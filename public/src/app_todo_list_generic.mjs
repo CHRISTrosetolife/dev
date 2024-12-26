@@ -1,3 +1,5 @@
+import { emoji_delete } from "./emoji_delete.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_todo_item_choices } from "./app_todo_item_choices.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { emoji_edit_combine } from "./emoji_edit_combine.mjs";
@@ -32,6 +34,9 @@ export function app_todo_list_generic(context, filtered, refresh, properties) {
         app_todo_item_choices(context, item, p);
       });
     });
-    html_button_width_full_text_click(root);
+    html_button_width_full_text_click(
+      root,
+      string_combine_multiple([emoji_delete()]),
+    );
   });
 }
