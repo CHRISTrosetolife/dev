@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import { emoji_delete } from "./emoji_delete.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_todo_item_choices } from "./app_todo_item_choices.mjs";
@@ -28,6 +29,7 @@ export function app_todo_list_generic(context, filtered, refresh, properties) {
         function on_save() {
           refresh(context);
         },
+        error(),
       );
       each(properties, (p) => {
         html_hr(root);

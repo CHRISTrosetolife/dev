@@ -8,6 +8,7 @@ export function app_todo_item_name(
   value_initial,
   on_complete,
   on_save,
+  index_path,
 ) {
   let app_main_lambda = app_todo_main;
   let index_path2 = app_todo_firebase_path_index();
