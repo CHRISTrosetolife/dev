@@ -32,5 +32,6 @@ export function app_todo_list_generic(context, filtered, refresh, properties) {
         app_todo_item_choices(context, item, p);
       });
     });
+    html_button_width_full_text_click(root);
   });
 }
