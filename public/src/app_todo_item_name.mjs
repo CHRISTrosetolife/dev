@@ -1,5 +1,4 @@
 import { html_item_add_generic } from "./html_item_add_generic.mjs";
-import { app_todo_firebase_path_index } from "./app_todo_firebase_path_index.mjs";
 import { app_todo_main } from "./app_todo_main.mjs";
 export function app_todo_item_name(
   context,
@@ -11,7 +10,6 @@ export function app_todo_item_name(
   index_path,
 ) {
   let app_main_lambda = app_todo_main;
-  let index_path2 = app_todo_firebase_path_index();
   html_item_add_generic(
     context,
     button_text_first,
