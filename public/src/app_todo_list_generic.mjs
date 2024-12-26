@@ -36,7 +36,7 @@ export function app_todo_list_generic(context, filtered, refresh, properties) {
     });
     html_button_width_full_text_click(
       root,
-      string_combine_multiple([emoji_delete()]),
+      string_combine_multiple([emoji_delete(), " delete"]),
     );
   });
 }
