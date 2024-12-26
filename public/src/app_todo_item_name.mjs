@@ -10,7 +10,7 @@ export function app_todo_item_name(
   on_save,
 ) {
   let app_main_lambda = app_todo_main;
-  let index_path = app_todo_firebase_path_index();
+  let index_path2 = app_todo_firebase_path_index();
   html_item_add_generic(
     context,
     button_text_first,
