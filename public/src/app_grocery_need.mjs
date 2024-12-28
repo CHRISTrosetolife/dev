@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { app_grocery_index_need } from "./app_grocery_index_need.mjs";
 import { app_grocery_index_items } from "./app_grocery_index_items.mjs";
@@ -13,8 +14,12 @@ export function app_grocery_need(context) {
   html_hr_each(root, items, (item) => {
     let name = object_property_get(item, "name");
     let count = object_property_initialize(index, name, 0);
-    html_button_width_full_text_click(root, name, () => {
-      html_button_back_main(context, refresh);
-    });
+    html_button_width_full_text_click(
+      root,
+      string_combine_multiple([name]),
+      () => {
+        html_button_back_main(context, refresh);
+      },
+    );
   });
 }
