@@ -21,7 +21,6 @@ export function app_todo_list_generic(
   items_all,
 ) {
   let { root } = context;
-  let lambda = () => {};
   html_hr_each(root, filtered, (item) => {
     let name = object_property_get(item, "name");
     html_button_width_full_text_click(root, name, () => {
