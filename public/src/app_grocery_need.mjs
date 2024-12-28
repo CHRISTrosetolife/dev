@@ -38,8 +38,10 @@ export function app_grocery_need(context) {
   });
   html_hr(root);
   html_button_width_full_text_click(root, c, async () => {
-    each();
-    object_property_set(need, name, c);
+    each(items, (item) => {
+      let name = object_property_get(item, "name");
+      object_property_set(need, name, 0);
+    });
     await save_refresh();
   });
   async function save_refresh() {
