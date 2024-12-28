@@ -22,7 +22,7 @@ export function app_grocery_need(context) {
       () => {
         html_button_back_main(context, refresh);
         html_hr_each(root, range(13), (item) => {
-          html_button_width_full_text_click(root);
+          let b = html_button_width_full_text_click(root);
           html_style_success_if(b, item, count);
         });
       },
