@@ -1,3 +1,4 @@
+import { firebase_save_index } from "./firebase_save_index.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { range } from "./range.mjs";
 import { html_style_success_if } from "./html_style_success_if.mjs";
@@ -23,8 +24,9 @@ export function app_grocery_need(context) {
       () => {
         html_button_back_main(context, refresh);
         html_hr_each(root, range(13), (c) => {
-          let b = html_button_width_full_text_click(root, c, () => {
+          let b = html_button_width_full_text_click(root, c, async () => {
             object_property_set(need, name, c);
+            await firebase_save_index(context, index_path);
             refresh();
           });
           html_style_success_if(b, count, c);
