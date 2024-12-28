@@ -1,3 +1,4 @@
+import { app_grocery_main } from "./app_grocery_main.mjs";
 import { each } from "./each.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { app_grocery_firebase_path_index } from "./app_grocery_firebase_path_index.mjs";
@@ -14,7 +15,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { html_hr_each } from "./html_hr_each.mjs";
 import { html_button_back_main } from "./html_button_back_main.mjs";
 export function app_grocery_need(context) {
-  let root = html_button_back_main(context, app_grocery_need);
+  let root = html_button_back_main(context, app_grocery_main);
   let refresh = () => app_grocery_need(context);
   let items = app_grocery_index_items(context);
   let need = app_grocery_index_need(context);
