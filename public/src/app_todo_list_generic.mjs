@@ -18,6 +18,7 @@ export function app_todo_list_generic(
   refresh,
   properties,
   index_path,
+  items_all,
 ) {
   let { root } = context;
   html_hr(root);
