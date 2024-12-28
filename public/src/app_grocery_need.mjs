@@ -22,8 +22,8 @@ export function app_grocery_need(context) {
       () => {
         html_button_back_main(context, refresh);
         html_hr_each(root, range(13), (item) => {
-          let b = html_button_width_full_text_click(root);
-          html_style_success_if(b, item, count);
+          let b = html_button_width_full_text_click(root, item, () => {});
+          html_style_success_if(b, count, item);
         });
       },
     );
