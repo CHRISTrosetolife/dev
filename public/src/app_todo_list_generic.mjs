@@ -23,7 +23,7 @@ export function app_todo_list_generic(
   html_hr(root);
   each(filtered, lambda);
   function lambda() {}
-   each(filtered, (item) => {
+  each(filtered, (item) => {
     let name = object_property_get(item, "name");
     html_button_width_full_text_click(root, name, () => {
       html_button_back_main(context, refresh);
