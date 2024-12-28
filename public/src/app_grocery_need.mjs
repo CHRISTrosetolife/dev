@@ -36,6 +36,10 @@ export function app_grocery_need(context) {
     );
   });
   html_hr(root);
+  html_button_width_full_text_click(root, c, async () => {
+    object_property_set(need, name, c);
+    await save_refresh();
+  });
   async function save_refresh() {
     let index_path = app_grocery_firebase_path_index();
     await firebase_save_index(context, index_path);
