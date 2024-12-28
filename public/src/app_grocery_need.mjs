@@ -15,6 +15,7 @@ import { html_button_back_main } from "./html_button_back_main.mjs";
 export function app_grocery_need(context) {
   let root = html_button_back_main(context, app_grocery_need);
   let refresh = () => app_grocery_need(context);
+  save_refresh();
   let items = app_grocery_index_items(context);
   let need = app_grocery_index_need(context);
   html_hr_each(root, items, (item) => {
@@ -28,9 +29,6 @@ export function app_grocery_need(context) {
         html_hr_each(root, range(13), (c) => {
           let b = html_button_width_full_text_click(root, c, async () => {
             object_property_set(need, name, c);
-            let index_path = app_grocery_firebase_path_index();
-            await firebase_save_index(context, index_path);
-            refresh();
           });
           html_style_success_if(b, count, c);
         });
@@ -38,4 +36,9 @@ export function app_grocery_need(context) {
     );
   });
   html_hr(root);
+  async function save_refresh() {
+    let index_path = app_grocery_firebase_path_index();
+    await firebase_save_index(context, index_path);
+    refresh();
+  }
 }
