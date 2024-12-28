@@ -20,7 +20,7 @@ export function app_todo_list_generic(
   items_all,
 ) {
   let { root } = context;
-  let lambda;
+  let lambda = () => {};
   html_hr(root);
   each(filtered, lambda);
   each(filtered, (item) => {
