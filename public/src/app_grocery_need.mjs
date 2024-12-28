@@ -1,6 +1,7 @@
+import { app_grocery_main } from "./app_grocery_main.mjs";
+import { html_button_back_main } from "./html_button_back_main.mjs";
 import { app_grocery_items } from "./app_grocery_items.mjs";
-import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
 export function app_grocery_need(context) {
-  let root = html_clear_scroll_top_context(context);
+  html_button_back_main(context, app_grocery_main);
   let items = app_grocery_items(context);
 }
