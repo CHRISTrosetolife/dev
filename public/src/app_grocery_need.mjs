@@ -16,17 +16,17 @@ export function app_grocery_need(context) {
   let need = app_grocery_index_need(context);
   html_hr_each(root, items, (item) => {
     let name = object_property_get(item, "name");
-    let count = object_property_initialize(index, name, 0);
+    let count = object_property_initialize(need, name, 0);
     html_button_width_full_text_click(
       root,
       string_combine_multiple([name, ": ", count]),
       () => {
         html_button_back_main(context, refresh);
-        html_hr_each(root, range(13), (item) => {
-          let b = html_button_width_full_text_click(root, item, () => {
-            object_property_set(object, "property_name", value);
+        html_hr_each(root, range(13), (c) => {
+          let b = html_button_width_full_text_click(root, c, () => {
+            object_property_set(need, name, c);
           });
-          html_style_success_if(b, count, item);
+          html_style_success_if(b, count, c);
         });
       },
     );
