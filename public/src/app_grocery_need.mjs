@@ -28,7 +28,7 @@ export function app_grocery_need(context) {
         html_hr_each(root, range(13), (c) => {
           let b = html_button_width_full_text_click(root, c, async () => {
             object_property_set(need, name, c);
-            save_refresh();
+            await save_refresh();
           });
           html_style_success_if(b, count, c);
         });
