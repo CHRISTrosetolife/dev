@@ -1,3 +1,5 @@
+import { html_style_success_if } from "./html_style_success_if.mjs";
+import { range_1 } from "./range_1.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { app_grocery_index_need } from "./app_grocery_index_need.mjs";
@@ -19,6 +21,8 @@ export function app_grocery_need(context) {
       string_combine_multiple([name, ": ", count]),
       () => {
         html_button_back_main(context, refresh);
+        html_hr_each(root, range_1(12), (item) => {});
+        html_style_success_if(b, highlight, book_code);
       },
     );
   });
