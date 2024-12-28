@@ -6,4 +6,5 @@ export function html_button_back_main(context, app_main_lambda) {
   html_button_back(root, () => {
     app_main_lambda(context);
   });
+  return root;
 }
