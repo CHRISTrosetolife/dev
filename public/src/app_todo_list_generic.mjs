@@ -1,3 +1,4 @@
+import { html_hr_each } from "./html_hr_each.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { firebase_save_index } from "./firebase_save_index.mjs";
 import { emoji_delete } from "./emoji_delete.mjs";
@@ -21,9 +22,7 @@ export function app_todo_list_generic(
 ) {
   let { root } = context;
   let lambda = () => {};
-  html_hr(root);
-  each(filtered, lambda);
-  each(filtered, (item) => {
+  html_hr_each(root, filtered, (item) => {
     let name = object_property_get(item, "name");
     html_button_width_full_text_click(root, name, () => {
       html_button_back_main(context, refresh);
