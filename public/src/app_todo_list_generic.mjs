@@ -1,3 +1,5 @@
+import { list_remove } from "./list_remove.mjs";
+import { app_grocery_items } from "./app_grocery_items.mjs";
 import { firebase_save_index } from "./firebase_save_index.mjs";
 import { emoji_delete } from "./emoji_delete.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -46,6 +48,8 @@ export function app_todo_list_generic(
       root,
       string_combine_multiple([emoji_delete(), " delete"]),
       async () => {
+        let items = app_grocery_items(context);
+        list_remove(items, item);
         await firebase_save_index(context, index_path);
         refresh(context);
       },
