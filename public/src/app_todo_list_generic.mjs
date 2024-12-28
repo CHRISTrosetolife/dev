@@ -50,7 +50,7 @@ export function app_todo_list_generic(
       string_combine_multiple([emoji_delete(), " delete"]),
       async () => {
         let items = app_grocery_items(context);
-        list_remove(items, item);
+        list_remove(items_all, item);
         await firebase_save_index(context, index_path);
         refresh(context);
       },
