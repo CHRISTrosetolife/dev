@@ -1,3 +1,4 @@
+import { app_grocery_firebase_path_index } from "./app_grocery_firebase_path_index.mjs";
 import { firebase_save_index } from "./firebase_save_index.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { range } from "./range.mjs";
@@ -26,6 +27,7 @@ export function app_grocery_need(context) {
         html_hr_each(root, range(13), (c) => {
           let b = html_button_width_full_text_click(root, c, async () => {
             object_property_set(need, name, c);
+            let index_path = app_grocery_firebase_path_index();
             await firebase_save_index(context, index_path);
             refresh();
           });
