@@ -21,8 +21,9 @@ export function app_grocery_need(context) {
       string_combine_multiple([name, ": ", count]),
       () => {
         html_button_back_main(context, refresh);
-        html_hr_each(root, range(13), (item) => {});
-        html_style_success_if(b, highlight, book_code);
+        html_hr_each(root, range(13), (item) => {
+          html_style_success_if(b, highlight, book_code);
+        });
       },
     );
   });
