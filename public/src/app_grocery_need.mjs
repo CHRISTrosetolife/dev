@@ -7,6 +7,7 @@ import { html_hr_each } from "./html_hr_each.mjs";
 import { html_button_back_main } from "./html_button_back_main.mjs";
 export function app_grocery_need(context) {
   let root = html_button_back_main(context, app_grocery_need);
+  let refresh = () => app_grocery_need(context);
   let items = app_grocery_index_items(context);
   let need = app_grocery_index_need(context);
   html_hr_each(root, items, (item) => {
