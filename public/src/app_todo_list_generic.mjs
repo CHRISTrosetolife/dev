@@ -1,3 +1,4 @@
+import { firebase_save_index } from "./firebase_save_index.mjs";
 import { emoji_delete } from "./emoji_delete.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_todo_item_choices } from "./app_todo_item_choices.mjs";
@@ -44,7 +45,10 @@ export function app_todo_list_generic(
     html_button_width_full_text_click(
       root,
       string_combine_multiple([emoji_delete(), " delete"]),
-      () => {},
+      async () => {
+        await firebase_save_index(context, index_path);
+        refresh(context);
+      },
     );
   });
 }
