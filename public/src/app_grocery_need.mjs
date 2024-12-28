@@ -16,7 +16,7 @@ export function app_grocery_need(context) {
     let count = object_property_initialize(index, name, 0);
     html_button_width_full_text_click(
       root,
-      string_combine_multiple([name]),
+      string_combine_multiple([name, ": ", count]),
       () => {
         html_button_back_main(context, refresh);
       },
