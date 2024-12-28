@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { app_grocery_firebase_path_index } from "./app_grocery_firebase_path_index.mjs";
 import { firebase_save_index } from "./firebase_save_index.mjs";
@@ -37,6 +38,7 @@ export function app_grocery_need(context) {
   });
   html_hr(root);
   html_button_width_full_text_click(root, c, async () => {
+    each();
     object_property_set(need, name, c);
     await save_refresh();
   });
