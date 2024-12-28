@@ -11,7 +11,7 @@ export function app_grocery_need(context) {
   let need = app_grocery_index_need(context);
   html_hr_each(root, items, (item) => {
     let name = object_property_get(item, "name");
-    let count = object_property_initialize(index, "need", {});
+    let count = object_property_initialize(index, name, 0);
     html_button_width_full_text_click(root, name, () => {});
   });
 }
