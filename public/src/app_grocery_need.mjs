@@ -1,3 +1,4 @@
+import { html_hr } from "./html_hr.mjs";
 import { app_grocery_firebase_path_index } from "./app_grocery_firebase_path_index.mjs";
 import { firebase_save_index } from "./firebase_save_index.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -36,4 +37,5 @@ export function app_grocery_need(context) {
       },
     );
   });
+  html_hr(root);
 }
