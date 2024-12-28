@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { range } from "./range.mjs";
 import { html_style_success_if } from "./html_style_success_if.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -22,7 +23,9 @@ export function app_grocery_need(context) {
       () => {
         html_button_back_main(context, refresh);
         html_hr_each(root, range(13), (item) => {
-          let b = html_button_width_full_text_click(root, item, () => {});
+          let b = html_button_width_full_text_click(root, item, () => {
+            object_property_set(object, "property_name", value);
+          });
           html_style_success_if(b, count, item);
         });
       },
