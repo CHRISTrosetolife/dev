@@ -27,6 +27,7 @@ export async function app_record_verse_generic(
     chapter,
   );
   let verse = list_find_property(verses, "verse_number", verse_number);
+  let { tokens } = verse;
   let vn = html_bible_verse(root, book_code, chapter, verse);
   html_hr(root);
   if (equal(verse_number, "1")) {
