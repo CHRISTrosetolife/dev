@@ -18,6 +18,7 @@ export async function app_record_generic(
       on_initialized: html_style_a_plain,
     });
   } else {
+    html_style_a_plain();
     await on_logged_in();
   }
   async function on_logged_in(context) {
