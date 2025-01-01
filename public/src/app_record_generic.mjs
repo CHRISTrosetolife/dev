@@ -1,3 +1,4 @@
+import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { app_record_lookup } from "./app_record_lookup.mjs";
 import { html_recorder_media } from "./html_recorder_media.mjs";
@@ -18,6 +19,7 @@ export async function app_record_generic(
       on_initialized: html_style_a_plain,
     });
   } else {
+    let root = html_style_default_initialize();
     html_style_a_plain();
     await on_logged_in();
   }
