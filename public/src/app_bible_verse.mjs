@@ -1,3 +1,4 @@
+import { bible_storage_version_http_get } from "./bible_storage_version_http_get.mjs";
 import { app_record_verse_generic } from "./app_record_verse_generic.mjs";
 import { html_style_red } from "./html_style_red.mjs";
 import { bible_storage_interlinear_chapter_definitions_property } from "./bible_storage_interlinear_chapter_definitions_property.mjs";
@@ -22,7 +23,6 @@ import { bible_interlinear_words_greek_audio_upload_filter } from "./bible_inter
 import { html_hr } from "./html_hr.mjs";
 import { each } from "./each.mjs";
 import { bible_storage_interlinear_book_path } from "./bible_storage_interlinear_book_path.mjs";
-import { firebase_download_bible } from "./firebase_download_bible.mjs";
 import { bible_books_prefix_to_name } from "./bible_books_prefix_to_name.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_find_property } from "./list_find_property.mjs";
@@ -41,11 +41,11 @@ export async function app_bible_verse(
     app_bible_verse,
   );
   let book_name = object_property_get(bible_books_prefix_to_name(), book_code);
-  let chapter_interlinear = await firebase_download_bible(
+  let chapter_interlinear = await bible_storage_version_http_get(
     bible_storage_interlinear_book_path(book_name),
     chapter,
   );
-  let chapter_definitions = await firebase_download_bible(
+  let chapter_definitions = await bible_storage_version_http_get(
     bible_storage_interlinear_chapter_definitions_path(book_name, chapter),
     bible_storage_interlinear_chapter_definitions_name(),
   );
