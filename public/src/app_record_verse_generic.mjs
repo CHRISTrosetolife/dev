@@ -31,12 +31,12 @@ export async function app_record_verse_generic(
     chapter,
   );
   let verse = list_find_property(verses, "verse_number", verse_number);
-  let vn = html_bible_verse(root, book_code, chapter, verse);
   let { tokens } = verse;
   let r = bible_reference_name(book_code, chapter, verse_number);
   html_button_copy_get(root, () =>
     string_combine_multiple([r, " ", list_join_space(tokens)]),
   );
+  let vn = html_bible_verse(root, book_code, chapter, verse);
   html_hr(root);
   if (equal(verse_number, "1")) {
     html_style_green(vn);
