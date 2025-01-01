@@ -1,3 +1,4 @@
+import { html_button_copy_get } from "./html_button_copy_get.mjs";
 import { bible_storage_version_http_get } from "./bible_storage_version_http_get.mjs";
 import { app_record_verse_generic } from "./app_record_verse_generic.mjs";
 import { html_style_red } from "./html_style_red.mjs";
@@ -40,6 +41,7 @@ export async function app_bible_verse(
     context,
     app_bible_verse,
   );
+  html_button_copy_get();
   let book_name = object_property_get(bible_books_prefix_to_name(), book_code);
   let chapter_interlinear = await bible_storage_version_http_get(
     bible_storage_interlinear_book_path(book_name),
