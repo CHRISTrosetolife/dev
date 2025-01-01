@@ -65,8 +65,8 @@ export async function app_memorize_refresh_memorize_load(context) {
       version_code,
     });
     let verses = await bible_storage_version_http_get(
-      chapter_code,
       version_code,
+      chapter_code,
     );
     if (list_empty_is(verses)) {
       console.error({
