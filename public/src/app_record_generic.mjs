@@ -12,10 +12,13 @@ export async function app_record_generic(
   app_verse_lambda,
   mr_initialize,
 ) {
-  await app_firebase({
-    on_logged_in,
-    on_initialized: html_style_a_plain,
-  });
+  if (mr_initialize) {
+    await app_firebase({
+      on_logged_in,
+      on_initialized: html_style_a_plain,
+    });
+  } else {
+  }
   async function on_logged_in(context) {
     let { root } = context;
     object_property_set(context, "app_lambda", app_lambda);
