@@ -23,7 +23,9 @@ export async function app_record_generic(
     let root = html_style_default_initialize();
     html_style_a_plain();
     await html_script_axios(root);
-    await on_logged_in();
+    await on_logged_in({
+      root,
+    });
   }
   async function on_logged_in(context) {
     let { root } = context;
