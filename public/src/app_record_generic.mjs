@@ -1,3 +1,4 @@
+import { html_script_axios } from "./html_script_axios.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { app_record_lookup } from "./app_record_lookup.mjs";
@@ -21,6 +22,7 @@ export async function app_record_generic(
   } else {
     let root = html_style_default_initialize();
     html_style_a_plain();
+    await html_script_axios(root);
     await on_logged_in();
   }
   async function on_logged_in(context) {
