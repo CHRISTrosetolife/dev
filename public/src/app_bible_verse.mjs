@@ -41,7 +41,8 @@ export async function app_bible_verse(
     context,
     app_bible_verse,
   );
-  html_button_copy_get();
+  let root = object_property_get(context, "root");
+  html_button_copy_get(root, () => {});
   let book_name = object_property_get(bible_books_prefix_to_name(), book_code);
   let chapter_interlinear = await bible_storage_version_http_get(
     bible_storage_interlinear_book_path(book_name),
