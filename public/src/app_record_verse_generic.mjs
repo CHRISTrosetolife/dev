@@ -1,3 +1,5 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { html_button_copy_get } from "./html_button_copy_get.mjs";
 import { bible_reference_name } from "./bible_reference_name.mjs";
 import { html_bible_verse_navigation } from "./html_bible_verse_navigation.mjs";
 import { html_div } from "./html_div.mjs";
@@ -10,6 +12,7 @@ import { app_verses_generic } from "./app_verses_generic.mjs";
 import { app_record_verse_buttons } from "./app_record_verse_buttons.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_save_change_bible } from "./app_save_change_bible.mjs";
+import { list_join_space } from "./list_join_space.mjs";
 export async function app_record_verse_generic(
   app_lambda,
   book_code,
@@ -31,6 +34,9 @@ export async function app_record_verse_generic(
   let vn = html_bible_verse(root, book_code, chapter, verse);
   let { tokens } = verse;
   let r = bible_reference_name(book_code, chapter, verse_number);
+  html_button_copy_get(root, () =>
+    string_combine_multiple([r, " ", list_join_space(tokens)]),
+  );
   html_hr(root);
   if (equal(verse_number, "1")) {
     html_style_green(vn);
