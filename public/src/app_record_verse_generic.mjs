@@ -1,5 +1,5 @@
+import { html_button_copy } from "./html_button_copy.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { html_button_copy_get } from "./html_button_copy_get.mjs";
 import { bible_reference_name } from "./bible_reference_name.mjs";
 import { html_bible_verse_navigation } from "./html_bible_verse_navigation.mjs";
 import { html_div } from "./html_div.mjs";
@@ -33,7 +33,8 @@ export async function app_record_verse_generic(
   let verse = list_find_property(verses, "verse_number", verse_number);
   let { tokens } = verse;
   let r = bible_reference_name(book_code, chapter, verse_number);
-  html_button_copy_get(root, () =>
+  html_button_copy(
+    root,
     string_combine_multiple([r, " ", list_join_space(tokens)]),
   );
   let vn = html_bible_verse(root, book_code, chapter, verse);
