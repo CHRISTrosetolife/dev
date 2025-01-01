@@ -1,3 +1,4 @@
+import { bible_reference_name } from "./bible_reference_name.mjs";
 import { html_bible_verse_navigation } from "./html_bible_verse_navigation.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_style_green } from "./html_style_green.mjs";
@@ -28,6 +29,7 @@ export async function app_record_verse_generic(
   );
   let verse = list_find_property(verses, "verse_number", verse_number);
   let vn = html_bible_verse(root, book_code, chapter, verse);
+  bible_reference_name(book_code, chapter, verse_number);
   html_hr(root);
   if (equal(verse_number, "1")) {
     html_style_green(vn);
