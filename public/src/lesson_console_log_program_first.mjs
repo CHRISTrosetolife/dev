@@ -44,7 +44,7 @@ export function lesson_console_log_program_first(parent) {
   app_learn_code_code_part_contrast(parent, "console.log('hello')");
   html_p_text(
     parent,
-    "to make this a statement , we can add a semicolon to the end",
+    "to make this a statement , we can add a semicolon to the end :",
   );
   html_cycle_list(
     parent,
