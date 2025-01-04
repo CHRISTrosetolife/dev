@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_cycle_list } from "./html_cycle_list.mjs";
 import { html_style_code } from "./html_style_code.mjs";
 import { app_learn_code_code } from "./app_learn_code_code.mjs";
@@ -6,7 +7,6 @@ import { html_style_bold } from "./html_style_bold.mjs";
 import { noop } from "./noop.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_p_text } from "./html_p_text.mjs";
-import { html_style_monospace } from "./html_style_monospace.mjs";
 export function lesson_console_log_program_first(parent) {
   html_cycle_list(
     parent,
@@ -16,10 +16,12 @@ export function lesson_console_log_program_first(parent) {
   );
   html_p_text(parent, "then we can write : ");
   app_learn_code_code_part_contrast(parent, "console.log()");
-  html_p_text(
-    parent,
-    "right now there are no inputs for this process , so there is nothing in between the parentheses",
-  );
+  if (false) {
+    html_p_text(
+      parent,
+      "right now there are no inputs for this process , so there is nothing in between the parentheses",
+    );
+  }
   html_cycle_list(
     parent,
     html_p,
@@ -59,5 +61,8 @@ export function lesson_console_log_program_first(parent) {
       " )",
     ],
   );
-  app_learn_code_code(parent, `console.log('hello');`);
+  app_learn_code_code(
+    parent,
+    string_combine_multiple(["console.log('hello');"]),
+  );
 }
