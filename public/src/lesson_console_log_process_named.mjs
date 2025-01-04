@@ -5,7 +5,7 @@ import { html_hr } from "./html_hr.mjs";
 export function lesson_console_log_process_named(parent) {
   html_p_text(
     parent,
-    "A process does not have to be addition; for example subtraction, multiplication and division are processes, too.",
+    "There are other processes besides addition; for example subtraction, multiplication and division are processes, too.",
   );
   if (false) {
     html_p_text(
