@@ -42,14 +42,9 @@ export function lesson_console_log_program_first(parent) {
   );
   html_p_text(parent, "then we can write : ");
   app_learn_code_code_part_contrast(parent, "console.log('hello')");
-  html_p_text(parent, "this is almost a finished computer program");
   html_p_text(
     parent,
-    "to finish this computer program we should add a semicolon separator to the end",
-  );
-  html_p_text(
-    parent,
-    "here is the finished computer program and the output of the computer program :",
+    "to make this a statement , we can add a semicolon to the end",
   );
   html_cycle_list(
     parent,
