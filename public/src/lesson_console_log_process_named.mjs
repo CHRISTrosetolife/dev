@@ -22,6 +22,7 @@ export function lesson_console_log_process_named(parent) {
   html_li_text(ol5, "subtract(3, 2) = 1");
   html_li_text(ol5, "multiply(3, 2) = 6");
   html_li_text(ol5, "divide(6, 3) = 2");
+  return;
   html_p_text(
     parent,
     "after the name of the process , we write a pair of parentheses like this : process_name()",
