@@ -42,6 +42,7 @@ export async function app_bible_verse(
     context,
     app_bible_verse,
   );
+  let root = context;
   await html_bible_verse_navigation(
     app_lambda,
     app_bible_verse,
