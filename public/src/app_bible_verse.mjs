@@ -42,7 +42,18 @@ export async function app_bible_verse(
     context,
     app_bible_verse,
   );
-  let middle_div = html_div(middle);
+  await html_bible_verse_navigation(
+    app_lambda,
+    app_bible_verse,
+    context,
+    book_code,
+    chapter,
+    verse_number,
+    "reading",
+    false,
+    middle,
+  );
+  html_hr(middle);
   let book_name = object_property_get(bible_books_prefix_to_name(), book_code);
   let chapter_interlinear = await bible_storage_version_http_get(
     bible_storage_interlinear_book_path(book_name),
@@ -100,16 +111,4 @@ export async function app_bible_verse(
     html_style_green(definition);
   });
   html_hr(middle);
-  await html_bible_verse_navigation(
-    app_lambda,
-    app_bible_verse,
-    context,
-    book_code,
-    chapter,
-    verse_number,
-    "reading",
-    false,
-    middle_div,
-  );
-  html_hr(middle_div);
 }
