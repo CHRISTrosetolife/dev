@@ -51,6 +51,7 @@ export async function app_bible_verse(
     verse_number,
     "reading",
     false,
+    root,
   );
   html_hr(middle);
   let book_name = object_property_get(bible_books_prefix_to_name(), book_code);

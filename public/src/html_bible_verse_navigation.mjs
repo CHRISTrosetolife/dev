@@ -18,6 +18,7 @@ export async function html_bible_verse_navigation(
   verse_number,
   copy_message,
   previous_first,
+  root,
 ) {
   let { root } = context;
   let verses = await app_verses_generic(context, app_fn, book_code, chapter);

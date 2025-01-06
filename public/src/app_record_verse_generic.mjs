@@ -52,6 +52,7 @@ export async function app_record_verse_generic(
     verse_number,
     "reading",
     false,
+    root,
   );
   (" and recording audio for audio Bible");
   return {
