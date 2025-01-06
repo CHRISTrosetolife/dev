@@ -1,3 +1,4 @@
+import { apps_list_generate } from "./apps_list_generate.mjs";
 import { app_html_generate_dev } from "./app_html_generate_dev.mjs";
 import { app_identifier } from "./app_identifier.mjs";
 import { file_write } from "./file_write.mjs";
@@ -17,4 +18,5 @@ export async function app_new(name) {
     false,
     file_write,
   );
+  await apps_list_generate();
 }
