@@ -42,7 +42,7 @@ export async function app_bible_verse(
     context,
     app_bible_verse,
   );
-  let root = context;
+  let { root } = context;
   await html_bible_verse_navigation(
     app_lambda,
     app_bible_verse,
@@ -52,7 +52,7 @@ export async function app_bible_verse(
     verse_number,
     "reading",
     false,
-    root,
+    middle,
   );
   html_hr(middle);
   let book_name = object_property_get(bible_books_prefix_to_name(), book_code);
