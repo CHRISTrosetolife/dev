@@ -1,3 +1,4 @@
+import { html_bible_verse_navigation } from "./html_bible_verse_navigation.mjs";
 import { bible_storage_version_http_get } from "./bible_storage_version_http_get.mjs";
 import { app_record_verse_generic } from "./app_record_verse_generic.mjs";
 import { html_style_red } from "./html_style_red.mjs";
@@ -32,15 +33,25 @@ export async function app_bible_verse(
   chapter,
   verse_number,
 ) {
+  let app_lambda = object_property_get(context, "app_lambda");
   let { middle } = await app_record_verse_generic(
-    object_property_get(context, "app_lambda"),
+    app_lambda,
     book_code,
     chapter,
     verse_number,
     context,
     app_bible_verse,
   );
-  let root = object_property_get(context, "root");
+  await html_bible_verse_navigation(
+    app_lambda,
+    app_verse_lambda,
+    context,
+    book_code,
+    chapter,
+    verse_number,
+    "reading",
+    false,
+  );
   let book_name = object_property_get(bible_books_prefix_to_name(), book_code);
   let chapter_interlinear = await bible_storage_version_http_get(
     bible_storage_interlinear_book_path(book_name),
