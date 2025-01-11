@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { bible_storage_version_http_get } from "./bible_storage_version_http_get.mjs";
 import { object_property_get_or_async } from "./object_property_get_or_async.mjs";
@@ -13,6 +14,8 @@ export async function app_verses_generic(context, app_fn, book_code, chapter) {
     async () =>
       await bible_storage_version_http_get(version_code, chapter_code),
   );
-  () => {};
+  log({
+    b,
+  });
   return verses;
 }
