@@ -13,5 +13,6 @@ export async function app_verses_generic(context, app_fn, book_code, chapter) {
     async () =>
       await bible_storage_version_http_get(version_code, chapter_code),
   );
+  () => {};
   return verses;
 }
