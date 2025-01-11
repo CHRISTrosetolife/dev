@@ -16,8 +16,8 @@ export async function storage_upload_object_gitignore(
     if (equal_json(result_existing, result_new)) {
       if (false) {
         log(string_combine_multiple(["same; not uploading: ", existing_path]));
-        return;
       }
+      return;
     }
   }
   log(string_combine_multiple(["uploading: ", existing_path]));
