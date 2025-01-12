@@ -37,7 +37,9 @@ export async function bible_words_definitions_atoms(language) {
   let atoms = list_adder((la) => {
     let previous = [];
     while (list_empty_not_is(pairs)) {
-      log({});
+      log({
+        pairs: list_count(pairs),
+      });
       let atom_result = [];
       each_range(atom_count, (index) => {
         if (list_empty_is(pairs)) {
