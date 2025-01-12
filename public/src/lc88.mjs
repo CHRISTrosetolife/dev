@@ -10,6 +10,7 @@ export function lc88(nums1, m, nums2, n) {
   if (value_1 > value_2) {
     value = value_1;
   } else {
+    value = value_2;
   }
   list_set(num, index_current, value_1);
 }
