@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_language_atom_size } from "./app_language_atom_size.mjs";
 import { bible_words_definitions_pairs } from "./bible_words_definitions_pairs.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -36,6 +37,7 @@ export async function bible_words_definitions_atoms(language) {
   let atoms = list_adder((la) => {
     let previous = [];
     while (list_empty_not_is(pairs)) {
+      log({});
       let atom_result = [];
       each_range(atom_count, (index) => {
         if (list_empty_is(pairs)) {
