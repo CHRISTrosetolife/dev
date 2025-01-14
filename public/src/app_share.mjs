@@ -16,6 +16,7 @@ export async function app_share() {
   await app_context_books_bible(context);
   let lookup = html_hash_lookup();
   let chapter_next = object_property_get(lookup, app_share_chapter());
+  $ex;
   let verse_number_next;
   verse_number_next = object_property_get(lookup, app_share_verse());
   let p = bible_chapter_name_parse(chapter_next);
