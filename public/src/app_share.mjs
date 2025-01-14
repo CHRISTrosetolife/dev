@@ -1,3 +1,4 @@
+import { html_hash_get } from "./html_hash_get.mjs";
 import { log } from "./log.mjs";
 import { list_take_bible_books_new } from "./list_take_bible_books_new.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -23,7 +24,7 @@ export async function app_share() {
       object_property_get(context, "books"),
     );
     log({
-      books_new,
+      h: html_hash_get(),
     });
     return;
   }
