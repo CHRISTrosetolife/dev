@@ -45,10 +45,11 @@ export async function app_share() {
           );
           let book = list_random_item(books_new);
           let book_code = object_property_get(book, "book_code");
+          let chapter_code = "01";
           object_property_set(
             lookup,
             app_share_chapter(),
-            string_combine_multiple([book_code, "01"]),
+            string_combine_multiple([book_code, chapter_code]),
           );
           object_property_set(lookup, app_share_verse(), "1");
           let f = object_property_get(folder, "code");
