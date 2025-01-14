@@ -24,9 +24,6 @@ export async function app_share() {
   await app_context_books_bible(context);
   let lookup = html_hash_lookup();
   if (object_property_exists_not(lookup, app_share_chapter())) {
-    let books_new = list_take_bible_books_new(
-      object_property_get(context, "books"),
-    );
     let folders = [
       {
         text: "English",
@@ -42,6 +39,9 @@ export async function app_share() {
         root,
         object_property_get(folder, "text"),
         () => {
+          let books_new = list_take_bible_books_new(
+            object_property_get(context, "books"),
+          );
           let f = object_property_get(folder, "code");
           object_property_set(lookup, app_share_bible_folders(), f);
           let joined = html_hash_unparse(lookup);
