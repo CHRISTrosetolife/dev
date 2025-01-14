@@ -1,3 +1,3 @@
-export function html_hash_set() {
-  return window.location.hash;
+export function html_hash_set(value) {
+  window.location.hash = value;
 }
