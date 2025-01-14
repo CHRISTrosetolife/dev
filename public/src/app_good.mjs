@@ -9,6 +9,8 @@ export function app_good() {
   each(messages, (message) => {
     html_button_width_full_text_click(body, message, () => {
       grace_good_generic_copy(message);
+      if (false) {
+      }
     });
   });
 }
