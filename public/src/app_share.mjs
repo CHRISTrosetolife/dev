@@ -1,3 +1,4 @@
+import { app_share_bible_folders } from "./app_share_bible_folders.mjs";
 import { each } from "./each.mjs";
 import { list_take_bible_books_new } from "./list_take_bible_books_new.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -39,6 +40,7 @@ export async function app_share() {
         object_property_get(folder, "text"),
         () => {
           let f = object_property_get(folder, "code");
+          object_property_set(lookup, app_share_bible_folders(), f);
         },
       );
     });
