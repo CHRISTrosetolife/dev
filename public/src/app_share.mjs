@@ -21,7 +21,16 @@ export async function app_share() {
     let books_new = list_take_bible_books_new(
       object_property_get(context, "books"),
     );
-    let folders = ["engbsb", "urdgvu+engbsb"];
+    let folders = [
+      {
+        text: "English",
+        code: "engbsb",
+      },
+      {
+        text: "Urdu and English",
+        code: "urdgvu+engbsb",
+      },
+    ];
     return;
   }
   let chapter_next = object_property_get(lookup, app_share_chapter());
