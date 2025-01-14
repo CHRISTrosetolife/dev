@@ -1,3 +1,4 @@
+import { html_p_text } from "./html_p_text.mjs";
 import { grace_good_generic_copy } from "./grace_good_generic_copy.mjs";
 import { each } from "./each.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -9,7 +10,8 @@ export function app_good() {
   each(messages, (message) => {
     html_button_width_full_text_click(body, message, () => {
       grace_good_generic_copy(message);
-      if (false) {
+      if (message === morning) {
+        html_p_text();
       }
     });
   });
