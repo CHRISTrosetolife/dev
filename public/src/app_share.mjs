@@ -18,7 +18,7 @@ export async function app_share() {
   await app_context_books_bible(context);
   let lookup = html_hash_lookup();
   if (object_property_exists_not(lookup, app_share_chapter())) {
-    list_take_bible_books_new(object_property_get(object, "property_name"));
+    list_take_bible_books_new(object_property_get(context, "books"));
     return;
   }
   let chapter_next = object_property_get(lookup, app_share_chapter());
