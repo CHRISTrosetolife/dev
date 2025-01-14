@@ -1,4 +1,4 @@
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { html_prayer } from "./html_prayer.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { grace_good_generic_copy } from "./grace_good_generic_copy.mjs";
 import { each } from "./each.mjs";
@@ -12,10 +12,17 @@ export function app_good() {
     html_button_width_full_text_click(body, message, () => {
       grace_good_generic_copy(message);
       if (message === morning) {
-        let lines = string_combine_multiple([
-          "Our Father, Who art in heaven, hallowed be Thy Name; Thy kingdom come; Thy will be done on earth as it is in heaven; give us this day our daily bread; and forgive us our trespasses as we forgive those who trespass against us; lead us not into temptation, but deliver us from evil|",
+        html_p_text(
+          body,
+          "Our Father, Who art in heaven, hallowed be Thy Name; Thy kingdom come; Thy will be done on earth as it is in heaven; give us this day our daily bread; and forgive us our trespasses as we forgive those who trespass against us; lead us not into temptation, but deliver us from evil",
+        );
+        html_prayer(root, [
+          "Cause me to perfectly obey You;",
+          "Cause me to perfectly obey Jesus",
+          "Cause me to perfectly obey the Holy Spirit",
+          "Unite the church",
+          "Cause all to choose good",
         ]);
-        html_p_text(body);
       }
     });
   });
