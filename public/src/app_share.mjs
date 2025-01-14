@@ -1,3 +1,4 @@
+import { html_hash_set } from "./html_hash_set.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_hash_unparse } from "./html_hash_unparse.mjs";
 import { app_share_bible_folders } from "./app_share_bible_folders.mjs";
@@ -45,7 +46,7 @@ export async function app_share() {
           object_property_set(lookup, app_share_bible_folders(), f);
           let joined = html_hash_unparse(lookup);
           let h = string_combine_multiple(["#", joined]);
-          html_hash_set(h)
+          html_hash_set(h);
         },
       );
     });
