@@ -96,7 +96,7 @@ export async function app_share_verse_refresh(
       ]),
     ),
   );
-  html_button_width_full_text_click_home(root);
+  html_button_width_full_text_click_home(root, () => app_share_main(context));
   function bible_folders_text_set(value) {
     bible_folders_text = value;
     bible_folders = string_split_plus(bible_folders_text);
