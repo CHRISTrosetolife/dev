@@ -7,6 +7,7 @@ import { app_share_chapter } from "./app_share_chapter.mjs";
 import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
+import { object_property_exists_not } from "./object_property_exists_not.mjs";
 export async function app_share() {
   let root = await firebase_initialize_axios();
   let context = {
@@ -15,7 +16,8 @@ export async function app_share() {
   object_property_set(context, "version_code", "engbsb");
   await app_context_books_bible(context);
   let lookup = html_hash_lookup();
-  if (false) {
+  if (object_property_exists_not(lookup, app_share_chapter())) {
+    return;
   }
   let chapter_next = object_property_get(lookup, app_share_chapter());
   let verse_number_next;
