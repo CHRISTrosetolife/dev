@@ -39,7 +39,7 @@ export async function app_share() {
       html_button_width_full_text_click(
         root,
         object_property_get(folder, "text"),
-        () => {
+        async () => {
           let books_new = list_take_bible_books_new(
             object_property_get(context, "books"),
           );
@@ -56,6 +56,12 @@ export async function app_share() {
           let joined = html_hash_unparse(lookup);
           let h = string_combine_multiple(["#", joined]);
           html_hash_set(h);
+          await app_share_verse_refresh(
+            context,
+            book_code,
+            chapter_code,
+            verse_number_next,
+          );
         },
       );
     });
