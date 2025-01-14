@@ -1,3 +1,4 @@
+import { list_random_item } from "./list_random_item.mjs";
 import { html_hash_set } from "./html_hash_set.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_hash_unparse } from "./html_hash_unparse.mjs";
@@ -42,6 +43,7 @@ export async function app_share() {
           let books_new = list_take_bible_books_new(
             object_property_get(context, "books"),
           );
+          list_random_item();
           let f = object_property_get(folder, "code");
           object_property_set(lookup, app_share_bible_folders(), f);
           let joined = html_hash_unparse(lookup);
