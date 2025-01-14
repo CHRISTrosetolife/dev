@@ -1,3 +1,5 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { html_hash_unparse } from "./html_hash_unparse.mjs";
 import { app_share_bible_folders } from "./app_share_bible_folders.mjs";
 import { each } from "./each.mjs";
 import { list_take_bible_books_new } from "./list_take_bible_books_new.mjs";
@@ -41,6 +43,8 @@ export async function app_share() {
         () => {
           let f = object_property_get(folder, "code");
           object_property_set(lookup, app_share_bible_folders(), f);
+          let joined = html_hash_unparse(lookup);
+          let h = string_combine_multiple(["#", joined]);
         },
       );
     });
