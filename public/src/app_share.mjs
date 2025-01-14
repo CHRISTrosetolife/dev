@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { html_hash_set } from "./html_hash_set.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -45,9 +44,13 @@ export async function app_share() {
             object_property_get(context, "books"),
           );
           let book = list_random_item(books_new);
-          log({
-            book,
-          });
+          let book_code = object_property_get(book, "book_code");
+          object_property_set(
+            lookup,
+            app_share_chapter(),
+            string_combine_multiple([book_code, "01"]),
+          );
+          object_property_set(lookup, app_share_verse(), "1");
           let f = object_property_get(folder, "code");
           object_property_set(lookup, app_share_bible_folders(), f);
           let joined = html_hash_unparse(lookup);
