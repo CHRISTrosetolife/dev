@@ -45,6 +45,7 @@ export async function app_share() {
           object_property_set(lookup, app_share_bible_folders(), f);
           let joined = html_hash_unparse(lookup);
           let h = string_combine_multiple(["#", joined]);
+          html_hash_set(h)
         },
       );
     });
