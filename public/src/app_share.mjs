@@ -51,7 +51,8 @@ export async function app_share() {
             app_share_chapter(),
             string_combine_multiple([book_code, chapter_code]),
           );
-          object_property_set(lookup, app_share_verse(), "1");
+          let verse_number_next = "1";
+          object_property_set(lookup, app_share_verse(), verse_number_next);
           let f = object_property_get(folder, "code");
           object_property_set(lookup, app_share_bible_folders(), f);
           let joined = html_hash_unparse(lookup);
