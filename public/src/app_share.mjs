@@ -36,8 +36,10 @@ export async function app_share() {
     each(folders, (folder) => {
       html_button_width_full_text_click(
         root,
-        object_property_get(object, "property_name"),
-        () => {},
+        object_property_get(folder, "text"),
+        () => {
+          let f = object_property_get(folder, "code");
+        },
       );
     });
     return;
