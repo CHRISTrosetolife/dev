@@ -1,3 +1,4 @@
+import { app_share_main } from "./app_share_main.mjs";
 import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { html_style_link } from "./html_style_link.mjs";
