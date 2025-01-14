@@ -43,7 +43,7 @@ export async function app_share() {
           let books_new = list_take_bible_books_new(
             object_property_get(context, "books"),
           );
-          list_random_item();
+          let book = list_random_item(books_new);$l_book
           let f = object_property_get(folder, "code");
           object_property_set(lookup, app_share_bible_folders(), f);
           let joined = html_hash_unparse(lookup);
@@ -65,5 +65,3 @@ export async function app_share() {
     book_code,
     chapter_code,
     verse_number_next,
-  );
-}
