@@ -16,7 +16,7 @@ export function app_good() {
           body,
           "Our Father, Who art in heaven, hallowed be Thy Name; Thy kingdom come; Thy will be done on earth as it is in heaven; give us this day our daily bread; and forgive us our trespasses as we forgive those who trespass against us; lead us not into temptation, but deliver us from evil",
         );
-        html_prayer(root, [
+        html_prayer(body, [
           "Cause me to perfectly obey the Father;",
           "Cause me to perfectly obey Jesus",
           "Cause me to perfectly obey the Holy Spirit",
