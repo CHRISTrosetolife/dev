@@ -10,6 +10,7 @@ import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_share() {
   let root = await firebase_initialize_axios();
   let context = {
@@ -32,7 +33,13 @@ export async function app_share() {
         code: "urdgvu+engbsb",
       },
     ];
-    each(list, (item) => {});
+    each(folders, (folder) => {
+      html_button_width_full_text_click(
+        root,
+        object_property_get(object, "property_name"),
+        () => {},
+      );
+    });
     return;
   }
   let chapter_next = object_property_get(lookup, app_share_chapter());
