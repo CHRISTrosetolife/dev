@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { list_take_bible_books_new } from "./list_take_bible_books_new.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { app_share_verse_refresh } from "./app_share_verse_refresh.mjs";
@@ -31,6 +32,7 @@ export async function app_share() {
         code: "urdgvu+engbsb",
       },
     ];
+    each(list, (item) => {});
     return;
   }
   let chapter_next = object_property_get(lookup, app_share_chapter());
