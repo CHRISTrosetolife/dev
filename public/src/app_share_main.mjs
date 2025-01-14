@@ -1,3 +1,4 @@
+import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
 import { app_share_verse_refresh } from "./app_share_verse_refresh.mjs";
 import { html_hash_set } from "./html_hash_set.mjs";
 import { html_hash_unparse } from "./html_hash_unparse.mjs";
@@ -14,7 +15,7 @@ import { each } from "./each.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 export function app_share_main(context) {
   let lookup = html_hash_lookup();
-  let { root } = context;
+  let root = html_clear_scroll_top_context(context);
   let folders = [
     {
       text: "English",
