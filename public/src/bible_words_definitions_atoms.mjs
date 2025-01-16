@@ -36,8 +36,8 @@ export async function bible_words_definitions_atoms(language) {
       let { pair, index } = p;
       let left = list_first(pair);
       let right = list_second(pair);
-      wait(lefts, left, index);
-      if (false) {
+      if (wait(lefts, left, index)) {
+        return true;
       }
       list_add(waiting, pair);
       list_add(atoms, pair);
