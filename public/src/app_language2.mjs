@@ -90,12 +90,12 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     );
     html_p_text(body, json_to(u));
   }
-  function app_language2_word(body, text, language, question) {
+  function app_language2_word(body, text, language, rememeber) {
     let q = html_p(body);
     html_style_centered(q);
     html_span_text(q, string_combine_multiple([text, ": "]));
     html_flag_language(q, language);
-    html_span_text(q, string_combine_multiple([" ", question]));
-    html_style_bold(q);
+    let r = html_span_text(q, string_combine_multiple([" ", rememeber]));
+    html_style_bold(r);
   }
 }
