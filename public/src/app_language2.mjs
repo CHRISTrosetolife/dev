@@ -17,7 +17,6 @@ import { each_index } from "./each_index.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { json_to } from "./json_to.mjs";
 import { object_property_set } from "./object_property_set.mjs";
-import { object_properties_empty_is } from "./object_properties_empty_is.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { each } from "./each.mjs";
@@ -70,17 +69,16 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     );
   });
   let words = storage_local_get(app_fn, "words", {});
-  each(list2, (item2) => {});
-  if (true || object_properties_empty_is(words)) {
-    each(list, (item) => {});
+  each(concated, (c) => {
     let word = list_first(concated);
     object_property_set(words, object_property_get(word, "key"), {
       learning: false,
       word,
     });
     storage_local_set(app_fn, "words", words);
-  }
-  html_clear_scroll_top_centered(root);
+  });
+
+  }  html_clear_scroll_top_centered(root);
   let values = object_values(words);
   let unlearned = list_filter_property(values, "learning", false);
   if (list_empty_not_is(unlearned)) {
