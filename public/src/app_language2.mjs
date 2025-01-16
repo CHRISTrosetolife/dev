@@ -1,3 +1,4 @@
+import { list_denest } from "./list_denest.mjs";
 import { json_to } from "./json_to.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { app_language_initialize } from "./app_language_initialize.mjs";
@@ -15,6 +16,7 @@ export async function app_language2(language_learn, language_fluent) {
   };
   await app_language_group_index_changed_inner(context, 0);
   let group = object_property_get(context, "group");
+  group = list_denest(group);
   let concated = list_concat(
     list_map(group, (pair) => ({
       question: list_first(pair),
