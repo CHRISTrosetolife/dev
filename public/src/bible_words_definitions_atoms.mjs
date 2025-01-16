@@ -41,7 +41,7 @@ export async function bible_words_definitions_atoms(language) {
       if (wait(lefts, left, index) || wait(rights, right, index)) {
         return;
       }
-      list_add(atoms, pair);
+      list_add(atom, pair);
       log({
         pair,
       });
