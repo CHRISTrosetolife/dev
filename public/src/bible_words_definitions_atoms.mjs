@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 import { each } from "./each.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -41,6 +42,9 @@ export async function bible_words_definitions_atoms(language) {
         return true;
       }
       list_add(atoms, pair);
+      log({
+        pair,
+      });
       object_property_set(lefts, left, index);
       object_property_set(rights, right, index);
       if (list_size(atom) >= atom_count) {
