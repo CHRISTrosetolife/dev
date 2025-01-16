@@ -66,7 +66,6 @@ import { html_style_display_inline_block } from "./html_style_display_inline_blo
 import { html_span_text } from "./html_span_text.mjs";
 import { html_span } from "./html_span.mjs";
 import { html_p } from "./html_p.mjs";
-import { equal_1 } from "./equal_1.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
 import { list_first } from "./list_first.mjs";
@@ -179,11 +178,7 @@ export async function app_language_refresh_quiz(context) {
   );
   quiz_container = html_div(root);
   let component_display_none;
-  if (true || equal_1(chunk_size)) {
-    component_display_none = quiz_container;
-  } else {
-    component_display_none = button_ready;
-  }
+  component_display_none = quiz_container;
   html_style_display_none(component_display_none);
   let answer_other = answer_other_get(pair_other);
   let answer_element = html_p(quiz_container);
