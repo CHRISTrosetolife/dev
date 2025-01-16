@@ -1,3 +1,6 @@
+import { html_flag_us } from "./html_flag_us.mjs";
+import { html_flag_ph } from "./html_flag_ph.mjs";
+import { html_flag } from "./html_flag.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
@@ -71,8 +74,10 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     list_sort_property(unlearned, "index");
     let u = list_first(unlearned);
     let word = object_property_get(u, "word");
+    let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
+    html_flag(button, language === "ceb" ? html_flag_ph() : html_flag_us());
     html_p_text(body, json_to(u));
   }
 }
