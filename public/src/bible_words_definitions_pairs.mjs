@@ -25,7 +25,8 @@ export async function bible_words_definitions_pairs(language) {
   list_adder((la) => {
     each(concise_duplicates, (cd) => {
       let j = json_to(cd);
-      if (object_property_exists(concise_hash, "property_name")) {
+      if (!object_property_exists(concise_hash, j)) {
+        object_property_set(object, "property_name", value);
       }
     });
   });
