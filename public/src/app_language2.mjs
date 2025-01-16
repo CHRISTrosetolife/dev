@@ -97,6 +97,9 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       storage_local_set(app_fn, "words", words);
     });
   } else {
+    list_sort_property(values, "wait");
+    let v = list_first(values);
+    html_p_text(body, json_to(v));
   }
   function app_language2_word(body, text, language, rememeber) {
     let r = html_p_text(body, string_combine_multiple([text, ": "]));
