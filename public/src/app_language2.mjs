@@ -83,7 +83,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     app_language2_word(
       body,
       language === language_learn ? language_fluent : language_learn,
-      question,
+      answer,
     );
     html_p_text(body, json_to(u));
   }
