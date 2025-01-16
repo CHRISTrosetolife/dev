@@ -1,7 +1,6 @@
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_button_next } from "./html_button_next.mjs";
 import { html_p } from "./html_p.mjs";
-import { html_style_centered } from "./html_style_centered.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_flag_language } from "./html_flag_language.mjs";
@@ -95,9 +94,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   }
   function app_language2_word(body, text, language, rememeber) {
     let r = html_p_text(body, string_combine_multiple([text, ": "]));
-    html_style_centered(r);
     let q = html_p(body);
-    html_style_centered(q);
     html_flag_language(q, language);
     html_span_text(q, string_combine_multiple([" ", rememeber]));
     html_style_bold(q);
