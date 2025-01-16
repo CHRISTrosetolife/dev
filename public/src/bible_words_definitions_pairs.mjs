@@ -31,7 +31,7 @@ export async function bible_words_definitions_pairs(language) {
     });
   });
   let found = {};
-  let ds = list_map(concise_duplicates, (item) => {
+  let ds = list_map(concise, (item) => {
     let f = list_first(item);
     if (object_property_exists(found, f)) {
       return null;
