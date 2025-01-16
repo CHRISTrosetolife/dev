@@ -28,27 +28,28 @@ export async function bible_words_definitions_atoms(language) {
   let waiting = [];
   let atoms = [];
   let atom = [];
-  each_index(pairs, (pair, pair_index) => {
+  each_index(pairs, (pair, index) => {
     if (list_empty_is(waiting)) {
-      list_add(waiting, pair);
+      list_add(waiting, {
+        pair,
+        index,
+      });
     }
     each(waiting, (w) => {
+      let { pair, index } = w;
       let left = list_first(pair);
       let right = list_second(pair);
       let wait = false;
       if (object_property_exists(lefts, left)) {
         let left_index = object_property_get(lefts, left);
-        if (left_index + take_count * atom_count > count) {
+        if (left_index + take_count * atom_count > index) {
           wait = true;
         }
       }
-      if (wait) {
-        list_add(waiting, pair);
-      }
+      list_add(waiting, pair);
       list_add(atoms, pair);
-      object_property_set(lefts, left, count);
-      object_property_set(rights, right, count);
-      count++;
+      object_property_set(lefts, left, index);
+      object_property_set(rights, right, index);
       if (list_size(atom) === atom_count) {
         list_add(atoms, atom);
       }
