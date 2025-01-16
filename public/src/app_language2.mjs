@@ -77,8 +77,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     });
     storage_local_set(app_fn, "words", words);
   });
-
-  }  html_clear_scroll_top_centered(root);
+  html_clear_scroll_top_centered(root);
   let values = object_values(words);
   let unlearned = list_filter_property(values, "learning", false);
   if (list_empty_not_is(unlearned)) {
