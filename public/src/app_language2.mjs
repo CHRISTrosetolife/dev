@@ -1,3 +1,4 @@
+import { list_shuffle } from "./list_shuffle.mjs";
 import { html_flag_language_get } from "./html_flag_language_get.mjs";
 import { app_language_button_ready } from "./app_language_button_ready.mjs";
 import { app_language2_other } from "./app_language2_other.mjs";
@@ -111,6 +112,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let others = list_without(answers, answer);
     let other = list_random_item(others);
     let choices = [answer, other];
+    list_shuffle(choices);
     app_language2_word(root, language, question);
     let quiz_container;
     await app_language_button_ready(
