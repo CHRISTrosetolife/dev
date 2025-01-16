@@ -82,7 +82,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     object_property_set(words, k, w);
     object_property_set(w, "wait", null);
     object_property_set(w, "gap", null);
-    log({});
+    log("h");
     storage_local_set(app_fn, "words", words);
   });
   html_clear_scroll_top_centered(root);
