@@ -55,7 +55,7 @@ export async function bible_words_definitions_atoms(language) {
         let w = false;
         if (object_property_exists(lrs, lr)) {
           let lr_index = object_property_get(lrs, lr);
-          if (lr_index + group_count > index) {
+          if (lr_index + group_count > count) {
             w = true;
           }
         }
