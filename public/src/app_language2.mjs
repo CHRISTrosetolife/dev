@@ -141,6 +141,14 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let choices = [answer, other];
     list_shuffle(choices);
     each(choices, (c) => {
+      html_button_width_full_text_click(
+        root,
+        string_combine_multiple([c]),
+        () => {
+          if (false) {
+          }
+        },
+      );
       html_button_width_full_text_click(root, c, () => {
         if (false) {
         }
