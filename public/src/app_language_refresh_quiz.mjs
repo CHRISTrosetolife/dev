@@ -177,9 +177,7 @@ export async function app_language_refresh_quiz(context) {
     language_fluent,
   );
   quiz_container = html_div(root);
-  let component_display_none;
-  component_display_none = quiz_container;
-  html_style_display_none(component_display_none);
+  html_style_display_none(quiz_container);
   let answer_other = answer_other_get(pair_other);
   let answer_element = html_p(quiz_container);
   let span_success = html_span(answer_element);
