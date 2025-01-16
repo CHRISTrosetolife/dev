@@ -46,10 +46,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     object_property_set(
       c,
       "key",
-      list_map(["question", "answer"], (p) =>
-        object_property_get(object, "property_name"),
-      ),
-      [object_property_get(c, "question"), object_property_get(c, "answer")],
+      list_map(["question", "answer"], (p) => object_property_get(c, p)),
     );
   });
   let words = storage_local_get(app_fn, "words", {});
