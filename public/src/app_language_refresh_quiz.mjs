@@ -294,7 +294,7 @@ export async function app_language_refresh_quiz(context) {
     await app_language_refresh_node(context);
   });
   function app_language_flag_answer() {
-    return forwards ? "us" : "ph";
+    return forwards ? html_flag_us() : html_flag_ph();
   }
   async function next() {
     if (equal_json(settings, list_last(settings_choices))) {
@@ -326,3 +326,11 @@ export async function app_language_refresh_quiz(context) {
     });
   }
 }
+function html_flag_us() {
+    return "us";
+}
+
+function html_flag_ph() {
+    return "ph";
+}
+
