@@ -70,6 +70,8 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   });
   let words = storage_local_get(app_fn, "words", {});
   each(concated, (word) => {
+    if (false) {
+    }
     object_property_set(words, object_property_get(word, "key"), {
       learning: false,
       word,
