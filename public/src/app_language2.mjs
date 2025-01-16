@@ -162,8 +162,8 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
             gap = ceiling(gap * factor);
             object_property_set(v, "gap", gap);
             object_property_set(v, "wait", gap);
-            storage_local_set(app_fn, "words", words);
           }
+          storage_local_set(app_fn, "words", words);
         },
       );
       html_button_width_full_text_click(
