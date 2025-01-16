@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 import { each } from "./each.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -33,6 +32,7 @@ export async function bible_words_definitions_atoms(language) {
   let rights = {};
   let atoms = [];
   let atom = [];
+  let count = 0;
   while (list_size(atoms) < take_count * 10) {
     each(pairs, (p) => {
       let { pair, index } = p;
@@ -42,6 +42,7 @@ export async function bible_words_definitions_atoms(language) {
         return;
       }
       list_add(atom, pair);
+      count++;
       object_property_set(lefts, left, index);
       object_property_set(rights, right, index);
       if (list_size(atom) >= atom_count) {
@@ -53,8 +54,8 @@ export async function bible_words_definitions_atoms(language) {
       function wait(lrs, lr) {
         let w = false;
         if (object_property_exists(lrs, lr)) {
-          let left_index = object_property_get(lrs, lr);
-          if (left_index + group_count > index) {
+          let lr_index = object_property_get(lrs, lr);
+          if (lr_index + group_count > index) {
             w = true;
           }
         }
