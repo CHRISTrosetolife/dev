@@ -1,3 +1,4 @@
+import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_map } from "./list_map.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -15,7 +16,7 @@ export async function app_language2(language_learn, language_fluent) {
   list_concat(
     list_map(group, (pair) => ({
       question: list_first(pair),
-      answer: list_first(pair),
+      answer: list_second(pair),
       language,
     })),
   );
