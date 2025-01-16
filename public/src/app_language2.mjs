@@ -1,3 +1,4 @@
+import { emoji_question } from "./emoji_question.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { log } from "./log.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
@@ -151,7 +152,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       );
       html_button_width_full_text_click(
         root,
-        string_combine_multiple(["❓ ", c]),
+        string_combine_multiple([emoji_question(), " ", c]),
         () => {
           if (false) {
           }
