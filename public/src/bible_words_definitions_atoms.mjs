@@ -14,6 +14,7 @@ import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_pr
 export async function bible_words_definitions_atoms(language) {
   let take_count = 16;
   let atom_count = app_language_atom_size();
+  let group_count = take_count * atom_count;
   let { pairs, definitions: definitions_list } =
     await bible_words_definitions_pairs(language);
   let definitions = list_to_lookup_key_value_property(
@@ -28,32 +29,29 @@ export async function bible_words_definitions_atoms(language) {
   let inverted = object_list_invert(definitions);
   let lefts = {};
   let rights = {};
-  let waiting = [];
   let atoms = [];
   let atom = [];
   while (true) {
     each(pairs, (p) => {
       let { pair, index } = p;
       let left = list_first(pair);
-      if (wait(lefts, left, index)) {
-        return true;
-      }
       let right = list_second(pair);
-      if (wait(right, left, index)) {
+      if (wait(lefts, left, index) || wait(rights, right, index)) {
         return true;
       }
-      list_add(waiting, pair);
       list_add(atoms, pair);
       object_property_set(lefts, left, index);
       object_property_set(rights, right, index);
-      if (list_size(atom) === atom_count) {
+      if (list_size(atom) >= atom_count) {
         list_add(atoms, atom);
+        atom = [];
       }
+      return true;
       function wait(lrs, lr) {
         let w = false;
         if (object_property_exists(lrs, lr)) {
           let left_index = object_property_get(lrs, lr);
-          if (left_index + take_count * atom_count > index) {
+          if (left_index + group_count > index) {
             w = true;
           }
         }
