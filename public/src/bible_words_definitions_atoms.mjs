@@ -11,6 +11,7 @@ import { app_language_atom_size } from "./app_language_atom_size.mjs";
 import { bible_words_definitions_pairs } from "./bible_words_definitions_pairs.mjs";
 import { object_list_invert } from "./object_list_invert.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
+import { list_remove } from "./list_remove.mjs";
 export async function bible_words_definitions_atoms(language) {
   let take_count = 16;
   let atom_count = app_language_atom_size();
@@ -46,6 +47,7 @@ export async function bible_words_definitions_atoms(language) {
         list_add(atoms, atom);
         atom = [];
       }
+      list_remove(pairs, p);
       return true;
       function wait(lrs, lr) {
         let w = false;
