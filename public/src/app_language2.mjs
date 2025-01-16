@@ -1,3 +1,4 @@
+import { object_properties } from "./object_properties.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
@@ -38,6 +39,6 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     })),
   );
   storage_local_get(app_fn, "words", {});
-  if (list_empty_is(object_keys())) {
+  if (list_empty_is(object_properties())) {
   }
 }
