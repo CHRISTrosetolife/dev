@@ -1,3 +1,4 @@
+import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_button_next } from "./html_button_next.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
@@ -81,6 +82,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
+    html_clear_scroll_top_centered(body);
     html_p_text(body, "Remember this:");
     app_language2_word(body, "Question", language, question);
     app_language2_word(
