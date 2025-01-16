@@ -10,7 +10,7 @@ export async function app_language_button_ready(root, f, language_fluent) {
   let quiz_container;
   let button_ready = html_button_width_full_text_click(root, "", () => {
     html_style_display_none(button_ready);
-    html_style_display_block(quiz_container_get());
+    html_style_display_block(quiz_container);
   });
   html_flag(button_ready, f);
   html_span_text(
