@@ -26,11 +26,13 @@ export async function bible_words_definitions_atoms(language) {
   let atoms = [];
   let atom = [];
   let pair = pairs[pair_index];
+  let left = list_first(pair);
+  let right = list_second(pair);
   if (false) {
   }
   list_add(atom, pair);
-  object_property_set(lefts, list_first(pair), count);
-  object_property_set(rights, list_second(pair), count);
+  object_property_set(lefts, left, count);
+  object_property_set(rights, right, count);
   count++;
   if (list_size(atom) === atom_count) {
     list_add(atoms, atom);
