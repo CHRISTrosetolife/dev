@@ -31,6 +31,7 @@ import { list_concat } from "./list_concat.mjs";
 import { list_without } from "./list_without.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_random_item } from "./list_random_item.mjs";
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_language2(app_fn, language_learn, language_fluent) {
   let root = await app_language_initialize();
   let context = {
@@ -113,7 +114,9 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let other = list_random_item(others);
     let choices = [answer, other];
     list_shuffle(choices);
-    each(list, (item) => {});
+    each(choices, (c) => {
+      html_button_width_full_text_click();
+    });
     app_language2_word(root, language, question);
     let quiz_container;
     await app_language_button_ready(
