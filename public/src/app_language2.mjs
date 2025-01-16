@@ -18,7 +18,9 @@ export async function app_language2(language_learn, language_fluent) {
   await app_language_group_index_changed_inner(context, 0);
   let group = object_property_get(context, "group");
   list_adder((la) => {
-    each(list, (item) => {});
+    each(group, (atom) => {
+      each(list, (item) => {});
+    });
   });
   let concated = list_concat(
     list_map(group, (pair) => ({
