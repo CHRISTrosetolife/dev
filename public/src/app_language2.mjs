@@ -22,6 +22,7 @@ import { list_map } from "./list_map.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language_group_index_changed_inner } from "./app_language_group_index_changed_inner.mjs";
 import { list_concat } from "./list_concat.mjs";
+import { html_div } from "./html_div.mjs";
 export async function app_language2(app_fn, language_learn, language_fluent) {
   let body = await app_language_initialize();
   let context = {
@@ -76,6 +77,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
+    let q = html_div(body);
     let other = language === language_learn ? language_fluent : language_learn;
     html_flag_language(q, language);
     html_span_text();
