@@ -27,8 +27,8 @@ export async function app_language(
   };
   let body = html_style_default_initialize();
   await html_script_axios(body);
-  html_style_a_plain();
   html_css_flags(body);
+  html_style_a_plain();
   let root = html_div(body);
   object_merge(context, {
     root,
