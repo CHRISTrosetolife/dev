@@ -1,14 +1,12 @@
-import { html_script_axios } from "./html_script_axios.mjs";
+import { app_language_initialize } from "./app_language_initialize.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { html_div } from "./html_div.mjs";
-import { html_css_flags } from "./html_css_flags.mjs";
 import { app_language_group_index_changed } from "./app_language_group_index_changed.mjs";
 import { app_language_position_initial } from "./app_language_position_initial.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
-import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { function_run } from "./function_run.mjs";
@@ -25,9 +23,7 @@ export async function app_language(
     language_fluent,
     invert,
   };
-  let body = html_style_default_initialize();
-  await html_script_axios(body);
-  html_css_flags(body);
+  let body = await app_language_initialize();
   html_style_a_plain();
   let root = html_div(body);
   object_merge(context, {
