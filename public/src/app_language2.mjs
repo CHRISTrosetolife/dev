@@ -109,7 +109,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let v_words = list_map_property(values, "word");
     let answers = list_map_property(v_words, "answer");
     let choices = list_without(answers, answer);
-    list_random_item(choices);
+    let other = list_random_item(choices);
     app_language2_word(root, language, question);
     let quiz_container;
     await app_language_button_ready(
