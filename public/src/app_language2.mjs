@@ -1,3 +1,4 @@
+import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { app_language_initialize } from "./app_language_initialize.mjs";
@@ -14,6 +15,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     language_learn,
     language_fluent,
   };
+  storage_local_initialize(app_fn, "index", 0);
   await app_language_group_index_changed_inner(context, 0);
   let group = object_property_get(context, "group");
   let flat = list_adder((la) => {
