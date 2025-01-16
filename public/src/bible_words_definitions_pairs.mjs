@@ -43,7 +43,7 @@ export async function bible_words_definitions_pairs(language) {
   });
   ds = list_filter(ds, null_not_is);
   return {
-    pairs: concise_duplicates,
+    pairs: concise,
     definitions: ds,
   };
 }
