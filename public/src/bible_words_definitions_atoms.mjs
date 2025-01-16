@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { each_index } from "./each_index.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -10,6 +11,7 @@ import { app_language_atom_size } from "./app_language_atom_size.mjs";
 import { bible_words_definitions_pairs } from "./bible_words_definitions_pairs.mjs";
 import { object_list_invert } from "./object_list_invert.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
+import { list_empty_is } from "./list_empty_is.mjs";
 export async function bible_words_definitions_atoms(language) {
   let take_count = 16;
   let atom_count = app_language_atom_size();
@@ -24,7 +26,13 @@ export async function bible_words_definitions_atoms(language) {
   let lefts = {};
   let rights = {};
   let waiting = [];
+  let atoms = [];
+  let atom = [];
   each_index(pairs, (pair, pair_index) => {
+    if (list_empty_is(waiting)) {
+      list_add(waiting, pair);
+    }
+    each(list, (item) => {});
     let left = list_first(pair);
     let right = list_second(pair);
     let wait = false;
@@ -44,11 +52,7 @@ export async function bible_words_definitions_atoms(language) {
     if (list_size(atom) === atom_count) {
       list_add(atoms, atom);
     }
-    pair_index++;
   });
-  let pair_index = 0;
-  let atoms = [];
-  let atom = [];
   return {
     atoms,
     definitions,
