@@ -83,6 +83,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   });
   html_clear_scroll_top_centered(root);
   let values = object_values(words);
+  list_sort_property(values, "wait");
   let unlearned = list_filter_property(values, "learning", false);
   if (list_empty_not_is(unlearned)) {
     list_sort_property(unlearned, "index");
@@ -106,7 +107,6 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       storage_local_set(app_fn, "words", words);
     });
   } else {
-    list_sort_property(values, "wait");
     let v = list_first(values);
     let word = object_property_get(v, "word");
     let language = object_property_get(word, "language");
