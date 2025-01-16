@@ -113,6 +113,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let other = list_random_item(others);
     let choices = [answer, other];
     list_shuffle(choices);
+    each(list, (item) => {});
     app_language2_word(root, language, question);
     let quiz_container;
     await app_language_button_ready(
