@@ -1,3 +1,4 @@
+import { html_p } from "./html_p.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_span_text } from "./html_span_text.mjs";
@@ -90,7 +91,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     html_p_text(body, json_to(u));
   }
   function app_language2_word(body, text, language, question) {
-    let q = html_p_text(body);
+    let q = html_p(body);
     html_style_centered(q);
     html_span_text(q, string_combine_multiple([text, ": "]));
     html_flag_language(q, language);
