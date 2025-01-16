@@ -151,7 +151,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       );
       html_button_width_full_text_click(
         root,
-        string_combine_multiple(["✅ ", c]),
+        string_combine_multiple(["❓ ", c]),
         () => {
           if (false) {
           }
