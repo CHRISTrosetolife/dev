@@ -1,3 +1,4 @@
+import { storage_local_set } from "./storage_local_set.mjs";
 import { json_to } from "./json_to.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_properties_empty_is } from "./object_properties_empty_is.mjs";
@@ -39,11 +40,12 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       language: language_fluent,
     })),
   );
-  let o = storage_local_get(app_fn, "words", {});
-  if (object_properties_empty_is(o)) {
+  let words = storage_local_get(app_fn, "words", {});
+  if (object_properties_empty_is(words)) {
     let word = list_first(concated);
-    object_property_set(o, json_to(word), {
+    object_property_set(words, json_to(word), {
       learned: false,
     });
+    storage_local_set(app_fn, "words", words);
   }
 }
