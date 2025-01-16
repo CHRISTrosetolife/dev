@@ -1,3 +1,4 @@
+import { object_property_exists } from "./object_property_exists.mjs";
 import { log } from "./log.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { html_flag_language_get } from "./html_flag_language_get.mjs";
@@ -71,7 +72,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   let words = storage_local_get(app_fn, "words", {});
   each(concated, (word) => {
     let k = object_property_get(word, "key");
-    if (false) {
+    if (object_property_exists(object, "property_name")) {
     }
     object_property_set(words, k, {
       learning: false,
