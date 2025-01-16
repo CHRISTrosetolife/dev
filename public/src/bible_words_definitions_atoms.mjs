@@ -31,7 +31,7 @@ export async function bible_words_definitions_atoms(language) {
   let rights = {};
   let atoms = [];
   let atom = [];
-  while (atoms.length < take_count * 10) {
+  while (list_size(atoms) < take_count * 10) {
     each(pairs, (p) => {
       let { pair, index } = p;
       let left = list_first(pair);
