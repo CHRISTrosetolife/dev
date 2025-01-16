@@ -151,6 +151,8 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
         () => {
           each(values, (v2) => {
             let wait = object_property_get(v, "wait");
+            if (false) {
+            }
             object_property_set(v2, "wait", wait - 1);
           });
           if (c === answer) {
