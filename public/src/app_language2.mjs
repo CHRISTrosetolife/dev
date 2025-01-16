@@ -1,7 +1,6 @@
 import { html_flag_language_get } from "./html_flag_language_get.mjs";
 import { app_language_button_ready } from "./app_language_button_ready.mjs";
 import { app_language2_other } from "./app_language2_other.mjs";
-import { app_language_refresh_quiz_text_ready } from "./app_language_refresh_quiz_text_ready.mjs";
 import { app_language2_word } from "./app_language2_word.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_button_next } from "./html_button_next.mjs";
@@ -28,7 +27,6 @@ import { list_map } from "./list_map.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language_group_index_changed_inner } from "./app_language_group_index_changed_inner.mjs";
 import { list_concat } from "./list_concat.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_language2(app_fn, language_learn, language_fluent) {
   let root = await app_language_initialize();
   let context = {
@@ -106,11 +104,6 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
     app_language2_word(root, language, question);
-    html_button_width_full_text_click(
-      root,
-      await app_language_refresh_quiz_text_ready(language_fluent),
-      () => {},
-    );
     let quiz_container;
     let button_ready = await app_language_button_ready(
       root,
