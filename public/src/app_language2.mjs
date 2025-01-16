@@ -150,11 +150,12 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
         string_combine_multiple([emoji_check(), " ", c]),
         () => {
           if (c === answer) {
-            object_property_set(v, "wait", 0);
             let gap = object_property_get(v, "gap");
             let factor = 1.2;
             gap = ceiling(gap * factor);
             object_property_set(v, "gap", 0);
+            let wait = object_property_get(v, "wait");
+            object_property_set(v, "wait", wait);
             storage_local_set(app_fn, "words", words);
           }
         },
