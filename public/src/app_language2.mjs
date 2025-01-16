@@ -72,6 +72,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     });
     storage_local_set(app_fn, "words", words);
   }
+  html_clear_scroll_top_centered(body);
   let values = object_values(words);
   let unlearned = list_filter_property(values, "learned", false);
   if (list_empty_not_is(unlearned)) {
@@ -81,7 +82,6 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
-    html_clear_scroll_top_centered(body);
     html_p_text(body, "Remember this:");
     app_language2_word(body, "Question", language, question);
     app_language2_word(
