@@ -21,6 +21,7 @@ export async function bible_words_definitions_pairs(language) {
       object_property_get(p[language], "word"),
     ),
   );
+  let concise_hash = {};
   let concise = list_adder((la) => {
     each(concise_duplicates, (cd) => {
       let j = json_to(cd);
