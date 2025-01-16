@@ -1,4 +1,4 @@
-import { each } from "./each.mjs";
+import { each_index } from "./each_index.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_second } from "./list_second.mjs";
@@ -24,7 +24,7 @@ export async function bible_words_definitions_atoms(language) {
   let lefts = {};
   let rights = {};
   let waiting = [];
-  each(list, (item) => {});
+  each_index(list, (item, index) => {});
   let pair_index = 0;
   let atoms = [];
   let atom = [];
