@@ -40,6 +40,7 @@ export async function bible_words_definitions_atoms(language) {
   if (wait) {
     list_add(waiting, pair);
   }
+  list_add(atoms, pair);
   object_property_set(lefts, left, count);
   object_property_set(rights, right, count);
   count++;
