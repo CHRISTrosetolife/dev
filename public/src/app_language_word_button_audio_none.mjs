@@ -1,3 +1,4 @@
+import { html_flag_ph } from "./html_flag_ph.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_flag } from "./html_flag.mjs";
@@ -13,7 +14,7 @@ export function app_language_word_button_audio_none(root, langauge, text) {
     }
   });
   html_span_text(button, " 👂 ");
-  html_flag(button, "ph");
+  html_flag(button, html_flag_ph());
   html_span_text(button, string_combine_multiple([" ", text]));
   app_language_word_style(button);
   return button;
