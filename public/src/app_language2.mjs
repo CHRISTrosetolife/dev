@@ -75,6 +75,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
+    let other = language === language_learn ? language_fluent : language_learn;
     html_flag_language(language);
     html_p_text(body, json_to(u));
   }
