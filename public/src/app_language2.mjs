@@ -143,16 +143,20 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     each(choices, (c) => {
       html_button_width_full_text_click(
         root,
-        string_combine_multiple([c]),
+        string_combine_multiple(["✅ ", c]),
         () => {
           if (false) {
           }
         },
       );
-      html_button_width_full_text_click(root, c, () => {
-        if (false) {
-        }
-      });
+      html_button_width_full_text_click(
+        root,
+        string_combine_multiple(["✅ ", c]),
+        () => {
+          if (false) {
+          }
+        },
+      );
     });
   }
   function app_language2_word_titled(body, text, language, rememeber) {
