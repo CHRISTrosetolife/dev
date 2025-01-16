@@ -63,5 +63,5 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     storage_local_set(app_fn, "words", words);
   }
   let values = object_values(words);
-  list_filter_property(values, "learned", false);
+  let unlearned = list_filter_property(values, "learned", false);
 }
