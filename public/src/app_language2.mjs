@@ -1,4 +1,4 @@
-import { app_language_group_get } from "./app_language_group_get.mjs";
+import { app_language_group_index_changed_inner } from "./app_language_group_index_changed_inner.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 export async function app_language2(language_learn, language_fluent) {
   let body = html_style_default_initialize();
@@ -6,5 +6,5 @@ export async function app_language2(language_learn, language_fluent) {
     language_learn,
     language_fluent,
   };
-  let words = await app_language_group_get(context, 0);
+  await app_language_group_index_changed_inner(context, 0);
 }
