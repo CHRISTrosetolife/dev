@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { app_language_atom_size } from "./app_language_atom_size.mjs";
 import { bible_words_definitions_pairs } from "./bible_words_definitions_pairs.mjs";
 import { object_list_invert } from "./object_list_invert.mjs";
@@ -13,6 +14,7 @@ export async function bible_words_definitions_atoms(language) {
     "definitions",
   );
   let inverted = object_list_invert(definitions);
+  each(list, (item) => {});
   return {
     atoms,
     definitions,
