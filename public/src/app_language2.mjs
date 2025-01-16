@@ -1,3 +1,4 @@
+import { html_span_text } from "./html_span_text.mjs";
 import { html_flag_language } from "./html_flag_language.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
@@ -76,7 +77,8 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
     let other = language === language_learn ? language_fluent : language_learn;
-    html_flag_language(language);
+    html_flag_language(q, language);
+    html_span_text();
     html_p_text(body, json_to(u));
   }
 }
