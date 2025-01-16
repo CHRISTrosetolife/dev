@@ -33,7 +33,8 @@ export async function bible_words_definitions_atoms(language) {
   let atoms = [];
   let atom = [];
   let count = 0;
-  while (list_size(atoms) < take_count * 10) {
+  while (true) {
+    let added = false;
     each(pairs, (p) => {
       let { pair, index } = p;
       let left = list_first(pair);
@@ -45,6 +46,7 @@ export async function bible_words_definitions_atoms(language) {
       object_property_set(lefts, left, count);
       object_property_set(rights, right, count);
       count++;
+      added = true;
       if (list_size(atom) >= atom_count) {
         list_add(atoms, atom);
         atom = [];
@@ -62,6 +64,9 @@ export async function bible_words_definitions_atoms(language) {
         return w;
       }
     });
+    if (!added) {
+      break;
+    }
   }
   return {
     atoms,
