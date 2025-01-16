@@ -25,6 +25,10 @@ export function app_share_main(context) {
       text: "Urdu and English",
       code: "urdgvu+engbsb",
     },
+    {
+      text: "Hindi and English",
+      code: "hin2017+engbsb",
+    },
   ];
   each(folders, (folder) => {
     html_button_width_full_text_click(
