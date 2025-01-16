@@ -1,3 +1,4 @@
+import { list_first } from "./list_first.mjs";
 import { list_map } from "./list_map.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language_group_index_changed_inner } from "./app_language_group_index_changed_inner.mjs";
@@ -11,11 +12,11 @@ export async function app_language2(language_learn, language_fluent) {
   };
   await app_language_group_index_changed_inner(context, 0);
   let group = object_property_get(context, "group");
-  list_concat(group_map(group, language_learn));
-  function group_map(group, language) {
-    return list_map(group, (pair) => ({
+  list_concat(
+    list_map(group, (pair) => ({
+      question: list_first(pair),
       pair,
       language,
-    }));
-  }
+    })),
+  );
 }
