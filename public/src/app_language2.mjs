@@ -83,6 +83,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     html_p_text(body, json_to(u));
   }
   function app_language2_word(body, language, context, question) {
+    let { language_learn, language_fluent } = context;
     let q = html_div(body);
     let other = language === language_learn ? language_fluent : language_learn;
     html_flag_language(q, other);
