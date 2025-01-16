@@ -1,3 +1,4 @@
+import { html_p } from "./html_p.mjs";
 import { emoji_check } from "./emoji_check.mjs";
 import { emoji_question } from "./emoji_question.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -160,6 +161,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   }
   function app_language2_word_titled(body, text, language, rememeber) {
     let r = html_p_text(body, string_combine_multiple([text, ": "]));
+    let p = html_p(body);
     app_language2_word(body, language, rememeber);
   }
 }
