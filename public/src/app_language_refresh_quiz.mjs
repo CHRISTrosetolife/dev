@@ -173,11 +173,11 @@ export async function app_language_refresh_quiz(context) {
     alternatives = alternatives_f;
   }
   let quiz_container;
+  let f = app_language_flag_answer();
   let button_ready = html_button_width_full_text_click(root, "", () => {
     html_style_display_none(button_ready);
     html_style_display_block(quiz_container);
   });
-  let f = app_language_flag_answer();
   html_flag(button_ready, f);
   html_span_text(
     button_ready,
