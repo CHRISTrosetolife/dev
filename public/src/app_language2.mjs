@@ -39,5 +39,6 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   );
   let o = storage_local_get(app_fn, "words", {});
   if (object_properties_empty_is(o)) {
+    let word = list_first(concated);
   }
 }
