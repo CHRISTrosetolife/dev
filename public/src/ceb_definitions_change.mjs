@@ -2,12 +2,10 @@ import { function_cache_refresh_args } from "./function_cache_refresh_args.mjs";
 import { app_language_upload } from "./app_language_upload.mjs";
 import { fn_name } from "./fn_name.mjs";
 export async function ceb_definitions_change() {
-  if (false) {
-    await function_cache_refresh_args(
-      fn_name("bible_words_definitions_all"),
-      "ceb",
-    );
-  }
+  await function_cache_refresh_args(
+    fn_name("bible_words_definitions_all"),
+    "ceb",
+  );
   await function_cache_refresh_args(
     fn_name("bible_words_definitions_atoms"),
     "ceb",
