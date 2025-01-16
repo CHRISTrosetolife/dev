@@ -90,7 +90,6 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       answer,
     );
     html_button_next(body, () => {});
-    html_p_text(body, json_to(u));
   }
   function app_language2_word(body, text, language, rememeber) {
     let r = html_p_text(body, string_combine_multiple([text, ": "]));
