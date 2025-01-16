@@ -1,9 +1,7 @@
+import { app_language2_word } from "./app_language2_word.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_button_next } from "./html_button_next.mjs";
-import { html_p } from "./html_p.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { html_span_text } from "./html_span_text.mjs";
-import { html_flag_language } from "./html_flag_language.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
@@ -26,7 +24,6 @@ import { list_map } from "./list_map.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language_group_index_changed_inner } from "./app_language_group_index_changed_inner.mjs";
 import { list_concat } from "./list_concat.mjs";
-import { html_style_bold } from "./html_style_bold.mjs";
 export async function app_language2(app_fn, language_learn, language_fluent) {
   let body = await app_language_initialize();
   let context = {
@@ -103,9 +100,6 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   }
   function app_language2_word_titled(body, text, language, rememeber) {
     let r = html_p_text(body, string_combine_multiple([text, ": "]));
-    let q = html_p(body);
-    html_flag_language(q, language);
-    html_span_text(q, string_combine_multiple([" ", rememeber]));
-    html_style_bold(q);
+    app_language2_word(body, language, rememeber);
   }
 }
