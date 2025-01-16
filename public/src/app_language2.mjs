@@ -40,7 +40,9 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       language: language_fluent,
     })),
   );
-  each(list, (item) => {});
+  each(concated, (c) => {
+    object_property_set(object, "property_name", value);
+  });
   let words = storage_local_get(app_fn, "words", {});
   if (object_properties_empty_is(words)) {
     let word = list_first(concated);
