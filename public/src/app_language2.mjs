@@ -50,10 +50,14 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   let words = storage_local_get(app_fn, "words", {});
   if (object_properties_empty_is(words)) {
     let word = list_first(concated);
-    object_property_set(words, json_to([]), {
-      learned: false,
-      word,
-    });
+    object_property_set(
+      words,
+      json_to(object_property_get(object, "property_name")),
+      {
+        learned: false,
+        word,
+      },
+    );
     storage_local_set(app_fn, "words", words);
   }
 }
