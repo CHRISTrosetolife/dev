@@ -36,5 +36,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       language: language_fluent,
     })),
   );
-  storage_local_get();
+  storage_local_get(app_fn, "words", {});
+  if (false) {
+  }
 }
