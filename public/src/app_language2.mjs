@@ -90,7 +90,9 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       language === language_learn ? language_fluent : language_learn,
       answer,
     );
-    html_button_next(body, () => {});
+    html_button_next(body, () => {
+      object_property_set(object, "property_name", value);
+    });
   }
   function app_language2_word(body, text, language, rememeber) {
     let r = html_p_text(body, string_combine_multiple([text, ": "]));
