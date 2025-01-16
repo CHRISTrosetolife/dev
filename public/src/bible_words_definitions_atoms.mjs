@@ -1,3 +1,4 @@
+import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
@@ -29,7 +30,7 @@ export async function bible_words_definitions_atoms(language) {
   let pair = pairs[pair_index];
   let left = list_first(pair);
   let right = list_second(pair);
-  if (false) {
+  if (object_property_exists(object, "property_name")) {
     if (object_property_get(lefts, left)) {
     }
   }
