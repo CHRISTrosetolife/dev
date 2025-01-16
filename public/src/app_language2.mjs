@@ -45,7 +45,11 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   each_index(concated, (c, index) => {
     object_property_set(c, "index", index);
     let properties = ["question", "answer"];
-    object_property_set(c, "key", object_properties_select(c, properties));
+    object_property_set(
+      c,
+      "key",
+      json_to(object_properties_select(c, properties)),
+    );
   });
   let words = storage_local_get(app_fn, "words", {});
   if (object_properties_empty_is(words)) {
