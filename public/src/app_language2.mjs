@@ -107,6 +107,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     html_button_width_full_text_click(
       body,
       await app_language_refresh_quiz_text_ready(language_fluent),
+      () => {},
     );
   }
   function app_language2_word_titled(body, text, language, rememeber) {
