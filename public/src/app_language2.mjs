@@ -148,7 +148,11 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
         quiz_container,
         string_combine_multiple([emoji_check(), " ", c]),
         () => {
-          if (false) {
+          if (c === answer) {
+            object_property_set(v, "wait", 0);
+            let gap = object_property_get(object, "property_name");
+            object_property_set(v, "gap", 0);
+            storage_local_set(app_fn, "words", words);
           }
         },
       );
