@@ -1,3 +1,4 @@
+import { each_index } from "./each_index.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { json_to } from "./json_to.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -40,8 +41,8 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       language: language_fluent,
     })),
   );
-  each(concated, (c) => {
-    object_property_set(object, "property_name", value);
+  each_index(concated, (c, index) => {
+    object_property_set(c, "index", index);
   });
   let words = storage_local_get(app_fn, "words", {});
   if (object_properties_empty_is(words)) {
