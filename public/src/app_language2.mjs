@@ -19,7 +19,7 @@ export async function app_language2(language_learn, language_fluent) {
   let group = object_property_get(context, "group");
   list_adder((la) => {
     each(group, (atom) => {
-      each(list, (item) => {});
+      each(atom, la);
     });
   });
   let concated = list_concat(
