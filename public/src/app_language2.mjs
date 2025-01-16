@@ -88,7 +88,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   let values = object_values(words);
   list_sort_property(values, "wait");
   let v = list_first(values);
-  let vw = object_property_get(object, "property_name");
+  let vw = object_property_get(v, "wait");
   log({
     v,
     values,
