@@ -79,14 +79,18 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
-    app_language2_word(body, language, context, question);
+    app_language2_word(body, language, question);
+    app_language2_word(
+      body,
+      language === language_learn ? language_fluent : language_learn,
+      context,
+      question,
+    );
     html_p_text(body, json_to(u));
   }
-  function app_language2_word(body, language, context, question) {
-    let { language_learn, language_fluent } = context;
+  function app_language2_word(body, language, question) {
     let q = html_div(body);
-    let other = language === language_learn ? language_fluent : language_learn;
-    html_flag_language(q, other);
+    html_flag_language(q, language);
     html_span_text(q, string_combine_multiple([" ", question]));
     html_style_bold(q);
   }
