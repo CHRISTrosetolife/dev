@@ -66,7 +66,6 @@ import { html_style_display_inline_block } from "./html_style_display_inline_blo
 import { html_span_text } from "./html_span_text.mjs";
 import { html_span } from "./html_span.mjs";
 import { html_p } from "./html_p.mjs";
-import { html_div } from "./html_div.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
 import { list_first } from "./list_first.mjs";
 import { app_language_word_native } from "./app_language_word_native.mjs";
@@ -169,15 +168,11 @@ export async function app_language_refresh_quiz(context) {
     answer_other_get = list_first;
     alternatives = alternatives_f;
   }
-  let quiz_container;
   let button_ready = await app_language_button_ready(
     root,
-    () => quiz_container,
     app_language_flag_answer(),
     language_fluent,
   );
-  quiz_container = html_div(root);
-  html_style_display_none(quiz_container);
   let answer_other = answer_other_get(pair_other);
   let answer_element = html_p(quiz_container);
   let span_success = html_span(answer_element);
