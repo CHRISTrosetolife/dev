@@ -1,3 +1,5 @@
+import { html_flag_language_get } from "./html_flag_language_get.mjs";
+import { app_language_button_ready } from "./app_language_button_ready.mjs";
 import { app_language2_other } from "./app_language2_other.mjs";
 import { app_language_refresh_quiz_text_ready } from "./app_language_refresh_quiz_text_ready.mjs";
 import { app_language2_word } from "./app_language2_word.mjs";
@@ -108,6 +110,14 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       body,
       await app_language_refresh_quiz_text_ready(language_fluent),
       () => {},
+    );
+    let button_ready = await app_language_button_ready(
+      root,
+      quiz_container,
+      html_flag_language_get(
+        app_language2_other(language, language_learn, language_fluent),
+      ),
+      language_fluent,
     );
   }
   function app_language2_word_titled(body, text, language, rememeber) {
