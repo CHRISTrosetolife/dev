@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { json_to } from "./json_to.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -16,7 +17,9 @@ export async function app_language2(language_learn, language_fluent) {
   };
   await app_language_group_index_changed_inner(context, 0);
   let group = object_property_get(context, "group");
-  list_adder((la) => {});
+  list_adder((la) => {
+    each(list, (item) => {});
+  });
   let concated = list_concat(
     list_map(group, (pair) => ({
       question: list_first(pair),
