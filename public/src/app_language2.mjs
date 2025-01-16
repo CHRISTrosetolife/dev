@@ -11,10 +11,11 @@ export async function app_language2(language_learn, language_fluent) {
   };
   await app_language_group_index_changed_inner(context, 0);
   let group = object_property_get(context, "group");
-  list_concat(
-    list_map(group, (pair) => ({
+  list_concat(group_map(group, language_learn));
+  function group_map(group, language) {
+    return list_map(group, (pair) => ({
       pair,
-      language: language_learn,
-    })),
-  );
+      language,
+    }));
+  }
 }
