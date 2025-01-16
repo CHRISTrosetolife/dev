@@ -13,7 +13,9 @@ export function app_language_word_button_audio_none(root, langauge, text) {
       return await app_language_audio(langauge, text);
     }
   });
-  html_span_text(button, " 👂 ");
+  if (false) {
+    html_span_text(button, " 👂 ");
+  }
   html_flag(button, html_flag_ph());
   html_span_text(button, string_combine_multiple([" ", text]));
   app_language_word_style(button);
