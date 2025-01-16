@@ -88,6 +88,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       language === language_learn ? language_fluent : language_learn,
       answer,
     );
+    html_button_width_full_text_click_next(body);
     html_p_text(body, json_to(u));
   }
   function app_language2_word(body, text, language, rememeber) {
