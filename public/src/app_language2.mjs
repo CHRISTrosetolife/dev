@@ -88,6 +88,9 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   let values = object_values(words);
   list_sort_property(values, "wait");
   let v = list_first(values);
+  log({
+    v,
+  });
   let unlearned = list_filter_property(values, "learning", false);
   if (list_empty_not_is(unlearned)) {
     list_sort_property(unlearned, "index");
