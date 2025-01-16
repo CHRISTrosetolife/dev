@@ -24,6 +24,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { app_language_group_index_changed_inner } from "./app_language_group_index_changed_inner.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { html_div } from "./html_div.mjs";
+import { html_style_bold } from "./html_style_bold.mjs";
 export async function app_language2(app_fn, language_learn, language_fluent) {
   let body = await app_language_initialize();
   let context = {
@@ -82,6 +83,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let other = language === language_learn ? language_fluent : language_learn;
     html_flag_language(q, other);
     html_span_text(q, string_combine_multiple([" ", question]));
+    html_style_bold(q);
     html_p_text(body, json_to(u));
   }
 }
