@@ -4,6 +4,6 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 export async function app_language_initialize() {
   let body = html_style_default_initialize();
   await html_script_axios(body);
-  html_css_flags(body);
+  html_css_flags();
   return body;
 }

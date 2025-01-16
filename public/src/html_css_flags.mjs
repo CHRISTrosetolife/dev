@@ -1,7 +1,7 @@
 import { html_document_head } from "./html_document_head.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_element } from "./html_element.mjs";
-export function html_css_flags(parent) {
+export function html_css_flags() {
   let c = html_element(html_document_head(), "link");
   html_attribute_set(c, "rel", "stylesheet");
   html_attribute_set(
