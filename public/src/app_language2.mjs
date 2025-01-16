@@ -7,9 +7,10 @@ import { list_map } from "./list_map.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language_group_index_changed_inner } from "./app_language_group_index_changed_inner.mjs";
 import { list_concat } from "./list_concat.mjs";
-export async function app_language2(language_learn, language_fluent) {
+export async function app_language2(app_fn, language_learn, language_fluent) {
   let body = await app_language_initialize();
   let context = {
+    app_fn,
     language_learn,
     language_fluent,
   };
