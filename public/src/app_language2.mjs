@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { html_flag_language_get } from "./html_flag_language_get.mjs";
 import { app_language_button_ready } from "./app_language_button_ready.mjs";
@@ -118,6 +119,9 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       language_fluent,
     );
     let v_words = list_map_property(values, "word");
+    log({
+      v_words,
+    });
     let answers = list_map_property(v_words, "answer");
     let others = list_without(answers, answer);
     let other = list_random_item(others);
