@@ -31,7 +31,8 @@ export async function bible_words_definitions_atoms(language) {
   let left = list_first(pair);
   let right = list_second(pair);
   if (object_property_exists(lefts, left)) {
-    if (object_property_get(lefts, left)) {
+    let left_index = object_property_get(lefts, left);
+    if (left_index + take_count * atom_count) {
     }
   }
   list_add(atom, pair);
