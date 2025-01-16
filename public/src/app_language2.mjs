@@ -144,7 +144,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     list_shuffle(choices);
     each(choices, (c) => {
       html_button_width_full_text_click(
-        root,
+        quiz_container,
         string_combine_multiple([emoji_check(), " ", c]),
         () => {
           if (false) {
@@ -152,7 +152,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
         },
       );
       html_button_width_full_text_click(
-        root,
+        quiz_container,
         string_combine_multiple([emoji_question(), " ", c]),
         () => {},
       );
