@@ -30,12 +30,16 @@ export async function bible_words_definitions_atoms(language) {
   let pair = pairs[pair_index];
   let left = list_first(pair);
   let right = list_second(pair);
+  let wait = false;
   if (object_property_exists(lefts, left)) {
     let left_index = object_property_get(lefts, left);
-    if (left_index + take_count * atom_count) {
+    if (left_index + take_count * atom_count > count) {
+      wait = true;
     }
   }
-  list_add(atom, pair);
+  if (wait) {
+    list_add(waiting, pair);
+  }
   object_property_set(lefts, left, count);
   object_property_set(rights, right, count);
   count++;
