@@ -1,7 +1,5 @@
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
-import { json_to } from "./json_to.mjs";
-import { html_p_text } from "./html_p_text.mjs";
 import { app_language_initialize } from "./app_language_initialize.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
@@ -34,5 +32,4 @@ export async function app_language2(language_learn, language_fluent) {
       language: language_fluent,
     })),
   );
-  html_p_text(body, json_to(concated));
 }
