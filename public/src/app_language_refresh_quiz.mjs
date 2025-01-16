@@ -168,7 +168,7 @@ export async function app_language_refresh_quiz(context) {
     answer_other_get = list_first;
     alternatives = alternatives_f;
   }
-  let button_ready = await app_language_button_ready(
+  let quiz_container = await app_language_button_ready(
     root,
     app_language_flag_answer(),
     language_fluent,
