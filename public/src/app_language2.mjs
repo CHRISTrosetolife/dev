@@ -83,8 +83,8 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
     html_p_text(body, "Remember this:");
-    app_language2_word(body, "Question", language, question);
-    app_language2_word(
+    app_language2_word_titled(body, "Question", language, question);
+    app_language2_word_titled(
       body,
       "Answer",
       language === language_learn ? language_fluent : language_learn,
@@ -101,7 +101,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let v = list_first(values);
     html_p_text(body, json_to(v));
   }
-  function app_language2_word(body, text, language, rememeber) {
+  function app_language2_word_titled(body, text, language, rememeber) {
     let r = html_p_text(body, string_combine_multiple([text, ": "]));
     let q = html_p(body);
     html_flag_language(q, language);
