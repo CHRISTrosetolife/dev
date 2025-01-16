@@ -92,9 +92,9 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       answer,
     );
     html_button_next(body, () => {
-      object_property_set(word, "learned", true);
-      object_property_set(word, "wait", 0);
-      object_property_set(word, "gap", 0);
+      object_property_set(u, "learned", true);
+      object_property_set(u, "wait", 0);
+      object_property_set(u, "gap", 0);
       storage_local_set(app_fn, "words", words);
       log({
         words,
