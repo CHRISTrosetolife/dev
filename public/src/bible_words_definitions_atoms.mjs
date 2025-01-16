@@ -16,6 +16,7 @@ export async function bible_words_definitions_atoms(language) {
   let waiting = [];
   let pair_index = 0;
   let atoms = [];
+  let group = [];
   let pair = pairs[pair_index];
   return {
     atoms,
