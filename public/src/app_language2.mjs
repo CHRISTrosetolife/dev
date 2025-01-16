@@ -152,7 +152,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
           if (c === answer) {
             object_property_set(v, "wait", 0);
             let gap = object_property_get(v, "gap");
-            let factor = 1.3;
+            let factor = 1.2;
             gap = ceiling(gap * factor);
             object_property_set(v, "gap", 0);
             storage_local_set(app_fn, "words", words);
