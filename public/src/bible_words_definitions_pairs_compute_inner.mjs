@@ -34,7 +34,6 @@ export async function bible_words_definitions_pairs_compute_inner(
             word: d,
           },
         };
-        log(f);
         la(f);
       }),
     ),
