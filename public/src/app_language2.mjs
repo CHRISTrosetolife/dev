@@ -28,6 +28,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { app_language_group_index_changed_inner } from "./app_language_group_index_changed_inner.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_without } from "./list_without.mjs";
+import { list_map_property } from "./list_map_property.mjs";
 export async function app_language2(app_fn, language_learn, language_fluent) {
   let root = await app_language_initialize();
   let context = {
@@ -104,7 +105,9 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
-    let choices = list_without(values, answer);
+    words = list_map_property(values, "word");
+    let answers = list_map_property(values, "answer");
+    let choices = list_without(answers, answer);
     app_language2_word(root, language, question);
     let quiz_container;
     await app_language_button_ready(
