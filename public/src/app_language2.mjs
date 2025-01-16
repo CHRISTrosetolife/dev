@@ -105,7 +105,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
-    words = list_map_property(values, "word");
+    let v_words = list_map_property(values, "word");
     let answers = list_map_property(values, "answer");
     let choices = list_without(answers, answer);
     app_language2_word(root, language, question);
