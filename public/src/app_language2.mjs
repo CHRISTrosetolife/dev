@@ -1,4 +1,4 @@
-import { html_p } from "./html_p.mjs";
+import { app_language2_word_p } from "./app_language2_word_p.mjs";
 import { emoji_check } from "./emoji_check.mjs";
 import { emoji_question } from "./emoji_question.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -122,7 +122,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
-    app_language2_word_p(root, language, question);
+    app_language2_word(root, language, question);
     let quiz_container;
     quiz_container = await app_language_button_ready(
       root,
@@ -164,8 +164,3 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     app_language2_word_p(body, language, rememeber);
   }
 }
-function app_language2_word_p(body, language, rememeber) {
-    let p = html_p(body);
-    app_language2_word(body, language, rememeber);
-}
-
