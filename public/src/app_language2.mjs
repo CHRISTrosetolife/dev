@@ -30,7 +30,7 @@ import { app_language_group_index_changed_inner } from "./app_language_group_ind
 import { list_concat } from "./list_concat.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_language2(app_fn, language_learn, language_fluent) {
-  let body = await app_language_initialize();
+  let root = await app_language_initialize();
   let context = {
     app_fn,
     language_learn,
@@ -74,7 +74,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     });
     storage_local_set(app_fn, "words", words);
   }
-  html_clear_scroll_top_centered(body);
+  html_clear_scroll_top_centered(root);
   let values = object_values(words);
   let unlearned = list_filter_property(values, "learned", false);
   if (list_empty_not_is(unlearned)) {
@@ -84,15 +84,15 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
-    html_p_text(body, "Remember this:");
-    app_language2_word_titled(body, "Question", language, question);
+    html_p_text(root, "Remember this:");
+    app_language2_word_titled(root, "Question", language, question);
     app_language2_word_titled(
-      body,
+      root,
       "Answer",
       app_language2_other(language, language_learn, language_fluent),
       answer,
     );
-    html_button_next(body, () => {
+    html_button_next(root, () => {
       object_property_set(u, "learned", true);
       object_property_set(u, "wait", 0);
       object_property_set(u, "gap", 0);
@@ -105,9 +105,9 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
-    app_language2_word(body, language, question);
+    app_language2_word(root, language, question);
     html_button_width_full_text_click(
-      body,
+      root,
       await app_language_refresh_quiz_text_ready(language_fluent),
       () => {},
     );
