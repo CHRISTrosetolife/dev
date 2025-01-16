@@ -75,12 +75,13 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     if (object_property_exists(words, k)) {
       return;
     }
-    object_property_set(words, k, {
+    let w = {
       learning: false,
       word,
-    });
-    object_property_set(words, "wait", null);
-    object_property_set(words, "gap", null);
+    };
+    object_property_set(words, k, w);
+    object_property_set(w, "wait", null);
+    object_property_set(w, "gap", null);
     storage_local_set(app_fn, "words", words);
   });
   html_clear_scroll_top_centered(root);
