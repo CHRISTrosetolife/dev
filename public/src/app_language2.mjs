@@ -1,3 +1,4 @@
+import { ceiling } from "./ceiling.mjs";
 import { app_language2_word_p } from "./app_language2_word_p.mjs";
 import { emoji_check } from "./emoji_check.mjs";
 import { emoji_question } from "./emoji_question.mjs";
@@ -150,7 +151,9 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
         () => {
           if (c === answer) {
             object_property_set(v, "wait", 0);
-            let gap = object_property_get(object, "property_name");
+            let gap = object_property_get(v, "gap");
+            let factor = 1.3;
+            gap = ceiling(gap * factor);
             object_property_set(v, "gap", 0);
             storage_local_set(app_fn, "words", words);
           }
