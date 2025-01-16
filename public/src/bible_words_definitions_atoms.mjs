@@ -1,3 +1,4 @@
+import { each_range } from "./each_range.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_second } from "./list_second.mjs";
@@ -23,6 +24,7 @@ export async function bible_words_definitions_atoms(language) {
   let lefts = {};
   let rights = {};
   let waiting = [];
+  each_range(count2, (item) => {});
   let count = 0;
   let pair_index = 0;
   let atoms = [];
