@@ -91,11 +91,12 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     html_p_text(body, json_to(u));
   }
   function app_language2_word(body, text, language, rememeber) {
-    html_p_text(body, string_combine_multiple([text, ": "]));
+    let r = html_p_text(body, string_combine_multiple([text, ": "]));
+    html_style_centered(r);
     let q = html_p(body);
     html_style_centered(q);
     html_flag_language(q, language);
-    let r = html_span_text(q, string_combine_multiple([" ", rememeber]));
-    html_style_bold(r);
+    html_span_text(q, string_combine_multiple([" ", rememeber]));
+    html_style_bold(q);
   }
 }
