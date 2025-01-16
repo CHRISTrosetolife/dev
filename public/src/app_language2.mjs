@@ -70,6 +70,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     );
   });
   let words = storage_local_get(app_fn, "words", {});
+  each(list2, (item2) => {});
   if (true || object_properties_empty_is(words)) {
     each(list, (item) => {});
     let word = list_first(concated);
