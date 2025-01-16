@@ -1,3 +1,4 @@
+import { json_to } from "./json_to.mjs";
 import { each } from "./each.mjs";
 import { bible_words_definitions_pairs_compute_inner } from "./bible_words_definitions_pairs_compute_inner.mjs";
 import { bible_words_score_language } from "./bible_words_score_language.mjs";
@@ -20,11 +21,11 @@ export async function bible_words_definitions_pairs(language) {
       object_property_get(p[language], "word"),
     ),
   );
-  let concise_hash = {};
   let concise = [];
   list_adder((la) => {
     each(concise_duplicates, (cd) => {
-      if (object_property_exists(object, "property_name")) {
+      let j = json_to(cd);
+      if (object_property_exists(concise_hash, "property_name")) {
       }
     });
   });
