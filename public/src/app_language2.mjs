@@ -10,7 +10,6 @@ import { html_button_next } from "./html_button_next.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
-import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
 import { object_values } from "./object_values.mjs";
 import { object_properties_select } from "./object_properties_select.mjs";
@@ -94,7 +93,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     values,
   });
   let unlearned = list_filter_property(values, "learning", false);
-  if (list_empty_not_is(unlearned)) {
+  if (vw === null || vw > 0) {
     list_sort_property(unlearned, "index");
     let u = list_first(unlearned);
     let word = object_property_get(u, "word");
