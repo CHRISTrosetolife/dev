@@ -71,6 +71,8 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     list_sort_property(unlearned, "index");
     let u = list_first(unlearned);
     let word = object_property_get(u, "word");
+    let question = object_property_get(word, "question");
+    let answer = object_property_get(word, "answer");
     html_p_text(body, json_to(u));
   }
 }
