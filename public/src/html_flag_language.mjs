@@ -7,5 +7,6 @@ export function html_flag_language(parent, language) {
     ceb: html_flag_ph(),
     en: html_flag_us(),
   };
-  html_flag(parent, object_property_get(languages_to_flags, language));
+  let g = object_property_get(languages_to_flags, language);
+  html_flag(parent, g);
 }
