@@ -32,26 +32,27 @@ export async function bible_words_definitions_atoms(language) {
     if (list_empty_is(waiting)) {
       list_add(waiting, pair);
     }
-    each(list, (item) => {});
-    let left = list_first(pair);
-    let right = list_second(pair);
-    let wait = false;
-    if (object_property_exists(lefts, left)) {
-      let left_index = object_property_get(lefts, left);
-      if (left_index + take_count * atom_count > count) {
-        wait = true;
+    each(waiting, (w) => {
+      let left = list_first(pair);
+      let right = list_second(pair);
+      let wait = false;
+      if (object_property_exists(lefts, left)) {
+        let left_index = object_property_get(lefts, left);
+        if (left_index + take_count * atom_count > count) {
+          wait = true;
+        }
       }
-    }
-    if (wait) {
-      list_add(waiting, pair);
-    }
-    list_add(atoms, pair);
-    object_property_set(lefts, left, count);
-    object_property_set(rights, right, count);
-    count++;
-    if (list_size(atom) === atom_count) {
-      list_add(atoms, atom);
-    }
+      if (wait) {
+        list_add(waiting, pair);
+      }
+      list_add(atoms, pair);
+      object_property_set(lefts, left, count);
+      object_property_set(rights, right, count);
+      count++;
+      if (list_size(atom) === atom_count) {
+        list_add(atoms, atom);
+      }
+    });
   });
   return {
     atoms,
