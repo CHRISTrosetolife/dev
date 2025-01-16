@@ -1,3 +1,5 @@
+import { list_second } from "./list_second.mjs";
+import { list_first } from "./list_first.mjs";
 import { list_size } from "./list_size.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { list_add } from "./list_add.mjs";
@@ -25,7 +27,8 @@ export async function bible_words_definitions_atoms(language) {
   let atom = [];
   let pair = pairs[pair_index];
   list_add(atom, pair);
-  object_property_set(object, "property_name", value);
+  object_property_set(lefts, list_first(pair), count);
+  object_property_set(lefts, list_second(pair), count);
   count++;
   if (list_size(atom) === atom_count) {
     list_add(atoms, atom);
