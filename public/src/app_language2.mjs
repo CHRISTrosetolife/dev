@@ -92,6 +92,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     );
     html_button_next(body, () => {
       object_property_set(word, "learned", true);
+      object_property_set(word, "seen", 0);
       storage_local_set(app_fn, "words", words);
     });
   }
