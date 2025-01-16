@@ -121,6 +121,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let v_words = list_map_property(values, "word");
     let answers = list_map_property(v_words, "answer");
     log({
+      values,
       v_words,
       answers,
     });
