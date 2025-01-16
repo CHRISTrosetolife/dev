@@ -37,6 +37,9 @@ export async function bible_words_definitions_pairs_compute_inner(
       }),
     ),
   );
+  log({
+    pairs,
+  });
   let fluent_scores = await bible_words_eng_score();
   let fluent_lookup = list_to_lookup_key_value_property(
     fluent_scores,
