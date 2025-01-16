@@ -23,7 +23,10 @@ export async function bible_words_definitions_pairs(language) {
   let concise_hash = {};
   let concise = [];
   list_adder((la) => {
-    each(list, (item2) => {});
+    each(concise_duplicates, (cd) => {
+      if (false) {
+      }
+    });
   });
   let found = {};
   let ds = list_map(concise_duplicates, (item) => {
