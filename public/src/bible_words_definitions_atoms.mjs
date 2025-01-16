@@ -20,6 +20,8 @@ export async function bible_words_definitions_atoms(language) {
   let group = [];
   let pair = pairs[pair_index];
   list_add(group, pair);
+  if (false) {
+  }
   return {
     atoms,
     definitions,
