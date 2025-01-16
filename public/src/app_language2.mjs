@@ -73,14 +73,14 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   if (object_properties_empty_is(words)) {
     let word = list_first(concated);
     object_property_set(words, object_property_get(word, "key"), {
-      learned: false,
+      learning: false,
       word,
     });
     storage_local_set(app_fn, "words", words);
   }
   html_clear_scroll_top_centered(root);
   let values = object_values(words);
-  let unlearned = list_filter_property(values, "learned", false);
+  let unlearned = list_filter_property(values, "learning", false);
   if (list_empty_not_is(unlearned)) {
     list_sort_property(unlearned, "index");
     let u = list_first(unlearned);
@@ -97,7 +97,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       answer,
     );
     html_button_next(root, () => {
-      object_property_set(u, "learned", true);
+      object_property_set(u, "learning", true);
       object_property_set(u, "wait", 0);
       object_property_set(u, "gap", 0);
       storage_local_set(app_fn, "words", words);
