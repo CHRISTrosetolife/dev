@@ -1,3 +1,5 @@
+import { html_flag_ph } from "./html_flag_ph.mjs";
+import { html_flag_us } from "./html_flag_us.mjs";
 import { html_button_next } from "./html_button_next.mjs";
 import { html_style_success_background } from "./html_style_success_background.mjs";
 import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
@@ -326,11 +328,3 @@ export async function app_language_refresh_quiz(context) {
     });
   }
 }
-function html_flag_us() {
-    return "us";
-}
-
-function html_flag_ph() {
-    return "ph";
-}
-
