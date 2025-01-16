@@ -29,7 +29,7 @@ export async function bible_words_definitions_atoms(language) {
   let pair = pairs[pair_index];
   let left = list_first(pair);
   let right = list_second(pair);
-  if (object_property_get(object, "property_name")) {
+  if (object_property_get(lefts, left)) {
   }
   list_add(atom, pair);
   object_property_set(lefts, left, count);
