@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_button_next } from "./html_button_next.mjs";
 import { html_p } from "./html_p.mjs";
@@ -96,9 +95,6 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       object_property_set(u, "wait", 0);
       object_property_set(u, "gap", 0);
       storage_local_set(app_fn, "words", words);
-      log({
-        words,
-      });
     });
   }
   function app_language2_word(body, text, language, rememeber) {
