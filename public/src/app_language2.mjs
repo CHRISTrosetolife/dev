@@ -96,7 +96,11 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   } else {
     list_sort_property(values, "wait");
     let v = list_first(values);
-    html_p_text(body, json_to(v));
+    let word = object_property_get(v, "word");
+    let language = object_property_get(word, "language");
+    let question = object_property_get(word, "question");
+    let answer = object_property_get(word, "answer");
+    app_language2_word(body, language, rememeber);
   }
   function app_language2_word_titled(body, text, language, rememeber) {
     let r = html_p_text(body, string_combine_multiple([text, ": "]));
