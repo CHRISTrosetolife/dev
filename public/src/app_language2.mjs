@@ -1,5 +1,4 @@
 import { html_style_success } from "./html_style_success.mjs";
-import { html_button } from "./html_button.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_button_next } from "./html_button_next.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -28,6 +27,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { app_language_group_index_changed_inner } from "./app_language_group_index_changed_inner.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
+import { html_button_width_full } from "./html_button_width_full.mjs";
 export async function app_language2(app_fn, language_learn, language_fluent) {
   let body = await app_language_initialize();
   let context = {
@@ -95,7 +95,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   }
   function app_language2_word(body, text, language, rememeber) {
     let r = html_p_text(body, string_combine_multiple([text, ": "]));
-    let q = html_button(body);
+    let q = html_button_width_full(body);
     html_flag_language(q, language);
     html_span_text(q, string_combine_multiple([" ", rememeber]));
     html_style_bold(q);
