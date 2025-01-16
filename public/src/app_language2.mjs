@@ -38,7 +38,8 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       language: language_fluent,
     })),
   );
-  storage_local_get(app_fn, "words", {});
-  if (list_empty_is(object_properties())) {
+  if (
+    list_empty_is(object_properties(storage_local_get(app_fn, "words", {})))
+  ) {
   }
 }
