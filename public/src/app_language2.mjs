@@ -36,6 +36,7 @@ import { list_without } from "./list_without.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
+import { number_is } from "./number_is.mjs";
 export async function app_language2(app_fn, language_learn, language_fluent) {
   let root = await app_language_initialize();
   let context = {
@@ -151,9 +152,9 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
         () => {
           each(values, (v2) => {
             let wait = object_property_get(v, "wait");
-            if (false) {
+            if (number_is(wait)) {
+              object_property_set(v2, "wait", wait - 1);
             }
-            object_property_set(v2, "wait", wait - 1);
           });
           if (c === answer) {
             let gap = object_property_get(v, "gap");
