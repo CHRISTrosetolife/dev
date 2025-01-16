@@ -16,7 +16,6 @@ export async function app_language2(language_learn, language_fluent) {
     list_map(group, (pair) => ({
       question: list_first(pair),
       answer: list_first(pair),
-      pair,
       language,
     })),
   );
