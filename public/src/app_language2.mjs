@@ -99,6 +99,6 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     html_flag_language(q, language);
     html_span_text(q, string_combine_multiple([" ", rememeber]));
     html_style_bold(q);
-    html_style_success(r);
+    html_style_success(q);
   }
 }
