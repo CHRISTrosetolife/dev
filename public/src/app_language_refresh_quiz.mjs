@@ -173,7 +173,7 @@ export async function app_language_refresh_quiz(context) {
   let quiz_container;
   let button_ready = await app_language_button_ready(
     root,
-    quiz_container,
+    () => quiz_container,
     app_language_flag_answer(),
     language_fluent,
   );
