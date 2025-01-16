@@ -7,5 +7,5 @@ export function html_flag_language(language) {
     ceb: html_flag_ph(),
     en: html_flag_us(),
   };
-  html_flag(button, object_property_get(object, "property_name"));
+  html_flag(button, object_property_get(languages_to_flags, language));
 }
