@@ -1,3 +1,4 @@
+import { object_values } from "./object_values.mjs";
 import { object_properties_select } from "./object_properties_select.mjs";
 import { each_index } from "./each_index.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
@@ -60,4 +61,5 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     });
     storage_local_set(app_fn, "words", words);
   }
+  let values = object_values(words);
 }
