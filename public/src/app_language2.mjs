@@ -114,7 +114,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let quiz_container;
     let button_ready = await app_language_button_ready(
       root,
-      quiz_container,
+      () => quiz_container,
       html_flag_language_get(
         app_language2_other(language, language_learn, language_fluent),
       ),
