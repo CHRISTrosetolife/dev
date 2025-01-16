@@ -171,12 +171,10 @@ export async function app_language_refresh_quiz(context) {
     alternatives = alternatives_f;
   }
   let quiz_container;
-  $ag
-  let fa = app_language_flag_answer();
   let button_ready = await app_language_button_ready(
     root,
     quiz_container,
-    fa,
+    app_language_flag_answer(),
     language_fluent,
   );
   quiz_container = html_div(root);
