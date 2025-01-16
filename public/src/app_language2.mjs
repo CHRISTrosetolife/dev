@@ -42,9 +42,9 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       language: language_fluent,
     })),
   );
+  let properties = ["question", "answer", "language"];
   each_index(concated, (c, index) => {
     object_property_set(c, "index", index);
-    let properties = ["question", "answer", "language"];
     object_property_set(
       c,
       "key",
