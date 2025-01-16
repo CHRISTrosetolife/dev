@@ -70,6 +70,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   if (list_empty_not_is(unlearned)) {
     list_sort_property(unlearned, "index");
     let u = list_first(unlearned);
+    $u$word;
     html_p_text(body, json_to(u));
   }
 }
