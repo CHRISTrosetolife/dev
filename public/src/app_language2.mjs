@@ -13,11 +13,16 @@ export async function app_language2(language_learn, language_fluent) {
   };
   await app_language_group_index_changed_inner(context, 0);
   let group = object_property_get(context, "group");
-  list_concat(
+  let concated = list_concat(
     list_map(group, (pair) => ({
       question: list_first(pair),
       answer: list_second(pair),
       language: language_learn,
+    })),
+    list_map(group, (pair) => ({
+      question: list_second(pair),
+      answer: list_first(pair),
+      language: language_fluent,
     })),
   );
 }
