@@ -43,11 +43,14 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   );
   each_index(concated, (c, index) => {
     object_property_set(c, "index", index);
+    object_property_set(c, "key", [
+      object_property_get(object, "property_name"),
+    ]);
   });
   let words = storage_local_get(app_fn, "words", {});
   if (object_properties_empty_is(words)) {
     let word = list_first(concated);
-    object_property_set(words, json_to(word), {
+    object_property_set(words, json_to([]), {
       learned: false,
       word,
     });
