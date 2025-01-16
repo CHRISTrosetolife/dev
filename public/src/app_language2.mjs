@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_map } from "./list_map.mjs";
@@ -25,4 +26,7 @@ export async function app_language2(language_learn, language_fluent) {
       language: language_fluent,
     })),
   );
+  log({
+    concated,
+  });
 }
