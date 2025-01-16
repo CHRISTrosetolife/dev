@@ -42,9 +42,9 @@ export async function bible_words_definitions_atoms(language) {
         return;
       }
       list_add(atom, pair);
-      count++;
       object_property_set(lefts, left, count);
       object_property_set(rights, right, count);
+      count++;
       if (list_size(atom) >= atom_count) {
         list_add(atoms, atom);
         atom = [];
