@@ -1,3 +1,4 @@
+import { list_sort } from "./list_sort.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
 import { object_values } from "./object_values.mjs";
@@ -66,5 +67,6 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   let values = object_values(words);
   let unlearned = list_filter_property(values, "learned", false);
   if (list_empty_not_is(unlearned)) {
+    list_sort();
   }
 }
