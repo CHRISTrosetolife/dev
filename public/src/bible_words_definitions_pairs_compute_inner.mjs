@@ -28,18 +28,17 @@ export async function bible_words_definitions_pairs_compute_inner(
         if (list_includes(["thee"], d)) {
           return;
         }
-        la({
+        let f = {
           foreign: object_properties_new(w, ["word", "score"]),
           fluent: {
             word: d,
           },
-        });
+        };
+        log(f);
+        la(f);
       }),
     ),
   );
-  log({
-    pairs,
-  });
   let fluent_scores = await bible_words_eng_score();
   let fluent_lookup = list_to_lookup_key_value_property(
     fluent_scores,
