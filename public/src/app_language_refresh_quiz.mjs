@@ -1,3 +1,4 @@
+import { app_language_button_ready } from "./app_language_button_ready.mjs";
 import { html_flag_ph } from "./html_flag_ph.mjs";
 import { html_flag_us } from "./html_flag_us.mjs";
 import { html_button_next } from "./html_button_next.mjs";
@@ -6,7 +7,6 @@ import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 import { list_index_by } from "./list_index_by.mjs";
 import { app_language_group_index_component } from "./app_language_group_index_component.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { app_language_refresh_quiz_text_ready } from "./app_language_refresh_quiz_text_ready.mjs";
 import { string_size } from "./string_size.mjs";
 import { list_without } from "./list_without.mjs";
 import { json_to } from "./json_to.mjs";
@@ -68,9 +68,7 @@ import { html_span } from "./html_span.mjs";
 import { html_p } from "./html_p.mjs";
 import { equal_1 } from "./equal_1.mjs";
 import { html_div } from "./html_div.mjs";
-import { html_style_display_block } from "./html_style_display_block.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_first } from "./list_first.mjs";
 import { app_language_word_native } from "./app_language_word_native.mjs";
 import { list_second } from "./list_second.mjs";
@@ -174,17 +172,11 @@ export async function app_language_refresh_quiz(context) {
   }
   let quiz_container;
   let f = app_language_flag_answer();
-  let button_ready = html_button_width_full_text_click(root, "", () => {
-    html_style_display_none(button_ready);
-    html_style_display_block(quiz_container);
-  });
-  html_flag(button_ready, f);
-  html_span_text(
-    button_ready,
-    string_combine_multiple([
-      " ",
-      await app_language_refresh_quiz_text_ready(language_fluent),
-    ]),
+  let button_ready = await app_language_button_ready(
+    root,
+    quiz_container,
+    f,
+    language_fluent,
   );
   quiz_container = html_div(root);
   let component_display_none;
