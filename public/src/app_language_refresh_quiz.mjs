@@ -177,7 +177,8 @@ export async function app_language_refresh_quiz(context) {
     html_style_display_none(button_ready);
     html_style_display_block(quiz_container);
   });
-  html_flag(button_ready, app_language_flag_answer());
+  let f = app_language_flag_answer();
+  html_flag(button_ready, f);
   html_span_text(
     button_ready,
     string_combine_multiple([
