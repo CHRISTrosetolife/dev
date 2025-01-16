@@ -22,5 +22,5 @@ export async function app_language_button_ready(root, f, language_fluent) {
   );
   quiz_container = html_div(root);
   html_style_display_none(quiz_container);
-  return button_ready;
+  return quiz_container;
 }
