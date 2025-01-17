@@ -36,8 +36,8 @@ export async function app_language2_refresh(context) {
     v,
     values,
   });
-  let unlearned = list_filter_property(values, "learning", false);
   if (vw === null || vw > 0) {
+    let unlearned = list_filter_property(values, "learning", false);
     list_sort_property(unlearned, "index");
     let u = list_first(unlearned);
     let word = object_property_get(u, "word");
