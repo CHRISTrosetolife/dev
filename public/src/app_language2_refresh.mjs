@@ -115,11 +115,8 @@ export async function app_language2_refresh(context) {
       );
       function decrease_wait() {
         each(values, (v2) => {
-          let wait = object_property_get(v, "wait");
+          let wait = object_property_get(v2, "wait");
           if (number_is(wait)) {
-            log({
-              v2,
-            });
             object_property_set(v2, "wait", wait - 1);
           }
         });
