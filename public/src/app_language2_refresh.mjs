@@ -109,6 +109,7 @@ export async function app_language2_refresh(context) {
         string_combine_multiple([emoji_check(), " ", c]),
         async () => {
           html_style_success(b);
+          await sleep(200);
           decrease_wait();
           if (c === answer_text) {
             let gap = object_property_get(v, "gap");
