@@ -68,13 +68,13 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       }
     }
     let w = {
-      learning: true,
+      learning: false,
       word,
     };
     object_property_set(words, k, w);
-    object_property_set(w, "wait", 100);
+    object_property_set(w, "wait", null);
     object_property_set(w, "skip", false);
-    object_property_set(w, "gap", 100);
+    object_property_set(w, "gap", null);
   });
   storage_local_set(app_fn, "words", words);
   let w_size = list_size(object_properties(words));
