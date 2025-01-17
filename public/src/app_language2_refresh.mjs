@@ -1,3 +1,4 @@
+import { list_sort } from "./list_sort.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { html_br2 } from "./html_br2.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
@@ -33,7 +34,7 @@ export async function app_language2_refresh(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
   let values = object_values(words);
-  list_sort_property(values, "index");
+  list_sort(values, (v) => object_property_get(object, "property_name"));
   log({
     values,
   });
