@@ -92,7 +92,7 @@ export async function app_language2_refresh(context) {
     );
     let v_words = list_map_property(values, "word");
     let v_filtered = list_filter_property(v_words, "language", language);
-    let answers = list_map_property(v_words, "answer");
+    let answers = list_map_property(v_filtered, "answer");
     let others = list_difference(answers, mapped);
     let other = list_random_item(others);
     let answer_text = list_join_comma_space(mapped);
