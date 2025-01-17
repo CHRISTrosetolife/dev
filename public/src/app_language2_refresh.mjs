@@ -110,7 +110,6 @@ export async function app_language2_refresh(context) {
         string_combine_multiple([emoji_check(), " ", c]),
         async () => {
           html_style_success(b);
-          await sleep(200);
           decrease_wait();
           if (c === answer_text) {
             let gap = object_property_get(v, "gap");
@@ -123,6 +122,7 @@ export async function app_language2_refresh(context) {
             app_language2_wrong(v, gap_initial, wait_initial);
           }
           storage_local_set(app_fn, "words", words);
+          await sleep(200);
           await app_language2_refresh(context);
         },
       );
@@ -131,10 +131,19 @@ export async function app_language2_refresh(context) {
         string_combine_multiple([emoji_question(), " ", c]),
         async () => {
           html_style_wrong(b2);
-          await sleep(200);
           decrease_wait();
-          app_language2_wrong(v, gap_initial, wait_initial);
+          if (c === answer_text) {
+            let gap = object_property_get(v, "gap");
+            let gaps = object_property_get(context, "gaps");
+            let f = list_filter(gaps, (g) => g > gap);
+            let gap_new = list_first(f) + random();
+            object_property_set(v, "gap", gap_new);
+            object_property_set(v, "wait", gap_new);
+          } else {
+            app_language2_wrong(v, gap_initial, wait_initial);
+          }
           storage_local_set(app_fn, "words", words);
+          await sleep(200);
           await app_language2_refresh(context);
         },
       );
