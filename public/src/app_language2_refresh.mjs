@@ -33,6 +33,10 @@ export async function app_language2_refresh(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
   let values = object_values(words);
+  log({
+    words,
+    values,
+  });
   list_sort_property(values, "wait");
   let wait_initial = 0;
   let gap_initial = 0;
@@ -79,12 +83,6 @@ export async function app_language2_refresh(context) {
     );
     let v_words = list_map_property(values, "word");
     let answers = list_map_property(v_words, "answer");
-    log({
-      words,
-      values,
-      v_words,
-      answers,
-    });
     let others = list_without(answers, answer);
     let other = list_random_item(others);
     let choices = [answer, other];
