@@ -109,16 +109,19 @@ export async function app_language2_refresh(context) {
         quiz_container,
         string_combine_multiple([emoji_check(), " ", c]),
         async () => {
-          html_style_success(b);
           decrease_wait();
           if (c === answer_text) {
+            html_style_success(b);
             let gap = object_property_get(v, "gap");
             let gaps = object_property_get(context, "gaps");
             let f = list_filter(gaps, (g) => g > gap);
+            if (false) {
+            }
             let gap_new = list_first(f) + random();
             object_property_set(v, "gap", gap_new);
             object_property_set(v, "wait", gap_new);
           } else {
+            html_style_wrong(b2);
             app_language2_wrong(v, gap_initial, wait_initial);
           }
           storage_local_set(app_fn, "words", words);
@@ -130,18 +133,13 @@ export async function app_language2_refresh(context) {
         quiz_container,
         string_combine_multiple([emoji_question(), " ", c]),
         async () => {
-          html_style_wrong(b2);
           decrease_wait();
           if (c === answer_text) {
-            let gap = object_property_get(v, "gap");
-            let gaps = object_property_get(context, "gaps");
-            let f = list_filter(gaps, (g) => g > gap);
-            let gap_new = list_first(f) + random();
-            object_property_set(v, "gap", gap_new);
-            object_property_set(v, "wait", gap_new);
+            html_style_success(b);
           } else {
-            app_language2_wrong(v, gap_initial, wait_initial);
+            html_style_wrong(b2);
           }
+          app_language2_wrong(v, gap_initial, wait_initial);
           storage_local_set(app_fn, "words", words);
           await sleep(200);
           await app_language2_refresh(context);
