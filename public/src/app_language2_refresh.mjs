@@ -1,3 +1,4 @@
+import { html_br } from "./html_br.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
 import { html_style_success } from "./html_style_success.mjs";
 import { app_language2_word_p } from "./app_language2_word_p.mjs";
@@ -55,6 +56,7 @@ export async function app_language2_refresh(context) {
       app_language2_other(language, language_learn, language_fluent),
       answer,
     );
+    html_br(root);
     html_button_next(root, async () => {
       decrease_wait();
       object_property_set(u, "learning", true);
