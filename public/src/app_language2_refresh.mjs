@@ -48,13 +48,13 @@ export async function app_language2_refresh(context) {
       app_language2_other(language, language_learn, language_fluent),
       answer,
     );
-    html_button_next(root, () => {
+    html_button_next(root, async () => {
       object_property_set(u, "learning", true);
       object_property_set(u, "wait", 0);
       object_property_set(u, "gap", 0);
       storage_local_set(app_fn, "words", words);
+      await app_language2_refresh(context);
     });
-    await app_language2_refresh(context);
   } else {
     let word = object_property_get(v, "word");
     let language = object_property_get(word, "language");
