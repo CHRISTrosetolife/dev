@@ -76,8 +76,7 @@ export async function app_language2_refresh(context) {
     let word = object_property_get(v, "word");
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
-    let index = object_property_get(word, "index");
-    let mapped = app_language2_answers(values_all, index, question, v);
+    let mapped = app_language2_answers(values_all, v);
     log({
       mapped,
     });
