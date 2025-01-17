@@ -83,5 +83,6 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     gap = ceiling(gap * factor) + 1;
     list_add(gaps, gap);
   }
+  object_property_set(context, "gaps", gaps);
   await app_language2_refresh(context);
 }
