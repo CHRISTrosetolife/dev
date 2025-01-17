@@ -1,4 +1,4 @@
-import { random } from "./random.mjs";
+import { list_add } from "./list_add.mjs";
 import { ceiling } from "./ceiling.mjs";
 import { list_size } from "./list_size.mjs";
 import { app_language2_refresh } from "./app_language2_refresh.mjs";
@@ -77,9 +77,11 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   });
   let w_size = list_size(object_properties(words));
   let gap = 0;
+  let gaps = [0];
   while (gap < w_size) {
     let factor = 1.2;
-    gap = ceiling(gap * factor) + 1 + random();
+    gap = ceiling(gap * factor) + 1;
+    list_add(gaps, gap);
   }
   await app_language2_refresh(context);
 }
