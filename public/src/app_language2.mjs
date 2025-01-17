@@ -58,7 +58,9 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   each(concated, (word) => {
     let k = object_property_get(word, "key");
     if (object_property_exists(words, k)) {
-      $ireturn;
+      if (false) {
+        return;
+      }
     }
     let w = {
       learning: false,
