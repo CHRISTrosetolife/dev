@@ -1,3 +1,4 @@
+import { list_difference } from "./list_difference.mjs";
 import { app_language2_word_index } from "./app_language2_word_index.mjs";
 import { list_sort } from "./list_sort.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -13,7 +14,6 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { each } from "./each.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { list_random_item } from "./list_random_item.mjs";
-import { list_without } from "./list_without.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { html_flag_language_get } from "./html_flag_language_get.mjs";
 import { app_language_button_ready } from "./app_language_button_ready.mjs";
@@ -97,7 +97,7 @@ export async function app_language2_refresh(context) {
     );
     let v_words = list_map_property(values, "word");
     let answers = list_map_property(v_words, "answer");
-    let others = list_without(answers, answer);
+    let others = list_difference(answers, matches);
     let other = list_random_item(others);
     let choices = [answer, other];
     list_shuffle(choices);
