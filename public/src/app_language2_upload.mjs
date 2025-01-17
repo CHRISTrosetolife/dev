@@ -1,1 +1,5 @@
-export function app_language2_upload() {}
+import { bible_words_definitions_atoms_cache } from "./bible_words_definitions_atoms_cache.mjs";
+export async function app_language2_upload() {
+  let { atoms, definitions, inverted } =
+    await bible_words_definitions_atoms_cache(from);
+}
