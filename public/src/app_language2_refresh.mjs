@@ -1,3 +1,4 @@
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_last } from "./list_last.mjs";
 import { app_language2_wrong } from "./app_language2_wrong.mjs";
 import { app_language2_answers } from "./app_language2_answers.mjs";
@@ -52,8 +53,8 @@ export async function app_language2_refresh(context) {
   let gap_initial = 0;
   let v = list_first(values);
   let vw = object_property_get(v, "wait");
-  if (vw === null || vw > 0) {
-    let unlearning = list_filter_property(values, "learning", false);
+  let unlearning = list_filter_property(values, "learning", false);
+  if (list_empty_not_is(unlearning) && (vw === null || vw > 0)) {
     list_sort_property(unlearning, "index");
     let u = list_first(unlearning);
     let word = object_property_get(u, "word");
