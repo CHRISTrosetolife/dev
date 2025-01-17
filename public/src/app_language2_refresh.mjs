@@ -88,7 +88,7 @@ export async function app_language2_refresh(context) {
       html_button_width_full_text_click(
         quiz_container,
         string_combine_multiple([emoji_check(), " ", c]),
-        () => {
+        async () => {
           decrease_wait();
           if (c === answer) {
             let gap = object_property_get(v, "gap");
@@ -98,14 +98,16 @@ export async function app_language2_refresh(context) {
             object_property_set(v, "wait", gap);
           }
           storage_local_set(app_fn, "words", words);
+          await app_language2_refresh(context);
         },
       );
       html_button_width_full_text_click(
         quiz_container,
         string_combine_multiple([emoji_question(), " ", c]),
-        () => {
+        async () => {
           decrease_wait();
           storage_local_set(app_fn, "words", words);
+          await app_language2_refresh(context);
         },
       );
       function decrease_wait() {
