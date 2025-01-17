@@ -35,6 +35,7 @@ export async function app_language2_refresh(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
   let values = object_values(words);
+  values = list_filter_property(values, "skip", false);
   list_sort(values, app_language2_word_index);
   log({
     values,
