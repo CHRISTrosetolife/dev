@@ -1,3 +1,5 @@
+import { list_map } from "./list_map.mjs";
+import { list_add } from "./list_add.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { list_difference } from "./list_difference.mjs";
 import { app_language2_word_index } from "./app_language2_word_index.mjs";
@@ -86,7 +88,11 @@ export async function app_language2_refresh(context) {
     each(matches, (match) => {
       object_property_set(match, "skip", true);
     });
-    let mapped = list_map_property(matches, "answer");
+    list_add(matches, v);
+    let mapped = list_map(
+      matches,
+      object_property_get(object, "property_name"),
+    );
     log({
       mapped,
     });
