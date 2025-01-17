@@ -87,6 +87,9 @@ export async function app_language2_refresh(context) {
       object_property_set(match, "skip", true);
     });
     let mapped = list_map_property(matches, "answer");
+    log({
+      mapped,
+    });
     app_language2_word(root, language, question);
     html_br2(root);
     let quiz_container = await app_language_button_ready(
