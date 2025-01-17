@@ -30,6 +30,9 @@ export async function app_language2_refresh(context) {
   html_clear_scroll_top_centered(root);
   let values = object_values(words);
   list_sort_property(values, "wait");
+  log({
+    values,
+  });
   let v = list_first(values);
   let vw = object_property_get(v, "wait");
   if (vw === null || vw > 0) {
