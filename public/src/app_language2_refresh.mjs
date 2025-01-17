@@ -75,9 +75,11 @@ export async function app_language2_refresh(context) {
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
     let index = object_property_get(word, "index");
-    let previous = list_filter(
+    let matches = list_filter(
       values,
-      (v) => app_language2_word_index(v) < index,
+      (v) =>
+        app_language2_word_index(v) < index &&
+        object_property_get(word, "question") === question,
     );
     app_language2_word(root, language, question);
     html_br2(root);
