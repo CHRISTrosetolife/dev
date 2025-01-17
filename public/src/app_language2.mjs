@@ -166,6 +166,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
         string_combine_multiple([emoji_question(), " ", c]),
         () => {
           decrease_wait();
+          storage_local_set(app_fn, "words", words);
         },
       );
       function decrease_wait() {
