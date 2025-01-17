@@ -81,6 +81,7 @@ export async function app_language2_refresh(context) {
         app_language2_word_index(v) < index &&
         object_property_get(word, "question") === question,
     );
+    let mapped = list_map_property(matches, "answer");
     app_language2_word(root, language, question);
     html_br2(root);
     let quiz_container = await app_language_button_ready(
