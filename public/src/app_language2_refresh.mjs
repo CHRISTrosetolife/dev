@@ -77,7 +77,7 @@ export async function app_language2_refresh(context) {
     let answer = object_property_get(word, "answer");
     let index = object_property_get(word, "index");
     let matches = list_filter(
-      values,
+      values_all,
       (v) =>
         app_language2_word_index(v) < index &&
         object_property_get(word, "question") === question,
