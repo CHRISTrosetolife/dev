@@ -71,8 +71,8 @@ export async function app_language2_refresh(context) {
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
     app_language2_word(root, language, question);
-    let quiz_container;
-    quiz_container = await app_language_button_ready(
+    html_br2(root);
+    let quiz_container = await app_language_button_ready(
       root,
       html_flag_language_get(
         app_language2_other(language, language_learn, language_fluent),
