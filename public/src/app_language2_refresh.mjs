@@ -125,7 +125,7 @@ export async function app_language2_refresh(context) {
             object_property_set(v, "gap", gap_new);
             object_property_set(v, "wait", gap_new);
           } else {
-            html_style_wrong(b2);
+            html_style_wrong(b);
             app_language2_wrong(v, gap_initial, wait_initial);
           }
           storage_local_set(app_fn, "words", words);
@@ -139,7 +139,7 @@ export async function app_language2_refresh(context) {
         async () => {
           decrease_wait();
           if (c === answer_text) {
-            html_style_success(b);
+            html_style_success(b2);
           } else {
             html_style_wrong(b2);
           }
