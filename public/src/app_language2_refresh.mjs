@@ -96,7 +96,7 @@ export async function app_language2_refresh(context) {
           decrease_wait();
           if (c === answer) {
             let gap = object_property_get(v, "gap");
-            let gaps = context;
+            let gaps = object_property_get(context, "gaps");
             object_property_set(v, "gap", gap);
             object_property_set(v, "wait", gap);
           }
