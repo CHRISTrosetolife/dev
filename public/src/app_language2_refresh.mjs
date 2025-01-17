@@ -1,5 +1,4 @@
-import { list_map } from "./list_map.mjs";
-import { list_add } from "./list_add.mjs";
+import { app_language2_answers } from "./app_language2_answers.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { list_difference } from "./list_difference.mjs";
 import { app_language2_word_index } from "./app_language2_word_index.mjs";
@@ -78,20 +77,7 @@ export async function app_language2_refresh(context) {
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
     let index = object_property_get(word, "index");
-    let matches = list_filter(
-      values_all,
-      (v) =>
-        app_language2_word_index(v) < index &&
-        object_property_get(object_property_get(v, "word"), "question") ===
-          question,
-    );
-    each(matches, (match) => {
-      object_property_set(match, "skip", true);
-    });
-    list_add(matches, v);
-    let mapped = list_map(matches, (m) =>
-      object_property_get(object_property_get(m, "word"), "answer"),
-    );
+    let mapped = app_language2_answers(values_all, index, question, v);
     log({
       mapped,
     });
