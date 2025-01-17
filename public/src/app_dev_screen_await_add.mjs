@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
@@ -15,13 +16,11 @@ import { js_code_export_function_declare } from "./js_code_export_function_decla
 import { function_name_new } from "./function_name_new.mjs";
 import { app_dev_p_transformer_generic } from "./app_dev_p_transformer_generic.mjs";
 import { js_await_add } from "./js_await_add.mjs";
-import { sleep } from "./sleep.mjs";
 import { html_style_link_code } from "./html_style_link_code.mjs";
 import { url_secure } from "./url_secure.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_style_function_name } from "./html_style_function_name.mjs";
 import { noop } from "./noop.mjs";
-import { timeout_set } from "./timeout_set.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 export function app_dev_screen_await_add() {
   return {
@@ -44,7 +43,9 @@ export function app_dev_screen_await_add() {
           noop,
           html_style_link_code(url),
         ],
-        "`" + timeout_set.name + "` is a `function` that calls `setTimeout` :",
+        "`" +
+          fn_name("timeout_set") +
+          "` is a `function` that calls `setTimeout` :",
       );
       app_dev_screen_img(app_dev_screen_await_add, root, i++);
       html_cycle_p(
@@ -58,9 +59,9 @@ export function app_dev_screen_await_add() {
           html_style_function_name,
         ],
         "`" +
-          sleep.name +
+          fn_name("sleep") +
           "` is a `function` that calls `" +
-          timeout_set.name +
+          fn_name("timeout_set") +
           "` :",
       );
       app_dev_screen_img(app_dev_screen_await_add, root, i++);
@@ -77,7 +78,7 @@ export function app_dev_screen_await_add() {
           html_style_function_name,
         ],
         "if we have a `function` that calls `" +
-          sleep.name +
+          fn_name("sleep") +
           "` , then normally we would have to type out `await` and `async` :",
       );
       app_dev_screen_img(app_dev_screen_await_add, root, i++);
@@ -107,10 +108,13 @@ export function app_dev_screen_await_add() {
       let contents_function = js_code_export_function_declare(
         function_name_unique,
         "",
-        js_code_statement_call_args(sleep.name, [100]),
+        js_code_statement_call_args(fn_name("sleep"), [100]),
         false,
       );
-      let code = string_combine(js_code_import(sleep.name), contents_function);
+      let code = string_combine(
+        js_code_import(fn_name("sleep")),
+        contents_function,
+      );
       let contents = await js_code_format(code);
       let file_path = function_name_to_path(function_name_unique);
       await file_write(file_path, contents);
@@ -120,7 +124,7 @@ export function app_dev_screen_await_add() {
         "adding `async` and `await`",
         string_delimit_backtick(
           string_combine_multiple([
-            function_transform.name,
+            fn_name("function_transform"),
             " ",
             fn.name,
             " ",
