@@ -82,7 +82,7 @@ export async function app_language2_refresh(context) {
         object_property_get(word, "question") === question,
     );
     each(matches, (match) => {
-      object_property_set(object, "property_name", value);
+      object_property_set(match, "skip", true);
     });
     let mapped = list_map_property(matches, "answer");
     app_language2_word(root, language, question);
