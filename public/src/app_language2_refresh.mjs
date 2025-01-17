@@ -1,3 +1,5 @@
+import { html_style_wrong } from "./html_style_wrong.mjs";
+import { html_style_success } from "./html_style_success.mjs";
 import { app_language2_word_p } from "./app_language2_word_p.mjs";
 import { number_is } from "./number_is.mjs";
 import { emoji_question } from "./emoji_question.mjs";
@@ -85,10 +87,11 @@ export async function app_language2_refresh(context) {
     let choices = [answer, other];
     list_shuffle(choices);
     each(choices, (c) => {
-      html_button_width_full_text_click(
+      let b = html_button_width_full_text_click(
         quiz_container,
         string_combine_multiple([emoji_check(), " ", c]),
         async () => {
+          html_style_success(b);
           decrease_wait();
           if (c === answer) {
             let gap = object_property_get(v, "gap");
@@ -101,10 +104,11 @@ export async function app_language2_refresh(context) {
           await app_language2_refresh(context);
         },
       );
-      html_button_width_full_text_click(
+      let b2 = html_button_width_full_text_click(
         quiz_container,
         string_combine_multiple([emoji_question(), " ", c]),
         async () => {
+          html_style_wrong(b2);
           decrease_wait();
           storage_local_set(app_fn, "words", words);
           await app_language2_refresh(context);
