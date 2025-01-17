@@ -22,6 +22,7 @@ import { app_language_group_index_changed_inner } from "./app_language_group_ind
 import { list_concat } from "./list_concat.mjs";
 import { object_properties } from "./object_properties.mjs";
 export async function app_language2(app_fn, language_learn, language_fluent) {
+  let i = 0;
   let root = await app_language_initialize();
   let context = {
     app_fn,
@@ -30,13 +31,17 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     root,
   };
   storage_local_initialize(app_fn, "words", {});
+  log(i++);
   await app_language_group_index_changed_inner(context, 0);
+  log(i++);
   let group = object_property_get(context, "group");
+  log(i++);
   let flat = list_adder((la) => {
     each(group, (atom) => {
       each(atom, la);
     });
   });
+  log(i++);
   let concated = list_concat(
     list_map(flat, (pair) => ({
       question: list_first(pair),
@@ -49,7 +54,9 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       language: language_fluent,
     })),
   );
+  log(i++);
   let properties = ["question", "answer", "language"];
+  log(i++);
   each_index(concated, (c, index) => {
     object_property_set(c, "index", index);
     object_property_set(
@@ -58,8 +65,11 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       json_to(object_properties_select(c, properties)),
     );
   });
+  log(i++);
   let words = storage_local_get(app_fn, "words", {});
+  log(i++);
   object_property_set(context, "words", words);
+  log(i++);
   each(concated, (word) => {
     let k = object_property_get(word, "key");
     if (object_property_exists(words, k)) {
@@ -76,6 +86,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     object_property_set(w, "gap", null);
     storage_local_set(app_fn, "words", words);
   });
+  log(i++);
   let w_size = list_size(object_properties(words));
   let gap = 0;
   let gaps = [0];
@@ -83,11 +94,10 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let factor = 1.2;
     gap = ceiling(gap * factor) + 1;
     list_add(gaps, gap);
-    log({
-      w_size,
-      gap,
-    });
+    log(i++);
   }
+  log(i++);
   object_property_set(context, "gaps", gaps);
+  log(i++);
   await app_language2_refresh(context);
 }
