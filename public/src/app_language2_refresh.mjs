@@ -83,7 +83,8 @@ export async function app_language2_refresh(context) {
       values_all,
       (v) =>
         app_language2_word_index(v) < index &&
-        object_property_get(word, "question") === question,
+        object_property_get(object_property_get(v, "word"), "question") ===
+          question,
     );
     each(matches, (match) => {
       object_property_set(match, "skip", true);
