@@ -89,9 +89,8 @@ export async function app_language2_refresh(context) {
       object_property_set(match, "skip", true);
     });
     list_add(matches, v);
-    let mapped = list_map(
-      matches,
-      object_property_get(object_property_get(object, "word"), "answer"),
+    let mapped = list_map(matches, (m) =>
+      object_property_get(object_property_get(m, "word"), "answer"),
     );
     log({
       mapped,
