@@ -120,6 +120,7 @@ export async function app_language2_refresh(context) {
             object_property_set(v, "gap", gap_new);
             object_property_set(v, "wait", gap_new);
           } else {
+            app_language2_wrong(v, gap_initial, wait_initial);
           }
           storage_local_set(app_fn, "words", words);
           await app_language2_refresh(context);
