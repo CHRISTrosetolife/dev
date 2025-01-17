@@ -56,6 +56,7 @@ export async function app_language2_refresh(context) {
       answer,
     );
     html_button_next(root, async () => {
+      decrease_wait();
       object_property_set(u, "learning", true);
       object_property_set(u, "wait", wait_initial);
       object_property_set(u, "gap", gap_initial);
@@ -118,13 +119,13 @@ export async function app_language2_refresh(context) {
           await app_language2_refresh(context);
         },
       );
-      function decrease_wait() {
-        each(values, (v2) => {
-          let wait = object_property_get(v2, "wait");
-          if (number_is(wait)) {
-            object_property_set(v2, "wait", wait - 1);
-          }
-        });
+    });
+  }
+  function decrease_wait() {
+    each(values, (v2) => {
+      let wait = object_property_get(v2, "wait");
+      if (number_is(wait)) {
+        object_property_set(v2, "wait", wait - 1);
       }
     });
   }
