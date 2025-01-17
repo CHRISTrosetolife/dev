@@ -92,6 +92,9 @@ export async function app_language2_refresh(context) {
             gap = ceiling(gap * factor);
             object_property_set(v, "gap", gap);
             object_property_set(v, "wait", gap);
+            log({
+              v,
+            });
           }
           storage_local_set(app_fn, "words", words);
           await app_language2_refresh(context);
