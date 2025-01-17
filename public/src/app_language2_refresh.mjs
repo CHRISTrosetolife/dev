@@ -4,7 +4,6 @@ import { html_style_success } from "./html_style_success.mjs";
 import { app_language2_word_p } from "./app_language2_word_p.mjs";
 import { number_is } from "./number_is.mjs";
 import { emoji_question } from "./emoji_question.mjs";
-import { ceiling } from "./ceiling.mjs";
 import { emoji_check } from "./emoji_check.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -97,8 +96,7 @@ export async function app_language2_refresh(context) {
           decrease_wait();
           if (c === answer) {
             let gap = object_property_get(v, "gap");
-            let factor = 1.2;
-            gap = ceiling(gap * factor) + 1;
+            let gaps = context;
             object_property_set(v, "gap", gap);
             object_property_set(v, "wait", gap);
           }
