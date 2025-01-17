@@ -1,3 +1,4 @@
+import { list_size } from "./list_size.mjs";
 import { app_language2_refresh } from "./app_language2_refresh.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_properties_select } from "./object_properties_select.mjs";
@@ -71,5 +72,6 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     object_property_set(w, "gap", null);
     storage_local_set(app_fn, "words", words);
   });
+  let cs = list_size(concated);
   await app_language2_refresh(context);
 }
