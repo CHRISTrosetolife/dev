@@ -35,6 +35,8 @@ export async function app_language2_refresh(context) {
   log({
     values,
   });
+  let wait_initial = 2;
+  let gap_initial = 2;
   let v = list_first(values);
   let vw = object_property_get(v, "wait");
   if (vw === null || vw > 0) {
@@ -55,8 +57,8 @@ export async function app_language2_refresh(context) {
     );
     html_button_next(root, async () => {
       object_property_set(u, "learning", true);
-      object_property_set(u, "wait", 0);
-      object_property_set(u, "gap", 0);
+      object_property_set(u, "wait", wait_initial);
+      object_property_set(u, "gap", gap_initial);
       storage_local_set(app_fn, "words", words);
       await app_language2_refresh(context);
     });
@@ -110,6 +112,8 @@ export async function app_language2_refresh(context) {
         async () => {
           html_style_wrong(b2);
           decrease_wait();
+          object_property_set(v, "gap", gap_initial);
+          object_property_set(v, "wait", wait_initial);
           storage_local_set(app_fn, "words", words);
           await app_language2_refresh(context);
         },
