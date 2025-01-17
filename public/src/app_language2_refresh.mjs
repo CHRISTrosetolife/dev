@@ -92,6 +92,9 @@ export async function app_language2_refresh(context) {
     );
     let v_words = list_map_property(values, "word");
     let v_filtered = list_filter_property(v_words, "language", language);
+    let v_filtered2 = list_filter(v_words, (v) =>
+      object_property_get(object, "property_name"),
+    );
     let answers = list_map_property(v_filtered, "answer");
     let others = list_difference(answers, mapped);
     let other = list_random_item(others);
