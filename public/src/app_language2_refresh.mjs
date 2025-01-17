@@ -1,3 +1,4 @@
+import { list_filter } from "./list_filter.mjs";
 import { html_br2 } from "./html_br2.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
 import { html_style_success } from "./html_style_success.mjs";
@@ -97,8 +98,10 @@ export async function app_language2_refresh(context) {
           if (c === answer) {
             let gap = object_property_get(v, "gap");
             let gaps = object_property_get(context, "gaps");
-            object_property_set(v, "gap", gap);
-            object_property_set(v, "wait", gap);
+            let f = list_filter(gaps, (g) => g > gap);
+            let gap_new = list_first(f);
+            object_property_set(v, "gap", gap_new);
+            object_property_set(v, "wait", gap_new);
           }
           storage_local_set(app_fn, "words", words);
           await app_language2_refresh(context);
