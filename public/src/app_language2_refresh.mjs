@@ -77,7 +77,6 @@ export async function app_language2_refresh(context) {
     let word = object_property_get(v, "word");
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
-    let answer = object_property_get(word, "answer");
     let index = object_property_get(word, "index");
     let matches = list_filter(
       values_all,
