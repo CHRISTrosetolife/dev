@@ -21,7 +21,6 @@ import { app_language_group_index_changed_inner } from "./app_language_group_ind
 import { list_concat } from "./list_concat.mjs";
 import { object_properties } from "./object_properties.mjs";
 export async function app_language2(app_fn, language_learn, language_fluent) {
-  let i = 0;
   let root = await app_language_initialize();
   let context = {
     app_fn,
