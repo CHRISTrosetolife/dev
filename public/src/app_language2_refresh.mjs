@@ -57,6 +57,7 @@ export async function app_language2_refresh(context) {
       answer,
     );
     html_br(root);
+    html_br(root);
     html_button_next(root, async () => {
       decrease_wait();
       object_property_set(u, "learning", true);
