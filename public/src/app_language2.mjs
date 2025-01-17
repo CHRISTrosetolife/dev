@@ -150,12 +150,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
         quiz_container,
         string_combine_multiple([emoji_check(), " ", c]),
         () => {
-          each(values, (v2) => {
-            let wait = object_property_get(v, "wait");
-            if (number_is(wait)) {
-              object_property_set(v2, "wait", wait - 1);
-            }
-          });
+          decrease_wait();
           if (c === answer) {
             let gap = object_property_get(v, "gap");
             let factor = 1.2;
@@ -169,8 +164,18 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       html_button_width_full_text_click(
         quiz_container,
         string_combine_multiple([emoji_question(), " ", c]),
-        () => {},
+        () => {
+          decrease_wait();
+        },
       );
+      function decrease_wait() {
+        each(values, (v2) => {
+          let wait = object_property_get(v, "wait");
+          if (number_is(wait)) {
+            object_property_set(v2, "wait", wait - 1);
+          }
+        });
+      }
     });
   }
   function app_language2_word_titled(body, text, language, rememeber) {
