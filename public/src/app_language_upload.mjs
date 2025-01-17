@@ -1,3 +1,4 @@
+import { app_language_upload_result } from "./app_language_upload_result.mjs";
 import { bible_words_definitions_atoms_cache } from "./bible_words_definitions_atoms_cache.mjs";
 import { list_chunk_each } from "./list_chunk_each.mjs";
 import { list_wait } from "./list_wait.mjs";
@@ -11,10 +12,7 @@ import { each_index_async } from "./each_index_async.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { assert } from "./assert.mjs";
 import { file_read_json } from "./file_read_json.mjs";
-import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { each } from "./each.mjs";
-import { list_adder_unique } from "./list_adder_unique.mjs";
 import { audio_upload } from "./audio_upload.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_map } from "./list_map.mjs";
@@ -22,7 +20,6 @@ import { log } from "./log.mjs";
 import { list_chunk } from "./list_chunk.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { each_async } from "./each_async.mjs";
-import { object_list_invert } from "./object_list_invert.mjs";
 import { app_language_group_size } from "./app_language_group_size.mjs";
 export async function app_language_upload(from) {
   let to = "en";
@@ -80,24 +77,7 @@ export async function app_language_upload(from) {
       if (audio_only) {
         return;
       }
-      let words = list_adder_unique((la) =>
-        each(group, (a) =>
-          each(a, (pair) => {
-            la(list_first(pair));
-          }),
-        ),
-      );
-      let definitions = {};
-      each(words, (w) => {
-        let ds = object_property_get(profile.definitions, w);
-        object_property_set(definitions, w, ds);
-      });
-      let inverted = object_list_invert(definitions);
-      let result_new = {
-        group,
-        definitions,
-        inverted,
-      };
+      let result_new = app_language_upload_result(group, profile);
       log({
         result_new,
       });
