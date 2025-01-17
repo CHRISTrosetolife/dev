@@ -54,6 +54,7 @@ export async function app_language2_refresh(context) {
       object_property_set(u, "gap", 0);
       storage_local_set(app_fn, "words", words);
     });
+    await app_language2_refresh(context);
   } else {
     let word = object_property_get(v, "word");
     let language = object_property_get(word, "language");
