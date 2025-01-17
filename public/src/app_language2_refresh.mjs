@@ -37,6 +37,7 @@ export async function app_language2_refresh(context) {
     words,
     values,
   });
+  list_sort_property(values, "index");
   list_sort_property(values, "wait");
   let wait_initial = 0;
   let gap_initial = 0;
