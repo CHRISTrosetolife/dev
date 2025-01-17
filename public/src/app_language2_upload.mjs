@@ -4,7 +4,10 @@ export async function app_language2_upload(from) {
   let { atoms, definitions, inverted } =
     await bible_words_definitions_atoms_cache(from);
   let existing_path = await app_language_group_upload(
-    profile,
+    {
+      from,
+      to,
+    },
     group_index,
     result_new,
   );
