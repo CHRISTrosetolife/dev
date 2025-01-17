@@ -1,3 +1,4 @@
+import { list_last } from "./list_last.mjs";
 import { app_language2_wrong } from "./app_language2_wrong.mjs";
 import { app_language2_answers } from "./app_language2_answers.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
@@ -35,6 +36,8 @@ import { object_values } from "./object_values.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { random } from "./random.mjs";
 import { sleep } from "./sleep.mjs";
+import { list_empty_is } from "./list_empty_is.mjs";
+import { list_add } from "./list_add.mjs";
 export async function app_language2_refresh(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
@@ -115,7 +118,8 @@ export async function app_language2_refresh(context) {
             let gap = object_property_get(v, "gap");
             let gaps = object_property_get(context, "gaps");
             let f = list_filter(gaps, (g) => g > gap);
-            if (false) {
+            if (list_empty_is(f)) {
+              list_add(f, list_last(gaps));
             }
             let gap_new = list_first(f) + random();
             object_property_set(v, "gap", gap_new);
