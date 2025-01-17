@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_add } from "./list_add.mjs";
 import { ceiling } from "./ceiling.mjs";
 import { list_size } from "./list_size.mjs";
@@ -82,6 +83,9 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     let factor = 1.2;
     gap = ceiling(gap * factor) + 1;
     list_add(gaps, gap);
+    log({
+      w_size,
+    });
   }
   object_property_set(context, "gaps", gaps);
   await app_language2_refresh(context);
