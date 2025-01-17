@@ -117,6 +117,9 @@ export async function app_language2_refresh(context) {
         each(values, (v2) => {
           let wait = object_property_get(v, "wait");
           if (number_is(wait)) {
+            log({
+              v2,
+            });
             object_property_set(v2, "wait", wait - 1);
           }
         });
