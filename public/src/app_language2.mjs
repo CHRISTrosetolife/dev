@@ -32,7 +32,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   };
   storage_local_initialize(app_fn, "words", {});
   log(i++);
-  await app_language_group_index_changed_inner(context, 0);
+  await app_language_group_index_changed_inner(context, "all");
   log(i++);
   let group = object_property_get(context, "group");
   log(i++);
