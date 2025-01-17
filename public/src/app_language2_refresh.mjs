@@ -35,7 +35,7 @@ export async function app_language2_refresh(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
   let values = object_values(words);
-  list_sort(values, (v) => app_language2_word_index(v));
+  list_sort(values, app_language2_word_index);
   log({
     values,
   });
@@ -75,7 +75,10 @@ export async function app_language2_refresh(context) {
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
     let index = object_property_get(word, "index");
-    let previous = list_filter(values);
+    let previous = list_filter(
+      values,
+      (v) => app_language2_word_index(v) < index,
+    );
     app_language2_word(root, language, question);
     html_br2(root);
     let quiz_container = await app_language_button_ready(
