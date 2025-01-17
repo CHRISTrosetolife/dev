@@ -85,6 +85,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     list_add(gaps, gap);
     log({
       w_size,
+      gap,
     });
   }
   object_property_set(context, "gaps", gaps);
