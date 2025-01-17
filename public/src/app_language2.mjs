@@ -17,6 +17,7 @@ import { list_map } from "./list_map.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language_group_index_changed_inner } from "./app_language_group_index_changed_inner.mjs";
 import { list_concat } from "./list_concat.mjs";
+import { object_properties } from "./object_properties.mjs";
 export async function app_language2(app_fn, language_learn, language_fluent) {
   let root = await app_language_initialize();
   let context = {
@@ -72,6 +73,6 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     object_property_set(w, "gap", null);
     storage_local_set(app_fn, "words", words);
   });
-  let cs = list_size(concated);
+  let w_size = list_size(object_properties(words));
   await app_language2_refresh(context);
 }
