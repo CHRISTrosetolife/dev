@@ -28,6 +28,7 @@ import { list_first } from "./list_first.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
 import { object_values } from "./object_values.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
+import { random } from "./random.mjs";
 export async function app_language2_refresh(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
@@ -99,7 +100,7 @@ export async function app_language2_refresh(context) {
             let gap = object_property_get(v, "gap");
             let gaps = object_property_get(context, "gaps");
             let f = list_filter(gaps, (g) => g > gap);
-            let gap_new = list_first(f);
+            let gap_new = list_first(f) + random();
             object_property_set(v, "gap", gap_new);
             object_property_set(v, "wait", gap_new);
           }
