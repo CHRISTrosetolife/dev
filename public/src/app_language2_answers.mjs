@@ -5,6 +5,8 @@ import { each } from "./each.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language2_word_index } from "./app_language2_word_index.mjs";
 import { list_filter } from "./list_filter.mjs";
+import { list_sort_string } from "./list_sort_string.mjs";
+import { identity } from "./identity.mjs";
 export function app_language2_answers(values_all, v) {
   let word = object_property_get(v, "word");
   let question = object_property_get(word, "question");
@@ -23,5 +25,6 @@ export function app_language2_answers(values_all, v) {
   let mapped = list_map(matches, (m) =>
     object_property_get(object_property_get(m, "word"), "answer"),
   );
+  list_sort_string(mapped, identity);
   return mapped;
 }
