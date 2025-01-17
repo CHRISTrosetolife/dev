@@ -35,8 +35,8 @@ export async function app_language2_refresh(context) {
   log({
     values,
   });
-  let wait_initial = 1;
-  let gap_initial = 1;
+  let wait_initial = 0;
+  let gap_initial = 0;
   let v = list_first(values);
   let vw = object_property_get(v, "wait");
   if (vw === null || vw > 0) {
