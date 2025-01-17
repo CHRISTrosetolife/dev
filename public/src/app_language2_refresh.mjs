@@ -89,7 +89,7 @@ export async function app_language2_refresh(context) {
           if (c === answer) {
             let gap = object_property_get(v, "gap");
             let factor = 1.2;
-            gap = ceiling(gap * factor);
+            gap = ceiling(gap * factor) + 1;
             object_property_set(v, "gap", gap);
             object_property_set(v, "wait", gap);
             log({
