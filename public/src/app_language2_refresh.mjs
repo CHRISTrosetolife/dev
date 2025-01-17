@@ -91,10 +91,7 @@ export async function app_language2_refresh(context) {
     list_add(matches, v);
     let mapped = list_map(
       matches,
-      object_property_get(
-        object_property_get(object, "property_name"),
-        "property_name",
-      ),
+      object_property_get(object_property_get(object, "word"), "answer"),
     );
     log({
       mapped,
