@@ -5,7 +5,10 @@ import { each } from "./each.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language2_word_index } from "./app_language2_word_index.mjs";
 import { list_filter } from "./list_filter.mjs";
-export function app_language2_answers(values_all, index, question, v) {
+export function app_language2_answers(values_all, v) {
+  let word = object_property_get(v, "word");
+  let question = object_property_get(word, "question");
+  let index = object_property_get(word, "index");
   let matches = list_filter(
     values_all,
     (v) =>
