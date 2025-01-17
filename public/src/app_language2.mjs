@@ -68,7 +68,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       }
     }
     let w = {
-      learning: false,
+      learning: true,
       word,
     };
     object_property_set(words, k, w);
