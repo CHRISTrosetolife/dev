@@ -1,3 +1,4 @@
+import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { list_difference } from "./list_difference.mjs";
 import { app_language2_word_index } from "./app_language2_word_index.mjs";
 import { list_sort } from "./list_sort.mjs";
@@ -97,9 +98,10 @@ export async function app_language2_refresh(context) {
     );
     let v_words = list_map_property(values, "word");
     let answers = list_map_property(v_words, "answer");
-    let others = list_difference(answers, matches);
+    let others = list_difference(answers, mapped);
     let other = list_random_item(others);
-    let choices = [answer, other];
+    let answer_text = list_join_comma_space(mapped);
+    let choices = [answer_text, other];
     list_shuffle(choices);
     each(choices, (c) => {
       let b = html_button_width_full_text_click(
@@ -108,7 +110,7 @@ export async function app_language2_refresh(context) {
         async () => {
           html_style_success(b);
           decrease_wait();
-          if (c === answer) {
+          if (c === answer_text) {
             let gap = object_property_get(v, "gap");
             let gaps = object_property_get(context, "gaps");
             let f = list_filter(gaps, (g) => g > gap);
