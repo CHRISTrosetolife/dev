@@ -34,11 +34,10 @@ export async function app_language2_refresh(context) {
   html_clear_scroll_top_centered(root);
   let values = object_values(words);
   list_sort_property(values, "index");
-  list_sort_property(values, "wait");
   log({
-    words,
     values,
   });
+  list_sort_property(values, "wait");
   let wait_initial = 0;
   let gap_initial = 0;
   let v = list_first(values);
