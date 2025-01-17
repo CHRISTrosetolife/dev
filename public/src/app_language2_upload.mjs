@@ -9,7 +9,7 @@ export async function app_language2_upload(from) {
       from,
       to,
     },
-    group_index,
+    "all",
     result_new,
   );
 }
