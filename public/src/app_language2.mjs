@@ -58,14 +58,14 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     );
   });
   let words = storage_local_get(app_fn, "words", {});
-  words = {};
+  if (false) {
+    words = {};
+  }
   object_property_set(context, "words", words);
   each(concated, (word) => {
     let k = object_property_get(word, "key");
     if (object_property_exists(words, k)) {
-      if (false) {
-        return;
-      }
+      return;
     }
     let w = {
       learning: false,
