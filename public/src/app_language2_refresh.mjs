@@ -33,6 +33,7 @@ import { list_sort_property } from "./list_sort_property.mjs";
 import { object_values } from "./object_values.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { random } from "./random.mjs";
+import { sleep } from "./sleep.mjs";
 export async function app_language2_refresh(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
@@ -126,6 +127,7 @@ export async function app_language2_refresh(context) {
         string_combine_multiple([emoji_question(), " ", c]),
         async () => {
           html_style_wrong(b2);
+          await sleep(200);
           decrease_wait();
           object_property_set(v, "gap", gap_initial);
           object_property_set(v, "wait", wait_initial);
