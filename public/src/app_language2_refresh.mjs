@@ -80,7 +80,7 @@ export async function app_language2_refresh(context) {
     let matches = list_filter(
       values_all,
       (v) =>
-        app_language2_word_index(v) <= index &&
+        app_language2_word_index(v) < index &&
         object_property_get(word, "question") === question,
     );
     each(matches, (match) => {
