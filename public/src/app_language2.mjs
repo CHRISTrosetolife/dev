@@ -1,21 +1,5 @@
-import { ceiling } from "./ceiling.mjs";
-import { app_language2_word_p } from "./app_language2_word_p.mjs";
-import { emoji_check } from "./emoji_check.mjs";
-import { emoji_question } from "./emoji_question.mjs";
+import { app_language2_refresh } from "./app_language2_refresh.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
-import { log } from "./log.mjs";
-import { list_shuffle } from "./list_shuffle.mjs";
-import { html_flag_language_get } from "./html_flag_language_get.mjs";
-import { app_language_button_ready } from "./app_language_button_ready.mjs";
-import { app_language2_other } from "./app_language2_other.mjs";
-import { app_language2_word } from "./app_language2_word.mjs";
-import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
-import { html_button_next } from "./html_button_next.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { html_p_text } from "./html_p_text.mjs";
-import { list_sort_property } from "./list_sort_property.mjs";
-import { list_filter_property } from "./list_filter_property.mjs";
-import { object_values } from "./object_values.mjs";
 import { object_properties_select } from "./object_properties_select.mjs";
 import { each_index } from "./each_index.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
@@ -32,17 +16,13 @@ import { list_map } from "./list_map.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language_group_index_changed_inner } from "./app_language_group_index_changed_inner.mjs";
 import { list_concat } from "./list_concat.mjs";
-import { list_without } from "./list_without.mjs";
-import { list_map_property } from "./list_map_property.mjs";
-import { list_random_item } from "./list_random_item.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { number_is } from "./number_is.mjs";
 export async function app_language2(app_fn, language_learn, language_fluent) {
   let root = await app_language_initialize();
   let context = {
     app_fn,
     language_learn,
     language_fluent,
+    root,
   };
   storage_local_initialize(app_fn, "words", {});
   await app_language_group_index_changed_inner(context, 0);
@@ -88,99 +68,5 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     object_property_set(w, "gap", null);
     storage_local_set(app_fn, "words", words);
   });
-  html_clear_scroll_top_centered(root);
-  let values = object_values(words);
-  list_sort_property(values, "wait");
-  let v = list_first(values);
-  let vw = object_property_get(v, "wait");
-  log({
-    v,
-    values,
-  });
-  let unlearned = list_filter_property(values, "learning", false);
-  if (vw === null || vw > 0) {
-    list_sort_property(unlearned, "index");
-    let u = list_first(unlearned);
-    let word = object_property_get(u, "word");
-    let language = object_property_get(word, "language");
-    let question = object_property_get(word, "question");
-    let answer = object_property_get(word, "answer");
-    html_p_text(root, "Remember this:");
-    app_language2_word_titled(root, "Question", language, question);
-    app_language2_word_titled(
-      root,
-      "Answer",
-      app_language2_other(language, language_learn, language_fluent),
-      answer,
-    );
-    html_button_next(root, () => {
-      object_property_set(u, "learning", true);
-      object_property_set(u, "wait", 0);
-      object_property_set(u, "gap", 0);
-      storage_local_set(app_fn, "words", words);
-    });
-  } else {
-    let word = object_property_get(v, "word");
-    let language = object_property_get(word, "language");
-    let question = object_property_get(word, "question");
-    let answer = object_property_get(word, "answer");
-    app_language2_word(root, language, question);
-    let quiz_container;
-    quiz_container = await app_language_button_ready(
-      root,
-      html_flag_language_get(
-        app_language2_other(language, language_learn, language_fluent),
-      ),
-      language_fluent,
-    );
-    let v_words = list_map_property(values, "word");
-    let answers = list_map_property(v_words, "answer");
-    log({
-      words,
-      values,
-      v_words,
-      answers,
-    });
-    let others = list_without(answers, answer);
-    let other = list_random_item(others);
-    let choices = [answer, other];
-    list_shuffle(choices);
-    each(choices, (c) => {
-      html_button_width_full_text_click(
-        quiz_container,
-        string_combine_multiple([emoji_check(), " ", c]),
-        () => {
-          decrease_wait();
-          if (c === answer) {
-            let gap = object_property_get(v, "gap");
-            let factor = 1.2;
-            gap = ceiling(gap * factor);
-            object_property_set(v, "gap", gap);
-            object_property_set(v, "wait", gap);
-          }
-          storage_local_set(app_fn, "words", words);
-        },
-      );
-      html_button_width_full_text_click(
-        quiz_container,
-        string_combine_multiple([emoji_question(), " ", c]),
-        () => {
-          decrease_wait();
-          storage_local_set(app_fn, "words", words);
-        },
-      );
-      function decrease_wait() {
-        each(values, (v2) => {
-          let wait = object_property_get(v, "wait");
-          if (number_is(wait)) {
-            object_property_set(v2, "wait", wait - 1);
-          }
-        });
-      }
-    });
-  }
-  function app_language2_word_titled(body, text, language, rememeber) {
-    let r = html_p_text(body, string_combine_multiple([text, ": "]));
-    app_language2_word_p(body, language, rememeber);
-  }
+  await app_language2_refresh(context, words);
 }
