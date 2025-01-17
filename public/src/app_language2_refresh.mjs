@@ -25,8 +25,8 @@ import { list_first } from "./list_first.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
 import { object_values } from "./object_values.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
-export async function app_language2_refresh(context, words) {
-  let { app_fn, language_learn, language_fluent, root } = context;
+export async function app_language2_refresh(context) {
+  let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
   let values = object_values(words);
   list_sort_property(values, "wait");
