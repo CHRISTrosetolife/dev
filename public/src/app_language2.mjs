@@ -1,3 +1,4 @@
+import { ceiling } from "./ceiling.mjs";
 import { list_size } from "./list_size.mjs";
 import { app_language2_refresh } from "./app_language2_refresh.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -74,5 +75,10 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     storage_local_set(app_fn, "words", words);
   });
   let w_size = list_size(object_properties(words));
+  let gap = 0;
+  while (gap < w_size) {
+    let factor = 1.2;
+    gap = ceiling(gap * factor) + 1;
+  }
   await app_language2_refresh(context);
 }
