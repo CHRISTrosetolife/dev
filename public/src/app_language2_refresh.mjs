@@ -35,7 +35,7 @@ export async function app_language2_refresh(context) {
   html_clear_scroll_top_centered(root);
   let values = object_values(words);
   list_sort(values, (v) =>
-    object_property_get(object_property_get(object, "word"), "index"),
+    object_property_get(object_property_get(v, "word"), "index"),
   );
   log({
     values,
