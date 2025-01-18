@@ -33,7 +33,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   await app_language_group_index_changed_inner(context, "all");
   let group = object_property_get(context, "group");
   let flat = list_flatten(group);
-  let chunked = list_chunk(flat, 2);
+  let chunked = list_chunk(flat, 100);
   let mapped = list_map(chunked, (chunk) =>
     list_concat(
       list_map(chunk, (pair) => ({
