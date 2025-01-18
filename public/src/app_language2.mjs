@@ -68,7 +68,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       object_property_set(
         word_existing,
         "index",
-        object_property_get(object, "property_name"),
+        object_property_get(word, "index"),
       );
       return;
     }
