@@ -67,7 +67,8 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     );
   });
   let words = storage_local_get(app_fn, "words", {});
-  if (false) {
+  if (flat.length === 2) {
+    words = {};
   }
   object_property_set(context, "words", words);
   each(flat2, (word) => {
