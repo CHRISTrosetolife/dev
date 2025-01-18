@@ -1,12 +1,10 @@
+import { html_progress } from "./html_progress.mjs";
 import { app_language_button_ready } from "./app_language_button_ready.mjs";
 import { html_flag_ph } from "./html_flag_ph.mjs";
 import { html_flag_us } from "./html_flag_us.mjs";
 import { html_button_next } from "./html_button_next.mjs";
-import { html_style_success_background } from "./html_style_success_background.mjs";
-import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 import { list_index_by } from "./list_index_by.mjs";
 import { app_language_group_index_component } from "./app_language_group_index_component.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_size } from "./string_size.mjs";
 import { list_without } from "./list_without.mjs";
 import { json_to } from "./json_to.mjs";
@@ -80,7 +78,6 @@ import { number_is } from "./number_is.mjs";
 import { assert } from "./assert.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { list_size } from "./list_size.mjs";
-import { html_style } from "./html_style.mjs";
 export async function app_language_refresh_quiz(context) {
   let {
     root,
@@ -102,29 +99,7 @@ export async function app_language_refresh_quiz(context) {
   let settings_index = list_index_by(settings_choices, settings, equal_json);
   let settings_choices_size = list_size(settings_choices);
   let progress_text = "question";
-  let progress = html_button_width_full_text(
-    root,
-    string_combine_multiple([
-      progress_text,
-      " ",
-      add_1(settings_index),
-      " of ",
-      settings_choices_size,
-    ]),
-  );
-  html_style_success(progress);
-  let progress_percent = (settings_index / settings_choices_size) * 100;
-  html_style(progress, {
-    background: string_combine_multiple([
-      "linear-gradient(90deg, ",
-      html_style_success_background(),
-      " ",
-      progress_percent,
-      "%, white ",
-      progress_percent,
-      "%)",
-    ]),
-  });
+  html_progress(root, progress_text, settings_index, settings_choices_size);
   html_spacer_vertical_2(root);
   let no_mistakes = true;
   let { pair, chunk_size, forwards } = settings;
