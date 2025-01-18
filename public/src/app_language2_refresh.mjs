@@ -1,3 +1,4 @@
+import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_copy } from "./list_copy.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
@@ -136,7 +137,7 @@ export async function app_language2_refresh(context) {
           await app_language2_refresh(context);
         },
       );
-      html_spacer_vertical2(quiz_container);
+      html_spacer_vertical_2(quiz_container);
       let b2 = html_button_width_full_text_click(
         quiz_container,
         string_combine_multiple([emoji_question(), " ", c]),
@@ -153,7 +154,7 @@ export async function app_language2_refresh(context) {
           await app_language2_refresh(context);
         },
       );
-      html_spacer_vertical2(quiz_container);
+      html_spacer_vertical_2(quiz_container);
     });
   }
   function decrease_wait() {
