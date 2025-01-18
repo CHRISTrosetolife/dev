@@ -1,4 +1,5 @@
-import { html_button_width_full_text_click_br } from "./html_button_width_full_text_click_br.mjs";
+import { html_spacer_vertical } from "./html_spacer_vertical.mjs";
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_copy } from "./list_copy.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_last } from "./list_last.mjs";
@@ -111,7 +112,7 @@ export async function app_language2_refresh(context) {
     let choices = [answer_text, other];
     list_shuffle(choices);
     each(choices, (c) => {
-      let b = html_button_width_full_text_click_br(
+      let b = html_button_width_full_text_click(
         quiz_container,
         string_combine_multiple([emoji_check(), " ", c]),
         async () => {
@@ -136,7 +137,8 @@ export async function app_language2_refresh(context) {
           await app_language2_refresh(context);
         },
       );
-      let b2 = html_button_width_full_text_click_br(
+      html_spacer_vertical();
+      let b2 = html_button_width_full_text_click(
         quiz_container,
         string_combine_multiple([emoji_question(), " ", c]),
         async () => {
