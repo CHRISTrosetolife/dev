@@ -1,3 +1,4 @@
+import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { list_flatten } from "./list_flatten.mjs";
 import { list_chunk } from "./list_chunk.mjs";
 import { list_add } from "./list_add.mjs";
@@ -23,6 +24,7 @@ import { list_concat } from "./list_concat.mjs";
 import { object_properties } from "./object_properties.mjs";
 export async function app_language2(app_fn, language_learn, language_fluent) {
   let root = await app_language_initialize();
+  html_style_default_font_size(3.5);
   let context = {
     app_fn,
     language_learn,
