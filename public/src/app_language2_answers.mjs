@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_add } from "./list_add.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -18,6 +19,9 @@ export function app_language2_answers(values_all, v) {
       object_property_get(object_property_get(v, "word"), "question") ===
         question,
   );
+  log({
+    matches,
+  });
   each(matches, (match) => {
     object_property_set(match, "skip", true);
   });
