@@ -35,8 +35,10 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   await app_language_group_index_changed_inner(context, "all");
   let group = object_property_get(context, "group");
   group = [
-    ["tawo", "man"],
-    ["man", "also"],
+    [
+      ["tawo", "man"],
+      ["man", "also"],
+    ],
   ];
   let flat = list_flatten(group);
   let chunked = list_chunk(flat, 24);
