@@ -111,6 +111,7 @@ export async function app_language2_refresh(context) {
     let choices = [answer_text, other];
     list_shuffle(choices);
     each(choices, (c) => {
+      html_br2(quiz_container);
       let b = html_button_width_full_text_click(
         quiz_container,
         string_combine_multiple([emoji_check(), " ", c]),
@@ -136,6 +137,7 @@ export async function app_language2_refresh(context) {
           await app_language2_refresh(context);
         },
       );
+      html_br2(quiz_container);
       let b2 = html_button_width_full_text_click(
         quiz_container,
         string_combine_multiple([emoji_question(), " ", c]),
