@@ -1,3 +1,4 @@
+import { list_size } from "./list_size.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_copy } from "./list_copy.mjs";
@@ -69,7 +70,7 @@ export async function app_language2_refresh(context) {
     html_progress(
       root,
       "Word pair",
-      lislt_size(list_filter_property(values, "learning", true)),
+      list_size(list_filter_property(values, "learning", true)),
     );
     html_p_text(root, "Remember this:");
     app_language2_word_titled(root, "Question", language, question);
