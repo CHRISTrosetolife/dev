@@ -1,3 +1,4 @@
+import { list_copy } from "./list_copy.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_last } from "./list_last.mjs";
 import { app_language2_wrong } from "./app_language2_wrong.mjs";
@@ -48,6 +49,7 @@ export async function app_language2_refresh(context) {
   log({
     values,
   });
+  values = list_copy(values);
   list_sort_property(values, "wait");
   let wait_initial = 0;
   let gap_initial = 0;
