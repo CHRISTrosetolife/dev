@@ -1,3 +1,4 @@
+import { number_locale } from "./number_locale.mjs";
 import { html_style_success_background } from "./html_style_success_background.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_style_success } from "./html_style_success.mjs";
@@ -7,7 +8,13 @@ import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 export function html_progress(root, progress_text, index, count) {
   let progress = html_button_width_full_text(
     root,
-    string_combine_multiple([progress_text, " ", add_1(index), " of ", count]),
+    string_combine_multiple([
+      progress_text,
+      " ",
+      add_1(index),
+      " of ",
+      number_locale(count),
+    ]),
   );
   html_style_success(progress);
   let progress_percent = (index / count) * 100;
