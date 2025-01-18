@@ -96,12 +96,11 @@ export async function app_language_refresh_quiz(context) {
   let settings = storage_local_get(context.app_fn, "quiz_settings");
   html_clear_scroll_top_centered(root);
   app_language_group_index_component(context);
-  let settings_choices_size = list_size(settings_choices);
   html_progress(
     root,
     "question",
     list_index_by(settings_choices, settings, equal_json),
-    settings_choices_size,
+    list_size(settings_choices),
   );
   html_spacer_vertical_2(root);
   let no_mistakes = true;
