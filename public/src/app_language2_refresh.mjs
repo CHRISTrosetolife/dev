@@ -1,4 +1,3 @@
-import { html_spacer_vertical } from "./html_spacer_vertical.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_copy } from "./list_copy.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
@@ -154,7 +153,7 @@ export async function app_language2_refresh(context) {
           await app_language2_refresh(context);
         },
       );
-      html_spacer_vertical(quiz_container);
+      html_spacer_vertical2(quiz_container);
     });
   }
   function decrease_wait() {
