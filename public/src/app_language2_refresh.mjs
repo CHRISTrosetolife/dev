@@ -41,6 +41,7 @@ import { random } from "./random.mjs";
 import { sleep } from "./sleep.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_add } from "./list_add.mjs";
+import { html_progress } from "./html_progress.mjs";
 export async function app_language2_refresh(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
@@ -65,6 +66,7 @@ export async function app_language2_refresh(context) {
     let question = object_property_get(word, "question");
     let mapped = app_language2_answers(values_all, u);
     let answer_text = list_join_comma_space(mapped);
+    html_progress(root);
     html_p_text(root, "Remember this:");
     app_language2_word_titled(root, "Question", language, question);
     app_language2_word_titled(
