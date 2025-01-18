@@ -66,8 +66,11 @@ export async function app_language2_refresh(context) {
     let question = object_property_get(word, "question");
     let mapped = app_language2_answers(values_all, u);
     let answer_text = list_join_comma_space(mapped);
-    lislt_size(list_filter_property(values, "learning", true));
-    html_progress(root, "Word pair");
+    html_progress(
+      root,
+      "Word pair",
+      lislt_size(list_filter_property(values, "learning", true)),
+    );
     html_p_text(root, "Remember this:");
     app_language2_word_titled(root, "Question", language, question);
     app_language2_word_titled(
