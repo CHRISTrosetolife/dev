@@ -1,4 +1,3 @@
-import { list_take } from "./list_take.mjs";
 import { list_flatten } from "./list_flatten.mjs";
 import { list_chunk } from "./list_chunk.mjs";
 import { list_add } from "./list_add.mjs";
@@ -34,7 +33,6 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   await app_language_group_index_changed_inner(context, "all");
   let group = object_property_get(context, "group");
   let flat = list_flatten(group);
-  flat = list_take(flat, 5);
   let chunked = list_chunk(flat, 2);
   let mapped = list_map(chunked, (chunk) =>
     list_concat(
