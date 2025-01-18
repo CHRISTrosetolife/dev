@@ -1,3 +1,4 @@
+import { list_flatten } from "./list_flatten.mjs";
 import { list_chunk } from "./list_chunk.mjs";
 import { list_add } from "./list_add.mjs";
 import { ceiling } from "./ceiling.mjs";
@@ -12,7 +13,6 @@ import { object_property_set } from "./object_property_set.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { each } from "./each.mjs";
-import { list_adder } from "./list_adder.mjs";
 import { app_language_initialize } from "./app_language_initialize.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
@@ -32,11 +32,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   storage_local_initialize(app_fn, "words", {});
   await app_language_group_index_changed_inner(context, "all");
   let group = object_property_get(context, "group");
-  let flat = list_adder((la) => {
-    each(group, (atom) => {
-      each(atom, la);
-    });
-  });
+  let flat = list_flatten(group);
   let chunked = list_chunk(flat, 24);
   let mapped = list_map(chunked, (chunk) =>
     list_concat(
