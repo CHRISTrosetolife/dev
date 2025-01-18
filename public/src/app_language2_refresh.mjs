@@ -137,7 +137,7 @@ export async function app_language2_refresh(context) {
           await app_language2_refresh(context);
         },
       );
-      html_spacer_vertical();
+      html_spacer_vertical(quiz_container);
       let b2 = html_button_width_full_text_click(
         quiz_container,
         string_combine_multiple([emoji_question(), " ", c]),
@@ -154,6 +154,7 @@ export async function app_language2_refresh(context) {
           await app_language2_refresh(context);
         },
       );
+      html_spacer_vertical(quiz_container);
     });
   }
   function decrease_wait() {
