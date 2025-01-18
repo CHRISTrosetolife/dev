@@ -1,3 +1,4 @@
+import { list_chunk } from "./list_chunk.mjs";
 import { list_add } from "./list_add.mjs";
 import { ceiling } from "./ceiling.mjs";
 import { list_size } from "./list_size.mjs";
@@ -36,6 +37,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       each(atom, la);
     });
   });
+  let chunked = list_chunk(flat, 24);
   let concated = list_concat(
     list_map(flat, (pair) => ({
       question: list_first(pair),
