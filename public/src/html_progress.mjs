@@ -11,7 +11,7 @@ export function html_progress(root, progress_text, index, count) {
     string_combine_multiple([
       progress_text,
       " ",
-      add_1(index),
+      number_locale(add_1(index)),
       " of ",
       number_locale(count),
     ]),
