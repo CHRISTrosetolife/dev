@@ -101,10 +101,12 @@ export async function app_language_refresh_quiz(context) {
   app_language_group_index_component(context);
   let settings_index = list_index_by(settings_choices, settings, equal_json);
   let settings_choices_size = list_size(settings_choices);
+  let progress_text = "question";
   let progress = html_button_width_full_text(
     root,
     string_combine_multiple([
-      "question ",
+      progress_text,
+      " ",
       add_1(settings_index),
       " of ",
       settings_choices_size,
