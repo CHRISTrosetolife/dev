@@ -38,6 +38,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     });
   });
   let chunked = list_chunk(flat, 24);
+  let mapped = list_map(chunked, (chunk) => {});
   let concated = list_concat(
     list_map(flat, (pair) => ({
       question: list_first(pair),
