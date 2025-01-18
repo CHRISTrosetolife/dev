@@ -65,6 +65,11 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     if (object_property_exists(words, k)) {
       let existing = object_property_get(words, k);
       let word_existing = object_property_get(existing, "word");
+      object_property_set(
+        word_existing,
+        "index",
+        object_property_get(object, "property_name"),
+      );
       return;
     }
     let w = {
