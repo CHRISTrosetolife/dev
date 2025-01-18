@@ -98,8 +98,7 @@ export async function app_language_refresh_quiz(context) {
   app_language_group_index_component(context);
   let settings_index = list_index_by(settings_choices, settings, equal_json);
   let settings_choices_size = list_size(settings_choices);
-  let progress_text = "question";
-  html_progress(root, progress_text, settings_index, settings_choices_size);
+  html_progress(root, "question", settings_index, settings_choices_size);
   html_spacer_vertical_2(root);
   let no_mistakes = true;
   let { pair, chunk_size, forwards } = settings;
