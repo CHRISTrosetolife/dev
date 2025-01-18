@@ -71,6 +71,7 @@ export async function app_language2_refresh(context) {
       root,
       "Word pair",
       list_size(list_filter_property(values, "learning", true)),
+      list_size(values),
     );
     html_p_text(root, "Remember this:");
     app_language2_word_titled(root, "Question", language, question);
