@@ -1,3 +1,4 @@
+import { html_button_width_full_text_click_br } from "./html_button_width_full_text_click_br.mjs";
 import { list_copy } from "./list_copy.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_last } from "./list_last.mjs";
@@ -16,7 +17,6 @@ import { number_is } from "./number_is.mjs";
 import { emoji_question } from "./emoji_question.mjs";
 import { emoji_check } from "./emoji_check.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { each } from "./each.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { list_random_item } from "./list_random_item.mjs";
@@ -111,7 +111,7 @@ export async function app_language2_refresh(context) {
     let choices = [answer_text, other];
     list_shuffle(choices);
     each(choices, (c) => {
-      let b = html_button_width_full_text_click(
+      let b = html_button_width_full_text_click_br(
         quiz_container,
         string_combine_multiple([emoji_check(), " ", c]),
         async () => {
@@ -136,7 +136,7 @@ export async function app_language2_refresh(context) {
           await app_language2_refresh(context);
         },
       );
-      let b2 = html_button_width_full_text_click(
+      let b2 = html_button_width_full_text_click_br(
         quiz_container,
         string_combine_multiple([emoji_question(), " ", c]),
         async () => {
