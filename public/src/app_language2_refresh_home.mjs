@@ -1,4 +1,4 @@
-import { storage_local_initialize } from "./storage_local_initialize.mjs";
+import { storage_local_set } from "./storage_local_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language2_factor_get } from "./app_language2_factor_get.mjs";
 import { range_from } from "./range_from.mjs";
@@ -21,7 +21,7 @@ export function app_language2_refresh_home(context) {
   each(factors, (f) => {
     let b = html_button_width_full_text_click(root, f, () => {
       let app_fn = object_property_get(context, "app_fn");
-      storage_local_initialize(app_fn, "factor", f);
+      storage_local_set(app_fn, "factor", f);
       app_language2_refresh_home(context);
     });
     if (f === factor) {
