@@ -1,3 +1,4 @@
+import { json_to } from "./json_to.mjs";
 import { html_flag } from "./html_flag.mjs";
 import { app_language2_refresh_home } from "./app_language2_refresh_home.mjs";
 import { html_button_home } from "./html_button_home.mjs";
@@ -62,9 +63,7 @@ export async function app_language2_refresh_learn(context) {
     values,
   });
   each(values, (v) => {
-    log({
-      v,
-    });
+    log(json_to(v));
   });
   values = list_copy(values);
   list_sort_property(values, "wait");
