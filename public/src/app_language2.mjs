@@ -1,3 +1,4 @@
+import { app_language2_words_get } from "./app_language2_words_get.mjs";
 import { app_language2_gaps_set } from "./app_language2_gaps_set.mjs";
 import { app_language2_refresh_learn } from "./app_language2_refresh_learn.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
@@ -9,7 +10,6 @@ import { each_index } from "./each_index.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { json_to } from "./json_to.mjs";
 import { object_property_set } from "./object_property_set.mjs";
-import { storage_local_get } from "./storage_local_get.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { each } from "./each.mjs";
 import { app_language_initialize } from "./app_language_initialize.mjs";
@@ -63,7 +63,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       json_to(object_properties_select(c, properties)),
     );
   });
-  let words = storage_local_get(app_fn, "words", {});
+  let words = app_language2_words_get(app_fn);
   if (flat.length === 2) {
   }
   object_property_set(context, "words", words);
