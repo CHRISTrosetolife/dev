@@ -26,7 +26,7 @@ export function app_share_main(context) {
       code: "urdgvu+engbsb",
     },
     {
-      text: "Swahili and English",
+      text: "Swahili +254 and English",
       code: "swhulb+engbsb",
     },
     {
