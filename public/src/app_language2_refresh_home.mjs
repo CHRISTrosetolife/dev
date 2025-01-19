@@ -1,3 +1,4 @@
+import { app_language2_factor_get } from "./app_language2_factor_get.mjs";
 import { range_from } from "./range_from.mjs";
 import { each } from "./each.mjs";
 import { app_language2_refresh_learn } from "./app_language2_refresh_learn.mjs";
@@ -13,7 +14,8 @@ export function app_language2_refresh_home(context) {
   });
   let n = range_from(11, 30);
   let factors = list_map(n, (i) => i / 10);
-  each(factors, (factor) => {
-    html_button_width_full_text_click(root, factor, () => {});
+  let factor = app_language2_factor_get(context);
+  each(factors, (f) => {
+    html_button_width_full_text_click(root, f, () => {});
   });
 }
