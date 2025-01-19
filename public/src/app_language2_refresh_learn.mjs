@@ -47,6 +47,7 @@ import { list_empty_is } from "./list_empty_is.mjs";
 import { list_add } from "./list_add.mjs";
 import { html_progress } from "./html_progress.mjs";
 import { html_spacer_vertical } from "./html_spacer_vertical.mjs";
+import { html_span_text } from "./html_span_text.mjs";
 export async function app_language2_refresh_learn(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
@@ -130,7 +131,7 @@ export async function app_language2_refresh_learn(context) {
     each(choices, (c) => {
       let b = html_button_width_full_text_click(
         quiz_container,
-        string_combine_multiple([emoji_check(), " ", c]),
+        "",
         async () => {
           decrease_wait();
           if (c === answer_text) {
@@ -153,11 +154,17 @@ export async function app_language2_refresh_learn(context) {
           await app_language2_refresh_learn(context);
         },
       );
-      html_flag(b, f);
+      html_flag(
+        b,
+        html_flag_language_get(
+          app_language2_other(language, language_learn, language_fluent),
+        ),
+      );
+      html_span_text(b, string_combine_multiple([emoji_check(), " ", c]));
       html_spacer_vertical_2(quiz_container);
       let b2 = html_button_width_full_text_click(
         quiz_container,
-        string_combine_multiple([emoji_question(), " ", c]),
+        "",
         async () => {
           decrease_wait();
           if (c === answer_text) {
@@ -171,6 +178,13 @@ export async function app_language2_refresh_learn(context) {
           await app_language2_refresh_learn(context);
         },
       );
+      html_flag(
+        b2,
+        html_flag_language_get(
+          app_language2_other(language, language_learn, language_fluent),
+        ),
+      );
+      html_span_text(b2, string_combine_multiple([emoji_question(), " ", c]));
       html_spacer_vertical_2(quiz_container);
     });
   }
