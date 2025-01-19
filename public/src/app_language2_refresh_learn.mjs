@@ -1,3 +1,4 @@
+import { list_take } from "./list_take.mjs";
 import { json_to } from "./json_to.mjs";
 import { html_flag } from "./html_flag.mjs";
 import { app_language2_refresh_home } from "./app_language2_refresh_home.mjs";
@@ -62,7 +63,7 @@ export async function app_language2_refresh_learn(context) {
   log({
     values,
   });
-  each(values, (v) => {
+  each(list_take(values, 200), (v) => {
     log(json_to(v));
   });
   values = list_copy(values);
