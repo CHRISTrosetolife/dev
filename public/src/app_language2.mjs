@@ -1,5 +1,5 @@
+import { app_language2_gaps_update } from "./app_language2_gaps_update.mjs";
 import { app_language2_words_get } from "./app_language2_words_get.mjs";
-import { app_language2_gaps_set } from "./app_language2_gaps_set.mjs";
 import { app_language2_refresh_learn } from "./app_language2_refresh_learn.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { list_flatten } from "./list_flatten.mjs";
@@ -89,6 +89,6 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     object_property_set(w, "gap", null);
   });
   storage_local_set(app_fn, "words", words);
-  app_language2_gaps_set(context, factor);
+  app_language2_gaps_update(context, factor);
   await app_language2_refresh_learn(context);
 }
