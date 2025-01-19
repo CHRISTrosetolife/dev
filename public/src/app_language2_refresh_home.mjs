@@ -6,6 +6,7 @@ import { html_button_back } from "./html_button_back.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { list_map } from "./list_map.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
+import { html_style_success } from "./html_style_success.mjs";
 export function app_language2_refresh_home(context) {
   let { root } = context;
   html_clear_scroll_top_centered(root);
@@ -18,6 +19,7 @@ export function app_language2_refresh_home(context) {
   each(factors, (f) => {
     let b = html_button_width_full_text_click(root, f, () => {});
     if (f === factor) {
+      html_style_success(b);
     }
   });
 }
