@@ -3,5 +3,7 @@ import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered
 export function app_language2_refresh_home(context) {
   let { root } = context;
   html_clear_scroll_top_centered(root);
-  html_button_back();
+  html_button_back(root, () => {
+    app_language2_refresh_home(context);
+  });
 }
