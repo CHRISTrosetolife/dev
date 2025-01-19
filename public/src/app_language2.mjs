@@ -1,10 +1,8 @@
+import { app_language2_gaps_set } from "./app_language2_gaps_set.mjs";
 import { app_language2_refresh_learn } from "./app_language2_refresh_learn.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { list_flatten } from "./list_flatten.mjs";
 import { list_chunk } from "./list_chunk.mjs";
-import { list_add } from "./list_add.mjs";
-import { ceiling } from "./ceiling.mjs";
-import { list_size } from "./list_size.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_properties_select } from "./object_properties_select.mjs";
 import { each_index } from "./each_index.mjs";
@@ -21,7 +19,6 @@ import { list_map } from "./list_map.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language_group_index_changed_inner } from "./app_language_group_index_changed_inner.mjs";
 import { list_concat } from "./list_concat.mjs";
-import { object_properties } from "./object_properties.mjs";
 export async function app_language2(app_fn, language_learn, language_fluent) {
   let root = await app_language_initialize();
   html_style_default_font_size(3.5);
@@ -93,14 +90,6 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   });
   storage_local_set(app_fn, "words", words);
   let factor = 1.2;
-  let w_size = list_size(object_properties(words));
-  let gap = 0;
-  let gaps = [0];
-  while (gap < w_size) {
-    gap = ceiling(gap * factor) + 1;
-    list_add(gaps, gap);
-  }
-  list_add(gaps, w_size);
-  object_property_set(context, "gaps", gaps);
+  app_language2_gaps_set(words, factor, context);
   await app_language2_refresh_learn(context);
 }
