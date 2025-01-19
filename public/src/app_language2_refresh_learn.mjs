@@ -61,7 +61,11 @@ export async function app_language2_refresh_learn(context) {
   log({
     values,
   });
-  each(list, (item) => {});
+  each(values, (v) => {
+    log({
+      v,
+    });
+  });
   values = list_copy(values);
   list_sort_property(values, "wait");
   let wait_initial = 0;
