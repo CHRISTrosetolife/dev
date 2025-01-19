@@ -47,6 +47,7 @@ import { list_empty_is } from "./list_empty_is.mjs";
 import { list_add } from "./list_add.mjs";
 import { html_progress } from "./html_progress.mjs";
 import { html_span_text } from "./html_span_text.mjs";
+import { html_style_bold } from "./html_style_bold.mjs";
 export async function app_language2_refresh_learn(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
@@ -160,6 +161,7 @@ export async function app_language2_refresh_learn(context) {
           app_language2_other(language, language_learn, language_fluent),
         ),
       );
+      html_style_bold(b);
       html_span_text(b, string_combine_multiple([" ", c]));
       html_spacer_vertical_2(quiz_container);
       let b2 = html_button_width_full_text_click(
@@ -185,6 +187,7 @@ export async function app_language2_refresh_learn(context) {
           app_language2_other(language, language_learn, language_fluent),
         ),
       );
+      html_style_bold(b2);
       html_span_text(b2, string_combine_multiple([" ", c]));
       html_spacer_vertical_2(quiz_container);
     });
