@@ -3,7 +3,7 @@ import { list_add } from "./list_add.mjs";
 import { ceiling } from "./ceiling.mjs";
 import { object_properties } from "./object_properties.mjs";
 import { list_size } from "./list_size.mjs";
-export function app_language2_gaps_set(factor, context) {
+export function app_language2_gaps_set(context, factor) {
   let w_size = list_size(object_properties(words));
   let gap = 0;
   let gaps = [0];
