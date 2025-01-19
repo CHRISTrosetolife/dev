@@ -63,7 +63,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       json_to(object_properties_select(c, properties)),
     );
   });
-  let words = app_language2_words_get(app_fn);
+  let words = app_language2_words_get(context);
   if (flat.length === 2) {
   }
   object_property_set(context, "words", words);
