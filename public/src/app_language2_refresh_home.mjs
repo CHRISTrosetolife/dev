@@ -1,3 +1,7 @@
+import { app_language2_word_index } from "./app_language2_word_index.mjs";
+import { list_sort } from "./list_sort.mjs";
+import { list_filter_property } from "./list_filter_property.mjs";
+import { object_values } from "./object_values.mjs";
 import { app_language2_gaps_update } from "./app_language2_gaps_update.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
@@ -19,6 +23,10 @@ export function app_language2_refresh_home(context) {
   });
   html_button_width_full_text_click(root, "values", () => {
     html_clear_scroll_top_centered(root);
+    let values_all = object_values(words);
+    let values = list_filter_property(values_all, "skip", false);
+    list_sort(values, app_language2_word_index);
+    each(list, (item) => {});
   });
   html_p_text(
     root,
