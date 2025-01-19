@@ -26,6 +26,10 @@ export function app_share_main(context) {
       code: "urdgvu+engbsb",
     },
     {
+      text: "Swahili and English",
+      code: "swhulb+engbsb",
+    },
+    {
       text: "Hindi and English",
       code: "hin2017+engbsb",
     },
