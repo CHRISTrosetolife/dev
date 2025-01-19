@@ -12,5 +12,5 @@ export function app_language2_refresh_home(context) {
   });
   let n = range_from(11, 30);
   let mapped = list_map(n, (i) => i / 10);
-  each(list, (item) => {});
+  each(mapped, (factors) => {});
 }
