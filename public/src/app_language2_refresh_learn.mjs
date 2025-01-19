@@ -46,7 +46,6 @@ import { sleep } from "./sleep.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_add } from "./list_add.mjs";
 import { html_progress } from "./html_progress.mjs";
-import { html_spacer_vertical } from "./html_spacer_vertical.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 export async function app_language2_refresh_learn(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
@@ -54,7 +53,7 @@ export async function app_language2_refresh_learn(context) {
   html_button_home(root, () => {
     app_language2_refresh_home(context);
   });
-  html_spacer_vertical(root);
+  html_spacer_vertical_2(root);
   let values_all = object_values(words);
   let values = list_filter_property(values_all, "skip", false);
   list_sort(values, app_language2_word_index);
