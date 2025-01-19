@@ -1,7 +1,7 @@
+import { html_button_home } from "./html_button_home.mjs";
 import { html_script_axios } from "./html_script_axios.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
-import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
 import { list_second } from "./list_second.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_unique } from "./list_unique.mjs";
@@ -80,7 +80,7 @@ export async function app_yyy8Uu() {
     });
   }
   function button_home() {
-    html_button_width_full_text_click_home(root, refresh_home);
+    html_button_home(root, refresh_home);
   }
   let show_latin = true;
   async function refresh_chapter(chapter_index) {

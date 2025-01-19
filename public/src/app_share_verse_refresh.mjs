@@ -1,5 +1,5 @@
+import { html_button_home } from "./html_button_home.mjs";
 import { app_share_main } from "./app_share_main.mjs";
-import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { html_style_link } from "./html_style_link.mjs";
 import { list_includes } from "./list_includes.mjs";
@@ -97,7 +97,7 @@ export async function app_share_verse_refresh(
       ]),
     ),
   );
-  html_button_width_full_text_click_home(root, () => app_share_main(context));
+  html_button_home(root, () => app_share_main(context));
   function bible_folders_text_set(value) {
     bible_folders_text = value;
     bible_folders = string_split_plus(bible_folders_text);

@@ -1,3 +1,4 @@
+import { html_button_home } from "./html_button_home.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { html_button_me_email } from "./html_button_me_email.mjs";
 import { string_delimit_double } from "./string_delimit_double.mjs";
@@ -9,7 +10,6 @@ import { html_scripts_load } from "./html_scripts_load.mjs";
 import { summation } from "./summation.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
-import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { html_button_width_full_text_click_alternate_code } from "./html_button_width_full_text_click_alternate_code.mjs";
@@ -217,6 +217,6 @@ export async function app_learn_code() {
     button_home();
   }
   function button_home() {
-    html_button_width_full_text_click_home(root, refresh_main);
+    html_button_home(root, refresh_main);
   }
 }

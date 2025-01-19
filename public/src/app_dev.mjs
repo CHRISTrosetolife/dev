@@ -1,3 +1,4 @@
+import { html_button_home } from "./html_button_home.mjs";
 import { html_scripts_load } from "./html_scripts_load.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { each } from "./each.mjs";
@@ -8,7 +9,6 @@ import { global_files_initialize } from "./global_files_initialize.mjs";
 import { html_button_view_sorce } from "./html_button_view_sorce.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { list_map } from "./list_map.mjs";
-import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -66,7 +66,7 @@ export async function app_dev() {
     await s.screen(root);
     let s_function = list_get(screens_functions, index);
     html_buttons_next_previous(root, screen, index, list_index_last(screens));
-    html_button_width_full_text_click_home(root, home);
+    html_button_home(root, home);
     html_spacer_vertical_2(root);
     let name = s_function.name;
     html_button_view_sorce(root, name);
