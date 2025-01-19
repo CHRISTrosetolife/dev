@@ -24,6 +24,7 @@ export function app_language2_refresh_home(context) {
     await app_language2_refresh_learn(context);
   });
   html_button_width_full_text_click(root, "values", () => {
+    let { root, words } = context;
     html_clear_scroll_top_centered(root);
     let values_all = object_values(words);
     let values = list_filter_property(values_all, "skip", false);
