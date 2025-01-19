@@ -58,6 +58,9 @@ export async function app_language2_refresh_learn(context) {
   let values_all = object_values(words);
   let values = list_filter_property(values_all, "skip", false);
   list_sort(values, app_language2_word_index);
+  log({
+    values,
+  });
   each(list, (item) => {});
   values = list_copy(values);
   list_sort_property(values, "wait");
