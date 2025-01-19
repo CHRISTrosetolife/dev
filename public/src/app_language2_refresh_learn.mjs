@@ -45,7 +45,7 @@ import { sleep } from "./sleep.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_add } from "./list_add.mjs";
 import { html_progress } from "./html_progress.mjs";
-export async function app_language2_refresh(context) {
+export async function app_language2_refresh_learn(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root, () => {
     app_language2_refresh_home(context);
@@ -93,7 +93,7 @@ export async function app_language2_refresh(context) {
       object_property_set(u, "wait", wait_initial);
       object_property_set(u, "gap", gap_initial);
       storage_local_set(app_fn, "words", words);
-      await app_language2_refresh(context);
+      await app_language2_refresh_learn(context);
     });
   } else {
     let word = object_property_get(v, "word");
@@ -147,7 +147,7 @@ export async function app_language2_refresh(context) {
           }
           storage_local_set(app_fn, "words", words);
           await sleep(200);
-          await app_language2_refresh(context);
+          await app_language2_refresh_learn(context);
         },
       );
       html_spacer_vertical_2(quiz_container);
@@ -164,7 +164,7 @@ export async function app_language2_refresh(context) {
           app_language2_wrong(v, gap_initial, wait_initial);
           storage_local_set(app_fn, "words", words);
           await sleep(200);
-          await app_language2_refresh(context);
+          await app_language2_refresh_learn(context);
         },
       );
       html_spacer_vertical_2(quiz_container);

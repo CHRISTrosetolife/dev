@@ -1,10 +1,10 @@
+import { app_language2_refresh_learn } from "./app_language2_refresh_learn.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { list_flatten } from "./list_flatten.mjs";
 import { list_chunk } from "./list_chunk.mjs";
 import { list_add } from "./list_add.mjs";
 import { ceiling } from "./ceiling.mjs";
 import { list_size } from "./list_size.mjs";
-import { app_language2_refresh } from "./app_language2_refresh.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_properties_select } from "./object_properties_select.mjs";
 import { each_index } from "./each_index.mjs";
@@ -102,5 +102,5 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
   }
   list_add(gaps, w_size);
   object_property_set(context, "gaps", gaps);
-  await app_language2_refresh(context);
+  await app_language2_refresh_learn(context);
 }
