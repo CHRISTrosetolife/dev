@@ -1,3 +1,4 @@
+import { app_language2_refresh_home } from "./app_language2_refresh_home.mjs";
 import { html_button_home } from "./html_button_home.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
@@ -46,7 +47,9 @@ import { list_add } from "./list_add.mjs";
 import { html_progress } from "./html_progress.mjs";
 export async function app_language2_refresh(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
-  html_clear_scroll_top_centered(root, () => {});
+  html_clear_scroll_top_centered(root, () => {
+    app_language2_refresh_home(context);
+  });
   html_button_home(root);
   let values_all = object_values(words);
   let values = list_filter_property(values_all, "skip", false);
