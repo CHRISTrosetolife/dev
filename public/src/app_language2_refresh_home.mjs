@@ -1,3 +1,4 @@
+import { app_language2_gaps_update } from "./app_language2_gaps_update.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -27,6 +28,7 @@ export function app_language2_refresh_home(context) {
     let b = html_button_width_full_text_click(root, f, () => {
       let app_fn = object_property_get(context, "app_fn");
       storage_local_set(app_fn, "factor", f);
+      app_language2_gaps_update(context);
       app_language2_refresh_home(context);
     });
     if (f === factor) {
