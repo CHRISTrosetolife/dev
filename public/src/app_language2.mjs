@@ -89,6 +89,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     object_property_set(w, "gap", null);
   });
   storage_local_set(app_fn, "words", words);
-  app_language2_gaps_set(context, 1.2);
+  let factor = storage_local_initialize(app_fn, "factor", 1.2);
+  app_language2_gaps_set(context, factor);
   await app_language2_refresh_learn(context);
 }
