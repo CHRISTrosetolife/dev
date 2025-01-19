@@ -1,3 +1,4 @@
+import { html_flag } from "./html_flag.mjs";
 import { app_language2_refresh_home } from "./app_language2_refresh_home.mjs";
 import { html_button_home } from "./html_button_home.mjs";
 import { list_size } from "./list_size.mjs";
@@ -152,6 +153,7 @@ export async function app_language2_refresh_learn(context) {
           await app_language2_refresh_learn(context);
         },
       );
+      html_flag(b, f);
       html_spacer_vertical_2(quiz_container);
       let b2 = html_button_width_full_text_click(
         quiz_container,
