@@ -16,7 +16,7 @@ export function app_language2_refresh_home(context) {
   let factors = list_map(n, (i) => i / 10);
   let factor = app_language2_factor_get(context);
   each(factors, (f) => {
-    if (false) {
+    if (f === factor) {
       html_button_width_full_text_click(root, f, () => {});
     }
   });
