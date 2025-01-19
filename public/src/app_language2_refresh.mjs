@@ -1,3 +1,4 @@
+import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -46,6 +47,7 @@ import { html_progress } from "./html_progress.mjs";
 export async function app_language2_refresh(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
+  html_button_width_full_text_click_home();
   let values_all = object_values(words);
   let values = list_filter_property(values_all, "skip", false);
   list_sort(values, app_language2_word_index);
