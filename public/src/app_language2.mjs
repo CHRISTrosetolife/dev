@@ -92,11 +92,11 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     object_property_set(w, "gap", null);
   });
   storage_local_set(app_fn, "words", words);
+  let factor = 1.2;
   let w_size = list_size(object_properties(words));
   let gap = 0;
   let gaps = [0];
   while (gap < w_size) {
-    let factor = 1.2;
     gap = ceiling(gap * factor) + 1;
     list_add(gaps, gap);
   }
