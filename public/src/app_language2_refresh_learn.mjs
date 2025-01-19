@@ -153,7 +153,7 @@ export async function app_language2_refresh_learn(context) {
           await app_language2_refresh_learn(context);
         },
       );
-      html_span_text(b, emoji_check());
+      html_span_text(b2, string_combine_multiple([emoji_check(), " "]));
       html_flag(
         b,
         html_flag_language_get(
