@@ -11,6 +11,6 @@ export function app_language2_refresh_home(context) {
     await app_language2_refresh_learn(context);
   });
   let n = range_from(11, 30);
-  let mapped = list_map(n, (i) => i / 10);
-  each(mapped, (factors) => {});
+  let factors = list_map(n, (i) => i / 10);
+  each(factors, (factor) => {});
 }
