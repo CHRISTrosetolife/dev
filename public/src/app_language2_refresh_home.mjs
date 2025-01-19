@@ -17,6 +17,7 @@ export function app_language2_refresh_home(context) {
   html_button_back(root, async () => {
     await app_language2_refresh_learn(context);
   });
+  html_button_width_full_text_click(root, "values", () => {});
   html_p_text(
     root,
     "The gap of a word pair relates to the number of other word pairs you see before seeing the same word pair again. The factor is the rate at which a gap increases. The lower the factor, the easier the app is. The higher the factor, the more difficult the app is. Choose a factor:",
