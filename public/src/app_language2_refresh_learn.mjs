@@ -78,8 +78,8 @@ export async function app_language2_refresh_learn(context) {
     html_progress(
       root,
       "Word pair",
-      list_size(list_filter_property(values, "learning", true)),
-      list_size(values),
+      list_size(list_filter_property(values_all, "learning", true)),
+      list_size(values_all),
     );
     html_p_text(root, "Remember this:");
     app_language2_word_titled(root, "Question", language, question);
