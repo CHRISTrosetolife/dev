@@ -1,5 +1,5 @@
+import { json_format_to } from "./json_format_to.mjs";
 import { list_take } from "./list_take.mjs";
-import { json_to } from "./json_to.mjs";
 import { html_div_text } from "./html_div_text.mjs";
 import { app_language2_word_index } from "./app_language2_word_index.mjs";
 import { list_sort } from "./list_sort.mjs";
@@ -31,7 +31,7 @@ export function app_language2_refresh_home(context) {
     let values = list_filter_property(values_all, "skip", false);
     list_sort(values, app_language2_word_index);
     each(list_take(values, 200), (item) => {
-      html_div_text(root, json_to(item));
+      html_div_text(root, json_format_to(item));
     });
   });
   html_p_text(
