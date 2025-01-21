@@ -1,5 +1,5 @@
+import { string_combine } from "./string_combine.mjs";
 import { html_style_rounded_padded_style } from "./html_style_rounded_padded_style.mjs";
-import { html_style_default_border_value } from "./html_style_default_border_value.mjs";
 import { html_span } from "./html_span.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -10,7 +10,9 @@ export function app_language2_word(body, language, rememeber, boxed) {
   let q = html_span(body);
   let box = html_span(q);
   if (boxed) {
-    html_style(box, html_style_default_border_value("black"));
+    html_style(box, {
+      border: string_combine("solid 0.25dvh black"),
+    });
     html_style(box, html_style_rounded_padded_style());
   }
   html_flag_language(box, language);
