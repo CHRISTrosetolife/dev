@@ -14,6 +14,7 @@ export function app_language2_word(body, language, rememeber, boxed) {
     color = "black";
     html_style(box, html_style_rounded_padded_style());
   } else {
+    color = "white";
   }
   html_style(box, {
     border: string_combine("solid 0.5dvh ", color),
