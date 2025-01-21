@@ -106,7 +106,7 @@ export async function app_language2_refresh_learn(context) {
     log({
       mapped,
     });
-    app_language2_word(root, language, question);
+    app_language2_word(root, language, question, false);
     html_br2(root);
     let quiz_container = await app_language_button_ready(
       root,
