@@ -1,9 +1,9 @@
+import { ceb_defintion_en } from "./ceb_defintion_en.mjs";
 import { ceb_html_cache_parse_form1 } from "./ceb_html_cache_parse_form1.mjs";
 import { ceb_definition_prefix_en } from "./ceb_definition_prefix_en.mjs";
 import { ceb_definition_prefix } from "./ceb_definition_prefix.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
 import { list_pairs_to_lookup } from "./list_pairs_to_lookup.mjs";
-import { string_to_url } from "./string_to_url.mjs";
 import { list_size } from "./list_size.mjs";
 import { list_size_2 } from "./list_size_2.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
@@ -336,10 +336,7 @@ export async function ceb_definition(word) {
       }
       return false;
     }
-    let url = string_combine(ceb_definition_prefix_en(), d);
-    url = string_to_url(url);
-    let { children: children2_ } = await ceb_html_cache_parse_form1(url);
-    let children2 = children2_;
+    let children2 = await ceb_defintion_en(d);
     let as = list_filter(children2, (c) => html_parse_tag_named(c, "a"));
     let mapped5 = list_map(as, html_parse_href);
     let filtered5 = list_filter_starts_with(mapped5, prefix_1);
