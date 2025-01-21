@@ -121,10 +121,6 @@ export async function app_language2_refresh_learn(context) {
     );
     let questions = list_map_property(va_filtered, "question");
     let boxed = list_includes(questions, question);
-    log({
-      language_other,
-      v_filtered3,
-    });
     app_language2_word(root, language, question, boxed);
     html_br2(root);
     let quiz_container = await app_language_button_ready(
