@@ -184,9 +184,8 @@ export async function ceb_definition(word) {
     each(split, (s) => assert(list_size_2, [s])),
   );
   let lookup = list_pairs_to_lookup(skipped_pairs_split);
-  let prefix = ceb_definition_prefix();
   let url = string_combine_multiple([
-    prefix,
+    ceb_definition_prefix(),
     "node/21?search=binisaya&word=",
     word,
     "&Search=Search",
@@ -223,8 +222,8 @@ export async function ceb_definition(word) {
     assert(equal, [f4_first_a_tag, "b"]);
     word = f4_first_a_text;
   }
-  let prefix_1 = string_combine(prefix, "cebuano/");
-  let prefix_2 = string_combine(prefix, "english/");
+  let prefix_1 = string_combine(ceb_definition_prefix(), "cebuano/");
+  let prefix_2 = string_combine(ceb_definition_prefix(), "english/");
   let a_href_lefts = html_parse_a_href_starts_with(parsed, prefix_1);
   let mapped3 = html_parse_map_text_trim(a_href_lefts);
   let mapped4 = list_map_index(mapped3, (m, index) => {
@@ -266,7 +265,7 @@ export async function ceb_definition(word) {
           let sense = "/sense/";
           if (string_starts_with(after, sense)) {
             let url_sense = string_combine_multiple([
-              prefix,
+              ceb_definition_prefix(),
               string_prefix_without(after, "/"),
             ]);
             let { children: children_sense } =
