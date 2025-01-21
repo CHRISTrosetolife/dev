@@ -1,3 +1,4 @@
+import { ceb_definition_prefix } from "./ceb_definition_prefix.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
 import { list_pairs_to_lookup } from "./list_pairs_to_lookup.mjs";
 import { string_to_url } from "./string_to_url.mjs";
@@ -183,7 +184,7 @@ export async function ceb_definition(word) {
     each(split, (s) => assert(list_size_2, [s])),
   );
   let lookup = list_pairs_to_lookup(skipped_pairs_split);
-  let prefix = "http://www.binisaya.com/";
+  let prefix = ceb_definition_prefix();
   let url = string_combine_multiple([
     prefix,
     "node/21?search=binisaya&word=",
