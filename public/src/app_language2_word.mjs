@@ -5,6 +5,7 @@ import { html_span_text } from "./html_span_text.mjs";
 import { html_flag_language } from "./html_flag_language.mjs";
 export function app_language2_word(body, language, rememeber, boxed) {
   let q = html_span(body);
+  let box = html_span(q);
   html_flag_language(q, language);
   html_span_text(q, string_combine_multiple([" ", rememeber]));
   html_style_bold(q);
