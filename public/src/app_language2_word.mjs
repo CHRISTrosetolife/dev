@@ -17,7 +17,7 @@ export function app_language2_word(body, language, rememeber, boxed) {
     color = "white";
   }
   html_style(box, {
-    border: string_combine("solid 0.5dvh ", color),
+    border: string_combine("solid 0.4dvh ", color),
   });
   html_flag_language(box, language);
   html_span_text(q, string_combine_multiple([" ", rememeber]));
