@@ -107,14 +107,18 @@ export async function app_language2_refresh_learn(context) {
     log({
       mapped,
     });
-    let v_words = list_map_property(values, "word");
     let language_other = app_language2_other(
       language,
       language_learn,
       language_fluent,
     );
-    let v_filtered3 = list_filter_property(v_words, "language", language_other);
-    let questions = list_map_property(v_filtered3, "question");
+    let va_words = list_map_property(values_all, "word");
+    let va_filtered = list_filter_property(
+      va_words,
+      "language",
+      language_other,
+    );
+    let questions = list_map_property(va_filtered, "question");
     let boxed = list_includes(questions, question);
     log({
       language_other,
@@ -127,6 +131,7 @@ export async function app_language2_refresh_learn(context) {
       html_flag_language_get(language_other),
       language_fluent,
     );
+    let v_words = list_map_property(values, "word");
     let v_filtered = list_filter_property(v_words, "language", language);
     let v_filtered2 = list_filter(
       v_filtered,
