@@ -1,7 +1,7 @@
+import { each } from "./each.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_split_newline } from "./string_split_newline.mjs";
 import { http_cache } from "./http_cache.mjs";
-import { log } from "./log.mjs";
 import { ceb_defintion_en } from "./ceb_defintion_en.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 export async function sandbox_3() {
@@ -11,7 +11,5 @@ export async function sandbox_3() {
   await ceb_defintion_en("god");
   let lines = string_split_newline(text);
   let trimmed = list_map(lines, string_trim_whitespace);
-  log({
-    trimmed,
-  });
+  each(list, (item) => {});
 }
