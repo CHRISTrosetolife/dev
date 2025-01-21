@@ -345,7 +345,7 @@ export async function ceb_definition(word) {
       }
       return false;
     }
-    let url = string_combine(prefix_2, d);
+    let url = string_combine(ceb_definition_prefix_en(), d);
     url = string_to_url(url);
     let { children: children2 } = await ceb_html_cache_parse_form1(url);
     let as = list_filter(children2, (c) => html_parse_tag_named(c, "a"));
