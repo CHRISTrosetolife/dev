@@ -118,6 +118,8 @@ export async function app_language2_refresh_learn(context) {
     let boxed = list_includes(answers_other, question);
     log({
       answers_other,
+      language_other,
+      v_filtered3,
     });
     app_language2_word(root, language, question, boxed);
     html_br2(root);
