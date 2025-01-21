@@ -1,3 +1,4 @@
+import { ceb_definition_prefix_en } from "./ceb_definition_prefix_en.mjs";
 import { ceb_definition_prefix } from "./ceb_definition_prefix.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
 import { list_pairs_to_lookup } from "./list_pairs_to_lookup.mjs";
@@ -223,7 +224,7 @@ export async function ceb_definition(word) {
     word = f4_first_a_text;
   }
   let prefix_1 = string_combine(ceb_definition_prefix(), "cebuano/");
-  let prefix_2 = string_combine(ceb_definition_prefix(), "english/");
+  let prefix_2 = ceb_definition_prefix_en();
   let a_href_lefts = html_parse_a_href_starts_with(parsed, prefix_1);
   let mapped3 = html_parse_map_text_trim(a_href_lefts);
   let mapped4 = list_map_index(mapped3, (m, index) => {
