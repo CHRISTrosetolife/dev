@@ -114,8 +114,8 @@ export async function app_language2_refresh_learn(context) {
       language_fluent,
     );
     let v_filtered3 = list_filter_property(v_words, "language", language_other);
-    let answers_other = list_map_property(v_filtered3, "answer");
-    let boxed = list_includes(answers_other, question);
+    let questions = list_map_property(v_filtered3, "question");
+    let boxed = list_includes(questions, question);
     log({
       answers_other,
       language_other,
