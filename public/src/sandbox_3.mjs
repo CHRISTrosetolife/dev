@@ -8,8 +8,9 @@ export async function sandbox_3() {
   let text = await http_cache(
     "https://raw.githubusercontent.com/first20hours/google-10000-english/refs/heads/master/google-10000-english-usa.txt",
   );
-  await ceb_defintion_en("god");
   let lines = string_split_newline(text);
   let trimmed = list_map(lines, string_trim_whitespace);
-  each(list, (item) => {});
+  each(trimmed, async (t) => {
+    await ceb_defintion_en(t);
+  });
 }
