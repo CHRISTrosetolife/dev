@@ -113,13 +113,13 @@ export async function app_language2_refresh_learn(context) {
       language_fluent,
     );
     let va_words = list_map_property(values_all, "word");
+    let va_filtered2 = list_filter_property(va_words, "learning", true);
     let va_filtered = list_filter_property(
-      va_words,
+      va_filtered2,
       "language",
       language_other,
     );
-    let va_filtered2 = list_filter_property(va_filtered, "learning", true);
-    let questions = list_map_property(va_filtered2, "question");
+    let questions = list_map_property(va_filtered, "question");
     let boxed = list_includes(questions, question);
     log({
       language_other,
