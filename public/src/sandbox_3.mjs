@@ -1,4 +1,3 @@
-import { each } from "./each.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_split_newline } from "./string_split_newline.mjs";
 import { http_cache } from "./http_cache.mjs";
@@ -11,7 +10,7 @@ export async function sandbox_3() {
   );
   let lines = string_split_newline(text);
   let trimmed = list_map(lines, string_trim_whitespace);
-  each_async(trimmed, async (t) => {
+  await each_async(trimmed, async (t) => {
     await ceb_defintion_en(t);
   });
 }
