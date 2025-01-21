@@ -12,6 +12,6 @@ export async function sandbox_3() {
   let lines = string_split_newline(text);
   let trimmed = list_map(lines, string_trim_whitespace);
   log({
-    text,
+    trimmed,
   });
 }
