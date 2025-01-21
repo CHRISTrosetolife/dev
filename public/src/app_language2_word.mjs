@@ -1,4 +1,3 @@
-import { string_combine } from "./string_combine.mjs";
 import { html_style_rounded_padded_style } from "./html_style_rounded_padded_style.mjs";
 import { html_span } from "./html_span.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
@@ -11,7 +10,7 @@ export function app_language2_word(body, language, rememeber, boxed) {
   let box = html_span(q);
   if (boxed) {
     html_style(box, {
-      border: string_combine("solid 0.25dvh black"),
+      border: "solid 0.25dvh black",
     });
     html_style(box, html_style_rounded_padded_style());
   }
