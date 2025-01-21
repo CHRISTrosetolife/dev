@@ -1,3 +1,4 @@
+import { ceb_html_cache_parse_form1 } from "./ceb_html_cache_parse_form1.mjs";
 import { ceb_definition_prefix_en } from "./ceb_definition_prefix_en.mjs";
 import { ceb_definition_prefix } from "./ceb_definition_prefix.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
@@ -26,7 +27,6 @@ import { list_filter_starts_with } from "./list_filter_starts_with.mjs";
 import { html_parse_href } from "./html_parse_href.mjs";
 import { html_parse_parent } from "./html_parse_parent.mjs";
 import { html_parse_tag_not } from "./html_parse_tag_not.mjs";
-import { ceb_form1 } from "./ceb_form1.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
 import { list_map_index } from "./list_map_index.mjs";
@@ -39,7 +39,6 @@ import { list_second } from "./list_second.mjs";
 import { list_index } from "./list_index.mjs";
 import { list_first } from "./list_first.mjs";
 import { html_parse_a_href_starts_with } from "./html_parse_a_href_starts_with.mjs";
-import { html_cache_parse } from "./html_cache_parse.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_get } from "./list_get.mjs";
@@ -198,14 +197,6 @@ export async function ceb_definition(word) {
     return {
       word,
       definitions: [],
-    };
-  }
-  async function ceb_html_cache_parse_form1(url) {
-    let parsed = await html_cache_parse(url);
-    let children = ceb_form1(parsed);
-    return {
-      parsed,
-      children,
     };
   }
   let filtered4 = list_filter(
