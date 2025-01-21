@@ -106,6 +106,13 @@ export async function app_language2_refresh_learn(context) {
     log({
       mapped,
     });
+    let v_words = list_map_property(values, "word");
+    let v_filtered = list_filter_property(v_words, "language", language);
+    let v_filtered2 = list_filter(
+      v_filtered,
+      (w) => object_property_get(w, "question") !== question,
+    );
+    let answers = list_map_property(v_filtered2, "answer");
     app_language2_word(root, language, question, false);
     html_br2(root);
     let quiz_container = await app_language_button_ready(
@@ -115,13 +122,6 @@ export async function app_language2_refresh_learn(context) {
       ),
       language_fluent,
     );
-    let v_words = list_map_property(values, "word");
-    let v_filtered = list_filter_property(v_words, "language", language);
-    let v_filtered2 = list_filter(
-      v_filtered,
-      (w) => object_property_get(w, "question") !== question,
-    );
-    let answers = list_map_property(v_filtered2, "answer");
     let others = list_difference(answers, mapped);
     let other = list_random_item(others);
     let answer_text = list_join_comma_space(mapped);
