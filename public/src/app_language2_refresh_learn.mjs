@@ -48,7 +48,6 @@ import { list_add } from "./list_add.mjs";
 import { html_progress } from "./html_progress.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
-import { list_includes } from "./list_includes.mjs";
 export async function app_language2_refresh_learn(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
@@ -107,15 +106,7 @@ export async function app_language2_refresh_learn(context) {
     log({
       mapped,
     });
-    let v_words = list_map_property(values, "word");
-    let v_filtered = list_filter_property(v_words, "language", language);
-    let v_filtered2 = list_filter(
-      v_filtered,
-      (w) => object_property_get(w, "question") !== question,
-    );
-    let answers = list_map_property(v_filtered2, "answer");
-    let boxed = list_includes(answers, question);
-    app_language2_word(root, language, question, boxed);
+    app_language2_word(root, language, question, false);
     html_br2(root);
     let quiz_container = await app_language_button_ready(
       root,
@@ -124,6 +115,13 @@ export async function app_language2_refresh_learn(context) {
       ),
       language_fluent,
     );
+    let v_words = list_map_property(values, "word");
+    let v_filtered = list_filter_property(v_words, "language", language);
+    let v_filtered2 = list_filter(
+      v_filtered,
+      (w) => object_property_get(w, "question") !== question,
+    );
+    let answers = list_map_property(v_filtered2, "answer");
     let others = list_difference(answers, mapped);
     let other = list_random_item(others);
     let answer_text = list_join_comma_space(mapped);
