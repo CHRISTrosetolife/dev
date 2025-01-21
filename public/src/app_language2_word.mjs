@@ -10,7 +10,7 @@ export function app_language2_word(body, language, rememeber, boxed) {
   let box = html_span(q);
   if (boxed) {
     html_style(box, {
-      border: "solid 0.25dvh black",
+      border: "solid 0.4dvh black",
     });
     html_style(box, html_style_rounded_padded_style());
   }
