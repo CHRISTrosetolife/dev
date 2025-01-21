@@ -11,6 +11,8 @@ export async function ceb_definitions_change() {
     fn_name("bible_words_definitions_atoms"),
     "ceb",
   );
-  await app_language_upload("ceb");
+  if (false) {
+    await app_language_upload("ceb");
+  }
   await app_language2_upload("ceb");
 }
