@@ -108,15 +108,16 @@ export async function app_language2_refresh_learn(context) {
       mapped,
     });
     let v_words = list_map_property(values, "word");
-    let v_filtered3 = list_filter_property(v_words, "language", language);
-    let boxed = list_includes(answers, question);
-    app_language2_word(root, language, question, false);
-    html_br2(root);
     let language_other = app_language2_other(
       language,
       language_learn,
       language_fluent,
     );
+    let v_filtered3 = list_filter_property(v_words, "language", language_other);
+    let answers_other = list_map_property(v_filtered3, "answer");
+    let boxed = list_includes(answers_other, question);
+    app_language2_word(root, language, question, boxed);
+    html_br2(root);
     let quiz_container = await app_language_button_ready(
       root,
       html_flag_language_get(language_other),
