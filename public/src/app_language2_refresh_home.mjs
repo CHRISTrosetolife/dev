@@ -20,7 +20,7 @@ import { list_map } from "./list_map.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_style_success } from "./html_style_success.mjs";
 export function app_language2_refresh_home(context) {
-  let { root } = context;
+  let { root, app_fn } = context;
   html_clear_scroll_top_centered(root);
   html_button_back(root, async () => {
     await app_language2_refresh_learn(context);
@@ -31,7 +31,7 @@ export function app_language2_refresh_home(context) {
     html_button_back(root, async () => {
       app_language2_refresh_home(context);
     });
-    let stats = storage_local_get();
+    let stats = storage_local_get(app_fn, "stats");
     each(list_take(values, 200), (item) => {
       html_div_text(root, json_format_to(item));
     });
