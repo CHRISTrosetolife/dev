@@ -171,7 +171,7 @@ export async function app_language2_refresh_learn(context) {
             object_property_increment(r, closest);
           } else {
             html_style_wrong(b);
-            app_language2_wrong(v, gap_initial, wait_initial);
+            app_language2_wrong(v, gap_initial, wait_initial, context);
           }
           storage_local_set(app_fn, "words", words);
           await sleep(200);
@@ -198,7 +198,7 @@ export async function app_language2_refresh_learn(context) {
           } else {
             html_style_wrong(b2);
           }
-          app_language2_wrong(v, gap_initial, wait_initial);
+          app_language2_wrong(v, gap_initial, wait_initial, context);
           storage_local_set(app_fn, "words", words);
           await sleep(200);
           await app_language2_refresh_learn(context);
