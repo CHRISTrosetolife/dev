@@ -1,3 +1,4 @@
+import { app_language2_stats_get } from "./app_language2_stats_get.mjs";
 import { object_property_increment } from "./object_property_increment.mjs";
 import { round_2 } from "./round_2.mjs";
 import { list_includes } from "./list_includes.mjs";
@@ -51,7 +52,6 @@ import { list_add } from "./list_add.mjs";
 import { html_progress } from "./html_progress.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
-import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { list_closest } from "./list_closest.mjs";
 export async function app_language2_refresh_learn(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
@@ -145,10 +145,7 @@ export async function app_language2_refresh_learn(context) {
     let answer_text = list_join_comma_space(mapped);
     let choices = [answer_text, other];
     list_shuffle(choices);
-    let stats = storage_local_initialize(app_fn, "stats", {
-      right: {},
-      wrong: {},
-    });
+    let stats = app_language2_stats_get(app_fn);
     each(choices, (c) => {
       let gap = object_property_get(v, "gap");
       let gaps = object_property_get(context, "gaps");
