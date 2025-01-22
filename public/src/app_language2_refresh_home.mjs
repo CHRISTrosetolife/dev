@@ -37,6 +37,7 @@ export function app_language2_refresh_home(context) {
       });
       let stats = storage_local_get(app_fn, "stats");
       let right = object_property_get(stats, "right");
+      let wrong = object_property_get(stats, "wrong");
       each_object(stats, (key, value) => {
         html_div_text(root, string_combine_multiple([key, ": ", value]));
       });
