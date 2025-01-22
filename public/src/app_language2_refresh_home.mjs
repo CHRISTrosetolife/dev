@@ -1,3 +1,4 @@
+import { storage_local_get } from "./storage_local_get.mjs";
 import { json_format_to } from "./json_format_to.mjs";
 import { list_take } from "./list_take.mjs";
 import { html_div_text } from "./html_div_text.mjs";
@@ -23,6 +24,17 @@ export function app_language2_refresh_home(context) {
   html_clear_scroll_top_centered(root);
   html_button_back(root, async () => {
     await app_language2_refresh_learn(context);
+  });
+  html_button_width_full_text_click(root, "stats", () => {
+    let { root, words } = context;
+    html_clear_scroll_top_centered(root);
+    html_button_back(root, async () => {
+      app_language2_refresh_home(context);
+    });
+    let stats = storage_local_get();
+    each(list_take(values, 200), (item) => {
+      html_div_text(root, json_format_to(item));
+    });
   });
   html_button_width_full_text_click(root, "values", () => {
     let { root, words } = context;
