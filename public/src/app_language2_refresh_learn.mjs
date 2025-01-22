@@ -169,6 +169,7 @@ export async function app_language2_refresh_learn(context) {
             object_property_set(v, "wait", gap_new);
             let r = object_property_get(stats, "right");
             object_property_increment(r, closest);
+            storage_local_set(app_fn, "stats", stats);
           } else {
             html_style_wrong(b);
             app_language2_wrong(context, v, gap_initial, wait_initial);
