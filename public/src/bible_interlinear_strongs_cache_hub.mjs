@@ -4,7 +4,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function bible_interlinear_strongs_cache_hub(language, strong) {
   let url = string_combine_multiple([
     url_secure_w3(),
-    "openbible.com/strongs/",
+    "biblehub.com/",
     language,
     "/",
     strong,
