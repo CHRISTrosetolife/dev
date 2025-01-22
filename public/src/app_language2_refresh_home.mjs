@@ -28,7 +28,7 @@ export function app_language2_refresh_home(context) {
     let { root, words } = context;
     html_clear_scroll_top_centered(root);
     html_button_back(root, async () => {
-      await app_language2_refresh_home(context);
+      app_language2_refresh_home(context);
     });
     let values_all = object_values(words);
     let values = list_filter_property(values_all, "skip", false);
