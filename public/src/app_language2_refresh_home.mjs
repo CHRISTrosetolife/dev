@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_object } from "./each_object.mjs";
 import { storage_local_exists } from "./storage_local_exists.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
@@ -35,8 +36,8 @@ export function app_language2_refresh_home(context) {
         app_language2_refresh_home(context);
       });
       let stats = storage_local_get(app_fn, "stats");
-      each_object(stats, (item) => {
-        html_div_text(root, json_format_to(item));
+      each_object(stats, (key, value) => {
+        html_div_text(root, string_combine_multiple([key, ": ", value]));
       });
     });
   }
