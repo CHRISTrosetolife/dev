@@ -51,6 +51,7 @@ import { html_progress } from "./html_progress.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
+import { list_closest } from "./list_closest.mjs";
 export async function app_language2_refresh_learn(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
@@ -164,7 +165,8 @@ export async function app_language2_refresh_learn(context) {
             let gap_new = list_first(f) + random();
             object_property_set(v, "gap", gap_new);
             object_property_set(v, "wait", gap_new);
-            let right2 = object_property_get(stats, "right");
+            let right = object_property_get(stats, "right");
+            let closest = list_closest(gaps, gap);
           } else {
             html_style_wrong(b);
             app_language2_wrong(v, gap_initial, wait_initial);
