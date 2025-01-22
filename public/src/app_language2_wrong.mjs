@@ -10,7 +10,7 @@ export function app_language2_wrong(context, v, gap_initial, wait_initial) {
   let gap = object_property_get(v, "gap");
   let gaps = object_property_get(context, "gaps");
   let closest = list_closest(gaps, gap);
-  let app_fn = context;
+  let { app_fn } = context;
   let stats = app_language2_stats_get(app_fn);
   let r = object_property_get(stats, "wrong");
   object_property_increment(r, closest);
