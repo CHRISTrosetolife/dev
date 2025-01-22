@@ -150,6 +150,9 @@ export async function app_language2_refresh_learn(context) {
       wrong: {},
     });
     each(choices, (c) => {
+      let gap = object_property_get(v, "gap");
+      let gaps = object_property_get(context, "gaps");
+      let closest = list_closest(gaps, gap);
       let b = html_button_width_full_text_click(
         quiz_container,
         "",
@@ -157,8 +160,6 @@ export async function app_language2_refresh_learn(context) {
           decrease_wait();
           if (c === answer_text) {
             html_style_success(b);
-            let gap = object_property_get(v, "gap");
-            let gaps = object_property_get(context, "gaps");
             let f = list_filter(gaps, (g) => g > gap);
             if (list_empty_is(f)) {
               list_add(f, list_last(gaps));
@@ -167,7 +168,6 @@ export async function app_language2_refresh_learn(context) {
             object_property_set(v, "gap", gap_new);
             object_property_set(v, "wait", gap_new);
             let right = object_property_get(stats, "right");
-            let closest = list_closest(gaps, gap);
             object_property_increment(right, closest);
           } else {
             html_style_wrong(b);
