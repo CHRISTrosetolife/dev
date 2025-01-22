@@ -1,3 +1,4 @@
+import { each_object } from "./each_object.mjs";
 import { storage_local_exists } from "./storage_local_exists.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { json_format_to } from "./json_format_to.mjs";
@@ -28,13 +29,13 @@ export function app_language2_refresh_home(context) {
   });
   if (storage_local_exists(app_fn, "stats")) {
     html_button_width_full_text_click(root, "stats", () => {
-      let { root, words } = context;
+      let { root } = context;
       html_clear_scroll_top_centered(root);
       html_button_back(root, async () => {
         app_language2_refresh_home(context);
       });
       let stats = storage_local_get(app_fn, "stats");
-      each(list_take(values, 200), (item) => {
+      each_object(stats, (item) => {
         html_div_text(root, json_format_to(item));
       });
     });
