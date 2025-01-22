@@ -1,5 +1,4 @@
-import { add_1 } from "./add_1.mjs";
-import { object_property_change } from "./object_property_change.mjs";
+import { object_property_increment } from "./object_property_increment.mjs";
 import { round_2 } from "./round_2.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { html_flag } from "./html_flag.mjs";
@@ -54,7 +53,6 @@ import { html_span_text } from "./html_span_text.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { list_closest } from "./list_closest.mjs";
-import { object_property_initialize } from "./object_property_initialize.mjs";
 export async function app_language2_refresh_learn(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
@@ -170,8 +168,7 @@ export async function app_language2_refresh_learn(context) {
             object_property_set(v, "wait", gap_new);
             let right = object_property_get(stats, "right");
             let closest = list_closest(gaps, gap);
-            object_property_initialize(right, closest, 0);
-            object_property_change(right, closest, add_1);
+            object_property_increment(right, closest);
           } else {
             html_style_wrong(b);
             app_language2_wrong(v, gap_initial, wait_initial);
