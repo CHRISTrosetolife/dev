@@ -1,3 +1,4 @@
+import { storage_local_exists } from "./storage_local_exists.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { json_format_to } from "./json_format_to.mjs";
 import { list_take } from "./list_take.mjs";
@@ -25,7 +26,7 @@ export function app_language2_refresh_home(context) {
   html_button_back(root, async () => {
     await app_language2_refresh_learn(context);
   });
-  if (false) {
+  if (storage_local_exists(app_fn, "stats")) {
     html_button_width_full_text_click(root, "stats", () => {
       let { root, words } = context;
       html_clear_scroll_top_centered(root);
