@@ -1,3 +1,4 @@
+import { object_property_exists } from "./object_property_exists.mjs";
 import { round_2 } from "./round_2.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { html_flag } from "./html_flag.mjs";
@@ -167,6 +168,7 @@ export async function app_language2_refresh_learn(context) {
             object_property_set(v, "wait", gap_new);
             let right = object_property_get(stats, "right");
             let closest = list_closest(gaps, gap);
+            object_property_exists(object, "property_name");
           } else {
             html_style_wrong(b);
             app_language2_wrong(v, gap_initial, wait_initial);
