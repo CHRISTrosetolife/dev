@@ -101,6 +101,7 @@ export async function app_language2_refresh_learn(context) {
     });
   } else {
     let word = object_property_get(v, "word");
+    let v_gap = object_property_get(v, "gap");
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
     let mapped = app_language2_answers(values_all, v);
@@ -203,6 +204,7 @@ export async function app_language2_refresh_learn(context) {
       html_span_text(b2, string_combine_multiple([" ", c]));
       html_spacer_vertical_2(quiz_container);
     });
+    html_p_text(root, v_gap);
   }
   function decrease_wait() {
     each(values, (v2) => {
