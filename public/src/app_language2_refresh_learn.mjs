@@ -143,7 +143,10 @@ export async function app_language2_refresh_learn(context) {
     let answer_text = list_join_comma_space(mapped);
     let choices = [answer_text, other];
     list_shuffle(choices);
-    let stats = storage_local_initialize(app_fn, "stats", {});
+    let stats = storage_local_initialize(app_fn, "stats", {
+      right: {},
+      wrong: {},
+    });
     each(choices, (c) => {
       let b = html_button_width_full_text_click(
         quiz_container,
@@ -161,6 +164,7 @@ export async function app_language2_refresh_learn(context) {
             let gap_new = list_first(f) + random();
             object_property_set(v, "gap", gap_new);
             object_property_set(v, "wait", gap_new);
+            let right2 = object_property_get(stats, "right");
           } else {
             html_style_wrong(b);
             app_language2_wrong(v, gap_initial, wait_initial);
