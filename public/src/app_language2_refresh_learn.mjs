@@ -167,8 +167,8 @@ export async function app_language2_refresh_learn(context) {
             let gap_new = list_first(f) + random();
             object_property_set(v, "gap", gap_new);
             object_property_set(v, "wait", gap_new);
-            let right = object_property_get(stats, "right");
-            object_property_increment(right, closest);
+            let r = object_property_get(stats, "right");
+            object_property_increment(r, closest);
           } else {
             html_style_wrong(b);
             app_language2_wrong(v, gap_initial, wait_initial);
