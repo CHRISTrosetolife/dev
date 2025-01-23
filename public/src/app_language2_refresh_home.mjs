@@ -1,3 +1,4 @@
+import { counter } from "./counter.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_object } from "./each_object.mjs";
 import { storage_local_exists } from "./storage_local_exists.mjs";
@@ -37,6 +38,7 @@ export function app_language2_refresh_home(context) {
       });
       let stats = storage_local_get(app_fn, "stats");
       let ss = ["right", "wrong"];
+      counter((c) => {});
       each(ss, (s) => {
         let r = object_property_get(stats, s);
         html_p_text(root, s);
