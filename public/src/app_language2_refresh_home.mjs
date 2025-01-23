@@ -38,12 +38,13 @@ export function app_language2_refresh_home(context) {
       });
       let stats = storage_local_get(app_fn, "stats");
       let ss = ["right", "wrong"];
-      counter((c) => {});
-      each(ss, (s) => {
-        let r = object_property_get(stats, s);
-        html_p_text(root, s);
-        each_object(r, (key, value) => {
-          html_div_text(root, string_combine_multiple([key, ": ", value]));
+      counter((c) => {
+        each(ss, (s) => {
+          let r = object_property_get(stats, s);
+          html_p_text(root, s);
+          each_object(r, (key, value) => {
+            html_div_text(root, string_combine_multiple([key, ": ", value]));
+          });
         });
       });
     });
