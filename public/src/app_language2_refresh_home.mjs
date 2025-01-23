@@ -1,3 +1,4 @@
+import { storage_local_get } from "./storage_local_get.mjs";
 import { app_language2_stats_initial } from "./app_language2_stats_initial.mjs";
 import { app_language2_stats_get } from "./app_language2_stats_get.mjs";
 import { summation } from "./summation.mjs";
@@ -53,7 +54,8 @@ export function app_language2_refresh_home(context) {
       html_button_width_full_text_click(root, "reset", () => {
         storage_local_set(app_fn, "stats", app_language2_stats_initial());
       });
-      if (storage_local_exists(app_fn, "stats")) {
+      if (storage_local_exists(app_fn, "count")) {
+        let cnt = storage_local_get(app_fn, "count");
       }
     });
   }
