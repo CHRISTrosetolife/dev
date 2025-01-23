@@ -1,4 +1,4 @@
-import { storage_local_initialize } from "./storage_local_initialize.mjs";
+import { app_language2_count_increment } from "./app_language2_count_increment.mjs";
 import { round } from "./round.mjs";
 import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
 import { app_language2_stats_get } from "./app_language2_stats_get.mjs";
@@ -177,10 +177,7 @@ export async function app_language2_refresh_learn(context) {
             let rounded = round(gap);
             object_property_increment(r, rounded);
             storage_local_set(app_fn, "stats", stats);
-            let { app_fn } = context;
-            let cnt = storage_local_initialize(app_fn, "count", 0);
-            cnt++;
-            storage_local_set(app_fn, "count", cnt);
+            app_language2_count_increment(context);
           } else {
             html_style_wrong(b);
             app_language2_wrong(context, v, gap_initial, wait_initial);
