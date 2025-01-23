@@ -1,3 +1,4 @@
+import { round } from "./round.mjs";
 import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
 import { app_language2_stats_get } from "./app_language2_stats_get.mjs";
 import { object_property_increment } from "./object_property_increment.mjs";
@@ -53,7 +54,6 @@ import { list_add } from "./list_add.mjs";
 import { html_progress } from "./html_progress.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
-import { list_closest } from "./list_closest.mjs";
 export async function app_language2_refresh_learn(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
@@ -158,7 +158,7 @@ export async function app_language2_refresh_learn(context) {
     each(choices, (c) => {
       let gap = object_property_get(v, "gap");
       let gaps = object_property_get(context, "gaps");
-      let closest = list_closest(gaps, gap);
+      let rounded = round(gap);
       let b = html_button_width_full_text_click(
         quiz_container,
         "",
@@ -174,7 +174,7 @@ export async function app_language2_refresh_learn(context) {
             object_property_set(v, "gap", gap_new);
             object_property_set(v, "wait", gap_new);
             let r = object_property_get(stats, "right");
-            object_property_increment(r, closest);
+            object_property_increment(r, rounded);
             storage_local_set(app_fn, "stats", stats);
           } else {
             html_style_wrong(b);
