@@ -1,5 +1,4 @@
 import { app_language2_stats_initial } from "./app_language2_stats_initial.mjs";
-import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { app_language2_stats_get } from "./app_language2_stats_get.mjs";
 import { summation } from "./summation.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -32,7 +31,7 @@ export function app_language2_refresh_home(context) {
     await app_language2_refresh_learn(context);
   });
   if (storage_local_exists(app_fn, "stats")) {
-    html_button_width_full_text_click(root, "stats", () => {
+    html_button_width_full_text_click(root, "stats view", () => {
       let { root } = context;
       html_clear_scroll_top_centered(root);
       html_button_back(root, async () => {
@@ -53,7 +52,9 @@ export function app_language2_refresh_home(context) {
       html_p_text(root, string_combine_multiple(["total: ", total]));
     });
   }
-  storage_local_initialize(app_fn, "stats", app_language2_stats_initial());
+  html_button_width_full_text_click(root, "stats reset", () => {
+    storage_local_set(app_fn, "stats", app_language2_stats_initial());
+  });
   html_button_width_full_text_click(root, "values", () => {
     let { root, words } = context;
     html_clear_scroll_top_centered(root);
