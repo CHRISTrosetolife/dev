@@ -37,11 +37,12 @@ export function app_language2_refresh_home(context) {
       });
       let stats = storage_local_get(app_fn, "stats");
       let ss = ["right", "wrong"];
-      each(list, (item2) => {});
-      let right = object_property_get(stats, "right");
-      html_p_text(root, "right");
-      each_object(right, (key, value) => {
-        html_div_text(root, string_combine_multiple([key, ": ", value]));
+      each(ss, (s) => {
+        let right = object_property_get(stats, "right");
+        html_p_text(root, "right");
+        each_object(right, (key, value) => {
+          html_div_text(root, string_combine_multiple([key, ": ", value]));
+        });
       });
       let wrong = object_property_get(stats, "wrong");
       html_p_text(root, "wrong");
