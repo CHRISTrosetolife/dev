@@ -38,7 +38,7 @@ export function app_language2_refresh_home(context) {
       });
       let stats = storage_local_get(app_fn, "stats");
       let ss = ["right", "wrong"];
-      counter((c) => {
+      let total = counter((c) => {
         each(ss, (s) => {
           let r = object_property_get(stats, s);
           html_p_text(root, s);
@@ -48,6 +48,7 @@ export function app_language2_refresh_home(context) {
           });
         });
       });
+      html_div_text(root, string_combine_multiple(["total: ", total]));
     });
   }
   html_button_width_full_text_click(root, "values", () => {
