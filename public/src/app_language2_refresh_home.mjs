@@ -53,6 +53,8 @@ export function app_language2_refresh_home(context) {
       html_button_width_full_text_click(root, "reset", () => {
         storage_local_set(app_fn, "stats", app_language2_stats_initial());
       });
+      if (storage_local_exists(app_fn, "stats")) {
+      }
     });
   }
   html_button_width_full_text_click(root, "values", () => {
