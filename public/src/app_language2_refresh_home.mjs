@@ -43,6 +43,7 @@ export function app_language2_refresh_home(context) {
           let r = object_property_get(stats, s);
           html_p_text(root, s);
           each_object(r, (key, value) => {
+            c(value);
             html_div_text(root, string_combine_multiple([key, ": ", value]));
           });
         });
