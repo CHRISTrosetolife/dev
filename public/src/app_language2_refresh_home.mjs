@@ -37,6 +37,7 @@ export function app_language2_refresh_home(context) {
       });
       let stats = storage_local_get(app_fn, "stats");
       let ss = ["right", "wrong"];
+      each(list, (item2) => {});
       let right = object_property_get(stats, "right");
       html_p_text(root, "right");
       each_object(right, (key, value) => {
