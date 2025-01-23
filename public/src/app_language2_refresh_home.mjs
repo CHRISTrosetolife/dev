@@ -44,9 +44,11 @@ export function app_language2_refresh_home(context) {
         each(ss, (s) => {
           let r = object_property_get(stats, s);
           html_p_text(root, s);
-          each_object(r, (key, value) => {
-            c(value);
-            html_div_text(root, string_combine_multiple([key, ": ", value]));
+          let s_total = summation((c) => {
+            each_object(r, (key, value) => {
+              c(value);
+              html_div_text(root, string_combine_multiple([key, ": ", value]));
+            });
           });
           html_p_text(root, string_combine_multiple([s, " total: ", total]));
         });
