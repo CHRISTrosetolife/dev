@@ -157,7 +157,6 @@ export async function app_language2_refresh_learn(context) {
     let stats = app_language2_stats_get(app_fn);
     each(choices, (c) => {
       let gap = object_property_get(v, "gap");
-      let gaps = object_property_get(context, "gaps");
       let rounded = round(gap);
       let b = html_button_width_full_text_click(
         quiz_container,
@@ -166,6 +165,7 @@ export async function app_language2_refresh_learn(context) {
           decrease_wait();
           if (c === answer_text) {
             html_style_success(b);
+            let gaps = object_property_get(context, "gaps");
             let f = list_filter(gaps, (g) => g > gap);
             if (list_empty_is(f)) {
               list_add(f, list_last(gaps));
