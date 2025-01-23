@@ -1,3 +1,4 @@
+import { html_color_gray } from "./html_color_gray.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_style_rounded_padded_style } from "./html_style_rounded_padded_style.mjs";
 import { html_span } from "./html_span.mjs";
@@ -11,7 +12,7 @@ export function app_language2_word(body, language, rememeber, boxed) {
   let box = html_span(q);
   let color;
   if (boxed) {
-    color = "black";
+    color = html_color_gray();
     html_style(box, html_style_rounded_padded_style());
   } else {
     color = "white";
