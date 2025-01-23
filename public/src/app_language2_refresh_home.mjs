@@ -38,7 +38,7 @@ export function app_language2_refresh_home(context) {
       });
       let stats = storage_local_get(app_fn, "stats");
       let ss = ["right", "wrong"];
-      let total = counter((c) => {
+      let total = summation((c) => {
         each(ss, (s) => {
           let r = object_property_get(stats, s);
           html_p_text(root, s);
