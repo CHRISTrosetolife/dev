@@ -48,14 +48,16 @@ export function app_language2_refresh_home(context) {
             c(value);
             html_div_text(root, string_combine_multiple([key, ": ", value]));
           });
+          html_p_text(root, string_combine_multiple([s, " total: ", total]));
         });
       });
-      html_p_text(root, string_combine_multiple(["total: ", total]));
+      html_p_text(root, string_combine_multiple(["grand total: ", total]));
       html_button_width_full_text_click(root, "reset", () => {
         storage_local_set(app_fn, "stats", app_language2_stats_initial());
       });
       if (storage_local_exists(app_fn, "count")) {
         let cnt = storage_local_get(app_fn, "count");
+        html_p_text(root, string_combine_multiple(["count: ", cnt]));
       }
     });
   }
