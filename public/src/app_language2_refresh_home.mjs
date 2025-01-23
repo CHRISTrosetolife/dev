@@ -50,7 +50,7 @@ export function app_language2_refresh_home(context) {
               html_div_text(root, string_combine_multiple([key, ": ", value]));
             });
           });
-          html_p_text(root, string_combine_multiple([s, " total: ", total]));
+          html_p_text(root, string_combine_multiple([s, " total: ", s_total]));
         });
       });
       html_p_text(root, string_combine_multiple(["grand total: ", total]));
