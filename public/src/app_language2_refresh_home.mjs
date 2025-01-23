@@ -1,4 +1,4 @@
-import { counter } from "./counter.mjs";
+import { summation } from "./summation.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_object } from "./each_object.mjs";
 import { storage_local_exists } from "./storage_local_exists.mjs";
