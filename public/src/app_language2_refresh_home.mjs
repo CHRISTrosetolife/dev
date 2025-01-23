@@ -48,7 +48,7 @@ export function app_language2_refresh_home(context) {
           });
         });
       });
-      html_div_text(root, string_combine_multiple(["total: ", total]));
+      html_p_text(root, string_combine_multiple(["total: ", total]));
     });
   }
   html_button_width_full_text_click(root, "values", () => {
