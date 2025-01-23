@@ -1,3 +1,4 @@
+import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
 import { app_language2_stats_get } from "./app_language2_stats_get.mjs";
 import { object_property_increment } from "./object_property_increment.mjs";
 import { round_2 } from "./round_2.mjs";
@@ -133,6 +134,7 @@ export async function app_language2_refresh_learn(context) {
         root,
         string_combine_multiple([" (", m_size, ")"]),
       );
+      html_style_font_color_gray(m_size_span);
     }
     html_br2(root);
     let quiz_container = await app_language_button_ready(
