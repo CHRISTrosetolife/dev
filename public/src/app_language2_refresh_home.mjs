@@ -1,8 +1,8 @@
+import { app_language2_stats_get } from "./app_language2_stats_get.mjs";
 import { summation } from "./summation.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_object } from "./each_object.mjs";
 import { storage_local_exists } from "./storage_local_exists.mjs";
-import { storage_local_get } from "./storage_local_get.mjs";
 import { json_format_to } from "./json_format_to.mjs";
 import { list_take } from "./list_take.mjs";
 import { html_div_text } from "./html_div_text.mjs";
@@ -36,7 +36,7 @@ export function app_language2_refresh_home(context) {
       html_button_back(root, async () => {
         app_language2_refresh_home(context);
       });
-      let stats = storage_local_get(app_fn, "stats");
+      let stats = app_language2_stats_get(app_fn);
       let ss = ["right", "wrong"];
       let total = summation((c) => {
         each(ss, (s) => {
