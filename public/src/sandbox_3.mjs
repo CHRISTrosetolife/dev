@@ -13,7 +13,7 @@ export async function sandbox_3() {
   let lines = string_split_newline(text);
   let split = list_map(lines, string_split_space);
   let firsts = list_map(split, list_first);
-  await each_async(trimmed, async (t) => {
+  await each_async(firsts, async (t) => {
     await ceb_defintion_en(t);
   });
 }
