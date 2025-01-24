@@ -22,7 +22,7 @@ export async function sandbox_3() {
   let filtered = list_difference_lower(firsts, c);
   let take = list_take(filtered, 100000);
   log({
-    filtered,
+    take,
   });
   return;
   await each_async(firsts, async (t) => {
