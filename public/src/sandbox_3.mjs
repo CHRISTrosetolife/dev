@@ -20,7 +20,7 @@ export async function sandbox_3() {
   let split = list_map(trimmed, string_split_space);
   let firsts = list_map(split, list_first);
   let c_lower = list_map(c, string_case_lower);
-  let firsts_lower = list_map(split, string_case_lower);
+  let firsts_lower = list_map(firsts, string_case_lower);
   let filtered = list_difference(firsts_lower, c_lower);
   log({
     filtered,
