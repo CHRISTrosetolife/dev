@@ -8,6 +8,7 @@ export async function sandbox_3() {
   let text = await http_cache(
     "https://raw.githubusercontent.com/first20hours/google-10000-english/refs/heads/master/google-10000-english-usa.txt",
   );
+  text = await http_cache("https://norvig.com/ngrams/count_1w.txt");
   let lines = string_split_newline(text);
   let trimmed = list_map(lines, string_trim_whitespace);
   await each_async(trimmed, async (t) => {
