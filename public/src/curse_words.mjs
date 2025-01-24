@@ -1,8 +1,9 @@
 import { http_cache_split_trim } from "./http_cache_split_trim.mjs";
+import { list_concat_multiple } from "./list_concat_multiple.mjs";
 export async function curse_words() {
   let url =
     "https://raw.githubusercontent.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words/refs/heads/master/en";
-  let trimmed = await http_cache_split_trim(url);
+  let c = await http_cache_split_trim(url);
   let b = [
     "4r5e",
     "5h1t",
@@ -703,4 +704,5 @@ export async function curse_words() {
     "Yeti",
     "Zit face",
   ];
+  return list_concat_multiple([a, b, c]);
 }
