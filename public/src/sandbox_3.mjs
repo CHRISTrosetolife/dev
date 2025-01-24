@@ -1,3 +1,4 @@
+import { list_first } from "./list_first.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_split_newline } from "./string_split_newline.mjs";
@@ -11,7 +12,8 @@ export async function sandbox_3() {
   let text = await http_cache("https://norvig.com/ngrams/count_1w.txt");
   let lines = string_split_newline(text);
   let split = list_map(lines, string_split_space);
-  let firsts = await each_async(trimmed, async (t) => {
+  let firsts = list_map(split, list_first);
+  await each_async(trimmed, async (t) => {
     await ceb_defintion_en(t);
   });
 }
