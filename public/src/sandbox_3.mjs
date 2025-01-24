@@ -1,3 +1,4 @@
+import { list_chunk } from "./list_chunk.mjs";
 import { list_take } from "./list_take.mjs";
 import { string_split_tab } from "./string_split_tab.mjs";
 import { list_difference_lower } from "./list_difference_lower.mjs";
@@ -9,6 +10,7 @@ import { http_cache } from "./http_cache.mjs";
 import { ceb_defintion_en } from "./ceb_defintion_en.mjs";
 import { each_async } from "./each_async.mjs";
 import { curse_words } from "./curse_words.mjs";
+import { list_last } from "./list_last.mjs";
 export async function sandbox_3() {
   let text2 = await http_cache(
     "https://raw.githubusercontent.com/first20hours/google-10000-english/refs/heads/master/google-10000-english-usa.txt",
@@ -21,8 +23,9 @@ export async function sandbox_3() {
   let firsts = list_map(split, list_first);
   let filtered = list_difference_lower(firsts, c);
   let take = list_take(filtered, 100000);
+  let cs = list_chunk(take, 20);
   log({
-    take,
+    take: list_last(cs),
   });
   return;
   await each_async(firsts, async (t) => {
