@@ -11,6 +11,7 @@ import { ceb_defintion_en } from "./ceb_defintion_en.mjs";
 import { each_async } from "./each_async.mjs";
 import { curse_words } from "./curse_words.mjs";
 import { list_last } from "./list_last.mjs";
+import { json_from } from "./json_from.mjs";
 export async function sandbox_3() {
   let text2 = await http_cache(
     "https://raw.githubusercontent.com/first20hours/google-10000-english/refs/heads/master/google-10000-english-usa.txt",
@@ -19,6 +20,10 @@ export async function sandbox_3() {
   let trimmed = await http_cache_split_trim(
     "https://norvig.com/ngrams/count_1w.txt",
   );
+  let dictionary_json = await http_cache(
+    "https://github.com/matthewreagan/WebstersEnglishDictionary/blob/master/dictionary_compact.json",
+  );
+  let dictionary = json_from(dictionary_json);
   let split = list_map(trimmed, string_split_tab);
   let firsts = list_map(split, list_first);
   let filtered = list_difference_lower(firsts, c);
