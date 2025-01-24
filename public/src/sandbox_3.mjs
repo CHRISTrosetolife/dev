@@ -31,7 +31,7 @@ export async function sandbox_3() {
   let filtered2 = list_filter(filtered, (f) =>
     object_property_exists(dictionary, f),
   );
-  let cs = list_chunk(take, 20);
+  let cs = list_chunk(filtered2, 20);
   log({
     take: list_last(cs),
   });
