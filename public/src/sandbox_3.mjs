@@ -6,14 +6,17 @@ import { list_map } from "./list_map.mjs";
 import { http_cache } from "./http_cache.mjs";
 import { ceb_defintion_en } from "./ceb_defintion_en.mjs";
 import { each_async } from "./each_async.mjs";
+import { curse_words } from "./curse_words.mjs";
 export async function sandbox_3() {
   let text2 = await http_cache(
     "https://raw.githubusercontent.com/first20hours/google-10000-english/refs/heads/master/google-10000-english-usa.txt",
   );
+  let c = await curse_words();
   let url = "https://norvig.com/ngrams/count_1w.txt";
   let trimmed = await http_cache_split_trim(url);
   let split = list_map(trimmed, string_split_space);
   let firsts = list_map(split, list_first);
+  filtered;
   log({
     firsts,
   });
