@@ -23,7 +23,7 @@ export async function sandbox_3() {
     "https://norvig.com/ngrams/count_1w.txt",
   );
   let dictionary_json = await http_cache(
-    "https://github.com/matthewreagan/WebstersEnglishDictionary/blob/master/dictionary_compact.json",
+    "https://raw.githubusercontent.com/matthewreagan/WebstersEnglishDictionary/refs/heads/master/dictionary_compact.json",
   );
   let dictionary = json_from(dictionary_json);
   let split = list_map(trimmed, string_split_tab);
