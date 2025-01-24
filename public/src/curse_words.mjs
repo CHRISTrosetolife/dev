@@ -1,6 +1,8 @@
-export function curse_words() {
+import { http_cache_split_trim } from "./http_cache_split_trim.mjs";
+export async function curse_words() {
   let url =
     "https://raw.githubusercontent.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words/refs/heads/master/en";
+  let trimmed = await http_cache_split_trim(url);
   let b = [
     "4r5e",
     "5h1t",
