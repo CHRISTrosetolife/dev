@@ -1,3 +1,4 @@
+import { list_take } from "./list_take.mjs";
 import { string_split_tab } from "./string_split_tab.mjs";
 import { list_difference_lower } from "./list_difference_lower.mjs";
 import { http_cache_split_trim } from "./http_cache_split_trim.mjs";
@@ -19,6 +20,7 @@ export async function sandbox_3() {
   let split = list_map(trimmed, string_split_tab);
   let firsts = list_map(split, list_first);
   let filtered = list_difference_lower(firsts, c);
+  let take = list_take(filtered, 100000);
   log({
     filtered,
   });
