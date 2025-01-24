@@ -14,8 +14,9 @@ export async function sandbox_3() {
     "https://raw.githubusercontent.com/first20hours/google-10000-english/refs/heads/master/google-10000-english-usa.txt",
   );
   let c = await curse_words();
-  let url = "https://norvig.com/ngrams/count_1w.txt";
-  let trimmed = await http_cache_split_trim(url);
+  let trimmed = await http_cache_split_trim(
+    "https://norvig.com/ngrams/count_1w.txt",
+  );
   let split = list_map(trimmed, string_split_space);
   let firsts = list_map(split, list_first);
   let c_lower = list_map(c, string_case_lower);
