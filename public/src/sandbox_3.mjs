@@ -1,3 +1,5 @@
+import { object_property_exists } from "./object_property_exists.mjs";
+import { list_filter } from "./list_filter.mjs";
 import { list_chunk } from "./list_chunk.mjs";
 import { list_take } from "./list_take.mjs";
 import { string_split_tab } from "./string_split_tab.mjs";
@@ -27,6 +29,9 @@ export async function sandbox_3() {
   let split = list_map(trimmed, string_split_tab);
   let firsts = list_map(split, list_first);
   let filtered = list_difference_lower(firsts, c);
+  let filtered2 = list_filter(filtered, (f) =>
+    object_property_exists(object, "property_name"),
+  );
   let take = list_take(filtered, 50000);
   let cs = list_chunk(take, 20);
   log({
