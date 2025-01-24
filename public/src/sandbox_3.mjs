@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_first } from "./list_first.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { list_map } from "./list_map.mjs";
@@ -13,6 +14,10 @@ export async function sandbox_3() {
   let lines = string_split_newline(text);
   let split = list_map(lines, string_split_space);
   let firsts = list_map(split, list_first);
+  log({
+    firsts,
+  });
+  return;
   await each_async(firsts, async (t) => {
     await ceb_defintion_en(t);
   });
