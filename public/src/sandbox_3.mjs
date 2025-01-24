@@ -16,7 +16,7 @@ export async function sandbox_3() {
   let trimmed = await http_cache_split_trim(
     "https://norvig.com/ngrams/count_1w.txt",
   );
-  let split = list_map(trimmed, string_split_space);
+  let split = list_map(trimmed, string_split_tab);
   let firsts = list_map(split, list_first);
   let filtered = list_difference_lower(firsts, c);
   log({
