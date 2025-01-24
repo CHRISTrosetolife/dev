@@ -10,7 +10,8 @@ export async function sandbox_3() {
   let text2 = await http_cache(
     "https://raw.githubusercontent.com/first20hours/google-10000-english/refs/heads/master/google-10000-english-usa.txt",
   );
-  let text = await http_cache("https://norvig.com/ngrams/count_1w.txt");
+  let url = "https://norvig.com/ngrams/count_1w.txt";
+  let text = await http_cache(url);
   let lines = string_split_newline(text);
   let split = list_map(lines, string_split_space);
   let firsts = list_map(split, list_first);
