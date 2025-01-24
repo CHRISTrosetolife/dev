@@ -7,7 +7,6 @@ import { list_first } from "./list_first.mjs";
 import { list_map } from "./list_map.mjs";
 import { http_cache } from "./http_cache.mjs";
 import { ceb_defintion_en } from "./ceb_defintion_en.mjs";
-import { each_async } from "./each_async.mjs";
 import { curse_words } from "./curse_words.mjs";
 import { json_from } from "./json_from.mjs";
 export async function sandbox_3() {
@@ -28,7 +27,7 @@ export async function sandbox_3() {
   let filtered2 = list_filter(filtered, (f) =>
     object_property_exists(dictionary, f),
   );
-  await each_async(filtered2, async (t) => {
+  await each_async_log(filtered2, async (t) => {
     await ceb_defintion_en(t);
   });
 }
