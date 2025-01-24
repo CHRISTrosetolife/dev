@@ -18,7 +18,7 @@ export async function sandbox_3() {
   );
   let split = list_map(trimmed, string_split_space);
   let firsts = list_map(split, list_first);
-  let filtered = list_difference_lower(c, firsts);
+  let filtered = list_difference_lower(firsts, c);
   log({
     filtered,
   });
