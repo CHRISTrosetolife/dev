@@ -1,8 +1,8 @@
+import { string_split_tab } from "./string_split_tab.mjs";
 import { list_difference_lower } from "./list_difference_lower.mjs";
 import { http_cache_split_trim } from "./http_cache_split_trim.mjs";
 import { log } from "./log.mjs";
 import { list_first } from "./list_first.mjs";
-import { string_split_space } from "./string_split_space.mjs";
 import { list_map } from "./list_map.mjs";
 import { http_cache } from "./http_cache.mjs";
 import { ceb_defintion_en } from "./ceb_defintion_en.mjs";
