@@ -22,7 +22,7 @@ export async function sandbox_3() {
   let split = list_map(trimmed, string_split_tab);
   let firsts = list_map(split, list_first);
   let filtered = list_difference_lower(firsts, c);
-  let take = list_take(filtered, 100000);
+  let take = list_take(filtered, 500000);
   let cs = list_chunk(take, 20);
   log({
     take: list_last(cs),
