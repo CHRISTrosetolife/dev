@@ -1,4 +1,6 @@
 export function curse_words() {
+  let url =
+    "https://raw.githubusercontent.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words/refs/heads/master/en";
   let b = [
     "4r5e",
     "5h1t",
