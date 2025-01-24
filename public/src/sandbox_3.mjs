@@ -1,7 +1,6 @@
 import { object_property_exists } from "./object_property_exists.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { list_chunk } from "./list_chunk.mjs";
-import { list_take } from "./list_take.mjs";
 import { string_split_tab } from "./string_split_tab.mjs";
 import { list_difference_lower } from "./list_difference_lower.mjs";
 import { http_cache_split_trim } from "./http_cache_split_trim.mjs";
@@ -32,7 +31,6 @@ export async function sandbox_3() {
   let filtered2 = list_filter(filtered, (f) =>
     object_property_exists(dictionary, f),
   );
-  let take = list_take(filtered2, 50000);
   let cs = list_chunk(take, 20);
   log({
     take: list_last(cs),
