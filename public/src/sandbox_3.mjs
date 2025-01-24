@@ -30,9 +30,9 @@ export async function sandbox_3() {
   let firsts = list_map(split, list_first);
   let filtered = list_difference_lower(firsts, c);
   let filtered2 = list_filter(filtered, (f) =>
-    object_property_exists(object, "property_name"),
+    object_property_exists(dictionary, f),
   );
-  let take = list_take(filtered, 50000);
+  let take = list_take(filtered2, 50000);
   let cs = list_chunk(take, 20);
   log({
     take: list_last(cs),
