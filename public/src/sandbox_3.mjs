@@ -1,3 +1,4 @@
+import { each_log_async } from "./each_log_async.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { string_split_tab } from "./string_split_tab.mjs";
@@ -27,7 +28,7 @@ export async function sandbox_3() {
   let filtered2 = list_filter(filtered, (f) =>
     object_property_exists(dictionary, f),
   );
-  await each_async_log(filtered2, async (t) => {
+  await each_log_async(filtered2, async (t) => {
     await ceb_defintion_en(t);
   });
 }
