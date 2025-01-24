@@ -2,4 +2,4 @@ https://codepen.io/sosuke/pen/Pjoqqp
 
 https://www.iconfinder.com/search
 
-https://raw.githubusercontent.com/first20hours/google-10000-english/refs/heads/master/google-10000-english-usa.txt
+https://github.com/first20hours/google-10000-english
