@@ -22,6 +22,8 @@ export function app_good() {
           "Cause me to perfectly obey the Holy Spirit",
           "Unite the church",
           "Cause all to choose good",
+          "Cause me to be with Jesus soon",
+          "Help the president",
         ]);
       }
     });
