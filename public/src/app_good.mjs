@@ -20,8 +20,9 @@ export function app_good() {
           "Cause me to perfectly obey the Father;",
           "Cause me to perfectly obey Jesus",
           "Cause me to perfectly obey the Holy Spirit",
-          "Unite the church",
+          "Cause me to fulfill my ministry",
           "Cause all to choose good",
+          "Unite the church",
           "Cause me to be with Jesus soon",
           "Help the president",
         ]);
