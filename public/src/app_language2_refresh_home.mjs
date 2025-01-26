@@ -104,6 +104,7 @@ export function app_language2_refresh_home(context) {
           html_div_text(
             root,
             string_combine_multiple([
+              "gap",
               gap,
               " ",
               s,
