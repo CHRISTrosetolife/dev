@@ -88,7 +88,7 @@ export function app_language2_refresh_home(context) {
       });
       each_object(closest, (gap, rw) => {
         each(ss, (s) => {
-          let v = object_property_get(object, "property_name");
+          let v = object_property_get(rw, s);
         });
       });
       html_button_width_full_text_click(root, "reset", () => {
