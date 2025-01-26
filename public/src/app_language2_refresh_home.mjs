@@ -65,7 +65,7 @@ export function app_language2_refresh_home(context) {
             each_object(r, (key, value) => {
               c2(value);
               html_div_text(root, string_combine_multiple([key, ": ", value]));
-              list_closest(gaps, integer_parse(key));
+              let c3 = list_closest(gaps, integer_parse(key));
             });
           });
           c(s_total);
