@@ -70,7 +70,7 @@ export function app_language2_refresh_home(context) {
               let c3 = list_closest(gaps, integer_parse(key));
               let c4 = object_property_initialize(closest, c3, {});
               let v = object_property_initialize(c4, s, 0);
-              object_property_set(object, "property_name", value2);
+              object_property_set(c4, s, v + value);
             });
           });
           c(s_total);
