@@ -43,6 +43,15 @@ export function app_language2_refresh_home(context) {
       let total = summation((c) => {
         each(ss, (s) => {
           let r = object_property_get(stats, s);
+          each_object(r, (key, value) => {
+            c(value);
+          });
+        });
+      });
+      html_p_text(root, string_combine_multiple(["grand total: ", total]));
+      summation((c) => {
+        each(ss, (s) => {
+          let r = object_property_get(stats, s);
           html_p_text(root, s);
           let s_total = summation((c2) => {
             each_object(r, (key, value) => {
@@ -54,7 +63,6 @@ export function app_language2_refresh_home(context) {
           html_p_text(root, string_combine_multiple([s, " total: ", s_total]));
         });
       });
-      html_p_text(root, string_combine_multiple(["grand total: ", total]));
       html_button_width_full_text_click(root, "reset", () => {
         storage_local_set(app_fn, "stats", app_language2_stats_initial());
       });
