@@ -24,6 +24,7 @@ export function app_good() {
           "Cause all to choose good",
           "Unite the church",
           "Cause me to be with Jesus soon",
+          "Help me learn Cebuano",
           "Help the president",
         ]);
       }
