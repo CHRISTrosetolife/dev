@@ -33,6 +33,7 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { html_style_success } from "./html_style_success.mjs";
 import { integer_parse } from "./integer_parse.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
+import { object_property_exists } from "./object_property_exists.mjs";
 export function app_language2_refresh_home(context) {
   let { root, app_fn } = context;
   html_clear_scroll_top_centered(root);
@@ -96,9 +97,10 @@ export function app_language2_refresh_home(context) {
         });
         each(ss, (s) => {
           let v;
-          if (false) {
+          if (object_property_exists(rw, s)) {
+            v = object_property_get(rw, s);
+          } else {
           }
-          v = object_property_get(rw, s);
           html_p_text(
             root,
             string_combine_multiple([
