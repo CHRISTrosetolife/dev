@@ -100,6 +100,7 @@ export function app_language2_refresh_home(context) {
           if (object_property_exists(rw, s)) {
             v = object_property_get(rw, s);
           } else {
+            v = 0;
           }
           html_p_text(
             root,
