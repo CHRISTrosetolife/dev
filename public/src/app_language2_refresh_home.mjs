@@ -1,4 +1,4 @@
-import { object_property_set } from "./object_property_set.mjs";
+import { object_property_add } from "./object_property_add.mjs";
 import { list_closest } from "./list_closest.mjs";
 import { app_language2_gaps_get } from "./app_language2_gaps_get.mjs";
 import { number_max } from "./number_max.mjs";
@@ -69,8 +69,7 @@ export function app_language2_refresh_home(context) {
               html_div_text(root, string_combine_multiple([key, ": ", value]));
               let c3 = list_closest(gaps, integer_parse(key));
               let c4 = object_property_initialize(closest, c3, {});
-              let v = object_property_initialize(c4, s, 0);
-              object_property_set(c4, s, v + value);
+              object_property_add(c4, s, value);
             });
           });
           c(s_total);
