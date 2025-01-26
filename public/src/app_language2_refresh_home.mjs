@@ -101,7 +101,7 @@ export function app_language2_refresh_home(context) {
           } else {
             v = 0;
           }
-          html_p_text(
+          html_div_text(
             root,
             string_combine_multiple([
               gap,
