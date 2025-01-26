@@ -67,7 +67,7 @@ export function app_language2_refresh_home(context) {
               " total: ",
               s_total,
               " (",
-              number_round_2(s_total / total),
+              number_round_2((s_total / total) * 100),
               ")",
             ]),
           );
