@@ -52,6 +52,7 @@ export function app_language2_refresh_home(context) {
         });
       });
       html_p_text(root, string_combine_multiple(["grand total: ", total]));
+      let closest = {};
       summation((c) => {
         each(ss, (s) => {
           let r = object_property_get(stats, s);
