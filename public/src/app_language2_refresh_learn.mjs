@@ -1,3 +1,4 @@
+import { app_language2_gaps_get } from "./app_language2_gaps_get.mjs";
 import { app_language2_count_increment } from "./app_language2_count_increment.mjs";
 import { round } from "./round.mjs";
 import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
@@ -164,7 +165,7 @@ export async function app_language2_refresh_learn(context) {
           decrease_wait();
           if (c === answer_text) {
             html_style_success(b);
-            let gaps = object_property_get(context, "gaps");
+            let gaps = app_language2_gaps_get(context);
             let gap = object_property_get(v, "gap");
             let f = list_filter(gaps, (g) => g > gap);
             if (list_empty_is(f)) {
