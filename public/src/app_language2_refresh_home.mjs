@@ -1,3 +1,4 @@
+import { each_object_values } from "./each_object_values.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { app_language2_stats_initial } from "./app_language2_stats_initial.mjs";
 import { app_language2_stats_get } from "./app_language2_stats_get.mjs";
@@ -43,7 +44,7 @@ export function app_language2_refresh_home(context) {
       let total = summation((c) => {
         each(ss, (s) => {
           let r = object_property_get(stats, s);
-          each_object(r, (key, value) => {
+          each_object_values(r, (value) => {
             c(value);
           });
         });
