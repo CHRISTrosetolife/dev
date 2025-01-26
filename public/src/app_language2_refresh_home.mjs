@@ -96,7 +96,21 @@ export function app_language2_refresh_home(context) {
         });
         each(ss, (s) => {
           let v = object_property_get(rw, s);
-          c(v);
+          html_p_text(
+            root,
+            string_combine_multiple([
+              gap,
+              " ",
+              s,
+              " ",
+              v,
+              "/",
+              total2,
+              " (",
+              round_2((v / number_max(total2, 1)) * 100),
+              "%)",
+            ]),
+          );
         });
       });
       html_button_width_full_text_click(root, "reset", () => {
