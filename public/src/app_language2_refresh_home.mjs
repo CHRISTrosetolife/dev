@@ -1,4 +1,3 @@
-import { object_property_set } from "./object_property_set.mjs";
 import { list_closest } from "./list_closest.mjs";
 import { app_language2_gaps_get } from "./app_language2_gaps_get.mjs";
 import { number_max } from "./number_max.mjs";
@@ -32,6 +31,7 @@ import { list_map } from "./list_map.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_style_success } from "./html_style_success.mjs";
 import { integer_parse } from "./integer_parse.mjs";
+import { object_property_initialize } from "./object_property_initialize.mjs";
 export function app_language2_refresh_home(context) {
   let { root, app_fn } = context;
   html_clear_scroll_top_centered(root);
@@ -67,7 +67,7 @@ export function app_language2_refresh_home(context) {
               c2(value);
               html_div_text(root, string_combine_multiple([key, ": ", value]));
               let c3 = list_closest(gaps, integer_parse(key));
-              object_property_set(object, "property_name", value2);
+              let c4 = object_property_initialize(closest, c3, {});
             });
           });
           c(s_total);
