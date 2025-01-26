@@ -96,6 +96,8 @@ export function app_language2_refresh_home(context) {
         });
         each(ss, (s) => {
           let v;
+          if (false) {
+          }
           v = object_property_get(rw, s);
           html_p_text(
             root,
