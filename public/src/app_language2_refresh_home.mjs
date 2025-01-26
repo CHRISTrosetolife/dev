@@ -68,7 +68,7 @@ export function app_language2_refresh_home(context) {
               s_total,
               " (",
               number_round_2((s_total / total) * 100),
-              ")",
+              "%)",
             ]),
           );
         });
