@@ -1,3 +1,4 @@
+import { list_closest } from "./list_closest.mjs";
 import { app_language2_gaps_get } from "./app_language2_gaps_get.mjs";
 import { number_max } from "./number_max.mjs";
 import { round_2 } from "./round_2.mjs";
@@ -63,6 +64,7 @@ export function app_language2_refresh_home(context) {
             each_object(r, (key, value) => {
               c2(value);
               html_div_text(root, string_combine_multiple([key, ": ", value]));
+              list_closest(gaps, number_parse(key));
             });
           });
           c(s_total);
