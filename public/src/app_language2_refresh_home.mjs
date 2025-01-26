@@ -1,3 +1,4 @@
+import { number_max } from "./number_max.mjs";
 import { round_2 } from "./round_2.mjs";
 import { each_object_values } from "./each_object_values.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
@@ -55,12 +56,18 @@ export function app_language2_refresh_home(context) {
         each(ss, (s) => {
           let r = object_property_get(stats, s);
           html_p_text(root, s);
-          let s_total = summation((c2) => {
-            each_object(r, (key, value) => {
-              c2(value);
-              html_div_text(root, string_combine_multiple([key, ": ", value]));
-            });
-          });
+          let s_total = number_max(
+            summation((c2) => {
+              each_object(r, (key, value) => {
+                c2(value);
+                html_div_text(
+                  root,
+                  string_combine_multiple([key, ": ", value]),
+                );
+              });
+            }),
+            1,
+          );
           c(s_total);
           html_p_text(
             root,
