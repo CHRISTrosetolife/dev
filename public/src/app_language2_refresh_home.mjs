@@ -1,3 +1,4 @@
+import { number_max } from "./number_max.mjs";
 import { round_2 } from "./round_2.mjs";
 import { each_object_values } from "./each_object_values.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
@@ -69,7 +70,7 @@ export function app_language2_refresh_home(context) {
               " total: ",
               s_total,
               " (",
-              round_2((s_total / total) * 100),
+              round_2((s_total / number_max(total, 1)) * 100),
               "%)",
             ]),
           );
