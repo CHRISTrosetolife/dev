@@ -30,6 +30,7 @@ import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered
 import { list_map } from "./list_map.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_style_success } from "./html_style_success.mjs";
+import { integer_parse } from "./integer_parse.mjs";
 export function app_language2_refresh_home(context) {
   let { root, app_fn } = context;
   html_clear_scroll_top_centered(root);
@@ -64,7 +65,7 @@ export function app_language2_refresh_home(context) {
             each_object(r, (key, value) => {
               c2(value);
               html_div_text(root, string_combine_multiple([key, ": ", value]));
-              list_closest(gaps, number_parse(key));
+              list_closest(gaps, integer_parse(key));
             });
           });
           c(s_total);
