@@ -87,6 +87,7 @@ export function app_language2_refresh_home(context) {
         });
       });
       each_object(closest, (gap, rw) => {
+        gap = integer_parse(gap);
         let total2 = summation((c) => {
           each(ss, (s) => {
             let v = object_property_get(rw, s);
