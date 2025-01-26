@@ -1,3 +1,4 @@
+import { app_language2_gaps_get } from "./app_language2_gaps_get.mjs";
 import { number_max } from "./number_max.mjs";
 import { round_2 } from "./round_2.mjs";
 import { each_object_values } from "./each_object_values.mjs";
@@ -53,6 +54,7 @@ export function app_language2_refresh_home(context) {
       });
       html_p_text(root, string_combine_multiple(["grand total: ", total]));
       let closest = {};
+      let gaps = app_language2_gaps_get();
       summation((c) => {
         each(ss, (s) => {
           let r = object_property_get(stats, s);
