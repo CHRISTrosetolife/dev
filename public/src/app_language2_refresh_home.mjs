@@ -86,7 +86,9 @@ export function app_language2_refresh_home(context) {
           );
         });
       });
-      each_object(closest, (gap, rw) => {});
+      each_object(closest, (gap, rw) => {
+        each(ss, (s) => {});
+      });
       html_button_width_full_text_click(root, "reset", () => {
         storage_local_set(app_fn, "stats", app_language2_stats_initial());
       });
