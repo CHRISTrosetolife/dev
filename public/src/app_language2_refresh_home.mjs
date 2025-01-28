@@ -1,3 +1,4 @@
+import { app_language2_button_back_home } from "./app_language2_button_back_home.mjs";
 import { emoji_chart } from "./emoji_chart.mjs";
 import { emoji_laptop } from "./emoji_laptop.mjs";
 import { object_property_add } from "./object_property_add.mjs";
@@ -151,11 +152,8 @@ export function app_language2_refresh_home(context) {
     root,
     string_combine_multiple([emoji_chart(), " Factor"]),
     () => {
+      app_language2_button_back_home(context);
       let { root } = context;
-      html_clear_scroll_top_centered(root);
-      html_button_back(root, async () => {
-        app_language2_refresh_home(context);
-      });
       html_p_text(
         root,
         "The gap of a word pair relates to the number of other word pairs you see before seeing the same word pair again. The factor is the rate at which a gap increases. The lower the factor, the easier the app is. The higher the factor, the more difficult the app is. Choose a factor:",
