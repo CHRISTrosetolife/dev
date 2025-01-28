@@ -62,11 +62,13 @@ export function app_language2_refresh_home(context) {
         html_hr(entry);
         let word = object_property_get(v, "word");
         let language = object_property_get(word, "language");
-        app_language2_word_p(entry, language, rememeber);
+        let question = object_property_get(word, "question");
+        app_language2_word_p(entry, language, question);
+        let answer = object_property_get(word, "answer");
         app_language2_word_p(
           entry,
           app_language2_other(language, language_learn, language_fluent),
-          rememeber,
+          answer,
         );
         html_p_text(entry, json_to(v));
         html_button_width_full_text_click(
