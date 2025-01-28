@@ -20,6 +20,13 @@ export function app_language2_refresh_home(context) {
       await app_language2_refresh_learn(context);
     },
   );
+  html_button_width_full_text_click(
+    root,
+    string_combine_multiple([emoji_chart(), " Difficulty"]),
+    () => {
+      app_language2_refresh_factor(context);
+    },
+  );
   if (storage_local_exists(app_fn, "stats")) {
     html_button_width_full_text_click(
       root,
@@ -34,13 +41,6 @@ export function app_language2_refresh_home(context) {
     string_combine_multiple([emoji_laptop(), " Data for development"]),
     () => {
       app_language2_refresh_data(context);
-    },
-  );
-  html_button_width_full_text_click(
-    root,
-    string_combine_multiple([emoji_chart(), " Factor"]),
-    () => {
-      app_language2_refresh_factor(context);
     },
   );
 }
