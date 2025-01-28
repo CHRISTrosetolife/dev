@@ -1,3 +1,4 @@
+import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 import { html_style_link_blank } from "./html_style_link_blank.mjs";
@@ -10,6 +11,7 @@ export async function app_ceb() {
   html_style_link_blank("ceb2.html")(
     html_button_width_full_text(body, "New Cebuano Language Learn App"),
   );
+  html_spacer_vertical_2(body);
   html_style_link_blank("ceb1.html")(
     html_button_width_full_text(body, "Original Cebuano Language Learn App"),
   );
