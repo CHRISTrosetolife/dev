@@ -128,7 +128,7 @@ export function app_language2_refresh_home(context) {
       }
     });
   }
-  html_button_width_full_text_click(root, "values", () => {
+  html_button_width_full_text_click(root, "Developer data", () => {
     let { root, words } = context;
     html_clear_scroll_top_centered(root);
     html_button_back(root, async () => {
