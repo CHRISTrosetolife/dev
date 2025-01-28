@@ -261,6 +261,13 @@ export async function app_language_2_refresh_learn(context) {
       html_style_bold(b);
       html_span_text(b, string_combine_multiple([" ", c]));
       html_spacer_vertical_2(quiz_container);
+      app_language_2_tutorial_message(
+        context,
+        string_combine_multiple([
+          "If this is not the answer you thought of, but you believe it is correct, then choose this:",
+        ]),
+        quiz_container,
+      );
       let b2 = html_button_width_full_text_click(
         quiz_container,
         "",
