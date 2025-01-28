@@ -1,4 +1,4 @@
-import { html_style_hidden } from "./html_style_hidden.mjs";
+import { html_style_display_none } from "./html_style_display_none.mjs";
 import { html_div } from "./html_div.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { object_property_delete } from "./object_property_delete.mjs";
@@ -59,7 +59,7 @@ export function app_language2_refresh_home(context) {
           let word_key = app_language2_word_key(v);
           object_property_delete(skip_manual, word_key);
           storage_local_set(app_fn, "skip_manual", skip_manual);
-          html_style_hidden(entry);
+          html_style_display_none(entry);
         });
       });
     },
