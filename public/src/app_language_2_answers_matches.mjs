@@ -8,14 +8,13 @@ export function app_language_2_answers_matches(values_all, v) {
   let question = object_property_get(word, "question");
   let language = object_property_get(word, "language");
   let index = object_property_get(word, "index");
-  let matches = list_filter(values_all, (v) => {
+  let matches = list_filter(values_all, (w) => {
+    let w_word = object_property_get(w, "word");
     return (
-      object_property_get(v, "learning") === true &&
-      app_language_2_word_index(v) < index &&
-      object_property_get(object_property_get(v, "word"), "question") ===
-        question &&
-      object_property_get(object_property_get(v, "word"), "language") ===
-        language
+      object_property_get(w, "learning") === true &&
+      app_language_2_word_index(w) < index &&
+      object_property_get(w_word, "question") === question &&
+      object_property_get(w_word, "language") === language
     );
   });
   if (list_empty_not_is(matches)) {
