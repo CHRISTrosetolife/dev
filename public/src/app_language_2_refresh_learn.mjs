@@ -93,6 +93,8 @@ export async function app_language_2_refresh_learn(context) {
     let index = object_property_get(word, "index");
     let key = json_to([language, question]);
     let value = object_property_initialize(max_indexes, key, -1);
+    if (false) {
+    }
   });
   let mapped2 = list_map(values_skip_manual, (v) => {
     if (object_property_get(v, "learning") === false) {
