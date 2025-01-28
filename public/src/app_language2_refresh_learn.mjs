@@ -1,3 +1,4 @@
+import { app_language2_answers_matches } from "./app_language2_answers_matches.mjs";
 import { app_language2_word_key } from "./app_language2_word_key.mjs";
 import { app_language2_skip } from "./app_language2_skip.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
@@ -72,7 +73,9 @@ export async function app_language2_refresh_learn(context) {
   let values_skip_manual = list_filter(values_all, (v) =>
     object_property_exists_not(skip_manual, app_language2_word_key(v)),
   );
-  let values = list_filter(values_skip_manual, () => {});
+  let values = list_filter(values_skip_manual, (v) => {
+    app_language2_answers_matches();
+  });
   list_sort(values, app_language2_word_index);
   log({
     values,
