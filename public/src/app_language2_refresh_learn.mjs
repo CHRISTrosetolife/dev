@@ -68,13 +68,13 @@ export async function app_language2_refresh_learn(context) {
   html_spacer_vertical_2(root);
   let values_all = object_values(words);
   let skip_manual = app_language2_skip_manual_get(app_fn);
-  let values_skip_manul = list_filter(values_all, (v) =>
+  let values_skip_manual = list_filter(values_all, (v) =>
     object_property_exists_not(
       skip_manual,
       object_property_get(object_property_get(v, "word"), "key"),
     ),
   );
-  let values = list_filter_property(values_skip_manul, "skip", false);
+  let values = list_filter_property(values_skip_manual, "skip", false);
   list_sort(values, app_language2_word_index);
   log({
     values,
@@ -97,7 +97,7 @@ export async function app_language2_refresh_learn(context) {
       root,
       "Word pair",
       list_size(list_filter_property(values_all, "learning", true)),
-      list_size(values_all),
+      list_size(values_skip_manual),
     );
     html_p_text(root, "Remember this:");
     app_language2_word_titled(root, "Question", language, question);
