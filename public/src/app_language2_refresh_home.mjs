@@ -1,3 +1,4 @@
+import { emoji_data } from "./emoji_data.mjs";
 import { app_language2_button_back_home } from "./app_language2_button_back_home.mjs";
 import { emoji_chart } from "./emoji_chart.mjs";
 import { emoji_laptop } from "./emoji_laptop.mjs";
@@ -46,7 +47,7 @@ export function app_language2_refresh_home(context) {
   if (storage_local_exists(app_fn, "stats")) {
     html_button_width_full_text_click(
       root,
-      string_combine_multiple(["stats"]),
+      string_combine_multiple([emoji_data(), " stats"]),
       () => {
         app_language2_button_back_home(context);
         let { root } = context;
