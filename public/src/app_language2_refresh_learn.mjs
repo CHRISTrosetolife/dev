@@ -235,7 +235,7 @@ export async function app_language2_refresh_learn(context) {
       html_span_text(b2, string_combine_multiple([" ", c]));
       html_spacer_vertical_2(quiz_container);
     });
-    app_language2_skip(root, word, app_fn, context);
+    app_language2_skip(word, app_fn, context);
     if (false) {
       html_p_text(root, round_2(v_gap));
     }
