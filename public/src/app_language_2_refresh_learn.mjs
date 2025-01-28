@@ -1,3 +1,4 @@
+import { list_take } from "./list_take.mjs";
 import { app_language_2_wrong } from "./app_language_2_wrong.mjs";
 import { app_language_2_word } from "./app_language_2_word.mjs";
 import { app_language_2_word_p } from "./app_language_2_word_p.mjs";
@@ -42,7 +43,6 @@ import { emoji_check } from "./emoji_check.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each } from "./each.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
-import { list_random_item } from "./list_random_item.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { html_flag_language_get } from "./html_flag_language_get.mjs";
 import { app_language_button_ready } from "./app_language_button_ready.mjs";
@@ -177,7 +177,7 @@ export async function app_language_2_refresh_learn(context) {
     let answers = list_map_property(v_filtered2, "answer");
     let others = list_difference(answers, mapped);
     list_shuffle(others);
-    let other = list_random_item(others);
+    let other_taken = list_take(others, list_size(mapped));
     let answer_text = list_join_comma_space(mapped);
     let choices = [answer_text, other];
     list_shuffle(choices);
