@@ -98,9 +98,11 @@ export function app_language2_refresh_stats(context) {
           v,
           "/",
           total2,
-          " (",
-          round_2((v / (total2 === 0 ? 1 : total2)) * 100),
-          "%)",
+          string_combine_multiple([
+            " (",
+            round_2((v / (total2 === 0 ? 1 : total2)) * 100),
+            "%)",
+          ]),
         ]),
       );
     });
