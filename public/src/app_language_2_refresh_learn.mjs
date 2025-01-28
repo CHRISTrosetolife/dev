@@ -1,3 +1,4 @@
+import { app_language_refresh_quiz_text_ready } from "./app_language_refresh_quiz_text_ready.mjs";
 import { app_language_2_skip_text } from "./app_language_2_skip_text.mjs";
 import { app_language_2_tutorial_message } from "./app_language_2_tutorial_message.mjs";
 import { list_take } from "./list_take.mjs";
@@ -183,6 +184,7 @@ export async function app_language_2_refresh_learn(context) {
       context,
       string_combine_multiple([
         "Try to remember the translation of the word above. Once you are ready to answer, choose ",
+        await app_language_refresh_quiz_text_ready(language_fluent),
       ]),
     );
     let quiz_container = await app_language_button_ready(
