@@ -87,6 +87,7 @@ export async function app_language_2_refresh_learn(context) {
     let question = object_property_get(vsm_word, "question");
     let language = object_property_get(vsm_word, "language");
     let key = json_to([language, question]);
+    object_property_set(object, "property_name", value);
   });
   let mapped2 = list_map(values_skip_manual, (v) => {
     if (object_property_get(v, "learning") === false) {
