@@ -99,7 +99,7 @@ export function app_language2_refresh_stats(context) {
           "/",
           total2,
           " (",
-          round_2((v / number_max(total2, 1)) * 100),
+          round_2((v / (total2 === 0 ? 1 : total2)) * 100),
           "%)",
         ]),
       );
@@ -113,12 +113,12 @@ export function app_language2_refresh_stats(context) {
       app_language2_refresh_stats(context);
     },
   );
+  let cnt = storage_local_get(app_fn, "count");
   if (storage_local_exists(app_fn, "count")) {
-    let cnt = storage_local_get(app_fn, "count");
     html_p_text(root, string_combine_multiple(["Grand total answered: ", cnt]));
   }
   if (storage_local_exists(app_fn, "count_wrong")) {
-    let cnt = storage_local_get(app_fn, "count_wrong");
+    let cnt_wrong = storage_local_get(app_fn, "count_wrong");
     html_p_text(root, string_combine_multiple(["Grand total wrong: ", cnt]));
   }
 }
