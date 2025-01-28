@@ -44,7 +44,7 @@ export function app_language2_refresh_home(context) {
     await app_language2_refresh_learn(context);
   });
   if (storage_local_exists(app_fn, "stats")) {
-    html_button_width_full_text_click(root, "stats view", () => {
+    html_button_width_full_text_click(root, "stats", () => {
       app_language2_button_back_home(context);
       let { root } = context;
       let stats = app_language2_stats_get(app_fn);
