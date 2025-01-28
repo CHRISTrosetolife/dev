@@ -1,3 +1,4 @@
+import { list_flatten } from "./list_flatten.mjs";
 import { list_map } from "./list_map.mjs";
 import { app_language2_answers_matches } from "./app_language2_answers_matches.mjs";
 import { app_language2_word_key } from "./app_language2_word_key.mjs";
@@ -77,6 +78,7 @@ export async function app_language2_refresh_learn(context) {
   let mapped2 = list_map(values_skip_manual, (v) => {
     return app_language2_answers_matches(values_skip_manual, v);
   });
+  let flattened = list_flatten(mapped2);
   list_sort(values, app_language2_word_index);
   log({
     values,
