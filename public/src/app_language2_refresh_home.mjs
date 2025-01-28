@@ -45,11 +45,8 @@ export function app_language2_refresh_home(context) {
   });
   if (storage_local_exists(app_fn, "stats")) {
     html_button_width_full_text_click(root, "stats view", () => {
+      app_language2_button_back_home(context);
       let { root } = context;
-      html_clear_scroll_top_centered(root);
-      html_button_back(root, async () => {
-        app_language2_refresh_home(context);
-      });
       let stats = app_language2_stats_get(app_fn);
       let ss = ["right", "wrong"];
       let total = summation((c) => {
