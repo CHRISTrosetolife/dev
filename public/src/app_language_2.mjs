@@ -1,3 +1,4 @@
+import { html_localhost_is } from "./html_localhost_is.mjs";
 import { app_language_2_words_get } from "./app_language_2_words_get.mjs";
 import { app_language_2_refresh_learn } from "./app_language_2_refresh_learn.mjs";
 import { app_language_2_gaps_update } from "./app_language_2_gaps_update.mjs";
@@ -31,7 +32,7 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
   storage_local_initialize(app_fn, "words", {});
   await app_language_group_index_changed_inner(context, "all");
   let group = object_property_get(context, "group");
-  if (false) {
+  if (html_localhost_is()) {
     group = [
       [
         ["tawo", "man"],
