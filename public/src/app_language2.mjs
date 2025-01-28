@@ -87,7 +87,6 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     };
     object_property_set(words, k, w);
     object_property_set(w, "wait", null);
-    object_property_set(w, "skip", false);
     object_property_set(w, "gap", null);
   });
   storage_local_set(app_fn, "words", words);
