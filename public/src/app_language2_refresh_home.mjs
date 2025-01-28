@@ -1,3 +1,4 @@
+import { emoji_chart } from "./emoji_chart.mjs";
 import { emoji_laptop } from "./emoji_laptop.mjs";
 import { object_property_add } from "./object_property_add.mjs";
 import { list_closest } from "./list_closest.mjs";
@@ -132,6 +133,23 @@ export function app_language2_refresh_home(context) {
   html_button_width_full_text_click(
     root,
     string_combine_multiple([emoji_laptop(), " Data for development"]),
+    () => {
+      let { root, words } = context;
+      html_clear_scroll_top_centered(root);
+      html_button_back(root, async () => {
+        app_language2_refresh_home(context);
+      });
+      let values_all = object_values(words);
+      let values = list_filter_property(values_all, "skip", false);
+      list_sort(values, app_language2_word_index);
+      each(list_take(values, 200), (item) => {
+        html_div_text(root, json_format_to(item));
+      });
+    },
+  );
+  html_button_width_full_text_click(
+    root,
+    string_combine_multiple([emoji_chart(), "Factor"]),
     () => {
       let { root, words } = context;
       html_clear_scroll_top_centered(root);
