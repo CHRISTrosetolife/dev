@@ -97,7 +97,7 @@ export async function app_language_2_refresh_learn(context) {
     let index = object_property_get(v_word, "index");
     let key = word_to_language_question_key(v_word);
     return (
-      object_property_exists_not(max_indexes, key) ||
+      object_property_get(v, "learning") !== true ||
       index === object_property_get(max_indexes, key)
     );
   });
