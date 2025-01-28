@@ -1,3 +1,5 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { app_language_2_tutorial_message } from "./app_language_2_tutorial_message.mjs";
 import { app_language_2_skip_text } from "./app_language_2_skip_text.mjs";
 import { app_language_2_skip_manual_get } from "./app_language_2_skip_manual_get.mjs";
 import { app_language_2_refresh_learn } from "./app_language_2_refresh_learn.mjs";
@@ -11,6 +13,15 @@ export function app_language_2_skip(context, word) {
   let app_fn = object_property_get(context, "app_fn");
   let skip_manual = app_language_2_skip_manual_get(app_fn);
   html_spacer_vertical_n(root, 6);
+  app_language_2_tutorial_message(
+    context,
+    string_combine_multiple([
+      'If you do not want to learn this word pair, then choose "',
+      app_language_2_skip_text(),
+      '"',
+    ]),
+    root,
+  );
   html_button_width_full_text_click(
     root,
     app_language_2_skip_text(),
