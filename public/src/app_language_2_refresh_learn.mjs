@@ -1,3 +1,4 @@
+import { object_property_initialize } from "./object_property_initialize.mjs";
 import { json_to } from "./json_to.mjs";
 import { app_language_refresh_quiz_text_ready } from "./app_language_refresh_quiz_text_ready.mjs";
 import { app_language_2_tutorial_message } from "./app_language_2_tutorial_message.mjs";
@@ -83,11 +84,14 @@ export async function app_language_2_refresh_learn(context) {
   );
   let max_indexes = {};
   each(values_skip_manual, (vsm) => {
+    if (false) {
+    }
     let vsm_word = object_property_get(vsm, "word");
     let question = object_property_get(vsm_word, "question");
     let language = object_property_get(vsm_word, "language");
+    let index = object_property_get(word, "index");
     let key = json_to([language, question]);
-    object_property_set(object, "property_name", value);
+    let value = object_property_initialize(max_indexes, key, -1);
   });
   let mapped2 = list_map(values_skip_manual, (v) => {
     if (object_property_get(v, "learning") === false) {
