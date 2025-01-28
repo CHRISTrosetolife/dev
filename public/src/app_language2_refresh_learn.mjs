@@ -1,3 +1,4 @@
+import { app_language2_skip_manual_get } from "./app_language2_skip_manual_get.mjs";
 import { app_language2_gaps_get } from "./app_language2_gaps_get.mjs";
 import { app_language2_count_increment } from "./app_language2_count_increment.mjs";
 import { round } from "./round.mjs";
@@ -56,7 +57,6 @@ import { list_add } from "./list_add.mjs";
 import { html_progress } from "./html_progress.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
-import { storage_local_initialize } from "./storage_local_initialize.mjs";
 export async function app_language2_refresh_learn(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
@@ -232,7 +232,7 @@ export async function app_language2_refresh_learn(context) {
   }
   html_spacer_vertical_2(root);
   html_button_width_full_text_click(root, "Skip", () => {
-    let skip_manual = storage_local_initialize(app_fn, "skip_manual", {});
+    let skip_manual = app_language2_skip_manual_get(app_fn);
   });
   function decrease_wait() {
     each(values, (v2) => {
