@@ -36,7 +36,7 @@ export function app_language2_refresh_home(context) {
       root,
       string_combine_multiple([emoji_data(), " stats"]),
       () => {
-        app_language2_refresh_stats(context, app_fn);
+        app_language2_refresh_stats(context);
       },
     );
   }
