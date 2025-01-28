@@ -96,7 +96,7 @@ export async function app_language2_refresh_learn(context) {
     html_progress(
       root,
       "Word pair",
-      list_size(list_filter_property(values_all, "learning", true)),
+      list_size(list_filter_property(values_skip_manual, "learning", true)),
       list_size(values_skip_manual),
     );
     html_p_text(root, "Remember this:");
