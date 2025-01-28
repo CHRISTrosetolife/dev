@@ -1,3 +1,4 @@
+import { list_map } from "./list_map.mjs";
 import { app_language2_answers_matches } from "./app_language2_answers_matches.mjs";
 import { app_language2_word_key } from "./app_language2_word_key.mjs";
 import { app_language2_skip } from "./app_language2_skip.mjs";
@@ -73,14 +74,14 @@ export async function app_language2_refresh_learn(context) {
   let values_skip_manual = list_filter(values_all, (v) =>
     object_property_exists_not(skip_manual, app_language2_word_key(v)),
   );
-  let values = list_filter(values_skip_manual, (v) => {
-    app_language2_answers_matches(values_skip_manual, v);
+  let mapped2 = list_map(values_skip_manual, (v) => {
+    return app_language2_answers_matches(values_skip_manual, v);
   });
   list_sort(values, app_language2_word_index);
   log({
     values,
   });
-  values = list_copy(values);
+  let values = list_copy(values);
   list_sort_property(values, "wait");
   let wait_initial = 0;
   let gap_initial = 0;
