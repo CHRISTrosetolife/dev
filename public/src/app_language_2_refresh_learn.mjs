@@ -182,6 +182,11 @@ export async function app_language_2_refresh_learn(context) {
       html_style_font_color_gray(m_size_span);
     }
     html_br2(root);
+    let { quiz_container } = await app_language_button_ready(
+      root,
+      html_flag_language_get(language_other),
+      language_fluent,
+    );
     app_language_2_tutorial_message(
       context,
       string_combine_multiple([
@@ -189,12 +194,7 @@ export async function app_language_2_refresh_learn(context) {
         await app_language_refresh_quiz_text_ready(language_fluent),
         '".',
       ]),
-      root,
-    );
-    let quiz_container = await app_language_button_ready(
-      root,
-      html_flag_language_get(language_other),
-      language_fluent,
+      ready_above,
     );
     let v_words = list_map_property(values_all, "word");
     let v_filtered = list_filter_property(v_words, "language", language);
