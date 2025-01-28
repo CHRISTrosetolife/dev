@@ -1,3 +1,4 @@
+import { app_language2_skip_manual_get } from "./app_language2_skip_manual_get.mjs";
 import { emoji_delete } from "./emoji_delete.mjs";
 import { app_language2_skipped } from "./app_language2_skipped.mjs";
 import { emoji_learn } from "./emoji_learn.mjs";
@@ -29,13 +30,16 @@ export function app_language2_refresh_home(context) {
       app_language2_refresh_factor(context);
     },
   );
-  html_button_width_full_text_click(
-    root,
-    string_combine_multiple([emoji_delete(), " Skipped"]),
-    () => {
-      app_language2_skipped(context);
-    },
-  );
+  let skip_manual = app_language2_skip_manual_get(app_fn);
+  if (false) {
+    html_button_width_full_text_click(
+      root,
+      string_combine_multiple([emoji_delete(), " Skipped"]),
+      () => {
+        app_language2_skipped(context);
+      },
+    );
+  }
   if (storage_local_exists(app_fn, "stats")) {
     html_button_width_full_text_click(
       root,
