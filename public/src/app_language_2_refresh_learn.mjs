@@ -123,6 +123,10 @@ export async function app_language_2_refresh_learn(context) {
       answer_text,
     );
     html_br2(root);
+    html_p_text(
+      root,
+      "You will be given the question. You will need to remember the answer.",
+    );
     html_button_next(root, async () => {
       decrease_wait();
       object_property_set(u, "learning", true);
