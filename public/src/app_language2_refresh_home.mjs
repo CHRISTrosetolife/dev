@@ -32,7 +32,7 @@ export function app_language2_refresh_home(context) {
     root,
     string_combine_multiple([" Skipped"]),
     () => {
-      app_language2_skipped(context, app_fn);
+      app_language2_skipped(context);
     },
   );
   if (storage_local_exists(app_fn, "stats")) {
