@@ -1,3 +1,4 @@
+import { storage_local_increment } from "./storage_local_increment.mjs";
 import { app_language2_count_increment } from "./app_language2_count_increment.mjs";
 import { round } from "./round.mjs";
 import { app_language2_stats_get } from "./app_language2_stats_get.mjs";
@@ -16,4 +17,5 @@ export function app_language2_wrong(context, v, gap_initial, wait_initial) {
   object_property_set(v, "gap", gap_initial);
   object_property_set(v, "wait", wait_initial);
   app_language2_count_increment(context);
+  storage_local_increment(context, "count_wrong");
 }
