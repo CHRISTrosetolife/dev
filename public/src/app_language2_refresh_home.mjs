@@ -53,7 +53,7 @@ export function app_language2_refresh_home(context) {
         html_p_text(root, json_to(v));
         html_button_width_full_text_click(root, "Unskip", () => {
           let word_key = app_language2_word_key(v);
-          object_property_delete(skip_manual);
+          object_property_delete(skip_manual, word_key);
         });
       });
     },
