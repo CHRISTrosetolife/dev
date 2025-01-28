@@ -129,6 +129,7 @@ export async function app_language_2_refresh_learn(context) {
     app_language_2_tutorial_message(
       context,
       "You will be quizzed on this. You will be given the question. You will need to remember the answer.",
+      root,
     );
     html_button_next(root, async () => {
       decrease_wait();
@@ -145,6 +146,7 @@ export async function app_language_2_refresh_learn(context) {
         app_language_2_skip_text(),
         '"',
       ]),
+      root,
     );
     app_language_2_skip(context, word);
   } else {
@@ -187,6 +189,7 @@ export async function app_language_2_refresh_learn(context) {
         await app_language_refresh_quiz_text_ready(language_fluent),
         '".',
       ]),
+      root,
     );
     let quiz_container = await app_language_button_ready(
       root,
@@ -216,6 +219,7 @@ export async function app_language_2_refresh_learn(context) {
         string_combine_multiple([
           "If this is the answer you thought of, choose this:",
         ]),
+        root,
       );
       let b = html_button_width_full_text_click(
         quiz_container,

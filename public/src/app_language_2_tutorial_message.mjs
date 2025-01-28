@@ -1,7 +1,11 @@
 import { object_property_get } from "./object_property_get.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
-export function app_language_2_tutorial_message(context, tutorial_message) {
+export function app_language_2_tutorial_message(
+  context,
+  tutorial_message,
+  root,
+) {
   let app_fn = object_property_get(context, "app_fn");
   let root = object_property_get(context, "root");
   if (storage_local_initialize(app_fn, "tutorial", true) === true) {
