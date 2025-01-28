@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { app_language2_word_p } from "./app_language2_word_p.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { emoji_check } from "./emoji_check.mjs";
@@ -58,6 +59,8 @@ export function app_language2_refresh_home(context) {
       each(values_skip_manual, (v) => {
         let entry = html_div(root);
         html_hr(entry);
+        let word = object_property_get(v, "word");
+        let language = object_property_get(word, "language");
         app_language2_word_p(body, language, rememeber);
         app_language2_word_p(body, language, rememeber);
         html_p_text(entry, json_to(v));
