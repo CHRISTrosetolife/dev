@@ -1,3 +1,4 @@
+import { app_language_2_skip_text } from "./app_language_2_skip_text.mjs";
 import { app_language_2_tutorial_message } from "./app_language_2_tutorial_message.mjs";
 import { list_take } from "./list_take.mjs";
 import { app_language_2_wrong } from "./app_language_2_wrong.mjs";
