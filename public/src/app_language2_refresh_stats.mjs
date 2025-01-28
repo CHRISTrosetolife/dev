@@ -53,7 +53,10 @@ export function app_language2_refresh_stats(context) {
       let s_total = summation((c2) => {
         each_object(r, (key, value) => {
           c2(value);
-          html_div_text(root, string_combine_multiple([key, ": ", value]));
+          html_div_text(
+            root,
+            string_combine_multiple(["Gap-", key, ": ", value]),
+          );
           let c3 = list_closest(gaps, integer_parse(key));
           let c4 = object_property_initialize(closest, c3, {});
           object_property_add(c4, s, value);
