@@ -1,3 +1,4 @@
+import { json_to } from "./json_to.mjs";
 import { app_language_refresh_quiz_text_ready } from "./app_language_refresh_quiz_text_ready.mjs";
 import { app_language_2_tutorial_message } from "./app_language_2_tutorial_message.mjs";
 import { list_take } from "./list_take.mjs";
@@ -80,7 +81,9 @@ export async function app_language_2_refresh_learn(context) {
   let values_skip_manual = list_filter(values_all, (v) =>
     object_property_exists_not(skip_manual, app_language_2_word_key(v)),
   );
-  each(list, (item) => {});
+  each(values_skip_manual, (vsm) => {
+    let key = json_to([]);
+  });
   let mapped2 = list_map(values_skip_manual, (v) => {
     if (object_property_get(v, "learning") === false) {
       return [];
