@@ -4,7 +4,7 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { html_p_text } from "./html_p_text.mjs";
 export async function app_ceb() {
   let body = html_style_default_initialize();
-  html_p_text(body, "It is recommended to use");
+  html_p_text(body, "It is recommended to use the new app");
   html_style_link_blank("ceb2.html")(
     html_button_width_full_text(body, "New Cebuano Language Learn App"),
   );
