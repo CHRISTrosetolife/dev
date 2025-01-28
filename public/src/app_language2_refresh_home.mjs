@@ -51,7 +51,7 @@ export function app_language2_refresh_home(context) {
       let values_skip_manual = list_filter(values_all, (v) =>
         object_property_exists(skip_manual, app_language2_word_key(v)),
       );
-      html_p_text(root, "Choose a word to no longer skip it");
+      html_p_text(root, "Choose a word pair to no longer skip it");
       each(values_skip_manual, (v) => {
         let entry = html_div(root);
         html_p_text(entry, json_to(v));
