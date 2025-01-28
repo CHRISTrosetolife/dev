@@ -1,3 +1,4 @@
+import { list_unique } from "./list_unique.mjs";
 import { list_flatten } from "./list_flatten.mjs";
 import { list_map } from "./list_map.mjs";
 import { app_language2_answers_matches } from "./app_language2_answers_matches.mjs";
@@ -79,6 +80,7 @@ export async function app_language2_refresh_learn(context) {
     return app_language2_answers_matches(values_skip_manual, v);
   });
   let flattened = list_flatten(mapped2);
+  let unique = list_unique(flattened);
   list_sort(values, app_language2_word_index);
   log({
     values,
