@@ -64,9 +64,7 @@ export function app_language2_refresh_stats(context) {
           s,
           " total: ",
           s_total,
-          " (",
           number_format_percent(s_total, total),
-          "%)",
         ]),
       );
     });
