@@ -31,7 +31,7 @@ export function app_language2_refresh_factor(context) {
           if (b === b2) {
             html_style_success(b);
           } else {
-            html_style_button_default(button);
+            html_style_button_default(b);
           }
         });
       });
