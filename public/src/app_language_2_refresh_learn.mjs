@@ -81,7 +81,7 @@ export async function app_language_2_refresh_learn(context) {
   );
   let max_indexes = {};
   each(values_skip_manual, (v) => {
-    if (false) {
+    if (object_property_get(object, "property_name")) {
     }
     let v_word = object_property_get(v, "word");
     let index = object_property_get(v_word, "index");
