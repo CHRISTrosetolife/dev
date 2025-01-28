@@ -219,7 +219,7 @@ export async function app_language_2_refresh_learn(context) {
         string_combine_multiple([
           "If this is the answer you thought of, choose this:",
         ]),
-        root,
+        quiz_container,
       );
       let b = html_button_width_full_text_click(
         quiz_container,
