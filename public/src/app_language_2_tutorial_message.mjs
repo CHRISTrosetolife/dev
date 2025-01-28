@@ -7,7 +7,7 @@ export function app_language_2_tutorial_message(
   root,
 ) {
   let app_fn = object_property_get(context, "app_fn");
-  if (storage_local_initialize(app_fn, "tutorial", true) === true) {
+  if (storage_local_initialize(app_fn, "count", 0) === 0) {
     html_p_text(root, tutorial_message);
   }
 }
