@@ -90,10 +90,11 @@ export async function app_language_2_refresh_learn(context) {
     let vsm_word = object_property_get(vsm, "word");
     let question = object_property_get(vsm_word, "question");
     let language = object_property_get(vsm_word, "language");
-    let index = object_property_get(word, "index");
+    let index = object_property_get(vsm_word, "index");
     let key = json_to([language, question]);
     let value = object_property_initialize(max_indexes, key, -1);
-    if (false) {
+    if (index > value) {
+      object_property_set(max_indexes, key, index);
     }
   });
   let mapped2 = list_map(values_skip_manual, (v) => {
