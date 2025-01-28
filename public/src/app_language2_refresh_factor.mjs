@@ -29,6 +29,7 @@ export function app_language2_refresh_factor(context) {
         app_language2_gaps_update(context);
         app_language2_refresh_home(context);
       });
+      la(buttons);
       if (f === factor) {
         html_style_success(b);
       }
