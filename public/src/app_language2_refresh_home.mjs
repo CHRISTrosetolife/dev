@@ -1,3 +1,4 @@
+import { emoji_delete } from "./emoji_delete.mjs";
 import { app_language2_skipped } from "./app_language2_skipped.mjs";
 import { emoji_learn } from "./emoji_learn.mjs";
 import { app_language2_refresh_factor } from "./app_language2_refresh_factor.mjs";
@@ -30,7 +31,7 @@ export function app_language2_refresh_home(context) {
   );
   html_button_width_full_text_click(
     root,
-    string_combine_multiple([" Skipped"]),
+    string_combine_multiple([emoji_delete(), " Skipped"]),
     () => {
       app_language2_skipped(context);
     },
