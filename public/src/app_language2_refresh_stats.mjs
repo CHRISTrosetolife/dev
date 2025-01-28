@@ -67,7 +67,7 @@ export function app_language2_refresh_stats(context) {
           " total: ",
           s_total,
           " (",
-          round_2((s_total / number_max(total, 1)) * 100),
+          number_format_percent(s_total, total),
           "%)",
         ]),
       );
@@ -118,6 +118,13 @@ export function app_language2_refresh_stats(context) {
   }
   if (storage_local_exists(app_fn, "count_wrong")) {
     let cnt_wrong = storage_local_get(app_fn, "count_wrong");
-    html_p_text(root, string_combine_multiple(["Grand total wrong: ", cnt]));
+    html_p_text(
+      root,
+      string_combine_multiple([
+        "Grand total wrong: ",
+        cnt,
+        round_2((s_total / number_max(total, 1)) * 100),
+      ]),
+    );
   }
 }
