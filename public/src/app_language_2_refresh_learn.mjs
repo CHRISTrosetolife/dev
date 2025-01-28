@@ -1,4 +1,3 @@
-import { html_div_text } from "./html_div_text.mjs";
 import { app_language_refresh_quiz_text_ready } from "./app_language_refresh_quiz_text_ready.mjs";
 import { app_language_2_tutorial_message } from "./app_language_2_tutorial_message.mjs";
 import { list_take } from "./list_take.mjs";
@@ -78,30 +77,18 @@ export async function app_language_2_refresh_learn(context) {
   html_spacer_vertical_2(root);
   let values_all = object_values(words);
   let skip_manual = app_language_2_skip_manual_get(app_fn);
-  html_div_text(root, "a");
-  await sleep(10);
   let values_skip_manual = list_filter(values_all, (v) =>
     object_property_exists_not(skip_manual, app_language_2_word_key(v)),
   );
-  html_div_text(root, "b");
-  await sleep(10);
   let mapped2 = list_map(values_skip_manual, (v) => {
     if (object_property_get(v, "learning") === false) {
       return [];
     }
     return app_language_2_answers_matches(values_skip_manual, v);
   });
-  html_div_text(root, "c");
-  await sleep(10);
   let flattened = list_flatten(mapped2);
-  html_div_text(root, "d");
-  await sleep(10);
   let unique = list_unique(flattened);
-  html_div_text(root, "e");
-  await sleep(10);
   let values = list_difference(values_skip_manual, unique);
-  html_div_text(root, "f");
-  await sleep(10);
   list_sort(values, app_language_2_word_index);
   log({
     values,
