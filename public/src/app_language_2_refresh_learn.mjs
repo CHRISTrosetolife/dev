@@ -182,7 +182,7 @@ export async function app_language_2_refresh_learn(context) {
       html_style_font_color_gray(m_size_span);
     }
     html_br2(root);
-    let { quiz_container } = await app_language_button_ready(
+    let { quiz_container, ready_above } = await app_language_button_ready(
       root,
       html_flag_language_get(language_other),
       language_fluent,
