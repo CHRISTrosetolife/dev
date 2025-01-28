@@ -1,4 +1,4 @@
-import { object_properties_empty_is } from "./object_properties_empty_is.mjs";
+import { object_properties_empty_not_is } from "./object_properties_empty_not_is.mjs";
 import { app_language2_skip_manual_get } from "./app_language2_skip_manual_get.mjs";
 import { emoji_delete } from "./emoji_delete.mjs";
 import { app_language2_skipped } from "./app_language2_skipped.mjs";
@@ -32,7 +32,7 @@ export function app_language2_refresh_home(context) {
     },
   );
   let skip_manual = app_language2_skip_manual_get(app_fn);
-  if (object_properties_empty_is(skip_manual)) {
+  if (object_properties_empty_not_is(skip_manual)) {
     html_button_width_full_text_click(
       root,
       string_combine_multiple([emoji_delete(), " Skipped"]),
