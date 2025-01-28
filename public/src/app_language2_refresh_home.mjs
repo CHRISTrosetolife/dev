@@ -8,7 +8,6 @@ import { html_div } from "./html_div.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { object_property_delete } from "./object_property_delete.mjs";
 import { app_language2_word_key } from "./app_language2_word_key.mjs";
-import { json_to } from "./json_to.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { each } from "./each.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -70,7 +69,6 @@ export function app_language2_refresh_home(context) {
           app_language2_other(language, language_learn, language_fluent),
           answer,
         );
-        html_p_text(entry, json_to(v));
         html_button_width_full_text_click(
           entry,
           string_combine_multiple([emoji_check(), "Unskip"]),
