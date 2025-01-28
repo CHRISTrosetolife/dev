@@ -1,3 +1,8 @@
+import { object_property_get } from "./object_property_get.mjs";
+import { object_property_exists_not } from "./object_property_exists_not.mjs";
+import { list_filter } from "./list_filter.mjs";
+import { app_language2_skip_manual_get } from "./app_language2_skip_manual_get.mjs";
+import { object_values } from "./object_values.mjs";
 import { app_language2_button_back_home } from "./app_language2_button_back_home.mjs";
 import { emoji_learn } from "./emoji_learn.mjs";
 import { app_language2_refresh_factor } from "./app_language2_refresh_factor.mjs";
@@ -33,8 +38,15 @@ export function app_language2_refresh_home(context) {
     string_combine_multiple([" Skipped"]),
     () => {
       app_language2_button_back_home(context);
-      let { root } = context;
-      app_language2_refresh_factor(context);
+      let { root, words } = context;
+      let values_all = object_values(words);
+      let skip_manual = app_language2_skip_manual_get(app_fn);
+      let values_skip_manual = list_filter(values_all, (v) =>
+        object_property_exists_not(
+          skip_manual,
+          object_property_get(object_property_get(v, "word"), "key"),
+        ),
+      );
     },
   );
   if (storage_local_exists(app_fn, "stats")) {
