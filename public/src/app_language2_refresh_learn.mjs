@@ -1,3 +1,4 @@
+import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { app_language2_skip_manual_get } from "./app_language2_skip_manual_get.mjs";
 import { app_language2_gaps_get } from "./app_language2_gaps_get.mjs";
 import { app_language2_count_increment } from "./app_language2_count_increment.mjs";
@@ -67,6 +68,9 @@ export async function app_language2_refresh_learn(context) {
   let values_all = object_values(words);
   let skip_manual = app_language2_skip_manual_get(app_fn);
   let values = list_filter_property(values_all, "skip", false);
+  values = list_filter(values, (v) =>
+    object_property_exists_not(object_property_get(v, "key")),
+  );
   list_sort(values, app_language2_word_index);
   log({
     values,
