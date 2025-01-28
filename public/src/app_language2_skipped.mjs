@@ -19,7 +19,7 @@ import { object_values } from "./object_values.mjs";
 import { app_language2_button_back_home } from "./app_language2_button_back_home.mjs";
 export function app_language2_skipped(context) {
   app_language2_button_back_home(context);
-  let { root, words, language_learn, language_fluent } = context;
+  let { root, words, language_learn, language_fluent,app_fn } = context;
   let values_all = object_values(words);
   let skip_manual = app_language2_skip_manual_get(app_fn);
   let values_skip_manual = list_filter(values_all, (v) =>
