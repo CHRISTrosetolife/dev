@@ -185,7 +185,7 @@ export async function app_language_2_refresh_learn(context) {
       string_combine_multiple([
         'Try to remember the translation of the word above. Once you are ready to answer, choose "',
         await app_language_refresh_quiz_text_ready(language_fluent),
-        '"',
+        '".',
       ]),
     );
     let quiz_container = await app_language_button_ready(
