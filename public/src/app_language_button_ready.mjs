@@ -10,10 +10,14 @@ export async function app_language_button_ready(root, f, language_fluent) {
   let quiz_container;
   let ready_container = html_div(root);
   let ready_above = html_div(ready_container);
-  let button_ready = html_button_width_full_text_click(root, "", () => {
-    html_style_display_none(ready_container);
-    html_style_display_block(quiz_container);
-  });
+  let button_ready = html_button_width_full_text_click(
+    ready_container,
+    "",
+    () => {
+      html_style_display_none(ready_container);
+      html_style_display_block(quiz_container);
+    },
+  );
   html_flag(button_ready, f);
   html_span_text(
     button_ready,
