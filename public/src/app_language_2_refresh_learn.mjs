@@ -140,6 +140,7 @@ export async function app_language_2_refresh_learn(context) {
       context,
       string_combine_multiple([
         'If you do not want to learn this word pair, then choose "',
+        app_language_2_skip_text(),
         '"',
       ]),
     );
