@@ -30,7 +30,7 @@ export function app_language2_refresh_stats(context) {
   let factor = app_language2_factor_get(context);
   html_p_text(
     root,
-    string_combine_multiple([emoji_chart(), " Factor: ", factor]),
+    string_combine_multiple([emoji_chart(), " Difficulty: ", factor]),
   );
   let stats = app_language2_stats_get(app_fn);
   let ss = ["right", "wrong"];
