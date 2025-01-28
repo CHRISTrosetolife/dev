@@ -116,6 +116,11 @@ export async function app_language_2_refresh_learn(context) {
   });
   let unlearning = list_filter_property(values, "learning", false);
   if (list_empty_not_is(unlearning) && (vw === null || vw > 0)) {
+    app_language_2_tutorial_message(
+      context,
+      "At this time, this app stores all data on your device. Make sure you are using the device you want to use this app on. At this time you cannot use this app on multiple devices.",
+      root,
+    );
     let u = list_first(unlearning);
     let word = object_property_get(u, "word");
     let language = object_property_get(word, "language");
