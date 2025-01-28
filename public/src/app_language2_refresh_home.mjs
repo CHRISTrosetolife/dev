@@ -50,6 +50,7 @@ export function app_language2_refresh_home(context) {
           object_property_get(object_property_get(v, "word"), "key"),
         ),
       );
+      html_p_text(root, "Choose a word to no longer skip it");
       each(values_skip_manual, (v) => {
         html_p_text(root, json_to(v));
       });
