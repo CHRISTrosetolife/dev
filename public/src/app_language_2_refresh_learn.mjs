@@ -168,7 +168,7 @@ export async function app_language_2_refresh_learn(context) {
       html_flag_language_get(language_other),
       language_fluent,
     );
-    let v_words = list_map_property(values, "word");
+    let v_words = list_map_property(values_all, "word");
     let v_filtered = list_filter_property(v_words, "language", language);
     let v_filtered2 = list_filter(
       v_filtered,
