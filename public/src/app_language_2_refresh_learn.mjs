@@ -127,7 +127,7 @@ export async function app_language_2_refresh_learn(context) {
     html_br2(root);
     app_language_2_tutorial_message(
       context,
-      "You will be quizzed on this. You will be given the question. You will need to remember the answer.",
+      "You will be quizzed on this question and answer. You will be given the question. You will need to remember the answer.",
       root,
     );
     html_button_next(root, async () => {
