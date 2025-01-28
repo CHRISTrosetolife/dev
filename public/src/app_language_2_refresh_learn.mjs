@@ -64,6 +64,8 @@ import { list_add } from "./list_add.mjs";
 import { html_progress } from "./html_progress.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
+import { list_sort_string } from "./list_sort_string.mjs";
+import { identity } from "./identity.mjs";
 export async function app_language_2_refresh_learn(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
@@ -179,6 +181,7 @@ export async function app_language_2_refresh_learn(context) {
     let others_unique = list_unique(others);
     list_shuffle(others_unique);
     let other_taken = list_take(others_unique, list_size(mapped));
+    list_sort_string(other_taken, identity);
     let other = list_join_comma_space(other_taken);
     let answer_text = list_join_comma_space(mapped);
     let choices = [answer_text, other];
