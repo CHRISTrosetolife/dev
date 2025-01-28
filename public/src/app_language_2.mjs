@@ -35,8 +35,9 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
   if (html_localhost_is()) {
     group = [
       [
-        ["tawo", "man"],
-        ["man", "also"],
+        ["o", "oh"],
+        ["o", "yes"],
+        ["o", "or"],
       ],
     ];
   }
