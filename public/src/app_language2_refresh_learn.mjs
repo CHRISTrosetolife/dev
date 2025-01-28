@@ -1,5 +1,4 @@
-import { emoji_delete } from "./emoji_delete.mjs";
-import { html_spacer_vertical_n } from "./html_spacer_vertical_n.mjs";
+import { app_language2_skip } from "./app_language2_skip.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { app_language2_skip_manual_get } from "./app_language2_skip_manual_get.mjs";
 import { app_language2_gaps_get } from "./app_language2_gaps_get.mjs";
@@ -236,17 +235,7 @@ export async function app_language2_refresh_learn(context) {
       html_span_text(b2, string_combine_multiple([" ", c]));
       html_spacer_vertical_2(quiz_container);
     });
-    html_spacer_vertical_n(root, 6);
-    html_button_width_full_text_click(
-      root,
-      string_combine_multiple([emoji_delete(), " Skip"]),
-      async () => {
-        let word_key = object_property_get(word, "key");
-        object_property_set(skip_manual, word_key, true);
-        storage_local_set(app_fn, "skip_manual", skip_manual);
-        await app_language2_refresh_learn(context);
-      },
-    );
+    app_language2_skip(root, word, skip_manual, app_fn, context);
     if (false) {
       html_p_text(root, round_2(v_gap));
     }
