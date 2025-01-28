@@ -29,9 +29,9 @@ export function app_language2_refresh_factor(context) {
         app_language2_gaps_update(context);
         each(buttons, (b2) => {
           if (b === b2) {
-            html_style_success(b);
+            html_style_success(b2);
           } else {
-            html_style_button_default(b);
+            html_style_button_default(b2);
           }
         });
       });
