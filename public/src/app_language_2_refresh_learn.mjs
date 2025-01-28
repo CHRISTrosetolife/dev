@@ -125,7 +125,7 @@ export async function app_language_2_refresh_learn(context) {
     html_br2(root);
     html_p_text(
       root,
-      "You will be given the question. You will need to remember the answer.",
+      "You will be quizzed on this. You will be given the question. You will need to remember the answer.",
     );
     html_button_next(root, async () => {
       decrease_wait();
