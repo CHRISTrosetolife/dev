@@ -17,5 +17,5 @@ export function app_language_2_wrong(context, v, gap_initial, wait_initial) {
   object_property_set(v, "gap", gap_initial);
   object_property_set(v, "wait", wait_initial);
   app_language_2_count_increment(context);
-  storage_local_increment(context, "count_wrong");
+  storage_local_increment(app_fn, "count_wrong");
 }
