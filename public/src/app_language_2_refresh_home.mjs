@@ -1,3 +1,4 @@
+import { html_button_me_email } from "./html_button_me_email.mjs";
 import { app_language_2_skipped } from "./app_language_2_skipped.mjs";
 import { app_language_2_skip_manual_get } from "./app_language_2_skip_manual_get.mjs";
 import { app_language_2_refresh_stats } from "./app_language_2_refresh_stats.mjs";
@@ -57,4 +58,5 @@ export function app_language_2_refresh_home(context) {
       app_language_2_refresh_data(context);
     },
   );
+  html_button_me_email(root);
 }
