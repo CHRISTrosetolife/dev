@@ -1,3 +1,4 @@
+import { emoji_danger } from "./emoji_danger.mjs";
 import { app_language2_factor_get } from "./app_language2_factor_get.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { storage_local_exists } from "./storage_local_exists.mjs";
@@ -101,7 +102,7 @@ export function app_language2_refresh_stats(context) {
   });
   html_button_width_full_text_click(
     root,
-    string_combine_multiple(["Reset"]),
+    string_combine_multiple([emoji_danger(), "Reset"]),
     () => {
       storage_local_set(app_fn, "stats", app_language2_stats_initial());
       app_language2_refresh_stats(context);
