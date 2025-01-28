@@ -16,7 +16,6 @@ import { app_language_2_other } from "./app_language_2_other.mjs";
 import { app_language_2_gaps_get } from "./app_language_2_gaps_get.mjs";
 import { app_language_2_count_increment } from "./app_language_2_count_increment.mjs";
 import { app_language_2_answers } from "./app_language_2_answers.mjs";
-import { app_language_2_answers_matches } from "./app_language_2_answers_matches.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { list_flatten } from "./list_flatten.mjs";
 import { list_map } from "./list_map.mjs";
@@ -83,25 +82,22 @@ export async function app_language_2_refresh_learn(context) {
     object_property_exists_not(skip_manual, app_language_2_word_key(v)),
   );
   let max_indexes = {};
-  each(values_skip_manual, (vsm) => {
-    if (object_property_get(vsm, "learning") !== true) {
+  each(values_skip_manual, (v) => {
+    if (object_property_get(v, "learning") !== true) {
       return;
     }
-    let vsm_word = object_property_get(vsm, "word");
-    let question = object_property_get(vsm_word, "question");
-    let language = object_property_get(vsm_word, "language");
-    let index = object_property_get(vsm_word, "index");
-    let key = json_to([language, question]);
+    let v_word = object_property_get(v, "word");
+    let index = object_property_get(v_word, "index");
+    let key = word_to_language_question_key(v_word);
     let value = object_property_initialize(max_indexes, key, -1);
     if (index > value) {
       object_property_set(max_indexes, key, index);
     }
   });
   let mapped2 = list_map(values_skip_manual, (v) => {
-    if (object_property_get(v, "learning") === false) {
-      return [];
-    }
-    return app_language_2_answers_matches(values_skip_manual, v);
+    let v_word = object_property_get(v, "word");
+    let index = object_property_get(v_word, "index");
+    return index === object_property_get(max_indexes, key);
   });
   let flattened = list_flatten(mapped2);
   let unique = list_unique(flattened);
@@ -306,6 +302,12 @@ export async function app_language_2_refresh_learn(context) {
     if (false) {
       html_p_text(root, round_2(v_gap));
     }
+  }
+  function word_to_language_question_key(vsm_word) {
+    let question = object_property_get(vsm_word, "question");
+    let language = object_property_get(vsm_word, "language");
+    let key = json_to([language, question]);
+    return key;
   }
   function decrease_wait() {
     each(values, (v2) => {
