@@ -7,15 +7,18 @@ import { emoji_laptop } from "./emoji_laptop.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { storage_local_exists } from "./storage_local_exists.mjs";
 import { app_language2_refresh_learn } from "./app_language2_refresh_learn.mjs";
-import { html_button_back } from "./html_button_back.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export function app_language2_refresh_home(context) {
   let { root, app_fn } = context;
   html_clear_scroll_top_centered(root);
-  html_button_back(root, async () => {
-    await app_language2_refresh_learn(context);
-  });
+  html_button_width_full_text_click(
+    root,
+    string_combine_multiple([" Learn"]),
+    async () => {
+      await app_language2_refresh_learn(context);
+    },
+  );
   if (storage_local_exists(app_fn, "stats")) {
     html_button_width_full_text_click(
       root,
