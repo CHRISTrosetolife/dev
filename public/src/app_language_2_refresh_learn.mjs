@@ -136,6 +136,12 @@ export async function app_language_2_refresh_learn(context) {
       storage_local_set(app_fn, "words", words);
       await app_language_2_refresh_learn(context);
     });
+    app_language_2_tutorial_message(
+      context,
+      string_combine_multiple([
+        'If you do not want to learn this word pair, then choose ""',
+      ]),
+    );
     app_language_2_skip(context, word);
   } else {
     let word = object_property_get(v, "word");
