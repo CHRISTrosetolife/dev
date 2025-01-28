@@ -179,6 +179,7 @@ export async function app_language_2_refresh_learn(context) {
     let others_unique = list_unique(others);
     list_shuffle(others_unique);
     let other_taken = list_take(others_unique, list_size(mapped));
+    let other = list_join_comma_space(other_taken);
     let answer_text = list_join_comma_space(mapped);
     let choices = [answer_text, other];
     list_shuffle(choices);
