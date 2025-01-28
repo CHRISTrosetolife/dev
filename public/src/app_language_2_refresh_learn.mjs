@@ -124,11 +124,10 @@ export async function app_language_2_refresh_learn(context) {
       answer_text,
     );
     html_br2(root);
+    let tutorial_message =
+      "You will be quizzed on this. You will be given the question. You will need to remember the answer.";
     if (storage_local_initialize(app_fn, "tutorial", true)) {
-      html_p_text(
-        root,
-        "You will be quizzed on this. You will be given the question. You will need to remember the answer.",
-      );
+      html_p_text(root, tutorial_message);
     }
     html_button_next(root, async () => {
       decrease_wait();
