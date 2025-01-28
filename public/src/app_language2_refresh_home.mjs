@@ -1,3 +1,4 @@
+import { app_language2_other } from "./app_language2_other.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language2_word_p } from "./app_language2_word_p.mjs";
 import { html_hr } from "./html_hr.mjs";
@@ -49,7 +50,7 @@ export function app_language2_refresh_home(context) {
     string_combine_multiple([" Skipped"]),
     () => {
       app_language2_button_back_home(context);
-      let { root, words } = context;
+      let { root, words, language_learn, language_fluent } = context;
       let values_all = object_values(words);
       let skip_manual = app_language2_skip_manual_get(app_fn);
       let values_skip_manual = list_filter(values_all, (v) =>
@@ -62,7 +63,11 @@ export function app_language2_refresh_home(context) {
         let word = object_property_get(v, "word");
         let language = object_property_get(word, "language");
         app_language2_word_p(entry, language, rememeber);
-        app_language2_word_p(entry, language, rememeber);
+        app_language2_word_p(
+          entry,
+          app_language2_other(language, language_learn, language_fluent),
+          rememeber,
+        );
         html_p_text(entry, json_to(v));
         html_button_width_full_text_click(
           entry,
