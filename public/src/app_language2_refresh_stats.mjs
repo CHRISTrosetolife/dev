@@ -115,6 +115,10 @@ export function app_language2_refresh_stats(context) {
   );
   if (storage_local_exists(app_fn, "count")) {
     let cnt = storage_local_get(app_fn, "count");
-    html_p_text(root, string_combine_multiple(["Count: ", cnt]));
+    html_p_text(root, string_combine_multiple(["Grand total answered: ", cnt]));
+  }
+  if (storage_local_exists(app_fn, "count_wrong")) {
+    let cnt = storage_local_get(app_fn, "count_wrong");
+    html_p_text(root, string_combine_multiple(["Grand total wrong: ", cnt]));
   }
 }
