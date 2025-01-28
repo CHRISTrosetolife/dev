@@ -1,8 +1,8 @@
+import { app_language2_word_key } from "./app_language2_word_key.mjs";
 import { json_to } from "./json_to.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { each } from "./each.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
-import { object_property_get } from "./object_property_get.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { app_language2_skip_manual_get } from "./app_language2_skip_manual_get.mjs";
 import { object_values } from "./object_values.mjs";
@@ -45,10 +45,7 @@ export function app_language2_refresh_home(context) {
       let values_all = object_values(words);
       let skip_manual = app_language2_skip_manual_get(app_fn);
       let values_skip_manual = list_filter(values_all, (v) =>
-        object_property_exists(
-          skip_manual,
-          object_property_get(object_property_get(v, "word"), "key"),
-        ),
+        object_property_exists(skip_manual, app_language2_word_key(v)),
       );
       html_p_text(root, "Choose a word to no longer skip it");
       each(values_skip_manual, (v) => {

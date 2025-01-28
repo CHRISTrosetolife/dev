@@ -1,0 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
+export function app_language2_word_key(v) {
+  return object_property_get(object_property_get(v, "word"), "key");
+}
