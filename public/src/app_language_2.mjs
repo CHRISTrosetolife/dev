@@ -1,3 +1,4 @@
+import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { html_localhost_is } from "./html_localhost_is.mjs";
 import { app_language_2_words_get } from "./app_language_2_words_get.mjs";
 import { app_language_2_refresh_learn } from "./app_language_2_refresh_learn.mjs";
@@ -23,6 +24,7 @@ import { list_concat } from "./list_concat.mjs";
 export async function app_language_2(app_fn, language_learn, language_fluent) {
   let root = await app_language_initialize();
   html_style_default_font_size(3.5);
+  html_style_a_plain();
   let context = {
     app_fn,
     language_learn,
