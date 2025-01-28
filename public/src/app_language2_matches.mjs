@@ -17,8 +17,10 @@ export function app_language2_matches(values_all, v) {
       object_property_get(object_property_get(v, "word"), "language") ===
         language,
   );
-  log({
-    matches,
-  });
+  if (false) {
+    log({
+      matches,
+    });
+  }
   return matches;
 }
