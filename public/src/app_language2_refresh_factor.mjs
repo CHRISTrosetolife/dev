@@ -35,7 +35,7 @@ export function app_language2_refresh_factor(context) {
           }
         });
       });
-      la(buttons);
+      la(b);
       if (f === factor) {
         html_style_success(b);
       }
