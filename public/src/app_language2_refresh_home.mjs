@@ -1,3 +1,4 @@
+import { app_language2_refresh_data } from "./app_language2_refresh_data.mjs";
 import { app_language2_refresh_stats } from "./app_language2_refresh_stats.mjs";
 import { emoji_data } from "./emoji_data.mjs";
 import { app_language2_button_back_home } from "./app_language2_button_back_home.mjs";
@@ -5,13 +6,6 @@ import { emoji_chart } from "./emoji_chart.mjs";
 import { emoji_laptop } from "./emoji_laptop.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { storage_local_exists } from "./storage_local_exists.mjs";
-import { json_format_to } from "./json_format_to.mjs";
-import { list_take } from "./list_take.mjs";
-import { html_div_text } from "./html_div_text.mjs";
-import { app_language2_word_index } from "./app_language2_word_index.mjs";
-import { list_sort } from "./list_sort.mjs";
-import { list_filter_property } from "./list_filter_property.mjs";
-import { object_values } from "./object_values.mjs";
 import { app_language2_gaps_update } from "./app_language2_gaps_update.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
@@ -44,14 +38,7 @@ export function app_language2_refresh_home(context) {
     root,
     string_combine_multiple([emoji_laptop(), " Data for development"]),
     () => {
-      app_language2_button_back_home(context);
-      let { root, words } = context;
-      let values_all = object_values(words);
-      let values = list_filter_property(values_all, "skip", false);
-      list_sort(values, app_language2_word_index);
-      each(list_take(values, 200), (item) => {
-        html_div_text(root, json_format_to(item));
-      });
+      app_language2_refresh_data(context);
     },
   );
   html_button_width_full_text_click(
