@@ -66,6 +66,7 @@ import { html_span_text } from "./html_span_text.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
+import { storage_local_initialize } from "./storage_local_initialize.mjs";
 export async function app_language_2_refresh_learn(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
@@ -123,7 +124,7 @@ export async function app_language_2_refresh_learn(context) {
       answer_text,
     );
     html_br2(root);
-    if (false) {
+    if (storage_local_initialize(app_fn, "tutorial", true)) {
       html_p_text(
         root,
         "You will be quizzed on this. You will be given the question. You will need to remember the answer.",
