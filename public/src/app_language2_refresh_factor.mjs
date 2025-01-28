@@ -17,7 +17,7 @@ export function app_language2_refresh_factor(context) {
     root,
     "The gap of a word pair relates to the number of other word pairs you see before seeing the same word pair again. The factor is the rate at which a gap increases. The lower the factor, the easier the app is. The higher the factor, the more difficult the app is. Choose a factor:",
   );
-  let n = range_from(11, 30);
+  let n = range_from(11, 40);
   let factors = list_map(n, (i) => i / 10);
   let factor = app_language2_factor_get(context);
   each(factors, (f) => {
