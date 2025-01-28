@@ -8,6 +8,7 @@ import { html_style_display_none } from "./html_style_display_none.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_language_button_ready(root, f, language_fluent) {
   let quiz_container;
+  let ready_container = html_div(root);
   let button_ready = html_button_width_full_text_click(root, "", () => {
     html_style_display_none(button_ready);
     html_style_display_block(quiz_container);
