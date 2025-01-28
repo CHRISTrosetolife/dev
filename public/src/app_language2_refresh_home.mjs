@@ -1,3 +1,4 @@
+import { app_language2_button_back_home } from "./app_language2_button_back_home.mjs";
 import { emoji_learn } from "./emoji_learn.mjs";
 import { app_language2_refresh_factor } from "./app_language2_refresh_factor.mjs";
 import { app_language2_refresh_data } from "./app_language2_refresh_data.mjs";
@@ -31,6 +32,8 @@ export function app_language2_refresh_home(context) {
     root,
     string_combine_multiple([" Skipped"]),
     () => {
+      app_language2_button_back_home(context);
+      let { root } = context;
       app_language2_refresh_factor(context);
     },
   );
