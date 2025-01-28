@@ -229,7 +229,8 @@ export async function app_language2_refresh_learn(context) {
     });
     html_spacer_vertical_2(root);
     html_button_width_full_text_click(root, "Skip", () => {
-      object_property_set(skip_manual, object_property_get(v, "key"), true);
+      let v_key = object_property_get(v, "key");
+      object_property_set(skip_manual, v_key, true);
       storage_local_set(app_fn, "skip_manual", skip_manual);
     });
     if (false) {
