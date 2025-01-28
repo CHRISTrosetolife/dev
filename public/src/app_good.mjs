@@ -21,7 +21,7 @@ export function app_good() {
           "Cause me to perfectly obey Jesus",
           "Cause me to perfectly obey the Holy Spirit",
           "Cause me to fulfill my ministry",
-          "Lead souls to Jesus",
+          "Lead all souls to Jesus",
           "Cause all to choose good",
           "Unite the church",
           "May the church be united about head coverings",
