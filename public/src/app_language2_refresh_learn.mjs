@@ -116,6 +116,7 @@ export async function app_language2_refresh_learn(context) {
       storage_local_set(app_fn, "words", words);
       await app_language2_refresh_learn(context);
     });
+    app_language2_skip(context, word);
   } else {
     let word = object_property_get(v, "word");
     let v_gap = object_property_get(v, "gap");
