@@ -230,6 +230,7 @@ export async function app_language2_refresh_learn(context) {
     html_spacer_vertical_2(root);
     html_button_width_full_text_click(root, "Skip", () => {
       object_property_set(skip_manual, object_property_get(v, "key"), true);
+      storage_local_set(app_fn, "skip_manual", skip_manual);
     });
     if (false) {
       html_p_text(root, round_2(v_gap));
