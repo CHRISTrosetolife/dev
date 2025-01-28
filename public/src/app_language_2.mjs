@@ -1,6 +1,6 @@
-import { app_language2_gaps_update } from "./app_language2_gaps_update.mjs";
-import { app_language2_words_get } from "./app_language2_words_get.mjs";
-import { app_language2_refresh_learn } from "./app_language2_refresh_learn.mjs";
+import { app_language_2_words_get } from "./app_language_2_words_get.mjs";
+import { app_language_2_refresh_learn } from "./app_language_2_refresh_learn.mjs";
+import { app_language_2_gaps_update } from "./app_language_2_gaps_update.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { list_flatten } from "./list_flatten.mjs";
 import { list_chunk } from "./list_chunk.mjs";
@@ -19,7 +19,7 @@ import { list_map } from "./list_map.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language_group_index_changed_inner } from "./app_language_group_index_changed_inner.mjs";
 import { list_concat } from "./list_concat.mjs";
-export async function app_language2(app_fn, language_learn, language_fluent) {
+export async function app_language_2(app_fn, language_learn, language_fluent) {
   let root = await app_language_initialize();
   html_style_default_font_size(3.5);
   let context = {
@@ -65,7 +65,7 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
       json_to(object_properties_select(c, properties)),
     );
   });
-  let words = app_language2_words_get(context);
+  let words = app_language_2_words_get(context);
   if (flat.length === 2) {
   }
   object_property_set(context, "words", words);
@@ -90,6 +90,6 @@ export async function app_language2(app_fn, language_learn, language_fluent) {
     object_property_set(w, "gap", null);
   });
   storage_local_set(app_fn, "words", words);
-  app_language2_gaps_update(context);
-  await app_language2_refresh_learn(context);
+  app_language_2_gaps_update(context);
+  await app_language_2_refresh_learn(context);
 }
