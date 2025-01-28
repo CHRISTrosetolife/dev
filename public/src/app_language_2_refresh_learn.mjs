@@ -176,6 +176,7 @@ export async function app_language_2_refresh_learn(context) {
     );
     let answers = list_map_property(v_filtered2, "answer");
     let others = list_difference(answers, mapped);
+    let others_unique = list_unique(others);
     list_shuffle(others);
     let other_taken = list_take(others, list_size(mapped));
     let answer_text = list_join_comma_space(mapped);
