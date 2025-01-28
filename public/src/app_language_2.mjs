@@ -40,7 +40,7 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
         ["o", "or"],
         ["dili", "no"],
         ["dili", "not"],
-        ["wala", "no"],
+        ["wala", "left"],
       ],
     ];
   }
