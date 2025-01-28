@@ -81,8 +81,12 @@ export async function app_language_2_refresh_learn(context) {
   let values_skip_manual = list_filter(values_all, (v) =>
     object_property_exists_not(skip_manual, app_language_2_word_key(v)),
   );
+  let max_indexes = {};
   each(values_skip_manual, (vsm) => {
-    let key = json_to([]);
+    let vsm_word = object_property_get(vsm, "word");
+    let question = object_property_get(vsm_word, "question");
+    let language = object_property_get(vsm_word, "language");
+    let key = json_to([language, question]);
   });
   let mapped2 = list_map(values_skip_manual, (v) => {
     if (object_property_get(v, "learning") === false) {
