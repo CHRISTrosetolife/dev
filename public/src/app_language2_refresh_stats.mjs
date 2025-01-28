@@ -68,6 +68,7 @@ export function app_language2_refresh_stats(context) {
       );
     });
   });
+  html_p_text(root, "Totals rounded to the nearest gap: ");
   each_object(closest, (gap, rw) => {
     gap = integer_parse(gap);
     let total2 = summation((c) => {
