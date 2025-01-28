@@ -59,6 +59,7 @@ export function app_language2_refresh_home(context) {
         let entry = html_div(root);
         html_hr(entry);
         app_language2_word_p(body, language, rememeber);
+        app_language2_word_p(body, language, rememeber);
         html_p_text(entry, json_to(v));
         html_button_width_full_text_click(
           entry,
