@@ -7,7 +7,7 @@ import { emoji_delete } from "./emoji_delete.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_spacer_vertical_n } from "./html_spacer_vertical_n.mjs";
-export function app_language2_skip(word, app_fn, context) {
+export function app_language2_skip(word, context) {
   let root2 = object_property_get(context, "root");
   let app_fn2 = object_property_get(context, "app_fn");
   let skip_manual = app_language2_skip_manual_get(app_fn);
