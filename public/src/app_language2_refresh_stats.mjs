@@ -116,6 +116,15 @@ export function app_language2_refresh_stats(context) {
   }
   if (storage_local_exists(app_fn, "count_wrong")) {
     let cnt_wrong = storage_local_get(app_fn, "count_wrong");
+    let count_right = cnt - cnt_wrong;
+    html_p_text(
+      root,
+      string_combine_multiple([
+        "Grand total right: ",
+        count_right,
+        number_format_percent(count_right, cnt),
+      ]),
+    );
     html_p_text(
       root,
       string_combine_multiple([
