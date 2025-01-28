@@ -232,7 +232,7 @@ export async function app_language2_refresh_learn(context) {
   }
   html_spacer_vertical_2(root);
   html_button_width_full_text_click(root, "Skip", () => {
-    storage_local_initialize(app_fn, "skip_manual", {});
+    let skip_manual = storage_local_initialize(app_fn, "skip_manual", {});
   });
   function decrease_wait() {
     each(values, (v2) => {
