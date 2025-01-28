@@ -1,3 +1,3 @@
-export function emoji_data() {
-  return "➕";
+export function emoji_add() {
+  return "📊";
 }
