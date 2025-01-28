@@ -72,7 +72,7 @@ export async function app_language2_refresh_learn(context) {
   let values_skip_manual = list_filter(values_all, (v) =>
     object_property_exists_not(skip_manual, app_language2_word_key(v)),
   );
-  let values = list_filter_property(values_skip_manual, "skip", false);
+  let values = list_filter(values_skip_manual, () => {});
   list_sort(values, app_language2_word_index);
   log({
     values,
