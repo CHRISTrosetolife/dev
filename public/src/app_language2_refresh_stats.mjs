@@ -1,3 +1,4 @@
+import { number_format_percent } from "./number_format_percent.mjs";
 import { emoji_danger } from "./emoji_danger.mjs";
 import { app_language2_factor_get } from "./app_language2_factor_get.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
@@ -98,11 +99,7 @@ export function app_language2_refresh_stats(context) {
           v,
           "/",
           total2,
-          string_combine_multiple([
-            " (",
-            round_2((v / (total2 === 0 ? 1 : total2)) * 100),
-            "%)",
-          ]),
+          number_format_percent(v, total2),
         ]),
       );
     });
