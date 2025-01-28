@@ -21,9 +21,9 @@ import { each } from "./each.mjs";
 import { summation } from "./summation.mjs";
 import { app_language2_stats_get } from "./app_language2_stats_get.mjs";
 import { app_language2_button_back_home } from "./app_language2_button_back_home.mjs";
-export function app_language2_refresh_stats(context, app_fn) {
+export function app_language2_refresh_stats(context) {
   app_language2_button_back_home(context);
-  let { root } = context;
+  let { root, app_fn } = context;
   let stats = app_language2_stats_get(app_fn);
   let ss = ["right", "wrong"];
   let total = summation((c) => {
