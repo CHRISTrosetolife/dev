@@ -1,3 +1,4 @@
+import { app_language2_skip_manual_get } from "./app_language2_skip_manual_get.mjs";
 import { app_language2_refresh_learn } from "./app_language2_refresh_learn.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -6,7 +7,7 @@ import { emoji_delete } from "./emoji_delete.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_spacer_vertical_n } from "./html_spacer_vertical_n.mjs";
-export function app_language2_skip(root, word, skip_manual, app_fn, context) {
+export function app_language2_skip(root, word, s, app_fn, context) {
   let skip_manual = app_language2_skip_manual_get(app_fn);
   html_spacer_vertical_n(root, 6);
   html_button_width_full_text_click(
