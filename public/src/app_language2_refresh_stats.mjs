@@ -38,7 +38,7 @@ export function app_language2_refresh_stats(context) {
       });
     });
   });
-  html_p_text(root, string_combine_multiple(["Grand total: ", total]));
+  html_p_text(root, string_combine_multiple(["Overall total: ", total]));
   let closest = {};
   let gaps = app_language2_gaps_get(context);
   summation((c) => {
