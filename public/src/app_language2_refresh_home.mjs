@@ -128,19 +128,23 @@ export function app_language2_refresh_home(context) {
       }
     });
   }
-  html_button_width_full_text_click(root, $s1," Developer data", () => {
-    let { root, words } = context;
-    html_clear_scroll_top_centered(root);
-    html_button_back(root, async () => {
-      app_language2_refresh_home(context);
-    });
-    let values_all = object_values(words);
-    let values = list_filter_property(values_all, "skip", false);
-    list_sort(values, app_language2_word_index);
-    each(list_take(values, 200), (item) => {
-      html_div_text(root, json_format_to(item));
-    });
-  });
+  html_button_width_full_text_click(
+    root,
+    string_combine_multiple([" Developer data"]),
+    () => {
+      let { root, words } = context;
+      html_clear_scroll_top_centered(root);
+      html_button_back(root, async () => {
+        app_language2_refresh_home(context);
+      });
+      let values_all = object_values(words);
+      let values = list_filter_property(values_all, "skip", false);
+      list_sort(values, app_language2_word_index);
+      each(list_take(values, 200), (item) => {
+        html_div_text(root, json_format_to(item));
+      });
+    },
+  );
   html_p_text(
     root,
     "The gap of a word pair relates to the number of other word pairs you see before seeing the same word pair again. The factor is the rate at which a gap increases. The lower the factor, the easier the app is. The higher the factor, the more difficult the app is. Choose a factor:",
