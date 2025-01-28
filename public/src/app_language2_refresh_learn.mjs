@@ -56,6 +56,7 @@ import { list_add } from "./list_add.mjs";
 import { html_progress } from "./html_progress.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
+import { storage_local_initialize } from "./storage_local_initialize.mjs";
 export async function app_language2_refresh_learn(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
@@ -230,7 +231,9 @@ export async function app_language2_refresh_learn(context) {
     }
   }
   html_spacer_vertical_2(root);
-  html_button_width_full_text_click(root, "Skip", () => {});
+  html_button_width_full_text_click(root, "Skip", () => {
+    storage_local_initialize(app_fn, "skip_manual", {});
+  });
   function decrease_wait() {
     each(values, (v2) => {
       let wait = object_property_get(v2, "wait");
