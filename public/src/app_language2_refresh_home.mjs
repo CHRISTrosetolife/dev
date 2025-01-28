@@ -61,8 +61,8 @@ export function app_language2_refresh_home(context) {
         html_hr(entry);
         let word = object_property_get(v, "word");
         let language = object_property_get(word, "language");
-        app_language2_word_p(body, language, rememeber);
-        app_language2_word_p(body, language, rememeber);
+        app_language2_word_p(entry, language, rememeber);
+        app_language2_word_p(entry, language, rememeber);
         html_p_text(entry, json_to(v));
         html_button_width_full_text_click(
           entry,
