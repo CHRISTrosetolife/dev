@@ -149,7 +149,7 @@ export function app_language2_refresh_home(context) {
   );
   html_button_width_full_text_click(
     root,
-    string_combine_multiple([emoji_chart(), "Factor"]),
+    string_combine_multiple([emoji_chart(), " Factor"]),
     () => {
       let { root, words } = context;
       html_clear_scroll_top_centered(root);
