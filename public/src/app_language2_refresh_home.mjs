@@ -1,3 +1,4 @@
+import { emoji_laptop } from "./emoji_laptop.mjs";
 import { object_property_add } from "./object_property_add.mjs";
 import { list_closest } from "./list_closest.mjs";
 import { app_language2_gaps_get } from "./app_language2_gaps_get.mjs";
@@ -130,7 +131,7 @@ export function app_language2_refresh_home(context) {
   }
   html_button_width_full_text_click(
     root,
-    string_combine_multiple([" Developer data"]),
+    string_combine_multiple([emoji_laptop(), " Developer data"]),
     () => {
       let { root, words } = context;
       html_clear_scroll_top_centered(root);
