@@ -27,6 +27,13 @@ export function app_language2_refresh_home(context) {
       app_language2_refresh_factor(context);
     },
   );
+  html_button_width_full_text_click(
+    root,
+    string_combine_multiple([" Skipped"]),
+    () => {
+      app_language2_refresh_factor(context);
+    },
+  );
   if (storage_local_exists(app_fn, "stats")) {
     html_button_width_full_text_click(
       root,
