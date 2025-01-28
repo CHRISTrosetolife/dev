@@ -7,8 +7,6 @@ import { app_language2_stats_initial } from "./app_language2_stats_initial.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
-import { number_max } from "./number_max.mjs";
-import { round_2 } from "./round_2.mjs";
 import { object_property_add } from "./object_property_add.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { integer_parse } from "./integer_parse.mjs";
@@ -122,8 +120,8 @@ export function app_language2_refresh_stats(context) {
       root,
       string_combine_multiple([
         "Grand total wrong: ",
-        cnt,
-        round_2((s_total / number_max(total, 1)) * 100),
+        cnt_wrong,
+        number_format_percent(cnt_wrong, cnt),
       ]),
     );
   }
