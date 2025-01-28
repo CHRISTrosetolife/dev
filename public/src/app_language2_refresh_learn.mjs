@@ -235,7 +235,7 @@ export async function app_language2_refresh_learn(context) {
       html_span_text(b2, string_combine_multiple([" ", c]));
       html_spacer_vertical_2(quiz_container);
     });
-    html_spacer_vertical_n(root, 8);
+    html_spacer_vertical_n(root, 6);
     html_button_width_full_text_click(root, "Skip", async () => {
       let v_key = object_property_get(v, "key");
       object_property_set(skip_manual, v_key, true);
