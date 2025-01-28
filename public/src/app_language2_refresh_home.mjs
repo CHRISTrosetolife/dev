@@ -1,3 +1,4 @@
+import { emoji_check } from "./emoji_check.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
 import { html_div } from "./html_div.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
@@ -57,7 +58,7 @@ export function app_language2_refresh_home(context) {
         html_p_text(entry, json_to(v));
         html_button_width_full_text_click(
           entry,
-          string_combine_multiple(["Unskip"]),
+          string_combine_multiple([emoji_check(), "Unskip"]),
           () => {
             let word_key = app_language2_word_key(v);
             object_property_delete(skip_manual, word_key);
