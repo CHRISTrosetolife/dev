@@ -92,6 +92,9 @@ export async function app_language_2_refresh_learn(context) {
   let gap_initial = 0;
   let v = list_first(values);
   let vw = object_property_get(v, "wait");
+  log({
+    vw,
+  });
   let unlearning = list_filter_property(values, "learning", false);
   if (list_empty_not_is(unlearning) && (vw === null || vw > 0)) {
     let u = list_first(unlearning);
