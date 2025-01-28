@@ -27,7 +27,7 @@ export function app_language2_refresh_stats(context) {
   app_language2_button_back_home(context);
   let { root, app_fn } = context;
   let factor = app_language2_factor_get(context);
-  html_p_text(root, string_combine_multiple(["factor: ", factor]));
+  html_p_text(root, string_combine_multiple(["Factor: ", factor]));
   let stats = app_language2_stats_get(app_fn);
   let ss = ["right", "wrong"];
   let total = summation((c) => {
