@@ -17,7 +17,6 @@ import { app_language_2_gaps_get } from "./app_language_2_gaps_get.mjs";
 import { app_language_2_count_increment } from "./app_language_2_count_increment.mjs";
 import { app_language_2_answers } from "./app_language_2_answers.mjs";
 import { list_unique } from "./list_unique.mjs";
-import { list_flatten } from "./list_flatten.mjs";
 import { list_map } from "./list_map.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { round } from "./round.mjs";
@@ -91,15 +90,12 @@ export async function app_language_2_refresh_learn(context) {
       object_property_set(max_indexes, key, index);
     }
   });
-  let mapped2 = list_map(values_skip_manual, (v) => {
+  let values = list_map(values_skip_manual, (v) => {
     let v_word = object_property_get(v, "word");
     let index = object_property_get(v_word, "index");
     let key = word_to_language_question_key(v_word);
     return index === object_property_get(max_indexes, key);
   });
-  let flattened = list_flatten(mapped2);
-  let unique = list_unique(flattened);
-  let values = list_difference(values_skip_manual, unique);
   list_sort(values, app_language_2_word_index);
   log({
     values,
