@@ -26,7 +26,10 @@ export function app_language2_refresh_factor(context) {
         let app_fn = object_property_get(context, "app_fn");
         storage_local_set(app_fn, "factor", f);
         app_language2_gaps_update(context);
-        each(list, (item) => {});
+        each(buttons, (b2) => {
+          if (false) {
+          }
+        });
       });
       la(buttons);
       if (f === factor) {
