@@ -229,6 +229,7 @@ export async function app_language2_refresh_learn(context) {
       html_p_text(root, round_2(v_gap));
     }
   }
+  html_spacer_vertical_2(root);
   function decrease_wait() {
     each(values, (v2) => {
       let wait = object_property_get(v2, "wait");
