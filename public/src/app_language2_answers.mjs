@@ -16,6 +16,7 @@ export function app_language2_answers(values_all, v) {
   let matches = list_filter(
     values_all,
     (v) =>
+      object_property_get(v, "learning") === true &&
       app_language2_word_index(v) < index &&
       object_property_get(object_property_get(v, "word"), "question") ===
         question &&
