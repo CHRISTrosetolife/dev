@@ -17,7 +17,6 @@ import { app_language_2_gaps_get } from "./app_language_2_gaps_get.mjs";
 import { app_language_2_count_increment } from "./app_language_2_count_increment.mjs";
 import { app_language_2_answers } from "./app_language_2_answers.mjs";
 import { list_unique } from "./list_unique.mjs";
-import { list_map } from "./list_map.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { round } from "./round.mjs";
 import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
@@ -90,7 +89,7 @@ export async function app_language_2_refresh_learn(context) {
       object_property_set(max_indexes, key, index);
     }
   });
-  let values = list_map(values_skip_manual, (v) => {
+  let values = list_filter(values_skip_manual, (v) => {
     let v_word = object_property_get(v, "word");
     let index = object_property_get(v_word, "index");
     let key = word_to_language_question_key(v_word);
