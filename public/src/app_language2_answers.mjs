@@ -7,8 +7,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
 export function app_language2_answers(values_all, v) {
-  let word = object_property_get(v, "word");
-  let matches = app_language2_matches(values_all, word);
+  let matches = app_language2_matches(values_all, v);
   each(matches, (match) => {
     object_property_set(match, "skip", true);
   });
