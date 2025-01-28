@@ -81,6 +81,7 @@ export async function app_language2_refresh_learn(context) {
   });
   let flattened = list_flatten(mapped2);
   let unique = list_unique(flattened);
+  let diffed = list_difference(values_skip_manual, unique);
   list_sort(values, app_language2_word_index);
   log({
     values,
