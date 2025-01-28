@@ -89,7 +89,7 @@ export function app_language2_refresh_stats(context) {
       html_div_text(
         root,
         string_combine_multiple([
-          "gap",
+          "Gap-",
           gap,
           " ",
           s,
