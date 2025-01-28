@@ -211,6 +211,12 @@ export async function app_language_2_refresh_learn(context) {
     list_shuffle(choices);
     let stats = app_language_2_stats_get(app_fn);
     each(choices, (c) => {
+      app_language_2_tutorial_message(
+        context,
+        string_combine_multiple([
+          "If this is the answer you thought of, choose this:",
+        ]),
+      );
       let b = html_button_width_full_text_click(
         quiz_container,
         "",
