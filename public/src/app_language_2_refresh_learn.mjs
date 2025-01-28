@@ -97,6 +97,7 @@ export async function app_language_2_refresh_learn(context) {
   let mapped2 = list_map(values_skip_manual, (v) => {
     let v_word = object_property_get(v, "word");
     let index = object_property_get(v_word, "index");
+    let key = word_to_language_question_key(v_word);
     return index === object_property_get(max_indexes, key);
   });
   let flattened = list_flatten(mapped2);
