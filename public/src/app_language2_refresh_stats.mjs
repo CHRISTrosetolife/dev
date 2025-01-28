@@ -99,10 +99,14 @@ export function app_language2_refresh_stats(context) {
       );
     });
   });
-  html_button_width_full_text_click(root, "Reset", () => {
-    storage_local_set(app_fn, "stats", app_language2_stats_initial());
-    app_language2_refresh_stats(context);
-  });
+  html_button_width_full_text_click(
+    root,
+    string_combine_multiple(["Reset"]),
+    () => {
+      storage_local_set(app_fn, "stats", app_language2_stats_initial());
+      app_language2_refresh_stats(context);
+    },
+  );
   if (storage_local_exists(app_fn, "count")) {
     let cnt = storage_local_get(app_fn, "count");
     html_p_text(root, string_combine_multiple(["Count: ", cnt]));
