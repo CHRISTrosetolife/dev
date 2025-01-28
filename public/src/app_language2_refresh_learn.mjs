@@ -241,8 +241,8 @@ export async function app_language2_refresh_learn(context) {
       root,
       string_combine_multiple([emoji_delete(), " Skip"]),
       async () => {
-        let v_key = object_property_get(v, "key");
-        object_property_set(skip_manual, v_key, true);
+        let key = object_property_get(word, "key");
+        object_property_set(skip_manual, key, true);
         storage_local_set(app_fn, "skip_manual", skip_manual);
         await app_language2_refresh_learn(context);
       },
