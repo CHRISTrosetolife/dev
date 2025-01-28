@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -47,6 +48,7 @@ export function app_language2_refresh_home(context) {
           object_property_get(object_property_get(v, "word"), "key"),
         ),
       );
+      each(list, (item) => {});
     },
   );
   if (storage_local_exists(app_fn, "stats")) {
