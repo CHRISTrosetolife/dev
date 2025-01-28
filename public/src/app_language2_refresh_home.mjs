@@ -44,89 +44,96 @@ export function app_language2_refresh_home(context) {
     await app_language2_refresh_learn(context);
   });
   if (storage_local_exists(app_fn, "stats")) {
-    html_button_width_full_text_click(root, "stats", () => {
-      app_language2_button_back_home(context);
-      let { root } = context;
-      let stats = app_language2_stats_get(app_fn);
-      let ss = ["right", "wrong"];
-      let total = summation((c) => {
-        each(ss, (s) => {
-          let r = object_property_get(stats, s);
-          each_object_values(r, (value) => {
-            c(value);
-          });
-        });
-      });
-      html_p_text(root, string_combine_multiple(["grand total: ", total]));
-      let closest = {};
-      let gaps = app_language2_gaps_get(context);
-      summation((c) => {
-        each(ss, (s) => {
-          let r = object_property_get(stats, s);
-          html_p_text(root, s);
-          let s_total = summation((c2) => {
-            each_object(r, (key, value) => {
-              c2(value);
-              html_div_text(root, string_combine_multiple([key, ": ", value]));
-              let c3 = list_closest(gaps, integer_parse(key));
-              let c4 = object_property_initialize(closest, c3, {});
-              object_property_add(c4, s, value);
+    html_button_width_full_text_click(
+      root,
+      string_combine_multiple(["stats"]),
+      () => {
+        app_language2_button_back_home(context);
+        let { root } = context;
+        let stats = app_language2_stats_get(app_fn);
+        let ss = ["right", "wrong"];
+        let total = summation((c) => {
+          each(ss, (s) => {
+            let r = object_property_get(stats, s);
+            each_object_values(r, (value) => {
+              c(value);
             });
           });
-          c(s_total);
-          html_p_text(
-            root,
-            string_combine_multiple([
-              s,
-              " total: ",
-              s_total,
-              " (",
-              round_2((s_total / number_max(total, 1)) * 100),
-              "%)",
-            ]),
-          );
         });
-      });
-      each_object(closest, (gap, rw) => {
-        gap = integer_parse(gap);
-        let total2 = summation((c) => {
-          each_object_values(rw, (v) => {
-            c(v);
+        html_p_text(root, string_combine_multiple(["grand total: ", total]));
+        let closest = {};
+        let gaps = app_language2_gaps_get(context);
+        summation((c) => {
+          each(ss, (s) => {
+            let r = object_property_get(stats, s);
+            html_p_text(root, s);
+            let s_total = summation((c2) => {
+              each_object(r, (key, value) => {
+                c2(value);
+                html_div_text(
+                  root,
+                  string_combine_multiple([key, ": ", value]),
+                );
+                let c3 = list_closest(gaps, integer_parse(key));
+                let c4 = object_property_initialize(closest, c3, {});
+                object_property_add(c4, s, value);
+              });
+            });
+            c(s_total);
+            html_p_text(
+              root,
+              string_combine_multiple([
+                s,
+                " total: ",
+                s_total,
+                " (",
+                round_2((s_total / number_max(total, 1)) * 100),
+                "%)",
+              ]),
+            );
           });
         });
-        each(ss, (s) => {
-          let v;
-          if (object_property_exists(rw, s)) {
-            v = object_property_get(rw, s);
-          } else {
-            v = 0;
-          }
-          html_div_text(
-            root,
-            string_combine_multiple([
-              "gap",
-              gap,
-              " ",
-              s,
-              " ",
-              v,
-              "/",
-              total2,
-              " (",
-              round_2((v / number_max(total2, 1)) * 100),
-              "%)",
-            ]),
-          );
+        each_object(closest, (gap, rw) => {
+          gap = integer_parse(gap);
+          let total2 = summation((c) => {
+            each_object_values(rw, (v) => {
+              c(v);
+            });
+          });
+          each(ss, (s) => {
+            let v;
+            if (object_property_exists(rw, s)) {
+              v = object_property_get(rw, s);
+            } else {
+              v = 0;
+            }
+            html_div_text(
+              root,
+              string_combine_multiple([
+                "gap",
+                gap,
+                " ",
+                s,
+                " ",
+                v,
+                "/",
+                total2,
+                " (",
+                round_2((v / number_max(total2, 1)) * 100),
+                "%)",
+              ]),
+            );
+          });
         });
-      });
-      html_button_width_full_text_click(root, "reset", () => {
-        storage_local_set(app_fn, "stats", app_language2_stats_initial());
-      });
-      if (storage_local_exists(app_fn, "count")) {
-        let cnt = storage_local_get(app_fn, "count");
-        html_p_text(root, string_combine_multiple(["count: ", cnt]));
-      }
-    });
+        html_button_width_full_text_click(root, "reset", () => {
+          storage_local_set(app_fn, "stats", app_language2_stats_initial());
+        });
+        if (storage_local_exists(app_fn, "count")) {
+          let cnt = storage_local_get(app_fn, "count");
+          html_p_text(root, string_combine_multiple(["count: ", cnt]));
+        }
+      },
+    );
   }
   html_button_width_full_text_click(
     root,
