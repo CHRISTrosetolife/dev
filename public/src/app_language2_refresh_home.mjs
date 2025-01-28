@@ -140,8 +140,8 @@ export function app_language2_refresh_home(context) {
     root,
     string_combine_multiple([emoji_laptop(), " Data for development"]),
     () => {
-      let { root, words } = context;
       app_language2_button_back_home(context);
+      let { root, words } = context;
       let values_all = object_values(words);
       let values = list_filter_property(values_all, "skip", false);
       list_sort(values, app_language2_word_index);
