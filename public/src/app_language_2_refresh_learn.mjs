@@ -80,6 +80,7 @@ export async function app_language_2_refresh_learn(context) {
   let values_skip_manual = list_filter(values_all, (v) =>
     object_property_exists_not(skip_manual, app_language_2_word_key(v)),
   );
+  each(list, (item) => {});
   let mapped2 = list_map(values_skip_manual, (v) => {
     if (object_property_get(v, "learning") === false) {
       return [];
