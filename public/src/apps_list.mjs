@@ -3,6 +3,7 @@ export function apps_list() {
     "bible",
     "bible2",
     "ceb",
+    "ceb1",
     "ceb2",
     "code",
     "demo_2024_05_19",
