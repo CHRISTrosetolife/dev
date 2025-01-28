@@ -136,10 +136,7 @@ export function app_language2_refresh_home(context) {
     string_combine_multiple([emoji_laptop(), " Data for development"]),
     () => {
       let { root, words } = context;
-      html_clear_scroll_top_centered(root);
-      html_button_back(root, async () => {
-        app_language2_refresh_home(context);
-      });
+      app_language2_button_back_home(context);
       let values_all = object_values(words);
       let values = list_filter_property(values_all, "skip", false);
       list_sort(values, app_language2_word_index);
