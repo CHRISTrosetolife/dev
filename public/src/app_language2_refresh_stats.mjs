@@ -102,7 +102,7 @@ export function app_language2_refresh_stats(context) {
   });
   html_button_width_full_text_click(
     root,
-    string_combine_multiple([emoji_danger(), "Reset"]),
+    string_combine_multiple([emoji_danger(), " Reset"]),
     () => {
       storage_local_set(app_fn, "stats", app_language2_stats_initial());
       app_language2_refresh_stats(context);
