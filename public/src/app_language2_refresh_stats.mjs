@@ -1,3 +1,4 @@
+import { string_case_upper_first } from "./string_case_upper_first.mjs";
 import { number_format_percent } from "./number_format_percent.mjs";
 import { emoji_danger } from "./emoji_danger.mjs";
 import { app_language2_factor_get } from "./app_language2_factor_get.mjs";
@@ -47,7 +48,8 @@ export function app_language2_refresh_stats(context) {
   summation((c) => {
     each(ss, (s) => {
       let r = object_property_get(stats, s);
-      html_p_text(root, s);
+      let s_upper_first = string_case_upper_first(s);
+      html_p_text(root, s_upper_first);
       let s_total = summation((c2) => {
         each_object(r, (key, value) => {
           c2(value);
@@ -61,7 +63,7 @@ export function app_language2_refresh_stats(context) {
       html_p_text(
         root,
         string_combine_multiple([
-          s,
+          s_upper_first,
           " total: ",
           s_total,
           number_format_percent(s_total, total),
