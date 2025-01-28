@@ -67,7 +67,8 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
     );
   });
   let words = app_language_2_words_get(context);
-  if (flat.length === 2) {
+  if (html_localhost_is()) {
+    words = {};
   }
   object_property_set(context, "words", words);
   each(flat2, (word) => {
