@@ -84,7 +84,8 @@ export async function app_language_2_refresh_learn(context) {
   );
   let max_indexes = {};
   each(values_skip_manual, (vsm) => {
-    if (false) {
+    if (object_property_get(vsm, "learning") !== true) {
+      return;
     }
     let vsm_word = object_property_get(vsm, "word");
     let question = object_property_get(vsm_word, "question");
