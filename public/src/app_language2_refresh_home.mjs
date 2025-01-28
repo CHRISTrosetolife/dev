@@ -55,12 +55,16 @@ export function app_language2_refresh_home(context) {
       each(values_skip_manual, (v) => {
         let entry = html_div(root);
         html_p_text(entry, json_to(v));
-        html_button_width_full_text_click(entry, "Unskip", () => {
-          let word_key = app_language2_word_key(v);
-          object_property_delete(skip_manual, word_key);
-          storage_local_set(app_fn, "skip_manual", skip_manual);
-          html_style_display_none(entry);
-        });
+        html_button_width_full_text_click(
+          entry,
+          string_combine_multiple(["Unskip"]),
+          () => {
+            let word_key = app_language2_word_key(v);
+            object_property_delete(skip_manual, word_key);
+            storage_local_set(app_fn, "skip_manual", skip_manual);
+            html_style_display_none(entry);
+          },
+        );
       });
     },
   );
