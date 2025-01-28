@@ -1,3 +1,5 @@
+import { app_language2_word_p } from "./app_language2_word_p.mjs";
+import { html_hr } from "./html_hr.mjs";
 import { emoji_check } from "./emoji_check.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
 import { html_div } from "./html_div.mjs";
@@ -55,6 +57,8 @@ export function app_language2_refresh_home(context) {
       html_p_text(root, "Choose a word pair to no longer skip it");
       each(values_skip_manual, (v) => {
         let entry = html_div(root);
+        html_hr(entry);
+        app_language2_word_p(body, language, rememeber);
         html_p_text(entry, json_to(v));
         html_button_width_full_text_click(
           entry,
