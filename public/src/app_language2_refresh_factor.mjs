@@ -1,3 +1,4 @@
+import { html_style_button_default } from "./html_style_button_default.mjs";
 import { html_style_success } from "./html_style_success.mjs";
 import { app_language2_gaps_update } from "./app_language2_gaps_update.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
@@ -27,8 +28,10 @@ export function app_language2_refresh_factor(context) {
         storage_local_set(app_fn, "factor", f);
         app_language2_gaps_update(context);
         each(buttons, (b2) => {
-          if (false) {
+          if (b === b2) {
+          } else {
           }
+          html_style_button_default(button);
         });
       });
       la(buttons);
