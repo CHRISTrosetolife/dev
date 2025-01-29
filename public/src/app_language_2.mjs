@@ -35,7 +35,7 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
   await app_language_group_index_changed_inner(context, "all");
   let group = object_property_get(context, "group");
   if (html_localhost_is()) {
-    if (true) {
+    if (false) {
       group = [
         [
           ["o", "oh"],
@@ -77,7 +77,6 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
   let words = app_language_2_words_get(context);
   if (html_localhost_is()) {
     if (true) {
-      words = {};
     }
   }
   object_property_set(context, "words", words);
