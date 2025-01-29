@@ -50,9 +50,6 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
   }
   let flat = list_flatten(group);
   let words = app_language_2_words_get(context);
-  list_sort(flat, (f) =>
-    object_property_exists(words, list_concat(f, [language_learn])) ? 1 : 0,
-  );
   let chunked = list_chunk(flat, 24);
   let mapped = list_map(chunked, (chunk) =>
     list_concat(
@@ -69,10 +66,15 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
     ),
   );
   let flat2 = list_flatten(mapped);
-  each_index(flat2, (c, index) => {
-    object_property_set(c, "index", index);
+  each(flat2, (c) => {
     let c_key = app_language_2_key_to(c);
     object_property_set(c, "key", c_key);
+  });
+  list_sort(flat2, (f) =>
+    object_property_exists(words, object_property_get(c, "key")) ? 1 : 0,
+  );
+  each_index(flat2, (c, index) => {
+    object_property_set(c, "index", index);
   });
   if (html_localhost_is()) {
     if (true) {
