@@ -73,7 +73,8 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
   });
   let skip_manual = app_language_2_skip_manual_get(app_fn);
   list_sort(flat2, (f) => {
-    return (object_property_exists(words, object_property_get(f, "key")) &&
+    let key = object_property_get(f, "key");
+    return (object_property_exists(words) &&
       object_property_get(f, "learning") === true) ||
       object_property_exists(skip_manual, object_property_get(f, "key"))
       ? 1
