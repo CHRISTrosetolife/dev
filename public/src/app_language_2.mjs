@@ -1,3 +1,4 @@
+import { list_sort } from "./list_sort.mjs";
 import { app_language_2_key_to } from "./app_language_2_key_to.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { html_localhost_is } from "./html_localhost_is.mjs";
@@ -49,6 +50,7 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
   }
   let flat = list_flatten(group);
   let words = app_language_2_words_get(context);
+  list_sort(flat, (f) => object_property_exists(object, "property_name"));
   let chunked = list_chunk(flat, 24);
   let mapped = list_map(chunked, (chunk) =>
     list_concat(
