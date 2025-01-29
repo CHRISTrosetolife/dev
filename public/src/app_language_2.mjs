@@ -53,17 +53,13 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
   let flat = list_flatten(group);
   let words = app_language_2_words_get(context);
   let skip_manual = app_language_2_skip_manual_get(app_fn);
-  alert(json_to(flat[0]));
-  if (false) {
-    list_sort(flat, (f) => {
-      let key = json_to(list_concat(f, [language_learn]));
-      return object_property_exists(words, key) &&
-        object_property_get(object_property_get(words, key), "learning") ===
-          true
-        ? 1
-        : 0;
-    });
-  }
+  list_sort(flat, (f) => {
+    let key = json_to(list_concat(f, [language_learn]));
+    return object_property_exists(words, key) &&
+      object_property_get(object_property_get(words, key), "learning") === true
+      ? 0
+      : 1;
+  });
   let chunked = list_chunk(flat, 24);
   let mapped = list_map(chunked, (chunk) =>
     list_concat(
