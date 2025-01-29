@@ -142,7 +142,7 @@ export async function app_language_2_refresh_learn(context) {
     let word = object_property_get(u, "word");
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
-    let mapped = app_language_2_answers(values_all, u);
+    let mapped = app_language_2_answers(values_skip_manual, u);
     let answer_text = list_join_comma_space(mapped);
     html_progress(
       root,
