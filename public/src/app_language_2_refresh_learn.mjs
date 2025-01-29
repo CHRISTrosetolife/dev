@@ -89,6 +89,7 @@ export async function app_language_2_refresh_learn(context) {
     });
     log({
       key,
+      key_other,
     });
     return (
       object_property_exists_not(skip_manual, key) &&
