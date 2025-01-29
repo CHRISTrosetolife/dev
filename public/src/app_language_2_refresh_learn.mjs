@@ -76,9 +76,12 @@ export async function app_language_2_refresh_learn(context) {
   html_spacer_vertical_2(root);
   let values_all = object_values(words);
   let skip_manual = app_language_2_skip_manual_get(app_fn);
-  let values_skip_manual = list_filter(values_all, (v) =>
-    object_property_exists_not(skip_manual, app_language_2_word_key(v)),
-  );
+  let values_skip_manual = list_filter(values_all, (v) => {
+    return (
+      object_property_exists_not(skip_manual, app_language_2_word_key(v)) &&
+      object_property_exists_not(skip_manual, app_language_2_word_key(v))
+    );
+  });
   let max_indexes = {};
   each(values_skip_manual, (v) => {
     if (object_property_get(v, "learning") !== true) {
