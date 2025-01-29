@@ -87,6 +87,9 @@ export async function app_language_2_refresh_learn(context) {
       answer: question,
       language: app_language_2_other(language, language_learn, language_fluent),
     });
+    log({
+      key,
+    });
     return (
       object_property_exists_not(skip_manual, key) &&
       object_property_exists_not(skip_manual, key_other)
