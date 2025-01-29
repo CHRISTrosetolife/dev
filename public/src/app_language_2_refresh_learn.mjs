@@ -87,12 +87,10 @@ export async function app_language_2_refresh_learn(context) {
       question,
       app_language_2_other(language, language_learn, language_fluent),
     ]);
-    if (false) {
-      log({
-        key,
-        key_other,
-      });
-    }
+    log({
+      key,
+      key_other,
+    });
     return (
       object_property_exists_not(skip_manual, key) &&
       object_property_exists_not(skip_manual, key_other)
@@ -144,7 +142,7 @@ export async function app_language_2_refresh_learn(context) {
     let word = object_property_get(u, "word");
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
-    let mapped = app_language_2_answers(values_skip_manual, u);
+    let mapped = app_language_2_answers(values_all, u);
     let answer_text = list_join_comma_space(mapped);
     html_progress(
       root,
@@ -180,7 +178,7 @@ export async function app_language_2_refresh_learn(context) {
     let v_gap = object_property_get(v, "gap");
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
-    let mapped = app_language_2_answers(values_manual_skip, v);
+    let mapped = app_language_2_answers(values_all, v);
     log({
       mapped,
     });
@@ -189,11 +187,7 @@ export async function app_language_2_refresh_learn(context) {
       language_learn,
       language_fluent,
     );
-    let va_filtered2 = list_filter_property(
-      values_skip_manual,
-      "learning",
-      true,
-    );
+    let va_filtered2 = list_filter_property(values_all, "learning", true);
     let va_words = list_map_property(va_filtered2, "word");
     let va_filtered = list_filter_property(
       va_words,
@@ -226,7 +220,7 @@ export async function app_language_2_refresh_learn(context) {
       ]),
       ready_above,
     );
-    let v_words = list_map_property(values_skip_manual, "word");
+    let v_words = list_map_property(values_all, "word");
     let v_filtered = list_filter_property(v_words, "language", language);
     let v_filtered2 = list_filter(
       v_filtered,
