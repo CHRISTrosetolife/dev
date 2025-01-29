@@ -73,7 +73,10 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
   });
   let skip_manual = app_language_2_skip_manual_get(app_fn);
   list_sort(flat2, (f) =>
-    object_property_exists(words, object_property_get(c, "key")) ? 1 : 0,
+    object_property_get(c, "learning") === true ||
+    object_property_exists(object, "property_name")
+      ? 1
+      : 0,
   );
   each_index(flat2, (c, index) => {
     object_property_set(c, "index", index);
