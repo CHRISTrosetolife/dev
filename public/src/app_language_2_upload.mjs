@@ -1,4 +1,3 @@
-import { list_flatten } from "./list_flatten.mjs";
 import { bible_words_definitions_atoms } from "./bible_words_definitions_atoms.mjs";
 import { app_language_upload_result } from "./app_language_upload_result.mjs";
 import { app_language_group_upload } from "./app_language_group_upload.mjs";
@@ -9,7 +8,6 @@ export async function app_language_2_upload(from) {
   let result_new = app_language_upload_result(atoms, {
     definitions,
   });
-  return list_flatten(result_new.group);
   let existing_path = await app_language_group_upload(
     {
       from,
