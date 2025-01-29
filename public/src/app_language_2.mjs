@@ -48,6 +48,7 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
     }
   }
   let flat = list_flatten(group);
+  let words = app_language_2_words_get(context);
   let chunked = list_chunk(flat, 24);
   let mapped = list_map(chunked, (chunk) =>
     list_concat(
@@ -69,7 +70,6 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
     let c_key = app_language_2_key_to(c);
     object_property_set(c, "key", c_key);
   });
-  let words = app_language_2_words_get(context);
   if (html_localhost_is()) {
     if (true) {
     }
