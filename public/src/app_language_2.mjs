@@ -53,6 +53,7 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
   let flat = list_flatten(group);
   let words = app_language_2_words_get(context);
   let skip_manual = app_language_2_skip_manual_get(app_fn);
+  alert(flat[0]);
   if (false) {
     list_sort(flat, (f) => {
       let key = json_to(list_concat(f, [language_learn]));
