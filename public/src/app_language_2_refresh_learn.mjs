@@ -77,6 +77,7 @@ export async function app_language_2_refresh_learn(context) {
   let values_all = object_values(words);
   let skip_manual = app_language_2_skip_manual_get(app_fn);
   let values_skip_manual = list_filter(values_all, (v) => {
+    let word2 = object_property_get(v, "word");
     return (
       object_property_exists_not(skip_manual, app_language_2_word_key(v)) &&
       object_property_exists_not(skip_manual, app_language_2_word_key(v))
