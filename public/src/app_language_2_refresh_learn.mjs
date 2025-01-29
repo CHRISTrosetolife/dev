@@ -80,6 +80,7 @@ export async function app_language_2_refresh_learn(context) {
     let word = object_property_get(v, "word");
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
+    let language = object_property_get(word, "language");
     return (
       object_property_exists_not(skip_manual, app_language_2_word_key(v)) &&
       object_property_exists_not(
@@ -87,7 +88,11 @@ export async function app_language_2_refresh_learn(context) {
         json_to({
           question: answer,
           answer: question,
-          language,
+          language: app_language_2_other(
+            language,
+            language_learn,
+            language_fluent,
+          ),
         }),
       )
     );
