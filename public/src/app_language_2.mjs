@@ -65,9 +65,9 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
     ),
   );
   let flat2 = list_flatten(mapped);
-  let properties = ["question", "answer", "language"];
   each_index(flat2, (c, index) => {
     object_property_set(c, "index", index);
+    let properties = ["question", "answer", "language"];
     let c_key = json_to(object_properties_select(c, properties));
     object_property_set(c, "key", c_key);
   });
