@@ -1,3 +1,4 @@
+import { app_language_2_key_to } from "./app_language_2_key_to.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { html_localhost_is } from "./html_localhost_is.mjs";
 import { app_language_2_words_get } from "./app_language_2_words_get.mjs";
@@ -7,10 +8,8 @@ import { html_style_default_font_size } from "./html_style_default_font_size.mjs
 import { list_flatten } from "./list_flatten.mjs";
 import { list_chunk } from "./list_chunk.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
-import { object_properties_select } from "./object_properties_select.mjs";
 import { each_index } from "./each_index.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
-import { json_to } from "./json_to.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { each } from "./each.mjs";
@@ -67,11 +66,6 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
   let flat2 = list_flatten(mapped);
   each_index(flat2, (c, index) => {
     object_property_set(c, "index", index);
-    function app_language_2_key_to(c) {
-      let properties = ["question", "answer", "language"];
-      let c_key = json_to(object_properties_select(c, properties));
-      return c_key;
-    }
     let c_key = app_language_2_key_to(c);
     object_property_set(c, "key", c_key);
   });
