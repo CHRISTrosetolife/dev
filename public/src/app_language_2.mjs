@@ -51,7 +51,7 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
   let flat = list_flatten(group);
   let words = app_language_2_words_get(context);
   list_sort(flat, (f) =>
-    object_property_exists(words, app_language_2_key_to(f)) ? 1 : 0,
+    object_property_exists(words, list_concat(f, [language_learn])) ? 1 : 0,
   );
   let chunked = list_chunk(flat, 24);
   let mapped = list_map(chunked, (chunk) =>
