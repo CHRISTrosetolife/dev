@@ -81,20 +81,15 @@ export async function app_language_2_refresh_learn(context) {
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
     let language = object_property_get(word, "language");
+    let key = app_language_2_word_key(v);
+    let key_other = json_to({
+      question: answer,
+      answer: question,
+      language: app_language_2_other(language, language_learn, language_fluent),
+    });
     return (
-      object_property_exists_not(skip_manual, app_language_2_word_key(v)) &&
-      object_property_exists_not(
-        skip_manual,
-        json_to({
-          question: answer,
-          answer: question,
-          language: app_language_2_other(
-            language,
-            language_learn,
-            language_fluent,
-          ),
-        }),
-      )
+      object_property_exists_not(skip_manual, key) &&
+      object_property_exists_not(skip_manual, key_other)
     );
   });
   let max_indexes = {};
