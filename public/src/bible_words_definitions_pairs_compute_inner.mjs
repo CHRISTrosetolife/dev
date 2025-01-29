@@ -1,6 +1,6 @@
+import { number_min } from "./number_min.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
-import { number_power } from "./number_power.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { number_is } from "./number_is.mjs";
 import { assert } from "./assert.mjs";
@@ -67,10 +67,7 @@ export async function bible_words_definitions_pairs_compute_inner(
       "score",
     );
     let n = 1;
-    pair.score = number_power(
-      number_power(fluent_score, n) + number_power(foreign_score, n),
-      1 / n,
-    );
+    pair.score = number_min(fluent_score, foreign_score);
   });
   list_sort_property(pairs, "score");
   list_reverse(pairs);
