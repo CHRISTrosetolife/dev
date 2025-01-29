@@ -1,3 +1,4 @@
+import { app_language_2_skip_manual_get } from "./app_language_2_skip_manual_get.mjs";
 import { list_sort } from "./list_sort.mjs";
 import { app_language_2_key_to } from "./app_language_2_key_to.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
@@ -70,6 +71,7 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
     let c_key = app_language_2_key_to(c);
     object_property_set(c, "key", c_key);
   });
+  let skip_manual = app_language_2_skip_manual_get(app_fn);
   list_sort(flat2, (f) =>
     object_property_exists(words, object_property_get(c, "key")) ? 1 : 0,
   );
