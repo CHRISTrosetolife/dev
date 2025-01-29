@@ -8,6 +8,7 @@ export async function app_language_2_upload(from) {
   let result_new = app_language_upload_result(atoms, {
     definitions,
   });
+  return result_new;
   let existing_path = await app_language_group_upload(
     {
       from,
