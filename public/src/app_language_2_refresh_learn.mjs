@@ -82,11 +82,11 @@ export async function app_language_2_refresh_learn(context) {
     let answer = object_property_get(word, "answer");
     let language = object_property_get(word, "language");
     let key = app_language_2_word_key(v);
-    let key_other = json_to({
-      question: answer,
-      answer: question,
-      language: app_language_2_other(language, language_learn, language_fluent),
-    });
+    let key_other = json_to([
+      answer,
+      question,
+      app_language_2_other(language, language_learn, language_fluent),
+    ]);
     log({
       key,
       key_other,
