@@ -11,7 +11,7 @@ export function app_language_2_gaps_update(context) {
   let w_size = list_size(object_properties(words));
   let gap = 0;
   let gaps = [0];
-  while (gap < w_size) {
+  while (gap < w_size * w_size) {
     gap = ceiling(gap * factor) + 1;
     list_add(gaps, gap);
   }
