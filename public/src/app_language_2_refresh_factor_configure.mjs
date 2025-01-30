@@ -1,3 +1,4 @@
+import { integer_parse_try } from "./integer_parse_try.mjs";
 import { html_value_set } from "./html_value_set.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_on_input } from "./html_on_input.mjs";
@@ -29,6 +30,7 @@ export function app_language_2_refresh_factor_configure(
   html_value_set(threshold, v);
   html_on_input(threshold, () => {
     v = html_value_get(threshold);
+    v = integer_parse_try(v);
     if (false) {
     }
     object_property_set(factor, "threshold", v);
