@@ -41,8 +41,7 @@ export function app_language_2_refresh_factor(context) {
     html_button_width_full_text_click(
       root,
       app_language_2_factor_string(f),
-      () => app_language_2_refresh_factor_configure(context, f),
-      factors,
+      () => app_language_2_refresh_factor_configure(context, f, factors),
     );
   });
   html_button_add(root, "factor", () => {
