@@ -1,3 +1,4 @@
+import { list_find } from "./list_find.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { json_to } from "./json_to.mjs";
@@ -142,6 +143,7 @@ export async function app_language_2_refresh_learn(context) {
     if (object_property_exists(max_indexes, key)) {
       let index_max = object_property_get(max_indexes, key);
       if (index < index_max) {
+        let existing = list_find();
       }
     }
     let language = object_property_get(word, "language");
