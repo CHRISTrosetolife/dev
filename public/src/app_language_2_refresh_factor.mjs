@@ -18,7 +18,7 @@ export function app_language_2_refresh_factor(context) {
   let gaps = app_language_2_gaps_get(context);
   let mapped = list_map(gaps, number_locale);
   let w_size = app_language_2_words_size(context);
-  list_filter(mapped, (m) => m <= m_size);
+  let filtered = list_filter(mapped, (m) => m <= w_size);
   html_p_text(
     root,
     string_combine_multiple([
