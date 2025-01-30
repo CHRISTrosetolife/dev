@@ -17,17 +17,17 @@ export function app_language_2_refresh_factor(context) {
     "Lower factors are easier. Higher factors are more difficult. A gap relates to the number of other word pairs you see before seeing the same word pair again. A factor is the rate at which a gap increases. A factor of 2 means that the gap approximately doubles each time a word pair is correctly answered. The lower the factor, the more words are reviewed before introducing new words. The higher the factor, the more often new words are introduced. Factors may have thresholds. With thresholds, the gap and the threshold determine which factor is used. Configure your factor(s) and any thresholds:",
   );
   let gaps = app_language_2_gaps_get(context);
-  let mapped = list_map(gaps, number_locale);
   let w_size = app_language_2_words_size(context);
+  let filtered = list_filter(gaps, (m) => m <= w_size);
   log({
     w_size,
   });
-  let filtered = list_filter(mapped, (m) => m <= w_size);
+  let mapped = list_map(filtered, number_locale);
   html_p_text(
     root,
     string_combine_multiple([
       "Based on your factor(s) and any thresholds, here are your first gaps: ",
-      list_join_comma_space(filtered),
+      list_join_comma_space(mapped),
     ]),
   );
   return;
