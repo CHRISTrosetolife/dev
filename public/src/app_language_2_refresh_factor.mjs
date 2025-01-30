@@ -1,3 +1,4 @@
+import { app_language_2_factor_value_default } from "./app_language_2_factor_value_default.mjs";
 import { app_language_2_factor_new } from "./app_language_2_factor_new.mjs";
 import { list_add } from "./list_add.mjs";
 import { html_button_add } from "./html_button_add.mjs";
@@ -43,7 +44,10 @@ export function app_language_2_refresh_factor(context) {
     );
   });
   html_button_add(root, "factor", () => {
-    let f = app_language_2_factor_new(threshold, factors);
+    let f = app_language_2_factor_new(
+      threshold,
+      app_language_2_factor_value_default(),
+    );
     list_add(factors, f);
     app_language_2_refresh_factor_configure(context, f);
   });
