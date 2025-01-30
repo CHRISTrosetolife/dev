@@ -143,7 +143,10 @@ export async function app_language_2_refresh_learn(context) {
     if (object_property_exists(max_indexes, key)) {
       let index_max = object_property_get(max_indexes, key);
       if (index < index_max) {
-        let existing = list_find();
+        let existing = list_find(
+          values_skip_manual,
+          (m) => app_language_2_word_index(m) === index_max,
+        );
       }
     }
     let language = object_property_get(word, "language");
