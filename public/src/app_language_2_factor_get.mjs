@@ -6,9 +6,10 @@ export function app_language_2_factor_get(context) {
   let app_fn = object_property_get(context, "app_fn");
   let factors = storage_local_initialize(app_fn, "factors", 1.5);
   if (number_is(factors)) {
+    let threshold = 0;
     factors = [
       {
-        threshold: 0,
+        threshold,
         factor: factors,
       },
     ];
