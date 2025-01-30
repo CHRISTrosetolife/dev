@@ -192,9 +192,6 @@ export async function app_language_2_refresh_learn(context) {
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
     let mapped = app_language_2_answers(values_skip_manual, v);
-    log({
-      mapped,
-    });
     let language_other = app_language_2_other(
       language,
       language_learn,
