@@ -1,3 +1,4 @@
+import { list_filter } from "./list_filter.mjs";
 import { app_language_2_words_size } from "./app_language_2_words_size.mjs";
 import { number_locale } from "./number_locale.mjs";
 import { list_map } from "./list_map.mjs";
@@ -17,6 +18,7 @@ export function app_language_2_refresh_factor(context) {
   let gaps = app_language_2_gaps_get(context);
   let mapped = list_map(gaps, number_locale);
   let w_size = app_language_2_words_size(context);
+  list_filter(mapped, (m) => m <= m_size);
   html_p_text(
     root,
     string_combine_multiple([
