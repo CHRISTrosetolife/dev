@@ -70,8 +70,9 @@ export function app_language_2_refresh_factor_configure(
     });
   });
   if (threshold_value >= threshold_min) {
-    html_button_delete(root, () => {});
-    list_remove(factors, f);
-    app_language_2_factor_set(context, factors);
+    html_button_delete(root, () => {
+      list_remove(factors, f);
+      app_language_2_factor_set(context, factors);
+    });
   }
 }
