@@ -35,7 +35,7 @@ export function app_language_2_refresh_factor(context) {
     root,
     "Based on your factor(s) and any thresholds, here are your first gaps: ",
   );
-  html_p_text(root, list_join_comma_space(list_concat([mapped, ["..."]])));
+  html_p_text(root, list_join_comma_space(list_concat(mapped, ["..."])));
   html_hr(root);
   html_p_text(root, "Configure your factor(s) and any thresholds:");
   let factors = app_language_2_factor_get(context);
