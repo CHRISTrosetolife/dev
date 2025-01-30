@@ -15,7 +15,7 @@ export function app_language_2_gaps_update(context) {
       factors,
       (f) => object_property_get(f, "threshold") <= gap,
     );
-    let factor2 = object_property_get(f, "factor");
+    let factor = object_property_get(f, "factor");
     gap = ceiling(gap * factor) + 1;
     list_add(gaps, gap);
   }
