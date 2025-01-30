@@ -16,5 +16,6 @@ export function app_language_2_refresh_factor(context) {
     root,
     string_combine_multiple(["Gaps: ", list_join_comma_space(gaps)]),
   );
+  return;
   app_language_2_refresh_factor_configure(context);
 }
