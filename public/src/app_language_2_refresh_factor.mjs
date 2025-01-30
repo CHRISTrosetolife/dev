@@ -1,3 +1,4 @@
+import { app_language_2_factor_set } from "./app_language_2_factor_set.mjs";
 import { number_max_list_map_property } from "./number_max_list_map_property.mjs";
 import { app_language_2_factor_value_default } from "./app_language_2_factor_value_default.mjs";
 import { app_language_2_factor_new } from "./app_language_2_factor_new.mjs";
@@ -50,6 +51,7 @@ export function app_language_2_refresh_factor(context) {
       app_language_2_factor_value_default(),
     );
     list_add(factors, f);
+    app_language_2_factor_set(context, factors);
     app_language_2_refresh_factor_configure(context, f);
   });
 }
