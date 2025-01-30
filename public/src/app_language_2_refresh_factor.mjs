@@ -23,7 +23,7 @@ export function app_language_2_refresh_factor(context) {
     root,
     string_combine_multiple([
       "Based on your factor(s) and any thresholds, here are your first gaps: ",
-      list_join_comma_space(mapped),
+      list_join_comma_space(filtered),
     ]),
   );
   return;
