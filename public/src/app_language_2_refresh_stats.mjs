@@ -1,3 +1,4 @@
+import { list_map } from "./list_map.mjs";
 import { app_language_2_stats_initial } from "./app_language_2_stats_initial.mjs";
 import { app_language_2_stats_get } from "./app_language_2_stats_get.mjs";
 import { app_language_2_gaps_get } from "./app_language_2_gaps_get.mjs";
@@ -24,13 +25,18 @@ import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { summation } from "./summation.mjs";
 import { emoji_chart } from "./emoji_chart.mjs";
+import { list_join_comma_space } from "./list_join_comma_space.mjs";
 export function app_language_2_refresh_stats(context) {
   app_language_2_button_back_home(context);
   let { root, app_fn } = context;
-  let factor = app_language_2_factor_get(context);
+  let factors = app_language_2_factor_get(context);
   html_p_text(
     root,
-    string_combine_multiple([emoji_chart(), " Difficulty: ", factor]),
+    string_combine_multiple([
+      emoji_chart(),
+      " Factors: ",
+      list_join_comma_space(list_map(factors, (f) => {})),
+    ]),
   );
   let stats = app_language_2_stats_get(app_fn);
   let ss = ["right", "wrong"];
