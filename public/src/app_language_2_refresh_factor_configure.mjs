@@ -32,14 +32,14 @@ export function app_language_2_refresh_factor_configure(
   let threshold = html_input_width_full(root);
   let v = object_property_get(factor, "threshold");
   html_value_set(threshold, v);
+  let threshold_min = 1;
   html_on_input(threshold, () => {
     v = html_value_get(threshold);
     v = integer_parse_try(v);
     if (!number_is(v)) {
       return;
     }
-    let newLocal = 1;
-    if (v < newLocal) {
+    if (v < threshold_min) {
       return;
     }
     object_property_set(factor, "threshold", v);
