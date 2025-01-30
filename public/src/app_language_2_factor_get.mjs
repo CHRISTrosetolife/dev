@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_language_2_factor_value_default } from "./app_language_2_factor_value_default.mjs";
 import { list_add } from "./list_add.mjs";
 import { app_language_2_factor_new } from "./app_language_2_factor_new.mjs";
@@ -12,6 +13,9 @@ export function app_language_2_factor_get(context) {
     "factors",
     app_language_2_factor_value_default(),
   );
+  log({
+    factors,
+  });
   if (number_is(factors)) {
     let threshold = 0;
     factors = [];
