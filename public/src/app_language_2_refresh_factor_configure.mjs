@@ -15,7 +15,7 @@ export function app_language_2_refresh_factor_configure(context) {
   let { root } = context;
   let n = range_from(11, 40);
   let factor_choices = list_map(n, (i) => i / 10);
-  let factor = app_language_2_factor_get(context);
+  let factors = app_language_2_factor_get(context);
   let buttons = list_adder((la) => {
     each(factor_choices, (f) => {
       let b = html_button_width_full_text_click(root, f, () => {
@@ -31,7 +31,7 @@ export function app_language_2_refresh_factor_configure(context) {
         });
       });
       la(b);
-      if (f === factor) {
+      if (f === factors) {
         html_style_success(b);
       }
     });
