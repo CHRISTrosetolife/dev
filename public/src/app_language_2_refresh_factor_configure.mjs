@@ -10,7 +10,6 @@ import { html_input_width_full } from "./html_input_width_full.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
 import { html_style_success } from "./html_style_success.mjs";
-import { app_language_2_gaps_update } from "./app_language_2_gaps_update.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { each } from "./each.mjs";
@@ -52,7 +51,6 @@ export function app_language_2_refresh_factor_configure(
       let b = html_button_width_full_text_click(root, f, () => {
         object_property_set(factor, "factor", f);
         app_language_2_factor_set(context, factors);
-        app_language_2_gaps_update(context);
         each(buttons, (b2) => {
           if (b === b2) {
             html_style_success(b2);
