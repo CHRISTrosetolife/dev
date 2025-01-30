@@ -42,7 +42,7 @@ export function app_todo_list_generic(
         html_hr(root);
         app_todo_item_choices(context, item, p);
       });
-      html_button_delete(root, async () => {
+      html_button_delete(root, "", async () => {
         list_remove(items_all, item);
         await firebase_save_index(context, index_path);
         refresh(context);
