@@ -10,9 +10,11 @@ export function app_language_2_gaps_update(context) {
   let w_size = app_language_2_words_size(context);
   let gap = 0;
   let gaps = [0];
-  while (gap < w_size * w_size) {$ag
-    let lamda = (f) => object_property_get(f, "threshold") <= gap;
-    let factor = list_filter_last(factors, lamda);
+  while (gap < w_size * w_size) {
+    let factor = list_filter_last(
+      factors,
+      (f) => object_property_get(f, "threshold") <= gap,
+    );
     gap = ceiling(gap * factor) + 1;
     list_add(gaps, gap);
   }
