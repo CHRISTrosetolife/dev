@@ -31,6 +31,8 @@ export function app_language_2_refresh_factor_configure(
   html_button_back(root, async () => {
     app_language_2_refresh_factor(context);
   });
+  if (false) {
+  }
   html_p_text(root, "Enter a threshold:");
   let threshold = html_input_width_full(root);
   html_attribute_set(threshold, "type", "number");
