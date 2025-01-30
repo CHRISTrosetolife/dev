@@ -25,8 +25,8 @@ export function app_language_2_refresh_factor_configure(
   let { root } = context;
   html_p_text(root, "Threshold:");
   let threshold = html_input_width_full(root);
-  html_value_set(threshold, v);
   let v = html_value_get(threshold);
+  html_value_set(threshold, v);
   html_on_input(threshold, () => {
     v = html_value_get(threshold);
     object_property_set(factor, "threshold", v);
