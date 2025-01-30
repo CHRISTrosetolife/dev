@@ -1,3 +1,4 @@
+import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { json_to } from "./json_to.mjs";
 import { app_language_refresh_quiz_text_ready } from "./app_language_refresh_quiz_text_ready.mjs";
@@ -138,7 +139,7 @@ export async function app_language_2_refresh_learn(context) {
     let word = object_property_get(u, "word");
     let key = object_property_get(word, "key");
     let index = object_property_get(word, "index");
-    if (false) {
+    if (object_property_exists(object, "property_name")) {
     }
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
