@@ -1,4 +1,3 @@
-import { app_language_2_factor_sort } from "./app_language_2_factor_sort.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
 import { html_style_success } from "./html_style_success.mjs";
 import { app_language_2_gaps_update } from "./app_language_2_gaps_update.mjs";
@@ -20,7 +19,6 @@ export function app_language_2_refresh_factor_configure(context, f, factors) {
     each(factor_choices, (f) => {
       let b = html_button_width_full_text_click(root, f, () => {
         let app_fn = object_property_get(context, "app_fn");
-        app_language_2_factor_sort(factors);
         storage_local_set(app_fn, "factor", factors);
         app_language_2_gaps_update(context);
         each(buttons, (b2) => {
@@ -32,7 +30,7 @@ export function app_language_2_refresh_factor_configure(context, f, factors) {
         });
       });
       la(b);
-      if (f === factors) {
+      if (object_property_get(f, "factor") === factors) {
         html_style_success(b);
       }
     });
