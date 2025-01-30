@@ -1,3 +1,6 @@
+import { app_language_2_refresh_factor } from "./app_language_2_refresh_factor.mjs";
+import { html_button_back } from "./html_button_back.mjs";
+import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { app_language_2_factor_set } from "./app_language_2_factor_set.mjs";
 import { integer_parse_try } from "./integer_parse_try.mjs";
 import { html_value_set } from "./html_value_set.mjs";
@@ -14,7 +17,6 @@ import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_map } from "./list_map.mjs";
 import { range_from } from "./range_from.mjs";
-import { app_language_2_button_back_home } from "./app_language_2_button_back_home.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { number_is } from "./number_is.mjs";
 export function app_language_2_refresh_factor_configure(
@@ -22,7 +24,10 @@ export function app_language_2_refresh_factor_configure(
   factor,
   factors,
 ) {
-  app_language_2_button_back_home(context);
+  html_clear_scroll_top_centered(root);
+  html_button_back(root, async () => {
+    app_language_2_refresh_factor(context);
+  });
   let { root } = context;
   html_p_text(root, "Threshold:");
   let threshold = html_input_width_full(root);
