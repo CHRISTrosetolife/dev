@@ -12,7 +12,7 @@ export function app_language_2_answers_matches(values_all, v) {
     let w_word = object_property_get(w, "word");
     return (
       object_property_get(w, "learning") === true &&
-      app_language_2_word_index(w) < index &&
+      app_language_2_word_index(w) !== index &&
       object_property_get(w_word, "question") === question &&
       object_property_get(w_word, "language") === language
     );
