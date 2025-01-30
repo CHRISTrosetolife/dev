@@ -10,6 +10,7 @@ import { app_language_2_gaps_get } from "./app_language_2_gaps_get.mjs";
 import { app_language_2_refresh_factor_configure } from "./app_language_2_refresh_factor_configure.mjs";
 import { app_language_2_button_back_home } from "./app_language_2_button_back_home.mjs";
 import { html_p_text } from "./html_p_text.mjs";
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export function app_language_2_refresh_factor(context) {
   app_language_2_button_back_home(context);
   let { root } = context;
@@ -29,6 +30,8 @@ export function app_language_2_refresh_factor(context) {
     ]),
   );
   let factors = app_language_2_factor_get(context);
-  each(list, (item) => {});
+  each(factors, (f) => {
+    html_button_width_full_text_click(root);
+  });
   app_language_2_refresh_factor_configure(context);
 }
