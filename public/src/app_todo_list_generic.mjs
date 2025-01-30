@@ -1,8 +1,7 @@
+import { html_button_delete } from "./html_button_delete.mjs";
 import { html_hr_each } from "./html_hr_each.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { firebase_save_index } from "./firebase_save_index.mjs";
-import { emoji_delete } from "./emoji_delete.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_todo_item_choices } from "./app_todo_item_choices.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { emoji_edit_combine } from "./emoji_edit_combine.mjs";
@@ -43,16 +42,11 @@ export function app_todo_list_generic(
         html_hr(root);
         app_todo_item_choices(context, item, p);
       });
-      let lambda = async () => {
+      html_button_delete(root, async () => {
         list_remove(items_all, item);
         await firebase_save_index(context, index_path);
         refresh(context);
-      };
-      html_button_width_full_text_click(
-        root,
-        string_combine_multiple([emoji_delete(), " Delete"]),
-        lambda,
-      );
+      });
     });
   });
 }
