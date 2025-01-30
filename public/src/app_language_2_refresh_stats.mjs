@@ -36,9 +36,7 @@ export function app_language_2_refresh_stats(context) {
     string_combine_multiple([
       emoji_chart(),
       " Factors: ",
-      list_join_comma_space(
-        list_map(factors, (f) => app_language_2_factor_string(f)),
-      ),
+      list_join_comma_space(list_map(factors, app_language_2_factor_string)),
     ]),
   );
   let stats = app_language_2_stats_get(app_fn);
