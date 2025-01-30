@@ -337,7 +337,6 @@ export async function app_language_2_refresh_learn(context) {
       html_p_text(root, round_2(v_gap));
     }
   }
-  function app_language_2_refresh_learn_word(u) {}
   function word_to_language_question_key(vsm_word) {
     let question = object_property_get(vsm_word, "question");
     let language = object_property_get(vsm_word, "language");
