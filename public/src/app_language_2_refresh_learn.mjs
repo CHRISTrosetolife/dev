@@ -137,9 +137,9 @@ export async function app_language_2_refresh_learn(context) {
     );
     let u = list_first(unlearning);
     let word = object_property_get(u, "word");
-    let key = object_property_get(word, "key");
+    let key = word_to_language_question_key(word);
     let index = object_property_get(word, "index");
-    if (object_property_exists(object, "property_name")) {
+    if (object_property_exists(max_indexes, key)) {
     }
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
