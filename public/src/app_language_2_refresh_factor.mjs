@@ -32,6 +32,9 @@ export function app_language_2_refresh_factor(context) {
   let mapped = list_map(filtered, number_locale);
   log({
     gaps,
+    w_size,
+    filtered,
+    mapped,
   });
   html_p_text(
     root,
