@@ -175,10 +175,7 @@ export async function app_language_2_refresh_learn(context) {
     );
     html_button_next(root, async () => {
       decrease_wait();
-      object_property_set(u, "learning", true);
-      object_property_set(u, "wait", wait_initial);
-      object_property_set(u, "gap", gap_initial);
-      storage_local_set(app_fn, "words", words);
+      app_language_2_refresh_learn_word(u);
       await app_language_2_refresh_learn(context);
     });
     app_language_2_skip(context, word);
@@ -332,6 +329,12 @@ export async function app_language_2_refresh_learn(context) {
     if (false) {
       html_p_text(root, round_2(v_gap));
     }
+  }
+  function app_language_2_refresh_learn_word(u) {
+    object_property_set(u, "learning", true);
+    object_property_set(u, "wait", wait_initial);
+    object_property_set(u, "gap", gap_initial);
+    storage_local_set(app_fn, "words", words);
   }
   function word_to_language_question_key(vsm_word) {
     let question = object_property_get(vsm_word, "question");
