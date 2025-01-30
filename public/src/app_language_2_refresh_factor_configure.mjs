@@ -23,6 +23,7 @@ export function app_language_2_refresh_factor_configure(
   factor,
   factors,
 ) {
+  let root2 = object_property_get(context, "root");
   html_clear_scroll_top_centered(root);
   html_button_back(root, async () => {
     app_language_2_refresh_factor(context);
