@@ -31,7 +31,7 @@ export function app_language_2_refresh_factor_configure(
   html_p_text(root, "Enter a threshold:");
   let threshold = html_input_width_full(root);
   let threshold_value = object_property_get(factor, "threshold");
-  html_value_set(threshold, v);
+  html_value_set(threshold, threshold_value);
   let threshold_min = 1;
   html_on_input(threshold, () => {
     let v = html_value_get(threshold);
@@ -67,6 +67,6 @@ export function app_language_2_refresh_factor_configure(
       }
     });
   });
-  if (false) {
+  if (threshold_value >= threshold_min) {
   }
 }
