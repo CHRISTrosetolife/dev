@@ -1,3 +1,4 @@
+import { list_first } from "./list_first.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language_2_words_size } from "./app_language_2_words_size.mjs";
 import { app_language_2_factor_get } from "./app_language_2_factor_get.mjs";
@@ -15,6 +16,7 @@ export function app_language_2_gaps_update(context) {
       factors,
       (f) => object_property_get(f, "threshold") >= gap,
     );
+    let first = list_first(filtered);
     gap = ceiling(gap * factor) + 1;
     list_add(gaps, gap);
   }
