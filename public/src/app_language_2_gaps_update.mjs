@@ -14,7 +14,7 @@ export function app_language_2_gaps_update(context) {
   while (gap < w_size * w_size) {
     let filtered = list_filter(
       factors,
-      (f) => object_property_get(f, "threshold") >= gap,
+      (f) => object_property_get(f, "threshold") <= gap,
     );
     let factor = list_first(filtered);
     gap = ceiling(gap * factor) + 1;
