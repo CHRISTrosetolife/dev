@@ -14,9 +14,10 @@ export function app_language_2_factor_get(context) {
     app_language_2_factor_value_default(),
   );
   if (number_is(factors)) {
+    let factor = factors;
     let threshold = 0;
     factors = [];
-    list_add(factors, app_language_2_factor_new(threshold, factors));
+    list_add(factors, app_language_2_factor_new(threshold, factor));
   }
   app_language_2_factor_sort(factors);
   log({
