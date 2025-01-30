@@ -12,10 +12,8 @@ export function app_language_2_gaps_update(context) {
   let gap = 0;
   let gaps = [0];
   while (gap < w_size * w_size) {
-    let filtered = list_filter(
-      factors,
-      (f) => object_property_get(f, "threshold") <= gap,
-    );
+    let lamda = (f) => object_property_get(f, "threshold") <= gap;
+    let filtered = list_filter(factors, lamda);
     let factor = list_last(filtered);
     gap = ceiling(gap * factor) + 1;
     list_add(gaps, gap);
