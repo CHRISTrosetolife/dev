@@ -13,14 +13,14 @@ export function app_language_2_factor_get(context) {
     "factors",
     app_language_2_factor_value_default(),
   );
-  log({
-    factors,
-  });
   if (number_is(factors)) {
     let threshold = 0;
     factors = [];
     list_add(factors, app_language_2_factor_new(threshold, factors));
   }
   app_language_2_factor_sort(factors);
+  log({
+    factors,
+  });
   return factors;
 }
