@@ -176,8 +176,6 @@ export async function app_language_2_refresh_learn(context) {
           list_add(us, u_max);
         }
       }
-      alert(json_to(us));
-      return;
       decrease_wait();
       each(us, (ui) => {
         object_property_set(ui, "learning", true);
