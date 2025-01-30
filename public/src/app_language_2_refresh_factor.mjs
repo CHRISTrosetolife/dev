@@ -1,3 +1,4 @@
+import { html_hr } from "./html_hr.mjs";
 import { app_language_2_factor_set } from "./app_language_2_factor_set.mjs";
 import { number_max_list_map_property } from "./number_max_list_map_property.mjs";
 import { app_language_2_factor_value_default } from "./app_language_2_factor_value_default.mjs";
@@ -28,11 +29,13 @@ export function app_language_2_refresh_factor(context) {
   let w_size = app_language_2_words_size(context);
   let filtered = list_filter(gaps, (m) => m <= w_size);
   let mapped = list_map(filtered, number_locale);
+  html_hr(root);
   html_p_text(
     root,
     "Based on your factor(s) and any thresholds, here are your first gaps: ",
   );
   html_p_text(root, list_join_comma_space(mapped));
+  html_hr(root);
   html_p_text(root, "Configure your factor(s) and any thresholds:");
   let factors = app_language_2_factor_get(context);
   each(factors, (f) => {
