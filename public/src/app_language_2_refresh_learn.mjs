@@ -140,6 +140,7 @@ export async function app_language_2_refresh_learn(context) {
     let key = word_to_language_question_key(word);
     let index = object_property_get(word, "index");
     if (object_property_exists(max_indexes, key)) {
+      let index_max = object_property_get(max_indexes, key);
     }
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
