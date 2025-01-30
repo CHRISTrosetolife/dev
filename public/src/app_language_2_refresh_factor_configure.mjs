@@ -29,6 +29,8 @@ export function app_language_2_refresh_factor_configure(
   html_value_set(threshold, v);
   html_on_input(threshold, () => {
     v = html_value_get(threshold);
+    if (false) {
+    }
     object_property_set(factor, "threshold", v);
     storage_local_set(app_fn, "factor", factors);
   });
