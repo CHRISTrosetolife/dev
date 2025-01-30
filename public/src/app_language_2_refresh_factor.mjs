@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_language_2_factor_set } from "./app_language_2_factor_set.mjs";
 import { number_max_list_map_property } from "./number_max_list_map_property.mjs";
 import { app_language_2_factor_value_default } from "./app_language_2_factor_value_default.mjs";
@@ -29,6 +30,9 @@ export function app_language_2_refresh_factor(context) {
   let w_size = app_language_2_words_size(context);
   let filtered = list_filter(gaps, (m) => m <= w_size);
   let mapped = list_map(filtered, number_locale);
+  log({
+    gaps,
+  });
   html_p_text(
     root,
     string_combine_multiple([
