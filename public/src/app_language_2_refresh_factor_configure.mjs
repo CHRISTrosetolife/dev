@@ -1,3 +1,4 @@
+import { html_button_delete } from "./html_button_delete.mjs";
 import { app_language_2_refresh_factor } from "./app_language_2_refresh_factor.mjs";
 import { html_button_back } from "./html_button_back.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
@@ -68,5 +69,6 @@ export function app_language_2_refresh_factor_configure(
     });
   });
   if (threshold_value >= threshold_min) {
+    html_button_delete(root);
   }
 }
