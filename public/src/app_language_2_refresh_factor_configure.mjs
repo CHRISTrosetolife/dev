@@ -17,6 +17,7 @@ import { list_map } from "./list_map.mjs";
 import { range_from } from "./range_from.mjs";
 import { app_language_2_button_back_home } from "./app_language_2_button_back_home.mjs";
 import { html_p_text } from "./html_p_text.mjs";
+import { number_is } from "./number_is.mjs";
 export function app_language_2_refresh_factor_configure(
   context,
   factor,
@@ -31,7 +32,8 @@ export function app_language_2_refresh_factor_configure(
   html_on_input(threshold, () => {
     v = html_value_get(threshold);
     v = integer_parse_try(v);
-    if (false) {
+    if (!number_is(v)) {
+      return;
     }
     object_property_set(factor, "threshold", v);
     storage_local_set(app_fn, "factor", factors);
