@@ -14,10 +14,10 @@ export function app_language_2_refresh_factor_configure(context) {
   app_language_2_button_back_home(context);
   let { root } = context;
   let n = range_from(11, 40);
-  let factors = list_map(n, (i) => i / 10);
+  let factor_choices = list_map(n, (i) => i / 10);
   let factor = app_language_2_factor_get(context);
   let buttons = list_adder((la) => {
-    each(factors, (f) => {
+    each(factor_choices, (f) => {
       let b = html_button_width_full_text_click(root, f, () => {
         let app_fn = object_property_get(context, "app_fn");
         storage_local_set(app_fn, "factor", f);
