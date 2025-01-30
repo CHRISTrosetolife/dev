@@ -12,7 +12,6 @@ import { app_language_2_words_size } from "./app_language_2_words_size.mjs";
 import { number_locale } from "./number_locale.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_language_2_gaps_get } from "./app_language_2_gaps_get.mjs";
 import { app_language_2_refresh_factor_configure } from "./app_language_2_refresh_factor_configure.mjs";
 import { app_language_2_button_back_home } from "./app_language_2_button_back_home.mjs";
@@ -31,11 +30,9 @@ export function app_language_2_refresh_factor(context) {
   let mapped = list_map(filtered, number_locale);
   html_p_text(
     root,
-    string_combine_multiple([
-      "Based on your factor(s) and any thresholds, here are your first gaps: ",
-      list_join_comma_space(mapped),
-    ]),
+    "Based on your factor(s) and any thresholds, here are your first gaps: ",
   );
+  html_p_text(root, list_join_comma_space(mapped));
   let factors = app_language_2_factor_get(context);
   each(factors, (f) => {
     html_button_width_full_text_click(
