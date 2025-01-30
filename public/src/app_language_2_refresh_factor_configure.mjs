@@ -61,7 +61,7 @@ export function app_language_2_refresh_factor_configure(
         });
       });
       la(b);
-      if (object_property_get(factor, "factor") === factors) {
+      if (object_property_get(factor, "factor") === f) {
         html_style_success(b);
       }
     });
