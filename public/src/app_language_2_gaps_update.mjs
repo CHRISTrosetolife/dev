@@ -15,6 +15,5 @@ export function app_language_2_gaps_update(context) {
     gap = ceiling(gap * factor) + 1;
     list_add(gaps, gap);
   }
-  list_add(gaps, w_size);
   object_property_set(context, "gaps", gaps);
 }
