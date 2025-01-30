@@ -35,6 +35,9 @@ export function app_language_2_refresh_factor_configure(
     if (!number_is(v)) {
       return;
     }
+    if (v < 0) {
+      return;
+    }
     object_property_set(factor, "threshold", v);
     storage_local_set(app_fn, "factor", factors);
   });
