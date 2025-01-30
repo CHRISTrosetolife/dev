@@ -16,7 +16,7 @@ export function app_language_2_refresh_factor(context) {
   let { root } = context;
   html_p_text(
     root,
-    "A gap relates to the number of other word pairs you see before seeing the same word pair again. The difficulty is the rate at which a gap increases. A difficulty of 2 means that the gap approximately doubles each time a word pair is correctly answered. The lower the difficulty, the more words are reviewed before introducing new words. The higher the difficulty, the more often new words are introduced. Choose a difficulty:",
+    "Lower factors are easier. Higher factors are more difficult. A gap relates to the number of other word pairs you see before seeing the same word pair again. A factor is the rate at which a gap increases. A difficulty of 2 means that the gap approximately doubles each time a word pair is correctly answered. The lower the factor, the more words are reviewed before introducing new words. The higher the factor, the more often new words are introduced. Choose a factor:",
   );
   let n = range_from(11, 40);
   let factors = list_map(n, (i) => i / 10);
