@@ -43,6 +43,8 @@ export function app_language_2_refresh_factor(context) {
     );
   });
   html_button_add(root, "factor", () => {
-    list_add(factors, app_language_2_factor_new(threshold, factors));
+    let f = app_language_2_factor_new(threshold, factors);
+    list_add(factors, f);
+    app_language_2_refresh_factor_configure(context, f);
   });
 }
