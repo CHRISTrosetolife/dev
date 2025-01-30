@@ -43,14 +43,15 @@ export function app_todo_list_generic(
         html_hr(root);
         app_todo_item_choices(context, item, p);
       });
+      let lambda = async () => {
+        list_remove(items_all, item);
+        await firebase_save_index(context, index_path);
+        refresh(context);
+      };
       html_button_width_full_text_click(
         root,
         string_combine_multiple([emoji_delete(), " delete"]),
-        async () => {
-          list_remove(items_all, item);
-          await firebase_save_index(context, index_path);
-          refresh(context);
-        },
+        lambda,
       );
     });
   });
