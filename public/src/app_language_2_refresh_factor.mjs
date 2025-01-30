@@ -14,7 +14,10 @@ export function app_language_2_refresh_factor(context) {
   let gaps = app_language_2_gaps_get(context);
   html_p_text(
     root,
-    string_combine_multiple(["Gaps: ", list_join_comma_space(gaps)]),
+    string_combine_multiple([
+      "Based on your factor(s) and any thresholds, here are your gaps: ",
+      list_join_comma_space(gaps),
+    ]),
   );
   return;
   app_language_2_refresh_factor_configure(context);
