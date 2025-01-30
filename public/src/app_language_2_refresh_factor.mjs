@@ -1,3 +1,4 @@
+import { number_max_list_map_property } from "./number_max_list_map_property.mjs";
 import { app_language_2_factor_value_default } from "./app_language_2_factor_value_default.mjs";
 import { app_language_2_factor_new } from "./app_language_2_factor_new.mjs";
 import { list_add } from "./list_add.mjs";
@@ -45,7 +46,7 @@ export function app_language_2_refresh_factor(context) {
   });
   html_button_add(root, "factor", () => {
     let f = app_language_2_factor_new(
-      threshold,
+      number_max_list_map_property(factors, "threshold") + 1,
       app_language_2_factor_value_default(),
     );
     list_add(factors, f);
