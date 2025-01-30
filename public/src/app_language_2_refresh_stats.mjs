@@ -36,12 +36,12 @@ export function app_language_2_refresh_stats(context) {
       emoji_chart(),
       " Factors: ",
       list_join_comma_space(
-        list_map(
-          factors,
-          (f) => $s,
-          object_property_get(f, "factor"),
-          "@",
-          object_property_get(f, "threshold"),
+        list_map(factors, (f) =>
+          string_combine_multiple([
+            object_property_get(f, "factor"),
+            "@",
+            object_property_get(f, "threshold"),
+          ]),
         ),
       ),
     ]),
