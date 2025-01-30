@@ -18,11 +18,12 @@ export function app_language_2_refresh_factor(context) {
   log({
     gaps,
   });
+  let mapped = list_map(gaps, number_locale);
   html_p_text(
     root,
     string_combine_multiple([
       "Based on your factor(s) and any thresholds, here are your gaps: ",
-      list_join_comma_space(list_map(gaps, number_locale)),
+      list_join_comma_space(mapped),
     ]),
   );
   return;
