@@ -28,7 +28,7 @@ export function app_language_2_refresh_factor_configure(
   html_button_back(root, async () => {
     app_language_2_refresh_factor(context);
   });
-  html_p_text(root, "Threshold:");
+  html_p_text(root, "Enter a threshold:");
   let threshold = html_input_width_full(root);
   let v = object_property_get(factor, "threshold");
   html_value_set(threshold, v);
@@ -44,6 +44,7 @@ export function app_language_2_refresh_factor_configure(
     object_property_set(factor, "threshold", v);
     app_language_2_factor_set(context, factors);
   });
+  html_p_text(root, "Choose a factor:");
   let n = range_from(11, 40);
   let factor_choices = list_map(n, (i) => i / 10);
   let buttons = list_adder((la) => {
