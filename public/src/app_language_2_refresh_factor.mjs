@@ -1,3 +1,4 @@
+import { html_button_add } from "./html_button_add.mjs";
 import { app_language_2_factor_string } from "./app_language_2_factor_string.mjs";
 import { each } from "./each.mjs";
 import { app_language_2_factor_get } from "./app_language_2_factor_get.mjs";
@@ -39,4 +40,5 @@ export function app_language_2_refresh_factor(context) {
       factors,
     );
   });
+  html_button_add();
 }
