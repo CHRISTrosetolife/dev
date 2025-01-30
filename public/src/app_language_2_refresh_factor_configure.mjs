@@ -1,3 +1,4 @@
+import { html_input_width_full } from "./html_input_width_full.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { app_language_2_factor_sort } from "./app_language_2_factor_sort.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
@@ -20,6 +21,7 @@ export function app_language_2_refresh_factor_configure(
   app_language_2_button_back_home(context);
   let { root } = context;
   html_p_text(root, "Threshold:");
+  html_input_width_full();
   let n = range_from(11, 40);
   let factor_choices = list_map(n, (i) => i / 10);
   let buttons = list_adder((la) => {
