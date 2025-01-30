@@ -1,3 +1,4 @@
+import { html_value_set } from "./html_value_set.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_on_input } from "./html_on_input.mjs";
 import { html_input_width_full } from "./html_input_width_full.mjs";
@@ -24,6 +25,7 @@ export function app_language_2_refresh_factor_configure(
   let { root } = context;
   html_p_text(root, "Threshold:");
   let threshold = html_input_width_full(root);
+  html_value_set(threshold, v);
   let v = html_value_get(threshold);
   html_on_input(threshold, () => {
     v = html_value_get(threshold);
