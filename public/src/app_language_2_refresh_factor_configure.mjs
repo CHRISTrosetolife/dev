@@ -46,8 +46,8 @@ export function app_language_2_refresh_factor_configure(
   let buttons = list_adder((la) => {
     each(factor_choices, (f) => {
       let b = html_button_width_full_text_click(root, f, () => {
-        let app_fn = object_property_get(context, "app_fn");
         object_property_set(factor, "factor", f);
+        let app_fn = object_property_get(context, "app_fn");
         app_language_2_factor_sort(factors);
         storage_local_set(app_fn, "factor", factors);
         app_language_2_gaps_update(context);
