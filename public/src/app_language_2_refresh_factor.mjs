@@ -1,3 +1,4 @@
+import { app_language_2_factor_string } from "./app_language_2_factor_string.mjs";
 import { each } from "./each.mjs";
 import { app_language_2_factor_get } from "./app_language_2_factor_get.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -31,7 +32,11 @@ export function app_language_2_refresh_factor(context) {
   );
   let factors = app_language_2_factor_get(context);
   each(factors, (f) => {
-    html_button_width_full_text_click(root);
+    html_button_width_full_text_click(
+      root,
+      app_language_2_factor_string(f),
+      () => {},
+    );
   });
   app_language_2_refresh_factor_configure(context);
 }
