@@ -32,6 +32,7 @@ export function app_language_2_refresh_factor_configure(
     app_language_2_refresh_factor(context);
   });
   if (false) {
+  } else {
   }
   html_p_text(root, "Enter a threshold:");
   let threshold = html_input_width_full(root);
