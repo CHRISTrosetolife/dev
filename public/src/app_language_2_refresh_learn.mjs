@@ -165,6 +165,7 @@ export async function app_language_2_refresh_learn(context) {
     html_button_next(root, async () => {
       let key = word_to_language_question_key(word);
       let index = object_property_get(word, "index");
+      let us = [u];
       if (object_property_exists(max_indexes, key)) {
         let index_max = object_property_get(max_indexes, key);
         if (index < index_max) {
@@ -172,10 +173,11 @@ export async function app_language_2_refresh_learn(context) {
             values_skip_manual,
             (m) => app_language_2_word_index(m) === index_max,
           );
-          app_language_2_refresh_learn_word(u_max);
+          list_add(us, u_max);
         }
       }
       decrease_wait();
+      each(list, (item) => {});
       app_language_2_refresh_learn_word(u);
       storage_local_set(app_fn, "words", words);
       await app_language_2_refresh_learn(context);
