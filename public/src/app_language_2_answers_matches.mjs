@@ -17,10 +17,12 @@ export function app_language_2_answers_matches(values_all, v) {
       object_property_get(w_word, "language") === language
     );
   });
-  if (list_empty_not_is(matches)) {
-    log({
-      matches,
-    });
+  if (false) {
+    if (list_empty_not_is(matches)) {
+      log({
+        matches,
+      });
+    }
   }
   return matches;
 }
