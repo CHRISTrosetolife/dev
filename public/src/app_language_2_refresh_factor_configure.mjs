@@ -1,3 +1,4 @@
+import { html_value_get } from "./html_value_get.mjs";
 import { html_on_input } from "./html_on_input.mjs";
 import { html_input_width_full } from "./html_input_width_full.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -23,7 +24,9 @@ export function app_language_2_refresh_factor_configure(
   let { root } = context;
   html_p_text(root, "Threshold:");
   let threshold = html_input_width_full(root);
-  html_on_input(threshold, () => {});
+  html_on_input(threshold, () => {
+    html_value_get(threshold);
+  });
   let n = range_from(11, 40);
   let factor_choices = list_map(n, (i) => i / 10);
   let buttons = list_adder((la) => {
