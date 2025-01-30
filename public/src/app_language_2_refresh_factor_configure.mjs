@@ -31,27 +31,29 @@ export function app_language_2_refresh_factor_configure(
   html_button_back(root, async () => {
     app_language_2_refresh_factor(context);
   });
-  if (false) {
-  } else {
-  }
-  html_p_text(root, "Enter a threshold:");
-  let threshold = html_input_width_full(root);
-  html_attribute_set(threshold, "type", "number");
   let threshold_value = object_property_get(factor, "threshold");
-  html_value_set(threshold, threshold_value);
   let threshold_min = 1;
-  html_on_input(threshold, () => {
-    let v = html_value_get(threshold);
-    v = integer_parse_try(v);
-    if (!number_is(v)) {
-      return;
-    }
-    if (v < threshold_min) {
-      return;
-    }
-    object_property_set(factor, "threshold", v);
-    app_language_2_factor_set(context, factors);
-  });
+  if (threshold_value < threshold_min) {
+    html_p_text(root, "Threshold: ");
+    html_p_text(root, threshold_value);
+  } else {
+    html_p_text(root, "Enter a threshold:");
+    let threshold = html_input_width_full(root);
+    html_attribute_set(threshold, "type", "number");
+    html_value_set(threshold, threshold_value);
+    html_on_input(threshold, () => {
+      let v = html_value_get(threshold);
+      v = integer_parse_try(v);
+      if (!number_is(v)) {
+        return;
+      }
+      if (v < threshold_min) {
+        return;
+      }
+      object_property_set(factor, "threshold", v);
+      app_language_2_factor_set(context, factors);
+    });
+  }
   html_p_text(root, "Choose a factor:");
   let n = range_from(11, 40);
   let factor_choices = list_map(n, (i) => i / 10);
