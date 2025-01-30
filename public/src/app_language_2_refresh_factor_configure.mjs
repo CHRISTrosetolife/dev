@@ -38,7 +38,8 @@ export function app_language_2_refresh_factor_configure(
     if (!number_is(v)) {
       return;
     }
-    if (v < 1) {
+    let newLocal = 1;
+    if (v < newLocal) {
       return;
     }
     object_property_set(factor, "threshold", v);
