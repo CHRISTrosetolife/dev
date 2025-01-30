@@ -27,7 +27,7 @@ export function app_language_2_refresh_home(context) {
   );
   html_button_width_full_text_click(
     root,
-    string_combine_multiple([emoji_chart(), " Difficulty"]),
+    string_combine_multiple([emoji_chart(), " Factor (difficulty)"]),
     () => {
       app_language_2_refresh_factor(context);
     },
