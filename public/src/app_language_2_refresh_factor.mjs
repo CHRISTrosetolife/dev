@@ -40,5 +40,5 @@ export function app_language_2_refresh_factor(context) {
       factors,
     );
   });
-  html_button_add();
+  html_button_add(root, "factor", () => {});
 }
