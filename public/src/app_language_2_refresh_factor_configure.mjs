@@ -23,7 +23,7 @@ export function app_language_2_refresh_factor_configure(
   let { root } = context;
   html_p_text(root, "Threshold:");
   let threshold = html_input_width_full(root);
-  html_on_input();
+  html_on_input(threshold, () => {});
   let n = range_from(11, 40);
   let factor_choices = list_map(n, (i) => i / 10);
   let buttons = list_adder((la) => {
