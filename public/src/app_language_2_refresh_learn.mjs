@@ -54,7 +54,6 @@ import { object_property_set } from "./object_property_set.mjs";
 import { html_button_next } from "./html_button_next.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
-import { log } from "./log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
@@ -117,18 +116,12 @@ export async function app_language_2_refresh_learn(context) {
     );
   });
   list_sort(values, app_language_2_word_index);
-  log({
-    values,
-  });
   values = list_copy(values);
   list_sort_property(values, "wait");
   let wait_initial = 0;
   let gap_initial = 0;
   let v = list_first(values);
   let vw = object_property_get(v, "wait");
-  log({
-    vw,
-  });
   let unlearning = list_filter_property(values, "learning", false);
   if (list_empty_not_is(unlearning) && (vw === null || vw > 0)) {
     app_language_2_tutorial_message(
