@@ -19,7 +19,7 @@ export function app_language_2_refresh_factor_configure(context, f, factors) {
     each(factor_choices, (f) => {
       let b = html_button_width_full_text_click(root, f, () => {
         let app_fn = object_property_get(context, "app_fn");
-        storage_local_set(app_fn, "factor", f);
+        storage_local_set(app_fn, "factor", factors);
         app_language_2_gaps_update(context);
         each(buttons, (b2) => {
           if (b === b2) {
