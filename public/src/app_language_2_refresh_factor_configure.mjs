@@ -1,10 +1,10 @@
+import { app_language_2_factor_set } from "./app_language_2_factor_set.mjs";
 import { integer_parse_try } from "./integer_parse_try.mjs";
 import { html_value_set } from "./html_value_set.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_on_input } from "./html_on_input.mjs";
 import { html_input_width_full } from "./html_input_width_full.mjs";
 import { object_property_set } from "./object_property_set.mjs";
-import { app_language_2_factor_sort } from "./app_language_2_factor_sort.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
 import { html_style_success } from "./html_style_success.mjs";
 import { app_language_2_gaps_update } from "./app_language_2_gaps_update.mjs";
@@ -47,9 +47,7 @@ export function app_language_2_refresh_factor_configure(
     each(factor_choices, (f) => {
       let b = html_button_width_full_text_click(root, f, () => {
         object_property_set(factor, "factor", f);
-        let app_fn = object_property_get(context, "app_fn");
-        app_language_2_factor_sort(factors);
-        storage_local_set(app_fn, "factor", factors);
+        app_language_2_factor_set(context, factors);
         app_language_2_gaps_update(context);
         each(buttons, (b2) => {
           if (b === b2) {
