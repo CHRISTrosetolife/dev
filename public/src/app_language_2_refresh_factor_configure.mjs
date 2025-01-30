@@ -26,6 +26,8 @@ export function app_language_2_refresh_factor_configure(
   let threshold = html_input_width_full(root);
   html_on_input(threshold, () => {
     let v = html_value_get(threshold);
+    object_property_set(factor, "threshold", v);
+    storage_local_set(app_fn, "factor", factors);
   });
   let n = range_from(11, 40);
   let factor_choices = list_map(n, (i) => i / 10);
