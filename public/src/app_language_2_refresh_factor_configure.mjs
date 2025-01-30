@@ -30,11 +30,11 @@ export function app_language_2_refresh_factor_configure(
   });
   html_p_text(root, "Enter a threshold:");
   let threshold = html_input_width_full(root);
-  let v = object_property_get(factor, "threshold");
+  let threshold_value = object_property_get(factor, "threshold");
   html_value_set(threshold, v);
   let threshold_min = 1;
   html_on_input(threshold, () => {
-    v = html_value_get(threshold);
+    let v = html_value_get(threshold);
     v = integer_parse_try(v);
     if (!number_is(v)) {
       return;
