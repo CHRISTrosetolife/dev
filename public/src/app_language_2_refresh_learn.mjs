@@ -147,8 +147,9 @@ export async function app_language_2_refresh_learn(context) {
           values_skip_manual,
           (m) => app_language_2_word_index(m) === index_max,
         );
-        each(list, (item) => {});
-        app_language_2_refresh_learn_word(u);
+        each([u, u_max], (ui) => {
+          app_language_2_refresh_learn_word(ui);
+        });
       }
     }
     let language = object_property_get(word, "language");
