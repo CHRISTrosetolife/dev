@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_filter_last } from "./list_filter_last.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language_2_words_size } from "./app_language_2_words_size.mjs";
@@ -18,10 +17,6 @@ export function app_language_2_gaps_update(context) {
     );
     let factor = object_property_get(f, "factor");
     gap = ceiling(gap * factor) + 1;
-    log({
-      factor,
-      gap,
-    });
     list_add(gaps, gap);
   }
   object_property_set(context, "gaps", gaps);
