@@ -138,19 +138,6 @@ export async function app_language_2_refresh_learn(context) {
     );
     let u = list_first(unlearning);
     let word = object_property_get(u, "word");
-    let key = word_to_language_question_key(word);
-    let index = object_property_get(word, "index");
-    if (object_property_exists(max_indexes, key)) {
-      let index_max = object_property_get(max_indexes, key);
-      if (index < index_max) {
-        let u_max = list_find(
-          values_skip_manual,
-          (m) => app_language_2_word_index(m) === index_max,
-        );
-        await app_language_2_refresh_learn_word([u, u_max]);
-        return;
-      }
-    }
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
     let mapped = app_language_2_answers(values_skip_manual, u);
@@ -176,8 +163,22 @@ export async function app_language_2_refresh_learn(context) {
       root,
     );
     html_button_next(root, async () => {
+      let key = word_to_language_question_key(word);
+      let index = object_property_get(word, "index");
+      if (object_property_exists(max_indexes, key)) {
+        let index_max = object_property_get(max_indexes, key);
+        if (index < index_max) {
+          let u_max = list_find(
+            values_skip_manual,
+            (m) => app_language_2_word_index(m) === index_max,
+          );
+          app_language_2_refresh_learn_word(u_max);
+        }
+      }
       decrease_wait();
-      app_language_2_refresh_learn_word([u]);
+      app_language_2_refresh_learn_word(u);
+      storage_local_set(app_fn, "words", words);
+      await app_language_2_refresh_learn(context);
     });
     app_language_2_skip(context, word);
   } else {
@@ -331,14 +332,10 @@ export async function app_language_2_refresh_learn(context) {
       html_p_text(root, round_2(v_gap));
     }
   }
-  async function app_language_2_refresh_learn_word(us) {
-    each(us, (u) => {
-      object_property_set(u, "learning", true);
-      object_property_set(u, "wait", wait_initial);
-      object_property_set(u, "gap", gap_initial);
-    });
-    storage_local_set(app_fn, "words", words);
-    await app_language_2_refresh_learn(context);
+  function app_language_2_refresh_learn_word(u) {
+    object_property_set(u, "learning", true);
+    object_property_set(u, "wait", wait_initial);
+    object_property_set(u, "gap", gap_initial);
   }
   function word_to_language_question_key(vsm_word) {
     let question = object_property_get(vsm_word, "question");
