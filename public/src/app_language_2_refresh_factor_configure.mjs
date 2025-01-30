@@ -9,7 +9,7 @@ import { list_adder } from "./list_adder.mjs";
 import { list_map } from "./list_map.mjs";
 import { range_from } from "./range_from.mjs";
 import { app_language_2_button_back_home } from "./app_language_2_button_back_home.mjs";
-export function app_language_2_refresh_factor_configure(context, f) {
+export function app_language_2_refresh_factor_configure(context, f, factors) {
   app_language_2_button_back_home(context);
   let { root } = context;
   let n = range_from(11, 40);
