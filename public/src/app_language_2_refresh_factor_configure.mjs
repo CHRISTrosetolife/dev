@@ -1,4 +1,4 @@
-import { list_add } from "./list_add.mjs";
+import { list_remove } from "./list_remove.mjs";
 import { html_button_delete } from "./html_button_delete.mjs";
 import { app_language_2_refresh_factor } from "./app_language_2_refresh_factor.mjs";
 import { html_button_back } from "./html_button_back.mjs";
@@ -71,7 +71,7 @@ export function app_language_2_refresh_factor_configure(
   });
   if (threshold_value >= threshold_min) {
     html_button_delete(root);
-    list_add(factors, f);
+    list_remove(factors, f);
     app_language_2_factor_set(context, factors);
   }
 }
