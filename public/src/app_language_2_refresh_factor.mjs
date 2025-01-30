@@ -1,3 +1,5 @@
+import { each } from "./each.mjs";
+import { app_language_2_factor_get } from "./app_language_2_factor_get.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { app_language_2_words_size } from "./app_language_2_words_size.mjs";
 import { number_locale } from "./number_locale.mjs";
@@ -26,6 +28,7 @@ export function app_language_2_refresh_factor(context) {
       list_join_comma_space(mapped),
     ]),
   );
-  return;
+  let factors = app_language_2_factor_get(context);
+  each(list, (item) => {});
   app_language_2_refresh_factor_configure(context);
 }
