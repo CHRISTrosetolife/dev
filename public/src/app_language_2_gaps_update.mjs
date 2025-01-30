@@ -20,6 +20,7 @@ export function app_language_2_gaps_update(context) {
     gap = ceiling(gap * factor) + 1;
     log({
       factor,
+      gap,
     });
     list_add(gaps, gap);
   }
