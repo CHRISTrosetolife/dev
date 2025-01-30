@@ -6,16 +6,15 @@ import { object_property_get } from "./object_property_get.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
-import { app_language_2_factor_get } from "./app_language_2_factor_get.mjs";
 import { list_map } from "./list_map.mjs";
 import { range_from } from "./range_from.mjs";
 import { app_language_2_button_back_home } from "./app_language_2_button_back_home.mjs";
-export function app_language_2_refresh_factor_configure(context) {
+export function app_language_2_refresh_factor_configure(context, f) {
   app_language_2_button_back_home(context);
   let { root } = context;
   let n = range_from(11, 40);
   let factor_choices = list_map(n, (i) => i / 10);
-  let factors = app_language_2_factor_get(context);
+  let factor = object_property_get(object, "property_name");
   let buttons = list_adder((la) => {
     each(factor_choices, (f) => {
       let b = html_button_width_full_text_click(root, f, () => {
