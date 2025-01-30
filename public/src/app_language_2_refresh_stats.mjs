@@ -1,3 +1,4 @@
+import { app_language_2_factor_string } from "./app_language_2_factor_string.mjs";
 import { list_map } from "./list_map.mjs";
 import { app_language_2_stats_initial } from "./app_language_2_stats_initial.mjs";
 import { app_language_2_stats_get } from "./app_language_2_stats_get.mjs";
@@ -36,13 +37,7 @@ export function app_language_2_refresh_stats(context) {
       emoji_chart(),
       " Factors: ",
       list_join_comma_space(
-        list_map(factors, (f) =>
-          string_combine_multiple([
-            object_property_get(f, "factor"),
-            "@",
-            object_property_get(f, "threshold"),
-          ]),
-        ),
+        list_map(factors, (f) => app_language_2_factor_string(f)),
       ),
     ]),
   );
