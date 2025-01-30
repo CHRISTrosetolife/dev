@@ -52,9 +52,10 @@ export function app_language_2_refresh_factor_configure(
   let factor_choices = list_map(n, (i) => i / 10);
   let buttons = list_adder((la) => {
     each(factor_choices, (f) => {
+      let factors2 = factors;
       let b = html_button_width_full_text_click(root, f, () => {
         object_property_set(factor, "factor", f);
-        app_language_2_factor_set(context, factors);
+        app_language_2_factor_set(context, factors2);
         each(buttons, (b2) => {
           if (b === b2) {
             html_style_success(b2);
