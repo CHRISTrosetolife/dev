@@ -8,7 +8,6 @@ import { object_property_set } from "./object_property_set.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
 import { html_style_success } from "./html_style_success.mjs";
 import { app_language_2_gaps_update } from "./app_language_2_gaps_update.mjs";
-import { storage_local_set } from "./storage_local_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { each } from "./each.mjs";
@@ -39,7 +38,7 @@ export function app_language_2_refresh_factor_configure(
       return;
     }
     object_property_set(factor, "threshold", v);
-    storage_local_set(app_fn, "factor", factors);
+    app_language_2_factor_set(context, factors);
   });
   let n = range_from(11, 40);
   let factor_choices = list_map(n, (i) => i / 10);
