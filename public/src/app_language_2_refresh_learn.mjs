@@ -1,3 +1,4 @@
+import { log_json } from "./log_json.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
 import { list_find } from "./list_find.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -208,6 +209,7 @@ export async function app_language_2_refresh_learn(context) {
       "questions_recent",
       questions_recent_keys_by_language,
     );
+    log_json(questions_recent_keys_by_language);
     let v_gap = object_property_get(v, "gap");
     let question = object_property_get(word, "question");
     let mapped = app_language_2_answers(values_skip_manual, v);
