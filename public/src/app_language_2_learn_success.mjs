@@ -12,7 +12,7 @@ import { list_empty_is } from "./list_empty_is.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language_2_gaps_get } from "./app_language_2_gaps_get.mjs";
-export function app_language_2_learn_success(context, v, stats2) {
+export function app_language_2_learn_success(context, v) {
   let stats = app_language_2_stats_get(app_fn);
   let { app_fn } = context;
   let gaps = app_language_2_gaps_get(context);
