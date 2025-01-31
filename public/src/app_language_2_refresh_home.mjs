@@ -1,3 +1,15 @@
+import { html_style_display_none } from "./html_style_display_none.mjs";
+import { storage_local_set } from "./storage_local_set.mjs";
+import { object_property_delete } from "./object_property_delete.mjs";
+import { app_language_2_word_key } from "./app_language_2_word_key.mjs";
+import { emoji_check } from "./emoji_check.mjs";
+import { app_language_2_other } from "./app_language_2_other.mjs";
+import { app_language_2_word_p } from "./app_language_2_word_p.mjs";
+import { object_property_get } from "./object_property_get.mjs";
+import { html_hr } from "./html_hr.mjs";
+import { html_div } from "./html_div.mjs";
+import { object_values } from "./object_values.mjs";
+import { each } from "./each.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { app_language_2_button_back_home } from "./app_language_2_button_back_home.mjs";
 import { html_button_reset } from "./html_button_reset.mjs";
@@ -68,6 +80,32 @@ export function app_language_2_refresh_home(context) {
       root,
       "Reset will simulate this app. It will be as if you used the app, got all the questions correct up to a certain point. This can approximate picking up where you left off while using the app on another device.",
     );
-    html_button_reset(root, () => {});
+    html_button_reset(root, () => {
+      each(values_skip_manual, (v) => {
+        let values_all = object_values(words);
+        let entry = html_div(root);
+        html_hr(entry);
+        let word = object_property_get(v, "word");
+        let language = object_property_get(word, "language");
+        let question = object_property_get(word, "question");
+        app_language_2_word_p(entry, language, question);
+        let answer = object_property_get(word, "answer");
+        app_language_2_word_p(
+          entry,
+          app_language_2_other(language, language_learn, language_fluent),
+          answer,
+        );
+        html_button_width_full_text_click(
+          entry,
+          string_combine_multiple([emoji_check(), "Unskip"]),
+          () => {
+            let word_key = app_language_2_word_key(v);
+            object_property_delete(skip_manual, word_key);
+            storage_local_set(app_fn, "skip_manual", skip_manual);
+            html_style_display_none(entry);
+          },
+        );
+      });
+    });
   });
 }
