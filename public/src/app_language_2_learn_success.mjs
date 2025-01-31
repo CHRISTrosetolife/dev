@@ -12,18 +12,18 @@ import { list_empty_is } from "./list_empty_is.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language_2_gaps_get } from "./app_language_2_gaps_get.mjs";
-export function app_language_2_learn_success(context, v) {
+export function app_language_2_learn_success(context, value_word) {
   let stats = app_language_2_stats_get(app_fn);
   let { app_fn } = context;
   let gaps = app_language_2_gaps_get(context);
-  let gap = object_property_get(v, "gap");
+  let gap = object_property_get(value_word, "gap");
   let f = list_filter(gaps, (g) => g > gap);
   if (list_empty_is(f)) {
     list_add(f, list_last(gaps));
   }
   let gap_new = list_first(f) + random();
-  object_property_set(v, "gap", gap_new);
-  object_property_set(v, "wait", gap_new);
+  object_property_set(value_word, "gap", gap_new);
+  object_property_set(value_word, "wait", gap_new);
   let r = object_property_get(stats, "right");
   let rounded = round(gap);
   object_property_increment(r, rounded);
