@@ -1,3 +1,4 @@
+import { app_language_words_set } from "./app_language_words_set.mjs";
 import { app_language_2_decrease_wait } from "./app_language_2_decrease_wait.mjs";
 import { app_language_2_on_learn } from "./app_language_2_on_learn.mjs";
 import { app_language_2_refresh_learn_value_choose } from "./app_language_2_refresh_learn_value_choose.mjs";
@@ -112,7 +113,7 @@ export async function app_language_2_refresh_learn(context) {
         wait_initial,
         gap_initial,
       );
-      storage_local_set(app_fn, "words", words);
+      app_language_words_set(context, words);
       await app_language_2_refresh_learn(context);
     });
     app_language_2_skip(context, u_word);
