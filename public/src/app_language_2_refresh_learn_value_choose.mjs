@@ -69,12 +69,6 @@ export function app_language_2_refresh_learn_value_choose(context) {
   let unlearning = list_filter_property(values, "learning", false);
   let learn_new = list_empty_not_is(unlearning) && (vw === null || vw > 0);
   let u = list_first_or(unlearning, null);
-  let u_word;
-  if (u !== null) {
-    u_word = object_property_get(u, "word");
-  } else {
-    u_word = null;
-  }
   return {
     v,
     values,
