@@ -1,3 +1,4 @@
+import { app_language_2_words_initialize } from "./app_language_2_words_initialize.mjs";
 import { json_to } from "./json_to.mjs";
 import { app_language_2_skip_manual_get } from "./app_language_2_skip_manual_get.mjs";
 import { list_sort } from "./list_sort.mjs";
@@ -6,16 +7,13 @@ import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { html_localhost_is } from "./html_localhost_is.mjs";
 import { app_language_2_words_get } from "./app_language_2_words_get.mjs";
 import { app_language_2_refresh_learn } from "./app_language_2_refresh_learn.mjs";
-import { app_language_2_gaps_update } from "./app_language_2_gaps_update.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { list_flatten } from "./list_flatten.mjs";
 import { list_chunk } from "./list_chunk.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { each_index } from "./each_index.mjs";
-import { storage_local_set } from "./storage_local_set.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
-import { each } from "./each.mjs";
 import { app_language_initialize } from "./app_language_initialize.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
@@ -85,28 +83,6 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
     if (true) {
     }
   }
-  object_property_set(context, "words", words);
-  each(flat2, (word) => {
-    let k = object_property_get(word, "key");
-    if (object_property_exists(words, k)) {
-      let existing = object_property_get(words, k);
-      let word_existing = object_property_get(existing, "word");
-      object_property_set(
-        word_existing,
-        "index",
-        object_property_get(word, "index"),
-      );
-      return;
-    }
-    let w = {
-      learning: false,
-      word,
-    };
-    object_property_set(words, k, w);
-    object_property_set(w, "wait", null);
-    object_property_set(w, "gap", null);
-  });
-  storage_local_set(app_fn, "words", words);
-  app_language_2_gaps_update(context);
+  app_language_2_words_initialize(context, words, flat2, app_fn);
   await app_language_2_refresh_learn(context);
 }
