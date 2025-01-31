@@ -46,16 +46,16 @@ export function app_language_2_reset_search(context, v) {
         let key = app_language_2_word_key(v);
         if (learn_new) {
         } else {
+          log({
+            key,
+          });
+          if (key === key2) {
+            break;
+          }
+          app_language_2_decrease_wait(values);
+          app_language_2_learn_success(context, v, false);
+          await app_language_2_refresh_learn(context);
         }
-        log({
-          key,
-        });
-        if (key === key2) {
-          break;
-        }
-        app_language_2_decrease_wait(values);
-        app_language_2_learn_success(context, v, false);
-        await app_language_2_refresh_learn(context);
       }
     });
     let word = object_property_get(v2, "word");
