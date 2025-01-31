@@ -29,6 +29,7 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { html_button } from "./html_button.mjs";
 import { html_input_width_full } from "./html_input_width_full.mjs";
 import { html_on_input } from "./html_on_input.mjs";
+import { html_value_get } from "./html_value_get.mjs";
 export function app_language_2_refresh_home(context) {
   let { root, app_fn } = context;
   html_clear_scroll_top_centered(root);
@@ -108,7 +109,8 @@ export function app_language_2_refresh_home(context) {
       });
     });
     html_on_input(search_input, () => {
-      if (false) {
+      let v = html_value_get(search_input);
+      if (v) {
       }
     });
   });
