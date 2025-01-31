@@ -71,7 +71,6 @@ export async function app_language_2_refresh_learn(context) {
     values_all,
     learn_new,
     u,
-    u_word,
   } = app_language_2_refresh_learn_value_choose(context);
   if (learn_new) {
     app_language_2_tutorial_message(
@@ -79,6 +78,7 @@ export async function app_language_2_refresh_learn(context) {
       "At this time, this app stores all its data on your device/browser. Make sure you are using the device and browser that you want to use this app on. At this time you cannot use this app on multiple devices or browsers.",
       root,
     );
+    let u_word = object_property_get(u, "word");
     let language = object_property_get(u_word, "language");
     let question = object_property_get(u_word, "question");
     let mapped = app_language_2_answers(values_skip_manual, u);
