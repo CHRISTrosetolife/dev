@@ -7,7 +7,6 @@ import { html_on_input_initial } from "./html_on_input_initial.mjs";
 import { app_language_2_other } from "./app_language_2_other.mjs";
 import { app_language_2_word_p } from "./app_language_2_word_p.mjs";
 import { html_hr } from "./html_hr.mjs";
-import { html_button } from "./html_button.mjs";
 import { each } from "./each.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { list_any } from "./list_any.mjs";
@@ -22,6 +21,7 @@ import { html_button_back_text } from "./html_button_back_text.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { app_language_2_button_back_home } from "./app_language_2_button_back_home.mjs";
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export function app_language_2_reset(context) {
   let { root } = context;
   app_language_2_button_back_home(context);
@@ -56,7 +56,7 @@ export function app_language_2_reset(context) {
       });
     });
     each(filtered, (v) => {
-      let entry = html_button(root);
+      let entry = html_button_width_full_text_click(root, "", () => {});
       html_hr(entry);
       let word = object_property_get(v, "word");
       let language = object_property_get(word, "language");
