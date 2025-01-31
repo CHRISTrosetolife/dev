@@ -1,3 +1,4 @@
+import { app_language_2_words_get } from "./app_language_2_words_get.mjs";
 import { app_language_2_refresh_learn_value_choose_initial } from "./app_language_2_refresh_learn_value_choose_initial.mjs";
 import { app_language_words_set } from "./app_language_words_set.mjs";
 import { app_language_2_on_learn } from "./app_language_2_on_learn.mjs";
@@ -40,10 +41,10 @@ export function app_language_2_reset_search(context, v) {
   });
   each(filtered, (v2) => {
     let entry = html_button_width_full_text_click(root, "", async () => {
-      let { words } = context;
       let key2 = app_language_2_word_key(v2);
       let { group_flat } = app_language_2_group_get(context);
       app_language_2_words_initialize(context, {}, group_flat);
+      let words = app_language_2_words_get(context);
       let { values, values_skip_manual, max_indexes } =
         app_language_2_refresh_learn_value_choose_initial(context);
       while (true) {
