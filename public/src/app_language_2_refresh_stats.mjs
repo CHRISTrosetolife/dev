@@ -1,3 +1,4 @@
+import { html_button_reset } from "./html_button_reset.mjs";
 import { app_language_2_factor_string } from "./app_language_2_factor_string.mjs";
 import { list_map } from "./list_map.mjs";
 import { app_language_2_stats_initial } from "./app_language_2_stats_initial.mjs";
@@ -7,11 +8,9 @@ import { app_language_2_factor_get } from "./app_language_2_factor_get.mjs";
 import { app_language_2_button_back_home } from "./app_language_2_button_back_home.mjs";
 import { string_case_upper_first } from "./string_case_upper_first.mjs";
 import { number_format_percent } from "./number_format_percent.mjs";
-import { emoji_danger } from "./emoji_danger.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { storage_local_exists } from "./storage_local_exists.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_add } from "./object_property_add.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
@@ -112,14 +111,11 @@ export function app_language_2_refresh_stats(context) {
       );
     });
   });
-  html_button_width_full_text_click(
-    root,
-    string_combine_multiple([emoji_danger(), " Reset"]),
-    () => {
-      storage_local_set(app_fn, "stats", app_language_2_stats_initial());
-      app_language_2_refresh_stats(context);
-    },
-  );
+  let lambda = () => {
+    storage_local_set(app_fn, "stats", app_language_2_stats_initial());
+    app_language_2_refresh_stats(context);
+  };
+  html_button_reset(root, lambda);
   let cnt = storage_local_get(app_fn, "count");
   if (storage_local_exists(app_fn, "count")) {
     html_p_text(root, string_combine_multiple(["Grand total answered: ", cnt]));
