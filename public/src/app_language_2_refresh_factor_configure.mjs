@@ -1,3 +1,4 @@
+import { html_hr } from "./html_hr.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { html_button_delete } from "./html_button_delete.mjs";
@@ -78,6 +79,7 @@ export function app_language_2_refresh_factor_configure(
     });
   });
   if (threshold_value >= threshold_min) {
+    html_hr(root);
     html_button_delete(root, "this factor and threshold", () => {
       list_remove(factors, factor);
       app_language_2_factor_set(context, factors);
