@@ -1,5 +1,3 @@
-import { list_first_or } from "./list_first_or.mjs";
-import { undefined } from "./or.mjs";
 import { app_language_2_decrease_wait } from "./app_language_2_decrease_wait.mjs";
 import { app_language_2_on_learn } from "./app_language_2_on_learn.mjs";
 import { app_language_2_refresh_learn_value_choose } from "./app_language_2_refresh_learn_value_choose.mjs";
@@ -73,6 +71,7 @@ export async function app_language_2_refresh_learn(context) {
     values_all,
     unlearning,
     learn_new,
+    u,
   } = app_language_2_refresh_learn_value_choose(context);
   if (learn_new) {
     app_language_2_tutorial_message(
@@ -80,7 +79,6 @@ export async function app_language_2_refresh_learn(context) {
       "At this time, this app stores all its data on your device/browser. Make sure you are using the device and browser that you want to use this app on. At this time you cannot use this app on multiple devices or browsers.",
       root,
     );
-    let u = list_first_or(unlearning, null);
     let word = object_property_get(u, "word");
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
