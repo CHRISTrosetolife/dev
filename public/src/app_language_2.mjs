@@ -83,6 +83,6 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
     if (true) {
     }
   }
-  app_language_2_words_initialize(context, words, flat2, app_fn);
+  app_language_2_words_initialize(context, words, app_fn);
   await app_language_2_refresh_learn(context);
 }

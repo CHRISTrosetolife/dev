@@ -4,12 +4,7 @@ import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { object_property_set } from "./object_property_set.mjs";
-export function app_language_2_words_initialize(
-  context,
-  words,
-  flat2,
-  aapp_fn,
-) {
+export function app_language_2_words_initialize(context, words, aapp_fn) {
   let { app_fn } = context;
   object_property_set(context, "words", words);
   each(flat2, (word) => {
