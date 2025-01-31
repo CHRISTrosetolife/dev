@@ -10,7 +10,7 @@ export function app_language_2_words_initialize(
   flat2,
   aapp_fn,
 ) {
-  let app_fn = context;
+  let { app_fn } = context;
   object_property_set(context, "words", words);
   each(flat2, (word) => {
     let k = object_property_get(word, "key");
