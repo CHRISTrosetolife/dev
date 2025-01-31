@@ -71,6 +71,7 @@ export async function app_language_2_refresh_learn(context) {
     values_all,
     learn_new,
     u,
+    u_word,
   } = app_language_2_refresh_learn_value_choose(context);
   if (learn_new) {
     app_language_2_tutorial_message(
