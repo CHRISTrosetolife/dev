@@ -1,3 +1,4 @@
+import { list_take_soft } from "./list_take_soft.mjs";
 import { log_json } from "./log_json.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
 import { list_find } from "./list_find.mjs";
@@ -200,7 +201,7 @@ export async function app_language_2_refresh_learn(context) {
     );
     list_add_beginning(questions_recent_keys, word_key);
     let questions_recent_limit = 15;
-    questions_recent_keys = list_take(
+    questions_recent_keys = list_take_soft(
       questions_recent_keys,
       questions_recent_limit,
     );
