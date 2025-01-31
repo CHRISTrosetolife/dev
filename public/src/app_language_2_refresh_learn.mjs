@@ -66,9 +66,7 @@ export async function app_language_2_refresh_learn(context) {
   let { values, values_skip_manual, max_indexes, values_all } =
     app_language_2_refresh_learn_value_choose_initial(context);
   let { v, wait_initial, gap_initial, learn_new, u } =
-    app_language_2_refresh_learn_value_choose(
-      values,
-    );
+    app_language_2_refresh_learn_value_choose(values);
   if (learn_new) {
     app_language_2_tutorial_message(
       context,
