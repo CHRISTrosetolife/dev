@@ -1,3 +1,5 @@
+import { app_language_2_words_initialize } from "./app_language_2_words_initialize.mjs";
+import { app_language_2_group_get } from "./app_language_2_group_get.mjs";
 import { html_button_back } from "./html_button_back.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_button_enable_if } from "./html_button_enable_if.mjs";
@@ -56,7 +58,10 @@ export function app_language_2_reset(context) {
       });
     });
     each(filtered, (v) => {
-      let entry = html_button_width_full_text_click(root, "", () => {});
+      let entry = html_button_width_full_text_click(root, "", () => {
+        let { words, group_flat } = app_language_2_group_get(context);
+        app_language_2_words_initialize(context, words, group_flat);
+      });
       html_hr(entry);
       let word = object_property_get(v, "word");
       let language = object_property_get(word, "language");
