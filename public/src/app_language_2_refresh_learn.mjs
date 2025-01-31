@@ -1,12 +1,11 @@
+import { app_language_2_refresh_learn_value_choose } from "./app_language_2_refresh_learn_value_choose.mjs";
 import { app_language_2_learn_success } from "./app_language_2_learn_success.mjs";
-import { app_language_2_words_sort } from "./app_language_2_words_sort.mjs";
 import { list_partition } from "./list_partition.mjs";
 import { list_take_soft } from "./list_take_soft.mjs";
 import { log_json } from "./log_json.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
 import { list_find } from "./list_find.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
-import { object_property_initialize } from "./object_property_initialize.mjs";
 import { json_to } from "./json_to.mjs";
 import { app_language_refresh_quiz_text_ready } from "./app_language_refresh_quiz_text_ready.mjs";
 import { app_language_2_tutorial_message } from "./app_language_2_tutorial_message.mjs";
@@ -16,12 +15,10 @@ import { app_language_2_word_p } from "./app_language_2_word_p.mjs";
 import { app_language_2_word_key } from "./app_language_2_word_key.mjs";
 import { app_language_2_word_index } from "./app_language_2_word_index.mjs";
 import { app_language_2_skip } from "./app_language_2_skip.mjs";
-import { app_language_2_skip_manual_get } from "./app_language_2_skip_manual_get.mjs";
 import { app_language_2_refresh_home } from "./app_language_2_refresh_home.mjs";
 import { app_language_2_other } from "./app_language_2_other.mjs";
 import { app_language_2_answers } from "./app_language_2_answers.mjs";
 import { list_unique } from "./list_unique.mjs";
-import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
 import { round_2 } from "./round_2.mjs";
 import { list_includes } from "./list_includes.mjs";
@@ -30,7 +27,6 @@ import { html_button_home } from "./html_button_home.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { list_copy } from "./list_copy.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { list_difference } from "./list_difference.mjs";
@@ -54,8 +50,6 @@ import { html_p_text } from "./html_p_text.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_first } from "./list_first.mjs";
-import { list_sort_property } from "./list_sort_property.mjs";
-import { object_values } from "./object_values.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { sleep } from "./sleep.mjs";
 import { list_add } from "./list_add.mjs";
@@ -73,52 +67,21 @@ export async function app_language_2_refresh_learn(context) {
     app_language_2_refresh_home(context);
   });
   html_spacer_vertical_2(root);
-  let values_all = object_values(words);
-  let skip_manual = app_language_2_skip_manual_get(app_fn);
-  let values_skip_manual = list_filter(values_all, (v) => {
-    let word = object_property_get(v, "word");
-    let question = object_property_get(word, "question");
-    let answer = object_property_get(word, "answer");
-    let language = object_property_get(word, "language");
-    let key = app_language_2_word_key(v);
-    let key_other = json_to([
-      answer,
-      question,
-      app_language_2_other(language, language_learn, language_fluent),
-    ]);
-    return (
-      object_property_exists_not(skip_manual, key) &&
-      object_property_exists_not(skip_manual, key_other)
-    );
-  });
-  let max_indexes = {};
-  each(values_skip_manual, (v) => {
-    if (object_property_get(v, "learning") !== true) {
-      return;
-    }
-    let v_word = object_property_get(v, "word");
-    let index = object_property_get(v_word, "index");
-    let key = word_to_language_question_key(v_word);
-    let value = object_property_initialize(max_indexes, key, -1);
-    if (index > value) {
-      object_property_set(max_indexes, key, index);
-    }
-  });
-  let values = list_filter(values_skip_manual, (v) => {
-    let v_word = object_property_get(v, "word");
-    let index = object_property_get(v_word, "index");
-    let key = word_to_language_question_key(v_word);
-    return (
-      object_property_get(v, "learning") !== true ||
-      index === object_property_get(max_indexes, key)
-    );
-  });
-  app_language_2_words_sort(values);
-  values = list_copy(values);
-  list_sort_property(values, "wait");
-  let wait_initial = 0;
-  let gap_initial = 0;
-  let v = list_first(values);
+  let {
+    v,
+    values,
+    values_skip_manual,
+    max_indexes,
+    wait_initial,
+    gap_initial,
+    values_all,
+  } = app_language_2_refresh_learn_value_choose(
+    words,
+    app_fn,
+    language_learn,
+    language_fluent,
+    word_to_language_question_key,
+  );
   let vw = object_property_get(v, "wait");
   let unlearning = list_filter_property(values, "learning", false);
   if (list_empty_not_is(unlearning) && (vw === null || vw > 0)) {
