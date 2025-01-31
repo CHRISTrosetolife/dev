@@ -5,7 +5,6 @@ import { app_language_2_refresh_learn_value_choose } from "./app_language_2_refr
 import { app_language_2_learn_success } from "./app_language_2_learn_success.mjs";
 import { app_language_2_other } from "./app_language_2_other.mjs";
 import { app_language_2_word_p } from "./app_language_2_word_p.mjs";
-import { html_hr } from "./html_hr.mjs";
 import { app_language_2_words_initialize } from "./app_language_2_words_initialize.mjs";
 import { app_language_2_group_get } from "./app_language_2_group_get.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -53,7 +52,6 @@ export function app_language_2_reset_search(context, v) {
         await app_language_2_refresh_learn(context);
       }
     });
-    html_hr(entry);
     let word = object_property_get(v2, "word");
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
