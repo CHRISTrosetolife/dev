@@ -1,3 +1,4 @@
+import { app_language_2_decrease_wait } from "./app_language_2_decrease_wait.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { each } from "./each.mjs";
 import { list_add } from "./list_add.mjs";
@@ -28,7 +29,7 @@ export function app_language_2_on_learn(
       list_add(us, u_max);
     }
   }
-  decrease_wait();
+  app_language_2_decrease_wait(values);
   each(us, (ui) => {
     object_property_set(ui, "learning", true);
     object_property_set(ui, "wait", wait_initial);

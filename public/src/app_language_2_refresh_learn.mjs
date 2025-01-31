@@ -111,7 +111,7 @@ export async function app_language_2_refresh_learn(context) {
         u,
         max_indexes,
         values_skip_manual,
-        decrease_wait,
+        values,
         wait_initial,
         gap_initial,
       );
