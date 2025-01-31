@@ -107,6 +107,9 @@ export function app_language_2_refresh_home(context) {
         );
       });
     });
-    html_on_input(search_input, () => {});
+    html_on_input(search_input, () => {
+      if (false) {
+      }
+    });
   });
 }
