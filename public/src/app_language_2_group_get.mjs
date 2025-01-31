@@ -15,9 +15,10 @@ import { html_localhost_is } from "./html_localhost_is.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export function app_language_2_group_get(
   context,
-  language_learn,
-  language_fluent,
+  language_learn1,
+  language_fluent1,
 ) {
+  let { language_learn, language_fluent } = context;
   let group = object_property_get(context, "group");
   if (html_localhost_is()) {
     if (false) {
