@@ -260,8 +260,7 @@ export async function app_language_2_refresh_learn(context) {
       v_filtered,
       (w) => object_property_get(w, "question") !== question,
     );
-    let [recent_choices, older_choices] = list_partition(
-      v_filtered2,
+    let [recent_choices, older_choices] = list_partition(v_filtered2, (w) =>
       list_includes(questions_recent_keys, object_property_get(w, "key")),
     );
     let other_taken_recent = app_language_2_answers_take(
