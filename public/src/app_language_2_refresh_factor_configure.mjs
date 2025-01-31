@@ -64,7 +64,7 @@ export function app_language_2_refresh_factor_configure(
     each(factor_choices, (f) => {
       let b = html_button_width_full_text_click(root, f, () => {
         object_property_set(factor, "factor", f);
-        app_language_2_factor_set(context, factors2);
+        app_language_2_factor_set(context, factors);
         each(buttons, (b2) => {
           if (b === b2) {
             html_style_success(b2);
