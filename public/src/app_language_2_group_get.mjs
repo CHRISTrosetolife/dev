@@ -13,11 +13,7 @@ import { app_language_2_words_get } from "./app_language_2_words_get.mjs";
 import { list_flatten } from "./list_flatten.mjs";
 import { html_localhost_is } from "./html_localhost_is.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-export function app_language_2_group_get(
-  context,
-  language_learn1,
-  language_fluent1,
-) {
+export function app_language_2_group_get(context, language_fluent1) {
   let { language_learn, language_fluent } = context;
   let group = object_property_get(context, "group");
   if (html_localhost_is()) {
