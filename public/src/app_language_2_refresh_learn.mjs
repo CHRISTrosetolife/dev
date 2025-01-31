@@ -1,3 +1,4 @@
+import { app_language_2_learn_success } from "./app_language_2_learn_success.mjs";
 import { app_language_2_words_sort } from "./app_language_2_words_sort.mjs";
 import { list_partition } from "./list_partition.mjs";
 import { list_take_soft } from "./list_take_soft.mjs";
@@ -19,14 +20,10 @@ import { app_language_2_skip } from "./app_language_2_skip.mjs";
 import { app_language_2_skip_manual_get } from "./app_language_2_skip_manual_get.mjs";
 import { app_language_2_refresh_home } from "./app_language_2_refresh_home.mjs";
 import { app_language_2_other } from "./app_language_2_other.mjs";
-import { app_language_2_gaps_get } from "./app_language_2_gaps_get.mjs";
-import { app_language_2_count_increment } from "./app_language_2_count_increment.mjs";
 import { app_language_2_answers } from "./app_language_2_answers.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
-import { round } from "./round.mjs";
 import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
-import { object_property_increment } from "./object_property_increment.mjs";
 import { round_2 } from "./round_2.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { html_flag } from "./html_flag.mjs";
@@ -36,7 +33,6 @@ import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_copy } from "./list_copy.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
-import { list_last } from "./list_last.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { list_difference } from "./list_difference.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -62,9 +58,7 @@ import { list_first } from "./list_first.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
 import { object_values } from "./object_values.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
-import { random } from "./random.mjs";
 import { sleep } from "./sleep.mjs";
-import { list_empty_is } from "./list_empty_is.mjs";
 import { list_add } from "./list_add.mjs";
 import { html_progress } from "./html_progress.mjs";
 import { html_span_text } from "./html_span_text.mjs";
@@ -291,20 +285,7 @@ export async function app_language_2_refresh_learn(context) {
           decrease_wait();
           if (c === answer_text) {
             html_style_success(b);
-            let gaps = app_language_2_gaps_get(context);
-            let gap = object_property_get(v, "gap");
-            let f = list_filter(gaps, (g) => g > gap);
-            if (list_empty_is(f)) {
-              list_add(f, list_last(gaps));
-            }
-            let gap_new = list_first(f) + random();
-            object_property_set(v, "gap", gap_new);
-            object_property_set(v, "wait", gap_new);
-            let r = object_property_get(stats, "right");
-            let rounded = round(gap);
-            object_property_increment(r, rounded);
-            storage_local_set(app_fn, "stats", stats);
-            app_language_2_count_increment(context);
+            app_language_2_learn_success(context, v, stats, app_fn);
           } else {
             html_style_wrong(b);
             app_language_2_wrong(context, v, gap_initial, wait_initial);
