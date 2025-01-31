@@ -198,9 +198,9 @@ export async function app_language_2_refresh_learn(context) {
       language,
     );
     let questions_recent_limit = 15;
-    list_add_beginning(questions_recent_keys_by_language, word_key);
-    questions_recent_keys_by_language = list_take(
-      questions_recent_keys_by_language,
+    list_add_beginning(questions_recent_keys, word_key);
+    questions_recent_keys = list_take(
+      questions_recent_keys,
       questions_recent_limit,
     );
     let v_gap = object_property_get(v, "gap");
