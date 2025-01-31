@@ -1,3 +1,4 @@
+import { html_button_enable } from "./html_button_enable.mjs";
 import { html_progress } from "./html_progress.mjs";
 import { app_language_button_ready } from "./app_language_button_ready.mjs";
 import { html_flag_ph } from "./html_flag_ph.mjs";
@@ -20,8 +21,6 @@ import { html_style_success } from "./html_style_success.mjs";
 import { app_language_refresh_node } from "./app_language_refresh_node.mjs";
 import { app_language_atoms_slice_concat } from "./app_language_atoms_slice_concat.mjs";
 import { html_button_disable } from "./html_button_disable.mjs";
-import { html_style_font_color_default_set } from "./html_style_font_color_default_set.mjs";
-import { html_enable } from "./html_enable.mjs";
 import { html_attribute_has } from "./html_attribute_has.mjs";
 import { app_language_alternatives_partial_matches_nexts } from "./app_language_alternatives_partial_matches_nexts.mjs";
 import { html_button_width_full_text_click_up } from "./html_button_width_full_text_click_up.mjs";
@@ -277,9 +276,7 @@ export async function app_language_refresh_quiz(context) {
       let { button, choice } = b;
       let disabled_is = html_attribute_has(button, "disabled");
       if (disabled_is) {
-        html_enable(button);
-        html_style_button_default(button);
-        html_style_font_color_default_set(button);
+        html_button_enable(button);
       }
       if (list_includes(nexts, choice)) {
         html_button_disable(button);
