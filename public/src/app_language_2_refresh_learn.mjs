@@ -184,14 +184,17 @@ export async function app_language_2_refresh_learn(context) {
   } else {
     let word = object_property_get(v, "word");
     let word_key = app_language_2_word_key(v);
-    let questions_recent = storage_local_initialize(
+    let questions_recent_keys = storage_local_initialize(
       app_fn,
       "questions_recent",
       [],
     );
     let questions_recent_limit = 15;
-    list_add_beginning(questions_recent, word_key);
-    questions_recent = list_take(questions_recent, questions_recent_limit);
+    list_add_beginning(questions_recent_keys, word_key);
+    questions_recent_keys = list_take(
+      questions_recent_keys,
+      questions_recent_limit,
+    );
     let v_gap = object_property_get(v, "gap");
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
