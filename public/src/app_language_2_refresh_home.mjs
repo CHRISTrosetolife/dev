@@ -1,6 +1,6 @@
+import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { html_button_enable_if } from "./html_button_enable_if.mjs";
 import { string_size } from "./string_size.mjs";
-import { string_trim } from "./string_trim.mjs";
 import { html_button_back_text } from "./html_button_back_text.mjs";
 import { app_language_2_words_sort } from "./app_language_2_words_sort.mjs";
 import { app_language_2_other } from "./app_language_2_other.mjs";
@@ -113,7 +113,7 @@ export function app_language_2_refresh_home(context) {
     });
     html_on_input(search_input, () => {
       let v = html_value_get(search_input);
-      v = string_trim(v);
+      v = string_trim_whitespace(v);
       let condition = string_size(v) >= 1;
       html_button_enable_if(button_reset, condition);
     });
