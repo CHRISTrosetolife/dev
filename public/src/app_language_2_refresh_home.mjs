@@ -111,11 +111,13 @@ export function app_language_2_refresh_home(context) {
         );
       });
     });
-    html_on_input(search_input, () => {
+    let lambda = () => {
       let v = html_value_get(search_input);
       v = string_trim_whitespace(v);
       let condition = string_size(v) >= 1;
       html_button_enable_if(button_reset, condition);
-    });
+    };
+    html_on_input(search_input, lambda);
+    lambda();
   });
 }
