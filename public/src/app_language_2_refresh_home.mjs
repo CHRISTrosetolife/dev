@@ -82,7 +82,7 @@ export function app_language_2_refresh_home(context) {
       string_combine_multiple([
         'If you do not want to reset, choose "',
         html_button_back_text(),
-        '". Otherwise, type in the word you wish to reset to: ',
+        '". Otherwise, type in the word you wish to reset to (you will choose the word after this): ',
       ]),
     );
     html_button_reset(root, () => {
