@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_language_2_refresh_learn } from "./app_language_2_refresh_learn.mjs";
 import { app_language_2_word_key } from "./app_language_2_word_key.mjs";
 import { app_language_2_refresh_learn_value_choose } from "./app_language_2_refresh_learn_value_choose.mjs";
@@ -42,6 +43,9 @@ export function app_language_2_reset_search(context, v) {
       let { v } = app_language_2_refresh_learn_value_choose(context);
       while (true) {
         let key = app_language_2_word_key(v);
+        log({
+          key,
+        });
         if (key === key2) {
           break;
         }
