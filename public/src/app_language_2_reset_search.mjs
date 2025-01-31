@@ -45,16 +45,8 @@ export function app_language_2_reset_search(context, v) {
       app_language_2_words_initialize(context, {}, group_flat);
       while (true) {
         log(1);
-        let {
-          v,
-          values,
-          values_skip_manual,
-          max_indexes,
-          wait_initial,
-          gap_initial,
-          learn_new,
-          u,
-        } = app_language_2_refresh_learn_value_choose();
+        let { v, wait_initial, gap_initial, learn_new, u } =
+          app_language_2_refresh_learn_value_choose();
         log(2);
         if (learn_new) {
           let key = app_language_2_word_key(u);
