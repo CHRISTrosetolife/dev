@@ -1,3 +1,4 @@
+import { string_includes } from "./string_includes.mjs";
 import { list_any } from "./list_any.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { html_on_input_initial } from "./html_on_input_initial.mjs";
@@ -96,13 +97,16 @@ export function app_language_2_refresh_home(context) {
     let search_input = html_input_width_full(root);
     let button_reset = html_button_reset(root, () => {
       let { root, words, language_learn, language_fluent, app_fn } = context;
+      let v = html_value_get(search_input);
       let values_all = object_values(words);
       app_language_2_words_sort(values_all);
-      list_filter(values_all, () => {
+      let filtered = list_filter(values_all, () => {
         let word = object_property_get(v, "word");
         let question = object_property_get(word, "question");
         let answer = object_property_get(word, "answer");
-        return list_any([question, answer], () => {});
+        return list_any([question, answer], (s) => {
+          return string_includes(s, v);
+        });
       });
       each(values_all, (v) => {
         let entry = html_button(root);
