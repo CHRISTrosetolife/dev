@@ -12,7 +12,7 @@ export function app_language_2_on_learn(
   u,
   max_indexes,
   values_skip_manual,
-  decrease_wait,
+  values,
   wait_initial,
   gap_initial,
 ) {
