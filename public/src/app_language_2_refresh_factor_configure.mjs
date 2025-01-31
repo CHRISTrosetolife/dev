@@ -1,3 +1,4 @@
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { list_remove } from "./list_remove.mjs";
@@ -27,6 +28,7 @@ export function app_language_2_refresh_factor_configure(
   factor,
   factors,
 ) {
+  assert_arguments_length(arguments, 3);
   let root = object_property_get(context, "root");
   html_clear_scroll_top_centered(root);
   html_button_back(root, async () => {
@@ -60,7 +62,6 @@ export function app_language_2_refresh_factor_configure(
   let factor_choices = list_map(n, (i) => i / 10);
   let buttons = list_adder((la) => {
     each(factor_choices, (f) => {
-      let factors2 = factors;
       let b = html_button_width_full_text_click(root, f, () => {
         object_property_set(factor, "factor", f);
         app_language_2_factor_set(context, factors2);
