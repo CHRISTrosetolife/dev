@@ -15,7 +15,6 @@ import { app_language_2_word } from "./app_language_2_word.mjs";
 import { app_language_2_word_p } from "./app_language_2_word_p.mjs";
 import { app_language_2_word_key } from "./app_language_2_word_key.mjs";
 import { app_language_2_word_index } from "./app_language_2_word_index.mjs";
-import { app_language_2_stats_get } from "./app_language_2_stats_get.mjs";
 import { app_language_2_skip } from "./app_language_2_skip.mjs";
 import { app_language_2_skip_manual_get } from "./app_language_2_skip_manual_get.mjs";
 import { app_language_2_refresh_home } from "./app_language_2_refresh_home.mjs";
@@ -269,7 +268,6 @@ export async function app_language_2_refresh_learn(context) {
     let answer_text = list_join_comma_space(mapped);
     let choices = [answer_text, other];
     list_shuffle(choices);
-    let stats = app_language_2_stats_get(app_fn);
     each(choices, (c) => {
       app_language_2_tutorial_message(
         context,
