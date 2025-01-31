@@ -1,4 +1,4 @@
-import { list_empty_is } from "./list_empty_is.mjs";
+import { list_first_or } from "./list_first_or.mjs";
 import { or } from "./or.mjs";
 import { app_language_2_decrease_wait } from "./app_language_2_decrease_wait.mjs";
 import { app_language_2_on_learn } from "./app_language_2_on_learn.mjs";
@@ -47,7 +47,6 @@ import { html_button_next } from "./html_button_next.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { list_first } from "./list_first.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { sleep } from "./sleep.mjs";
 import { html_progress } from "./html_progress.mjs";
@@ -82,12 +81,7 @@ export async function app_language_2_refresh_learn(context) {
       root,
     );
     let or = null;
-    let u;
-    if (list_empty_is(unlearning)) {
-      u = or;
-    } else {
-      u = list_first(unlearning);
-    }
+    let u = list_first_or(unlearning, or);
     let word = object_property_get(u, "word");
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
