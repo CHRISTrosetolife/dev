@@ -192,6 +192,7 @@ export async function app_language_2_refresh_learn(context) {
         [language_learn]: [],
       },
     );
+    let language = object_property_get(word, "language");
     let questions_recent_limit = 15;
     list_add_beginning(questions_recent_keys, word_key);
     questions_recent_keys = list_take(
@@ -199,7 +200,6 @@ export async function app_language_2_refresh_learn(context) {
       questions_recent_limit,
     );
     let v_gap = object_property_get(v, "gap");
-    let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
     let mapped = app_language_2_answers(values_skip_manual, v);
     let language_other = app_language_2_other(
