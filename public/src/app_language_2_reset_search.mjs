@@ -49,7 +49,7 @@ export function app_language_2_reset_search(context, v) {
       while (true) {
         log(1);
         let { v, wait_initial, gap_initial, learn_new, u } =
-          app_language_2_refresh_learn_value_choose();
+          app_language_2_refresh_learn_value_choose(values);
         log(2);
         if (learn_new) {
           let key = app_language_2_word_key(u);
