@@ -55,7 +55,7 @@ export function app_language_2_reset_search(context, v) {
         if (learn_new) {
           let key = app_language_2_word_key(u);
           if (key === key2) {
-            app_language_words_set(context, words);
+            app_language_words_set(context);
             await app_language_2_refresh_learn(context);
             return;
           }

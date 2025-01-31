@@ -107,7 +107,7 @@ export async function app_language_2_refresh_learn(context) {
         wait_initial,
         gap_initial,
       );
-      app_language_words_set(context, words);
+      app_language_words_set(context);
       await app_language_2_refresh_learn(context);
     });
     app_language_2_skip(context, u_word);
