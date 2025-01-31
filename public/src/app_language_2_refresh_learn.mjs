@@ -181,6 +181,7 @@ export async function app_language_2_refresh_learn(context) {
     app_language_2_skip(context, word);
   } else {
     let word = object_property_get(v, "word");
+    let word_key = app_language_2_word_key(v);
     let v_gap = object_property_get(v, "gap");
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
