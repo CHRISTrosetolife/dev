@@ -68,6 +68,7 @@ import { html_span_text } from "./html_span_text.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
+import { storage_local_initialize } from "./storage_local_initialize.mjs";
 export async function app_language_2_refresh_learn(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
@@ -182,6 +183,11 @@ export async function app_language_2_refresh_learn(context) {
   } else {
     let word = object_property_get(v, "word");
     let word_key = app_language_2_word_key(v);
+    let questions_recent = storage_local_initialize(
+      app_fn,
+      "questions_recent",
+      [],
+    );
     let v_gap = object_property_get(v, "gap");
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
