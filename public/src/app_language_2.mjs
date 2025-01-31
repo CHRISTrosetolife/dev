@@ -1,6 +1,5 @@
 import { app_language_2_words_initialize } from "./app_language_2_words_initialize.mjs";
 import { json_to } from "./json_to.mjs";
-import { app_language_2_skip_manual_get } from "./app_language_2_skip_manual_get.mjs";
 import { list_sort } from "./list_sort.mjs";
 import { app_language_2_key_to } from "./app_language_2_key_to.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
@@ -50,7 +49,6 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
   }
   let flat = list_flatten(group);
   let words = app_language_2_words_get(context);
-  let skip_manual = app_language_2_skip_manual_get(app_fn);
   list_sort(flat, (f) => {
     let key = json_to(list_concat(f, [language_learn]));
     return object_property_exists(words, key) &&
