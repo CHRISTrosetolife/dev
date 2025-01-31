@@ -108,7 +108,7 @@ export function app_language_2_refresh_home(context) {
           return string_includes(s, v);
         });
       });
-      each(values_all, (v) => {
+      each(filtered, (v) => {
         let entry = html_button(root);
         html_hr(entry);
         let word = object_property_get(v, "word");
