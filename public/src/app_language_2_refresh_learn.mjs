@@ -27,7 +27,6 @@ import { html_button_home } from "./html_button_home.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { list_difference } from "./list_difference.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -75,10 +74,9 @@ export async function app_language_2_refresh_learn(context) {
     wait_initial,
     gap_initial,
     values_all,
+    unlearning,
+    learn_new,
   } = app_language_2_refresh_learn_value_choose(context);
-  let vw = object_property_get(v, "wait");
-  let unlearning = list_filter_property(values, "learning", false);
-  let learn_new = list_empty_not_is(unlearning) && (vw === null || vw > 0);
   if (learn_new) {
     app_language_2_tutorial_message(
       context,
