@@ -18,10 +18,7 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
   };
   storage_local_initialize(app_fn, "words", {});
   await app_language_group_index_changed_inner(context, "all");
-  let { words, group_flat } = app_language_2_group_get(
-    context,
-    language_fluent,
-  );
+  let { words, group_flat } = app_language_2_group_get(context);
   app_language_2_words_initialize(context, words, group_flat);
   await app_language_2_refresh_learn(context);
 }
