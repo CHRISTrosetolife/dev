@@ -1,3 +1,4 @@
+import { html_enable } from "./html_enable.mjs";
 import { string_size } from "./string_size.mjs";
 import { string_trim } from "./string_trim.mjs";
 import { html_button_back_text } from "./html_button_back_text.mjs";
@@ -113,7 +114,9 @@ export function app_language_2_refresh_home(context) {
     html_on_input(search_input, () => {
       let v = html_value_get(search_input);
       v = string_trim(v);
-      if (string_size(v)) {
+      if (string_size(v) >= 1) {
+        html_enable(button_reset);
+      } else {
       }
     });
   });
