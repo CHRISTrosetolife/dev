@@ -28,6 +28,7 @@ import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_input_width_full } from "./html_input_width_full.mjs";
+import { html_on_input } from "./html_on_input.mjs";
 export function app_language_2_refresh_home(context) {
   let { root, app_fn } = context;
   html_clear_scroll_top_centered(root);
@@ -87,6 +88,7 @@ export function app_language_2_refresh_home(context) {
       ]),
     );
     let search_input = html_input_width_full(root);
+    html_on_input(search_input, () => {});
     html_button_reset(root, () => {
       let { root, words, language_learn, language_fluent, app_fn } = context;
       let values_all = object_values(words);
