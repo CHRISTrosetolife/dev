@@ -1,3 +1,4 @@
+import { app_language_2_stats_get } from "./app_language_2_stats_get.mjs";
 import { app_language_2_count_increment } from "./app_language_2_count_increment.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { object_property_increment } from "./object_property_increment.mjs";
@@ -11,7 +12,8 @@ import { list_empty_is } from "./list_empty_is.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language_2_gaps_get } from "./app_language_2_gaps_get.mjs";
-export function app_language_2_learn_success(context, v, stats) {
+export function app_language_2_learn_success(context, v, stats2) {
+  let stats = app_language_2_stats_get(app_fn);
   let { app_fn } = context;
   let gaps = app_language_2_gaps_get(context);
   let gap = object_property_get(v, "gap");
