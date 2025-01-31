@@ -7,7 +7,6 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { json_to } from "./json_to.mjs";
 import { app_language_refresh_quiz_text_ready } from "./app_language_refresh_quiz_text_ready.mjs";
 import { app_language_2_tutorial_message } from "./app_language_2_tutorial_message.mjs";
-import { list_take } from "./list_take.mjs";
 import { app_language_2_wrong } from "./app_language_2_wrong.mjs";
 import { app_language_2_word } from "./app_language_2_word.mjs";
 import { app_language_2_word_p } from "./app_language_2_word_p.mjs";
@@ -263,7 +262,7 @@ export async function app_language_2_refresh_learn(context) {
     let others = list_difference(answers, mapped);
     let others_unique = list_unique(others);
     list_shuffle(others_unique);
-    let other_taken = list_take(others_unique, list_size(mapped));
+    let other_taken = list_take_soft(others_unique, list_size(mapped));
     list_sort_string(other_taken, identity);
     let other = list_join_comma_space(other_taken);
     let answer_text = list_join_comma_space(mapped);
