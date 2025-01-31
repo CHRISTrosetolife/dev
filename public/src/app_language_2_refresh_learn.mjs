@@ -78,9 +78,9 @@ export async function app_language_2_refresh_learn(context) {
       "At this time, this app stores all its data on your device/browser. Make sure you are using the device and browser that you want to use this app on. At this time you cannot use this app on multiple devices or browsers.",
       root,
     );
-    let word = object_property_get(u, "word");
-    let language = object_property_get(word, "language");
-    let question = object_property_get(word, "question");
+    let u_word = object_property_get(u, "word");
+    let language = object_property_get(u_word, "language");
+    let question = object_property_get(u_word, "question");
     let mapped = app_language_2_answers(values_skip_manual, u);
     let answer_text = list_join_comma_space(mapped);
     html_progress(
@@ -105,7 +105,7 @@ export async function app_language_2_refresh_learn(context) {
     );
     html_button_next(root, async () => {
       app_language_2_on_learn(
-        word,
+        u_word,
         u,
         max_indexes,
         values_skip_manual,
@@ -116,7 +116,7 @@ export async function app_language_2_refresh_learn(context) {
       storage_local_set(app_fn, "words", words);
       await app_language_2_refresh_learn(context);
     });
-    app_language_2_skip(context, word);
+    app_language_2_skip(context, u_word);
   } else {
     let word = object_property_get(v, "word");
     let word_key = app_language_2_word_key(v);
