@@ -80,7 +80,7 @@ export async function app_language_2_refresh_learn(context) {
     app_fn,
     language_learn,
     language_fluent,
-    word_to_language_question_key,
+    app_language_2_word_to_language_question_key,
   );
   let vw = object_property_get(v, "wait");
   let unlearning = list_filter_property(values, "learning", false);
@@ -117,7 +117,7 @@ export async function app_language_2_refresh_learn(context) {
       root,
     );
     html_button_next(root, async () => {
-      let key = word_to_language_question_key(word);
+      let key = app_language_2_word_to_language_question_key(word);
       let index = object_property_get(word, "index");
       let us = [u];
       if (object_property_exists(max_indexes, key)) {
@@ -312,10 +312,6 @@ export async function app_language_2_refresh_learn(context) {
     list_shuffle(others_unique);
     let other_taken = list_take_soft(others_unique, list_size(mapped));
     return other_taken;
-  }
-  function word_to_language_question_key(vsm_word) {
-    let key = app_language_2_word_to_language_question_key(vsm_word);
-    return key;
   }
   function decrease_wait() {
     each(values, (v2) => {
