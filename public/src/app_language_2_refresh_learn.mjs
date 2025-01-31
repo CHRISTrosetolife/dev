@@ -126,7 +126,7 @@ export async function app_language_2_refresh_learn(context) {
   if (list_empty_not_is(unlearning) && (vw === null || vw > 0)) {
     app_language_2_tutorial_message(
       context,
-      "At this time, this app stores all data on your device. Make sure you are using the device you want to use this app on. At this time you cannot use this app on multiple devices.",
+      "At this time, this app stores all its data on your device/browser. Make sure you are using the device and browser that you want to use this app on. At this time you cannot use this app on multiple devices or browsers.",
       root,
     );
     let u = list_first(unlearning);
