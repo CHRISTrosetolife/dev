@@ -14,12 +14,13 @@ import { list_filter } from "./list_filter.mjs";
 import { app_language_2_skip_manual_get } from "./app_language_2_skip_manual_get.mjs";
 import { object_values } from "./object_values.mjs";
 export function app_language_2_refresh_learn_value_choose(
-  words,
-  app_fn,
-  language_learn,
-  language_fluent,
+  words1,
+  app_fn1,
+  language_le1arn,
+  language_flu1ent,
   word_to_language_question_key,
 ) {
+  let { app_fn, language_learn, language_fluent, words } = context;
   let values_all = object_values(words);
   let skip_manual = app_language_2_skip_manual_get(app_fn);
   let values_skip_manual = list_filter(values_all, (v) => {
