@@ -1,3 +1,4 @@
+import { list_first_or } from "./list_first_or.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
 import { app_language_2_word_to_language_question_key } from "./app_language_2_word_to_language_question_key.mjs";
@@ -67,6 +68,7 @@ export function app_language_2_refresh_learn_value_choose(context) {
   let vw = object_property_get(v, "wait");
   let unlearning = list_filter_property(values, "learning", false);
   let learn_new = list_empty_not_is(unlearning) && (vw === null || vw > 0);
+  let u = list_first_or(unlearning, null);
   return {
     v,
     values,
@@ -77,5 +79,6 @@ export function app_language_2_refresh_learn_value_choose(context) {
     values_all,
     unlearning,
     learn_new,
+    u,
   };
 }
