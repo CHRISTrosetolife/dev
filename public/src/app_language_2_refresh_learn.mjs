@@ -1,3 +1,4 @@
+import { app_language_2_word_to_language_question_key } from "./app_language_2_word_to_language_question_key.mjs";
 import { app_language_2_refresh_learn_value_choose } from "./app_language_2_refresh_learn_value_choose.mjs";
 import { app_language_2_learn_success } from "./app_language_2_learn_success.mjs";
 import { list_partition } from "./list_partition.mjs";
@@ -6,7 +7,6 @@ import { log_json } from "./log_json.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
 import { list_find } from "./list_find.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
-import { json_to } from "./json_to.mjs";
 import { app_language_refresh_quiz_text_ready } from "./app_language_refresh_quiz_text_ready.mjs";
 import { app_language_2_tutorial_message } from "./app_language_2_tutorial_message.mjs";
 import { app_language_2_wrong } from "./app_language_2_wrong.mjs";
@@ -314,9 +314,7 @@ export async function app_language_2_refresh_learn(context) {
     return other_taken;
   }
   function word_to_language_question_key(vsm_word) {
-    let question = object_property_get(vsm_word, "question");
-    let language = object_property_get(vsm_word, "language");
-    let key = json_to([language, question]);
+    let key = app_language_2_word_to_language_question_key(vsm_word);
     return key;
   }
   function decrease_wait() {
