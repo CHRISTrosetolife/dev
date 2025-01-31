@@ -258,6 +258,10 @@ export async function app_language_2_refresh_learn(context) {
       v_filtered,
       (w) => object_property_get(w, "question") !== question,
     );
+    let v_filtered3 = list_filter(
+      v_filtered,
+      (w) => object_property_get(w, "question") !== question,
+    );
     let answers = list_map_property(v_filtered2, "answer");
     let others = list_difference(answers, mapped);
     let others_unique = list_unique(others);
