@@ -78,7 +78,8 @@ export async function app_language_2_refresh_learn(context) {
   } = app_language_2_refresh_learn_value_choose(context);
   let vw = object_property_get(v, "wait");
   let unlearning = list_filter_property(values, "learning", false);
-  if (list_empty_not_is(unlearning) && (vw === null || vw > 0)) {
+  let learn_new = list_empty_not_is(unlearning) && (vw === null || vw > 0);
+  if (learn_new) {
     app_language_2_tutorial_message(
       context,
       "At this time, this app stores all its data on your device/browser. Make sure you are using the device and browser that you want to use this app on. At this time you cannot use this app on multiple devices or browsers.",
