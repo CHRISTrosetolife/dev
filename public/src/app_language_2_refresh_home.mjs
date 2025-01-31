@@ -1,3 +1,4 @@
+import { html_button_back_text } from "./html_button_back_text.mjs";
 import { app_language_2_words_sort } from "./app_language_2_words_sort.mjs";
 import { app_language_2_other } from "./app_language_2_other.mjs";
 import { app_language_2_word_p } from "./app_language_2_word_p.mjs";
@@ -78,7 +79,11 @@ export function app_language_2_refresh_home(context) {
     );
     html_p_text(
       root,
-      $s,"If you do not want to reset, choose \"",html_button_back_text(),'\"'
+      string_combine_multiple([
+        'If you do not want to reset, choose "',
+        html_button_back_text(),
+        '"',
+      ]),
     );
     html_button_reset(root, () => {
       let { root, words, language_learn, language_fluent, app_fn } = context;
