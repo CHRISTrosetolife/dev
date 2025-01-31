@@ -1,3 +1,4 @@
+import { app_language_2_word_to_language_question_key } from "./app_language_2_word_to_language_question_key.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
 import { list_copy } from "./list_copy.mjs";
@@ -46,7 +47,7 @@ export function app_language_2_refresh_learn_value_choose(
     }
     let v_word = object_property_get(v, "word");
     let index = object_property_get(v_word, "index");
-    let key = word_to_language_question_key(v_word);
+    let key = app_language_2_word_to_language_question_key(v_word);
     let value = object_property_initialize(max_indexes, key, -1);
     if (index > value) {
       object_property_set(max_indexes, key, index);
@@ -55,7 +56,7 @@ export function app_language_2_refresh_learn_value_choose(
   let values = list_filter(values_skip_manual, (v) => {
     let v_word = object_property_get(v, "word");
     let index = object_property_get(v_word, "index");
-    let key = word_to_language_question_key(v_word);
+    let key = app_language_2_word_to_language_question_key(v_word);
     return (
       object_property_get(v, "learning") !== true ||
       index === object_property_get(max_indexes, key)
