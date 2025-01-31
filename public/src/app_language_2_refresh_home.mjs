@@ -1,3 +1,4 @@
+import { html_p_text } from "./html_p_text.mjs";
 import { app_language_2_button_back_home } from "./app_language_2_button_back_home.mjs";
 import { html_button_reset } from "./html_button_reset.mjs";
 import { html_button_me_email } from "./html_button_me_email.mjs";
@@ -63,6 +64,9 @@ export function app_language_2_refresh_home(context) {
   html_button_me_email(root);
   html_button_reset(root, () => {
     app_language_2_button_back_home(context);
-    let { root, words } = context;
+    html_p_text(
+      root,
+      "Reset will simulate this app. It will be as if you used the app, got all the questions correct up to a certain point. This can approximate picking up where you left off while using the app on another device.",
+    );
   });
 }
