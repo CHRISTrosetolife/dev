@@ -1,3 +1,4 @@
+import { app_language_2_refresh_learn_value_choose_initial } from "./app_language_2_refresh_learn_value_choose_initial.mjs";
 import { app_language_words_set } from "./app_language_words_set.mjs";
 import { app_language_2_decrease_wait } from "./app_language_2_decrease_wait.mjs";
 import { app_language_2_on_learn } from "./app_language_2_on_learn.mjs";
@@ -62,17 +63,16 @@ export async function app_language_2_refresh_learn(context) {
     app_language_2_refresh_home(context);
   });
   html_spacer_vertical_2(root);
-  let {
-    v,
-    values,
-    values_skip_manual,
-    max_indexes,
-    wait_initial,
-    gap_initial,
-    values_all,
-    learn_new,
-    u,
-  } = app_language_2_refresh_learn_value_choose(context);
+  let { values, values_skip_manual, max_indexes, values_all } =
+    app_language_2_refresh_learn_value_choose_initial(context);
+  let { v, wait_initial, gap_initial, learn_new, u } =
+    app_language_2_refresh_learn_value_choose(
+      context,
+      values,
+      values_skip_manual,
+      max_indexes,
+      values_all,
+    );
   if (learn_new) {
     app_language_2_tutorial_message(
       context,
