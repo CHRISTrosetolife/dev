@@ -1,3 +1,4 @@
+import { html_on_input_initial } from "./html_on_input_initial.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { html_button_enable_if } from "./html_button_enable_if.mjs";
 import { string_size } from "./string_size.mjs";
@@ -31,7 +32,6 @@ import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_input_width_full } from "./html_input_width_full.mjs";
-import { html_on_input } from "./html_on_input.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 export function app_language_2_refresh_home(context) {
   let { root, app_fn } = context;
@@ -117,7 +117,6 @@ export function app_language_2_refresh_home(context) {
       let condition = string_size(v) >= 1;
       html_button_enable_if(button_reset, condition);
     };
-    html_on_input(search_input, lambda);
-    lambda();
+    html_on_input_initial(search_input, lambda);
   });
 }
