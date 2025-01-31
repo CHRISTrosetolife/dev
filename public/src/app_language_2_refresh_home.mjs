@@ -1,5 +1,4 @@
-import { html_disable } from "./html_disable.mjs";
-import { html_enable } from "./html_enable.mjs";
+import { html_enable_if } from "./html_enable_if.mjs";
 import { string_size } from "./string_size.mjs";
 import { string_trim } from "./string_trim.mjs";
 import { html_button_back_text } from "./html_button_back_text.mjs";
@@ -116,11 +115,7 @@ export function app_language_2_refresh_home(context) {
       let v = html_value_get(search_input);
       v = string_trim(v);
       let condition = string_size(v) >= 1;
-      if (condition) {
-        html_enable(button_reset);
-      } else {
-        html_disable(button_reset);
-      }
+      html_enable_if(condition, button_reset);
     });
   });
 }
