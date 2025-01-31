@@ -115,7 +115,7 @@ export function app_language_2_refresh_home(context) {
       let v = html_value_get(search_input);
       v = string_trim(v);
       let condition = string_size(v) >= 1;
-      html_enable_if(condition, button_reset);
+      html_enable_if(button_reset, condition);
     });
   });
 }
