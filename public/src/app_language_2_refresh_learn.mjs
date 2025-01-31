@@ -187,7 +187,10 @@ export async function app_language_2_refresh_learn(context) {
     let questions_recent_keys = storage_local_initialize(
       app_fn,
       "questions_recent",
-      [],
+      {
+        [language_fluent]: [],
+        [language_learn]: [],
+      },
     );
     let questions_recent_limit = 15;
     list_add_beginning(questions_recent_keys, word_key);
