@@ -102,7 +102,7 @@ export function app_language_2_refresh_home(context) {
         let word = object_property_get(v, "word");
         let question = object_property_get(word, "question");
         let answer = object_property_get(word, "answer");
-        return list_any([question, answer], $a); 
+        return list_any([question, answer], () => {});
       });
       each(values_all, (v) => {
         let entry = html_button(root);
