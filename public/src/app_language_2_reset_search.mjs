@@ -1,3 +1,4 @@
+import { app_language_2_decrease_wait } from "./app_language_2_decrease_wait.mjs";
 import { log } from "./log.mjs";
 import { app_language_2_refresh_learn } from "./app_language_2_refresh_learn.mjs";
 import { app_language_2_word_key } from "./app_language_2_word_key.mjs";
@@ -48,7 +49,7 @@ export function app_language_2_reset_search(context, v) {
         if (key === key2) {
           break;
         }
-        decrease_wait();
+        app_language_2_decrease_wait(values);
         app_language_2_learn_success(context, v, false);
         await app_language_2_refresh_learn(context);
       }
