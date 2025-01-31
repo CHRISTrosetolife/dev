@@ -54,7 +54,7 @@ export function app_language_2_reset_search(context, v) {
           gap_initial,
           learn_new,
           u,
-        } = app_language_2_refresh_learn_value_choose(context);
+        } = app_language_2_refresh_learn_value_choose();
         log(2);
         if (learn_new) {
           let key = app_language_2_word_key(u);
