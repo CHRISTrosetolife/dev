@@ -27,7 +27,7 @@ export function app_language_2_learn_success(
   let gap_new = list_first(f) + random();
   object_property_set(value_word, "gap", gap_new);
   object_property_set(value_word, "wait", gap_new);
-  if (true) {
+  if (stats_update) {
     let stats = app_language_2_stats_get(app_fn);
     let r = object_property_get(stats, "right");
     let rounded = round(gap);
