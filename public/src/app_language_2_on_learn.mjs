@@ -16,6 +16,7 @@ export function app_language_2_on_learn(
   wait_initial,
   gap_initial,
 ) {
+  let u_word = object_property_get(u, "word");
   let key = app_language_2_word_to_language_question_key(word);
   let index = object_property_get(word, "index");
   let us = [u];
