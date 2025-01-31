@@ -260,7 +260,7 @@ export async function app_language_2_refresh_learn(context) {
             html_style_wrong(b2);
           }
           app_language_2_wrong(context, v, gap_initial, wait_initial);
-          storage_local_set(app_fn, "words", words);
+          app_language_words_set(context);
           await sleep(200);
           await app_language_2_refresh_learn(context);
         },
