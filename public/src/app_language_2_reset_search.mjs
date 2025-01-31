@@ -33,16 +33,17 @@ export function app_language_2_reset_search(context, v) {
       return string_includes(s, v);
     });
   });
-  each(filtered, (v) => {
+  each(filtered, (v2) => {
     let entry = html_button_width_full_text_click(root, "", () => {
+      let key2 = app_language_2_word_key(v2);
       let { group_flat } = app_language_2_group_get(context);
       app_language_2_words_initialize(context, {}, group_flat);
       let { v } = app_language_2_refresh_learn_value_choose(context);
-      let key = app_language_2_word_key();
+      let key = app_language_2_word_key(v);
       app_language_2_learn_success(context, v, false);
     });
     html_hr(entry);
-    let word = object_property_get(v, "word");
+    let word = object_property_get(v2, "word");
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
     app_language_2_word_p(entry, language, question);
