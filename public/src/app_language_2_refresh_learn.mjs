@@ -1,3 +1,4 @@
+import { list_empty_is } from "./list_empty_is.mjs";
 import { or } from "./or.mjs";
 import { app_language_2_decrease_wait } from "./app_language_2_decrease_wait.mjs";
 import { app_language_2_on_learn } from "./app_language_2_on_learn.mjs";
@@ -82,8 +83,9 @@ export async function app_language_2_refresh_learn(context) {
     );
     let or = null;
     let u;
-    if (false) {
+    if (list_empty_is(unlearning)) {
       u = list_first(unlearning);
+    } else {
     }
     let word = object_property_get(u, "word");
     let language = object_property_get(word, "language");
