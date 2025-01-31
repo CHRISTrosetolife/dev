@@ -1,19 +1,16 @@
-import { app_language_2_word_to_language_question_key } from "./app_language_2_word_to_language_question_key.mjs";
+import { app_language_2_on_learn } from "./app_language_2_on_learn.mjs";
 import { app_language_2_refresh_learn_value_choose } from "./app_language_2_refresh_learn_value_choose.mjs";
 import { app_language_2_learn_success } from "./app_language_2_learn_success.mjs";
 import { list_partition } from "./list_partition.mjs";
 import { list_take_soft } from "./list_take_soft.mjs";
 import { log_json } from "./log_json.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
-import { list_find } from "./list_find.mjs";
-import { object_property_exists } from "./object_property_exists.mjs";
 import { app_language_refresh_quiz_text_ready } from "./app_language_refresh_quiz_text_ready.mjs";
 import { app_language_2_tutorial_message } from "./app_language_2_tutorial_message.mjs";
 import { app_language_2_wrong } from "./app_language_2_wrong.mjs";
 import { app_language_2_word } from "./app_language_2_word.mjs";
 import { app_language_2_word_p } from "./app_language_2_word_p.mjs";
 import { app_language_2_word_key } from "./app_language_2_word_key.mjs";
-import { app_language_2_word_index } from "./app_language_2_word_index.mjs";
 import { app_language_2_skip } from "./app_language_2_skip.mjs";
 import { app_language_2_refresh_home } from "./app_language_2_refresh_home.mjs";
 import { app_language_2_other } from "./app_language_2_other.mjs";
@@ -51,7 +48,6 @@ import { object_property_get } from "./object_property_get.mjs";
 import { list_first } from "./list_first.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { sleep } from "./sleep.mjs";
-import { list_add } from "./list_add.mjs";
 import { html_progress } from "./html_progress.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
@@ -110,25 +106,15 @@ export async function app_language_2_refresh_learn(context) {
       root,
     );
     html_button_next(root, async () => {
-      let key = app_language_2_word_to_language_question_key(word);
-      let index = object_property_get(word, "index");
-      let us = [u];
-      if (object_property_exists(max_indexes, key)) {
-        let index_max = object_property_get(max_indexes, key);
-        if (index < index_max) {
-          let u_max = list_find(
-            values_skip_manual,
-            (m) => app_language_2_word_index(m) === index_max,
-          );
-          list_add(us, u_max);
-        }
-      }
-      decrease_wait();
-      each(us, (ui) => {
-        object_property_set(ui, "learning", true);
-        object_property_set(ui, "wait", wait_initial);
-        object_property_set(ui, "gap", gap_initial);
-      });
+      app_language_2_on_learn(
+        word,
+        u,
+        max_indexes,
+        values_skip_manual,
+        decrease_wait,
+        wait_initial,
+        gap_initial,
+      );
       storage_local_set(app_fn, "words", words);
       await app_language_2_refresh_learn(context);
     });
