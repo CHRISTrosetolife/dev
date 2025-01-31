@@ -74,7 +74,7 @@ export function app_language_2_refresh_home(context) {
     app_language_2_button_back_home(context);
     html_p_text(
       root,
-      "Reset will simulate this app. It will be as if you used the app, got all the questions correct up to a certain point. This can approximate picking up where you left off while using the app on another device.",
+      "Reset will simulate this app. It will be as if you used the app, got all the questions correct up to a certain point. This can approximate picking up where you left off while using the app on another device or browser.",
     );
     html_button_reset(root, () => {
       let { root, words, language_learn, language_fluent, app_fn } = context;
