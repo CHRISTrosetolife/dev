@@ -203,6 +203,11 @@ export async function app_language_2_refresh_learn(context) {
       questions_recent_keys,
       questions_recent_limit,
     );
+    storage_local_set(
+      app_fn,
+      "questions_recent",
+      questions_recent_keys_by_language,
+    );
     let v_gap = object_property_get(v, "gap");
     let question = object_property_get(word, "question");
     let mapped = app_language_2_answers(values_skip_manual, v);
