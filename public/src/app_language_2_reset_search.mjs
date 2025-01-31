@@ -44,7 +44,8 @@ export function app_language_2_reset_search(context, v) {
         let { v, learn_new, u } =
           app_language_2_refresh_learn_value_choose(context);
         let key = app_language_2_word_key(v);
-        if (false) {
+        if (learn_new) {
+        } else {
         }
         log({
           key,
