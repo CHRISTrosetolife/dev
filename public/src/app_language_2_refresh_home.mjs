@@ -97,7 +97,13 @@ export function app_language_2_refresh_home(context) {
       let { root, words, language_learn, language_fluent, app_fn } = context;
       let values_all = object_values(words);
       app_language_2_words_sort(values_all);
-      list_filter(values_all, () => {});
+      list_filter(values_all, () => {
+        let word = object_property_get(v, "word");
+        let language = object_property_get(word, "language");
+        let question = object_property_get(word, "question");
+        app_language_2_word_p(entry, language, question);
+        let answer = object_property_get(word, "answer");
+      });
       each(values_all, (v) => {
         let entry = html_button(root);
         html_hr(entry);
