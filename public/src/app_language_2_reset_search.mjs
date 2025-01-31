@@ -61,12 +61,12 @@ export function app_language_2_reset_search(context, v) {
           });
           if (key === key2) {
             app_language_words_set(context, words);
+            await app_language_2_refresh_learn(context);
             break;
           }
         } else {
           app_language_2_decrease_wait(values);
           app_language_2_learn_success(context, v, false);
-          await app_language_2_refresh_learn(context);
         }
       }
     });
