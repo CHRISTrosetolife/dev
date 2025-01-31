@@ -1,3 +1,4 @@
+import { list_filter } from "./list_filter.mjs";
 import { html_on_input_initial } from "./html_on_input_initial.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { html_button_enable_if } from "./html_button_enable_if.mjs";
@@ -96,6 +97,7 @@ export function app_language_2_refresh_home(context) {
       let { root, words, language_learn, language_fluent, app_fn } = context;
       let values_all = object_values(words);
       app_language_2_words_sort(values_all);
+      list_filter(values_all, () => {});
       each(values_all, (v) => {
         let entry = html_button(root);
         html_hr(entry);
