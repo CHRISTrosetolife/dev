@@ -157,6 +157,7 @@ export async function app_language_2_refresh_learn(context) {
       questions_recent_keys,
       questions_recent_limit,
     );
+    object_property_set(object, "property_name", value);
     storage_local_set(
       app_fn,
       "questions_recent",
