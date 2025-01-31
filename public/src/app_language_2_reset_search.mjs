@@ -1,3 +1,4 @@
+import { app_language_2_on_learn } from "./app_language_2_on_learn.mjs";
 import { app_language_2_decrease_wait } from "./app_language_2_decrease_wait.mjs";
 import { log } from "./log.mjs";
 import { app_language_2_refresh_learn } from "./app_language_2_refresh_learn.mjs";
@@ -45,6 +46,15 @@ export function app_language_2_reset_search(context, v) {
           app_language_2_refresh_learn_value_choose(context);
         let key = app_language_2_word_key(v);
         if (learn_new) {
+          app_language_2_on_learn(
+            word,
+            u,
+            max_indexes,
+            values_skip_manual,
+            values,
+            wait_initial,
+            gap_initial,
+          );
         } else {
           log({
             key,
