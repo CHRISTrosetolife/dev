@@ -1,3 +1,5 @@
+import { html_button_disable } from "./html_button_disable.mjs";
+import { html_button_enable } from "./html_button_enable.mjs";
 import { html_enable_if } from "./html_enable_if.mjs";
 import { string_size } from "./string_size.mjs";
 import { string_trim } from "./string_trim.mjs";
@@ -116,6 +118,11 @@ export function app_language_2_refresh_home(context) {
       v = string_trim(v);
       let condition = string_size(v) >= 1;
       html_enable_if(button_reset, condition);
+      if (condition) {
+        html_button_enable(button);
+      } else {
+        html_button_disable(button);
+      }
     });
   });
 }
