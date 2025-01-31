@@ -32,7 +32,7 @@ export function app_language_2_reset_search(context, v) {
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
     return list_any([question, answer], (s) => {
-      return string_includes(s, v3);
+      return string_includes(s, v);
     });
   });
   each(filtered, (v2) => {
