@@ -1,3 +1,4 @@
+import { list_any } from "./list_any.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { html_on_input_initial } from "./html_on_input_initial.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
@@ -99,10 +100,9 @@ export function app_language_2_refresh_home(context) {
       app_language_2_words_sort(values_all);
       list_filter(values_all, () => {
         let word = object_property_get(v, "word");
-        let language = object_property_get(word, "language");
         let question = object_property_get(word, "question");
-        app_language_2_word_p(entry, language, question);
         let answer = object_property_get(word, "answer");
+        return list_any([question, answer], $a); 
       });
       each(values_all, (v) => {
         let entry = html_button(root);
