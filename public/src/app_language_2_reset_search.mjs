@@ -44,7 +44,7 @@ export function app_language_2_reset_search(context, v) {
       let key2 = app_language_2_word_key(v2);
       let { group_flat } = app_language_2_group_get(context);
       app_language_2_words_initialize(context, {}, group_flat);
-      let { values, values_skip_manual, max_indexes, values_all } =
+      let { values, values_skip_manual, max_indexes } =
         app_language_2_refresh_learn_value_choose_initial(context);
       while (true) {
         log(1);
