@@ -259,7 +259,7 @@ export async function app_language_2_refresh_learn(context) {
       v_filtered,
       (w) => object_property_get(w, "question") !== question,
     );
-    list_partition(
+    let [v_filtered3, v_filtered4] = list_partition(
       v_filtered2,
       list_includes(questions_recent_keys, object_property_get(w, "key")),
     );
