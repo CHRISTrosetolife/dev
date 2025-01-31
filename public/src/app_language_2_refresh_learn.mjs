@@ -193,6 +193,7 @@ export async function app_language_2_refresh_learn(context) {
       },
     );
     let language = object_property_get(word, "language");
+    let questions_recent_keys = object_property_get(object, "property_name");
     let questions_recent_limit = 15;
     list_add_beginning(questions_recent_keys_by_language, word_key);
     questions_recent_keys_by_language = list_take(
