@@ -75,13 +75,7 @@ export async function app_language_2_refresh_learn(context) {
     wait_initial,
     gap_initial,
     values_all,
-  } = app_language_2_refresh_learn_value_choose(
-    words,
-    app_fn,
-    language_learn,
-    language_fluent,
-    app_language_2_word_to_language_question_key,
-  );
+  } = app_language_2_refresh_learn_value_choose();
   let vw = object_property_get(v, "wait");
   let unlearning = list_filter_property(values, "learning", false);
   if (list_empty_not_is(unlearning) && (vw === null || vw > 0)) {
