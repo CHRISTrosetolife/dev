@@ -5,7 +5,6 @@ import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 export function app_language_2_words_initialize(context, words, group_flat) {
-  let { app_fn } = context;
   object_property_set(context, "words", words);
   each(group_flat, (word) => {
     let k = object_property_get(word, "key");
