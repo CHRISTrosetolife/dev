@@ -105,7 +105,6 @@ export async function app_language_2_refresh_learn(context) {
     );
     html_button_next(root, async () => {
       app_language_2_on_learn(
-        u_word,
         u,
         max_indexes,
         values_skip_manual,

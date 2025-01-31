@@ -8,7 +8,6 @@ import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language_2_word_to_language_question_key } from "./app_language_2_word_to_language_question_key.mjs";
 export function app_language_2_on_learn(
-  u_wosrd,
   u,
   max_indexes,
   values_skip_manual,
