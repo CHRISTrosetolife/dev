@@ -48,6 +48,7 @@ export function app_language_2_reset_search(context, v) {
         if (key === key2) {
           break;
         }
+        decrease_wait();
         app_language_2_learn_success(context, v, false);
         await app_language_2_refresh_learn(context);
       }
