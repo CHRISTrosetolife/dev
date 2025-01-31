@@ -259,7 +259,7 @@ export async function app_language_2_refresh_learn(context) {
       (w) => object_property_get(w, "question") !== question,
     );
     let v_filtered3 = list_filter(
-      v_filtered,
+      v_filtered2,
       (w) => object_property_get(w, "question") !== question,
     );
     let answers = list_map_property(v_filtered2, "answer");
