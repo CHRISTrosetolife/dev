@@ -1,3 +1,4 @@
+import { string_trim } from "./string_trim.mjs";
 import { html_button_back_text } from "./html_button_back_text.mjs";
 import { app_language_2_words_sort } from "./app_language_2_words_sort.mjs";
 import { app_language_2_other } from "./app_language_2_other.mjs";
@@ -110,6 +111,7 @@ export function app_language_2_refresh_home(context) {
     });
     html_on_input(search_input, () => {
       let v = html_value_get(search_input);
+      v = string_trim(v);
       if (v) {
       }
     });
