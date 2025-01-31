@@ -29,6 +29,7 @@ export function app_good() {
           "May the church be united about homosexuality",
           "May the church be united about women in leadership",
           "Cause me to be with Jesus soon",
+          "Heal me",
           "Help me learn Cebuano",
           "Help my muscles grow",
           "Help the president",
