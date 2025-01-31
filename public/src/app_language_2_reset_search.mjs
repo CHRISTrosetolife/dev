@@ -39,8 +39,11 @@ export function app_language_2_reset_search(context, v) {
       let { group_flat } = app_language_2_group_get(context);
       app_language_2_words_initialize(context, {}, group_flat);
       let { v } = app_language_2_refresh_learn_value_choose(context);
-      let key = app_language_2_word_key(v);
-      app_language_2_learn_success(context, v, false);
+      while (true) {
+        let key = app_language_2_word_key(v);
+        $ib();
+        app_language_2_learn_success(context, v, false);
+      }
     });
     html_hr(entry);
     let word = object_property_get(v2, "word");
