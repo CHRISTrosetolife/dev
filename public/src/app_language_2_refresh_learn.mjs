@@ -72,6 +72,7 @@ import { html_style_bold } from "./html_style_bold.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
+import { list_concat } from "./list_concat.mjs";
 export async function app_language_2_refresh_learn(context) {
   let { app_fn, language_learn, language_fluent, root, words } = context;
   html_clear_scroll_top_centered(root);
@@ -259,15 +260,16 @@ export async function app_language_2_refresh_learn(context) {
       v_filtered,
       (w) => object_property_get(w, "question") !== question,
     );
-    let [v_filtered3, v_filtered4] = list_partition(
+    let [recent_choices, older_choices] = list_partition(
       v_filtered2,
       list_includes(questions_recent_keys, object_property_get(w, "key")),
     );
-    let answers = list_map_property(v_filtered2, "answer");
-    let others = list_difference(answers, mapped);
-    let others_unique = list_unique(others);
-    list_shuffle(others_unique);
-    let other_taken = list_take_soft(others_unique, list_size(mapped));
+    let other_taken_recent = app_language_2_answers_take(
+      recent_choices,
+      mapped,
+    );
+    let other_taken_older = app_language_2_answers_take(older_choices, mapped);
+    let other_taken = list_concat(other_taken_recent, other_taken_older);
     list_sort_string(other_taken, identity);
     let other = list_join_comma_space(other_taken);
     let answer_text = list_join_comma_space(mapped);
@@ -360,6 +362,14 @@ export async function app_language_2_refresh_learn(context) {
     if (false) {
       html_p_text(root, round_2(v_gap));
     }
+  }
+  function app_language_2_answers_take(v_filtered2, mapped) {
+    let answers = list_map_property(v_filtered2, "answer");
+    let others = list_difference(answers, mapped);
+    let others_unique = list_unique(others);
+    list_shuffle(others_unique);
+    let other_taken = list_take_soft(others_unique, list_size(mapped));
+    return other_taken;
   }
   function word_to_language_question_key(vsm_word) {
     let question = object_property_get(vsm_word, "question");
