@@ -8,7 +8,7 @@ import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language_2_word_to_language_question_key } from "./app_language_2_word_to_language_question_key.mjs";
 export function app_language_2_on_learn(
-  word,
+  u_wosrd,
   u,
   max_indexes,
   values_skip_manual,
@@ -17,8 +17,8 @@ export function app_language_2_on_learn(
   gap_initial,
 ) {
   let u_word = object_property_get(u, "word");
-  let key = app_language_2_word_to_language_question_key(word);
-  let index = object_property_get(word, "index");
+  let key = app_language_2_word_to_language_question_key(u_word);
+  let index = object_property_get(u_word, "index");
   let us = [u];
   if (object_property_exists(max_indexes, key)) {
     let index_max = object_property_get(max_indexes, key);
