@@ -68,5 +68,6 @@ export function app_language_2_refresh_home(context) {
       root,
       "Reset will simulate this app. It will be as if you used the app, got all the questions correct up to a certain point. This can approximate picking up where you left off while using the app on another device.",
     );
+    html_button_reset(root, () => {});
   });
 }
