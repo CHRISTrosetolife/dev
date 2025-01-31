@@ -41,7 +41,8 @@ export function app_language_2_reset_search(context, v) {
       let { v } = app_language_2_refresh_learn_value_choose(context);
       while (true) {
         let key = app_language_2_word_key(v);
-        if (false) {
+        if (key === key2) {
+          break;
         }
         app_language_2_learn_success(context, v, false);
       }
