@@ -54,8 +54,8 @@ export function app_language_2_group_get(context) {
       })),
     ),
   );
-  let flat2 = list_flatten(mapped);
-  each_index(flat2, (c, index) => {
+  let group_flat = list_flatten(mapped);
+  each_index(group_flat, (c, index) => {
     object_property_set(c, "index", index);
     let c_key = app_language_2_key_to(c);
     object_property_set(c, "key", c_key);
@@ -66,6 +66,6 @@ export function app_language_2_group_get(context) {
   }
   return {
     words,
-    flat2,
+    group_flat,
   };
 }
