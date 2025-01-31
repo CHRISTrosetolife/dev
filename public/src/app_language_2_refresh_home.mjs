@@ -88,8 +88,7 @@ export function app_language_2_refresh_home(context) {
       ]),
     );
     let search_input = html_input_width_full(root);
-    html_on_input(search_input, () => {});
-    html_button_reset(root, () => {
+    let button_reset = html_button_reset(root, () => {
       let { root, words, language_learn, language_fluent, app_fn } = context;
       let values_all = object_values(words);
       app_language_2_words_sort(values_all);
@@ -108,5 +107,6 @@ export function app_language_2_refresh_home(context) {
         );
       });
     });
+    html_on_input(search_input, () => {});
   });
 }
