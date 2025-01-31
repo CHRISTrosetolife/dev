@@ -69,7 +69,6 @@ export async function app_language_2_refresh_learn(context) {
     wait_initial,
     gap_initial,
     values_all,
-    unlearning,
     learn_new,
     u,
   } = app_language_2_refresh_learn_value_choose(context);

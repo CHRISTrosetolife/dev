@@ -77,7 +77,6 @@ export function app_language_2_refresh_learn_value_choose(context) {
     wait_initial,
     gap_initial,
     values_all,
-    unlearning,
     learn_new,
     u,
   };
