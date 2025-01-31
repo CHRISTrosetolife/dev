@@ -1,3 +1,4 @@
+import { app_language_2_word_key } from "./app_language_2_word_key.mjs";
 import { app_language_2_refresh_learn_value_choose } from "./app_language_2_refresh_learn_value_choose.mjs";
 import { app_language_2_learn_success } from "./app_language_2_learn_success.mjs";
 import { app_language_2_other } from "./app_language_2_other.mjs";
@@ -37,6 +38,7 @@ export function app_language_2_reset_search(context, v) {
       let { group_flat } = app_language_2_group_get(context);
       app_language_2_words_initialize(context, {}, group_flat);
       let { v } = app_language_2_refresh_learn_value_choose(context);
+      let key = app_language_2_word_key();
       app_language_2_learn_success(context, v, false);
     });
     html_hr(entry);
