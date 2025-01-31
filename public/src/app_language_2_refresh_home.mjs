@@ -1,3 +1,4 @@
+import { app_language_2_button_back_home } from "./app_language_2_button_back_home.mjs";
 import { html_button_reset } from "./html_button_reset.mjs";
 import { html_button_me_email } from "./html_button_me_email.mjs";
 import { app_language_2_skipped } from "./app_language_2_skipped.mjs";
@@ -60,5 +61,8 @@ export function app_language_2_refresh_home(context) {
     },
   );
   html_button_me_email(root);
-  html_button_reset(root, () => {});
+  html_button_reset(root, () => {
+    app_language_2_button_back_home(context);
+    let { root, words } = context;
+  });
 }
