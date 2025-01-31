@@ -1,3 +1,4 @@
+import { app_language_2_words_sort } from "./app_language_2_words_sort.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { object_property_delete } from "./object_property_delete.mjs";
@@ -83,6 +84,7 @@ export function app_language_2_refresh_home(context) {
     html_button_reset(root, () => {
       let { root, words, language_learn, language_fluent, app_fn } = context;
       let values_all = object_values(words);
+      app_language_2_words_sort(values_all);
       each(values_all, (v) => {
         let entry = html_div(root);
         html_hr(entry);
