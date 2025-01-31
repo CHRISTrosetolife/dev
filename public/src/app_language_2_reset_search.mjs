@@ -27,12 +27,12 @@ export function app_language_2_reset_search(context, v) {
   });
   let values_all = object_values(words);
   app_language_2_words_sort(values_all);
-  let filtered = list_filter(values_all, () => {
-    let word = object_property_get(v, "word");
+  let filtered = list_filter(values_all, (v3) => {
+    let word = object_property_get(v3, "word");
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
     return list_any([question, answer], (s) => {
-      return string_includes(s, v);
+      return string_includes(s, v3);
     });
   });
   each(filtered, (v2) => {
