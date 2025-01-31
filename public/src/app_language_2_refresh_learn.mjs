@@ -1,3 +1,4 @@
+import { app_language_2_decrease_wait } from "./app_language_2_decrease_wait.mjs";
 import { app_language_2_on_learn } from "./app_language_2_on_learn.mjs";
 import { app_language_2_refresh_learn_value_choose } from "./app_language_2_refresh_learn_value_choose.mjs";
 import { app_language_2_learn_success } from "./app_language_2_learn_success.mjs";
@@ -30,7 +31,6 @@ import { list_filter } from "./list_filter.mjs";
 import { html_br2 } from "./html_br2.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
 import { html_style_success } from "./html_style_success.mjs";
-import { number_is } from "./number_is.mjs";
 import { emoji_question } from "./emoji_question.mjs";
 import { emoji_check } from "./emoji_check.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -298,12 +298,7 @@ export async function app_language_2_refresh_learn(context) {
     return other_taken;
   }
   function decrease_wait() {
-    each(values, (v2) => {
-      let wait = object_property_get(v2, "wait");
-      if (number_is(wait)) {
-        object_property_set(v2, "wait", wait - 1);
-      }
-    });
+    app_language_2_decrease_wait(values);
   }
   function app_language2_word_titled(body, text, language, rememeber) {
     let r = html_p_text(body, string_combine_multiple([text, ": "]));
