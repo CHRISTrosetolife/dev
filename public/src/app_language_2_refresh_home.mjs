@@ -113,7 +113,7 @@ export function app_language_2_refresh_home(context) {
     });
     html_on_input(search_input, () => {
       let v = html_value_get(search_input);
-      v = string_trim(v);
+      v = string_trim(v);$ag
       let condition = string_size(v) >= 1;
       html_enable_if(button_reset, condition);
     });
