@@ -58,6 +58,11 @@ export function app_language_2_reset_search(context, v) {
         log(2);
         if (learn_new) {
           let key = app_language_2_word_key(u);
+          if (key === key2) {
+            app_language_words_set(context, words);
+            await app_language_2_refresh_learn(context);
+            return;
+          }
           app_language_2_on_learn(
             u,
             max_indexes,
@@ -67,11 +72,6 @@ export function app_language_2_reset_search(context, v) {
             gap_initial,
           );
           log(3);
-          if (key === key2) {
-            app_language_words_set(context, words);
-            await app_language_2_refresh_learn(context);
-            return;
-          }
         } else {
           log(4);
           app_language_2_decrease_wait(values);
