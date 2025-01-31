@@ -1,5 +1,5 @@
+import { app_language_words_set } from "./app_language_words_set.mjs";
 import { app_language_2_gaps_update } from "./app_language_2_gaps_update.mjs";
-import { storage_local_set } from "./storage_local_set.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
@@ -27,6 +27,6 @@ export function app_language_2_words_initialize(context, words, group_flat) {
     object_property_set(w, "wait", null);
     object_property_set(w, "gap", null);
   });
-  storage_local_set(app_fn, "words", words);
+  app_language_words_set(context);
   app_language_2_gaps_update(context);
 }
