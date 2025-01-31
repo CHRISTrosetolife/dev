@@ -1,3 +1,6 @@
+import { app_language_2_refresh_home } from "./app_language_2_refresh_home.mjs";
+import { html_button_back } from "./html_button_back.mjs";
+import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_button_enable_if } from "./html_button_enable_if.mjs";
 import { string_size } from "./string_size.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
@@ -38,6 +41,11 @@ export function app_language_2_reset(context) {
   let search_input = html_input_width_full(root);
   let button_reset = html_button_reset(root, () => {
     let { root, words, language_learn, language_fluent } = context;
+    let { root2 } = context;
+    html_clear_scroll_top_centered(root2);
+    html_button_back(root2, async () => {
+      app_language_2_refresh_home(context);
+    });
     let v = html_value_get(search_input);
     let values_all = object_values(words);
     app_language_2_words_sort(values_all);
