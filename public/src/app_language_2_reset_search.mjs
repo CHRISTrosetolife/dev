@@ -44,6 +44,7 @@ export function app_language_2_reset_search(context, v) {
       let { group_flat } = app_language_2_group_get(context);
       app_language_2_words_initialize(context, {}, group_flat);
       while (true) {
+        log(1);
         let {
           v,
           values,
@@ -54,6 +55,7 @@ export function app_language_2_reset_search(context, v) {
           learn_new,
           u,
         } = app_language_2_refresh_learn_value_choose(context);
+        log(2);
         if (learn_new) {
           let key = app_language_2_word_key(u);
           app_language_2_on_learn(
@@ -64,17 +66,18 @@ export function app_language_2_reset_search(context, v) {
             wait_initial,
             gap_initial,
           );
-          log({
-            key,
-          });
+          log(3);
           if (key === key2) {
             app_language_words_set(context, words);
             await app_language_2_refresh_learn(context);
             return;
           }
         } else {
+          log(4);
           app_language_2_decrease_wait(values);
+          log(5);
           app_language_2_learn_success(context, v, false);
+          log(6);
         }
       }
     });
