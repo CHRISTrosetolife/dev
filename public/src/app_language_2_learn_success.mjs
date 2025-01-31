@@ -11,7 +11,8 @@ import { list_empty_is } from "./list_empty_is.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language_2_gaps_get } from "./app_language_2_gaps_get.mjs";
-export function app_language_2_learn_success(context, v, stats, app_fn) {
+export function app_language_2_learn_success(context, v, stats) {
+  let { app_fn } = context;
   let gaps = app_language_2_gaps_get(context);
   let gap = object_property_get(v, "gap");
   let f = list_filter(gaps, (g) => g > gap);
