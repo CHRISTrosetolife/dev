@@ -202,7 +202,7 @@ export async function app_language_2_refresh_learn(context) {
     list_shuffle(choices);
     each(choices, (c) => {
       let row = html_p(quiz_container);
-      html_style(b, {
+      html_style(row, {
         display: "flex",
         "flex-direction": "row",
       });

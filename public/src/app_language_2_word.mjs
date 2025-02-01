@@ -8,8 +8,8 @@ import { html_span_text } from "./html_span_text.mjs";
 import { html_flag_language } from "./html_flag_language.mjs";
 import { html_style } from "./html_style.mjs";
 export function app_language_2_word(body, language, text, boxed) {
-  let q = html_span(body);
-  let box = html_span(q);
+  let container = html_span(body);
+  let box = html_span(container);
   let color;
   if (boxed) {
     color = html_color_gray();
@@ -21,6 +21,6 @@ export function app_language_2_word(body, language, text, boxed) {
     border: string_combine("solid 0.4dvh ", color),
   });
   html_flag_language(box, language);
-  html_span_text(q, string_combine_multiple([" ", text]));
-  html_style_bold(q);
+  html_span_text(container, string_combine_multiple([" ", text]));
+  html_style_bold(container);
 }
