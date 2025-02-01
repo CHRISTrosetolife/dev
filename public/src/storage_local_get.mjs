@@ -9,6 +9,7 @@ export function storage_local_get(fn_namespace, key) {
       name: "",
     };
     if (storage_local_exists(other, key)) {
+      let value = storage_local_get(other, key);
     }
     let value = value_get();
     storage_local_set(fn_namespace, key, value);
