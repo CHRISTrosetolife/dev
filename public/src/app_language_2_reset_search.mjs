@@ -1,3 +1,4 @@
+import { html_p } from "./html_p.mjs";
 import { sleep_0 } from "./sleep_0.mjs";
 import { html_spacer_vertical_n } from "./html_spacer_vertical_n.mjs";
 import { html_spacer } from "./html_spacer.mjs";
@@ -48,6 +49,7 @@ export function app_language_2_reset_search(context, v) {
       html_clear_scroll_top_centered(root);
       html_spacer_vertical_n(root, 8);
       html_p_text(root, "Loading...");
+      let progress = html_p(root);
       await sleep_0();
       let key2 = app_language_2_word_key(v2);
       let { group_flat } = app_language_2_group_get(context);
