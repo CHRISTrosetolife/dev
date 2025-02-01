@@ -1,3 +1,4 @@
+import { app_language_2_on_answer } from "./app_language_2_on_answer.mjs";
 import { log } from "./log.mjs";
 import { app_language_words_update } from "./app_language_words_update.mjs";
 import { app_language_2_answer_delay } from "./app_language_2_answer_delay.mjs";
@@ -216,9 +217,7 @@ export async function app_language_2_refresh_learn(context) {
             html_style_wrong(b);
             app_language_2_wrong(context, v, gap_initial, wait_initial);
           }
-          app_language_words_update(context);
-          await app_language_2_answer_delay();
-          await app_language_2_refresh_learn(context);
+          await app_language_2_on_answer(context);
         },
       );
       html_span_text(b, string_combine_multiple([emoji_check(), " "]));
