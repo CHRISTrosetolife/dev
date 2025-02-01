@@ -130,6 +130,7 @@ export async function app_language_2_refresh_learn(context) {
         l = list_copy(k);
         list_reverse(l);
       } else {
+        l = k;
       }
     });
     log({
