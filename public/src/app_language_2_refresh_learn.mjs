@@ -227,15 +227,6 @@ export async function app_language_2_refresh_learn(context) {
         "flex-direction": "row",
         "align-items": "center",
       });
-      let { container } = app_language_2_word(
-        row,
-        app_language_2_other(language, language_learn, language_fluent),
-        c,
-        false,
-      );
-      html_style(container, {
-        flex: "1",
-      });
       let b2 = html_button_text_click(row, emoji_wrong, async () => {
         decrease_wait();
         if (c === answer_text) {
@@ -245,6 +236,15 @@ export async function app_language_2_refresh_learn(context) {
         }
         app_language_2_wrong(context, v, gap_initial, wait_initial);
         await app_language_2_on_answer(context, word, recent_count);
+      });
+      let { container } = app_language_2_word(
+        row,
+        app_language_2_other(language, language_learn, language_fluent),
+        c,
+        false,
+      );
+      html_style(container, {
+        flex: "1",
       });
       let b = html_button_text_click(row, emoji_right, async () => {
         decrease_wait();
