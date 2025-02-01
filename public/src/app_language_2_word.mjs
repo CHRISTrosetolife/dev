@@ -23,4 +23,7 @@ export function app_language_2_word(body, language, text, boxed) {
   html_flag_language(box, language);
   html_span_text(container, string_combine_multiple([" ", text]));
   html_style_bold(container);
+  return {
+    container,
+  };
 }
