@@ -1,4 +1,4 @@
-import { number_min } from "./number_min.mjs";
+import { number_max } from "./number_max.mjs";
 import { app_language_2_refresh_learn_value_choose_initial } from "./app_language_2_refresh_learn_value_choose_initial.mjs";
 import { app_language_words_set } from "./app_language_words_set.mjs";
 import { app_language_2_decrease_wait } from "./app_language_2_decrease_wait.mjs";
@@ -132,7 +132,10 @@ export async function app_language_2_refresh_learn(context) {
     questions_recent_keys = list_unique(questions_recent_keys);
     let answer_count_max = 4;
     let answer_choice_word_count_max = 10;
-    let questions_recent_limit = number_min(15);
+    let questions_recent_limit = number_max(
+      15,
+      answer_count_max * answer_choice_word_count_max,
+    );
     questions_recent_keys = list_take_soft(
       questions_recent_keys,
       questions_recent_limit,
