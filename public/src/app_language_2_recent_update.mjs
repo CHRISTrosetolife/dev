@@ -5,12 +5,7 @@ import { list_take_soft } from "./list_take_soft.mjs";
 import { number_max } from "./number_max.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
-export function app_language_2_recent_update(
-  context,
-  questions_recent_stored,
-  word,
-  recent_count,
-) {
+export function app_language_2_recent_update(context, word, recent_count) {
   let app_fn = object_property_get(context, "app_fn");
   let language_learn = object_property_get(context, "language_learn");
   let language_fluent = object_property_get(context, "language_fluent");
