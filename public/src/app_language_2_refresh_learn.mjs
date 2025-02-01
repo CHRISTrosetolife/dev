@@ -1,4 +1,3 @@
-import { app_language_2_recent_update } from "./app_language_2_recent_update.mjs";
 import { app_language_2_on_answer } from "./app_language_2_on_answer.mjs";
 import { log } from "./log.mjs";
 import { app_language_words_update } from "./app_language_words_update.mjs";
@@ -213,7 +212,14 @@ export async function app_language_2_refresh_learn(context) {
             html_style_wrong(b);
             app_language_2_wrong(context, v, gap_initial, wait_initial);
           }
-          await app_language_2_on_answer(context);
+          await app_language_2_on_answer(
+            context,
+            questions_recent_keys_stored,
+            word_key,
+            recent_count,
+            questions_recent_keys_by_language,
+            language,
+          );
         },
       );
       html_span_text(b, string_combine_multiple([emoji_check(), " "]));
@@ -244,7 +250,14 @@ export async function app_language_2_refresh_learn(context) {
             html_style_wrong(b2);
           }
           app_language_2_wrong(context, v, gap_initial, wait_initial);
-          await app_language_2_on_answer(context);
+          await app_language_2_on_answer(
+            context,
+            questions_recent_keys_stored,
+            word_key,
+            recent_count,
+            questions_recent_keys_by_language,
+            language,
+          );
         },
       );
       html_span_text(b2, string_combine_multiple([emoji_question(), " "]));
@@ -259,14 +272,6 @@ export async function app_language_2_refresh_learn(context) {
       html_spacer_vertical_2(quiz_container);
     });
     app_language_2_skip(context, word);
-    app_language_2_recent_update(
-      context,
-      questions_recent_keys_stored,
-      word_key,
-      recent_count,
-      questions_recent_keys_by_language,
-      language,
-    );
   }
   function app_language_2_answers_take(v_filtered2, mapped) {
     let answers = list_map_property(v_filtered2, "answer");
