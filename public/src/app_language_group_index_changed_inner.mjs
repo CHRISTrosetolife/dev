@@ -6,11 +6,10 @@ export async function app_language_group_index_changed_inner(
   group_index,
 ) {
   let result = await app_language_group_get(context, group_index);
-  let chosen = object_properties_new();
-  let { group, definitions, inverted } = result;
-  object_merge(context, {
-    group,
-    definitions,
-    inverted,
-  });
+  let chosen = object_properties_new(result, [
+    "group",
+    "definitions",
+    "inverted",
+  ]);
+  object_merge(context, chosen);
 }
