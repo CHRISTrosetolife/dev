@@ -260,6 +260,7 @@ export async function app_language_2_refresh_learn(context) {
     });
     app_language_2_skip(context, word);
     app_language_2_recent_update(
+      context,
       questions_recent_keys_stored,
       word_key,
       recent_count,
