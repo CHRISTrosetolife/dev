@@ -205,7 +205,7 @@ export async function app_language_2_refresh_learn(context) {
       html_style(row, {
         display: "flex",
         "flex-direction": "row",
-        "align-items": center,
+        "align-items": "center",
       });
       app_language_2_tutorial_message(
         context,
