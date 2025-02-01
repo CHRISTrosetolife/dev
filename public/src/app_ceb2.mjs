@@ -14,6 +14,9 @@ import { string_size } from "./string_size.mjs";
 export async function app_ceb2() {
   let language_learn = "ceb";
   let language_fluent = "en";
+  let other = {
+    name: "",
+  };
   let keys = storage_local_keys();
   each(keys, (k) => {
     let prefix = " ";
@@ -24,9 +27,6 @@ export async function app_ceb2() {
         k_old,
       });
       return;
-      let other = {
-        name: "",
-      };
       if (storage_local_exists(other, key)) {
         let migration = storage_local_get(other, key);
         storage_local_remove(other);
