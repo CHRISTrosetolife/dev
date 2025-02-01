@@ -10,6 +10,8 @@ export function app_language_2_recent_update(context, word, recent_count) {
   let language_learn = object_property_get(context, "language_learn");
   let language_fluent = object_property_get(context, "language_fluent");
   let language = object_property_get(word, "language");
+  let question = object_property_get(word, "question");
+  let answer = object_property_get(word, "answer");
   let questions_recent_stored = app_language_2_questions_recent_get(context);
   list_add_beginning(questions_recent_stored, word_key);
   questions_recent_stored = list_unique(questions_recent_stored);
