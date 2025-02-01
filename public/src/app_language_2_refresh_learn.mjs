@@ -25,7 +25,6 @@ import { app_language_2_answers } from "./app_language_2_answers.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
 import { list_includes } from "./list_includes.mjs";
-import { html_flag } from "./html_flag.mjs";
 import { html_button_home } from "./html_button_home.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
@@ -50,7 +49,6 @@ import { object_property_get } from "./object_property_get.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_progress } from "./html_progress.mjs";
 import { html_span_text } from "./html_span_text.mjs";
-import { html_style_bold } from "./html_style_bold.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
 import { list_concat } from "./list_concat.mjs";
@@ -223,11 +221,6 @@ export async function app_language_2_refresh_learn(context) {
           await app_language_2_on_answer(context, word, recent_count);
         },
       );
-      let flag = html_flag_language_get(
-        app_language_2_other(language, language_learn, language_fluent),
-      );
-      html_flag(b, flag);
-      html_style_bold(b);
       app_language_2_tutorial_message(
         context,
         string_combine_multiple([
@@ -235,7 +228,12 @@ export async function app_language_2_refresh_learn(context) {
         ]),
         quiz_container,
       );
-      app_language_2_word();
+      app_language_2_word(
+        quiz_container,
+        app_language_2_other(language, language_learn, language_fluent),
+        c,
+        false,
+      );
       html_span_text(quiz_container, string_combine_multiple([" ", c]));
       let b2 = html_button_text_click(
         quiz_container,
@@ -251,8 +249,6 @@ export async function app_language_2_refresh_learn(context) {
           await app_language_2_on_answer(context, word, recent_count);
         },
       );
-      html_flag(b2, flag);
-      html_style_bold(b2);
       html_spacer_vertical_2(quiz_container);
     });
     app_language_2_skip(context, word);
@@ -268,8 +264,8 @@ export async function app_language_2_refresh_learn(context) {
   function decrease_wait() {
     app_language_2_decrease_wait(values);
   }
-  function app_language2_word_titled(body, text, language, rememeber) {
-    let r = html_p_text(body, string_combine_multiple([text, ": "]));
-    app_language_2_word_p(body, language, rememeber);
+  function app_language2_word_titled(body, title, language, text) {
+    let r = html_p_text(body, string_combine_multiple([title, ": "]));
+    app_language_2_word_p(body, language, text);
   }
 }
