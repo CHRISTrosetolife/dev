@@ -127,6 +127,7 @@ export async function app_language_2_refresh_learn(context) {
       questions_recent_keys_by_language,
       language,
     );
+    let recent_count = 15;
     let questions_recent_keys = list_take_soft(
       questions_recent_keys_stored,
       recent_count,
@@ -265,7 +266,6 @@ export async function app_language_2_refresh_learn(context) {
       html_spacer_vertical_2(quiz_container);
     });
     app_language_2_skip(context, word);
-    let recent_count = 15;
     list_add_beginning(questions_recent_keys_stored, word_key);
     questions_recent_keys_stored = list_unique(questions_recent_keys_stored);
     let answer_count_max = 4;
