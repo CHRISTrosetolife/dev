@@ -10,7 +10,6 @@ export function app_language_2_recent_update(
   questions_recent_keys_stored,
   word_key,
   recent_count,
-  questions_recent_keys_by_language,
   language,
 ) {
   let app_fn = object_property_get(context, "app_fn");
