@@ -113,7 +113,7 @@ export async function app_language_2_refresh_learn(context) {
   } else {
     let word = object_property_get(v, "word");
     let word_key = app_language_2_word_key(v);
-    let questions_recent_stored = app_language_2_questions_recent_get(app_fn);
+    let questions_recent_stored = app_language_2_questions_recent_get(context);
     let recent_count = 15;
     let questions_recent = list_take_soft(
       questions_recent_stored,
