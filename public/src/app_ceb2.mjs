@@ -5,13 +5,13 @@ import { app_language_2 } from "./app_language_2.mjs";
 export async function app_ceb2() {
   let language_learn = "ceb";
   let language_fluent = "en";
-  for (let i = 0, len = localStorage.length; i < len; ++i) {
-    console.log(localStorage.getItem());
-  }
   let keys = list_adder((la) => {
     each_range(localStorage.length, (i) => {
       la(localStorage.key(i));
     });
+  });
+  log({
+    keys,
   });
   await app_language_2(app_ceb2, language_learn, language_fluent);
 }
