@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { string_skip } from "./string_skip.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { storage_local_remove } from "./storage_local_remove.mjs";
@@ -19,6 +20,9 @@ export async function app_ceb2() {
     if (string_starts_with(k, prefix)) {
       let k_new = string_combine_multiple([fn_name("app_ceb2"), k]);
       let k_old = string_skip(k, string_size(prefix));
+      log({
+        k_old,
+      });
       return;
       let other = {
         name: "",
