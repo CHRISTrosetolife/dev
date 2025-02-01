@@ -7,7 +7,7 @@ export async function app_ceb2() {
   let language_learn = "ceb";
   let language_fluent = "en";
   let keys = list_adder((la) => {
-    each_range(object_property_get(object, "property_name"), (i) => {
+    each_range(object_property_get(localStorage, "length"), (i) => {
       la(localStorage.key(i));
     });
   });
