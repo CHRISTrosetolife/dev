@@ -5,6 +5,7 @@ import { list_take_soft } from "./list_take_soft.mjs";
 import { number_max } from "./number_max.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
+import { list_reverse } from "./list_reverse.mjs";
 export function app_language_2_recent_update(context, word, recent_count) {
   let app_fn = object_property_get(context, "app_fn");
   let language_learn = object_property_get(context, "language_learn");
@@ -13,10 +14,11 @@ export function app_language_2_recent_update(context, word, recent_count) {
   let question = object_property_get(word, "question");
   let answer = object_property_get(word, "answer");
   let recent_new = [question, answer];
-  if (false) {
+  if (language === language_fluent) {
+    list_reverse(recent_new);
   }
   let questions_recent_stored = app_language_2_questions_recent_get(context);
-  list_add_beginning(questions_recent_stored, word_key);
+  list_add_beginning(questions_recent_stored, recent_new);
   questions_recent_stored = list_unique(questions_recent_stored);
   let answer_count_max = 4;
   let answer_choice_word_count_max = 10;
