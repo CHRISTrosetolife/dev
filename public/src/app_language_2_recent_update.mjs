@@ -13,6 +13,8 @@ export function app_language_2_recent_update(
   language,
 ) {
   let app_fn = object_property_get(context, "app_fn");
+  let language_learn = object_property_get(context, "language_learn");
+  let language_fluent = object_property_get(context, "language_fluent");
   list_add_beginning(questions_recent_stored, word_key);
   questions_recent_stored = list_unique(questions_recent_stored);
   let answer_count_max = 4;
