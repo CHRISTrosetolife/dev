@@ -220,12 +220,7 @@ export async function app_language_2_refresh_learn(context) {
             html_style_wrong(b);
             app_language_2_wrong(context, v, gap_initial, wait_initial);
           }
-          await app_language_2_on_answer(
-            context,
-            questions_recent_stored,
-            word,
-            recent_count,
-          );
+          await app_language_2_on_answer(context, word, recent_count);
         },
       );
       html_span_text(b, string_combine_multiple([emoji_check(), " "]));
@@ -256,12 +251,7 @@ export async function app_language_2_refresh_learn(context) {
             html_style_wrong(b2);
           }
           app_language_2_wrong(context, v, gap_initial, wait_initial);
-          await app_language_2_on_answer(
-            context,
-            questions_recent_stored,
-            word,
-            recent_count,
-          );
+          await app_language_2_on_answer(context, word, recent_count);
         },
       );
       html_span_text(b2, string_combine_multiple([emoji_question(), " "]));
