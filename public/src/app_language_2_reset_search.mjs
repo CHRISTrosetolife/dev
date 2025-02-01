@@ -50,6 +50,7 @@ export function app_language_2_reset_search(context, v) {
       html_spacer_vertical_n(root, 8);
       html_p_text(root, "Loading...");
       let progress = html_p(root);
+      html_span_text(progress, "Progress: ");
       await sleep_0();
       let key2 = app_language_2_word_key(v2);
       let { group_flat } = app_language_2_group_get(context);
