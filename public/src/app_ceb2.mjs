@@ -13,7 +13,8 @@ export async function app_ceb2() {
   let language_fluent = "en";
   let keys = storage_local_keys();
   each(keys, (k) => {
-    if (string_starts_with(k, " ")) {
+    let prefix = " ";
+    if (string_starts_with(k, prefix)) {
       let k_new = string_combine_multiple([fn_name("app_ceb2"), k]);
       let other = {
         name: "",
