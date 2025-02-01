@@ -7,6 +7,8 @@ export function storage_local_get(fn_namespace, key) {
     let other = {
       name: "",
     };
+    if (false) {
+    }
     let value = value_get();
     storage_local_set(fn_namespace, key, value);
     return value;
