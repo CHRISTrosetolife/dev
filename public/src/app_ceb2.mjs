@@ -23,7 +23,7 @@ export async function app_ceb2() {
       let k_new = string_combine_multiple([fn_name("app_ceb2"), k]);
       let k_old = string_skip(k, string_size(prefix));
       if (storage_local_exists_not(app_ceb2, key)) {
-        let migration = storage_local_get(other, key);
+        let migration = storage_local_get(other, k_old);
         storage_local_remove(other);
         storage_local_set(fn_namespace, key, migration);
       }
