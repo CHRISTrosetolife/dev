@@ -129,6 +129,7 @@ export async function app_language_2_refresh_learn(context) {
       if (language === language_fluent) {
         l = list_copy(k);
         list_reverse(l);
+      } else {
       }
     });
     log({
