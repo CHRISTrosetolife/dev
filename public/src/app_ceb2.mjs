@@ -1,4 +1,7 @@
-import { log } from "./log.mjs";
+import { storage_local_set } from "./storage_local_set.mjs";
+import { storage_local_remove } from "./storage_local_remove.mjs";
+import { storage_local_get } from "./storage_local_get.mjs";
+import { storage_local_exists } from "./storage_local_exists.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
