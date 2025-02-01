@@ -224,12 +224,10 @@ export async function app_language_2_refresh_learn(context) {
         },
       );
       html_span_text(b, string_combine_multiple([emoji_check(), " "]));
-      html_flag(
-        b,
-        html_flag_language_get(
-          app_language_2_other(language, language_learn, language_fluent),
-        ),
+      let flag = html_flag_language_get(
+        app_language_2_other(language, language_learn, language_fluent),
       );
+      html_flag(b, flag);
       html_style_bold(b);
       html_span_text(b, string_combine_multiple([" ", c]));
       html_spacer_vertical_2(quiz_container);
@@ -255,9 +253,6 @@ export async function app_language_2_refresh_learn(context) {
         },
       );
       html_span_text(b2, string_combine_multiple([emoji_question(), " "]));
-      let flag = html_flag_language_get(
-        app_language_2_other(language, language_learn, language_fluent),
-      );
       html_flag(b2, flag);
       html_style_bold(b2);
       html_span_text(b2, string_combine_multiple([" ", c]));
