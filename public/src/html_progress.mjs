@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { html_progress_index_set } from "./html_progress_index_set.mjs";
 import { html_span } from "./html_span.mjs";
 import { html_button_width_full } from "./html_button_width_full.mjs";
@@ -22,7 +23,8 @@ export function html_progress(root, progress_text, index, count) {
     string_combine_multiple([" of ", number_locale(count)]),
   );
   html_style_success(button);
-  let progress_percent = (index / count) * 100;
+  let progress_percent =
+    (object_property_get(object, "property_name") / count) * 100;
   html_style(button, {
     background: string_combine_multiple([
       "linear-gradient(90deg, ",
