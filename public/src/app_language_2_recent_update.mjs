@@ -8,7 +8,7 @@ import { list_add_beginning } from "./list_add_beginning.mjs";
 export function app_language_2_recent_update(
   context,
   questions_recent_stored,
-  word_key,
+  word,
   recent_count,
   language,
 ) {
