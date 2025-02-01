@@ -121,7 +121,7 @@ export async function app_language_2_refresh_learn(context) {
     list_map(questions_recent, (key) => {
       let list;
       if (language === language_fluent) {
-        list = list_copy_reverse(list, key);
+        list = list_copy_reverse(key);
       } else {
         list = key;
       }
