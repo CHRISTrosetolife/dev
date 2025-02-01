@@ -1,3 +1,5 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { fn_name } from "./fn_name.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { each } from "./each.mjs";
 import { storage_local_keys } from "./storage_local_keys.mjs";
@@ -8,6 +10,7 @@ export async function app_ceb2() {
   let keys = storage_local_keys();
   each(keys, (k) => {
     if (string_starts_with(k, " ")) {
+      let k_new = string_combine_multiple([fn_name("app_ceb2"), k]);
     }
   });
   return;
