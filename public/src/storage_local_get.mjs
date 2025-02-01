@@ -1,3 +1,4 @@
+import { storage_local_exists } from "./storage_local_exists.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { storage_local_exists_not } from "./storage_local_exists_not.mjs";
 import { json_from } from "./json_from.mjs";
@@ -7,7 +8,7 @@ export function storage_local_get(fn_namespace, key) {
     let other = {
       name: "",
     };
-    if (false) {
+    if (storage_local_exists(other, key)) {
     }
     let value = value_get();
     storage_local_set(fn_namespace, key, value);
