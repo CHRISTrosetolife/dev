@@ -1,5 +1,4 @@
-import { list_reverse } from "./list_reverse.mjs";
-import { list_copy } from "./list_copy.mjs";
+import { list_copy_reverse } from "./list_copy_reverse.mjs";
 import { list_map } from "./list_map.mjs";
 import { log } from "./log.mjs";
 import { app_language_2_on_answer } from "./app_language_2_on_answer.mjs";
@@ -127,8 +126,7 @@ export async function app_language_2_refresh_learn(context) {
     list_map(questions_recent_keys, (k) => {
       let l;
       if (language === language_fluent) {
-        l = list_copy(k);
-        list_reverse(l);
+        l = list_copy_reverse(l, k);
       } else {
         l = k;
       }
