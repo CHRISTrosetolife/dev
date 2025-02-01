@@ -5,9 +5,10 @@ import { object_property_get } from "./object_property_get.mjs";
 export function app_language_word_pair(
   word,
   entry,
-  language_learn,
-  language_fluent,
+  language_learn2,
+  language_fluent2,
 ) {
+  let { language_learn, language_fluent } = context;
   let language = object_property_get(word, "language");
   let question = object_property_get(word, "question");
   app_language_2_word(entry, language, question);
