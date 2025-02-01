@@ -113,14 +113,14 @@ export async function app_language_2_refresh_learn(context) {
   } else {
     let word = object_property_get(v, "word");
     let word_key = app_language_2_word_key(v);
-    let questions_recent_keys_stored = storage_local_initialize(
+    let questions_recent_stored = storage_local_initialize(
       app_fn,
       "questions_recent",
       [],
     );
     let recent_count = 15;
     let questions_recent = list_take_soft(
-      questions_recent_keys_stored,
+      questions_recent_stored,
       recent_count,
     );
     let language = object_property_get(word, "language");
@@ -228,7 +228,7 @@ export async function app_language_2_refresh_learn(context) {
           }
           await app_language_2_on_answer(
             context,
-            questions_recent_keys_stored,
+            questions_recent_stored,
             word_key,
             recent_count,
             language,
@@ -265,7 +265,7 @@ export async function app_language_2_refresh_learn(context) {
           app_language_2_wrong(context, v, gap_initial, wait_initial);
           await app_language_2_on_answer(
             context,
-            questions_recent_keys_stored,
+            questions_recent_stored,
             word_key,
             recent_count,
             language,
