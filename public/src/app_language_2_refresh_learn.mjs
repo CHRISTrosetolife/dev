@@ -229,7 +229,7 @@ export async function app_language_2_refresh_learn(context) {
           await app_language_2_on_answer(
             context,
             questions_recent_stored,
-            word_key,
+            word,
             recent_count,
             language,
           );
@@ -266,7 +266,7 @@ export async function app_language_2_refresh_learn(context) {
           await app_language_2_on_answer(
             context,
             questions_recent_stored,
-            word_key,
+            word,
             recent_count,
             language,
           );
