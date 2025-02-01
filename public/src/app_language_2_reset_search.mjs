@@ -1,3 +1,4 @@
+import { app_language_2_word } from "./app_language_2_word.mjs";
 import { equal } from "./equal.mjs";
 import { app_language_2_refresh_learn_value_choose_initial } from "./app_language_2_refresh_learn_value_choose_initial.mjs";
 import { app_language_words_set } from "./app_language_words_set.mjs";
@@ -8,7 +9,6 @@ import { app_language_2_word_key } from "./app_language_2_word_key.mjs";
 import { app_language_2_refresh_learn_value_choose } from "./app_language_2_refresh_learn_value_choose.mjs";
 import { app_language_2_learn_success } from "./app_language_2_learn_success.mjs";
 import { app_language_2_other } from "./app_language_2_other.mjs";
-import { app_language_2_word_p } from "./app_language_2_word_p.mjs";
 import { app_language_2_words_initialize } from "./app_language_2_words_initialize.mjs";
 import { app_language_2_group_get } from "./app_language_2_group_get.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -74,9 +74,9 @@ export function app_language_2_reset_search(context, v) {
     let word = object_property_get(v2, "word");
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
-    app_language_2_word_p(entry, language, question);
+    app_language_2_word(entry, language, question);
     let answer = object_property_get(word, "answer");
-    app_language_2_word_p(
+    app_language_2_word(
       entry,
       app_language_2_other(language, language_learn, language_fluent),
       answer,
