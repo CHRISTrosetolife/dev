@@ -94,6 +94,6 @@ export function app_language_2_reset_search(context, v) {
       entry,
       string_combine_multiple(["Word pair ", index + 1, " "]),
     );
-    app_language_word_pair(entry, word, context);
+    app_language_word_pair(context, entry, word);
   });
 }
