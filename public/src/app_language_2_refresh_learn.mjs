@@ -49,7 +49,6 @@ import { html_p_text } from "./html_p_text.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
-import { sleep } from "./sleep.mjs";
 import { html_progress } from "./html_progress.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
