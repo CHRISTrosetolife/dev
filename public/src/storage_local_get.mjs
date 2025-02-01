@@ -9,8 +9,8 @@ export function storage_local_get(fn_namespace, key) {
       name: "",
     };
     if (storage_local_exists(other, key)) {
-      let value = storage_local_get(other, key);
-      storage_local_set(fn_namespace, key, value);
+      let migration = storage_local_get(other, key);
+      storage_local_set(fn_namespace, key, migration);
     }
   }
   let json = localStorage.getItem(storage_local_key(fn_namespace, key));
