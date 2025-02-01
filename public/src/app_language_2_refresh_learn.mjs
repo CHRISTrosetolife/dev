@@ -1,3 +1,4 @@
+import { json_to } from "./json_to.mjs";
 import { list_copy_reverse } from "./list_copy_reverse.mjs";
 import { list_map } from "./list_map.mjs";
 import { log } from "./log.mjs";
@@ -130,7 +131,8 @@ export async function app_language_2_refresh_learn(context) {
       } else {
         list = key;
       }
-      return list_concat(list, [language]);
+      let concat = list_concat(list, [language]);
+      return json_to(concat);
     });
     log({
       questions_recent,
