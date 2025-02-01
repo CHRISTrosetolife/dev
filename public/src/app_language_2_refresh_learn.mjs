@@ -1,3 +1,4 @@
+import { html_p } from "./html_p.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
 import { app_language_2_questions_recent_get } from "./app_language_2_questions_recent_get.mjs";
@@ -200,6 +201,7 @@ export async function app_language_2_refresh_learn(context) {
     let choices = [answer_text, other];
     list_shuffle(choices);
     each(choices, (c) => {
+      let row = html_p(quiz_container);
       app_language_2_tutorial_message(
         context,
         string_combine_multiple([
@@ -222,9 +224,6 @@ export async function app_language_2_refresh_learn(context) {
           await app_language_2_on_answer(context, word, recent_count);
         },
       );
-      html_style(b, {
-        float: "left",
-      });
       app_language_2_tutorial_message(
         context,
         string_combine_multiple([
@@ -238,6 +237,9 @@ export async function app_language_2_refresh_learn(context) {
         c,
         false,
       );
+      html_style(b, {
+        float: "left",
+      });
       let b2 = html_button_text_click(
         quiz_container,
         emoji_question(),
@@ -252,9 +254,6 @@ export async function app_language_2_refresh_learn(context) {
           await app_language_2_on_answer(context, word, recent_count);
         },
       );
-      html_style(b2, {
-        float: "right",
-      });
       html_spacer_vertical_2(quiz_container);
     });
     app_language_2_skip(context, word);
