@@ -268,7 +268,7 @@ export async function app_language_2_refresh_learn(context) {
           }
           app_language_2_wrong(context, v, gap_initial, wait_initial);
           app_language_words_set(context);
-          await sleep(200);
+          await app_language_2_answer_delay();
           await app_language_2_refresh_learn(context);
         },
       );
