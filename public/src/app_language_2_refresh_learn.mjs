@@ -201,12 +201,6 @@ export async function app_language_2_refresh_learn(context) {
     let choices = [answer_text, other];
     list_shuffle(choices);
     each(choices, (c) => {
-      let row = html_p(quiz_container);
-      html_style(row, {
-        display: "flex",
-        "flex-direction": "row",
-        "align-items": "center",
-      });
       let emoji_wrong = emoji_question();
       let emoji_right = emoji_check();
       app_language_2_tutorial_message(
@@ -227,6 +221,12 @@ export async function app_language_2_refresh_learn(context) {
         ]),
         quiz_container,
       );
+      let row = html_p(quiz_container);
+      html_style(row, {
+        display: "flex",
+        "flex-direction": "row",
+        "align-items": "center",
+      });
       let { container } = app_language_2_word(
         row,
         app_language_2_other(language, language_learn, language_fluent),
