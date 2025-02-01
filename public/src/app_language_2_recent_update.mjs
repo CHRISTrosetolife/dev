@@ -10,7 +10,6 @@ export function app_language_2_recent_update(
   questions_recent_stored,
   word,
   recent_count,
-  language,
 ) {
   let app_fn = object_property_get(context, "app_fn");
   let language_learn = object_property_get(context, "language_learn");

@@ -14,7 +14,6 @@ export async function app_language_2_on_answer(
     questions_recent_stored,
     word,
     recent_count,
-    language,
   );
   await app_language_2_answer_delay();
   await app_language_2_refresh_learn(context);
