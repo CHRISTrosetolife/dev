@@ -3,8 +3,6 @@ import { string_skip } from "./string_skip.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { storage_local_remove } from "./storage_local_remove.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { fn_name } from "./fn_name.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { each } from "./each.mjs";
 import { storage_local_keys } from "./storage_local_keys.mjs";
@@ -21,12 +19,11 @@ export async function app_ceb2() {
   each(keys, (k) => {
     let prefix = " ";
     if (string_starts_with(k, prefix)) {
-      let k_new = string_combine_multiple([fn_name("app_ceb2"), k]);
       let k_old = string_skip(k, string_size(prefix));
       if (storage_local_exists_not(k_old)) {
         let migration = storage_local_get(other, k_old);
         storage_local_remove(other);
-        storage_local_set(fn_namespace, k_old, migration);
+        storage_local_set(app_fn, k_old, migration);
       }
     }
   });
