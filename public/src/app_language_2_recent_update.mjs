@@ -13,6 +13,8 @@ export function app_language_2_recent_update(context, word, recent_count) {
   let question = object_property_get(word, "question");
   let answer = object_property_get(word, "answer");
   let recent_new = [question, answer];
+  if (false) {
+  }
   let questions_recent_stored = app_language_2_questions_recent_get(context);
   list_add_beginning(questions_recent_stored, word_key);
   questions_recent_stored = list_unique(questions_recent_stored);
