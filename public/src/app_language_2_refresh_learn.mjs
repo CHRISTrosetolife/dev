@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_language_words_update } from "./app_language_words_update.mjs";
 import { app_language_2_answer_delay } from "./app_language_2_answer_delay.mjs";
 import { number_max } from "./number_max.mjs";
@@ -199,6 +200,9 @@ export async function app_language_2_refresh_learn(context) {
       v_filtered,
       (w) => object_property_get(w, "question") !== question,
     );
+    log({
+      questions_recent_keys,
+    });
     let [recent_choices, older_choices] = list_partition(v_filtered2, (w) =>
       list_includes(questions_recent_keys, object_property_get(w, "key")),
     );
