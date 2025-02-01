@@ -20,7 +20,7 @@ export async function app_ceb2() {
     let prefix = " ";
     if (string_starts_with(k, prefix)) {
       let k_old = string_skip(k, string_size(prefix));
-      if (storage_local_exists_not(k_old)) {
+      if (storage_local_exists_not(app_fn, k_old)) {
         let migration = storage_local_get(other, k_old);
         storage_local_remove(other, k_old);
         storage_local_set(app_fn, k_old, migration);
