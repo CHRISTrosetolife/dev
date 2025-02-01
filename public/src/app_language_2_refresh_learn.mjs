@@ -212,14 +212,18 @@ export async function app_language_2_refresh_learn(context) {
       app_language_2_tutorial_message(
         quiz_container,
         string_combine_multiple([
-          "If this is the answer you thought of, choose this:",
+          "If this is the answer you thought of, choose ",
+          emoji_right,
+          ":",
         ]),
         row,
       );
       app_language_2_tutorial_message(
         quiz_container,
         string_combine_multiple([
-          "If this is not the answer you thought of, but you believe it is correct, then choose this (it will be counted wrong so you can review the word more):",
+          "If this is not the answer you thought of, but you believe it is correct, then choose ",
+          emoji_wrong,
+          " (it will be counted wrong so you can review the word more):",
         ]),
         row,
       );
