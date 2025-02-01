@@ -133,7 +133,7 @@ export async function app_language_2_refresh_learn(context) {
       return list_concat(list, [language]);
     });
     log({
-      questions_recent_keys: questions_recent,
+      questions_recent,
     });
     let question = object_property_get(word, "question");
     let mapped = app_language_2_answers(values_skip_manual, v);
