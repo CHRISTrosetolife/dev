@@ -1,11 +1,10 @@
+import { app_language_word_pair } from "./app_language_word_pair.mjs";
 import { app_language_words_update } from "./app_language_words_update.mjs";
 import { html_progress_index_update } from "./html_progress_index_update.mjs";
 import { html_progress } from "./html_progress.mjs";
 import { sleep_0 } from "./sleep_0.mjs";
 import { html_spacer_vertical_n } from "./html_spacer_vertical_n.mjs";
-import { html_spacer } from "./html_spacer.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { app_language_2_word } from "./app_language_2_word.mjs";
 import { equal } from "./equal.mjs";
 import { app_language_2_refresh_learn_value_choose_initial } from "./app_language_2_refresh_learn_value_choose_initial.mjs";
 import { app_language_2_on_learn } from "./app_language_2_on_learn.mjs";
@@ -14,7 +13,6 @@ import { app_language_2_refresh_learn } from "./app_language_2_refresh_learn.mjs
 import { app_language_2_word_key } from "./app_language_2_word_key.mjs";
 import { app_language_2_refresh_learn_value_choose } from "./app_language_2_refresh_learn_value_choose.mjs";
 import { app_language_2_learn_success } from "./app_language_2_learn_success.mjs";
-import { app_language_2_other } from "./app_language_2_other.mjs";
 import { app_language_2_words_initialize } from "./app_language_2_words_initialize.mjs";
 import { app_language_2_group_get } from "./app_language_2_group_get.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -96,15 +94,6 @@ export function app_language_2_reset_search(context, v) {
       entry,
       string_combine_multiple(["Word pair ", index + 1, " "]),
     );
-    let language = object_property_get(word, "language");
-    let question = object_property_get(word, "question");
-    app_language_2_word(entry, language, question);
-    let answer = object_property_get(word, "answer");
-    html_spacer(entry);
-    app_language_2_word(
-      entry,
-      app_language_2_other(language, language_learn, language_fluent),
-      answer,
-    );
+    app_language_word_pair(word, entry, language_learn, language_fluent);
   });
 }
