@@ -1,3 +1,4 @@
+import { equal } from "./equal.mjs";
 import { app_language_2_refresh_learn_value_choose_initial } from "./app_language_2_refresh_learn_value_choose_initial.mjs";
 import { app_language_words_set } from "./app_language_words_set.mjs";
 import { app_language_2_on_learn } from "./app_language_2_on_learn.mjs";
@@ -12,7 +13,6 @@ import { app_language_2_words_initialize } from "./app_language_2_words_initiali
 import { app_language_2_group_get } from "./app_language_2_group_get.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { each } from "./each.mjs";
-import { string_includes } from "./string_includes.mjs";
 import { list_any } from "./list_any.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -35,7 +35,7 @@ export function app_language_2_reset_search(context, v) {
     let question = object_property_get(word, "question");
     let answer = object_property_get(word, "answer");
     return list_any([question, answer], (s) => {
-      return string_includes(s, v);
+      return equal(s, v);
     });
   });
   each(filtered, (v2) => {
