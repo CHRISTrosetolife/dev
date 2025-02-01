@@ -235,6 +235,7 @@ export async function app_language_2_refresh_learn(context) {
         ]),
         quiz_container,
       );
+      app_language_2_word;
       html_span_text(quiz_container, string_combine_multiple([" ", c]));
       let b2 = html_button_text_click(
         quiz_container,
