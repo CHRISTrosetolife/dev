@@ -1,3 +1,4 @@
+import { html_style } from "./html_style.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
 import { app_language_2_questions_recent_get } from "./app_language_2_questions_recent_get.mjs";
 import { json_to } from "./json_to.mjs";
@@ -221,6 +222,9 @@ export async function app_language_2_refresh_learn(context) {
           await app_language_2_on_answer(context, word, recent_count);
         },
       );
+      html_style(b, {
+        float: "left",
+      });
       app_language_2_tutorial_message(
         context,
         string_combine_multiple([
@@ -248,6 +252,9 @@ export async function app_language_2_refresh_learn(context) {
           await app_language_2_on_answer(context, word, recent_count);
         },
       );
+      html_style(b2, {
+        float: "right",
+      });
       html_spacer_vertical_2(quiz_container);
     });
     app_language_2_skip(context, word);
