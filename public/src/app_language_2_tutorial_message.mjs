@@ -4,10 +4,10 @@ import { storage_local_initialize } from "./storage_local_initialize.mjs";
 export function app_language_2_tutorial_message(
   context,
   tutorial_message,
-  root,
+  parent,
 ) {
   let app_fn = object_property_get(context, "app_fn");
   if (storage_local_initialize(app_fn, "count", 0) === 0) {
-    html_p_text(root, tutorial_message);
+    html_p_text(parent, tutorial_message);
   }
 }
