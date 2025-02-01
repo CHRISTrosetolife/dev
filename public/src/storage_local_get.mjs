@@ -13,7 +13,6 @@ export function storage_local_get(fn_namespace, key) {
       value = storage_local_get(other, key);
     }
     storage_local_set(fn_namespace, key, value);
-    return value;
   }
   let json = localStorage.getItem(storage_local_key(fn_namespace, key));
   let item = json_from(json);
