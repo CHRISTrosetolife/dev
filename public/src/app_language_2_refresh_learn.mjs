@@ -125,10 +125,11 @@ export async function app_language_2_refresh_learn(context) {
     );
     let language = object_property_get(word, "language");
     list_map(questions_recent_keys, (k) => {
+      let l;
       if (language === language_fluent) {
-        k = list_copy(k);
+        l = list_copy(k);
+        list_reverse(l);
       }
-      list_reverse(k);
     });
     log({
       questions_recent_keys,
