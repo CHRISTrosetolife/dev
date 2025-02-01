@@ -118,6 +118,9 @@ export async function app_language_2_refresh_learn(context) {
         [language_learn]: [],
       },
     );
+    log({
+      questions_recent_keys_by_language,
+    });
     let language = object_property_get(word, "language");
     let questions_recent_keys_stored = object_property_get(
       questions_recent_keys_by_language,
