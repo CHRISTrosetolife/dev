@@ -30,5 +30,6 @@ export function html_progress(root, progress_text, index, count) {
   return {
     button,
     text_index,
+    count,
   };
 }
