@@ -4,6 +4,9 @@ import { json_from } from "./json_from.mjs";
 import { storage_local_key } from "./storage_local_key.mjs";
 export function storage_local_get(fn_namespace, key) {
   if (storage_local_exists_not(fn_namespace, key)) {
+    let other = {
+      name: "",
+    };
     let value = value_get();
     storage_local_set(fn_namespace, key, value);
     return value;
