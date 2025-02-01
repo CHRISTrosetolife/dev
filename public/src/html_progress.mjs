@@ -8,16 +8,18 @@ import { html_style_success } from "./html_style_success.mjs";
 import { add_1 } from "./add_1.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function html_progress(root, progress_text, index, count) {
-  let text = string_combine_multiple([
-    progress_text,
-    " ",
-    number_locale(add_1(index)),
-    " of ",
-    number_locale(count),
-  ]);
-  assert_arguments_length(arguments, 2);
+  assert_arguments_length(arguments, 4);
   let progress = html_button_width_full(root);
-  html_inner_set(progress, text);
+  html_inner_set(
+    progress,
+    string_combine_multiple([
+      progress_text,
+      " ",
+      number_locale(add_1(index)),
+      " of ",
+      number_locale(count),
+    ]),
+  );
   html_style_success(progress);
   let progress_percent = (index / count) * 100;
   html_style(progress, {
