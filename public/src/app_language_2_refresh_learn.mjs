@@ -210,22 +210,22 @@ export async function app_language_2_refresh_learn(context) {
       let emoji_wrong = emoji_question();
       let emoji_right = emoji_check();
       app_language_2_tutorial_message(
-        quiz_container,
+        context,
         string_combine_multiple([
           "If this is the answer you thought of, choose ",
           emoji_right,
           ":",
         ]),
-        row,
+        quiz_container,
       );
       app_language_2_tutorial_message(
-        quiz_container,
+        context,
         string_combine_multiple([
           "If this is not the answer you thought of, but you believe it is correct, then choose ",
           emoji_wrong,
           " (it will be counted wrong so you can review the word more):",
         ]),
-        row,
+        quiz_container,
       );
       let { container } = app_language_2_word(
         row,
