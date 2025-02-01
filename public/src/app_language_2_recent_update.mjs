@@ -14,7 +14,7 @@ export function app_language_2_recent_update(
   language,
   aa,
 ) {
-  let app_fn2 = object_property_get(context, "app_fn");
+  let app_fn = object_property_get(context, "app_fn");
   list_add_beginning(questions_recent_keys_stored, word_key);
   questions_recent_keys_stored = list_unique(questions_recent_keys_stored);
   let answer_count_max = 4;
