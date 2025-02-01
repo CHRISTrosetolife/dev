@@ -123,12 +123,12 @@ export async function app_language_2_refresh_learn(context) {
       recent_count,
     );
     let language = object_property_get(word, "language");
-    list_map(questions_recent_keys, (k) => {
-      let l;
+    list_map(questions_recent_keys, (key) => {
+      let list;
       if (language === language_fluent) {
-        l = list_copy_reverse(l, k);
+        list = list_copy_reverse(list, key);
       } else {
-        l = k;
+        list = key;
       }
     });
     log({
