@@ -207,32 +207,28 @@ export async function app_language_2_refresh_learn(context) {
         string_combine_multiple([
           "If this is the answer you thought of, choose this:",
         ]),
-        quiz_container,
+        row,
       );
-      let b = html_button_text_click(
-        quiz_container,
-        emoji_check(),
-        async () => {
-          decrease_wait();
-          if (c === answer_text) {
-            html_style_success(b);
-            app_language_2_learn_success(context, v, true);
-          } else {
-            html_style_wrong(b);
-            app_language_2_wrong(context, v, gap_initial, wait_initial);
-          }
-          await app_language_2_on_answer(context, word, recent_count);
-        },
-      );
+      let b = html_button_text_click(row, emoji_check(), async () => {
+        decrease_wait();
+        if (c === answer_text) {
+          html_style_success(b);
+          app_language_2_learn_success(context, v, true);
+        } else {
+          html_style_wrong(b);
+          app_language_2_wrong(context, v, gap_initial, wait_initial);
+        }
+        await app_language_2_on_answer(context, word, recent_count);
+      });
       app_language_2_tutorial_message(
         context,
         string_combine_multiple([
           "If this is not the answer you thought of, but you believe it is correct, then choose this (it will be counted wrong so you can review the word more):",
         ]),
-        quiz_container,
+        row,
       );
       app_language_2_word(
-        quiz_container,
+        row,
         app_language_2_other(language, language_learn, language_fluent),
         c,
         false,
@@ -240,20 +236,16 @@ export async function app_language_2_refresh_learn(context) {
       html_style(b, {
         float: "left",
       });
-      let b2 = html_button_text_click(
-        quiz_container,
-        emoji_question(),
-        async () => {
-          decrease_wait();
-          if (c === answer_text) {
-            html_style_success(b2);
-          } else {
-            html_style_wrong(b2);
-          }
-          app_language_2_wrong(context, v, gap_initial, wait_initial);
-          await app_language_2_on_answer(context, word, recent_count);
-        },
-      );
+      let b2 = html_button_text_click(row, emoji_question(), async () => {
+        decrease_wait();
+        if (c === answer_text) {
+          html_style_success(b2);
+        } else {
+          html_style_wrong(b2);
+        }
+        app_language_2_wrong(context, v, gap_initial, wait_initial);
+        await app_language_2_on_answer(context, word, recent_count);
+      });
       html_spacer_vertical_2(quiz_container);
     });
     app_language_2_skip(context, word);
