@@ -21,7 +21,6 @@ import { app_language_2_other } from "./app_language_2_other.mjs";
 import { app_language_2_answers } from "./app_language_2_answers.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
-import { round_2 } from "./round_2.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { html_flag } from "./html_flag.mjs";
 import { html_button_home } from "./html_button_home.mjs";
@@ -284,9 +283,6 @@ export async function app_language_2_refresh_learn(context) {
       html_spacer_vertical_2(quiz_container);
     });
     app_language_2_skip(context, word);
-    if (false) {
-      html_p_text(root, round_2(v_gap));
-    }
   }
   function app_language_2_answers_take(v_filtered2, mapped) {
     let answers = list_map_property(v_filtered2, "answer");
