@@ -19,6 +19,7 @@ export async function app_ceb2() {
     if (string_starts_with(k, prefix)) {
       let k_new = string_combine_multiple([fn_name("app_ceb2"), k]);
       let k_old = string_skip(k, string_size(prefix));
+      return;
       let other = {
         name: "",
       };
