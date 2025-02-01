@@ -1,3 +1,4 @@
+import { html_spacer_vertical_n } from "./html_spacer_vertical_n.mjs";
 import { html_spacer } from "./html_spacer.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_language_2_word } from "./app_language_2_word.mjs";
@@ -44,6 +45,7 @@ export function app_language_2_reset_search(context, v) {
   each(filtered, (v2) => {
     let entry = html_button_width_full_text_click(root, "", async () => {
       html_clear_scroll_top_centered(root);
+      html_spacer_vertical_n(root, 8);
       html_p_text(root, "Loading...");
       let key2 = app_language_2_word_key(v2);
       let { group_flat } = app_language_2_group_get(context);
