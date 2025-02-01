@@ -11,8 +11,6 @@ export function storage_local_get(fn_namespace, key) {
     let value;
     if (storage_local_exists(other, key)) {
       value = storage_local_get(other, key);
-    } else {
-      value = value_get();
     }
     storage_local_set(fn_namespace, key, value);
     return value;
