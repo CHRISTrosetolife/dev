@@ -1,10 +1,8 @@
-import { object_property_get } from "./object_property_get.mjs";
+import { html_progress_style_update } from "./html_progress_style_update.mjs";
 import { html_progress_index_set } from "./html_progress_index_set.mjs";
 import { html_span } from "./html_span.mjs";
 import { html_button_width_full } from "./html_button_width_full.mjs";
 import { number_locale } from "./number_locale.mjs";
-import { html_style_success_background } from "./html_style_success_background.mjs";
-import { html_style } from "./html_style.mjs";
 import { html_style_success } from "./html_style_success.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_span_text } from "./html_span_text.mjs";
@@ -23,20 +21,6 @@ export function html_progress(root, progress_text, index, count) {
     string_combine_multiple([" of ", number_locale(count)]),
   );
   html_style_success(button);
-  let progress_percent =
-    (object_property_get(result, "index") /
-      object_property_get(result, "index")) *
-    100;
-  html_style(object_property_get(result, "button"), {
-    background: string_combine_multiple([
-      "linear-gradient(90deg, ",
-      html_style_success_background(),
-      " ",
-      progress_percent,
-      "%, white ",
-      progress_percent,
-      "%)",
-    ]),
-  });
+  html_progress_style_update(result);
   return result;
 }
