@@ -5,7 +5,10 @@ export async function app_ceb2() {
   let language_learn = "ceb";
   let language_fluent = "en";
   let keys = storage_local_keys();
-  each(list, (item) => {});
+  each(keys, (k) => {
+    if (false) {
+    }
+  });
   return;
   await app_language_2(app_ceb2, language_learn, language_fluent);
 }
