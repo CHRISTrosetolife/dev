@@ -28,6 +28,7 @@ import { html_button_back } from "./html_button_back.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_span_text } from "./html_span_text.mjs";
+import { html_inner_set } from "./html_inner_set.mjs";
 export function app_language_2_reset_search(context, v) {
   let { root, words, language_learn, language_fluent } = context;
   html_clear_scroll_top_centered(root);
@@ -64,6 +65,7 @@ export function app_language_2_reset_search(context, v) {
           app_language_2_refresh_learn_value_choose(values);
         if (learn_new) {
           count++;
+          html_inner_set(progress_value, string_combine_multiple([count]));
           let key = app_language_2_word_key(u);
           if (key === key2) {
             app_language_words_set(context);
