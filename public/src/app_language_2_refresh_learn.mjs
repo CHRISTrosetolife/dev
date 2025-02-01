@@ -121,7 +121,9 @@ export async function app_language_2_refresh_learn(context) {
       questions_recent_keys_stored,
       recent_count,
     );
-    list_map(questions_recent_keys, (k) => {});
+    list_map(questions_recent_keys, (k) => {
+      $b;
+    });
     log({
       questions_recent_keys,
     });
