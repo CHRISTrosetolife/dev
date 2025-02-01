@@ -1,7 +1,7 @@
+import { app_language_2_recent_update } from "./app_language_2_recent_update.mjs";
 import { app_language_2_on_answer } from "./app_language_2_on_answer.mjs";
 import { log } from "./log.mjs";
 import { app_language_words_update } from "./app_language_words_update.mjs";
-import { number_max } from "./number_max.mjs";
 import { app_language_2_refresh_learn_value_choose_initial } from "./app_language_2_refresh_learn_value_choose_initial.mjs";
 import { app_language_2_decrease_wait } from "./app_language_2_decrease_wait.mjs";
 import { app_language_2_on_learn } from "./app_language_2_on_learn.mjs";
@@ -9,7 +9,6 @@ import { app_language_2_refresh_learn_value_choose } from "./app_language_2_refr
 import { app_language_2_learn_success } from "./app_language_2_learn_success.mjs";
 import { list_partition } from "./list_partition.mjs";
 import { list_take_soft } from "./list_take_soft.mjs";
-import { list_add_beginning } from "./list_add_beginning.mjs";
 import { app_language_refresh_quiz_text_ready } from "./app_language_refresh_quiz_text_ready.mjs";
 import { app_language_2_tutorial_message } from "./app_language_2_tutorial_message.mjs";
 import { app_language_2_wrong } from "./app_language_2_wrong.mjs";
@@ -42,8 +41,6 @@ import { list_shuffle } from "./list_shuffle.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { html_flag_language_get } from "./html_flag_language_get.mjs";
 import { app_language_button_ready } from "./app_language_button_ready.mjs";
-import { storage_local_set } from "./storage_local_set.mjs";
-import { object_property_set } from "./object_property_set.mjs";
 import { html_button_next } from "./html_button_next.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
@@ -262,27 +259,13 @@ export async function app_language_2_refresh_learn(context) {
       html_spacer_vertical_2(quiz_container);
     });
     app_language_2_skip(context, word);
-    list_add_beginning(questions_recent_keys_stored, word_key);
-    questions_recent_keys_stored = list_unique(questions_recent_keys_stored);
-    let answer_count_max = 4;
-    let answer_choice_word_count_max = 10;
-    let questions_recent_limit = number_max(
-      recent_count,
-      answer_count_max * answer_choice_word_count_max,
-    );
-    questions_recent_keys_stored = list_take_soft(
+    questions_recent_keys_stored = app_language_2_recent_update(
       questions_recent_keys_stored,
-      questions_recent_limit,
-    );
-    object_property_set(
+      word_key,
+      recent_count,
       questions_recent_keys_by_language,
       language,
-      questions_recent_keys_stored,
-    );
-    storage_local_set(
       app_fn,
-      "questions_recent",
-      questions_recent_keys_by_language,
     );
   }
   function app_language_2_answers_take(v_filtered2, mapped) {
