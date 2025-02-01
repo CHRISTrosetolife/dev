@@ -7,7 +7,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_flag_language } from "./html_flag_language.mjs";
 import { html_style } from "./html_style.mjs";
-export function app_language_2_word(body, language, rememeber, boxed) {
+export function app_language_2_word(body, language, word, boxed) {
   let q = html_span(body);
   let box = html_span(q);
   let color;
@@ -21,6 +21,6 @@ export function app_language_2_word(body, language, rememeber, boxed) {
     border: string_combine("solid 0.4dvh ", color),
   });
   html_flag_language(box, language);
-  html_span_text(q, string_combine_multiple([" ", rememeber]));
+  html_span_text(q, string_combine_multiple([" ", word]));
   html_style_bold(q);
 }
