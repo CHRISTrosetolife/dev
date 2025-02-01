@@ -186,6 +186,7 @@ export async function app_language_2_refresh_learn(context) {
     let other_taken_concat_unique = list_unique(other_taken_concat);
     log({
       other_taken_concat_unique,
+      other_taken_recent,
     });
     let other_taken = list_take_soft(
       other_taken_concat_unique,
