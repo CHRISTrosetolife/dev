@@ -55,7 +55,7 @@ export function app_language_2_reset_search(context, v) {
       html_p_text(root, "Loading...");
       let progress = html_p(root);
       html_span_text(progress, "Progress: ");
-      html_progress();
+      html_progress(root, "Progress: ", count, index + 1);
       let progress_value = html_span_text(progress, "0");
       html_span_text(progress, string_combine_multiple([" / ", index + 1]));
       await sleep_0();
