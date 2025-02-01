@@ -1,3 +1,5 @@
+import { html_spacer } from "./html_spacer.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_language_2_word } from "./app_language_2_word.mjs";
 import { equal } from "./equal.mjs";
 import { app_language_2_refresh_learn_value_choose_initial } from "./app_language_2_refresh_learn_value_choose_initial.mjs";
@@ -22,6 +24,7 @@ import { app_language_2_reset } from "./app_language_2_reset.mjs";
 import { html_button_back } from "./html_button_back.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_p_text } from "./html_p_text.mjs";
+import { html_span_text } from "./html_span_text.mjs";
 export function app_language_2_reset_search(context, v) {
   let { root, words, language_learn, language_fluent } = context;
   html_clear_scroll_top_centered(root);
@@ -72,10 +75,13 @@ export function app_language_2_reset_search(context, v) {
       }
     });
     let word = object_property_get(v2, "word");
+    let index = object_property_get(word, "index");
+    html_span_text(entry, string_combine_multiple(["Word ", index + 1, " "]));
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
     app_language_2_word(entry, language, question);
     let answer = object_property_get(word, "answer");
+    html_spacer(entry);
     app_language_2_word(
       entry,
       app_language_2_other(language, language_learn, language_fluent),
