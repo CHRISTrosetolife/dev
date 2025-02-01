@@ -151,7 +151,6 @@ export async function app_language_2_refresh_learn(context) {
       questions_recent_keys_by_language,
     );
     log_json(questions_recent_keys_by_language);
-    let v_gap = object_property_get(v, "gap");
     let question = object_property_get(word, "question");
     let mapped = app_language_2_answers(values_skip_manual, v);
     let language_other = app_language_2_other(
