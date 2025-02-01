@@ -17,7 +17,6 @@ import { app_language_2_tutorial_message } from "./app_language_2_tutorial_messa
 import { app_language_2_wrong } from "./app_language_2_wrong.mjs";
 import { app_language_2_word } from "./app_language_2_word.mjs";
 import { app_language_2_word_p } from "./app_language_2_word_p.mjs";
-import { app_language_2_word_key } from "./app_language_2_word_key.mjs";
 import { app_language_2_skip } from "./app_language_2_skip.mjs";
 import { app_language_2_refresh_home } from "./app_language_2_refresh_home.mjs";
 import { app_language_2_other } from "./app_language_2_other.mjs";
@@ -112,7 +111,6 @@ export async function app_language_2_refresh_learn(context) {
     app_language_2_skip(context, u_word);
   } else {
     let word = object_property_get(v, "word");
-    let word_key = app_language_2_word_key(v);
     let questions_recent_stored = app_language_2_questions_recent_get(context);
     let recent_count = 15;
     let questions_recent = list_take_soft(
