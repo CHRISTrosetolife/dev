@@ -10,10 +10,6 @@ export function storage_local_get(fn_namespace, key) {
     if (storage_local_exists(other, key)) {
       let migration = storage_local_get(other, key);
       storage_local_set(fn_namespace, key, migration);
-    } else {
-      let value = value_get();
-      storage_local_set(fn_namespace, key, value);
-      return value;
     }
   }
   return storage_local_get_checkless(fn_namespace, key);
