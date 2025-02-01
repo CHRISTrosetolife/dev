@@ -132,8 +132,9 @@ export async function app_language_2_refresh_learn(context) {
     questions_recent_keys = list_unique(questions_recent_keys);
     let answer_count_max = 4;
     let answer_choice_word_count_max = 10;
+    let recent_count = 15;
     let questions_recent_limit = number_max(
-      15,
+      recent_count,
       answer_count_max * answer_choice_word_count_max,
     );
     questions_recent_keys = list_take_soft(
