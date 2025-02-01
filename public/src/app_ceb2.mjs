@@ -15,5 +15,6 @@ export async function app_ceb2() {
   log({
     keys,
   });
+  return;
   await app_language_2(app_ceb2, language_learn, language_fluent);
 }
