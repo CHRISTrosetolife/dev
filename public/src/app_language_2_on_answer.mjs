@@ -7,7 +7,6 @@ export async function app_language_2_on_answer(
   questions_recent_keys_stored,
   word_key,
   recent_count,
-  questions_recent_keys_by_language,
   language,
 ) {
   app_language_words_update(context);
