@@ -9,7 +9,7 @@ import { html_span_text } from "./html_span_text.mjs";
 export function html_progress(root, progress_text, index, count) {
   let progress = html_button_width_full(root);
   html_span_text(progress, string_combine_multiple([progress_text, " "]));
-  index = html_span_text(progress, number_locale(add_1(index)));
+  let text_index = html_span_text(progress, number_locale(add_1(index)));
   html_span_text(
     progress,
     string_combine_multiple([" of ", number_locale(count)]),
