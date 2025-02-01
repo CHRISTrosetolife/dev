@@ -27,4 +27,7 @@ export function html_progress(root, progress_text, index, count) {
       "%)",
     ]),
   });
+  return {
+    text_index,
+  };
 }
