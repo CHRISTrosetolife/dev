@@ -46,6 +46,8 @@ export function app_language_2_reset_search(context, v) {
     });
   });
   each(filtered, (v2) => {
+    let word = object_property_get(v2, "word");
+    let index = object_property_get(word, "index");
     let entry = html_button_width_full_text_click(root, "", async () => {
       html_clear_scroll_top_centered(root);
       html_spacer_vertical_n(root, 8);
@@ -53,6 +55,7 @@ export function app_language_2_reset_search(context, v) {
       let progress = html_p(root);
       html_span_text(progress, "Progress: ");
       let progress_value = html_span_text(progress, "0");
+      html_span_text(progress, string_combine_multiple([index + 1]));
       await sleep_0();
       let key2 = app_language_2_word_key(v2);
       let { group_flat } = app_language_2_group_get(context);
@@ -87,8 +90,6 @@ export function app_language_2_reset_search(context, v) {
         }
       }
     });
-    let word = object_property_get(v2, "word");
-    let index = object_property_get(word, "index");
     html_span_text(
       entry,
       string_combine_multiple(["Word pair ", index + 1, " "]),
