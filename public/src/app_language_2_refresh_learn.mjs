@@ -207,6 +207,8 @@ export async function app_language_2_refresh_learn(context) {
         "flex-direction": "row",
         "align-items": "center",
       });
+      let emoji_wrong = emoji_question();
+      let emoji_right = emoji_check();
       app_language_2_tutorial_message(
         context,
         string_combine_multiple([
@@ -230,8 +232,6 @@ export async function app_language_2_refresh_learn(context) {
       html_style(container, {
         flex: "1",
       });
-      let emoji_wrong = emoji_question();
-      let emoji_right = emoji_check();
       let b2 = html_button_text_click(row, emoji_wrong, async () => {
         decrease_wait();
         if (c === answer_text) {
