@@ -266,7 +266,6 @@ export async function app_language_2_refresh_learn(context) {
       recent_count,
       questions_recent_keys_by_language,
       language,
-      app_fn,
     );
   }
   function app_language_2_answers_take(v_filtered2, mapped) {

@@ -12,7 +12,6 @@ export function app_language_2_recent_update(
   recent_count,
   questions_recent_keys_by_language,
   language,
-  aa,
 ) {
   let app_fn = object_property_get(context, "app_fn");
   list_add_beginning(questions_recent_keys_stored, word_key);
