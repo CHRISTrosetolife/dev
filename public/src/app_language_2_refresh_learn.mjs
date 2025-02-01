@@ -129,6 +129,7 @@ export async function app_language_2_refresh_learn(context) {
     );
     list_add_beginning(questions_recent_keys, word_key);
     questions_recent_keys = list_unique(questions_recent_keys);
+    let answer_count_max = 4;
     let questions_recent_limit = 15;
     questions_recent_keys = list_take_soft(
       questions_recent_keys,
