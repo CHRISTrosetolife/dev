@@ -66,6 +66,7 @@ export function app_language_2_reset_search(context, v) {
         if (learn_new) {
           count++;
           html_inner_set(progress_value, string_combine_multiple([count]));
+          await sleep_0();
           let key = app_language_2_word_key(u);
           if (key === key2) {
             app_language_words_set(context);
