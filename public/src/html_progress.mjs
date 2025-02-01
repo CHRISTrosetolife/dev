@@ -8,15 +8,14 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 export function html_progress(root, progress_text, index, count) {
   let progress = html_button_width_full(root);
+  html_span_text(progress, string_combine_multiple([progress_text, " "]));
   html_span_text(
     progress,
-    string_combine_multiple([
-      progress_text,
-      " ",
-      number_locale(add_1(index)),
-      " of ",
-      number_locale(count),
-    ]),
+    string_combine_multiple([number_locale(add_1(index))]),
+  );
+  html_span_text(
+    progress,
+    string_combine_multiple([" of ", number_locale(count)]),
   );
   html_style_success(progress);
   let progress_percent = (index / count) * 100;
