@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_language_2_on_answer } from "./app_language_2_on_answer.mjs";
 import { app_language_words_update } from "./app_language_words_update.mjs";
 import { app_language_2_refresh_learn_value_choose_initial } from "./app_language_2_refresh_learn_value_choose_initial.mjs";
@@ -183,6 +184,9 @@ export async function app_language_2_refresh_learn(context) {
     let other_taken_older = app_language_2_answers_take(older_choices, mapped);
     let other_taken_concat = list_concat(other_taken_recent, other_taken_older);
     let other_taken_concat_unique = list_unique(other_taken_concat);
+    log({
+      other_taken_concat_unique,
+    });
     let other_taken = list_take_soft(
       other_taken_concat_unique,
       list_size(mapped),
