@@ -1,3 +1,4 @@
+import { app_language_words_update } from "./app_language_words_update.mjs";
 import { html_progress_index_update } from "./html_progress_index_update.mjs";
 import { html_progress } from "./html_progress.mjs";
 import { sleep_0 } from "./sleep_0.mjs";
@@ -7,7 +8,6 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_language_2_word } from "./app_language_2_word.mjs";
 import { equal } from "./equal.mjs";
 import { app_language_2_refresh_learn_value_choose_initial } from "./app_language_2_refresh_learn_value_choose_initial.mjs";
-import { app_language_words_set } from "./app_language_words_set.mjs";
 import { app_language_2_on_learn } from "./app_language_2_on_learn.mjs";
 import { app_language_2_decrease_wait } from "./app_language_2_decrease_wait.mjs";
 import { app_language_2_refresh_learn } from "./app_language_2_refresh_learn.mjs";
@@ -74,7 +74,7 @@ export function app_language_2_reset_search(context, v) {
           await sleep_0();
           let key = app_language_2_word_key(u);
           if (key === key2) {
-            app_language_words_set(context);
+            app_language_words_update(context);
             await app_language_2_refresh_learn(context);
             return;
           }
