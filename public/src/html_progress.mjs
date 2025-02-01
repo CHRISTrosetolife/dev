@@ -30,9 +30,10 @@ export function html_progress(root, progress_text, index, count) {
       "%)",
     ]),
   });
-  return {
+  let result = {
     button,
     text_index,
     count,
   };
+  return result;
 }
