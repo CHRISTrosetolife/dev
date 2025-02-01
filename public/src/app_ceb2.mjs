@@ -13,6 +13,7 @@ import { string_size } from "./string_size.mjs";
 export async function app_ceb2() {
   let language_learn = "ceb";
   let language_fluent = "en";
+  let app_fn = app_ceb2;
   let other = {
     name: "",
   };
@@ -22,13 +23,13 @@ export async function app_ceb2() {
     if (string_starts_with(k, prefix)) {
       let k_new = string_combine_multiple([fn_name("app_ceb2"), k]);
       let k_old = string_skip(k, string_size(prefix));
-      if (storage_local_exists_not(app_ceb2, key)) {
+      if (storage_local_exists_not(k_old)) {
         let migration = storage_local_get(other, k_old);
         storage_local_remove(other);
-        storage_local_set(fn_namespace, key, migration);
+        storage_local_set(fn_namespace, k_old, migration);
       }
     }
   });
   return;
-  await app_language_2(app_ceb2, language_learn, language_fluent);
+  await app_language_2(app_fn, language_learn, language_fluent);
 }
