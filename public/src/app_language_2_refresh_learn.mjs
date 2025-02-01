@@ -259,7 +259,7 @@ export async function app_language_2_refresh_learn(context) {
       html_spacer_vertical_2(quiz_container);
     });
     app_language_2_skip(context, word);
-    questions_recent_keys_stored = app_language_2_recent_update(
+    app_language_2_recent_update(
       questions_recent_keys_stored,
       word_key,
       recent_count,

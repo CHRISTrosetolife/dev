@@ -34,5 +34,4 @@ export function app_language_2_recent_update(
     "questions_recent",
     questions_recent_keys_by_language,
   );
-  return questions_recent_keys_stored;
 }
