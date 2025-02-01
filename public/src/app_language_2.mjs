@@ -3,7 +3,6 @@ import { app_language_2_words_initialize } from "./app_language_2_words_initiali
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { app_language_2_refresh_learn } from "./app_language_2_refresh_learn.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
-import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { app_language_initialize } from "./app_language_initialize.mjs";
 import { app_language_group_index_changed_inner } from "./app_language_group_index_changed_inner.mjs";
 export async function app_language_2(app_fn, language_learn, language_fluent) {
@@ -16,9 +15,6 @@ export async function app_language_2(app_fn, language_learn, language_fluent) {
     language_fluent,
     root,
   };
-  if (false) {
-    storage_local_initialize(app_fn, "words", {});
-  }
   await app_language_group_index_changed_inner(context, "all");
   let { words, group_flat } = app_language_2_group_get(context);
   app_language_2_words_initialize(context, words, group_flat);
