@@ -12,9 +12,14 @@ export async function app_ceb2() {
   each(keys, (k) => {
     if (string_starts_with(k, " ")) {
       let k_new = string_combine_multiple([fn_name("app_ceb2"), k]);
-      log({
-        k_new,
-      });
+      let other = {
+        name: "",
+      };
+      if (storage_local_exists(other, key)) {
+        let migration = storage_local_get(other, key);
+        storage_local_remove(other);
+        storage_local_set(fn_namespace, key, migration);
+      }
     }
   });
   return;
