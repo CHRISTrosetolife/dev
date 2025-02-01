@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { object_properties_new } from "./object_properties_new.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { app_language_group_get } from "./app_language_group_get.mjs";
@@ -11,5 +12,8 @@ export async function app_language_group_index_changed_inner(
     "definitions",
     "inverted",
   ]);
+  log({
+    chosen,
+  });
   object_merge(context, chosen);
 }
