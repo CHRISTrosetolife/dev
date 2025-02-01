@@ -1,3 +1,4 @@
+import { html_progress } from "./html_progress.mjs";
 import { html_p } from "./html_p.mjs";
 import { sleep_0 } from "./sleep_0.mjs";
 import { html_spacer_vertical_n } from "./html_spacer_vertical_n.mjs";
@@ -54,6 +55,7 @@ export function app_language_2_reset_search(context, v) {
       html_p_text(root, "Loading...");
       let progress = html_p(root);
       html_span_text(progress, "Progress: ");
+      html_progress();
       let progress_value = html_span_text(progress, "0");
       html_span_text(progress, string_combine_multiple([" / ", index + 1]));
       await sleep_0();
