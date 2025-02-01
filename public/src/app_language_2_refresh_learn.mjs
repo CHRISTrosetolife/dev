@@ -130,6 +130,7 @@ export async function app_language_2_refresh_learn(context) {
       } else {
         list = key;
       }
+      return list_concat(list, [language]);
     });
     log({
       questions_recent_keys,
