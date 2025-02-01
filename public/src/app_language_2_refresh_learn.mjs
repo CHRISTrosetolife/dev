@@ -202,6 +202,10 @@ export async function app_language_2_refresh_learn(context) {
     list_shuffle(choices);
     each(choices, (c) => {
       let row = html_p(quiz_container);
+      html_style(b, {
+        display: "flex",
+        "flex-direction": "row",
+      });
       app_language_2_tutorial_message(
         context,
         string_combine_multiple([
@@ -234,7 +238,7 @@ export async function app_language_2_refresh_learn(context) {
         false,
       );
       html_style(b, {
-        float: "left",
+        flex: "1",
       });
       let b2 = html_button_text_click(row, emoji_question(), async () => {
         decrease_wait();
