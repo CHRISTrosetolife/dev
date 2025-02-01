@@ -1,3 +1,4 @@
+import { app_ceb2 } from "./app_ceb2.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { storage_local_remove } from "./storage_local_remove.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
@@ -7,7 +8,8 @@ import { string_skip } from "./string_skip.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { each } from "./each.mjs";
 import { storage_local_keys } from "./storage_local_keys.mjs";
-export function app_ceb2_migrate(app_fn) {
+export function app_ceb2_migrate() {
+  let app_fn = app_ceb2;
   let other = {
     name: "",
   };
