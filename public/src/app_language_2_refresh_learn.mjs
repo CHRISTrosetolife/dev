@@ -52,7 +52,7 @@ import { identity } from "./identity.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { list_concat } from "./list_concat.mjs";
 export async function app_language_2_refresh_learn(context) {
-  let { app_fn, language_learn, language_fluent, root, words } = context;
+  let { app_fn, language_learn, language_fluent, root } = context;
   html_clear_scroll_top_centered(root);
   html_button_home(root, () => {
     app_language_2_refresh_home(context);
