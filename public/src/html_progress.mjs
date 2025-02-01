@@ -10,6 +10,11 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 export function html_progress(root, progress_text, index, count) {
   let button = html_button_width_full(root);
+  let result = {
+    button,
+    text_index,
+    count,
+  };
   html_span_text(button, string_combine_multiple([progress_text, " "]));
   let text_index = html_span(button);
   html_inner_set(number_locale(add_1(index)));
@@ -30,10 +35,5 @@ export function html_progress(root, progress_text, index, count) {
       "%)",
     ]),
   });
-  let result = {
-    button,
-    text_index,
-    count,
-  };
   return result;
 }
