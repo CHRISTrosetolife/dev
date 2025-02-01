@@ -1,3 +1,4 @@
+import { each_range } from "./each_range.mjs";
 import { log } from "./log.mjs";
 import { app_language_2 } from "./app_language_2.mjs";
 export async function app_ceb2() {
@@ -6,5 +7,6 @@ export async function app_ceb2() {
   for (let i = 0, len = localStorage.length; i < len; ++i) {
     console.log(localStorage.getItem(localStorage.key(i)));
   }
+  each_range(count, (item) => {});
   await app_language_2(app_ceb2, language_learn, language_fluent);
 }
