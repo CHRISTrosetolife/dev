@@ -15,6 +15,7 @@ export function storage_local_initialize_lambda(fn_namespace, key, value_get) {
     if (storage_local_exists(other, key)) {
       let migration = storage_local_get(other, key);
       storage_local_set(fn_namespace, key, migration);
+    } else {
     }
   }
   return storage_local_get(fn_namespace, key);
