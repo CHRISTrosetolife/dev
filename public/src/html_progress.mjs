@@ -1,3 +1,5 @@
+import { html_inner_set } from "./html_inner_set.mjs";
+import { html_span } from "./html_span.mjs";
 import { html_button_width_full } from "./html_button_width_full.mjs";
 import { number_locale } from "./number_locale.mjs";
 import { html_style_success_background } from "./html_style_success_background.mjs";
@@ -9,7 +11,8 @@ import { html_span_text } from "./html_span_text.mjs";
 export function html_progress(root, progress_text, index, count) {
   let button = html_button_width_full(root);
   html_span_text(button, string_combine_multiple([progress_text, " "]));
-  let text_index = html_span_text(button, number_locale(add_1(index)));
+  let text_index = html_span(button);
+  html_inner_set(number_locale(add_1(index)));
   html_span_text(
     button,
     string_combine_multiple([" of ", number_locale(count)]),
