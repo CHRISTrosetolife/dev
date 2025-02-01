@@ -118,12 +118,12 @@ export async function app_language_2_refresh_learn(context) {
       [],
     );
     let recent_count = 15;
-    let questions_recent_keys = list_take_soft(
+    let questions_recent = list_take_soft(
       questions_recent_keys_stored,
       recent_count,
     );
     let language = object_property_get(word, "language");
-    list_map(questions_recent_keys, (key) => {
+    list_map(questions_recent, (key) => {
       let list;
       if (language === language_fluent) {
         list = list_copy_reverse(list, key);
@@ -133,7 +133,7 @@ export async function app_language_2_refresh_learn(context) {
       return list_concat(list, [language]);
     });
     log({
-      questions_recent_keys,
+      questions_recent_keys: questions_recent,
     });
     let question = object_property_get(word, "question");
     let mapped = app_language_2_answers(values_skip_manual, v);
@@ -182,7 +182,7 @@ export async function app_language_2_refresh_learn(context) {
       (w) => object_property_get(w, "question") !== question,
     );
     let [recent_choices, older_choices] = list_partition(v_filtered2, (w) =>
-      list_includes(questions_recent_keys, object_property_get(w, "key")),
+      list_includes(questions_recent, object_property_get(w, "key")),
     );
     let other_taken_recent = app_language_2_answers_take(
       recent_choices,
