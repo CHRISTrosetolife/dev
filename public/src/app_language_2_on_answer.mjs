@@ -5,7 +5,7 @@ import { app_language_words_update } from "./app_language_words_update.mjs";
 export async function app_language_2_on_answer(
   context,
   questions_recent_stored,
-  word_key,
+  word,
   recent_count,
 ) {
   app_language_words_update(context);
