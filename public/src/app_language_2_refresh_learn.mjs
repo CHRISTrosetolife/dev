@@ -1,3 +1,4 @@
+import { html_button_text_click } from "./html_button_text_click.mjs";
 import { app_language_2_questions_recent_get } from "./app_language_2_questions_recent_get.mjs";
 import { json_to } from "./json_to.mjs";
 import { list_copy_reverse } from "./list_copy_reverse.mjs";
@@ -28,7 +29,6 @@ import { html_flag } from "./html_flag.mjs";
 import { html_button_home } from "./html_button_home.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { list_difference } from "./list_difference.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -208,29 +208,23 @@ export async function app_language_2_refresh_learn(context) {
         ]),
         quiz_container,
       );
-      let b = html_button_width_full_text_click(
-        quiz_container,
-        "",
-        async () => {
-          decrease_wait();
-          if (c === answer_text) {
-            html_style_success(b);
-            app_language_2_learn_success(context, v, true);
-          } else {
-            html_style_wrong(b);
-            app_language_2_wrong(context, v, gap_initial, wait_initial);
-          }
-          await app_language_2_on_answer(context, word, recent_count);
-        },
-      );
+      let b = html_button_text_click(quiz_container, "", async () => {
+        decrease_wait();
+        if (c === answer_text) {
+          html_style_success(b);
+          app_language_2_learn_success(context, v, true);
+        } else {
+          html_style_wrong(b);
+          app_language_2_wrong(context, v, gap_initial, wait_initial);
+        }
+        await app_language_2_on_answer(context, word, recent_count);
+      });
       html_span_text(b, string_combine_multiple([emoji_check(), " "]));
       let flag = html_flag_language_get(
         app_language_2_other(language, language_learn, language_fluent),
       );
       html_flag(b, flag);
       html_style_bold(b);
-      html_span_text(b, string_combine_multiple([" ", c]));
-      html_spacer_vertical_2(quiz_container);
       app_language_2_tutorial_message(
         context,
         string_combine_multiple([
@@ -238,24 +232,20 @@ export async function app_language_2_refresh_learn(context) {
         ]),
         quiz_container,
       );
-      let b2 = html_button_width_full_text_click(
-        quiz_container,
-        "",
-        async () => {
-          decrease_wait();
-          if (c === answer_text) {
-            html_style_success(b2);
-          } else {
-            html_style_wrong(b2);
-          }
-          app_language_2_wrong(context, v, gap_initial, wait_initial);
-          await app_language_2_on_answer(context, word, recent_count);
-        },
-      );
+      html_span_text(quiz_container, string_combine_multiple([" ", c]));
+      let b2 = html_button_text_click(quiz_container, "", async () => {
+        decrease_wait();
+        if (c === answer_text) {
+          html_style_success(b2);
+        } else {
+          html_style_wrong(b2);
+        }
+        app_language_2_wrong(context, v, gap_initial, wait_initial);
+        await app_language_2_on_answer(context, word, recent_count);
+      });
       html_span_text(b2, string_combine_multiple([emoji_question(), " "]));
       html_flag(b2, flag);
       html_style_bold(b2);
-      html_span_text(b2, string_combine_multiple([" ", c]));
       html_spacer_vertical_2(quiz_container);
     });
     app_language_2_skip(context, word);
