@@ -1,7 +1,6 @@
 import { app_language_2_questions_recent_get } from "./app_language_2_questions_recent_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
-import { object_property_set } from "./object_property_set.mjs";
 import { list_take_soft } from "./list_take_soft.mjs";
 import { number_max } from "./number_max.mjs";
 import { list_unique } from "./list_unique.mjs";
@@ -24,14 +23,5 @@ export function app_language_2_recent_update(context, word, recent_count) {
     questions_recent_stored,
     questions_recent_limit,
   );
-  object_property_set(
-    questions_recent_keys_by_language,
-    language,
-    questions_recent_stored,
-  );
-  storage_local_set(
-    app_fn,
-    "questions_recent",
-    questions_recent_keys_by_language,
-  );
+  storage_local_set(app_fn, "questions_recent", questions_recent_stored);
 }
