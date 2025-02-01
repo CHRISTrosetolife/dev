@@ -19,7 +19,7 @@ export function html_progress(root, progress_text, index, count) {
   html_span_text(button, string_combine_multiple([progress_text, " "]));
   let text_index = html_span(button);
   html_inner_set(number_locale(add_1(index)));
-  object_property_set(object, "property_name", value);
+  object_property_set(result, "index", index);
   html_span_text(
     button,
     string_combine_multiple([" of ", number_locale(count)]),
