@@ -168,7 +168,7 @@ export async function app_language_2_refresh_learn(context) {
     app_language_2_tutorial_message(
       context,
       string_combine_multiple([
-        'Try to remember the translation of the word above. Once you are ready to answer, choose "',
+        'Try to remember the translation of the word above. You may learn better if you remember the answer without seeing any choices. Once you are ready to answer, choose "',
         await app_language_refresh_quiz_text_ready(language_fluent),
         '".',
       ]),
