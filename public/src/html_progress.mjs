@@ -27,7 +27,7 @@ export function html_progress(root, progress_text, index, count) {
     (object_property_get(result, "index") /
       object_property_get(result, "index")) *
     100;
-  html_style(button, {
+  html_style(object_property_get(result, "button"), {
     background: string_combine_multiple([
       "linear-gradient(90deg, ",
       html_style_success_background(),
