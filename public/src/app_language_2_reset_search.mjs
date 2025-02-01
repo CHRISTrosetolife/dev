@@ -28,6 +28,7 @@ import { html_button_back } from "./html_button_back.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_span_text } from "./html_span_text.mjs";
+import { html_span } from "./html_span.mjs";
 export function app_language_2_reset_search(context, v) {
   let { root, words, language_learn, language_fluent } = context;
   html_clear_scroll_top_centered(root);
@@ -51,6 +52,7 @@ export function app_language_2_reset_search(context, v) {
       html_p_text(root, "Loading...");
       let progress = html_p(root);
       html_span_text(progress, "Progress: ");
+      let progress_value = html_span(progress);
       await sleep_0();
       let key2 = app_language_2_word_key(v2);
       let { group_flat } = app_language_2_group_get(context);
