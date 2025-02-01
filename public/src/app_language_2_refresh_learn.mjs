@@ -127,29 +127,6 @@ export async function app_language_2_refresh_learn(context) {
       questions_recent_keys_by_language,
       language,
     );
-    list_add_beginning(questions_recent_keys_stored, word_key);
-    questions_recent_keys_stored = list_unique(questions_recent_keys_stored);
-    let answer_count_max = 4;
-    let answer_choice_word_count_max = 10;
-    let recent_count = 15;
-    let questions_recent_limit = number_max(
-      recent_count,
-      answer_count_max * answer_choice_word_count_max,
-    );
-    questions_recent_keys_stored = list_take_soft(
-      questions_recent_keys_stored,
-      questions_recent_limit,
-    );
-    object_property_set(
-      questions_recent_keys_by_language,
-      language,
-      questions_recent_keys_stored,
-    );
-    storage_local_set(
-      app_fn,
-      "questions_recent",
-      questions_recent_keys_by_language,
-    );
     let questions_recent_keys = list_take_soft(
       questions_recent_keys_stored,
       recent_count,
@@ -288,6 +265,29 @@ export async function app_language_2_refresh_learn(context) {
       html_spacer_vertical_2(quiz_container);
     });
     app_language_2_skip(context, word);
+    let recent_count = 15;
+    list_add_beginning(questions_recent_keys_stored, word_key);
+    questions_recent_keys_stored = list_unique(questions_recent_keys_stored);
+    let answer_count_max = 4;
+    let answer_choice_word_count_max = 10;
+    let questions_recent_limit = number_max(
+      recent_count,
+      answer_count_max * answer_choice_word_count_max,
+    );
+    questions_recent_keys_stored = list_take_soft(
+      questions_recent_keys_stored,
+      questions_recent_limit,
+    );
+    object_property_set(
+      questions_recent_keys_by_language,
+      language,
+      questions_recent_keys_stored,
+    );
+    storage_local_set(
+      app_fn,
+      "questions_recent",
+      questions_recent_keys_by_language,
+    );
   }
   function app_language_2_answers_take(v_filtered2, mapped) {
     let answers = list_map_property(v_filtered2, "answer");
