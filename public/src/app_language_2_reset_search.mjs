@@ -76,7 +76,10 @@ export function app_language_2_reset_search(context, v) {
     });
     let word = object_property_get(v2, "word");
     let index = object_property_get(word, "index");
-    html_span_text(entry, string_combine_multiple(["Word ", index + 1, " "]));
+    html_span_text(
+      entry,
+      string_combine_multiple(["Word pair ", index + 1, " "]),
+    );
     let language = object_property_get(word, "language");
     let question = object_property_get(word, "question");
     app_language_2_word(entry, language, question);
