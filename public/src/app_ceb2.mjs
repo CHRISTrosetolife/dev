@@ -8,7 +8,7 @@ export async function app_ceb2() {
   for (let i = 0, len = localStorage.length; i < len; ++i) {
     console.log(localStorage.getItem());
   }
-  list_adder((la) => {
+  let keys = list_adder((la) => {
     each_range(localStorage.length, (i) => {
       la(localStorage.key(i));
     });
