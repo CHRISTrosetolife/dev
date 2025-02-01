@@ -27,6 +27,5 @@ export async function app_ceb2() {
       }
     }
   });
-  return;
   await app_language_2(app_fn, language_learn, language_fluent);
 }
