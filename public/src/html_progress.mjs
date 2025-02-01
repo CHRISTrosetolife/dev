@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_span } from "./html_span.mjs";
 import { html_button_width_full } from "./html_button_width_full.mjs";
@@ -18,6 +19,7 @@ export function html_progress(root, progress_text, index, count) {
   html_span_text(button, string_combine_multiple([progress_text, " "]));
   let text_index = html_span(button);
   html_inner_set(number_locale(add_1(index)));
+  object_property_set(object, "property_name", value);
   html_span_text(
     button,
     string_combine_multiple([" of ", number_locale(count)]),
