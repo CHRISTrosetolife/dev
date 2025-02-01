@@ -208,18 +208,21 @@ export async function app_language_2_refresh_learn(context) {
         ]),
         quiz_container,
       );
-      let b = html_button_text_click(quiz_container, "", async () => {
-        decrease_wait();
-        if (c === answer_text) {
-          html_style_success(b);
-          app_language_2_learn_success(context, v, true);
-        } else {
-          html_style_wrong(b);
-          app_language_2_wrong(context, v, gap_initial, wait_initial);
-        }
-        await app_language_2_on_answer(context, word, recent_count);
-      });
-      html_span_text(b, string_combine_multiple([emoji_check(), " "]));
+      let b = html_button_text_click(
+        quiz_container,
+        emoji_check(),
+        async () => {
+          decrease_wait();
+          if (c === answer_text) {
+            html_style_success(b);
+            app_language_2_learn_success(context, v, true);
+          } else {
+            html_style_wrong(b);
+            app_language_2_wrong(context, v, gap_initial, wait_initial);
+          }
+          await app_language_2_on_answer(context, word, recent_count);
+        },
+      );
       let flag = html_flag_language_get(
         app_language_2_other(language, language_learn, language_fluent),
       );
@@ -233,17 +236,20 @@ export async function app_language_2_refresh_learn(context) {
         quiz_container,
       );
       html_span_text(quiz_container, string_combine_multiple([" ", c]));
-      let b2 = html_button_text_click(quiz_container, "", async () => {
-        decrease_wait();
-        if (c === answer_text) {
-          html_style_success(b2);
-        } else {
-          html_style_wrong(b2);
-        }
-        app_language_2_wrong(context, v, gap_initial, wait_initial);
-        await app_language_2_on_answer(context, word, recent_count);
-      });
-      html_span_text(b2, string_combine_multiple([emoji_question(), " "]));
+      let b2 = html_button_text_click(
+        quiz_container,
+        emoji_question(),
+        async () => {
+          decrease_wait();
+          if (c === answer_text) {
+            html_style_success(b2);
+          } else {
+            html_style_wrong(b2);
+          }
+          app_language_2_wrong(context, v, gap_initial, wait_initial);
+          await app_language_2_on_answer(context, word, recent_count);
+        },
+      );
       html_flag(b2, flag);
       html_style_bold(b2);
       html_spacer_vertical_2(quiz_container);
