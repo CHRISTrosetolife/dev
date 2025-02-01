@@ -1,3 +1,4 @@
+import { list_map } from "./list_map.mjs";
 import { log } from "./log.mjs";
 import { app_language_2_on_answer } from "./app_language_2_on_answer.mjs";
 import { app_language_words_update } from "./app_language_words_update.mjs";
@@ -120,6 +121,7 @@ export async function app_language_2_refresh_learn(context) {
       questions_recent_keys_stored,
       recent_count,
     );
+    list_map(questions_recent_keys, (k) => {});
     log({
       questions_recent_keys,
     });
