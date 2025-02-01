@@ -8,7 +8,6 @@ import { app_language_2_refresh_learn_value_choose } from "./app_language_2_refr
 import { app_language_2_learn_success } from "./app_language_2_learn_success.mjs";
 import { list_partition } from "./list_partition.mjs";
 import { list_take_soft } from "./list_take_soft.mjs";
-import { log_json } from "./log_json.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
 import { app_language_refresh_quiz_text_ready } from "./app_language_refresh_quiz_text_ready.mjs";
 import { app_language_2_tutorial_message } from "./app_language_2_tutorial_message.mjs";
@@ -123,12 +122,12 @@ export async function app_language_2_refresh_learn(context) {
       },
     );
     let language = object_property_get(word, "language");
-    let questions_recent_keys = object_property_get(
+    let questions_recent_keys_stored = object_property_get(
       questions_recent_keys_by_language,
       language,
     );
-    list_add_beginning(questions_recent_keys, word_key);
-    questions_recent_keys = list_unique(questions_recent_keys);
+    list_add_beginning(questions_recent_keys_stored, word_key);
+    questions_recent_keys_stored = list_unique(questions_recent_keys_stored);
     let answer_count_max = 4;
     let answer_choice_word_count_max = 10;
     let recent_count = 15;
@@ -136,21 +135,24 @@ export async function app_language_2_refresh_learn(context) {
       recent_count,
       answer_count_max * answer_choice_word_count_max,
     );
-    questions_recent_keys = list_take_soft(
-      questions_recent_keys,
+    questions_recent_keys_stored = list_take_soft(
+      questions_recent_keys_stored,
       questions_recent_limit,
     );
     object_property_set(
       questions_recent_keys_by_language,
       language,
-      questions_recent_keys,
+      questions_recent_keys_stored,
     );
     storage_local_set(
       app_fn,
       "questions_recent",
       questions_recent_keys_by_language,
     );
-    log_json(questions_recent_keys_by_language);
+    let questions_recent_keys = list_take_soft(
+      questions_recent_keys_stored,
+      recent_count,
+    );
     let question = object_property_get(word, "question");
     let mapped = app_language_2_answers(values_skip_manual, v);
     let language_other = app_language_2_other(
