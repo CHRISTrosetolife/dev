@@ -1,7 +1,6 @@
 import { app_language_2_on_answer } from "./app_language_2_on_answer.mjs";
 import { log } from "./log.mjs";
 import { app_language_words_update } from "./app_language_words_update.mjs";
-import { app_language_2_answer_delay } from "./app_language_2_answer_delay.mjs";
 import { number_max } from "./number_max.mjs";
 import { app_language_2_refresh_learn_value_choose_initial } from "./app_language_2_refresh_learn_value_choose_initial.mjs";
 import { app_language_2_decrease_wait } from "./app_language_2_decrease_wait.mjs";
@@ -248,9 +247,7 @@ export async function app_language_2_refresh_learn(context) {
             html_style_wrong(b2);
           }
           app_language_2_wrong(context, v, gap_initial, wait_initial);
-          app_language_words_update(context);
-          await app_language_2_answer_delay();
-          await app_language_2_refresh_learn(context);
+          await app_language_2_on_answer(context);
         },
       );
       html_span_text(b2, string_combine_multiple([emoji_question(), " "]));
