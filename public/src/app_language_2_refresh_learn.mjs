@@ -289,6 +289,7 @@ export async function app_language_2_refresh_learn(context) {
     }
   }
   function app_language_2_answers_take(v_filtered2, mapped) {
+    let answers = list_map_property(v_filtered2, "answer");
     let others = list_difference(answers, mapped);
     let others_unique = list_unique(others);
     list_shuffle(others_unique);
