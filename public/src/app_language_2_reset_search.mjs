@@ -1,3 +1,5 @@
+import { html_progress_style_update } from "./html_progress_style_update.mjs";
+import { html_progress_index_set } from "./html_progress_index_set.mjs";
 import { html_progress } from "./html_progress.mjs";
 import { sleep_0 } from "./sleep_0.mjs";
 import { html_spacer_vertical_n } from "./html_spacer_vertical_n.mjs";
@@ -28,7 +30,6 @@ import { html_button_back } from "./html_button_back.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_span_text } from "./html_span_text.mjs";
-import { html_inner_set } from "./html_inner_set.mjs";
 export function app_language_2_reset_search(context, v) {
   let { root, words, language_learn, language_fluent } = context;
   html_clear_scroll_top_centered(root);
@@ -65,7 +66,8 @@ export function app_language_2_reset_search(context, v) {
           app_language_2_refresh_learn_value_choose(values);
         if (learn_new) {
           count++;
-          html_inner_set(progress_value, string_combine_multiple([count]));
+          html_progress_index_set(result, count);
+          html_progress_style_update(result);
           await sleep_0();
           let key = app_language_2_word_key(u);
           if (key === key2) {
