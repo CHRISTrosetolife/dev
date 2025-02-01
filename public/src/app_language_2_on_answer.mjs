@@ -12,7 +12,7 @@ export async function app_language_2_on_answer(
   app_language_2_recent_update(
     context,
     questions_recent_stored,
-    word_key,
+    word,
     recent_count,
     language,
   );
