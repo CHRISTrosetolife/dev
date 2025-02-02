@@ -1,3 +1,4 @@
+import { html_spacer_vertical } from "./html_spacer_vertical.mjs";
 import { app_language_2_answer_count_max } from "./app_language_2_answer_count_max.mjs";
 import { html_style_font_size_default_multiplied } from "./html_style_font_size_default_multiplied.mjs";
 import { html_p } from "./html_p.mjs";
@@ -272,7 +273,7 @@ export async function app_language_2_refresh_learn(context) {
       each([b, b2], (bi) => {
         html_style_font_size_default_multiplied(bi, 1.2);
       });
-      html_spacer_vertical_2(quiz_container);
+      html_spacer_vertical(quiz_container);
     });
     app_language_2_skip(context, word);
   }
