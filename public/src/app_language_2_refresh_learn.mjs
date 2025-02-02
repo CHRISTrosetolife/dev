@@ -257,6 +257,7 @@ export async function app_language_2_refresh_learn(context) {
         }
         await app_language_2_on_answer(context, word, recent_count);
       });
+      each(list2, (item) => {});
       html_spacer_vertical_2(quiz_container);
     });
     app_language_2_skip(context, word);
