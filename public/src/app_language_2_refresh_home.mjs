@@ -1,3 +1,5 @@
+import { html_p_text } from "./html_p_text.mjs";
+import { app_language_2_button_back_home } from "./app_language_2_button_back_home.mjs";
 import { emoji_setting } from "./emoji_setting.mjs";
 import { app_language_2_reset } from "./app_language_2_reset.mjs";
 import { html_button_reset } from "./html_button_reset.mjs";
@@ -39,7 +41,9 @@ export function app_language_2_refresh_home(context) {
     root,
     string_combine_multiple([emoji_setting(), " Settings"]),
     () => {
-      app_language_2_refresh_factor(context);
+      app_language_2_button_back_home(context);
+      let { root } = context;
+      html_p_text(root, "How many answers do you want to see?");
     },
   );
   let skip_manual = app_language_2_skip_manual_get(app_fn);
