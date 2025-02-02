@@ -4,7 +4,7 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 export function html_buttons_choices(root, choices, on_choose, choice_default) {
-  let button = list_adder((la) => {
+  let buttons = list_adder((la) => {
     each(choices, (choice) => {
       let b = html_button_width_full_text_click(root, choice, () => {
         on_choose(choice);
