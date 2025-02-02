@@ -1,3 +1,4 @@
+import { app_language_2_answer_count_max } from "./app_language_2_answer_count_max.mjs";
 import { html_style_font_size_default_multiplied } from "./html_style_font_size_default_multiplied.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_style } from "./html_style.mjs";
@@ -129,7 +130,7 @@ export async function app_language_2_refresh_learn(context) {
       let concat = list_concat(list, [language]);
       return json_to(concat);
     });
-    let choices_count = 4;
+    let choices_count = app_language_2_answer_count_max();
     log({
       questions_recent_keys,
     });
