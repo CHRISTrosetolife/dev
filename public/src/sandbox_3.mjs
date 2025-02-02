@@ -1,7 +1,7 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { list_pairs_to_lookup } from "./list_pairs_to_lookup.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 import { number_max_list } from "./number_max_list.mjs";
-import { list_index } from "./list_index.mjs";
 import { each_log_async } from "./each_log_async.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -34,7 +34,9 @@ export async function sandbox_3() {
   );
   let pairs = list_map_index(filtered2, (f, index) => [f, index]);
   let lookup = list_pairs_to_lookup(pairs);
-  let mapped = list_map(filtered2, (f) => list_index(filtered, f));
+  let mapped = list_map(filtered2, (f) =>
+    object_property_get(object, "property_name"),
+  );
   return number_max_list(mapped);
   await each_log_async(filtered2, async (t) => {
     await ceb_defintion_en(t);
