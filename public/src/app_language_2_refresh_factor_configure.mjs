@@ -60,6 +60,7 @@ export function app_language_2_refresh_factor_configure(
   html_p_text(root, "Choose a factor:");
   let n = range_from(11, 40);
   let factor_choices = list_map(n, (i) => i / 10);
+  let factor_selected = object_property_get(factor, "factor");
   let buttons = list_adder((la) => {
     each(factor_choices, (f) => {
       let b = html_button_width_full_text_click(root, f, () => {
@@ -74,7 +75,7 @@ export function app_language_2_refresh_factor_configure(
         });
       });
       la(b);
-      if (object_property_get(factor, "factor") === f) {
+      if (factor_selected === f) {
         html_style_success(b);
       }
     });
