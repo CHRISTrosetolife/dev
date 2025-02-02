@@ -1,3 +1,4 @@
+import { html_buttons_choices } from "./html_buttons_choices.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
@@ -13,12 +14,7 @@ import { html_value_get } from "./html_value_get.mjs";
 import { html_on_input } from "./html_on_input.mjs";
 import { html_input_width_full } from "./html_input_width_full.mjs";
 import { object_property_set } from "./object_property_set.mjs";
-import { html_style_button_default } from "./html_style_button_default.mjs";
-import { html_style_success } from "./html_style_success.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { each } from "./each.mjs";
-import { list_adder } from "./list_adder.mjs";
 import { list_map } from "./list_map.mjs";
 import { range_from } from "./range_from.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -61,24 +57,13 @@ export function app_language_2_refresh_factor_configure(
   let n = range_from(11, 40);
   let factor_choices = list_map(n, (i) => i / 10);
   let factor_selected = object_property_get(factor, "factor");
-  let buttons = list_adder((la) => {
-    each(factor_choices, (f) => {
-      let b = html_button_width_full_text_click(root, f, () => {
-        on_choose(f);
-        each(buttons, (b2) => {
-          if (b === b2) {
-            html_style_success(b2);
-          } else {
-            html_style_button_default(b2);
-          }
-        });
-      });
-      la(b);
-      if (factor_selected === f) {
-        html_style_success(b);
-      }
-    });
-  });
+  let buttons = html_buttons_choices(
+    factor_choices,
+    root,
+    on_choose,
+    buttons,
+    factor_selected,
+  );
   if (threshold_value >= threshold_min) {
     html_hr(root);
     html_button_delete(root, "this factor and threshold", () => {
