@@ -57,7 +57,7 @@ export function app_language_2_refresh_factor_configure(
   let n = range_from(11, 40);
   let factor_choices = list_map(n, (i) => i / 10);
   let factor_selected = object_property_get(factor, "factor");
-  let buttons = html_buttons_choices(
+  html_buttons_choices(
     root,
     factor_choices,
     on_choose,
