@@ -32,7 +32,7 @@ export async function sandbox_3() {
   let filtered2 = list_filter(filtered, (f) =>
     object_property_exists(dictionary, f),
   );
-  let pairs = list_map_index(filtered2, (f, index) => [f, index]);
+  let pairs = list_map_index(filtered, (f, index) => [f, index]);
   let lookup = list_pairs_to_lookup(pairs);
   let mapped = list_map(filtered2, (f) => object_property_get(lookup, f));
   return number_max_list(mapped);
