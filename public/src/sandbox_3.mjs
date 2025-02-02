@@ -1,3 +1,4 @@
+import { list_map_index } from "./list_map_index.mjs";
 import { number_max_list } from "./number_max_list.mjs";
 import { list_index } from "./list_index.mjs";
 import { each_log_async } from "./each_log_async.mjs";
@@ -30,6 +31,7 @@ export async function sandbox_3() {
   let filtered2 = list_filter(filtered, (f) =>
     object_property_exists(dictionary, f),
   );
+  let pairs = list_map_index(filtered2, (f, index) => [f, index]);
   let mapped = list_map(filtered2, (f) => list_index(filtered, f));
   return number_max_list(mapped);
   await each_log_async(filtered2, async (t) => {
