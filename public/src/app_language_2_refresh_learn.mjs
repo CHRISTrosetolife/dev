@@ -210,7 +210,7 @@ export async function app_language_2_refresh_learn(context) {
     });
     let other = list_map(chunked, list_join_comma_space);
     let answer_text = list_join_comma_space(mapped);
-    let choices = [answer_text, other];
+    let choices = list_concat([answer_text], other);
     list_shuffle(choices);
     each(choices, (c) => {
       let emoji_wrong = emoji_question();
