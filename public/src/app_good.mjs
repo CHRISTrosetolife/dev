@@ -36,6 +36,12 @@ export function app_good() {
           "Heal me",
           "Help me learn Cebuano",
           "Help my muscles grow",
+          "Let there be no adultery",
+          "Let there be no murder",
+          "Let there be no sickness",
+          "Let there be no thievery",
+          "Let there be no jealousy",
+          "Let there be no pornography",
           "Help the president",
         ]);
       }
