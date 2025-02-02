@@ -64,8 +64,7 @@ export function app_language_2_refresh_factor_configure(
   let buttons = list_adder((la) => {
     each(factor_choices, (f) => {
       let b = html_button_width_full_text_click(root, f, () => {
-        object_property_set(factor, "factor", f);
-        app_language_2_factor_set(context, factors);
+        on_choose(f);
         each(buttons, (b2) => {
           if (b === b2) {
             html_style_success(b2);
@@ -87,5 +86,9 @@ export function app_language_2_refresh_factor_configure(
       app_language_2_factor_set(context, factors);
       app_language_2_refresh_factor(context);
     });
+  }
+  function on_choose(f) {
+    object_property_set(factor, "factor", f);
+    app_language_2_factor_set(context, factors);
   }
 }
