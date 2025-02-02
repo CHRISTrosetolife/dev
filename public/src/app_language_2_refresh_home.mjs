@@ -1,3 +1,4 @@
+import { app_language_2_answer_count_max } from "./app_language_2_answer_count_max.mjs";
 import { range_1 } from "./range_1.mjs";
 import { app_language_2_answer_count_get } from "./app_language_2_answer_count_get.mjs";
 import { html_buttons_choices } from "./html_buttons_choices.mjs";
@@ -50,7 +51,7 @@ export function app_language_2_refresh_home(context) {
       html_p_text(root, "How many answers do you want to see?");
       html_buttons_choices(
         root,
-        range_1(4),
+        range_1(app_language_2_answer_count_max()),
         (count) => storage_local_set(app_fn, "answer_count", count),
         app_language_2_answer_count_get(context),
       );
