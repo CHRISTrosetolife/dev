@@ -283,7 +283,7 @@ export async function app_language_2_refresh_learn(context) {
     list_shuffle(others_unique);
     let other_taken = list_take_soft(
       others_unique,
-      list_size(mapped) * choices_count - 1,
+      list_size(mapped) * (choices_count - 1),
     );
     return other_taken;
   }
