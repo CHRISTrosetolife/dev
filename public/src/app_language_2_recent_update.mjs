@@ -1,3 +1,4 @@
+import { app_language_2_answer_count_max } from "./app_language_2_answer_count_max.mjs";
 import { list_unique_json } from "./list_unique_json.mjs";
 import { app_language_2_questions_recent_get } from "./app_language_2_questions_recent_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -19,7 +20,7 @@ export function app_language_2_recent_update(context, word, recent_count) {
   let questions_recent_stored = app_language_2_questions_recent_get(context);
   list_add_beginning(questions_recent_stored, recent_new);
   questions_recent_stored = list_unique_json(questions_recent_stored);
-  let answer_count_max = 4;
+  let answer_count_max = app_language_2_answer_count_max();
   let answer_choice_word_count_max = 10;
   let questions_recent_limit = number_max(
     recent_count,
