@@ -129,6 +129,7 @@ export async function app_language_2_refresh_learn(context) {
       let concat = list_concat(list, [language]);
       return json_to(concat);
     });
+    let choices_count = 4;
     log({
       questions_recent_keys,
     });
