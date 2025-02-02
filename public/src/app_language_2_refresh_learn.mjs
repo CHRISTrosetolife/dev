@@ -205,8 +205,9 @@ export async function app_language_2_refresh_learn(context) {
       list_size(mapped) * choices_count,
     );
     let chunked = list_chunk(other_taken, list_size(mapped));
-    each(list2, (item) => {});
-    list_sort_string(other_taken, identity);
+    each(chunked, (c) => {
+      list_sort_string(other_taken, identity);
+    });
     let other = list_join_comma_space(other_taken);
     let answer_text = list_join_comma_space(mapped);
     let choices = [answer_text, other];
