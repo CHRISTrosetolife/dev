@@ -206,7 +206,7 @@ export async function app_language_2_refresh_learn(context) {
     );
     let chunked = list_chunk(other_taken, list_size(mapped));
     each(chunked, (c) => {
-      list_sort_string(other_taken, identity);
+      list_sort_string(c, identity);
     });
     let other = list_join_comma_space(other_taken);
     let answer_text = list_join_comma_space(mapped);
