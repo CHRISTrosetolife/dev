@@ -1,3 +1,4 @@
+import { list_pairs_to_lookup } from "./list_pairs_to_lookup.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 import { number_max_list } from "./number_max_list.mjs";
 import { list_index } from "./list_index.mjs";
@@ -32,6 +33,7 @@ export async function sandbox_3() {
     object_property_exists(dictionary, f),
   );
   let pairs = list_map_index(filtered2, (f, index) => [f, index]);
+  let lookup = list_pairs_to_lookup(pairs);
   let mapped = list_map(filtered2, (f) => list_index(filtered, f));
   return number_max_list(mapped);
   await each_log_async(filtered2, async (t) => {
