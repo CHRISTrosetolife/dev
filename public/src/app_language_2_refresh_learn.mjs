@@ -208,6 +208,7 @@ export async function app_language_2_refresh_learn(context) {
     each(chunked, (c) => {
       list_sort_string(c, identity);
     });
+    list_map(chunked, list_join_comma_space);
     let other = list_join_comma_space(other_taken);
     let answer_text = list_join_comma_space(mapped);
     let choices = [answer_text, other];
