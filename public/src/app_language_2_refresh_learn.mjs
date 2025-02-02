@@ -186,8 +186,13 @@ export async function app_language_2_refresh_learn(context) {
     let other_taken_recent = app_language_2_answers_take(
       recent_choices,
       mapped,
+      choices_count,
     );
-    let other_taken_older = app_language_2_answers_take(older_choices, mapped);
+    let other_taken_older = app_language_2_answers_take(
+      older_choices,
+      mapped,
+      choices_count,
+    );
     let other_taken_concat = list_concat(other_taken_recent, other_taken_older);
     let other_taken_concat_unique = list_unique(other_taken_concat);
     log({
