@@ -1,5 +1,4 @@
 import { html_style_font_size_default_multiplied } from "./html_style_font_size_default_multiplied.mjs";
-import { app_language_2_font_size } from "./app_language_2_font_size.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
@@ -260,7 +259,6 @@ export async function app_language_2_refresh_learn(context) {
         await app_language_2_on_answer(context, word, recent_count);
       });
       each([b, b2], (bi) => {
-        app_language_2_font_size();
         html_style_font_size_default_multiplied(bi, 1.2);
       });
       html_spacer_vertical_2(quiz_container);
