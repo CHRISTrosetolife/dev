@@ -4,8 +4,8 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 export function html_buttons_choices(
-  factor_choices,
   root,
+  factor_choices,
   on_choose,
   buttons,
   factor_selected,
