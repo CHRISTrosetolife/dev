@@ -1,3 +1,5 @@
+import { storage_local_get } from "./storage_local_get.mjs";
+import { html_buttons_choices } from "./html_buttons_choices.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { app_language_2_button_back_home } from "./app_language_2_button_back_home.mjs";
 import { emoji_setting } from "./emoji_setting.mjs";
@@ -20,6 +22,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { storage_local_exists } from "./storage_local_exists.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
+import { storage_local_set } from "./storage_local_set.mjs";
 export function app_language_2_refresh_home(context) {
   let { root, app_fn } = context;
   html_clear_scroll_top_centered(root);
@@ -42,8 +45,14 @@ export function app_language_2_refresh_home(context) {
     string_combine_multiple([emoji_setting(), " Settings"]),
     () => {
       app_language_2_button_back_home(context);
-      let { root } = context;
+      let { root, app_fn } = context;
       html_p_text(root, "How many answers do you want to see?");
+      html_buttons_choices(
+        root,
+        factor_choices,
+        (count) => storage_local_set(app_fn, "answer_count", count),
+        storage_local_get(app_fn, "answer_count"),
+      );
     },
   );
   let skip_manual = app_language_2_skip_manual_get(app_fn);
