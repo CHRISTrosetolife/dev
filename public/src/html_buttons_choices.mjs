@@ -7,7 +7,6 @@ export function html_buttons_choices(
   root,
   factor_choices,
   on_choose,
-  buttons,
   factor_selected,
 ) {
   return list_adder((la) => {
