@@ -37,6 +37,7 @@ export function app_good() {
           "Heal me",
           "Help me learn Cebuano",
           "Help my muscles grow",
+          "Let there be harvest workers",
           "Let there be no adultery",
           "Let there be no murder",
           "Let there be no sickness",
