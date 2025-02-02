@@ -1,6 +1,3 @@
-import { list_to_lookup_indices } from "./list_to_lookup_indices.mjs";
-import { object_property_get } from "./object_property_get.mjs";
-import { number_max_list } from "./number_max_list.mjs";
 import { each_log_async } from "./each_log_async.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -31,9 +28,6 @@ export async function sandbox_3() {
   let filtered2 = list_filter(filtered, (f) =>
     object_property_exists(dictionary, f),
   );
-  let lookup = list_to_lookup_indices(filtered);
-  let mapped = list_map(filtered2, (f) => object_property_get(lookup, f));
-  return number_max_list(mapped);
   await each_log_async(filtered2, async (t) => {
     await ceb_defintion_en(t);
   });
