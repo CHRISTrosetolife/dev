@@ -201,7 +201,7 @@ export async function app_language_2_refresh_learn(context) {
     });
     let other_taken = list_take_soft(
       other_taken_concat_unique,
-      list_size(mapped),
+      list_size(mapped) * choices_count,
     );
     list_sort_string(other_taken, identity);
     let other = list_join_comma_space(other_taken);
