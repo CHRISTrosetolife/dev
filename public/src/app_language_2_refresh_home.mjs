@@ -1,3 +1,4 @@
+import { range } from "./range.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { html_buttons_choices } from "./html_buttons_choices.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -49,7 +50,7 @@ export function app_language_2_refresh_home(context) {
       html_p_text(root, "How many answers do you want to see?");
       html_buttons_choices(
         root,
-        factor_choices,
+        range(4),
         (count) => storage_local_set(app_fn, "answer_count", count),
         storage_local_get(app_fn, "answer_count"),
       );
