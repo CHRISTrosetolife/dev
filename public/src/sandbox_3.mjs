@@ -28,7 +28,7 @@ export async function sandbox_3() {
   let filtered2 = list_filter(filtered, (f) =>
     object_property_exists(dictionary, f),
   );
-  await each_log_async(filtered2, async (t) => {
+  await each_log_async(filtered, async (t) => {
     await ceb_defintion_en(t);
   });
 }
