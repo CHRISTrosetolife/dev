@@ -1,4 +1,4 @@
-import { storage_local_initialize } from "./storage_local_initialize.mjs";
+import { app_language_2_answer_count_get } from "./app_language_2_answer_count_get.mjs";
 import { range } from "./range.mjs";
 import { html_buttons_choices } from "./html_buttons_choices.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -52,7 +52,7 @@ export function app_language_2_refresh_home(context) {
         root,
         range(4),
         (count) => storage_local_set(app_fn, "answer_count", count),
-        storage_local_initialize(app_fn, "answer_count", 4),
+        app_language_2_answer_count_get(context),
       );
     },
   );
