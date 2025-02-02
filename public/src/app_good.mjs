@@ -42,6 +42,9 @@ export function app_good() {
           "Let there be no thievery",
           "Let there be no jealousy",
           "Let there be no pornography",
+          "Let there be life",
+          "Let all preaching be perfect",
+          "Let all teaching be perfect",
           "Help the president",
         ]);
       }
