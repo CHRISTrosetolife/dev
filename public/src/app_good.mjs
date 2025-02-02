@@ -20,6 +20,8 @@ export function app_good() {
           "Cause me to perfectly obey the Father",
           "Cause me to perfectly obey Jesus",
           "Cause me to perfectly obey the Holy Spirit",
+          "Bless our marriage",
+          "Bless our children",
           "Cause me to fulfill my ministry",
           "Cause me to suffer in the flesh and cease from sin",
           "Cause me to either speak perfectly or be silent",
