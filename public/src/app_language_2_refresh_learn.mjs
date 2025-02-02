@@ -202,7 +202,7 @@ export async function app_language_2_refresh_learn(context) {
     });
     let other_taken = list_take_soft(
       other_taken_concat_unique,
-      list_size(mapped) * choices_count,
+      list_size(mapped) * (choices_count - 1),
     );
     let chunked = list_chunk(other_taken, list_size(mapped));
     each(chunked, (c) => {
