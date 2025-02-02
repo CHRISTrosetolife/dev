@@ -26,6 +26,7 @@ export function app_good() {
           "Give me wisdom",
           "Lead all souls to Jesus",
           "Cause all to choose good",
+          "Wisen all Christians",
           "Unite the church",
           "May the church be united about head coverings",
           "May the church be united about transgender",
