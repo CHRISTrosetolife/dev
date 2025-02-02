@@ -3,14 +3,9 @@ import { html_style_success } from "./html_style_success.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
-export function html_buttons_choices(
-  root,
-  factor_choices,
-  on_choose,
-  factor_selected,
-) {
+export function html_buttons_choices(root, choices, on_choose, choice_default) {
   return list_adder((la) => {
-    each(factor_choices, (f) => {
+    each(choices, (f) => {
       let b = html_button_width_full_text_click(root, f, () => {
         on_choose(f);
         each(buttons, (b2) => {
@@ -22,7 +17,7 @@ export function html_buttons_choices(
         });
       });
       la(b);
-      if (factor_selected === f) {
+      if (choice_default === f) {
         html_style_success(b);
       }
     });
