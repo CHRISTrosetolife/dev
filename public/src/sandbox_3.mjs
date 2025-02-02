@@ -1,6 +1,5 @@
+import { list_to_lookup_indices } from "./list_to_lookup_indices.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { list_pairs_to_lookup } from "./list_pairs_to_lookup.mjs";
-import { list_map_index } from "./list_map_index.mjs";
 import { number_max_list } from "./number_max_list.mjs";
 import { each_log_async } from "./each_log_async.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -32,8 +31,7 @@ export async function sandbox_3() {
   let filtered2 = list_filter(filtered, (f) =>
     object_property_exists(dictionary, f),
   );
-  let pairs = list_map_index(filtered, (f, index) => [f, index]);
-  let lookup = list_pairs_to_lookup(pairs);
+  let lookup = list_to_lookup_indices(filtered);
   let mapped = list_map(filtered2, (f) => object_property_get(lookup, f));
   return number_max_list(mapped);
   await each_log_async(filtered2, async (t) => {
