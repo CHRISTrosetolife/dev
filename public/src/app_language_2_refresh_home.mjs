@@ -1,5 +1,5 @@
+import { range_1 } from "./range_1.mjs";
 import { app_language_2_answer_count_get } from "./app_language_2_answer_count_get.mjs";
-import { range } from "./range.mjs";
 import { html_buttons_choices } from "./html_buttons_choices.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { app_language_2_button_back_home } from "./app_language_2_button_back_home.mjs";
@@ -50,7 +50,7 @@ export function app_language_2_refresh_home(context) {
       html_p_text(root, "How many answers do you want to see?");
       html_buttons_choices(
         root,
-        range(4),
+        range_1(4),
         (count) => storage_local_set(app_fn, "answer_count", count),
         app_language_2_answer_count_get(context),
       );
