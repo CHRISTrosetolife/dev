@@ -277,7 +277,10 @@ export async function app_language_2_refresh_learn(context) {
     let others = list_difference(answers, mapped);
     let others_unique = list_unique(others);
     list_shuffle(others_unique);
-    let other_taken = list_take_soft(others_unique, list_size(mapped));
+    let other_taken = list_take_soft(
+      others_unique,
+      list_size(mapped) * choices_count,
+    );
     return other_taken;
   }
   function decrease_wait() {
