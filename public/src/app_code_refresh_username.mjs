@@ -75,4 +75,5 @@ export function app_code_refresh_username(context) {
     html_button_enable_if(button_save, valid);
   });
   html_hr(root);
+  html_button_width_full_text_click(root, "Skip", () => {});
 }
