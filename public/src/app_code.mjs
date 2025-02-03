@@ -24,8 +24,11 @@ export async function app_code() {
     ]);
     html_input_width_full_placeholder(parent, "Username");
     function username_valid(username) {
-      let fns = [string_letter_is, string_underscore_is, string_digit_is];
-      return string_all_or(username, fns);
+      return string_all_or(username, [
+        string_letter_is,
+        string_underscore_is,
+        string_digit_is,
+      ]);
     }
   } else {
     app_code_refresh(context);
