@@ -11,9 +11,10 @@ export function html_condition_letters_numbers_underscores() {
     message: (value) => {
       let value_as_list = string_split_empty(value);
       let characters_invalid = list_filter_not(value_as_list, valid_is);
+          const unique = list_unique(characters_invalid);
       return string_combine_multiple([
         "contain only letters, numbers or underscores; contains: ",
-        list_unique(characters_invalid),
+        unique,
       ]);
     },
     condition: valid_is,
