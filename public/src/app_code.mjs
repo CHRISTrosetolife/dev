@@ -42,7 +42,13 @@ export async function app_code() {
     html_style_font_color(p_error_message, error_color);
     html_on_input_initial(input_username, () => {
       let username = html_value_get(input_username);
-      let conditions = [html_condition_empty_not()];
+      let conditions = [
+        html_condition_empty_not(),
+        {
+          message: "not be empty",
+          condition: string_empty_not_is,
+        },
+      ];
       let uv = username_valid(username);
       html_style_display_block_or_none(p_error_message, !uv);
       let message = uv
