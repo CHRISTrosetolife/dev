@@ -5,5 +5,5 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
-  await http_storage_get(app_code_local_functions_path());
+  let s = await http_storage_get(app_code_local_functions_path());
 }
