@@ -1,6 +1,5 @@
-import { list_all_true } from "./list_all_true.mjs";
+import { list_all } from "./list_all.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { list_map } from "./list_map.mjs";
 import { html_condition_empty_not } from "./html_condition_empty_not.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_style_default_border_value } from "./html_style_default_border_value.mjs";
@@ -56,10 +55,9 @@ export async function app_code() {
             ]),
         },
       ];
-      let mapped = list_map(conditions, (c) =>
+      let uv = list_all(conditions, (c) =>
         object_property_get(c, "condition")(username),
       );
-      let uv = list_all_true(mapped);
       html_style_display_block_or_none(p_error_message, !uv);
       let message = uv
         ? ""
