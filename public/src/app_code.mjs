@@ -1,4 +1,4 @@
-import { each } from "./each.mjs";
+import { each_or } from "./each_or.mjs";
 import { string_underscore_is } from "./string_underscore_is.mjs";
 import { string_digit_is } from "./string_digit_is.mjs";
 import { list_all } from "./list_all.mjs";
@@ -29,14 +29,7 @@ export async function app_code() {
       let list = string_split_empty(username);
       list_all(list, (l) => {
         let fns = [string_letter_is, string_underscore_is, string_digit_is];
-        let result = false;
-        each(fns, (fn) => {
-          if (fn(l)) {
-            result = true;
-            return true;
-          }
-        });
-        return result;
+        return each_or(fns, l);
       });
       return list_all(list, (l) => string_letter_is(l));
     }
