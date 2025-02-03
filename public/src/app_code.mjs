@@ -10,6 +10,6 @@ export async function app_code() {
   };
   if (storage_local_exists_not(app_code, "username")) {
   } else {
+    app_code_refresh(context);
   }
-  app_code_refresh(context);
 }
