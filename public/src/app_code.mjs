@@ -12,10 +12,9 @@ export async function app_code() {
   };
   if (storage_local_exists_not(app_code, "username")) {
     let root = html_clear_scroll_top_centered_context(context);
-    html_p_text_multiple(
-      root,
+    html_p_text_multiple(root, [
       "In order to store data for later, you need a username",
-    );
+    ]);
   } else {
     app_code_refresh(context);
   }
