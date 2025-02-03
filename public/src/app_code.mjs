@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_style_default_border_value } from "./html_style_default_border_value.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_style_display_block_or_none } from "./html_style_display_block_or_none.mjs";
@@ -42,7 +43,9 @@ export async function app_code() {
       let username = html_value_get(input_username);
       let uv = username_valid(username);
       html_style_display_block_or_none(p_error_message, !uv);
-      let message = uv ? "" : "Username invalid";
+      let message = uv
+        ? ""
+        : string_combine_multiple([placeholder, " invalid"]);
       html_inner_set(p_error_message, message);
       let border_color = html_style_default_border_value(
         uv ? "white" : error_color,
