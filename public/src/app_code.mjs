@@ -54,9 +54,7 @@ export async function app_code() {
           c,
         ),
       );
-      let uv = list_all(mapped, (c) =>
-        object_property_get(object, "property_name"),
-      );
+      let uv = list_all(mapped, (c) => !object_property_get(c, "value"));
       html_style_display_block_or_none(p_error_message, !uv);
       let message = uv
         ? ""
