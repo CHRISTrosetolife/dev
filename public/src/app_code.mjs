@@ -12,5 +12,5 @@ export async function app_code() {
   let files = await http_storage_get(app_code_local_functions_path());
   global_files_initialize(files);
   let file_paths = object_properties(files);
-  html_p_text(root, json_to(files));
+  html_p_text(root, json_to(file_paths));
 }
