@@ -32,7 +32,8 @@ export async function app_code() {
       "If you do not want to store data for later, you may skip this",
       "At this time there are no passwords. You should choose a unique username or someone could overwrite your data.",
     ]);
-    let input_username = html_input_width_full_placeholder(root, "Username");
+    let placeholder = "Username";
+    let input_username = html_input_width_full_placeholder(root, placeholder);
     let p_error_message = html_div(root);
     html_style_rounded_padded(p_error_message);
     let error_color = "darkred";
