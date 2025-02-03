@@ -57,12 +57,10 @@ export async function app_code() {
             ]),
         },
       ];
-      let uv = list_all(
-        list_map(conditions, (c) =>
-          object_property_get(c, "condition")(username),
-        ),
-        identity,
+      let mapped = list_map(conditions, (c) =>
+        object_property_get(c, "condition")(username),
       );
+      let uv = list_all(mapped, identity);
       html_style_display_block_or_none(p_error_message, !uv);
       let message = uv
         ? ""
