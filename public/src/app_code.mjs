@@ -25,7 +25,7 @@ export async function app_code() {
     function username_valid(username) {
       let list = string_split_empty(username);
       list_all(list, (l) => string_letter_is(l));
-      return;
+      return list_all(list, (l) => string_letter_is(l));
     }
   } else {
     app_code_refresh(context);
