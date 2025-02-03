@@ -1,6 +1,5 @@
 import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_style_display_block_or_none } from "./html_style_display_block_or_none.mjs";
-import { app_learn_code_style_code_error } from "./app_learn_code_style_code_error.mjs";
 import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
 import { html_div } from "./html_div.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
@@ -34,8 +33,7 @@ export async function app_code() {
     let input_username = html_input_width_full_placeholder(root, "Username");
     let p_error_message = html_div(root);
     html_style_rounded_padded(p_error_message);
-    app_learn_code_style_code_error(p_error_message);
-    html_style_font_color(p_error_message, "white");
+    html_style_font_color(p_error_message, "darkred");
     html_on_input_initial(input_username, () => {
       let username = html_value_get(input_username);
       let uv = username_valid(username);
