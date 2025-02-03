@@ -12,6 +12,7 @@ import { object_properties } from "./object_properties.mjs";
 export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
+  html_clear_scroll_top_centered();
   html_button_width_full_text_click(root, "Functions", async () => {
     html_clear_scroll_top_centered();
     let files = await http_storage_get(app_code_local_functions_path());
