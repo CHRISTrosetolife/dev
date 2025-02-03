@@ -12,9 +12,13 @@ export function app_code_refresh(root) {
   html_clear_scroll_top_centered();
   html_button_width_full_text_click(root, "Functions", async () => {
     html_clear_scroll_top_centered();
-    html_button_back(root, () => {app_code_refresh(root)});
+    html_button_back(root, () => {
+      app_code_refresh(root);
+    });
     let files = await http_storage_get(app_code_local_functions_path());
     global_files_initialize(files);
     let file_paths = object_properties(files);
     let mapped2 = list_map(file_paths, function_path_to_name);
-    html_list(ro
+    html_list(root, mapped2);
+  });
+}
