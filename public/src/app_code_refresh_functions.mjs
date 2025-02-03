@@ -8,7 +8,7 @@ import { http_storage_get } from "./http_storage_get.mjs";
 import { app_code_refresh } from "./app_code_refresh.mjs";
 import { html_button_back } from "./html_button_back.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
-export async function app_code_refresh_functions(root) {
+export async function app_code_refresh_functions(context) {
   html_clear_scroll_top_centered();
   html_button_back(root, () => {
     app_code_refresh(root);
