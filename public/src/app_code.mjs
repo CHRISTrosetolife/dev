@@ -1,4 +1,4 @@
-import { list_all } from "./list_all.mjs";
+import { list_filter } from "./list_filter.mjs";
 import { list_map } from "./list_map.mjs";
 import { html_condition_letters_numbers_underscores } from "./html_condition_letters_numbers_underscores.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -21,6 +21,7 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_style } from "./html_style.mjs";
 import { object_merge } from "./object_merge.mjs";
+import { list_empty_is } from "./list_empty_is.mjs";
 export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
@@ -54,7 +55,8 @@ export async function app_code() {
           c,
         ),
       );
-      let uv = list_all(mapped, (c) => object_property_get(c, "valid"));
+      let errors = list_filter(mapped, (c) => !object_property_get(c, "valid"));
+      let uv = list_empty_is(errors);
       html_style_display_block_or_none(p_error_message, !uv);
       let message = uv
         ? ""
