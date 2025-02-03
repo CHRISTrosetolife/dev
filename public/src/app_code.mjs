@@ -7,5 +7,7 @@ export async function app_code() {
   let context = {
     root,
   };
+  if (false) {
+  }
   app_code_refresh(context);
 }
