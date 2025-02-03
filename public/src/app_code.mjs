@@ -1,3 +1,4 @@
+import { string_underscore_is } from "./string_underscore_is.mjs";
 import { string_digit_is } from "./string_digit_is.mjs";
 import { list_all } from "./list_all.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
@@ -28,7 +29,7 @@ export async function app_code() {
       list_all(
         list,
         (l) =>
-          string_letter_is(l) || stringnewFunction(l) || string_digit_is(l),
+          string_letter_is(l) || string_underscore_is(l) || string_digit_is(l),
       );
       return list_all(list, (l) => string_letter_is(l));
     }
