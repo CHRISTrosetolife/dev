@@ -1,8 +1,8 @@
+import { storage_upload_object } from "./storage_upload_object.mjs";
 import { log } from "./log.mjs";
 import { folder_parent_exists_ensure } from "./folder_parent_exists_ensure.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { bible_verses_upload_path } from "./bible_verses_upload_path.mjs";
-import { storage_upload_object_gitignore } from "./storage_upload_object_gitignore.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { bible_books_chapter_each } from "./bible_books_chapter_each.mjs";
 import { list_map } from "./list_map.mjs";
@@ -26,7 +26,7 @@ export async function bible_verses_upload(bible_folder) {
         chapter,
         verse_number,
       );
-      await storage_upload_object_gitignore(storage_path, {
+      await storage_upload_object(storage_path, {
         tokens,
       });
     });
