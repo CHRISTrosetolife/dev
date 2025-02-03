@@ -1,3 +1,4 @@
+import { http_storage_get } from "./http_storage_get.mjs";
 import { html_button_home } from "./html_button_home.mjs";
 import { html_script_axios } from "./html_script_axios.mjs";
 import { list_size } from "./list_size.mjs";
@@ -31,7 +32,7 @@ export async function app_yyy8Uu() {
   let root = html_style_default_initialize();
   await html_script_axios(root);
   let file_path = yyy8Uu_storage_path("chapter_names");
-  let { chapter_names } = await http_storage(file_path);
+  let { chapter_names } = await http_storage_get(file_path);
   let index_last = list_index_last(chapter_names);
   let separator = "-";
   let split = list_map(chapter_names, (c) => string_split(c, separator));
