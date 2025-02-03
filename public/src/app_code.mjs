@@ -56,14 +56,14 @@ export async function app_code() {
         ),
       );
       let errors = list_filter(mapped, (c) => !object_property_get(c, "valid"));
-      let uv = list_empty_is(errors);
-      html_style_display_block_or_none(p_error_message, !uv);
-      let message = uv
+      let valid = list_empty_is(errors);
+      html_style_display_block_or_none(p_error_message, !valid);
+      let message = valid
         ? ""
         : string_combine_multiple([placeholder, " invalid: must "]);
       html_inner_set(p_error_message, message);
       let border_color = html_style_default_border_value(
-        uv ? "green" : error_color,
+        valid ? "green" : error_color,
       );
       html_style(input_username, border_color);
     });
