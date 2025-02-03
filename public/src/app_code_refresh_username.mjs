@@ -37,6 +37,7 @@ export function app_code_refresh_username(context) {
   let error_color = "darkred";
   html_style_font_color(p_error_message, error_color);
   let button_save = html_button_width_full_text_click(root, "Save", () => {
+    let value = html_value_get(input_username);
     next();
   });
   html_on_input_initial(input_username, () => {
