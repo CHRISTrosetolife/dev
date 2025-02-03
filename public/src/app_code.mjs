@@ -1,3 +1,4 @@
+import { list_all } from "./list_all.mjs";
 import { string_letter_is } from "./string_letter_is.mjs";
 import { html_input_width_full_placeholder } from "./html_input_width_full_placeholder.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
@@ -21,6 +22,7 @@ export async function app_code() {
     ]);
     html_input_width_full_placeholder(parent, "Username");
     function username_valid(username) {
+      list_all();
       return string_letter_is();
     }
   } else {
