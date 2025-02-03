@@ -28,6 +28,7 @@ export function app_good() {
           "Cause me to suffer in the flesh and cease from sin",
           "Cause me to either speak perfectly or be silent",
           "Give me wisdom",
+          "Let my prayer be perfect",
           "Lead all souls to Jesus",
           "Cause all to choose good",
           "Wisen all Christians",
