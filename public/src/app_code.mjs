@@ -14,6 +14,7 @@ export async function app_code() {
     let root = html_clear_scroll_top_centered_context(context);
     html_p_text_multiple(root, [
       "In order to store data for later, you need a username",
+      "If you do not want to store data for later, you may skip this",
       "At this time there are no passwords. You should choose a unique username or someone could overwrite your data.",
     ]);
   } else {
