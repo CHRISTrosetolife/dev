@@ -1,4 +1,4 @@
-import { each_or } from "./each_or.mjs";
+import { list_all_or } from "./list_all_or.mjs";
 import { string_underscore_is } from "./string_underscore_is.mjs";
 import { string_digit_is } from "./string_digit_is.mjs";
 import { list_all } from "./list_all.mjs";
@@ -35,9 +35,3 @@ export async function app_code() {
     app_code_refresh(context);
   }
 }
-function list_all_or(list, conditions) {
-    list_all(list, (l) => {
-        return each_or(l, conditions);
-    });
-}
-
