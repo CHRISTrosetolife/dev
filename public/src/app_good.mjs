@@ -52,6 +52,10 @@ export function app_good() {
           "Let all teaching be perfect",
           "Help the president",
           "Bless the nails of love",
+          "Bless my works",
+          "Bless my word of God speech",
+          "Bless my programming",
+          "Bless my apps",
         ]);
       }
     });
