@@ -41,7 +41,7 @@ export async function app_code() {
     let error_color = "darkred";
     html_style_font_color(p_error_message, error_color);
     html_on_input_initial(input_username, () => {
-      let username = html_value_get(input_username);
+      let value = html_value_get(input_username);
       let conditions = [
         html_condition_empty_not(),
         html_condition_letters_numbers_underscores(),
@@ -49,7 +49,7 @@ export async function app_code() {
       let mapped = list_map(conditions, (c) =>
         object_merge(
           {
-            valid: object_property_get(c, "condition")(username),
+            valid: object_property_get(c, "condition")(value),
           },
           c,
         ),
