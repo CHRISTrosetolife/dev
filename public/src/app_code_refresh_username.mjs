@@ -1,3 +1,4 @@
+import { html_hr } from "./html_hr.mjs";
 import { html_button_enable_if } from "./html_button_enable_if.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_style_default_border_value } from "./html_style_default_border_value.mjs";
@@ -73,4 +74,5 @@ export function app_code_refresh_username(context) {
     html_style(input_username, border_color);
     html_button_enable_if(button_save, valid);
   });
+  html_hr(root);
 }
