@@ -13,7 +13,7 @@ import { html_button_back } from "./html_button_back.mjs";
 export async function app_code_refresh_functions(context) {
   let root = html_clear_scroll_top_centered_context(context);
   html_button_back(root, () => {
-    app_code_refresh_main(root);
+    app_code_refresh_main(context);
   });
   let files = await object_property_initialize_get_async(
     global_get(),
