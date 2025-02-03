@@ -16,6 +16,7 @@ import { storage_local_exists_not } from "./storage_local_exists_not.mjs";
 import { app_code_refresh } from "./app_code_refresh.mjs";
 import { html_scripts_load } from "./html_scripts_load.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
+import { html_inner_set } from "./html_inner_set.mjs";
 export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
@@ -37,6 +38,7 @@ export async function app_code() {
       let username = html_value_get(input_username);
       let condition = username_valid(username);
       html_style_display_block_or_none(p_error_message, condition);
+      html_inner_set(username, message);
     });
     function username_valid(username) {
       return (
