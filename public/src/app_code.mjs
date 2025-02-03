@@ -30,5 +30,5 @@ export async function app_code() {
     function_extension(),
   ]);
   let mapped2 = list_map(mapped, (m) => string_suffix_without(m, suffix));
-  html_p_text(root, json_to(mapped));
+  html_p_text(root, json_to(mapped2));
 }
