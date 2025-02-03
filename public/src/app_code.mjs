@@ -61,7 +61,7 @@ export async function app_code() {
         : string_combine_multiple([placeholder, " invalid: must "]);
       html_inner_set(p_error_message, message);
       let border_color = html_style_default_border_value(
-        uv ? "white" : error_color,
+        uv ? "green" : error_color,
       );
       html_style(input_username, border_color);
     });
