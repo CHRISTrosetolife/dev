@@ -1,3 +1,4 @@
+import { identity } from "./identity.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_all } from "./list_all.mjs";
@@ -60,6 +61,7 @@ export async function app_code() {
         list_map(conditions, (c) =>
           object_property_get(c, "condition")(username),
         ),
+        identity,
       );
       html_style_display_block_or_none(p_error_message, !uv);
       let message = uv
