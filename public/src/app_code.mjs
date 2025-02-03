@@ -30,7 +30,9 @@ export async function app_code() {
       list_all(list, (l) => {
         let result = false;
         let fns = [string_letter_is, string_underscore_is, string_digit_is];
-        each(list2, (item) => {});
+        each(fns, (fn) => {
+          $b;
+        });
         return (
           string_letter_is(l) || string_underscore_is(l) || string_digit_is(l)
         );
