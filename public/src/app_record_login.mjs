@@ -1,3 +1,4 @@
+import { html_placeholder } from "./html_placeholder.mjs";
 import { html_input_width_full_placeholder } from "./html_input_width_full_placeholder.mjs";
 import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
@@ -16,6 +17,7 @@ import { html_style_visible } from "./html_style_visible.mjs";
 export function app_record_login(parent) {
   html_clear_scroll_top(parent);
   let email = html_input_width_full_focus(parent);
+  html_placeholder(email, "Email");
   let password = html_input_width_full_placeholder(parent, "Password");
   html_attribute_set(password, "type", "password");
   let error_message;
