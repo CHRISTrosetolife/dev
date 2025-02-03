@@ -77,6 +77,9 @@ export function app_code_refresh_username(context) {
   });
   html_hr(root);
   html_button_width_full_text_click(root, "Skip", () => {
-    app_code_refresh_main(context);
+    next();
   });
+  function next() {
+    app_code_refresh_main(context);
+  }
 }
