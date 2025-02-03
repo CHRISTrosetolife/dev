@@ -39,7 +39,7 @@ export async function app_code() {
       let uv = username_valid(username);
       html_style_display_block_or_none(p_error_message, uv);
       let message = uv ? "" : "Usernme invalid";
-      html_inner_set(username, message);
+      html_inner_set(input_username, message);
     });
     function username_valid(username) {
       return (
