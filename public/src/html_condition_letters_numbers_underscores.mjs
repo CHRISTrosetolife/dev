@@ -25,6 +25,6 @@ export function html_condition_letters_numbers_underscores() {
       string_underscore_is,
       string_digit_is,
     ];
-    string_all_or(u, requirements);
+    return string_all_or(u, requirements);
   }
 }
