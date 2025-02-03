@@ -36,7 +36,7 @@ export async function app_code() {
     html_on_input_initial(input_username, () => {
       let username = html_value_get(input_username);
       let condition = username_valid(username);
-      html_style_display_block_or_none(condition, p_error_message);
+      html_style_display_block_or_none(p_error_message, condition);
     });
     function username_valid(username) {
       return (
