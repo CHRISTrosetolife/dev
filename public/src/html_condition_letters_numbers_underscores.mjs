@@ -4,7 +4,7 @@ import { string_letter_is } from "./string_letter_is.mjs";
 import { string_all_or } from "./string_all_or.mjs";
 export function html_condition_letters_numbers_underscores() {
   return {
-    message: "contain only letters, numbers or underscores",
+    message: (value) => "contain only letters, numbers or underscores",
     condition: (u) =>
       string_all_or(u, [
         string_letter_is,
