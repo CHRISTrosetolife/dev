@@ -68,7 +68,7 @@ export async function app_code() {
               list_map(errors, (c) =>
                 string_combine_multiple([
                   "must ",
-                  object_property_get(c, "message"),
+                  object_property_get(c, "message")(c),
                 ]),
               ),
             ),
