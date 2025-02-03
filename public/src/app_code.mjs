@@ -36,8 +36,8 @@ export async function app_code() {
     app_learn_code_style_code_error(p_error_message);
     html_on_input_initial(input_username, () => {
       let username = html_value_get(input_username);
-      let condition = username_valid(username);
-      html_style_display_block_or_none(p_error_message, condition);
+      let uv = username_valid(username);
+      html_style_display_block_or_none(p_error_message, uv);
       html_inner_set(username, message);
     });
     function username_valid(username) {
