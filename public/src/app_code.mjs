@@ -24,7 +24,10 @@ export async function app_code() {
       "At this time there are no passwords. You should choose a unique username or someone could overwrite your data.",
     ]);
     let input_username = html_input_width_full_placeholder(parent, "Username");
-    html_on_input(input_username, () => {});
+    html_on_input(input_username, () => {
+      if (false) {
+      }
+    });
     function username_valid(username) {
       return string_all_or(username, [
         string_letter_is,
