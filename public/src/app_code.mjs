@@ -1,3 +1,6 @@
+import { app_learn_code_style_code_error } from "./app_learn_code_style_code_error.mjs";
+import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
+import { html_div } from "./html_div.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_on_input_initial } from "./html_on_input_initial.mjs";
@@ -26,6 +29,9 @@ export async function app_code() {
       "At this time there are no passwords. You should choose a unique username or someone could overwrite your data.",
     ]);
     let input_username = html_input_width_full_placeholder(parent, "Username");
+    let p_error_message = html_div(root);
+    html_style_rounded_padded(p_error_message);
+    app_learn_code_style_code_error(p_error_message);
     html_on_input_initial(input_username, () => {
       let username = html_value_get(input_username);
       if (username_valid(username)) {
