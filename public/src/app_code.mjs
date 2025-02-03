@@ -1,3 +1,4 @@
+import { html_value_get } from "./html_value_get.mjs";
 import { html_on_input_initial } from "./html_on_input_initial.mjs";
 import { string_all_or } from "./string_all_or.mjs";
 import { string_underscore_is } from "./string_underscore_is.mjs";
@@ -25,6 +26,7 @@ export async function app_code() {
     ]);
     let input_username = html_input_width_full_placeholder(parent, "Username");
     html_on_input_initial(input_username, () => {
+      let username = html_value_get(input_username);
       if (username_valid(username)) {
       }
     });
