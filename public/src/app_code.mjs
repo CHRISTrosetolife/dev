@@ -70,7 +70,7 @@ export async function app_code() {
     function username_valid(username) {
       return list_all(
         list_map(conditions, (c) =>
-          object_property_get(object, "property_name")(username),
+          object_property_get(c, "condition")(username),
         ),
       );
     }
