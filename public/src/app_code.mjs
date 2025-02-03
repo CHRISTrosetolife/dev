@@ -1,3 +1,4 @@
+import { html_on_input } from "./html_on_input.mjs";
 import { string_all_or } from "./string_all_or.mjs";
 import { string_underscore_is } from "./string_underscore_is.mjs";
 import { string_digit_is } from "./string_digit_is.mjs";
@@ -23,6 +24,7 @@ export async function app_code() {
       "At this time there are no passwords. You should choose a unique username or someone could overwrite your data.",
     ]);
     let input_username = html_input_width_full_placeholder(parent, "Username");
+    html_on_input(input_username, () => {});
     function username_valid(username) {
       return string_all_or(username, [
         string_letter_is,
