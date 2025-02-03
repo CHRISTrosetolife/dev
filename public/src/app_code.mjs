@@ -1,4 +1,4 @@
-import { list_any } from "./list_any.mjs";
+import { list_all } from "./list_all.mjs";
 import { list_map } from "./list_map.mjs";
 import { html_condition_letters_numbers_underscores } from "./html_condition_letters_numbers_underscores.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -54,7 +54,9 @@ export async function app_code() {
           c,
         ),
       );
-      let uv = list_any();
+      let uv = list_all(mapped, (c) =>
+        object_property_get(object, "property_name"),
+      );
       html_style_display_block_or_none(p_error_message, !uv);
       let message = uv
         ? ""
