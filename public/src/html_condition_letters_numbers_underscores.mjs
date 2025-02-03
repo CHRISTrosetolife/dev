@@ -1,3 +1,4 @@
+import { lambda_not } from "./lambda_not.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_digit_is } from "./string_digit_is.mjs";
@@ -11,7 +12,9 @@ export function html_condition_letters_numbers_underscores() {
     message: (value) =>
       string_combine_multiple([
         "contain only letters, numbers or underscores; contains: ",
-        list_unique(list_filter(string_split_empty(value), valid_is)),
+        list_unique(
+          list_filter(string_split_empty(value), lambda_not(valid_is)),
+        ),
       ]),
     condition: function valid_is(u) {
       string_all_or(u, [
