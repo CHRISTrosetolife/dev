@@ -27,6 +27,7 @@ export async function app_code() {
     function username_valid(username) {
       let list = string_split_empty(username);
       list_all(list, (l) => {
+        let result = false;
         return (
           string_letter_is(l) || string_underscore_is(l) || string_digit_is(l)
         );
