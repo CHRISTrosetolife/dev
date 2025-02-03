@@ -9,13 +9,14 @@ import { list_filter } from "./list_filter.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 export function html_condition_letters_numbers_underscores() {
   return {
-    message: (value) =>
-      string_combine_multiple([
+    message: (value) => {
+      return string_combine_multiple([
         "contain only letters, numbers or underscores; contains: ",
         list_unique(
           list_filter(string_split_empty(value), lambda_not(valid_is)),
         ),
-      ]),
+      ]);
+    },
     condition: function valid_is(u) {
       string_all_or(u, [
         string_letter_is,
