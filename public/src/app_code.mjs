@@ -65,7 +65,9 @@ export async function app_code() {
             placeholder,
             " invalid: ",
             list_join_comma_space(
-              list_map(errors, (c) => object_property_get(c, "message")),
+              list_map(errors, (c) =>
+                string_combine_multiple([object_property_get(c, "message")]),
+              ),
             ),
           ]);
       html_inner_set(p_error_message, message);
