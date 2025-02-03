@@ -50,6 +50,7 @@ export function app_good() {
           "Let all preaching be perfect",
           "Let all teaching be perfect",
           "Help the president",
+          "Bless the fingernails of love",
         ]);
       }
     });
