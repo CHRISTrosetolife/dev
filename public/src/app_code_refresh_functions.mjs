@@ -15,7 +15,7 @@ export async function app_code_refresh_functions(context) {
   html_button_back(root, () => {
     app_code_refresh_main(root);
   });
-  await object_property_initialize_get_async(
+  let files = await object_property_initialize_get_async(
     global_get(),
     global_files(),
     async () => {
