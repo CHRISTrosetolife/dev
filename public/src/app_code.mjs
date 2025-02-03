@@ -1,8 +1,7 @@
-import { list_all_or } from "./list_all_or.mjs";
+import { string_all_or } from "./string_all_or.mjs";
 import { string_underscore_is } from "./string_underscore_is.mjs";
 import { string_digit_is } from "./string_digit_is.mjs";
 import { list_all } from "./list_all.mjs";
-import { string_split_empty } from "./string_split_empty.mjs";
 import { string_letter_is } from "./string_letter_is.mjs";
 import { html_input_width_full_placeholder } from "./html_input_width_full_placeholder.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
@@ -27,8 +26,7 @@ export async function app_code() {
     html_input_width_full_placeholder(parent, "Username");
     function username_valid(username) {
       let fns = [string_letter_is, string_underscore_is, string_digit_is];
-      let list = string_split_empty(username);
-      list_all_or(list, fns);
+      let list = string_all_or(username, fns);
       return list_all(list, (l) => string_letter_is(l));
     }
   } else {
