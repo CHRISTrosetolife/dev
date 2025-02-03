@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { html_list } from "./html_list.mjs";
 import { function_path_to_name } from "./function_path_to_name.mjs";
 import { list_map } from "./list_map.mjs";
@@ -10,6 +11,7 @@ import { html_button_back } from "./html_button_back.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 export async function app_code_refresh_functions(context) {
   html_clear_scroll_top_centered();
+  let root = object_property_get(context, "root");
   html_button_back(root, () => {
     app_code_refresh(root);
   });
