@@ -1,6 +1,5 @@
-import { list_map_suffix_without } from "./list_map_suffix_without.mjs";
+import { list_map_prefix_suffix_without } from "./list_map_prefix_suffix_without.mjs";
 import { html_list } from "./html_list.mjs";
-import { list_map_prefix_without } from "./list_map_prefix_without.mjs";
 import { function_extension } from "./function_extension.mjs";
 import { folder_current } from "./folder_current.mjs";
 import { folder_path_src } from "./folder_path_src.mjs";
@@ -26,7 +25,6 @@ export async function app_code() {
     folder_current(),
     function_extension(),
   ]);
-  let mapped = list_map_prefix_without(file_paths, prefix);
-  let mapped2 = list_map_suffix_without(mapped, suffix);
+  let mapped2 = list_map_prefix_suffix_without(file_paths, prefix, suffix);
   html_list(root, mapped2);
 }
