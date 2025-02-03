@@ -8,7 +8,7 @@ export async function app_code() {
   let context = {
     root,
   };
-  if (storage_local_exists_not(app_code)) {
+  if (storage_local_exists_not(app_code, "username")) {
   }
   app_code_refresh(context);
 }
