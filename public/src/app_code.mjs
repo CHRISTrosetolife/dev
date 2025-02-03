@@ -45,7 +45,7 @@ export async function app_code() {
       let conditions = [
         html_condition_empty_not(),
         {
-          message: "not be empty",
+          message: "contain only letters, numbers or underscores",
           condition: string_empty_not_is,
         },
       ];
