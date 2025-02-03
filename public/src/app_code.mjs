@@ -1,3 +1,4 @@
+import { html_input_width_full } from "./html_input_width_full.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { html_clear_scroll_top_centered_context } from "./html_clear_scroll_top_centered_context.mjs";
 import { storage_local_exists_not } from "./storage_local_exists_not.mjs";
@@ -17,6 +18,7 @@ export async function app_code() {
       "If you do not want to store data for later, you may skip this",
       "At this time there are no passwords. You should choose a unique username or someone could overwrite your data.",
     ]);
+    html_input_width_full(root);
   } else {
     app_code_refresh(context);
   }
