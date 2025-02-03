@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { storage_upload_object_force } from "./storage_upload_object_force.mjs";
 import { list_size } from "./list_size.mjs";
 import { each_range } from "./each_range.mjs";
@@ -9,7 +10,6 @@ import { log } from "./log.mjs";
 import { equal_not } from "./equal_not.mjs";
 import { yyy8Uu_storage_path } from "./yyy8Uu_storage_path.mjs";
 import { list_single } from "./list_single.mjs";
-import { yyy8Uu_part } from "./yyy8Uu_part.mjs";
 import { yyy8Uu_language_to } from "./yyy8Uu_language_to.mjs";
 import { yyy8Uu_language_from } from "./yyy8Uu_language_from.mjs";
 import { gcloud_translate_cache } from "./gcloud_translate_cache.mjs";
@@ -32,7 +32,7 @@ export async function yyy8Uu_translate_upload_chapter(chapter_index) {
       let translateds = await gcloud_translate_cache(
         yyy8Uu_language_from(),
         yyy8Uu_language_to(),
-        yyy8Uu_part.name,
+        fn_name("yyy8Uu_part"),
         [chapter_index, index2],
       );
       let translated = list_single(translateds);
