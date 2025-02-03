@@ -8,7 +8,7 @@ export async function app_code() {
   let context = {
     root,
   };
-  if (storage_local_exists()) {
+  if (storage_local_exists(app_code)) {
   }
   app_code_refresh(context);
 }
