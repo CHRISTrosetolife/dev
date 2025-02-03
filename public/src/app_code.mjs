@@ -1,3 +1,4 @@
+import { html_condition_empty_not } from "./html_condition_empty_not.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_style_default_border_value } from "./html_style_default_border_value.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
@@ -41,12 +42,7 @@ export async function app_code() {
     html_style_font_color(p_error_message, error_color);
     html_on_input_initial(input_username, () => {
       let username = html_value_get(input_username);
-      let conditions = [
-        {
-          message: "not be empty",
-          condition: string_empty_not_is,
-        },
-      ];
+      let conditions = [html_condition_empty_not()];
       let uv = username_valid(username);
       html_style_display_block_or_none(p_error_message, !uv);
       let message = uv
