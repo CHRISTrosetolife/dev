@@ -1,4 +1,4 @@
-import { string_digits_is } from "./string_digits_is.mjs";
+import { string_digit_is } from "./string_digit_is.mjs";
 import { list_all } from "./list_all.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { string_letter_is } from "./string_letter_is.mjs";
@@ -27,7 +27,7 @@ export async function app_code() {
       let list = string_split_empty(username);
       list_all(
         list,
-        (l) => string_letter_is(l) || l === "_" || string_digits_is(l),
+        (l) => string_letter_is(l) || l === "_" || string_digit_is(l),
       );
       return list_all(list, (l) => string_letter_is(l));
     }

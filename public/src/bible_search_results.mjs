@@ -1,6 +1,6 @@
+import { string_digit_is } from "./string_digit_is.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { string_digits_is } from "./string_digits_is.mjs";
 import { json_from } from "./json_from.mjs";
 import { list_intersect_multiple } from "./list_intersect_multiple.mjs";
 import { json_to } from "./json_to.mjs";
@@ -48,7 +48,7 @@ export async function bible_search_results(split, word_to_results, filter) {
   let intersect = list_intersect_multiple(mapped4);
   let mapped5 = list_map(intersect, json_from);
   let filtered = list_filter(mapped5, (i) => {
-    return string_digits_is(object_property_get(i, "verse_number"));
+    return string_digit_is(object_property_get(i, "verse_number"));
   });
   return filtered;
 }

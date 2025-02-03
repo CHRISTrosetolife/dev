@@ -1,9 +1,9 @@
+import { string_digit_is } from "./string_digit_is.mjs";
 import { sermon_transform } from "./sermon_transform.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { keyboard_keys } from "./keyboard_keys.mjs";
 import { each } from "./each.mjs";
 import { list_map } from "./list_map.mjs";
-import { string_digits_is } from "./string_digits_is.mjs";
 import { string_first } from "./string_first.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -15,7 +15,7 @@ export async function sermon_format(sermon_name) {
         return false;
       }
       let first = string_first(line);
-      if (string_digits_is(first)) {
+      if (string_digit_is(first)) {
         return true;
       }
       return false;
