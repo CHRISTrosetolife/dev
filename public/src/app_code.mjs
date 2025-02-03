@@ -22,11 +22,11 @@ export async function app_code() {
     folder_current_prefix(),
     folder_path_src(),
   ]);
-  let mapped = list_map_prefix_without(file_paths, prefix);
   let suffix = string_combine_multiple([
     folder_current(),
     function_extension(),
   ]);
+  let mapped = list_map_prefix_without(file_paths, prefix);
   let mapped2 = list_map_suffix_without(mapped, suffix);
   html_list(root, mapped2);
 }
