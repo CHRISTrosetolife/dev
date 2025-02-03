@@ -57,6 +57,7 @@ export function app_good() {
           "Bless my word of God speech",
           "Bless my programming",
           "Bless my apps",
+          "Bless the works of Christians",
         ]);
       }
     });
