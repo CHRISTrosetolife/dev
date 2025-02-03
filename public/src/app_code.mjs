@@ -37,9 +37,6 @@ export async function app_code() {
           }
         });
         return result;
-        return (
-          string_letter_is(l) || string_underscore_is(l) || string_digit_is(l)
-        );
       });
       return list_all(list, (l) => string_letter_is(l));
     }
