@@ -1,3 +1,4 @@
+import { app_code_refresh_main } from "./app_code_refresh_main.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { html_button_enable_if } from "./html_button_enable_if.mjs";
 import { html_style } from "./html_style.mjs";
@@ -75,5 +76,7 @@ export function app_code_refresh_username(context) {
     html_button_enable_if(button_save, valid);
   });
   html_hr(root);
-  html_button_width_full_text_click(root, "Skip", () => {});
+  html_button_width_full_text_click(root, "Skip", () => {
+    app_code_refresh_main(context);
+  });
 }
