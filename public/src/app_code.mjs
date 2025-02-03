@@ -1,3 +1,4 @@
+import { string_size } from "./string_size.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_on_input_initial } from "./html_on_input_initial.mjs";
 import { string_all_or } from "./string_all_or.mjs";
@@ -31,11 +32,14 @@ export async function app_code() {
       }
     });
     function username_valid(username) {
-      return string_all_or(username, [
-        string_letter_is,
-        string_underscore_is,
-        string_digit_is,
-      ]);
+      return (
+        string_size(username) >= 1 &&
+        string_all_or(username, [
+          string_letter_is,
+          string_underscore_is,
+          string_digit_is,
+        ])
+      );
     }
   } else {
     app_code_refresh(context);
