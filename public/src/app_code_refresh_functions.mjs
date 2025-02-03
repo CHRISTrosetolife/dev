@@ -16,12 +16,13 @@ export async function app_code_refresh_functions(context) {
   html_button_back(root, () => {
     app_code_refresh_main(root);
   });
-  let files = await http_storage_get(app_code_local_functions_path());
   global_files_set(files);
   await object_property_initialize_get_async(
     global_get(),
     global_files(),
-    () => {},
+    async () => {
+      await http_storage_get(app_code_local_functions_path());
+    },
   );
   let file_paths = object_properties(files);
   let mapped2 = list_map(file_paths, function_path_to_name);
