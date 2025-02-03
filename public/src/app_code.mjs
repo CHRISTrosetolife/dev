@@ -1,3 +1,5 @@
+import { list_map } from "./list_map.mjs";
+import { list_all } from "./list_all.mjs";
 import { html_condition_empty_not } from "./html_condition_empty_not.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_style_default_border_value } from "./html_style_default_border_value.mjs";
@@ -5,7 +7,6 @@ import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_style_display_block_or_none } from "./html_style_display_block_or_none.mjs";
 import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
 import { html_div } from "./html_div.mjs";
-import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_on_input_initial } from "./html_on_input_initial.mjs";
 import { string_all_or } from "./string_all_or.mjs";
@@ -46,7 +47,12 @@ export async function app_code() {
         html_condition_empty_not(),
         {
           message: "contain only letters, numbers or underscores",
-          condition: string_empty_not_is,
+          condition: (u) =>
+            string_all_or(u, [
+              string_letter_is,
+              string_underscore_is,
+              string_digit_is,
+            ]),
         },
       ];
       let uv = username_valid(username);
@@ -61,14 +67,7 @@ export async function app_code() {
       html_style(input_username, border_color);
     });
     function username_valid(username) {
-      return (
-        string_empty_not_is(username) &&
-        string_all_or(username, [
-          string_letter_is,
-          string_underscore_is,
-          string_digit_is,
-        ])
-      );
+      return list_all(list_map(conditions, (c) => c.condition(username)));
     }
   } else {
     app_code_refresh(context);
