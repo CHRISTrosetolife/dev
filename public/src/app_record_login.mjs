@@ -1,3 +1,4 @@
+import { html_input_width_full_placeholder } from "./html_input_width_full_placeholder.mjs";
 import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_style_button_default_border } from "./html_style_button_default_border.mjs";
@@ -8,7 +9,6 @@ import { html_value_get } from "./html_value_get.mjs";
 import { firebase_login } from "./firebase_login.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { html_input_width_full } from "./html_input_width_full.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
@@ -17,8 +17,7 @@ export function app_record_login(parent) {
   html_clear_scroll_top(parent);
   let email = html_input_width_full_focus(parent);
   let placeholder = "Password";
-  let password = html_input_width_full(parent);
-  html_attribute_set(password, "placeholder", placeholder);
+  let password = html_input_width_full_placeholder(parent, placeholder);
   html_attribute_set(password, "type", "password");
   let error_message;
   html_button_width_full_text_click(parent, "login", async () => {
