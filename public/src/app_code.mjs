@@ -19,6 +19,7 @@ import { html_scripts_load } from "./html_scripts_load.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_style } from "./html_style.mjs";
+import { object_merge } from "./object_merge.mjs";
 export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
@@ -44,9 +45,14 @@ export async function app_code() {
         html_condition_empty_not(),
         html_condition_letters_numbers_underscores(),
       ];
-      let mapped = list_map(conditions, (c) => {
-        value: object_property_get(c, "condition")(username);
-      });
+      let mapped = list_map(conditions, (c) =>
+        object_merge(
+          {
+            value: object_property_get(c, "condition")(username),
+          },
+          c,
+        ),
+      );
       html_style_display_block_or_none(p_error_message, !uv);
       let message = uv
         ? ""
