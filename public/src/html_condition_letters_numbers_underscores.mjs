@@ -20,6 +20,11 @@ export function html_condition_letters_numbers_underscores() {
     condition: valid_is,
   };
   function valid_is(u) {
-    string_all_or(u, [string_letter_is, string_underscore_is, string_digit_is]);
+    let requirements = [
+      string_letter_is,
+      string_underscore_is,
+      string_digit_is,
+    ];
+    string_all_or(u, requirements);
   }
 }
