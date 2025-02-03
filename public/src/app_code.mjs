@@ -31,7 +31,8 @@ export async function app_code() {
         let result = false;
         let fns = [string_letter_is, string_underscore_is, string_digit_is];
         each(fns, (fn) => {
-          $b;
+          if (false) {
+          }
         });
         return (
           string_letter_is(l) || string_underscore_is(l) || string_digit_is(l)
