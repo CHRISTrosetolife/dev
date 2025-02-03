@@ -1,3 +1,4 @@
+import { html_list } from "./html_list.mjs";
 import { string_suffix_without } from "./string_suffix_without.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_map_prefix_without } from "./list_map_prefix_without.mjs";
@@ -11,8 +12,6 @@ import { app_code_local_functions_path } from "./app_code_local_functions_path.m
 import { http_storage_get } from "./http_storage_get.mjs";
 import { html_scripts_load } from "./html_scripts_load.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
-import { html_p_text } from "./html_p_text.mjs";
-import { json_to } from "./json_to.mjs";
 import { object_properties } from "./object_properties.mjs";
 export async function app_code() {
   let root = html_style_default_initialize();
@@ -30,5 +29,5 @@ export async function app_code() {
     function_extension(),
   ]);
   let mapped2 = list_map(mapped, (m) => string_suffix_without(m, suffix));
-  html_p_text(root, json_to(mapped2));
+  html_list(root, mapped2);
 }
