@@ -28,12 +28,16 @@ export async function app_code() {
     function username_valid(username) {
       let list = string_split_empty(username);
       let fns = [string_letter_is, string_underscore_is, string_digit_is];
-      list_all(list, (l) => {
-        return each_or(l, fns);
-      });
+      list_all_or(list, fns);
       return list_all(list, (l) => string_letter_is(l));
     }
   } else {
     app_code_refresh(context);
   }
 }
+function list_all_or(list, conditions) {
+    list_all(list, (l) => {
+        return each_or(l, conditions);
+    });
+}
+

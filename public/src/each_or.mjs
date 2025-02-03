@@ -1,8 +1,8 @@
 import { each } from "./each.mjs";
-export function each_or(l, fns) {
+export function each_or(item, conditions) {
   let result = false;
-  each(fns, (fn) => {
-    if (fn(l)) {
+  each(conditions, (fn) => {
+    if (fn(item)) {
       result = true;
       return true;
     }
