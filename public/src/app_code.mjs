@@ -15,6 +15,9 @@ export async function app_code() {
   let files = await http_storage_get(app_code_local_functions_path());
   global_files_initialize(files);
   let file_paths = object_properties(files);
-  string_combine_multiple([folder_current_prefix(), folder_path_src()]);
+  let prefix = string_combine_multiple([
+    folder_current_prefix(),
+    folder_path_src(),
+  ]);
   html_p_text(root, json_to(file_paths));
 }
