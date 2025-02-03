@@ -1,3 +1,4 @@
+import { html_style_default_border_value } from "./html_style_default_border_value.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_style_display_block_or_none } from "./html_style_display_block_or_none.mjs";
 import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
@@ -40,6 +41,7 @@ export async function app_code() {
       html_style_display_block_or_none(p_error_message, !uv);
       let message = uv ? "" : "Usernme invalid";
       html_inner_set(p_error_message, message);
+      html_style_default_border_value();
     });
     function username_valid(username) {
       return (
