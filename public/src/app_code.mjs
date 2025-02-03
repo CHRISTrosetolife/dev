@@ -22,7 +22,7 @@ export async function app_code() {
       "If you do not want to store data for later, you may skip this",
       "At this time there are no passwords. You should choose a unique username or someone could overwrite your data.",
     ]);
-    html_input_width_full_placeholder(parent, "Username");
+    let input_username = html_input_width_full_placeholder(parent, "Username");
     function username_valid(username) {
       return string_all_or(username, [
         string_letter_is,
