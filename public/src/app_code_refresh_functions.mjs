@@ -21,7 +21,7 @@ export async function app_code_refresh_functions(context) {
     global_get(),
     global_files(),
     async () => {
-      await http_storage_get(app_code_local_functions_path());
+      return await http_storage_get(app_code_local_functions_path());
     },
   );
   let file_paths = object_properties(files);
