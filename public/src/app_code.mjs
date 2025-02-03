@@ -26,8 +26,8 @@ export async function app_code() {
     ]);
     html_input_width_full_placeholder(parent, "Username");
     function username_valid(username) {
-      let list = string_split_empty(username);
       let fns = [string_letter_is, string_underscore_is, string_digit_is];
+      let list = string_split_empty(username);
       list_all_or(list, fns);
       return list_all(list, (l) => string_letter_is(l));
     }
