@@ -22,6 +22,7 @@ import { html_inner_set } from "./html_inner_set.mjs";
 import { html_style } from "./html_style.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
+import { list_join_comma_space } from "./list_join_comma_space.mjs";
 export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
@@ -60,7 +61,13 @@ export async function app_code() {
       html_style_display_block_or_none(p_error_message, !valid);
       let message = valid
         ? ""
-        : string_combine_multiple([placeholder, " invalid: must "]);
+        : string_combine_multiple([
+            placeholder,
+            " invalid: ",
+            list_join_comma_space(
+              list_map(errors, (c) => object_property_get(c, "message")),
+            ),
+          ]);
       html_inner_set(p_error_message, message);
       let border_color = html_style_default_border_value(
         valid ? "green" : error_color,
