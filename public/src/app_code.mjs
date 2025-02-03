@@ -70,9 +70,6 @@ export async function app_code() {
         uv ? "white" : error_color,
       );
       html_style(input_username, border_color);
-      function username_valid(username) {
-        return;
-      }
     });
   } else {
     app_code_refresh(context);
