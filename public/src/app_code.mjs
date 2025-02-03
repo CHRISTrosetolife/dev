@@ -1,3 +1,4 @@
+import { string_letter_is } from "./string_letter_is.mjs";
 import { html_input_width_full_placeholder } from "./html_input_width_full_placeholder.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { html_clear_scroll_top_centered_context } from "./html_clear_scroll_top_centered_context.mjs";
@@ -19,6 +20,9 @@ export async function app_code() {
       "At this time there are no passwords. You should choose a unique username or someone could overwrite your data.",
     ]);
     html_input_width_full_placeholder(parent, "Username");
+    function username_valid(username) {
+      return string_letter_is();
+    }
   } else {
     app_code_refresh(context);
   }
