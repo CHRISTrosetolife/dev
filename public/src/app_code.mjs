@@ -35,7 +35,8 @@ export async function app_code() {
     let input_username = html_input_width_full_placeholder(root, "Username");
     let p_error_message = html_div(root);
     html_style_rounded_padded(p_error_message);
-    html_style_font_color(p_error_message, "darkred");
+    let error_color = "darkred";
+    html_style_font_color(p_error_message, error_color);
     html_on_input_initial(input_username, () => {
       let username = html_value_get(input_username);
       let uv = username_valid(username);
@@ -44,7 +45,7 @@ export async function app_code() {
       html_inner_set(p_error_message, message);
       html_style(
         input_username,
-        html_style_default_border_value(uv ? "white" : "darkred"),
+        html_style_default_border_value(uv ? "white" : error_color),
       );
     });
     function username_valid(username) {
