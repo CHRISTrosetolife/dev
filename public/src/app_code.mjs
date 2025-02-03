@@ -41,7 +41,7 @@ export async function app_code() {
       let username = html_value_get(input_username);
       let uv = username_valid(username);
       html_style_display_block_or_none(p_error_message, !uv);
-      let message = uv ? "" : "Usernme invalid";
+      let message = uv ? "" : "Username invalid";
       html_inner_set(p_error_message, message);
       let border_color = html_style_default_border_value(
         uv ? "white" : error_color,
