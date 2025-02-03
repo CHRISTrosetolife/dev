@@ -1,5 +1,4 @@
-import { html_style_display_none } from "./html_style_display_none.mjs";
-import { html_style_display_block } from "./html_style_display_block.mjs";
+import { html_style_display_block_or_none } from "./html_style_display_block_or_none.mjs";
 import { app_learn_code_style_code_error } from "./app_learn_code_style_code_error.mjs";
 import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
 import { html_div } from "./html_div.mjs";
@@ -37,11 +36,7 @@ export async function app_code() {
     html_on_input_initial(input_username, () => {
       let username = html_value_get(input_username);
       let condition = username_valid(username);
-      if (condition) {
-        html_style_display_block(p_error_message);
-      } else {
-        html_style_display_none(p_error_message);
-      }
+      html_style_display_block_or_none(condition, p_error_message);
     });
     function username_valid(username) {
       return (
