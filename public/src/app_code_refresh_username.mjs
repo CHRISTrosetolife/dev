@@ -71,6 +71,6 @@ export function app_code_refresh_username(context) {
       valid ? "green" : error_color,
     );
     html_style(input_username, border_color);
-    html_button_enable_if(button_save);
+    html_button_enable_if(button_save, valid);
   });
 }
