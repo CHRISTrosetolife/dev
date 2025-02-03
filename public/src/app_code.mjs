@@ -1,3 +1,4 @@
+import { html_p_text } from "./html_p_text.mjs";
 import { html_clear_scroll_top_centered_context } from "./html_clear_scroll_top_centered_context.mjs";
 import { storage_local_exists_not } from "./storage_local_exists_not.mjs";
 import { app_code_refresh } from "./app_code_refresh.mjs";
@@ -11,6 +12,7 @@ export async function app_code() {
   };
   if (storage_local_exists_not(app_code, "username")) {
     let root = html_clear_scroll_top_centered_context(context);
+    html_p_text();
   } else {
     app_code_refresh(context);
   }
