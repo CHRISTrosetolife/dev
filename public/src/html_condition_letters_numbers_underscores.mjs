@@ -13,7 +13,7 @@ export function html_condition_letters_numbers_underscores() {
       let characters_invalid = list_filter_not(value_as_list, valid_is);
       let unique = list_unique(characters_invalid);
       return string_combine_multiple([
-        "contain only letters, numbers or underscores; contains: ",
+        "contain only letters, numbers or underscores; invalid character(s): ",
         unique,
       ]);
     },
