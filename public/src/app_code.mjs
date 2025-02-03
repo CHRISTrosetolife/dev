@@ -28,8 +28,8 @@ export async function app_code() {
     function username_valid(username) {
       let list = string_split_empty(username);
       list_all(list, (l) => {
-        let result = false;
         let fns = [string_letter_is, string_underscore_is, string_digit_is];
+        let result = false;
         each(fns, (fn) => {
           if (fn(l)) {
             result = true;
