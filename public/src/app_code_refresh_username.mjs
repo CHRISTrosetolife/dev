@@ -1,3 +1,4 @@
+import { html_button_enable_if } from "./html_button_enable_if.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_style_default_border_value } from "./html_style_default_border_value.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
@@ -19,6 +20,7 @@ import { html_div } from "./html_div.mjs";
 import { html_input_width_full_placeholder } from "./html_input_width_full_placeholder.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { html_clear_scroll_top_centered_context } from "./html_clear_scroll_top_centered_context.mjs";
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export function app_code_refresh_username(context) {
   let root = html_clear_scroll_top_centered_context(context);
   html_p_text_multiple(root, [
@@ -32,6 +34,7 @@ export function app_code_refresh_username(context) {
   html_style_rounded_padded(p_error_message);
   let error_color = "darkred";
   html_style_font_color(p_error_message, error_color);
+  let button_save = html_button_width_full_text_click(root, "Save", () => {});
   html_on_input_initial(input_username, () => {
     let value = html_value_get(input_username);
     let conditions = [
@@ -68,5 +71,6 @@ export function app_code_refresh_username(context) {
       valid ? "green" : error_color,
     );
     html_style(input_username, border_color);
+    html_button_enable_if(button_save);
   });
 }
