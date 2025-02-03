@@ -43,10 +43,10 @@ export async function app_code() {
       html_style_display_block_or_none(p_error_message, !uv);
       let message = uv ? "" : "Usernme invalid";
       html_inner_set(p_error_message, message);
-      html_style(
-        input_username,
-        html_style_default_border_value(uv ? "white" : error_color),
+      let border_color = html_style_default_border_value(
+        uv ? "white" : error_color,
       );
+      html_style(input_username, border_color);
     });
     function username_valid(username) {
       return (
