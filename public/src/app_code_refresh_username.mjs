@@ -1,3 +1,5 @@
+import { app_code } from "./app_code.mjs";
+import { storage_local_set } from "./storage_local_set.mjs";
 import { app_code_refresh_main } from "./app_code_refresh_main.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { html_button_enable_if } from "./html_button_enable_if.mjs";
@@ -38,6 +40,7 @@ export function app_code_refresh_username(context) {
   html_style_font_color(p_error_message, error_color);
   let button_save = html_button_width_full_text_click(root, "Save", () => {
     let value = html_value_get(input_username);
+    storage_local_set(app_code, "username", value);
     next();
   });
   html_on_input_initial(input_username, () => {
