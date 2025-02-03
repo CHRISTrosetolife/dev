@@ -56,7 +56,11 @@ export async function app_code() {
             ]),
         },
       ];
-      let uv = username_valid(username);
+      let uv = list_all(
+        list_map(conditions, (c) =>
+          object_property_get(c, "condition")(username),
+        ),
+      );
       html_style_display_block_or_none(p_error_message, !uv);
       let message = uv
         ? ""
@@ -66,14 +70,10 @@ export async function app_code() {
         uv ? "white" : error_color,
       );
       html_style(input_username, border_color);
+      function username_valid(username) {
+        return;
+      }
     });
-    function username_valid(username) {
-      return list_all(
-        list_map(conditions, (c) =>
-          object_property_get(c, "condition")(username),
-        ),
-      );
-    }
   } else {
     app_code_refresh(context);
   }
