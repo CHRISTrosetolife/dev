@@ -18,6 +18,7 @@ import { app_code_refresh } from "./app_code_refresh.mjs";
 import { html_scripts_load } from "./html_scripts_load.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
+import { html_style } from "./html_style.mjs";
 export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
@@ -41,7 +42,7 @@ export async function app_code() {
       html_style_display_block_or_none(p_error_message, !uv);
       let message = uv ? "" : "Usernme invalid";
       html_inner_set(p_error_message, message);
-      html_style_default_border_value();
+      html_style(input_username, html_style_default_border_value());
     });
     function username_valid(username) {
       return (
