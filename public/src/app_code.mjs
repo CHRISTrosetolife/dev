@@ -4,7 +4,8 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
-  app_code_refresh({
+  let context = {
     root,
-  });
+  };
+  app_code_refresh(context);
 }
