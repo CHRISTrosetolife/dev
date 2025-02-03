@@ -1,5 +1,5 @@
+import { list_map } from "./list_map.mjs";
 import { html_condition_letters_numbers_underscores } from "./html_condition_letters_numbers_underscores.mjs";
-import { list_all } from "./list_all.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_condition_empty_not } from "./html_condition_empty_not.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -44,9 +44,9 @@ export async function app_code() {
         html_condition_empty_not(),
         html_condition_letters_numbers_underscores(),
       ];
-      let uv = list_all(conditions, (c) =>
-        object_property_get(c, "condition")(username),
-      );
+      let mapped = list_map(conditions, (c) => {
+        value: object_property_get(c, "condition")(username);
+      });
       html_style_display_block_or_none(p_error_message, !uv);
       let message = uv
         ? ""
