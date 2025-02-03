@@ -1,3 +1,4 @@
+import { storage_upload_object_force } from "./storage_upload_object_force.mjs";
 import { list_size } from "./list_size.mjs";
 import { each_range } from "./each_range.mjs";
 import { list_remove_first } from "./list_remove_first.mjs";
@@ -6,7 +7,6 @@ import { integer_parse } from "./integer_parse.mjs";
 import { error } from "./error.mjs";
 import { log } from "./log.mjs";
 import { equal_not } from "./equal_not.mjs";
-import { storage_upload_object } from "./storage_upload_object.mjs";
 import { yyy8Uu_storage_path } from "./yyy8Uu_storage_path.mjs";
 import { list_single } from "./list_single.mjs";
 import { yyy8Uu_part } from "./yyy8Uu_part.mjs";
@@ -45,7 +45,7 @@ export async function yyy8Uu_translate_upload_chapter(chapter_index) {
   each_range(less, () => list_remove_first(english));
   let destination = yyy8Uu_storage_path(chapter_index);
   if (10) {
-    await storage_upload_object(
+    await storage_upload_object_force(
       {
         english,
         latin,

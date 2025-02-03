@@ -1,9 +1,9 @@
+import { storage_upload_object_force } from "./storage_upload_object_force.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { log } from "./log.mjs";
 import { file_overwrite_json } from "./file_overwrite_json.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
-import { storage_upload_object } from "./storage_upload_object.mjs";
 import { file_exists } from "./file_exists.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 export async function storage_upload_object_gitignore(
@@ -21,7 +21,7 @@ export async function storage_upload_object_gitignore(
     }
   }
   log(string_combine_multiple(["uploading: ", existing_path]));
-  await storage_upload_object(result_new, storage_path);
+  await storage_upload_object_force(result_new, storage_path);
   await file_overwrite_json(existing_path, result_new);
   return existing_path;
 }
