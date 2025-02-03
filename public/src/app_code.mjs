@@ -1,3 +1,4 @@
+import { storage_local_exists } from "./storage_local_exists.mjs";
 import { app_code_refresh } from "./app_code_refresh.mjs";
 import { html_scripts_load } from "./html_scripts_load.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
@@ -7,7 +8,7 @@ export async function app_code() {
   let context = {
     root,
   };
-  if (false) {
+  if (storage_local_exists()) {
   }
   app_code_refresh(context);
 }
