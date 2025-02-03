@@ -22,6 +22,7 @@ export function app_good() {
           "Cause me to perfectly obey the Holy Spirit",
           "Cause me to be with Jesus today",
           "Bless our marriage",
+          "Bless trip",
           "Bless our children",
           "Cause me to fulfill my ministry",
           "Cause me to suffer in the flesh and cease from sin",
