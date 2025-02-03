@@ -1,3 +1,4 @@
+import { list_all } from "./list_all.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { string_letter_is } from "./string_letter_is.mjs";
 import { html_input_width_full_placeholder } from "./html_input_width_full_placeholder.mjs";
@@ -23,7 +24,8 @@ export async function app_code() {
     html_input_width_full_placeholder(parent, "Username");
     function username_valid(username) {
       let list = string_split_empty(username);
-      return string_letter_is();
+      list_all(list, (l) => string_letter_is(l));
+      return;
     }
   } else {
     app_code_refresh(context);
