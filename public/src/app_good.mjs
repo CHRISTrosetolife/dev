@@ -50,6 +50,7 @@ export function app_good() {
           "Let there be life and life abundantly",
           "Let all preaching be perfect",
           "Let all teaching be perfect",
+          "Let all shepherding be perfect",
           "Help the president",
           "Bless the nails of love",
           "Bless my works",
