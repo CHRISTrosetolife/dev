@@ -1,3 +1,4 @@
+import { html_style_font_color_white } from "./html_style_font_color_white.mjs";
 import { html_style_display_block_or_none } from "./html_style_display_block_or_none.mjs";
 import { app_learn_code_style_code_error } from "./app_learn_code_style_code_error.mjs";
 import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
@@ -34,6 +35,7 @@ export async function app_code() {
     let p_error_message = html_div(root);
     html_style_rounded_padded(p_error_message);
     app_learn_code_style_code_error(p_error_message);
+    html_style_font_color_white(p_error_message);
     html_on_input_initial(input_username, () => {
       let username = html_value_get(input_username);
       let uv = username_valid(username);
