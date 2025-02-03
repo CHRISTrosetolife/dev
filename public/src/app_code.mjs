@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_all } from "./list_all.mjs";
 import { html_condition_empty_not } from "./html_condition_empty_not.mjs";
@@ -67,7 +68,11 @@ export async function app_code() {
       html_style(input_username, border_color);
     });
     function username_valid(username) {
-      return list_all(list_map(conditions, (c) => c.condition(username)));
+      return list_all(
+        list_map(conditions, (c) =>
+          object_property_get(object, "property_name")(username),
+        ),
+      );
     }
   } else {
     app_code_refresh(context);
