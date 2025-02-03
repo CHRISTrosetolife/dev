@@ -1,6 +1,6 @@
+import { app_code_refresh_main } from "./app_code_refresh_main.mjs";
 import { app_code_refresh_username } from "./app_code_refresh_username.mjs";
 import { storage_local_exists_not } from "./storage_local_exists_not.mjs";
-import { app_code_refresh } from "./app_code_refresh.mjs";
 import { html_scripts_load } from "./html_scripts_load.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 export async function app_code() {
@@ -12,6 +12,6 @@ export async function app_code() {
   if (storage_local_exists_not(app_code, "username")) {
     app_code_refresh_username(context);
   } else {
-    app_code_refresh(context);
+    app_code_refresh_main(context);
   }
 }
