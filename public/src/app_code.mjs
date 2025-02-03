@@ -66,7 +66,10 @@ export async function app_code() {
             " invalid: ",
             list_join_comma_space(
               list_map(errors, (c) =>
-                string_combine_multiple([object_property_get(c, "message")]),
+                string_combine_multiple([
+                  "must ",
+                  object_property_get(c, "message"),
+                ]),
               ),
             ),
           ]);
