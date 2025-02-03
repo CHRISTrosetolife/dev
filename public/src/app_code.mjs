@@ -27,7 +27,8 @@ export async function app_code() {
       let list = string_split_empty(username);
       list_all(
         list,
-        (l) => string_letter_is(l) || l === "_" || string_digit_is(l),
+        (l) =>
+          string_letter_is(l) || stringnewFunction(l) || string_digit_is(l),
       );
       return list_all(list, (l) => string_letter_is(l));
     }
