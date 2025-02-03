@@ -1,3 +1,5 @@
+import { function_extension } from "./function_extension.mjs";
+import { folder_current } from "./folder_current.mjs";
 import { list_map } from "./list_map.mjs";
 import { folder_path_src } from "./folder_path_src.mjs";
 import { folder_current_prefix } from "./folder_current_prefix.mjs";
@@ -22,5 +24,6 @@ export async function app_code() {
     folder_path_src(),
   ]);
   let mapped = list_map(file_paths, (p) => string_prefix_without(p, prefix));
+  (suffix = $s), folder_current(), function_extension();
   html_p_text(root, json_to(mapped));
 }
