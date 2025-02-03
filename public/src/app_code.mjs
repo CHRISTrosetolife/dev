@@ -25,7 +25,7 @@ export async function app_code() {
     ]);
     let input_username = html_input_width_full_placeholder(parent, "Username");
     html_on_input_initial(input_username, () => {
-      if (false) {
+      if (username_valid(username)) {
       }
     });
     function username_valid(username) {
