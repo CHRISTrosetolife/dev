@@ -26,11 +26,11 @@ export async function app_code() {
     html_input_width_full_placeholder(parent, "Username");
     function username_valid(username) {
       let list = string_split_empty(username);
-      list_all(
-        list,
-        (l) =>
-          string_letter_is(l) || string_underscore_is(l) || string_digit_is(l),
-      );
+      list_all(list, (l) => {
+        return (
+          string_letter_is(l) || string_underscore_is(l) || string_digit_is(l)
+        );
+      });
       return list_all(list, (l) => string_letter_is(l));
     }
   } else {
