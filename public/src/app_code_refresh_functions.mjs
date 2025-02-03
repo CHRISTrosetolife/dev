@@ -1,7 +1,6 @@
 import { global_files } from "./global_files.mjs";
 import { global_get } from "./global_get.mjs";
 import { object_property_initialize_get_async } from "./object_property_initialize_get_async.mjs";
-import { global_files_set } from "./global_files_set.mjs";
 import { app_code_refresh_main } from "./app_code_refresh_main.mjs";
 import { html_clear_scroll_top_centered_context } from "./html_clear_scroll_top_centered_context.mjs";
 import { html_list } from "./html_list.mjs";
@@ -16,7 +15,6 @@ export async function app_code_refresh_functions(context) {
   html_button_back(root, () => {
     app_code_refresh_main(root);
   });
-  global_files_set(files);
   await object_property_initialize_get_async(
     global_get(),
     global_files(),
