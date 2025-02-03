@@ -24,6 +24,9 @@ export async function app_code() {
     folder_path_src(),
   ]);
   let mapped = list_map(file_paths, (p) => string_prefix_without(p, prefix));
-  (suffix = $s), folder_current(), function_extension();
+  let suffix = string_combine_multiple([
+    folder_current(),
+    function_extension(),
+  ]);
   html_p_text(root, json_to(mapped));
 }
