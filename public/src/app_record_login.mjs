@@ -16,8 +16,7 @@ import { html_style_visible } from "./html_style_visible.mjs";
 export function app_record_login(parent) {
   html_clear_scroll_top(parent);
   let email = html_input_width_full_focus(parent);
-  let placeholder = "Password";
-  let password = html_input_width_full_placeholder(parent, placeholder);
+  let password = html_input_width_full_placeholder(parent, "Password");
   html_attribute_set(password, "type", "password");
   let error_message;
   html_button_width_full_text_click(parent, "login", async () => {
