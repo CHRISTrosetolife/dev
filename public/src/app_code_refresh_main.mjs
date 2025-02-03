@@ -14,7 +14,10 @@ export function app_code_refresh_main(context) {
   html_style_width_full(overlay);
   html_style_height_full(overlay);
   html_style(overlay, {
-    margin: 0,
+    position: "fixed",
+    top: 0,
+    left: 0,
+    "z-index": 9999,
   });
   html_style_background_color_transparent(overlay, "black", 75);
   html_p_text(overlay, "Loading...");
