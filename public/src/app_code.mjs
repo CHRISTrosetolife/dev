@@ -1,6 +1,6 @@
+import { list_map_prefix_without } from "./list_map_prefix_without.mjs";
 import { function_extension } from "./function_extension.mjs";
 import { folder_current } from "./folder_current.mjs";
-import { list_map } from "./list_map.mjs";
 import { folder_path_src } from "./folder_path_src.mjs";
 import { folder_current_prefix } from "./folder_current_prefix.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -12,7 +12,6 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { html_p_text } from "./html_p_text.mjs";
 import { json_to } from "./json_to.mjs";
 import { object_properties } from "./object_properties.mjs";
-import { string_prefix_without } from "./string_prefix_without.mjs";
 export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
@@ -23,7 +22,7 @@ export async function app_code() {
     folder_current_prefix(),
     folder_path_src(),
   ]);
-  let mapped = list_map(file_paths, (p) => string_prefix_without(p, prefix));
+  let mapped = list_map_prefix_without(file_paths, prefix);
   let suffix = string_combine_multiple([
     folder_current(),
     function_extension(),
