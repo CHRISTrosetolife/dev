@@ -44,6 +44,7 @@ export async function app_code() {
       let conditions = [
         {
           message: "not be empty",
+          condition: string_empty_not_is,
         },
       ];
       let uv = username_valid(username);
