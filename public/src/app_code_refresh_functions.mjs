@@ -113,6 +113,7 @@ export async function app_code_refresh_functions(context) {
                 index++;
               }
               object_property_set(m, "highlighted", true);
+              index++;
             });
           });
           each(mapped, (m) => {
