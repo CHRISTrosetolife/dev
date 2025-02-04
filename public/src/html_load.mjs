@@ -1,3 +1,4 @@
+import { set_add } from "./set_add.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { set_empty_is } from "./set_empty_is.mjs";
 import { set_new } from "./set_new.mjs";
@@ -13,5 +14,6 @@ export async function html_load(lambda) {
     object_property_set(g, "overlay", overlay);
   }
   let o = {};
+  set_add(0);
   await sleep_0();
 }
