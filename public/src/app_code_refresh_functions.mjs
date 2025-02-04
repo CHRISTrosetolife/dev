@@ -86,7 +86,7 @@ export async function app_code_refresh_functions(context) {
             symbol,
             highlighted: false,
           }));
-          each(list, (item) => {});
+          each(v_list, (vi) => {});
         });
       }
     });
