@@ -1,9 +1,11 @@
+import { html_style_bold } from "./html_style_bold.mjs";
+import { noop } from "./noop.mjs";
+import { html_cycle_p } from "./html_cycle_p.mjs";
 import { list_sort } from "./list_sort.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { regex_test } from "./regex_test.mjs";
 import { log } from "./log.mjs";
 import { list_between_after } from "./list_between_after.mjs";
-import { html_p_text } from "./html_p_text.mjs";
 import { each } from "./each.mjs";
 import { list_take } from "./list_take.mjs";
 import { html_load } from "./html_load.mjs";
@@ -31,8 +33,9 @@ export async function app_code_refresh_functions(context) {
     html_button_back(root, async () => {
       await app_code_refresh_main(context);
     });
-    html_p_text(
+    html_cycle_p(
       root,
+      [noop, html_style_bold],
       'Choose a function. To find a function, type in letters in the order they appear in the function name. For example, "oo" would match "tons_of" and "options".',
     );
     let st = html_input_width_full_placeholder(root, "Search term");
