@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { html_input_validated_on_input } from "./html_input_validated_on_input.mjs";
 import { app_code_refresh_menu } from "./app_code_refresh_menu.mjs";
 import { html_input_validated_on_input_lambda } from "./html_input_validated_on_input_lambda.mjs";
@@ -25,6 +26,7 @@ export function app_code_refresh_username(context) {
     next();
   });
   html_input_validated_on_input_lambda(input_username, (valid) => {
+    log({});
     html_button_enable_if(button_save, valid);
   });
   html_input_validated_on_input(input_username);
