@@ -29,7 +29,6 @@ export function html_input_validated(root, placeholder) {
   html_style_rounded_padded(error_message);
   let error_color = html_input_validated_error_color();
   html_style_font_color(error_message, error_color);
-  html_on_input(input_username_inner, on_input);
   let result = object_merge_strict(
     {
       on_input,
@@ -37,6 +36,7 @@ export function html_input_validated(root, placeholder) {
     input_username,
   );
   return result;
+  html_on_input(input_username_inner, on_input);
   function on_input() {
     let conditions = [
       html_condition_empty_not(),
