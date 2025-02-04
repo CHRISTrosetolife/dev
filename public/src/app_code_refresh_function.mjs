@@ -11,6 +11,6 @@ export async function app_code_refresh_function() {
     );
     let files = await app_code_files_get();
     let property_name = "function_selected";
-    storage_local_get_context(context, property_name);
+    storage_local_get_context(property_name, context);
   });
 }
