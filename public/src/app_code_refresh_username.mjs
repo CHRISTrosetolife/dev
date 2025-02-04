@@ -44,11 +44,11 @@ export function app_code_refresh_username(context) {
     next();
   });
   html_on_input_initial(input_username, () => {
-    let value = html_value_get(input_username);
     let conditions = [
       html_condition_empty_not(),
       html_condition_letters_numbers_underscores(),
     ];
+    let value = html_value_get(input_username);
     let mapped = list_map(conditions, (c) =>
       object_merge(
         {
@@ -85,7 +85,7 @@ export function app_code_refresh_username(context) {
   html_button_width_full_text_click(root, "Skip", () => {
     next();
   });
-  function next() {
-    app_code_refresh_main(context);
+  async function next() {
+    await app_code_refresh_main(context);
   }
 }
