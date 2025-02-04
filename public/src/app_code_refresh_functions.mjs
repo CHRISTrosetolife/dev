@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { html_button_width_full_click } from "./html_button_width_full_click.mjs";
 import { app_code_refresh_menu } from "./app_code_refresh_menu.mjs";
 import { regex_new } from "./regex_new.mjs";
@@ -92,7 +93,7 @@ export async function app_code_refresh_functions(context) {
             let m;
             while (true) {
               m = list_get(mapped, index);
-              if (false) {
+              if (object_property_get(object, "property_name")) {
               }
               index++;
             }
