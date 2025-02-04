@@ -1,10 +1,10 @@
+import { app_code_refresh_menu } from "./app_code_refresh_menu.mjs";
 import { object_property_set_exists_not } from "./object_property_set_exists_not.mjs";
 import { html_input_validated_on_input_lambda } from "./html_input_validated_on_input_lambda.mjs";
 import { html_button_enable_if } from "./html_button_enable_if.mjs";
 import { html_input_validated } from "./html_input_validated.mjs";
 import { app_code } from "./app_code.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
-import { app_code_refresh_main } from "./app_code_refresh_main.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
@@ -36,6 +36,6 @@ export function app_code_refresh_username(context) {
     next();
   });
   async function next() {
-    await app_code_refresh_main(context);
+    await app_code_refresh_menu(context);
   }
 }

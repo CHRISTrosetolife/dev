@@ -1,3 +1,4 @@
+import { app_code_refresh_menu } from "./app_code_refresh_menu.mjs";
 import { regex_new } from "./regex_new.mjs";
 import { list_between_surround } from "./list_between_surround.mjs";
 import { regex_test_multiple } from "./regex_test_multiple.mjs";
@@ -15,7 +16,6 @@ import { html_load } from "./html_load.mjs";
 import { global_files } from "./global_files.mjs";
 import { global_get } from "./global_get.mjs";
 import { object_property_initialize_get_async } from "./object_property_initialize_get_async.mjs";
-import { app_code_refresh_main } from "./app_code_refresh_main.mjs";
 import { html_clear_scroll_top_centered_context } from "./html_clear_scroll_top_centered_context.mjs";
 import { function_path_to_name } from "./function_path_to_name.mjs";
 import { list_map } from "./list_map.mjs";
@@ -38,7 +38,7 @@ export async function app_code_refresh_functions(context) {
   await html_load(async () => {
     let root = html_clear_scroll_top_centered_context(context);
     html_button_back(root, async () => {
-      await app_code_refresh_main(context);
+      await app_code_refresh_menu(context);
     });
     html_cycle_p(
       root,
