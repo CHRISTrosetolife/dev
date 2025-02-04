@@ -82,6 +82,7 @@ export async function app_code_refresh_functions(context) {
         each(taken, (t) => {
           let b = html_button_width_full_click(results, () => {});
           let t_list = string_split_empty(t);
+          list_map(t_list, () => {});
         });
       }
     });
