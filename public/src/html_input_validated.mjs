@@ -1,4 +1,3 @@
-import { html_button_enable_if } from "./html_button_enable_if.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_style_default_border_value } from "./html_style_default_border_value.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
@@ -64,7 +63,8 @@ export function html_input_validated(root, placeholder) {
     );
     html_style(input_username, border_color);
     if (object_property_exists(input_username, "on_input")) {
-      html_button_enable_if(button_save, valid);
+      let on_input = object_property_get(input_username, "on_input");
+      on_input(valid);
     }
   });
   return object_merge_strict(
