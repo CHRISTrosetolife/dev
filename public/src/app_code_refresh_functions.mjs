@@ -1,3 +1,4 @@
+import { list_join_empty } from "./list_join_empty.mjs";
 import { html_focus } from "./html_focus.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { noop } from "./noop.mjs";
@@ -52,10 +53,11 @@ export async function app_code_refresh_functions(context) {
     let file_paths = object_properties(files);
     let mapped2 = list_map(file_paths, function_path_to_name);
     html_on_input_initial(st, () => {
-      let regex_string = list_between_after(
+      let regex_list = list_between_after(
         string_split_empty(html_value_get(st)),
         ".*",
       );
+      let regex_string = list_join_empty(regex_list);
       log({
         regex_string,
       });
