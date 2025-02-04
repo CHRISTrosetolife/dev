@@ -9,7 +9,7 @@ export async function http_response(url) {
   let f = await import_node("node-fetch");
   let { default: fetch } = f;
   let response = await retry(
-    4,
+    5,
     lambda,
     retry_if(["ECONNRESET", "ENOTFOUND", "ETIMEDOUT", "EHOSTUNREACH"]),
   );
