@@ -8,7 +8,9 @@ import { html_clear_scroll_top_centered_context } from "./html_clear_scroll_top_
 import { app_code_refresh_functions } from "./app_code_refresh_functions.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
+import { string_prefix_without } from "./string_prefix_without.mjs";
 export function app_code_refresh_menu(context) {
+  let suffix = string_prefix_without();
   storage_local_set(app_code, "screen", suffix);
   let root = html_clear_scroll_top_centered_context(context);
   html_button_width_full_text_click(root, "Functions", async () => {
