@@ -4,10 +4,10 @@ import { object_property_set } from "./object_property_set.mjs";
 export async function object_property_initialize_get_async(
   object,
   key,
-  initial,
+  initial_get,
 ) {
   if (object_property_exists_not(object, key)) {
-    object_property_set(object, key, await initial());
+    object_property_set(object, key, await initial_get());
   }
   return object_property_get(object, key);
 }
