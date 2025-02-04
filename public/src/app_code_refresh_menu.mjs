@@ -10,8 +10,7 @@ import { html_clear_scroll_top_centered_context } from "./html_clear_scroll_top_
 import { app_code_refresh_functions } from "./app_code_refresh_functions.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export function app_code_refresh_menu(context) {
-  let this_fn_name = fn_name("app_code_refresh_menu");
-  app_code_screen_set(this_fn_name);
+  app_code_screen_set(fn_name("app_code_refresh_menu"));
   let root = html_clear_scroll_top_centered_context(context);
   html_button_width_full_text_click(root, "Functions", async () => {
     await app_code_refresh_functions(context);
