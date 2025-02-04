@@ -1,3 +1,5 @@
+import { html_condition_letters_numbers_underscores } from "./html_condition_letters_numbers_underscores.mjs";
+import { html_input_validated } from "./html_input_validated.mjs";
 import { list_copy } from "./list_copy.mjs";
 import { list_first } from "./list_first.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -29,7 +31,6 @@ import { object_properties } from "./object_properties.mjs";
 import { app_code_local_functions_path } from "./app_code_local_functions_path.mjs";
 import { http_storage_get } from "./http_storage_get.mjs";
 import { html_button_back } from "./html_button_back.mjs";
-import { html_input_width_full_placeholder } from "./html_input_width_full_placeholder.mjs";
 import { html_on_input_initial } from "./html_on_input_initial.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { html_value_get } from "./html_value_get.mjs";
@@ -57,7 +58,9 @@ export async function app_code_refresh_functions(context) {
       [noop, html_style_bold],
       'Choose a function. To find a function, type in letters in the order they appear in the function name. For example, "`oo`" would match "t`o`ns_`o`f" and "`o`pti`o`ns". To match in any order, separate by spaces.',
     );
-    let st = html_input_width_full_placeholder(root, "Search query");
+    let st = html_input_validated(root, "Search query", [
+      html_condition_letters_numbers_underscores(),
+    ]);
     html_focus(st);
     let results = html_div(root);
     let g = global_get();
