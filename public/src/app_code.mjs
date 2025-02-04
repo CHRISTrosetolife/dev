@@ -9,5 +9,7 @@ export async function app_code() {
   let context = {
     root,
   };
+  if (false) {
+  }
   await function_run(f, [context]);
 }
