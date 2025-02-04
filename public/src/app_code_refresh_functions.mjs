@@ -1,3 +1,4 @@
+import { storage_local_set_context } from "./storage_local_set_context.mjs";
 import { app_code_refresh_function } from "./app_code_refresh_function.mjs";
 import { app_code_files_get } from "./app_code_files_get.mjs";
 import { html_condition_letters_numbers_underscores_spaces } from "./html_condition_letters_numbers_underscores_spaces.mjs";
@@ -91,8 +92,9 @@ export async function app_code_refresh_functions(context) {
         html_p_text(results, "No functions found for search query");
       } else {
         each(taken, (t) => {
-          let b = html_button_width_full_click(results, () => {
-            app_code_refresh_function(context);
+          let b = html_button_width_full_click(results, async () => {
+            storage_local_set_context(context, "function_selected", t);
+            await app_code_refresh_function(context);
           });
           let t_list = string_split_empty(t);
           let mapped = list_map(t_list, (symbol) => ({
