@@ -1,3 +1,4 @@
+import { html_on_input } from "./html_on_input.mjs";
 import { html_input_validated_error_color } from "./html_input_validated_error_color.mjs";
 import { html_input_validated } from "./html_input_validated.mjs";
 import { app_code } from "./app_code.mjs";
@@ -19,7 +20,6 @@ import { list_map } from "./list_map.mjs";
 import { html_condition_letters_numbers_underscores } from "./html_condition_letters_numbers_underscores.mjs";
 import { html_condition_empty_not } from "./html_condition_empty_not.mjs";
 import { html_value_get } from "./html_value_get.mjs";
-import { html_on_input_initial } from "./html_on_input_initial.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { html_clear_scroll_top_centered_context } from "./html_clear_scroll_top_centered_context.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -38,7 +38,7 @@ export function app_code_refresh_username(context) {
     storage_local_set(app_code, "username", value);
     next();
   });
-  html_on_input_initial(input_username, () => {
+  html_on_input(input_username, () => {
     let conditions = [
       html_condition_empty_not(),
       html_condition_letters_numbers_underscores(),
