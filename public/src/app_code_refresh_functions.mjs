@@ -23,7 +23,7 @@ export async function app_code_refresh_functions(context) {
     });
     html_p_text(
       root,
-      'Choose a function. Type in letters in the order they appear in the function name. For example, "oo" would match "tons_of" and "options".',
+      'Choose a function. To find a function, type in letters in the order they appear in the function name. For example, "oo" would match "tons_of" and "options".',
     );
     let st = html_input_width_full_placeholder(root, "Search term");
     let g = global_get();
