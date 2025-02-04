@@ -1,3 +1,4 @@
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_code_refresh_menu } from "./app_code_refresh_menu.mjs";
 import { regex_new } from "./regex_new.mjs";
 import { list_between_surround } from "./list_between_surround.mjs";
@@ -79,7 +80,7 @@ export async function app_code_refresh_functions(context) {
         html_p_text(results, "No functions found for search query");
       } else {
         each(taken, (t) => {
-          html_button_width_full_click(results, t, () => {});
+          html_button_width_full_text_click(results, "", () => {});
         });
       }
     });
