@@ -1,3 +1,4 @@
+import { html_input_validated_on_input_lambda } from "./html_input_validated_on_input_lambda.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_style_default_border_value } from "./html_style_default_border_value.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
@@ -70,7 +71,12 @@ export function html_input_validated(root, placeholder) {
       valid ? "green" : html_input_validated_error_color(),
     );
     html_style(input_username, border_color);
-    if (object_property_exists(input_username, "on_input_lambda")) {
+    if (
+      object_property_exists(
+        input_username,
+        html_input_validated_on_input_lambda(),
+      )
+    ) {
       let on_input = object_property_get(input_username, "on_input_lambda");
       on_input(valid);
     }
