@@ -75,7 +75,8 @@ export async function app_code_refresh_functions(context) {
     let mapped2 = list_map(file_paths, function_path_to_name);
     html_input_validated_on_input_lambda(st, (valid) => {
       html_clear(results);
-      if (false) {
+      if (!valid) {
+        return;
       }
       let value = html_value_get(st);
       let split = string_split_space(value);
