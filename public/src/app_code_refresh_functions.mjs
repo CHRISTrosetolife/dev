@@ -101,7 +101,9 @@ export async function app_code_refresh_functions(context) {
         html_p_text(results, "No functions found for search query");
       } else {
         each(taken, (t) => {
-          let b = html_button_width_full_click(results, () => {});
+          let b = html_button_width_full_click(results, () => {
+            app_code_refresh_function(context);
+          });
           let t_list = string_split_empty(t);
           let mapped = list_map(t_list, (symbol) => ({
             symbol,
