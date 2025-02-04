@@ -25,7 +25,7 @@ export async function app_code_refresh_functions(context) {
       root,
       'Choose a function. Type in letters in the order they appear in the function name. For example, "oo" would match "tons_of" and "options".',
     );
-    html_input_width_full_placeholder(root, "Search term");
+    let st = html_input_width_full_placeholder(root, "Search term");
     let g = global_get();
     let files = await object_property_initialize_get_async(
       g,
