@@ -42,7 +42,6 @@ import { list_get } from "./list_get.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { list_size_1 } from "./list_size_1.mjs";
-import { string_empty_is } from "./string_empty_is.mjs";
 export async function app_code_refresh_functions(context) {
   await html_load(async () => {
     let root = app_code_screen_set(
@@ -74,7 +73,7 @@ export async function app_code_refresh_functions(context) {
       let value = html_value_get(st);
       let split = string_split_space(value);
       let v_lists = list_map(split, string_split_empty);
-      if (list_size_1(v_lists) && string_empty_is(list_first(v_lists))) {
+      if (list_size_1(v_lists) && list_empty_is(list_first(v_lists))) {
         v_lists = [];
       }
       let regexes = list_map(v_lists, (s) => {
