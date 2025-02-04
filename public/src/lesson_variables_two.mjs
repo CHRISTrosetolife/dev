@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { html_cycle_code_list } from "./html_cycle_code_list.mjs";
 import { call_multiple } from "./call_multiple.mjs";
@@ -26,9 +27,13 @@ export function lesson_variables_two() {
       let names = app_learn_code_random_identifiers(count);
       list_sort_string_map(names, identity);
       let [name_a, name_b] = names;
-      return `${js_code_statement_let_assign(name_a, v_a)}
-${js_code_statement_let_assign(name_b, v_b)}
-${app_learn_code_log_add(name_a, name_b)}`;
+      return string_combine_multiple([
+        js_code_statement_let_assign(name_a, v_a),
+        "\n",
+        js_code_statement_let_assign(name_b, v_b),
+        "\n",
+        app_learn_code_log_add(name_a, name_b),
+      ]);
     },
     example_before,
     description,
@@ -51,15 +56,21 @@ ${app_learn_code_log_add(name_a, name_b)}`;
     ]);
     app_learn_code_code_part_contrast(
       parent,
-      `${js_code_statement_let(a)}
-${js_code_statement_let(b)}`,
+      string_combine_multiple([
+        js_code_statement_let(a),
+        "\n",
+        js_code_statement_let(b),
+      ]),
     );
     html_cycle_code_list(parent, ["", "b", " will not come before ", "a"]);
     html_p_text(parent, "it will not be like this :");
     app_learn_code_code_part_contrast(
       parent,
-      `${js_code_statement_let(b)}
-${js_code_statement_let(a)}`,
+      string_combine_multiple([
+        js_code_statement_let(b),
+        "\n",
+        js_code_statement_let(a),
+      ]),
     );
     html_p_text(parent, "this should make quizzing easier");
     html_p_text(
@@ -82,14 +93,20 @@ ${js_code_statement_let(a)}`,
     ]);
     app_learn_code_code_part_contrast(
       parent,
-      `${js_code_statement_let_assign(a, "1")}
-${js_code_statement_let_assign(b, "2")}`,
+      string_combine_multiple([
+        js_code_statement_let_assign(a, "1"),
+        "\n",
+        js_code_statement_let_assign(b, "2"),
+      ]),
     );
     html_p_text(parent, "it will not be like this :");
     app_learn_code_code_part_contrast(
       parent,
-      `${js_code_statement_let_assign(a, "2")}
-${js_code_statement_let_assign(b, "1")}`,
+      string_combine_multiple([
+        js_code_statement_let_assign(a, "2"),
+        "\n",
+        js_code_statement_let_assign(b, "1"),
+      ]),
     );
     html_p_text(parent, "this should make quizzing easier");
     html_p_text(
