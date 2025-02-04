@@ -1,5 +1,5 @@
+import { html_condition_letters_numbers_underscores_spaces } from "./html_condition_letters_numbers_underscores_spaces.mjs";
 import { html_input_validated_on_input_lambda_initial } from "./html_input_validated_on_input_lambda_initial.mjs";
-import { html_condition_letters_numbers_underscores } from "./html_condition_letters_numbers_underscores.mjs";
 import { html_input_validated } from "./html_input_validated.mjs";
 import { list_copy } from "./list_copy.mjs";
 import { list_first } from "./list_first.mjs";
@@ -59,7 +59,7 @@ export async function app_code_refresh_functions(context) {
       'Choose a function. To find a function, type in letters in the order they appear in the function name. For example, "`oo`" would match "t`o`ns_`o`f" and "`o`pti`o`ns". To match in any order, separate by spaces.',
     );
     let st = html_input_validated(root, "Search query", [
-      html_condition_letters_numbers_underscores(),
+      html_condition_letters_numbers_underscores_spaces(),
     ]);
     html_focus(st);
     let results = html_div(root);
