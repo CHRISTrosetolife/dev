@@ -11,7 +11,13 @@ export async function http_response(url) {
   let response = await retry(
     5,
     lambda,
-    retry_if(["ECONNRESET", "ENOTFOUND", "ETIMEDOUT", "EHOSTUNREACH"]),
+    retry_if([
+      "ECONNRESET",
+      "ENOTFOUND",
+      "ETIMEDOUT",
+      "EHOSTUNREACH",
+      "Service Unavailable",
+    ]),
   );
   if (!response.ok) {
     let { statusText } = response;
