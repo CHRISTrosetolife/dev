@@ -71,7 +71,7 @@ export async function app_code_refresh_functions(context) {
       list_sort_string(taken);
       list_sort(taken, string_size);
       html_clear(results);
-      if (list_empty_is(results)) {
+      if (list_empty_is(taken)) {
         html_p_text(results, "No functions found for search query");
       } else {
         each(taken, (t) => {
