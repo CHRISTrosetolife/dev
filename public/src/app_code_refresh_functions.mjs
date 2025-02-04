@@ -53,7 +53,7 @@ export async function app_code_refresh_functions(context) {
       });
       let regex = new RegExp(regex_string, "i");
       let filtered = list_filter(mapped2, (m) => regex_test(regex, m));
-      let taken = list_take(mapped2, 20);
+      let taken = list_take(filtered, 20);
       each(taken, (t) => {
         html_button_width_full_text_click(root, t, () => {});
       });
