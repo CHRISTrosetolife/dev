@@ -24,6 +24,7 @@ export async function app_code_refresh_functions(context) {
       g,
       global_files(),
       async () => {
+        log("here");
         return await http_storage_get(app_code_local_functions_path());
       },
     );
