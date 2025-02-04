@@ -1,3 +1,4 @@
+import { set_remove } from "./set_remove.mjs";
 import { set_add } from "./set_add.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { set_empty_is } from "./set_empty_is.mjs";
@@ -17,4 +18,5 @@ export async function html_load(lambda) {
   let o = {};
   set_add(o);
   await lambda();
+  set_remove(o);
 }
