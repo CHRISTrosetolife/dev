@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { list_take } from "./list_take.mjs";
 import { html_load } from "./html_load.mjs";
 import { global_files } from "./global_files.mjs";
@@ -5,7 +6,6 @@ import { global_get } from "./global_get.mjs";
 import { object_property_initialize_get_async } from "./object_property_initialize_get_async.mjs";
 import { app_code_refresh_main } from "./app_code_refresh_main.mjs";
 import { html_clear_scroll_top_centered_context } from "./html_clear_scroll_top_centered_context.mjs";
-import { html_list } from "./html_list.mjs";
 import { function_path_to_name } from "./function_path_to_name.mjs";
 import { list_map } from "./list_map.mjs";
 import { object_properties } from "./object_properties.mjs";
@@ -29,6 +29,6 @@ export async function app_code_refresh_functions(context) {
     let file_paths = object_properties(files);
     let mapped2 = list_map(file_paths, function_path_to_name);
     let taken = list_take(mapped2, 20);
-    html_list(root, taken);
+    each(list, (item) => {});
   });
 }
