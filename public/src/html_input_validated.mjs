@@ -29,14 +29,14 @@ export function html_input_validated(root, placeholder) {
   html_style_rounded_padded(error_message);
   let error_color = html_input_validated_error_color();
   html_style_font_color(error_message, error_color);
-  let result = object_merge_strict(
+  let input_username = object_merge_strict(
     {
       on_input,
     },
     input_username_inner,
   );
   html_on_input(input_username_inner, on_input);
-  return result;
+  return input_username;
   function on_input() {
     let conditions = [
       html_condition_empty_not(),
