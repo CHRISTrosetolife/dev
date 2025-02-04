@@ -1,3 +1,4 @@
+import { regex_new } from "./regex_new.mjs";
 import { list_between_surround } from "./list_between_surround.mjs";
 import { regex_test_multiple } from "./regex_test_multiple.mjs";
 import { string_split_space } from "./string_split_space.mjs";
@@ -64,7 +65,7 @@ export async function app_code_refresh_functions(context) {
         let v_list = string_split_empty(s);
         let regex_list = list_between_surround(v_list, ".*");
         let regex_string = list_join_empty(regex_list);
-        let regex = new RegExp(regex_string);
+        let regex = regex_new(regex_string);
         return regex;
       });
       let filtered = list_filter(mapped2, (m) =>
