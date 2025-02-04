@@ -40,6 +40,9 @@ export async function app_code_refresh_functions(context) {
     html_on_input_initial(st, () => {
       let taken = list_take(mapped2, 20);
       each(taken, (t) => {
+        let regex = new RegExp(searchTerm, "i");
+        let testString = "Hello, world!";
+        let isMatch = regex.test(testString);
         html_button_width_full_text_click(root, t, () => {});
       });
     });
