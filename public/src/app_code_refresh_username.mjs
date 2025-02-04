@@ -1,3 +1,5 @@
+import { html_condition_letters_numbers_underscores } from "./html_condition_letters_numbers_underscores.mjs";
+import { html_condition_empty_not } from "./html_condition_empty_not.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { log } from "./log.mjs";
@@ -20,6 +22,10 @@ export function app_code_refresh_username(context) {
     "At this time there are no passwords. You should choose a unique username or someone could overwrite your data.",
   ]);
   let placeholder = "Username";
+  let conditions = [
+    html_condition_empty_not(),
+    html_condition_letters_numbers_underscores(),
+  ];
   let input_username = html_input_validated(root, placeholder, conditions);
   let button_save = html_button_width_full_text_click(root, "Save", () => {
     let value = html_value_get(input_username);
