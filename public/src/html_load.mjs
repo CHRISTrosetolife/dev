@@ -1,4 +1,4 @@
-import { set_size } from "./set_size.mjs";
+import { set_empty_is } from "./set_empty_is.mjs";
 import { set_new } from "./set_new.mjs";
 import { global_function } from "./global_function.mjs";
 import { sleep_0 } from "./sleep_0.mjs";
@@ -7,7 +7,7 @@ import { object_property_initialize_get } from "./object_property_initialize_get
 export async function html_load(lambda) {
   let g = global_function(html_load);
   let s = object_property_initialize_get(g, "set", () => set_new());
-  if (set_size(s) === 0) {
+  if (set_empty_is(s)) {
   }
   let o = {};
   let overlay = html_loader();
