@@ -1,3 +1,4 @@
+import { list_between_after } from "./list_between_after.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { each } from "./each.mjs";
 import { list_take } from "./list_take.mjs";
@@ -16,6 +17,8 @@ import { html_button_back } from "./html_button_back.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_input_width_full_placeholder } from "./html_input_width_full_placeholder.mjs";
 import { html_on_input_initial } from "./html_on_input_initial.mjs";
+import { string_split_empty } from "./string_split_empty.mjs";
+import { html_value_get } from "./html_value_get.mjs";
 export async function app_code_refresh_functions(context) {
   await html_load(async () => {
     let root = html_clear_scroll_top_centered_context(context);
@@ -38,6 +41,10 @@ export async function app_code_refresh_functions(context) {
     let file_paths = object_properties(files);
     let mapped2 = list_map(file_paths, function_path_to_name);
     html_on_input_initial(st, () => {
+      let searchTerm = list_between_after(
+        string_split_empty(html_value_get(st)),
+        ".*",
+      );
       let regex = new RegExp(searchTerm, "i");
       let testString = "Hello, world!";
       let isMatch = regex.test(testString);
