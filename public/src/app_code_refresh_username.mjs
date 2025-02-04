@@ -1,11 +1,10 @@
+import { html_input_validated_on_input_lambda_initial } from "./html_input_validated_on_input_lambda_initial.mjs";
 import { html_condition_letters_numbers_underscores } from "./html_condition_letters_numbers_underscores.mjs";
 import { html_condition_empty_not } from "./html_condition_empty_not.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { log } from "./log.mjs";
-import { html_input_validated_on_input } from "./html_input_validated_on_input.mjs";
 import { app_code_refresh_menu } from "./app_code_refresh_menu.mjs";
-import { html_input_validated_on_input_lambda } from "./html_input_validated_on_input_lambda.mjs";
 import { html_button_enable_if } from "./html_button_enable_if.mjs";
 import { html_input_validated } from "./html_input_validated.mjs";
 import { app_code } from "./app_code.mjs";
@@ -34,8 +33,7 @@ export function app_code_refresh_username(context) {
     log({});
     html_button_enable_if(button_save, valid);
   };
-  html_input_validated_on_input_lambda(input_username, lambda);
-  html_input_validated_on_input(input_username);
+  html_input_validated_on_input_lambda_initial(input_username, lambda);
   html_hr(root);
   html_button_width_full_text_click(root, "Skip", () => {
     next();
