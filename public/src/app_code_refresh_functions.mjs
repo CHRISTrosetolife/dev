@@ -38,11 +38,11 @@ export async function app_code_refresh_functions(context) {
     let file_paths = object_properties(files);
     let mapped2 = list_map(file_paths, function_path_to_name);
     html_on_input_initial(st, () => {
+      let regex = new RegExp(searchTerm, "i");
+      let testString = "Hello, world!";
+      let isMatch = regex.test(testString);
       let taken = list_take(mapped2, 20);
       each(taken, (t) => {
-        let regex = new RegExp(searchTerm, "i");
-        let testString = "Hello, world!";
-        let isMatch = regex.test(testString);
         html_button_width_full_text_click(root, t, () => {});
       });
     });
