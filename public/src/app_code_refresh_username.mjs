@@ -27,10 +27,11 @@ export function app_code_refresh_username(context) {
     next();
   });
   let property_name = html_input_validated_on_input_lambda();
-  assert(object_property_exists_not, property_name);
-  object_property_set(input_username, property_name, (valid) => {
+  let lambda = (valid) => {
     html_button_enable_if(button_save, valid);
-  });
+  };
+  assert(object_property_exists_not, property_name);
+  object_property_set(input_username, property_name, lambda);
   html_hr(root);
   html_button_width_full_text_click(root, "Skip", () => {
     next();
