@@ -31,6 +31,8 @@ import { list_filter } from "./list_filter.mjs";
 import { string_size } from "./string_size.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { list_take_soft } from "./list_take_soft.mjs";
+import { list_empty_is } from "./list_empty_is.mjs";
+import { html_p_text } from "./html_p_text.mjs";
 export async function app_code_refresh_functions(context) {
   await html_load(async () => {
     let root = html_clear_scroll_top_centered_context(context);
@@ -42,7 +44,7 @@ export async function app_code_refresh_functions(context) {
       [noop, html_style_bold],
       'Choose a function. To find a function, type in letters in the order they appear in the function name. For example, "`oo`" would match "t`o`ns_`o`f" and "`o`pti`o`ns".',
     );
-    let st = html_input_width_full_placeholder(root, "Search term");
+    let st = html_input_width_full_placeholder(root, "Search query");
     html_focus(st);
     let results = html_div(root);
     let g = global_get();
@@ -69,7 +71,8 @@ export async function app_code_refresh_functions(context) {
       list_sort_string(taken);
       list_sort(taken, string_size);
       html_clear(results);
-      if (false) {
+      if (list_empty_is(results)) {
+        html_p_text(results, "No functions found for search query");
       } else {
         each(taken, (t) => {
           html_button_width_full_text_click(results, t, () => {});
