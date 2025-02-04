@@ -19,7 +19,7 @@ export function app_code_refresh_main(context) {
     left: 0,
     "z-index": 9999,
   });
-  html_style_background_color_transparent(overlay, "black", 75);
+  html_style_background_color_transparent(overlay, "black", 90);
   html_p_text(overlay, "Loading...");
   return;
   let root = html_clear_scroll_top_centered_context(context);
