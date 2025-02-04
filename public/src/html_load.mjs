@@ -15,5 +15,6 @@ export async function html_load(lambda) {
     object_property_set(g, "overlay", overlay);
   }
   let o = {};
-  set_add(0);
+  set_add(o);
+  lambda();
 }
