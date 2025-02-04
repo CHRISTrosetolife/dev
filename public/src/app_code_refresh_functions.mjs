@@ -86,6 +86,7 @@ export async function app_code_refresh_functions(context) {
             symbol,
             highlighted: false,
           }));
+          let pointer = 0;
           each(v_list, (vi) => {});
         });
       }
