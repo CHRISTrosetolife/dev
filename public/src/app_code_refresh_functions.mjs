@@ -75,6 +75,7 @@ export async function app_code_refresh_functions(context) {
       let split = string_split_space(value);
       let v_lists = list_map(split, string_split_empty);
       if (list_size_1(v_lists) && string_empty_is(list_first(v_lists))) {
+        v_lists = [];
       }
       let regexes = list_map(v_lists, (s) => {
         let v_list = string_split_empty(s);
