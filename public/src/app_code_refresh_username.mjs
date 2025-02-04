@@ -31,8 +31,8 @@ export function app_code_refresh_username(context) {
     "At this time there are no passwords. You should choose a unique username or someone could overwrite your data.",
   ]);
   let placeholder = "Username";
-  let { p_error_message: error_message, input_username } = object_merge;
-  let object_merge = html_input_validated(root, placeholder);
+  let { error_message } = input_username;
+  let input_username = html_input_validated(root, placeholder);
   let button_save = html_button_width_full_text_click(root, "Save", () => {
     let value = html_value_get(input_username);
     storage_local_set(app_code, "username", value);
