@@ -38,10 +38,6 @@ export function html_input_validated(root, placeholder, conditions) {
   html_on_input(input_username_inner, on_input);
   return input_username;
   function on_input() {
-    let conditions = [
-      html_condition_empty_not(),
-      html_condition_letters_numbers_underscores(),
-    ];
     let value = html_value_get(input_username);
     let mapped = list_map(conditions, (c) =>
       object_merge(
