@@ -22,7 +22,7 @@ export function app_code_refresh_username(context) {
     storage_local_set(app_code, "username", value);
     next();
   });
-  object_property_set(object, "property_name", value2);
+  object_property_set(object, "property_name", () => {});
   html_hr(root);
   html_button_width_full_text_click(root, "Skip", () => {
     next();
