@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -41,7 +42,10 @@ import { html_span_text } from "./html_span_text.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 export async function app_code_refresh_functions(context) {
   await html_load(async () => {
-    let root = app_code_screen_set(context,$t);
+    let root = app_code_screen_set(
+      context,
+      fn_name("app_code_refresh_functions"),
+    );
     html_button_back(root, async () => {
       app_code_refresh_menu(context);
     });
@@ -116,3 +120,4 @@ export async function app_code_refresh_functions(context) {
       }
     });
   });
+}
