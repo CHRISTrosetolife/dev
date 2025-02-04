@@ -40,6 +40,7 @@ export function app_good() {
           "Unite the church about transgender",
           "Unite the church about homosexuality",
           "Unite the church about women in leadership",
+          "Unite the church about bible copyrights",
           "Unite the churchabout marriage",
           "May all Shepherds be in communion with each other",
           "Heal me",
