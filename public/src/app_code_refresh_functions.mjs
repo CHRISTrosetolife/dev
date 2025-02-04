@@ -10,7 +10,6 @@ import { regex_test } from "./regex_test.mjs";
 import { log } from "./log.mjs";
 import { list_between_after } from "./list_between_after.mjs";
 import { each } from "./each.mjs";
-import { list_take } from "./list_take.mjs";
 import { html_load } from "./html_load.mjs";
 import { global_files } from "./global_files.mjs";
 import { global_get } from "./global_get.mjs";
@@ -31,6 +30,7 @@ import { html_value_get } from "./html_value_get.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { string_size } from "./string_size.mjs";
 import { html_clear } from "./html_clear.mjs";
+import { list_take_soft } from "./list_take_soft.mjs";
 export async function app_code_refresh_functions(context) {
   await html_load(async () => {
     let root = html_clear_scroll_top_centered_context(context);
@@ -66,7 +66,7 @@ export async function app_code_refresh_functions(context) {
       });
       let regex = new RegExp(regex_string, "i");
       let filtered = list_filter(mapped2, (m) => regex_test(regex, m));
-      let taken = list_take(filtered, 20);
+      let taken = list_take_soft(filtered, 20);
       list_sort_string(taken);
       list_sort(taken, string_size);
       html_clear(results);
