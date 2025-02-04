@@ -79,7 +79,7 @@ export async function app_code_refresh_functions(context) {
       }
       let regexes = list_map(v_lists, (v_list) => {
         let copy = list_copy(v_list);
-        let regex_list = list_between_surround(v_list, ".*");
+        let regex_list = list_between_surround(copy, ".*");
         let regex_string = list_join_empty(regex_list);
         let regex = regex_new(regex_string);
         return regex;
