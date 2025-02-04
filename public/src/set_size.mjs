@@ -1,8 +1,6 @@
-import { assert } from "./assert.mjs";
+import { object_property_get } from "./object_property_get.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
-import { list_is } from "./list_is.mjs";
 export function set_size(list) {
   assert_arguments_length(arguments, 1);
-  assert(list_is, [list]);
-  return list.length;
+  return object_property_get(object, "property_name");
 }
