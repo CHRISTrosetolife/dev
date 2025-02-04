@@ -89,18 +89,19 @@ export async function app_code_refresh_functions(context) {
             symbol,
             highlighted: false,
           }));
-          let index = 0;
-          each(list, (item) => {});
-          each(v_list, (vi) => {
-            let m;
-            while (true) {
-              m = list_get(mapped, index);
-              if (object_property_get(m, "symbol") === vi) {
-                break;
+          each(v_lists, (v_list) => {
+            let index = 0;
+            each(v_list, (vi) => {
+              let m;
+              while (true) {
+                m = list_get(mapped, index);
+                if (object_property_get(m, "symbol") === vi) {
+                  break;
+                }
+                index++;
               }
-              index++;
-            }
-            object_property_set(m, "highlighted", true);
+              object_property_set(m, "highlighted", true);
+            });
           });
         });
       }
