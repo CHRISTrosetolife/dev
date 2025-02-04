@@ -4,6 +4,7 @@ import { html_clear_scroll_top_centered_context } from "./html_clear_scroll_top_
 import { app_code_refresh_functions } from "./app_code_refresh_functions.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_code_refresh_main(context) {
+  let o = {};
   let overlay = html_loader();
   await sleep_0();
   return;
