@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { html_load } from "./html_load.mjs";
 import { global_files } from "./global_files.mjs";
 import { global_get } from "./global_get.mjs";
@@ -19,12 +18,10 @@ export async function app_code_refresh_functions(context) {
       await app_code_refresh_main(context);
     });
     let g = global_get();
-    log(object_properties(g));
     let files = await object_property_initialize_get_async(
       g,
       global_files(),
       async () => {
-        log("here");
         return await http_storage_get(app_code_local_functions_path());
       },
     );
