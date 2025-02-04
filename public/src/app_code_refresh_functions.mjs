@@ -69,9 +69,6 @@ export async function app_code_refresh_functions(context) {
       let filtered = list_filter(mapped2, (m) => regex_test(regex, m));
       list_sort_string(filtered);
       list_sort(filtered, string_size);
-      log({
-        filtered,
-      });
       let taken = list_take_soft(filtered, 20);
       html_clear(results);
       if (list_empty_is(taken)) {
