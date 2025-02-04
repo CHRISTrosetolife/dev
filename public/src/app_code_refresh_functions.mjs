@@ -103,6 +103,7 @@ export async function app_code_refresh_functions(context) {
               object_property_set(m, "highlighted", true);
             });
           });
+          each(list, (item) => {});
         });
       }
     });
