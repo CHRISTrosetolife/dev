@@ -1,3 +1,4 @@
+import { html_input_validated_on_input } from "./html_input_validated_on_input.mjs";
 import { html_input_validated_on_input_lambda } from "./html_input_validated_on_input_lambda.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_style_default_border_value } from "./html_style_default_border_value.mjs";
@@ -30,7 +31,7 @@ export function html_input_validated(root, placeholder) {
   html_on_input(input_username, on_input);
   return object_merge_strict(
     {
-      ["on_input"]: on_input,
+      [html_input_validated_on_input()]: on_input,
     },
     input_username,
   );
