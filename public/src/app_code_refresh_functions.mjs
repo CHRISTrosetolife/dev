@@ -32,7 +32,6 @@ import { object_properties } from "./object_properties.mjs";
 import { app_code_local_functions_path } from "./app_code_local_functions_path.mjs";
 import { http_storage_get } from "./http_storage_get.mjs";
 import { html_button_back } from "./html_button_back.mjs";
-import { html_on_input_initial } from "./html_on_input_initial.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -74,8 +73,7 @@ export async function app_code_refresh_functions(context) {
     );
     let file_paths = object_properties(files);
     let mapped2 = list_map(file_paths, function_path_to_name);
-    html_input_validated_on_input_lambda();
-    html_on_input_initial(st, () => {
+    html_input_validated_on_input_lambda(st, () => {
       let value = html_value_get(st);
       let split = string_split_space(value);
       let v_lists = list_map(split, string_split_empty);
