@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { html_input_validated } from "./html_input_validated.mjs";
 import { app_code } from "./app_code.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
@@ -21,6 +22,7 @@ export function app_code_refresh_username(context) {
     storage_local_set(app_code, "username", value);
     next();
   });
+  object_property_set(object, "property_name", value2);
   html_hr(root);
   html_button_width_full_text_click(root, "Skip", () => {
     next();
