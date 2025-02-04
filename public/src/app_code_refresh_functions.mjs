@@ -1,3 +1,4 @@
+import { list_copy } from "./list_copy.mjs";
 import { list_first } from "./list_first.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
@@ -77,6 +78,7 @@ export async function app_code_refresh_functions(context) {
         v_lists = [];
       }
       let regexes = list_map(v_lists, (v_list) => {
+        let copy = list_copy(v_list);
         let regex_list = list_between_surround(v_list, ".*");
         let regex_string = list_join_empty(regex_list);
         let regex = regex_new(regex_string);
