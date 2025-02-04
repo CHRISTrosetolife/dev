@@ -1,4 +1,3 @@
-import { function_name_combine } from "./function_name_combine.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { app_code_username_get } from "./app_code_username_get.mjs";
 import { app_code_username_exists } from "./app_code_username_exists.mjs";
@@ -11,8 +10,13 @@ import { app_code_refresh_functions } from "./app_code_refresh_functions.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
+import { function_name_combine_multiple } from "./function_name_combine_multiple.mjs";
 export function app_code_refresh_menu(context) {
-  let prefix = function_name_combine(fn_name("app_code"), "refresh", "");
+  let prefix = function_name_combine_multiple([
+    fn_name("app_code"),
+    "refresh",
+    "",
+  ]);
   let suffix = string_prefix_without(fn_name("app_code_refresh_menu"), prefix);
   storage_local_set(app_code, "screen", suffix);
   let root = html_clear_scroll_top_centered_context(context);
