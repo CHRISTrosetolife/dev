@@ -5,6 +5,7 @@ import { app_code_files_get } from "./app_code_files_get.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { html_load } from "./html_load.mjs";
+import { html_p_text } from "./html_p_text.mjs";
 export async function app_code_refresh_function() {
   await html_load(async () => {
     let root = app_code_screen_set(
@@ -17,6 +18,7 @@ export async function app_code_refresh_function() {
       "function_selected",
     );
     let p = function_name_to_path(function_selected);
-    object_property_get(object, "property_name");
+    let contents = object_property_get(files, p);
+    html_p_text(root, contents);
   });
 }
