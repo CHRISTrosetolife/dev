@@ -6,6 +6,8 @@ import { object_property_initialize_get } from "./object_property_initialize_get
 export async function html_load(lambda) {
   let g = global_function(html_load);
   let s = object_property_initialize_get(g, "set", () => set_new());
+  if (false) {
+  }
   let o = {};
   let overlay = html_loader();
   await sleep_0();
