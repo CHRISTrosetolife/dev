@@ -77,7 +77,10 @@ export function html_input_validated(root, placeholder) {
         html_input_validated_on_input_lambda(),
       )
     ) {
-      let on_input = object_property_get(input_username, "on_input_lambda");
+      let on_input = object_property_get(
+        input_username,
+        html_input_validated_on_input_lambda(),
+      );
       on_input(valid);
     }
   }
