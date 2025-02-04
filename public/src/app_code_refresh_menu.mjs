@@ -1,3 +1,4 @@
+import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { app_code_username_get } from "./app_code_username_get.mjs";
 import { app_code_username_exists } from "./app_code_username_exists.mjs";
@@ -8,18 +9,9 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_clear_scroll_top_centered_context } from "./html_clear_scroll_top_centered_context.mjs";
 import { app_code_refresh_functions } from "./app_code_refresh_functions.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { storage_local_set } from "./storage_local_set.mjs";
-import { string_prefix_without } from "./string_prefix_without.mjs";
-import { function_name_combine_multiple } from "./function_name_combine_multiple.mjs";
 export function app_code_refresh_menu(context) {
   let this_fn_name = fn_name("app_code_refresh_menu");
-  let prefix = function_name_combine_multiple([
-    fn_name("app_code"),
-    "refresh",
-    "",
-  ]);
-  let suffix = string_prefix_without(this_fn_name, prefix);
-  storage_local_set(app_code, "screen", suffix);
+  app_code_screen_set(this_fn_name);
   let root = html_clear_scroll_top_centered_context(context);
   html_button_width_full_text_click(root, "Functions", async () => {
     await app_code_refresh_functions(context);
