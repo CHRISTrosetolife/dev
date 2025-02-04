@@ -16,5 +16,5 @@ export async function html_load(lambda) {
   }
   let o = {};
   set_add(o);
-  lambda();
+  await lambda();
 }
