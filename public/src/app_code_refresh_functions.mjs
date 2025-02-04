@@ -25,7 +25,7 @@ export async function app_code_refresh_functions(context) {
         return await http_storage_get(app_code_local_functions_path());
       },
     );
-    log({});
+    log("here");
     let file_paths = object_properties(files);
     let mapped2 = list_map(file_paths, function_path_to_name);
     html_list(root, mapped2);
