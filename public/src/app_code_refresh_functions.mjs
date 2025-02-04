@@ -60,11 +60,13 @@ export async function app_code_refresh_functions(context) {
     html_on_input_initial(st, () => {
       let value = html_value_get(st);
       let split = string_split_space(value);
-      list_map(split, (s) => {});
-      let v_list = string_split_empty(value);
-      let regex_list = list_between_after(v_list, ".*");
-      let regex_string = list_join_empty(regex_list);
-      let regex = new RegExp(regex_string, "i");
+      let regexes = list_map(split, (s) => {
+        let v_list = string_split_empty(value);
+        let regex_list = list_between_after(v_list, ".*");
+        let regex_string = list_join_empty(regex_list);
+        let regex = new RegExp(regex_string, "i");
+        return regex;
+      });
       let filtered = list_filter(mapped2, (m) => regex_test(regex, m));
       list_sort_string(filtered);
       list_sort(filtered, string_size);
