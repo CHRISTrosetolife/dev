@@ -7,9 +7,10 @@ export async function app_code() {
   let body = html_style_default_initialize();
   let root = html_div(body);
   await html_scripts_load(body, ["axios", "acorn", "astring"]);
+  let app_fn = app_code;
   let context = {
     root,
   };
-  storage_local_initialize();
+  storage_local_initialize(app_fn);
   await function_run(f, [context]);
 }
