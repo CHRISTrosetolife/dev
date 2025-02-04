@@ -14,6 +14,6 @@ export async function app_code() {
   if (storage_local_exists_not(app_code, "username")) {
     app_code_refresh_username(context);
   } else {
-    await app_code_refresh_menu(context);
+    app_code_refresh_menu(context);
   }
 }
