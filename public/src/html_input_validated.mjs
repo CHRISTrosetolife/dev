@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { html_condition_letters_numbers_underscores_conditions } from "./html_condition_letters_numbers_underscores_conditions.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_style_default_border_value } from "./html_style_default_border_value.mjs";
@@ -76,6 +77,9 @@ export function html_input_validated(
     );
     html_style(input_username, border_color);
     html_style_font_color(title, border_color);
+    log({
+      title,
+    });
     if (object_property_exists(input_username, "on_input_lambda")) {
       let on_input = object_property_get(input_username, "on_input_lambda");
       on_input(valid, value);
