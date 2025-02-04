@@ -1,3 +1,4 @@
+import { list_sort } from "./list_sort.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { regex_test } from "./regex_test.mjs";
 import { log } from "./log.mjs";
@@ -56,6 +57,7 @@ export async function app_code_refresh_functions(context) {
       let filtered = list_filter(mapped2, (m) => regex_test(regex, m));
       let taken = list_take(filtered, 20);
       list_sort_string(taken);
+      list_sort(taken);
       each(taken, (t) => {
         html_button_width_full_text_click(root, t, () => {});
       });
