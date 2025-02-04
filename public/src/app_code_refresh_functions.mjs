@@ -80,7 +80,7 @@ export async function app_code_refresh_functions(context) {
         html_p_text(results, "No functions found for search query");
       } else {
         each(taken, (t) => {
-          html_button_width_full_click(results, () => {});
+          let b = html_button_width_full_click(results, () => {});
         });
       }
     });
