@@ -1,3 +1,5 @@
+import { app_code_screen_set } from "./app_code_screen_set.mjs";
+import { fn_name } from "./fn_name.mjs";
 import { log } from "./log.mjs";
 import { html_input_validated_on_input } from "./html_input_validated_on_input.mjs";
 import { app_code_refresh_menu } from "./app_code_refresh_menu.mjs";
@@ -12,6 +14,7 @@ import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { html_clear_scroll_top_centered_context } from "./html_clear_scroll_top_centered_context.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export function app_code_refresh_username(context) {
+  app_code_screen_set(fn_name("app_code_refresh_username"));
   let root = html_clear_scroll_top_centered_context(context);
   html_p_text_multiple(root, [
     "In order to store data for later, you need a username",
