@@ -23,7 +23,6 @@ import { object_properties } from "./object_properties.mjs";
 import { app_code_local_functions_path } from "./app_code_local_functions_path.mjs";
 import { http_storage_get } from "./http_storage_get.mjs";
 import { html_button_back } from "./html_button_back.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_input_width_full_placeholder } from "./html_input_width_full_placeholder.mjs";
 import { html_on_input_initial } from "./html_on_input_initial.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
@@ -80,7 +79,7 @@ export async function app_code_refresh_functions(context) {
         html_p_text(results, "No functions found for search query");
       } else {
         each(taken, (t) => {
-          html_button_width_full_text_click(results, t, () => {});
+          html_button_width_full_click(results, t, () => {});
         });
       }
     });
