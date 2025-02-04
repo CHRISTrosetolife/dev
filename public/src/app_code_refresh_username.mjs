@@ -1,3 +1,4 @@
+import { html_input_validated_error_color } from "./html_input_validated_error_color.mjs";
 import { html_input_validated } from "./html_input_validated.mjs";
 import { app_code } from "./app_code.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
@@ -74,7 +75,7 @@ export function app_code_refresh_username(context) {
         ]);
     html_inner_set(p_error_message, message);
     let border_color = html_style_default_border_value(
-      valid ? "green" : error_color,
+      valid ? "green" : html_input_validated_error_color(),
     );
     html_style(input_username, border_color);
     html_button_enable_if(button_save, valid);
