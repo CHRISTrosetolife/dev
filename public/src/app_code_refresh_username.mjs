@@ -24,14 +24,12 @@ export function app_code_refresh_username(context) {
     storage_local_set(app_code, "username", value);
     next();
   });
-  $ag;
-  let lambda = (valid) => {
-    html_button_enable_if(button_save, valid);
-  };
   object_property_set_exists_not(
     html_input_validated_on_input_lambda(),
     input_username,
-    lambda,
+    (valid) => {
+      html_button_enable_if(button_save, valid);
+    },
   );
   html_hr(root);
   html_button_width_full_text_click(root, "Skip", () => {
