@@ -12,6 +12,7 @@ import { object_properties } from "./object_properties.mjs";
 import { app_code_local_functions_path } from "./app_code_local_functions_path.mjs";
 import { http_storage_get } from "./http_storage_get.mjs";
 import { html_button_back } from "./html_button_back.mjs";
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_code_refresh_functions(context) {
   await html_load(async () => {
     let root = html_clear_scroll_top_centered_context(context);
@@ -29,6 +30,8 @@ export async function app_code_refresh_functions(context) {
     let file_paths = object_properties(files);
     let mapped2 = list_map(file_paths, function_path_to_name);
     let taken = list_take(mapped2, 20);
-    each(list, (item) => {});
+    each(taken, (t) => {
+      html_button_width_full_text_click(root, t, () => {});
+    });
   });
 }
