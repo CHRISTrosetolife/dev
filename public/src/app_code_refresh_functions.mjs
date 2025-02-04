@@ -14,6 +14,7 @@ import { app_code_local_functions_path } from "./app_code_local_functions_path.m
 import { http_storage_get } from "./http_storage_get.mjs";
 import { html_button_back } from "./html_button_back.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
+import { html_input_width_full_placeholder } from "./html_input_width_full_placeholder.mjs";
 export async function app_code_refresh_functions(context) {
   await html_load(async () => {
     let root = html_clear_scroll_top_centered_context(context);
@@ -24,6 +25,7 @@ export async function app_code_refresh_functions(context) {
       root,
       'Choose a function. Type in letters in the order they appear in the function name. For example, "oo" would match "tons_of" and "options".',
     );
+    html_input_width_full_placeholder(root, "Search term");
     let g = global_get();
     let files = await object_property_initialize_get_async(
       g,
