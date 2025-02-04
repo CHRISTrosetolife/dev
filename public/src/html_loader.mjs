@@ -1,4 +1,3 @@
-import { html_document_head } from "./html_document_head.mjs";
 import { html_style_font_size_default_multiplied } from "./html_style_font_size_default_multiplied.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { html_spacer_vertical_n } from "./html_spacer_vertical_n.mjs";
@@ -9,8 +8,9 @@ import { html_style } from "./html_style.mjs";
 import { html_style_height_full } from "./html_style_height_full.mjs";
 import { html_style_width_full } from "./html_style_width_full.mjs";
 import { html_div } from "./html_div.mjs";
+import { html_document_body } from "./html_document_body.mjs";
 export function html_loader() {
-  let body = html_document_head();
+  let body = html_document_body();
   let overlay = html_div(body);
   html_style_width_full(overlay);
   html_style_height_full(overlay);
