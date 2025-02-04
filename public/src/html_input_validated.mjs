@@ -38,6 +38,7 @@ export function html_input_validated(
     },
     input_username_inner,
   );
+  object_property_get(input_username, "title");
   html_on_input(input_username_inner, on_input);
   return input_username;
   function on_input() {
