@@ -20,7 +20,7 @@ export function html_loader() {
     left: 0,
     "z-index": 9999,
   });
-  html_style_background_color_transparent(overlay, "black", 90);
+  html_style_background_color_transparent(overlay, "black", 85);
   let label = html_p_text(overlay, "Loading...");
   html_style_font_color_white(label);
   html_spacer_vertical_n(label, 6);
