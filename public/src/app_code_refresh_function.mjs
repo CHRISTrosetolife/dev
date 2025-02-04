@@ -6,7 +6,7 @@ import { fn_name } from "./fn_name.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { html_load } from "./html_load.mjs";
 import { html_p_text } from "./html_p_text.mjs";
-export async function app_code_refresh_function() {
+export async function app_code_refresh_function(context) {
   await html_load(async () => {
     let root = app_code_screen_set(
       context,
