@@ -18,9 +18,9 @@ export async function html_load(lambda) {
     object_property_set(g, "overlay", overlay);
   }
   let o = {};
-  set_add(s,o);
+  set_add(s, o);
   await lambda();
-  set_remove(o);
+  set_remove(s,o);
   if (set_empty_is(s)) {
     let overlay = object_property_get(g, "overlay");
     html_remove(overlay);
