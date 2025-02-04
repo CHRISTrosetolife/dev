@@ -80,6 +80,7 @@ export function html_input_validated(
     log({
       title,
     });
+    debugger;
     if (object_property_exists(input_username, "on_input_lambda")) {
       let on_input = object_property_get(input_username, "on_input_lambda");
       on_input(valid, value);
