@@ -1,3 +1,4 @@
+import { list_all } from "./list_all.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { html_div } from "./html_div.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
@@ -67,7 +68,9 @@ export async function app_code_refresh_functions(context) {
         let regex = new RegExp(regex_string, "i");
         return regex;
       });
-      let filtered = list_filter(mapped2, (m) => regex_test(regex, m));
+      let filtered = list_filter(mapped2, (m) =>
+        list_all(regexes, (r) => regex_test(r, m)),
+      );
       list_sort_string(filtered);
       list_sort(filtered, string_size);
       let taken = list_take_soft(filtered, 20);
