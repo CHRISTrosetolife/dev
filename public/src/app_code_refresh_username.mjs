@@ -24,11 +24,15 @@ export function app_code_refresh_username(context) {
     storage_local_set(app_code, "username", value);
     next();
   });
-  let property_name = html_input_validated_on_input_lambda();
+  $ag;
   let lambda = (valid) => {
     html_button_enable_if(button_save, valid);
   };
-  object_property_set_exists_not(property_name, input_username, lambda);
+  object_property_set_exists_not(
+    html_input_validated_on_input_lambda(),
+    input_username,
+    lambda,
+  );
   html_hr(root);
   html_button_width_full_text_click(root, "Skip", () => {
     next();
