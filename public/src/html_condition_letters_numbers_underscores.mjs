@@ -7,6 +7,7 @@ import { string_letter_is } from "./string_letter_is.mjs";
 import { string_all_or } from "./string_all_or.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 export function html_condition_letters_numbers_underscores() {
+  let requirements = [string_letter_is, string_underscore_is, string_digit_is];
   return {
     message: (value) => {
       let value_as_list = string_split_empty(value);
@@ -20,11 +21,6 @@ export function html_condition_letters_numbers_underscores() {
     condition: valid_is,
   };
   function valid_is(u) {
-    let requirements = [
-      string_letter_is,
-      string_underscore_is,
-      string_digit_is,
-    ];
     return string_all_or(u, requirements);
   }
 }
