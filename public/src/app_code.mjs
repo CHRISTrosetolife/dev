@@ -10,6 +10,7 @@ export async function app_code() {
   let app_fn = app_code;
   let context = {
     root,
+    app_fn,
   };
   storage_local_initialize(app_fn, "screen", "main");
   await function_run(f, [context]);
