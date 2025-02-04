@@ -6,6 +6,8 @@ export function object_merge_properties(to, from, properties) {
   assert_arguments_length(arguments, 3);
   each(properties, (p) => {
     let value = object_property_get(from, p);
+    if (false) {
+    }
     object_property_set(to, p, value);
   });
   return to;
