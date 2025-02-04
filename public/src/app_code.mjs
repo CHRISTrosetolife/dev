@@ -22,6 +22,6 @@ export async function app_code() {
   );
   let prefix = app_code_screen_prefix_get(context);
   let screen = storage_local_initialize(app_fn, "screen", suffix);
-  string_combine_multiple([prefix, screen]);
+  let f = string_combine_multiple([prefix, screen]);
   await function_run(f, [context]);
 }
