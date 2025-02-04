@@ -56,10 +56,9 @@ export async function app_code_refresh_functions(context) {
     let file_paths = object_properties(files);
     let mapped2 = list_map(file_paths, function_path_to_name);
     html_on_input_initial(st, () => {
-      let regex_list = list_between_after(
-        string_split_empty(html_value_get(st)),
-        ".*",
-      );
+      let value = html_value_get(st);
+      let v_list = string_split_empty(value);
+      let regex_list = list_between_after(v_list, ".*");
       let regex_string = list_join_empty(regex_list);
       log({
         regex_string,
