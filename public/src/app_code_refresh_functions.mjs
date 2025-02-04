@@ -73,6 +73,7 @@ export async function app_code_refresh_functions(context) {
     );
     let file_paths = object_properties(files);
     let mapped2 = list_map(file_paths, function_path_to_name);
+    object_property_set(object, "property_name", value2);
     html_on_input_initial(st, () => {
       let value = html_value_get(st);
       let split = string_split_space(value);
