@@ -23,7 +23,7 @@ export function html_loader() {
   html_style_background_color_transparent(overlay, "black", 85);
   let label = html_p_text(overlay, "Loading...");
   html_style_font_color_white(label);
-  html_spacer_vertical_n(label, 6);
+  html_spacer_vertical_n(label, 10);
   html_style_centered(label);
   html_style_font_size_default_multiplied(label, 2);
   return overlay;
