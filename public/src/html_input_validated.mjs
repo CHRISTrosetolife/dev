@@ -26,7 +26,14 @@ export function html_input_validated(root, placeholder) {
   html_style_rounded_padded(error_message);
   let error_color = html_input_validated_error_color();
   html_style_font_color(error_message, error_color);
-  html_on_input(input_username, () => {
+  html_on_input(input_username, on_input);
+  return object_merge_strict(
+    {
+      error_message,
+    },
+    input_username,
+  );
+  function on_input() {
     let conditions = [
       html_condition_empty_not(),
       html_condition_letters_numbers_underscores(),
@@ -66,11 +73,5 @@ export function html_input_validated(root, placeholder) {
       let on_input = object_property_get(input_username, "on_input");
       on_input(valid);
     }
-  });
-  return object_merge_strict(
-    {
-      error_message,
-    },
-    input_username,
-  );
+  }
 }
