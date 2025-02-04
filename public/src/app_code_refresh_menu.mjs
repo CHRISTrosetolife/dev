@@ -12,7 +12,7 @@ export function app_code_refresh_menu(context) {
   html_button_width_full_text_click(root, "Functions", async () => {
     await app_code_refresh_functions(context);
   });
-  if (app_code_username_exists()) {
+  if (!app_code_username_exists()) {
     html_button_width_full_text_click(
       root,
       string_combine_multiple([
