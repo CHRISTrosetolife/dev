@@ -37,10 +37,11 @@ export async function app_code_refresh_functions(context) {
     );
     let file_paths = object_properties(files);
     let mapped2 = list_map(file_paths, function_path_to_name);
-    html_on_input_initial(st, () => {});
-    let taken = list_take(mapped2, 20);
-    each(taken, (t) => {
-      html_button_width_full_text_click(root, t, () => {});
+    html_on_input_initial(st, () => {
+      let taken = list_take(mapped2, 20);
+      each(taken, (t) => {
+        html_button_width_full_text_click(root, t, () => {});
+      });
     });
   });
 }
