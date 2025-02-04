@@ -1,3 +1,4 @@
+import { each_index } from "./each_index.mjs";
 import { html_button_width_full_click } from "./html_button_width_full_click.mjs";
 import { app_code_refresh_menu } from "./app_code_refresh_menu.mjs";
 import { regex_new } from "./regex_new.mjs";
@@ -86,6 +87,7 @@ export async function app_code_refresh_functions(context) {
             symbol,
             highlighted: false,
           }));
+          each_index(list, (item, index) => {});
         });
       }
     });
