@@ -4,7 +4,7 @@ import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
-export function object_merge_properties_strict(properties, from, to, strict) {
+export function object_merge_properties_generic(properties, from, to, strict) {
   assert_arguments_length(arguments, 4);
   each(properties, (p) => {
     let value = object_property_get(from, p);
