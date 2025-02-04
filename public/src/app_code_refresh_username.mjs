@@ -31,7 +31,7 @@ export function app_code_refresh_username(context) {
     "At this time there are no passwords. You should choose a unique username or someone could overwrite your data.",
   ]);
   let placeholder = "Username";
-  let { p_error_message, error_color, input_username } = html_input_validated(
+  let { p_error_message, input_username } = html_input_validated(
     root,
     placeholder,
   );
