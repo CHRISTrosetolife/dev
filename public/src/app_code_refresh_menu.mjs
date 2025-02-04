@@ -1,3 +1,4 @@
+import { storage_local_exists } from "./storage_local_exists.mjs";
 import { app_code_refresh_main } from "./app_code_refresh_main.mjs";
 import { storage_local_remove } from "./storage_local_remove.mjs";
 import { app_code } from "./app_code.mjs";
@@ -11,7 +12,7 @@ export function app_code_refresh_menu(context) {
   html_button_width_full_text_click(root, "Functions", async () => {
     await app_code_refresh_functions(context);
   });
-  if (false) {
+  if (storage_local_exists(app_code, "username")) {
     html_button_width_full_text_click(
       root,
       string_combine_multiple([
