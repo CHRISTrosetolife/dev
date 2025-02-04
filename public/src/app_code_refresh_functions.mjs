@@ -42,7 +42,7 @@ export async function app_code_refresh_functions(context) {
     html_cycle_p(
       root,
       [noop, html_style_bold],
-      'Choose a function. To find a function, type in letters in the order they appear in the function name. For example, "`oo`" would match "t`o`ns_`o`f" and "`o`pti`o`ns".',
+      'Choose a function. To find a function, type in letters in the order they appear in the function name. For example, "`oo`" would match "t`o`ns_`o`f" and "`o`pti`o`ns". To match in any order, separate by spaces.',
     );
     let st = html_input_width_full_placeholder(root, "Search query");
     html_focus(st);
