@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { set_remove } from "./set_remove.mjs";
@@ -11,7 +10,6 @@ import { sleep_0 } from "./sleep_0.mjs";
 import { html_loader } from "./html_loader.mjs";
 import { object_property_initialize_get } from "./object_property_initialize_get.mjs";
 export async function html_load(lambda) {
-  log("here3");
   let g = global_function(html_load);
   let s = object_property_initialize_get(g, "set", () => set_new());
   if (set_empty_is(s)) {
@@ -22,7 +20,6 @@ export async function html_load(lambda) {
   let o = {};
   set_add(s, o);
   await lambda();
-  log("here2");
   set_remove(s, o);
   if (set_empty_is(s)) {
     let overlay = object_property_get(g, "overlay");
