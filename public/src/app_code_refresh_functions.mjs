@@ -1,3 +1,4 @@
+import { each_range } from "./each_range.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_button_width_full_click } from "./html_button_width_full_click.mjs";
 import { app_code_refresh_menu } from "./app_code_refresh_menu.mjs";
@@ -91,6 +92,7 @@ export async function app_code_refresh_functions(context) {
           let index = 0;
           each(v_list, (vi) => {
             let m;
+            each_range(count, (item) => {});
             while (true) {
               m = list_get(mapped, index);
               if (object_property_get(m, "symbol") === vi) {
