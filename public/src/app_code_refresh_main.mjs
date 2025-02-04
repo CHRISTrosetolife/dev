@@ -1,3 +1,4 @@
+import { html_style_centered } from "./html_style_centered.mjs";
 import { html_style_font_color_white } from "./html_style_font_color_white.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_style_height_full } from "./html_style_height_full.mjs";
@@ -23,6 +24,7 @@ export function app_code_refresh_main(context) {
   html_style_background_color_transparent(overlay, "black", 90);
   let label = html_p_text(overlay, "Loading...");
   html_style_font_color_white(label);
+  html_style_centered(label);
   return;
   let root = html_clear_scroll_top_centered_context(context);
   html_button_width_full_text_click(root, "Functions", async () => {
