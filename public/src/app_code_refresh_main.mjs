@@ -12,7 +12,7 @@ export function app_code_refresh_main(context) {
   html_button_width_full_text_click(
     root,
     string_combine_multiple([
-      "Log out ",
+      "Log out: ",
       storage_local_get(app_code, "username"),
     ]),
     async () => {
