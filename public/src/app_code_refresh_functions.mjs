@@ -64,7 +64,7 @@ export async function app_code_refresh_functions(context) {
         let v_list = string_split_empty(s);
         let regex_list = list_between_surround(v_list, ".*");
         let regex_string = list_join_empty(regex_list);
-        let regex = new RegExp(regex_string, "i");
+        let regex = new RegExp(regex_string);
         return regex;
       });
       let filtered = list_filter(mapped2, (m) =>
