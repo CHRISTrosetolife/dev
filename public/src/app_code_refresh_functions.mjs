@@ -1,4 +1,4 @@
-import { html_input_validated_on_input_lambda } from "./html_input_validated_on_input_lambda.mjs";
+import { html_input_validated_on_input_lambda_initial } from "./html_input_validated_on_input_lambda_initial.mjs";
 import { html_condition_letters_numbers_underscores } from "./html_condition_letters_numbers_underscores.mjs";
 import { html_input_validated } from "./html_input_validated.mjs";
 import { list_copy } from "./list_copy.mjs";
@@ -73,7 +73,7 @@ export async function app_code_refresh_functions(context) {
     );
     let file_paths = object_properties(files);
     let mapped2 = list_map(file_paths, function_path_to_name);
-    html_input_validated_on_input_lambda(st, (valid) => {
+    html_input_validated_on_input_lambda_initial(st, (valid) => {
       html_clear(results);
       if (!valid) {
         return;
