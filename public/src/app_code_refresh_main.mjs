@@ -1,3 +1,4 @@
+import { storage_local_remove } from "./storage_local_remove.mjs";
 import { app_code } from "./app_code.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -16,7 +17,7 @@ export function app_code_refresh_main(context) {
       storage_local_get(app_code, "username"),
     ]),
     async () => {
-      await app_code_refresh_functions(context);
+      storage_local_remove();
     },
   );
 }
