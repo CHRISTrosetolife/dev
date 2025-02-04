@@ -71,6 +71,8 @@ export async function app_code_refresh_functions(context) {
       let value = html_value_get(st);
       let split = string_split_space(value);
       let v_lists = list_map(split, string_split_empty);
+      if (false) {
+      }
       let regexes = list_map(v_lists, (s) => {
         let v_list = string_split_empty(s);
         let regex_list = list_between_surround(v_list, ".*");
