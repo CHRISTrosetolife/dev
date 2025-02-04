@@ -43,7 +43,8 @@ export function app_good() {
           "Unite the church about marriage roles",
           "Unite the church about bible copyrights",
           "Unite the church about believer-to-believer lawsuits",
-          "May all Shepherds be in communion with each other",
+          "Unite the church about abortion",
+          "May all shepherds be in communion with each other",
           "Heal me",
           "Help me learn Cebuano",
           "Help my muscles grow",
@@ -52,7 +53,7 @@ export function app_good() {
           "Let there be no murder",
           "Let there be no sickness",
           "Let there be no thievery",
-          "Let there be no jealousy",
+          "Let there be no jealousy or envy",
           "Let there be no pornography",
           "Let there be life and life abundantly",
           "Let all preaching be perfect",
@@ -68,6 +69,9 @@ export function app_good() {
           "Help orphans",
           "Help children",
           "Help widows",
+          "Help foreigners",
+          "Help the poor",
+          "Help the sick",
         ]);
       }
     });
