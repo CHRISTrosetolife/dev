@@ -28,7 +28,7 @@ export function app_code_refresh_username(context) {
     let value = html_value_get(input_username);
     storage_local_set(app_code, "username", value);
     next();
-  });
+  });$ag
   let lambda = (valid) => {
     log({});
     html_button_enable_if(button_save, valid);
