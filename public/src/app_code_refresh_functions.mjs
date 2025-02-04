@@ -22,6 +22,8 @@ import { html_on_input_initial } from "./html_on_input_initial.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { list_filter } from "./list_filter.mjs";
+import { list_sort_string } from "./list_sort_string.mjs";
+import { identity } from "./identity.mjs";
 export async function app_code_refresh_functions(context) {
   await html_load(async () => {
     let root = html_clear_scroll_top_centered_context(context);
@@ -54,6 +56,7 @@ export async function app_code_refresh_functions(context) {
       let regex = new RegExp(regex_string, "i");
       let filtered = list_filter(mapped2, (m) => regex_test(regex, m));
       let taken = list_take(filtered, 20);
+      list_sort_string(taken, identity);
       each(taken, (t) => {
         html_button_width_full_text_click(root, t, () => {});
       });
