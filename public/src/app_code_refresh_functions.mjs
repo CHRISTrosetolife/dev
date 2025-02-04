@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_between_after } from "./list_between_after.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { each } from "./each.mjs";
@@ -41,11 +42,14 @@ export async function app_code_refresh_functions(context) {
     let file_paths = object_properties(files);
     let mapped2 = list_map(file_paths, function_path_to_name);
     html_on_input_initial(st, () => {
-      let searchTerm = list_between_after(
+      let regex_string = list_between_after(
         string_split_empty(html_value_get(st)),
         ".*",
       );
-      let regex = new RegExp(searchTerm, "i");
+      log({
+        regex_string,
+      });
+      let regex = new RegExp(regex_string, "i");
       let testString = "Hello, world!";
       let isMatch = regex.test(testString);
       let taken = list_take(mapped2, 20);
