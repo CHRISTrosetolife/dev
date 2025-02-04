@@ -8,7 +8,7 @@ export function object_merge_properties(to, from, properties) {
   each(properties, (p) => {
     let value = object_property_get(from, p);
     if (false) {
-      if (object_property_exists(object, "property_name")) {
+      if (object_property_exists(from, p)) {
       }
     }
     object_property_set(to, p, value);
