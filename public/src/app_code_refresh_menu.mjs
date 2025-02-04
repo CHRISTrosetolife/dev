@@ -11,15 +11,17 @@ export function app_code_refresh_menu(context) {
   html_button_width_full_text_click(root, "Functions", async () => {
     await app_code_refresh_functions(context);
   });
-  html_button_width_full_text_click(
-    root,
-    string_combine_multiple([
-      "Log out: ",
-      storage_local_get(app_code, "username"),
-    ]),
-    async () => {
-      storage_local_remove(app_code, "username");
-      app_code_refresh_main(context);
-    },
-  );
+  if (false) {
+    html_button_width_full_text_click(
+      root,
+      string_combine_multiple([
+        "Log out: ",
+        storage_local_get(app_code, "username"),
+      ]),
+      async () => {
+        storage_local_remove(app_code, "username");
+        app_code_refresh_main(context);
+      },
+    );
+  }
 }
