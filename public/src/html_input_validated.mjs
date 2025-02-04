@@ -70,8 +70,8 @@ export function html_input_validated(root, placeholder) {
       valid ? "green" : html_input_validated_error_color(),
     );
     html_style(input_username, border_color);
-    if (object_property_exists(input_username, "on_input")) {
-      let on_input = object_property_get(input_username, "on_input");
+    if (object_property_exists(input_username, "on_input_lambda")) {
+      let on_input = object_property_get(input_username, "on_input_lambda");
       on_input(valid);
     }
   }
