@@ -23,7 +23,7 @@ export function app_code_refresh_username(context) {
     storage_local_set(app_code, "username", value);
     next();
   });
-  object_property_set(input_username, "on_input", (valid) => {
+  object_property_set(input_username, "on_input_lambda", (valid) => {
     html_button_enable_if(button_save, valid);
   });
   html_hr(root);
