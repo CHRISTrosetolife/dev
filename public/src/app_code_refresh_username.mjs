@@ -25,8 +25,8 @@ export function app_code_refresh_username(context) {
     next();
   });
   object_property_set_exists_not(
-    html_input_validated_on_input_lambda(),
     input_username,
+    html_input_validated_on_input_lambda(),
     (valid) => {
       html_button_enable_if(button_save, valid);
     },
