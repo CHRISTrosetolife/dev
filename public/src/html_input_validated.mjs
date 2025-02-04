@@ -30,8 +30,7 @@ export function html_input_validated(root, placeholder) {
   html_on_input(input_username, on_input);
   return object_merge_strict(
     {
-      error_message,
-      on_input: on_input,
+      ["on_input"]: on_input,
     },
     input_username,
   );
