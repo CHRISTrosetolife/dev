@@ -10,7 +10,7 @@ export async function html_load(lambda) {
   let s = object_property_initialize_get(g, "set", () => set_new());
   if (set_empty_is(s)) {
     let overlay = html_loader();
-    object_property_set(object, "property_name", value);
+    object_property_set(g, "overlay", overlay);
   }
   let o = {};
   await sleep_0();
