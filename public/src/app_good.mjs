@@ -64,6 +64,9 @@ export function app_good() {
           "Bless my programming",
           "Bless my apps",
           "Bless the works of Christians",
+          "Help orphans",
+          "Help children",
+          "Help widows",
         ]);
       }
     });
