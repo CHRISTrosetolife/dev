@@ -30,10 +30,11 @@ export function app_code_refresh_username(context) {
     storage_local_set(app_code, "username", value);
     next();
   });
-  html_input_validated_on_input_lambda(input_username, (valid) => {
+  let lambda = (valid) => {
     log({});
     html_button_enable_if(button_save, valid);
-  });
+  };
+  html_input_validated_on_input_lambda(input_username, lambda);
   html_input_validated_on_input(input_username);
   html_hr(root);
   html_button_width_full_text_click(root, "Skip", () => {
