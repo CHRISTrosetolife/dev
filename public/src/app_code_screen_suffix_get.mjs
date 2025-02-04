@@ -4,7 +4,7 @@ import { function_name_combine_multiple } from "./function_name_combine_multiple
 export function app_code_screen_suffix_get(context, this_fn_name) {
   let app_fn = object_property_get(context, "app_fn");
   let prefix = function_name_combine_multiple([
-    object_property_get(object, "property_name"),
+    object_property_get(app_fn, "name"),
     "refresh",
     "",
   ]);
