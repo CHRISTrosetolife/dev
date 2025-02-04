@@ -33,10 +33,10 @@ export function html_input_validated(root, placeholder) {
     {
       on_input,
     },
-    input_username,
+    input_username_inner,
   );
-  return result;
   html_on_input(input_username_inner, on_input);
+  return result;
   function on_input() {
     let conditions = [
       html_condition_empty_not(),
