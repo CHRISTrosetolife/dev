@@ -31,7 +31,7 @@ export function app_code_refresh_username(context) {
     "At this time there are no passwords. You should choose a unique username or someone could overwrite your data.",
   ]);
   let placeholder = "Username";
-  let { p_error_message, input_username } = html_input_validated(
+  let { p_error_message: error_message, input_username } = html_input_validated(
     root,
     placeholder,
   );
@@ -56,7 +56,7 @@ export function app_code_refresh_username(context) {
     );
     let errors = list_filter(mapped, (c) => !object_property_get(c, "valid"));
     let valid = list_empty_is(errors);
-    html_style_display_block_or_none(p_error_message, !valid);
+    html_style_display_block_or_none(error_message, !valid);
     let message = valid
       ? ""
       : string_combine_multiple([
@@ -71,7 +71,7 @@ export function app_code_refresh_username(context) {
             ),
           ),
         ]);
-    html_inner_set(p_error_message, message);
+    html_inner_set(error_message, message);
     let border_color = html_style_default_border_value(
       valid ? "green" : html_input_validated_error_color(),
     );
