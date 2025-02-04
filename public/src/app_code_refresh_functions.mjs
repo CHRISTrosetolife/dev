@@ -1,3 +1,4 @@
+import { list_take } from "./list_take.mjs";
 import { html_load } from "./html_load.mjs";
 import { global_files } from "./global_files.mjs";
 import { global_get } from "./global_get.mjs";
@@ -27,6 +28,7 @@ export async function app_code_refresh_functions(context) {
     );
     let file_paths = object_properties(files);
     let mapped2 = list_map(file_paths, function_path_to_name);
+    let taken = list_take(mapped2, 20);
     html_list(root, mapped2);
   });
 }
