@@ -1,3 +1,4 @@
+import { list_first } from "./list_first.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -40,6 +41,8 @@ import { html_p_text } from "./html_p_text.mjs";
 import { list_get } from "./list_get.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
+import { list_size_1 } from "./list_size_1.mjs";
+import { string_empty_is } from "./string_empty_is.mjs";
 export async function app_code_refresh_functions(context) {
   await html_load(async () => {
     let root = app_code_screen_set(
@@ -71,7 +74,7 @@ export async function app_code_refresh_functions(context) {
       let value = html_value_get(st);
       let split = string_split_space(value);
       let v_lists = list_map(split, string_split_empty);
-      if (false) {
+      if (list_size_1(v_lists) && string_empty_is(list_first(v_lists))) {
       }
       let regexes = list_map(v_lists, (s) => {
         let v_list = string_split_empty(s);
