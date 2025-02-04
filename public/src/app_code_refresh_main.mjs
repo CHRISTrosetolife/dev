@@ -17,7 +17,7 @@ export function app_code_refresh_main(context) {
       storage_local_get(app_code, "username"),
     ]),
     async () => {
-      storage_local_remove();
+      storage_local_remove(app_code, "username");
     },
   );
 }
