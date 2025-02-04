@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_code_screen_prefix_get } from "./app_code_screen_prefix_get.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -23,5 +24,8 @@ export async function app_code() {
   let prefix = app_code_screen_prefix_get(context);
   let screen = storage_local_initialize(app_fn, "screen", suffix);
   let f = string_combine_multiple([prefix, screen]);
+  log({
+    f,
+  });
   await function_run(f, [context]);
 }
