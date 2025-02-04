@@ -90,6 +90,7 @@ export async function app_code_refresh_functions(context) {
             highlighted: false,
           }));
           let index = 0;
+          each(list, (item) => {});
           each(v_list, (vi) => {
             let m;
             while (true) {
