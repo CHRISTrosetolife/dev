@@ -67,9 +67,12 @@ export async function app_code_refresh_functions(context) {
       });
       let regex = new RegExp(regex_string, "i");
       let filtered = list_filter(mapped2, (m) => regex_test(regex, m));
+      list_sort_string(filtered);
+      list_sort(filtered, string_size);
+      log({
+        filtered,
+      });
       let taken = list_take_soft(filtered, 20);
-      list_sort_string(taken);
-      list_sort(taken, string_size);
       html_clear(results);
       if (list_empty_is(taken)) {
         html_p_text(results, "No functions found for search query");
