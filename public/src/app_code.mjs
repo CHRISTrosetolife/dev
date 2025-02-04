@@ -1,3 +1,4 @@
+import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { function_run } from "./function_run.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_scripts_load } from "./html_scripts_load.mjs";
@@ -9,7 +10,6 @@ export async function app_code() {
   let context = {
     root,
   };
-  if (false) {
-  }
+  storage_local_initialize();
   await function_run(f, [context]);
 }
