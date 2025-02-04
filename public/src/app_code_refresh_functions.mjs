@@ -105,7 +105,7 @@ export async function app_code_refresh_functions(context) {
             });
           });
           each(mapped, (m) => {
-            html_span_text(b, object_property_get(m, "symbol"));
+            let s = html_span_text(b, object_property_get(m, "symbol"));
           });
         });
       }
