@@ -1,3 +1,4 @@
+import { html_p_text } from "./html_p_text.mjs";
 import { each } from "./each.mjs";
 import { list_take } from "./list_take.mjs";
 import { html_load } from "./html_load.mjs";
@@ -19,6 +20,10 @@ export async function app_code_refresh_functions(context) {
     html_button_back(root, async () => {
       await app_code_refresh_main(context);
     });
+    html_p_text(
+      root,
+      'Choose a function. Type in letters in the order they appear in the function. For example, "hlwd" would match hello_world.',
+    );
     let g = global_get();
     let files = await object_property_initialize_get_async(
       g,
