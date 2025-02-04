@@ -1,3 +1,4 @@
+import { regex_test } from "./regex_test.mjs";
 import { log } from "./log.mjs";
 import { list_between_after } from "./list_between_after.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -20,6 +21,7 @@ import { html_input_width_full_placeholder } from "./html_input_width_full_place
 import { html_on_input_initial } from "./html_on_input_initial.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { html_value_get } from "./html_value_get.mjs";
+import { list_filter } from "./list_filter.mjs";
 export async function app_code_refresh_functions(context) {
   await html_load(async () => {
     let root = html_clear_scroll_top_centered_context(context);
@@ -50,7 +52,7 @@ export async function app_code_refresh_functions(context) {
         regex_string,
       });
       let regex = new RegExp(regex_string, "i");
-      let isMatch = regex.test(testString);
+      let filtered = list_filter(mapped2, (m) => regex_test(regex, m));
       let taken = list_take(mapped2, 20);
       each(taken, (t) => {
         html_button_width_full_text_click(root, t, () => {});
