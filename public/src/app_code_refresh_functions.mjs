@@ -1,3 +1,4 @@
+import { html_focus } from "./html_focus.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { noop } from "./noop.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
@@ -39,6 +40,7 @@ export async function app_code_refresh_functions(context) {
       'Choose a function. To find a function, type in letters in the order they appear in the function name. For example, "`oo`" would match "t`o`ns_`o`f" and "`o`pti`o`ns".',
     );
     let st = html_input_width_full_placeholder(root, "Search term");
+    html_focus(st);
     let g = global_get();
     let files = await object_property_initialize_get_async(
       g,
