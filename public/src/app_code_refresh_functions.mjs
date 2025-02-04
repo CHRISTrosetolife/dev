@@ -73,7 +73,10 @@ export async function app_code_refresh_functions(context) {
     );
     let file_paths = object_properties(files);
     let mapped2 = list_map(file_paths, function_path_to_name);
-    html_input_validated_on_input_lambda(st, () => {
+    html_input_validated_on_input_lambda(st, (valid) => {
+      html_clear(results);
+      if (false) {
+      }
       let value = html_value_get(st);
       let split = string_split_space(value);
       let v_lists = list_map(split, string_split_empty);
@@ -93,7 +96,6 @@ export async function app_code_refresh_functions(context) {
       list_sort_string(filtered);
       list_sort(filtered, string_size);
       let taken = list_take_soft(filtered, 20);
-      html_clear(results);
       if (list_empty_is(taken)) {
         html_p_text(results, "No functions found for search query");
       } else {
