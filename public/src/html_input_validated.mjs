@@ -7,6 +7,7 @@ export function html_input_validated(root, placeholder) {
   let p_error_message = html_div(root);
   html_style_rounded_padded(p_error_message);
   let error_color = html_input_validated_error_color();
+    html_style_font_color(p_error_message, error_color);
   return {
     p_error_message,
     error_color,
