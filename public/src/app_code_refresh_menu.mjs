@@ -19,7 +19,7 @@ export function app_code_refresh_menu(context) {
         "Log out: ",
         storage_local_get(app_code, "username"),
       ]),
-      async () => {
+      () => {
         storage_local_remove(app_code, "username");
         app_code_refresh_main(context);
       },
