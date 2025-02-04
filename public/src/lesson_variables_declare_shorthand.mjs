@@ -1,3 +1,4 @@
+import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { lesson_screen_variables_numbers_sorted } from "./lesson_screen_variables_numbers_sorted.mjs";
 import { list_sort } from "./list_sort.mjs";
 import { js_code_statement_let_assign_multiple } from "./js_code_statement_let_assign_multiple.mjs";
@@ -9,7 +10,6 @@ import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_co
 import { html_p_text } from "./html_p_text.mjs";
 import { identity } from "./identity.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
-import { list_sort_string } from "./list_sort_string.mjs";
 import { app_learn_code_random_identifiers } from "./app_learn_code_random_identifiers.mjs";
 export function lesson_variables_declare_shorthand() {
   let description =
@@ -21,7 +21,7 @@ export function lesson_variables_declare_shorthand() {
       let values = call_multiple(integer_random_digit_single_positive, count);
       list_sort(values, identity);
       let names = app_learn_code_random_identifiers(count);
-      list_sort_string(names, identity);
+      list_sort_string_map(names, identity);
       let [name_a, name_b] = names;
       return `${js_code_statement_let_assign_multiple(names, values)}
 ${app_learn_code_log_add(name_a, name_b)}`;
@@ -36,7 +36,7 @@ ${app_learn_code_log_add(name_a, name_b)}`;
     list_sort(values, identity);
     let [a, b] = values;
     let names = app_learn_code_random_identifiers(count);
-    list_sort_string(names, identity);
+    list_sort_string_map(names, identity);
     let [name_a, name_b] = names;
     html_p_text(parent, "here is some code :");
     app_learn_code_code_part_contrast(

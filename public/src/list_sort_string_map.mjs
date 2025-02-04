@@ -1,4 +1,4 @@
-export function list_sort_string(list, element_mapper) {
+export function list_sort_string_map(list, element_mapper) {
   var collator = new Intl.Collator([], {
     numeric: true,
   });

@@ -1,10 +1,10 @@
+import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { app_language_refresh_node } from "./app_language_refresh_node.mjs";
 import { app_language_word_native } from "./app_language_word_native.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language_word_button_audio_none } from "./app_language_word_button_audio_none.mjs";
 import { each_object } from "./each_object.mjs";
 import { identity } from "./identity.mjs";
-import { list_sort_string } from "./list_sort_string.mjs";
 import { list_add } from "./list_add.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { each } from "./each.mjs";
@@ -31,8 +31,8 @@ export function app_language_refresh_review(context) {
       list_add(e, word_f);
     }),
   );
-  list_sort_string(words_f, identity);
-  each_object(lookup, (key, value) => list_sort_string(value, identity));
+  list_sort_string_map(words_f, identity);
+  each_object(lookup, (key, value) => list_sort_string_map(value, identity));
   each(words_f, (word_f) => {
     app_language_word_button_audio_none(root, language_learn, word_f);
     each(object_property_get(lookup, word_f), (english) =>

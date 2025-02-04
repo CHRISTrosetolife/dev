@@ -1,3 +1,4 @@
+import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { string_size } from "./string_size.mjs";
 import { list_size } from "./list_size.mjs";
 import { app_learn_code_code_background_set } from "./app_learn_code_code_background_set.mjs";
@@ -46,7 +47,6 @@ import { list_filter } from "./list_filter.mjs";
 import { app_learn_code_range_retry } from "./app_learn_code_range_retry.mjs";
 import { equal_not } from "./equal_not.mjs";
 import { list_includes } from "./list_includes.mjs";
-import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
 import { list_skip } from "./list_skip.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
@@ -97,7 +97,7 @@ export function app_learn_code_unshuffle(source_get) {
         }
         list_add(sorted, a);
       }
-      list_sort_string(sorted, identity);
+      list_sort_string_map(sorted, identity);
       list_sort(sorted, string_size);
       let parts = array_new();
       let current_index = 0;

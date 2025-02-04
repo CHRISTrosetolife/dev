@@ -1,4 +1,4 @@
-import { list_sort_string } from "./list_sort_string.mjs";
+import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { list_single } from "./list_single.mjs";
 import { storage_bucket } from "./storage_bucket.mjs";
 import { error } from "./error.mjs";
@@ -12,6 +12,6 @@ export async function storage_files(prefix) {
     prefix,
   });
   let files = list_single(data);
-  list_sort_string(files, (f) => f.name);
+  list_sort_string_map(files, (f) => f.name);
   return files;
 }

@@ -1,4 +1,4 @@
-import { list_sort_string } from "./list_sort_string.mjs";
+import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { string_replace } from "./string_replace.mjs";
 export function bible_eng_versions() {
   return [
@@ -40,6 +40,6 @@ export function bible_eng_versions() {
     "engWycliffe",
     "engylt",
   ];
-  list_sort_string(c, (s) => string_replace(s, "-", ""));
+  list_sort_string_map(c, (s) => string_replace(s, "-", ""));
   return c;
 }

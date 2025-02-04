@@ -1,3 +1,4 @@
+import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { html_style_success } from "./html_style_success.mjs";
 import { js_code_format_indent_none } from "./js_code_format_indent_none.mjs";
 import { app_learn_code_ms_correct } from "./app_learn_code_ms_correct.mjs";
@@ -13,7 +14,6 @@ import { html_hr } from "./html_hr.mjs";
 import { app_learn_code_code_part_titled_code } from "./app_learn_code_code_part_titled_code.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_random_index } from "./list_random_index.mjs";
-import { list_sort_string } from "./list_sort_string.mjs";
 import { list_add } from "./list_add.mjs";
 import { equal } from "./equal.mjs";
 import { list_any } from "./list_any.mjs";
@@ -55,7 +55,7 @@ export function app_learn_code_quiz_inner_refresh(
       break;
     }
   }
-  list_sort_string(choices, (c) => c.answer);
+  list_sort_string_map(choices, (c) => c.answer);
   let correct_index = list_random_index(choices);
   let { source } = list_get(choices, correct_index);
   source = js_code_format_indent_none(source);

@@ -1,3 +1,4 @@
+import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { html_cycle_code_list } from "./html_cycle_code_list.mjs";
 import { call_multiple } from "./call_multiple.mjs";
 import { app_learn_code_log_add } from "./app_learn_code_log_add.mjs";
@@ -7,7 +8,6 @@ import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_co
 import { html_p_text } from "./html_p_text.mjs";
 import { identity } from "./identity.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
-import { list_sort_string } from "./list_sort_string.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { js_code_statement_let } from "./js_code_statement_let.mjs";
 import { list_sort } from "./list_sort.mjs";
@@ -24,7 +24,7 @@ export function lesson_variables_two() {
       list_sort(values, identity);
       let [v_a, v_b] = values;
       let names = app_learn_code_random_identifiers(count);
-      list_sort_string(names, identity);
+      list_sort_string_map(names, identity);
       let [name_a, name_b] = names;
       return `${js_code_statement_let_assign(name_a, v_a)}
 ${js_code_statement_let_assign(name_b, v_b)}

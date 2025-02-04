@@ -1,3 +1,4 @@
+import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { lesson_screen_variables_numbers_sorted } from "./lesson_screen_variables_numbers_sorted.mjs";
 import { js_code_statement_let_assign_multiple } from "./js_code_statement_let_assign_multiple.mjs";
 import { list_sort } from "./list_sort.mjs";
@@ -7,7 +8,6 @@ import { integer_random_digit_single_positive } from "./integer_random_digit_sin
 import { html_p_text } from "./html_p_text.mjs";
 import { identity } from "./identity.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
-import { list_sort_string } from "./list_sort_string.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { app_learn_code_random_identifiers } from "./app_learn_code_random_identifiers.mjs";
 export function lesson_variables_three() {
@@ -19,7 +19,7 @@ export function lesson_variables_three() {
       let values = call_multiple(integer_random_digit_single_positive, count);
       list_sort(values, identity);
       let names = app_learn_code_random_identifiers(count);
-      list_sort_string(names, identity);
+      list_sort_string_map(names, identity);
       let [name_a, name_b, name_c] = names;
       return `${js_code_statement_let_assign_multiple(names, values)}
 ${app_learn_code_log_add_3(name_a, name_b, name_c)}`;

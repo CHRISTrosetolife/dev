@@ -1,3 +1,4 @@
+import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { string_size } from "./string_size.mjs";
 import { list_size } from "./list_size.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
@@ -15,7 +16,6 @@ import { assert } from "./assert.mjs";
 import { list_single } from "./list_single.mjs";
 import { ceb_dictionary_page_each } from "./ceb_dictionary_page_each.mjs";
 import { list_add } from "./list_add.mjs";
-import { list_sort_string } from "./list_sort_string.mjs";
 import { list_first } from "./list_first.mjs";
 export async function ceb_dictionary_words() {
   let lookup = {};
@@ -45,7 +45,7 @@ export async function ceb_dictionary_words() {
       }
     });
   });
-  list_sort_string(list, list_first);
-  list_sort_string(list, (l) => string_size(list_first(l)));
+  list_sort_string_map(list, list_first);
+  list_sort_string_map(list, (l) => string_size(list_first(l)));
   return list;
 }

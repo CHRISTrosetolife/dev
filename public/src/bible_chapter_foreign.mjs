@@ -1,3 +1,4 @@
+import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { equal } from "./equal.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { log } from "./log.mjs";
@@ -10,7 +11,6 @@ import { list_difference } from "./list_difference.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { object_property_get_curry } from "./object_property_get_curry.mjs";
-import { list_sort_string } from "./list_sort_string.mjs";
 import { list_add } from "./list_add.mjs";
 import { each } from "./each.mjs";
 import { each_object } from "./each_object.mjs";
@@ -54,7 +54,7 @@ export async function bible_chapter_foreign(bible_folder, chapter_name) {
     }
   });
   if (missing_is) {
-    list_sort_string(eng, object_property_get_curry("verse_number"));
+    list_sort_string_map(eng, object_property_get_curry("verse_number"));
   }
   let eng_verse_numbers = list_map_property(eng, "verse_number");
   let foreign = await bible_chapter(bible_folder, chapter_name);

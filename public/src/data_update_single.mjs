@@ -1,3 +1,4 @@
+import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { js_visit_calls } from "./js_visit_calls.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -12,7 +13,6 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { js_declaration_single } from "./js_declaration_single.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_unique } from "./list_unique.mjs";
-import { list_sort_string } from "./list_sort_string.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { string_is } from "./string_is.mjs";
 import { identity } from "./identity.mjs";
@@ -34,7 +34,7 @@ export function data_update_single(ast, data) {
   let mapped = list_map_property(ast_literals, "value");
   let filtered = list_filter(mapped, string_is);
   let u = list_unique(filtered);
-  list_sort_string(u, identity);
+  list_sort_string_map(u, identity);
   let ids = js_identifiers(ast);
   js_visit_calls(ast, fn_name("fn_name"), (args) => {
     if (list_size_1(args)) {
@@ -46,7 +46,7 @@ export function data_update_single(ast, data) {
     }
   });
   let ids_u = list_unique(ids);
-  list_sort_string(ids_u, identity);
+  list_sort_string_map(ids_u, identity);
   let list = [
     {
       ast_list: u,

@@ -1,3 +1,4 @@
+import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { app_language_2_answer_count_get } from "./app_language_2_answer_count_get.mjs";
 import { html_spacer_vertical } from "./html_spacer_vertical.mjs";
 import { html_style_font_size_default_multiplied } from "./html_style_font_size_default_multiplied.mjs";
@@ -54,7 +55,6 @@ import { object_property_get } from "./object_property_get.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_progress } from "./html_progress.mjs";
 import { html_span_text } from "./html_span_text.mjs";
-import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_chunk } from "./list_chunk.mjs";
@@ -207,7 +207,7 @@ export async function app_language_2_refresh_learn(context) {
     );
     let chunked = list_chunk(other_taken, list_size(mapped));
     each(chunked, (c) => {
-      list_sort_string(c, identity);
+      list_sort_string_map(c, identity);
     });
     let other = list_map(chunked, list_join_comma_space);
     let answer_text = list_join_comma_space(mapped);

@@ -1,3 +1,4 @@
+import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_copy } from "./html_button_copy.mjs";
 import { firebase_download_bible_verse_search } from "./firebase_download_bible_verse_search.mjs";
@@ -20,7 +21,6 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { string_split_space } from "./string_split_space.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { object_merge } from "./object_merge.mjs";
-import { list_sort_string } from "./list_sort_string.mjs";
 import { html_hr } from "./html_hr.mjs";
 export async function app_search() {
   let root = await firebase_initialize_axios();
@@ -43,7 +43,7 @@ export async function app_search() {
         reference,
       });
     });
-    list_sort_string(filtered, (f) => object_property_get(f, "reference"));
+    list_sort_string_map(filtered, (f) => object_property_get(f, "reference"));
     html_hr(root);
     html_button_width_full_text_click(root, "expand all", expand_all);
     let on_clicks = list_map(filtered, (f) => {
