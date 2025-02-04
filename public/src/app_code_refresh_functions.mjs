@@ -22,7 +22,7 @@ export async function app_code_refresh_functions(context) {
     });
     html_p_text(
       root,
-      'Choose a function. Type in letters in the order they appear in the function name. For example, "hlwd" would match hello_world.',
+      'Choose a function. Type in letters in the order they appear in the function name. For example, "oo" would match "tons_of" and "options".',
     );
     let g = global_get();
     let files = await object_property_initialize_get_async(
