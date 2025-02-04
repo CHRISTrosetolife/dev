@@ -19,9 +19,7 @@ export async function app_code_refresh_functions(context) {
       await app_code_refresh_main(context);
     });
     let g = global_get();
-    log({
-      g,
-    });
+    log(object_properties(g));
     let files = await object_property_initialize_get_async(
       g,
       global_files(),
