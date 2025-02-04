@@ -87,7 +87,9 @@ export async function app_code_refresh_functions(context) {
             highlighted: false,
           }));
           let pointer = 0;
-          each(v_list, (vi) => {});
+          each(v_list, (vi) => {
+            while (vi !== $lg) {}
+          });
         });
       }
     });
