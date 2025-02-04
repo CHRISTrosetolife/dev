@@ -62,7 +62,9 @@ export function html_input_validated(root, placeholder) {
       valid ? "green" : html_input_validated_error_color(),
     );
     html_style(input_username, border_color);
-    html_button_enable_if(button_save, valid);
+    if (false) {
+      html_button_enable_if(button_save, valid);
+    }
   });
   return object_merge_strict(
     {
