@@ -1,3 +1,4 @@
+import { function_name_to_path } from "./function_name_to_path.mjs";
 import { storage_local_get_context } from "./storage_local_get_context.mjs";
 import { app_code_files_get } from "./app_code_files_get.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -14,5 +15,6 @@ export async function app_code_refresh_function() {
       context,
       "function_selected",
     );
+    let p = function_name_to_path(function_selected);
   });
 }
