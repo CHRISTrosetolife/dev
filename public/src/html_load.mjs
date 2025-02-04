@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { set_empty_is } from "./set_empty_is.mjs";
 import { set_new } from "./set_new.mjs";
 import { global_function } from "./global_function.mjs";
@@ -8,8 +9,9 @@ export async function html_load(lambda) {
   let g = global_function(html_load);
   let s = object_property_initialize_get(g, "set", () => set_new());
   if (set_empty_is(s)) {
+    let overlay = html_loader();
+    object_property_set(object, "property_name", value);
   }
   let o = {};
-  let overlay = html_loader();
   await sleep_0();
 }
