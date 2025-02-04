@@ -27,12 +27,13 @@ export function html_input_validated(root, placeholder) {
   let error_color = html_input_validated_error_color();
   html_style_font_color(error_message, error_color);
   html_on_input(input_username, on_input);
-  return object_merge_strict(
+  let result = object_merge_strict(
     {
       on_input,
     },
     input_username,
   );
+  return result;
   function on_input() {
     let conditions = [
       html_condition_empty_not(),
