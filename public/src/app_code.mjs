@@ -1,4 +1,4 @@
-import { app_code_refresh_main } from "./app_code_refresh_main.mjs";
+import { function_run } from "./function_run.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_scripts_load } from "./html_scripts_load.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
@@ -9,5 +9,5 @@ export async function app_code() {
   let context = {
     root,
   };
-  app_code_refresh_main(context);
+  await function_run(f, [context]);
 }
