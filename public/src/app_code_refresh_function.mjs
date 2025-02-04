@@ -20,7 +20,7 @@ export async function app_code_refresh_function(context) {
     );
     let p = function_name_to_path(function_selected);
     let contents = object_property_get(files, p);
-    html_element(root, "pre");
-    html_inner_set(contents);
+    let e = html_element(root, "pre");
+    html_inner_set(e, contents);
   });
 }
