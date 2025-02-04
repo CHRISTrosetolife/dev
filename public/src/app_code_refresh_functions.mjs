@@ -1,4 +1,4 @@
-import { list_all } from "./list_all.mjs";
+import { regex_test_multiple } from "./regex_test_multiple.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { html_div } from "./html_div.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
@@ -8,7 +8,6 @@ import { noop } from "./noop.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
 import { list_sort } from "./list_sort.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
-import { regex_test } from "./regex_test.mjs";
 import { list_between_after } from "./list_between_after.mjs";
 import { each } from "./each.mjs";
 import { html_load } from "./html_load.mjs";
@@ -69,7 +68,7 @@ export async function app_code_refresh_functions(context) {
         return regex;
       });
       let filtered = list_filter(mapped2, (m) =>
-        list_all(regexes, (r) => regex_test(r, m)),
+        regex_test_multiple(regexes, m),
       );
       list_sort_string(filtered);
       list_sort(filtered, string_size);
