@@ -75,6 +75,7 @@ export function html_input_validated(
       valid ? "green" : html_input_validated_error_color(),
     );
     html_style(input_username, border_color);
+    html_style_font_color(title, border_color);
     if (object_property_exists(input_username, "on_input_lambda")) {
       let on_input = object_property_get(input_username, "on_input_lambda");
       on_input(valid, value);
