@@ -30,9 +30,10 @@ export function app_code_refresh_username(context) {
     "If you do not want to store data for later, you may skip this",
     "At this time there are no passwords. You should choose a unique username or someone could overwrite your data.",
   ]);
+  let button_save = null;
   let placeholder = "Username";
   let input_username = html_input_validated(root, placeholder);
-  let button_save = html_button_width_full_text_click(root, "Save", () => {
+  button_save = html_button_width_full_text_click(root, "Save", () => {
     let value = html_value_get(input_username);
     storage_local_set(app_code, "username", value);
     next();
