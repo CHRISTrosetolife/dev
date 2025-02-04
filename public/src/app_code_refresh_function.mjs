@@ -10,6 +10,9 @@ export async function app_code_refresh_function() {
       fn_name("app_code_refresh_function"),
     );
     let files = await app_code_files_get();
-    storage_local_get_context(context, "function_selected");
+    let function_selected = storage_local_get_context(
+      context,
+      "function_selected",
+    );
   });
 }
