@@ -1,3 +1,4 @@
+import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_button_width_full_click } from "./html_button_width_full_click.mjs";
@@ -19,7 +20,6 @@ import { html_load } from "./html_load.mjs";
 import { global_files } from "./global_files.mjs";
 import { global_get } from "./global_get.mjs";
 import { object_property_initialize_get_async } from "./object_property_initialize_get_async.mjs";
-import { html_clear_scroll_top_centered_context } from "./html_clear_scroll_top_centered_context.mjs";
 import { function_path_to_name } from "./function_path_to_name.mjs";
 import { list_map } from "./list_map.mjs";
 import { object_properties } from "./object_properties.mjs";
@@ -41,7 +41,7 @@ import { html_span_text } from "./html_span_text.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 export async function app_code_refresh_functions(context) {
   await html_load(async () => {
-    let root = html_clear_scroll_top_centered_context(context);
+    let root = app_code_screen_set(context,$t);
     html_button_back(root, async () => {
       app_code_refresh_menu(context);
     });
@@ -116,4 +116,3 @@ export async function app_code_refresh_functions(context) {
       }
     });
   });
-}
