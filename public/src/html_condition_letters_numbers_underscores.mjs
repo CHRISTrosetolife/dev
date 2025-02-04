@@ -16,6 +16,7 @@ export function html_condition_letters_numbers_underscores() {
       let unique = list_unique(characters_invalid);
       return string_combine_multiple([
         "contain only ",
+        message,
         "; invalid character(s): ",
         unique,
       ]);
