@@ -1,3 +1,4 @@
+import { html_div } from "./html_div.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 import { html_focus } from "./html_focus.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
@@ -29,6 +30,7 @@ import { string_split_empty } from "./string_split_empty.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { string_size } from "./string_size.mjs";
+import { html_clear } from "./html_clear.mjs";
 export async function app_code_refresh_functions(context) {
   await html_load(async () => {
     let root = html_clear_scroll_top_centered_context(context);
@@ -42,6 +44,7 @@ export async function app_code_refresh_functions(context) {
     );
     let st = html_input_width_full_placeholder(root, "Search term");
     html_focus(st);
+    let results = html_div(root);
     let g = global_get();
     let files = await object_property_initialize_get_async(
       g,
@@ -66,8 +69,9 @@ export async function app_code_refresh_functions(context) {
       let taken = list_take(filtered, 20);
       list_sort_string(taken);
       list_sort(taken, string_size);
+      html_clear(results);
       each(taken, (t) => {
-        html_button_width_full_text_click(root, t, () => {});
+        html_button_width_full_text_click(results, t, () => {});
       });
     });
   });
