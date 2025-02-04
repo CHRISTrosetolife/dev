@@ -93,7 +93,7 @@ export async function app_code_refresh_functions(context) {
             let m;
             while (true) {
               m = list_get(mapped, index);
-              if (object_property_get(object, "property_name")) {
+              if (object_property_get(m, "symbol")) {
               }
               index++;
             }
