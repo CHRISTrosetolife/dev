@@ -89,7 +89,11 @@ export async function app_code_refresh_functions(context) {
           }));
           let index = 0;
           each(v_list, (vi) => {
-            while (vi !== list_get(mapped, index)) {
+            let m;
+            while (true) {
+              m = list_get(mapped, index);
+              if (false) {
+              }
               index++;
             }
           });
