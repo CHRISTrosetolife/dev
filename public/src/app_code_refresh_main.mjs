@@ -1,3 +1,4 @@
+import { html_style_font_size_default_multiplied } from "./html_style_font_size_default_multiplied.mjs";
 import { html_spacer_vertical_n } from "./html_spacer_vertical_n.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { html_style_font_color_white } from "./html_style_font_color_white.mjs";
@@ -25,8 +26,9 @@ export function app_code_refresh_main(context) {
   html_style_background_color_transparent(overlay, "black", 90);
   let label = html_p_text(overlay, "Loading...");
   html_style_font_color_white(label);
-  html_style_centered(label);
   html_spacer_vertical_n(label, 6);
+  html_style_centered(label);
+  html_style_font_size_default_multiplied(label, 2);
   return;
   let root = html_clear_scroll_top_centered_context(context);
   html_button_width_full_text_click(root, "Functions", async () => {
