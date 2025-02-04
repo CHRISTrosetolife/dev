@@ -63,7 +63,7 @@ export function html_input_validated(root, placeholder) {
       valid ? "green" : html_input_validated_error_color(),
     );
     html_style(input_username, border_color);
-    if (object_property_exists(button_save, "on_input")) {
+    if (object_property_exists(input_username, "on_input")) {
       html_button_enable_if(button_save, valid);
     }
   });
