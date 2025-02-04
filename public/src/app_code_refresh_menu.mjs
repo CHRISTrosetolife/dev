@@ -12,7 +12,7 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { storage_local_set } from "./storage_local_set.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 export function app_code_refresh_menu(context) {
-  let prefix = function_name_combine(fn_name("app_code"));
+  let prefix = function_name_combine(fn_name("app_code"), "refresh", "");
   let suffix = string_prefix_without();
   storage_local_set(app_code, "screen", suffix);
   let root = html_clear_scroll_top_centered_context(context);
