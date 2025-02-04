@@ -15,6 +15,6 @@ export async function app_code() {
     app_fn,
   };
   let suffix = app_code_screen_suffix_get(fn_name("app_code_refresh_main"));
-  storage_local_initialize(app_fn, "screen", suffix);
+  let screen = storage_local_initialize(app_fn, "screen", suffix);
   await function_run(f, [context]);
 }
