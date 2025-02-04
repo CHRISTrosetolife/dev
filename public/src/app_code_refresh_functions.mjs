@@ -36,7 +36,7 @@ export async function app_code_refresh_functions(context) {
     html_cycle_p(
       root,
       [noop, html_style_bold],
-      'Choose a function. To find a function, type in letters in the order they appear in the function name. For example, "oo" would match "tons_of" and "options".',
+      'Choose a function. To find a function, type in letters in the order they appear in the function name. For example, "`oo`" would match "t`o`ns_`o`f" and "`o`pti`o`ns".',
     );
     let st = html_input_width_full_placeholder(root, "Search term");
     let g = global_get();
