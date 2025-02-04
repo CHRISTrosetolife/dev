@@ -7,7 +7,6 @@ import { html_cycle_p } from "./html_cycle_p.mjs";
 import { list_sort } from "./list_sort.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { regex_test } from "./regex_test.mjs";
-import { log } from "./log.mjs";
 import { list_between_after } from "./list_between_after.mjs";
 import { each } from "./each.mjs";
 import { html_load } from "./html_load.mjs";
@@ -62,9 +61,6 @@ export async function app_code_refresh_functions(context) {
       let v_list = string_split_empty(value);
       let regex_list = list_between_after(v_list, ".*");
       let regex_string = list_join_empty(regex_list);
-      log({
-        regex_string,
-      });
       let regex = new RegExp(regex_string, "i");
       let filtered = list_filter(mapped2, (m) => regex_test(regex, m));
       list_sort_string(filtered);
