@@ -6,12 +6,10 @@ import { app_code_refresh_main } from "./app_code_refresh_main.mjs";
 import { storage_local_remove } from "./storage_local_remove.mjs";
 import { app_code } from "./app_code.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { html_clear_scroll_top_centered_context } from "./html_clear_scroll_top_centered_context.mjs";
 import { app_code_refresh_functions } from "./app_code_refresh_functions.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export function app_code_refresh_menu(context) {
-  app_code_screen_set(fn_name("app_code_refresh_menu"));
-  let root = html_clear_scroll_top_centered_context(context);
+  let root = app_code_screen_set(context, fn_name("app_code_refresh_menu"));
   html_button_width_full_text_click(root, "Functions", async () => {
     await app_code_refresh_functions(context);
   });
