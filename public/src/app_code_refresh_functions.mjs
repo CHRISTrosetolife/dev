@@ -37,6 +37,7 @@ import { list_take_soft } from "./list_take_soft.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { list_get } from "./list_get.mjs";
+import { html_span_text } from "./html_span_text.mjs";
 export async function app_code_refresh_functions(context) {
   await html_load(async () => {
     let root = html_clear_scroll_top_centered_context(context);
@@ -103,7 +104,9 @@ export async function app_code_refresh_functions(context) {
               object_property_set(m, "highlighted", true);
             });
           });
-          each(list, (item) => {});
+          each(mapped, (m) => {
+            html_span_text(b, object_property_get(m, "symbol"));
+          });
         });
       }
     });
