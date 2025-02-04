@@ -1,7 +1,6 @@
 import { html_input_validated_on_input } from "./html_input_validated_on_input.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_code_refresh_menu } from "./app_code_refresh_menu.mjs";
-import { object_property_set_exists_not } from "./object_property_set_exists_not.mjs";
 import { html_input_validated_on_input_lambda } from "./html_input_validated_on_input_lambda.mjs";
 import { html_button_enable_if } from "./html_button_enable_if.mjs";
 import { html_input_validated } from "./html_input_validated.mjs";
@@ -26,13 +25,9 @@ export function app_code_refresh_username(context) {
     storage_local_set(app_code, "username", value);
     next();
   });
-  object_property_set_exists_not(
-    input_username,
-    html_input_validated_on_input_lambda(),
-    (valid) => {
-      html_button_enable_if(button_save, valid);
-    },
-  );
+  html_input_validated_on_input_lambda(input_username, (valid) => {
+    html_button_enable_if(button_save, valid);
+  });
   object_property_get(input_username, html_input_validated_on_input())();
   html_hr(root);
   html_button_width_full_text_click(root, "Skip", () => {
