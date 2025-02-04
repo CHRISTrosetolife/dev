@@ -38,7 +38,7 @@ export async function app_code_refresh_functions(context) {
   await html_load(async () => {
     let root = html_clear_scroll_top_centered_context(context);
     html_button_back(root, async () => {
-      await app_code_refresh_menu(context);
+      app_code_refresh_menu(context);
     });
     html_cycle_p(
       root,
