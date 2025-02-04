@@ -87,9 +87,11 @@ export async function app_code_refresh_functions(context) {
             symbol,
             highlighted: false,
           }));
-          let pointer = 0;
+          let index = 0;
           each(v_list, (vi) => {
-            while (vi !== list_get()) {}
+            while (vi !== list_get(mapped, index)) {
+              index++;
+            }
           });
         });
       }
