@@ -12,6 +12,6 @@ export async function app_code_refresh_function() {
     );
     let files = await app_code_files_get();
     let app_fn = object_property_get(context, "app_fn");
-    storage_local_get(app_fn, property_name, value);
+    storage_local_get(app_fn, "function_selected", value);
   });
 }
