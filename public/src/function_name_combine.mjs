@@ -1,9 +1,5 @@
-import { function_name_separator } from "./function_name_separator.mjs";
-import { list_between } from "./list_between.mjs";
-import { list_join_empty } from "./list_join_empty.mjs";
+import { function_name_combine_multiple } from "./function_name_combine_multiple.mjs";
 export function function_name_combine(left, right) {
   let terms = [left, right];
-  let b = list_between(terms, function_name_separator());
-  let joined = list_join_empty(b);
-  return joined;
+  return function_name_combine_multiple(terms);
 }
