@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { html_load } from "./html_load.mjs";
 import { global_files } from "./global_files.mjs";
 import { global_get } from "./global_get.mjs";
@@ -17,8 +18,12 @@ export async function app_code_refresh_functions(context) {
     html_button_back(root, async () => {
       await app_code_refresh_main(context);
     });
+    let g = global_get();
+    log({
+      g,
+    });
     let files = await object_property_initialize_get_async(
-      global_get(),
+      g,
       global_files(),
       async () => {
         return await http_storage_get(app_code_local_functions_path());
