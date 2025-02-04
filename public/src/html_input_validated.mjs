@@ -20,7 +20,7 @@ import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_input_width_full_placeholder } from "./html_input_width_full_placeholder.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
-export function html_input_validated(root, placeholder) {
+export function html_input_validated(root, placeholder, conditions) {
   let input_username_inner = html_input_width_full_placeholder(
     root,
     placeholder,
