@@ -11,6 +11,7 @@ import { sleep_0 } from "./sleep_0.mjs";
 import { html_loader } from "./html_loader.mjs";
 import { object_property_initialize_get } from "./object_property_initialize_get.mjs";
 export async function html_load(lambda) {
+  log("here3");
   let g = global_function(html_load);
   let s = object_property_initialize_get(g, "set", () => set_new());
   if (set_empty_is(s)) {
