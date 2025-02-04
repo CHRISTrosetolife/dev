@@ -12,12 +12,13 @@ import { storage_local_set } from "./storage_local_set.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { function_name_combine_multiple } from "./function_name_combine_multiple.mjs";
 export function app_code_refresh_menu(context) {
+  let this_fn_name = fn_name("app_code_refresh_menu");
   let prefix = function_name_combine_multiple([
     fn_name("app_code"),
     "refresh",
     "",
   ]);
-  let suffix = string_prefix_without(fn_name("app_code_refresh_menu"), prefix);
+  let suffix = string_prefix_without(this_fn_name, prefix);
   storage_local_set(app_code, "screen", suffix);
   let root = html_clear_scroll_top_centered_context(context);
   html_button_width_full_text_click(root, "Functions", async () => {
