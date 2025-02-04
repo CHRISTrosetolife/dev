@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { lesson_screen_variables_numbers_sorted } from "./lesson_screen_variables_numbers_sorted.mjs";
 import { js_code_statement_let_assign_multiple } from "./js_code_statement_let_assign_multiple.mjs";
@@ -21,8 +22,11 @@ export function lesson_variables_three() {
       let names = app_learn_code_random_identifiers(count);
       list_sort_string_map(names, identity);
       let [name_a, name_b, name_c] = names;
-      return `${js_code_statement_let_assign_multiple(names, values)}
-${app_learn_code_log_add_3(name_a, name_b, name_c)}`;
+      return string_combine_multiple([
+        js_code_statement_let_assign_multiple(names, values),
+        "\n",
+        app_learn_code_log_add_3(name_a, name_b, name_c),
+      ]);
     },
     example_before,
     description,
