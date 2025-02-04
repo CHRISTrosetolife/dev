@@ -30,6 +30,7 @@ export function app_good() {
           "Bless the family of love",
           "Bless my family",
           "Give me wisdom",
+          "Give me humility",
           "Let my prayer be perfect",
           "Lead all souls to Jesus",
           "Cause all to choose good",
