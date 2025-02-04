@@ -60,6 +60,7 @@ export async function app_code_refresh_functions(context) {
     html_on_input_initial(st, () => {
       let value = html_value_get(st);
       let split = string_split_space(value);
+      list_map(split, () => {});
       let v_list = string_split_empty(value);
       let regex_list = list_between_after(v_list, ".*");
       let regex_string = list_join_empty(regex_list);
