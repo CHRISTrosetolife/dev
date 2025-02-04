@@ -1,3 +1,4 @@
+import { string_split_space } from "./string_split_space.mjs";
 import { html_div } from "./html_div.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 import { html_focus } from "./html_focus.mjs";
@@ -58,6 +59,7 @@ export async function app_code_refresh_functions(context) {
     let mapped2 = list_map(file_paths, function_path_to_name);
     html_on_input_initial(st, () => {
       let value = html_value_get(st);
+      let split = string_split_space(value);
       let v_list = string_split_empty(value);
       let regex_list = list_between_after(v_list, ".*");
       let regex_string = list_join_empty(regex_list);
