@@ -1,3 +1,4 @@
+import { app_code_refresh_main } from "./app_code_refresh_main.mjs";
 import { storage_local_remove } from "./storage_local_remove.mjs";
 import { app_code } from "./app_code.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
@@ -18,6 +19,7 @@ export function app_code_refresh_menu(context) {
     ]),
     async () => {
       storage_local_remove(app_code, "username");
+      app_code_refresh_main(context);
     },
   );
 }
