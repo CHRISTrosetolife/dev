@@ -32,7 +32,7 @@ export function app_code_refresh_username(context) {
       html_button_enable_if(button_save, valid);
     },
   );
-  object_property_get(object, "property_name");
+  object_property_get(input_username, "property_name");
   html_hr(root);
   html_button_width_full_text_click(root, "Skip", () => {
     next();
