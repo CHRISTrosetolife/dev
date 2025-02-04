@@ -70,6 +70,7 @@ export async function app_code_refresh_functions(context) {
       list_sort(taken, string_size);
       html_clear(results);
       if (false) {
+      } else {
         each(taken, (t) => {
           html_button_width_full_text_click(results, t, () => {});
         });
