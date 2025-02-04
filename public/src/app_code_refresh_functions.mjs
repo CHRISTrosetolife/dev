@@ -76,8 +76,7 @@ export async function app_code_refresh_functions(context) {
       if (list_size_1(v_lists) && list_empty_is(list_first(v_lists))) {
         v_lists = [];
       }
-      let regexes = list_map(v_lists, (s) => {
-        let v_list = string_split_empty(s);
+      let regexes = list_map(v_lists, (v_list) => {
         let regex_list = list_between_surround(v_list, ".*");
         let regex_string = list_join_empty(regex_list);
         let regex = regex_new(regex_string);
