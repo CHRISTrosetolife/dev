@@ -50,7 +50,6 @@ export async function app_code_refresh_functions(context) {
         regex_string,
       });
       let regex = new RegExp(regex_string, "i");
-      let testString = "Hello, world!";
       let isMatch = regex.test(testString);
       let taken = list_take(mapped2, 20);
       each(taken, (t) => {
