@@ -12,19 +12,20 @@ import { app_code_local_functions_path } from "./app_code_local_functions_path.m
 import { http_storage_get } from "./http_storage_get.mjs";
 import { html_button_back } from "./html_button_back.mjs";
 export async function app_code_refresh_functions(context) {
-  await html_load(() => {});
-  let root = html_clear_scroll_top_centered_context(context);
-  html_button_back(root, async () => {
-    await app_code_refresh_main(context);
+  await html_load(async () => {
+    let root = html_clear_scroll_top_centered_context(context);
+    html_button_back(root, async () => {
+      await app_code_refresh_main(context);
+    });
+    let files = await object_property_initialize_get_async(
+      global_get(),
+      global_files(),
+      async () => {
+        return await http_storage_get(app_code_local_functions_path());
+      },
+    );
+    let file_paths = object_properties(files);
+    let mapped2 = list_map(file_paths, function_path_to_name);
+    html_list(root, mapped2);
   });
-  let files = await object_property_initialize_get_async(
-    global_get(),
-    global_files(),
-    async () => {
-      return await http_storage_get(app_code_local_functions_path());
-    },
-  );
-  let file_paths = object_properties(files);
-  let mapped2 = list_map(file_paths, function_path_to_name);
-  html_list(root, mapped2);
 }
