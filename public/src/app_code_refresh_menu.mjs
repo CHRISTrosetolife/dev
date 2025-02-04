@@ -1,3 +1,5 @@
+import { app_code_screen_set } from "./app_code_screen_set.mjs";
+import { fn_name } from "./fn_name.mjs";
 import { app_code_username_get } from "./app_code_username_get.mjs";
 import { app_code_username_exists } from "./app_code_username_exists.mjs";
 import { app_code_refresh_main } from "./app_code_refresh_main.mjs";
@@ -7,6 +9,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_code_refresh_functions } from "./app_code_refresh_functions.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export function app_code_refresh_menu(context) {
+  let root = app_code_screen_set(context, fn_name("app_code_refresh_menu"));
   html_button_width_full_text_click(root, "Functions", async () => {
     await app_code_refresh_functions(context);
   });
