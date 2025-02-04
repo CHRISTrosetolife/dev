@@ -1,3 +1,4 @@
+import { html_input_validated } from "./html_input_validated.mjs";
 import { app_code } from "./app_code.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { app_code_refresh_main } from "./app_code_refresh_main.mjs";
@@ -19,9 +20,6 @@ import { html_condition_empty_not } from "./html_condition_empty_not.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_on_input_initial } from "./html_on_input_initial.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
-import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
-import { html_div } from "./html_div.mjs";
-import { html_input_width_full_placeholder } from "./html_input_width_full_placeholder.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { html_clear_scroll_top_centered_context } from "./html_clear_scroll_top_centered_context.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -33,10 +31,10 @@ export function app_code_refresh_username(context) {
     "At this time there are no passwords. You should choose a unique username or someone could overwrite your data.",
   ]);
   let placeholder = "Username";
-  let input_username = html_input_width_full_placeholder(root, placeholder);
-  let p_error_message = html_div(root);
-  html_style_rounded_padded(p_error_message);
-  let error_color = "darkred";
+  let { p_error_message, error_color, input_username } = html_input_validated(
+    root,
+    placeholder,
+  );
   html_style_font_color(p_error_message, error_color);
   let button_save = html_button_width_full_text_click(root, "Save", () => {
     let value = html_value_get(input_username);
