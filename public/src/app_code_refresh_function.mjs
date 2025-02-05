@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { js_parse } from "./js_parse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
@@ -21,5 +22,6 @@ export async function app_code_refresh_function(context) {
     let contents = object_property_get(files, path);
     let p = js_parse(contents);
     let body = object_property_get(p, "body");
+    each(list, (item) => {});
   });
 }
