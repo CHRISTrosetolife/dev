@@ -17,6 +17,7 @@ export async function http_response(url) {
       "ETIMEDOUT",
       "EHOSTUNREACH",
       "Service Unavailable",
+      "Not Found",
     ]),
   );
   if (!response.ok) {
