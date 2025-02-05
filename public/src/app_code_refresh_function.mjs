@@ -11,6 +11,8 @@ import { app_code_files_get } from "./app_code_files_get.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { html_load } from "./html_load.mjs";
+import { string_starts_with } from "./string_starts_with.mjs";
+import { folder_current_prefix } from "./folder_current_prefix.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async () => {
     let root = app_code_screen_set(
@@ -33,6 +35,7 @@ export async function app_code_refresh_function(context) {
         let type_source = object_property_get(source, "type");
         assert(equal, [type_source, "Literal"]);
         let value = object_property_get(source, "value");
+        assert(string_starts_with, [value, folder_current_prefix()]);
         let specifiers = object_property_get(b, "specifiers");
         assert(list_size_1, [specifiers]);
         let s = list_first(specifiers);
