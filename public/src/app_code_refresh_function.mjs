@@ -1,3 +1,4 @@
+import { list_first } from "./list_first.mjs";
 import { list_size_1 } from "./list_size_1.mjs";
 import { assert } from "./assert.mjs";
 import { each } from "./each.mjs";
@@ -29,6 +30,7 @@ export async function app_code_refresh_function(context) {
       if (type === "ImportDeclaration") {
         let specifiers = object_property_get(b, "specifiers");
         assert(list_size_1, [specifiers]);
+        let f = list_first(specifiers);
       }
     });
   });
