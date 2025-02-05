@@ -23,7 +23,8 @@ export async function app_code_refresh_function(context) {
     let p = js_parse(contents);
     let body = object_property_get(p, "body");
     each(body, (b) => {
-      $b;
+      if (false) {
+      }
     });
   });
 }
