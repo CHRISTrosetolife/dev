@@ -29,7 +29,7 @@ export async function app_code_refresh_function(context) {
     each(body, (b) => {
       let type = object_property_get(b, "type");
       if (type === "ImportDeclaration") {
-        $b$source;
+        let source = object_property_get(b, "source");
         let specifiers = object_property_get(b, "specifiers");
         assert(list_size_1, [specifiers]);
         let s = list_first(specifiers);
