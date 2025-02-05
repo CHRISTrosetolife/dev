@@ -1,3 +1,5 @@
+import { list_size_1 } from "./list_size_1.mjs";
+import { assert } from "./assert.mjs";
 import { each } from "./each.mjs";
 import { js_parse } from "./js_parse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -26,7 +28,7 @@ export async function app_code_refresh_function(context) {
       let type = object_property_get(b, "type");
       if (type === "ImportDeclaration") {
         let specifiers = object_property_get(b, "specifiers");
-        () => {};
+        assert(list_size_1, [specifiers]);
       }
     });
   });
