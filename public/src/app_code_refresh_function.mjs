@@ -31,6 +31,7 @@ export async function app_code_refresh_function(context) {
       if (type === "ImportDeclaration") {
         let source = object_property_get(b, "source");
         let type_source = object_property_get(source, "type");
+        assert(equal, [type_source, "Literal"]);
         let specifiers = object_property_get(b, "specifiers");
         assert(list_size_1, [specifiers]);
         let s = list_first(specifiers);
