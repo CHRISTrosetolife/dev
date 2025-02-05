@@ -25,6 +25,7 @@ export async function app_code_refresh_function(context) {
     each(body, (b) => {
       let type = object_property_get(b, "type");
       if (type === "ImportDeclaration") {
+        let specifiers = object_property_get(b, "specifiers");
       }
     });
   });
