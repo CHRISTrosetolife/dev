@@ -18,9 +18,9 @@ export async function app_code_refresh_function(context) {
       context,
       "function_selected",
     );
-    let p = function_name_to_path(function_selected);
-    let contents = object_property_get(files, p);
-    p = js_parse(contents);
+    let path = function_name_to_path(function_selected);
+    let contents = object_property_get(files, path);
+    let p = js_parse(contents);
     log({
       p,
     });
