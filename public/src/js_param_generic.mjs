@@ -10,7 +10,7 @@ export function js_param_generic(
   lambda_if_match,
 ) {
   js_visit_calls(ast, function_name, (a) => {
-    let args = a;
+    let { args } = a;
     each_caller(args);
   });
   let name = js_declaration_single_name(ast);
