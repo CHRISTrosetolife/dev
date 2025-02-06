@@ -1,7 +1,7 @@
+import { app_code_button_menu_app } from "./app_code_button_menu_app.mjs";
 import { storage_local_recent_add } from "./storage_local_recent_add.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_button_back_after } from "./html_button_back_after.mjs";
-import { app_code_button_functions_search } from "./app_code_button_functions_search.mjs";
 import { html_clear_scroll_top_centered_context } from "./html_clear_scroll_top_centered_context.mjs";
 import { html_code_string } from "./html_code_string.mjs";
 import { html_code_keyword } from "./html_code_keyword.mjs";
@@ -46,7 +46,7 @@ export async function app_code_refresh_function(context) {
         string_combine_multiple(["to function: ", function_selected]),
         async () => await app_code_refresh_function(context),
       );
-      app_code_button_functions_search(context);
+      app_code_button_menu_app(context);
     });
     let files = await app_code_files_get();
     let function_selected = storage_local_get_context(
