@@ -1,10 +1,10 @@
+import { html_button_element } from "./html_button_element.mjs";
 import { app_memorize_on_keydown } from "./app_memorize_on_keydown.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { app_memorize_button_keyboard_stylize } from "./app_memorize_button_keyboard_stylize.mjs";
 import { string_case_upper } from "./string_case_upper.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { object_property_set } from "./object_property_set.mjs";
-import { html_button } from "./html_button.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { html_div } from "./html_div.mjs";
 import { keyboard_keys_rows } from "./keyboard_keys_rows.mjs";
@@ -24,7 +24,7 @@ export function app_memorize_keyboard(context) {
     let row_element = html_div(keyboard_element);
     html_style_centered(row_element);
     for (let k of row) {
-      let b = html_button(row_element);
+      let b = html_button_element(row_element);
       object_property_set(context.keyboard_buttons, k, b);
       html_inner_set(b, string_case_upper(k));
       app_memorize_button_keyboard_stylize(context, b);

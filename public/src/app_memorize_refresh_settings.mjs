@@ -1,3 +1,4 @@
+import { html_button_element } from "./html_button_element.mjs";
 import { html_button_next } from "./html_button_next.mjs";
 import { html_button_back } from "./html_button_back.mjs";
 import { html_style_success_if } from "./html_style_success_if.mjs";
@@ -30,7 +31,6 @@ import { list_get } from "./list_get.mjs";
 import { app_memorize_group_current_set } from "./app_memorize_group_current_set.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
-import { html_button } from "./html_button.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { app_memorize_group_to_range_string } from "./app_memorize_group_to_range_string.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -149,7 +149,7 @@ export async function app_memorize_refresh_settings(context) {
       app_memorize_settings_button_back_clear(context);
       html_p_text(root, "which verse range do you want to focus on ?");
       for (let g of context.groups) {
-        let b = html_button(root);
+        let b = html_button_element(root);
         html_inner_set(b, app_memorize_group_to_range_string(context, g));
         html_on_click(b, async () => {
           app_memorize_group_current_set(context, g, true);
@@ -172,7 +172,7 @@ export async function app_memorize_refresh_settings(context) {
         "which pattern of shown and hidden words do you want ?",
       );
       each_index(context.patterns, (p, i) => {
-        let b = html_button(root);
+        let b = html_button_element(root);
         html_inner_set(b, p);
         html_on_click(b, async () => {
           save.pattern_index = i;
