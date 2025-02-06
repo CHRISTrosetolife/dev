@@ -21,10 +21,11 @@ export function app_language_2_recent_update(context, word, recent_count) {
     recent_count,
     (answer_count_max - 1) * answer_choice_word_count_max,
   );
+  let property_name = "questions_recent";
   let app_fn2 = object_property_get(context, "app_fn");
   let questions_recent_stored = storage_local_initialize(
     app_fn2,
-    "questions_recent",
+    property_name,
     [],
   );
   questions_recent_stored = list_beginning_unique_take(
@@ -32,5 +33,5 @@ export function app_language_2_recent_update(context, word, recent_count) {
     recent_new,
     questions_recent_limit,
   );
-  storage_local_set(app_fn, "questions_recent", questions_recent_stored);
+  storage_local_set(app_fn, property_name, questions_recent_stored);
 }
