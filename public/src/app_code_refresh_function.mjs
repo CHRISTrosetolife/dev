@@ -46,6 +46,8 @@ export async function app_code_refresh_function(context) {
         let local = object_property_get(s, "local");
         assert(equal, [imported, local]);
         html_span_text(section, "import { ");
+        html_span_text(section, local);
+        html_span_text(section, "} from ");
       }
     });
   });
