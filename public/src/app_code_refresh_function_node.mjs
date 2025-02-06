@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
 import { js_code_statement_end } from "./js_code_statement_end.mjs";
 import { html_code_string } from "./html_code_string.mjs";
@@ -18,7 +19,12 @@ import { object_property_get } from "./object_property_get.mjs";
 import { html_div } from "./html_div.mjs";
 export function app_code_refresh_function_node(parent, b) {
   let section = html_div(parent);
-  if (js_node_type_is(b, "ImportDeclaration")) {
+  if (js_node_type_is(b, "Program")) {
+    let body = object_property_get(p, "body");
+    each(body, (b) => {
+      app_code_refresh_function_node(container, b);
+    });
+  } else if (js_node_type_is(b, "ImportDeclaration")) {
     let source = object_property_get(b, "source");
     let type_source = object_property_get(source, "type");
     assert(equal, [type_source, "Literal"]);
