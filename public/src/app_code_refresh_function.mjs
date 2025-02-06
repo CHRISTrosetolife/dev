@@ -50,6 +50,7 @@ export async function app_code_refresh_function(context) {
         let s = list_first(specifiers);
         let imported = object_property_get(s, "imported");
         let local = object_property_get(s, "local");
+        let name = object_property_get(local, "name");
         assert(equal, [imported, local]);
         html_span_text(section, js_keyword_import(), " { ");
         html_span_text(section, local);
