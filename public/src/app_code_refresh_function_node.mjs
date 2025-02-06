@@ -104,6 +104,7 @@ export async function app_code_refresh_function_node(parent, node) {
     if (list_includes(fn_names, name5)) {
       html_fn = html_code_identifier_fn;
     } else {
+      html_fn = html_code_identifier;
     }
   } else {
     log({
