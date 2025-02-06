@@ -16,20 +16,20 @@ import { equal } from "./equal.mjs";
 import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_div } from "./html_div.mjs";
-export function app_code_refresh_function_node(parent, b) {
-  if (js_node_type_is(b, "Program")) {
+export function app_code_refresh_function_node(parent, node) {
+  if (js_node_type_is(node, "Program")) {
     let body = object_property_get(p, "body");
     each(body, (b) => {
       let section = html_div(parent);
-      app_code_refresh_function_node(section, b);
+      app_code_refresh_function_node(section, node);
     });
-  } else if (js_node_type_is(b, "ImportDeclaration")) {
-    let source = object_property_get(b, "source");
+  } else if (js_node_type_is(node, "ImportDeclaration")) {
+    let source = object_property_get(node, "source");
     let type_source = object_property_get(source, "type");
     assert(equal, [type_source, "Literal"]);
     let value = object_property_get(source, "value");
     assert(string_starts_with, [value, folder_current_prefix()]);
-    let specifiers = object_property_get(b, "specifiers");
+    let specifiers = object_property_get(node, "specifiers");
     assert(list_size_1, [specifiers]);
     let s = list_first(specifiers);
     let imported = object_property_get(s, "imported");
