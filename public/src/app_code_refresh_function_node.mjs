@@ -58,13 +58,9 @@ export function app_code_refresh_function_node(parent, node) {
     html_code_identifier_fn(parent, name3);
     html_span_text(parent, "( ");
     let params = object_property_get(node, "params");
-    html_span_text_list_comma(
-      params,
-      function lambda(param) {
-        html_code_identifier(parent, param);
-      },
-      parent,
-    );
+    html_span_text_list_comma(parent, params, function lambda(param) {
+      html_code_identifier(parent, param);
+    });
     html_span_text(parent, ") {");
     let body3 = object_property_get(node, "body");
     app_code_refresh_function_node_section(parent, body3);
