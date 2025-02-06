@@ -20,6 +20,8 @@ import { string_starts_with } from "./string_starts_with.mjs";
 import { equal } from "./equal.mjs";
 import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { html_span_text_font_color } from "./html_span_text_font_color.mjs";
+import { js_unparse } from "./js_unparse.mjs";
 export function app_code_refresh_function_node(parent, node) {
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
@@ -79,5 +81,6 @@ export function app_code_refresh_function_node(parent, node) {
     log({
       node,
     });
+    html_span_text_font_color(parent, js_unparse(node), "pink");
   }
 }
