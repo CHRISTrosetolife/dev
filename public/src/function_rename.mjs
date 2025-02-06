@@ -60,12 +60,12 @@ export async function function_rename(fn_name_from, fn_name_to) {
   });
   let functions_matching_strings = await functions_string(fn_name_from);
   let functions_fn_name = await functions_identifier(fn_name("fn_name"));
-  let intersected = object_properties_intersect(
+  let intersecteds = object_properties_intersect(
     functions_matching_strings,
     functions_fn_name,
   );
-  await each_async(list, async (item) => {});
-  assert_message(list_empty_is, [intersected], () =>
+  await each_async(intersecteds, async (intersected) => {});
+  assert_message(list_empty_is, [intersecteds], () =>
     string_combine_multiple([
       "if this assert fails, then ",
       fn_name("function_rename"),
@@ -74,7 +74,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
       " with ",
       fn_name_from,
       " passed into it because of these functions : ",
-      list_join_comma_space(intersected),
+      list_join_comma_space(intersecteds),
     ]),
   );
   let concatenated = list_concat(existing, [fn_name_to]);
