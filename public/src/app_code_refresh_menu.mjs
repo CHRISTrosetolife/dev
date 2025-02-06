@@ -31,10 +31,11 @@ export function app_code_refresh_menu(context) {
         app_code_refresh_main(context);
       },
     );
-    log({});
+    log("here1");
   } else {
     html_button(root, "Log in", () => {
       app_code_refresh_username(context);
     });
+    log("here2");
   }
 }
