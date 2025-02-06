@@ -34,7 +34,7 @@ export async function app_code_refresh_function(context) {
       context,
       fn_name("app_code_refresh_function"),
     );
-    html_button(root, "Menu", () => {
+    html_button(root, "Function menu", () => {
       let root = html_clear_scroll_top_centered_context(context);
       let function_selected = storage_local_get_context(
         context,
