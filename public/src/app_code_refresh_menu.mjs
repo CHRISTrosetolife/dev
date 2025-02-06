@@ -10,7 +10,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export function app_code_refresh_menu(context) {
   let root = app_code_screen_set(context, fn_name("app_code_refresh_menu"));
-  app_code_button_functions_search(root, context);
+  app_code_button_functions_search(context);
   if (app_code_username_exists()) {
     html_button_width_full_text_click(
       root,
