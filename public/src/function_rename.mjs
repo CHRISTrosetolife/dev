@@ -1,4 +1,4 @@
-import { file_js_transform_regular } from "./file_js_transform_regular.mjs";
+import { functions_transform } from "./functions_transform.mjs";
 import { js_import_remove_try } from "./js_import_remove_try.mjs";
 import { log } from "./log.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -45,14 +45,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
     [js_identifier_rename],
     [fn_name_from, fn_name_to],
   );
-  await each_async(existing, async (e) => {
-    let file_path = function_name_to_path(e);
-    log({
-      file_path,
-      e,
-    });
-    await file_js_transform_regular(file_path, lambda);
-  });
+  await functions_transform(existing, lambda);
   let functions_matching_strings = await functions_string(fn_name_from);
   let functions_fn_name = await functions_identifier(fn_name("fn_name"));
   let intersecteds = object_properties_intersect(
