@@ -13,6 +13,7 @@ import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { html_load } from "./html_load.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { folder_current_prefix } from "./folder_current_prefix.mjs";
+import { html_div } from "./html_div.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async () => {
     let root = app_code_screen_set(
@@ -29,6 +30,7 @@ export async function app_code_refresh_function(context) {
     let p = js_parse(contents);
     let body = object_property_get(p, "body");
     each(body, (b) => {
+      let section = html_div(root);
       let type = object_property_get(b, "type");
       if (type === "ImportDeclaration") {
         let source = object_property_get(b, "source");
