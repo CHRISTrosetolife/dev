@@ -63,11 +63,11 @@ export async function app_code_refresh_function(context) {
         log({
           local,
         });
+        html_span_text(section, string_combine_multiple([" } "]));
+        let kw = html_span_text(section, js_keyword_from());
         html_span_text(
           section,
           string_combine_multiple([
-            " } ",
-            js_keyword_from(),
             " ",
             string_delimit(value),
             js_code_statement_end(),
