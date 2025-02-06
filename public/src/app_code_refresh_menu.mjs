@@ -10,7 +10,7 @@ import { app_code_refresh_functions } from "./app_code_refresh_functions.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export function app_code_refresh_menu(context) {
   let root = app_code_screen_set(context, fn_name("app_code_refresh_menu"));
-  html_button_width_full_text_click(root, "Functions", async () => {
+  html_button_width_full_text_click(root, "Search Functions", async () => {
     await app_code_refresh_functions(context);
   });
   if (app_code_username_exists()) {
