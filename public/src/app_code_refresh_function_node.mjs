@@ -44,8 +44,7 @@ export function app_code_refresh_function_node(parent, node) {
     let f_name = html_span_text(parent, name);
     html_style_font_color(f_name, "forestgreen");
     html_span_text(parent, string_combine_multiple([" } "]));
-    let kw = js_keyword_from();
-    html_code_keyword_space(parent, kw);
+    html_code_keyword_space(parent, js_keyword_from());
     html_code_string(parent, value);
     html_span_text(parent, js_code_statement_end());
   } else if (js_node_type_is(node, "ExportNamedDeclaration")) {
