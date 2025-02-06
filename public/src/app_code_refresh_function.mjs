@@ -53,6 +53,7 @@ export async function app_code_refresh_function(context) {
       context,
       "function_selected",
     );
+    let functions_recent_limit = 15;
     storage_local_recent_add(
       context,
       "functions_recent",
