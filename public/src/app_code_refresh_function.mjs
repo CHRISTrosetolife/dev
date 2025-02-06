@@ -65,8 +65,7 @@ export async function app_code_refresh_function(context) {
           local,
         });
         html_span_text(section, string_combine_multiple([" } "]));
-        let keyword = js_keyword_from();
-        html_code_keyword(section, keyword);
+        html_code_keyword(section, js_keyword_from());
         html_span_text(
           section,
           string_combine_multiple([
