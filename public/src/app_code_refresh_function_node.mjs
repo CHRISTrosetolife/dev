@@ -49,6 +49,7 @@ export function app_code_refresh_function_node(parent, node) {
     html_span_text(parent, js_code_statement_end());
   } else if (js_node_type_is(node, "ExportNamedDeclaration")) {
     let declaration = object_property_get(node, "declaration");
+    app_code_refresh_function_node(parent, declaration);
   } else {
     log({
       node,
