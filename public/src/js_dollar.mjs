@@ -414,7 +414,7 @@ export function js_dollar(ast) {
           let { index, next, s1 } = a;
           each(mapped, (m) => {
             list_insert(s1, index, m);
-          });list_remove(s1, node)
+          });list_remove(s1, parent)
         });
       } else {
         let log_prefix_start_is = remaining === log_prefix_start;
