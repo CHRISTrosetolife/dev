@@ -410,7 +410,7 @@ export function js_dollar(ast) {
           let r = js_parse_first(c);
           return r;
         });
-        await js_dollar_grandparent_next(v, (a) => {
+        await js_dollar_grandparent(v, (a) => {
           let { index, s1 } = a;
           each(mapped, (m) => {
             list_insert(s1, index, m);
