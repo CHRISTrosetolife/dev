@@ -87,6 +87,6 @@ export function app_code_refresh_function_node(parent, node) {
     log({
       node,
     });
-    html_span_text_font_color(parent, js_unparse(node), "pink");
+    html_span_text_font_color(parent, js_unparse(node), "deeppink");
   }
 }
