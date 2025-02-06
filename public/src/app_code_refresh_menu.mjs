@@ -1,3 +1,4 @@
+import { storage_local_get_context } from "./storage_local_get_context.mjs";
 import { html_button } from "./html_button.mjs";
 import { app_code_button_functions_search } from "./app_code_button_functions_search.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
@@ -21,4 +22,5 @@ export function app_code_refresh_menu(context) {
       },
     );
   }
+  let functions_recent = storage_local_get_context(context, "functions_recent");
 }
