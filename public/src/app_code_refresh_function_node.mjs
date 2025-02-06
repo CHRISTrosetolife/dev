@@ -100,7 +100,7 @@ export async function app_code_refresh_function_node(parent, node) {
     let callee = object_property_get(node, "callee");
     let name5 = object_property_get(callee, "name");
     let fn_names = await app_code_function_names_get();
-    if (list_includes(fn_names)) {
+    if (list_includes(fn_names, name5)) {
     }
   } else {
     log({
