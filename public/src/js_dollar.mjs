@@ -416,7 +416,6 @@ export function js_dollar(ast) {
             list_insert(s1, index, m);
           });
         });
-        object_replace(parent, r);
       } else {
         let log_prefix_start_is = remaining === log_prefix_start;
         if (
