@@ -73,10 +73,7 @@ export function app_code_refresh_function_node(parent, node) {
       app_code_refresh_function_node_section(parent, b);
     });
   } else if (js_node_type_is(node, "VariableDeclaration")) {
-    let body2 = object_property_get(node, "body");
-    each(body2, (b) => {
-      app_code_refresh_function_node_section(parent, b);
-    });
+    let declarations = object_property_get(node, "declarations");
   } else {
     log({
       node,
