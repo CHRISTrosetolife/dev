@@ -3,6 +3,7 @@ import { list_get } from "./list_get.mjs";
 import { list_index_next } from "./list_index_next.mjs";
 import { list_is } from "./list_is.mjs";
 import { list_get_end_1 } from "./list_get_end_1.mjs";
+import { object_merge_strict } from "./object_merge_strict.mjs";
 export async function js_dollar_grandparent_next(v, lambda) {
   let { parent } = v;
   let { stack } = v;
@@ -17,7 +18,12 @@ export async function js_dollar_grandparent_next(v, lambda) {
     });
   }
   return s1;
-  await js_dollar_grandparent(v, (a) => {
+  await js_dollar_grandparent(v, async (a) => {
     let next = list_get(s1, index);
+    await lambda(
+      object_merge_strict(a, {
+        next,
+      }),
+    );
   });
 }
