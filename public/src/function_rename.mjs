@@ -1,13 +1,10 @@
-import { js_fn_name_rename } from "./js_fn_name_rename.mjs";
+import { function_rename_fn_name } from "./function_rename_fn_name.mjs";
 import { functions_transform } from "./functions_transform.mjs";
 import { js_import_remove_try } from "./js_import_remove_try.mjs";
 import { log } from "./log.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { assert_message } from "./assert_message.mjs";
-import { object_properties_intersect } from "./object_properties_intersect.mjs";
 import { fn_name } from "./fn_name.mjs";
-import { functions_identifier } from "./functions_identifier.mjs";
-import { functions_string } from "./functions_string.mjs";
 import { function_paths } from "./function_paths.mjs";
 import { data_remove } from "./data_remove.mjs";
 import { data_update_multiple_transform } from "./data_update_multiple_transform.mjs";
@@ -27,15 +24,7 @@ import { list_empty_is } from "./list_empty_is.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 export async function function_rename(fn_name_from, fn_name_to) {
   assert_arguments_length(arguments, 2);
-  let functions_matching_strings = await functions_string(fn_name_from);
-  let functions_fn_name = await functions_identifier(fn_name("fn_name"));
-  let intersecteds = object_properties_intersect(
-    functions_matching_strings,
-    functions_fn_name,
-  );
-  await functions_transform(intersecteds, function lambda(ast) {
-    js_fn_name_rename(ast, fn_name_from, fn_name_to);
-  });
+  let intersecteds = await function_rename_fn_name(fn_name_from, fn_name_to);
   let identifiers = await data_identifiers();
   let fn_path_from = function_name_to_path(fn_name_from);
   let fn_path_to = function_name_to_path(fn_name_to);
