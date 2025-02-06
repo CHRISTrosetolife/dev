@@ -1,4 +1,3 @@
-import { html_style_code_dark } from "./html_style_code_dark.mjs";
 import { html_style_monospace } from "./html_style_monospace.mjs";
 import { log } from "./log.mjs";
 import { js_keyword_from } from "./js_keyword_from.mjs";
@@ -40,7 +39,6 @@ export async function app_code_refresh_function(context) {
     let body = object_property_get(p, "body");
     each(body, (b) => {
       let section = html_div(root);
-      html_style_code_dark(section);
       html_style_monospace(section);
       let type = object_property_get(b, "type");
       if (type === "ImportDeclaration") {
