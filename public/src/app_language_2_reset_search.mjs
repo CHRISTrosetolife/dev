@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { app_language_word_pair } from "./app_language_word_pair.mjs";
 import { app_language_words_update } from "./app_language_words_update.mjs";
 import { html_progress_index_update } from "./html_progress_index_update.mjs";
@@ -15,7 +16,6 @@ import { app_language_2_refresh_learn_value_choose } from "./app_language_2_refr
 import { app_language_2_learn_success } from "./app_language_2_learn_success.mjs";
 import { app_language_2_words_initialize } from "./app_language_2_words_initialize.mjs";
 import { app_language_2_group_get } from "./app_language_2_group_get.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { each } from "./each.mjs";
 import { list_any } from "./list_any.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -46,7 +46,7 @@ export function app_language_2_reset_search(context, v) {
   each(filtered, (v2) => {
     let word = object_property_get(v2, "word");
     let index = object_property_get(word, "index");
-    let entry = html_button_width_full_text_click(root, "", async () => {
+    let entry = html_button(root, "", async () => {
       html_clear_scroll_top_centered(root);
       html_spacer_vertical_n(root, 8);
       html_p_text(root, "Loading...");

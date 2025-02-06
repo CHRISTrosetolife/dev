@@ -1,6 +1,6 @@
+import { html_button } from "./html_button.mjs";
 import { html_button_back } from "./html_button_back.mjs";
 import { html_remove } from "./html_remove.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_gs_menu_main } from "./app_gs_menu_main.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -26,7 +26,7 @@ export function app_gs_menu_pray(context, menu_overlay) {
     list_random_item(["the Lord", "our Savior", "King"]),
     " Jesus, amen.",
   ]);
-  html_button_width_full_text_click(menu_overlay, prayer, () => {
+  html_button(menu_overlay, prayer, () => {
     context.game.player.pray.conversation = true;
     html_remove(menu_overlay);
   });

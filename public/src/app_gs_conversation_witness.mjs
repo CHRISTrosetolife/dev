@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { app_gs_conversation_witness_choice } from "./app_gs_conversation_witness_choice.mjs";
 import { app_gs_conversation_witness_wrong } from "./app_gs_conversation_witness_wrong.mjs";
 import { list_without } from "./list_without.mjs";
@@ -5,7 +6,6 @@ import { app_gs_objection_ids } from "./app_gs_objection_ids.mjs";
 import { list_pop } from "./list_pop.mjs";
 import { each } from "./each.mjs";
 import { app_gs_conversation_gospel } from "./app_gs_conversation_gospel.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_gs_conversation_player_prompt } from "./app_gs_conversation_player_prompt.mjs";
 import { app_gs_conversation_npc } from "./app_gs_conversation_npc.mjs";
@@ -40,10 +40,6 @@ export async function app_gs_conversation_witness(context, menu_overlay, npc) {
   let choices = [choice_wrong, choice_correct];
   list_shuffle(choices);
   each(choices, (choice) => {
-    html_button_width_full_text_click(
-      div_player,
-      choice.answer_text,
-      choice.on_click,
-    );
+    html_button(div_player, choice.answer_text, choice.on_click);
   });
 }

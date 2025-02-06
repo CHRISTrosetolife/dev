@@ -1,15 +1,15 @@
+import { html_button } from "./html_button.mjs";
 import { html_prayer } from "./html_prayer.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { grace_good_generic_copy } from "./grace_good_generic_copy.mjs";
 import { each } from "./each.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 export function app_good() {
   let body = html_style_default_initialize();
   let morning = "morning";
   let messages = [morning, "night"];
   each(messages, (message) => {
-    html_button_width_full_text_click(body, message, () => {
+    html_button(body, message, () => {
       grace_good_generic_copy(message);
       if (message === morning) {
         html_p_text(

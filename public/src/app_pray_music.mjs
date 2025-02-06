@@ -1,9 +1,9 @@
+import { html_button } from "./html_button.mjs";
 import { app_pray_word } from "./app_pray_word.mjs";
 import { html_prayer } from "./html_prayer.mjs";
 import { html_button_previous_text } from "./html_button_previous_text.mjs";
 import { html_button_next_text } from "./html_button_next_text.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_get } from "./list_get.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_document_body } from "./html_document_body.mjs";
@@ -36,7 +36,7 @@ export function app_pray_music(index) {
   html_clear_scroll_top_centered(root);
   let prayer = list_get(prayers, index);
   html_prayer(root, prayer);
-  let next = html_button_width_full_text_click(
+  let next = html_button(
     root,
     string_combine_multiple([html_button_next_text(), " prayer"]),
     () => {
@@ -44,7 +44,7 @@ export function app_pray_music(index) {
       app_pray_music(index);
     },
   );
-  let previous = html_button_width_full_text_click(
+  let previous = html_button(
     root,
     string_combine_multiple([html_button_previous_text(), " prayer"]),
     async () => {

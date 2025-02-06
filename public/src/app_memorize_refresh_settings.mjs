@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { html_button_element } from "./html_button_element.mjs";
 import { html_button_next } from "./html_button_next.mjs";
 import { html_button_back } from "./html_button_back.mjs";
@@ -34,7 +35,6 @@ import { html_inner_set } from "./html_inner_set.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { app_memorize_group_to_range_string } from "./app_memorize_group_to_range_string.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_memorize_refresh_settings(context) {
   let { root } = context;
   html_clear_scroll_top(root);
@@ -45,7 +45,7 @@ export async function app_memorize_refresh_settings(context) {
   let version_code_current = app_memorize_version_code_get(context);
   let destination = bible_storage_path_copyrights();
   let copyrights = await http_storage_get(destination);
-  html_button_width_full_text_click(
+  html_button(
     root,
     string_combine_multiple([
       "translation ",
@@ -66,80 +66,65 @@ export async function app_memorize_refresh_settings(context) {
           copyrights,
           version_code,
         );
-        let b = html_button_width_full_text_click(
-          root,
-          name,
-          async function () {
-            if (string_includes(copyright, "Public Domain")) {
-              await app_memorize_refresh_settings_version(
-                context,
-                version_code,
-              );
-            } else {
-              html_clear_scroll_top_context(context);
-              each(
-                [
-                  string_combine_multiple([
-                    'press "',
-                    html_button_next_text(),
-                    '" at the bottom to continue"',
-                  ]),
-                  name,
-                  description,
-                  copyright,
-                ],
-                (text) => {
-                  html_p_text(root, text);
-                  html_hr(root);
-                },
-              );
-              html_button_next(
-                root,
-                async () =>
-                  await app_memorize_refresh_settings_version(
-                    context,
-                    version_code,
-                  ),
-              );
-            }
-          },
-        );
+        let b = html_button(root, name, async function () {
+          if (string_includes(copyright, "Public Domain")) {
+            await app_memorize_refresh_settings_version(context, version_code);
+          } else {
+            html_clear_scroll_top_context(context);
+            each(
+              [
+                string_combine_multiple([
+                  'press "',
+                  html_button_next_text(),
+                  '" at the bottom to continue"',
+                ]),
+                name,
+                description,
+                copyright,
+              ],
+              (text) => {
+                html_p_text(root, text);
+                html_hr(root);
+              },
+            );
+            html_button_next(
+              root,
+              async () =>
+                await app_memorize_refresh_settings_version(
+                  context,
+                  version_code,
+                ),
+            );
+          }
+        });
         html_style_success_if(b, expected, version_code);
       });
     },
   );
   let book_code = app_memorize_book_code_get(context);
-  html_button_width_full_text_click(
-    root,
-    string_combine_multiple(["book ", book_code]),
-    () => {
-      app_record_home_generic(
-        context,
-        () => {
-          app_memorize_settings_button_back(context);
-          html_p_text(root, "which book do you want to memorize from ?");
-        },
-        async (context, book_code) => {
-          object_merge(save, {
-            book_code,
-          });
-          app_memorize_chapter_set(context, "1");
-          app_memorize_refresh_settings_chapter(context);
-          await app_memorize_refresh_memorize_load(context);
-        },
-        book_code,
-      );
-    },
-  );
+  html_button(root, string_combine_multiple(["book ", book_code]), () => {
+    app_record_home_generic(
+      context,
+      () => {
+        app_memorize_settings_button_back(context);
+        html_p_text(root, "which book do you want to memorize from ?");
+      },
+      async (context, book_code) => {
+        object_merge(save, {
+          book_code,
+        });
+        app_memorize_chapter_set(context, "1");
+        app_memorize_refresh_settings_chapter(context);
+        await app_memorize_refresh_memorize_load(context);
+      },
+      book_code,
+    );
+  });
   let chapter = app_memorize_chapter_get(context);
-  html_button_width_full_text_click(
-    root,
-    string_combine_multiple(["chapter ", chapter]),
-    () => {
-      app_memorize_refresh_settings_chapter(context);
-    },
-  );
-  html_button_width_full_text_click(
+  html_button(root, string_combine_multiple(["chapter ", chapter]), () => {
+    app_memorize_refresh_settings_chapter(context);
+  });
+  html_button(
     root,
     string_combine_multiple([
       "verses ",
@@ -159,7 +144,7 @@ export async function app_memorize_refresh_settings(context) {
       }
     },
   );
-  html_button_width_full_text_click(
+  html_button(
     root,
     string_combine_multiple([
       "pattern ",

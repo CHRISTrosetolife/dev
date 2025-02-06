@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { html_item_add } from "./html_item_add.mjs";
 import { app_todo_list_filtered } from "./app_todo_list_filtered.mjs";
 import { app_todo_firebase_path_index } from "./app_todo_firebase_path_index.mjs";
@@ -13,16 +14,15 @@ import { app_todo_completed_property } from "./app_todo_completed_property.mjs";
 import { app_todo_not_completed } from "./app_todo_not_completed.mjs";
 import { each } from "./each.mjs";
 import { app_todo_items } from "./app_todo_items.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 export function app_todo_main(context) {
   let { root } = context;
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
-  html_button_width_full_text_click(root, app_todo_completed_value(), () => {
+  html_button(root, app_todo_completed_value(), () => {
     app_todo_completed_view(context);
   });
-  html_button_width_full_text_click(root, "🌅 add dailies", async () => {
+  html_button(root, "🌅 add dailies", async () => {
     let filtered = list_filter_property(
       items,
       app_todo_type(),

@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { app_memorize_group_next_skip } from "./app_memorize_group_next_skip.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_map_sum } from "./list_map_sum.mjs";
@@ -8,7 +9,6 @@ import { list_join_br_br } from "./list_join_br_br.mjs";
 import { app_gs_menu_study_bible_group } from "./app_gs_menu_study_bible_group.mjs";
 import { app_gs_menu_study_bible_group_single } from "./app_gs_menu_study_bible_group_single.mjs";
 import { app_memorize_group_next } from "./app_memorize_group_next.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { app_gs_overlay_speech_text } from "./app_gs_overlay_speech_text.mjs";
@@ -93,7 +93,7 @@ export async function app_gs_menu_study_bible(menu_overlay, context) {
           memorize_context,
         );
       }
-      html_button_width_full_text_click(menu_overlay, "⬅️ No, go back", () =>
+      html_button(menu_overlay, "⬅️ No, go back", () =>
         html_remove(menu_overlay),
       );
     },

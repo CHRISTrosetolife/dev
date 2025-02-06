@@ -1,7 +1,7 @@
+import { html_button } from "./html_button.mjs";
 import { app_sleep_list_name } from "./app_sleep_list_name.mjs";
 import { firebase_save } from "./firebase_save.mjs";
 import { list_remove } from "./list_remove.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_sleep_types } from "./app_sleep_types.mjs";
@@ -21,7 +21,7 @@ export async function app_sleep_delete_refresh(parent) {
         html_p_text_centered(parent, list_name);
         let list = object_property_get(data_day, list_name);
         each(list, (item) => {
-          html_button_width_full_text_click(parent, item, async () => {
+          html_button(parent, item, async () => {
             list_remove(list, item);
             await firebase_save(month_path, data);
             await app_sleep_delete_refresh(parent);

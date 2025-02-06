@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { app_language_2_answer_count_max } from "./app_language_2_answer_count_max.mjs";
 import { range_1 } from "./range_1.mjs";
 import { app_language_2_answer_count_get } from "./app_language_2_answer_count_get.mjs";
@@ -23,26 +24,25 @@ import { emoji_laptop } from "./emoji_laptop.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { storage_local_exists } from "./storage_local_exists.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 export function app_language_2_refresh_home(context) {
   let { root, app_fn } = context;
   html_clear_scroll_top_centered(root);
-  html_button_width_full_text_click(
+  html_button(
     root,
     string_combine_multiple([emoji_learn(), " Learn"]),
     async () => {
       await app_language_2_refresh_learn(context);
     },
   );
-  html_button_width_full_text_click(
+  html_button(
     root,
     string_combine_multiple([emoji_chart(), " Factor (difficulty)"]),
     () => {
       app_language_2_refresh_factor(context);
     },
   );
-  html_button_width_full_text_click(
+  html_button(
     root,
     string_combine_multiple([emoji_setting(), " Settings"]),
     () => {
@@ -59,7 +59,7 @@ export function app_language_2_refresh_home(context) {
   );
   let skip_manual = app_language_2_skip_manual_get(app_fn);
   if (object_properties_empty_not_is(skip_manual)) {
-    html_button_width_full_text_click(
+    html_button(
       root,
       string_combine_multiple([emoji_delete(), " Skipped"]),
       () => {
@@ -68,15 +68,11 @@ export function app_language_2_refresh_home(context) {
     );
   }
   if (storage_local_exists(app_fn, "stats")) {
-    html_button_width_full_text_click(
-      root,
-      string_combine_multiple([emoji_data(), " Stats"]),
-      () => {
-        app_language_2_refresh_stats(context);
-      },
-    );
+    html_button(root, string_combine_multiple([emoji_data(), " Stats"]), () => {
+      app_language_2_refresh_stats(context);
+    });
   }
-  html_button_width_full_text_click(
+  html_button(
     root,
     string_combine_multiple([emoji_laptop(), " Data for development"]),
     () => {

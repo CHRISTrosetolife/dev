@@ -1,10 +1,10 @@
+import { html_button } from "./html_button.mjs";
 import { http_storage_get } from "./http_storage_get.mjs";
 import { html_button_home } from "./html_button_home.mjs";
 import { html_script_axios } from "./html_script_axios.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { list_second } from "./list_second.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { list_map } from "./list_map.mjs";
 import { http_storage } from "./http_storage.mjs";
@@ -48,7 +48,7 @@ export async function app_yyy8Uu() {
   function refresh_home() {
     html_clear_scroll_top(root);
     each_index(book_labels, (b, book_index) => {
-      html_button_width_full_text_click(root, b, () => {
+      html_button(root, b, () => {
         refresh_book(book_index);
       });
     });
@@ -71,7 +71,7 @@ export async function app_yyy8Uu() {
       string_combine_multiple([book_label, " chapter ", b]),
     );
     each_index(chapter_labels, (c, chapter_book_index) => {
-      html_button_width_full_text_click(root, c, () => {
+      html_button(root, c, () => {
         let chapter_index = list_index(
           split,
           list_get(filtered, chapter_book_index),
@@ -88,7 +88,7 @@ export async function app_yyy8Uu() {
     html_clear_scroll_top(root);
     buttons_navigation();
     html_hr(root);
-    html_button_width_full_text_click(
+    html_button(
       root,
       (show_latin ? "hide" : "show") + " latin",
       async function on_click() {

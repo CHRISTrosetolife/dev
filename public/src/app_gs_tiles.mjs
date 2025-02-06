@@ -1,7 +1,7 @@
+import { html_button } from "./html_button.mjs";
 import { html_style_width } from "./html_style_width.mjs";
 import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 import { html_button_width_full } from "./html_button_width_full.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { html_style_line_height_none } from "./html_style_line_height_none.mjs";
@@ -26,7 +26,7 @@ export function app_gs_tiles(context, parent) {
     html_style_background_color(image, "black");
     html_on_click(image, () => {
       let menu2 = app_gs_menu_overlay(context);
-      html_button_width_full_text_click(menu2, "back", () => {
+      html_button(menu2, "back", () => {
         html_remove(menu2);
       });
       let button_container = html_button_width_full(menu2);

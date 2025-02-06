@@ -1,9 +1,9 @@
+import { html_button } from "./html_button.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
 import { js_code_format_indent_none } from "./js_code_format_indent_none.mjs";
 import { app_learn_code_code } from "./app_learn_code_code.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { string_combine } from "./string_combine.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { html_div } from "./html_div.mjs";
 import { app_learn_code_range_retry } from "./app_learn_code_range_retry.mjs";
@@ -34,7 +34,7 @@ export function lesson_log_number_example(source_get, message, before) {
       }
       previous = source;
       app_learn_code_code(div, source);
-      html_button_width_full_text_click(div, "another example", refresh);
+      html_button(div, "another example", refresh);
     }
   };
 }

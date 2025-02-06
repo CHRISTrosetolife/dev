@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { list_last_is } from "./list_last_is.mjs";
 import { app_language_atom_title_patterns } from "./app_language_atom_title_patterns.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
@@ -7,7 +8,6 @@ import { app_language_group_get } from "./app_language_group_get.mjs";
 import { app_language_group_index_set } from "./app_language_group_index_set.mjs";
 import { add_1 } from "./add_1.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_language_refresh_menu(context) {
   let { root } = context;
   html_clear_scroll_top_centered(root);
@@ -16,7 +16,7 @@ export async function app_language_refresh_menu(context) {
     if (list_last_is(groups, group_info)) {
       return;
     }
-    let button = html_button_width_full_text_click(root, "", async () => {
+    let button = html_button(root, "", async () => {
       await app_language_group_index_set(context, group_index);
     });
     html_cycle_p(

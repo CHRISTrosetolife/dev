@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { app_language_word_pair } from "./app_language_word_pair.mjs";
 import { app_language_2_word_key } from "./app_language_2_word_key.mjs";
 import { app_language_2_skip_manual_get } from "./app_language_2_skip_manual_get.mjs";
@@ -7,7 +8,6 @@ import { storage_local_set } from "./storage_local_set.mjs";
 import { object_property_delete } from "./object_property_delete.mjs";
 import { emoji_check } from "./emoji_check.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { html_div } from "./html_div.mjs";
@@ -30,7 +30,7 @@ export function app_language_2_skipped(context) {
     html_hr(entry);
     let word = object_property_get(v, "word");
     app_language_word_pair(context, entry, word);
-    html_button_width_full_text_click(
+    html_button(
       entry,
       string_combine_multiple([emoji_check(), "Unskip"]),
       () => {

@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { html_input_validated_on_input_lambda_initial } from "./html_input_validated_on_input_lambda_initial.mjs";
 import { html_condition_letters_numbers_underscores } from "./html_condition_letters_numbers_underscores.mjs";
 import { html_condition_empty_not } from "./html_condition_empty_not.mjs";
@@ -11,7 +12,6 @@ import { storage_local_set } from "./storage_local_set.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export function app_code_refresh_username(context) {
   let root = app_code_screen_set(context, fn_name("app_code_refresh_username"));
   html_p_text_multiple(root, [
@@ -23,7 +23,7 @@ export function app_code_refresh_username(context) {
     html_condition_empty_not(),
     html_condition_letters_numbers_underscores(),
   ]);
-  let button_save = html_button_width_full_text_click(root, "Save", () => {
+  let button_save = html_button(root, "Save", () => {
     let value = html_value_get(input_username);
     storage_local_set(app_code, "username", value);
     next();
@@ -32,7 +32,7 @@ export function app_code_refresh_username(context) {
     html_button_enable_if(button_save, valid);
   });
   html_hr(root);
-  html_button_width_full_text_click(root, "Skip", () => {
+  html_button(root, "Skip", () => {
     next();
   });
   async function next() {

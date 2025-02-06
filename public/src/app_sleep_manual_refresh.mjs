@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { html_button_back } from "./html_button_back.mjs";
 import { app_sleep_types } from "./app_sleep_types.mjs";
 import { log } from "./log.mjs";
@@ -13,7 +14,6 @@ import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_button_previous_text } from "./html_button_previous_text.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_list_chooser } from "./html_list_chooser.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { range } from "./range.mjs";
@@ -66,7 +66,7 @@ export function app_sleep_manual_refresh(context, parts) {
   }
   let day = object_property_get(parts, "day");
   html_p_text(root, day);
-  html_button_width_full_text_click(
+  html_button(
     root,
     string_combine_multiple([html_button_previous_text(), " day"]),
     () => {
@@ -114,7 +114,7 @@ export function app_sleep_manual_refresh(context, parts) {
     },
   );
   let result;
-  html_button_width_full_text_click(root, app_sleep_manual_text(), async () => {
+  html_button(root, app_sleep_manual_text(), async () => {
     now.setFullYear(year);
     now.setMonth(month_index);
     now.setDate(day);

@@ -1,8 +1,8 @@
+import { html_button } from "./html_button.mjs";
 import { app_gs_save } from "./app_gs_save.mjs";
 import { app_gs_menu_study_bible } from "./app_gs_menu_study_bible.mjs";
 import { app_memorize_group_to_range_string } from "./app_memorize_group_to_range_string.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export function app_gs_menu_study_bible_group(
   menu_overlay,
   g,
@@ -10,7 +10,7 @@ export function app_gs_menu_study_bible_group(
   context,
   memorize_context,
 ) {
-  html_button_width_full_text_click(
+  html_button(
     menu_overlay,
     string_combine_multiple([
       "📖 Yes, study the bible more with verse",

@@ -1,5 +1,5 @@
+import { html_button } from "./html_button.mjs";
 import { window_open } from "./window_open.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -15,12 +15,8 @@ export function app_index_choices_buttons(root, choices) {
     } else {
       url = object_property_get(choice, "href");
     }
-    html_button_width_full_text_click(
-      root,
-      object_property_get(choice, "text"),
-      () => {
-        window_open(url);
-      },
-    );
+    html_button(root, object_property_get(choice, "text"), () => {
+      window_open(url);
+    });
   });
 }

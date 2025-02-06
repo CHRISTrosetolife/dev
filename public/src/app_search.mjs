@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_copy } from "./html_button_copy.mjs";
@@ -17,7 +18,6 @@ import { bible_search_results } from "./bible_search_results.mjs";
 import { tautology } from "./tautology.mjs";
 import { html_p_text_centered } from "./html_p_text_centered.mjs";
 import { html_value_get } from "./html_value_get.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { object_merge } from "./object_merge.mjs";
@@ -26,7 +26,7 @@ export async function app_search() {
   let root = await firebase_initialize_axios();
   html_p_text_centered(root, "enter words separated by spaces");
   let i = html_input_width_full_focus(root);
-  html_button_width_full_text_click(root, "🔎 search", async () => {
+  html_button(root, "🔎 search", async () => {
     let v = html_value_get(i);
     html_clear_scroll_top(root);
     html_p_text_centered(root, v);
@@ -45,7 +45,7 @@ export async function app_search() {
     });
     list_sort_string_map(filtered, (f) => object_property_get(f, "reference"));
     html_hr(root);
-    html_button_width_full_text_click(root, "expand all", expand_all);
+    html_button(root, "expand all", expand_all);
     let on_clicks = list_map(filtered, (f) => {
       let { chapter_code, verse_number, reference } = f;
       html_hr(root);
@@ -60,7 +60,7 @@ export async function app_search() {
         html_button_copy(result, text);
         html_p_text_centered(result, text);
       };
-      let b = html_button_width_full_text_click(root, reference, on_click);
+      let b = html_button(root, reference, on_click);
       return on_click;
     });
     async function expand_all() {

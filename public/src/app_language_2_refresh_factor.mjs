@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { app_language_2_factor_set } from "./app_language_2_factor_set.mjs";
@@ -18,7 +19,6 @@ import { app_language_2_gaps_get } from "./app_language_2_gaps_get.mjs";
 import { app_language_2_refresh_factor_configure } from "./app_language_2_refresh_factor_configure.mjs";
 import { app_language_2_button_back_home } from "./app_language_2_button_back_home.mjs";
 import { html_p_text } from "./html_p_text.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export function app_language_2_refresh_factor(context) {
   app_language_2_button_back_home(context);
   let { root } = context;
@@ -40,10 +40,8 @@ export function app_language_2_refresh_factor(context) {
   html_p_text(root, "Configure your factor(s) and any thresholds:");
   let factors = app_language_2_factor_get(context);
   each(factors, (f) => {
-    html_button_width_full_text_click(
-      root,
-      app_language_2_factor_string(f),
-      () => app_language_2_refresh_factor_configure(context, f, factors),
+    html_button(root, app_language_2_factor_string(f), () =>
+      app_language_2_refresh_factor_configure(context, f, factors),
     );
   });
   html_button_add(root, "factor", () => {

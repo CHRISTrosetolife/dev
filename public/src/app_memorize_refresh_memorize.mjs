@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
 import { app_memorize_save } from "./app_memorize_save.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
@@ -29,7 +30,6 @@ import { subtract } from "./subtract.mjs";
 import { add } from "./add.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_style_margin_x } from "./html_style_margin_x.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_element } from "./html_element.mjs";
 import { string_split } from "./string_split.mjs";
 import { list_get } from "./list_get.mjs";
@@ -50,7 +50,7 @@ export async function app_memorize_refresh_memorize(context) {
   let pattern = string_split(p, "");
   if (context.settings) {
     let settings_element = html_div(root);
-    let settings_button = html_button_width_full_text_click(
+    let settings_button = html_button(
       settings_element,
       "⚙️ settings",
       async () => await app_memorize_refresh_settings(context),

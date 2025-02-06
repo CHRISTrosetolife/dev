@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { string_size } from "./string_size.mjs";
 import { list_size } from "./list_size.mjs";
@@ -37,7 +38,6 @@ import { html_inner_set } from "./html_inner_set.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { add } from "./add.mjs";
 import { html_div } from "./html_div.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { list_first } from "./list_first.mjs";
 import { add_1 } from "./add_1.mjs";
@@ -170,7 +170,7 @@ export function app_learn_code_unshuffle(source_get) {
               'if you want to take another quiz , press the "another quiz" button below : ',
             );
             html_p_text(success, 'otherwise , press the "next" button below');
-            html_button_width_full_text_click(success, "another quiz", refresh);
+            html_button(success, "another quiz", refresh);
           }
         });
       }

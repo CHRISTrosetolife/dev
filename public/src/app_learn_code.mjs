@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { html_button_home } from "./html_button_home.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { html_button_me_email } from "./html_button_me_email.mjs";
@@ -30,7 +31,6 @@ import { multiply } from "./multiply.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { add_1 } from "./add_1.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { equal } from "./equal.mjs";
 import { list_get } from "./list_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -109,7 +109,7 @@ export async function app_learn_code() {
       } else {
         font_color = "white";
       }
-      let change = html_button_width_full_text_click(
+      let change = html_button(
         root,
         string_combine_multiple([index, ".", " background color : ", color]),
         () =>
@@ -150,7 +150,7 @@ export async function app_learn_code() {
     });
     html_hr(root);
     html_button_me_email(root);
-    html_button_width_full_text_click(root, "⚙️ settings", refresh_settings);
+    html_button(root, "⚙️ settings", refresh_settings);
   }
   function refresh_module(module) {
     html_clear_scroll_top(root);
@@ -187,7 +187,7 @@ export async function app_learn_code() {
     let { screens } = lesson;
     each_index(screens, (screen, index) => {
       let message = string_combine("screen ", add_1(index));
-      let button = html_button_width_full_text_click(
+      let button = html_button(
         root,
         "",
         async () => await refresh_lesson_screen(add(index_first, index)),

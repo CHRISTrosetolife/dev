@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { bible_book_chapter_text } from "./bible_book_chapter_text.mjs";
 import { html_p_text_centered } from "./html_p_text_centered.mjs";
 import { object_replace } from "./object_replace.mjs";
@@ -9,7 +10,6 @@ import { list_join_space } from "./list_join_space.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { each } from "./each.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_record_chapter(
   context,
   book_code,
@@ -28,7 +28,7 @@ export async function app_record_chapter(
   html_p_text_centered(root, bible_book_chapter_text(book_code, chapter));
   each(verses, (verse) => {
     let { tokens, verse_number } = verse;
-    let p = html_button_width_full_text_click(root, "", async () => {
+    let p = html_button(root, "", async () => {
       await on_verse(context, book_code, chapter, verse_number);
     });
     let vn = html_span_text(p, verse_number);

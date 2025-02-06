@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { html_button_me_email } from "./html_button_me_email.mjs";
 import { app_language_group_index_component } from "./app_language_group_index_component.mjs";
 import { app_language_refresh_help } from "./app_language_refresh_help.mjs";
@@ -30,7 +31,6 @@ import { mod_last_is } from "./mod_last_is.mjs";
 import { number_power } from "./number_power.mjs";
 import { integer_log } from "./integer_log.mjs";
 import { app_language_text } from "./app_language_text.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_language_atom_title_patterns } from "./app_language_atom_title_patterns.mjs";
@@ -69,7 +69,7 @@ export async function app_language_refresh_node(context) {
       },
     );
   }
-  html_button_width_full_text_click(root, "🛟 help", async () => {
+  html_button(root, "🛟 help", async () => {
     await app_language_refresh_help(context);
   });
   let srl = subtract(right, left);
@@ -99,13 +99,13 @@ export async function app_language_refresh_node(context) {
       j++;
     });
   }
-  html_button_width_full_text_click(
+  html_button(
     root,
     "📃 " + (await app_language_text(language_fluent, "review")),
     () => app_language_refresh_review(context),
   );
   if (left === right) {
-    html_button_width_full_text_click(
+    html_button(
       root,
       string_combine_multiple([
         j,
@@ -137,7 +137,7 @@ export async function app_language_refresh_node(context) {
     chunk_size: 1,
   });
   await each_async(quizzes_list, async (item) => {
-    html_button_width_full_text_click(
+    html_button(
       root,
       string_combine_multiple([
         j,
@@ -153,7 +153,7 @@ export async function app_language_refresh_node(context) {
   if (top_is) {
     let group_index = app_language_group_index_get(context);
     if (group_index >= 1) {
-      html_button_width_full_text_click(
+      html_button(
         root,
         await app_language_text_group_previous(language_fluent),
         async () => {
@@ -164,7 +164,7 @@ export async function app_language_refresh_node(context) {
     let { groups } = await app_language_group_get(context, "index");
     let groups_size = list_size(groups);
     if (group_index < groups_size - 1) {
-      html_button_width_full_text_click(
+      html_button(
         root,
         await app_language_text_group_next(language_fluent),
         async () => {
@@ -173,7 +173,7 @@ export async function app_language_refresh_node(context) {
       );
     }
   } else {
-    html_button_width_full_text_click(
+    html_button(
       root,
       string_combine_multiple([
         j++,

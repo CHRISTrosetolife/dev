@@ -1,4 +1,4 @@
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
+import { html_button } from "./html_button.mjs";
 import { storage_local_set_context } from "./storage_local_set_context.mjs";
 import { app_code_refresh_function } from "./app_code_refresh_function.mjs";
 import { app_code_files_get } from "./app_code_files_get.mjs";
@@ -48,7 +48,7 @@ export async function app_code_refresh_functions(context) {
       context,
       fn_name("app_code_refresh_functions"),
     );
-    html_button_width_full_text_click(root, async () => {
+    html_button(root, async () => {
       app_code_refresh_menu(context);
     });
     html_cycle_p(

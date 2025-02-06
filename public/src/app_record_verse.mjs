@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { app_record_verse_generic } from "./app_record_verse_generic.mjs";
 import { html_button_width_full_text_click_br } from "./html_button_width_full_text_click_br.mjs";
 import { html_audio } from "./html_audio.mjs";
@@ -14,7 +15,6 @@ import { html_style_display_block } from "./html_style_display_block.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
 import { html_recorder_media_start } from "./html_recorder_media_start.mjs";
 import { html_recorder_media_stop } from "./html_recorder_media_stop.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_record_verse(
   context,
   book_code,
@@ -40,15 +40,11 @@ export async function app_record_verse(
     recording_not,
     listen;
   let blob = null;
-  start = html_button_width_full_text_click(
-    middle,
-    "⏺️ start recording",
-    () => {
-      each(recording_not, html_style_display_none);
-      record_start();
-      each(recording, html_style_display_block);
-    },
-  );
+  start = html_button(middle, "⏺️ start recording", () => {
+    each(recording_not, html_style_display_none);
+    record_start();
+    each(recording, html_style_display_block);
+  });
   previous = object_property_get(navigation, "previous");
   next = object_property_get(navigation, "next");
   let verse_next = object_property_get(navigation, "verse_next");

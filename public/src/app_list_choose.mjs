@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
 import { list_join_comma } from "./list_join_comma.mjs";
 import { list_map_property } from "./list_map_property.mjs";
@@ -11,7 +12,6 @@ import { storage_local_remove } from "./storage_local_remove.mjs";
 import { log } from "./log.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { each_index } from "./each_index.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_list } from "./app_list.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
@@ -50,7 +50,7 @@ export function app_list_choose(body) {
     chosen,
   });
   each_index(split, (line, index) => {
-    let b = html_button_width_full_text_click(body, line, () => {
+    let b = html_button(body, line, () => {
       chosen[index] = !chosen[index];
       storage_local_set(app_list, "chosen", chosen);
       log({

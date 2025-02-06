@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { html_button_back_after } from "./html_button_back_after.mjs";
 import { app_code_button_functions_search } from "./app_code_button_functions_search.mjs";
 import { html_clear_scroll_top_centered_context } from "./html_clear_scroll_top_centered_context.mjs";
@@ -27,14 +28,13 @@ import { folder_current_prefix } from "./folder_current_prefix.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async () => {
     let root = app_code_screen_set(
       context,
       fn_name("app_code_refresh_function"),
     );
-    html_button_width_full_text_click(root, "Menu", () => {
+    html_button(root, "Menu", () => {
       let root = html_clear_scroll_top_centered_context(context);
       let function_selected = storage_local_get_context(
         context,
