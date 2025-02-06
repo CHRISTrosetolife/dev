@@ -23,6 +23,7 @@ import { folder_current_prefix } from "./folder_current_prefix.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { string_delimit } from "./string_delimit.mjs";
+import { html_style_font_color } from "./html_style_font_color.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async () => {
     let root = app_code_screen_set(
@@ -66,6 +67,7 @@ export async function app_code_refresh_function(context) {
         html_code_keyword(section, js_keyword_from());
         html_span_text(section, " ");
         let st = html_span_text(section, string_delimit(value));
+        html_style_font_color(st, "orange");
         html_span_text(section, js_code_statement_end());
       }
     });
