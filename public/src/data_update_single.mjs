@@ -34,7 +34,7 @@ export function data_update_single(ast, data) {
   let filtered = list_filter(mapped, string_is);
   let u = list_unique(filtered);
   list_sort_string_map(u, identity);
-  let ids = js_identifiers(ast);
+  let ids = js_identifiers(ast);$ag
   let lambda = (args) => {
     if (list_size_1(args)) {
       let a = list_single(args);
