@@ -1,4 +1,4 @@
-import { html_button } from "./html_button.mjs";
+import { app_code_menu_app } from "./app_code_menu_app.mjs";
 import { storage_local_set_context } from "./storage_local_set_context.mjs";
 import { app_code_refresh_function } from "./app_code_refresh_function.mjs";
 import { app_code_files_get } from "./app_code_files_get.mjs";
@@ -12,7 +12,6 @@ import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_button_width_full_click } from "./html_button_width_full_click.mjs";
-import { app_code_refresh_menu } from "./app_code_refresh_menu.mjs";
 import { regex_new } from "./regex_new.mjs";
 import { list_between_surround } from "./list_between_surround.mjs";
 import { regex_test_multiple } from "./regex_test_multiple.mjs";
@@ -48,9 +47,7 @@ export async function app_code_refresh_functions(context) {
       context,
       fn_name("app_code_refresh_functions"),
     );
-    html_button(root, 'App menu', async () => {
-      app_code_refresh_menu(context);
-    });
+    app_code_menu_app(context);
     html_cycle_p(
       root,
       [noop, html_style_bold],
