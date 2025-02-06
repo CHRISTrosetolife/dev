@@ -1,3 +1,4 @@
+import { js_fn_name_rename } from "./js_fn_name_rename.mjs";
 import { functions_transform } from "./functions_transform.mjs";
 import { js_import_remove_try } from "./js_import_remove_try.mjs";
 import { log } from "./log.mjs";
@@ -56,9 +57,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
     functions_fn_name,
   );
   await functions_transform(intersecteds, function lambda(ast) {
-    js_import_remove_try(ast, fn_name_from);
-    js_identifier_rename(ast, fn_name_from, fn_name_to);
-    js_imports_add_specified(ast, [fn_name_to]);
+    js_fn_name_rename(ast, fn_name_from, fn_name_to);
   });
   assert_message(list_empty_is, [intersecteds], () =>
     string_combine_multiple([
