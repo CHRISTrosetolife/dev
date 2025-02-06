@@ -13,6 +13,9 @@ export function js_visit_calls(ast, function_name, each_caller) {
       continue;
     }
     let { arguments: args } = node;
-    each_caller(args);
+    each_caller({
+      args,
+      node,
+    });
   }
 }
