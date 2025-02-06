@@ -1,3 +1,4 @@
+import { html_clear_scroll_top_centered_context } from "./html_clear_scroll_top_centered_context.mjs";
 import { html_code_string } from "./html_code_string.mjs";
 import { html_code_keyword } from "./html_code_keyword.mjs";
 import { html_style_monospace } from "./html_style_monospace.mjs";
@@ -31,7 +32,9 @@ export async function app_code_refresh_function(context) {
       context,
       fn_name("app_code_refresh_function"),
     );
-    html_button_width_full_text_click(root, "Menu", () => {});
+    html_button_width_full_text_click(root, "Menu", () => {
+      let root = html_clear_scroll_top_centered_context(context);
+    });
     let files = await app_code_files_get();
     let function_selected = storage_local_get_context(
       context,
