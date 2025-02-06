@@ -1,3 +1,4 @@
+import { string_delimit_double } from "./string_delimit_double.mjs";
 import { js_keyword_from } from "./js_keyword_from.mjs";
 import { js_keyword_import } from "./js_keyword_import.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -11,9 +12,7 @@ export function js_code_import_generic(a, b) {
       " ",
       js_keyword_from(),
       " ",
-      '"',
-      b,
-      '"',
+      string_delimit_double(b),
     ]),
   );
 }
