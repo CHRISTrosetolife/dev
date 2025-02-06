@@ -9,7 +9,6 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { js_keyword_import } from "./js_keyword_import.mjs";
-import { html_code_keyword } from "./html_code_keyword.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_size_1 } from "./list_size_1.mjs";
 import { folder_current_prefix } from "./folder_current_prefix.mjs";
@@ -39,8 +38,8 @@ export function app_code_refresh_function_node(parent, node) {
     let local = object_property_get(s, "local");
     let name = object_property_get(local, "name");
     assert(equal, [name, name2]);
-    html_code_keyword(parent, js_keyword_import());
-    html_span_text(parent, " { ");
+    html_code_keyword_space(parent, js_keyword_import());
+    html_span_text(parent, "{ ");
     let f_name = html_span_text(parent, name);
     html_style_font_color(f_name, "forestgreen");
     html_span_text(parent, string_combine_multiple([" } "]));
