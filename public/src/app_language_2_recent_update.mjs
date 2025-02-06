@@ -1,8 +1,6 @@
-import { storage_local_initialize } from "./storage_local_initialize.mjs";
-import { list_beginning_unique_take } from "./list_beginning_unique_take.mjs";
+import { storage_local_recent_add } from "./storage_local_recent_add.mjs";
 import { app_language_2_answer_count_max } from "./app_language_2_answer_count_max.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { storage_local_set } from "./storage_local_set.mjs";
 import { number_max } from "./number_max.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 export function app_language_2_recent_update(context, word, recent_count) {
@@ -22,16 +20,10 @@ export function app_language_2_recent_update(context, word, recent_count) {
     (answer_count_max - 1) * answer_choice_word_count_max,
   );
   let property_name = "questions_recent";
-  let app_fn2 = object_property_get(context, "app_fn");
-  let questions_recent_stored = storage_local_initialize(
-    app_fn2,
+  storage_local_recent_add(
+    context,
     property_name,
-    [],
-  );
-  questions_recent_stored = list_beginning_unique_take(
-    questions_recent_stored,
     recent_new,
     questions_recent_limit,
   );
-  storage_local_set(app_fn, property_name, questions_recent_stored);
 }
