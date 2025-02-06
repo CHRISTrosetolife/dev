@@ -18,7 +18,7 @@ export function app_language_2_recent_update(context, word, recent_count) {
   let questions_recent_limit = number_max(
     recent_count,
     (answer_count_max - 1) * answer_choice_word_count_max,
-  );
+  );$ag
   let property_name = "questions_recent";
   storage_local_recent_add(
     context,
