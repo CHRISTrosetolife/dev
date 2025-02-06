@@ -1,3 +1,4 @@
+import { app_code_refresh_function_node } from "./app_code_refresh_function_node.mjs";
 import { html_style_left } from "./html_style_left.mjs";
 import { app_code_refresh_function_menu } from "./app_code_refresh_function_menu.mjs";
 import { storage_local_recent_add } from "./storage_local_recent_add.mjs";
@@ -39,5 +40,6 @@ export async function app_code_refresh_function(context) {
     let path = function_name_to_path(function_selected);
     let contents = object_property_get(files, path);
     let p = js_parse(contents);
+    app_code_refresh_function_node(parent, node);
   });
 }
