@@ -58,7 +58,9 @@ export async function watch() {
     let before;
     try {
       before = await file_read(path);
-    } catch (e) {}
+    } catch (e) {
+      return;
+    }
     if (before === contents) {
       object_property_set(c, "processing", false);
       return;
