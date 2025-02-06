@@ -403,6 +403,7 @@ export function js_dollar(ast) {
             ),
           );
           let r = js_parse_first(c);
+          return r;
         });
         object_replace(parent, r);
       } else {
