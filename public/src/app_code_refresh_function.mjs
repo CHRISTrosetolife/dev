@@ -51,7 +51,7 @@ export async function app_code_refresh_function(context) {
         html_span_text(section, local);
         html_span_text(
           section,
-          string_combine_multiple(["} from ", string_delimit(value)]),
+          string_combine_multiple(["} from ", string_delimit(value), ";"]),
         );
       }
     });
