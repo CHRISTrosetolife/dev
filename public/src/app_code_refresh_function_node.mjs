@@ -66,7 +66,7 @@ export function app_code_refresh_function_node(parent, node) {
     });
     html_span_text(parent, ") {");
     let body3 = object_property_get(node, "body");
-    app_code_refresh_function_node_section(parent, body2);
+    app_code_refresh_function_node_section(parent, body3);
     html_span_text(parent, "}");
   } else {
     log({
