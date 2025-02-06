@@ -43,7 +43,7 @@ export async function app_code_refresh_function(context) {
       html_button_back_after(
         parent,
         string_combine_multiple(["to ", function_selected]),
-        () => {},
+        async () => await app_code_refresh_function(context),
       );
       app_code_button_functions_search(context);
     });
