@@ -1,3 +1,4 @@
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { storage_local_get_context } from "./storage_local_get_context.mjs";
 import { html_button } from "./html_button.mjs";
 import { app_code_button_functions_search } from "./app_code_button_functions_search.mjs";
@@ -23,6 +24,6 @@ export function app_code_refresh_menu(context) {
     );
   }
   let functions_recent = storage_local_get_context(context, "functions_recent");
-  if (false) {
+  if (list_empty_not_is()) {
   }
 }
