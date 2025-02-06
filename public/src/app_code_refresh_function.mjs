@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { equal } from "./equal.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_size_1 } from "./list_size_1.mjs";
@@ -47,7 +48,7 @@ export async function app_code_refresh_function(context) {
         assert(equal, [imported, local]);
         html_span_text(section, "import { ");
         html_span_text(section, local);
-        html_span_text(section, "} from ");
+        html_span_text(section, string_combine_multiple(["} from "]));
       }
     });
   });
