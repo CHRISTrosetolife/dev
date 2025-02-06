@@ -58,7 +58,7 @@ export function app_code_refresh_function_node(parent, node) {
     html_code_identifier_fn(parent, name3);
     html_span_text(parent, "( ");
     log({
-      body2,
+      node,
     });
   } else {
     log({
