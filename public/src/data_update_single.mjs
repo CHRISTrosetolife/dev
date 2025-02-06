@@ -35,11 +35,12 @@ export function data_update_single(ast, data) {
   let u = list_unique(filtered);
   list_sort_string_map(u, identity);
   let ids = js_identifiers(ast);
-  js_visit_calls_fn_name(ast, (args) => {
+  js_visit_calls_fn_name(ast, (a) => {
+    let {args} = a;
     if (list_size_1(args)) {
-      let a = list_single(args);
-      if (js_node_type_is(a, "Literal")) {
-        let v = object_property_get(a, "value");
+      let arg = list_single(args);
+      if (js_node_type_is(arg, "Literal")) {
+        let v = object_property_get(arg, "value");
         list_add(ids, v);
       }
     }
