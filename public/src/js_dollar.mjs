@@ -409,8 +409,9 @@ export function js_dollar(ast) {
         });
         await js_dollar_grandparent_next(v, (a) => {
           let { index, next, s1 } = a;
-          each(list2, (item2) => {});
-          list_insert(s1, index, b);
+          each(mapped, (m) => {
+            list_insert(s1, index, m);
+          });
         });
         object_replace(parent, r);
       } else {
