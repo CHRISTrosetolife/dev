@@ -5,6 +5,7 @@ import { app_code_button_menu_app } from "./app_code_button_menu_app.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { html_button } from "./html_button.mjs";
+import { each_index } from "./each_index.mjs";
 export function app_code_refresh_functions_recent(context) {
   let root = app_code_screen_set(
     context,
@@ -12,7 +13,7 @@ export function app_code_refresh_functions_recent(context) {
   );
   app_code_button_menu_app(context);
   let functions_recent = app_code_functions_recent_get(context);
-  each(functions_recent, (fr) => {
+  each_index_1(functions_recent, (fr) => {
     html_button(root, string_combine_multiple([fr]), () => {});
   });
 }
