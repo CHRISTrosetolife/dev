@@ -97,7 +97,7 @@ export async function app_code_refresh_function_node(parent, node) {
   } else if (js_node_type_is(node, "CallExpression")) {
     let args = object_property_get(node, "arguments");
     let callee = object_property_get(node, "callee");
-    let mapped2 = await app_code_function_names_get();
+    let fn_names = await app_code_function_names_get();
   } else {
     log({
       node,
