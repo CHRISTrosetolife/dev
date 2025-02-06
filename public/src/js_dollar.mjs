@@ -1,4 +1,4 @@
-import { string_split_comma } from "./string_split_comma.mjs";
+import { list_first_remaining } from "./list_first_remaining.mjs";
 import { list_insert } from "./list_insert.mjs";
 import { each } from "./each.mjs";
 import { list_map } from "./list_map.mjs";
@@ -396,12 +396,10 @@ export function js_dollar(ast) {
       } else if (prefix_use(remaining, get_prefix, prefixes)) {
         remaining = string_prefix_without(remaining, get_prefix);
         let s = string_split_dollar(remaining);
-        let [variable_name, property_names] = s;
-        fr=list_first_remaining(s)
-        $gfr$first
-        $gfr$remaining
-        let property_names_split = string_split_comma(property_names);
-        let mapped = list_map(property_names_split, () => {
+        let fr = list_first_remaining(s);
+        let variable_name = object_property_get(fr, "first");
+        let property_names = object_property_get(fr, "remaining");
+        let mapped = list_map(property_names, () => {
           let c = js_code_statement_let_assign(
             js_name_unique(ast, property_name),
             object_property_get_code(
