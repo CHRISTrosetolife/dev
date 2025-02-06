@@ -36,7 +36,7 @@ export function data_update_single(ast, data) {
   list_sort_string_map(u, identity);
   let ids = js_identifiers(ast);
   js_visit_calls_fn_name(ast, (a) => {
-    let {args} = a;
+    let { args } = a;
     if (list_size_1(args)) {
       let arg = list_single(args);
       if (js_node_type_is(arg, "Literal")) {
