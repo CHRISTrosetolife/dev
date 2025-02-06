@@ -397,6 +397,9 @@ export function js_dollar(ast) {
         remaining = string_prefix_without(remaining, get_prefix);
         let s = string_split_dollar(remaining);
         let [variable_name, property_names] = s;
+        fr=list_first_remaining(s)
+        $gfr$first
+        $gfr$remaining
         let property_names_split = string_split_comma(property_names);
         let mapped = list_map(property_names_split, () => {
           let c = js_code_statement_let_assign(
