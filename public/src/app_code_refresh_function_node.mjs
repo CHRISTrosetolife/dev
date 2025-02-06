@@ -18,7 +18,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { html_div } from "./html_div.mjs";
 export function app_code_refresh_function_node(parent, node) {
   if (js_node_type_is(node, "Program")) {
-    let body = object_property_get(p, "body");
+    let body = object_property_get(node, "body");
     each(body, (b) => {
       let section = html_div(parent);
       app_code_refresh_function_node(section, node);
