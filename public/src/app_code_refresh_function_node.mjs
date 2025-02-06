@@ -24,6 +24,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { html_span_text_font_color } from "./html_span_text_font_color.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { each_async } from "./each_async.mjs";
+import { list_includes } from "./list_includes.mjs";
 export async function app_code_refresh_function_node(parent, node) {
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
@@ -97,8 +98,9 @@ export async function app_code_refresh_function_node(parent, node) {
   } else if (js_node_type_is(node, "CallExpression")) {
     let args = object_property_get(node, "arguments");
     let callee = object_property_get(node, "callee");
+    let name5 = object_property_get(callee, "name");
     let fn_names = await app_code_function_names_get();
-    if (false) {
+    if (list_includes(fn_names)) {
     }
   } else {
     log({
