@@ -23,6 +23,7 @@ import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_span_text_font_color } from "./html_span_text_font_color.mjs";
 import { js_unparse } from "./js_unparse.mjs";
+import { each_async } from "./each_async.mjs";
 export async function app_code_refresh_function_node(parent, node) {
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
@@ -70,7 +71,7 @@ export async function app_code_refresh_function_node(parent, node) {
     html_span_text(parent, "}");
   } else if (js_node_type_is(node, "BlockStatement")) {
     let body2 = object_property_get(node, "body");
-    each(body2, async (b) => {
+    await each_async(body2, async (b) => {
       await app_code_refresh_function_node_section(parent, b);
     });
   } else if (js_node_type_is(node, "VariableDeclaration")) {
