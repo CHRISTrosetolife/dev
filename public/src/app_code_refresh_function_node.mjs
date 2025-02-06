@@ -85,11 +85,13 @@ export function app_code_refresh_function_node(parent, node) {
     );
     html_span_text(parent, js_code_statement_end());
   } else if (js_node_type_is(node, "VariableDeclarator")) {
-    let init = object_property_get(node, "init");
     let id2 = object_property_get(node, "id");
     assert(js_node_type_is, [node, "Identifier"]);
     let name4 = object_property_get(id2, "name");
     html_code_identifier(parent, name4);
+    html_span_text(parent, " = ");
+    let init = object_property_get(node, "init");
+    app_code_refresh_function_node(parent, init);
   } else {
     log({
       node,
