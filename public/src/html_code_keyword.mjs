@@ -1,6 +1,5 @@
-import { html_style_font_color } from "./html_style_font_color.mjs";
-import { html_span_text } from "./html_span_text.mjs";
+import { html_span_text_color } from "./html_span_text_color.mjs";
 export function html_code_keyword(section, keyword) {
-  let kw = html_span_text(section, keyword);
-  html_style_font_color(kw, "purple");
+  let color = "purple";
+  html_span_text_color(section, keyword, color);
 }
