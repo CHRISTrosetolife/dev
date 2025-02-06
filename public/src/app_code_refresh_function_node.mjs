@@ -58,6 +58,8 @@ export function app_code_refresh_function_node(parent, node) {
     let params = object_property_get(node, "params");
     each(params, (param) => {
       html_code_identifier(parent, param);
+      if (false) {
+      }
     });
     let id = object_property_get(node, "id");
     html_span_text(parent, "( ");
