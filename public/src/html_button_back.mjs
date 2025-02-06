@@ -5,7 +5,7 @@ export function html_button_back(parent, back_on_click) {
   let after = "";
   html_button_width_full_text_click(
     parent,
-    string_combine_multiple([html_button_back_text()]),
+    string_combine_multiple([html_button_back_text(), " ", after]),
     back_on_click,
   );
 }
