@@ -4,7 +4,7 @@ import { each } from "./each.mjs";
 export function html_span_text_list_comma(parent, params, lambda) {
   each(params, (param) => {
     lambda(param);
-    if (!list_last_is(param)) {
+    if (!list_last_is(params, param)) {
       html_span_text(parent, ", ");
     }
   });
