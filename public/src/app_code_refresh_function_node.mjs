@@ -101,12 +101,14 @@ export async function app_code_refresh_function_node(parent, node) {
     let name5 = object_property_get(callee, "name");
     let fn_names = await app_code_function_names_get();
     let html_fn;
-    if (list_includes(fn_names, name5)) {
-      html_fn = html_code_identifier_fn;
-    } else {
-      html_fn = html_code_identifier;
+    if (false) {
+      if (list_includes(fn_names, name5)) {
+        html_fn = html_code_identifier_fn;
+      } else {
+        html_fn = html_code_identifier;
+      }
     }
-    html_fn(parent, name5);
+    html_code_identifier_fn(parent, name5);
   } else {
     log({
       node,
