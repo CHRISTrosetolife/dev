@@ -48,7 +48,7 @@ export async function app_code_refresh_functions(context) {
       context,
       fn_name("app_code_refresh_functions"),
     );
-    html_button(root, async () => {
+    html_button(root, 'Menu', async () => {
       app_code_refresh_menu(context);
     });
     html_cycle_p(
