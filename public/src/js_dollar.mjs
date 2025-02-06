@@ -1,3 +1,4 @@
+import { string_split_comma } from "./string_split_comma.mjs";
 import { list_insert } from "./list_insert.mjs";
 import { each } from "./each.mjs";
 import { list_map } from "./list_map.mjs";
@@ -396,7 +397,8 @@ export function js_dollar(ast) {
         remaining = string_prefix_without(remaining, get_prefix);
         let s = string_split_dollar(remaining);
         let [variable_name, property_names] = s;
-        let mapped = list_map(property_names, () => {
+        let property_names_split = string_split_comma(property_names);
+        let mapped = list_map(property_names_split, () => {
           let c = js_code_statement_let_assign(
             js_name_unique(ast, property_name),
             object_property_get_code(
