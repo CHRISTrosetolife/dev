@@ -1,3 +1,5 @@
+import { list_insert } from "./list_insert.mjs";
+import { each } from "./each.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 import { object_property_get_code } from "./object_property_get_code.mjs";
@@ -407,6 +409,8 @@ export function js_dollar(ast) {
         });
         await js_dollar_grandparent_next(v, (a) => {
           let { index, next, s1 } = a;
+          each(list2, (item2) => {});
+          list_insert(s1, index, b);
         });
         object_replace(parent, r);
       } else {
