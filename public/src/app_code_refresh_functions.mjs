@@ -1,3 +1,4 @@
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { storage_local_set_context } from "./storage_local_set_context.mjs";
 import { app_code_refresh_function } from "./app_code_refresh_function.mjs";
 import { app_code_files_get } from "./app_code_files_get.mjs";
@@ -29,7 +30,6 @@ import { html_load } from "./html_load.mjs";
 import { function_path_to_name } from "./function_path_to_name.mjs";
 import { list_map } from "./list_map.mjs";
 import { object_properties } from "./object_properties.mjs";
-import { html_button_back } from "./html_button_back.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -48,7 +48,7 @@ export async function app_code_refresh_functions(context) {
       context,
       fn_name("app_code_refresh_functions"),
     );
-    html_button_back(root, async () => {
+    html_button_width_full_text_click(root, async () => {
       app_code_refresh_menu(context);
     });
     html_cycle_p(
