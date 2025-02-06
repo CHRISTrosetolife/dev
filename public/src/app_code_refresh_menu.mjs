@@ -1,3 +1,4 @@
+import { app_code_refresh_functions_recent } from "./app_code_refresh_functions_recent.mjs";
 import { app_code_functions_recent_get } from "./app_code_functions_recent_get.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { html_button } from "./html_button.mjs";
@@ -17,8 +18,7 @@ export function app_code_refresh_menu(context) {
   let functions_recent = app_code_functions_recent_get(context);
   if (list_empty_not_is(functions_recent)) {
     html_button(root, "Recent functions", () => {
-      storage_local_remove(app_code, "username");
-      app_code_refresh_main(context);
+      app_code_refresh_functions_recent(context);
     });
   }
   if (app_code_username_exists()) {
