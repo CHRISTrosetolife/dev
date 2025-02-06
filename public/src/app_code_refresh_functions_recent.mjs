@@ -13,6 +13,6 @@ export function app_code_refresh_functions_recent(context) {
   app_code_button_menu_app(context);
   let functions_recent = app_code_functions_recent_get(context);
   each_index_1(functions_recent, (fr, index) => {
-    html_button(root, string_combine_multiple([fr]), () => {});
+    html_button(root, string_combine_multiple([index, ". ", fr]), () => {});
   });
 }
