@@ -399,7 +399,7 @@ export function js_dollar(ast) {
         let fr = list_first_remaining(s);
         let variable_name = object_property_get(fr, "first");
         let property_names = object_property_get(fr, "remaining");
-        let mapped = list_map(property_names, () => {
+        let mapped = list_map(property_names, (property_name) => {
           let c = js_code_statement_let_assign(
             js_name_unique(ast, property_name),
             object_property_get_code(

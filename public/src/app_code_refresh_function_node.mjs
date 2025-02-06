@@ -52,6 +52,7 @@ export function app_code_refresh_function_node(parent, node) {
     app_code_refresh_function_node(parent, declaration);
   } else if (js_node_type_is(node, "FunctionDeclaration")) {
     html_code_keyword_space(parent, js_keyword_function());
+    $gnode$id$body
     app_code_refresh_function_node(parent, declaration);
   } else {
     log({
