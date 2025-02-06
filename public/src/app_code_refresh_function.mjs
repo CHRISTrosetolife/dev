@@ -1,4 +1,4 @@
-import { js_code_statement } from "./js_code_statement.mjs";
+import { js_code_statement_end } from "./js_code_statement_end.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { equal } from "./equal.mjs";
 import { list_first } from "./list_first.mjs";
@@ -55,7 +55,7 @@ export async function app_code_refresh_function(context) {
           string_combine_multiple([
             "} from ",
             string_delimit(value),
-            js_code_statement(""),
+            js_code_statement_end(),
           ]),
         );
       }
