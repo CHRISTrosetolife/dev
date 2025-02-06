@@ -34,8 +34,8 @@ export function data_update_single(ast, data) {
   let filtered = list_filter(mapped, string_is);
   let u = list_unique(filtered);
   list_sort_string_map(u, identity);
-  let ids = js_identifiers(ast);$ag
-  let lambda = (args) => {
+  let ids = js_identifiers(ast);
+  js_visit_calls_fn_name(ast, (args) => {
     if (list_size_1(args)) {
       let a = list_single(args);
       if (js_node_type_is(a, "Literal")) {
@@ -43,8 +43,7 @@ export function data_update_single(ast, data) {
         list_add(ids, v);
       }
     }
-  };
-  js_visit_calls_fn_name(ast, lambda);
+  });
   let ids_u = list_unique(ids);
   list_sort_string_map(ids_u, identity);
   let list = [
