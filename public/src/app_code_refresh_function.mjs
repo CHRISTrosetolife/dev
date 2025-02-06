@@ -54,7 +54,7 @@ export async function app_code_refresh_function(context) {
         let name = object_property_get(local, "name");
         assert(equal, [name, name2]);
         html_span_text(section, js_keyword_import(), " { ");
-        html_span_text(section, local);
+        html_span_text(section, name);
         log({
           local,
         });
