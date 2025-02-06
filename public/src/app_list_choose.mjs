@@ -20,7 +20,7 @@ export function app_list_choose(body) {
   html_clear_scroll_top_centered(body);
   let split = storage_local_get(app_list, "list");
   let chosen = storage_local_initialize(app_list, "chosen", {});
-  html_button_width_full_text_click_hr(body, "items", () => {
+  html_button_width_full_text_click_hr(body, "items", async () => {
     let ms = list_map_index(split, (line, index) => {
       return {
         choice: chosen[index] || false,
@@ -33,7 +33,7 @@ export function app_list_choose(body) {
     log({
       text,
     });
-    clipboard_copy_web(text);
+    await clipboard_copy_web(text);
   });
   let last = null;
   html_button_width_full_text_click_hr(body, "scroll", () => {
