@@ -64,6 +64,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
     functions_matching_strings,
     functions_fn_name,
   );
+  await each_async(list, async (item) => {});
   assert_message(list_empty_is, [intersected], () =>
     string_combine_multiple([
       "if this assert fails, then ",
