@@ -1,3 +1,4 @@
+import { js_keyword_function } from "./js_keyword_function.mjs";
 import { js_keyword_export } from "./js_keyword_export.mjs";
 import { html_code_identifier_fn } from "./html_code_identifier_fn.mjs";
 import { html_code_keyword_space } from "./html_code_keyword_space.mjs";
@@ -50,7 +51,7 @@ export function app_code_refresh_function_node(parent, node) {
     let declaration = object_property_get(node, "declaration");
     app_code_refresh_function_node(parent, declaration);
   } else if (js_node_type_is(node, "FunctionDeclaration")) {
-    html_code_keyword_space(parent, js_keyword_export());
+    html_code_keyword_space(parent, js_keyword_function());
     let declaration = object_property_get(node, "declaration");
     app_code_refresh_function_node(parent, declaration);
   } else {
