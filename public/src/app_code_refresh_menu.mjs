@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_code_functions_recent_get } from "./app_code_functions_recent_get.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { html_button } from "./html_button.mjs";
@@ -30,6 +31,7 @@ export function app_code_refresh_menu(context) {
         app_code_refresh_main(context);
       },
     );
+    log({});
   } else {
     html_button(root, "Log in", () => {
       app_code_refresh_username(context);
