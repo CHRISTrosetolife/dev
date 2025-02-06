@@ -1,3 +1,4 @@
+import { html_style_left } from "./html_style_left.mjs";
 import { app_code_refresh_function_menu } from "./app_code_refresh_function_menu.mjs";
 import { storage_local_recent_add } from "./storage_local_recent_add.mjs";
 import { html_button } from "./html_button.mjs";
@@ -33,6 +34,7 @@ export async function app_code_refresh_function(context) {
       context,
       fn_name("app_code_refresh_function"),
     );
+    html_style_left(root);
     html_button(root, "Function menu", () => {
       app_code_refresh_function_menu(context);
     });
