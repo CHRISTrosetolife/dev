@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each } from "./each.mjs";
 import { app_code_functions_recent_get } from "./app_code_functions_recent_get.mjs";
 import { app_code_button_menu_app } from "./app_code_button_menu_app.mjs";
@@ -12,6 +13,6 @@ export function app_code_refresh_functions_recent(context) {
   app_code_button_menu_app(context);
   let functions_recent = app_code_functions_recent_get(context);
   each(functions_recent, (fr) => {
-    html_button(root, fr, () => {});
+    html_button(root, string_combine_multiple([fr]), () => {});
   });
 }
