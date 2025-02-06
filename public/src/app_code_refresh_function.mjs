@@ -50,13 +50,14 @@ export async function app_code_refresh_function(context) {
       function_selected,
       functions_recent_limit,
     );
+    let container = html_div(root);
+    html_style_monospace(container);
     let path = function_name_to_path(function_selected);
     let contents = object_property_get(files, path);
     let p = js_parse(contents);
     let body = object_property_get(p, "body");
     each(body, (b) => {
-      let section = html_div(root);
-      html_style_monospace(section);
+      let section = html_div(container);
       let type = object_property_get(b, "type");
       if (type === "ImportDeclaration") {
         let source = object_property_get(b, "source");
