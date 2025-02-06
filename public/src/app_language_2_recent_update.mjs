@@ -15,13 +15,13 @@ export function app_language_2_recent_update(context, word, recent_count) {
   if (language === language_fluent) {
     list_reverse(recent_new);
   }
-  let questions_recent_stored = app_language_2_questions_recent_get(context);
   let answer_count_max = app_language_2_answer_count_max();
   let answer_choice_word_count_max = 10;
   let questions_recent_limit = number_max(
     recent_count,
     (answer_count_max - 1) * answer_choice_word_count_max,
   );
+  let questions_recent_stored = app_language_2_questions_recent_get(context);
   questions_recent_stored = list_beginning_unique_take(
     questions_recent_stored,
     recent_new,
