@@ -83,6 +83,7 @@ export function app_code_refresh_function_node(parent, node) {
         app_code_refresh_function_node(parent, declaration);
       },
     );
+    html_span_text(parent, js_code_statement_end());
   } else {
     log({
       node,
