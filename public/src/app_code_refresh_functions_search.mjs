@@ -1,7 +1,7 @@
+import { app_code_function_names_get } from "./app_code_function_names_get.mjs";
 import { app_code_button_menu_app } from "./app_code_button_menu_app.mjs";
 import { storage_local_set_context } from "./storage_local_set_context.mjs";
 import { app_code_refresh_function } from "./app_code_refresh_function.mjs";
-import { app_code_files_get } from "./app_code_files_get.mjs";
 import { html_condition_letters_numbers_underscores_spaces } from "./html_condition_letters_numbers_underscores_spaces.mjs";
 import { html_input_validated_on_input_lambda_initial } from "./html_input_validated_on_input_lambda_initial.mjs";
 import { html_input_validated } from "./html_input_validated.mjs";
@@ -26,9 +26,7 @@ import { list_sort } from "./list_sort.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { each } from "./each.mjs";
 import { html_load } from "./html_load.mjs";
-import { function_path_to_name } from "./function_path_to_name.mjs";
 import { list_map } from "./list_map.mjs";
-import { object_properties } from "./object_properties.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -58,9 +56,7 @@ export async function app_code_refresh_functions_search(context) {
     ]);
     html_focus(st);
     let results = html_div(root);
-    let files = await app_code_files_get();
-    let file_paths = object_properties(files);
-    let mapped2 = list_map(file_paths, function_path_to_name);
+    let mapped2 = await app_code_function_names_get();
     html_input_validated_on_input_lambda_initial(st, (valid) => {
       html_clear(results);
       if (!valid) {
