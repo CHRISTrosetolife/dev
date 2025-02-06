@@ -88,6 +88,7 @@ export function app_code_refresh_function_node(parent, node) {
     let init = object_property_get(node, "init");
     let id2 = object_property_get(node, "id");
     assert(js_node_type_is, [node, "Identifier"]);
+    let name4 = object_property_get(id2, "name");
   } else {
     log({
       node,
