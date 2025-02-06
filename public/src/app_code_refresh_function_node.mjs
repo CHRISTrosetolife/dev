@@ -58,7 +58,7 @@ export function app_code_refresh_function_node(parent, node) {
     let params = object_property_get(node, "params");
     each(params, (param) => {
       let f_name = html_span_text(parent, param);
-      html_style_font_color(f_name, "forestgreen");
+      html_style_font_color(f_name, "blue");
     });
     let id = object_property_get(node, "id");
     html_span_text(parent, "( ");
