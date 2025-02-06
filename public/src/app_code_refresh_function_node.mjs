@@ -26,8 +26,8 @@ import { js_unparse } from "./js_unparse.mjs";
 export async function app_code_refresh_function_node(parent, node) {
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
-    each(body, (b) => {
-      app_code_refresh_function_node_section(parent, b);
+    each(body, async (b) => {
+      await app_code_refresh_function_node_section(parent, b);
     });
   } else if (js_node_type_is(node, "ImportDeclaration")) {
     let source = object_property_get(node, "source");
@@ -70,8 +70,8 @@ export async function app_code_refresh_function_node(parent, node) {
     html_span_text(parent, "}");
   } else if (js_node_type_is(node, "BlockStatement")) {
     let body2 = object_property_get(node, "body");
-    each(body2, (b) => {
-      app_code_refresh_function_node_section(parent, b);
+    each(body2, async (b) => {
+      await app_code_refresh_function_node_section(parent, b);
     });
   } else if (js_node_type_is(node, "VariableDeclaration")) {
     let kind = object_property_get(node, "kind");
