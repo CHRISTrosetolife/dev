@@ -53,9 +53,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
       e,
     });
     let ast = await file_js_parse(file_path);
-    js_import_remove_try(ast, fn_name_from);
-    js_identifier_rename(ast, fn_name_from, fn_name_to);
-    js_imports_add_specified(ast, [fn_name_to]);
+    lambda(ast);
     await file_js_unparse(file_path, ast);
   });
   let functions_matching_strings = await functions_string(fn_name_from);
@@ -83,4 +81,9 @@ export async function function_rename(fn_name_from, fn_name_to) {
     data_remove(data, fn_name_from);
     await data_update_multiple_transform(function_paths, data);
   });
+  function lambda(ast) {
+    js_import_remove_try(ast, fn_name_from);
+    js_identifier_rename(ast, fn_name_from, fn_name_to);
+    js_imports_add_specified(ast, [fn_name_to]);
+  }
 }
