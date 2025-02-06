@@ -53,7 +53,7 @@ export async function app_code_refresh_function_node(parent, node) {
   } else if (js_node_type_is(node, "ExportNamedDeclaration")) {
     html_code_keyword_space(parent, js_keyword_export());
     let declaration = object_property_get(node, "declaration");
-    app_code_refresh_function_node(parent, declaration);
+    await app_code_refresh_function_node(parent, declaration);
   } else if (js_node_type_is(node, "FunctionDeclaration")) {
     html_code_keyword_space(parent, js_keyword_function());
     let id = object_property_get(node, "id");
@@ -66,7 +66,7 @@ export async function app_code_refresh_function_node(parent, node) {
     });
     html_span_text(parent, ") {");
     let body3 = object_property_get(node, "body");
-    app_code_refresh_function_node(parent, body3);
+    await app_code_refresh_function_node(parent, body3);
     html_span_text(parent, "}");
   } else if (js_node_type_is(node, "BlockStatement")) {
     let body2 = object_property_get(node, "body");
@@ -80,8 +80,8 @@ export async function app_code_refresh_function_node(parent, node) {
     html_span_text_list_comma(
       parent,
       declarations,
-      function lambda(declaration) {
-        app_code_refresh_function_node(parent, declaration);
+      async function lambda(declaration) {
+        await app_code_refresh_function_node(parent, declaration);
       },
     );
     html_span_text(parent, js_code_statement_end());
@@ -92,7 +92,7 @@ export async function app_code_refresh_function_node(parent, node) {
     html_code_identifier(parent, name4);
     html_span_text(parent, " = ");
     let init = object_property_get(node, "init");
-    app_code_refresh_function_node(parent, init);
+    await app_code_refresh_function_node(parent, init);
   } else if (js_node_type_is(node, "CallExpression")) {
     let args = object_property_get(node, "arguments");
     let callee = object_property_get(node, "callee");
