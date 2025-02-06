@@ -59,7 +59,7 @@ export async function watch() {
     try {
       before = await file_read(path);
     } catch (e) {
-      comment("if rename, then file may not exist");
+      ("if rename, then file may not exist");
       return;
     }
     if (before === contents) {
