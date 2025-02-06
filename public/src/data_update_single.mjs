@@ -16,9 +16,6 @@ import { list_unique } from "./list_unique.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { string_is } from "./string_is.mjs";
 import { identity } from "./identity.mjs";
-import { js_node_type_is } from "./js_node_type_is.mjs";
-import { list_size_1 } from "./list_size_1.mjs";
-import { list_single } from "./list_single.mjs";
 import { list_add } from "./list_add.mjs";
 export function data_update_single(ast, data) {
   let declaration = js_declaration_single(ast);
@@ -35,14 +32,9 @@ export function data_update_single(ast, data) {
   let u = list_unique(filtered);
   list_sort_string_map(u, identity);
   let ids = js_identifiers(ast);
-  js_visit_calls_fn_name(ast, (args) => {
-    if (list_size_1(args)) {
-      let arg = list_single(args);
-      if (js_node_type_is(arg, "Literal")) {
-        let v = object_property_get(arg, "value");
-        list_add(ids, v);
-      }
-    }
+  js_visit_calls_fn_name(ast, (arg) => {
+    let v = object_property_get(arg, "value");
+    list_add(ids, v);
   });
   let ids_u = list_unique(ids);
   list_sort_string_map(ids_u, identity);
