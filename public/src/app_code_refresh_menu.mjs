@@ -22,6 +22,7 @@ export function app_code_refresh_menu(context) {
         app_code_refresh_main(context);
       },
     );
+  } else {
   }
   let functions_recent = storage_local_get_context(context, "functions_recent");
   if (list_empty_not_is(functions_recent)) {
