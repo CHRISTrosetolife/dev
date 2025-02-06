@@ -1,5 +1,5 @@
+import { html_span_text_list_comma } from "./html_span_text_list_comma.mjs";
 import { app_code_refresh_function_node_section } from "./app_code_refresh_function_node_section.mjs";
-import { list_last_is } from "./list_last_is.mjs";
 import { html_code_identifier } from "./html_code_identifier.mjs";
 import { js_keyword_function } from "./js_keyword_function.mjs";
 import { js_keyword_export } from "./js_keyword_export.mjs";
@@ -58,12 +58,7 @@ export function app_code_refresh_function_node(parent, node) {
     html_code_identifier_fn(parent, name3);
     html_span_text(parent, "( ");
     let params = object_property_get(node, "params");
-    each(params, (param) => {
-      html_code_identifier(parent, param);
-      if (!list_last_is(param)) {
-        html_span_text(parent, ", ");
-      }
-    });
+    html_span_text_list_comma(params, lambda, parent);
     html_span_text(parent, ") {");
     let body3 = object_property_get(node, "body");
     app_code_refresh_function_node_section(parent, body3);
@@ -82,5 +77,8 @@ export function app_code_refresh_function_node(parent, node) {
     log({
       node,
     });
+  }
+  function lambda(param) {
+    html_code_identifier(parent, param);
   }
 }
