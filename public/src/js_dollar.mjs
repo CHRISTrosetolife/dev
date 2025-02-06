@@ -394,15 +394,16 @@ export function js_dollar(ast) {
         remaining = string_prefix_without(remaining, get_prefix);
         let s = string_split_dollar(remaining);
         let [variable_name, property_names] = s;
-        list_map(property_names, () => {});
-        let c = js_code_statement_let_assign(
-          js_name_unique(ast, property_name),
-          object_property_get_code(
-            variable_name,
-            string_delimit(property_name),
-          ),
-        );
-        let r = js_parse_first(c);
+        list_map(property_names, () => {
+          let c = js_code_statement_let_assign(
+            js_name_unique(ast, property_name),
+            object_property_get_code(
+              variable_name,
+              string_delimit(property_name),
+            ),
+          );
+          let r = js_parse_first(c);
+        });
         object_replace(parent, r);
       } else {
         let log_prefix_start_is = remaining === log_prefix_start;
