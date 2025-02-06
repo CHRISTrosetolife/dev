@@ -41,7 +41,7 @@ export async function app_code_refresh_function(context) {
         "function_selected",
       );
       html_button_back_after(
-        parent,
+        root,
         string_combine_multiple(["to ", function_selected]),
         async () => await app_code_refresh_function(context),
       );
