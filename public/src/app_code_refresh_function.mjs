@@ -41,7 +41,7 @@ export async function app_code_refresh_function(context) {
         let s = list_first(specifiers);
         let imported = object_property_get(s, "imported");
         let local = object_property_get(s, "local");
-        assert(equal, []);
+        assert(equal, [imported, local]);
       }
     });
   });
