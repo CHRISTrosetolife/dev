@@ -25,10 +25,10 @@ export function app_language_2_recent_update(context, word, recent_count) {
     (answer_count_max - 1) * answer_choice_word_count_max,
   );
   list_add_beginning(questions_recent_stored, recent_new);
+  questions_recent_stored = list_unique_json(questions_recent_stored);
   questions_recent_stored = list_take_soft(
     questions_recent_stored,
     questions_recent_limit,
   );
-  questions_recent_stored = list_unique_json(questions_recent_stored);
   storage_local_set(app_fn, "questions_recent", questions_recent_stored);
 }
