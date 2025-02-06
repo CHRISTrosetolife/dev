@@ -65,7 +65,8 @@ export async function app_code_refresh_function(context) {
           local,
         });
         html_span_text(section, string_combine_multiple([" } "]));
-        let kw = html_span_text(section, js_keyword_from());
+        let keyword = js_keyword_from();
+        let kw = html_span_text(section, keyword);
         html_style_font_color(kw, "purple");
         html_span_text(
           section,
