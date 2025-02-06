@@ -1,4 +1,4 @@
-import { app_code_files_get } from "./app_code_files_get.mjs";
+import { app_code_function_names_get } from "./app_code_function_names_get.mjs";
 import { html_span_text_list_comma } from "./html_span_text_list_comma.mjs";
 import { app_code_refresh_function_node_section } from "./app_code_refresh_function_node_section.mjs";
 import { html_code_identifier } from "./html_code_identifier.mjs";
@@ -97,7 +97,7 @@ export async function app_code_refresh_function_node(parent, node) {
   } else if (js_node_type_is(node, "CallExpression")) {
     let args = object_property_get(node, "arguments");
     let callee = object_property_get(node, "callee");
-    let files = await app_code_files_get();
+    let mapped2 = await app_code_function_names_get();
   } else {
     log({
       node,
