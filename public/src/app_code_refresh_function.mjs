@@ -1,3 +1,5 @@
+import { js_keyword_from } from "./js_keyword_from.mjs";
+import { js_keyword_import } from "./js_keyword_import.mjs";
 import { js_code_statement_end } from "./js_code_statement_end.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { equal } from "./equal.mjs";
@@ -48,12 +50,14 @@ export async function app_code_refresh_function(context) {
         let imported = object_property_get(s, "imported");
         let local = object_property_get(s, "local");
         assert(equal, [imported, local]);
-        html_span_text(section, "import { ");
+        html_span_text(section, js_keyword_import(), " { ");
         html_span_text(section, local);
         html_span_text(
           section,
           string_combine_multiple([
-            "} from ",
+            "} ",
+            js_keyword_from(),
+            " ",
             string_delimit(value),
             js_code_statement_end(),
           ]),
