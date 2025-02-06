@@ -1,3 +1,4 @@
+import { js_dollar_grandparent } from "./js_dollar_grandparent.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_index_next } from "./list_index_next.mjs";
 import { list_is } from "./list_is.mjs";
@@ -16,4 +17,5 @@ export async function js_dollar_grandparent_next(v, lambda) {
     });
   }
   return s1;
+  await js_dollar_grandparent(v, (a) => {});
 }
