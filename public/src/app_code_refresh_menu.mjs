@@ -14,6 +14,13 @@ import { app_code_refresh_username } from "./app_code_refresh_username.mjs";
 export function app_code_refresh_menu(context) {
   let root = app_code_screen_set(context, fn_name("app_code_refresh_menu"));
   app_code_button_functions_search(context);
+  let functions_recent = storage_local_get_context(context, "functions_recent");
+  if (list_empty_not_is(functions_recent)) {
+    html_button(root, "Recent functions", () => {
+      storage_local_remove(app_code, "username");
+      app_code_refresh_main(context);
+    });
+  }
   if (app_code_username_exists()) {
     html_button(
       root,
@@ -26,13 +33,6 @@ export function app_code_refresh_menu(context) {
   } else {
     html_button(root, "Log in", () => {
       app_code_refresh_username(context);
-    });
-  }
-  let functions_recent = storage_local_get_context(context, "functions_recent");
-  if (list_empty_not_is(functions_recent)) {
-    html_button(root, "Recent functions", () => {
-      storage_local_remove(app_code, "username");
-      app_code_refresh_main(context);
     });
   }
 }
