@@ -1,4 +1,4 @@
-import { list_beginning_unique_take } from "./list_beginning_unique_take.mjs";
+import { storage_local_recent_add } from "./storage_local_recent_add.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_button_back_after } from "./html_button_back_after.mjs";
 import { app_code_button_functions_search } from "./app_code_button_functions_search.mjs";
@@ -53,8 +53,9 @@ export async function app_code_refresh_function(context) {
       context,
       "function_selected",
     );
-    list_beginning_unique_take(
-      functions_recent,
+    storage_local_recent_add(
+      context,
+      "functions_recent",
       function_selected,
       functions_recent_limit,
     );
