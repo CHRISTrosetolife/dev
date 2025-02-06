@@ -1,10 +1,8 @@
-import { app_code_refresh_function_node } from "./app_code_refresh_function_node.mjs";
 import { html_style_left } from "./html_style_left.mjs";
 import { app_code_refresh_function_menu } from "./app_code_refresh_function_menu.mjs";
 import { storage_local_recent_add } from "./storage_local_recent_add.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_style_monospace } from "./html_style_monospace.mjs";
-import { each } from "./each.mjs";
 import { js_parse } from "./js_parse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
@@ -41,11 +39,5 @@ export async function app_code_refresh_function(context) {
     let path = function_name_to_path(function_selected);
     let contents = object_property_get(files, path);
     let p = js_parse(contents);
-    if (false) {
-      let body = object_property_get(p, "body");
-      each(body, (b) => {
-        app_code_refresh_function_node(container, b);
-      });
-    }
   });
 }
