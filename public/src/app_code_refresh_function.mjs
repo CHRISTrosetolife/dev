@@ -65,7 +65,7 @@ export async function app_code_refresh_function(context) {
         html_span_text(section, string_combine_multiple([" } "]));
         html_code_keyword(section, js_keyword_from());
         html_span_text(section, " ");
-        s = html_span_text(section, string_delimit(value));
+        let st = html_span_text(section, string_delimit(value));
         html_span_text(section, js_code_statement_end());
       }
     });
