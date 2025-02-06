@@ -42,10 +42,10 @@ export async function app_code_refresh_function(context) {
     let contents = object_property_get(files, path);
     let p = js_parse(contents);
     if (false) {
+      let body = object_property_get(p, "body");
+      each(body, (b) => {
+        app_code_refresh_function_node(container, b);
+      });
     }
-    let body = object_property_get(p, "body");
-    each(body, (b) => {
-      app_code_refresh_function_node(container, b);
-    });
   });
 }
