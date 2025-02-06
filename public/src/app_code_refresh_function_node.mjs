@@ -57,6 +57,9 @@ export function app_code_refresh_function_node(parent, node) {
     let name3 = object_property_get(id, "name");
     html_code_identifier_fn(parent, name3);
     html_span_text(parent, "( ");
+    log({
+      body2,
+    });
   } else {
     log({
       node,
