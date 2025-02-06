@@ -21,7 +21,7 @@ export function app_code_refresh_function_node(parent, node) {
     let body = object_property_get(node, "body");
     each(body, (b) => {
       let section = html_div(parent);
-      app_code_refresh_function_node(section, node);
+      app_code_refresh_function_node(section, b);
     });
   } else if (js_node_type_is(node, "ImportDeclaration")) {
     let source = object_property_get(node, "source");
