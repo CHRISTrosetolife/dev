@@ -67,7 +67,7 @@ export async function app_code_refresh_function(context) {
         html_code_keyword(section, js_keyword_from());
         html_span_text(section, " ");
         let st = html_span_text(section, string_delimit(value));
-        html_style_font_color(st, "darkorange");
+        html_style_font_color(st, "chocolate");
         html_span_text(section, js_code_statement_end());
       }
     });
