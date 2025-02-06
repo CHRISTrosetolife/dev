@@ -66,7 +66,7 @@ export async function app_code_refresh_function(context) {
         html_span_text(
           section,
           string_combine_multiple([
-            "} ",
+            " } ",
             js_keyword_from(),
             " ",
             string_delimit(value),
