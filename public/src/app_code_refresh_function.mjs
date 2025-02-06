@@ -40,7 +40,11 @@ export async function app_code_refresh_function(context) {
         context,
         "function_selected",
       );
-      html_button_back_after(parent, "to ", back_on_click);
+      html_button_back_after(
+        parent,
+        string_combine_multiple(["to "]),
+        back_on_click,
+      );
       app_code_button_functions_search(context);
     });
     let files = await app_code_files_get();
