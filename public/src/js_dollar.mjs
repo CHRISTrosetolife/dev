@@ -411,10 +411,11 @@ export function js_dollar(ast) {
           return r;
         });
         await js_dollar_grandparent_next(v, (a) => {
-          let { index, next, s1 } = a;
+          let { index, s1 } = a;
           each(mapped, (m) => {
             list_insert(s1, index, m);
-          });list_remove(s1, parent)
+          });
+          list_remove(s1, parent);
         });
       } else {
         let log_prefix_start_is = remaining === log_prefix_start;
