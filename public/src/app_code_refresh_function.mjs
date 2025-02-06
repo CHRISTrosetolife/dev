@@ -49,10 +49,10 @@ export async function app_code_refresh_function(context) {
         assert(list_size_1, [specifiers]);
         let s = list_first(specifiers);
         let imported = object_property_get(s, "imported");
+        let name2 = object_property_get(imported, "name");
         let local = object_property_get(s, "local");
         let name = object_property_get(local, "name");
-        let name2 = object_property_get(imported, "name");
-        assert(equal, [imported, local]);
+        assert(equal, [name, name2]);
         html_span_text(section, js_keyword_import(), " { ");
         html_span_text(section, local);
         log({
