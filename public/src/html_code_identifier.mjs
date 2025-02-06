@@ -1,4 +1,4 @@
-import { html_span_text } from "./html_span_text.mjs";
+import { html_span_text_font_color } from "./html_span_text_font_color.mjs";
 export function html_code_identifier(parent, param) {
-  let f_name = html_span_text(parent, param, "blue");
+  let f_name = html_span_text_font_color(parent, param, "blue");
 }
