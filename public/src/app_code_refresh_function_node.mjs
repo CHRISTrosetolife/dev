@@ -1,3 +1,4 @@
+import { html_style_font_color } from "./html_style_font_color.mjs";
 import { js_keyword_function } from "./js_keyword_function.mjs";
 import { js_keyword_export } from "./js_keyword_export.mjs";
 import { html_code_identifier_fn } from "./html_code_identifier_fn.mjs";
@@ -56,7 +57,8 @@ export function app_code_refresh_function_node(parent, node) {
     html_code_identifier_fn(parent, name3);
     let params = object_property_get(node, "params");
     each(params, (param) => {
-      html_code_identifier_fn(parent, param);
+      let f_name = html_span_text(parent, param);
+      html_style_font_color(f_name, "forestgreen");
     });
     let id = object_property_get(node, "id");
     html_span_text(parent, "( ");
