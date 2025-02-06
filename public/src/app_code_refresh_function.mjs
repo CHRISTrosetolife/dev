@@ -60,7 +60,7 @@ export async function app_code_refresh_function(context) {
         html_code_keyword(section, js_keyword_import());
         html_span_text(section, " { ");
         let f_name = html_span_text(section, name);
-        html_style_font_color(f_name, "darkgreen");
+        html_style_font_color(f_name, "forestgreen");
         log({
           local,
         });
