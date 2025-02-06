@@ -1,3 +1,4 @@
+import { list_map } from "./list_map.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 import { object_property_get_code } from "./object_property_get_code.mjs";
 import { object_property_get_expression } from "./object_property_get_expression.mjs";
@@ -392,7 +393,8 @@ export function js_dollar(ast) {
       } else if (prefix_use(remaining, get_prefix, prefixes)) {
         remaining = string_prefix_without(remaining, get_prefix);
         let s = string_split_dollar(remaining);
-        let [variable_name, property_name] = s;
+        let [variable_name, property_names] = s;
+        list_map(property_names, () => {});
         let c = js_code_statement_let_assign(
           js_name_unique(ast, property_name),
           object_property_get_code(
