@@ -23,6 +23,7 @@ import { string_starts_with } from "./string_starts_with.mjs";
 import { folder_current_prefix } from "./folder_current_prefix.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_span_text } from "./html_span_text.mjs";
+import { html_style_font_color } from "./html_style_font_color.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async () => {
     let root = app_code_screen_set(
@@ -58,7 +59,8 @@ export async function app_code_refresh_function(context) {
         assert(equal, [name, name2]);
         html_code_keyword(section, js_keyword_import());
         html_span_text(section, " { ");
-        html_span_text(section, name);
+        let f_name = html_span_text(section, name);
+        html_style_font_color(f_name, "darkgreen");
         log({
           local,
         });
