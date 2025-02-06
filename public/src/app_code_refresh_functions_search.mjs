@@ -41,7 +41,7 @@ import { list_get } from "./list_get.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { list_size_1 } from "./list_size_1.mjs";
-export async function app_code_refresh_functions(context) {
+export async function app_code_refresh_functions_search(context) {
   await html_load(async () => {
     let root = app_code_screen_set(
       context,
