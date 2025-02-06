@@ -44,5 +44,6 @@ export function app_code_refresh_function_node(parent, b) {
     html_span_text(section, " ");
     html_code_string(section, value);
     html_span_text(section, js_code_statement_end());
+  } else {
   }
 }
