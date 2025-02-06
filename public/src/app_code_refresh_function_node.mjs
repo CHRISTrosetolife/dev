@@ -53,6 +53,7 @@ export function app_code_refresh_function_node(parent, node) {
   } else if (js_node_type_is(node, "FunctionDeclaration")) {
     html_code_keyword_space(parent, js_keyword_function());
     let body2 = object_property_get(node, "body");
+    let params = object_property_get(node, "params");
     let id = object_property_get(node, "id");
     let name3 = object_property_get(id, "name");
     html_code_identifier_fn(parent, name3);
