@@ -39,6 +39,8 @@ export async function app_code_refresh_function(context) {
         let specifiers = object_property_get(b, "specifiers");
         assert(list_size_1, [specifiers]);
         let s = list_first(specifiers);
+        let imported = object_property_get(s, "imported");
+        let local = object_property_get(s, "local");
         assert(equal, []);
       }
     });
