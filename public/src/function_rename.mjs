@@ -27,6 +27,15 @@ import { list_empty_is } from "./list_empty_is.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 export async function function_rename(fn_name_from, fn_name_to) {
   assert_arguments_length(arguments, 2);
+  let functions_matching_strings = await functions_string(fn_name_from);
+  let functions_fn_name = await functions_identifier(fn_name("fn_name"));
+  let intersecteds = object_properties_intersect(
+    functions_matching_strings,
+    functions_fn_name,
+  );
+  await functions_transform(intersecteds, function lambda(ast) {
+    js_fn_name_rename(ast, fn_name_from, fn_name_to);
+  });
   let identifiers = await data_identifiers();
   let fn_path_from = function_name_to_path(fn_name_from);
   let fn_path_to = function_name_to_path(fn_name_to);
@@ -49,15 +58,6 @@ export async function function_rename(fn_name_from, fn_name_to) {
     js_import_remove_try(ast, fn_name_from);
     js_identifier_rename(ast, fn_name_from, fn_name_to);
     js_imports_add_specified(ast, [fn_name_to]);
-  });
-  let functions_matching_strings = await functions_string(fn_name_from);
-  let functions_fn_name = await functions_identifier(fn_name("fn_name"));
-  let intersecteds = object_properties_intersect(
-    functions_matching_strings,
-    functions_fn_name,
-  );
-  await functions_transform(intersecteds, function lambda(ast) {
-    js_fn_name_rename(ast, fn_name_from, fn_name_to);
   });
   if (false) {
     assert_message(list_empty_is, [intersecteds], () =>
