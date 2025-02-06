@@ -1,3 +1,4 @@
+import { app_code_button_functions_search } from "./app_code_button_functions_search.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { app_code_username_get } from "./app_code_username_get.mjs";
@@ -6,13 +7,10 @@ import { app_code_refresh_main } from "./app_code_refresh_main.mjs";
 import { storage_local_remove } from "./storage_local_remove.mjs";
 import { app_code } from "./app_code.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { app_code_refresh_functions } from "./app_code_refresh_functions.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export function app_code_refresh_menu(context) {
   let root = app_code_screen_set(context, fn_name("app_code_refresh_menu"));
-  html_button_width_full_text_click(root, "Search Functions", async () => {
-    await app_code_refresh_functions(context);
-  });
+  app_code_button_functions_search(root, context);
   if (app_code_username_exists()) {
     html_button_width_full_text_click(
       root,
