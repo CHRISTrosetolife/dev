@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { each } from "./each.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
 import { js_code_statement_end } from "./js_code_statement_end.mjs";
@@ -47,5 +48,8 @@ export function app_code_refresh_function_node(parent, node) {
     html_code_string(parent, value);
     html_span_text(parent, js_code_statement_end());
   } else {
+    log({
+      node,
+    });
   }
 }
