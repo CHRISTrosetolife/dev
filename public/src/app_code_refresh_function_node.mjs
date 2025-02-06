@@ -5,7 +5,6 @@ import { js_node_type_is } from "./js_node_type_is.mjs";
 import { js_code_statement_end } from "./js_code_statement_end.mjs";
 import { html_code_string } from "./html_code_string.mjs";
 import { js_keyword_from } from "./js_keyword_from.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { js_keyword_import } from "./js_keyword_import.mjs";
@@ -42,7 +41,7 @@ export function app_code_refresh_function_node(parent, node) {
     html_span_text(parent, "{ ");
     let f_name = html_span_text(parent, name);
     html_style_font_color(f_name, "forestgreen");
-    html_span_text(parent, string_combine_multiple([" } "]));
+    html_span_text(parent, " } ");
     html_code_keyword_space(parent, js_keyword_from());
     html_code_string(parent, value);
     html_span_text(parent, js_code_statement_end());
