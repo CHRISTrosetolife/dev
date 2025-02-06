@@ -34,6 +34,9 @@ export async function app_code_refresh_function(context) {
     );
     html_button_width_full_text_click(root, "Menu", () => {
       let root = html_clear_scroll_top_centered_context(context);
+      html_button_width_full_text_click(root, "Function Search", () => {
+        let root = html_clear_scroll_top_centered_context(context);
+      });
     });
     let files = await app_code_files_get();
     let function_selected = storage_local_get_context(
