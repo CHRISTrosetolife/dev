@@ -37,15 +37,15 @@ export function app_code_refresh_function_node(parent, node) {
     let local = object_property_get(s, "local");
     let name = object_property_get(local, "name");
     assert(equal, [name, name2]);
-    html_code_keyword(section, js_keyword_import());
-    html_span_text(section, " { ");
-    let f_name = html_span_text(section, name);
+    html_code_keyword(parent, js_keyword_import());
+    html_span_text(parent, " { ");
+    let f_name = html_span_text(parent, name);
     html_style_font_color(f_name, "forestgreen");
-    html_span_text(section, string_combine_multiple([" } "]));
-    html_code_keyword(section, js_keyword_from());
-    html_span_text(section, " ");
-    html_code_string(section, value);
-    html_span_text(section, js_code_statement_end());
+    html_span_text(parent, string_combine_multiple([" } "]));
+    html_code_keyword(parent, js_keyword_from());
+    html_span_text(parent, " ");
+    html_code_string(parent, value);
+    html_span_text(parent, js_code_statement_end());
   } else {
   }
 }
