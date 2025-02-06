@@ -14,6 +14,7 @@ import { html_load } from "./html_load.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { folder_current_prefix } from "./folder_current_prefix.mjs";
 import { html_div } from "./html_div.mjs";
+import { html_span_text } from "./html_span_text.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async () => {
     let root = app_code_screen_set(
@@ -44,6 +45,7 @@ export async function app_code_refresh_function(context) {
         let imported = object_property_get(s, "imported");
         let local = object_property_get(s, "local");
         assert(equal, [imported, local]);
+        html_span_text(section, "import { ");
       }
     });
   });
