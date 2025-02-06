@@ -1,3 +1,4 @@
+import { app_code_button_functions_search } from "./app_code_button_functions_search.mjs";
 import { html_clear_scroll_top_centered_context } from "./html_clear_scroll_top_centered_context.mjs";
 import { html_code_string } from "./html_code_string.mjs";
 import { html_code_keyword } from "./html_code_keyword.mjs";
@@ -34,9 +35,7 @@ export async function app_code_refresh_function(context) {
     );
     html_button_width_full_text_click(root, "Menu", () => {
       let root = html_clear_scroll_top_centered_context(context);
-      html_button_width_full_text_click(root, "Function Search", () => {
-        let root = html_clear_scroll_top_centered_context(context);
-      });
+      app_code_button_functions_search(context);
     });
     let files = await app_code_files_get();
     let function_selected = storage_local_get_context(
