@@ -93,7 +93,7 @@ export function app_code_refresh_function_node(parent, node) {
     let init = object_property_get(node, "init");
     app_code_refresh_function_node(parent, init);
   } else if (js_node_type_is(node, "CallExpression")) {
-    let args = object_property_get(node, "args");
+    let args = object_property_get(node, "arguments");
     let callee = object_property_get(node, "callee");
   } else {
     log({
