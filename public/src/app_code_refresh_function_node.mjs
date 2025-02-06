@@ -45,12 +45,12 @@ export function app_code_refresh_function_node(parent, node) {
     html_code_string(parent, value);
     html_span_text(parent, js_code_statement_end());
   } else if (js_node_type_is(node, "ExportNamedDeclaration")) {
+    html_code_keyword_space(parent, "export");
     let declaration = object_property_get(node, "declaration");
     app_code_refresh_function_node(parent, declaration);
   } else if (js_node_type_is(node, "FunctionDeclaration")) {
     let declaration = object_property_get(node, "declaration");
     app_code_refresh_function_node(parent, declaration);
-    html_code_keyword_space(parent, "export");
   } else {
     log({
       node,
