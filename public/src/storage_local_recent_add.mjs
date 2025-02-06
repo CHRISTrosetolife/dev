@@ -8,7 +8,7 @@ export function storage_local_recent_add(
   recent_item_new,
   recent_limit,
 ) {
-  let app_fn2 = object_property_get(context, "app_fn");
+  let app_fn = object_property_get(context, "app_fn");
   let questions_recent_stored = storage_local_initialize_context_list(
     context,
     recent_property_name,
@@ -18,5 +18,5 @@ export function storage_local_recent_add(
     recent_item_new,
     recent_limit,
   );
-  storage_local_set(app_fn2, recent_property_name, questions_recent_stored);
+  storage_local_set(app_fn, recent_property_name, questions_recent_stored);
 }
