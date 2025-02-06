@@ -1,3 +1,4 @@
+import { app_code_files_get } from "./app_code_files_get.mjs";
 import { html_span_text_list_comma } from "./html_span_text_list_comma.mjs";
 import { app_code_refresh_function_node_section } from "./app_code_refresh_function_node_section.mjs";
 import { html_code_identifier } from "./html_code_identifier.mjs";
@@ -22,7 +23,7 @@ import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_span_text_font_color } from "./html_span_text_font_color.mjs";
 import { js_unparse } from "./js_unparse.mjs";
-export function app_code_refresh_function_node(parent, node) {
+export async function app_code_refresh_function_node(parent, node) {
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
     each(body, (b) => {
@@ -95,6 +96,7 @@ export function app_code_refresh_function_node(parent, node) {
   } else if (js_node_type_is(node, "CallExpression")) {
     let args = object_property_get(node, "arguments");
     let callee = object_property_get(node, "callee");
+    let files = await app_code_files_get();
   } else {
     log({
       node,
