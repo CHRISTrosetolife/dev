@@ -1,6 +1,6 @@
+import { js_visit_calls_fn_name } from "./js_visit_calls_fn_name.mjs";
 import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { js_visit_calls } from "./js_visit_calls.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { each } from "./each.mjs";
 import { list_remove_if_exists } from "./list_remove_if_exists.mjs";
@@ -16,7 +16,6 @@ import { list_unique } from "./list_unique.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { string_is } from "./string_is.mjs";
 import { identity } from "./identity.mjs";
-import { fn_name } from "./fn_name.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
 import { list_size_1 } from "./list_size_1.mjs";
 import { list_single } from "./list_single.mjs";
@@ -45,7 +44,7 @@ export function data_update_single(ast, data) {
       }
     }
   };
-  js_visit_calls(ast, fn_name("fn_name"), lambda);
+  js_visit_calls_fn_name(ast, lambda);
   let ids_u = list_unique(ids);
   list_sort_string_map(ids_u, identity);
   let list = [
