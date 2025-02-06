@@ -56,10 +56,8 @@ export async function app_code_refresh_function(context) {
         let local = object_property_get(s, "local");
         let name = object_property_get(local, "name");
         assert(equal, [name, name2]);
-        html_span_text(
-          section,
-          string_combine_multiple([js_keyword_import(), " { "]),
-        );
+        html_code_keyword(section, js_keyword_import());
+        html_span_text(section, " { ");
         html_span_text(section, name);
         log({
           local,
