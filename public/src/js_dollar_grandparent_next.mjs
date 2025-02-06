@@ -17,5 +17,7 @@ export async function js_dollar_grandparent_next(v, lambda) {
     });
   }
   return s1;
-  await js_dollar_grandparent(v, (a) => {});
+  await js_dollar_grandparent(v, (a) => {
+    let next = list_get(s1, index);
+  });
 }
