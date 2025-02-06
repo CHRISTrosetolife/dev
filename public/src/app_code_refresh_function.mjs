@@ -42,7 +42,7 @@ export async function app_code_refresh_function(context) {
       );
       html_button_back_after(
         parent,
-        string_combine_multiple(["to "]),
+        string_combine_multiple(["to ", function_selected]),
         back_on_click,
       );
       app_code_button_functions_search(context);
