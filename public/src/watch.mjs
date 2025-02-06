@@ -55,7 +55,8 @@ export async function watch() {
       return;
     }
     object_property_set(c, "processing", true);
-    let before = await file_read(path);
+    let before;
+    before = await file_read(path);
     if (before === contents) {
       object_property_set(c, "processing", false);
       return;
