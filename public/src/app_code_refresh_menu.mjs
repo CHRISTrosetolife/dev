@@ -23,4 +23,6 @@ export function app_code_refresh_menu(context) {
     );
   }
   let functions_recent = storage_local_get_context(context, "functions_recent");
+  if (false) {
+  }
 }
