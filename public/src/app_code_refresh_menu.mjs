@@ -25,5 +25,13 @@ export function app_code_refresh_menu(context) {
   }
   let functions_recent = storage_local_get_context(context, "functions_recent");
   if (list_empty_not_is(functions_recent)) {
+    html_button(
+      root,
+      string_combine_multiple(["Log out: ", app_code_username_get()]),
+      () => {
+        storage_local_remove(app_code, "username");
+        app_code_refresh_main(context);
+      },
+    );
   }
 }
