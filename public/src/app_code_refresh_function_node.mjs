@@ -73,8 +73,16 @@ export function app_code_refresh_function_node(parent, node) {
       app_code_refresh_function_node_section(parent, b);
     });
   } else if (js_node_type_is(node, "VariableDeclaration")) {
-    let declarations = object_property_get(node, "declarations");
     let kind = object_property_get(node, "kind");
+    html_code_keyword_space(parent, kind);
+    let declarations = object_property_get(node, "declarations");
+    html_span_text_list_comma(
+      parent,
+      declarations,
+      function lambda(declaration) {
+        app_code_refresh_function_node(parent, declaration);
+      },
+    );
   } else {
     log({
       node,
