@@ -106,7 +106,7 @@ export async function app_code_refresh_function_node(parent, node) {
     } else {
       html_fn = html_code_identifier;
     }
-    html_code_identifier(parent, name5);
+    html_fn(parent, name5);
   } else {
     log({
       node,
