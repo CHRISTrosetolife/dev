@@ -1,3 +1,4 @@
+import { html_code_identifier_fn } from "./html_code_identifier_fn.mjs";
 import { html_code_keyword_space } from "./html_code_keyword_space.mjs";
 import { log } from "./log.mjs";
 import { each } from "./each.mjs";
@@ -5,7 +6,6 @@ import { js_node_type_is } from "./js_node_type_is.mjs";
 import { js_code_statement_end } from "./js_code_statement_end.mjs";
 import { html_code_string } from "./html_code_string.mjs";
 import { js_keyword_from } from "./js_keyword_from.mjs";
-import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { js_keyword_import } from "./js_keyword_import.mjs";
 import { list_first } from "./list_first.mjs";
@@ -39,8 +39,7 @@ export function app_code_refresh_function_node(parent, node) {
     assert(equal, [name, name2]);
     html_code_keyword_space(parent, js_keyword_import());
     html_span_text(parent, "{ ");
-    let f_name = html_span_text(parent, name);
-    html_style_font_color(f_name, "forestgreen");
+    html_code_identifier_fn(parent, name);
     html_span_text(parent, " } ");
     html_code_keyword_space(parent, js_keyword_from());
     html_code_string(parent, value);
