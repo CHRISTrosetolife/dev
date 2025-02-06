@@ -19,7 +19,6 @@ import { data_identifiers } from "./data_identifiers.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { each_async } from "./each_async.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_map } from "./list_map.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
@@ -56,7 +55,11 @@ export async function function_rename(fn_name_from, fn_name_to) {
     functions_matching_strings,
     functions_fn_name,
   );
-  await each_async(intersecteds, async (intersected) => {});
+  await functions_transform(intersecteds, function lambda(ast) {
+    js_import_remove_try(ast, fn_name_from);
+    js_identifier_rename(ast, fn_name_from, fn_name_to);
+    js_imports_add_specified(ast, [fn_name_to]);
+  });
   assert_message(list_empty_is, [intersecteds], () =>
     string_combine_multiple([
       "if this assert fails, then ",
