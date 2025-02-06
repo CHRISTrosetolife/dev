@@ -1,4 +1,4 @@
-import { app_code_menu_app } from "./app_code_menu_app.mjs";
+import { app_code_button_menu_app } from "./app_code_button_menu_app.mjs";
 import { storage_local_set_context } from "./storage_local_set_context.mjs";
 import { app_code_refresh_function } from "./app_code_refresh_function.mjs";
 import { app_code_files_get } from "./app_code_files_get.mjs";
@@ -47,7 +47,7 @@ export async function app_code_refresh_functions(context) {
       context,
       fn_name("app_code_refresh_functions"),
     );
-    app_code_menu_app(context);
+    app_code_button_menu_app(context);
     html_cycle_p(
       root,
       [noop, html_style_bold],
