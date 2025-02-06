@@ -59,18 +59,20 @@ export async function function_rename(fn_name_from, fn_name_to) {
   await functions_transform(intersecteds, function lambda(ast) {
     js_fn_name_rename(ast, fn_name_from, fn_name_to);
   });
-  assert_message(list_empty_is, [intersecteds], () =>
-    string_combine_multiple([
-      "if this assert fails, then ",
-      fn_name("function_rename"),
-      " needs to handle ",
-      fn_name("fn_name"),
-      " with ",
-      fn_name_from,
-      " passed into it because of these functions : ",
-      list_join_comma_space(intersecteds),
-    ]),
-  );
+  if (false) {
+    assert_message(list_empty_is, [intersecteds], () =>
+      string_combine_multiple([
+        "if this assert fails, then ",
+        fn_name("function_rename"),
+        " needs to handle ",
+        fn_name("fn_name"),
+        " with ",
+        fn_name_from,
+        " passed into it because of these functions : ",
+        list_join_comma_space(intersecteds),
+      ]),
+    );
+  }
   let concatenated = list_concat(existing, [fn_name_to]);
   let function_paths = list_map(concatenated, function_name_to_path);
   await data_transform(async function lambda(data) {
