@@ -123,10 +123,10 @@ export function app_code_refresh_function_node(parent, node, indent) {
       app_code_refresh_function_node(parent, element, indent);
     }
   } else if (js_node_type_is(node, "Literal")) {
-    let value2 = object_property_get(node, "value");
     let raw2 = object_property_get(node, "raw");
-    if (string_is(value2)) {
-      html_code_string(value2);
+    if (string_is(raw2)) {
+      html_code_string(raw2);
+    } else {
     }
   } else {
     log({
