@@ -1,3 +1,4 @@
+import { js_keyword_await } from "./js_keyword_await.mjs";
 import { html_span_text_list_comma_parenthesis } from "./html_span_text_list_comma_parenthesis.mjs";
 import { html_span_text_list_comma } from "./html_span_text_list_comma.mjs";
 import { app_code_refresh_function_node_section } from "./app_code_refresh_function_node_section.mjs";
@@ -108,7 +109,7 @@ export function app_code_refresh_function_node(parent, node, indent) {
     html_span_text(parent, js_code_statement_end());
   } else if (js_node_type_is(node, "AwaitExpression")) {
     let argument = object_property_get(node, "argument");
-    html_code_keyword_space(parent, js_keyword_import());
+    html_code_keyword_space(parent, js_keyword_await());
     app_code_refresh_function_node(parent, argument, indent);
   } else {
     log({
