@@ -103,14 +103,8 @@ export function app_code_refresh_function_node(parent, node, indent) {
       app_code_refresh_function_node(parent, arg, indent);
     }
   } else if (js_node_type_is(node, "ExpressionStatement")) {
-    let args = object_property_get(node, "arguments");
-    let callee = object_property_get(node, "callee");
-    let name5 = object_property_get(callee, "name");
-    html_code_identifier_fn(parent, name5);
-    html_span_text_list_comma_parenthesis(parent, args, lambda);
-    function lambda(arg) {
-      app_code_refresh_function_node(parent, arg, indent);
-    }
+    let expression = object_property_get(node, "expression");
+    html_span_text(parent, js_code_statement_end());
   } else {
     log({
       node,
