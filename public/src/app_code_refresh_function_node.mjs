@@ -125,7 +125,7 @@ export function app_code_refresh_function_node(parent, node, indent) {
   } else if (js_node_type_is(node, "Literal")) {
     let raw2 = object_property_get(node, "raw");
     if (string_is(raw2)) {
-      html_code_string(raw2);
+      html_code_string(parent, raw2);
     } else {
       unknown();
     }
