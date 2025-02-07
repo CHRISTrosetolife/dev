@@ -7,7 +7,7 @@ export function app_code_refresh_function_node_section(parent, b, indent) {
   indent++;
   let section = html_div(parent);
   let left = html_span(section);
-  each_range(indent, (i) => {
+  each_range(indent, () => {
     let s = html_span(left, "a");
     html_style_font_color_white(s);
   });
