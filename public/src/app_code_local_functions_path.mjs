@@ -1,3 +1,4 @@
+import { path_join } from "./path_join.mjs";
 export function app_code_local_functions_path() {
-  return "code/functions/local.json";
+  return path_join(["code", "dev", "local.json"]);
 }
