@@ -8,7 +8,7 @@ export function app_code_refresh_function_node_section(parent, b, indent) {
   let left = html_span(section);
   each_range(indent, (i) => {
     let s = html_span(parent, "a");
-    html_style_font_color_white(i);
+    html_style_font_color_white(s);
   });
   let right = html_span(section);
   app_code_refresh_function_node(right, b, indent);
