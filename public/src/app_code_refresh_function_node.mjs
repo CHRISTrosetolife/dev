@@ -111,6 +111,10 @@ export function app_code_refresh_function_node(parent, node, indent) {
     let argument = object_property_get(node, "argument");
     html_code_keyword_space(parent, js_keyword_await());
     app_code_refresh_function_node(parent, argument, indent);
+  } else if (js_node_type_is(node, "Identifier")) {
+    let name6 = object_property_get(node, "name");
+    html_code_keyword_space(parent, js_keyword_await());
+    app_code_refresh_function_node(parent, argument, indent);
   } else {
     log({
       node,
