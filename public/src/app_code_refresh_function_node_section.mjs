@@ -8,7 +8,7 @@ export function app_code_refresh_function_node_section(parent, b, indent) {
   let section = html_div(parent);
   html_style_flex_row_centered(section);
   let left = html_div(section);
-  html_style_width(s, string_combine_multiple(["ch"]));
+  html_style_width(left, string_combine_multiple([indent, "ch"]));
   let right = html_div(section);
   app_code_refresh_function_node(right, b, indent);
 }
