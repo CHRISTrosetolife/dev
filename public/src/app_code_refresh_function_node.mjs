@@ -106,6 +106,10 @@ export function app_code_refresh_function_node(parent, node, indent) {
     let expression = object_property_get(node, "expression");
     app_code_refresh_function_node(parent, expression, indent);
     html_span_text(parent, js_code_statement_end());
+  } else if (js_node_type_is(node, "AwaitExpression")) {
+    let argument = object_property_get(node, "argument");
+    html_code_keyword_space(parent, js_keyword_import());
+    app_code_refresh_function_node(parent, argument, indent);
   } else {
     log({
       node,
