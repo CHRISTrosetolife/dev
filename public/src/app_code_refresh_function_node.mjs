@@ -60,7 +60,7 @@ export function app_code_refresh_function_node(parent, node) {
     html_code_identifier_fn(parent, name3);
     let params = object_property_get(node, "params");
     html_span_text(parent, "( ");
-    html_span_text_list_comma(parent, params);
+    html_span_text_list_comma(parent, params, lambda);
     html_span_text(parent, ")");
     function lambda(param) {
       html_code_identifier(parent, param);
