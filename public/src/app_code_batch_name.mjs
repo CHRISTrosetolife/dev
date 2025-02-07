@@ -4,6 +4,10 @@ import { path_join } from "./path_join.mjs";
 export async function app_code_batch_name() {
   let when = date_string_iso_file();
   let id = await uuid();
-  let v = path_join(["batch", when, id, ".json"]);
-  return v;
+  let path = path_join(["batch", when, id, ".json"]);
+  return {
+    path,
+    when,
+    id,
+  };
 }
