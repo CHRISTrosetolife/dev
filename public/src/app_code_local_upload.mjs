@@ -6,7 +6,6 @@ import { functions_source_get } from "./functions_source_get.mjs";
 export async function app_code_local_upload() {
   let batch_name = await app_code_batch_name();
   let s = await functions_source_get();
-  let mapper = (contents, file_path) => {};
-  let result = object_map(s, mapper);
+  let result = object_map(s, (contents, file_path) => {});
   await storage_upload_object(app_code_local_files_path(batch_name), result);
 }
