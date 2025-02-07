@@ -64,15 +64,15 @@ export function app_code_refresh_function_node(parent, node, indent) {
     function lambda(param) {
       html_code_identifier(parent, param);
     }
-    html_span_text(parent, " {");
     let body3 = object_property_get(node, "body");
     app_code_refresh_function_node(parent, body3, indent);
-    html_span_text(parent, "}");
   } else if (js_node_type_is(node, "BlockStatement")) {
+    html_span_text(parent, " {");
     let body2 = object_property_get(node, "body");
     each(body2, (b) => {
       app_code_refresh_function_node_section(parent, b);
     });
+    html_span_text(parent, "}");
   } else if (js_node_type_is(node, "VariableDeclaration")) {
     let kind = object_property_get(node, "kind");
     html_code_keyword_space(parent, kind);
