@@ -107,6 +107,8 @@ export function app_good() {
           "Let there be no pornography",
           "Let there be no rape",
           "Let there be no sexual sin",
+          "Let there be no violence",
+          "Let there be no drugs",
           "Let there be life and life abundantly",
           "Let all preaching be perfect",
           "Let all teaching be perfect",
