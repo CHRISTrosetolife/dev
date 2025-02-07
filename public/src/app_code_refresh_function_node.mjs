@@ -1,3 +1,4 @@
+import { string_is } from "./string_is.mjs";
 import { js_keyword_await } from "./js_keyword_await.mjs";
 import { html_span_text_list_comma_parenthesis } from "./html_span_text_list_comma_parenthesis.mjs";
 import { html_span_text_list_comma } from "./html_span_text_list_comma.mjs";
@@ -122,7 +123,8 @@ export function app_code_refresh_function_node(parent, node, indent) {
     }
   } else if (js_node_type_is(node, "Literal")) {
     let value2 = object_property_get(node, "value");
-    if (false) {
+    if (string_is(value2)) {
+      html_code_string(value2);
     }
   } else {
     log({
