@@ -120,6 +120,12 @@ export function app_code_refresh_function_node(parent, node, indent) {
     function lambda(element) {
       app_code_refresh_function_node(parent, element, indent);
     }
+  } else if (js_node_type_is(node, "Literal")) {
+    let value2 = object_property_get(node, "value");
+    html_span_text_list_comma(parent, elements, lambda);
+    function lambda(element) {
+      app_code_refresh_function_node(parent, element, indent);
+    }
   } else {
     log({
       node,
