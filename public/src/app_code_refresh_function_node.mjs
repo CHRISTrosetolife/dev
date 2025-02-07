@@ -116,8 +116,7 @@ export function app_code_refresh_function_node(parent, node, indent) {
     html_code_identifier(parent, name6);
     app_code_refresh_function_node(parent, argument, indent);
   } else if (js_node_type_is(node, "ArrayExpression")) {
-    let name6 = object_property_get(node, "name");
-    html_code_identifier(parent, name6);
+    let elements = object_property_get(node, "elements");
     app_code_refresh_function_node(parent, argument, indent);
   } else {
     log({
