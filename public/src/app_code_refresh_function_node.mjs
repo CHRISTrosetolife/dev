@@ -1,4 +1,3 @@
-import { app_code_function_names_get } from "./app_code_function_names_get.mjs";
 import { html_span_text_list_comma } from "./html_span_text_list_comma.mjs";
 import { app_code_refresh_function_node_section } from "./app_code_refresh_function_node_section.mjs";
 import { html_code_identifier } from "./html_code_identifier.mjs";
@@ -23,8 +22,6 @@ import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_span_text_font_color } from "./html_span_text_font_color.mjs";
 import { js_unparse } from "./js_unparse.mjs";
-import { each_async } from "./each_async.mjs";
-import { list_includes } from "./list_includes.mjs";
 export async function app_code_refresh_function_node(parent, node) {
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
@@ -72,7 +69,7 @@ export async function app_code_refresh_function_node(parent, node) {
     html_span_text(parent, "}");
   } else if (js_node_type_is(node, "BlockStatement")) {
     let body2 = object_property_get(node, "body");
-    await each_async(body2, async (b) => {
+    each(body2, async (b) => {
       await app_code_refresh_function_node_section(parent, b);
     });
   } else if (js_node_type_is(node, "VariableDeclaration")) {
@@ -99,15 +96,6 @@ export async function app_code_refresh_function_node(parent, node) {
     let args = object_property_get(node, "arguments");
     let callee = object_property_get(node, "callee");
     let name5 = object_property_get(callee, "name");
-    let fn_names = await app_code_function_names_get();
-    if (false) {
-      let html_fn;
-      if (list_includes(fn_names, name5)) {
-        html_fn = html_code_identifier_fn;
-      } else {
-        html_fn = html_code_identifier;
-      }
-    }
     html_code_identifier_fn(parent, name5);
   } else {
     log({
