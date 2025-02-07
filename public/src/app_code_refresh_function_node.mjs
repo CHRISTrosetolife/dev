@@ -120,7 +120,6 @@ export function app_code_refresh_function_node(parent, node, indent) {
     function lambda(element) {
       app_code_refresh_function_node(parent, element, indent);
     }
-    app_code_refresh_function_node(parent, argument, indent);
   } else {
     log({
       node,
