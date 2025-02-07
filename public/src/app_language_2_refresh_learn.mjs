@@ -1,3 +1,4 @@
+import { html_style_flex_row_centered } from "./html_style_flex_row_centered.mjs";
 import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { app_language_2_answer_count_get } from "./app_language_2_answer_count_get.mjs";
 import { html_spacer_vertical } from "./html_spacer_vertical.mjs";
@@ -235,11 +236,7 @@ export async function app_language_2_refresh_learn(context) {
         quiz_container,
       );
       let row = html_p(quiz_container);
-      html_style(row, {
-        display: "flex",
-        "flex-direction": "row",
-        "align-items": "center",
-      });
+      html_style_flex_row_centered(row);
       let b2 = html_button_text_click(row, emoji_wrong, async () => {
         decrease_wait();
         if (c === answer_text) {
