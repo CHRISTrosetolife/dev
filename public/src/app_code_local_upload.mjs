@@ -7,6 +7,7 @@ export async function app_code_local_upload() {
   let batch_name = await app_code_batch_name();
   let s = await functions_source_get();
   let mapper = (contents, file_path) => {};
+  let result = {};
   each_object(s, (file_path, contents) => {});
   await storage_upload_object(app_code_local_files_path(batch_name), s);
 }
