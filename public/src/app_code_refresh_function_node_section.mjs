@@ -8,7 +8,7 @@ export function app_code_refresh_function_node_section(parent, b) {
   let section = html_div(parent);
   html_style_flex_row_centered(section);
   let left = html_div(section);
-  html_style_width(left, string_combine_multiple(["1ch"]));
+  html_style_width(left, string_combine_multiple(["2ch"]));
   let right = html_div(section);
   html_style_flex_1(right);
   app_code_refresh_function_node(right, b);
