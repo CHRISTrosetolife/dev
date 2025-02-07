@@ -98,6 +98,7 @@ export function app_code_refresh_function_node(parent, node) {
     let callee = object_property_get(node, "callee");
     let name5 = object_property_get(callee, "name");
     html_code_identifier_fn(parent, name5);
+    html_span_text_list_comma_parenthesis(parent, args, lambda);
   } else {
     log({
       node,
