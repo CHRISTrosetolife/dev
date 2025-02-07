@@ -29,7 +29,7 @@ export function app_code_refresh_function_node(parent, node) {
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
     each(body, async (b) => {
-      app_code_refresh_function_node_section(parent, b);
+      app_code_refresh_function_node_section(parent, b, false);
     });
   } else if (js_node_type_is(node, "ImportDeclaration")) {
     let source = object_property_get(node, "source");
@@ -73,7 +73,7 @@ export function app_code_refresh_function_node(parent, node) {
     html_span_text(parent, " {");
     let body2 = object_property_get(node, "body");
     each(body2, (b) => {
-      app_code_refresh_function_node_section(parent, b);
+      app_code_refresh_function_node_section(parent, b, false);
     });
     html_span_text(parent, "}");
   } else if (js_node_type_is(node, "VariableDeclaration")) {
