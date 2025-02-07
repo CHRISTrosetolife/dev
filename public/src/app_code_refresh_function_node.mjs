@@ -1,3 +1,4 @@
+import { html_span_text_list_comma_parenthesis } from "./html_span_text_list_comma_parenthesis.mjs";
 import { html_span_text_list_comma } from "./html_span_text_list_comma.mjs";
 import { app_code_refresh_function_node_section } from "./app_code_refresh_function_node_section.mjs";
 import { html_code_identifier } from "./html_code_identifier.mjs";
@@ -59,9 +60,7 @@ export function app_code_refresh_function_node(parent, node) {
     let name3 = object_property_get(id, "name");
     html_code_identifier_fn(parent, name3);
     let params = object_property_get(node, "params");
-    html_span_text(parent, "( ");
-    html_span_text_list_comma(parent, params, lambda);
-    html_span_text(parent, ")");
+    html_span_text_list_comma_parenthesis(parent, params, lambda);
     function lambda(param) {
       html_code_identifier(parent, param);
     }
