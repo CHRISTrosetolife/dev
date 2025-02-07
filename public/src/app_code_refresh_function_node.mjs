@@ -50,6 +50,7 @@ export function app_code_refresh_function_node(parent, node, indent) {
     html_code_identifier_fn(parent, name);
     html_span_text(parent, " } ");
     html_code_keyword_space(parent, js_keyword_from());
+    let raw = object_property_get(source, "raw");
     html_code_string(parent, value);
     html_span_text(parent, js_code_statement_end());
   } else if (js_node_type_is(node, "ExportNamedDeclaration")) {
