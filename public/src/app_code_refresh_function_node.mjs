@@ -73,7 +73,7 @@ export function app_code_refresh_function_node(parent, node) {
     html_span_text(parent, " {");
     let body2 = object_property_get(node, "body");
     each(body2, (b) => {
-      app_code_refresh_function_node_section(parent, b, false);
+      app_code_refresh_function_node_section(parent, b, true);
     });
     html_span_text(parent, "}");
   } else if (js_node_type_is(node, "VariableDeclaration")) {
