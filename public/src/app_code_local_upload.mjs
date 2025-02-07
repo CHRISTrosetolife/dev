@@ -13,5 +13,5 @@ export async function app_code_local_upload() {
     let value = mapper(contents, file_path);
     object_property_set(object, file_path, value);
   });
-  await storage_upload_object(app_code_local_files_path(batch_name), s);
+  await storage_upload_object(app_code_local_files_path(batch_name), result);
 }
