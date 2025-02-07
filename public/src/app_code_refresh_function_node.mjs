@@ -23,7 +23,7 @@ import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_span_text_font_color } from "./html_span_text_font_color.mjs";
 import { js_unparse } from "./js_unparse.mjs";
-export function app_code_refresh_function_node(parent, node) {
+export function app_code_refresh_function_node(parent, node, indent) {
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
     each(body, async (b) => {
@@ -53,7 +53,7 @@ export function app_code_refresh_function_node(parent, node) {
   } else if (js_node_type_is(node, "ExportNamedDeclaration")) {
     html_code_keyword_space(parent, js_keyword_export());
     let declaration = object_property_get(node, "declaration");
-    app_code_refresh_function_node(parent, declaration);
+    app_code_refresh_function_node(parent, declaration, indent);
   } else if (js_node_type_is(node, "FunctionDeclaration")) {
     html_code_keyword_space(parent, js_keyword_function());
     let id = object_property_get(node, "id");
@@ -66,7 +66,7 @@ export function app_code_refresh_function_node(parent, node) {
     }
     html_span_text(parent, " {");
     let body3 = object_property_get(node, "body");
-    app_code_refresh_function_node(parent, body3);
+    app_code_refresh_function_node(parent, body3, indent);
     html_span_text(parent, "}");
   } else if (js_node_type_is(node, "BlockStatement")) {
     let body2 = object_property_get(node, "body");
@@ -81,7 +81,7 @@ export function app_code_refresh_function_node(parent, node) {
       parent,
       declarations,
       function lambda(declaration) {
-        app_code_refresh_function_node(parent, declaration);
+        app_code_refresh_function_node(parent, declaration, indent);
       },
     );
     html_span_text(parent, js_code_statement_end());
@@ -92,7 +92,7 @@ export function app_code_refresh_function_node(parent, node) {
     html_code_identifier(parent, name4);
     html_span_text(parent, " = ");
     let init = object_property_get(node, "init");
-    app_code_refresh_function_node(parent, init);
+    app_code_refresh_function_node(parent, init, indent);
   } else if (js_node_type_is(node, "CallExpression")) {
     let args = object_property_get(node, "arguments");
     let callee = object_property_get(node, "callee");
@@ -100,7 +100,7 @@ export function app_code_refresh_function_node(parent, node) {
     html_code_identifier_fn(parent, name5);
     html_span_text_list_comma_parenthesis(parent, args, lambda);
     function lambda(arg) {
-      app_code_refresh_function_node(parent, arg);
+      app_code_refresh_function_node(parent, arg, indent);
     }
   } else {
     log({
