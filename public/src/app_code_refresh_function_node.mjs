@@ -63,7 +63,8 @@ export function app_code_refresh_function_node(parent, node) {
     html_span_text_list_comma(parent, params, function lambda(param) {
       html_code_identifier(parent, param);
     });
-    html_span_text(parent, ") {");
+    html_span_text(parent, ")");
+    html_span_text(parent, " {");
     let body3 = object_property_get(node, "body");
     app_code_refresh_function_node(parent, body3);
     html_span_text(parent, "}");
