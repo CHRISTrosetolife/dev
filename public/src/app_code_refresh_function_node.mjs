@@ -127,11 +127,15 @@ export function app_code_refresh_function_node(parent, node, indent) {
     if (string_is(raw2)) {
       html_code_string(raw2);
     } else {
+      unknown();
     }
   } else {
     log({
       node,
     });
+    unknown();
+  }
+  function unknown() {
     html_span_text_font_color(parent, js_unparse(node), "deeppink");
   }
 }
