@@ -5,7 +5,9 @@ import { html_span } from "./html_span.mjs";
 export function app_code_refresh_function_node_section(parent, b, indent) {
   let section = html_div(parent);
   let left = html_span(section);
-  each_range(count, (item) => {});
+  each_range(indent, (i) => {
+    html_span(parent, "a");
+  });
   let right = html_span(section);
   app_code_refresh_function_node(right, b, indent);
 }
