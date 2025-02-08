@@ -121,10 +121,10 @@ export function app_code_refresh_function_node(parent, node) {
     });
     html_span_text(parent, " }");
   } else if (js_node_type_is(node, "ArrayExpression")) {
-    html_span_text(parent, "[");
+    html_span_text(parent, "[ ");
     let elements = object_property_get(node, "elements");
     html_span_text_list_comma(parent, elements, lambda);
-    html_span_text(parent, "]");
+    html_span_text(parent, " ]");
     function lambda(element) {
       app_code_refresh_function_node(parent, element);
     }
