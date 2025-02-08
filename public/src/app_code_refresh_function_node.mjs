@@ -115,6 +115,11 @@ export function app_code_refresh_function_node(parent, node) {
     html_code_identifier(parent, name6);
   } else if (js_node_type_is(node, "ObjectExpression")) {
     let properties = object_property_get(node, "properties");
+    html_span_text(parent, " {");
+    html_span_text_list_comma(parent, properties, (b) => {
+      app_code_refresh_function_node_section(parent, b, true);
+    });
+    html_span_text(parent, "}");
     html_span_text_list_comma();
   } else if (js_node_type_is(node, "ArrayExpression")) {
     let elements = object_property_get(node, "elements");
