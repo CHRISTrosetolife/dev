@@ -20,7 +20,7 @@ export async function app_code_refresh_function(context) {
       fn_name("app_code_refresh_function"),
     );
     html_style_left(root);
-    html_button(root, "Function menu", () => {
+    let b = html_button(root, "Function menu", () => {
       app_code_refresh_function_menu(context);
     });
     let files = await app_code_files_get();
