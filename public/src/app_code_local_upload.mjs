@@ -12,6 +12,7 @@ import { app_code_batch_name } from "./app_code_batch_name.mjs";
 import { storage_upload_object } from "./storage_upload_object.mjs";
 import { functions_source_get } from "./functions_source_get.mjs";
 import { folder_current_prefix } from "./folder_current_prefix.mjs";
+import { object_merge_strict } from "./object_merge_strict.mjs";
 export async function app_code_local_upload() {
   let paths_html = await folder_read_shallow(
     folder_path_public(),
@@ -23,10 +24,11 @@ export async function app_code_local_upload() {
     return m2;
   });
   let htmls = await files_contents_lookup(paths_html_mapped);
-  let fns = await functions_source_get();
+  let mjss = await functions_source_get();
+  let combined = object_merge_strict(mjss, html);
   let batch_name = await app_code_batch_name();
   let batch_path = app_code_local_files_path(batch_name);
-  let files = object_map(fns, (contents) => ({
+  let files = object_map(mjss, (contents) => ({
     contents,
   }));
   await storage_upload_object(batch_path, {
