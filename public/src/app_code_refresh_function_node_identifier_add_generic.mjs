@@ -14,6 +14,10 @@ export function app_code_refresh_function_node_identifier_add_generic(
   list_add(id_list, i);
   let toggled = false;
   html_on_click(i, () => {
-    each(id_list, (i) => html_style_background_color_yellow(i));
+    each(id_list, (i) =>
+      toggled
+        ? html_style_background_color_yellow(i)
+        : html_style_background_color_yellow(i),
+    );
   });
 }
