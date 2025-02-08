@@ -96,7 +96,11 @@ export function app_code_refresh_function_node(args) {
       parent,
       declarations,
       function lambda(declaration) {
-        app_code_refresh_function_node(parent, declaration);
+        app_code_refresh_function_node(
+          object_merge(args, {
+            node: declaration,
+          }),
+        );
       },
     );
     html_span_text(parent, js_code_statement_end());
