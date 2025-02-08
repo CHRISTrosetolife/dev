@@ -188,11 +188,7 @@ export function app_code_refresh_function_node(args) {
     let value2 = object_property_get(node, "value");
     let key = object_property_get(node, "key");
     if (list_all([key, value2], (n) => js_node_type_is(n, "Identifier"))) {
-      if (
-        equal_by(key, value2, (n) =>
-          object_property_get(object, "property_name"),
-        )
-      ) {
+      if (equal_by(key, value2, (n) => object_property_get(n, "name"))) {
         app_code_refresh_function_node(
           object_copy_merge(args, {
             node: key,
