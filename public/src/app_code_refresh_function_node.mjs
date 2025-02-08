@@ -1,3 +1,4 @@
+import { app_code_refresh_function_node_block } from "./app_code_refresh_function_node_block.mjs";
 import { string_is } from "./string_is.mjs";
 import { js_keyword_await } from "./js_keyword_await.mjs";
 import { html_span_text_list_comma_parenthesis } from "./html_span_text_list_comma_parenthesis.mjs";
@@ -71,11 +72,7 @@ export function app_code_refresh_function_node(parent, node) {
     app_code_refresh_function_node(parent, body3);
   } else if (js_node_type_is(node, "BlockStatement")) {
     let body2 = object_property_get(node, "body");
-    html_span_text(parent, " {");
-    each(body2, (b) => {
-      app_code_refresh_function_node_section(parent, b, true);
-    });
-    html_span_text(parent, "}");
+    app_code_refresh_function_node_block(parent, body2);
   } else if (js_node_type_is(node, "VariableDeclaration")) {
     let kind = object_property_get(node, "kind");
     html_code_keyword_space(parent, kind);
