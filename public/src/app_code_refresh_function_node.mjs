@@ -7,10 +7,8 @@ import { js_keyword_await } from "./js_keyword_await.mjs";
 import { html_span_text_list_comma_parenthesis } from "./html_span_text_list_comma_parenthesis.mjs";
 import { html_span_text_list_comma } from "./html_span_text_list_comma.mjs";
 import { app_code_refresh_function_node_section } from "./app_code_refresh_function_node_section.mjs";
-import { html_code_identifier } from "./html_code_identifier.mjs";
 import { js_keyword_function } from "./js_keyword_function.mjs";
 import { js_keyword_export } from "./js_keyword_export.mjs";
-import { html_code_identifier_fn } from "./html_code_identifier_fn.mjs";
 import { html_code_keyword_space } from "./html_code_keyword_space.mjs";
 import { log } from "./log.mjs";
 import { each } from "./each.mjs";
@@ -114,7 +112,7 @@ export function app_code_refresh_function_node(args) {
     let id2 = object_property_get(node, "id");
     assert(js_node_type_is, [id2, "Identifier"]);
     let name4 = object_property_get(id2, "name");
-    html_code_identifier(parent, name4);
+    app_code_refresh_function_node_identifier_add(parent, name4, args);
     html_span_text(parent, " = ");
     let init = object_property_get(node, "init");
     app_code_refresh_function_node(
@@ -126,7 +124,7 @@ export function app_code_refresh_function_node(args) {
     let args2 = object_property_get(node, "arguments");
     let callee = object_property_get(node, "callee");
     let name5 = object_property_get(callee, "name");
-    html_code_identifier_fn(parent, name5);
+    app_code_refresh_function_node_identifier_add_fn(parent, name5, args);
     html_span_text_list_comma_parenthesis(parent, args2, lambda);
     function lambda(arg) {
       app_code_refresh_function_node(
@@ -153,7 +151,7 @@ export function app_code_refresh_function_node(args) {
     );
   } else if (js_node_type_is(node, "Identifier")) {
     let name6 = object_property_get(node, "name");
-    html_code_identifier(parent, name6);
+    app_code_refresh_function_node_identifier_add(parent, name6, args);
   } else if (js_node_type_is(node, "ObjectExpression")) {
     let properties = object_property_get(node, "properties");
     html_span_text(parent, " { ");
