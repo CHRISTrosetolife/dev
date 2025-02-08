@@ -1,3 +1,4 @@
+import { app_extension_html } from "./app_extension_html.mjs";
 import { html_cache_parse_hrefs } from "./html_cache_parse_hrefs.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_find_properties } from "./list_find_properties.mjs";
