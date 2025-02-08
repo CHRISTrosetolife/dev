@@ -18,7 +18,7 @@ export async function bible_ceb_2_books_hrefs() {
   let url = string_combine_multiple([url_base, "bible.html"]);
   let book_hrefs = await html_cache_parse_hrefs(url, condition);
   function condition(href) {
-    return string_ends_with(href, ".html");
+    return string_ends_with(href, app_extension_html());
   }
   book_hrefs = list_map(book_hrefs, (href) => string_combine(url_base, href));
   let columns = 7;

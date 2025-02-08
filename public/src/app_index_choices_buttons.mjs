@@ -1,3 +1,4 @@
+import { app_extension_html } from "./app_extension_html.mjs";
 import { html_button } from "./html_button.mjs";
 import { window_open } from "./window_open.mjs";
 import { object_property_get } from "./object_property_get.mjs";
