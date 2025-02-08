@@ -1,3 +1,4 @@
+import { each_log_async } from "./each_log_async.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { json_from } from "./json_from.mjs";
@@ -16,5 +17,7 @@ export async function sandbox_4() {
   let url = string_combine_multiple([
     "https://www.bohol.ph/diksyunaryo.php?sw=god&lang=English",
   ]);
-  return await http_cache(url);
+  await each_log_async(filtered, async (url) => {
+    await http_cache(url);
+  });
 }
