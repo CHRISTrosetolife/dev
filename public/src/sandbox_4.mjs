@@ -1,6 +1,8 @@
+import { http_cache } from "./http_cache.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-export function sandbox_4() {
+export async function sandbox_4() {
   let url = string_combine_multiple([
-    "https://www.bohol.ph/diksyunaryo.php?sw=me&lang=English",
+    "https://www.bohol.ph/diksyunaryo.php?sw=god&lang=English",
   ]);
+  await http_cache(url);
 }
