@@ -60,7 +60,7 @@ export function app_code_refresh_function_node(args) {
     let i = html_code_identifier_fn(parent, name);
     let ids = object_property_get(args, "identifiers");
     let id_list = object_property_initialize(ids, name, []);
-    list_add(id_list);
+    list_add(id_list, i);
     html_span_text(parent, " } ");
     html_code_keyword_space(parent, js_keyword_from());
     let raw = object_property_get(source, "raw");
