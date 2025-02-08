@@ -28,7 +28,7 @@ export async function app_code_local_upload() {
   let combined = object_merge_strict(mjss, htmls);
   let batch_name = await app_code_batch_name();
   let batch_path = app_code_local_files_path(batch_name);
-  let files = object_map(mjss, (contents) => ({
+  let files = object_map(combined, (contents) => ({
     contents,
   }));
   await storage_upload_object(batch_path, {
