@@ -14,10 +14,12 @@ export async function sandbox_4() {
   let filtered2 = list_filter(filtered, (f) =>
     object_property_exists(dictionary, f),
   );
-  let url = string_combine_multiple([
-    "https://www.bohol.ph/diksyunaryo.php?sw=god&lang=English",
-  ]);
-  await each_log_async(filtered2, async (url) => {
+  await each_log_async(filtered2, async (word) => {
+    let url = string_combine_multiple([
+      "https://www.bohol.ph/diksyunaryo.php?sw=",
+      word,
+      "&lang=English",
+    ]);
     await http_cache(url);
   });
 }
