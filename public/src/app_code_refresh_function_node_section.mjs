@@ -1,10 +1,10 @@
+import { object_copy_merge } from "./object_copy_merge.mjs";
 import { html_style_flex_1 } from "./html_style_flex_1.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_style_flex_row_centered } from "./html_style_flex_row_centered.mjs";
 import { app_code_refresh_function_node } from "./app_code_refresh_function_node.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_style_width } from "./html_style_width.mjs";
-import { object_merge } from "./object_merge.mjs";
 export function app_code_refresh_function_node_section(args, indent) {
   let { parent } = args;
   let section = html_div(parent);
@@ -16,7 +16,7 @@ export function app_code_refresh_function_node_section(args, indent) {
     html_style_flex_1(section);
   }
   app_code_refresh_function_node(
-    object_merge(args, {
+    object_copy_merge(args, {
       parent: section,
     }),
   );
