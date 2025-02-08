@@ -182,6 +182,9 @@ export function app_code_refresh_function_node(args) {
     } else {
       unknown();
     }
+  } else if (js_node_type_is(node, "Property")) {
+    let value2 = object_property_get(node, "value");
+    let key = object_property_get(node, "key");
   } else {
     log({
       node,
