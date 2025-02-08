@@ -1,3 +1,4 @@
+import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
 import { html_style_background_color_black } from "./html_style_background_color_black.mjs";
 import { html_style } from "./html_style.mjs";
 import { app_code_refresh_function_node } from "./app_code_refresh_function_node.mjs";
@@ -47,6 +48,7 @@ export async function app_code_refresh_function(context) {
     let node = js_parse(contents);
     let container = html_div(root);
     html_style_background_color_black(container);
+    html_style_rounded_padded(container);
     html_style_monospace(container);
     app_code_refresh_function_node({
       parent: container,
