@@ -18,7 +18,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
     each(id_list, (i) =>
       toggled
         ? html_style_background_color(i, "transparent")
-        : html_style_background_color(i, "brown"),
+        : html_style_background_color(i, "darkred"),
     );
     toggled = !toggled;
     log({
