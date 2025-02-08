@@ -1,4 +1,4 @@
-import { object_merge } from "./object_merge.mjs";
+import { object_copy_merge } from "./object_copy_merge.mjs";
 import { app_code_refresh_function_node_block } from "./app_code_refresh_function_node_block.mjs";
 import { string_is } from "./string_is.mjs";
 import { js_keyword_await } from "./js_keyword_await.mjs";
@@ -33,7 +33,7 @@ export function app_code_refresh_function_node(args) {
     let body = object_property_get(node, "body");
     each(body, async (b) => {
       app_code_refresh_function_node_section(
-        object_merge(args, {
+        object_copy_merge(args, {
           node: b,
         }),
         false,
@@ -65,7 +65,7 @@ export function app_code_refresh_function_node(args) {
     html_code_keyword_space(parent, js_keyword_export());
     let declaration = object_property_get(node, "declaration");
     app_code_refresh_function_node(
-      object_merge(args, {
+      object_copy_merge(args, {
         node: declaration,
       }),
     );
@@ -81,14 +81,14 @@ export function app_code_refresh_function_node(args) {
     }
     let body3 = object_property_get(node, "body");
     app_code_refresh_function_node(
-      object_merge(args, {
+      object_copy_merge(args, {
         node: body3,
       }),
     );
   } else if (js_node_type_is(node, "BlockStatement")) {
     let body2 = object_property_get(node, "body");
     app_code_refresh_function_node_block(
-      object_merge(args, {
+      object_copy_merge(args, {
         node: body2,
       }),
     );
@@ -101,7 +101,7 @@ export function app_code_refresh_function_node(args) {
       declarations,
       function lambda(declaration) {
         app_code_refresh_function_node(
-          object_merge(args, {
+          object_copy_merge(args, {
             node: declaration,
           }),
         );
@@ -116,7 +116,7 @@ export function app_code_refresh_function_node(args) {
     html_span_text(parent, " = ");
     let init = object_property_get(node, "init");
     app_code_refresh_function_node(
-      object_merge(args, {
+      object_copy_merge(args, {
         node: init,
       }),
     );
@@ -128,7 +128,7 @@ export function app_code_refresh_function_node(args) {
     html_span_text_list_comma_parenthesis(parent, args2, lambda);
     function lambda(arg) {
       app_code_refresh_function_node(
-        object_merge(args, {
+        object_copy_merge(args, {
           node: arg,
         }),
       );
@@ -136,7 +136,7 @@ export function app_code_refresh_function_node(args) {
   } else if (js_node_type_is(node, "ExpressionStatement")) {
     let expression = object_property_get(node, "expression");
     app_code_refresh_function_node(
-      object_merge(args, {
+      object_copy_merge(args, {
         node: expression,
       }),
     );
@@ -145,7 +145,7 @@ export function app_code_refresh_function_node(args) {
     let argument = object_property_get(node, "argument");
     html_code_keyword_space(parent, js_keyword_await());
     app_code_refresh_function_node(
-      object_merge(args, {
+      object_copy_merge(args, {
         node: argument,
       }),
     );
@@ -157,7 +157,7 @@ export function app_code_refresh_function_node(args) {
     html_span_text(parent, " { ");
     html_span_text_list_comma(parent, properties, (b) => {
       app_code_refresh_function_node(
-        object_merge(args, {
+        object_copy_merge(args, {
           node: b,
         }),
       );
@@ -170,7 +170,7 @@ export function app_code_refresh_function_node(args) {
     html_span_text(parent, " ]");
     function lambda(element) {
       app_code_refresh_function_node(
-        object_merge(args, {
+        object_copy_merge(args, {
           node: element,
         }),
       );
