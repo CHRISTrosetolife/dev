@@ -46,6 +46,9 @@ export async function app_code_refresh_function(context) {
     let node = js_parse(contents);
     let container = html_div(root);
     html_style_monospace(container);
-    app_code_refresh_function_node(container, node);
+    app_code_refresh_function_node({
+      parent: container,
+      node,
+    });
   });
 }
