@@ -1,3 +1,4 @@
+import { html_style_background_color_yellow } from "./html_style_background_color_yellow.mjs";
 import { app_code_function_names_get } from "./app_code_function_names_get.mjs";
 import { app_code_button_menu_app } from "./app_code_button_menu_app.mjs";
 import { storage_local_set_context } from "./storage_local_set_context.mjs";
@@ -37,7 +38,6 @@ import { list_empty_is } from "./list_empty_is.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { list_get } from "./list_get.mjs";
 import { html_span_text } from "./html_span_text.mjs";
-import { html_style_background_color } from "./html_style_background_color.mjs";
 import { list_size_1 } from "./list_size_1.mjs";
 export async function app_code_refresh_functions_search(context) {
   await html_load(async () => {
@@ -113,7 +113,7 @@ export async function app_code_refresh_functions_search(context) {
             let s = html_span_text(b, object_property_get(m, "symbol"));
             if (object_property_get(m, "highlighted") === true) {
               html_style_bold(s);
-              html_style_background_color(s, "yellow");
+              html_style_background_color_yellow(s);
             }
           });
         });
