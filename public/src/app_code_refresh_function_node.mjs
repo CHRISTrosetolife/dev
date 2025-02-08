@@ -121,11 +121,11 @@ export function app_code_refresh_function_node(args) {
       }),
     );
   } else if (js_node_type_is(node, "CallExpression")) {
-    let args = object_property_get(node, "arguments");
+    let args2 = object_property_get(node, "arguments");
     let callee = object_property_get(node, "callee");
     let name5 = object_property_get(callee, "name");
     html_code_identifier_fn(parent, name5);
-    html_span_text_list_comma_parenthesis(parent, args, lambda);
+    html_span_text_list_comma_parenthesis(parent, args2, lambda);
     function lambda(arg) {
       app_code_refresh_function_node(
         object_merge(args, {
