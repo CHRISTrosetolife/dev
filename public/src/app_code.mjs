@@ -1,4 +1,3 @@
-import { html_style_margin_none } from "./html_style_margin_none.mjs";
 import { log } from "./log.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_code_screen_prefix_get } from "./app_code_screen_prefix_get.mjs";
@@ -11,7 +10,6 @@ import { html_scripts_load } from "./html_scripts_load.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 export async function app_code() {
   let body = html_style_default_initialize();
-  html_style_margin_none(body);
   let root = html_div(body);
   await html_scripts_load(body, ["axios", "acorn", "astring"]);
   let app_fn = app_code;
