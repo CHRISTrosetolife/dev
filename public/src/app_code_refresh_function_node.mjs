@@ -120,7 +120,6 @@ export function app_code_refresh_function_node(parent, node) {
       app_code_refresh_function_node(parent, b);
     });
     html_span_text(parent, " }");
-    html_span_text_list_comma();
   } else if (js_node_type_is(node, "ArrayExpression")) {
     let elements = object_property_get(node, "elements");
     html_span_text_list_comma(parent, elements, lambda);
