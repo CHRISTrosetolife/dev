@@ -87,7 +87,9 @@ export function app_code_refresh_function_node(args) {
     );
   } else if (js_node_type_is(node, "BlockStatement")) {
     let body2 = object_property_get(node, "body");
-    app_code_refresh_function_node_block(parent, body2);
+    app_code_refresh_function_node_block(object_merge(args, {
+        node: body2,
+      }), );
   } else if (js_node_type_is(node, "VariableDeclaration")) {
     let kind = object_property_get(node, "kind");
     html_code_keyword_space(parent, kind);
@@ -111,7 +113,9 @@ export function app_code_refresh_function_node(args) {
     html_code_identifier(parent, name4);
     html_span_text(parent, " = ");
     let init = object_property_get(node, "init");
-    app_code_refresh_function_node(parent, init);
+    app_code_refresh_function_node(object_merge(args, {
+        node: init,
+      }), );
   } else if (js_node_type_is(node, "CallExpression")) {
     let args = object_property_get(node, "arguments");
     let callee = object_property_get(node, "callee");
@@ -119,16 +123,22 @@ export function app_code_refresh_function_node(args) {
     html_code_identifier_fn(parent, name5);
     html_span_text_list_comma_parenthesis(parent, args, lambda);
     function lambda(arg) {
-      app_code_refresh_function_node(parent, arg);
+      app_code_refresh_function_node(object_merge(args, {
+        node: arg,
+      }), );
     }
   } else if (js_node_type_is(node, "ExpressionStatement")) {
     let expression = object_property_get(node, "expression");
-    app_code_refresh_function_node(parent, expression);
+    app_code_refresh_function_node(object_merge(args, {
+        node: expression,
+      }), );
     html_span_text(parent, js_code_statement_end());
   } else if (js_node_type_is(node, "AwaitExpression")) {
     let argument = object_property_get(node, "argument");
     html_code_keyword_space(parent, js_keyword_await());
-    app_code_refresh_function_node(parent, argument);
+    app_code_refresh_function_node(object_merge(args, {
+        node: argument,
+      }), );
   } else if (js_node_type_is(node, "Identifier")) {
     let name6 = object_property_get(node, "name");
     html_code_identifier(parent, name6);
@@ -136,7 +146,9 @@ export function app_code_refresh_function_node(args) {
     let properties = object_property_get(node, "properties");
     html_span_text(parent, " { ");
     html_span_text_list_comma(parent, properties, (b) => {
-      app_code_refresh_function_node(parent, b);
+      app_code_refresh_function_node(object_merge(args, {
+        node: b,
+      }), );
     });
     html_span_text(parent, " }");
   } else if (js_node_type_is(node, "ArrayExpression")) {
@@ -145,7 +157,9 @@ export function app_code_refresh_function_node(args) {
     html_span_text_list_comma(parent, elements, lambda);
     html_span_text(parent, " ]");
     function lambda(element) {
-      app_code_refresh_function_node(parent, element);
+      app_code_refresh_function_node(object_merge(args, {
+        node: element,
+      }), );
     }
   } else if (js_node_type_is(node, "Literal")) {
     let raw2 = object_property_get(node, "raw");
