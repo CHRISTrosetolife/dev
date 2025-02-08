@@ -57,7 +57,9 @@ export function app_code_refresh_function_node(args) {
     html_code_keyword_space(parent, js_keyword_import());
     html_span_text(parent, "{ ");
     html_code_identifier_fn(parent, name);
-    object_property_initialize(object_property_get(object, "property_name"));
+    let ids = object_property_initialize(
+      object_property_get(args, "identifiers"),
+    );
     html_span_text(parent, " } ");
     html_code_keyword_space(parent, js_keyword_from());
     let raw = object_property_get(source, "raw");
