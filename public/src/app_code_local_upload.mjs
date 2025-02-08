@@ -1,3 +1,4 @@
+import { list_map } from "./list_map.mjs";
 import { app_extension_html } from "./app_extension_html.mjs";
 import { folder_path_public } from "./folder_path_public.mjs";
 import { files_contents_lookup } from "./files_contents_lookup.mjs";
@@ -13,6 +14,7 @@ export async function app_code_local_upload() {
     folder_path_public(),
     app_extension_html(),
   );
+  let paths_html_mapped = list_map(paths_html, () => {});
   return await files_contents_lookup(paths_html);
   await files_contents_lookup();
   let s = await functions_source_get();
