@@ -17,7 +17,6 @@ import { js_node_type_is } from "./js_node_type_is.mjs";
 import { js_code_statement_end } from "./js_code_statement_end.mjs";
 import { html_code_string } from "./html_code_string.mjs";
 import { js_keyword_from } from "./js_keyword_from.mjs";
-import { html_span_text } from "./html_span_text.mjs";
 import { js_keyword_import } from "./js_keyword_import.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_size_1 } from "./list_size_1.mjs";
@@ -57,11 +56,11 @@ export function app_code_refresh_function_node(args) {
     html_code_keyword_space(parent, js_keyword_import());
     html_span_text_gray(parent, "{ ");
     app_code_refresh_function_node_identifier_add_fn(parent, name, args);
-    html_span_text(parent, " } ");
+    html_span_text_gray(parent, " } ");
     html_code_keyword_space(parent, js_keyword_from());
     let raw = object_property_get(source, "raw");
     html_code_string(parent, raw);
-    html_span_text(parent, js_code_statement_end());
+    html_span_text_gray(parent, js_code_statement_end());
   } else if (js_node_type_is(node, "ExportNamedDeclaration")) {
     html_code_keyword_space(parent, js_keyword_export());
     let declaration = object_property_get(node, "declaration");
@@ -108,13 +107,13 @@ export function app_code_refresh_function_node(args) {
         );
       },
     );
-    html_span_text(parent, js_code_statement_end());
+    html_span_text_gray(parent, js_code_statement_end());
   } else if (js_node_type_is(node, "VariableDeclarator")) {
     let id2 = object_property_get(node, "id");
     assert(js_node_type_is, [id2, "Identifier"]);
     let name4 = object_property_get(id2, "name");
     app_code_refresh_function_node_identifier_add(parent, name4, args);
-    html_span_text(parent, " = ");
+    html_span_text_gray(parent, " = ");
     let init = object_property_get(node, "init");
     app_code_refresh_function_node(
       object_copy_merge(args, {
@@ -141,7 +140,7 @@ export function app_code_refresh_function_node(args) {
         node: expression,
       }),
     );
-    html_span_text(parent, js_code_statement_end());
+    html_span_text_gray(parent, js_code_statement_end());
   } else if (js_node_type_is(node, "AwaitExpression")) {
     let argument = object_property_get(node, "argument");
     html_code_keyword_space(parent, js_keyword_await());
@@ -155,7 +154,7 @@ export function app_code_refresh_function_node(args) {
     app_code_refresh_function_node_identifier_add(parent, name6, args);
   } else if (js_node_type_is(node, "ObjectExpression")) {
     let properties = object_property_get(node, "properties");
-    html_span_text(parent, " { ");
+    html_span_text_gray(parent, " { ");
     html_span_text_list_comma(parent, properties, (b) => {
       app_code_refresh_function_node(
         object_copy_merge(args, {
@@ -163,12 +162,12 @@ export function app_code_refresh_function_node(args) {
         }),
       );
     });
-    html_span_text(parent, " }");
+    html_span_text_gray(parent, " }");
   } else if (js_node_type_is(node, "ArrayExpression")) {
-    html_span_text(parent, "[ ");
+    html_span_text_gray(parent, "[ ");
     let elements = object_property_get(node, "elements");
     html_span_text_list_comma(parent, elements, lambda);
-    html_span_text(parent, " ]");
+    html_span_text_gray(parent, " ]");
     function lambda(element) {
       app_code_refresh_function_node(
         object_copy_merge(args, {
