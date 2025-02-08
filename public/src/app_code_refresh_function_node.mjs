@@ -64,7 +64,11 @@ export function app_code_refresh_function_node(args) {
   } else if (js_node_type_is(node, "ExportNamedDeclaration")) {
     html_code_keyword_space(parent, js_keyword_export());
     let declaration = object_property_get(node, "declaration");
-    app_code_refresh_function_node(parent, declaration);
+    app_code_refresh_function_node(
+      object_merge(args, {
+        node: declaration,
+      }),
+    );
   } else if (js_node_type_is(node, "FunctionDeclaration")) {
     html_code_keyword_space(parent, js_keyword_function());
     let id = object_property_get(node, "id");
@@ -76,7 +80,11 @@ export function app_code_refresh_function_node(args) {
       html_code_identifier(parent, param);
     }
     let body3 = object_property_get(node, "body");
-    app_code_refresh_function_node(parent, body3);
+    app_code_refresh_function_node(
+      object_merge(args, {
+        node: body3,
+      }),
+    );
   } else if (js_node_type_is(node, "BlockStatement")) {
     let body2 = object_property_get(node, "body");
     app_code_refresh_function_node_block(parent, body2);
