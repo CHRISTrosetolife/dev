@@ -56,7 +56,7 @@ export function app_code_refresh_function_node(args) {
     assert(equal, [name, name2]);
     html_code_keyword_space(parent, js_keyword_import());
     let s2 = html_span_text(parent, "{ ");
-    html_style_font_color_gray(parent);
+    html_style_font_color_gray(s2);
     app_code_refresh_function_node_identifier_add_fn(parent, name, args);
     html_span_text(parent, " } ");
     html_code_keyword_space(parent, js_keyword_from());
