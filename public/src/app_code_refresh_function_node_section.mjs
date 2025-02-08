@@ -6,7 +6,7 @@ import { html_div } from "./html_div.mjs";
 import { html_style_width } from "./html_style_width.mjs";
 import { object_merge } from "./object_merge.mjs";
 export function app_code_refresh_function_node_section(args, indent) {
-  let { parent, node } = args;
+  let { parent } = args;
   let section = html_div(parent);
   if (indent) {
     html_style_flex_row_centered(section);
