@@ -27,6 +27,7 @@ import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_span_text_font_color } from "./html_span_text_font_color.mjs";
 import { js_unparse } from "./js_unparse.mjs";
+import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
 export function app_code_refresh_function_node(args) {
   let { parent, node } = args;
   if (js_node_type_is(node, "Program")) {
@@ -55,6 +56,7 @@ export function app_code_refresh_function_node(args) {
     assert(equal, [name, name2]);
     html_code_keyword_space(parent, js_keyword_import());
     html_span_text(parent, "{ ");
+    html_style_font_color_gray(parent);
     app_code_refresh_function_node_identifier_add_fn(parent, name, args);
     html_span_text(parent, " } ");
     html_code_keyword_space(parent, js_keyword_from());
