@@ -9,7 +9,8 @@ export async function app_code_files_get() {
     g,
     global_files(),
     async () => {
-      return await http_storage_get(app_code_local_files_path_latest());
+      let v = await http_storage_get(app_code_local_files_path_latest());
+      return v;
     },
   );
   return files;
