@@ -116,6 +116,7 @@ export function app_code_refresh_function_node(parent, node) {
   } else if (js_node_type_is(node, "Identifier")) {
     let name6 = object_property_get(node, "name");
     html_code_identifier(parent, name6);
+  } else if (js_node_type_is(node, "ObjectExpression")) {
   } else if (js_node_type_is(node, "ArrayExpression")) {
     let elements = object_property_get(node, "elements");
     html_span_text_list_comma(parent, elements, lambda);
