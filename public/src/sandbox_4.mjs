@@ -4,5 +4,5 @@ export async function sandbox_4() {
   let url = string_combine_multiple([
     "https://www.bohol.ph/diksyunaryo.php?sw=god&lang=English",
   ]);
-  await http_cache(url);
+  return await http_cache(url);
 }
