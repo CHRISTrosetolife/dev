@@ -18,12 +18,12 @@ export async function sandbox_3() {
   let trimmed = await http_cache_split_trim(
     "https://norvig.com/ngrams/count_1w.txt",
   );
-  let dictionary_json = await http_cache(
-    "https://raw.githubusercontent.com/matthewreagan/WebstersEnglishDictionary/refs/heads/master/dictionary_compact.json",
-  );
   let split = list_map(trimmed, string_split_tab);
   let firsts = list_map(split, list_first);
   let filtered = list_difference_lower(firsts, c);
+  let dictionary_json = await http_cache(
+    "https://raw.githubusercontent.com/matthewreagan/WebstersEnglishDictionary/refs/heads/master/dictionary_compact.json",
+  );
   let dictionary = json_from(dictionary_json);
   let filtered2 = list_filter(filtered, (f) =>
     object_property_exists(dictionary, f),
