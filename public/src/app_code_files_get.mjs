@@ -12,7 +12,8 @@ export async function app_code_files_get() {
     async () => {
       let v = await http_storage_get(app_code_local_files_path_latest());
       let batch_path = object_property_get(v, "batch_path");
-      return await http_storage_get(batch_path);
+      let v2 = await http_storage_get(batch_path);
+      return v2;
     },
   );
   return files;
