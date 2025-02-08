@@ -1,3 +1,4 @@
+import { folder_path_public } from "./folder_path_public.mjs";
 import { files_contents_lookup } from "./files_contents_lookup.mjs";
 import { folder_read_shallow } from "./folder_read_shallow.mjs";
 import { app_code_local_files_path_latest } from "./app_code_local_files_path_latest.mjs";
@@ -7,7 +8,7 @@ import { app_code_batch_name } from "./app_code_batch_name.mjs";
 import { storage_upload_object } from "./storage_upload_object.mjs";
 import { functions_source_get } from "./functions_source_get.mjs";
 export async function app_code_local_upload() {
-  await folder_read_shallow();
+  await folder_read_shallow(folder_path_public());
   await files_contents_lookup();
   let s = await functions_source_get();
   let batch_name = await app_code_batch_name();
