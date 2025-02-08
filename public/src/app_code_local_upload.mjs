@@ -10,8 +10,8 @@ export async function app_code_local_upload() {
   let files = object_map(s, (contents) => ({
     contents,
   }));
-  await storage_upload_object(storage_path, {
+  await storage_upload_object(p, {
     files,
   });
-  let latest_path = app_code_local_files_path(batch_name);
+  let latest_path = app_code_local_files_path("latest");
 }
