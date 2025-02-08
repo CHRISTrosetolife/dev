@@ -3,11 +3,12 @@ import { app_code_refresh_function_node_section } from "./app_code_refresh_funct
 import { each } from "./each.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 export function app_code_refresh_function_node_block(args) {
+  let { parent, node } = args;
   html_span_text(parent, " {");
-  each(body_list, (b) => {
+  each(node, (n) => {
     app_code_refresh_function_node_section(
       object_merge(args, {
-        node: b,
+        node: n,
       }),
       true,
     );
