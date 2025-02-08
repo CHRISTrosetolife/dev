@@ -12,6 +12,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
   let ids = object_property_get(args, "identifiers");
   let id_list = object_property_initialize(ids, name, []);
   list_add(id_list, i);
+  let toggled = false;
   html_on_click(i, () => {
     each(id_list, html_style_background_color_yellow);
   });
