@@ -36,7 +36,8 @@ export async function app_code_refresh_function(context) {
       functions_recent_limit,
     );
     let path = function_name_to_path(function_selected);
-    let contents = object_property_get(files, path);
+    let file = object_property_get(files, path);
+    let contents2 = object_property_get(file, "contents");
     let node = js_parse(contents);
     let container = html_div(root);
     html_style_monospace(container);
