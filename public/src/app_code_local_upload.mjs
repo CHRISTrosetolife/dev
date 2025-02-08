@@ -22,8 +22,7 @@ export async function app_code_local_upload() {
     let m2 = string_combine_multiple([folder_current_prefix(), m]);
     return m2;
   });
-  return await files_contents_lookup(paths_html_mapped);
-  await files_contents_lookup();
+  let htmls = await files_contents_lookup(paths_html_mapped);
   let s = await functions_source_get();
   let batch_name = await app_code_batch_name();
   let batch_path = app_code_local_files_path(batch_name);
