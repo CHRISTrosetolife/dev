@@ -1,3 +1,4 @@
+import { html_style_background_color_black } from "./html_style_background_color_black.mjs";
 import { html_style } from "./html_style.mjs";
 import { app_code_refresh_function_node } from "./app_code_refresh_function_node.mjs";
 import { html_style_left } from "./html_style_left.mjs";
@@ -45,6 +46,7 @@ export async function app_code_refresh_function(context) {
     let contents = object_property_get(file, "contents");
     let node = js_parse(contents);
     let container = html_div(root);
+    html_style_background_color_black(container);
     html_style_monospace(container);
     app_code_refresh_function_node({
       parent: container,
