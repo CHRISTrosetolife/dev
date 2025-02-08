@@ -13,6 +13,7 @@ export async function app_code_local_upload() {
     folder_path_public(),
     app_extension_html(),
   );
+  return await files_contents_lookup(paths_html);
   await files_contents_lookup();
   let s = await functions_source_get();
   let batch_name = await app_code_batch_name();
