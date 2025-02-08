@@ -7,6 +7,10 @@ export function app_code_refresh_function_node_identifier_add(
   args,
 ) {
   let i = html_code_identifier(parent, name);
-  app_code_refresh_function_node_identifier_add_generic(args, name, i);
+  let id_list = app_code_refresh_function_node_identifier_add_generic(
+    args,
+    name,
+    i,
+  );
   html_on_click(i, () => {});
 }
