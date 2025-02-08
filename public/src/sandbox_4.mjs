@@ -20,6 +20,6 @@ export async function sandbox_4() {
       word,
       "&lang=English",
     ]);
-    await http_cache(url);
+    let contents = await http_cache(url);
   });
 }
