@@ -1,3 +1,4 @@
+import { functions_names } from "./functions_names.mjs";
 import { list_take_but } from "./list_take_but.mjs";
 import { js_name_unique_multiple } from "./js_name_unique_multiple.mjs";
 import { each } from "./each.mjs";
@@ -24,7 +25,6 @@ import { js_return_variablize } from "./js_return_variablize.mjs";
 import { function_parse } from "./function_parse.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
 import { null_not_is } from "./null_not_is.mjs";
-import { function_names } from "./function_names.mjs";
 import { list_concat } from "./list_concat.mjs";
 export async function js_dollar_expand(ast, call, result_id, a, parent) {
   let { next, s1, index } = a;
@@ -37,7 +37,7 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
       let { arguments: args } = call;
       let args_names = js_identifiers_names(args);
       let identifiers = js_identifiers(ast);
-      let fns = await function_names();
+      let fns = await functions_names();
       let needs_enhance = js_identifiers_intersect_difference(
         ast_c,
         identifiers,

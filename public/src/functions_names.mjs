@@ -11,7 +11,7 @@ import { web_is } from "./web_is.mjs";
 import { global_get } from "./global_get.mjs";
 import { object_properties } from "./object_properties.mjs";
 import { function_path_to_name } from "./function_path_to_name.mjs";
-export async function function_names() {
+export async function functions_names() {
   let suffix = function_path_suffix();
   if (web_is()) {
     let { files } = global_get();
