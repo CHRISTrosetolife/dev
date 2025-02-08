@@ -1,3 +1,4 @@
+import { equal_by } from "./equal_by.mjs";
 import { list_all } from "./list_all.mjs";
 import { html_span_text_gray } from "./html_span_text_gray.mjs";
 import { app_code_refresh_function_node_identifier_add } from "./app_code_refresh_function_node_identifier_add.mjs";
@@ -187,7 +188,11 @@ export function app_code_refresh_function_node(args) {
     let value2 = object_property_get(node, "value");
     let key = object_property_get(node, "key");
     if (list_all([key, value2], (n) => js_node_type_is(n, "Identifier"))) {
-      if (false) {
+      if (
+        equal_by(key, value2, (n) =>
+          object_property_get(object, "property_name"),
+        )
+      ) {
         app_code_refresh_function_node(
           object_copy_merge(args, {
             node: key,
