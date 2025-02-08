@@ -1,4 +1,4 @@
-import { app_code_refresh_function_node_identifier_add } from "./app_code_refresh_function_node_identifier_add.mjs";
+import { app_code_refresh_function_node_identifier_add_generic } from "./app_code_refresh_function_node_identifier_add_generic.mjs";
 import { object_copy_merge } from "./object_copy_merge.mjs";
 import { app_code_refresh_function_node_block } from "./app_code_refresh_function_node_block.mjs";
 import { string_is } from "./string_is.mjs";
@@ -57,7 +57,7 @@ export function app_code_refresh_function_node(args) {
     html_code_keyword_space(parent, js_keyword_import());
     html_span_text(parent, "{ ");
     let i = html_code_identifier_fn(parent, name);
-    app_code_refresh_function_node_identifier_add(args, name, i);
+    app_code_refresh_function_node_identifier_add_generic(args, name, i);
     html_span_text(parent, " } ");
     html_code_keyword_space(parent, js_keyword_from());
     let raw = object_property_get(source, "raw");
