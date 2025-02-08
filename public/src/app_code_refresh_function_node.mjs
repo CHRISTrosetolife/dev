@@ -26,7 +26,8 @@ import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_span_text_font_color } from "./html_span_text_font_color.mjs";
 import { js_unparse } from "./js_unparse.mjs";
-export function app_code_refresh_function_node(parent, node) {
+export function app_code_refresh_function_node(args) {
+  let { parent, node } = args;
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
     each(body, async (b) => {
