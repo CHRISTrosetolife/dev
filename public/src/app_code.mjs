@@ -11,8 +11,8 @@ import { html_scripts_load } from "./html_scripts_load.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 export async function app_code() {
   let body = html_style_default_initialize();
+  html_style_margin_none(body);
   let root = html_div(body);
-  html_style_margin_none(root);
   await html_scripts_load(body, ["axios", "acorn", "astring"]);
   let app_fn = app_code;
   let context = {
