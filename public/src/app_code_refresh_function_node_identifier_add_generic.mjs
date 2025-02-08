@@ -1,3 +1,4 @@
+import { html_style_background_color_yellow } from "./html_style_background_color_yellow.mjs";
 import { each } from "./each.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { list_add } from "./list_add.mjs";
@@ -12,6 +13,6 @@ export function app_code_refresh_function_node_identifier_add_generic(
   let id_list = object_property_initialize(ids, name, []);
   list_add(id_list, i);
   html_on_click(i, () => {
-    each(id_list, (id) => {});
+    each(id_list, html_style_background_color_yellow);
   });
 }
