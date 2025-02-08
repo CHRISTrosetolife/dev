@@ -10,7 +10,7 @@ export function app_index_choices_buttons(root, choices) {
     if (object_property_exists(choice, "page")) {
       url = string_combine_multiple([
         object_property_get(choice, "page"),
-        ".html",
+        app_extension_html(),
       ]);
     } else {
       url = object_property_get(choice, "href");
