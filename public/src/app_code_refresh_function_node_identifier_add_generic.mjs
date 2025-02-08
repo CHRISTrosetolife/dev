@@ -1,6 +1,5 @@
 import { log } from "./log.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
-import { html_style_background_color_yellow } from "./html_style_background_color_yellow.mjs";
 import { each } from "./each.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { list_add } from "./list_add.mjs";
@@ -19,7 +18,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
     each(id_list, (i) =>
       toggled
         ? html_style_background_color(i, "transparent")
-        : html_style_background_color_yellow(i),
+        : html_style_background_color(i, "brown"),
     );
     toggled = !toggled;
     log({
