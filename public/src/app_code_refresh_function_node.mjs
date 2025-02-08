@@ -194,6 +194,8 @@ export function app_code_refresh_function_node(args) {
             node: key,
           }),
         );
+      } else {
+        unknown();
       }
     } else {
       unknown();
