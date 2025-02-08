@@ -1,3 +1,4 @@
+import { functions_paths } from "./functions_paths.mjs";
 import { function_rename_fn_name } from "./function_rename_fn_name.mjs";
 import { functions_transform } from "./functions_transform.mjs";
 import { js_import_remove_try } from "./js_import_remove_try.mjs";
@@ -5,7 +6,6 @@ import { log } from "./log.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { fn_name } from "./fn_name.mjs";
-import { function_paths } from "./function_paths.mjs";
 import { data_remove } from "./data_remove.mjs";
 import { data_update_multiple_transform } from "./data_update_multiple_transform.mjs";
 import { data_transform } from "./data_transform.mjs";
@@ -63,9 +63,9 @@ export async function function_rename(fn_name_from, fn_name_to) {
     );
   }
   let concatenated = list_concat(existing, [fn_name_to]);
-  let function_paths = list_map(concatenated, function_name_to_path);
+  let functions_paths = list_map(concatenated, function_name_to_path);
   await data_transform(async function lambda(data) {
     data_remove(data, fn_name_from);
-    await data_update_multiple_transform(function_paths, data);
+    await data_update_multiple_transform(functions_paths, data);
   });
 }
