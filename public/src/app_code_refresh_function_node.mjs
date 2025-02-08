@@ -187,11 +187,13 @@ export function app_code_refresh_function_node(args) {
     let value2 = object_property_get(node, "value");
     let key = object_property_get(node, "key");
     if (list_all([key, value2], (n) => js_node_type_is(n, "Identifier"))) {
-      app_code_refresh_function_node(
-        object_copy_merge(args, {
-          node: key,
-        }),
-      );
+      if (false) {
+        app_code_refresh_function_node(
+          object_copy_merge(args, {
+            node: key,
+          }),
+        );
+      }
     } else {
       unknown();
     }
