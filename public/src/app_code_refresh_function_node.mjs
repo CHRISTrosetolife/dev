@@ -1,3 +1,4 @@
+import { app_code_refresh_function_node_identifier_add } from "./app_code_refresh_function_node_identifier_add.mjs";
 import { object_copy_merge } from "./object_copy_merge.mjs";
 import { app_code_refresh_function_node_block } from "./app_code_refresh_function_node_block.mjs";
 import { string_is } from "./string_is.mjs";
@@ -27,8 +28,6 @@ import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_span_text_font_color } from "./html_span_text_font_color.mjs";
 import { js_unparse } from "./js_unparse.mjs";
-import { object_property_initialize } from "./object_property_initialize.mjs";
-import { list_add } from "./list_add.mjs";
 export function app_code_refresh_function_node(args) {
   let { parent, node } = args;
   if (js_node_type_is(node, "Program")) {
@@ -58,9 +57,7 @@ export function app_code_refresh_function_node(args) {
     html_code_keyword_space(parent, js_keyword_import());
     html_span_text(parent, "{ ");
     let i = html_code_identifier_fn(parent, name);
-    let ids = object_property_get(args, "identifiers");
-    let id_list = object_property_initialize(ids, name, []);
-    list_add(id_list, i);
+    app_code_refresh_function_node_identifier_add(args, name, i);
     html_span_text(parent, " } ");
     html_code_keyword_space(parent, js_keyword_from());
     let raw = object_property_get(source, "raw");
