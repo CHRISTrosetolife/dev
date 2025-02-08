@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { each } from "./each.mjs";
 import { html_on_click } from "./html_on_click.mjs";
@@ -21,8 +20,5 @@ export function app_code_refresh_function_node_identifier_add_generic(
         : html_style_background_color(i, "darkred"),
     );
     toggled = !toggled;
-    log({
-      toggled,
-    });
   });
 }
