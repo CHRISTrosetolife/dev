@@ -20,18 +20,18 @@ export async function http_response(url) {
       "Not Found",
     ]),
   );
-  if (!response.ok) {
-    let { statusText } = response;
-    throw error(
-      json_to({
-        url,
-        statusText,
-      }),
-    );
-  }
   async function lambda() {
     await sleep(integer_random(5000, 8000));
     let response = await fetch(url);
+    if (!response.ok) {
+      let { statusText } = response;
+      throw error(
+        json_to({
+          url,
+          statusText,
+        }),
+      );
+    }
     return response;
   }
   return response;
