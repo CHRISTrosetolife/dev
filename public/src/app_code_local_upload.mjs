@@ -1,3 +1,4 @@
+import { file_name_json } from "./file_name_json.mjs";
 import { object_map } from "./object_map.mjs";
 import { app_code_local_files_path } from "./app_code_local_files_path.mjs";
 import { app_code_batch_name } from "./app_code_batch_name.mjs";
@@ -13,7 +14,7 @@ export async function app_code_local_upload() {
   await storage_upload_object(batch_path, {
     files,
   });
-  let latest_path = app_code_local_files_path("latest");
+  let latest_path = app_code_local_files_path(file_name_json("latest"));
   await storage_upload_object(latest_path, {
     batch_path,
   });
