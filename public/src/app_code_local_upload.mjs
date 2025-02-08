@@ -1,3 +1,4 @@
+import { folder_path_slash_forward } from "./folder_path_slash_forward.mjs";
 import { list_map } from "./list_map.mjs";
 import { app_extension_html } from "./app_extension_html.mjs";
 import { folder_path_public } from "./folder_path_public.mjs";
@@ -9,14 +10,13 @@ import { app_code_local_files_path } from "./app_code_local_files_path.mjs";
 import { app_code_batch_name } from "./app_code_batch_name.mjs";
 import { storage_upload_object } from "./storage_upload_object.mjs";
 import { functions_source_get } from "./functions_source_get.mjs";
-import { string_replace } from "./string_replace.mjs";
 export async function app_code_local_upload() {
   let paths_html = await folder_read_shallow(
     folder_path_public(),
     app_extension_html(),
   );
   let paths_html_mapped = list_map(paths_html, (p) => {
-    let m = string_replace(p, "\\", "/");
+    let m = folder_path_slash_forward(p);
   });
   return await files_contents_lookup(paths_html);
   await files_contents_lookup();
