@@ -1,3 +1,4 @@
+import { app_code_refresh_function_node_identifier_add } from "./app_code_refresh_function_node_identifier_add.mjs";
 import { app_code_refresh_function_node_identifier_add_fn } from "./app_code_refresh_function_node_identifier_add_fn.mjs";
 import { object_copy_merge } from "./object_copy_merge.mjs";
 import { app_code_refresh_function_node_block } from "./app_code_refresh_function_node_block.mjs";
@@ -78,7 +79,7 @@ export function app_code_refresh_function_node(args) {
     let params = object_property_get(node, "params");
     html_span_text_list_comma_parenthesis(parent, params, lambda);
     function lambda(param) {
-      html_code_identifier(parent, param);
+      app_code_refresh_function_node_identifier_add(parent, param, args);
     }
     let body3 = object_property_get(node, "body");
     app_code_refresh_function_node(
