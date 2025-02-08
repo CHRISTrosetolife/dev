@@ -17,7 +17,7 @@ export async function sandbox_4() {
   let url = string_combine_multiple([
     "https://www.bohol.ph/diksyunaryo.php?sw=god&lang=English",
   ]);
-  await each_log_async(filtered, async (url) => {
+  await each_log_async(filtered2, async (url) => {
     await http_cache(url);
   });
 }
