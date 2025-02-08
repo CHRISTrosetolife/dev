@@ -1,3 +1,4 @@
+import { object_merge } from "./object_merge.mjs";
 import { app_code_refresh_function_node_block } from "./app_code_refresh_function_node_block.mjs";
 import { string_is } from "./string_is.mjs";
 import { js_keyword_await } from "./js_keyword_await.mjs";
@@ -31,7 +32,12 @@ export function app_code_refresh_function_node(args) {
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
     each(body, async (b) => {
-      app_code_refresh_function_node_section(parent, b, false);
+      app_code_refresh_function_node_section(
+        object_merge(args, {
+          node: b,
+        }),
+        false,
+      );
     });
   } else if (js_node_type_is(node, "ImportDeclaration")) {
     let source = object_property_get(node, "source");
