@@ -1,11 +1,6 @@
+import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { functions_contents } from "./functions_contents.mjs";
-import { object_property_set } from "./object_property_set.mjs";
 export async function functions_source_get() {
   let mapped = await functions_contents();
-  let result = {};
-  for (let fc of mapped) {
-    let { file_path, contents } = fc;
-    object_property_set(result, file_path, contents);
-  }
-  return result;
+  return list_to_lookup_key_value_property(mapped, "file_path", "contents");
 }
