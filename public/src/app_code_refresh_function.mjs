@@ -1,3 +1,4 @@
+import { html_style } from "./html_style.mjs";
 import { app_code_refresh_function_node } from "./app_code_refresh_function_node.mjs";
 import { html_style_left } from "./html_style_left.mjs";
 import { app_code_refresh_function_menu } from "./app_code_refresh_function_menu.mjs";
@@ -22,6 +23,10 @@ export async function app_code_refresh_function(context) {
     html_style_left(root);
     let b = html_button(root, "Function menu", () => {
       app_code_refresh_function_menu(context);
+    });
+    html_style(b, {
+      top: 0,
+      position: "sticky",
     });
     let files = await app_code_files_get();
     let function_selected = storage_local_get_context(
