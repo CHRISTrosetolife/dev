@@ -70,8 +70,8 @@ export function app_code_refresh_function_node(parent, node) {
     let body3 = object_property_get(node, "body");
     app_code_refresh_function_node(parent, body3);
   } else if (js_node_type_is(node, "BlockStatement")) {
-    html_span_text(parent, " {");
     let body2 = object_property_get(node, "body");
+    html_span_text(parent, " {");
     each(body2, (b) => {
       app_code_refresh_function_node_section(parent, b, true);
     });
