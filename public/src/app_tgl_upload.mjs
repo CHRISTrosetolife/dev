@@ -1,3 +1,4 @@
+import { each_async } from "./each_async.mjs";
 import { english_words_dictionary } from "./english_words_dictionary.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -25,8 +26,9 @@ import { string_starts_with } from "./string_starts_with.mjs";
 import { string_ends_with } from "./string_ends_with.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 export async function app_tgl_upload() {
-  let filtered2 = await english_words_dictionary();
   let limit = 100;
+  let filtered2 = await english_words_dictionary();
+  await each_async(list, async (item) => {});
   let p = await definition_bohol("the");
   let center = html_parse_visit_id(p, "center");
   let contents = html_parse_visit_class_single(center, "contents");
