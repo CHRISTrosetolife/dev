@@ -1,3 +1,4 @@
+import { apps_list_generate } from "./apps_list_generate.mjs";
 import { app_html_path_dev } from "./app_html_path_dev.mjs";
 import { each_async } from "./each_async.mjs";
 import { file_delete_if_exists } from "./file_delete_if_exists.mjs";
@@ -10,4 +11,5 @@ export async function app_remove(name) {
   await each_async([app_html_path, app_html_path_dev], async (fn) => {
     await file_delete_if_exists(fn(name));
   });
+  await apps_list_generate();
 }
