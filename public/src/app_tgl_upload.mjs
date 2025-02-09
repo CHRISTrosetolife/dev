@@ -23,7 +23,7 @@ export async function app_tgl_upload() {
   let td = html_parse_visit_tag_list(tr_first, "td");
   let languages = list_map(td, html_parse_text);
   log({
-    table,
+    languages,
   });
   return;
   let from = "tgl";
