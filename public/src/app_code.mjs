@@ -22,7 +22,13 @@ export async function app_code() {
   let on_renames = file_rename_on_renames();
   let body = html_style_default_initialize();
   let root = html_div(body);
-  await html_scripts_load(body, ["axios", "acorn", "astring"]);
+  await html_scripts_load(body, [
+    "axios",
+    "acorn",
+    "astring",
+    "prettier_standalone",
+    "prettier_parser_babel",
+  ]);
   let app_fn = app_code;
   let context = {
     root,
