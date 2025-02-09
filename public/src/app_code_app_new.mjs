@@ -19,5 +19,5 @@ export function app_code_app_new(context) {
       next();
     },
   );
-  html_focus(object_property_get(object, "property_name"));
+  html_focus(object_property_get(ib, "button"));
 }
