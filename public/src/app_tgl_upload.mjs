@@ -44,25 +44,27 @@ export async function app_tgl_upload() {
   assert(equal_json, [languages, expected]);
   let en_index = list_index(expected, en);
   let tgl_index = list_index(expected, tgl);
-  list_adder((la) => {});
-  each(remaining, (row) => {
-    let row_tds = html_parse_visit_tag_list(row, "td");
-    assert(list_size_equal, [row, expected]);
-    let td_en = list_get(row_tds, en_index);
-    let a_en = html_parse_visit_tag_single(td_en, "a");
-    let word_en = html_parse_text(a_en);
-    word_en = string_trim_whitespace(word_en);
-    let td_tgl = list_get(row_tds, tgl_index);
-    let as_tgl = html_parse_visit_tag_list(td_tgl, "a");
-    list_map(as_tgl, (a_tgl) => {
-      let href = html_parse_href(a_tgl);
-      assert(string_starts_with, [href, "diksyunaryo.php?sw="]);
-      assert(string_ends_with, [
-        tgl,
-        string_combine_multiple(["&amp;lang=", tgl]),
-      ]);
-      let word_tgl = html_parse_text(a_tgl);
-      word_tgl = string_trim_whitespace(word_tgl);
+  list_adder((la) => {
+    each(remaining, (row) => {
+      let row_tds = html_parse_visit_tag_list(row, "td");
+      assert(list_size_equal, [row, expected]);
+      let td_en = list_get(row_tds, en_index);
+      let a_en = html_parse_visit_tag_single(td_en, "a");
+      let word_en = html_parse_text(a_en);
+      word_en = string_trim_whitespace(word_en);
+      let td_tgl = list_get(row_tds, tgl_index);
+      let as_tgl = html_parse_visit_tag_list(td_tgl, "a");
+      list_map(as_tgl, (a_tgl) => {
+        let href = html_parse_href(a_tgl);
+        assert(string_starts_with, [href, "diksyunaryo.php?sw="]);
+        assert(string_ends_with, [
+          tgl,
+          string_combine_multiple(["&amp;lang=", tgl]),
+        ]);
+        let word_tgl = html_parse_text(a_tgl);
+        word_tgl = string_trim_whitespace(word_tgl);
+        la([word_tgl, word_en]);
+      });
     });
   });
   log({
