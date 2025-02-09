@@ -1,3 +1,4 @@
+import { html_span_text_emoji_ear } from "./html_span_text_emoji_ear.mjs";
 import { app_language_audio_unawait } from "./app_language_audio_unawait.mjs";
 import { html_style_flex_1 } from "./html_style_flex_1.mjs";
 import { html_style_flex_row_centered } from "./html_style_flex_row_centered.mjs";
@@ -287,7 +288,7 @@ export async function app_language_2_refresh_learn(context) {
     let word = app_language_2_word_p(body, language, text_word);
     if (language === "tgl") {
       let container2 = object_property_get(word, "container");
-      html_span_text(container2, string_combine_multiple([" "]));
+      html_span_text_emoji_ear(container2);
       app_language_audio_unawait(language, text_word);
     }
   }
