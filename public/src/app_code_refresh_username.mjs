@@ -16,15 +16,11 @@ export function app_code_refresh_username(context) {
     "If you do not want to store data for later, you may skip this",
     "At this time there are no passwords. You should choose a unique username or someone could overwrite your data.",
   ]);
-  let conditions = [
-    html_condition_empty_not(),
-    html_condition_letters_numbers_underscores(),
-  ];
   let button_text = "Save";
   html_input_validated_button(
     root,
     "Username",
-    conditions,
+    [html_condition_empty_not(), html_condition_letters_numbers_underscores()],
     button_text,
     on_submit,
   );
