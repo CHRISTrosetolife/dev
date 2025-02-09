@@ -284,9 +284,9 @@ export async function app_language_2_refresh_learn(context) {
         html_remove(choice_div);
         html_remove(b);
       }
-      async function on_answer_match(b) {
+      async function on_answer_match(button) {
         decrease_wait();
-        html_style_success(b);
+        html_style_success(button);
         if (correct) {
           app_language_2_learn_success(context, v, true);
         } else {
