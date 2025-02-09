@@ -46,6 +46,6 @@ export async function audio_upload(language, text) {
     },
   );
   return object_merge_strict(list_any_created(results), {
-    file_paths: list_map_property(result, "output_path"),
+    file_paths: list_map_property(results, "output_path"),
   });
 }
