@@ -99,15 +99,17 @@ export async function app_language_2_refresh_learn(context) {
       list_size(list_filter_property(values_skip_manual, "learning", true)),
       list_size(values_skip_manual),
     );
-    app_language_2_tutorial_message(
-      context,
-      string_combine_multiple([
-        "If you see the ",
-        emoji_ear(),
-        " emoji, then if you tap or click on the word, audio will play",
-      ]),
-      root,
-    );
+    if (false) {
+      app_language_2_tutorial_message(
+        context,
+        string_combine_multiple([
+          "If you see the ",
+          emoji_ear(),
+          " emoji, then if you tap or click on the word, audio will play",
+        ]),
+        root,
+      );
+    }
     html_p_text(root, "Remember this:");
     let question_component2 = app_language2_word_titled(
       root,
