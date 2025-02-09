@@ -15,7 +15,7 @@ export async function app_tgl_upload() {
     "width",
     "100%",
   );
-  html_parse_visit_tag_list(table);
+  let trs = html_parse_visit_tag_list(table, "tr");
   log({
     table,
   });
