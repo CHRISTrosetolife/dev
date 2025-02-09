@@ -13,7 +13,7 @@ import { integer_random } from "./integer_random.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export async function app_language_audio(language, text) {
   assert_arguments_length(arguments, 2);
-  let { voices } = await audio_language(language);
+  let { voices } = audio_language(language);
   let counts = global_function(app_language_audio);
   let voices_index_last = list_index_last(voices);
   let count = object_property_initialize(
