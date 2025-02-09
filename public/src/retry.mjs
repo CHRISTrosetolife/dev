@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { sleep } from "./sleep.mjs";
 import { error } from "./error.mjs";
@@ -10,6 +11,7 @@ export async function retry(retries, lambda, retry_if_lambda) {
     retries--;
     try {
       let result = await lambda();
+      log({});
       return result;
     } catch (e) {
       if (retry_if_lambda(e)) {
