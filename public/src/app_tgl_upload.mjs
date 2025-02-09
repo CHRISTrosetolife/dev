@@ -31,7 +31,7 @@ export async function app_tgl_upload() {
   let filtered2 = await english_words_dictionary();
   let taken = list_take(filtered2, limit);
   let words = await list_adder_async(async (la) => {
-    await each_async(filtered2, async (w) => {
+    await each_async(taken, async (w) => {
       let p = await definition_bohol(w);
       let center = html_parse_visit_id(p, "center");
       let contents = html_parse_visit_class_single(center, "contents");
