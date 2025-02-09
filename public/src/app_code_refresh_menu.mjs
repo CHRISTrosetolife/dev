@@ -1,6 +1,4 @@
-import { list_filter_ends_with } from "./list_filter_ends_with.mjs";
-import { app_extension_html } from "./app_extension_html.mjs";
-import { app_code_files_get } from "./app_code_files_get.mjs";
+import { app_code_html_file_paths_get } from "./app_code_html_file_paths_get.mjs";
 import { html_load } from "./html_load.mjs";
 import { app_code_refresh_functions_recent } from "./app_code_refresh_functions_recent.mjs";
 import { app_code_functions_recent_get } from "./app_code_functions_recent_get.mjs";
@@ -16,7 +14,6 @@ import { storage_local_remove } from "./storage_local_remove.mjs";
 import { app_code } from "./app_code.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_code_refresh_username } from "./app_code_refresh_username.mjs";
-import { object_properties } from "./object_properties.mjs";
 export async function app_code_refresh_menu(context) {
   await html_load(async () => {
     let root = app_code_screen_set(context, fn_name("app_code_refresh_menu"));
@@ -41,12 +38,7 @@ export async function app_code_refresh_menu(context) {
         app_code_refresh_username(context);
       });
     }
-    let files = await app_code_files_get();
-    let file_paths = object_properties(files);
-    let file_paths_html = list_filter_ends_with(
-      file_paths,
-      app_extension_html(),
-    );
+    let file_paths_html = await app_code_html_file_paths_get();
     if (list_empty_not_is(file_paths_html)) {
       html_button(parent, "HTML files", () => {});
     }
