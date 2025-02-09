@@ -1,3 +1,4 @@
+import { list_unique_json } from "./list_unique_json.mjs";
 import { each_log_async } from "./each_log_async.mjs";
 import { list_take } from "./list_take.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
@@ -87,6 +88,7 @@ export async function app_tgl_upload() {
       });
     });
   });
+  words = list_unique_json(words);
   return words;
   let from = "tgl";
   let to = "en";
