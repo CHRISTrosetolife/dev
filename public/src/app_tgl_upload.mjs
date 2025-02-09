@@ -1,3 +1,4 @@
+import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_to_lookup_key_value } from "./list_to_lookup_key_value.mjs";
 import { string_parenthesis_remove } from "./string_parenthesis_remove.mjs";
@@ -109,6 +110,7 @@ export async function app_tgl_upload() {
     list_first,
     (pair, result) => {
       let key = list_first(pair);
+      let value = list_second(pair);
     },
   );
   return pairs;
