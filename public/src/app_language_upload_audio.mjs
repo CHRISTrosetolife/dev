@@ -13,12 +13,11 @@ export async function app_language_upload_audio(group, from) {
       group,
     });
     let mapped = list_map(chunk, async (atom) => {
-      let mapped2 = list_map(atom, async (pair) => {
+      let createds = list_map_async(atom, async (pair) => {
         let b = list_first(pair);
         let r = await audio_upload(from, b);
         return r;
       });
-      let createds = await list_wait(mapped2);
       return list_any_created(createds);
     });
     let createds = await list_wait(mapped);
