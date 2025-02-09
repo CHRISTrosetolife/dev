@@ -78,10 +78,6 @@ export async function app_tgl_upload() {
         let href = html_parse_href(a_tgl);
         assert(string_starts_with, [href, "diksyunaryo.php?sw="]);
         let words_tgl = html_parse_text(a_tgl);
-        let split = string_split_comma(words_tgl);
-        if (list_size(split) >= 3) {
-          return;
-        }
         if (!string_includes(words_tgl, "'")) {
           assert(string_ends_with, [
             href,
@@ -92,6 +88,10 @@ export async function app_tgl_upload() {
           let word_tgl = string_parenthesis_remove(s);
           word_tgl = string_trim_whitespace(word_tgl);
           if (string_empty_is(word_tgl)) {
+            return;
+          }
+          let split = string_split_comma(word_tgl);
+          if (list_size(split) >= 3) {
             return;
           }
           la([word_tgl, word_en]);
