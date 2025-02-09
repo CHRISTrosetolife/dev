@@ -1,3 +1,4 @@
+import { object_property_exists } from "./object_property_exists.mjs";
 import { html_attribute_get } from "./html_attribute_get.mjs";
 import { html_attribute_has } from "./html_attribute_has.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -7,7 +8,7 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { html_scrollable_hide } from "./html_scrollable_hide.mjs";
 import { global_function } from "./global_function.mjs";
 export function html_id(component) {
-  if (false) {
+  if (!object_property_exists(object, "property_name")) {
   }
   if (html_attribute_has(component, "id")) {
     return html_attribute_get(component, "id");
