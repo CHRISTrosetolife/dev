@@ -1,1 +1,1 @@
-export function app_code_refresh_htmls() {}
+export function app_code_refresh_htmls(context) {}
