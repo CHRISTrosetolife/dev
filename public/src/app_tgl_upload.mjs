@@ -9,7 +9,7 @@ export async function app_tgl_upload() {
   let p = await definition_bohol("the");
   let center = html_parse_visit_id(p, "center");
   let contents = html_parse_visit_class_single(center, "contents");
-  html_parse_visit_attribute_value_single();
+  html_parse_visit_attribute_value_single(contents, "width", "100%");
   log({
     contents,
   });
