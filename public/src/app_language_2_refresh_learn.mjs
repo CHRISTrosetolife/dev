@@ -297,6 +297,8 @@ export async function app_language_2_refresh_learn(context) {
         } else {
           app_language_2_wrong(context, v, gap_initial, wait_initial);
         }
+        if (false) {
+        }
         await app_language_2_on_answer(context, word, recent_count);
       }
       each([b, b2], (bi) => {
