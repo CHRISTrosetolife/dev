@@ -1,5 +1,5 @@
 export function string_html_escape(s) {
-  return unsafe
+  return s
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
