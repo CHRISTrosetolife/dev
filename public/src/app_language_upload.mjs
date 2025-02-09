@@ -53,7 +53,7 @@ export async function app_language_upload(from) {
         return;
       }
       if (audio_upload_run) {
-        await app_language_upload_audio(group, profile);
+        await app_language_upload_audio(group, profile.from);
       }
       if (audio_only) {
         return;
