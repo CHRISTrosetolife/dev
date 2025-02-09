@@ -4,7 +4,8 @@ import { html_on_click } from "./html_on_click.mjs";
 import { html_span_text_emoji_ear } from "./html_span_text_emoji_ear.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export function app_language_2_audio(word, langua2ge, text2) {
-  let { language, text } = word;
+  let text3 = object_property_get(word, "text");
+  let language2 = object_property_get(word, "language");
   if (language === "tgl") {
     let container = object_property_get(word, "container");
     html_span_text_emoji_ear(container);
