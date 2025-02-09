@@ -15,7 +15,7 @@ export async function app_code() {
     apps_list_name: fn_name("apps_list"),
   }));
   let on_rename = (file_name_from, file_name_to) => {
-    object_property_get(object, "property_name");
+    let apps_list_name = object_property_get(g, "apps_list_name");
   };
   let on_renames = file_rename_on_renames();
   let body = html_style_default_initialize();
