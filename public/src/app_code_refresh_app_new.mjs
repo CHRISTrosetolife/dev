@@ -20,5 +20,5 @@ export function app_code_refresh_app_new(context) {
     "Save",
     function on_submit(value) {},
   );
-  html_focus(object_property_get(ib, "button"));
+  html_focus(object_property_get(ib, "input"));
 }
