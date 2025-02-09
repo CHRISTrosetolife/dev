@@ -70,6 +70,11 @@ export async function app_language_2_refresh_learn(context) {
     app_language_2_refresh_learn_value_choose_initial(context);
   let { v, wait_initial, gap_initial, learn_new, u } =
     app_language_2_refresh_learn_value_choose(values);
+  let language_other = app_language_2_other(
+    language,
+    language_learn,
+    language_fluent,
+  );
   if (learn_new) {
     app_language_2_tutorial_message(
       context,
@@ -89,12 +94,7 @@ export async function app_language_2_refresh_learn(context) {
     );
     html_p_text(root, "Remember this:");
     app_language2_word_titled(root, "Question", language, question);
-    app_language2_word_titled(
-      root,
-      "Answer",
-      app_language_2_other(language, language_learn, language_fluent),
-      answer_text,
-    );
+    app_language2_word_titled(root, "Answer", language_other, answer_text);
     html_br2(root);
     app_language_2_tutorial_message(
       context,
@@ -139,11 +139,6 @@ export async function app_language_2_refresh_learn(context) {
     });
     let question = object_property_get(word, "question");
     let mapped = app_language_2_answers(values_skip_manual, v);
-    let language_other = app_language_2_other(
-      language,
-      language_learn,
-      language_fluent,
-    );
     let va_filtered2 = list_filter_property(values_all, "learning", true);
     let va_words = list_map_property(va_filtered2, "word");
     let va_filtered = list_filter_property(
