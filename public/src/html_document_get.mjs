@@ -1,3 +1,3 @@
 export function html_document_get() {
-  return document;
+  return html_element_wrap(document);
 }
