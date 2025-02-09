@@ -270,18 +270,18 @@ export async function app_language_2_refresh_learn(context) {
       let { container } = word_component;
       html_style_flex_1(container);
       let b = html_button_text_click(row, emoji_right, async () => {
-        decrease_wait();
         if (c === answer_text) {
+          decrease_wait();
           html_style_success(b);
           if (correct) {
             app_language_2_learn_success(context, v, true);
           } else {
-            html_style_wrong(b);
             app_language_2_wrong(context, v, gap_initial, wait_initial);
             await app_language_2_on_answer(context, word, recent_count);
           }
         } else {
           correct = false;
+          html_style_wrong(b);
         }
       });
       each([b, b2], (bi) => {
