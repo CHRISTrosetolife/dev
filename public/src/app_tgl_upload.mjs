@@ -105,11 +105,10 @@ export async function app_tgl_upload() {
     });
   });
   pairs = list_unique_json(pairs);
-  let value_mapper = list_second;
   let dictionary = list_to_lookup_key_value_list(
     pairs,
     list_first,
-    value_mapper,
+    list_second,
   );
   return dictionary;
   let from = "tgl";
