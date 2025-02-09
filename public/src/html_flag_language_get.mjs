@@ -4,6 +4,7 @@ import { html_flag_ph } from "./html_flag_ph.mjs";
 export function html_flag_language_get(language) {
   let languages_to_flags = {
     ceb: html_flag_ph(),
+    tgl: html_flag_ph(),
     en: html_flag_us(),
   };
   let g = object_property_get(languages_to_flags, language);
