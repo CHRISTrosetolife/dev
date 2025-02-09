@@ -1,3 +1,4 @@
+import { string_split_comma } from "./string_split_comma.mjs";
 import { list_unique_json } from "./list_unique_json.mjs";
 import { each_log_async } from "./each_log_async.mjs";
 import { list_take } from "./list_take.mjs";
@@ -73,7 +74,7 @@ export async function app_tgl_upload() {
         let a_tgl = html_parse_visit_tag_single(td_tgl, "a");
         let href = html_parse_href(a_tgl);
         assert(string_starts_with, [href, "diksyunaryo.php?sw="]);
-        let split = list_split_comma(words_tgl);
+        let split = string_split_comma(words_tgl);
         if (!string_includes(split, "'")) {
           assert(string_ends_with, [
             href,
