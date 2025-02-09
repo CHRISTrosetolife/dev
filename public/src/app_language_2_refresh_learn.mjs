@@ -290,5 +290,8 @@ export async function app_language_2_refresh_learn(context) {
     if (language === "tgl") {
       let container2 = object_property_get(word, "container");
       html_span_text_emoji_ear(container2);
-      html_on_click(container2,$a);
+      html_on_click(container2, () => {});
       app_language_audio_unawait(language, text_word);
+    }
+  }
+}
