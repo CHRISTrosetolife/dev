@@ -11,6 +11,7 @@ import { app_language_group_upload } from "./app_language_group_upload.mjs";
 import { app_language_upload_result } from "./app_language_upload_result.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { equal_json } from "./equal_json.mjs";
+import { list_index } from "./list_index.mjs";
 export async function app_tgl_upload() {
   let p = await definition_bohol("the");
   let center = html_parse_visit_id(p, "center");
@@ -26,10 +27,10 @@ export async function app_tgl_upload() {
   let languages = list_map(td, html_parse_text);
   let en = "English";
   let tgl = "Tagalog";
-  assert(equal_json, [
-    languages,
-    [en, "Grammar", "Cebuano", tgl, "Hiligaynon"],
-  ]);
+  let expected = [en, "Grammar", "Cebuano", tgl, "Hiligaynon"];
+  assert(equal_json, [languages, expected]);
+  let en_index = list_index(expected, en);
+  let tgl_index = list_index(expected, tgl);
   log({
     languages,
   });
