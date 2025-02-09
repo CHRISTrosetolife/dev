@@ -28,7 +28,6 @@ export function apps_list() {
     "share",
     "sleep",
     "test",
-    "tg",
     "todo",
     "yyy8Uu",
   ];
