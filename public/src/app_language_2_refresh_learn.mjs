@@ -258,12 +258,7 @@ export async function app_language_2_refresh_learn(context) {
         app_language_2_wrong(context, v, gap_initial, wait_initial);
         await app_language_2_on_answer(context, word, recent_count);
       });
-      let { container } = app_language_2_word(
-        row,
-        app_language_2_other(language, language_learn, language_fluent),
-        c,
-        false,
-      );
+      let { container } = app_language_2_word(row, language_other, c, false);
       html_style_flex_1(container);
       let b = html_button_text_click(row, emoji_right, async () => {
         decrease_wait();
