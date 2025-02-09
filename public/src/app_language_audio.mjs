@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { html_overlay } from "./html_overlay.mjs";
 import { html_interacted } from "./html_interacted.mjs";
 import { storage_url_audio } from "./storage_url_audio.mjs";
@@ -32,6 +33,7 @@ export async function app_language_audio(language, text) {
   let url = await storage_url_audio(language, count, text);
   if (!html_interacted()) {
     let overlay = html_overlay();
+    html_button(overlay, "Press button to enable audio");
   }
   return await html_audio(url);
 }
