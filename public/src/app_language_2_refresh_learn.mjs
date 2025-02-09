@@ -96,6 +96,11 @@ export async function app_language_2_refresh_learn(context) {
       list_size(list_filter_property(values_skip_manual, "learning", true)),
       list_size(values_skip_manual),
     );
+    app_language_2_tutorial_message(
+      context,
+      string_combine_multiple(["If you see the "]),
+      root,
+    );
     html_p_text(root, "Remember this:");
     app_language2_word_titled(root, "Question", language, question);
     app_language2_word_titled(root, "Answer", language_other, answer_text);
