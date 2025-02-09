@@ -25,7 +25,7 @@ export async function app_tgl_upload() {
   let trs = html_parse_visit_tag_list(table, "tr");
   let fr = list_first_remaining(trs);
   let remaining = object_property_get(fr, "remaining");
-  let first = object_property_get(fr, "first");
+  let tr_first = object_property_get(fr, "first");
   let td = html_parse_visit_tag_list(tr_first, "td");
   let languages = list_map(td, html_parse_text);
   let en = "English";
