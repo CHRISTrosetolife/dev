@@ -18,6 +18,7 @@ export async function app_tgl_upload() {
   );
   let trs = html_parse_visit_tag_list(table, "tr");
   let tr_first = list_first(trs);
+  let td = html_parse_visit_tag_list(tr_first, "td");
   log({
     table,
   });
