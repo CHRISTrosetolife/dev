@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { global_function_initialize } from "./global_function_initialize.mjs";
 import { functions_paths } from "./functions_paths.mjs";
 import { function_rename_fn_name } from "./function_rename_fn_name.mjs";
@@ -72,4 +73,5 @@ export async function function_rename(fn_name_from, fn_name_to) {
   let g = global_function_initialize(function_rename, () => ({
     on_renames: [],
   }));
+  each(list, (item) => {});
 }
