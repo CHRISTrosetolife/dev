@@ -1,3 +1,4 @@
+import { log_json } from "./log_json.mjs";
 import { log } from "./log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_wait } from "./list_wait.mjs";
@@ -8,7 +9,7 @@ import { list_map } from "./list_map.mjs";
 import { list_chunk_each } from "./list_chunk_each.mjs";
 export async function app_language_upload_audio(group, from) {
   await list_chunk_each(group, async function each_chunk(chunk) {
-    log({
+    log_json({
       group,
     });
     return;
