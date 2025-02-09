@@ -8,7 +8,7 @@ import { html_interacted } from "./html_interacted.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 export function html_interacted_initialize() {
   let g = global_function(html_interacted);
-  let interacted = object_property_initialize(g, "interacted", false);
+  object_property_initialize(g, "interacted", false);
   let start = true;
   each([html_on_keydown, html_on_click], (on) => {
     on(html_document_get(), () => {
