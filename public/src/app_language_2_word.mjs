@@ -8,8 +8,8 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_flag_language } from "./html_flag_language.mjs";
 import { html_style } from "./html_style.mjs";
-export function app_language_2_word(body, language, text, boxed) {
-  let container = html_span(body);
+export function app_language_2_word(parent, language, text, boxed) {
+  let container = html_span(parent);
   let box = html_span(container);
   let color;
   if (boxed) {
