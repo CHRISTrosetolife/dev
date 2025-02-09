@@ -36,7 +36,7 @@ export async function app_tgl_upload() {
   let limit = 100;
   let filtered2 = await english_words_dictionary();
   let taken = list_take(filtered2, limit);
-  let words = await list_adder_async(async (la) => {
+  let pairs = await list_adder_async(async (la) => {
     await each_log_async(taken, async (w) => {
       let p = await definition_bohol(w);
       let center = html_parse_visit_id(p, "center");
@@ -101,8 +101,8 @@ export async function app_tgl_upload() {
       });
     });
   });
-  words = list_unique_json(words);
-  return words;
+  pairs = list_unique_json(pairs);
+  return pairs;
   let from = "tgl";
   let to = "en";
   let result_new = app_language_upload_result(atoms, {
