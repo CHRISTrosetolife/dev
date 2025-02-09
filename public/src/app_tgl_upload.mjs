@@ -35,6 +35,8 @@ export async function app_tgl_upload() {
       let center = html_parse_visit_id(p, "center");
       let contents = html_parse_visit_class_single(center, "contents");
       let contents_text = html_parse_text(contents);
+      if (false) {
+      }
       let table = html_parse_visit_attribute_value_single(
         contents,
         "width",
