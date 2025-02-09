@@ -34,7 +34,10 @@ export async function app_language_audio(language, text) {
   if (!html_interacted()) {
     let overlay = html_overlay();
     let text = "Press this button to enable audio";
-    html_button(overlay, text, () => {});
+    await new Promise((resolve) => {
+      let b = html_button(overlay, text, on_click);
+      resolve(b);
+    });
   }
   return await html_audio(url);
 }
