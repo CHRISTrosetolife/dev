@@ -1,7 +1,6 @@
+import { html_condition_identifier_fn_part } from "./html_condition_identifier_fn_part.mjs";
 import { app_code } from "./app_code.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
-import { html_condition_letters_numbers_underscores } from "./html_condition_letters_numbers_underscores.mjs";
-import { html_condition_empty_not } from "./html_condition_empty_not.mjs";
 import { html_input_validated_button } from "./html_input_validated_button.mjs";
 import { html_button } from "./html_button.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
@@ -19,7 +18,7 @@ export function app_code_refresh_username(context) {
   html_input_validated_button(
     root,
     "Username",
-    [html_condition_empty_not(), html_condition_letters_numbers_underscores()],
+    html_condition_identifier_fn_part(),
     "Save",
     function on_submit(value) {
       storage_local_set(app_code, "username", value);
