@@ -64,7 +64,7 @@ export async function app_tgl_upload() {
         assert(string_starts_with, [href, "diksyunaryo.php?sw="]);
         assert(string_ends_with, [
           href,
-          string_combine_multiple(["&amp;lang=", tgl]),
+          string_combine_multiple(["&lang=", tgl]),
         ]);
         let word_tgl = html_parse_text(a_tgl);
         word_tgl = string_trim_whitespace(word_tgl);
