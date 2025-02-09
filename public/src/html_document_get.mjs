@@ -1,1 +1,3 @@
-export function html_document_get() {}
+export function html_document_get() {
+  return document;
+}
