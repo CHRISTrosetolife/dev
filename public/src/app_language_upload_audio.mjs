@@ -11,6 +11,7 @@ export async function app_language_upload_audio(group, from) {
     log({
       group,
     });
+    return;
     let mapped = list_map(chunk, async (atom) => {
       let mapped2 = list_map(atom, async (pair) => {
         let b = list_first(pair);
