@@ -1,3 +1,4 @@
+import { emoji_ear } from "./emoji_ear.mjs";
 import { app_language_audio } from "./app_language_audio.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { html_span_text_emoji_ear } from "./html_span_text_emoji_ear.mjs";
@@ -98,7 +99,11 @@ export async function app_language_2_refresh_learn(context) {
     );
     app_language_2_tutorial_message(
       context,
-      string_combine_multiple(["If you see the "]),
+      string_combine_multiple([
+        "If you see the ",
+        emoji_ear(),
+        " emoji, then if you tap or click on the word, audio will play",
+      ]),
       root,
     );
     html_p_text(root, "Remember this:");
