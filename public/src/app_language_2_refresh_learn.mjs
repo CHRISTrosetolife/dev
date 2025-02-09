@@ -273,7 +273,9 @@ export async function app_language_2_refresh_learn(context) {
         decrease_wait();
         if (c === answer_text) {
           html_style_success(b);
-          app_language_2_learn_success(context, v, true);
+          if (false) {
+            app_language_2_learn_success(context, v, true);
+          }
         } else {
           correct = false;
           html_style_wrong(b);
