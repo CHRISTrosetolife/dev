@@ -1,4 +1,4 @@
-import { http_cache } from "./http_cache.mjs";
+import { html_cache_parse } from "./html_cache_parse.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function definition_bohol(word) {
   let url = string_combine_multiple([
@@ -6,6 +6,6 @@ export async function definition_bohol(word) {
     word,
     "&lang=English",
   ]);
-  let result = await http_cache(url);
+  let result = await html_cache_parse(url);
   return result;
 }
