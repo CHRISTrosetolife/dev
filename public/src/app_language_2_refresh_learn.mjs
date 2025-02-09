@@ -1,3 +1,5 @@
+import { app_language_2_answer_delay } from "./app_language_2_answer_delay.mjs";
+import { html_div } from "./html_div.mjs";
 import { app_language_2_audio } from "./app_language_2_audio.mjs";
 import { emoji_ear } from "./emoji_ear.mjs";
 import { html_style_flex_1 } from "./html_style_flex_1.mjs";
@@ -61,6 +63,7 @@ import { html_span_text } from "./html_span_text.mjs";
 import { identity } from "./identity.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_chunk } from "./list_chunk.mjs";
+import { html_remove } from "./html_remove.mjs";
 export async function app_language_2_refresh_learn(context) {
   let { language_learn, language_fluent, root } = context;
   html_clear_scroll_top_centered(root);
@@ -233,6 +236,7 @@ export async function app_language_2_refresh_learn(context) {
     list_shuffle(choices);
     let correct = true;
     each(choices, (c) => {
+      let choice_div = html_div(quiz_container);
       let emoji_wrong = emoji_question();
       let emoji_right = emoji_check();
       app_language_2_tutorial_message(
@@ -282,6 +286,8 @@ export async function app_language_2_refresh_learn(context) {
         } else {
           correct = false;
           html_style_wrong(b);
+          await app_language_2_answer_delay();
+          html_remove();
         }
       });
       each([b, b2], (bi) => {
