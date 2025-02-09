@@ -5,7 +5,6 @@ import { app_code_refresh_function_change } from "./app_code_refresh_function_ch
 import { app_new } from "./app_new.mjs";
 import { html_condition_includes_not } from "./html_condition_includes_not.mjs";
 import { html_condition_identifier_fn_part } from "./html_condition_identifier_fn_part.mjs";
-import { apps_list } from "./apps_list.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_focus } from "./html_focus.mjs";
 import { html_input_validated_button } from "./html_input_validated_button.mjs";
@@ -17,7 +16,7 @@ export async function app_code_refresh_app_new(context) {
   let f_name = fn_name("apps_list");
   let f_source = await function_declarations_unparse([f_name]);
   let combined = string_combine_multiple([f_source, js_code_call(f_name)]);
-  let existing = apps_list();
+  let existing = eval(combined);
   let message = "not be the name of an existing app";
   let ib = html_input_validated_button(
     root,
