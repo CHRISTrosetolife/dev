@@ -298,7 +298,7 @@ export async function app_language_2_refresh_learn(context) {
         } else {
           app_language_2_wrong(context, v, gap_initial, wait_initial);
         }
-        if (app_language_2_audio_play_should(language)) {
+        if (app_language_2_audio_play_should(language_other)) {
           if (list_size(mapped) === 1) {
           }
         }
