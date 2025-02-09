@@ -38,6 +38,6 @@ export async function app_code_refresh_menu(context) {
         app_code_refresh_username(context);
       });
     }
-    await app_code_button_html_files();
+    await app_code_button_html_files(context);
   });
 }
