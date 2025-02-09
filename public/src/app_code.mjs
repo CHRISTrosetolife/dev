@@ -15,10 +15,10 @@ export async function app_code() {
     let g = global_function_initialize(app_code, () => ({
       apps_list_name: fn_name("apps_list"),
     }));
+    let on_rename = (file_name_from, file_name_to) => {
+      let apps_list_name = object_property_get(g, "apps_list_name");
+    };
   }
-  let on_rename = (file_name_from, file_name_to) => {
-    let apps_list_name = object_property_get(g, "apps_list_name");
-  };
   let on_renames = file_rename_on_renames();
   let body = html_style_default_initialize();
   let root = html_div(body);
