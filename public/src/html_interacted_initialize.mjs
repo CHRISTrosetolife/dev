@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { html_document_get } from "./html_document_get.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { global_function } from "./global_function.mjs";
@@ -8,7 +9,8 @@ export function html_interacted_initialize() {
   object_property_initialize(g, "initialized", false);
   let start = true;
   html_on_click(html_document_get(), () => {
-    if (false) {
+    if (start) {
+      object_property_set(g, "initialized", true);
     }
   });
 }
