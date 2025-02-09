@@ -19,4 +19,5 @@ export async function app_new(name) {
     file_write,
   );
   await apps_list_generate();
+  return name_prefixed;
 }
