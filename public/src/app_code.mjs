@@ -9,7 +9,7 @@ import { html_div } from "./html_div.mjs";
 import { html_scripts_load } from "./html_scripts_load.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 export async function app_code() {
-  let on_rename = () => {};
+  let on_rename = (file_name_from, file_name_to) => {};
   let on_renames = file_rename_on_renames();
   let body = html_style_default_initialize();
   let root = html_div(body);
