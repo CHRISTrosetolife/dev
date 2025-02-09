@@ -11,11 +11,11 @@ export function html_input_validated_button(
   on_submit,
 ) {
   let input = html_input_validated(root, placeholder, conditions);
-  let button_submit = html_button(root, button_text, () => {
+  let button = html_button(root, button_text, () => {
     let value = html_value_get(input);
     on_submit(value);
   });
   html_input_validated_on_input_lambda_initial(input, (valid) => {
-    html_button_enable_if(button_submit, valid);
+    html_button_enable_if(button, valid);
   });
 }
