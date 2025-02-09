@@ -8,6 +8,7 @@ import { fn_name } from "./fn_name.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { html_load } from "./html_load.mjs";
 import { html_style_left } from "./html_style_left.mjs";
+import { html_style_monospace } from "./html_style_monospace.mjs";
 export async function app_code_refresh_html(context) {
   await html_load(async () => {
     let root = app_code_screen_set(context, fn_name("app_code_refresh_html"));
@@ -18,5 +19,6 @@ export async function app_code_refresh_html(context) {
     let t = html_p_text(root, e);
     html_style_left(t);
     html_style_pre_wrap(t);
+    html_style_monospace(t);
   });
 }
