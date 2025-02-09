@@ -7,7 +7,7 @@ import { app_language_upload_result } from "./app_language_upload_result.mjs";
 export async function app_tgl_upload() {
   let p = await definition_bohol("the");
   let center = html_parse_visit_id(p, "center");
-  let contents = html_parse_visit_class_single(p, "contents");
+  let contents = html_parse_visit_class_single(center, "contents");
   log({
     contents,
   });
