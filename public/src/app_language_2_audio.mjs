@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_language_audio_unawait } from "./app_language_audio_unawait.mjs";
 import { app_language_audio } from "./app_language_audio.mjs";
 import { html_on_click } from "./html_on_click.mjs";
@@ -13,5 +14,8 @@ export function app_language_2_audio(word) {
       await app_language_audio(language, text);
     });
     app_language_audio_unawait(language, text);
+    log({
+      text,
+    });
   }
 }
