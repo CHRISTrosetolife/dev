@@ -1,3 +1,4 @@
+import { html_parse_href } from "./html_parse_href.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { list_size_equal } from "./list_size_equal.mjs";
 import { each } from "./each.mjs";
@@ -46,7 +47,9 @@ export async function app_tgl_upload() {
     let word_en = html_parse_text(a_en);
     let td_tgl = list_get(row_tds, tgl_index);
     let as_tgl = html_parse_visit_tag_list(td_tgl, "a");
-    list_map(as_tgl, (a_tgl) => {});
+    list_map(as_tgl, (a_tgl) => {
+      let href = html_parse_href(a_tgl);
+    });
   });
   log({
     languages,
