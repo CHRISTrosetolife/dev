@@ -1,3 +1,4 @@
+import { object_merge_strict } from "./object_merge_strict.mjs";
 import { html_color_gray } from "./html_color_gray.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_style_rounded_padded_style } from "./html_style_rounded_padded_style.mjs";
@@ -23,7 +24,12 @@ export function app_language_2_word(body, language, text, boxed) {
   html_flag_language(box, language);
   html_span_text(container, string_combine_multiple([" ", text]));
   html_style_bold(container);
-  return {
+  let result = {
     container,
   };
+  object_merge_strict(result, {
+    language,
+    text,
+  });
+  return result;
 }
