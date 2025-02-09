@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { tautology } from "./tautology.mjs";
 import { retry } from "./retry.mjs";
 import { file_overwrite_binary } from "./file_overwrite_binary.mjs";
@@ -30,6 +31,7 @@ export async function gcloud_tts(
       audioEncoding: "MP3",
     },
   };
+  log({});
   let [response] = await retry(
     3,
     async () => await client.synthesizeSpeech(request),
