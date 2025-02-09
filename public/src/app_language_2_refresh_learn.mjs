@@ -263,6 +263,7 @@ export async function app_language_2_refresh_learn(context) {
         correct = false;
         if (c === answer_text) {
           await on_answer_match(b2);
+        } else {
         }
       });
       let word_component = app_language_2_word(row, language_other, c, false);
