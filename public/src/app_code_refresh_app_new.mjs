@@ -21,8 +21,8 @@ export function app_code_refresh_app_new(context) {
     ]),
     "New app",
     async function on_submit(value) {
-      await app_new(value);
-      await app_code_refresh_function_change(context, fr);
+      let f_name = await app_new(value);
+      await app_code_refresh_function_change(context, f_name);
     },
   );
   html_focus(object_property_get(ib, "input"));
