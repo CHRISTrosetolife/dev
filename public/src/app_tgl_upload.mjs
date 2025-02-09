@@ -35,6 +35,7 @@ import { string_includes } from "./string_includes.mjs";
 import { list_size } from "./list_size.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
 import { string_split_space } from "./string_split_space.mjs";
+import { object_property_initialize } from "./object_property_initialize.mjs";
 export async function app_tgl_upload() {
   let limit = 100;
   let filtered2 = await english_words_dictionary();
@@ -111,6 +112,7 @@ export async function app_tgl_upload() {
     (pair, result) => {
       let key = list_first(pair);
       let value = list_second(pair);
+      let list = object_property_initialize(result, key, []);
     },
   );
   return pairs;
