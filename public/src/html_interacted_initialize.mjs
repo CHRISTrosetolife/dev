@@ -6,5 +6,5 @@ import { html_on_click } from "./html_on_click.mjs";
 export function html_interacted_initialize() {
   let g = global_function(html_interacted);
   object_property_initialize(g, "initialized", false);
-  html_on_click(html_document_get());
+  html_on_click(html_document_get(), () => {});
 }
