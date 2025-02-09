@@ -1,3 +1,4 @@
+import { app_extension_html } from "./app_extension_html.mjs";
 import { app_code_files_get } from "./app_code_files_get.mjs";
 import { html_load } from "./html_load.mjs";
 import { app_code_refresh_functions_recent } from "./app_code_refresh_functions_recent.mjs";
@@ -16,6 +17,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_code_refresh_username } from "./app_code_refresh_username.mjs";
 import { object_properties } from "./object_properties.mjs";
 import { list_filter } from "./list_filter.mjs";
+import { string_ends_with } from "./string_ends_with.mjs";
 export async function app_code_refresh_menu(context) {
   await html_load(async () => {
     let root = app_code_screen_set(context, fn_name("app_code_refresh_menu"));
@@ -42,6 +44,8 @@ export async function app_code_refresh_menu(context) {
     }
     let files = await app_code_files_get();
     let file_paths = object_properties(files);
-    let file_paths_html = list_filter(file_paths);
+    let file_paths_html = list_filter(file_paths, (p) =>
+      string_ends_with(p, app_extension_html()),
+    );
   });
 }
