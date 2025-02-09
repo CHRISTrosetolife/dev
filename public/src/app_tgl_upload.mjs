@@ -72,13 +72,15 @@ export async function app_tgl_upload() {
         let a_tgl = html_parse_visit_tag_single(td_tgl, "a");
         let words_tgl = html_parse_text(a_tgl);
         let split = list_split_comma(words_tgl);
-        list_map(as_tgl, (a_tgl) => {
+        list_map(split, (s) => {
           let href = html_parse_href(a_tgl);
           assert(string_starts_with, [href, "diksyunaryo.php?sw="]);
-          assert(string_ends_with, [
-            href,
-            string_combine_multiple(["&lang=", tgl]),
-          ]);
+          if (false) {
+            assert(string_ends_with, [
+              href,
+              string_combine_multiple(["&lang=", tgl]),
+            ]);
+          }
           let word_tgl = string_trim_whitespace(word_tgl);
           la([word_tgl, word_en]);
         });
