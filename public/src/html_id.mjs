@@ -7,6 +7,8 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { html_scrollable_hide } from "./html_scrollable_hide.mjs";
 import { global_function } from "./global_function.mjs";
 export function html_id(component) {
+  if (false) {
+  }
   if (html_attribute_has(component, "id")) {
     return html_attribute_get(component, "id");
   }
