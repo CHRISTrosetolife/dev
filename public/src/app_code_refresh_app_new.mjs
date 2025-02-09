@@ -1,3 +1,4 @@
+import { app_new } from "./app_new.mjs";
 import { html_condition_includes_not } from "./html_condition_includes_not.mjs";
 import { html_condition_identifier_fn_part } from "./html_condition_identifier_fn_part.mjs";
 import { apps_list } from "./apps_list.mjs";
@@ -18,7 +19,9 @@ export function app_code_refresh_app_new(context) {
       html_condition_includes_not(existing, message),
     ]),
     "New app",
-    function on_submit(value) {},
+    async function on_submit(value) {
+      await app_new(value);
+    },
   );
   html_focus(object_property_get(ib, "input"));
 }
