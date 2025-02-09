@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_parse_href } from "./html_parse_href.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { list_size_equal } from "./list_size_equal.mjs";
@@ -51,7 +52,7 @@ export async function app_tgl_upload() {
     list_map(as_tgl, (a_tgl) => {
       let href = html_parse_href(a_tgl);
       assert(string_starts_with, [href, "diksyunaryo.php?sw="]);
-      [("&amp;lang=", tgl)];
+      [string_combine_multiple(["&amp;lang=", tgl])];
     });
   });
   log({
