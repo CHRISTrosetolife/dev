@@ -16,7 +16,6 @@ export function app_code_refresh_username(context) {
     "If you do not want to store data for later, you may skip this",
     "At this time there are no passwords. You should choose a unique username or someone could overwrite your data.",
   ]);
-  let placeholder = "Username";
   let conditions = [
     html_condition_empty_not(),
     html_condition_letters_numbers_underscores(),
@@ -24,7 +23,7 @@ export function app_code_refresh_username(context) {
   let button_text = "Save";
   html_input_validated_button(
     root,
-    placeholder,
+    "Username",
     conditions,
     button_text,
     on_submit,
