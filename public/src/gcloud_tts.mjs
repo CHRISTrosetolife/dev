@@ -13,12 +13,12 @@ export async function gcloud_tts(
   text,
   output_path,
 ) {
-  assert(string_empty_not_is, [text]);
   if (await file_exists(output_path)) {
     return {
       created: false,
     };
   }
+  assert(string_empty_not_is, [text]);
   let client = new textToSpeech.TextToSpeechClient();
   let request = {
     input: {
