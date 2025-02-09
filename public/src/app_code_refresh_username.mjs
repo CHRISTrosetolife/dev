@@ -19,22 +19,28 @@ export function app_code_refresh_username(context) {
     "If you do not want to store data for later, you may skip this",
     "At this time there are no passwords. You should choose a unique username or someone could overwrite your data.",
   ]);
-  let input_username = html_input_validated(root, "Username", [
+  let placeholder = "Username";
+  let conditions = [
     html_condition_empty_not(),
     html_condition_letters_numbers_underscores(),
-  ]);
-  let button_save = html_button(root, "Save", () => {
-    let value = html_value_get(input_username);
-    storage_local_set(app_code, "username", value);
-    next();
+  ];
+  let button_text = "Save";
+  let input = html_input_validated(root, placeholder, conditions);
+  let button_submit = html_button(root, button_text, () => {
+    let value = html_value_get(input);
+    on_submit(value);
   });
-  html_input_validated_on_input_lambda_initial(input_username, (valid) => {
-    html_button_enable_if(button_save, valid);
+  html_input_validated_on_input_lambda_initial(input, (valid) => {
+    html_button_enable_if(button_submit, valid);
   });
   html_hr(root);
   html_button(root, "Skip", () => {
     next();
   });
+  function on_submit(value) {
+    storage_local_set(app_code, "username", value);
+    next();
+  }
   async function next() {
     await app_code_refresh_menu(context);
   }
