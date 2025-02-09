@@ -107,7 +107,13 @@ export async function app_language_2_refresh_learn(context) {
       root,
     );
     html_p_text(root, "Remember this:");
-    app_language2_word_titled(root, "Question", language, question);
+    let question_component2 = app_language2_word_titled(
+      root,
+      "Question",
+      language,
+      question,
+    );
+    app_language_2_audio(question_component2);
     app_language2_word_titled(root, "Answer", language_other, answer_text);
     html_br2(root);
     app_language_2_tutorial_message(
