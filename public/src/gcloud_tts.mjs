@@ -13,6 +13,7 @@ export async function gcloud_tts(
   output_path,
 ) {
   if (await file_exists(output_path)) {
+    log("no TTS");
     return {
       created: false,
     };
@@ -31,12 +32,13 @@ export async function gcloud_tts(
       audioEncoding: "MP3",
     },
   };
-  log({});
+  log("TTS");
   let [response] = await retry(
     3,
     async () => await client.synthesizeSpeech(request),
     tautology,
   );
+  log("TTS complete");
   let data = response.audioContent;
   await file_overwrite_binary(output_path, data);
   return {
