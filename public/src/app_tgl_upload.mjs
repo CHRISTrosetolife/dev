@@ -43,6 +43,7 @@ export async function app_tgl_upload() {
     assert(list_size_equal, [row, expected]);
     let td_en = list_get(row_tds, en_index);
     let as_en = html_parse_visit_tag_single(td_en, "a");
+    let word_en = html_parse_text(as_en);
     let td_tgl = list_get(row_tds, tgl_index);
     let as_td_tgl = html_parse_visit_tag_list(td_tgl, "a");
   });
