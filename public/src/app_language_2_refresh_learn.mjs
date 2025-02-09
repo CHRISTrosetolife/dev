@@ -1,3 +1,4 @@
+import { app_language_audio } from "./app_language_audio.mjs";
 import { app_language_2_recent_update } from "./app_language_2_recent_update.mjs";
 import { app_language_2_audio_play_should } from "./app_language_2_audio_play_should.mjs";
 import { app_language_2_answer_delay } from "./app_language_2_answer_delay.mjs";
@@ -304,6 +305,7 @@ export async function app_language_2_refresh_learn(context) {
           list_size(mapped) === 1 &&
           app_language_2_audio_play_should(language_other)
         ) {
+          await app_language_audio(language_other, answer_text);
         } else {
           await app_language_2_answer_delay();
         }
