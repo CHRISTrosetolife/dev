@@ -11,6 +11,7 @@ export function html_interacted_initialize() {
   html_on_click(html_document_get(), () => {
     if (start) {
       object_property_set(g, "initialized", true);
+      start = false;
     }
   });
 }
