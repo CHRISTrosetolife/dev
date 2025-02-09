@@ -29,6 +29,7 @@ import { string_ends_with } from "./string_ends_with.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { list_size } from "./list_size.mjs";
+import { string_empty_is } from "./string_empty_is.mjs";
 export async function app_tgl_upload() {
   let limit = 100;
   let filtered2 = await english_words_dictionary();
@@ -88,7 +89,8 @@ export async function app_tgl_upload() {
         }
         list_map(split, (s) => {
           let word_tgl = string_trim_whitespace(s);
-          if (false) {
+          if (string_empty_is()) {
+            return;
           }
           la([word_tgl, word_en]);
         });
