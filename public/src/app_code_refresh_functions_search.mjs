@@ -50,9 +50,10 @@ export async function app_code_refresh_functions_search(context) {
       [noop, html_style_bold],
       'Choose a function. To find a function, type in letters in the order they appear in the function name. For example, "`oo`" would match "t`o`ns_`o`f" and "`o`pti`o`ns". To match in any order, separate by spaces.',
     );
-    let conditions = [html_condition_letters_numbers_underscores_spaces()];
     let placeholder = "Search query";
-    let st = html_input_validated_focus(root, placeholder, conditions);
+    let st = html_input_validated_focus(root, placeholder, [
+      html_condition_letters_numbers_underscores_spaces(),
+    ]);
     let results = html_div(root);
     let mapped2 = await app_code_function_names_get();
     html_input_validated_on_input_lambda_initial(st, (valid) => {
