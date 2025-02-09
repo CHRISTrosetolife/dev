@@ -26,7 +26,7 @@ import { list_empty_is } from "./list_empty_is.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 export async function function_rename(fn_name_from, fn_name_to) {
   assert_arguments_length(arguments, 2);
-  assert(equal_not, []);
+  assert(equal_not, [fn_name_from, fn_name("apps_list")]);
   let intersecteds = await function_rename_fn_name(fn_name_from, fn_name_to);
   let identifiers = await data_identifiers();
   let fn_path_from = function_name_to_path(fn_name_from);
