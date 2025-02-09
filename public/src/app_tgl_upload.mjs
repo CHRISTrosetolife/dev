@@ -57,6 +57,7 @@ export async function app_tgl_upload() {
         tgl,
         string_combine_multiple(["&amp;lang=", tgl]),
       ]);
+      let word_tgl = html_parse_text(a_tgl);
     });
   });
   log({
