@@ -287,6 +287,7 @@ export async function app_language_2_refresh_learn(context) {
     let word = app_language_2_word_p(body, language, text_word);
     if (language === "tgl") {
       let container2 = object_property_get(word, "container");
+      html_span_text(container2, string_combine_multiple([" "]));
       app_language_audio_unawait(language, text_word);
     }
   }
