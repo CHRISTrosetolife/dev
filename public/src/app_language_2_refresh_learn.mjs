@@ -99,7 +99,7 @@ export async function app_language_2_refresh_learn(context) {
       list_size(list_filter_property(values_skip_manual, "learning", true)),
       list_size(values_skip_manual),
     );
-    if (false) {
+    if (app_language_2_audio_play_should(language)) {
       app_language_2_tutorial_message(
         context,
         string_combine_multiple([
