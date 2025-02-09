@@ -1,3 +1,4 @@
+import { html_on_click } from "./html_on_click.mjs";
 import { html_span_text_emoji_ear } from "./html_span_text_emoji_ear.mjs";
 import { app_language_audio_unawait } from "./app_language_audio_unawait.mjs";
 import { html_style_flex_1 } from "./html_style_flex_1.mjs";
@@ -289,8 +290,5 @@ export async function app_language_2_refresh_learn(context) {
     if (language === "tgl") {
       let container2 = object_property_get(word, "container");
       html_span_text_emoji_ear(container2);
-      html_on_click_initial();
+      html_on_click(container2,$a);
       app_language_audio_unawait(language, text_word);
-    }
-  }
-}
