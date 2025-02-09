@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_filter_ends_with } from "./list_filter_ends_with.mjs";
 import { app_extension_html } from "./app_extension_html.mjs";
 import { app_code_files_get } from "./app_code_files_get.mjs";
@@ -48,8 +47,7 @@ export async function app_code_refresh_menu(context) {
       file_paths,
       app_extension_html(),
     );
-    log({
-      file_paths_html,
-    });
+    if (false) {
+    }
   });
 }
