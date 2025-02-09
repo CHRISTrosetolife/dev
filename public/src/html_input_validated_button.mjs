@@ -18,4 +18,8 @@ export function html_input_validated_button(
   html_input_validated_on_input_lambda_initial(input, (valid) => {
     html_button_enable_if(button, valid);
   });
+  return {
+    input,
+    button,
+  };
 }
