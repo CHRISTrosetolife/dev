@@ -1,3 +1,4 @@
+import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { list_size_equal } from "./list_size_equal.mjs";
 import { each } from "./each.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -41,6 +42,7 @@ export async function app_tgl_upload() {
     let row_tds = html_parse_visit_tag_list(row, "td");
     assert(list_size_equal, [row, expected]);
     let td_en = list_get(row_tds, en_index);
+    html_parse_visit_tag_single();
     let td_tgl = list_get(row_tds, tgl_index);
   });
   log({
