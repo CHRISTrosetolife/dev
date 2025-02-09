@@ -8,12 +8,12 @@ import { html_interacted } from "./html_interacted.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 export function html_interacted_initialize() {
   let g = global_function(html_interacted);
-  object_property_initialize(g, "initialized", false);
+  object_property_initialize(g, "interacted", false);
   let start = true;
   each([html_on_keydown, html_on_click], (on) => {
     on(html_document_get(), () => {
       if (start) {
-        object_property_set(g, "initialized", true);
+        object_property_set(g, "interacted", true);
         start = false;
       }
     });
