@@ -1,3 +1,4 @@
+import { app_code_files_get } from "./app_code_files_get.mjs";
 import { log } from "./log.mjs";
 import { js_code_call } from "./js_code_call.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -13,6 +14,7 @@ import { fn_name } from "./fn_name.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { list_concat } from "./list_concat.mjs";
 export async function app_code_refresh_app_new(context) {
+  await app_code_files_get();
   let root = app_code_screen_set(context, fn_name("app_code_refresh_app_new"));
   let f_name = fn_name("apps_list");
   let f_source = await function_declarations_unparse([f_name]);
