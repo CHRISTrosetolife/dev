@@ -36,7 +36,13 @@ export async function app_tgl_upload() {
       let center = html_parse_visit_id(p, "center");
       let contents = html_parse_visit_class_single(center, "contents");
       let contents_text = html_parse_text(contents);
-      if (string_includes(contents_text, "No English words found matching")) {
+      let en = "English";
+      if (
+        string_includes(
+          contents_text,
+          string_combine_multiple(["No English words found matching"]),
+        )
+      ) {
       }
       let table = html_parse_visit_attribute_value_single(
         contents,
@@ -49,7 +55,6 @@ export async function app_tgl_upload() {
       let tr_first = object_property_get(fr, "first");
       let first_tds = html_parse_visit_tag_list(tr_first, "td");
       let languages = list_map(first_tds, html_parse_text);
-      let en = "English";
       let tgl = "Tagalog";
       let expected = [en, "Grammar", "Cebuano", tgl, "Hiligaynon"];
       assert(equal_json, [languages, expected]);
