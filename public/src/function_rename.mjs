@@ -69,5 +69,5 @@ export async function function_rename(fn_name_from, fn_name_to) {
     data_remove(data, fn_name_from);
     await data_update_multiple_transform(functions_paths, data);
   });
-  global_function_initialize(function_rename);
+  global_function_initialize(function_rename, () => {});
 }
