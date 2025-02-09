@@ -1,3 +1,4 @@
+import { html_overlay } from "./html_overlay.mjs";
 import { html_interacted } from "./html_interacted.mjs";
 import { storage_url_audio } from "./storage_url_audio.mjs";
 import { global_function } from "./global_function.mjs";
@@ -30,6 +31,7 @@ export async function app_language_audio(language, text) {
   object_property_set(counts, text, count);
   let url = await storage_url_audio(language, count, text);
   if (!html_interacted()) {
+    let overlay = html_overlay();
   }
   return await html_audio(url);
 }
