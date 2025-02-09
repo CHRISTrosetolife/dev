@@ -42,5 +42,6 @@ export async function gcloud_tts(
   await file_overwrite_binary(output_path, data);
   return {
     created: true,
+    output_path,
   };
 }
