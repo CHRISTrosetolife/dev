@@ -9,8 +9,8 @@ export async function retry(retries, lambda, retry_if_lambda) {
   while (retries >= 1) {
     retries--;
     try {
-      let newLocal = await lambda();
-      return newLocal;
+      let result = await lambda();
+      return result;
     } catch (e) {
       if (retry_if_lambda(e)) {
         await sleep(delay * 1000);
