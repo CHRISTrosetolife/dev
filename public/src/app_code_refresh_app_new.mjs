@@ -11,6 +11,7 @@ import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { list_concat } from "./list_concat.mjs";
 export function app_code_refresh_app_new(context) {
   let root = app_code_screen_set(context, fn_name("app_code_refresh_app_new"));
+  let f_name = fn_name("apps_list");
   let existing = apps_list();
   let message = "not be the name of an existing app";
   let ib = html_input_validated_button(
