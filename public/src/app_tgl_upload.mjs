@@ -1,3 +1,4 @@
+import { string_parenthesis_remove } from "./string_parenthesis_remove.mjs";
 import { string_split_comma } from "./string_split_comma.mjs";
 import { list_unique_json } from "./list_unique_json.mjs";
 import { each_log_async } from "./each_log_async.mjs";
@@ -89,6 +90,7 @@ export async function app_tgl_upload() {
         }
         list_map(split, (s) => {
           let word_tgl = string_trim_whitespace(s);
+          word_tgl = string_parenthesis_remove(word_tgl);
           if (string_empty_is(word_tgl)) {
             return;
           }
