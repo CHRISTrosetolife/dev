@@ -1,3 +1,4 @@
+import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { apps_list } from "./apps_list.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_focus } from "./html_focus.mjs";
@@ -12,7 +13,14 @@ export function app_code_app_new(context) {
   let ib = html_input_validated_button(
     root,
     "App name",
-    [html_condition_empty_not(), html_condition_letters_numbers_underscores()],
+    [
+      html_condition_empty_not(),
+      html_condition_letters_numbers_underscores(),
+      {
+        message: (value) => "not be empty",
+        condition: string_empty_not_is,
+      },
+    ],
     "Save",
     function on_submit(value) {},
   );
