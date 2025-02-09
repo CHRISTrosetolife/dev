@@ -28,6 +28,7 @@ import { string_starts_with } from "./string_starts_with.mjs";
 import { string_ends_with } from "./string_ends_with.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { string_includes } from "./string_includes.mjs";
+import { list_size } from "./list_size.mjs";
 export async function app_tgl_upload() {
   let limit = 100;
   let filtered2 = await english_words_dictionary();
@@ -76,7 +77,8 @@ export async function app_tgl_upload() {
         assert(string_starts_with, [href, "diksyunaryo.php?sw="]);
         let words_tgl = html_parse_text(a_tgl);
         let split = string_split_comma(words_tgl);
-        if (false) {
+        if (list_size(split) >= 3) {
+          return;
         }
         if (!string_includes(words_tgl, "'")) {
           assert(string_ends_with, [
