@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { js_code_call } from "./js_code_call.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { function_declarations_unparse } from "./function_declarations_unparse.mjs";
@@ -17,6 +18,9 @@ export async function app_code_refresh_app_new(context) {
   let f_source = await function_declarations_unparse([f_name]);
   let combined = string_combine_multiple([f_source, js_code_call(f_name)]);
   let existing = eval(combined);
+  log({
+    existing,
+  });
   let message = "not be the name of an existing app";
   let ib = html_input_validated_button(
     root,
