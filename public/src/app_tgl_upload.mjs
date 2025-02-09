@@ -118,7 +118,7 @@ export async function app_tgl_upload() {
       return list;
     },
   );
-  return pairs;
+  return dictionary;
   let from = "tgl";
   let to = "en";
   let result_new = app_language_upload_result(atoms, {
