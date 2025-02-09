@@ -50,8 +50,7 @@ export async function app_code_refresh_functions_search(context) {
       [noop, html_style_bold],
       'Choose a function. To find a function, type in letters in the order they appear in the function name. For example, "`oo`" would match "t`o`ns_`o`f" and "`o`pti`o`ns". To match in any order, separate by spaces.',
     );
-    let placeholder = "Search query";
-    let st = html_input_validated_focus(root, placeholder, [
+    let st = html_input_validated_focus(root, "Search query", [
       html_condition_letters_numbers_underscores_spaces(),
     ]);
     let results = html_div(root);
