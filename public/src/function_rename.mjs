@@ -1,5 +1,5 @@
+import { function_rename_on_renames } from "./function_rename_on_renames.mjs";
 import { invoke_multiple_async } from "./invoke_multiple_async.mjs";
-import { global_function_initialize } from "./global_function_initialize.mjs";
 import { functions_paths } from "./functions_paths.mjs";
 import { function_rename_fn_name } from "./function_rename_fn_name.mjs";
 import { functions_transform } from "./functions_transform.mjs";
@@ -70,9 +70,6 @@ export async function function_rename(fn_name_from, fn_name_to) {
     data_remove(data, fn_name_from);
     await data_update_multiple_transform(functions_paths, data);
   });
-  let g = global_function_initialize(function_rename, () => ({
-    on_renames: [],
-  }));
-  let on_renames = object_property_get(g, "on_renames");
+  let on_renames = function_rename_on_renames();
   await invoke_multiple_async(on_renames);
 }
