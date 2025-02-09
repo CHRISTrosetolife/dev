@@ -10,6 +10,6 @@ export async function sandbox_4() {
       word,
       "&lang=English",
     ]);
-    await http_cache(url);
+    let result = await http_cache(url);
   });
 }
