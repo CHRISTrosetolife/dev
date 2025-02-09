@@ -73,5 +73,5 @@ export async function function_rename(fn_name_from, fn_name_to) {
   let g = global_function_initialize(function_rename, () => ({
     on_renames: [],
   }));
-  each(list, (item) => {});
+  each(object_property_get(object, "property_name"), (item) => {});
 }
