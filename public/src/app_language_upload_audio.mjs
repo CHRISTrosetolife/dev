@@ -8,6 +8,9 @@ import { list_map } from "./list_map.mjs";
 import { list_chunk_each } from "./list_chunk_each.mjs";
 export async function app_language_upload_audio(group, from) {
   await list_chunk_each(group, async function each_chunk(chunk) {
+    log({
+      group,
+    });
     let mapped = list_map(chunk, async (atom) => {
       let mapped2 = list_map(atom, async (pair) => {
         let b = list_first(pair);
