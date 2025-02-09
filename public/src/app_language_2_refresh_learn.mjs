@@ -264,7 +264,7 @@ export async function app_language_2_refresh_learn(context) {
         if (c === answer_text) {
           await on_answer_match(b2);
         } else {
-          await on_answer_wrong(b);
+          await on_answer_wrong(b2);
         }
       });
       let word_component = app_language_2_word(row, language_other, c, false);
@@ -275,7 +275,7 @@ export async function app_language_2_refresh_learn(context) {
           await on_answer_match(b);
         } else {
           correct = false;
-          await on_answer_wrong();
+          await on_answer_wrong(b);
         }
       });
       async function on_answer_wrong(b) {
