@@ -31,6 +31,7 @@ import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { list_size } from "./list_size.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
+import { string_split_space } from "./string_split_space.mjs";
 export async function app_tgl_upload() {
   let limit = 100;
   let filtered2 = await english_words_dictionary();
@@ -78,6 +79,7 @@ export async function app_tgl_upload() {
         let href = html_parse_href(a_tgl);
         assert(string_starts_with, [href, "diksyunaryo.php?sw="]);
         let words_tgl = html_parse_text(a_tgl);
+        let split = string_split_comma(words_tgl);
         if (!string_includes(words_tgl, "'")) {
           assert(string_ends_with, [
             href,
@@ -90,8 +92,8 @@ export async function app_tgl_upload() {
           if (string_empty_is(word_tgl)) {
             return;
           }
-          let split = string_split_comma(word_tgl);
-          if (list_size(split) >= 3) {
+          let w_split = string_split_space(word_tgl);
+          if (list_size(w_split) >= 3) {
             return;
           }
           la([word_tgl, word_en]);
