@@ -317,6 +317,6 @@ export async function app_language_2_refresh_learn(context) {
   function app_language2_word_titled(body, text_title, language, text_word) {
     let title = html_p_text(body, string_combine_multiple([text_title, ": "]));
     let word = app_language_2_word_p(body, language, text_word);
-    app_language_2_audio(word);
+    return word;
   }
 }
