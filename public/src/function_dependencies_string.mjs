@@ -1,3 +1,4 @@
+import { function_declarations_unparse } from "./function_declarations_unparse.mjs";
 import { js_code_array } from "./js_code_array.mjs";
 import { function_imports_recursive } from "./function_imports_recursive.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
@@ -6,9 +7,6 @@ import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { function_dependencies_string_externals } from "./function_dependencies_string_externals.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
-import { js_unparse } from "./js_unparse.mjs";
-import { function_declaration } from "./function_declaration.mjs";
-import { list_map_async } from "./list_map_async.mjs";
 import { object_properties } from "./object_properties.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_map } from "./list_map.mjs";
@@ -45,8 +43,7 @@ export async function function_dependencies_string(function_name) {
     return code;
   });
   let dependency_names = object_properties(map);
-  let ds = await list_map_async(dependency_names, function_declaration);
-  let us = list_map(ds, js_unparse);
+  let us = await function_declarations_unparse(dependency_names);
   let c = list_concat_multiple([[imports], e_code, us]);
   let text = list_join_newline(c);
   return text;
