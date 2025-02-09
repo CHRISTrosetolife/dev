@@ -113,6 +113,7 @@ export async function app_tgl_upload() {
       let key = list_first(pair);
       let value = list_second(pair);
       let list = object_property_initialize(result, key, []);
+      return list;
     },
   );
   return pairs;
