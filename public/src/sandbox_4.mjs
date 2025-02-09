@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { english_words_dictionary } from "./english_words_dictionary.mjs";
 import { each_log_async } from "./each_log_async.mjs";
 import { http_cache } from "./http_cache.mjs";
@@ -11,5 +12,8 @@ export async function sandbox_4() {
       "&lang=English",
     ]);
     let result = await http_cache(url);
+    log({
+      result,
+    });
   });
 }
