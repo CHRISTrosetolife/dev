@@ -44,8 +44,9 @@ export async function app_code_refresh_menu(context) {
     }
     let files = await app_code_files_get();
     let file_paths = object_properties(files);
+    let suffix = app_extension_html();
     let file_paths_html = list_filter(file_paths, (p) =>
-      string_ends_with(p, app_extension_html()),
+      string_ends_with(p, suffix),
     );
   });
 }
