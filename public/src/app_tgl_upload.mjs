@@ -48,13 +48,13 @@ export async function app_tgl_upload() {
   let tgl_index = list_index(expected, tgl);
   let words = list_adder((la) => {
     each(remaining, (row) => {
-      let children = html_parse_children(row);
-      let row_tds = html_parse_visit_tag_list(row, "td");
+      let row_children = html_parse_children(row);
+      let row_tds = html_parse_visit_tag_list(row_children, "td");
       log({
-        row: list_size(row),
+        row: list_size(row_children),
         expected: list_size(expected),
       });
-      assert(list_size_equal, [row, expected]);
+      assert(list_size_equal, [row_children, expected]);
       let td_en = list_get(row_tds, en_index);
       let a_en = html_parse_visit_tag_single(td_en, "a");
       let word_en = html_parse_text(a_en);
