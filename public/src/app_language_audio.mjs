@@ -1,4 +1,4 @@
-import { html_button } from "./html_button.mjs";
+import { html_button_wait } from "./html_button_wait.mjs";
 import { html_overlay } from "./html_overlay.mjs";
 import { html_interacted } from "./html_interacted.mjs";
 import { storage_url_audio } from "./storage_url_audio.mjs";
@@ -32,13 +32,9 @@ export async function app_language_audio(language, text) {
   object_property_set(counts, text, count);
   let url = await storage_url_audio(language, count, text);
   if (!html_interacted()) {
-    let overlay = html_overlay();
+    let overlay = html_overlay();$ag
     let text = "Press this button to enable audio";
-    await new Promise((resolve) => {
-      let b = html_button(overlay, text, () => {
-        resolve(b);
-      });
-    });
+    await html_button_wait(overlay, text);
   }
   return await html_audio(url);
 }
