@@ -107,7 +107,7 @@ export async function app_tgl_upload() {
     });
   });
   pairs = list_unique_json(pairs);
-  let dictionary = list_to_lookup_key_value_list(
+  let definitions = list_to_lookup_key_value_list(
     pairs,
     list_first,
     list_second,
