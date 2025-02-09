@@ -264,6 +264,7 @@ export async function app_language_2_refresh_learn(context) {
         if (c === answer_text) {
           await on_answer_match(b2);
         } else {
+          await on_answer_wrong(b);
         }
       });
       let word_component = app_language_2_word(row, language_other, c, false);
@@ -274,11 +275,14 @@ export async function app_language_2_refresh_learn(context) {
           await on_answer_match(b);
         } else {
           correct = false;
-          html_style_wrong(b);
-          await app_language_2_answer_delay();
-          html_remove(choice_div);
+          await on_answer_wrong();
         }
       });
+      async function on_answer_wrong(b) {
+        html_style_wrong(b);
+        await app_language_2_answer_delay();
+        html_remove(choice_div);
+      }
       async function on_answer_match(b) {
         decrease_wait();
         html_style_success(b);
