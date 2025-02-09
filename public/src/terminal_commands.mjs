@@ -40,8 +40,8 @@ export function terminal_commands(context) {
   return [
     {
       match: {
-        sequence: "\x16",
-        name: "v",
+        sequence: "\x02",
+        name: "b",
         ctrl: true,
         meta: false,
         shift: false,
