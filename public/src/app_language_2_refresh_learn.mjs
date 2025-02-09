@@ -259,6 +259,7 @@ export async function app_language_2_refresh_learn(context) {
         await app_language_2_on_answer(context, word, recent_count);
       });
       let { container } = app_language_2_word(row, language_other, c, false);
+      app_language_2_audio(word);
       html_style_flex_1(container);
       let b = html_button_text_click(row, emoji_right, async () => {
         decrease_wait();
