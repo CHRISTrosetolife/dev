@@ -47,6 +47,9 @@ export async function app_tgl_upload() {
   let words = list_adder((la) => {
     each(remaining, (row) => {
       let row_tds = html_parse_visit_tag_list(row, "td");
+      log({
+        row,
+      });
       assert(list_size_equal, [row, expected]);
       let td_en = list_get(row_tds, en_index);
       let a_en = html_parse_visit_tag_single(td_en, "a");
