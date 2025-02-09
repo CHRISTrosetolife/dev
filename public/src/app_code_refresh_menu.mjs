@@ -39,5 +39,6 @@ export async function app_code_refresh_menu(context) {
       });
     }
     await app_code_button_html_files(context);
+    html_button(root, "New app", () => {});
   });
 }
