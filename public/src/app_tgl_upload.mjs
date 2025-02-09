@@ -1,3 +1,4 @@
+import { html_parse_visit_id } from "./html_parse_visit_id.mjs";
 import { html_parse_visit_class_single } from "./html_parse_visit_class_single.mjs";
 import { log } from "./log.mjs";
 import { definition_bohol } from "./definition_bohol.mjs";
@@ -5,6 +6,7 @@ import { app_language_group_upload } from "./app_language_group_upload.mjs";
 import { app_language_upload_result } from "./app_language_upload_result.mjs";
 export async function app_tgl_upload() {
   let p = await definition_bohol("the");
+  let center = html_parse_visit_id(p, "center");
   let contents = html_parse_visit_class_single(p, "contents");
   log({
     contents,
