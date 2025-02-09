@@ -262,7 +262,7 @@ export async function app_language_2_refresh_learn(context) {
       let b2 = html_button_text_click(row, emoji_wrong, async () => {
         correct = false;
         if (c === answer_text) {
-          await on_answer_match(b);
+          await on_answer_match(b2);
         }
       });
       let word_component = app_language_2_word(row, language_other, c, false);
