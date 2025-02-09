@@ -260,22 +260,17 @@ export async function app_language_2_refresh_learn(context) {
       let row = html_p(choice_div);
       html_style_flex_row_centered(row);
       let b2 = html_button_text_click(row, emoji_wrong, async () => {
-        decrease_wait();
+        correct = false;
         if (c === answer_text) {
-          html_style_success(b2);
-        } else {
-          correct = false;
-          html_style_wrong(b2);
+          await on_answer_match(b);
         }
-        app_language_2_wrong(context, v, gap_initial, wait_initial);
-        await app_language_2_on_answer(context, word, recent_count);
       });
       let word_component = app_language_2_word(row, language_other, c, false);
       let { container } = word_component;
       html_style_flex_1(container);
       let b = html_button_text_click(row, emoji_right, async () => {
         if (c === answer_text) {
-          await on_answer_match(b, correct, word, recent_count);
+          await on_answer_match(b);
         } else {
           correct = false;
           html_style_wrong(b);
@@ -283,7 +278,7 @@ export async function app_language_2_refresh_learn(context) {
           html_remove(choice_div);
         }
       });
-      async function on_answer_match(b, correct, word, recent_count) {
+      async function on_answer_match(b) {
         decrease_wait();
         html_style_success(b);
         if (correct) {
