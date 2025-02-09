@@ -13,6 +13,9 @@ export async function gcloud_tts(
   text,
   output_path,
 ) {
+  let result = {
+    output_path,
+  };
   if (await file_exists(output_path)) {
     return {
       created: false,
