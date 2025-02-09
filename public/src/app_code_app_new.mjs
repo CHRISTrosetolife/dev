@@ -1,4 +1,3 @@
-import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { apps_list } from "./apps_list.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_focus } from "./html_focus.mjs";
@@ -7,6 +6,7 @@ import { html_condition_empty_not } from "./html_condition_empty_not.mjs";
 import { html_input_validated_button } from "./html_input_validated_button.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
+import { list_includes_not } from "./list_includes_not.mjs";
 export function app_code_app_new(context) {
   let root = app_code_screen_set(context, fn_name("app_code_app_new"));
   let existing = apps_list();
@@ -17,8 +17,8 @@ export function app_code_app_new(context) {
       html_condition_empty_not(),
       html_condition_letters_numbers_underscores(),
       {
-        message: (value) => "not be empty",
-        condition: string_empty_not_is,
+        message: (value) => "not be the name of an existing app",
+        condition: (value) => list_includes_not(existing, value),
       },
     ],
     "Save",
