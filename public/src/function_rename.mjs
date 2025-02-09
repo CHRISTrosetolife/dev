@@ -1,4 +1,4 @@
-import { each } from "./each.mjs";
+import { invoke_multiple_async } from "./invoke_multiple_async.mjs";
 import { global_function_initialize } from "./global_function_initialize.mjs";
 import { functions_paths } from "./functions_paths.mjs";
 import { function_rename_fn_name } from "./function_rename_fn_name.mjs";
@@ -73,5 +73,5 @@ export async function function_rename(fn_name_from, fn_name_to) {
   let g = global_function_initialize(function_rename, () => ({
     on_renames: [],
   }));
-  each(object_property_get(g, "on_renames"), (on_rename) => {});
+  await invoke_multiple_async(object_property_get(g, "on_renames"));
 }
