@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
 import { assert } from "./assert.mjs";
 import { list_map } from "./list_map.mjs";
@@ -22,7 +23,9 @@ export async function app_tgl_upload() {
     "100%",
   );
   let trs = html_parse_visit_tag_list(table, "tr");
-  let tr_first = list_first_remaining(trs);
+  let fr = list_first_remaining(trs);
+  let remaining = object_property_get(fr, "remaining");
+  let first = object_property_get(fr, "first");
   let td = html_parse_visit_tag_list(tr_first, "td");
   let languages = list_map(td, html_parse_text);
   let en = "English";
