@@ -1,3 +1,4 @@
+import { html_parse_visit_attribute_value_single } from "./html_parse_visit_attribute_value_single.mjs";
 import { html_parse_visit_id } from "./html_parse_visit_id.mjs";
 import { html_parse_visit_class_single } from "./html_parse_visit_class_single.mjs";
 import { log } from "./log.mjs";
@@ -8,6 +9,7 @@ export async function app_tgl_upload() {
   let p = await definition_bohol("the");
   let center = html_parse_visit_id(p, "center");
   let contents = html_parse_visit_class_single(center, "contents");
+  html_parse_visit_attribute_value_single();
   log({
     contents,
   });
