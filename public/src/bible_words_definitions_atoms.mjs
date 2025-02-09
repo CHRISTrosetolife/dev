@@ -11,8 +11,7 @@ export async function bible_words_definitions_atoms(language) {
     "definitions",
   );
   let inverted = object_list_invert(definitions);
-  let atoms;
-  atoms = bible_words_spaceify(pairs);
+  let atoms = bible_words_spaceify(pairs);
   return {
     atoms,
     definitions,
