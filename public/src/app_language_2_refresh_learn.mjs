@@ -304,7 +304,7 @@ export async function app_language_2_refresh_learn(context) {
             await app_language_audio(language, text);
           }
         }
-        await app_language_2_on_answer(context, word, recent_count);
+        await app_language_2_on_answer(context, word, recent_count, delay);
       }
       each([b, b2], (bi) => {
         html_style_font_size_default_multiplied(bi, 1.2);
