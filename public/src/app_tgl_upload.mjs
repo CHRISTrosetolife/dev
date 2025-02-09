@@ -75,7 +75,7 @@ export async function app_tgl_upload() {
         list_map(split, (s) => {
           let href = html_parse_href(a_tgl);
           assert(string_starts_with, [href, "diksyunaryo.php?sw="]);
-          if (string_includes_not()) {
+          if (!string_includes(s, "'")) {
             assert(string_ends_with, [
               href,
               string_combine_multiple(["&lang=", tgl]),
