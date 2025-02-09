@@ -10,12 +10,13 @@ import { list_concat } from "./list_concat.mjs";
 export function app_code_app_new(context) {
   let root = app_code_screen_set(context, fn_name("app_code_app_new"));
   let existing = apps_list();
+  let message = "not be the name of an existing app";
   let ib = html_input_validated_button(
     root,
     "App name",
     list_concat(html_condition_identifier_fn_part(), [
       {
-        message: (value) => "not be the name of an existing app",
+        message: (value) => message,
         condition: (value) => list_includes_not(existing, value),
       },
     ]),
