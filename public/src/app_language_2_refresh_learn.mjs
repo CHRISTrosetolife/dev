@@ -281,8 +281,8 @@ export async function app_language_2_refresh_learn(context) {
   function decrease_wait() {
     app_language_2_decrease_wait(values);
   }
-  function app_language2_word_titled(body, title, language, text) {
-    let r = html_p_text(body, string_combine_multiple([title, ": "]));
-    app_language_2_word_p(body, language, text);
+  function app_language2_word_titled(body, text_title, language, text_word) {
+    let r = html_p_text(body, string_combine_multiple([text_title, ": "]));
+    app_language_2_word_p(body, language, text_word);
   }
 }
