@@ -15,6 +15,7 @@ import { app_code } from "./app_code.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_code_refresh_username } from "./app_code_refresh_username.mjs";
 import { object_properties } from "./object_properties.mjs";
+import { list_filter } from "./list_filter.mjs";
 export async function app_code_refresh_menu(context) {
   await html_load(async () => {
     let root = app_code_screen_set(context, fn_name("app_code_refresh_menu"));
@@ -41,5 +42,6 @@ export async function app_code_refresh_menu(context) {
     }
     let files = await app_code_files_get();
     let file_paths = object_properties(files);
+    let file_paths_html = list_filter(file_paths);
   });
 }
