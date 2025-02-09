@@ -1,3 +1,4 @@
+import { html_input_validated_focus } from "./html_input_validated_focus.mjs";
 import { html_style_background_color_yellow } from "./html_style_background_color_yellow.mjs";
 import { app_code_function_names_get } from "./app_code_function_names_get.mjs";
 import { app_code_button_menu_app } from "./app_code_button_menu_app.mjs";
@@ -5,7 +6,6 @@ import { storage_local_set_context } from "./storage_local_set_context.mjs";
 import { app_code_refresh_function } from "./app_code_refresh_function.mjs";
 import { html_condition_letters_numbers_underscores_spaces } from "./html_condition_letters_numbers_underscores_spaces.mjs";
 import { html_input_validated_on_input_lambda_initial } from "./html_input_validated_on_input_lambda_initial.mjs";
-import { html_input_validated } from "./html_input_validated.mjs";
 import { list_copy } from "./list_copy.mjs";
 import { list_first } from "./list_first.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -19,7 +19,6 @@ import { regex_test_multiple } from "./regex_test_multiple.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { html_div } from "./html_div.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
-import { html_focus } from "./html_focus.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { noop } from "./noop.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
@@ -53,8 +52,7 @@ export async function app_code_refresh_functions_search(context) {
     );
     let conditions = [html_condition_letters_numbers_underscores_spaces()];
     let placeholder = "Search query";
-    let st = html_input_validated(root, placeholder, conditions);
-    html_focus(st);
+    let st = html_input_validated_focus(root, placeholder, conditions);
     let results = html_div(root);
     let mapped2 = await app_code_function_names_get();
     html_input_validated_on_input_lambda_initial(st, (valid) => {
