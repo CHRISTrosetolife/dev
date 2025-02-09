@@ -1,3 +1,4 @@
+import { html_style_monospace } from "./html_style_monospace.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { string_html_escape } from "./string_html_escape.mjs";
 import { app_code_file_contents } from "./app_code_file_contents.mjs";
@@ -14,5 +15,6 @@ export async function app_code_refresh_html(context) {
     let contents = await app_code_file_contents(html_selected);
     let e = string_html_escape(contents);
     let t = html_p_text(root, e);
+    html_style_monospace(t);
   });
 }
