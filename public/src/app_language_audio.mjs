@@ -1,9 +1,8 @@
+import { storage_url_audio } from "./storage_url_audio.mjs";
 import { global_function } from "./global_function.mjs";
 import { audio_language } from "./audio_language.mjs";
-import { audio_path } from "./audio_path.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_audio } from "./html_audio.mjs";
-import { storage_url } from "./storage_url.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { list_index_last } from "./list_index_last.mjs";
@@ -28,7 +27,6 @@ export async function app_language_audio(language, text) {
     count = mod(count, length);
   }
   object_property_set(counts, text, count);
-  let file_path = await audio_path(language, count, text);
-  let url = storage_url(file_path);
+  let url = await storage_url_audio(language, count, text);
   return await html_audio(url);
 }
