@@ -48,6 +48,7 @@ export async function app_code_refresh_menu(context) {
       app_extension_html(),
     );
     if (list_empty_not_is(file_paths_html)) {
+      html_button(parent, "HTML files");
     }
   });
 }
