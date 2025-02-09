@@ -10,8 +10,10 @@ import { log } from "./log.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_wait } from "./list_wait.mjs";
+import { string_empty_not_is } from "./string_empty_not_is.mjs";
 export async function audio_upload(language, text) {
   assert(string_is, [text]);
+  assert(string_empty_not_is, [text]);
   let { language_code, voices } = await audio_language(language);
   let promises = list_map_index(voices, async (voice, voice_index) => {
     let file_path = await audio_path(language, voice_index, text);
