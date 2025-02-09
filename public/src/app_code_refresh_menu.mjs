@@ -1,3 +1,4 @@
+import { app_code_app_new } from "./app_code_app_new.mjs";
 import { app_code_button_html_files } from "./app_code_button_html_files.mjs";
 import { html_load } from "./html_load.mjs";
 import { app_code_refresh_functions_recent } from "./app_code_refresh_functions_recent.mjs";
@@ -40,5 +41,6 @@ export async function app_code_refresh_menu(context) {
     }
     await app_code_button_html_files(context);
     html_button(root, "New app", () => {});
+    app_code_app_new(context);
   });
 }
