@@ -1,3 +1,4 @@
+import { list_map_async } from "./list_map_async.mjs";
 import { log_json } from "./log_json.mjs";
 import { log } from "./log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -13,7 +14,7 @@ export async function app_language_upload_audio(group, from) {
       group,
     });
     let mapped = list_map(chunk, async (atom) => {
-      let createds = list_map_async(atom, async (pair) => {
+      let createds = await list_map_async(atom, async (pair) => {
         let b = list_first(pair);
         let r = await audio_upload(from, b);
         return r;
