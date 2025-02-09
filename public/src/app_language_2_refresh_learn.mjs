@@ -298,6 +298,7 @@ export async function app_language_2_refresh_learn(context) {
           app_language_2_wrong(context, v, gap_initial, wait_initial);
         }
         if (false) {
+          list_size(mapped) === 1;
         }
         await app_language_2_on_answer(context, word, recent_count);
       }
