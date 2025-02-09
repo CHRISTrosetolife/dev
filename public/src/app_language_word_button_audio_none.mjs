@@ -1,4 +1,4 @@
-import { emoji_ear } from "./emoji_ear.mjs";
+import { html_span_text_emoji_ear } from "./html_span_text_emoji_ear.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_flag_ph } from "./html_flag_ph.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -15,7 +15,7 @@ export function app_language_word_button_audio_none(root, langauge, text) {
     }
   });
   if (false) {
-    html_span_text(button, string_combine_multiple([" ", emoji_ear(), " "]));
+    html_span_text_emoji_ear(button);
   }
   html_flag(button, html_flag_ph());
   html_span_text(button, string_combine_multiple([" ", text]));
