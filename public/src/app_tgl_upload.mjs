@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
 import { assert } from "./assert.mjs";
@@ -34,6 +35,7 @@ export async function app_tgl_upload() {
   assert(equal_json, [languages, expected]);
   let en_index = list_index(expected, en);
   let tgl_index = list_index(expected, tgl);
+  each(list, (item) => {});
   log({
     languages,
   });
