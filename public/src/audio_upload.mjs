@@ -9,6 +9,8 @@ import { gcloud_tts } from "./gcloud_tts.mjs";
 import { log } from "./log.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { object_merge_strict } from "./object_merge_strict.mjs";
+import { list_map_property } from "./list_map_property.mjs";
 export async function audio_upload(language, text) {
   assert(string_is, [text]);
   let { language_code, voices } = await audio_language(language);
@@ -43,5 +45,7 @@ export async function audio_upload(language, text) {
       return result;
     },
   );
-  return list_any_created(results);
+  return object_merge_strict(list_any_created(results), {
+    file_paths: list_map_property(result, "output_path"),
+  });
 }
