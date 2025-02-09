@@ -8,6 +8,6 @@ export async function app_remove(name) {
   let name_prefixed = app_identifier(name);
   await function_delete(name_prefixed);
   await each_async([app_html_path, app_html_path_dev], async (fn) => {
-    await file_delete_if_exists(app_html_path(name));
+    await file_delete_if_exists(fn(name));
   });
 }
