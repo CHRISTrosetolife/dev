@@ -1,3 +1,4 @@
+import { list_adder } from "./list_adder.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_parse_href } from "./html_parse_href.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
@@ -43,6 +44,7 @@ export async function app_tgl_upload() {
   assert(equal_json, [languages, expected]);
   let en_index = list_index(expected, en);
   let tgl_index = list_index(expected, tgl);
+  list_adder((la) => {});
   each(remaining, (row) => {
     let row_tds = html_parse_visit_tag_list(row, "td");
     assert(list_size_equal, [row, expected]);
