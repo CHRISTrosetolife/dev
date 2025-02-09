@@ -1,8 +1,5 @@
+import { app_language_2_audio } from "./app_language_2_audio.mjs";
 import { emoji_ear } from "./emoji_ear.mjs";
-import { app_language_audio } from "./app_language_audio.mjs";
-import { html_on_click } from "./html_on_click.mjs";
-import { html_span_text_emoji_ear } from "./html_span_text_emoji_ear.mjs";
-import { app_language_audio_unawait } from "./app_language_audio_unawait.mjs";
 import { html_style_flex_1 } from "./html_style_flex_1.mjs";
 import { html_style_flex_row_centered } from "./html_style_flex_row_centered.mjs";
 import { list_sort_string_map } from "./list_sort_string_map.mjs";
@@ -303,13 +300,6 @@ export async function app_language_2_refresh_learn(context) {
   function app_language2_word_titled(body, text_title, language, text_word) {
     let title = html_p_text(body, string_combine_multiple([text_title, ": "]));
     let word = app_language_2_word_p(body, language, text_word);
-    if (language === "tgl") {
-      let container2 = object_property_get(word, "container");
-      html_span_text_emoji_ear(container2);
-      html_on_click(container2, async () => {
-        await app_language_audio(language, text_word);
-      });
-      app_language_audio_unawait(language, text_word);
-    }
+    app_language_2_audio(language, word, text_word);
   }
 }
