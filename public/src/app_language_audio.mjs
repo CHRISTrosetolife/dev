@@ -29,5 +29,6 @@ export async function app_language_audio(language, text) {
   }
   object_property_set(counts, text, count);
   let file_path = await audio_path(language, count, text);
-  return await html_audio(storage_url(file_path));
+  let url = storage_url(file_path);
+  return await html_audio(url);
 }
