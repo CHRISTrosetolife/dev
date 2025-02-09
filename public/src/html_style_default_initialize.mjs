@@ -1,3 +1,4 @@
+import { html_interacted_initialize } from "./html_interacted_initialize.mjs";
 import { html_style_default_a_merge } from "./html_style_default_a_merge.mjs";
 import { html_style_font_color_property } from "./html_style_font_color_property.mjs";
 import { html_style_border_box_get } from "./html_style_border_box_get.mjs";
@@ -9,6 +10,7 @@ import { html_style_default_font_size_value } from "./html_style_default_font_si
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { html_style_sans_serif } from "./html_style_sans_serif.mjs";
 export function html_style_default_initialize() {
+  html_interacted_initialize();
   let root = html_document_body();
   html_style_sans_serif(root);
   object_merge(html_style_default(), html_style_border_box_get());
