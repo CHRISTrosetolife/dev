@@ -7,6 +7,9 @@ import { object_property_get } from "./object_property_get.mjs";
 export function app_language_2_audio(word) {
   let text = object_property_get(word, "text");
   let language = object_property_get(word, "language");
+  log({
+    language,
+  });
   if (language === "tgl") {
     let container = object_property_get(word, "container");
     html_span_text_emoji_ear(container);
@@ -14,8 +17,5 @@ export function app_language_2_audio(word) {
       await app_language_audio(language, text);
     });
     app_language_audio_unawait(language, text);
-    log({
-      text,
-    });
   }
 }
