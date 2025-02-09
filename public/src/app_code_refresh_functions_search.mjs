@@ -1,9 +1,8 @@
+import { app_code_refresh_function_change } from "./app_code_refresh_function_change.mjs";
 import { html_input_validated_focus } from "./html_input_validated_focus.mjs";
 import { html_style_background_color_yellow } from "./html_style_background_color_yellow.mjs";
 import { app_code_function_names_get } from "./app_code_function_names_get.mjs";
 import { app_code_button_menu_app } from "./app_code_button_menu_app.mjs";
-import { storage_local_set_context } from "./storage_local_set_context.mjs";
-import { app_code_refresh_function } from "./app_code_refresh_function.mjs";
 import { html_condition_letters_numbers_underscores_spaces } from "./html_condition_letters_numbers_underscores_spaces.mjs";
 import { html_input_validated_on_input_lambda_initial } from "./html_input_validated_on_input_lambda_initial.mjs";
 import { list_copy } from "./list_copy.mjs";
@@ -84,8 +83,7 @@ export async function app_code_refresh_functions_search(context) {
       } else {
         each(taken, (t) => {
           let b = html_button_width_full_click(results, async () => {
-            storage_local_set_context(context, "function_selected", t);
-            await app_code_refresh_function(context);
+            await app_code_refresh_function_change(context, t);
           });
           let t_list = string_split_empty(t);
           let mapped = list_map(t_list, (symbol) => ({
