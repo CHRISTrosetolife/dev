@@ -18,6 +18,7 @@ import { html_parse_text } from "./html_parse_text.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { list_index } from "./list_index.mjs";
 import { list_get } from "./list_get.mjs";
+import { string_starts_with } from "./string_starts_with.mjs";
 export async function app_tgl_upload() {
   let p = await definition_bohol("the");
   let center = html_parse_visit_id(p, "center");
@@ -49,8 +50,9 @@ export async function app_tgl_upload() {
     let as_tgl = html_parse_visit_tag_list(td_tgl, "a");
     list_map(as_tgl, (a_tgl) => {
       let href = html_parse_href(a_tgl);
-      ["diksyunaryo.php?sw="];
-      ["&amp;lang=", tgl];
+      assert(string_starts_with, [href, "diksyunaryo.php?sw="])[
+        ("&amp;lang=", tgl)
+      ];
     });
   });
   log({
