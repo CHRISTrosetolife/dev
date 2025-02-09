@@ -11,10 +11,9 @@ export async function retry(retries, lambda, retry_if_lambda) {
     retries--;
     try {
       let result = await lambda();
-      log("retry complete");
       return result;
     } catch (e) {
-      log("retry error");
+      log(e);
       if (retry_if_lambda(e)) {
         await sleep(delay * 1000);
         delay *= 2;
