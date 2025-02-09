@@ -260,6 +260,7 @@ export async function app_language_2_refresh_learn(context) {
         if (c === answer_text) {
           html_style_success(b2);
         } else {
+          correct = false;
           html_style_wrong(b2);
         }
         app_language_2_wrong(context, v, gap_initial, wait_initial);
