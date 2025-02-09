@@ -89,8 +89,8 @@ export async function app_tgl_upload() {
           ]);
         }
         list_map(split, (s) => {
-          let word_tgl = string_parenthesis_remove(word_tgl);
-          let word_tgl = string_trim_whitespace(s);
+          let word_tgl = string_parenthesis_remove(s);
+          word_tgl = string_trim_whitespace(word_tgl);
           if (string_empty_is(word_tgl)) {
             return;
           }
