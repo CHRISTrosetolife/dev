@@ -1,7 +1,5 @@
 import { object_property_get } from "./object_property_get.mjs";
 import { html_focus } from "./html_focus.mjs";
-import { app_code } from "./app_code.mjs";
-import { storage_local_set } from "./storage_local_set.mjs";
 import { html_condition_letters_numbers_underscores } from "./html_condition_letters_numbers_underscores.mjs";
 import { html_condition_empty_not } from "./html_condition_empty_not.mjs";
 import { html_input_validated_button } from "./html_input_validated_button.mjs";
@@ -14,10 +12,7 @@ export function app_code_app_new(context) {
     "Username",
     [html_condition_empty_not(), html_condition_letters_numbers_underscores()],
     "Save",
-    function on_submit(value) {
-      storage_local_set(app_code, "username", value);
-      next();
-    },
+    function on_submit(value) {},
   );
   html_focus(object_property_get(ib, "button"));
 }
