@@ -32,9 +32,8 @@ export async function app_language_audio(language, text) {
   object_property_set(counts, text, count);
   let url = await storage_url_audio(language, count, text);
   if (!html_interacted()) {
-    let overlay = html_overlay();$ag
-    let text = "Press this button to enable audio";
-    await html_button_wait(overlay, text);
+    let overlay = html_overlay();
+    await html_button_wait(overlay, "Press this button to enable audio");
   }
   return await html_audio(url);
 }
