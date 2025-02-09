@@ -40,7 +40,7 @@ export async function app_tgl_upload() {
   each(remaining, (row) => {
     let row_tds = html_parse_visit_tag_list(row, "td");
     assert(list_size_equal, [row, expected]);
-    list_get(row_tds, en_index);
+    let td_en = list_get(row_tds, en_index);
   });
   log({
     languages,
