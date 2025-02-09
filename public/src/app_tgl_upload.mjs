@@ -89,7 +89,7 @@ export async function app_tgl_upload() {
         }
         list_map(split, (s) => {
           let word_tgl = string_trim_whitespace(s);
-          if (string_empty_is()) {
+          if (string_empty_is(word_tgl)) {
             return;
           }
           la([word_tgl, word_en]);
