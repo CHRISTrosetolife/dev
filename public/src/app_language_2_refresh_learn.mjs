@@ -1,3 +1,4 @@
+import { app_language_2_recent_update } from "./app_language_2_recent_update.mjs";
 import { app_language_audio } from "./app_language_audio.mjs";
 import { app_language_2_audio_play_should } from "./app_language_2_audio_play_should.mjs";
 import { app_language_2_answer_delay } from "./app_language_2_answer_delay.mjs";
@@ -17,7 +18,6 @@ import { json_to } from "./json_to.mjs";
 import { list_copy_reverse } from "./list_copy_reverse.mjs";
 import { list_map } from "./list_map.mjs";
 import { log } from "./log.mjs";
-import { app_language_2_on_answer } from "./app_language_2_on_answer.mjs";
 import { app_language_words_update } from "./app_language_words_update.mjs";
 import { app_language_2_refresh_learn_value_choose_initial } from "./app_language_2_refresh_learn_value_choose_initial.mjs";
 import { app_language_2_decrease_wait } from "./app_language_2_decrease_wait.mjs";
@@ -304,7 +304,10 @@ export async function app_language_2_refresh_learn(context) {
             await app_language_audio(language, text);
           }
         }
-        await app_language_2_on_answer(context, word, recent_count, delay);
+        app_language_words_update(context);
+        app_language_2_recent_update(context, word, recent_count);
+        await app_language_2_answer_delay();
+        await app_language_2_refresh_learn(context);
       }
       each([b, b2], (bi) => {
         html_style_font_size_default_multiplied(bi, 1.2);
