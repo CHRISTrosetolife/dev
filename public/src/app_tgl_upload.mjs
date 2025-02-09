@@ -36,7 +36,7 @@ export async function app_tgl_upload() {
   let en_index = list_index(expected, en);
   let tgl_index = list_index(expected, tgl);
   each(remaining, (row) => {
-    let td = html_parse_visit_tag_list(tr_first, "td");
+    let row_tds = html_parse_visit_tag_list(row, "td");
   });
   log({
     languages,
