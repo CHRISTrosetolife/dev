@@ -24,9 +24,11 @@ export async function app_tgl_upload() {
   let tr_first = list_first(trs);
   let td = html_parse_visit_tag_list(tr_first, "td");
   let languages = list_map(td, html_parse_text);
+  let en = "English";
+  let tgl = "Tagalog";
   assert(equal_json, [
     languages,
-    ["English", "Grammar", "Cebuano", "Tagalog", "Hiligaynon"],
+    [en, "Grammar", "Cebuano", tgl, "Hiligaynon"],
   ]);
   log({
     languages,
