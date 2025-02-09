@@ -1,4 +1,4 @@
-import { app_code_refresh_function } from "./app_code_refresh_function.mjs";
+import { app_code_refresh_function_change } from "./app_code_refresh_function_change.mjs";
 import { each_index_1 } from "./each_index_1.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_code_functions_recent_get } from "./app_code_functions_recent_get.mjs";
@@ -20,7 +20,7 @@ export function app_code_refresh_functions_recent(context) {
   let functions_recent = app_code_functions_recent_get(context);
   each_index_1(functions_recent, (fr, index) => {
     html_button(root, string_combine_multiple([index, ". ", fr]), async () => {
-      await app_code_refresh_function(context);
+      await app_code_refresh_function_change(context, fr);
     });
   });
 }
