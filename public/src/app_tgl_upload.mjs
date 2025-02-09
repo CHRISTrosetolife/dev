@@ -21,6 +21,7 @@ import { list_index } from "./list_index.mjs";
 import { list_get } from "./list_get.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { string_ends_with } from "./string_ends_with.mjs";
+import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 export async function app_tgl_upload() {
   let p = await definition_bohol("the");
   let center = html_parse_visit_id(p, "center");
@@ -58,6 +59,7 @@ export async function app_tgl_upload() {
         string_combine_multiple(["&amp;lang=", tgl]),
       ]);
       let word_tgl = html_parse_text(a_tgl);
+      word_tgl = string_trim_whitespace(word_tgl);
     });
   });
   log({
