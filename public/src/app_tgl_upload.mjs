@@ -25,6 +25,7 @@ import { list_get } from "./list_get.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { string_ends_with } from "./string_ends_with.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
+import { string_includes } from "./string_includes.mjs";
 export async function app_tgl_upload() {
   let limit = 100;
   let filtered2 = await english_words_dictionary();
@@ -35,7 +36,7 @@ export async function app_tgl_upload() {
       let center = html_parse_visit_id(p, "center");
       let contents = html_parse_visit_class_single(center, "contents");
       let contents_text = html_parse_text(contents);
-      if (false) {
+      if (string_includes(contents_text, "No English words found matching")) {
       }
       let table = html_parse_visit_attribute_value_single(
         contents,
