@@ -1,3 +1,4 @@
+import { global_function_initialize } from "./global_function_initialize.mjs";
 import { file_rename_on_renames } from "./file_rename_on_renames.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_code_screen_prefix_get } from "./app_code_screen_prefix_get.mjs";
@@ -9,6 +10,9 @@ import { html_div } from "./html_div.mjs";
 import { html_scripts_load } from "./html_scripts_load.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 export async function app_code() {
+  let g = global_function_initialize(app_code, () => ({
+    on_renames: [],
+  }));
   let on_rename = (file_name_from, file_name_to) => {};
   let on_renames = file_rename_on_renames();
   let body = html_style_default_initialize();
