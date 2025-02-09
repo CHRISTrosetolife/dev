@@ -1,3 +1,4 @@
+import { html_parse_children } from "./html_parse_children.mjs";
 import { list_size } from "./list_size.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -47,6 +48,7 @@ export async function app_tgl_upload() {
   let tgl_index = list_index(expected, tgl);
   let words = list_adder((la) => {
     each(remaining, (row) => {
+      let children = html_parse_children(row);
       let row_tds = html_parse_visit_tag_list(row, "td");
       log({
         row: list_size(row),
