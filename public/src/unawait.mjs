@@ -1,3 +1,3 @@
 export function unawait(fn) {
-  fn();
+  return fn();
 }
