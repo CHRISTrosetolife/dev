@@ -1,3 +1,4 @@
+import { app_language_upload_audio } from "./app_language_upload_audio.mjs";
 import { app_language_2_upload_atoms_definitions } from "./app_language_2_upload_atoms_definitions.mjs";
 import { bible_words_spaceify } from "./bible_words_spaceify.mjs";
 import { list_to_lookup_key_value_list } from "./list_to_lookup_key_value_list.mjs";
@@ -113,5 +114,6 @@ export async function app_tgl_upload() {
     list_second,
   );
   let atoms = bible_words_spaceify(pairs);
+  await app_language_upload_audio(atoms, profile);
   await app_language_2_upload_atoms_definitions(atoms, definitions, from, to);
 }
