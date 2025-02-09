@@ -1,3 +1,4 @@
+import { app_code_refresh_html } from "./app_code_refresh_html.mjs";
 import { storage_local_set_context } from "./storage_local_set_context.mjs";
 import { html_button } from "./html_button.mjs";
 import { each } from "./each.mjs";
@@ -12,8 +13,9 @@ export async function app_code_refresh_htmls(context) {
     app_code_button_menu_app(context);
     let file_paths_html = await app_code_html_file_paths_get();
     each(file_paths_html, (h) => {
-      html_button(root, h, () => {
+      html_button(root, h, async () => {
         storage_local_set_context(context, "html_selected", h);
+        await app_code_refresh_html(context);
       });
     });
   });
