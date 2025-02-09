@@ -48,9 +48,6 @@ export function terminal_commands(context) {
       },
       action: async () => {
         let value = await clipboard_paste();
-        log({
-          value,
-        });
         let split = string_split_empty(value);
         let filtered = list_filter(split, (s) => s !== "\r");
         keyboard_type(filtered);
