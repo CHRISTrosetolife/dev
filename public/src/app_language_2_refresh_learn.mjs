@@ -1,5 +1,4 @@
 import { app_language_2_recent_update } from "./app_language_2_recent_update.mjs";
-import { app_language_audio } from "./app_language_audio.mjs";
 import { app_language_2_audio_play_should } from "./app_language_2_audio_play_should.mjs";
 import { app_language_2_answer_delay } from "./app_language_2_answer_delay.mjs";
 import { html_div } from "./html_div.mjs";
@@ -299,14 +298,15 @@ export async function app_language_2_refresh_learn(context) {
         } else {
           app_language_2_wrong(context, v, gap_initial, wait_initial);
         }
-        if (app_language_2_audio_play_should(language_other)) {
-          if (list_size(mapped) === 1) {
-            await app_language_audio(language, text);
-          }
-        }
         app_language_words_update(context);
         app_language_2_recent_update(context, word, recent_count);
-        await app_language_2_answer_delay();
+        if (
+          list_size(mapped) === 1 &&
+          app_language_2_audio_play_should(language_other)
+        ) {
+        } else {
+            await app_language_2_answer_delay();
+        }
         await app_language_2_refresh_learn(context);
       }
       each([b, b2], (bi) => {
