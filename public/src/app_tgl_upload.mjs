@@ -1,3 +1,4 @@
+import { list_add_if_exists_not } from "./list_add_if_exists_not.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_to_lookup_key_value } from "./list_to_lookup_key_value.mjs";
@@ -113,6 +114,7 @@ export async function app_tgl_upload() {
       let key = list_first(pair);
       let value = list_second(pair);
       let list = object_property_initialize(result, key, []);
+      list_add_if_exists_not(list, value);
       return list;
     },
   );
