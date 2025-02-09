@@ -20,6 +20,7 @@ export async function bible_words_definitions_atoms(language) {
     "word",
     "definitions",
   );
+  let inverted = object_list_invert(definitions);
   let take_count = 16;
   let atom_count = app_language_atom_size();
   let group_count = take_count * atom_count;
@@ -27,7 +28,6 @@ export async function bible_words_definitions_atoms(language) {
     pair,
     index,
   }));
-  let inverted = object_list_invert(definitions);
   let lefts = {};
   let rights = {};
   let atoms = [];
