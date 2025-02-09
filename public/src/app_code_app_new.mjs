@@ -9,7 +9,7 @@ export function app_code_app_new(context) {
   let root = app_code_screen_set(context, fn_name("app_code_app_new"));
   let ib = html_input_validated_button(
     root,
-    "Username",
+    "App name",
     [html_condition_empty_not(), html_condition_letters_numbers_underscores()],
     "Save",
     function on_submit(value) {},
