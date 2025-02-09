@@ -42,7 +42,8 @@ export async function app_tgl_upload() {
           contents_text,
           string_combine_multiple(["No ", en, " words found matching"]),
         )
-      ) {$r
+      ) {
+        return;
       }
       let table = html_parse_visit_attribute_value_single(
         contents,
