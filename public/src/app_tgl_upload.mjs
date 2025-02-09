@@ -114,7 +114,6 @@ export async function app_tgl_upload() {
     list_second,
   );
   let atoms = bible_words_spaceify(pairs);
-  return atoms;
   await app_language_upload_audio(atoms, from);
   await app_language_2_upload_atoms_definitions(atoms, definitions, from, to);
 }
