@@ -1,3 +1,8 @@
+import { app_code } from "./app_code.mjs";
+import { storage_local_set } from "./storage_local_set.mjs";
+import { html_condition_letters_numbers_underscores } from "./html_condition_letters_numbers_underscores.mjs";
+import { html_condition_empty_not } from "./html_condition_empty_not.mjs";
+import { html_input_validated_button } from "./html_input_validated_button.mjs";
 import { html_button } from "./html_button.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -11,6 +16,16 @@ export function app_code_refresh_username(context) {
     "If you do not want to store data for later, you may skip this",
     "At this time there are no passwords. You should choose a unique username or someone could overwrite your data.",
   ]);
+  html_input_validated_button(
+    root,
+    "Username",
+    [html_condition_empty_not(), html_condition_letters_numbers_underscores()],
+    "Save",
+    function on_submit(value) {
+      storage_local_set(app_code, "username", value);
+      next();
+    },
+  );
   html_hr(root);
   html_button(root, "Skip", () => {
     next();
