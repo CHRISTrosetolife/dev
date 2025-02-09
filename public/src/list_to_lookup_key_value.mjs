@@ -3,7 +3,7 @@ import { each } from "./each.mjs";
 export function list_to_lookup_key_value(list, mapper_key, mapped_value) {
   let lookup = {};
   each(list, (w) => {
-    object_property_set(lookup, mapper_key(w), mapped_value(w));
+    object_property_set(lookup, mapper_key(w), mapped_value(w, lookup));
   });
   return lookup;
 }
