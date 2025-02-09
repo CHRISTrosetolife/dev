@@ -30,7 +30,6 @@ export async function app_code_refresh_function(context) {
       top: 0,
       position: "sticky",
     });
-    let files = await app_code_files_get();
     let function_selected = storage_local_get_context(
       context,
       "function_selected",
@@ -43,6 +42,7 @@ export async function app_code_refresh_function(context) {
       functions_recent_limit,
     );
     let path = function_name_to_path(function_selected);
+    let files = await app_code_files_get();
     let file = object_property_get(files, path);
     let contents = object_property_get(file, "contents");
     let node = js_parse(contents);
