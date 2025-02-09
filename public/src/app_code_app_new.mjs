@@ -1,3 +1,4 @@
+import { apps_list } from "./apps_list.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_focus } from "./html_focus.mjs";
 import { html_condition_letters_numbers_underscores } from "./html_condition_letters_numbers_underscores.mjs";
@@ -7,6 +8,7 @@ import { fn_name } from "./fn_name.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
 export function app_code_app_new(context) {
   let root = app_code_screen_set(context, fn_name("app_code_app_new"));
+  let existing = apps_list();
   let ib = html_input_validated_button(
     root,
     "App name",
