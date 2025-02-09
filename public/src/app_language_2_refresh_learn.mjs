@@ -276,13 +276,13 @@ export async function app_language_2_refresh_learn(context) {
           if (correct) {
             app_language_2_learn_success(context, v, true);
           } else {
+            html_style_wrong(b);
+            app_language_2_wrong(context, v, gap_initial, wait_initial);
+            await app_language_2_on_answer(context, word, recent_count);
           }
         } else {
           correct = false;
-          html_style_wrong(b);
-          app_language_2_wrong(context, v, gap_initial, wait_initial);
         }
-        await app_language_2_on_answer(context, word, recent_count);
       });
       each([b, b2], (bi) => {
         html_style_font_size_default_multiplied(bi, 1.2);
