@@ -1,3 +1,4 @@
+import { function_rename_on_renames } from "./function_rename_on_renames.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_code_screen_prefix_get } from "./app_code_screen_prefix_get.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -8,6 +9,7 @@ import { html_div } from "./html_div.mjs";
 import { html_scripts_load } from "./html_scripts_load.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 export async function app_code() {
+  let on_renames = function_rename_on_renames();
   let body = html_style_default_initialize();
   let root = html_div(body);
   await html_scripts_load(body, ["axios", "acorn", "astring"]);
