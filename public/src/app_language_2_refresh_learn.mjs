@@ -1,3 +1,4 @@
+import { app_language_audio_unawait } from "./app_language_audio_unawait.mjs";
 import { html_style_flex_1 } from "./html_style_flex_1.mjs";
 import { html_style_flex_row_centered } from "./html_style_flex_row_centered.mjs";
 import { list_sort_string_map } from "./list_sort_string_map.mjs";
@@ -283,6 +284,7 @@ export async function app_language_2_refresh_learn(context) {
   }
   function app_language2_word_titled(body, text_title, language, text_word) {
     let title = html_p_text(body, string_combine_multiple([text_title, ": "]));
-    app_language_2_word_p(body, language, text_word);
+    app_language_2_word_p(body, language, text_word);$ib
+    app_language_audio_unawait(language, text_word);
   }
 }
