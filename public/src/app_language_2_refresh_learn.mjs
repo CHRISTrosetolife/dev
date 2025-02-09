@@ -164,7 +164,13 @@ export async function app_language_2_refresh_learn(context) {
     );
     let questions = list_map_property(va_filtered, "question");
     let boxed = list_includes(questions, question);
-    app_language_2_word(root, language, question, boxed);
+    let question_component = app_language_2_word(
+      root,
+      language,
+      question,
+      boxed,
+    );
+    app_language_2_audio(question_component);
     let m_size = list_size(mapped);
     if (m_size >= 2) {
       let m_size_span = html_span_text(
