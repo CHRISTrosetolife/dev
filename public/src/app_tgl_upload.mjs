@@ -1,3 +1,4 @@
+import { bible_words_spaceify } from "./bible_words_spaceify.mjs";
 import { list_to_lookup_key_value_list } from "./list_to_lookup_key_value_list.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
@@ -110,6 +111,7 @@ export async function app_tgl_upload() {
     list_first,
     list_second,
   );
+  let atoms = bible_words_spaceify(pairs);
   return dictionary;
   let from = "tgl";
   let to = "en";
