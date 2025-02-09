@@ -49,6 +49,8 @@ export async function app_tgl_upload() {
     let as_tgl = html_parse_visit_tag_list(td_tgl, "a");
     list_map(as_tgl, (a_tgl) => {
       let href = html_parse_href(a_tgl);
+      ["diksyunaryo.php?sw="];
+      ["&amp;lang=", tgl];
     });
   });
   log({
