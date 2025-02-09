@@ -153,6 +153,7 @@ export async function terminal() {
             match_is = true;
           }
         }
+        log({});
         if (match_is) {
           la();
           await command.action(key);
