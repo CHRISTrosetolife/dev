@@ -40,9 +40,9 @@ export async function app_tgl_upload() {
       if (
         string_includes(
           contents_text,
-          string_combine_multiple(["No English words found matching"]),
+          string_combine_multiple(["No ", en, " words found matching"]),
         )
-      ) {
+      ) {$r
       }
       let table = html_parse_visit_attribute_value_single(
         contents,
