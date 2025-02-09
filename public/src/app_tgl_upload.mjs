@@ -114,7 +114,7 @@ export async function app_tgl_upload() {
     key_mapper,
     (pair, result) => {
       let key = key_mapper(pair);
-      let value = list_second(pair);
+      let value = value_mapper(pair);
       let list = object_property_initialize(result, key, []);
       list_add_if_exists_not(list, value);
       return list;
