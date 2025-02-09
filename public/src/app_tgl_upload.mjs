@@ -68,7 +68,7 @@ export async function app_tgl_upload() {
     });
   });
   log({
-    languages,
+    words,
   });
   return;
   let from = "tgl";
