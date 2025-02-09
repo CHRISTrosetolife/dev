@@ -11,7 +11,7 @@ export async function app_code_refresh_htmls(context) {
     app_code_button_menu_app(context);
     let file_paths_html = await app_code_html_file_paths_get();
     each(file_paths_html, (f) => {
-      html_button(parent, "HTML files", () => {});
+      html_button(parent, f, () => {});
     });
   });
 }
