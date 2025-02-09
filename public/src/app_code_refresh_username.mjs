@@ -21,16 +21,15 @@ export function app_code_refresh_username(context) {
     "Username",
     [html_condition_empty_not(), html_condition_letters_numbers_underscores()],
     "Save",
-    on_submit,
+    function on_submit(value) {
+      storage_local_set(app_code, "username", value);
+      next();
+    },
   );
   html_hr(root);
   html_button(root, "Skip", () => {
     next();
   });
-  function on_submit(value) {
-    storage_local_set(app_code, "username", value);
-    next();
-  }
   async function next() {
     await app_code_refresh_menu(context);
   }
