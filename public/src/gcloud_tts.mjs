@@ -6,6 +6,7 @@ import { file_overwrite_binary } from "./file_overwrite_binary.mjs";
 import textToSpeech from "@google-cloud/text-to-speech";
 import { file_exists } from "./file_exists.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { object_merge_strict } from "./object_merge_strict.mjs";
 export async function gcloud_tts(
   language_code,
   voice,
@@ -17,9 +18,12 @@ export async function gcloud_tts(
     output_path,
   };
   if (await file_exists(output_path)) {
-    return {
-      created: false,
-    };
+    return object_merge_strict(
+      {
+        created: false,
+      },
+      result,
+    );
   }
   assert(string_empty_not_is, [text]);
   let client = new textToSpeech.TextToSpeechClient();
@@ -43,8 +47,10 @@ export async function gcloud_tts(
   );
   let data = response.audioContent;
   await file_overwrite_binary(output_path, data);
-  return {
-    created: true,
-    output_path,
-  };
+  return object_merge_strict(
+    {
+      created: true,
+    },
+    result,
+  );
 }
