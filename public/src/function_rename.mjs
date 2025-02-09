@@ -1,4 +1,3 @@
-import { function_rename_on_renames } from "./function_rename_on_renames.mjs";
 import { functions_paths } from "./functions_paths.mjs";
 import { function_rename_fn_name } from "./function_rename_fn_name.mjs";
 import { functions_transform } from "./functions_transform.mjs";
@@ -23,7 +22,6 @@ import { list_map } from "./list_map.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
-import { each_async } from "./each_async.mjs";
 export async function function_rename(fn_name_from, fn_name_to) {
   assert_arguments_length(arguments, 2);
   let intersecteds = await function_rename_fn_name(fn_name_from, fn_name_to);
@@ -69,9 +67,5 @@ export async function function_rename(fn_name_from, fn_name_to) {
   await data_transform(async function lambda(data) {
     data_remove(data, fn_name_from);
     await data_update_multiple_transform(functions_paths, data);
-  });
-  let on_renames = function_rename_on_renames();
-  await each_async(on_renames, () => {
-    on_renames();
   });
 }
