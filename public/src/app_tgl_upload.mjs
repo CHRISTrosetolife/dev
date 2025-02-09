@@ -107,11 +107,12 @@ export async function app_tgl_upload() {
     });
   });
   pairs = list_unique_json(pairs);
+  let key_mapper = list_first;
   let dictionary = list_to_lookup_key_value(
     pairs,
-    list_first,
+    key_mapper,
     (pair, result) => {
-      let key = list_first(pair);
+      let key = key_mapper(pair);
       let value = list_second(pair);
       let list = object_property_initialize(result, key, []);
       list_add_if_exists_not(list, value);
