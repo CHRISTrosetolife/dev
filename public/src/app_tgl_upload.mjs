@@ -1,3 +1,4 @@
+import { equal_by } from "./equal_by.mjs";
 import { each } from "./each.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
@@ -14,6 +15,7 @@ import { app_language_upload_result } from "./app_language_upload_result.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { list_index } from "./list_index.mjs";
+import { list_size } from "./list_size.mjs";
 export async function app_tgl_upload() {
   let p = await definition_bohol("the");
   let center = html_parse_visit_id(p, "center");
@@ -37,6 +39,7 @@ export async function app_tgl_upload() {
   let tgl_index = list_index(expected, tgl);
   each(remaining, (row) => {
     let row_tds = html_parse_visit_tag_list(row, "td");
+    assert(equal_by, [row, expected, list_size]);
   });
   log({
     languages,
