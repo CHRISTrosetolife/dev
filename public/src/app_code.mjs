@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { global_function_initialize } from "./global_function_initialize.mjs";
 import { file_rename_on_renames } from "./file_rename_on_renames.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -13,7 +14,9 @@ export async function app_code() {
   let g = global_function_initialize(app_code, () => ({
     apps_list_name: fn_name("apps_list"),
   }));
-  let on_rename = (file_name_from, file_name_to) => {};
+  let on_rename = (file_name_from, file_name_to) => {
+    object_property_get(object, "property_name");
+  };
   let on_renames = file_rename_on_renames();
   let body = html_style_default_initialize();
   let root = html_div(body);
