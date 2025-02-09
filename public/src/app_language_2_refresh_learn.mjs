@@ -1,3 +1,4 @@
+import { app_language_2_audio_play_should } from "./app_language_2_audio_play_should.mjs";
 import { app_language_2_answer_delay } from "./app_language_2_answer_delay.mjs";
 import { html_div } from "./html_div.mjs";
 import { app_language_2_audio } from "./app_language_2_audio.mjs";
@@ -297,8 +298,9 @@ export async function app_language_2_refresh_learn(context) {
         } else {
           app_language_2_wrong(context, v, gap_initial, wait_initial);
         }
-        if (false) {
-          list_size(mapped) === 1;
+        if (app_language_2_audio_play_should(language)) {
+          if (list_size(mapped) === 1) {
+          }
         }
         await app_language_2_on_answer(context, word, recent_count);
       }
