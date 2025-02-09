@@ -1,3 +1,5 @@
+import { string_empty_not_is } from "./string_empty_not_is.mjs";
+import { assert } from "./assert.mjs";
 import { tautology } from "./tautology.mjs";
 import { retry } from "./retry.mjs";
 import { file_overwrite_binary } from "./file_overwrite_binary.mjs";
@@ -11,7 +13,7 @@ export async function gcloud_tts(
   text,
   output_path,
 ) {
-    assert(string_empty_not_is, [text]);
+  assert(string_empty_not_is, [text]);
   if (await file_exists(output_path)) {
     return {
       created: false,
