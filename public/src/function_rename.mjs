@@ -73,5 +73,6 @@ export async function function_rename(fn_name_from, fn_name_to) {
   let g = global_function_initialize(function_rename, () => ({
     on_renames: [],
   }));
-  await invoke_multiple_async(object_property_get(g, "on_renames"));
+  let on_renames = object_property_get(g, "on_renames");
+  await invoke_multiple_async(on_renames);
 }
