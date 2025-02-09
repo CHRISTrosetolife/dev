@@ -1,3 +1,5 @@
+import { list_first } from "./list_first.mjs";
+import { list_to_lookup_key_value } from "./list_to_lookup_key_value.mjs";
 import { string_parenthesis_remove } from "./string_parenthesis_remove.mjs";
 import { string_split_comma } from "./string_split_comma.mjs";
 import { list_unique_json } from "./list_unique_json.mjs";
@@ -102,6 +104,11 @@ export async function app_tgl_upload() {
     });
   });
   pairs = list_unique_json(pairs);
+  let dictionary = list_to_lookup_key_value(
+    pairs,
+    list_first,
+    (pair, result) => {},
+  );
   return pairs;
   let from = "tgl";
   let to = "en";
