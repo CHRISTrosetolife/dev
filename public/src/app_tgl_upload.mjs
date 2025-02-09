@@ -44,7 +44,7 @@ export async function app_tgl_upload() {
   assert(equal_json, [languages, expected]);
   let en_index = list_index(expected, en);
   let tgl_index = list_index(expected, tgl);
-  list_adder((la) => {
+  let words = list_adder((la) => {
     each(remaining, (row) => {
       let row_tds = html_parse_visit_tag_list(row, "td");
       assert(list_size_equal, [row, expected]);
