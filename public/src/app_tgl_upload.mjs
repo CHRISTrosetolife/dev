@@ -1,3 +1,4 @@
+import { app_language_2_upload_atoms_definitions } from "./app_language_2_upload_atoms_definitions.mjs";
 import { bible_words_spaceify } from "./bible_words_spaceify.mjs";
 import { list_to_lookup_key_value_list } from "./list_to_lookup_key_value_list.mjs";
 import { list_second } from "./list_second.mjs";
@@ -23,8 +24,6 @@ import { html_parse_visit_attribute_value_single } from "./html_parse_visit_attr
 import { html_parse_visit_id } from "./html_parse_visit_id.mjs";
 import { html_parse_visit_class_single } from "./html_parse_visit_class_single.mjs";
 import { definition_bohol } from "./definition_bohol.mjs";
-import { app_language_group_upload } from "./app_language_group_upload.mjs";
-import { app_language_upload_result } from "./app_language_upload_result.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { list_index } from "./list_index.mjs";
@@ -37,6 +36,8 @@ import { list_size } from "./list_size.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 export async function app_tgl_upload() {
+  let from = "tgl";
+  let to = "en";
   let limit = 100;
   let filtered2 = await english_words_dictionary();
   let taken = list_take(filtered2, limit);
@@ -112,18 +113,6 @@ export async function app_tgl_upload() {
     list_second,
   );
   let atoms = bible_words_spaceify(pairs);
+  await app_language_2_upload_atoms_definitions(atoms, definitions, from, to);
   return dictionary;
-  let from = "tgl";
-  let to = "en";
-  let result_new = app_language_upload_result(atoms, {
-    definitions,
-  });
-  let existing_path = await app_language_group_upload(
-    {
-      from,
-      to,
-    },
-    "all",
-    result_new,
-  );
 }
