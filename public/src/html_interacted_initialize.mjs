@@ -10,11 +10,12 @@ export function html_interacted_initialize() {
   let g = global_function(html_interacted);
   object_property_initialize(g, "initialized", false);
   let start = true;
-  each([html_on_keydown, html_on_click], (item) => {});
-  html_on_click(html_document_get(), () => {
-    if (start) {
-      object_property_set(g, "initialized", true);
-      start = false;
-    }
+  each([html_on_keydown, html_on_click], (on) => {
+    on(html_document_get(), () => {
+      if (start) {
+        object_property_set(g, "initialized", true);
+        start = false;
+      }
+    });
   });
 }
