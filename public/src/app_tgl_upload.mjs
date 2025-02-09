@@ -107,7 +107,9 @@ export async function app_tgl_upload() {
   let dictionary = list_to_lookup_key_value(
     pairs,
     list_first,
-    (pair, result) => {},
+    (pair, result) => {
+      let key = list_first(pair);
+    },
   );
   return pairs;
   let from = "tgl";
