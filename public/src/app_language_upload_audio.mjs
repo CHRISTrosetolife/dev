@@ -7,12 +7,12 @@ import { list_first } from "./list_first.mjs";
 import { list_map_async } from "./list_map_async.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_chunk_each } from "./list_chunk_each.mjs";
-export async function app_language_upload_audio(group, profile) {
+export async function app_language_upload_audio(group, from) {
   await list_chunk_each(group, async function each_chunk(chunk) {
     let mapped = list_map(chunk, async (atom) => {
       let createds = await list_map_async(atom, async (pair) => {
         let b = list_first(pair);
-        let r = await audio_upload(profile.from, b);
+        let r = await audio_upload(from, b);
         return r;
       });
       return list_any_created(createds);
