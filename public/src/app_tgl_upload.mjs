@@ -27,15 +27,17 @@ export async function app_tgl_upload() {
   let fr = list_first_remaining(trs);
   let remaining = object_property_get(fr, "remaining");
   let tr_first = object_property_get(fr, "first");
-  let td = html_parse_visit_tag_list(tr_first, "td");
-  let languages = list_map(td, html_parse_text);
+  let first_tds = html_parse_visit_tag_list(tr_first, "td");
+  let languages = list_map(first_tds, html_parse_text);
   let en = "English";
   let tgl = "Tagalog";
   let expected = [en, "Grammar", "Cebuano", tgl, "Hiligaynon"];
   assert(equal_json, [languages, expected]);
   let en_index = list_index(expected, en);
   let tgl_index = list_index(expected, tgl);
-  each(list, (item) => {});
+  each(remaining, (row) => {
+    let td = html_parse_visit_tag_list(tr_first, "td");
+  });
   log({
     languages,
   });
