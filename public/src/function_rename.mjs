@@ -1,3 +1,5 @@
+import { equal_not } from "./equal_not.mjs";
+import { assert } from "./assert.mjs";
 import { functions_paths } from "./functions_paths.mjs";
 import { function_rename_fn_name } from "./function_rename_fn_name.mjs";
 import { functions_transform } from "./functions_transform.mjs";
@@ -24,6 +26,7 @@ import { list_empty_is } from "./list_empty_is.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 export async function function_rename(fn_name_from, fn_name_to) {
   assert_arguments_length(arguments, 2);
+  assert(equal_not, []);
   let intersecteds = await function_rename_fn_name(fn_name_from, fn_name_to);
   let identifiers = await data_identifiers();
   let fn_path_from = function_name_to_path(fn_name_from);
