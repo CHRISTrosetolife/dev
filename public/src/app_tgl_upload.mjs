@@ -1,3 +1,4 @@
+import { list_take } from "./list_take.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { each_async } from "./each_async.mjs";
 import { english_words_dictionary } from "./english_words_dictionary.mjs";
@@ -28,6 +29,7 @@ import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 export async function app_tgl_upload() {
   let limit = 100;
   let filtered2 = await english_words_dictionary();
+  let taken = list_take(filtered2, limit);
   let words = await list_adder_async(async (la) => {
     await each_async(filtered2, async (w) => {
       let p = await definition_bohol(w);
