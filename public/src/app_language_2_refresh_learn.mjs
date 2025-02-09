@@ -246,7 +246,7 @@ export async function app_language_2_refresh_learn(context) {
           emoji_right,
           ":",
         ]),
-        quiz_container,
+        choice_div,
       );
       app_language_2_tutorial_message(
         context,
@@ -255,9 +255,9 @@ export async function app_language_2_refresh_learn(context) {
           emoji_wrong,
           " (it will be counted wrong so you can review the word more):",
         ]),
-        quiz_container,
+        choice_div,
       );
-      let row = html_p(quiz_container);
+      let row = html_p(choice_div);
       html_style_flex_row_centered(row);
       let b2 = html_button_text_click(row, emoji_wrong, async () => {
         decrease_wait();
