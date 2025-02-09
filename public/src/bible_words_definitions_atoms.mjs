@@ -9,5 +9,5 @@ export async function bible_words_definitions_atoms(language) {
     "word",
     "definitions",
   );
-  return bible_words_definitions_pairs_to_atoms_inverted(definitions, pairs);
+  return bible_words_definitions_pairs_to_atoms_inverted(pairs, definitions);
 }
