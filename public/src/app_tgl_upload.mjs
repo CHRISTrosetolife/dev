@@ -76,7 +76,7 @@ export async function app_tgl_upload() {
         assert(string_starts_with, [href, "diksyunaryo.php?sw="]);
         let words_tgl = html_parse_text(a_tgl);
         let split = string_split_comma(words_tgl);
-        if (!string_includes(split, "'")) {
+        if (!string_includes(words_tgl, "'")) {
           assert(string_ends_with, [
             href,
             string_combine_multiple(["&lang=", tgl]),
