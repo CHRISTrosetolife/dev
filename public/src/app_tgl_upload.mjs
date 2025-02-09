@@ -7,7 +7,7 @@ export async function app_tgl_upload() {
   let p = await definition_bohol("the");
   let contents = html_parse_visit_class_single(p, "contents");
   log({
-    p,
+    contents,
   });
   return;
   let from = "tgl";
