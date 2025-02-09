@@ -11,7 +11,7 @@ import { html_scripts_load } from "./html_scripts_load.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 export async function app_code() {
   let g = global_function_initialize(app_code, () => ({
-    on_renames: [],
+    apps_list_name: fn_name("apps_list"),
   }));
   let on_rename = (file_name_from, file_name_to) => {};
   let on_renames = file_rename_on_renames();
