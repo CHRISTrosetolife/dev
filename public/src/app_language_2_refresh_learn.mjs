@@ -74,11 +74,6 @@ export async function app_language_2_refresh_learn(context) {
     app_language_2_refresh_learn_value_choose_initial(context);
   let { v, wait_initial, gap_initial, learn_new, u } =
     app_language_2_refresh_learn_value_choose(values);
-  let language_other = app_language_2_other(
-    language,
-    language_learn,
-    language_fluent,
-  );
   if (learn_new) {
     app_language_2_tutorial_message(
       context,
@@ -87,6 +82,11 @@ export async function app_language_2_refresh_learn(context) {
     );
     let u_word = object_property_get(u, "word");
     let language = object_property_get(u_word, "language");
+    let language_other = app_language_2_other(
+      language,
+      language_learn,
+      language_fluent,
+    );
     let question = object_property_get(u_word, "question");
     let mapped = app_language_2_answers(values_skip_manual, u);
     let answer_text = list_join_comma_space(mapped);
@@ -127,6 +127,11 @@ export async function app_language_2_refresh_learn(context) {
       recent_count,
     );
     let language = object_property_get(word, "language");
+    let language_other = app_language_2_other(
+      language,
+      language_learn,
+      language_fluent,
+    );
     let questions_recent_keys = list_map(questions_recent, (key) => {
       let list;
       if (language === language_fluent) {
