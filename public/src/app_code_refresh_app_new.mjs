@@ -13,9 +13,9 @@ import { fn_name } from "./fn_name.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { list_concat } from "./list_concat.mjs";
 export async function app_code_refresh_app_new(context) {
-  await app_code_files_get();
   let root = app_code_screen_set(context, fn_name("app_code_refresh_app_new"));
   let f_name = fn_name("apps_list");
+  await app_code_files_get();
   let f_source = await function_declarations_unparse([f_name]);
   let combined = string_combine_multiple([f_source, js_code_call(f_name)]);
   let existing = eval(combined);
