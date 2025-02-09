@@ -7,7 +7,7 @@ export async function file_rename(file_name_from, file_name_to) {
   await folder_parent_exists_ensure(file_name_to);
   await fs.promises.rename(file_name_from, file_name_to);
   let on_renames = file_rename_on_renames();
-  await each_async(on_renames, (on_renames) => {
-    on_renames(file_name_from, file_name_to);
+  await each_async(on_renames, async (on_renames) => {
+    await on_renames(file_name_from, file_name_to);
   });
 }
