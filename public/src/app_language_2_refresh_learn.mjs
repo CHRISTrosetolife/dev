@@ -278,10 +278,11 @@ export async function app_language_2_refresh_learn(context) {
           await on_answer_wrong(b);
         }
       });
-      async function on_answer_wrong(b) {
-        html_style_wrong(b);
+      async function on_answer_wrong(button) {
+        html_style_wrong(button);
         await app_language_2_answer_delay();
         html_remove(choice_div);
+        html_remove(b);
       }
       async function on_answer_match(b) {
         decrease_wait();
