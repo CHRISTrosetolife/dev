@@ -15,7 +15,7 @@ export function app_code_app_new(context) {
     root,
     "App name",
     list_concat(html_condition_identifier_fn_part(), [
-      html_condition_includes_not(message, existing),
+      html_condition_includes_not(existing, message),
     ]),
     "Save",
     function on_submit(value) {},
