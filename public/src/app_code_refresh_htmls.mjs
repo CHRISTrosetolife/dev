@@ -11,9 +11,9 @@ export async function app_code_refresh_htmls(context) {
     let root = app_code_screen_set(context, fn_name("app_code_refresh_htmls"));
     app_code_button_menu_app(context);
     let file_paths_html = await app_code_html_file_paths_get();
-    each(file_paths_html, (f) => {
-      html_button(parent, f, () => {
-        storage_local_set_context(context, "html_selected", f);
+    each(file_paths_html, (h) => {
+      html_button(parent, h, () => {
+        storage_local_set_context(context, "html_selected", h);
       });
     });
   });
