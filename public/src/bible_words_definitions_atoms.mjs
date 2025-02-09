@@ -13,7 +13,6 @@ import { object_list_invert } from "./object_list_invert.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { list_remove } from "./list_remove.mjs";
 export async function bible_words_definitions_atoms(language) {
-  let group_count = take_count * atom_count;
   let { pairs, definitions: definitions_list } =
     await bible_words_definitions_pairs(language);
   let definitions = list_to_lookup_key_value_property(
@@ -23,6 +22,7 @@ export async function bible_words_definitions_atoms(language) {
   );
   let take_count = 16;
   let atom_count = app_language_atom_size();
+  let group_count = take_count * atom_count;
   pairs = list_map_index(pairs, (pair, index) => ({
     pair,
     index,
