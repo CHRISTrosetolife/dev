@@ -32,7 +32,9 @@ export function app_el_upload() {
         list_first_remaining(split_letters);
     });
     la([uppercase, string_combine_multiple([name_letter, " uppercase"])]);
-    each_index(list, (item, index) => {});
+    each_index(list, (item, index) => {
+      la([uppercase, string_combine_multiple([name_letter, " uppercase"])]);
+    });
   });
   return chunks;
 }
