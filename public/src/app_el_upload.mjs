@@ -12,6 +12,7 @@ import { app_language_2_upload_pairs } from "./app_language_2_upload_pairs.mjs";
 import { object_property_increment } from "./object_property_increment.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { list_first } from "./list_first.mjs";
+import { object_merge_strict } from "./object_merge_strict.mjs";
 export async function app_el_upload() {
   let from = "el";
   let to = "en";
@@ -29,9 +30,13 @@ export async function app_el_upload() {
   list_reverse(pairs);
   let taken = list_take(pairs, 50);
   let mapped = list_map(taken, list_first);
-  let mapped2 = await list_map_async(
-    mapped,
-    async (m) => await bible_interlinear_definition_hub("greek", m),
+  let mapped2 = await list_map_async(mapped, async (strong) =>
+    object_merge_strict(
+      {
+        strong,
+      },
+      await bible_interlinear_definition_hub("greek", strong),
+    ),
   );
   return mapped2;
   return await app_language_2_upload_pairs(pairs, from, to);
