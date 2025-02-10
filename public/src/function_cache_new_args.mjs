@@ -1,3 +1,4 @@
+import { js_code_array } from "./js_code_array.mjs";
 import { string_split_comma } from "./string_split_comma.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { function_cache_name } from "./function_cache_name.mjs";
@@ -6,7 +7,6 @@ import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_await } from "./js_code_await.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
-import { js_code_brackets } from "./js_code_brackets.mjs";
 import { file_write } from "./file_write.mjs";
 export async function function_cache_new_args(function_name, args_string) {
   let split = string_split_comma(args_string);
@@ -18,7 +18,7 @@ export async function function_cache_new_args(function_name, args_string) {
       js_code_await(
         js_code_call_args(fn_name("function_cache"), [
           function_name,
-          js_code_brackets(),
+          js_code_array(split),
         ]),
       ),
     ),
