@@ -1,3 +1,4 @@
+import { bible_interlinear_strongs_cache_hub } from "./bible_interlinear_strongs_cache_hub.mjs";
 import { list_find } from "./list_find.mjs";
 import { equal } from "./equal.mjs";
 import { assert } from "./assert.mjs";
@@ -6,9 +7,8 @@ import { html_parse_text } from "./html_parse_text.mjs";
 import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
 import { html_parse_visit_id } from "./html_parse_visit_id.mjs";
 import { html_parse } from "./html_parse.mjs";
-import { bible_interlinear_strongs_cache } from "./bible_interlinear_strongs_cache.mjs";
 export async function bible_interlinear_definition_hub(language, strong) {
-  let html = await bible_interlinear_strongs_cache(language, strong);
+  let html = await bible_interlinear_strongs_cache_hub(language, strong);
   let p = await html_parse(html);
   let leftbox = html_parse_visit_id(p, "leftbox");
   let tophdg = html_parse_visit_class_list(leftbox, "tophdg");
