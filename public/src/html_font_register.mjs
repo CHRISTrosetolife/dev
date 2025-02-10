@@ -1,3 +1,4 @@
+import { object_property_exists } from "./object_property_exists.mjs";
 import { json_to } from "./json_to.mjs";
 import { global_function } from "./global_function.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
@@ -8,7 +9,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function html_font_register(font_name, font_path) {
   let g = global_function(html_font_register);
   let key = json_to(font_name, font_path);
-  if (false) {
+  if (object_property_exists(object, "property_name")) {
   }
   let style = html_element(html_document_head(), "style");
   html_attribute_set(style, "type", "text/css");
