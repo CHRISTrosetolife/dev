@@ -114,8 +114,8 @@ export async function app_tgl_upload() {
     list_first,
     list_second,
   );
+  return list_find_index(pairs, (a) => equal_json(a, ["kimi", "shy"]));
   let atoms = bible_words_spaceify(pairs);
-  return list_find_index(atoms, (a) => equal_json(a, ["kimi", "shy"]));
   await app_language_upload_audio(atoms, from);
   await app_language_2_upload_atoms_definitions(atoms, definitions, from, to);
 }
