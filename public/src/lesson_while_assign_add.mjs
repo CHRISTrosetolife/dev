@@ -1,3 +1,4 @@
+import { list_sort_map } from "./list_sort_map.mjs";
 import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { lesson_screen_variables_numbers_sorted } from "./lesson_screen_variables_numbers_sorted.mjs";
 import { app_learn_code_random_identifiers } from "./app_learn_code_random_identifiers.mjs";
@@ -11,7 +12,6 @@ import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
 import { call_multiple } from "./call_multiple.mjs";
 import { html_p_text } from "./html_p_text.mjs";
-import { list_sort } from "./list_sort.mjs";
 import { identity } from "./identity.mjs";
 import { js_code_statement_let_assign_multiple } from "./js_code_statement_let_assign_multiple.mjs";
 export function lesson_while_assign_add() {
@@ -23,7 +23,7 @@ export function lesson_while_assign_add() {
       list_sort_string_map(names, identity);
       let [a, b] = names;
       let values = call_multiple(integer_random_digit_single_positive, 2);
-      list_sort(values, identity);
+      list_sort_map(values, identity);
       let lines = [
         js_code_statement_let_assign_multiple(names, values),
         js_code_statement_add_assign(a, b),

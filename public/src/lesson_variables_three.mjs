@@ -1,8 +1,8 @@
+import { list_sort_map } from "./list_sort_map.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { lesson_screen_variables_numbers_sorted } from "./lesson_screen_variables_numbers_sorted.mjs";
 import { js_code_statement_let_assign_multiple } from "./js_code_statement_let_assign_multiple.mjs";
-import { list_sort } from "./list_sort.mjs";
 import { app_learn_code_log_add_3 } from "./app_learn_code_log_add_3.mjs";
 import { call_multiple } from "./call_multiple.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
@@ -18,7 +18,7 @@ export function lesson_variables_three() {
     function () {
       let count = 3;
       let values = call_multiple(integer_random_digit_single_positive, count);
-      list_sort(values, identity);
+      list_sort_map(values, identity);
       let names = app_learn_code_random_identifiers(count);
       list_sort_string_map(names, identity);
       let [name_a, name_b, name_c] = names;

@@ -1,4 +1,4 @@
-import { list_sort } from "./list_sort.mjs";
+import { list_sort_map } from "./list_sort_map.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { each_object } from "./each_object.mjs";
@@ -20,7 +20,7 @@ export async function app_el_upload() {
       la([strong, count]);
     });
   });
-  list_sort(pairs, (p) => list_second(p));
+  list_sort_map(pairs, (p) => list_second(p));
   list_reverse(pairs);
   return pairs;
   return await app_language_2_upload_pairs(pairs, from, to);

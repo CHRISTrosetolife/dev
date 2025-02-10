@@ -1,3 +1,4 @@
+import { list_sort_map } from "./list_sort_map.mjs";
 import { app_language_2_key_to } from "./app_language_2_key_to.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { each_index } from "./each_index.mjs";
@@ -8,7 +9,6 @@ import { list_chunk } from "./list_chunk.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { json_to } from "./json_to.mjs";
-import { list_sort } from "./list_sort.mjs";
 import { app_language_2_words_get } from "./app_language_2_words_get.mjs";
 import { list_flatten } from "./list_flatten.mjs";
 import { html_localhost_is } from "./html_localhost_is.mjs";
@@ -32,7 +32,7 @@ export function app_language_2_group_get(context) {
   }
   let flat = list_flatten(group);
   let words = app_language_2_words_get(context);
-  list_sort(flat, (f) => {
+  list_sort_map(flat, (f) => {
     let key = json_to(list_concat(f, [language_learn]));
     return object_property_exists(words, key) &&
       object_property_get(object_property_get(words, key), "learning") === true

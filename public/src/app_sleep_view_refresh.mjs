@@ -1,3 +1,4 @@
+import { list_sort_map } from "./list_sort_map.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { round_2 } from "./round_2.mjs";
@@ -8,7 +9,6 @@ import { app_sleep_when_get } from "./app_sleep_when_get.mjs";
 import { app_sleep_when } from "./app_sleep_when.mjs";
 import { app_sleep_wakeups } from "./app_sleep_wakeups.mjs";
 import { app_sleep_list_name } from "./app_sleep_list_name.mjs";
-import { list_sort } from "./list_sort.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { each_async } from "./each_async.mjs";
 import { app_sleep_date_download } from "./app_sleep_date_download.mjs";
@@ -52,7 +52,7 @@ export async function app_sleep_view_refresh(parent) {
       });
     });
   });
-  list_sort(items, app_sleep_when_get);
+  list_sort_map(items, app_sleep_when_get);
   let sleep_start = null;
   each(items, (item) => {
     let when = app_sleep_when_get(item);
