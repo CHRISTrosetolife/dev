@@ -8,6 +8,8 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function html_font_register(font_name, font_path) {
   let g = global_function(html_font_register);
   let key = json_to(font_name, font_path);
+  if (false) {
+  }
   let style = html_element(html_document_head(), "style");
   html_attribute_set(style, "type", "text/css");
   let value = string_combine_multiple([
