@@ -1,4 +1,4 @@
-import { app_tgl_upload_pairs } from "./app_tgl_upload_pairs.mjs";
+import { app_tgl_upload_pairs_cache } from "./app_tgl_upload_pairs_cache.mjs";
 import { app_language_upload_audio } from "./app_language_upload_audio.mjs";
 import { app_language_2_upload_atoms_definitions } from "./app_language_2_upload_atoms_definitions.mjs";
 import { bible_words_spaceify } from "./bible_words_spaceify.mjs";
