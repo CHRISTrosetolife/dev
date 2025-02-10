@@ -1,3 +1,4 @@
+import { list_map_async } from "./list_map_async.mjs";
 import { bible_interlinear_definition_hub } from "./bible_interlinear_definition_hub.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_take } from "./list_take.mjs";
@@ -28,7 +29,7 @@ export async function app_el_upload() {
   list_reverse(pairs);
   let taken = list_take(pairs, 50);
   let mapped = list_map(taken, list_first);
-  let mapped2 = list_map(
+  let mapped2 = await list_map_async(
     mapped,
     async (m) => await bible_interlinear_definition_hub("greek", m),
   );
