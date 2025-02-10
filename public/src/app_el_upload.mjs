@@ -36,7 +36,7 @@ export function app_el_upload() {
           string_combine_multiple([
             name_letter,
             " (lowercase",
-            index === 1 ? " ending" : "",
+            index === 1 ? ", ending" : "",
             ")",
           ]),
         ]);
