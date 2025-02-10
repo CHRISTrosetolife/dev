@@ -1,3 +1,4 @@
+import { string_encoded_to } from "./string_encoded_to.mjs";
 import { storage_url_audio } from "./storage_url_audio.mjs";
 import { global_function } from "./global_function.mjs";
 import { audio_language } from "./audio_language.mjs";
@@ -27,7 +28,8 @@ export async function app_language_audio(language, text) {
     count = mod(count, length);
   }
   object_property_set(counts, text, count);
-  if (false) {
+  if (language === "el") {
+    text = string_encoded_to(text);
   }
   let url = await storage_url_audio(language, count, text);
   return await html_audio(url);
