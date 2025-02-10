@@ -21,6 +21,6 @@ export async function app_el_upload() {
   });
   list_sort_map(pairs, (p) => list_second(p));
   list_reverse(pairs);
-  return;
+  return pairs;
   return await app_language_2_upload_pairs(pairs, from, to);
 }
