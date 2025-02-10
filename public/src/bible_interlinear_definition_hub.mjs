@@ -6,6 +6,6 @@ export async function bible_interlinear_definition_hub(language, strong) {
     html_lambda,
     language,
     strong,
-    ["Definition:",'Meaning:'],
+    ["Definition:", "Meaning:"],
   );
 }
