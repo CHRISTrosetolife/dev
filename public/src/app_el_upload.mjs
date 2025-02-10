@@ -11,4 +11,5 @@ export function app_el_upload() {
   let split = string_split_multiple(alphabet_string, ["\n", "\t"]);
   let mapped = list_map(split, string_trim_whitespace);
   let filtered = list_filter(mapped, string_empty_not_is);
+  return filtered;
 }
