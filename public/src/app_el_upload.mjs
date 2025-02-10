@@ -1,3 +1,5 @@
+import { list_size_2 } from "./list_size_2.mjs";
+import { assert } from "./assert.mjs";
 import { list_first } from "./list_first.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -18,6 +20,7 @@ export function app_el_upload() {
   let chunks = list_chunk(filtered, 2);
   list_adder((la) => {
     each(chunks, (chunk) => {
+      assert(list_size_2, [chunk]);
       let letters = list_first(chunk);
     });
   });
