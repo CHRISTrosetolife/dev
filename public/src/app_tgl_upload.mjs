@@ -39,7 +39,7 @@ import { string_split_space } from "./string_split_space.mjs";
 export async function app_tgl_upload() {
   let from = "tgl";
   let to = "en";
-  let limit = 100;
+  let limit = 6355;
   let filtered2 = await english_words_dictionary();
   let taken = list_take(filtered2, limit);
   let pairs = await list_adder_async(async (la) => {
