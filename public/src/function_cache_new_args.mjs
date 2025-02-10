@@ -10,9 +10,11 @@ import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_await } from "./js_code_await.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
 import { file_write } from "./file_write.mjs";
+import { list_map_property } from "./list_map_property.mjs";
 export async function function_cache_new_args(function_name, args_string) {
   let d = await function_declaration(function_name);
-  return js_declaration_to_params(d);
+  let params = js_declaration_to_params(d);
+  list_map_property(params, "limit");
   let split = string_split_comma(args_string);
   let cache_name = function_cache_name(function_name);
   await function_new_generic(
