@@ -13,7 +13,7 @@ export async function app_el_upload() {
   bible_interlinear_each_token_strong_number(books, (strong) => {
     object_property_increment(counts, strong);
   });
-  list_adder((la) => {
+  let pairs = list_adder((la) => {
     each_object(counts, (strong, count) => {
       la([strong, count]);
     });
