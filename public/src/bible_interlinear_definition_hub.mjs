@@ -12,7 +12,7 @@ export async function bible_interlinear_definition_hub(language, strong) {
   let p = await html_parse(html);
   let leftbox = html_parse_visit_id(p, "leftbox");
   let tophdg = html_parse_visit_class_list(leftbox, "tophdg");
-  let label = "Definition: ";
+  let label = "Definition:";
   let definition = list_find(tophdg, (t) => {
     let t_text = html_parse_text(t);
     t_text = string_trim_whitespace(t_text);
