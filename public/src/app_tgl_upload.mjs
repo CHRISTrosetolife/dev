@@ -1,5 +1,3 @@
-import { list_includes } from "./list_includes.mjs";
-import { list_filter_index } from "./list_filter_index.mjs";
 import { app_tgl_upload_pairs_cache } from "./app_tgl_upload_pairs_cache.mjs";
 import { app_language_upload_audio } from "./app_language_upload_audio.mjs";
 import { app_language_2_upload_atoms_definitions } from "./app_language_2_upload_atoms_definitions.mjs";
@@ -12,14 +10,6 @@ export async function app_tgl_upload() {
   let to = "en";
   let limit = 1000;
   let pairs = await app_tgl_upload_pairs_cache(limit);
-  return (
-    pairs.length +
-    " " +
-    list_filter_index(pairs, (p) => {
-      return list_includes(p, "paglipat");
-    })
-  );
-  return;
   let definitions = list_to_lookup_key_value_list(
     pairs,
     list_first,
