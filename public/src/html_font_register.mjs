@@ -1,6 +1,8 @@
+import { html_document_head } from "./html_document_head.mjs";
+import { html_element } from "./html_element.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function html_font_register() {
-  let style = document.createElement("style");
+  let style = html_element(html_document_head(), "style");
   style.type = "text/css";
   let fontFaceRule = string_combine_multiple([
     "\n      @font-face {\n        font-family: '",
