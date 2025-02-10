@@ -1,3 +1,4 @@
+import { html_style_font_size_default_multiplied } from "./html_style_font_size_default_multiplied.mjs";
 import { html_style_font_family } from "./html_style_font_family.mjs";
 import { html_font_register } from "./html_font_register.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
@@ -31,7 +32,7 @@ export function app_language_2_word(parent, language, text, boxed) {
   if (language === "el") {
     html_font_register("GentiumPlus-Regular", "font/GentiumPlus-Regular");
     html_style_font_family(text_span, "GentiumPlus-Regular");
-    html_font_multiplier(text_span, 1.2);
+    html_style_font_size_default_multiplied(text_span, 1.2);
   }
   html_style_bold(container);
   let result = {
