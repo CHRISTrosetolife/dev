@@ -14,7 +14,7 @@ import { list_map_property } from "./list_map_property.mjs";
 export async function function_cache_new_args(function_name, args_string) {
   let d = await function_declaration(function_name);
   let params = js_declaration_to_params(d);
-  list_map_property(params, "limit");
+  let param_names = list_map_property(params, "limit");
   let split = string_split_comma(args_string);
   let cache_name = function_cache_name(function_name);
   await function_new_generic(
