@@ -1,3 +1,4 @@
+import { html_style_font_family } from "./html_style_font_family.mjs";
 import { html_font_register } from "./html_font_register.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
 import { html_color_gray } from "./html_color_gray.mjs";
@@ -29,6 +30,7 @@ export function app_language_2_word(parent, language, text, boxed) {
   );
   if (language === "el") {
     html_font_register("GentiumPlus-Regular", "font/GentiumPlus-Regular");
+    html_style_font_family(text_span, "GentiumPlus-Regular");
   }
   html_style_bold(container);
   let result = {
