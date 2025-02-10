@@ -1,3 +1,4 @@
+import { list_first } from "./list_first.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_map } from "./list_map.mjs";
@@ -16,7 +17,9 @@ export function app_el_upload() {
   let filtered = list_filter(mapped, string_empty_not_is);
   let chunks = list_chunk(filtered, 2);
   list_adder((la) => {
-    each(chunks, (chunk) => {});
+    each(chunks, (chunk) => {
+      let letters = list_first(chunk);
+    });
   });
   return chunks;
 }
