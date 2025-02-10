@@ -1,4 +1,3 @@
-import { list_find_index } from "./list_find_index.mjs";
 import { app_language_upload_audio } from "./app_language_upload_audio.mjs";
 import { app_language_2_upload_atoms_definitions } from "./app_language_2_upload_atoms_definitions.mjs";
 import { bible_words_spaceify } from "./bible_words_spaceify.mjs";
@@ -114,7 +113,7 @@ export async function app_tgl_upload() {
     list_first,
     list_second,
   );
-  return list_find_index(pairs, (a) => equal_json(a, ["kimi", "shy"]));
+  return list_size(pairs);
   let atoms = bible_words_spaceify(pairs);
   await app_language_upload_audio(atoms, from);
   await app_language_2_upload_atoms_definitions(atoms, definitions, from, to);
