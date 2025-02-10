@@ -11,8 +11,8 @@ import { js_code_await } from "./js_code_await.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
 import { file_write } from "./file_write.mjs";
 export async function function_cache_new_args(function_name, args_string) {
-  await function_declaration();
-  js_declaration_to_params();
+  let d = await function_declaration(function_name);
+  return js_declaration_to_params(d);
   let split = string_split_comma(args_string);
   let cache_name = function_cache_name(function_name);
   await function_new_generic(
