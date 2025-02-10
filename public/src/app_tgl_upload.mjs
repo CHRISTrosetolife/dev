@@ -10,6 +10,7 @@ export async function app_tgl_upload() {
   let to = "en";
   let limit = 6355;
   let pairs = await app_tgl_upload_pairs_cache(limit);
+  return;
   let definitions = list_to_lookup_key_value_list(
     pairs,
     list_first,
