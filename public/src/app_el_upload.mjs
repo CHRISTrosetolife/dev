@@ -1,3 +1,4 @@
+import { bible_interlinear_definition_hub } from "./bible_interlinear_definition_hub.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_take } from "./list_take.mjs";
 import { list_sort_map } from "./list_sort_map.mjs";
@@ -27,6 +28,10 @@ export async function app_el_upload() {
   list_reverse(pairs);
   let taken = list_take(pairs, 50);
   let mapped = list_map(taken, list_first);
-  return pairs;
+  let mapped2 = list_map(
+    mapped,
+    async (m) => await bible_interlinear_definition_hub("greek", m),
+  );
+  return mapped2;
   return await app_language_2_upload_pairs(pairs, from, to);
 }
