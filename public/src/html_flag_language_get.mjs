@@ -6,6 +6,7 @@ export function html_flag_language_get(language) {
     ceb: html_flag_ph(),
     tgl: html_flag_ph(),
     en: html_flag_us(),
+    el: "el",
   };
   let g = object_property_get(languages_to_flags, language);
   return g;
