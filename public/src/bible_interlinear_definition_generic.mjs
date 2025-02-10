@@ -22,6 +22,11 @@ export async function bible_interlinear_definition_generic(
     return label_to_text(label);
   });
   let definition = list_join_comma_space(mapped);
+  let word = label_to_text("Original Word:");
+  return {
+    definition,
+    word,
+  };
   function label_to_text(label) {
     let definition = list_find(tophdg, (t) => {
       let t_text = html_parse_text(t);
