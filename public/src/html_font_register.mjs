@@ -1,4 +1,3 @@
-import { fn_name } from "./fn_name.mjs";
 import { global_function } from "./global_function.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_document_head } from "./html_document_head.mjs";
@@ -6,7 +5,7 @@ import { html_element } from "./html_element.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function html_font_register(font_name, font_path) {
-  let g = global_function(fn_name("html_font_register"));
+  let g = global_function(html_font_register);
   let style = html_element(html_document_head(), "style");
   html_attribute_set(style, "type", "text/css");
   let value = string_combine_multiple([
