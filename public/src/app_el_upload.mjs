@@ -1,3 +1,4 @@
+import { list_second } from "./list_second.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { each_object } from "./each_object.mjs";
 import { bible_interlinear_each_token_strong_number } from "./bible_interlinear_each_token_strong_number.mjs";
@@ -17,6 +18,7 @@ export async function app_el_upload() {
       la([strong, count]);
     });
   });
+  list_sort_map(pairs, (p) => list_second(p));
   return;
   return await app_language_2_upload_pairs(pairs, from, to);
 }
