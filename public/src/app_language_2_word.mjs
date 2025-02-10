@@ -1,3 +1,4 @@
+import { html_font_register } from "./html_font_register.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
 import { html_color_gray } from "./html_color_gray.mjs";
 import { string_combine } from "./string_combine.mjs";
@@ -26,7 +27,8 @@ export function app_language_2_word(parent, language, text, boxed) {
     container,
     string_combine_multiple([" ", text]),
   );
-  if (false) {
+  if (language === "el") {
+    html_font_register(font_name, font_path);
   }
   html_style_bold(container);
   let result = {
