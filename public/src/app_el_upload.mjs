@@ -10,6 +10,7 @@ import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { list_chunk } from "./list_chunk.mjs";
+import { string_split_empty } from "./string_split_empty.mjs";
 export function app_el_upload() {
   let alphabet_string = string_combine_multiple([
     "\nΑα\tAlpha\tΝν\tNu\nΒβ\tBeta\tΞξ\tXi\nΓγ\tGamma\tΟο\tOmicron\nΔδ\tDelta\tΠπ\tPi\nΕε\tEpsilon\tΡρ\tRho\nΖζ\tZeta\tΣσς\tSigma\nΗη\tEta\tΤτ\tTau\nΘθ\tTheta\tΥυ\tUpsilon\nΙι\tIota\tΦφ\tPhi\nΚκ\tKappa\tΧχ\tChi\nΛλ\tLambda\tΨψ\tPsi\nΜμ\tMu\tΩω\tOmega\n    ",
@@ -22,6 +23,7 @@ export function app_el_upload() {
     each(chunks, (chunk) => {
       assert(list_size_2, [chunk]);
       let letters = list_first(chunk);
+      let split_letters = string_split_empty(letters);
     });
   });
   return chunks;
