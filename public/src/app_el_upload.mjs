@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_split_multiple } from "./string_split_multiple.mjs";
@@ -14,6 +15,8 @@ export function app_el_upload() {
   let mapped = list_map(split, string_trim_whitespace);
   let filtered = list_filter(mapped, string_empty_not_is);
   let chunks = list_chunk(filtered, 2);
-  list_adder((la) => {});
+  list_adder((la) => {
+    each(list, (item) => {});
+  });
   return chunks;
 }
