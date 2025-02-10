@@ -8,6 +8,7 @@ export function apps_list() {
     "code",
     "demo_2024_05_19",
     "dev",
+    "el",
     "en",
     "good",
     "grocery",
