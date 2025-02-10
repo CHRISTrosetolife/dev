@@ -16,7 +16,7 @@ export function app_el_upload() {
   let filtered = list_filter(mapped, string_empty_not_is);
   let chunks = list_chunk(filtered, 2);
   list_adder((la) => {
-    each(list, (item) => {});
+    each(chunks, (chunk) => {});
   });
   return chunks;
 }
