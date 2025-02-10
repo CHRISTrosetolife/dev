@@ -22,7 +22,10 @@ export function app_language_2_word(parent, language, text, boxed) {
     border: string_combine("solid 0.4dvh ", color),
   });
   html_flag_language(box, language);
-  html_span_text(container, string_combine_multiple([" ", text]));
+  let text_span = html_span_text(
+    container,
+    string_combine_multiple([" ", text]),
+  );
   html_style_bold(container);
   let result = {
     container,
