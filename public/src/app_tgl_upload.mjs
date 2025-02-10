@@ -5,11 +5,13 @@ import { bible_words_spaceify } from "./bible_words_spaceify.mjs";
 import { list_to_lookup_key_value_list } from "./list_to_lookup_key_value_list.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
+import { list_index_first } from "./list_index_first.mjs";
 export async function app_tgl_upload() {
   let from = "tgl";
   let to = "en";
   let limit = 6355;
   let pairs = await app_tgl_upload_pairs_cache(limit);
+  list_index_first(pairs, () => {});
   return;
   let definitions = list_to_lookup_key_value_list(
     pairs,
