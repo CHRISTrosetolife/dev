@@ -13,9 +13,10 @@ export async function app_el_upload() {
   bible_interlinear_each_token_strong_number(books, (strong) => {
     object_property_increment(counts, strong);
   });
-  list_adder((la) => {});
-  each_object(counts, (strong, count) => {
-    la([strong, count]);
+  list_adder((la) => {
+    each_object(counts, (strong, count) => {
+      la([strong, count]);
+    });
   });
   let pairs = app_el_alphabet_pairs();
   return await app_language_2_upload_pairs(pairs, from, to);
