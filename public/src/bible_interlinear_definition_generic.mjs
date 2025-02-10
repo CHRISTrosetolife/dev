@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_map } from "./list_map.mjs";
 import { assert } from "./assert.mjs";
 import { equal } from "./equal.mjs";
@@ -20,9 +19,6 @@ export async function bible_interlinear_definition_generic(
   let leftbox = html_parse_visit_id(p, "leftbox");
   let tophdg = html_parse_visit_class_list(leftbox, "tophdg");
   let mapped = list_map(labels, (label) => {
-    log({
-      label,
-    });
     let definition = list_find(tophdg, (t) => {
       let t_text = html_parse_text(t);
       t_text = string_trim_whitespace(t_text);
