@@ -7,6 +7,6 @@ export async function bible_interlinear_definition(language, strong) {
     html_lambda,
     language,
     strong,
-    label,
+    [label],
   );
 }
