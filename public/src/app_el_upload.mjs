@@ -1,3 +1,4 @@
+import { list_first_remaining } from "./list_first_remaining.mjs";
 import { list_size_2 } from "./list_size_2.mjs";
 import { assert } from "./assert.mjs";
 import { list_first } from "./list_first.mjs";
@@ -24,6 +25,7 @@ export function app_el_upload() {
       assert(list_size_2, [chunk]);
       let letters = list_first(chunk);
       let split_letters = string_split_empty(letters);
+      list_first_remaining();
     });
   });
   return chunks;
