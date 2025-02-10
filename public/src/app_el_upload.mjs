@@ -1,3 +1,4 @@
+import { each_index } from "./each_index.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
 import { list_size_2 } from "./list_size_2.mjs";
 import { assert } from "./assert.mjs";
@@ -31,6 +32,7 @@ export function app_el_upload() {
         list_first_remaining(split_letters);
     });
     la([uppercase, string_combine_multiple([name_letter, " uppercase"])]);
+    each_index(list, (item, index) => {});
   });
   return chunks;
 }
