@@ -5,6 +5,7 @@ import { bible_interlinear_each_token_strong_number } from "./bible_interlinear_
 import { bible_interlinear_cache_new } from "./bible_interlinear_cache_new.mjs";
 import { app_language_2_upload_pairs } from "./app_language_2_upload_pairs.mjs";
 import { object_property_increment } from "./object_property_increment.mjs";
+import { list_reverse } from "./list_reverse.mjs";
 export async function app_el_upload() {
   let from = "el";
   let to = "en";
@@ -19,6 +20,7 @@ export async function app_el_upload() {
     });
   });
   list_sort_map(pairs, (p) => list_second(p));
+  list_reverse(pairs);
   return;
   return await app_language_2_upload_pairs(pairs, from, to);
 }
