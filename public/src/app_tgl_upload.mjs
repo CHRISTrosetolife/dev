@@ -10,7 +10,7 @@ import { list_first } from "./list_first.mjs";
 export async function app_tgl_upload() {
   let from = "tgl";
   let to = "en";
-  let limit = 6355;
+  let limit = 1000;
   let pairs = await app_tgl_upload_pairs_cache(limit);
   return (
     pairs.length +
