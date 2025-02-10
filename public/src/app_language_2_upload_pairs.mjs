@@ -1,3 +1,4 @@
+import { app_language_2_audio_play_should } from "./app_language_2_audio_play_should.mjs";
 import { app_language_2_upload_atoms_definitions } from "./app_language_2_upload_atoms_definitions.mjs";
 import { app_language_upload_audio } from "./app_language_upload_audio.mjs";
 import { bible_words_spaceify } from "./bible_words_spaceify.mjs";
@@ -11,7 +12,7 @@ export async function app_language_2_upload_pairs(pairs, from, to) {
     list_second,
   );
   let atoms = bible_words_spaceify(pairs);
-  if (false) {
+  if (app_language_2_audio_play_should(from)) {
     await app_language_upload_audio(atoms, from);
   }
   await app_language_2_upload_atoms_definitions(atoms, definitions, from, to);
