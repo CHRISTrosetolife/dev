@@ -30,7 +30,7 @@ export function app_el_upload() {
       let { first: uppercase, remaining: lowercases } =
         list_first_remaining(split_letters);
     });
-    la([uppercase, name_letter]);
+    la([uppercase, string_combine_multiple([name_letter])]);
   });
   return chunks;
 }
