@@ -66,6 +66,7 @@ import { identity } from "./identity.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_chunk } from "./list_chunk.mjs";
 import { html_remove } from "./html_remove.mjs";
+import { log_error } from "./log_error.mjs";
 export async function app_language_2_refresh_learn(context) {
   let { language_learn, language_fluent, root } = context;
   html_clear_scroll_top_centered(root);
@@ -307,7 +308,11 @@ export async function app_language_2_refresh_learn(context) {
           list_size(mapped) === 1 &&
           app_language_2_audio_play_should(language_other)
         ) {
-          await app_language_audio(language_other, answer_text);
+          try {
+            await app_language_audio(language_other, answer_text);
+          } catch (e) {
+            log_error(e);
+          }
         } else {
           await app_language_2_answer_delay();
         }
