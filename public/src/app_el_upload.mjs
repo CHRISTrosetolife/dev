@@ -1,3 +1,4 @@
+import { app_el_alphabet_string } from "./app_el_alphabet_string.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
 import { list_size_2 } from "./list_size_2.mjs";
@@ -15,10 +16,7 @@ import { list_chunk } from "./list_chunk.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { list_second } from "./list_second.mjs";
 export function app_el_upload() {
-  "https://en.wikipedia.org/wiki/Archaic_Greek_alphabets";
-  let alphabet_string = string_combine_multiple([
-    "\nΑα\tAlpha\tΝν\tNu\nΒβ\tBeta\tΞξ\tXi\nΓγ\tGamma\tΟο\tOmicron\nΔδ\tDelta\tΠπ\tPi\nΕε\tEpsilon\tΡρ\tRho\nΖζ\tZeta\tΣσς\tSigma\nΗη\tEta\tΤτ\tTau\nΘθ\tTheta\tΥυ\tUpsilon\nΙι\tIota\tΦφ\tPhi\nΚκ\tKappa\tΧχ\tChi\nΛλ\tLambda\tΨψ\tPsi\nΜμ\tMu\tΩω\tOmega\n    ",
-  ]);
+  let alphabet_string = app_el_alphabet_string();
   let split = string_split_multiple(alphabet_string, ["\n", "\t"]);
   let mapped = list_map(split, string_trim_whitespace);
   let filtered = list_filter(mapped, string_empty_not_is);
