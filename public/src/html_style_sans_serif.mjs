@@ -1,6 +1,7 @@
 import { html_style } from "./html_style.mjs";
 export function html_style_sans_serif(root) {
+  let value = "sans-serif";
   html_style(root, {
-    "font-family": "sans-serif",
+    "font-family": value,
   });
 }
