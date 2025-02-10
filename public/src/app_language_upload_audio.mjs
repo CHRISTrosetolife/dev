@@ -11,7 +11,7 @@ import { list_chunk_each } from "./list_chunk_each.mjs";
 export async function app_language_upload_audio(group, from) {
   await list_chunk_each(group, async function each_chunk(chunk) {
     log_json({
-      group,
+      chunk,
     });
     let mapped = list_map(chunk, async (atom) => {
       let createds = await list_map_async(atom, async (pair) => {
