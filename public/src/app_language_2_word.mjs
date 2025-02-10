@@ -28,7 +28,7 @@ export function app_language_2_word(parent, language, text, boxed) {
     string_combine_multiple([" ", text]),
   );
   if (language === "el") {
-    html_font_register(font_name, font_path);
+    html_font_register("font_name", "font/GentiumPlus-Regular.woff");
   }
   html_style_bold(container);
   let result = {
