@@ -1,3 +1,4 @@
+import { string_split_comma } from "./string_split_comma.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { function_cache_name } from "./function_cache_name.mjs";
 import { function_data } from "./function_data.mjs";
@@ -8,6 +9,7 @@ import { function_new_generic } from "./function_new_generic.mjs";
 import { js_code_brackets } from "./js_code_brackets.mjs";
 import { file_write } from "./file_write.mjs";
 export async function function_cache_new_args(function_name, args_string) {
+  let split = string_split_comma(args_string);
   let cache_name = function_cache_name(function_name);
   await function_new_generic(
     cache_name,
