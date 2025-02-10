@@ -19,6 +19,10 @@ export async function bible_interlinear_definition_generic(
   let leftbox = html_parse_visit_id(p, "leftbox");
   let tophdg = html_parse_visit_class_list(leftbox, "tophdg");
   let mapped = list_map(labels, (label) => {
+    return label_to_text(label);
+  });
+  return list_join_comma_space(mapped);
+  function label_to_text(label) {
     let definition = list_find(tophdg, (t) => {
       let t_text = html_parse_text(t);
       t_text = string_trim_whitespace(t_text);
@@ -30,6 +34,5 @@ export async function bible_interlinear_definition_generic(
     let { next } = definition;
     let next_text = html_parse_text(next);
     return next_text;
-  });
-  return list_join_comma_space(mapped);
+  }
 }
