@@ -12,6 +12,5 @@ export async function app_language_2_upload_pairs(pairs, from, to) {
   );
   let atoms = bible_words_spaceify(pairs);
   await app_language_upload_audio(atoms, from);
-  return;
   await app_language_2_upload_atoms_definitions(atoms, definitions, from, to);
 }
