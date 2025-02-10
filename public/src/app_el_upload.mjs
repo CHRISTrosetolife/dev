@@ -22,7 +22,7 @@ export function app_el_upload() {
   let mapped = list_map(split, string_trim_whitespace);
   let filtered = list_filter(mapped, string_empty_not_is);
   let chunks = list_chunk(filtered, 2);
-  list_adder((la) => {
+  let pairs = list_adder((la) => {
     each(chunks, (chunk) => {
       assert(list_size_2, [chunk]);
       let letters = list_first(chunk);
@@ -43,5 +43,5 @@ export function app_el_upload() {
       ]);
     });
   });
-  return chunks;
+  return pairs;
 }
