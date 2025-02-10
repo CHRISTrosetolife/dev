@@ -1,3 +1,4 @@
+import { list_adder } from "./list_adder.mjs";
 import { each_object } from "./each_object.mjs";
 import { bible_interlinear_each_token_strong_number } from "./bible_interlinear_each_token_strong_number.mjs";
 import { bible_interlinear_cache_new } from "./bible_interlinear_cache_new.mjs";
@@ -12,7 +13,10 @@ export async function app_el_upload() {
   bible_interlinear_each_token_strong_number(books, (strong) => {
     object_property_increment(counts, strong);
   });
-  each_object(object, (key, value) => {});
+  list_adder((la) => {});
+  each_object(counts, (strong, count) => {
+    la([strong, count]);
+  });
   let pairs = app_el_alphabet_pairs();
   return await app_language_2_upload_pairs(pairs, from, to);
 }
