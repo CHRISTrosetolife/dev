@@ -16,7 +16,7 @@ export async function app_tgl_upload() {
     pairs.length +
     " " +
     list_filter_index(pairs, (p) => {
-      $r, list_includes(p, "paglipat");
+      return list_includes(p, "paglipat");
     })
   );
   return;
