@@ -1,6 +1,7 @@
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_document_head } from "./html_document_head.mjs";
 import { html_element } from "./html_element.mjs";
+import { html_inner_set } from "./html_inner_set.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function html_font_register() {
   let style = html_element(html_document_head(), "style");
@@ -14,6 +15,5 @@ export function html_font_register() {
     fontPath,
     ".woff') format('woff');\n        font-weight: normal;\n        font-style: normal;\n      }\n    ",
   ]);
-  style.innerHTML = value;
-  document.head.appendChild(style);
+  html_inner_set(style, value);
 }
