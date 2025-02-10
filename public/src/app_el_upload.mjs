@@ -29,14 +29,15 @@ export function app_el_upload() {
       let split_letters = string_split_empty(letters);
       let { first: uppercase, remaining: lowercases } =
         list_first_remaining(split_letters);
-      la([uppercase, string_combine_multiple([name_letter, " uppercase"])]);
+      la([uppercase, string_combine_multiple([name_letter, " (uppercase)"])]);
       each_index(lowercases, (lowercase, index) => {
         la([
           lowercase,
           string_combine_multiple([
             name_letter,
-            " lowercase",
-            index === 2 ? " ending" : "",
+            " (lowercase",
+            index === 1 ? " ending" : "",
+            ")",
           ]),
         ]);
       });
