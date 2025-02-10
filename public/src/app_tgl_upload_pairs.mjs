@@ -90,7 +90,7 @@ export async function app_tgl_upload_pairs(limit) {
             return;
           }
           let w_split = string_split_space(word_tgl);
-            const max_word_count = 1;
+          let max_word_count = 1;
           if (list_size(w_split) > max_word_count) {
             return;
           }
