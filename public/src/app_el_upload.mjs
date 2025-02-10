@@ -25,7 +25,8 @@ export function app_el_upload() {
       assert(list_size_2, [chunk]);
       let letters = list_first(chunk);
       let split_letters = string_split_empty(letters);
-      let { first, remaining } = list_first_remaining(split_letters);
+      let { first: uppercase, remaining: lowercases } =
+        list_first_remaining(split_letters);
     });
   });
   return chunks;
