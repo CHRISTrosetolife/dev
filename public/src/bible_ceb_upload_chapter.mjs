@@ -25,6 +25,7 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
       [bible_storage_interlinear_chapter_definitions_property()]:
         object_property_get(d, "definitions"),
     };
+    let word = object_property_get(d, "word");
     return result;
   });
   return definitions;
