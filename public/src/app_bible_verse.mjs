@@ -65,7 +65,8 @@ export async function app_bible_verse(
     verses_interlinear,
     verse_number,
   );
-  let { tokens } = verse_interlinear;
+  let { tokens: t } = verse_interlinear;
+  let tokens = t;
   each(tokens, (token) => {
     let d = html_div(middle);
     let word = object_property_get(token, "word");
