@@ -20,6 +20,7 @@ import { bible_interlinear_new_definitions_list } from "./bible_interlinear_new_
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_join_space } from "./list_join_space.mjs";
+import { html_remove } from "./html_remove.mjs";
 export function app_el_definitions() {
   let root = html_style_default_initialize();
   let list = bible_interlinear_new_definitions_list();
@@ -43,9 +44,10 @@ export function app_el_definitions() {
     object_property_set(definitions, strong, definitions_word);
     word_reset();
     each(filtered, (s) => {
-      html_button_text_click(root, s, () => {
+      let b = html_button_text_click(root, s, () => {
         list_add(word_builder, s);
         progress_update();
+        html_remove(b);
       });
     });
     html_button_add(root, "", async () => {
