@@ -20,19 +20,17 @@ export function html_font_register(font_name, font_path) {
       font_name,
       "'; src: ",
       list_join_comma_space(
-        list_map(["woff2", "woff"], (extension) => {}),
-        [
+        list_map(["woff2", "woff"], (extension) =>
           string_combine_multiple([
             "url('",
             font_path,
-            ".woff2') format('woff2')",
+            ".",
+            extension,
+            "') format('",
+            extension,
+            "')",
           ]),
-          string_combine_multiple([
-            "url('",
-            font_path,
-            ".woff') format('woff')",
-          ]),
-        ],
+        ),
       ),
       "; font-weight: normal; font-style: normal; }",
     ]);
