@@ -13,6 +13,7 @@ import { list_to_lookup_value_async } from "./list_to_lookup_value_async.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
+import { object_merge_strict } from "./object_merge_strict.mjs";
 export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
   let chapter = await bible_chapter(bible_version, chapter_code);
   let tokens_all = list_flatten(list_map_property(chapter, "tokens"));
@@ -26,7 +27,12 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
         object_property_get(d, "definitions"),
     };
     let word = object_property_get(d, "word");
-    return result;
+    return object_merge_strict(
+      {
+        root: word,
+      },
+      result,
+    );
   });
   return definitions;
   await bible_storage_version_upload(
