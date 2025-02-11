@@ -61,12 +61,12 @@ export async function app_bible_verse(
       ),
   );
   let { verses: verses_interlinear } = chapter_interlinear;
+  let filter = bible_interlinear_words_greek_audio_upload_filter();
   let verse_interlinear = list_find_verse_number(
     verses_interlinear,
     verse_number,
   );
   let { tokens } = verse_interlinear;
-  let filter = bible_interlinear_words_greek_audio_upload_filter();
   each(tokens, (token) => {
     let d = html_div(middle);
     let word = object_property_get(token, "word");
