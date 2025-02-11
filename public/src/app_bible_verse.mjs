@@ -1,5 +1,5 @@
+import { bible_verses_to_verse_tokens } from "./bible_verses_to_verse_tokens.mjs";
 import { html_bible_word } from "./html_bible_word.mjs";
-import { list_find_verse_number } from "./list_find_verse_number.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { global_function_property_async } from "./global_function_property_async.mjs";
 import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
@@ -61,12 +61,7 @@ export async function app_bible_verse(
   );
   let { verses: verses_interlinear } = chapter_interlinear;
   let filter = bible_interlinear_words_greek_audio_upload_filter();
-  let verse_interlinear = list_find_verse_number(
-    verses_interlinear,
-    verse_number,
-  );
-  let { tokens: t } = verse_interlinear;
-  let tokens = t;
+  let tokens = bible_verses_to_verse_tokens(verses_interlinear, verse_number);
   each(tokens, (token) => {
     let d = html_div(middle);
     let word = object_property_get(token, "word");
