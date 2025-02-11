@@ -85,6 +85,6 @@ export async function app_bible_verse(
     html_span_text(row, object_property_get(token, "translation"));
     html_spacer(row);
     let strong = object_property_get(token, "strong");
-    html_bible_token_defitions(chapter_definitions, strong, row);
+    html_bible_token_defitions(row, chapter_definitions, strong);
   }
 }
