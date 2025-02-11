@@ -21,6 +21,7 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { html_remove } from "./html_remove.mjs";
+import { list_unique } from "./list_unique.mjs";
 export function app_el_definitions() {
   let root = html_style_default_initialize();
   let list = bible_interlinear_new_definitions_list();
@@ -31,6 +32,7 @@ export function app_el_definitions() {
     let definition = object_property_get(item, "definition");
     let split = string_split_multiple(definition, [",", " ", ";"]);
     let filtered = list_trim_empty_not(split);
+    filtered = list_unique(filtered);
     let word = object_property_get(item, "word");
     let strong = object_property_get(item, "strong");
     html_p_text(root, word);
