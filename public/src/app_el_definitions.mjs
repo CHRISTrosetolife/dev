@@ -22,10 +22,11 @@ export function app_el_definitions() {
     let definition = object_property_get(item, "definition");
     let split = string_split_multiple(definition, [",", " ", ";"]);
     let word = object_property_get(item, "word");
+    let strong = object_property_get(item, "strong");
     html_p_text(root, word);
     let word_builder;
     let definitions_word = [];
-    object_property_set(object, "property_name", value);
+    object_property_set(definitions, strong, definitions_word);
     word_reset();
     each(split, (s) => {
       html_button_text_click(root, s, () => {});
