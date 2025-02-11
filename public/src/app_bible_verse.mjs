@@ -89,10 +89,7 @@ export async function app_bible_verse(
     html_style_italic(transliteration);
     html_style_font_color_gray(transliteration);
     html_spacer(d);
-    let translation = html_span_text(
-      d,
-      object_property_get(token, "translation"),
-    );
+    html_span_text(d, object_property_get(token, "translation"));
     html_spacer(d);
     let strong = object_property_get(token, "strong");
     let definition_entry = object_property_get(chapter_definitions, strong);
