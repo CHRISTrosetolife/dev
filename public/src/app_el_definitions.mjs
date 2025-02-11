@@ -1,3 +1,4 @@
+import { object_merge } from "./object_merge.mjs";
 import { app_save_change } from "./app_save_change.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_is } from "./list_is.mjs";
@@ -15,13 +16,14 @@ import { list_join_space } from "./list_join_space.mjs";
 export function app_el_definitions() {
   let root = html_style_default_initialize();
   let list = bible_interlinear_new_definitions_list();
+  let definitions = {};
   each(list, (item) => {
     let definition = object_property_get(item, "definition");
     let split = string_split_multiple(definition, [",", " ", ";"]);
     let word = object_property_get(item, "word");
     html_p_text(root, word);
     let word_builder;
-    let definitions = [];
+    let definitions_word = [];
     word_reset();
     each(split, (s) => {
       html_button_text_click(root, s, () => {});
@@ -29,8 +31,10 @@ export function app_el_definitions() {
     html_button_next(root, () => {});
     async function word_reset() {
       if (list_is(word_builder) && list_empty_not_is(word_builder)) {
-        list_add(definitions, list_join_space(word_builder));
-        await app_save_change();
+        list_add(definitions_word, list_join_space(word_builder));
+        await app_save_change((save) => {
+          object_merge(save);
+        });
       }
       word_builder = [];
     }
