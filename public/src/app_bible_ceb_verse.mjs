@@ -66,7 +66,7 @@ export async function app_bible_ceb_verse(
     let row = html_div(middle);
     let word_component = html_bible_word(row, word);
     html_spacer(row);
-    html_bible_token_definitions(row, chapter_definitions, strong);
+    html_bible_token_definitions(row, definitions, mapped);
   });
   html_hr(middle);
   html_p_text(middle, json_to(definitions));
