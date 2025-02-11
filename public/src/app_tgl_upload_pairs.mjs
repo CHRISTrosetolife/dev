@@ -60,7 +60,8 @@ export async function app_tgl_upload_pairs(limit) {
       let first_tds = html_parse_visit_tag_list(tr_first, "td");
       let languages = list_map(first_tds, html_parse_text);
       let tgl = "Tagalog";
-      let expected = [en, "Grammar", "Cebuano", tgl, "Hiligaynon"];
+      let ceb = "Cebuano";
+      let expected = [en, "Grammar", ceb, tgl, "Hiligaynon"];
       assert(equal_json, [languages, expected]);
       let en_index = list_index(expected, en);
       let tgl_index = list_index(expected, tgl);
