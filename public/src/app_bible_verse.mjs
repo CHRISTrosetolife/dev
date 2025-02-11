@@ -1,4 +1,4 @@
-import { bible_verses_to_verse_tokens } from "./bible_verses_to_verse_tokens.mjs";
+import { bible_verses_to_verse_tokens_each } from "./bible_verses_to_verse_tokens_each.mjs";
 import { html_bible_word } from "./html_bible_word.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { global_function_property_async } from "./global_function_property_async.mjs";
@@ -19,10 +19,8 @@ import { html_on_click } from "./html_on_click.mjs";
 import { html_style_green } from "./html_style_green.mjs";
 import { html_select_none } from "./html_select_none.mjs";
 import { html_span_text } from "./html_span_text.mjs";
-import { html_div } from "./html_div.mjs";
 import { bible_interlinear_words_greek_audio_upload_filter } from "./bible_interlinear_words_greek_audio_upload_filter.mjs";
 import { html_hr } from "./html_hr.mjs";
-import { each } from "./each.mjs";
 import { bible_storage_interlinear_book_path } from "./bible_storage_interlinear_book_path.mjs";
 import { bible_books_prefix_to_name } from "./bible_books_prefix_to_name.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -61,11 +59,12 @@ export async function app_bible_verse(
   );
   let { verses: verses_interlinear } = chapter_interlinear;
   let filter = bible_interlinear_words_greek_audio_upload_filter();
-  let tokens = bible_verses_to_verse_tokens(verses_interlinear, verse_number);
-  each(tokens, (token) => {
-    let row = html_div(middle);
-    lambda_each(token, row);
-  });
+  bible_verses_to_verse_tokens_each(
+    verses_interlinear,
+    verse_number,
+    middle,
+    lambda_each,
+  );
   html_hr(middle);
   function lambda_each(token, row) {
     let word = object_property_get(token, "word");
