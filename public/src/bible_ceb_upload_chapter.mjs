@@ -15,11 +15,11 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
   let tokens_all = list_flatten(list_map_property(chapter, "tokens"));
   let mapped = list_map(tokens_all, bible_word_map);
   let unique = list_unique(mapped);
-  let definitions = await list_to_lookup_value_async(strongs, async (s) => ({
+  let definitions = await list_to_lookup_value_async(unique, async (u) => ({
     [bible_storage_interlinear_chapter_definitions_property()]:
-      await ceb_definition(s),
+      await ceb_definition(u),
   }));
-  return;
+  return definitions;
   await bible_storage_version_upload(
     bible_storage_interlinear_chapter_definitions_path(book_code, chapter_code),
     bible_storage_interlinear_chapter_definitions_name(),
