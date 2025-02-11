@@ -1,3 +1,5 @@
+import { json_to } from "./json_to.mjs";
+import { html_pre_text } from "./html_pre_text.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_find_verse_number } from "./list_find_verse_number.mjs";
 import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
@@ -24,4 +26,5 @@ export async function app_bible_ceb_verse(
     async () => await bible_storage_version_http_get(ceb_version, chapter_code),
   );
   let verse_ceb = list_find_verse_number(verses_ceb, verse_number);
+  html_pre_text(middle, json_to(verse_ceb));
 }
