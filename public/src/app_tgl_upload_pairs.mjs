@@ -36,7 +36,7 @@ export async function app_tgl_upload_pairs(limit) {
   let taken = list_take_soft(filtered2, limit);
   let pairs = await list_adder_async(async (la) => {
     await each_log_async(taken, async (w) => {
-      let inner = await list_adder_async(async (la) => {
+      let inner = await list_adder_async(async (la_inner) => {
         let p = await definition_bohol(w);
         let center = html_parse_visit_id(p, "center");
         let contents = html_parse_visit_class_single(center, "contents");
@@ -95,7 +95,7 @@ export async function app_tgl_upload_pairs(limit) {
             if (list_size(w_split) > max_word_count) {
               return;
             }
-            la([word_tgl, word_en]);
+            la_inner([word_tgl, word_en]);
           });
         });
       });
