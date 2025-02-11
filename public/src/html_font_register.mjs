@@ -14,13 +14,13 @@ export function html_font_register(font_name, font_path) {
     let style = html_element(html_document_head(), "style");
     html_attribute_set(style, "type", "text/css");
     let value = string_combine_multiple([
-      "\n      @font-face {\n        font-family: '",
+      "@font-face { font-family: '",
       font_name,
-      "';\n        src: url('",
+      "'; src: url('",
       font_path,
-      ".woff2') format('woff2'),\n             url('",
+      ".woff2') format('woff2'), url('",
       font_path,
-      ".woff') format('woff');\n        font-weight: normal;\n        font-style: normal;\n      }\n    ",
+      ".woff') format('woff'); font-weight: normal; font-style: normal; }",
     ]);
     html_inner_set(style, value);
     object_property_set(g, key, true);
