@@ -42,15 +42,14 @@ export async function app_bible_verse(
   );
   let book_name = object_property_get(bible_books_prefix_to_name(), book_code);
   let chapter_code = app_gs_bible_chapter_name(book_code, chapter);
-  let verses = await global_function_property_async(
+  let chapter_interlinear = await global_function_property_async(
     app_fn,
     string_combine_multiple(["interlinear_", chapter_code]),
     async () =>
-      await bible_storage_version_http_get(version_code, chapter_code),
-  );
-  let chapter_interlinear = await bible_storage_version_http_get(
-    bible_storage_interlinear_book_path(book_name),
-    chapter,
+      await bible_storage_version_http_get(
+        bible_storage_interlinear_book_path(book_name),
+        chapter,
+      ),
   );
   let chapter_definitions = await bible_storage_version_http_get(
     bible_storage_interlinear_chapter_definitions_path(book_name, chapter),
