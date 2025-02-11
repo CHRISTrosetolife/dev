@@ -71,9 +71,9 @@ export async function app_bible_verse(
     let d = html_div(middle);
     let word = object_property_get(token, "word");
     let word_component = html_span_text(d, word);
-    html_select_none(word_component);
     html_style_bold(word_component);
     html_style_red(word_component);
+    html_select_none(word_component);
     html_on_click(word_component, async () => {
       let ms = bible_interlinear_words_audio_upload_map([word], filter);
       let m = list_first(ms);
