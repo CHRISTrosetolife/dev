@@ -1,8 +1,8 @@
+import { definition_bohol } from "./definition_bohol.mjs";
 import { bible_storage_ceb_definitions_path } from "./bible_storage_ceb_definitions_path.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { null_not_is } from "./null_not_is.mjs";
 import { list_filter } from "./list_filter.mjs";
-import { ceb_definition } from "./ceb_definition.mjs";
 import { bible_word_map } from "./bible_word_map.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_flatten } from "./list_flatten.mjs";
@@ -14,6 +14,7 @@ import { list_unique } from "./list_unique.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
+import { list_first } from "./list_first.mjs";
 export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
   let chapter = await bible_chapter(bible_version, chapter_code);
   let tokens_all = list_flatten(list_map_property(chapter, "tokens"));
@@ -21,7 +22,8 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
   let unique = list_unique(mapped);
   let filtered = list_filter(unique, null_not_is);
   let definitions = await list_to_lookup_value_async(filtered, async (u) => {
-    let d = await ceb_definition(u);
+    let d = await definition_bohol(u, "Cebuano", "English");
+    mapped = list_map(d, list_first);
     let result = {
       [bible_storage_interlinear_chapter_definitions_property()]:
         object_property_get(d, "definitions"),
