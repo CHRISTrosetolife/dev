@@ -1,10 +1,10 @@
+import { html_bible_word } from "./html_bible_word.mjs";
 import { list_find_verse_number } from "./list_find_verse_number.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { global_function_property_async } from "./global_function_property_async.mjs";
 import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
 import { app_bible_verse_common } from "./app_bible_verse_common.mjs";
 import { bible_storage_version_http_get } from "./bible_storage_version_http_get.mjs";
-import { html_style_red } from "./html_style_red.mjs";
 import { bible_storage_interlinear_chapter_definitions_property } from "./bible_storage_interlinear_chapter_definitions_property.mjs";
 import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
 import { bible_storage_interlinear_chapter_definitions_path } from "./bible_storage_interlinear_chapter_definitions_path.mjs";
@@ -17,7 +17,6 @@ import { list_first } from "./list_first.mjs";
 import { bible_interlinear_words_audio_upload_map } from "./bible_interlinear_words_audio_upload_map.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { html_style_green } from "./html_style_green.mjs";
-import { html_style_bold } from "./html_style_bold.mjs";
 import { html_select_none } from "./html_select_none.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_div } from "./html_div.mjs";
@@ -70,9 +69,7 @@ export async function app_bible_verse(
   each(tokens, (token) => {
     let d = html_div(middle);
     let word = object_property_get(token, "word");
-    let word_component = html_span_text(d, word);
-    html_style_bold(word_component);
-    html_style_red(word_component);
+    let word_component = html_bible_word(d, word);
     html_select_none(word_component);
     html_on_click(word_component, async () => {
       let ms = bible_interlinear_words_audio_upload_map([word], filter);
