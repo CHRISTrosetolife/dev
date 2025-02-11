@@ -13,7 +13,9 @@ export function app_el_definitions() {
     let split = string_split_multiple(definition, [",", " ", ";"]);
     let word = object_property_get(item, "word");
     html_p_text(root, word);
-    each(list2, (item2) => {});
+    each(split, (s) => {
+      html_button_short();
+    });
     html_hr(root);
   });
 }
