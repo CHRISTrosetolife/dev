@@ -30,7 +30,9 @@ export function app_el_definitions() {
     object_property_set(definitions, strong, definitions_word);
     word_reset();
     each(split, (s) => {
-      html_button_text_click(root, s, () => {});
+      html_button_text_click(root, s, () => {
+        word_reset();
+      });
     });
     html_button_add(root, () => {});
     async function word_reset() {
