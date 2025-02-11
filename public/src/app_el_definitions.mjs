@@ -57,7 +57,7 @@ export function app_el_definitions() {
     async function word_reset() {
       if (list_is(word_builder) && list_empty_not_is(word_builder)) {
         list_add(definitions_word, list_join_space(word_builder));
-        await app_save_change((save) => {
+        await app_save_change(app_el_definitions, (save) => {
           object_merge(save, {
             definitions,
           });
