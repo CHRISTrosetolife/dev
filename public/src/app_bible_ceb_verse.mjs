@@ -42,7 +42,6 @@ export async function app_bible_ceb_verse(
   let tokens = bible_verses_to_verse_tokens(verses_ceb, verse_number);
   each(tokens, (token) => {
     let row = html_div(middle);
-    lambda_each(token, row);
     let word_component = html_bible_word(row, word);
     bible_word_map(word);
   });
