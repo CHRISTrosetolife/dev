@@ -16,5 +16,6 @@ export async function app_language_2_bible_upload(
     object_property_get(d, "word"),
     object_property_get(d, "definition"),
   ]);
+  return pairs;
   return await app_language_2_upload_pairs(pairs, from, to);
 }
