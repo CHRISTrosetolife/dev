@@ -1,3 +1,4 @@
+import { ceb_definition_url } from "./ceb_definition_url.mjs";
 import { ceb_defintion_en } from "./ceb_defintion_en.mjs";
 import { ceb_html_cache_parse_form1 } from "./ceb_html_cache_parse_form1.mjs";
 import { ceb_definition_prefix_en } from "./ceb_definition_prefix_en.mjs";
@@ -184,12 +185,7 @@ export async function ceb_definition(word) {
     each(split, (s) => assert(list_size_2, [s])),
   );
   let lookup = list_pairs_to_lookup(skipped_pairs_split);
-  let url = string_combine_multiple([
-    ceb_definition_prefix(),
-    "node/21?search=binisaya&word=",
-    word,
-    "&Search=Search",
-  ]);
+  let url = ceb_definition_url(word);
   let { parsed, children } = await ceb_html_cache_parse_form1(url);
   let filtered9 = list_filter_property(children, "type", "text");
   let texts = list_map_property(filtered9, "data");
