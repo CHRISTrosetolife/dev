@@ -5,11 +5,11 @@ import { app_language_2_upload_pairs } from "./app_language_2_upload_pairs.mjs";
 import { list_map } from "./list_map.mjs";
 export async function app_el_upload() {
   let from = "el";
-  let to = "en";
   let ds = await bible_interlinear_definitions_generic(
     bible_interlinear_cache_new,
     "greek",
   );
+  let to = "en";
   let pairs = list_map(ds, (d) => [
     object_property_get(d, "word"),
     object_property_get(d, "definition"),
