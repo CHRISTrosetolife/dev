@@ -14,6 +14,7 @@ import { html_flag_language } from "./html_flag_language.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
 export function app_language_2_word(parent, language, text, boxed, context) {
+  let { language_learn } = context;
   let container = html_span(parent);
   let box = html_span(container);
   let color;
@@ -42,6 +43,8 @@ export function app_language_2_word(parent, language, text, boxed, context) {
     html_style_font_family(text_span, "SILEOT");
     html_style_font_size_default_multiplied(text_span, 1.2);
     html_style_font_color(text_span, "darkblue");
+  }
+  if (false) {
   }
   html_style_bold(container);
   let result = {
