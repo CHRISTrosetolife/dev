@@ -1,3 +1,4 @@
+import { bible_books_chapters } from "./bible_books_chapters.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
 import { bible_storage_interlinear_chapter_definitions_property } from "./bible_storage_interlinear_chapter_definitions_property.mjs";
 import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
@@ -16,6 +17,7 @@ import { bible_interlinear_cache_new } from "./bible_interlinear_cache_new.mjs";
 import { bible_interlinear_each_chapter } from "./bible_interlinear_each_chapter.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 export async function bible_ceb_upload() {
+  await bible_books_chapters();
   let language = "greek";
   let books = await bible_interlinear_cache_new();
   let chapters = list_adder((la) => {
