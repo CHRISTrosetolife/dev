@@ -1,3 +1,5 @@
+import { global_function_property_async } from "./global_function_property_async.mjs";
+import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
 import { app_bible_verse_common } from "./app_bible_verse_common.mjs";
 import { bible_storage_version_http_get } from "./bible_storage_version_http_get.mjs";
 import { html_style_red } from "./html_style_red.mjs";
@@ -38,6 +40,13 @@ export async function app_bible_verse(
     verse_number,
   );
   let book_name = object_property_get(bible_books_prefix_to_name(), book_code);
+  let chapter_code = app_gs_bible_chapter_name(book_code, chapter);
+  let verses = await global_function_property_async(
+    app_fn,
+    chapter_code,
+    async () =>
+      await bible_storage_version_http_get(version_code, chapter_code),
+  );
   let chapter_interlinear = await bible_storage_version_http_get(
     bible_storage_interlinear_book_path(book_name),
     chapter,
