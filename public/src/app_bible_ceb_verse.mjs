@@ -1,4 +1,6 @@
-import { html_bible_token_definitions } from "./html_bible_token_definitions.mjs";
+import { html_style_green } from "./html_style_green.mjs";
+import { bible_storage_interlinear_chapter_definitions_property } from "./bible_storage_interlinear_chapter_definitions_property.mjs";
+import { html_span_text } from "./html_span_text.mjs";
 import { html_spacer } from "./html_spacer.mjs";
 import { html_div } from "./html_div.mjs";
 import { each } from "./each.mjs";
@@ -65,7 +67,15 @@ export async function app_bible_ceb_verse(
     let row = html_div(middle);
     let word_component = html_bible_word(row, word);
     html_spacer(row);
-    html_bible_token_definitions(row, definitions, mapped);
+    let definition_entry = object_property_get(definitions, mapped);
+    let definition = html_span_text(
+      row,
+      object_property_get(
+        definition_entry,
+        bible_storage_interlinear_chapter_definitions_property(),
+      ),
+    );
+    html_style_green(definition);
   });
   html_hr(middle);
   html_p_text(middle, json_to(definitions));
