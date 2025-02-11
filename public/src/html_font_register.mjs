@@ -1,3 +1,4 @@
+import { list_map } from "./list_map.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { json_to } from "./json_to.mjs";
@@ -18,14 +19,21 @@ export function html_font_register(font_name, font_path) {
       "@font-face { font-family: '",
       font_name,
       "'; src: ",
-      list_join_comma_space([
-        string_combine_multiple([
-          "url('",
-          font_path,
-          ".woff2') format('woff2')",
-        ]),
-        string_combine_multiple(["url('", font_path, ".woff') format('woff')"]),
-      ]),
+      list_join_comma_space(
+        list_map(["woff2", "woff"], (extension) => {}),
+        [
+          string_combine_multiple([
+            "url('",
+            font_path,
+            ".woff2') format('woff2')",
+          ]),
+          string_combine_multiple([
+            "url('",
+            font_path,
+            ".woff') format('woff')",
+          ]),
+        ],
+      ),
       "; font-weight: normal; font-style: normal; }",
     ]);
     html_inner_set(style, value);
