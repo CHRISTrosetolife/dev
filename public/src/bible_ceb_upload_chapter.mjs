@@ -4,7 +4,6 @@ import { list_flatten } from "./list_flatten.mjs";
 import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
 import { bible_storage_interlinear_chapter_definitions_path } from "./bible_storage_interlinear_chapter_definitions_path.mjs";
 import { bible_storage_version_upload } from "./bible_storage_version_upload.mjs";
-import { bible_interlinear_definition } from "./bible_interlinear_definition.mjs";
 import { bible_storage_interlinear_chapter_definitions_property } from "./bible_storage_interlinear_chapter_definitions_property.mjs";
 import { list_to_lookup_value_async } from "./list_to_lookup_value_async.mjs";
 import { list_unique } from "./list_unique.mjs";
@@ -17,7 +16,7 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
   let unique = list_unique(mapped);
   let definitions = await list_to_lookup_value_async(strongs, async (s) => ({
     [bible_storage_interlinear_chapter_definitions_property()]:
-      await bible_interlinear_definition(language, s),
+      await ceb_defition(language, s),
   }));
   return;
   await bible_storage_version_upload(
