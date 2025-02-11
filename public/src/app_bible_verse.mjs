@@ -1,3 +1,4 @@
+import { list_find_verse_number } from "./list_find_verse_number.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { global_function_property_async } from "./global_function_property_async.mjs";
 import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
@@ -27,7 +28,6 @@ import { each } from "./each.mjs";
 import { bible_storage_interlinear_book_path } from "./bible_storage_interlinear_book_path.mjs";
 import { bible_books_prefix_to_name } from "./bible_books_prefix_to_name.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { list_find_property } from "./list_find_property.mjs";
 export async function app_bible_verse(
   context,
   book_code,
@@ -62,9 +62,8 @@ export async function app_bible_verse(
       ),
   );
   let { verses: verses_interlinear } = chapter_interlinear;
-  let verse_interlinear = list_find_property(
+  let verse_interlinear = list_find_verse_number(
     verses_interlinear,
-    "verse_number",
     verse_number,
   );
   let { tokens } = verse_interlinear;
