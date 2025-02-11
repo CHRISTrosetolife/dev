@@ -34,7 +34,6 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
     }
     return result;
   });
-  return definitions;
   await bible_storage_version_upload(
     path_join([bible_version, chapter_code]),
     bible_storage_interlinear_chapter_definitions_name(),
