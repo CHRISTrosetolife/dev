@@ -27,7 +27,7 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
         object_property_get(d, "definitions"),
     };
     let word = object_property_get(d, "word");
-    if (false) {
+    if (word !== u) {
       object_merge_strict(result, {
         root: word,
       });
