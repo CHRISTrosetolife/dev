@@ -2,7 +2,6 @@ import { app_bible_verse_common } from "./app_bible_verse_common.mjs";
 import { bible_storage_version_http_get } from "./bible_storage_version_http_get.mjs";
 import { html_style_red } from "./html_style_red.mjs";
 import { bible_storage_interlinear_chapter_definitions_property } from "./bible_storage_interlinear_chapter_definitions_property.mjs";
-import { log } from "./log.mjs";
 import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
 import { bible_storage_interlinear_chapter_definitions_path } from "./bible_storage_interlinear_chapter_definitions_path.mjs";
 import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
@@ -47,9 +46,6 @@ export async function app_bible_verse(
     bible_storage_interlinear_chapter_definitions_path(book_name, chapter),
     bible_storage_interlinear_chapter_definitions_name(),
   );
-  log({
-    chapter_definitions,
-  });
   let { verses: verses_interlinear } = chapter_interlinear;
   let verse_interlinear = list_find_property(
     verses_interlinear,
