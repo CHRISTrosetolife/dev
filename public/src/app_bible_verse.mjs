@@ -64,6 +64,10 @@ export async function app_bible_verse(
   let tokens = bible_verses_to_verse_tokens(verses_interlinear, verse_number);
   each(tokens, (token) => {
     let row = html_div(middle);
+    lambda_each(token, row);
+  });
+  html_hr(middle);
+  function lambda_each(token, row) {
     let word = object_property_get(token, "word");
     let word_component = html_bible_word(row, word);
     html_select_none(word_component);
@@ -92,6 +96,5 @@ export async function app_bible_verse(
       ),
     );
     html_style_green(definition);
-  });
-  html_hr(middle);
+  }
 }
