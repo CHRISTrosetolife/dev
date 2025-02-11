@@ -29,11 +29,8 @@ export async function app_bible_ceb_verse(
     string_combine_multiple([ceb_version, "_", chapter_code]),
     async () => await bible_storage_version_http_get(ceb_version, chapter_code),
   );
-  let verse_interlinear = list_find_verse_number(
-    verses_interlinear,
-    verse_number,
-  );
-  html_bible_verse(middle, book_code, chapter, verse_interlinear);
+  let verse_ceb = list_find_verse_number(verses_ceb, verse_number);
+  html_bible_verse(middle, book_code, chapter, verse_ceb);
   bible_verses_to_verse_tokens_each(
     verses_ceb,
     verse_number,
