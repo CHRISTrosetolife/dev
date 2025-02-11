@@ -1,4 +1,5 @@
-import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
-export function app_bible_ceb() {
-  let root = html_style_default_initialize();
+import { app_bible_verse } from "./app_bible_verse.mjs";
+import { app_record_generic } from "./app_record_generic.mjs";
+export async function app_bible_ceb() {
+  await app_record_generic("engbsb", app_bible_ceb, app_bible_verse, false);
 }
