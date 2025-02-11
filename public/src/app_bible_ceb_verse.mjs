@@ -23,5 +23,5 @@ export async function app_bible_ceb_verse(
     string_combine_multiple([ceb_version, "_", chapter_code]),
     async () => await bible_storage_version_http_get(ceb_version, chapter_code),
   );
-  let verse_interlinear = list_find_verse_number(verses_ceb, verse_number);
+  let verse_ceb = list_find_verse_number(verses_ceb, verse_number);
 }
