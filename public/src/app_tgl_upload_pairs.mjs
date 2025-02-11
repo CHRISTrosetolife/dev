@@ -1,3 +1,4 @@
+import { definition_bohol_http_parse } from "./definition_bohol_http_parse.mjs";
 import { list_unique_json } from "./list_unique_json.mjs";
 import { list_size } from "./list_size.mjs";
 import { string_split_space } from "./string_split_space.mjs";
@@ -25,7 +26,6 @@ import { string_includes } from "./string_includes.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { html_parse_visit_class_single } from "./html_parse_visit_class_single.mjs";
 import { html_parse_visit_id } from "./html_parse_visit_id.mjs";
-import { definition_bohol } from "./definition_bohol.mjs";
 import { each_log_async } from "./each_log_async.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { english_words_dictionary } from "./english_words_dictionary.mjs";
@@ -37,7 +37,7 @@ export async function app_tgl_upload_pairs(limit) {
   let pairs = await list_adder_async(async (la) => {
     await each_log_async(taken, async (w) => {
       let inner = await list_adder_async(async (la_inner) => {
-        let p = await definition_bohol(w);
+        let p = await definition_bohol_http_parse(w);
         let center = html_parse_visit_id(p, "center");
         let contents = html_parse_visit_class_single(center, "contents");
         let contents_text = html_parse_text(contents);
