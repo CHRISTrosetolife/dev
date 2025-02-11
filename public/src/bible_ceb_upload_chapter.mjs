@@ -1,3 +1,4 @@
+import { list_concat } from "./list_concat.mjs";
 import { ceb_definition } from "./ceb_definition.mjs";
 import { definition_bohol } from "./definition_bohol.mjs";
 import { bible_storage_ceb_definitions_path } from "./bible_storage_ceb_definitions_path.mjs";
@@ -28,10 +29,12 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
     let d2 = await ceb_definition(u);
     let definitions2 = object_property_get(d2, "definitions");
     let word2 = object_property_get(d2, "word");
-    if (false) {
+    if (word2 === u) {
+      let c = list_concat(mapped2, definitions2);
+      c = list_unique(c);
     }
     let result = {
-      [bible_storage_interlinear_chapter_definitions_property()]: mapped2,
+      [bible_storage_interlinear_chapter_definitions_property()]: c,
     };
     if (false) {
       let word = object_property_get(d, "word");
