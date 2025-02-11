@@ -10,6 +10,5 @@ export async function app_el_upload() {
     object_property_get(d, "word"),
     object_property_get(d, "definition"),
   ]);
-  return pairs;
-  return await app_language_2_upload_pairs(pairs2, from, to);
+  return await app_language_2_upload_pairs(pairs, from, to);
 }
