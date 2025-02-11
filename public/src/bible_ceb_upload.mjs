@@ -8,21 +8,14 @@ import { list_unique } from "./list_unique.mjs";
 import { bible_interlinear_chapter_each_token } from "./bible_interlinear_chapter_each_token.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
 import { each_async } from "./each_async.mjs";
-import { bible_storage_interlinear_book_path } from "./bible_storage_interlinear_book_path.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { bible_storage_version_upload } from "./bible_storage_version_upload.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 export async function bible_ceb_upload() {
   let chapters = await bible_books_chapters("cebulb");
-  return chapters;
   await each_async(chapters, async (chapter) => {
     let book_name = object_property_get(chapter, "book_name");
     let chapter_name = object_property_get(chapter, "chapter_name");
-    await bible_storage_version_upload(
-      bible_storage_interlinear_book_path(book_name),
-      chapter_name,
-      chapter,
-    );
     let tokens = list_adder_unique((la) => {
       bible_interlinear_chapter_each_token(chapter, la);
     });
