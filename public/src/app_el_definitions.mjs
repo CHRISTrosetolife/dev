@@ -1,3 +1,4 @@
+import { object_property_exists } from "./object_property_exists.mjs";
 import { app_save_get } from "./app_save_get.mjs";
 import { html_pre } from "./html_pre.mjs";
 import { json_format_to } from "./json_format_to.mjs";
@@ -34,7 +35,7 @@ export function app_el_definitions() {
     let strong = object_property_get(item, "strong");
     html_p_text(root, word);
     let progress = html_pre(root);
-    if (false) {
+    if (object_property_exists(object, "property_name")) {
     }
     let word_builder;
     let definitions_word = [];
