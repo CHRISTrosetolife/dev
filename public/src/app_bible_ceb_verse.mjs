@@ -51,7 +51,7 @@ export async function app_bible_ceb_verse(
       "_",
       chapter_code,
       "_",
-      "definitions",
+      bible_storage_interlinear_chapter_definitions_name(),
     ]),
     async () =>
       await bible_storage_version_http_get(
