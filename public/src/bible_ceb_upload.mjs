@@ -25,7 +25,7 @@ export async function bible_ceb_upload() {
       [bible_storage_interlinear_chapter_definitions_property()]:
         await bible_interlinear_definition(language, s),
     }));
-    await bible_storage_version_upload(
+    return await bible_storage_version_upload(
       bible_storage_interlinear_chapter_definitions_path(
         book_name,
         chapter_name,
