@@ -1,3 +1,4 @@
+import { html_button_text_click } from "./html_button_text_click.mjs";
 import { string_split_multiple } from "./string_split_multiple.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -14,7 +15,7 @@ export function app_el_definitions() {
     let word = object_property_get(item, "word");
     html_p_text(root, word);
     each(split, (s) => {
-      html_button_short();
+      html_button_text_click();
     });
     html_hr(root);
   });
