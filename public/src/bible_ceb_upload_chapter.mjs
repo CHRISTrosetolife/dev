@@ -1,4 +1,4 @@
-import { path_join } from "./path_join.mjs";
+import { bible_storage_ceb_definitions_path } from "./bible_storage_ceb_definitions_path.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { null_not_is } from "./null_not_is.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -35,7 +35,7 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
     return result;
   });
   await bible_storage_version_upload(
-    path_join([bible_version, chapter_code]),
+    bible_storage_ceb_definitions_path(bible_version, chapter_code),
     bible_storage_interlinear_chapter_definitions_name(),
     definitions,
   );
