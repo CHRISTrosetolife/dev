@@ -75,7 +75,9 @@ export async function app_bible_ceb_verse(
     }
     let row = html_div(middle);
     html_on_click(verse_word, () => {
-      html_style_background_color_yellow(row);
+      if (false) {
+      }
+      html_style_background_color_yellow(row_selected);
       html_scroll_center_generic(row, {});
     });
     let verse_word_red = html_bible_word(row, word);
