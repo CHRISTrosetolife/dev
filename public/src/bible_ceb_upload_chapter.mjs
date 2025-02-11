@@ -21,10 +21,11 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
   let filtered = list_filter(unique, null_not_is);
   let definitions = await list_to_lookup_value_async(filtered, async (u) => {
     let d = await ceb_definition(u);
-    return {
+    let result = {
       [bible_storage_interlinear_chapter_definitions_property()]:
-        object_property_get(object, "property_name"),
+        object_property_get(d, "definitions"),
     };
+    return result;
   });
   return definitions;
   await bible_storage_version_upload(
