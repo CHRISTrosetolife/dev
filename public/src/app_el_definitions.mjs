@@ -30,11 +30,11 @@ export function app_el_definitions() {
     object_property_set(definitions, strong, definitions_word);
     word_reset();
     each(split, (s) => {
-      html_button_text_click(root, s, () => {
-        word_reset();
-      });
+      html_button_text_click(root, s, () => {});
     });
-    html_button_add(root, () => {});
+    html_button_add(root, () => {
+      word_reset();
+    });
     async function word_reset() {
       if (list_is(word_builder) && list_empty_not_is(word_builder)) {
         list_add(definitions_word, list_join_space(word_builder));
