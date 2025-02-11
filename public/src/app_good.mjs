@@ -130,6 +130,8 @@ export function app_good() {
           "Let Gates be generous and Christian",
           "Let Rowling be generous and Christian",
           "Let Putin be generous and Christian",
+          "Let Taylor Swift be generous and Christian",
+          "Let Kanye be generous and Christian",
           "Bless the nails of love",
           "Bless my works",
           "Bless my word of God speech",
