@@ -25,7 +25,9 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
   let definitions = await list_to_lookup_value_async(filtered, async (u) => {
     let d = await definition_bohol(u, "Cebuano", "English");
     let mapped2 = list_map(d, list_first);
-    await ceb_definition();
+    let d2 = await ceb_definition(u);
+    let definitions2 = object_property_get(d2, "definitions");
+    let word2 = object_property_get(d2, "word");
     let result = {
       [bible_storage_interlinear_chapter_definitions_property()]: mapped2,
     };
