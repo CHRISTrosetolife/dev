@@ -47,8 +47,9 @@ export async function app_bible_ceb_verse(
   let verse_ceb = list_find_verse_number(verses_ceb, verse_number);
   html_bible_verse(middle, book_code, chapter, verse_ceb, (root, token) => {
     let s = html_span_text(root, token);
-    html_on_click(s, () => {});
-    html_scroll_center(s);
+    html_on_click(s, () => {
+      html_scroll_center(s);
+    });
   });
   html_hr(middle);
   let definitions = await global_function_property_async(
