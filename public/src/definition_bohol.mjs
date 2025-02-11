@@ -86,8 +86,8 @@ export async function definition_bohol(word, language_from, language_to) {
           return;
         }
         let w_split = string_split_space(word_tgl);
-        let max_word_count = 1;
         if (false) {
+          let max_word_count = 1;
           if (list_size(w_split) > max_word_count) {
             return;
           }
