@@ -33,7 +33,9 @@ export function app_el_definitions() {
       if (list_is(word_builder) && list_empty_not_is(word_builder)) {
         list_add(definitions_word, list_join_space(word_builder));
         await app_save_change((save) => {
-          object_merge(save);
+          object_merge(save, {
+            definitions,
+          });
         });
       }
       word_builder = [];
