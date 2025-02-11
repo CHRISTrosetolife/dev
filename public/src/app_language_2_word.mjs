@@ -34,9 +34,9 @@ export function app_language_2_word(parent, language, text, boxed) {
     html_font_register("GentiumPlus-Regular", "font/GentiumPlus-Regular");
     html_style_font_family(text_span, "GentiumPlus-Regular");
     html_style_font_size_default_multiplied(text_span, 1.2);
-    html_style_font_color(text_span, "darkblue");
   } else {
   }
+  html_style_font_color(text_span, "darkblue");
   html_style_bold(container);
   let result = {
     container,
