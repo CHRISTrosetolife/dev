@@ -39,7 +39,7 @@ export function app_el_definitions() {
         progress_update();
       });
     });
-    html_button_add(root, async () => {
+    html_button_add(root, "", async () => {
       await word_reset();
       progress_update();
     });
