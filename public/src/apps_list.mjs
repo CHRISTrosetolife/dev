@@ -1,6 +1,5 @@
 export function apps_list() {
   return [
-    "app_el_definitions",
     "bible",
     "bible2",
     "ceb",
