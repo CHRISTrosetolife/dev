@@ -1,3 +1,4 @@
+import { html_style_background_color_transparent } from "./html_style_background_color_transparent.mjs";
 import { html_scroll_center_generic } from "./html_scroll_center_generic.mjs";
 import { html_span } from "./html_span.mjs";
 import { html_bible_verse_number } from "./html_bible_verse_number.mjs";
@@ -75,7 +76,8 @@ export async function app_bible_ceb_verse(
     }
     let row = html_div(middle);
     html_on_click(verse_word, () => {
-      if (false) {
+      if (row_selected !== null) {
+        html_style_background_color_transparent(row_selected);
       }
       html_style_background_color_yellow(row_selected);
       html_scroll_center_generic(row, {});
