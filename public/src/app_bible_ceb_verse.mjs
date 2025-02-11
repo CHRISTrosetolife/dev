@@ -16,7 +16,6 @@ export async function app_bible_ceb_verse(
   let verses = await global_function_property_async(
     app_fn,
     chapter_code,
-    async () =>
-      await bible_storage_version_http_get(version_code, chapter_code),
+    async () => await bible_storage_version_http_get("cebulb", chapter_code),
   );
 }
