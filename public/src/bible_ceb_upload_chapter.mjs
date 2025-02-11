@@ -28,6 +28,8 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
     let d2 = await ceb_definition(u);
     let definitions2 = object_property_get(d2, "definitions");
     let word2 = object_property_get(d2, "word");
+    if (false) {
+    }
     let result = {
       [bible_storage_interlinear_chapter_definitions_property()]: mapped2,
     };
