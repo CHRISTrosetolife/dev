@@ -14,6 +14,7 @@ export function apps_list() {
     "good",
     "grocery",
     "gs",
+    "he",
     "index",
     "learn_code",
     "links",
