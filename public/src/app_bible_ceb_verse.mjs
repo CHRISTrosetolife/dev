@@ -86,6 +86,7 @@ export async function app_bible_ceb_verse(
         verse_word_selected,
         verse_word,
       );
+      row_selected = html_style_background_color_select(row_selected, null);
       html_scroll_center_generic(verse_word, {});
       await sleep(500);
       html_style_background_color_transparent(verse_word);
