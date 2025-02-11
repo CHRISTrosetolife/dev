@@ -75,8 +75,8 @@ export async function app_bible_ceb_verse(
       html_scroll_center(row);
     });
     let verse_word_red = html_bible_word(row, word);
-    html_on_click(verse_word, () => {
-      html_scroll_center(row);
+    html_on_click(verse_word_red, () => {
+      html_scroll_center(verse_word);
     });
     html_spacer(row);
     let definition_entry = object_property_get(definitions, mapped);
