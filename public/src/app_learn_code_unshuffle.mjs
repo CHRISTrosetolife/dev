@@ -1,3 +1,4 @@
+import { html_style_display_none } from "./html_style_display_none.mjs";
 import { list_sort_map } from "./list_sort_map.mjs";
 import { html_button } from "./html_button.mjs";
 import { list_sort_string_map } from "./list_sort_string_map.mjs";
@@ -149,9 +150,7 @@ export function app_learn_code_unshuffle(source_get) {
             app_learn_code_code_background_set(part),
           );
           if (list_includes_not(remaining, current)) {
-            html_style(part, {
-              display: "none",
-            });
+            html_style_display_none(part);
           }
           let first_source = first.source;
           current_index++;
