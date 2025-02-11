@@ -1,3 +1,4 @@
+import { bible_chapter } from "./bible_chapter.mjs";
 import { bible_books_chapters } from "./bible_books_chapters.mjs";
 import { bible_storage_interlinear_chapter_definitions_property } from "./bible_storage_interlinear_chapter_definitions_property.mjs";
 import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
@@ -12,10 +13,12 @@ import { object_property_get } from "./object_property_get.mjs";
 import { bible_storage_version_upload } from "./bible_storage_version_upload.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 export async function bible_ceb_upload() {
-  let chapters = await bible_books_chapters("cebulb");
+  let bible_version = "cebulb";
+  let chapters = await bible_books_chapters(bible_version);
   await each_async(chapters, async (chapter) => {
     let book_name = object_property_get(chapter, "book_name");
     let chapter_name = object_property_get(chapter, "chapter_name");
+    await bible_chapter(bible_version, chapter_name);
     let tokens = list_adder_unique((la) => {
       bible_interlinear_chapter_each_token(chapter, la);
     });
