@@ -41,19 +41,6 @@ export async function app_bible_ceb_verse(
   let verse_ceb = list_find_verse_number(verses_ceb, verse_number);
   html_bible_verse(middle, book_code, chapter, verse_ceb);
   html_hr(middle);
-  let tokens = bible_verses_to_verse_tokens(verses_ceb, verse_number);
-  each(tokens, (token) => {
-    let word = object_property_get(token, "word");
-    let mapped = bible_word_map(word);
-    if (mapped === null) {
-      return;
-    }
-    let row = html_div(middle);
-    let word_component = html_bible_word(row, word);
-    html_spacer(row);
-    html_bible_token_definitions(row, chapter_definitions, strong);
-  });
-  html_hr(middle);
   let definitions = await global_function_property_async(
     app_lambda,
     string_combine_multiple([
@@ -69,5 +56,18 @@ export async function app_bible_ceb_verse(
         bible_storage_interlinear_chapter_definitions_name(),
       ),
   );
+  let tokens = bible_verses_to_verse_tokens(verses_ceb, verse_number);
+  each(tokens, (token) => {
+    let word = object_property_get(token, "word");
+    let mapped = bible_word_map(word);
+    if (mapped === null) {
+      return;
+    }
+    let row = html_div(middle);
+    let word_component = html_bible_word(row, word);
+    html_spacer(row);
+    html_bible_token_definitions(row, chapter_definitions, strong);
+  });
+  html_hr(middle);
   html_p_text(middle, json_to(definitions));
 }
