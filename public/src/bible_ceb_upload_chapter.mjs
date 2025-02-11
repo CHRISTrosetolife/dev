@@ -1,3 +1,4 @@
+import { ceb_definition } from "./ceb_definition.mjs";
 import { bible_word_map } from "./bible_word_map.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_flatten } from "./list_flatten.mjs";
@@ -16,7 +17,7 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
   let unique = list_unique(mapped);
   let definitions = await list_to_lookup_value_async(strongs, async (s) => ({
     [bible_storage_interlinear_chapter_definitions_property()]:
-      await ceb_defition(language, s),
+      await ceb_definition(s),
   }));
   return;
   await bible_storage_version_upload(
