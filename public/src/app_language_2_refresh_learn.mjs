@@ -183,6 +183,7 @@ export async function app_language_2_refresh_learn(context) {
       language,
       question,
       boxed,
+      context,
     );
     app_language_2_audio(question_component);
     let m_size = list_size(mapped);
@@ -278,7 +279,13 @@ export async function app_language_2_refresh_learn(context) {
           await on_answer_wrong(b2);
         }
       });
-      let word_component = app_language_2_word(row, language_other, c, false);
+      let word_component = app_language_2_word(
+        row,
+        language_other,
+        c,
+        false,
+        context,
+      );
       let { container } = word_component;
       html_style_flex_1(container);
       let b = html_button_text_click(row, emoji_right, async () => {

@@ -13,7 +13,7 @@ import { html_span_text } from "./html_span_text.mjs";
 import { html_flag_language } from "./html_flag_language.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
-export function app_language_2_word(parent, language, text, boxed) {
+export function app_language_2_word(parent, language, text, boxed, context) {
   let container = html_span(parent);
   let box = html_span(container);
   let color;
