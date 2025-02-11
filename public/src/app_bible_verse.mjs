@@ -52,9 +52,14 @@ export async function app_bible_verse(
         chapter,
       ),
   );
-  let chapter_definitions = await bible_storage_version_http_get(
-    bible_storage_interlinear_chapter_definitions_path(book_name, chapter),
-    bible_storage_interlinear_chapter_definitions_name(),
+  let chapter_definitions = await global_function_property_async(
+    app_lambda,
+    string_combine_multiple(["interlinear_definitions_", chapter_code]),
+    async () =>
+      await bible_storage_version_http_get(
+        bible_storage_interlinear_chapter_definitions_path(book_name, chapter),
+        bible_storage_interlinear_chapter_definitions_name(),
+      ),
   );
   let { verses: verses_interlinear } = chapter_interlinear;
   let verse_interlinear = list_find_property(
