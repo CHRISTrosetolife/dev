@@ -14,8 +14,8 @@ import { list_unique } from "./list_unique.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
-export async function bible_ceb_upload_chapter(bible_folder, chapter_code) {
-  let chapter = await bible_chapter(bible_folder, chapter_code);
+export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
+  let chapter = await bible_chapter(bible_version, chapter_code);
   let tokens_all = list_flatten(list_map_property(chapter, "tokens"));
   let mapped = list_map(tokens_all, bible_word_map);
   let unique = list_unique(mapped);
@@ -36,7 +36,7 @@ export async function bible_ceb_upload_chapter(bible_folder, chapter_code) {
   });
   return definitions;
   await bible_storage_version_upload(
-    path_join([bible_folder, chapter_name]),
+    path_join([bible_version, chapter_name]),
     bible_storage_interlinear_chapter_definitions_name(),
     definitions,
   );
