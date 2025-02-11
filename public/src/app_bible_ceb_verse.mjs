@@ -1,3 +1,5 @@
+import { html_span } from "./html_span.mjs";
+import { html_bible_verse_number } from "./html_bible_verse_number.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
 import { html_a_blank } from "./html_a_blank.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
@@ -45,6 +47,8 @@ export async function app_bible_ceb_verse(
     async () => await bible_storage_version_http_get(ceb_version, chapter_code),
   );
   let verse_ceb = list_find_verse_number(verses_ceb, verse_number);
+  html_bible_verse_number(root, book_code, chapter, verse_number);
+  let tokens_component = html_span(root);
   html_bible_verse(middle, book_code, chapter, verse_ceb, (root, token) => {
     let s = html_span_text(root, token);
     html_on_click(s, () => {
@@ -69,6 +73,8 @@ export async function app_bible_ceb_verse(
   );
   let tokens = bible_verses_to_verse_tokens(verses_ceb, verse_number);
   each(tokens, (word) => {
+    html_spacer(tokens_component);
+    let verse_word = html_span_text(tokens_component, word);
     let mapped = bible_word_map(word);
     if (mapped === null) {
       return;
