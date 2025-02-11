@@ -70,7 +70,7 @@ export async function app_bible_ceb_verse(
     html_bible_word(row, word);
     html_spacer(row);
     let definition_entry = object_property_get(definitions, mapped);
-    html_a_blank(
+    let definition = html_a_blank(
       row,
       list_join_comma_space(
         object_property_get(
