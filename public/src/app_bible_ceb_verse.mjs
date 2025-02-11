@@ -12,8 +12,6 @@ import { bible_verses_to_verse_tokens } from "./bible_verses_to_verse_tokens.mjs
 import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
 import { bible_storage_ceb_definitions_path } from "./bible_storage_ceb_definitions_path.mjs";
 import { bible_word_map } from "./bible_word_map.mjs";
-import { list_find_verse_number } from "./list_find_verse_number.mjs";
-import { html_bible_verse } from "./html_bible_verse.mjs";
 import { html_bible_word } from "./html_bible_word.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -46,15 +44,8 @@ export async function app_bible_ceb_verse(
     string_combine_multiple([ceb_version, "_", chapter_code]),
     async () => await bible_storage_version_http_get(ceb_version, chapter_code),
   );
-  let verse_ceb = list_find_verse_number(verses_ceb, verse_number);
   html_bible_verse_number(root, book_code, chapter, verse_number);
   let tokens_component = html_span(root);
-  html_bible_verse(middle, book_code, chapter, verse_ceb, (root, token) => {
-    let s = html_span_text(root, token);
-    html_on_click(s, () => {
-      html_scroll_center(s);
-    });
-  });
   html_hr(middle);
   let definitions = await global_function_property_async(
     app_lambda,
@@ -80,6 +71,9 @@ export async function app_bible_ceb_verse(
       return;
     }
     let row = html_div(middle);
+    html_on_click(verse_word, () => {
+      html_scroll_center(s);
+    });
     html_bible_word(row, word);
     html_spacer(row);
     let definition_entry = object_property_get(definitions, mapped);
