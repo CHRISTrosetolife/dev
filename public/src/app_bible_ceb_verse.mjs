@@ -1,3 +1,4 @@
+import { list_find_verse_number } from "./list_find_verse_number.mjs";
 import { html_bible_verse } from "./html_bible_verse.mjs";
 import { html_bible_word } from "./html_bible_word.mjs";
 import { html_hr } from "./html_hr.mjs";
@@ -28,7 +29,11 @@ export async function app_bible_ceb_verse(
     string_combine_multiple([ceb_version, "_", chapter_code]),
     async () => await bible_storage_version_http_get(ceb_version, chapter_code),
   );
-  html_bible_verse(middle, book_code, chapter, verses_ceb);
+  let verse_interlinear = list_find_verse_number(
+    verses_interlinear,
+    verse_number,
+  );
+  html_bible_verse(middle, book_code, chapter, verse_interlinear);
   bible_verses_to_verse_tokens_each(
     verses_ceb,
     verse_number,
