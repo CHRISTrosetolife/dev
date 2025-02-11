@@ -31,6 +31,8 @@ export function app_el_definitions() {
     let strong = object_property_get(item, "strong");
     html_p_text(root, word);
     let progress = html_pre(root);
+    if (false) {
+    }
     let word_builder;
     let definitions_word = [];
     object_property_set(definitions, strong, definitions_word);
