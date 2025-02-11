@@ -1,3 +1,4 @@
+import { list_is } from "./list_is.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
 import { string_split_multiple } from "./string_split_multiple.mjs";
 import { html_hr } from "./html_hr.mjs";
@@ -7,6 +8,7 @@ import { each } from "./each.mjs";
 import { bible_interlinear_new_definitions_list } from "./bible_interlinear_new_definitions_list.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_button_next } from "./html_button_next.mjs";
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 export function app_el_definitions() {
   let root = html_style_default_initialize();
   let list = bible_interlinear_new_definitions_list();
@@ -22,7 +24,7 @@ export function app_el_definitions() {
     });
     html_button_next(root, () => {});
     function word_reset() {
-      if (false) {
+      if (list_is(word_builder) && list_empty_not_is(word_builder)) {
       }
       word_builder = [];
     }
