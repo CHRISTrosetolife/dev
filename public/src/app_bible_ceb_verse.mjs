@@ -23,6 +23,7 @@ import { app_bible_verse_common } from "./app_bible_verse_common.mjs";
 import { ceb_definition_url } from "./ceb_definition_url.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_on_click } from "./html_on_click.mjs";
+import { html_style_background_color_yellow } from "./html_style_background_color_yellow.mjs";
 export async function app_bible_ceb_verse(
   context,
   book_code,
@@ -62,6 +63,8 @@ export async function app_bible_ceb_verse(
         bible_storage_interlinear_chapter_definitions_name(),
       ),
   );
+  let verse_word_selected = null;
+  let row_selected = null;
   let tokens = bible_verses_to_verse_tokens(verses_ceb, verse_number);
   each(tokens, (word) => {
     html_spacer(tokens_component);
@@ -72,6 +75,7 @@ export async function app_bible_ceb_verse(
     }
     let row = html_div(middle);
     html_on_click(verse_word, () => {
+      html_style_background_color_yellow(row);
       html_scroll_center_generic(row, {});
     });
     let verse_word_red = html_bible_word(row, word);
