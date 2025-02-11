@@ -44,7 +44,7 @@ export async function app_bible_verse(
   let chapter_code = app_gs_bible_chapter_name(book_code, chapter);
   let verses = await global_function_property_async(
     app_fn,
-    string_combine_multiple([chapter_code]),
+    string_combine_multiple(["interlinear_", chapter_code]),
     async () =>
       await bible_storage_version_http_get(version_code, chapter_code),
   );
