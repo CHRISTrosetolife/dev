@@ -35,6 +35,7 @@ export async function app_bible_verse(
     book_code,
     chapter,
     verse_number,
+    app_bible_verse,
   );
   let book_name = object_property_get(bible_books_prefix_to_name(), book_code);
   let chapter_code = app_gs_bible_chapter_name(book_code, chapter);

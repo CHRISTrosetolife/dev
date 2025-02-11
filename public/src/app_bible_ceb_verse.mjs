@@ -33,7 +33,7 @@ export async function app_bible_ceb_verse(
     context,
     book_code,
     chapter,
-    verse_number,
+    verse_number,app_bible_ceb_verse
   );
   let chapter_code = app_gs_bible_chapter_name(book_code, chapter);
   let ceb_version = "cebulb";
