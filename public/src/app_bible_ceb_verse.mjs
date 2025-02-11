@@ -1,3 +1,5 @@
+import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
+import { bible_storage_ceb_definitions_path } from "./bible_storage_ceb_definitions_path.mjs";
 import { bible_word_map } from "./bible_word_map.mjs";
 import { list_find_verse_number } from "./list_find_verse_number.mjs";
 import { html_bible_verse } from "./html_bible_verse.mjs";
@@ -40,6 +42,15 @@ export async function app_bible_ceb_verse(
     lambda_each,
   );
   html_hr(middle);
+  let definitions = await global_function_property_async(
+    app_lambda,
+    string_combine_multiple([ceb_version, "_", chapter_code]),
+    async () =>
+      await bible_storage_version_http_get(
+        bible_storage_ceb_definitions_path(ceb_version, chapter_code),
+        bible_storage_interlinear_chapter_definitions_name(),
+      ),
+  );
   function lambda_each(word, row) {
     let word_component = html_bible_word(row, word);
     bible_word_map(word);
