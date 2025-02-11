@@ -7,6 +7,7 @@ import { html_document_head } from "./html_document_head.mjs";
 import { html_element } from "./html_element.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { list_join_comma_space } from "./list_join_comma_space.mjs";
 export function html_font_register(font_name, font_path) {
   let g = global_function(html_font_register);
   let key = json_to(font_name, font_path);
@@ -17,13 +18,12 @@ export function html_font_register(font_name, font_path) {
       "@font-face { font-family: '",
       font_name,
       "'; src: ",
-      string_combine_multiple([
+      list_join_comma_space([
         string_combine_multiple([
           "url('",
           font_path,
           ".woff2') format('woff2')",
         ]),
-        ", ",
         string_combine_multiple(["url('", font_path, ".woff') format('woff')"]),
       ]),
       "; font-weight: normal; font-style: normal; }",
