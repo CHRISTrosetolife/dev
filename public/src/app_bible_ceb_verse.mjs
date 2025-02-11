@@ -2,7 +2,6 @@ import { html_a_blank } from "./html_a_blank.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { html_style_green } from "./html_style_green.mjs";
 import { bible_storage_interlinear_chapter_definitions_property } from "./bible_storage_interlinear_chapter_definitions_property.mjs";
-import { html_span_text } from "./html_span_text.mjs";
 import { html_spacer } from "./html_spacer.mjs";
 import { html_div } from "./html_div.mjs";
 import { each } from "./each.mjs";
@@ -22,6 +21,7 @@ import { bible_storage_version_http_get } from "./bible_storage_version_http_get
 import { global_function_property_async } from "./global_function_property_async.mjs";
 import { app_bible_verse_common } from "./app_bible_verse_common.mjs";
 import { json_to } from "./json_to.mjs";
+import { ceb_definition_url } from "./ceb_definition_url.mjs";
 export async function app_bible_ceb_verse(
   context,
   book_code,
@@ -67,10 +67,10 @@ export async function app_bible_ceb_verse(
       return;
     }
     let row = html_div(middle);
-    let word_component = html_bible_word(row, word);
+    html_bible_word(row, word);
     html_spacer(row);
     let definition_entry = object_property_get(definitions, mapped);
-    let definition = html_span_text(
+    html_a_blank(
       row,
       list_join_comma_space(
         object_property_get(
@@ -78,8 +78,8 @@ export async function app_bible_ceb_verse(
           bible_storage_interlinear_chapter_definitions_property(),
         ),
       ),
+      ceb_definition_url(mapped),
     );
-    html_a_blank();
     html_style_green(definition);
   });
   html_hr(middle);
