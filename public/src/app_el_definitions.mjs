@@ -1,3 +1,4 @@
+import { list_trim_empty_not } from "./list_trim_empty_not.mjs";
 import { json_to } from "./json_to.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_button_add } from "./html_button_add.mjs";
@@ -18,10 +19,6 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
-import { list_map } from "./list_map.mjs";
-import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
-import { list_filter } from "./list_filter.mjs";
-import { string_empty_not_is } from "./string_empty_not_is.mjs";
 export function app_el_definitions() {
   let root = html_style_default_initialize();
   let list = bible_interlinear_new_definitions_list();
@@ -29,8 +26,7 @@ export function app_el_definitions() {
   each(list, (item) => {
     let definition = object_property_get(item, "definition");
     let split = string_split_multiple(definition, [",", " ", ";"]);
-    let mapped = list_map(split, string_trim_whitespace);
-    let filtered = list_filter(mapped, string_empty_not_is);
+    let filtered = list_trim_empty_not(split);
     let word = object_property_get(item, "word");
     let strong = object_property_get(item, "strong");
     html_p_text(root, word);
