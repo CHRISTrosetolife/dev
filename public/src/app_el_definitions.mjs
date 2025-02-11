@@ -19,6 +19,7 @@ export function app_el_definitions() {
       html_button_text_click(root, s, () => {});
     });
     html_button_next(root, () => {});
+    function word_reset() {}
     html_hr(root);
   });
 }
