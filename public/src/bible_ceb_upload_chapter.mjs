@@ -9,6 +9,7 @@ import { list_map_property } from "./list_map_property.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
   let chapter = await bible_chapter(bible_version, chapter_code);
+  return chapter;
   let strongs = list_map_property(tokens, "strong");
   strongs = list_unique(strongs);
   let definitions = await list_to_lookup_value_async(strongs, async (s) => ({
