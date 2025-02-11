@@ -19,9 +19,9 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
   let unique = list_unique(mapped);
   let filtered = list_filter(unique, null_not_is);
   let definitions = await list_to_lookup_value_async(filtered, async (u) => {
+    let d = await ceb_definition(u);
     return {
-      [bible_storage_interlinear_chapter_definitions_property()]:
-        await ceb_definition(u),
+      [bible_storage_interlinear_chapter_definitions_property()]: d,
     };
   });
   return definitions;
