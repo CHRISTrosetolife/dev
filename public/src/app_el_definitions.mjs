@@ -6,6 +6,7 @@ import { html_p_text } from "./html_p_text.mjs";
 import { each } from "./each.mjs";
 import { bible_interlinear_new_definitions_list } from "./bible_interlinear_new_definitions_list.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
+import { html_button_next } from "./html_button_next.mjs";
 export function app_el_definitions() {
   let root = html_style_default_initialize();
   let list = bible_interlinear_new_definitions_list();
@@ -17,6 +18,7 @@ export function app_el_definitions() {
     each(split, (s) => {
       html_button_text_click(root, s, () => {});
     });
+    html_button_next(root, () => {});
     html_hr(root);
   });
 }
