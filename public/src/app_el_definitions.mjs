@@ -1,7 +1,7 @@
+import { html_inner_set_json_format } from "./html_inner_set_json_format.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { app_save_get } from "./app_save_get.mjs";
 import { html_pre } from "./html_pre.mjs";
-import { json_format_to } from "./json_format_to.mjs";
 import { list_trim_empty_not } from "./list_trim_empty_not.mjs";
 import { html_button_add } from "./html_button_add.mjs";
 import { log } from "./log.mjs";
@@ -20,7 +20,6 @@ import { bible_interlinear_new_definitions_list } from "./bible_interlinear_new_
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_join_space } from "./list_join_space.mjs";
-import { html_inner_set } from "./html_inner_set.mjs";
 export function app_el_definitions() {
   let root = html_style_default_initialize();
   let list = bible_interlinear_new_definitions_list();
@@ -36,8 +35,8 @@ export function app_el_definitions() {
     html_p_text(root, word);
     let progress = html_pre(root);
     if (object_property_exists(save_definitions, strong)) {
-        existing=object_property_get(save_definitions, strong) 
-
+      let existing = object_property_get(save_definitions, strong);
+      html_inner_set_json_format(progress, existing);
     }
     let word_builder;
     let definitions_word = [];
@@ -54,10 +53,10 @@ export function app_el_definitions() {
       progress_update();
     });
     function progress_update() {
-        const object = {
-            word_builder,
-            definitions_word,
-        };
+      let object = {
+        word_builder,
+        definitions_word,
+      };
       html_inner_set_json_format(progress, object);
     }
     async function word_reset() {
@@ -77,10 +76,3 @@ export function app_el_definitions() {
     html_hr(root);
   });
 }
-function html_inner_set_json_format(progress, object) {
-    html_inner_set(
-        progress,
-        json_format_to(object)
-    );
-}
-
