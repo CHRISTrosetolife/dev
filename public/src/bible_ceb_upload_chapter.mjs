@@ -30,11 +30,11 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
     let definitions2 = object_property_get(d2, "definitions");
     let word2 = object_property_get(d2, "word");
     if (word2 === u) {
-      let c = list_concat(mapped2, definitions2);
-      c = list_unique(c);
+      mapped2 = list_concat(mapped2, definitions2);
+      mapped2 = list_unique(mapped2);
     }
     let result = {
-      [bible_storage_interlinear_chapter_definitions_property()]: c,
+      [bible_storage_interlinear_chapter_definitions_property()]: mapped2,
     };
     if (false) {
       let word = object_property_get(d, "word");
