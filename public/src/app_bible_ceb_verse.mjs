@@ -57,8 +57,7 @@ export async function app_bible_ceb_verse(
       ),
   );
   let tokens = bible_verses_to_verse_tokens(verses_ceb, verse_number);
-  each(tokens, (token) => {
-    let word = object_property_get(token, "word");
+  each(tokens, (word) => {
     let mapped = bible_word_map(word);
     if (mapped === null) {
       return;
