@@ -34,8 +34,7 @@ export async function app_bible_ceb_verse(
     lambda_each,
   );
   html_hr(middle);
-  function lambda_each(token, row) {
-    let word = object_property_get(token, "word");
+  function lambda_each(word, row) {
     let word_component = html_bible_word(row, word);
   }
 }
