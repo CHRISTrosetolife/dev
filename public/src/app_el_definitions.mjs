@@ -25,6 +25,7 @@ export function app_el_definitions() {
   let list = bible_interlinear_new_definitions_list();
   let definitions = {};
   let save = app_save_get(app_el_definitions);
+  object_property_get(object, "property_name");
   each(list, (item) => {
     let definition = object_property_get(item, "definition");
     let split = string_split_multiple(definition, [",", " ", ";"]);
