@@ -32,11 +32,14 @@ export async function definition_bohol(word, language_from, language_to) {
     let center = html_parse_visit_id(p, "center");
     let contents = html_parse_visit_class_single(center, "contents");
     let contents_text = html_parse_text(contents);
-    let en = "English";
     if (
       string_includes(
         contents_text,
-        string_combine_multiple(["No ", en, " words found matching"]),
+        string_combine_multiple([
+          "No ",
+          language_from,
+          " words found matching",
+        ]),
       )
     ) {
       return;
@@ -52,9 +55,15 @@ export async function definition_bohol(word, language_from, language_to) {
     let tr_first = object_property_get(fr, "first");
     let first_tds = html_parse_visit_tag_list(tr_first, "td");
     let languages = list_map(first_tds, html_parse_text);
-    let expected = [en, "Grammar", "Cebuano", "Tagalog", "Hiligaynon"];
+    let expected = [
+      language_from,
+      "Grammar",
+      "Cebuano",
+      "Tagalog",
+      "Hiligaynon",
+    ];
     assert(equal_json, [languages, expected]);
-    let en_index = list_index(expected, en);
+    let en_index = list_index(expected, language_from);
     let tgl_index = list_index(expected, language_to);
     each(remaining, (row) => {
       let row_tds = html_parse_visit_tag_list(row, "td");
