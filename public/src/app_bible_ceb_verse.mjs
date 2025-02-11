@@ -44,8 +44,8 @@ export async function app_bible_ceb_verse(
     string_combine_multiple([ceb_version, "_", chapter_code]),
     async () => await bible_storage_version_http_get(ceb_version, chapter_code),
   );
-  html_bible_verse_number(root, book_code, chapter, verse_number);
-  let tokens_component = html_span(root);
+  html_bible_verse_number(middle, book_code, chapter, verse_number);
+  let tokens_component = html_span(middle);
   html_hr(middle);
   let definitions = await global_function_property_async(
     app_lambda,
