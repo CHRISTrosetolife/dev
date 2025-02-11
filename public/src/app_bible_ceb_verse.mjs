@@ -79,6 +79,7 @@ export async function app_bible_ceb_verse(
       if (row_selected !== null) {
         html_style_background_color_transparent(row_selected);
       }
+      row_selected = row;
       html_style_background_color_yellow(row_selected);
       html_scroll_center_generic(row, {});
     });
