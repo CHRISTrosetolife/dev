@@ -14,8 +14,9 @@ import { bible_interlinear_each_token_strong_number } from "./bible_interlinear_
 import { bible_interlinear_cache_new } from "./bible_interlinear_cache_new.mjs";
 export async function bible_interlinear_new_definitions() {
   let bible_interlinear_cache_fn = bible_interlinear_cache_new;
+  let language = "greek";
   let counts = {};
-  let books = await bible_interlinear_cache_new();
+  let books = await bible_interlinear_cache_fn();
   bible_interlinear_each_token_strong_number(books, (strong) => {
     object_property_increment(counts, strong);
   });
@@ -33,7 +34,7 @@ export async function bible_interlinear_new_definitions() {
       {
         strong,
       },
-      await bible_interlinear_definition_hub("greek", strong),
+      await bible_interlinear_definition_hub(language, strong),
     ),
   );
   return mapped2;
