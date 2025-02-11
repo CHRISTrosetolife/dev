@@ -1,5 +1,4 @@
-import { bible_words_map } from "./bible_words_map.mjs";
-import { bible_words_count_generic_symbols } from "./bible_words_count_generic_symbols.mjs";
+import { bible_word_map } from "./bible_word_map.mjs";
 import { list_find_verse_number } from "./list_find_verse_number.mjs";
 import { html_bible_verse } from "./html_bible_verse.mjs";
 import { html_bible_word } from "./html_bible_word.mjs";
@@ -43,7 +42,6 @@ export async function app_bible_ceb_verse(
   html_hr(middle);
   function lambda_each(word, row) {
     let word_component = html_bible_word(row, word);
-    let symbols = bible_words_count_generic_symbols();
-    let mapped = bible_words_map([word], symbols);
+    bible_word_map(word);
   }
 }
