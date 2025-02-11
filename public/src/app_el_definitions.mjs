@@ -1,3 +1,4 @@
+import { app_save_change } from "./app_save_change.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_is } from "./list_is.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
@@ -26,9 +27,10 @@ export function app_el_definitions() {
       html_button_text_click(root, s, () => {});
     });
     html_button_next(root, () => {});
-    function word_reset() {
+    async function word_reset() {
       if (list_is(word_builder) && list_empty_not_is(word_builder)) {
         list_add(definitions, list_join_space(word_builder));
+        await app_save_change();
       }
       word_builder = [];
     }
