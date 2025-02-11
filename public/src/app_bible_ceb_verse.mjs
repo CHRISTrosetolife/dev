@@ -43,7 +43,8 @@ export async function app_bible_ceb_verse(
   each(tokens, (token) => {
     let word = object_property_get(token, "word");
     let mapped = bible_word_map(word);
-    if (false) {
+    if (mapped === null) {
+      return;
     }
     let row = html_div(middle);
     let word_component = html_bible_word(row, word);
