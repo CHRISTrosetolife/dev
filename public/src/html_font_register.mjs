@@ -18,13 +18,13 @@ export function html_font_register(font_name, font_path) {
       font_name,
       "'; src: ",
       string_combine_multiple([
-        "url('",
-        font_path,
-        ".woff2') format('woff2')",
+        string_combine_multiple([
+          "url('",
+          font_path,
+          ".woff2') format('woff2')",
+        ]),
         ", ",
-        "url('",
-        font_path,
-        ".woff') format('woff')",
+        string_combine_multiple(["url('", font_path, ".woff') format('woff')"]),
       ]),
       "; font-weight: normal; font-style: normal; }",
     ]);
