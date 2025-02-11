@@ -59,12 +59,12 @@ export async function app_tgl_upload_pairs(limit) {
       let tr_first = object_property_get(fr, "first");
       let first_tds = html_parse_visit_tag_list(tr_first, "td");
       let languages = list_map(first_tds, html_parse_text);
-      let tgl = "Tagalog";
+      let language = "Tagalog";
       let ceb = "Cebuano";
-      let expected = [en, "Grammar", ceb, tgl, "Hiligaynon"];
+      let expected = [en, "Grammar", ceb, language, "Hiligaynon"];
       assert(equal_json, [languages, expected]);
       let en_index = list_index(expected, en);
-      let tgl_index = list_index(expected, tgl);
+      let tgl_index = list_index(expected, language);
       each(remaining, (row) => {
         let row_tds = html_parse_visit_tag_list(row, "td");
         assert(list_size_equal, [row_tds, expected]);
@@ -81,7 +81,7 @@ export async function app_tgl_upload_pairs(limit) {
         if (!string_includes(words_tgl, "'")) {
           assert(string_ends_with, [
             href,
-            string_combine_multiple(["&lang=", tgl]),
+            string_combine_multiple(["&lang=", language]),
           ]);
         }
         list_map(split, (s) => {
