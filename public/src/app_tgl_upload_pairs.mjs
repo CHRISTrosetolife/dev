@@ -36,65 +36,67 @@ export async function app_tgl_upload_pairs(limit) {
   let taken = list_take_soft(filtered2, limit);
   let pairs = await list_adder_async(async (la) => {
     await each_log_async(taken, async (w) => {
-      let p = await definition_bohol(w);
-      let center = html_parse_visit_id(p, "center");
-      let contents = html_parse_visit_class_single(center, "contents");
-      let contents_text = html_parse_text(contents);
-      let en = "English";
-      if (
-        string_includes(
-          contents_text,
-          string_combine_multiple(["No ", en, " words found matching"]),
-        )
-      ) {
-        return;
-      }
-      let table = html_parse_visit_attribute_value_single(
-        contents,
-        "width",
-        "100%",
-      );
-      let trs = html_parse_visit_tag_list(table, "tr");
-      let fr = list_first_remaining(trs);
-      let remaining = object_property_get(fr, "remaining");
-      let tr_first = object_property_get(fr, "first");
-      let first_tds = html_parse_visit_tag_list(tr_first, "td");
-      let languages = list_map(first_tds, html_parse_text);
-      let expected = [en, "Grammar", "Cebuano", "Tagalog", "Hiligaynon"];
-      assert(equal_json, [languages, expected]);
-      let en_index = list_index(expected, en);
-      let tgl_index = list_index(expected, language);
-      each(remaining, (row) => {
-        let row_tds = html_parse_visit_tag_list(row, "td");
-        assert(list_size_equal, [row_tds, expected]);
-        let td_en = list_get(row_tds, en_index);
-        let a_en = html_parse_visit_tag_single(td_en, "a");
-        let word_en = html_parse_text(a_en);
-        word_en = string_trim_whitespace(word_en);
-        let td_tgl = list_get(row_tds, tgl_index);
-        let a_tgl = html_parse_visit_tag_single(td_tgl, "a");
-        let href = html_parse_href(a_tgl);
-        assert(string_starts_with, [href, "diksyunaryo.php?sw="]);
-        let words_tgl = html_parse_text(a_tgl);
-        let split = string_split_comma(words_tgl);
-        if (!string_includes(words_tgl, "'")) {
-          assert(string_ends_with, [
-            href,
-            string_combine_multiple(["&lang=", language]),
-          ]);
+      let inner = await list_adder_async(async (la) => {
+        let p = await definition_bohol(w);
+        let center = html_parse_visit_id(p, "center");
+        let contents = html_parse_visit_class_single(center, "contents");
+        let contents_text = html_parse_text(contents);
+        let en = "English";
+        if (
+          string_includes(
+            contents_text,
+            string_combine_multiple(["No ", en, " words found matching"]),
+          )
+        ) {
+          return;
         }
-        list_map(split, (s) => {
-          let word_tgl = string_parenthesis_remove(s);
-          word_tgl = string_trim_whitespace(word_tgl);
-          if (string_empty_is(word_tgl)) {
-            return;
+        let table = html_parse_visit_attribute_value_single(
+          contents,
+          "width",
+          "100%",
+        );
+        let trs = html_parse_visit_tag_list(table, "tr");
+        let fr = list_first_remaining(trs);
+        let remaining = object_property_get(fr, "remaining");
+        let tr_first = object_property_get(fr, "first");
+        let first_tds = html_parse_visit_tag_list(tr_first, "td");
+        let languages = list_map(first_tds, html_parse_text);
+        let expected = [en, "Grammar", "Cebuano", "Tagalog", "Hiligaynon"];
+        assert(equal_json, [languages, expected]);
+        let en_index = list_index(expected, en);
+        let tgl_index = list_index(expected, language);
+        each(remaining, (row) => {
+          let row_tds = html_parse_visit_tag_list(row, "td");
+          assert(list_size_equal, [row_tds, expected]);
+          let td_en = list_get(row_tds, en_index);
+          let a_en = html_parse_visit_tag_single(td_en, "a");
+          let word_en = html_parse_text(a_en);
+          word_en = string_trim_whitespace(word_en);
+          let td_tgl = list_get(row_tds, tgl_index);
+          let a_tgl = html_parse_visit_tag_single(td_tgl, "a");
+          let href = html_parse_href(a_tgl);
+          assert(string_starts_with, [href, "diksyunaryo.php?sw="]);
+          let words_tgl = html_parse_text(a_tgl);
+          let split = string_split_comma(words_tgl);
+          if (!string_includes(words_tgl, "'")) {
+            assert(string_ends_with, [
+              href,
+              string_combine_multiple(["&lang=", language]),
+            ]);
           }
-          let w_split = string_split_space(word_tgl);
-          let max_word_count = 1;
-          if (list_size(w_split) > max_word_count) {
-            return;
-          }
-          la([word_tgl, word_en]);
+          list_map(split, (s) => {
+            let word_tgl = string_parenthesis_remove(s);
+            word_tgl = string_trim_whitespace(word_tgl);
+            if (string_empty_is(word_tgl)) {
+              return;
+            }
+            let w_split = string_split_space(word_tgl);
+            let max_word_count = 1;
+            if (list_size(w_split) > max_word_count) {
+              return;
+            }
+            la([word_tgl, word_en]);
+          });
         });
       });
     });
