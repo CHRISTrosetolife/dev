@@ -1,3 +1,4 @@
+import { html_a_blank } from "./html_a_blank.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { html_style_green } from "./html_style_green.mjs";
 import { bible_storage_interlinear_chapter_definitions_property } from "./bible_storage_interlinear_chapter_definitions_property.mjs";
@@ -78,6 +79,7 @@ export async function app_bible_ceb_verse(
         ),
       ),
     );
+    html_a_blank();
     html_style_green(definition);
   });
   html_hr(middle);
