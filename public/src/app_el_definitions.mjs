@@ -1,3 +1,4 @@
+import { app_save_get } from "./app_save_get.mjs";
 import { html_pre } from "./html_pre.mjs";
 import { json_format_to } from "./json_format_to.mjs";
 import { list_trim_empty_not } from "./list_trim_empty_not.mjs";
@@ -23,6 +24,7 @@ export function app_el_definitions() {
   let root = html_style_default_initialize();
   let list = bible_interlinear_new_definitions_list();
   let definitions = {};
+  let save = app_save_get(app_el_definitions);
   each(list, (item) => {
     let definition = object_property_get(item, "definition");
     let split = string_split_multiple(definition, [",", " ", ";"]);
