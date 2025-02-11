@@ -1,3 +1,5 @@
+import { json_to } from "./json_to.mjs";
+import { html_p } from "./html_p.mjs";
 import { html_button_add } from "./html_button_add.mjs";
 import { log } from "./log.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -15,6 +17,7 @@ import { bible_interlinear_new_definitions_list } from "./bible_interlinear_new_
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_join_space } from "./list_join_space.mjs";
+import { html_inner_set } from "./html_inner_set.mjs";
 export function app_el_definitions() {
   let root = html_style_default_initialize();
   let list = bible_interlinear_new_definitions_list();
@@ -25,6 +28,7 @@ export function app_el_definitions() {
     let word = object_property_get(item, "word");
     let strong = object_property_get(item, "strong");
     html_p_text(root, word);
+    let progress = html_p(root);
     let word_builder;
     let definitions_word = [];
     object_property_set(definitions, strong, definitions_word);
@@ -32,11 +36,22 @@ export function app_el_definitions() {
     each(split, (s) => {
       html_button_text_click(root, s, () => {
         list_add(word_builder, s);
+        progress_update();
       });
     });
-    html_button_add(root, () => {
-      word_reset();
+    html_button_add(root, async () => {
+      await word_reset();
+      progress_update();
     });
+    function progress_update() {
+      html_inner_set(
+        progress,
+        json_to({
+          word_builder,
+          definitions_word,
+        }),
+      );
+    }
     async function word_reset() {
       if (list_is(word_builder) && list_empty_not_is(word_builder)) {
         list_add(definitions_word, list_join_space(word_builder));
