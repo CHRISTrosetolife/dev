@@ -1,3 +1,4 @@
+import { object_merge_strict } from "./object_merge_strict.mjs";
 import { bible_storage_interlinear_chapter_definitions_property } from "./bible_storage_interlinear_chapter_definitions_property.mjs";
 import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
 import { bible_storage_interlinear_chapter_definitions_path } from "./bible_storage_interlinear_chapter_definitions_path.mjs";
@@ -13,14 +14,13 @@ import { bible_storage_version_upload } from "./bible_storage_version_upload.mjs
 import { list_adder } from "./list_adder.mjs";
 import { bible_interlinear_cache_new } from "./bible_interlinear_cache_new.mjs";
 import { bible_interlinear_each_chapter } from "./bible_interlinear_each_chapter.mjs";
-import { object_merge } from "./object_merge.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 export async function bible_interlinear_upload() {
   let language = "greek";
   let books = await bible_interlinear_cache_new();
   let chapters = list_adder((la) => {
     bible_interlinear_each_chapter(books, (chapter, book_name) => {
-      let r = object_merge(
+      let r = object_merge_strict(
         {
           book_name,
         },
