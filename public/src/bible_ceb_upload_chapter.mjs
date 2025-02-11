@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { null_not_is } from "./null_not_is.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { ceb_definition } from "./ceb_definition.mjs";
@@ -21,7 +22,8 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
   let definitions = await list_to_lookup_value_async(filtered, async (u) => {
     let d = await ceb_definition(u);
     return {
-      [bible_storage_interlinear_chapter_definitions_property()]: d,
+      [bible_storage_interlinear_chapter_definitions_property()]:
+        object_property_get(object, "property_name"),
     };
   });
   return definitions;
