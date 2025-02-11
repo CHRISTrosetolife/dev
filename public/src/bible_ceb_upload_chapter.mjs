@@ -1,3 +1,4 @@
+import { path_join } from "./path_join.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { null_not_is } from "./null_not_is.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -6,7 +7,6 @@ import { bible_word_map } from "./bible_word_map.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_flatten } from "./list_flatten.mjs";
 import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
-import { bible_storage_interlinear_chapter_definitions_path } from "./bible_storage_interlinear_chapter_definitions_path.mjs";
 import { bible_storage_version_upload } from "./bible_storage_version_upload.mjs";
 import { bible_storage_interlinear_chapter_definitions_property } from "./bible_storage_interlinear_chapter_definitions_property.mjs";
 import { list_to_lookup_value_async } from "./list_to_lookup_value_async.mjs";
@@ -36,7 +36,7 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
   });
   return definitions;
   await bible_storage_version_upload(
-    bible_storage_interlinear_chapter_definitions_path(book_code, chapter_code),
+    path_join([bible_version, chapter_name]),
     bible_storage_interlinear_chapter_definitions_name(),
     definitions,
   );
