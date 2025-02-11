@@ -1,3 +1,4 @@
+import { list_unique_json } from "./list_unique_json.mjs";
 import { list_size } from "./list_size.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
@@ -27,7 +28,7 @@ import { html_parse_visit_id } from "./html_parse_visit_id.mjs";
 import { definition_bohol_http_parse } from "./definition_bohol_http_parse.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 export async function definition_bohol(word, language_from, language_to) {
-  return await list_adder_async(async (la_inner) => {
+  let pairs = await list_adder_async(async (la_inner) => {
     let p = await definition_bohol_http_parse(word, language_from);
     let center = html_parse_visit_id(p, "center");
     let contents = html_parse_visit_class_single(center, "contents");
@@ -93,4 +94,6 @@ export async function definition_bohol(word, language_from, language_to) {
       });
     });
   });
+  pairs = list_unique_json(pairs);
+  return pairs;
 }
