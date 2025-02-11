@@ -1,3 +1,4 @@
+import { html_bible_token_defitions } from "./html_bible_token_defitions.mjs";
 import { html_spacer } from "./html_spacer.mjs";
 import { html_div } from "./html_div.mjs";
 import { each } from "./each.mjs";
@@ -50,6 +51,7 @@ export async function app_bible_ceb_verse(
     let row = html_div(middle);
     let word_component = html_bible_word(row, word);
     html_spacer(row);
+    html_bible_token_defitions(row, chapter_definitions, strong);
   });
   html_hr(middle);
   let definitions = await global_function_property_async(
