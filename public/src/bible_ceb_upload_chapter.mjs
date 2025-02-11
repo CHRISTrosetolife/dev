@@ -25,8 +25,7 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
     let d = await definition_bohol(u, "Cebuano", "English");
     let mapped2 = list_map(d, list_first);
     let result = {
-      [bible_storage_interlinear_chapter_definitions_property()]:
-        object_property_get(mapped2, "definitions"),
+      [bible_storage_interlinear_chapter_definitions_property()]: mapped2,
     };
     let word = object_property_get(d, "word");
     if (word !== u) {
