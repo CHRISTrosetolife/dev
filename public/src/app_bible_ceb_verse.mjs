@@ -43,6 +43,8 @@ export async function app_bible_ceb_verse(
   each(tokens, (token) => {
     let row = html_div(middle);
     lambda_each(token, row);
+    let word_component = html_bible_word(row, word);
+    bible_word_map(word);
   });
   html_hr(middle);
   let definitions = await global_function_property_async(
@@ -61,8 +63,4 @@ export async function app_bible_ceb_verse(
       ),
   );
   html_p_text(middle, json_to(definitions));
-  function lambda_each(word, row) {
-    let word_component = html_bible_word(row, word);
-    bible_word_map(word);
-  }
 }
