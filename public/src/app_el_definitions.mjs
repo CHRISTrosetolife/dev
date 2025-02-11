@@ -1,5 +1,4 @@
 import { list_trim_empty_not } from "./list_trim_empty_not.mjs";
-import { json_to } from "./json_to.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_button_add } from "./html_button_add.mjs";
 import { log } from "./log.mjs";
@@ -48,7 +47,7 @@ export function app_el_definitions() {
     function progress_update() {
       html_inner_set(
         progress,
-        json_to({
+        json_to_format({
           word_builder,
           definitions_word,
         }),
