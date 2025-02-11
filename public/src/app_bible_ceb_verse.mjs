@@ -44,6 +44,6 @@ export async function app_bible_ceb_verse(
   let symbols = bible_words_count_generic_symbols();
   function lambda_each(word, row) {
     let word_component = html_bible_word(row, word);
-    word = bible_words_map([word], symbols);
+    let mapped = bible_words_map([word], symbols);
   }
 }
