@@ -18,7 +18,7 @@ export async function bible_ceb_upload() {
   await each_async(chapters, async (chapter) => {
     let book_name = object_property_get(chapter, "book_name");
     let chapter_name = object_property_get(chapter, "chapter_name");
-    await bible_chapter(bible_version, chapter_name);
+    chapter = await bible_chapter(bible_version, chapter_name);
     let tokens = list_adder_unique((la) => {
       bible_interlinear_chapter_each_token(chapter, la);
     });
