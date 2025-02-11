@@ -1,6 +1,6 @@
+import { html_scroll_center_generic } from "./html_scroll_center_generic.mjs";
 import { html_span } from "./html_span.mjs";
 import { html_bible_verse_number } from "./html_bible_verse_number.mjs";
-import { html_scroll_center } from "./html_scroll_center.mjs";
 import { html_a_blank } from "./html_a_blank.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { html_style_green } from "./html_style_green.mjs";
@@ -72,11 +72,11 @@ export async function app_bible_ceb_verse(
     }
     let row = html_div(middle);
     html_on_click(verse_word, () => {
-      html_scroll_center(row);
+      html_scroll_center_generic(row, {});
     });
     let verse_word_red = html_bible_word(row, word);
     html_on_click(verse_word_red, () => {
-      html_scroll_center(verse_word);
+      html_scroll_center_generic(verse_word, {});
     });
     html_spacer(row);
     let definition_entry = object_property_get(definitions, mapped);
