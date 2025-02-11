@@ -128,6 +128,7 @@ export function app_good() {
           "Help Cityalight",
           "Help Tomlin",
           "Help Redman",
+          "Help Maverick City",
           "Let Elon be generous and Christian",
           "Let Zuckerberg be generous and Christian",
           "Let Altman be generous and Christian",
