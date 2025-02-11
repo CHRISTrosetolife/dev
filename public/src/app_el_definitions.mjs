@@ -22,6 +22,8 @@ export function app_el_definitions() {
     });
     html_button_next(root, () => {});
     function word_reset() {
+      if (false) {
+      }
       word_builder = [];
     }
     html_hr(root);
