@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { app_save_change } from "./app_save_change.mjs";
 import { list_add } from "./list_add.mjs";
@@ -24,6 +25,7 @@ export function app_el_definitions() {
     html_p_text(root, word);
     let word_builder;
     let definitions_word = [];
+    object_property_set(object, "property_name", value);
     word_reset();
     each(split, (s) => {
       html_button_text_click(root, s, () => {});
