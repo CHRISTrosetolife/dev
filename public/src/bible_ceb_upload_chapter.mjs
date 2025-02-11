@@ -1,3 +1,4 @@
+import { list_flatten } from "./list_flatten.mjs";
 import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
 import { bible_storage_interlinear_chapter_definitions_path } from "./bible_storage_interlinear_chapter_definitions_path.mjs";
 import { bible_storage_version_upload } from "./bible_storage_version_upload.mjs";
@@ -9,6 +10,7 @@ import { list_map_property } from "./list_map_property.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
   let chapter = await bible_chapter(bible_version, chapter_code);
+  let tokens_all = list_flatten(list_map_property(chapter, "tokens"));
   return chapter;
   let strongs = list_map_property(tokens, "strong");
   strongs = list_unique(strongs);
