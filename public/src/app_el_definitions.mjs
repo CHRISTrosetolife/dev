@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { app_save_change } from "./app_save_change.mjs";
@@ -38,6 +39,9 @@ export function app_el_definitions() {
         await app_save_change((save) => {
           object_merge(save, {
             definitions,
+          });
+          log({
+            save,
           });
         });
       }
