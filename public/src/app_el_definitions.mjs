@@ -15,7 +15,7 @@ export function app_el_definitions() {
     let word = object_property_get(item, "word");
     html_p_text(root, word);
     each(split, (s) => {
-      html_button_text_click();
+      html_button_text_click(root, s, () => {});
     });
     html_hr(root);
   });
