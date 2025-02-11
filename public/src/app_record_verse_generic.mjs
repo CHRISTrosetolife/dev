@@ -37,7 +37,7 @@ export async function app_record_verse_generic(
     root,
     string_combine_multiple([r, " ", list_join_space(tokens)]),
   );
-  let vn = html_bible_verse(root, book_code, chapter, verse);
+  let vn = html_bible_verse(root, book_code, chapter, verse,$a);
   html_hr(root);
   if (equal(verse_number, "1")) {
     html_style_green(vn);
