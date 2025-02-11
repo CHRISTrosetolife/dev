@@ -80,6 +80,10 @@ export async function app_bible_ceb_verse(
     });
     let verse_word_red = html_bible_word(row, word);
     html_on_click(verse_word_red, () => {
+      verse_word_selected = html_style_background_color_select(
+        verse_word_selected,
+        verse_word,
+      );
       html_scroll_center_generic(verse_word, {});
     });
     html_spacer(row);
