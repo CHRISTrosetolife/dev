@@ -20,6 +20,7 @@ import { bible_storage_version_http_get } from "./bible_storage_version_http_get
 import { global_function_property_async } from "./global_function_property_async.mjs";
 import { app_bible_verse_common } from "./app_bible_verse_common.mjs";
 import { ceb_definition_url } from "./ceb_definition_url.mjs";
+import { html_span_text } from "./html_span_text.mjs";
 export async function app_bible_ceb_verse(
   context,
   book_code,
@@ -42,7 +43,9 @@ export async function app_bible_ceb_verse(
     async () => await bible_storage_version_http_get(ceb_version, chapter_code),
   );
   let verse_ceb = list_find_verse_number(verses_ceb, verse_number);
-  html_bible_verse(middle, book_code, chapter, verse_ceb);
+  html_bible_verse(middle, book_code, chapter, verse_ceb, (root, token) => {
+    html_span_text(root, token);
+  });
   html_hr(middle);
   let definitions = await global_function_property_async(
     app_lambda,
