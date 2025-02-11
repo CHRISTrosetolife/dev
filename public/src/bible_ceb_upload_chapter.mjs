@@ -26,7 +26,7 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
     let mapped2 = list_map(d, list_first);
     let result = {
       [bible_storage_interlinear_chapter_definitions_property()]:
-        object_property_get(d, "definitions"),
+        object_property_get(mapped2, "definitions"),
     };
     let word = object_property_get(d, "word");
     if (word !== u) {
