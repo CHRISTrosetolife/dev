@@ -5,7 +5,7 @@ export function html_style_background_color_select(selected, selection_new) {
     html_style_background_color_transparent(selected);
   }
   selected = selection_new;
-  if (false) {
+  if (selection_new !== null) {
     html_style_background_color_yellow(selected);
   }
   return selected;
