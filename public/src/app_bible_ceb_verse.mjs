@@ -28,7 +28,7 @@ export async function app_bible_ceb_verse(
     async () => await bible_storage_version_http_get(ceb_version, chapter_code),
   );
   bible_verses_to_verse_tokens_each(
-    verses_interlinear,
+    verses_ceb,
     verse_number,
     middle,
     lambda_each,
