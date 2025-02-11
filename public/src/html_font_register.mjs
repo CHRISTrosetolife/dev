@@ -10,6 +10,7 @@ import { html_inner_set } from "./html_inner_set.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 export function html_font_register(font_name, font_path) {
+  let extensions = ["woff2", "woff"];
   let g = global_function(html_font_register);
   let key = json_to(font_name, font_path);
   if (object_property_exists_not(g, key)) {
@@ -20,7 +21,7 @@ export function html_font_register(font_name, font_path) {
       font_name,
       "'; src: ",
       list_join_comma_space(
-        list_map(["woff2", "woff"], (extension) =>
+        list_map(extensions, (extension) =>
           string_combine_multiple([
             "url('",
             font_path,
