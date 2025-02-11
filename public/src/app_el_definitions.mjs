@@ -35,7 +35,7 @@ export function app_el_definitions() {
     let strong = object_property_get(item, "strong");
     html_p_text(root, word);
     let progress = html_pre(root);
-    if (object_property_exists(object, "property_name")) {
+    if (object_property_exists(save_definitions, strong)) {
     }
     let word_builder;
     let definitions_word = [];
