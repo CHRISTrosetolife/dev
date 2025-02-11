@@ -1,3 +1,4 @@
+import { json_format_to } from "./json_format_to.mjs";
 import { list_trim_empty_not } from "./list_trim_empty_not.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_button_add } from "./html_button_add.mjs";
@@ -29,7 +30,7 @@ export function app_el_definitions() {
     let word = object_property_get(item, "word");
     let strong = object_property_get(item, "strong");
     html_p_text(root, word);
-    let progress = html_p(root);
+    let progress = html_pre(root);
     let word_builder;
     let definitions_word = [];
     object_property_set(definitions, strong, definitions_word);
@@ -47,7 +48,7 @@ export function app_el_definitions() {
     function progress_update() {
       html_inner_set(
         progress,
-        json_to_format({
+        json_format_to({
           word_builder,
           definitions_word,
         }),
