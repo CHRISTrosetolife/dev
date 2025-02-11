@@ -34,7 +34,7 @@ export async function app_bible_verse(
   verse_number,
 ) {
   let app_lambda = object_property_get(context, "app_lambda");
-  let { middle } = await app_record_verse_generic(
+  let { middle: m } = await app_record_verse_generic(
     app_lambda,
     book_code,
     chapter,
@@ -42,6 +42,7 @@ export async function app_bible_verse(
     context,
     app_bible_verse,
   );
+  let middle = m;
   await html_bible_verse_navigation(
     app_lambda,
     app_bible_verse,
