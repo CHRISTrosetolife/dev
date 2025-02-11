@@ -99,6 +99,7 @@ export async function app_tgl_upload_pairs(limit) {
           });
         });
       });
+      each(list, (item) => {});
     });
   });
   pairs = list_unique_json(pairs);
