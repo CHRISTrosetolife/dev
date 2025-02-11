@@ -63,29 +63,29 @@ export async function app_bible_verse(
   let filter = bible_interlinear_words_greek_audio_upload_filter();
   let tokens = bible_verses_to_verse_tokens(verses_interlinear, verse_number);
   each(tokens, (token) => {
-    let d = html_div(middle);
+    let row = html_div(middle);
     let word = object_property_get(token, "word");
-    let word_component = html_bible_word(d, word);
+    let word_component = html_bible_word(row, word);
     html_select_none(word_component);
     html_on_click(word_component, async () => {
       let ms = bible_interlinear_words_audio_upload_map([word], filter);
       let m = list_first(ms);
       await app_language_audio(language_code_greek(), m);
     });
-    html_spacer(d);
+    html_spacer(row);
     let transliteration = html_span_text(
-      d,
+      row,
       object_property_get(token, "transliteration"),
     );
     html_style_italic(transliteration);
     html_style_font_color_gray(transliteration);
-    html_spacer(d);
-    html_span_text(d, object_property_get(token, "translation"));
-    html_spacer(d);
+    html_spacer(row);
+    html_span_text(row, object_property_get(token, "translation"));
+    html_spacer(row);
     let strong = object_property_get(token, "strong");
     let definition_entry = object_property_get(chapter_definitions, strong);
     let definition = html_span_text(
-      d,
+      row,
       object_property_get(
         definition_entry,
         bible_storage_interlinear_chapter_definitions_property(),
