@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { json_to } from "./json_to.mjs";
 import { html_pre_text } from "./html_pre_text.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -12,6 +13,7 @@ export async function app_bible_ceb_verse(
   chapter,
   verse_number,
 ) {
+  let app_lambda = object_property_get(context, "app_lambda");
   let middle = await app_bible_verse_common(
     context,
     book_code,
@@ -21,7 +23,7 @@ export async function app_bible_ceb_verse(
   let chapter_code = app_gs_bible_chapter_name(book_code, chapter);
   let ceb_version = "cebulb";
   let verses_ceb = await global_function_property_async(
-    app_fn,
+    app_lambda,
     string_combine_multiple([ceb_version, "_", chapter_code]),
     async () => await bible_storage_version_http_get(ceb_version, chapter_code),
   );
