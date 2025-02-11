@@ -2,7 +2,7 @@ import { html_style_green } from "./html_style_green.mjs";
 import { bible_storage_interlinear_chapter_definitions_property } from "./bible_storage_interlinear_chapter_definitions_property.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-export function html_bible_token_defitions(row, definitions, definition_key) {
+export function html_bible_token_definitions(row, definitions, definition_key) {
   let definition_entry = object_property_get(definitions, definition_key);
   let definition = html_span_text(
     row,

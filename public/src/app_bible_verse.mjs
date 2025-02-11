@@ -1,4 +1,4 @@
-import { html_bible_token_defitions } from "./html_bible_token_defitions.mjs";
+import { html_bible_token_definitions } from "./html_bible_token_definitions.mjs";
 import { bible_verses_to_verse_tokens_each } from "./bible_verses_to_verse_tokens_each.mjs";
 import { html_bible_word } from "./html_bible_word.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -85,6 +85,6 @@ export async function app_bible_verse(
     html_span_text(row, object_property_get(token, "translation"));
     html_spacer(row);
     let strong = object_property_get(token, "strong");
-    html_bible_token_defitions(row, chapter_definitions, strong);
+    html_bible_token_definitions(row, chapter_definitions, strong);
   }
 }
