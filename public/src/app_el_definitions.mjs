@@ -39,7 +39,7 @@ export function app_el_definitions() {
     let definitions_word = [];
     object_property_set(definitions, strong, definitions_word);
     word_reset();
-    each(split, (s) => {
+    each(filtered, (s) => {
       html_button_text_click(root, s, () => {
         list_add(word_builder, s);
         progress_update();
