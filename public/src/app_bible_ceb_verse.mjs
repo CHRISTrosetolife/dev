@@ -6,7 +6,6 @@ import { html_spacer } from "./html_spacer.mjs";
 import { html_div } from "./html_div.mjs";
 import { each } from "./each.mjs";
 import { bible_verses_to_verse_tokens } from "./bible_verses_to_verse_tokens.mjs";
-import { html_p_text } from "./html_p_text.mjs";
 import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
 import { bible_storage_ceb_definitions_path } from "./bible_storage_ceb_definitions_path.mjs";
 import { bible_word_map } from "./bible_word_map.mjs";
@@ -20,7 +19,6 @@ import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
 import { bible_storage_version_http_get } from "./bible_storage_version_http_get.mjs";
 import { global_function_property_async } from "./global_function_property_async.mjs";
 import { app_bible_verse_common } from "./app_bible_verse_common.mjs";
-import { json_to } from "./json_to.mjs";
 import { ceb_definition_url } from "./ceb_definition_url.mjs";
 export async function app_bible_ceb_verse(
   context,
@@ -83,6 +81,4 @@ export async function app_bible_ceb_verse(
     );
     html_style_green(definition);
   });
-  html_hr(middle);
-  html_p_text(middle, json_to(definitions));
 }
