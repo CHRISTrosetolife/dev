@@ -1,3 +1,4 @@
+import { html_scroll_center } from "./html_scroll_center.mjs";
 import { html_a_blank } from "./html_a_blank.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { html_style_green } from "./html_style_green.mjs";
@@ -45,6 +46,7 @@ export async function app_bible_ceb_verse(
   let verse_ceb = list_find_verse_number(verses_ceb, verse_number);
   html_bible_verse(middle, book_code, chapter, verse_ceb, (root, token) => {
     let s = html_span_text(root, token);
+    html_scroll_center();
   });
   html_hr(middle);
   let definitions = await global_function_property_async(
