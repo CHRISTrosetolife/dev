@@ -1,5 +1,4 @@
-import { google_search_url } from "./google_search_url.mjs";
-import { html_a_blank } from "./html_a_blank.mjs";
+import { html_bible_verse_define } from "./html_bible_verse_define.mjs";
 import { html_button_copy } from "./html_button_copy.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { bible_reference_name } from "./bible_reference_name.mjs";
@@ -8,7 +7,6 @@ import { html_div } from "./html_div.mjs";
 import { html_style_green } from "./html_style_green.mjs";
 import { equal } from "./equal.mjs";
 import { html_hr } from "./html_hr.mjs";
-import { html_bible_verse } from "./html_bible_verse.mjs";
 import { list_find_property } from "./list_find_property.mjs";
 import { app_verses_generic } from "./app_verses_generic.mjs";
 import { app_record_verse_buttons } from "./app_record_verse_buttons.mjs";
@@ -39,13 +37,7 @@ export async function app_record_verse_generic(
     root,
     string_combine_multiple([r, " ", list_join_space(tokens)]),
   );
-  let vn = html_bible_verse(root, book_code, chapter, verse, (root, token) =>
-    html_a_blank(
-      root,
-      token,
-      google_search_url(string_combine_multiple(["define: ", token])),
-    ),
-  );
+  let vn = html_bible_verse_define(root, book_code, chapter, verse);
   html_hr(root);
   if (equal(verse_number, "1")) {
     html_style_green(vn);
