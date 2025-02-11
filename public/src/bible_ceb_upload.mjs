@@ -21,9 +21,9 @@ export async function bible_ceb_upload() {
       chapter,
     });
     return;
-    let book_name = object_property_get(chapter, "book_code");
-    let chapter_name = object_property_get(chapter, "chapter_code");
-    chapter = await bible_chapter(bible_version, chapter_name);
+    let book_code = object_property_get(chapter, "book_code");
+    let chapter_code = object_property_get(chapter, "chapter_code");
+    chapter = await bible_chapter(bible_version, chapter_code);
     let tokens = list_adder_unique((la) => {
       bible_interlinear_chapter_each_token(chapter, la);
     });
@@ -36,8 +36,8 @@ export async function bible_ceb_upload() {
     return;
     await bible_storage_version_upload(
       bible_storage_interlinear_chapter_definitions_path(
-        book_name,
-        chapter_name,
+        book_code,
+        chapter_code,
       ),
       bible_storage_interlinear_chapter_definitions_name(),
       definitions,
