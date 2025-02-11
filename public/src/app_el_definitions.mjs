@@ -15,11 +15,15 @@ export function app_el_definitions() {
     let split = string_split_multiple(definition, [",", " ", ";"]);
     let word = object_property_get(item, "word");
     html_p_text(root, word);
+    let word_builder;
+    word_reset();
     each(split, (s) => {
       html_button_text_click(root, s, () => {});
     });
     html_button_next(root, () => {});
-    function word_reset() {}
+    function word_reset() {
+      word_builder = [];
+    }
     html_hr(root);
   });
 }
