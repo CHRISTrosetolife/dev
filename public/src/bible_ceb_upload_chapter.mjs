@@ -23,7 +23,7 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
   let filtered = list_filter(unique, null_not_is);
   let definitions = await list_to_lookup_value_async(filtered, async (u) => {
     let d = await definition_bohol(u, "Cebuano", "English");
-    mapped = list_map(d, list_first);
+    let mapped2 = list_map(d, list_first);
     let result = {
       [bible_storage_interlinear_chapter_definitions_property()]:
         object_property_get(d, "definitions"),
