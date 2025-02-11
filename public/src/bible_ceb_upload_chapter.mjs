@@ -27,11 +27,13 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
     let result = {
       [bible_storage_interlinear_chapter_definitions_property()]: mapped2,
     };
-    let word = object_property_get(d, "word");
-    if (word !== u) {
-      object_merge_strict(result, {
-        root: word,
-      });
+    if (false) {
+      let word = object_property_get(d, "word");
+      if (word !== u) {
+        object_merge_strict(result, {
+          root: word,
+        });
+      }
     }
     return result;
   });
