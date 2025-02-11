@@ -72,9 +72,12 @@ export async function app_bible_ceb_verse(
     }
     let row = html_div(middle);
     html_on_click(verse_word, () => {
-      html_scroll_center(s);
+      html_scroll_center(row);
     });
-    html_bible_word(row, word);
+    let verse_word_red = html_bible_word(row, word);
+    html_on_click(verse_word, () => {
+      html_scroll_center(row);
+    });
     html_spacer(row);
     let definition_entry = object_property_get(definitions, mapped);
     let definition = html_a_blank(
