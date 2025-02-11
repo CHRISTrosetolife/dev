@@ -36,8 +36,12 @@ export function app_language_2_word(parent, language, text, boxed, context) {
     html_style_font_family(text_span, "GentiumPlus-Regular");
     html_style_font_size_default_multiplied(text_span, 1.2);
   } else if (language === "he") {
-    html_font_register("SILEOT", "font/SILEOT");
-    html_style_font_family(text_span, "SILEOT");
+    let font_name = "SILEOT";
+    html_font_register(
+      font_name,
+      string_combine_multiple(["font/", font_name]),
+    );
+    html_style_font_family(text_span, font_name);
     html_style_font_size_default_multiplied(text_span, 1.2);
   }
   if (language === language_learn) {
