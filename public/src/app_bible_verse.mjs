@@ -11,7 +11,6 @@ import { bible_storage_interlinear_chapter_definitions_path } from "./bible_stor
 import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
 import { html_style_italic } from "./html_style_italic.mjs";
 import { html_spacer } from "./html_spacer.mjs";
-import { string_encoded_to } from "./string_encoded_to.mjs";
 import { language_code_greek } from "./language_code_greek.mjs";
 import { app_language_audio } from "./app_language_audio.mjs";
 import { list_first } from "./list_first.mjs";
@@ -78,7 +77,7 @@ export async function app_bible_verse(
     html_on_click(word_component, async () => {
       let ms = bible_interlinear_words_audio_upload_map([word], filter);
       let m = list_first(ms);
-      await app_language_audio(language_code_greek(), string_encoded_to(m));
+      await app_language_audio(language_code_greek(), m);
     });
     html_spacer(d);
     let transliteration = html_span_text(
