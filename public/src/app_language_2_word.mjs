@@ -1,7 +1,5 @@
 import { html_style_font_family_register } from "./html_style_font_family_register.mjs";
 import { html_style_font_size_default_multiplied } from "./html_style_font_size_default_multiplied.mjs";
-import { html_style_font_family } from "./html_style_font_family.mjs";
-import { html_font_register } from "./html_font_register.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
 import { html_color_gray } from "./html_color_gray.mjs";
 import { string_combine } from "./string_combine.mjs";
