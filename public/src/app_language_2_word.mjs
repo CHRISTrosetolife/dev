@@ -1,3 +1,4 @@
+import { html_style_font_family_register } from "./html_style_font_family_register.mjs";
 import { html_style_font_size_default_multiplied } from "./html_style_font_size_default_multiplied.mjs";
 import { html_style_font_family } from "./html_style_font_family.mjs";
 import { html_font_register } from "./html_font_register.mjs";
@@ -37,11 +38,7 @@ export function app_language_2_word(parent, language, text, boxed, context) {
     html_style_font_size_default_multiplied(text_span, 1.2);
   } else if (language === "he") {
     let font_name = "SILEOT";
-    html_font_register(
-      font_name,
-      string_combine_multiple(["font/", font_name]),
-    );
-    html_style_font_family(text_span, font_name);
+    html_style_font_family_register(font_name, text_span);
     html_style_font_size_default_multiplied(text_span, 1.2);
   }
   if (language === language_learn) {
