@@ -1,4 +1,5 @@
-import { log } from "./log.mjs";
+import { html_style_background_color_transparent } from "./html_style_background_color_transparent.mjs";
+import { sleep } from "./sleep.mjs";
 import { html_style_background_color_select } from "./html_style_background_color_select.mjs";
 import { html_scroll_center_generic } from "./html_scroll_center_generic.mjs";
 import { html_span } from "./html_span.mjs";
@@ -76,19 +77,18 @@ export async function app_bible_ceb_verse(
     }
     let row = html_div(middle);
     html_on_click(verse_word, () => {
-      log({
-        row_selected,
-      });
       row_selected = html_style_background_color_select(row_selected, row);
       html_scroll_center_generic(row, {});
     });
     let verse_word_red = html_bible_word(row, word);
-    html_on_click(verse_word_red, () => {
+    html_on_click(verse_word_red, async () => {
       verse_word_selected = html_style_background_color_select(
         verse_word_selected,
         verse_word,
       );
       html_scroll_center_generic(verse_word, {});
+      await sleep(500);
+      html_style_background_color_transparent(verse_word_selected);
     });
     html_spacer(row);
     let definition_entry = object_property_get(definitions, mapped);
