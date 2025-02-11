@@ -55,13 +55,7 @@ export async function definition_bohol(word, language_from, language_to) {
     let tr_first = object_property_get(fr, "first");
     let first_tds = html_parse_visit_tag_list(tr_first, "td");
     let languages = list_map(first_tds, html_parse_text);
-    let expected = [
-      language_from,
-      "Grammar",
-      "Cebuano",
-      "Tagalog",
-      "Hiligaynon",
-    ];
+    let expected = ["English", "Grammar", "Cebuano", "Tagalog", "Hiligaynon"];
     assert(equal_json, [languages, expected]);
     let en_index = list_index(expected, language_from);
     let tgl_index = list_index(expected, language_to);
