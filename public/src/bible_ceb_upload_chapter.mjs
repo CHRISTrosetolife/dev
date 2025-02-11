@@ -15,7 +15,7 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
   let tokens_all = list_flatten(list_map_property(chapter, "tokens"));
   let mapped = list_map(tokens_all, bible_word_map);
   let unique = list_unique(mapped);
-  return unique;
+  return tokens_all;
   let strongs = list_map_property(tokens, "strong");
   strongs = list_unique(strongs);
   let definitions = await list_to_lookup_value_async(strongs, async (s) => ({
