@@ -31,6 +31,7 @@ import { list_adder_async } from "./list_adder_async.mjs";
 import { english_words_dictionary } from "./english_words_dictionary.mjs";
 import { list_take_soft } from "./list_take_soft.mjs";
 export async function app_tgl_upload_pairs(limit) {
+  let language = "Tagalog";
   let filtered2 = await english_words_dictionary();
   let taken = list_take_soft(filtered2, limit);
   let pairs = await list_adder_async(async (la) => {
@@ -59,7 +60,6 @@ export async function app_tgl_upload_pairs(limit) {
       let tr_first = object_property_get(fr, "first");
       let first_tds = html_parse_visit_tag_list(tr_first, "td");
       let languages = list_map(first_tds, html_parse_text);
-      let language = "Tagalog";
       let expected = [en, "Grammar", "Cebuano", "Tagalog", "Hiligaynon"];
       assert(equal_json, [languages, expected]);
       let en_index = list_index(expected, en);
