@@ -26,10 +26,10 @@ import { html_parse_visit_class_single } from "./html_parse_visit_class_single.m
 import { html_parse_visit_id } from "./html_parse_visit_id.mjs";
 import { definition_bohol_http_parse } from "./definition_bohol_http_parse.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
-export async function definition_bohol(w, language) {
+export async function definition_bohol(word, language) {
   return await list_adder_async(async (la_inner) => {
     let language_search = "English";
-    let p = await definition_bohol_http_parse(w, language_search);
+    let p = await definition_bohol_http_parse(word, language_search);
     let center = html_parse_visit_id(p, "center");
     let contents = html_parse_visit_class_single(center, "contents");
     let contents_text = html_parse_text(contents);
