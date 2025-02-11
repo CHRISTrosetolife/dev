@@ -46,7 +46,13 @@ export async function app_bible_ceb_verse(
   html_hr(middle);
   let definitions = await global_function_property_async(
     app_lambda,
-    string_combine_multiple([ceb_version, "_", chapter_code]),
+    string_combine_multiple([
+      ceb_version,
+      "_",
+      chapter_code,
+      "_",
+      "definitions",
+    ]),
     async () =>
       await bible_storage_version_http_get(
         bible_storage_ceb_definitions_path(ceb_version, chapter_code),
