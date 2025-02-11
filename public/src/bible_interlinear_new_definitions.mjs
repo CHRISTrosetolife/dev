@@ -13,6 +13,7 @@ import { object_property_increment } from "./object_property_increment.mjs";
 import { bible_interlinear_each_token_strong_number } from "./bible_interlinear_each_token_strong_number.mjs";
 import { bible_interlinear_cache_new } from "./bible_interlinear_cache_new.mjs";
 export async function bible_interlinear_new_definitions() {
+  let bible_interlinear_cache_fn = bible_interlinear_cache_new;
   let counts = {};
   let books = await bible_interlinear_cache_new();
   bible_interlinear_each_token_strong_number(books, (strong) => {
