@@ -5,6 +5,7 @@ import { app_language_2_upload_pairs } from "./app_language_2_upload_pairs.mjs";
 import { list_map } from "./list_map.mjs";
 export async function app_el_upload() {
   let from = "el";
+  let bible_interlinear_cache_fn = bible_interlinear_cache_new;
   let ds = await bible_interlinear_definitions_generic(
     bible_interlinear_cache_new,
     "greek",
