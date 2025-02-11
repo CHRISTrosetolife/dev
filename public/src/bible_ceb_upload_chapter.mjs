@@ -1,3 +1,4 @@
+import { list_empty_is } from "./list_empty_is.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { ceb_definition } from "./ceb_definition.mjs";
 import { definition_bohol } from "./definition_bohol.mjs";
@@ -29,7 +30,7 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
     let d2 = await ceb_definition(u);
     let definitions2 = object_property_get(d2, "definitions");
     let word2 = object_property_get(d2, "word");
-    if (word2 === u) {
+    if (word2 === u || list_empty_is(mapped2)) {
       mapped2 = list_concat(mapped2, definitions2);
       mapped2 = list_unique(mapped2);
     }
