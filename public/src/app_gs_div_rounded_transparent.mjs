@@ -1,4 +1,4 @@
-import { html_style_background_color_transparent } from "./html_style_background_color_transparent.mjs";
+import { html_style_background_color_transparent_mix } from "./html_style_background_color_transparent_mix.mjs";
 import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
 import { game_tile_units_css } from "./game_tile_units_css.mjs";
 import { html_style } from "./html_style.mjs";
@@ -10,7 +10,7 @@ export function app_gs_div_rounded_transparent(parent, color, percent) {
   html_style(div, {
     padding: game_tile_units_css(0.25),
   });
-  html_style_background_color_transparent(div, color, percent);
+  html_style_background_color_transparent_mix(div, color, percent);
   html_style_rounded_padded(div);
   return div;
 }

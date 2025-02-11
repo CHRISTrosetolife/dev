@@ -1,4 +1,4 @@
-import { html_style_background_color_transparent } from "./html_style_background_color_transparent.mjs";
+import { html_style_background_color_transparent_mix } from "./html_style_background_color_transparent_mix.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_style_height_full } from "./html_style_height_full.mjs";
 import { html_style_width_full } from "./html_style_width_full.mjs";
@@ -15,6 +15,6 @@ export function html_overlay() {
     left: 0,
     "z-index": 9999,
   });
-  html_style_background_color_transparent(overlay, "black", 85);
+  html_style_background_color_transparent_mix(overlay, "black", 85);
   return overlay;
 }
