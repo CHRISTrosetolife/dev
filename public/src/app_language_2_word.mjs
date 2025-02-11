@@ -1,4 +1,3 @@
-import { html_font_register_generic } from "./html_font_register_generic.mjs";
 import { html_style_font_size_default_multiplied } from "./html_style_font_size_default_multiplied.mjs";
 import { html_style_font_family } from "./html_style_font_family.mjs";
 import { html_font_register } from "./html_font_register.mjs";
@@ -38,7 +37,7 @@ export function app_language_2_word(parent, language, text, boxed, context) {
     html_style_font_size_default_multiplied(text_span, 1.2);
   } else if (language === "he") {
     let extensions = ["woff"];
-    html_font_register_generic("SILEOT", "font/SILEOT", extensions);
+    html_font_register("SILEOT", "font/SILEOT");
     html_style_font_family(text_span, "SILEOT");
     html_style_font_size_default_multiplied(text_span, 1.2);
   }
