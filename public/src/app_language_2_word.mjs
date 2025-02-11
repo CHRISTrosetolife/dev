@@ -40,6 +40,7 @@ export function app_language_2_word(parent, language, text, boxed) {
     let extensions = ["woff"];
     html_font_register_generic("SILEOT", "font/SILEOT", extensions);
     html_style_font_family(text_span, "SILEOT");
+    html_style_font_size_default_multiplied(text_span, 1.2);
     html_style_font_color(text_span, "darkblue");
   }
   html_style_bold(container);
