@@ -30,7 +30,7 @@ export function app_el_definitions() {
   let save_definitions = object_property_get(save, "definitions");
   each(list, (item) => {
     let definition = object_property_get(item, "definition");
-    let split = string_split_multiple(definition, [",", " ", ";"]);
+    let split = string_split_multiple(definition, [",", " ", ";", "."]);
     let filtered = list_trim_empty_not(split);
     filtered = list_unique(filtered);
     let word = object_property_get(item, "word");
