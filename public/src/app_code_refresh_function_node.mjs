@@ -1,3 +1,4 @@
+import { app_code_section } from "./app_code_section.mjs";
 import { html_span_text_wrap_brackets } from "./html_span_text_wrap_brackets.mjs";
 import { html_span_text_wrap_parenthesis } from "./html_span_text_wrap_parenthesis.mjs";
 import { html_span_text_list_comma_parenthesis_params } from "./html_span_text_list_comma_parenthesis_params.mjs";
@@ -189,7 +190,8 @@ export function app_code_refresh_function_node(args) {
   } else if (js_node_type_is(node, "ObjectExpression")) {
     let properties = object_property_get(node, "properties");
     html_span_text_gray(parent, " { ");
-    html_span_text_list_comma(parent, properties, (b) => {
+    let section = app_code_section(args, true);
+    html_span_text_list_comma(section, properties, (b) => {
       app_code_refresh_function_node(
         object_copy_merge(args, {
           node: b,
