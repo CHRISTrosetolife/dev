@@ -96,7 +96,7 @@ export async function app_bible_ceb_verse(
     let definition_entry = object_property_get(definitions, mapped);
     if (object_property_exists(definition_entry, mapped)) {
       let definition = ceb_definition_html_a(row, definition_entry, mapped);
-      html_style_green(definition);
+      html_style_blue(definition);
     }
     each(object_properties(definition_entry), (word_defined) => {
       if (word_defined === mapped) {
@@ -111,7 +111,7 @@ export async function app_bible_ceb_verse(
         definition_entry,
         word_defined,
       );
-      html_style_blue(definition);
+      html_style_green(definition);
     });
   });
 }
