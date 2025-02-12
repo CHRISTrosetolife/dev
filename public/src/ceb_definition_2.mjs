@@ -1,3 +1,4 @@
+import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
 import { each } from "./each.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
@@ -30,6 +31,7 @@ export async function ceb_definition_2(word) {
     let columns = html_parse_visit_tag_list(row, "td");
     assert(list_size_2, [columns]);
     let f = list_first(columns);
+    let s = list_second(columns);
   });
   let prefix_1 = ceb_definition_prefix_1();
   let a_href_lefts = html_parse_a_href_starts_with(table, prefix_1);
