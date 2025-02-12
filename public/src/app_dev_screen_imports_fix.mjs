@@ -1,10 +1,10 @@
+import { function_transform_command_line } from "./function_transform_command_line.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
 import { html_cycle_function_name } from "./html_cycle_function_name.mjs";
 import { app_dev_p_transformer_generic } from "./app_dev_p_transformer_generic.mjs";
 import { log } from "./log.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
-import { function_transform } from "./function_transform.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
 import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
@@ -62,14 +62,15 @@ export function app_dev_screen_imports_fix() {
         "fixing `import`s",
         string_delimit_backtick(
           string_combine_multiple([
-            function_transform.name,
+            function_transform_command_line.name,
             " ",
             fn.name,
             " ",
             function_name_unique,
           ]),
         ),
-        async () => await function_transform(fn.name, function_name_unique),
+        async () =>
+          await function_transform_command_line(fn.name, function_name_unique),
       );
     },
   };

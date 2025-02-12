@@ -1,10 +1,10 @@
+import { function_transform_command_line } from "./function_transform_command_line.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
-import { function_transform } from "./function_transform.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
 import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
@@ -57,14 +57,15 @@ export function app_dev_screen_assign_to_let() {
         "adding `let`",
         string_delimit_backtick(
           string_combine_multiple([
-            fn_name("function_transform"),
+            fn_name("function_transform_command_line"),
             " ",
             fn.name,
             " ",
             function_name_unique,
           ]),
         ),
-        async () => await function_transform(fn.name, function_name_unique),
+        async () =>
+          await function_transform_command_line(fn.name, function_name_unique),
       );
     },
   };

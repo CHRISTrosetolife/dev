@@ -1,7 +1,7 @@
+import { function_transform_command_line } from "./function_transform_command_line.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
 import { js_code_import } from "./js_code_import.mjs";
-import { function_transform } from "./function_transform.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
 import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
 import { file_write } from "./file_write.mjs";
@@ -49,14 +49,15 @@ export function app_dev_screen_imports_remove() {
         "adding missing `import`s",
         string_delimit_backtick(
           string_combine_multiple([
-            function_transform.name,
+            function_transform_command_line.name,
             " ",
             fn.name,
             " ",
             function_name_unique,
           ]),
         ),
-        async () => await function_transform(fn.name, function_name_unique),
+        async () =>
+          await function_transform_command_line(fn.name, function_name_unique),
       );
     },
   };

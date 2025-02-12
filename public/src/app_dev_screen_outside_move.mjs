@@ -1,3 +1,4 @@
+import { function_transform_command_line } from "./function_transform_command_line.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
@@ -7,7 +8,6 @@ import { js_code_call_args } from "./js_code_call_args.mjs";
 import { add } from "./add.mjs";
 import { multiply } from "./multiply.mjs";
 import { js_code_function_declare } from "./js_code_function_declare.mjs";
-import { function_transform } from "./function_transform.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
 import { file_write } from "./file_write.mjs";
@@ -71,14 +71,15 @@ export function app_dev_screen_outside_move() {
         (fn_name) =>
           string_delimit_backtick(
             string_combine_multiple([
-              function_transform.name,
+              function_transform_command_line.name,
               " ",
               fn.name,
               " ",
               fn_name,
             ]),
           ),
-        async (fn_name) => await function_transform(fn.name, fn_name),
+        async (fn_name) =>
+          await function_transform_command_line(fn.name, fn_name),
       );
     },
   };

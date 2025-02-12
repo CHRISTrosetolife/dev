@@ -28,7 +28,9 @@ export function function_aliases() {
     "fca",
   ]);
   function_aliases_register(all, fn_name("function_cache_refresh"), ["fcr"]);
-  function_aliases_register(all, fn_name("function_transform"), ["ft"]);
+  function_aliases_register(all, fn_name("function_transform_command_line"), [
+    "ft",
+  ]);
   function_aliases_register(all, fn_name("function_transform_all"), ["fta"]);
   function_aliases_register(all, fn_name("function_transform_all_args"), [
     "ftaa",
