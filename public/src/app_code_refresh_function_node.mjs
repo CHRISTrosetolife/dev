@@ -1,3 +1,4 @@
+import { js_keyword_async } from "./js_keyword_async.mjs";
 import { false_is } from "./false_is.mjs";
 import { html_style_display_block } from "./html_style_display_block.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
