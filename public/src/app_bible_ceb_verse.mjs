@@ -102,6 +102,6 @@ export async function app_bible_ceb_verse(
       );
       html_style_green(definition);
     }
-    each_object(object, (key, value) => {});
+    each_object(definition_entry, (word_defined, definitions) => {});
   });
 }
