@@ -218,12 +218,11 @@ export function app_code_refresh_function_node(args) {
       unknown();
     }
   } else if (js_node_type_is(node, "ArrowFunctionExpression")) {
-    let raw2 = object_property_get(node, "raw");
-    if (string_is(raw2)) {
-      html_code_string(parent, raw2);
-    } else {
-      unknown();
-    }
+    let body4 = object_property_get(node, "body");
+    let generator = object_property_get(node, "generator");
+    let expression2 = object_property_get(node, "expression");
+    let async = object_property_get(node, "async");
+    let params2 = object_property_get(node, "params");
   } else if (js_node_type_is(node, "Property")) {
     let value2 = object_property_get(node, "value");
     let key = object_property_get(node, "key");
