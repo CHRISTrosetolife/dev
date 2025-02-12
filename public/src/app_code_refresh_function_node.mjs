@@ -112,7 +112,7 @@ export function app_code_refresh_function_node(args) {
     let id = object_property_get(node, "id");
     let name3 = object_property_get(id, "name");
     app_code_refresh_function_node_identifier_add_fn(parent, name3, args);
-    html_span_text_list_comma_parenthesis_params(node, parent, args);
+    html_span_text_list_comma_parenthesis_params(parent, node, args);
     let body3 = object_property_get(node, "body");
     app_code_refresh_function_node(
       object_copy_merge(args, {
