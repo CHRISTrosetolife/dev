@@ -1,3 +1,4 @@
+import { list_first } from "./list_first.mjs";
 import { functions_names } from "./functions_names.mjs";
 import { list_take_but } from "./list_take_but.mjs";
 import { js_name_unique_multiple } from "./js_name_unique_multiple.mjs";
@@ -74,6 +75,7 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
         );
       }
       let taken = list_take_but(body, take_but_count);
+      let f = list_first(taken);
       each_reverse(taken, (b) => {
         list_insert(s1, index, b);
       });
