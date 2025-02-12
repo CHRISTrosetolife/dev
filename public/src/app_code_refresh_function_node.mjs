@@ -36,7 +36,7 @@ export function app_code_refresh_function_node(args) {
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
     let imports_container = html_div(imports);
-    let imports = html_div(body);
+    let imports = html_div(imports_container);
     let only_imports = true;
     each(body, async (b) => {
       todo("hide the imports behind button");
