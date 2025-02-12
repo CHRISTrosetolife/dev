@@ -2,8 +2,6 @@ import { list_uniqueify } from "./list_uniqueify.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { ceb_definition_2 } from "./ceb_definition_2.mjs";
-import { list_empty_is } from "./list_empty_is.mjs";
-import { list_concat } from "./list_concat.mjs";
 import { definition_bohol } from "./definition_bohol.mjs";
 import { bible_storage_ceb_definitions_path } from "./bible_storage_ceb_definitions_path.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -34,11 +32,6 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
     let mapped2 = list_map(d, list_first);
     list_add_multiple(word_definitions, mapped2);
     list_uniqueify(word_definitions);
-    if (word2 === u || list_empty_is(mapped2)) {
-      let definitions2 = object_property_get(d2, "definitions");
-      mapped2 = list_concat(mapped2, definitions2);
-      mapped2 = list_unique(mapped2);
-    }
     let result = {
       [bible_storage_interlinear_chapter_definitions_property()]: mapped2,
     };
