@@ -10,7 +10,8 @@ export function app_code_refresh_function_node_section(args, indent) {
   let { parent } = args;
   let section = html_div(parent);
   html_style(section, {
-    "overflow-wrap": "break-word",
+    "overflow-wrap": "anywhere",
+    "word-break": "break-word",
   });
   if (indent) {
     html_style_flex_row_centered(section);
