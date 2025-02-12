@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { js_code_arrow_block_args_choose } from "./js_code_arrow_block_args_choose.mjs";
 import { string_trail_dollar } from "./string_trail_dollar.mjs";
 import { list_includes } from "./list_includes.mjs";
@@ -447,6 +448,9 @@ export function js_dollar(ast) {
         }
         if (prefix_use(remaining, lambda_prefix, prefixes)) {
           remaining = string_prefix_without(remaining, lambda_prefix);
+          log({
+            remaining,
+          });
           let async_prefix = "y";
           let async_use = false;
           if (string_starts_with(remaining, async_prefix)) {
