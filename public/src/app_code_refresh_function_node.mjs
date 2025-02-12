@@ -200,11 +200,10 @@ export function app_code_refresh_function_node(args) {
     });
     html_span_text_gray(parent, " }");
   } else if (js_node_type_is(node, "ArrayExpression")) {
-    html_span_text_wrap_brackets(parent, () => {});
-    html_span_text_gray(parent, "[ ");
-    let elements = object_property_get(node, "elements");
-    html_span_text_list_comma(parent, elements, lambda);
-    html_span_text_gray(parent, " ]");
+    html_span_text_wrap_brackets(parent, () => {
+      let elements = object_property_get(node, "elements");
+      html_span_text_list_comma(parent, elements, lambda);
+    });
     function lambda(element) {
       app_code_refresh_function_node(
         object_copy_merge(args, {
