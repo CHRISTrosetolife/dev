@@ -42,8 +42,9 @@ export function app_code_refresh_function_node(args) {
     html_style_display_none(imports_container);
     let imports = html_div(imports_container);
     html_style_display_none(imports);
-    html_button(imports_container, "Show imports", () => {
+    let imports_show = html_button(imports_container, "Show imports", () => {
       html_style_display_block(imports);
+      html_style_display_none(imports);
     });
     let only_imports = true;
     each(body, async (b) => {
