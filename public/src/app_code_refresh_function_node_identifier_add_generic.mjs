@@ -27,5 +27,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
     );
     object_property_toggle(toggled, name);
   });
-  js_visit(ast, (v) => {});
+  js_visit(ast, (v) => {
+    let node = object_property_get(v, "node");
+  });
 }
