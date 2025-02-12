@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_skip } from "./list_skip.mjs";
 import { js_code_arrow_block_args_choose } from "./js_code_arrow_block_args_choose.mjs";
 import { string_trail_dollar } from "./string_trail_dollar.mjs";
@@ -445,15 +446,17 @@ export function js_dollar(ast) {
           prefix_use(remaining, log_prefix, prefixes)
         ) {
           let inside;
+          let arg;
           if (log_prefix_start_is) {
             inside = "";
+            arg = js_parse_expression('""');
+            log();
           } else {
             remaining = string_prefix_without(remaining, log_prefix);
             inside = remaining;
+            arg = js_code_braces_inside(inside);
           }
-          let e = js_parse_expression(
-            js_code_call_args(fn_name("log"), [js_code_braces_inside(inside)]),
-          );
+          let e = js_parse_expression(js_code_call_args(fn_name("log"), []));
           object_replace(node, e);
         } else if (prefix_use(remaining, lambda_prefix, prefixes)) {
           remaining = string_prefix_without(remaining, lambda_prefix);
