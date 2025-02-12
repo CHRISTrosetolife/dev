@@ -16,6 +16,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
 ) {
   let name = object_property_get(identifier, "name");
   let ids = object_property_get(args, "identifiers");
+  object_property_initialize(object, "property_name", null);
   let id_list = object_property_initialize(ids, name, []);
   list_add(id_list, i);
   let data = object_property_get(args, "data");
