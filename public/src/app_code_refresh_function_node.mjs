@@ -145,7 +145,7 @@ export function app_code_refresh_function_node(args) {
   } else if (js_node_type_is(node, "VariableDeclarator")) {
     let id2 = object_property_get(node, "id");
     assert(js_node_type_is, [id2, "Identifier"]);
-    app_code_refresh_function_node_identifier_add(parent, node, args);
+    app_code_refresh_function_node_identifier_add(parent, id2, args);
     html_span_text_gray(parent, " = ");
     let init = object_property_get(node, "init");
     app_code_refresh_function_node(
