@@ -10,6 +10,7 @@ import { each_object_async } from "./each_object_async.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { functions_identifier } from "./functions_identifier.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
+import { error } from "./error.mjs";
 export async function function_new_generic_migrate() {
   let f_name = fn_name("function_new_generic");
   let results = await functions_identifier(f_name);
@@ -24,6 +25,7 @@ export async function function_new_generic_migrate() {
         let last = list_last(params);
         if (js_node_identifier_named(last, fn_name("file_overwrite"))) {
           log(js_parse_expression("true"));
+          error();
         }
       });
     });
