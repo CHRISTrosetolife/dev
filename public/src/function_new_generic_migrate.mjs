@@ -20,6 +20,8 @@ export async function function_new_generic_migrate() {
       js_visit_calls(ast, f_name, (params) => {
         assert(lists_sizes_equal, [[params, param_names]]);
         let last = list_last(params);
+        if (false) {
+        }
       });
     });
   });
