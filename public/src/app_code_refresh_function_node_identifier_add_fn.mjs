@@ -6,7 +6,7 @@ export function app_code_refresh_function_node_identifier_add_fn(
   identifier,
   args,
 ) {
-  let name2 = object_property_get(identifier, "name");
+  let name = object_property_get(identifier, "name");
   let i = html_code_identifier_fn(parent, name);
-  app_code_refresh_function_node_identifier_add_generic(args, name, i);
+  app_code_refresh_function_node_identifier_add_generic(args, identifier, i);
 }
