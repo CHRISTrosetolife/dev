@@ -449,14 +449,13 @@ export function js_dollar(ast) {
           let arg;
           if (log_prefix_start_is) {
             inside = "";
-            arg = js_parse_expression('""');
-            log();
+            arg = ('""');
           } else {
             remaining = string_prefix_without(remaining, log_prefix);
             inside = remaining;
             arg = js_code_braces_inside(inside);
           }
-          let e = js_parse_expression(js_code_call_args(fn_name("log"), []));
+          let e = js_parse_expression(js_code_call_args(fn_name("log"), [arg]));
           object_replace(node, e);
         } else if (prefix_use(remaining, lambda_prefix, prefixes)) {
           remaining = string_prefix_without(remaining, lambda_prefix);
