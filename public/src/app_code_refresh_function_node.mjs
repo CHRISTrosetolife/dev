@@ -36,19 +36,23 @@ export function app_code_refresh_function_node(args) {
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
     let imports = html_div(body);
+    let only_imports = true;
     each(body, async (b) => {
       todo("hide the imports behind button");
+      let b_parent;
+      if (only_imports && js_node_type_is(b, "ImportDeclaration")) {
+        b_parent = imports;
+      } else {
+        only_imports = false;
+        b_parent = parent;
+      }
       app_code_refresh_function_node_section(
         object_copy_merge(args, {
           node: b,
+          parent: b_parent,
         }),
         false,
       );
-      let b_parent;
-      if (js_node_type_is(b, "ImportDeclaration")) {
-        b_parent = imports;
-      } else {
-      }
     });
   } else if (js_node_type_is(node, "ImportDeclaration")) {
     let source = object_property_get(node, "source");
