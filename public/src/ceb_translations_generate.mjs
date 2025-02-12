@@ -12,8 +12,10 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 export async function ceb_translations_generate() {
-  let folder = `./translations/ceb/learnentry/letters/`;
-  let extension = `.txt`;
+  let folder = string_combine_multiple([
+    "./translations/ceb/learnentry/letters/",
+  ]);
+  let extension = string_combine_multiple([".txt"]);
   let words = {};
   let files = await folder_read(folder, extension);
   for (let file of files) {
@@ -39,10 +41,12 @@ export async function ceb_translations_generate() {
     }
   });
   let entries_string = list_join(pairs, ", ");
-  let body_string = js_code_statement_return(`{ ${entries_string} }`);
+  let body_string = js_code_statement_return(
+    string_combine_multiple(["{ ", entries_string, " }"]),
+  );
   await function_new_generic(
-    `ceb_translations`,
-    ``,
+    string_combine_multiple(["ceb_translations"]),
+    string_combine_multiple([]),
     body_string,
     false,
     [],
