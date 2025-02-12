@@ -16,4 +16,5 @@ export async function ceb_definition_2(word) {
   let prefix_1 = ceb_definition_prefix_1();
   let a_href_lefts = html_parse_a_href_starts_with(parsed, prefix_1);
   let mapped3 = html_parse_map_text_trim(a_href_lefts);
+  return mapped3;
 }
