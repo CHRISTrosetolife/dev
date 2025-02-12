@@ -1,5 +1,4 @@
 import { list_skip } from "./list_skip.mjs";
-import { log } from "./log.mjs";
 import { js_code_arrow_block_args_choose } from "./js_code_arrow_block_args_choose.mjs";
 import { string_trail_dollar } from "./string_trail_dollar.mjs";
 import { list_includes } from "./list_includes.mjs";
@@ -454,9 +453,6 @@ export function js_dollar(ast) {
             remaining = string_prefix_without(remaining, async_prefix);
             async_use = true;
           }
-          log({
-            remaining,
-          });
           let e = js_parse_expression(
             js_code_arrow_block_args_choose(async_use)(
               list_skip(string_split(remaining, "$"), 1),
