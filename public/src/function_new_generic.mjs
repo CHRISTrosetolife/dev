@@ -50,7 +50,7 @@ export async function function_new_generic(
   let unparsed = js_unparse(parsed);
   unparsed = await js_code_format(unparsed);
   let file_path = function_name_to_path(function_name);
-  await overwrite(file_path, unparsed);
+  await write(file_path, unparsed);
   if (open) {
     await file_open(file_path);
   }
