@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { js_dollar_grandparent } from "./js_dollar_grandparent.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
@@ -449,6 +450,9 @@ export function js_dollar(ast) {
           object_replace(node, e);
         }
         let newLocal = prefix_use(remaining, lambda_prefix, prefixes);
+        log({
+          newLocal,
+        });
         if (newLocal) {
           remaining = string_prefix_without(remaining, lambda_prefix);
           let e = js_parse_expression(
