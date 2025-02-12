@@ -1,3 +1,5 @@
+import { never } from "./never.mjs";
+import { assert } from "./assert.mjs";
 import { log } from "./log.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { js_visit_calls } from "./js_visit_calls.mjs";
@@ -13,7 +15,7 @@ export async function function_new_generic_migrate() {
     });
     await function_transform(f_name_result, async (ast) => {
       js_visit_calls(ast, f_name, (params) => {
-        () => {};
+        assert(never, []);
       });
     });
   });
