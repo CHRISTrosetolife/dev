@@ -41,8 +41,9 @@ export async function ceb_definition_2(word) {
     let word_cebs = html_parse_map_text_trim(a_href_fs);
     let s = list_second(columns);
     let a_href_ss = html_parse_a_href_starts_with(f, prefix_2);
+    let word_ens = html_parse_map_text_trim(a_href_ss);
     object_merge_strict(result, {
-      [list_single(word_cebs)]: [],
+      [list_single(word_cebs)]: word_ens,
     });
   });
   return mapped3;
