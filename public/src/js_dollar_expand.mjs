@@ -1,7 +1,6 @@
 import { js_statement_call_is } from "./js_statement_call_is.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { fn_name } from "./fn_name.mjs";
-import { list_first } from "./list_first.mjs";
 import { functions_names } from "./functions_names.mjs";
 import { list_take_but } from "./list_take_but.mjs";
 import { js_name_unique_multiple } from "./js_name_unique_multiple.mjs";
@@ -78,10 +77,10 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
         );
       }
       let taken = list_take_but(body, take_but_count);
-      let f_name = fn_name("assert_arguments_length");
-      let f = list_first(taken);
-      js_statement_call_is(f, f_name);
-      list_filter(taken, (t) => f_name);
+      taken = list_filter(
+        taken,
+        (t) => !js_statement_call_is(t, fn_name("assert_arguments_length")),
+      );
       each_reverse(taken, (b) => {
         list_insert(s1, index, b);
       });
