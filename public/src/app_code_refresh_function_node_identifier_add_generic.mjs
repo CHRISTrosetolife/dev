@@ -1,3 +1,4 @@
+import { object_property_toggle } from "./object_property_toggle.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { html_style_background_color_transparent } from "./html_style_background_color_transparent.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
@@ -23,6 +24,6 @@ export function app_code_refresh_function_node_identifier_add_generic(
         ? html_style_background_color_transparent(i)
         : html_style_background_color(i, "darkred"),
     );
-    object_property_set(toggled, name, !object_property_get(toggled, name));
+    object_property_toggle(toggled, name);
   });
 }
