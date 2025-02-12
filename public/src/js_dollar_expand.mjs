@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_first } from "./list_first.mjs";
 import { functions_names } from "./functions_names.mjs";
 import { list_take_but } from "./list_take_but.mjs";
@@ -78,6 +79,11 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
       let f = list_first(taken);
       if (js_node_type_is(f, "ExpressionStatement")) {
         let expression = object_property_get(f, "expression");
+        if (js_node_type_is(expression, "CallExpression")) {
+          log({
+            expression,
+          });
+        }
       }
       each_reverse(taken, (b) => {
         list_insert(s1, index, b);
