@@ -232,6 +232,7 @@ export function app_code_refresh_function_node(args) {
       if (js_node_type_is(body4, "ObjectExpression")) {
         html_span_text_wrap_parenthesis(parent, lambda2);
       } else {
+        lambda2();
       }
       function lambda2() {
         app_code_refresh_function_node(
