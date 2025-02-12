@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { function_transform_command_line } from "./function_transform_command_line.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
@@ -39,7 +40,10 @@ export function app_dev_screen_imports_remove() {
         false,
       );
       let contents = await js_code_format(
-        string_combine(js_code_import(string_combine.name), contents_function),
+        string_combine(
+          js_code_import(fn_name("string_combine")),
+          contents_function,
+        ),
       );
       let file_path = function_name_to_path(function_name_unique);
       await file_write(file_path, contents);
@@ -49,7 +53,7 @@ export function app_dev_screen_imports_remove() {
         "adding missing `import`s",
         string_delimit_backtick(
           string_combine_multiple([
-            function_transform_command_line.name,
+            fn_name("function_transform_command_line"),
             " ",
             fn.name,
             " ",

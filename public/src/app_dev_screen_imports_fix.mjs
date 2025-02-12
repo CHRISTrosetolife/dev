@@ -1,9 +1,9 @@
+import { fn_name } from "./fn_name.mjs";
 import { function_transform_command_line } from "./function_transform_command_line.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
 import { html_cycle_function_name } from "./html_cycle_function_name.mjs";
 import { app_dev_p_transformer_generic } from "./app_dev_p_transformer_generic.mjs";
-import { log } from "./log.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
@@ -46,11 +46,13 @@ export function app_dev_screen_imports_fix() {
       let contents_function = js_code_export_function_declare(
         function_name_unique,
         "",
-        js_code_statement_call_args(log.name, [string_delimit("log message")]),
+        js_code_statement_call_args(fn_name("log"), [
+          string_delimit("log message"),
+        ]),
         false,
       );
       let code = string_combine(
-        js_code_import(string_combine.name),
+        js_code_import(fn_name("string_combine")),
         contents_function,
       );
       let contents = await js_code_format(code);
@@ -62,7 +64,7 @@ export function app_dev_screen_imports_fix() {
         "fixing `import`s",
         string_delimit_backtick(
           string_combine_multiple([
-            function_transform_command_line.name,
+            fn_name("function_transform_command_line"),
             " ",
             fn.name,
             " ",

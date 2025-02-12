@@ -1,9 +1,9 @@
-import { function_transform_command_line } from "./function_transform_command_line.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
 import { html_style_code } from "./html_style_code.mjs";
+import { function_transform } from "./function_transform.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
 import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
@@ -131,8 +131,7 @@ export function app_dev_screen_await_add() {
             function_name_unique,
           ]),
         ),
-        async () =>
-          await function_transform_command_line(fn.name, function_name_unique),
+        async () => await function_transform(fn.name, function_name_unique),
       );
     },
   };
