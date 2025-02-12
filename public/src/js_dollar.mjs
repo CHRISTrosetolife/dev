@@ -450,6 +450,7 @@ export function js_dollar(ast) {
         }
         if (prefix_use(remaining, lambda_prefix, prefixes)) {
           remaining = string_prefix_without(remaining, lambda_prefix);
+          let async_prefix = "s";
           if (false) {
           }
           let e = js_parse_expression(
