@@ -266,6 +266,7 @@ export function app_code_refresh_function_node(args) {
           );
         });
       }
+      html_span_text_gray(parent, ": ");
     }
   } else {
     unknown();
