@@ -188,8 +188,7 @@ export async function ceb_definition(word) {
   let lookup = list_pairs_to_lookup(skipped_pairs_split);
   let url = ceb_definition_url(word);
   let { parsed, children } = await ceb_html_cache_parse_form1(url);
-  let no_results = ceb_definition_no_results(children);
-  if (no_results) {
+  if (ceb_definition_no_results(children)) {
     return {
       word,
       definitions: [],
