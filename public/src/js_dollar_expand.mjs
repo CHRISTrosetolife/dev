@@ -84,6 +84,8 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
           let args2 = object_property_get(expression, "arguments");
           let callee2 = object_property_get(expression, "callee");
           let name2 = object_property_get(callee2, "name");
+          if (false) {
+          }
           log({
             expression,
           });
