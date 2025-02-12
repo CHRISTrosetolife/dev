@@ -1,3 +1,5 @@
+import { each } from "./each.mjs";
+import { object_property_initialize } from "./object_property_initialize.mjs";
 import { ceb_definition_2 } from "./ceb_definition_2.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_concat } from "./list_concat.mjs";
@@ -25,10 +27,11 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
   let unique = list_unique(mapped);
   let filtered = list_filter(unique, null_not_is);
   let definitions = await list_to_lookup_value_async(filtered, async (u) => {
+    let d2 = await ceb_definition_2(u);
+    let word_definitions = object_property_initialize(d2, u, []);
     let d = await definition_bohol(u, "Cebuano", "English");
     let mapped2 = list_map(d, list_first);
-    let d2 = await ceb_definition_2(u);
-    let word2 = object_property_get(d2, "word");
+    each(list, (item) => {});
     if (word2 === u || list_empty_is(mapped2)) {
       let definitions2 = object_property_get(d2, "definitions");
       mapped2 = list_concat(mapped2, definitions2);
