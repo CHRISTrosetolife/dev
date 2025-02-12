@@ -1,3 +1,4 @@
+import { list_add_if_exists_not } from "./list_add_if_exists_not.mjs";
 import { each } from "./each.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { ceb_definition_2 } from "./ceb_definition_2.mjs";
@@ -31,7 +32,9 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
     let word_definitions = object_property_initialize(d2, u, []);
     let d = await definition_bohol(u, "Cebuano", "English");
     let mapped2 = list_map(d, list_first);
-    each(list, (item) => {});
+    each(mapped2, (m) => {
+      list_add_if_exists_not(word_definitions, m);
+    });
     if (word2 === u || list_empty_is(mapped2)) {
       let definitions2 = object_property_get(d2, "definitions");
       mapped2 = list_concat(mapped2, definitions2);
