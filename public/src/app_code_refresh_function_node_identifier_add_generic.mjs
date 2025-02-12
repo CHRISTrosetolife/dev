@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { js_stack_find_list } from "./js_stack_find_list.mjs";
 import { js_visit_find } from "./js_visit_find.mjs";
 import { object_property_toggle } from "./object_property_toggle.mjs";
@@ -33,5 +34,6 @@ export function app_code_refresh_function_node_identifier_add_generic(
     let stack = object_property_get(v, "stack");
     let parents = object_property_get(data, "parents");
     let { current, list, item } = js_stack_find_list(stack);
+    log({});
   });
 }
