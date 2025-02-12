@@ -7,6 +7,7 @@ import { html_on_click } from "./html_on_click.mjs";
 import { list_add } from "./list_add.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { js_visit_node } from "./js_visit_node.mjs";
 export function app_code_refresh_function_node_identifier_add_generic(
   args,
   name,
@@ -26,4 +27,5 @@ export function app_code_refresh_function_node_identifier_add_generic(
     );
     object_property_toggle(toggled, name);
   });
+  js_visit_node();
 }
