@@ -84,8 +84,8 @@ export function js_dollar(ast) {
       let sermon_prefix = "se";
       let log_prefix_start = "l";
       let get_prefix = "g";
-      let lambda_prefix = string_trail_underscore(lambda_prefix_start);
-      let log_prefix = string_trail_underscore(log_prefix_start);
+      let lambda_prefix = string_trail_dollar(lambda_prefix_start);
+      let log_prefix = string_trail_dollar(log_prefix_start);
       let prefixes = [
         lambda_prefix,
         objection_prefix,
