@@ -1,3 +1,4 @@
+import { js_code_arrow_block_args_choose } from "./js_code_arrow_block_args_choose.mjs";
 import { string_trail_dollar } from "./string_trail_dollar.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { js_dollar_grandparent } from "./js_dollar_grandparent.mjs";
@@ -231,6 +232,7 @@ export function js_dollar(ast) {
         let object = js_name_unique(ast, "object");
         let key = js_name_unique(ast, "key");
         let value = js_name_unique(ast, "value");
+        let js_code_arrow_block_args_async_use = remaining === "eoa";
         let e = js_parse_expression(
           js_code_call_args(
             remaining === "eoa"
@@ -238,9 +240,9 @@ export function js_dollar(ast) {
               : fn_name("each_object"),
             [
               object,
-              (remaining === "eoa"
-                ? js_code_arrow_block_args_async
-                : js_code_arrow_block_args)([key, value], ""),
+              js_code_arrow_block_args_choose(
+                js_code_arrow_block_args_async_use,
+              )([key, value], ""),
             ],
           ),
         );
