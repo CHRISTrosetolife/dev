@@ -1,3 +1,4 @@
+import { list_includes } from "./list_includes.mjs";
 import { js_dollar_grandparent } from "./js_dollar_grandparent.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
 import { list_insert } from "./list_insert.mjs";
@@ -226,7 +227,7 @@ export function js_dollar(ast) {
           });
         }
       }
-      if (remaining === "eo") {
+      if (list_includes(["eo", "eoa"], remaining)) {
         let object = js_name_unique(ast, "object");
         let key = js_name_unique(ast, "key");
         let value = js_name_unique(ast, "value");
