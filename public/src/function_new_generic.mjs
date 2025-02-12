@@ -54,4 +54,7 @@ export async function function_new_generic(
   if (open) {
     await file_open(file_path);
   }
+  return {
+    contents,
+  };
 }
