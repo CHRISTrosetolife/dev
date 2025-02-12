@@ -3,10 +3,10 @@ import { list_single } from "./list_single.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_adder } from "./list_adder.mjs";
 export function ceb_form1(root) {
+  let tag_name = "form";
+  let attribute_name = "name";
+  let attribute_value = "form1";
   let q = list_adder((la) => {
-    let tag_name = "form";
-    let attribute_name = "name";
-    let attribute_value = "form1";
     html_parse_visit_tag_attribute(root, tag_name, attribute_name, lambda);
     function lambda(v) {
       let { node } = v;
