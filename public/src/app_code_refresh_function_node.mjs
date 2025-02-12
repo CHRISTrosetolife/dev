@@ -1,4 +1,3 @@
-import { js_node_type_get } from "./js_node_type_get.mjs";
 import { equal_by } from "./equal_by.mjs";
 import { list_all } from "./list_all.mjs";
 import { html_span_text_gray } from "./html_span_text_gray.mjs";
@@ -210,5 +209,4 @@ export function app_code_refresh_function_node(args) {
   function unknown() {
     html_span_text_font_color(parent, js_unparse(node), "deeppink");
   }
-  return js_node_type_get(node);
 }
