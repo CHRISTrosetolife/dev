@@ -1,3 +1,4 @@
+import { js_stack_find_list } from "./js_stack_find_list.mjs";
 import { js_visit_find } from "./js_visit_find.mjs";
 import { log } from "./log.mjs";
 import { object_property_toggle } from "./object_property_toggle.mjs";
@@ -21,6 +22,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
   list_add(id_list, i);
   let toggled = object_property_initialize(data, "toggled", {});
   object_property_set(toggled, name, false);
+  let ast = object_property_get(args, "ast");
   html_on_click(i, () => {
     each(id_list, (i) =>
       object_property_get(toggled, name)
@@ -28,9 +30,9 @@ export function app_code_refresh_function_node_identifier_add_generic(
         : html_style_background_color(i, "darkred"),
     );
     object_property_toggle(toggled, name);
+    let found = js_visit_find(ast, identifier);
+    let { current, list, item } = js_stack_find_list(stack);
   });
-  let ast = object_property_get(args, "ast");
-  let found = js_visit_find(ast, identifier);
   log({
     found,
   });
