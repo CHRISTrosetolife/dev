@@ -1,3 +1,4 @@
+import { list_pop } from "./list_pop.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { html_span_text_list_comma_parenthesis_params } from "./html_span_text_list_comma_parenthesis_params.mjs";
 import { js_keyword_async } from "./js_keyword_async.mjs";
@@ -261,4 +262,5 @@ export function app_code_refresh_function_node(args) {
   function unknown() {
     html_span_text_font_color(parent, js_unparse(node), "deeppink");
   }
+  list_pop(stack);
 }
