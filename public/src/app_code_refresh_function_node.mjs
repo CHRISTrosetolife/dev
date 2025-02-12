@@ -257,12 +257,12 @@ export function app_code_refresh_function_node(args) {
       unknown();
     }
   } else {
-    log({
-      node,
-    });
     unknown();
   }
   function unknown() {
+    log({
+      node,
+    });
     html_span_text_font_color(parent, js_unparse(node), "deeppink");
   }
 }
