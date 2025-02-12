@@ -10,23 +10,23 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export function app_code_refresh_function_node_identifier_add_generic(
   args,
-  name2,
+  identifier,
   i,
 ) {
   let name = object_property_get(identifier, "name");
   let ids = object_property_get(args, "identifiers");
-  let id_list = object_property_initialize(ids, name2, []);
+  let id_list = object_property_initialize(ids, name, []);
   list_add(id_list, i);
   let data = object_property_get(args, "data");
   let toggled = object_property_initialize(data, "toggled", {});
-  object_property_set(toggled, name2, false);
+  object_property_set(toggled, name, false);
   html_on_click(i, () => {
     each(id_list, (i) =>
-      object_property_get(toggled, name2)
+      object_property_get(toggled, name)
         ? html_style_background_color_transparent(i)
         : html_style_background_color(i, "darkred"),
     );
-    object_property_toggle(toggled, name2);
+    object_property_toggle(toggled, name);
   });
   js_visit(ast, (v) => {
     let node = object_property_get(v, "node");
