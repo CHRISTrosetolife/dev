@@ -1,3 +1,4 @@
+import { ceb_definition_prefix_1 } from "./ceb_definition_prefix_1.mjs";
 import { ceb_definition_no_results } from "./ceb_definition_no_results.mjs";
 import { ceb_definition_url } from "./ceb_definition_url.mjs";
 import { ceb_defintion_en } from "./ceb_defintion_en.mjs";
@@ -42,7 +43,6 @@ import { list_index } from "./list_index.mjs";
 import { list_first } from "./list_first.mjs";
 import { html_parse_a_href_starts_with } from "./html_parse_a_href_starts_with.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { string_combine } from "./string_combine.mjs";
 import { list_get } from "./list_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { assert } from "./assert.mjs";
@@ -209,7 +209,7 @@ export async function ceb_definition(word) {
     assert(equal, [f4_first_a_tag, "b"]);
     word = f4_first_a_text;
   }
-  let prefix_1 = string_combine(ceb_definition_prefix(), "cebuano/");
+  let prefix_1 = ceb_definition_prefix_1();
   let a_href_lefts = html_parse_a_href_starts_with(parsed, prefix_1);
   let mapped3 = html_parse_map_text_trim(a_href_lefts);
   let mapped4 = list_map_index(mapped3, (m, index) => {
