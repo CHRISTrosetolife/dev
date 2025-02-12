@@ -46,5 +46,5 @@ export async function ceb_definition_2(word) {
       [list_single(word_cebs)]: word_ens,
     });
   });
-  return mapped3;
+  return result;
 }
