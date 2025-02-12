@@ -1,4 +1,5 @@
-import { object_property_set } from "./object_property_set.mjs";
+import { object_property_initialize } from "./object_property_initialize.mjs";
+import { map_new } from "./map_new.mjs";
 import { app_code_section } from "./app_code_section.mjs";
 import { html_span_text_wrap_brackets } from "./html_span_text_wrap_brackets.mjs";
 import { html_span_text_wrap_parenthesis } from "./html_span_text_wrap_parenthesis.mjs";
@@ -43,7 +44,7 @@ import { html_button } from "./html_button.mjs";
 export function app_code_refresh_function_node(args) {
   let { parent, node } = args;
   let data = object_property_get(args, "data");
-  object_property_set(object, "property_name", value3);
+  object_property_initialize(data, "parents", map_new());
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
     let imports_container = html_div(parent);
