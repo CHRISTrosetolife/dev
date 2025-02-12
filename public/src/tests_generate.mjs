@@ -3,7 +3,6 @@ import { functions_names } from "./functions_names.mjs";
 import { js_code_await } from "./js_code_await.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { js_code_statement_call } from "./js_code_statement_call.mjs";
-import { function_delete_if_exists } from "./function_delete_if_exists.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -16,7 +15,6 @@ export async function tests_generate() {
   let mapped = list_map(filtered, js_code_statement_call);
   let mapped2 = list_map(mapped, js_code_await);
   let body_string = list_join_newline(mapped2);
-  await function_delete_if_exists(function_name);
   await function_new_generic(
     function_name,
     "",
