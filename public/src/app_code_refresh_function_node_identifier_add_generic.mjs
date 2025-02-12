@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { html_style_background_color_transparent } from "./html_style_background_color_transparent.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { each } from "./each.mjs";
@@ -13,7 +14,8 @@ export function app_code_refresh_function_node_identifier_add_generic(
   let ids = object_property_get(args, "identifiers");
   let id_list = object_property_initialize(ids, name, []);
   list_add(id_list, i);
-  let toggled = object_property_initialize(object, "property_name", null);
+  let toggled = object_property_initialize(args, "toggled", {});
+  object_property_set(object, "property_name", value);
   html_on_click(i, () => {
     each(id_list, (i) =>
       toggled
