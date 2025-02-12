@@ -1,3 +1,4 @@
+import { ceb_definition_prefix_en } from "./ceb_definition_prefix_en.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
 import { each } from "./each.mjs";
@@ -30,6 +31,7 @@ export async function ceb_definition_2(word) {
   );
   let result = {};
   let prefix_1 = ceb_definition_prefix_1();
+  let prefix_2 = ceb_definition_prefix_en();
   let rows = html_parse_visit_tag_list(table, "tr");
   each(rows, (row) => {
     let columns = html_parse_visit_tag_list(row, "td");
@@ -37,10 +39,11 @@ export async function ceb_definition_2(word) {
     let f = list_first(columns);
     let a_href_fs = html_parse_a_href_starts_with(f, prefix_1);
     let word_cebs = html_parse_map_text_trim(a_href_fs);
+    let s = list_second(columns);
+    let a_href_ss = html_parse_a_href_starts_with(f, prefix_2);
     object_merge_strict(result, {
       [list_single(word_cebs)]: [],
     });
-    let s = list_second(columns);
   });
   return mapped3;
 }
