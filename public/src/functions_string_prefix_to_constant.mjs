@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { string_size } from "./string_size.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { js_code_string } from "./js_code_string.mjs";
@@ -19,7 +20,6 @@ import { assert } from "./assert.mjs";
 import { file_exists } from "./file_exists.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
-import { string_combine } from "./string_combine.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
 import { string_skip } from "./string_skip.mjs";
 import { js_imports_fix } from "./js_imports_fix.mjs";
@@ -60,7 +60,7 @@ export async function functions_string_prefix_to_constant(
                 if (string_is_starts_with(value, prefix)) {
                   let s = string_skip(value, string_size(prefix));
                   let unparsed = js_code_string(s);
-                  let code = js_code_call_args(string_combine.name, [
+                  let code = js_code_call_args(fn_name("string_combine"), [
                     js_code_call(constant_name),
                     unparsed,
                   ]);
