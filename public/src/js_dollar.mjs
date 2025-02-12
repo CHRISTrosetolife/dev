@@ -458,7 +458,7 @@ export function js_dollar(ast) {
           });
           let e = js_parse_expression(
             js_code_arrow_block_args_choose(async_use)(
-              string_split(remaining, "$"),
+              list_skip_1(string_split(remaining, "$")),
               "",
             ),
           );
