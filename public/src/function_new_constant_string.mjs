@@ -14,5 +14,5 @@ export async function function_new_constant_string(f_name, value) {
     return v;
   }
   let open = true;
-  await function_new_generic(f_name, "", "", open, [], false, file_write);
+  await function_new_generic(f_name, "", "", open, [], false, false);
 }

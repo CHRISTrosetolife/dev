@@ -101,6 +101,6 @@ export async function tests_generate_single_generic(
     false,
     [],
     false,
-    file_overwrite,
+    true,
   );
 }

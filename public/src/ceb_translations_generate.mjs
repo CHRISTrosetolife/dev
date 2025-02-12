@@ -51,6 +51,6 @@ export async function ceb_translations_generate() {
     false,
     [],
     false,
-    file_write,
+    false,
   );
 }

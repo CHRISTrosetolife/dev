@@ -16,7 +16,7 @@ export async function app_new(name) {
     open,
     [],
     false,
-    file_write,
+    false,
   );
   await apps_list_generate();
   return name_prefixed;

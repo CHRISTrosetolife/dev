@@ -22,7 +22,7 @@ export async function tests_generate() {
     false,
     [],
     true,
-    file_overwrite,
+    true,
   );
   return await function_run(function_name, []);
 }

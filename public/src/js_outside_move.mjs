@@ -35,7 +35,7 @@ export async function js_outside_move(ast) {
       false,
       [],
       async,
-      file_write,
+      false,
     );
   }
   for (let declaration of copy) {

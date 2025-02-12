@@ -15,13 +15,5 @@ export async function function_new(function_name) {
     return;
   }
   let open = true;
-  await function_new_generic(
-    function_name,
-    "",
-    "",
-    open,
-    [],
-    false,
-    file_write,
-  );
+  await function_new_generic(function_name, "", "", open, [], false, false);
 }

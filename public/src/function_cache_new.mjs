@@ -27,7 +27,7 @@ export async function function_cache_new(function_name) {
     false,
     [],
     true,
-    file_write,
+    false,
   );
   await function_data(cache_name);
   return {

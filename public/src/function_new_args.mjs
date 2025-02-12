@@ -14,6 +14,6 @@ export async function function_new_args(function_name, args) {
     true,
     [],
     false,
-    file_write,
+    false,
   );
 }

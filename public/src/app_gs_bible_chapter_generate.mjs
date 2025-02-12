@@ -98,7 +98,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
       false,
       [],
       false,
-      file_overwrite,
+      true,
     );
     await function_open(function_name);
   }

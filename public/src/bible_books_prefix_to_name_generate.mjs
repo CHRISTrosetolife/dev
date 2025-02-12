@@ -32,6 +32,6 @@ export async function bible_books_prefix_to_name_generate() {
     false,
     [],
     false,
-    file_overwrite,
+    true,
   );
 }

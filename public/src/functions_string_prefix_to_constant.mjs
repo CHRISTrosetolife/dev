@@ -42,7 +42,7 @@ export async function functions_string_prefix_to_constant(
       false,
       [],
       false,
-      file_write,
+      false,
     );
   }
   let functions = await data_functions();
