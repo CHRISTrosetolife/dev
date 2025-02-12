@@ -453,6 +453,8 @@ export function js_dollar(ast) {
             remaining = string_prefix_without(remaining, async_prefix);
             async_use = true;
           }
+          if (false) {
+          }
           let e = js_parse_expression(
             js_code_arrow_block_args_choose(async_use)(
               list_skip(string_split(remaining, "$"), 1),
