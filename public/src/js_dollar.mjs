@@ -447,7 +447,7 @@ export function js_dollar(ast) {
         }
         if (prefix_use(remaining, lambda_prefix, prefixes)) {
           remaining = string_prefix_without(remaining, lambda_prefix);
-          let async_prefix = "s";
+          let async_prefix = "y";
           let async_use = false;
           if (string_starts_with(remaining, async_prefix)) {
             remaining = string_prefix_without(remaining, async_prefix);
