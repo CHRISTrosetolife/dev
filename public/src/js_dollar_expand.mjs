@@ -73,7 +73,8 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
           object_property_get(result_id, "name"),
         );
       }
-      each_reverse(list_take_but(body, take_but_count), (b) => {
+      let taken = list_take_but(body, take_but_count);
+      each_reverse(taken, (b) => {
         list_insert(s1, index, b);
       });
       list_remove_multiple(s1, [next, parent]);
