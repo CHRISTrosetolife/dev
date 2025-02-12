@@ -247,14 +247,15 @@ export function app_code_refresh_function_node(args) {
       if (equal_by(key, value2, (n) => object_property_get(n, "name"))) {
         app_code_refresh_function_node(
           object_copy_merge(args, {
-            [1]: key,
+            "node#": key,
           }),
         );
       } else {
         unknown();
       }
-    } else {
+    } else if (js_node_type_is(key, "Literal")) {
       unknown();
+    } else {
     }
   } else {
     unknown();
