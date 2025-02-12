@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { html_parse_visit_tag_attribute_value } from "./html_parse_visit_tag_attribute_value.mjs";
 import { html_parse_map_text_trim } from "./html_parse_map_text_trim.mjs";
@@ -22,6 +23,7 @@ export async function ceb_definition_2(word) {
     "border-top:none;color:black",
   );
   let rows = html_parse_visit_tag_list(table, "tr");
+  each(list, (item) => {});
   let prefix_1 = ceb_definition_prefix_1();
   let a_href_lefts = html_parse_a_href_starts_with(table, prefix_1);
   let mapped3 = html_parse_map_text_trim(a_href_lefts);
