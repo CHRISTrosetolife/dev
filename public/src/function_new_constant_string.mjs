@@ -3,7 +3,7 @@ import { function_new_generic } from "./function_new_generic.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
 export async function function_new_constant_string(f_name, value) {
   let open = true;
-  let contents = await function_new_generic(
+  let { contents } = await function_new_generic(
     f_name,
     "",
     js_code_statement_return(js_code_string(value)),
@@ -12,4 +12,5 @@ export async function function_new_constant_string(f_name, value) {
     false,
     false,
   );
+  return contents;
 }
