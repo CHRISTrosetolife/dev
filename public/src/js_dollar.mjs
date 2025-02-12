@@ -453,15 +453,15 @@ export function js_dollar(ast) {
             remaining = string_prefix_without(remaining, async_prefix);
             async_use = true;
           }
-          if (false) {
+          if (string_starts_with(remaining, "$")) {
+            let e = js_parse_expression(
+              js_code_arrow_block_args_choose(async_use)(
+                list_skip(string_split(remaining, "$"), 1),
+                "",
+              ),
+            );
+            object_replace(node, e);
           }
-          let e = js_parse_expression(
-            js_code_arrow_block_args_choose(async_use)(
-              list_skip(string_split(remaining, "$"), 1),
-              "",
-            ),
-          );
-          object_replace(node, e);
         }
         if (prefix_use(remaining, scm_prefix, prefixes)) {
           if (list_is(parent)) {
