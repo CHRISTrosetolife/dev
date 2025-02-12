@@ -1,3 +1,4 @@
+import { html_style_display_block } from "./html_style_display_block.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
 import { todo } from "./todo.mjs";
 import { equal_by } from "./equal_by.mjs";
@@ -48,6 +49,7 @@ export function app_code_refresh_function_node(args) {
       let b_parent;
       if (only_imports && js_node_type_is(b, "ImportDeclaration")) {
         b_parent = imports;
+        html_style_display_block(imports_container);
       } else {
         only_imports = false;
         b_parent = parent;
