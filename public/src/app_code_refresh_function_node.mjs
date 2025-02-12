@@ -1,5 +1,3 @@
-import { list_pop } from "./list_pop.mjs";
-import { object_property_initialize } from "./object_property_initialize.mjs";
 import { html_span_text_list_comma_parenthesis_params } from "./html_span_text_list_comma_parenthesis_params.mjs";
 import { js_keyword_async } from "./js_keyword_async.mjs";
 import { false_is } from "./false_is.mjs";
@@ -42,7 +40,6 @@ import { html_button } from "./html_button.mjs";
 import { list_add } from "./list_add.mjs";
 export function app_code_refresh_function_node(args) {
   let { parent, node } = args;
-  let stack = object_property_initialize(args, "stack", []);
   list_add(stack, node);
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
@@ -231,6 +228,8 @@ export function app_code_refresh_function_node(args) {
       html_code_keyword_space(parent, js_keyword_async());
       html_span_text_list_comma_parenthesis_params(parent, node, args);
       html_span_text_gray(parent, " => ");
+      if (false) {
+      }
       app_code_refresh_function_node(
         object_copy_merge(args, {
           node: body4,
@@ -262,5 +261,4 @@ export function app_code_refresh_function_node(args) {
   function unknown() {
     html_span_text_font_color(parent, js_unparse(node), "deeppink");
   }
-  list_pop(stack);
 }
