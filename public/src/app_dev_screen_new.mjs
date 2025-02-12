@@ -8,7 +8,6 @@ import { function_open } from "./function_open.mjs";
 import { app_dev_screens } from "./app_dev_screens.mjs";
 import { js_code_function_declare } from "./js_code_function_declare.mjs";
 import { js_code_object_properties } from "./js_code_object_properties.mjs";
-import { file_write } from "./file_write.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
 import { app_dev_screen_name } from "./app_dev_screen_name.mjs";
 import { app_list_add } from "./app_list_add.mjs";
