@@ -444,8 +444,7 @@ export function js_dollar(ast) {
             js_code_call_args(fn_name("log"), [js_code_braces_inside(inside)]),
           );
           object_replace(node, e);
-        }
-        if (prefix_use(remaining, lambda_prefix, prefixes)) {
+        } else if (prefix_use(remaining, lambda_prefix, prefixes)) {
           remaining = string_prefix_without(remaining, lambda_prefix);
           let async_prefix = "y";
           let async_use = false;
@@ -462,8 +461,7 @@ export function js_dollar(ast) {
             );
             object_replace(node, e);
           }
-        }
-        if (prefix_use(remaining, scm_prefix, prefixes)) {
+        } else if (prefix_use(remaining, scm_prefix, prefixes)) {
           if (list_is(parent)) {
             let e = js_parse_expression(
               js_code_call_args(fn_name("string_combine_multiple"), [
@@ -484,15 +482,13 @@ export function js_dollar(ast) {
             });
             object_replace(node, e);
           }
-        }
-        if (prefix_use(remaining, sermon_prefix, prefixes)) {
+        } else if (prefix_use(remaining, sermon_prefix, prefixes)) {
           let count = remaining_count_get(remaining, sermon_prefix);
           let e = js_parse_expression(
             string_combine_multiple(["{sermon:'',count:", count, "}"]),
           );
           object_replace(node, e);
-        }
-        if (remaining === "x") {
+        } else if (remaining === "x") {
           let e = js_parse_expression(js_code_call(fn_name("exit")));
           object_replace(node, e);
         }
