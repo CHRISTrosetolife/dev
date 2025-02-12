@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import { log } from "./log.mjs";
 import { list_first } from "./list_first.mjs";
 import { functions_names } from "./functions_names.mjs";
@@ -83,6 +84,7 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
           log({
             expression,
           });
+          error();
         }
       }
       each_reverse(taken, (b) => {
