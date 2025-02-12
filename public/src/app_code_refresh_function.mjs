@@ -51,6 +51,7 @@ export async function app_code_refresh_function(context) {
       parent: container,
       node,
       identifiers: {},
+      data: {},
     });
   });
 }
