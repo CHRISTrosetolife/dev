@@ -380,6 +380,15 @@ export function js_dollar(ast) {
         );
         object_replace(node, e);
       }
+      if (remaining === "z") {
+        let e = js_parse_expression(
+          js_code_call_args(fn_name("object_property_initialize"), [
+            js_name_unique(ast, "object"),
+            '"property_name"',
+          ]),
+        );
+        object_replace(node, e);
+      }
       if (remaining === "d") {
         let e = js_parse_expression(
           js_code_call_args(fn_name("object_property_delete"), [
