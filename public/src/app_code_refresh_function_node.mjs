@@ -40,11 +40,19 @@ export function app_code_refresh_function_node(args) {
     let body = object_property_get(node, "body");
     let imports_container = html_div(parent);
     html_style_display_none(imports_container);
-    let imports = html_div(imports_container);
+    let imports_show;
+    let imports;
+    let imports_hide = html_button(imports, "Hide imports", () => {
+      html_style_display_none(imports);
+      html_style_display_none(imports_hide);
+      html_style_display_block(imports_show);
+    });
+    imports = html_div(imports_container);
     html_style_display_none(imports);
-    let imports_show = html_button(imports_container, "Show imports", () => {
+    imports_show = html_button(imports_container, "Show imports", () => {
       html_style_display_block(imports);
       html_style_display_none(imports_show);
+      html_style_display_block(imports_hide);
     });
     let only_imports = true;
     each(body, async (b) => {
