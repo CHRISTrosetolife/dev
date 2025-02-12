@@ -1,9 +1,9 @@
 import { function_name_separator } from "./function_name_separator.mjs";
 import { function_name_generated } from "./function_name_generated.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-export function function_name_generated_combine(fn_caller, name) {
+export function function_name_generated_combine(fn_caller_name, name) {
   return string_combine_multiple([
-    function_name_generated(fn_caller),
+    function_name_generated(fn_caller_name),
     function_name_separator(),
     name,
   ]);
