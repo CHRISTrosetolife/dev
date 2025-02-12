@@ -450,6 +450,8 @@ export function js_dollar(ast) {
         }
         if (prefix_use(remaining, lambda_prefix, prefixes)) {
           remaining = string_prefix_without(remaining, lambda_prefix);
+          if (false) {
+          }
           let e = js_parse_expression(
             js_code_arrow_block_args(string_split(remaining, "$"), ""),
           );
