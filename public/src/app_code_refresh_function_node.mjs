@@ -1,3 +1,5 @@
+import { html_style_display_block } from "./html_style_display_block.mjs";
+import { html_style_display_none } from "./html_style_display_none.mjs";
 import { todo } from "./todo.mjs";
 import { equal_by } from "./equal_by.mjs";
 import { list_all } from "./list_all.mjs";
@@ -30,16 +32,35 @@ import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_span_text_font_color } from "./html_span_text_font_color.mjs";
 import { js_unparse } from "./js_unparse.mjs";
+import { html_div } from "./html_div.mjs";
+import { html_button } from "./html_button.mjs";
 export function app_code_refresh_function_node(args) {
   let { parent, node } = args;
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
+    let imports_container = html_div(parent);
+    html_style_display_none(imports_container);
+    let imports = html_div(imports_container);
+    html_style_display_none(imports);
+    let imports_show = html_button(imports_container, "Show imports", () => {
+      html_style_display_block(imports);
+      html_style_display_none(imports_show);
+    });
     let only_imports = true;
     each(body, async (b) => {
       todo("hide the imports behind button");
+      let b_parent;
+      if (only_imports && js_node_type_is(b, "ImportDeclaration")) {
+        b_parent = imports;
+        html_style_display_block(imports_container);
+      } else {
+        only_imports = false;
+        b_parent = parent;
+      }
       app_code_refresh_function_node_section(
         object_copy_merge(args, {
           node: b,
+          parent: b_parent,
         }),
         false,
       );
