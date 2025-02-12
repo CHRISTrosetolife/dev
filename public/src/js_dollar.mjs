@@ -232,10 +232,12 @@ export function js_dollar(ast) {
         let key = js_name_unique(ast, "key");
         let value = js_name_unique(ast, "value");
         let e = js_parse_expression(
-          js_code_call_args(fn_name("each_object"), [
-            object,
-            js_code_arrow_block_args([key, value], ""),
-          ]),
+          js_code_call_args(
+            remaining === "eoa"
+              ? fn_name("each_object_async")
+              : fn_name("each_object"),
+            [object, js_code_arrow_block_args([key, value], "")],
+          ),
         );
         object_replace(node, e);
       }
