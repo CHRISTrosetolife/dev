@@ -459,7 +459,10 @@ export function js_dollar(ast) {
             async_use = true;
           }
           let e = js_parse_expression(
-            js_code_arrow_block_args(string_split(remaining, "$"), ""),
+            js_code_arrow_block_args_choose(async_use)(
+              string_split(remaining, "$"),
+              "",
+            ),
           );
           object_replace(node, e);
         }
