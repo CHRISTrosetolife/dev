@@ -19,7 +19,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
   object_property_set(toggled, name, false);
   html_on_click(i, () => {
     each(id_list, (i) =>
-      toggled
+      object_property_get(toggled, name)
         ? html_style_background_color_transparent(i)
         : html_style_background_color(i, "darkred"),
     );
