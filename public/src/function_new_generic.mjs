@@ -35,10 +35,11 @@ export async function function_new_generic(
   let unparsed = js_unparse(parsed);
   unparsed = await js_code_format(unparsed);
   let file_path = function_name_to_path(function_name);
+  let write;
   if (overwrite) {
-    let write = file_overwrite;
+    write = file_overwrite;
   } else {
-    let write = file_write;
+    write = file_write;
   }
   await overwrite(file_path, unparsed);
   if (open) {
