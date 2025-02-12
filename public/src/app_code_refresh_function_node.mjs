@@ -229,6 +229,8 @@ export function app_code_refresh_function_node(args) {
       html_span_text_list_comma_parenthesis_params(parent, node, args);
       html_span_text_gray(parent, " => ");
       let add_parenthesis = js_node_type_is(body4, "ObjectExpression");
+      if (false) {
+      }
       app_code_refresh_function_node(
         object_copy_merge(args, {
           node: body4,
