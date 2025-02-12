@@ -30,6 +30,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
     );
     object_property_toggle(toggled, name);
     let found = js_visit_find(ast, identifier);
+    let stack2 = object_property_get(found, "stack");
     let { current, list, item } = js_stack_find_list(stack);
   });
 }
