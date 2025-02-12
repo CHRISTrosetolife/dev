@@ -29,8 +29,8 @@ export function app_code_refresh_function_node_identifier_add_generic(
         : html_style_background_color(i, "darkred"),
     );
     object_property_toggle(toggled, name);
-    let found = js_visit_find(ast, identifier);
-    let stack2 = object_property_get(found, "stack");
+    let v = js_visit_find(ast, identifier);
+    let stack = object_property_get(v, "stack");
     let { current, list, item } = js_stack_find_list(stack);
   });
 }
