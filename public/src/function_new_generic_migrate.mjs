@@ -9,6 +9,9 @@ export async function function_new_generic_migrate() {
   let f_name = fn_name("function_new_generic");
   let results = await functions_identifier(f_name);
   await each_object_async(results, async (f_name_result) => {
+    log({
+      f_name_result,
+    });
     await function_transform(f_name_result, async (ast) => {
       js_visit_calls(ast, f_name, (v) => {
         let node = object_property_get(v, "node");
