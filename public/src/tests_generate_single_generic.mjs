@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { js_code_string } from "./js_code_string.mjs";
 import { js_code_array } from "./js_code_array.mjs";
 import { string_to } from "./string_to.mjs";
@@ -7,7 +8,6 @@ import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
 import { json_to } from "./json_to.mjs";
-import { equal_json } from "./equal_json.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 import { error } from "./error.mjs";
@@ -70,12 +70,33 @@ export async function tests_generate_single_generic(
     }
     return js_code_call_args(mapper.name, [a]);
   });
-  let body_string = `    let ${result_name} = ${function_name}(${args_mapped2.join(", ")});
-    ${equal(result_mapper, identity) ? "" : js_code_statement_assign(result_name, js_code_call_args(result_mapper.name, [result_name]))} 
-    ${assert_boolean.name}(${equal_json.name}(${result_name}, ${json_to(result)}))`;
+  let body_string = string_combine_multiple([
+    "    let ",
+    result_name,
+    " = ",
+    function_name,
+    "(",
+    args_mapped2.join(", "),
+    ");\n    ",
+    equal(result_mapper, identity)
+      ? ""
+      : js_code_statement_assign(
+          result_name,
+          js_code_call_args(result_mapper.name, [result_name]),
+        ),
+    " \n    ",
+    fn_name("assert_boolean"),
+    "(",
+    fn_name("equal_json"),
+    "(",
+    result_name,
+    ", ",
+    json_to(result),
+    "))",
+  ]);
   await function_new_generic(
-    `${function_name}_test_${test_number}`,
-    ``,
+    string_combine_multiple([function_name, "_test_", test_number]),
+    string_combine_multiple([]),
     body_string,
     false,
     [],
