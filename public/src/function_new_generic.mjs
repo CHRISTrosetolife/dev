@@ -19,6 +19,11 @@ export async function function_new_generic(
   async_is,
   writer,
 ) {
+    if (await function_exists(function_name)) {
+      await function_open(function_name);
+      log_error(string_combine_multiple(["already exists: ", function_name]));
+      return;
+    }
   let contents_function = js_code_export_function_declare(
     function_name,
     args_string,
