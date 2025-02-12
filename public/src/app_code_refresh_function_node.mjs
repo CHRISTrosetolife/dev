@@ -247,7 +247,7 @@ export function app_code_refresh_function_node(args) {
       if (equal_by(key, value2, (n) => object_property_get(n, "name"))) {
         app_code_refresh_function_node(
           object_copy_merge(args, {
-            "node#": key,
+            ["node#"]: key,
           }),
         );
       } else {
