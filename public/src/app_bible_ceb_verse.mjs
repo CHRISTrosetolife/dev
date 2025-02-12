@@ -1,6 +1,5 @@
-import { html_style_orange } from "./html_style_orange.mjs";
+import { html_style } from "./html_style.mjs";
 import { ceb_definition_html_a } from "./ceb_definition_html_a.mjs";
-import { html_style_blue } from "./html_style_blue.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { html_style_background_color_transparent } from "./html_style_background_color_transparent.mjs";
 import { sleep } from "./sleep.mjs";
@@ -96,7 +95,7 @@ export async function app_bible_ceb_verse(
     let definition_entry = object_property_get(definitions, mapped);
     if (object_property_exists(definition_entry, mapped)) {
       let definition = ceb_definition_html_a(row, definition_entry, mapped);
-      html_style_blue(definition);
+      html_style_green(definition);
     }
     each(object_properties(definition_entry), (word_defined) => {
       if (word_defined === mapped) {
@@ -104,14 +103,18 @@ export async function app_bible_ceb_verse(
       }
       html_spacer(row);
       let verse_word_orange = html_bible_word(row, word_defined);
-      html_style_orange(verse_word_orange);
+      html_style(verse_word_orange, {
+        color: "darkorange",
+      });
       html_spacer(row);
       let definition = ceb_definition_html_a(
         row,
         definition_entry,
         word_defined,
       );
-      html_style_green(definition);
+      html_style(definition, {
+        color: "blue",
+      });
     });
   });
 }
