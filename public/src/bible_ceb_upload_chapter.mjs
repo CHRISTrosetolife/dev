@@ -31,7 +31,7 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
     let mapped2 = list_map(d, list_first);
     list_add_multiple(word_definitions, mapped2);
     list_uniqueify(word_definitions);
-    let result = word_definitions;
+    let result = d2;
     if (false) {
       let word = object_property_get(d, "word");
       if (word !== u) {
