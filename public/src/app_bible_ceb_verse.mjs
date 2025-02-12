@@ -1,6 +1,6 @@
+import { html_style_orange } from "./html_style_orange.mjs";
 import { ceb_definition_html_a } from "./ceb_definition_html_a.mjs";
 import { html_style_blue } from "./html_style_blue.mjs";
-import { each_object } from "./each_object.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { html_style_background_color_transparent } from "./html_style_background_color_transparent.mjs";
 import { sleep } from "./sleep.mjs";
@@ -8,8 +8,6 @@ import { html_style_background_color_select } from "./html_style_background_colo
 import { html_scroll_center_generic } from "./html_scroll_center_generic.mjs";
 import { html_span } from "./html_span.mjs";
 import { html_bible_verse_number } from "./html_bible_verse_number.mjs";
-import { html_a_blank } from "./html_a_blank.mjs";
-import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { html_style_green } from "./html_style_green.mjs";
 import { html_spacer } from "./html_spacer.mjs";
 import { html_div } from "./html_div.mjs";
@@ -26,9 +24,9 @@ import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
 import { bible_storage_version_http_get } from "./bible_storage_version_http_get.mjs";
 import { global_function_property_async } from "./global_function_property_async.mjs";
 import { app_bible_verse_common } from "./app_bible_verse_common.mjs";
-import { ceb_definition_url } from "./ceb_definition_url.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_on_click } from "./html_on_click.mjs";
+import { object_properties } from "./object_properties.mjs";
 export async function app_bible_ceb_verse(
   context,
   book_code,
@@ -97,17 +95,17 @@ export async function app_bible_ceb_verse(
     html_spacer(row);
     let definition_entry = object_property_get(definitions, mapped);
     if (object_property_exists(definition_entry, mapped)) {
-      let definition = html_a_blank(
-        row,
-        list_join_comma_space(object_property_get(definition_entry, mapped)),
-        ceb_definition_url(mapped),
-      );
+      let definition = ceb_definition_html_a(row, definition_entry, mapped);
       html_style_green(definition);
     }
-    each_object(definition_entry, (word_defined, definitions) => {
+    each(object_properties(definition_entry), (word_defined) => {
       if (word_defined === mapped) {
         return;
       }
+      html_spacer(row);
+      let verse_word_orange = html_bible_word(row, word_defined);
+      html_style_orange(verse_word_orange);
+      html_spacer(row);
       let definition = ceb_definition_html_a(
         row,
         definition_entry,
