@@ -451,7 +451,10 @@ export function js_dollar(ast) {
         if (prefix_use(remaining, lambda_prefix, prefixes)) {
           remaining = string_prefix_without(remaining, lambda_prefix);
           let async_prefix = "s";
-          if (false) {
+          let async_use = false;
+          if (string_starts_with(remaining, async_prefix)) {
+            remaining = string_prefix_without(remaining, async_prefix);
+            async_use = true;
           }
           let e = js_parse_expression(
             js_code_arrow_block_args(string_split(remaining, "$"), ""),
