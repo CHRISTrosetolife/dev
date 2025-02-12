@@ -9,6 +9,6 @@ export async function app_code_function_names_get() {
   let file_paths = object_properties(files);
   let prefix = function_path_prefix();
   let filtered = list_filter_starts_with(file_paths, prefix);
-  let mapped2 = list_map(file_paths, function_path_to_name);
-  return mapped2;
+  let mapped = list_map(filtered, function_path_to_name);
+  return mapped;
 }
