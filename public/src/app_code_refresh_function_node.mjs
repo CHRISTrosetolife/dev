@@ -248,7 +248,7 @@ export function app_code_refresh_function_node(args) {
       if (equal_by(key, value2, (n) => object_property_get(n, "name"))) {
         app_code_refresh_function_node(
           object_copy_merge(args, {
-            "node#": key,
+            node: key,
           }),
         );
       } else {
@@ -257,7 +257,13 @@ export function app_code_refresh_function_node(args) {
     } else if (js_node_type_is(key, "Literal")) {
       unknown();
     } else {
-      html_span_text_wrap_brackets(parent, () => {});
+      html_span_text_wrap_brackets(parent, () => {
+        app_code_refresh_function_node(
+          object_copy_merge(args, {
+            node: key,
+          }),
+        );
+      });
     }
   } else {
     unknown();
