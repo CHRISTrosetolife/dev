@@ -1,3 +1,4 @@
+import { html_span_text_wrap_parenthesis } from "./html_span_text_wrap_parenthesis.mjs";
 import { html_span_text_list_comma_parenthesis_params } from "./html_span_text_list_comma_parenthesis_params.mjs";
 import { js_keyword_async } from "./js_keyword_async.mjs";
 import { false_is } from "./false_is.mjs";
@@ -230,12 +231,16 @@ export function app_code_refresh_function_node(args) {
       html_span_text_gray(parent, " => ");
       let add_parenthesis = js_node_type_is(body4, "ObjectExpression");
       if (false) {
+        html_span_text_wrap_parenthesis(parent, lambda2);
+      } else {
       }
-      app_code_refresh_function_node(
-        object_copy_merge(args, {
-          node: body4,
-        }),
-      );
+      function lambda2() {
+        app_code_refresh_function_node(
+          object_copy_merge(args, {
+            node: body4,
+          }),
+        );
+      }
     }
   } else if (js_node_type_is(node, "Property")) {
     let value2 = object_property_get(node, "value");
