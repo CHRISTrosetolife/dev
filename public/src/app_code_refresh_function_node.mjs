@@ -31,12 +31,14 @@ import { object_property_get } from "./object_property_get.mjs";
 import { html_span_text_font_color } from "./html_span_text_font_color.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { html_div } from "./html_div.mjs";
+import { html_button } from "./html_button.mjs";
 export function app_code_refresh_function_node(args) {
   let { parent, node } = args;
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
     let imports_container = html_div(imports);
     let imports = html_div(imports_container);
+    html_button(imports_container, "Show imports", () => {});
     let only_imports = true;
     each(body, async (b) => {
       todo("hide the imports behind button");
