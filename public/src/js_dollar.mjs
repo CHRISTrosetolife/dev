@@ -77,14 +77,13 @@ export function js_dollar(ast) {
     let prefix = "$";
     if (string_starts_with(name, prefix)) {
       let { parent } = v;
-      let lambda_prefix_start = "a";
+      let lambda_prefix = "a";
       let objection_prefix = "o";
       let question_prefix = "q";
       let scm_prefix = "s";
       let sermon_prefix = "se";
       let log_prefix_start = "l";
       let get_prefix = "g";
-      let lambda_prefix = string_trail_dollar(lambda_prefix_start);
       let log_prefix = string_trail_dollar(log_prefix_start);
       let prefixes = [
         lambda_prefix,
