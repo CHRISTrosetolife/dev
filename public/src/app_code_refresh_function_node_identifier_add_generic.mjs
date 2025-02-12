@@ -15,13 +15,13 @@ export function app_code_refresh_function_node_identifier_add_generic(
   let id_list = object_property_initialize(ids, name, []);
   list_add(id_list, i);
   let toggled = object_property_initialize(args, "toggled", {});
-  object_property_set(object, "property_name", value);
+  object_property_set(toggled, name, false);
   html_on_click(i, () => {
     each(id_list, (i) =>
       toggled
         ? html_style_background_color_transparent(i)
         : html_style_background_color(i, "darkred"),
     );
-    toggled = !toggled;
+    object_property_set(toggled, name, !object_property_get(toggled, name));
   });
 }
