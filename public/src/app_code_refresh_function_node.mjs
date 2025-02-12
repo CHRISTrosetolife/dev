@@ -1,3 +1,4 @@
+import { object_property_initialize } from "./object_property_initialize.mjs";
 import { html_span_text_list_comma_parenthesis_params } from "./html_span_text_list_comma_parenthesis_params.mjs";
 import { js_keyword_async } from "./js_keyword_async.mjs";
 import { false_is } from "./false_is.mjs";
@@ -39,6 +40,7 @@ import { html_div } from "./html_div.mjs";
 import { html_button } from "./html_button.mjs";
 export function app_code_refresh_function_node(args) {
   let { parent, node } = args;
+  object_property_initialize(object, "property_name");
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
     let imports_container = html_div(parent);
