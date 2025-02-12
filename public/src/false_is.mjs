@@ -1,1 +1,3 @@
-export function false_is(b) {}
+export function false_is(b) {
+  return b === false;
+}
