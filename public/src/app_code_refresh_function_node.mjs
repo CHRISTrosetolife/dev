@@ -38,9 +38,11 @@ import { html_span_text_font_color } from "./html_span_text_font_color.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_button } from "./html_button.mjs";
+import { list_add } from "./list_add.mjs";
 export function app_code_refresh_function_node(args) {
   let { parent, node } = args;
   let stack = object_property_initialize(args, "stack", []);
+  list_add(stack, node);
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
     let imports_container = html_div(parent);
