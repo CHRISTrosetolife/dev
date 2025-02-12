@@ -227,7 +227,9 @@ export function app_code_refresh_function_node(args) {
     let params2 = object_property_get(node, "params");
     assert(false_is, [generator]);
     if (async) {
+      html_span_text_gray(parent, "( ");
       html_code_keyword_space(parent, js_keyword_async());
+      html_span_text_gray(parent, " )");
     }
   } else if (js_node_type_is(node, "Property")) {
     let value2 = object_property_get(node, "value");
