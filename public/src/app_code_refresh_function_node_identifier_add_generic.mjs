@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { js_visit } from "./js_visit.mjs";
 import { object_property_toggle } from "./object_property_toggle.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -34,5 +35,8 @@ export function app_code_refresh_function_node_identifier_add_generic(
     if (node === identifier) {
       found = v;
     }
+  });
+  log({
+    v,
   });
 }
