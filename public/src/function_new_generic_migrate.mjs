@@ -7,8 +7,9 @@ export async function function_new_generic_migrate() {
   let f_name = fn_name("function_new_generic");
   let results = await functions_identifier(f_name);
   await each_object_async(results, async (f_name_result) => {
-    await function_transform(f_name_result, async (r) => {});
-    js_visit_calls();
+    await function_transform(f_name_result, async (ast) => {
+      js_visit_calls();
+    });
   });
   return results;
 }
