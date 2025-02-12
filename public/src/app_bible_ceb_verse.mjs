@@ -8,7 +8,6 @@ import { html_bible_verse_number } from "./html_bible_verse_number.mjs";
 import { html_a_blank } from "./html_a_blank.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { html_style_green } from "./html_style_green.mjs";
-import { bible_storage_interlinear_chapter_definitions_property } from "./bible_storage_interlinear_chapter_definitions_property.mjs";
 import { html_spacer } from "./html_spacer.mjs";
 import { html_div } from "./html_div.mjs";
 import { each } from "./each.mjs";
@@ -89,23 +88,18 @@ export async function app_bible_ceb_verse(
       );
       row_selected = html_style_background_color_select(row_selected, null);
       html_scroll_center_generic(verse_word, {});
-      await sleep(500);
+      await sleep(1000);
       html_style_background_color_transparent(verse_word);
     });
     html_spacer(row);
     let definition_entry = object_property_get(definitions, mapped);
-    if (object_property_exists(object, "property_name")) {
+    if (object_property_exists(definition_entry, mapped)) {
+      let definition = html_a_blank(
+        row,
+        list_join_comma_space(object_property_get(definition_entry, mapped)),
+        ceb_definition_url(mapped),
+      );
+      html_style_green(definition);
     }
-    let definition = html_a_blank(
-      row,
-      list_join_comma_space(
-        object_property_get(
-          definition_entry,
-          bible_storage_interlinear_chapter_definitions_property(),
-        ),
-      ),
-      ceb_definition_url(mapped),
-    );
-    html_style_green(definition);
   });
 }
