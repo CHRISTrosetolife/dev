@@ -1,5 +1,4 @@
 import { string_trail_dollar } from "./string_trail_dollar.mjs";
-import { log } from "./log.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { js_dollar_grandparent } from "./js_dollar_grandparent.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
@@ -449,13 +448,8 @@ export function js_dollar(ast) {
           let e = js_parse_expression(js_code_arrow_block());
           object_replace(node, e);
         }
+        () => {};$ag
         let newLocal = prefix_use(remaining, lambda_prefix, prefixes);
-        log({
-          newLocal,
-          lambda_prefix,
-          remaining,
-          prefixes,
-        });
         if (newLocal) {
           remaining = string_prefix_without(remaining, lambda_prefix);
           let e = js_parse_expression(
