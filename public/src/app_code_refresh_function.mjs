@@ -42,16 +42,17 @@ export async function app_code_refresh_function(context) {
     );
     let path = function_name_to_path(function_selected);
     let contents = await app_code_file_contents(path);
-    let node = js_parse(contents);
+    let ast = js_parse(contents);
     let container = html_div(root);
     html_style_background_color_black(container);
     html_style_rounded_padded(container);
     html_style_monospace(container);
     app_code_refresh_function_node({
       parent: container,
-      node,
+      node: ast,
       identifiers: {},
       data: {},
+      ast,
     });
   });
 }
