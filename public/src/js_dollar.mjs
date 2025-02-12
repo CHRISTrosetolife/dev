@@ -1,4 +1,4 @@
-import { string_trail_underscore } from "./string_trail_underscore.mjs";
+import { string_trail_dollar } from "./string_trail_dollar.mjs";
 import { log } from "./log.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { js_dollar_grandparent } from "./js_dollar_grandparent.mjs";
