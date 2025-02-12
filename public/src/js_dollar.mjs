@@ -236,7 +236,12 @@ export function js_dollar(ast) {
             remaining === "eoa"
               ? fn_name("each_object_async")
               : fn_name("each_object"),
-            [object, js_code_arrow_block_args([key, value], "")],
+            [
+              object,
+              (remaining === "eoa"
+                ? js_code_arrow_block_args_async
+                : js_code_arrow_block_args)([key, value], ""),
+            ],
           ),
         );
         object_replace(node, e);
