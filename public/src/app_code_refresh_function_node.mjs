@@ -1,3 +1,4 @@
+import { html_span_text_list_comma_parenthesis_params } from "./html_span_text_list_comma_parenthesis_params.mjs";
 import { js_keyword_async } from "./js_keyword_async.mjs";
 import { false_is } from "./false_is.mjs";
 import { html_style_display_block } from "./html_style_display_block.mjs";
@@ -111,11 +112,7 @@ export function app_code_refresh_function_node(args) {
     let id = object_property_get(node, "id");
     let name3 = object_property_get(id, "name");
     app_code_refresh_function_node_identifier_add_fn(parent, name3, args);
-    let params = object_property_get(node, "params");
-    html_span_text_list_comma_parenthesis(parent, params, lambda);
-    function lambda(param) {
-      app_code_refresh_function_node_identifier_add(parent, param, args);
-    }
+    html_span_text_list_comma_parenthesis_params(node, parent, args);
     let body3 = object_property_get(node, "body");
     app_code_refresh_function_node(
       object_copy_merge(args, {
