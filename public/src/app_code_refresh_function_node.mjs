@@ -38,7 +38,7 @@ export function app_code_refresh_function_node(args) {
   let { parent, node } = args;
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
-    let imports_container = html_div(imports);
+    let imports_container = html_div(parent);
     html_style_display_none(imports_container);
     let imports = html_div(imports_container);
     html_style_display_none(imports);
