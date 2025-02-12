@@ -104,7 +104,7 @@ export async function app_bible_ceb_verse(
       html_spacer(row);
       let verse_word_orange = html_bible_word(row, word_defined);
       html_style(verse_word_orange, {
-        color: "darkorange",
+        color: "darkred",
       });
       html_spacer(row);
       let definition = ceb_definition_html_a(
@@ -113,7 +113,7 @@ export async function app_bible_ceb_verse(
         word_defined,
       );
       html_style(definition, {
-        color: "blue",
+        color: "darkgreen",
       });
     });
   });
