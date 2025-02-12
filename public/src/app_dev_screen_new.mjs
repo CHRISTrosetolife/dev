@@ -57,7 +57,7 @@ export async function app_dev_screen_new(name) {
     false,
     [],
     false,
-    file_write,
+    false,
   );
   await app_list_add(app_dev_screens, function inserted_code() {
     return js_code_statement_call_args(fn_name("list_add"), [
