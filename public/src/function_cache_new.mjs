@@ -8,7 +8,6 @@ import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_await } from "./js_code_await.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
-import { file_write } from "./file_write.mjs";
 export async function function_cache_new(function_name) {
   let param_names = await function_params_names(function_name);
   let joined = list_join_comma_space(param_names);

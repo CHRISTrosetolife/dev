@@ -2,7 +2,6 @@ import { fn_name } from "./fn_name.mjs";
 import { js_code_string } from "./js_code_string.mjs";
 import { js_code_array } from "./js_code_array.mjs";
 import { string_to } from "./string_to.mjs";
-import { file_overwrite } from "./file_overwrite.mjs";
 import { equal } from "./equal.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";

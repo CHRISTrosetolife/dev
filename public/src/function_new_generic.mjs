@@ -17,7 +17,7 @@ export async function function_new_generic(
   open,
   imports,
   async_is,
-  writer,
+  overwrite,
 ) {
   let contents_function = js_code_export_function_declare(
     function_name,
@@ -32,8 +32,8 @@ export async function function_new_generic(
   await js_imports_fix(parsed);
   let unparsed = js_unparse(parsed);
   unparsed = await js_code_format(unparsed);
-  let file_path = function_name_to_path(function_name);
-  await writer(file_path, unparsed);
+  let file_path = function_name_to_path(function_name);$ib
+  await overwrite(file_path, unparsed);
   if (open) {
     await file_open(file_path);
   }

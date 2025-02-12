@@ -9,7 +9,6 @@ import { js_parent_replace } from "./js_parent_replace.mjs";
 import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
 import { string_slashes_escape } from "./string_slashes_escape.mjs";
 import { string_delimit } from "./string_delimit.mjs";
-import { file_write } from "./file_write.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
 import { log } from "./log.mjs";
 import { data_functions } from "./data_functions.mjs";

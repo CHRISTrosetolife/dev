@@ -1,5 +1,4 @@
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
-import { file_write } from "./file_write.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
 import { list_join } from "./list_join.mjs";
 import { string_split_comma } from "./string_split_comma.mjs";

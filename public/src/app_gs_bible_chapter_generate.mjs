@@ -13,7 +13,6 @@ import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
 import { function_exists } from "./function_exists.mjs";
 import { object_property_delete } from "./object_property_delete.mjs";
 import { each } from "./each.mjs";
-import { file_overwrite } from "./file_overwrite.mjs";
 import { js_code_array } from "./js_code_array.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";

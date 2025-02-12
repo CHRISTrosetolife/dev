@@ -1,4 +1,3 @@
-import { file_write } from "./file_write.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { log_error } from "./log_error.mjs";
