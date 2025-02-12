@@ -1,3 +1,4 @@
+import { html_span_text_wrap_brackets } from "./html_span_text_wrap_brackets.mjs";
 import { html_span_text_wrap_parenthesis } from "./html_span_text_wrap_parenthesis.mjs";
 import { html_span_text_list_comma_parenthesis_params } from "./html_span_text_list_comma_parenthesis_params.mjs";
 import { js_keyword_async } from "./js_keyword_async.mjs";
@@ -199,6 +200,7 @@ export function app_code_refresh_function_node(args) {
     });
     html_span_text_gray(parent, " }");
   } else if (js_node_type_is(node, "ArrayExpression")) {
+    html_span_text_wrap_brackets();
     html_span_text_gray(parent, "[ ");
     let elements = object_property_get(node, "elements");
     html_span_text_list_comma(parent, elements, lambda);
