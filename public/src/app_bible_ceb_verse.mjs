@@ -104,7 +104,14 @@ export async function app_bible_ceb_verse(
     }
     each_object(definition_entry, (word_defined, definitions) => {
       if (word_defined === mapped) {
+        $r
       }
+      let definition = html_a_blank(
+        row,
+        list_join_comma_space(object_property_get(definition_entry, word_defined)),
+        ceb_definition_url(word_defined),
+      );
+      html_style_blue(definition);
     });
   });
 }
