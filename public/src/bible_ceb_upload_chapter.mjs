@@ -12,7 +12,6 @@ import { list_map } from "./list_map.mjs";
 import { list_flatten } from "./list_flatten.mjs";
 import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
 import { bible_storage_version_upload } from "./bible_storage_version_upload.mjs";
-import { bible_storage_interlinear_chapter_definitions_property } from "./bible_storage_interlinear_chapter_definitions_property.mjs";
 import { list_to_lookup_value_async } from "./list_to_lookup_value_async.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { list_map_property } from "./list_map_property.mjs";
@@ -32,10 +31,7 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
     let mapped2 = list_map(d, list_first);
     list_add_multiple(word_definitions, mapped2);
     list_uniqueify(word_definitions);
-    let result = {
-      [bible_storage_interlinear_chapter_definitions_property()]:
-        word_definitions,
-    };
+    let result = word_definitions;
     if (false) {
       let word = object_property_get(d, "word");
       if (word !== u) {
