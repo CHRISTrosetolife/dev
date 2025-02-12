@@ -210,7 +210,6 @@ export async function ceb_definition(word) {
     word = f4_first_a_text;
   }
   let prefix_1 = string_combine(ceb_definition_prefix(), "cebuano/");
-  let prefix_2 = ceb_definition_prefix_en();
   let a_href_lefts = html_parse_a_href_starts_with(parsed, prefix_1);
   let mapped3 = html_parse_map_text_trim(a_href_lefts);
   let mapped4 = list_map_index(mapped3, (m, index) => {
@@ -219,6 +218,7 @@ export async function ceb_definition(word) {
       index,
     };
   });
+  let prefix_2 = ceb_definition_prefix_en();
   let matches = list_filter_property(mapped4, "text", word);
   if (list_empty_is(matches)) {
     let first = list_first(mapped4);
