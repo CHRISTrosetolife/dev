@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { ceb_definition_prefix_en } from "./ceb_definition_prefix_en.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
@@ -15,6 +14,7 @@ import { assert } from "./assert.mjs";
 import { list_size_2 } from "./list_size_2.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
 import { list_single } from "./list_single.mjs";
+import { html_parse_text } from "./html_parse_text.mjs";
 export async function ceb_definition_2(word) {
   let url = ceb_definition_url(word);
   let { parsed, children, form1 } = await ceb_html_cache_parse_form1(url);
@@ -35,10 +35,10 @@ export async function ceb_definition_2(word) {
   let prefix_2 = ceb_definition_prefix_en();
   let rows = html_parse_visit_tag_list(table, "tr");
   each(rows, (row) => {
+    let row_text = html_parse_text(row);
+    if (false) {
+    }
     let columns = html_parse_visit_tag_list(row, "td");
-    log({
-      columns,
-    });
     assert(list_size_2, [columns]);
     let f = list_first(columns);
     let a_href_fs = html_parse_a_href_starts_with(f, prefix_1);
