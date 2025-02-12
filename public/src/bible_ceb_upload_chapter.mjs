@@ -33,7 +33,7 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
     let d = await definition_bohol(u, "Cebuano", "English");
     let mapped2 = list_map(d, list_first);
     list_add_multiple(word_definitions, mapped2);
-    unique = list_unique(word_definitions);
+    let unique2 = list_unique(word_definitions);
     object_property_set(word_definitions, "length", 0);
     if (word2 === u || list_empty_is(mapped2)) {
       let definitions2 = object_property_get(d2, "definitions");
