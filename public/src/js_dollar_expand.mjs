@@ -76,6 +76,8 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
       }
       let taken = list_take_but(body, take_but_count);
       let f = list_first(taken);
+      if (false) {
+      }
       each_reverse(taken, (b) => {
         list_insert(s1, index, b);
       });
