@@ -94,7 +94,7 @@ export function app_code_refresh_function_node(args) {
     assert(equal, [name, name2]);
     html_code_keyword_space(parent, js_keyword_import());
     html_span_text_gray(parent, "{ ");
-    app_code_refresh_function_node_identifier_add_fn(parent, name, args);
+    app_code_refresh_function_node_identifier_add_fn(parent, local, args);
     html_span_text_gray(parent, " } ");
     html_code_keyword_space(parent, js_keyword_from());
     let raw = object_property_get(source, "raw");
@@ -111,8 +111,7 @@ export function app_code_refresh_function_node(args) {
   } else if (js_node_type_is(node, "FunctionDeclaration")) {
     html_code_keyword_space(parent, js_keyword_function());
     let id = object_property_get(node, "id");
-    let name3 = object_property_get(id, "name");
-    app_code_refresh_function_node_identifier_add_fn(parent, name3, args);
+    app_code_refresh_function_node_identifier_add_fn(parent, id, args);
     html_span_text_list_comma_parenthesis_params(parent, node, args);
     let body3 = object_property_get(node, "body");
     app_code_refresh_function_node(
