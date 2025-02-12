@@ -225,6 +225,8 @@ export function app_code_refresh_function_node(args) {
     let async = object_property_get(node, "async");
     let params2 = object_property_get(node, "params");
     assert(false_is, [generator]);
+    if (false) {
+    }
   } else if (js_node_type_is(node, "Property")) {
     let value2 = object_property_get(node, "value");
     let key = object_property_get(node, "key");
