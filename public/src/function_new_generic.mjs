@@ -1,3 +1,7 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { log_error } from "./log_error.mjs";
+import { function_open } from "./function_open.mjs";
+import { function_exists } from "./function_exists.mjs";
 import { file_write } from "./file_write.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { js_code_format } from "./js_code_format.mjs";
@@ -21,6 +25,17 @@ export async function function_new_generic(
   async_is,
   overwrite,
 ) {
+  let write;
+  if (overwrite) {
+    write = file_overwrite;
+  } else {
+    if (await function_exists(function_name)) {
+      await function_open(function_name);
+      log_error(string_combine_multiple(["already exists: ", function_name]));
+      return;
+    }
+    write = file_write;
+  }
   let contents_function = js_code_export_function_declare(
     function_name,
     args_string,
@@ -35,12 +50,6 @@ export async function function_new_generic(
   let unparsed = js_unparse(parsed);
   unparsed = await js_code_format(unparsed);
   let file_path = function_name_to_path(function_name);
-  let write;
-  if (overwrite) {
-    write = file_overwrite;
-  } else {
-    write = file_write;
-  }
   await overwrite(file_path, unparsed);
   if (open) {
     await file_open(file_path);

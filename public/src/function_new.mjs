@@ -8,11 +8,6 @@ import { function_new_generic } from "./function_new_generic.mjs";
 export async function function_new(function_name) {
   assert_arguments_length(arguments, 1);
   fn_name("function_new_generic"), " might overwrite a function";
-  if (await function_exists(function_name)) {
-    await function_open(function_name);
-    log_error(string_combine_multiple(["already exists: ", function_name]));
-    return;
-  }
   let open = true;
   await function_new_generic(function_name, "", "", open, [], false, false);
 }
