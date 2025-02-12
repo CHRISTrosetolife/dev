@@ -70,6 +70,7 @@ import { list_index_last } from "./list_index_last.mjs";
 import { list_all } from "./list_all.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { equal } from "./equal.mjs";
+import { string_empty_is } from "./string_empty_is.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, async (v) => {
     let { node } = v;
@@ -385,7 +386,7 @@ export function js_dollar(ast) {
           js_code_call_args(fn_name("object_property_initialize"), [
             js_name_unique(ast, "object"),
             '"property_name"',
-            'null'
+            "null",
           ]),
         );
         object_replace(node, e);
@@ -462,7 +463,10 @@ export function js_dollar(ast) {
             remaining = string_prefix_without(remaining, async_prefix);
             async_use = true;
           }
-          if (string_starts_with(remaining, "$")) {
+          if (
+            string_starts_with(remaining, "$") ||
+            string_empty_is(remaining)
+          ) {
             let e = js_parse_expression(
               js_code_arrow_block_args_choose(async_use)(
                 list_skip(string_split(remaining, "$"), 1),
