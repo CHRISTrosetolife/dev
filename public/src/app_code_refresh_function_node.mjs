@@ -1,3 +1,4 @@
+import { html_style_display_none } from "./html_style_display_none.mjs";
 import { todo } from "./todo.mjs";
 import { equal_by } from "./equal_by.mjs";
 import { list_all } from "./list_all.mjs";
@@ -38,6 +39,7 @@ export function app_code_refresh_function_node(args) {
     let body = object_property_get(node, "body");
     let imports_container = html_div(imports);
     let imports = html_div(imports_container);
+    html_style_display_none(imports);
     html_button(imports_container, "Show imports", () => {});
     let only_imports = true;
     each(body, async (b) => {
