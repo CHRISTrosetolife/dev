@@ -17,7 +17,7 @@ export async function function_new_generic_migrate() {
     });
     await function_transform(f_name_result, async (ast) => {
       js_visit_calls(ast, f_name, (params) => {
-        assert(lists_sizes_equal, [[params, param_names]]);
+        assert(lists_sizes_equal, [[params, param_names]]);last=list_last(params)
       });
     });
   });
