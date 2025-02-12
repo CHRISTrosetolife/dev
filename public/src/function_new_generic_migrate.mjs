@@ -21,8 +21,7 @@ export async function function_new_generic_migrate() {
         let last = list_last(params);
         if (js_node_identifier_named(last, fn_name("file_overwrite"))) {
           object_replace(last, js_parse_expression("true"));
-        }
-        if (js_node_identifier_named(last, fn_name("file_write"))) {
+        } else if (js_node_identifier_named(last, fn_name("file_write"))) {
           object_replace(last, js_parse_expression("false"));
         }
       });
