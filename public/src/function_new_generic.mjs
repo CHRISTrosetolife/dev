@@ -1,3 +1,4 @@
+import { file_write } from "./file_write.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { js_code_format } from "./js_code_format.mjs";
 import { js_imports_fix } from "./js_imports_fix.mjs";
@@ -37,6 +38,7 @@ export async function function_new_generic(
   if (overwrite) {
     let write = file_overwrite;
   } else {
+    let write = file_write;
   }
   await overwrite(file_path, unparsed);
   if (open) {
