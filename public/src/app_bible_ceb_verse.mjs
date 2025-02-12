@@ -1,3 +1,4 @@
+import { html_style_blue } from "./html_style_blue.mjs";
 import { each_object } from "./each_object.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { html_style_background_color_transparent } from "./html_style_background_color_transparent.mjs";
@@ -104,11 +105,13 @@ export async function app_bible_ceb_verse(
     }
     each_object(definition_entry, (word_defined, definitions) => {
       if (word_defined === mapped) {
-        $r
+        return;
       }
       let definition = html_a_blank(
         row,
-        list_join_comma_space(object_property_get(definition_entry, word_defined)),
+        list_join_comma_space(
+          object_property_get(definition_entry, word_defined),
+        ),
         ceb_definition_url(word_defined),
       );
       html_style_blue(definition);
