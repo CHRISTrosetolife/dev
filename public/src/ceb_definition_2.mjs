@@ -1,3 +1,4 @@
+import { list_first } from "./list_first.mjs";
 import { each } from "./each.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { html_parse_visit_tag_attribute_value } from "./html_parse_visit_tag_attribute_value.mjs";
@@ -26,8 +27,9 @@ export async function ceb_definition_2(word) {
   );
   let rows = html_parse_visit_tag_list(table, "tr");
   each(rows, (row) => {
-    let columns = html_parse_visit_tag_list(table, "td");
+    let columns = html_parse_visit_tag_list(row, "td");
     assert(list_size_2, [columns]);
+    let f = list_first(columns);
   });
   let prefix_1 = ceb_definition_prefix_1();
   let a_href_lefts = html_parse_a_href_starts_with(table, prefix_1);
