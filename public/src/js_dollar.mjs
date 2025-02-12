@@ -448,9 +448,8 @@ export function js_dollar(ast) {
           let e = js_parse_expression(js_code_arrow_block());
           object_replace(node, e);
         }
-        () => {};$ag
-        let newLocal = prefix_use(remaining, lambda_prefix, prefixes);
-        if (newLocal) {
+        () => {};
+        if (prefix_use(remaining, lambda_prefix, prefixes)) {
           remaining = string_prefix_without(remaining, lambda_prefix);
           let e = js_parse_expression(
             js_code_arrow_block_args(string_split(remaining, "$"), ""),
