@@ -1,3 +1,4 @@
+import { each_object } from "./each_object.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { html_style_background_color_transparent } from "./html_style_background_color_transparent.mjs";
 import { sleep } from "./sleep.mjs";
@@ -101,5 +102,6 @@ export async function app_bible_ceb_verse(
       );
       html_style_green(definition);
     }
+    each_object(object, (key, value) => {});
   });
 }
