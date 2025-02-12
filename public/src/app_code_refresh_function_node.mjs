@@ -42,7 +42,7 @@ export function app_code_refresh_function_node(args) {
     html_style_display_none(imports_container);
     let imports_show;
     let imports;
-    let imports_hide = html_button(imports, "Hide imports", () => {
+    let imports_hide = html_button(imports_container, "Hide imports", () => {
       html_style_display_none(imports);
       html_style_display_none(imports_hide);
       html_style_display_block(imports_show);
