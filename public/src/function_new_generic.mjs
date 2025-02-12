@@ -1,7 +1,3 @@
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { log_error } from "./log_error.mjs";
-import { function_open } from "./function_open.mjs";
-import { function_exists } from "./function_exists.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { js_code_format } from "./js_code_format.mjs";
 import { js_imports_fix } from "./js_imports_fix.mjs";
@@ -23,11 +19,6 @@ export async function function_new_generic(
   async_is,
   writer,
 ) {
-  if (await function_exists(function_name)) {
-    await function_open(function_name);
-    log_error(string_combine_multiple(["already exists: ", function_name]));
-    return;
-  }
   let contents_function = js_code_export_function_declare(
     function_name,
     args_string,
