@@ -10,6 +10,7 @@ import { list_join } from "./list_join.mjs";
 import { newline } from "./newline.mjs";
 import { js_parse } from "./js_parse.mjs";
 import { js_unparse } from "./js_unparse.mjs";
+import { file_overwrite } from "./file_overwrite.mjs";
 export async function function_new_generic(
   function_name,
   args_string,
@@ -33,9 +34,11 @@ export async function function_new_generic(
   let unparsed = js_unparse(parsed);
   unparsed = await js_code_format(unparsed);
   let file_path = function_name_to_path(function_name);
-  if (false) {
-    await overwrite(file_path, unparsed);
+  if (overwrite) {
+    let write = file_overwrite;
+  } else {
   }
+  await overwrite(file_path, unparsed);
   if (open) {
     await file_open(file_path);
   }
