@@ -452,6 +452,9 @@ export function js_dollar(ast) {
         let newLocal = prefix_use(remaining, lambda_prefix, prefixes);
         log({
           newLocal,
+          lambda_prefix,
+          remaining,
+          prefixes,
         });
         if (newLocal) {
           remaining = string_prefix_without(remaining, lambda_prefix);
