@@ -15,6 +15,7 @@ import { list_size_2 } from "./list_size_2.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
 import { list_single } from "./list_single.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
+import { string_empty_is } from "./string_empty_is.mjs";
 export async function ceb_definition_2(word) {
   let url = ceb_definition_url(word);
   let { parsed, children, form1 } = await ceb_html_cache_parse_form1(url);
@@ -36,7 +37,8 @@ export async function ceb_definition_2(word) {
   let rows = html_parse_visit_tag_list(table, "tr");
   each(rows, (row) => {
     let row_text = html_parse_text(row);
-    if (false) {
+    if (string_empty_is(row_text)) {
+      return;
     }
     let columns = html_parse_visit_tag_list(row, "td");
     assert(list_size_2, [columns]);
