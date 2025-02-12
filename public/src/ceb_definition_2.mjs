@@ -12,10 +12,12 @@ import { ceb_html_cache_parse_form1 } from "./ceb_html_cache_parse_form1.mjs";
 import { ceb_definition_url } from "./ceb_definition_url.mjs";
 import { assert } from "./assert.mjs";
 import { list_size_2 } from "./list_size_2.mjs";
-import { object_merge_strict } from "./object_merge_strict.mjs";
 import { list_single } from "./list_single.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
+import { object_property_initialize } from "./object_property_initialize.mjs";
+import { list_add_multiple } from "./list_add_multiple.mjs";
+import { list_uniqueify } from "./list_uniqueify.mjs";
 export async function ceb_definition_2(word) {
   let url = ceb_definition_url(word);
   let { children, form1 } = await ceb_html_cache_parse_form1(url);
@@ -45,9 +47,13 @@ export async function ceb_definition_2(word) {
     let s = list_second(columns);
     let a_href_ss = html_parse_a_href_starts_with(s, prefix_2);
     let word_ens = html_parse_map_text_trim(a_href_ss);
-    object_merge_strict(result, {
-      [list_single(word_cebs)]: word_ens,
-    });
+    let existing = object_property_initialize(
+      result,
+      list_single(word_cebs),
+      [],
+    );
+    list_add_multiple(existing, word_ens);
+    list_uniqueify(existing);
   });
   return result;
 }
