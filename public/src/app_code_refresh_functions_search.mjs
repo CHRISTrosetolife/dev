@@ -1,4 +1,4 @@
-import { list_sort_map } from "./list_sort_map.mjs";
+import { list_sort_size } from "./list_sort_size.mjs";
 import { app_code_refresh_function_change } from "./app_code_refresh_function_change.mjs";
 import { html_input_validated_focus } from "./html_input_validated_focus.mjs";
 import { html_style_background_color_yellow } from "./html_style_background_color_yellow.mjs";
@@ -29,7 +29,6 @@ import { list_map } from "./list_map.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { list_filter } from "./list_filter.mjs";
-import { string_size } from "./string_size.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { list_take_soft } from "./list_take_soft.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
@@ -76,7 +75,7 @@ export async function app_code_refresh_functions_search(context) {
         regex_test_multiple(regexes, m),
       );
       list_sort_string(filtered);
-      list_sort_map(filtered, string_size);
+      list_sort_size(filtered);
       let taken = list_take_soft(filtered, 20);
       if (list_empty_is(taken)) {
         html_p_text(results, "No functions found for search query");
