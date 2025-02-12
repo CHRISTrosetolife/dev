@@ -1,3 +1,4 @@
+import { ceb_definition_no_results } from "./ceb_definition_no_results.mjs";
 import { ceb_definition_url } from "./ceb_definition_url.mjs";
 import { ceb_defintion_en } from "./ceb_defintion_en.mjs";
 import { ceb_html_cache_parse_form1 } from "./ceb_html_cache_parse_form1.mjs";
@@ -187,12 +188,7 @@ export async function ceb_definition(word) {
   let lookup = list_pairs_to_lookup(skipped_pairs_split);
   let url = ceb_definition_url(word);
   let { parsed, children } = await ceb_html_cache_parse_form1(url);
-  let filtered9 = list_filter_property(children, "type", "text");
-  let texts = list_map_property(filtered9, "data");
-  let no_results = list_includes(
-    texts,
-    "No results found for the Cebuano word ",
-  );
+  let no_results = ceb_definition_no_results(children);
   if (no_results) {
     return {
       word,
