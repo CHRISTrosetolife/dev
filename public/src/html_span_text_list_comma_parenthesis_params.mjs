@@ -1,3 +1,4 @@
+import { list_map_property } from "./list_map_property.mjs";
 import { log } from "./log.mjs";
 import { app_code_refresh_function_node_identifier_add } from "./app_code_refresh_function_node_identifier_add.mjs";
 import { html_span_text_list_comma_parenthesis } from "./html_span_text_list_comma_parenthesis.mjs";
@@ -11,6 +12,7 @@ export function html_span_text_list_comma_parenthesis_params(
   log({
     params,
   });
+  let names = list_map_property(params, "name");
   html_span_text_list_comma_parenthesis(parent, params, lambda);
   function lambda(param) {
     app_code_refresh_function_node_identifier_add(parent, param, args);
