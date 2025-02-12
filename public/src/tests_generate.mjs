@@ -1,5 +1,5 @@
+import { file_overwrite } from "./file_overwrite.mjs";
 import { functions_names } from "./functions_names.mjs";
-import { file_write } from "./file_write.mjs";
 import { js_code_await } from "./js_code_await.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { js_code_statement_call } from "./js_code_statement_call.mjs";
@@ -24,7 +24,7 @@ export async function tests_generate() {
     false,
     [],
     true,
-    file_write,
+    file_overwrite,
   );
   return await function_run(function_name, []);
 }
