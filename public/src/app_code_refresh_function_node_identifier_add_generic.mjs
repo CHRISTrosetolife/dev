@@ -31,6 +31,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
     object_property_toggle(toggled, name);
     let v = js_visit_find(ast, identifier);
     let stack = object_property_get(v, "stack");
+    let parents = object_property_get(data, "parents");
     let { current, list, item } = js_stack_find_list(stack);
   });
 }
