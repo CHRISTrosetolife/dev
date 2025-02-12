@@ -1,3 +1,4 @@
+import { lists_sizes_equal } from "./lists_sizes_equal.mjs";
 import { function_params_names } from "./function_params_names.mjs";
 import { assert } from "./assert.mjs";
 import { log } from "./log.mjs";
@@ -16,7 +17,7 @@ export async function function_new_generic_migrate() {
     });
     await function_transform(f_name_result, async (ast) => {
       js_visit_calls(ast, f_name, (params) => {
-        assert(list_sizes_equal, [params, param_names]);
+        assert(lists_sizes_equal, [[params, param_names]]);
       });
     });
   });
