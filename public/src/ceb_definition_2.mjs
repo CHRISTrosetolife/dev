@@ -18,12 +18,9 @@ import { html_parse_text } from "./html_parse_text.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
 export async function ceb_definition_2(word) {
   let url = ceb_definition_url(word);
-  let { parsed, children, form1 } = await ceb_html_cache_parse_form1(url);
+  let { children, form1 } = await ceb_html_cache_parse_form1(url);
   if (ceb_definition_no_results(children)) {
-    return {
-      word,
-      definitions: [],
-    };
+    return {};
   }
   let table = html_parse_visit_tag_attribute_value(
     form1,
