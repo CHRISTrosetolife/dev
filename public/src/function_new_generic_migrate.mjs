@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { js_node_identifier_named } from "./js_node_identifier_named.mjs";
 import { list_last } from "./list_last.mjs";
 import { lists_sizes_equal } from "./lists_sizes_equal.mjs";
@@ -16,6 +17,9 @@ export async function function_new_generic_migrate() {
   let param_names = await function_params_names(f_name);
   await each_object_async(results, async (f_name_result) => {
     await function_transform(f_name_result, async (ast) => {
+      log({
+        f_name_result,
+      });
       js_visit_calls(ast, f_name, (params) => {
         assert(lists_sizes_equal, [[params, param_names]]);
         let last = list_last(params);
