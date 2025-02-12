@@ -17,7 +17,6 @@ import { bible_interlinear_each_chapter } from "./bible_interlinear_each_chapter
 import { list_map_property } from "./list_map_property.mjs";
 export async function bible_interlinear_upload() {
   let language = "greek";
-  let books_get = bible_interlinear_cache_new;
   let books = await bible_interlinear_cache_new();
   let chapters = list_adder((la) => {
     bible_interlinear_each_chapter(books, (chapter, book_name) => {
