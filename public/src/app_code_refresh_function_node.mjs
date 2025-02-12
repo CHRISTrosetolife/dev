@@ -5,7 +5,6 @@ import { js_keyword_async } from "./js_keyword_async.mjs";
 import { false_is } from "./false_is.mjs";
 import { html_style_display_block } from "./html_style_display_block.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
-import { todo } from "./todo.mjs";
 import { equal_by } from "./equal_by.mjs";
 import { list_all } from "./list_all.mjs";
 import { html_span_text_gray } from "./html_span_text_gray.mjs";
@@ -62,7 +61,6 @@ export function app_code_refresh_function_node(args) {
     });
     let only_imports = true;
     each(body, async (b) => {
-      todo("hide the imports behind button");
       let b_parent;
       if (only_imports && js_node_type_is(b, "ImportDeclaration")) {
         b_parent = imports;
