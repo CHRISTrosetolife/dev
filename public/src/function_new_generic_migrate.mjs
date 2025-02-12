@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { js_visit_calls } from "./js_visit_calls.mjs";
@@ -12,6 +13,9 @@ export async function function_new_generic_migrate() {
       js_visit_calls(ast, f_name, (v) => {
         let node = object_property_get(v, "node");
         let params = object_property_get(node, "params");
+        log({
+          params,
+        });
       });
     });
   });
