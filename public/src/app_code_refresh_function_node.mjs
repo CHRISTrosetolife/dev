@@ -44,7 +44,7 @@ import { html_button } from "./html_button.mjs";
 export function app_code_refresh_function_node(args) {
   let { parent, node } = args;
   let data = object_property_get(args, "data");
-  object_property_initialize(data, "parents", map_new());
+  let parents = object_property_initialize(data, "parents", map_new());
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
     let imports_container = html_div(parent);
