@@ -1,3 +1,4 @@
+import { js_statement_call_is } from "./js_statement_call_is.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { list_first } from "./list_first.mjs";
@@ -79,18 +80,7 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
       let taken = list_take_but(body, take_but_count);
       let f_name = fn_name("assert_arguments_length");
       let f = list_first(taken);
-      let assert_arguments_length_is = false;
-      if (js_node_type_is(f, "ExpressionStatement")) {
-        let expression = object_property_get(f, "expression");
-        if (js_node_type_is(expression, "CallExpression")) {
-          let args2 = object_property_get(expression, "arguments");
-          let callee2 = object_property_get(expression, "callee");
-          let name2 = object_property_get(callee2, "name");
-          if (name2 === f_name) {
-            assert_arguments_length_is = true;
-          }
-        }
-      }
+      js_statement_call_is(f, f_name);
       list_filter(taken, (t) => f_name);
       each_reverse(taken, (b) => {
         list_insert(s1, index, b);
