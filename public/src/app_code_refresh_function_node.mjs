@@ -146,8 +146,7 @@ export function app_code_refresh_function_node(args) {
   } else if (js_node_type_is(node, "VariableDeclarator")) {
     let id2 = object_property_get(node, "id");
     assert(js_node_type_is, [id2, "Identifier"]);
-    let name4 = object_property_get(id2, "name");
-    app_code_refresh_function_node_identifier_add(parent, name4, args);
+    app_code_refresh_function_node_identifier_add(parent, node, args);
     html_span_text_gray(parent, " = ");
     let init = object_property_get(node, "init");
     app_code_refresh_function_node(
@@ -185,8 +184,7 @@ export function app_code_refresh_function_node(args) {
       }),
     );
   } else if (js_node_type_is(node, "Identifier")) {
-    let name6 = object_property_get(node, "name");
-    app_code_refresh_function_node_identifier_add(parent, name6, args);
+    app_code_refresh_function_node_identifier_add(parent, node, args);
   } else if (js_node_type_is(node, "ObjectExpression")) {
     let properties = object_property_get(node, "properties");
     html_span_text_gray(parent, " { ");
