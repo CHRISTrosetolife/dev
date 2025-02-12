@@ -15,7 +15,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
   let id_list = object_property_initialize(ids, name, []);
   list_add(id_list, i);
   let data = object_property_get(args, "data");
-  let toggled = object_property_initialize(d, "toggled", {});
+  let toggled = object_property_initialize(data, "toggled", {});
   object_property_set(toggled, name, false);
   html_on_click(i, () => {
     each(id_list, (i) =>
