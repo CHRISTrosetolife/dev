@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { function_transform_command_line } from "./function_transform_command_line.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
@@ -7,7 +8,6 @@ import { js_code_format } from "./js_code_format.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { js_code_array } from "./js_code_array.mjs";
 import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
-import { log } from "./log.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { function_name_new } from "./function_name_new.mjs";
 import { js_imports_add } from "./js_imports_add.mjs";
@@ -38,8 +38,8 @@ export function app_dev_screen_imports_add() {
       let contents_function = js_code_export_function_declare(
         function_name_unique,
         "",
-        js_code_statement_call_args(log.name, [
-          js_code_call_args(string_combine_multiple.name, [
+        js_code_statement_call_args(fn_name("log"), [
+          js_code_call_args(fn_name("string_combine_multiple"), [
             js_code_array(list_map(["log", " ", "message"], string_delimit)),
           ]),
         ]),
@@ -54,16 +54,16 @@ export function app_dev_screen_imports_add() {
         "adding missing `import`s",
         string_delimit_backtick(
           string_combine_multiple([
-            function_transform_command_line.name,
+            fn_name("function_transform_command_line"),
             " ",
-            js_imports_add.name,
+            fn_name("js_imports_add"),
             " ",
             function_name_unique,
           ]),
         ),
         async () =>
           await function_transform_command_line(
-            js_imports_add.name,
+            fn_name("js_imports_add"),
             function_name_unique,
           ),
       );

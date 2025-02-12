@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { function_transform_command_line } from "./function_transform_command_line.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
@@ -5,8 +6,6 @@ import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
 import { app_dev_sandbox_function_multiple } from "./app_dev_sandbox_function_multiple.mjs";
 import { function_name_new } from "./function_name_new.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
-import { add } from "./add.mjs";
-import { multiply } from "./multiply.mjs";
 import { js_code_function_declare } from "./js_code_function_declare.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
@@ -43,12 +42,12 @@ export function app_dev_screen_outside_move() {
       let contents_c = js_code_function_declare(
         fn_c,
         "a,b",
-        js_code_statement_call_args(multiply.name, ["a", "b"]),
+        js_code_statement_call_args(fn_name("multiply"), ["a", "b"]),
       );
       let contents_b = js_code_function_declare(
         fn_b,
         "a,b,c",
-        js_code_statement_call_args(add.name, [
+        js_code_statement_call_args(fn_name("add"), [
           "a",
           js_code_call_args(fn_c, ["b", "c"]),
         ]),
@@ -71,7 +70,7 @@ export function app_dev_screen_outside_move() {
         (fn_name) =>
           string_delimit_backtick(
             string_combine_multiple([
-              function_transform_command_line.name,
+              fn_name("function_transform_command_line"),
               " ",
               fn.name,
               " ",
