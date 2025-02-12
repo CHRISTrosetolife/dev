@@ -47,6 +47,7 @@ export function app_code_refresh_function_node(args) {
       html_style_display_none(imports_hide);
       html_style_display_block(imports_show);
     });
+    html_style_display_none(imports_hide);
     imports = html_div(imports_container);
     html_style_display_none(imports);
     imports_show = html_button(imports_container, "Show imports", () => {
