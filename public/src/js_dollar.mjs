@@ -1,3 +1,4 @@
+import { string_trail_underscore } from "./string_trail_underscore.mjs";
 import { log } from "./log.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { js_dollar_grandparent } from "./js_dollar_grandparent.mjs";
@@ -15,7 +16,6 @@ import { object_copy_replace } from "./object_copy_replace.mjs";
 import { js_visit_identifiers_named } from "./js_visit_identifiers_named.mjs";
 import { js_node_if_declaration } from "./js_node_if_declaration.mjs";
 import { string_split } from "./string_split.mjs";
-import { string_underscore_trail } from "./string_underscore_trail.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { js_node_is } from "./js_node_is.mjs";
 import { list_previous } from "./list_previous.mjs";
@@ -84,8 +84,8 @@ export function js_dollar(ast) {
       let sermon_prefix = "se";
       let log_prefix_start = "l";
       let get_prefix = "g";
-      let lambda_prefix = string_underscore_trail(lambda_prefix_start);
-      let log_prefix = string_underscore_trail(log_prefix_start);
+      let lambda_prefix = string_trail_underscore(lambda_prefix_start);
+      let log_prefix = string_trail_underscore(log_prefix_start);
       let prefixes = [
         lambda_prefix,
         objection_prefix,
