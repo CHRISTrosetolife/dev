@@ -44,7 +44,6 @@ import { list_remove_first } from "./list_remove_first.mjs";
 import { list_get_end } from "./list_get_end.mjs";
 import { integer_parse_try } from "./integer_parse_try.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
-import { js_code_arrow_block } from "./js_code_arrow_block.mjs";
 import { js_code_arrow_block_args } from "./js_code_arrow_block_args.mjs";
 import { js_name_unique } from "./js_name_unique.mjs";
 import { each_range } from "./each_range.mjs";
@@ -444,10 +443,6 @@ export function js_dollar(ast) {
           let e = js_parse_expression(
             js_code_call_args(fn_name("log"), [js_code_braces_inside(inside)]),
           );
-          object_replace(node, e);
-        }
-        if (remaining === lambda_prefix_start) {
-          let e = js_parse_expression(js_code_arrow_block());
           object_replace(node, e);
         }
         if (prefix_use(remaining, lambda_prefix, prefixes)) {
