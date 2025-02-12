@@ -228,9 +228,8 @@ export function app_code_refresh_function_node(args) {
     if (async) {
       html_code_keyword_space(parent, js_keyword_async());
       html_span_text_list_comma_parenthesis_params(parent, node, args);
-      html_span_text_gray(parent, " => ");$ag
-      let add_parenthesis = js_node_type_is(body4, "ObjectExpression");
-      if (add_parenthesis) {
+      html_span_text_gray(parent, " => ");
+      if (js_node_type_is(body4, "ObjectExpression")) {
         html_span_text_wrap_parenthesis(parent, lambda2);
       } else {
       }
