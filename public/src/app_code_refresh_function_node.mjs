@@ -35,7 +35,7 @@ export function app_code_refresh_function_node(args) {
   let { parent, node } = args;
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
-    let import_group = html_div(body);
+    let imports = html_div(body);
     each(body, async (b) => {
       todo("hide the imports behind button");
       app_code_refresh_function_node_section(
@@ -44,7 +44,10 @@ export function app_code_refresh_function_node(args) {
         }),
         false,
       );
+      let b_parent;
       if (js_node_type_is(b, "ImportDeclaration")) {
+        b_parent = imports;
+      } else {
       }
     });
   } else if (js_node_type_is(node, "ImportDeclaration")) {
