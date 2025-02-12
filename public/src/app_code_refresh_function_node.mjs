@@ -42,6 +42,8 @@ export function app_code_refresh_function_node(args) {
         }),
         false,
       );
+      if (js_node_type_is(b, "ImportDeclaration")) {
+      }
     });
   } else if (js_node_type_is(node, "ImportDeclaration")) {
     let source = object_property_get(node, "source");
