@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { function_name_generated } from "./function_name_generated.mjs";
 import { bible_books_names_lookup } from "./bible_books_names_lookup.mjs";
 import { js_string } from "./js_string.mjs";
@@ -25,7 +26,7 @@ export async function bible_books_prefix_to_name_generate() {
     });
   });
   await function_new_generic(
-    function_name_generated(bible_books_prefix_to_name_generate),
+    function_name_generated(fn_name("bible_books_prefix_to_name_generate")),
     "",
     js_code_statement_return(js_unparse(r)),
     false,
