@@ -1,3 +1,4 @@
+import { object_property_exists } from "./object_property_exists.mjs";
 import { html_style_background_color_transparent } from "./html_style_background_color_transparent.mjs";
 import { sleep } from "./sleep.mjs";
 import { html_style_background_color_select } from "./html_style_background_color_select.mjs";
@@ -93,7 +94,7 @@ export async function app_bible_ceb_verse(
     });
     html_spacer(row);
     let definition_entry = object_property_get(definitions, mapped);
-    if (false) {
+    if (object_property_exists(object, "property_name")) {
     }
     let definition = html_a_blank(
       row,
