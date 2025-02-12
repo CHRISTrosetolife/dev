@@ -1,3 +1,4 @@
+import { js_node_identifier_named } from "./js_node_identifier_named.mjs";
 import { list_last } from "./list_last.mjs";
 import { lists_sizes_equal } from "./lists_sizes_equal.mjs";
 import { function_params_names } from "./function_params_names.mjs";
@@ -20,7 +21,8 @@ export async function function_new_generic_migrate() {
       js_visit_calls(ast, f_name, (params) => {
         assert(lists_sizes_equal, [[params, param_names]]);
         let last = list_last(params);
-        if (false) {
+        if (js_node_identifier_named(last, fn_name("file_overwrite"))) {
+          log({});
         }
       });
     });
