@@ -1,3 +1,4 @@
+import { list_size_2 } from "./list_size_2.mjs";
 import { list_last_match } from "./list_last_match.mjs";
 import { list_map } from "./list_map.mjs";
 import { map_remove } from "./map_remove.mjs";
@@ -50,7 +51,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       });
       let last_matching_item = list_last_match(values);
       if (list_is(last_matching_item)) {
-        if (false) {
+        if (list_size_2(values)) {
         }
       }
     } else {
