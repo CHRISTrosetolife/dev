@@ -1,3 +1,4 @@
+import { list_index_is } from "./list_index_is.mjs";
 import { list_get } from "./list_get.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_reverse } from "./list_reverse.mjs";
@@ -317,9 +318,9 @@ export function js_dollar(ast) {
         assert(list_is, [parent]);
         let index = list_index(parent, node);
         let index_previous = index - 1;
-        if (false) {
+        if (list_index_is(index_previous)) {
+          let previous = list_get(parent, index_previous);
         }
-        let next = list_get(parent, index_previous);
         list_add(list_first(e.arguments).elements, next);
         object_replace(node, e);
       }
