@@ -335,7 +335,7 @@ export function js_dollar(ast) {
             let v5 = js_node_type_is(id2, "Identifier");
             return v5;
           });
-          let d = list_last(declarations);
+          let d = list_last(fs);
           log({
             d,
           });
