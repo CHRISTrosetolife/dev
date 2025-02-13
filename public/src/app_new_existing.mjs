@@ -18,6 +18,6 @@ export async function app_new_existing(a) {
   let body = js_declaration_single_body(ast);
   let lines = list_map(body, js_unparse);
   let body_string = list_join_semicolon(lines);
-  let v = await app_new_generic(a_new, body_string);
+  let v = await app_new_generic(a_new, body_string, false);
   return a_new;
 }
