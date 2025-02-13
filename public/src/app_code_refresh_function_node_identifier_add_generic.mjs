@@ -41,8 +41,8 @@ export function app_code_refresh_function_node_identifier_add_generic(
         visitor,
       });
       let values = list_map(map_properties(selected), function (p) {
-        let v2 = map_get(selected, p);
-        return v2;
+        let m = map_get(selected, p);
+        return m;
       });
       log({
         values,
