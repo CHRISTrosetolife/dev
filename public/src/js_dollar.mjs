@@ -345,8 +345,9 @@ export function js_dollar(ast) {
                 ]),
               ),
             ];
-            list_insert(s1, index, c);
-            each(list2, function (item2) {});
+            each(codes, function (item2) {
+              list_insert(s1, index, c);
+            });
             list_remove(s1, parent);
           }
         }
