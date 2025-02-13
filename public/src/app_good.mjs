@@ -106,7 +106,7 @@ export function app_good() {
           "Enlightened the eyes of the hearts of Christians",
           "Let Christians know what the hope God called us",
           "Let Christians know the riches of God's glorious inheritance in the saints",
-          "Let Christians know what is the immeasurable greatness of his power toward us who believe",
+          "Let Christians know the immeasurable greatness of God's power toward us who believe",
           "Let there be no adultery",
           "Let there be no murder",
           "Let there be no sickness",
