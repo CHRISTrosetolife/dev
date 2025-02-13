@@ -10,7 +10,6 @@ export function app_code_section(args, indent) {
   html_style(section, {
     "overflow-wrap": "anywhere",
     "word-break": "break-word",
-    display: "inline",
   });
   if (indent) {
     html_style_flex_row_centered(section);
