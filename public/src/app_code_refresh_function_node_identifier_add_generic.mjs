@@ -1,4 +1,5 @@
-import { map_properties_each } from "./map_properties_each.mjs";
+import { map_get } from "./map_get.mjs";
+import { each_object_generic } from "./each_object_generic.mjs";
 import { map_remove } from "./map_remove.mjs";
 import { map_set } from "./map_set.mjs";
 import { map_new } from "./map_new.mjs";
@@ -12,6 +13,7 @@ import { html_on_click } from "./html_on_click.mjs";
 import { list_add } from "./list_add.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { map_properties } from "./map_properties.mjs";
 export function app_code_refresh_function_node_identifier_add_generic(
   args,
   identifier,
@@ -37,7 +39,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       map_set(selected, identifier, {
         visitor,
       });
-      map_properties_each(selected, (p) => {});
+      each_object_generic(map_properties, map_get, object, lambda);
     } else {
       map_remove(selected, identifier);
     }
