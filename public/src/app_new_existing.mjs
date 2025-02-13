@@ -17,6 +17,8 @@ export async function app_new_existing(a) {
   js_identifier_rename(ast, a, a_new);
   todo("this should also rename", fn_name);
   let d = js_declaration_single(ast);
+  let v2 = d;
+  return v2;
   let body = js_declaration_single_body(ast);
   let lines = list_map(body, js_unparse);
   let body_string = list_join_semicolon(lines);
