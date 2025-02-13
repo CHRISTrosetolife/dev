@@ -43,6 +43,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       let visitor = js_visit_find(ast, identifier);
       map_set(selected, identifier, {
         visitor,
+        component,
       });
       let values = list_map(map_properties(selected), function (p) {
         let m = map_get(selected, p);
