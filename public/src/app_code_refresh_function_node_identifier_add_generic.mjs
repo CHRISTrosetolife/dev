@@ -1,6 +1,6 @@
+import { map_remove } from "./map_remove.mjs";
 import { map_set } from "./map_set.mjs";
 import { map_new } from "./map_new.mjs";
-import { list_remove } from "./list_remove.mjs";
 import { js_visit_find } from "./js_visit_find.mjs";
 import { object_property_toggle } from "./object_property_toggle.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -34,7 +34,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       let selected = object_property_initialize(data, "selected", map_new());
       map_set(selected, identifier, {});
     } else {
-      list_remove(selected, identifier);
+      map_remove(identifier);
     }
     let v = js_visit_find(ast, identifier);
     let stack = object_property_get(v, "stack");
