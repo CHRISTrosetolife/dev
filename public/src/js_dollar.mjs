@@ -76,6 +76,7 @@ export function js_dollar(ast) {
   js_visit_identifiers(ast, async (v) => {
     let { node } = v;
     let { name } = node;
+    name = string_lower_case_to(name);
     let prefix = "$";
     if (string_starts_with(name, prefix)) {
       let { parent } = v;
@@ -84,7 +85,7 @@ export function js_dollar(ast) {
       let question_prefix = "q";
       let scm_prefix = "s";
       let sermon_prefix = "se";
-      let log_prefix_start = "L";
+      let log_prefix_start = "a";
       let get_prefix = "g";
       let log_prefix = string_trail_dollar(log_prefix_start);
       let prefixes = [
