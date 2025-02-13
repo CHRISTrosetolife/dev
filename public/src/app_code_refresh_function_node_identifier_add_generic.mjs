@@ -40,9 +40,10 @@ export function app_code_refresh_function_node_identifier_add_generic(
       map_set(selected, identifier, {
         visitor,
       });
-      let values = list_map(map_properties(selected), (p) =>
-        map_get(selected, p),
-      );
+      let values = list_map(map_properties(selected), function (p) {
+        let v2 = map_get(selected, p);
+        return v2;
+      });
       log({
         values,
       });
