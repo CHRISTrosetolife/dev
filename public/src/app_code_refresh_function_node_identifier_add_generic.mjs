@@ -60,7 +60,8 @@ export function app_code_refresh_function_node_identifier_add_generic(
           let first = list_first(values);
           let index = list_index(first, last_matching_item);
           let index_next = index + 1;
-          list_get(first, index_next);
+          let first_next = list_get(first, index_next);
+          let second_next = list_get(second, index_next);
         }
       }
     } else {
