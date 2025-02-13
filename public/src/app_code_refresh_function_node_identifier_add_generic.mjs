@@ -53,6 +53,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
         app_code_refresh_function_node_identifier_add_generic_style_selected,
       );
     } else {
+      parents(selected, html_style_background_color_transparent);
       map_remove(selected, identifier);
     }
   });
