@@ -37,7 +37,9 @@ export function app_code_refresh_function_node_identifier_add_generic(
       map_set(selected, identifier, {
         visitor,
       });
-      each_map(selected, (m) => {});
+      each_map(selected, (property, value) => {
+        let selected2 = object_property_get(value, "selected");
+      });
     } else {
       map_remove(selected, identifier);
     }
