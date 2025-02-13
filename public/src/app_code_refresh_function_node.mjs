@@ -1,3 +1,4 @@
+import { object_property_initialize } from "./object_property_initialize.mjs";
 import { app_code_section } from "./app_code_section.mjs";
 import { html_span_text_wrap_brackets } from "./html_span_text_wrap_brackets.mjs";
 import { html_span_text_wrap_parenthesis } from "./html_span_text_wrap_parenthesis.mjs";
@@ -41,27 +42,33 @@ import { html_div } from "./html_div.mjs";
 import { html_button } from "./html_button.mjs";
 export function app_code_refresh_function_node(args) {
   let { parent, node } = args;
+  let data = object_property_get(args, "data");
+  let nodes = object_property_initialize(object, "property_name", null);
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
     let imports_container = html_div(parent);
     html_style_display_none(imports_container);
     let imports_show;
     let imports;
-    let imports_hide = html_button(imports_container, "Hide imports", () => {
-      html_style_display_none(imports);
-      html_style_display_none(imports_hide);
-      html_style_display_block(imports_show);
-    });
+    let imports_hide = html_button(
+      imports_container,
+      "Hide imports",
+      function () {
+        html_style_display_none(imports);
+        html_style_display_none(imports_hide);
+        html_style_display_block(imports_show);
+      },
+    );
     html_style_display_none(imports_hide);
     imports = html_div(imports_container);
     html_style_display_none(imports);
-    imports_show = html_button(imports_container, "Show imports", () => {
+    imports_show = html_button(imports_container, "Show imports", function () {
       html_style_display_block(imports);
       html_style_display_none(imports_show);
       html_style_display_block(imports_hide);
     });
     let only_imports = true;
-    each(body, async (b) => {
+    each(body, async function (b) {
       let b_parent;
       if (only_imports && js_node_type_is(b, "ImportDeclaration")) {
         b_parent = imports;
@@ -187,7 +194,7 @@ export function app_code_refresh_function_node(args) {
     let properties = object_property_get(node, "properties");
     html_span_text_gray(parent, " { ");
     let section = app_code_section(args, true);
-    html_span_text_list_comma(section, properties, (b) => {
+    html_span_text_list_comma(section, properties, function (b) {
       app_code_refresh_function_node(
         object_copy_merge(args, {
           parent: section,
@@ -197,7 +204,7 @@ export function app_code_refresh_function_node(args) {
     });
     html_span_text_gray(parent, " }");
   } else if (js_node_type_is(node, "ArrayExpression")) {
-    html_span_text_wrap_brackets(parent, () => {
+    html_span_text_wrap_brackets(parent, function () {
       let elements = object_property_get(node, "elements");
       html_span_text_list_comma(parent, elements, lambda);
     });
@@ -255,8 +262,18 @@ export function app_code_refresh_function_node(args) {
   } else if (js_node_type_is(node, "Property")) {
     let value2 = object_property_get(node, "value");
     let key = object_property_get(node, "key");
-    if (list_all([key, value2], (n) => js_node_type_is(n, "Identifier"))) {
-      if (equal_by(key, value2, (n) => object_property_get(n, "name"))) {
+    if (
+      list_all([key, value2], function (n) {
+        let v = js_node_type_is(n, "Identifier");
+        return v;
+      })
+    ) {
+      if (
+        equal_by(key, value2, function (n) {
+          let v2 = object_property_get(n, "name");
+          return v2;
+        })
+      ) {
         app_code_refresh_function_node(
           object_copy_merge(args, {
             node: key,
@@ -269,7 +286,7 @@ export function app_code_refresh_function_node(args) {
       if (js_node_type_is(key, "Literal")) {
         unknown();
       } else {
-        html_span_text_wrap_brackets(parent, () => {
+        html_span_text_wrap_brackets(parent, function () {
           app_code_refresh_function_node(
             object_copy_merge(args, {
               node: key,
