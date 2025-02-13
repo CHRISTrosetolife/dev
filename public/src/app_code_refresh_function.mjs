@@ -53,8 +53,11 @@ export async function app_code_refresh_function(context) {
       data: {},
       ast,
     });
-    html_style(button_back(), {
-      top: 0,
+    let b2 = html_button(root, "bottom menu", function () {
+      app_code_refresh_function_menu(context);
+    });
+    html_style(b2, {
+      bottom: 0,
       position: "sticky",
     });
   });
