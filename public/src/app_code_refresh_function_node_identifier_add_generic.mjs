@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_code_refresh_function_node_nodes } from "./app_code_refresh_function_node_nodes.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_index } from "./list_index.mjs";
@@ -62,6 +63,9 @@ export function app_code_refresh_function_node_identifier_add_generic(
             let next = list_get(v, index_next);
             let m = map_get(nodes, next);
             let parent = object_property_get(m, "parent");
+            log({
+              parent,
+            });
           });
         }
       }
