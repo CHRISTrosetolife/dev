@@ -5,6 +5,8 @@ import { map_new } from "./map_new.mjs";
 import { js_visit_find } from "./js_visit_find.mjs";
 import { object_property_toggle } from "./object_property_toggle.mjs";
 import { object_property_set } from "./object_property_set.mjs";
+import { html_style_background_color_transparent } from "./html_style_background_color_transparent.mjs";
+import { html_style_background_color } from "./html_style_background_color.mjs";
 import { each } from "./each.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { list_add } from "./list_add.mjs";
@@ -23,8 +25,12 @@ export function app_code_refresh_function_node_identifier_add_generic(
   let toggled = object_property_initialize(data, "toggled", {});
   object_property_set(toggled, name, false);
   let ast = object_property_get(args, "ast");
-  html_on_click(component, function () {
-    each(id_list, function (i) {});
+  html_on_click(component, () => {
+    each(id_list, (i) =>
+      object_property_get(toggled, name)
+        ? html_style_background_color_transparent(i)
+        : html_style_background_color(i, "darkred"),
+    );
     let selected = object_property_initialize(data, "selected", map_new());
     if (object_property_toggle(toggled, name)) {
       let visitor = js_visit_find(ast, identifier);
@@ -32,7 +38,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
         visitor,
       });
       let properties = map_properties(selected);
-      each(properties, function (p) {
+      each(properties, (p) => {
         each_lambda(p);
       });
     } else {
