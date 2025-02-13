@@ -2,7 +2,6 @@ import { list_all } from "./list_all.mjs";
 import { list_get } from "./list_get.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_map } from "./list_map.mjs";
-import { log } from "./log.mjs";
 import { map_remove } from "./map_remove.mjs";
 import { map_set } from "./map_set.mjs";
 import { map_new } from "./map_new.mjs";
@@ -68,10 +67,8 @@ export function app_code_refresh_function_node_identifier_add_generic(
           return v3;
         }
       });
-      log({
-        last_matching,
-        first,
-      });
+      if (false) {
+      }
     } else {
       map_remove(selected, identifier);
     }
