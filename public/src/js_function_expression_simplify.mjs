@@ -13,6 +13,8 @@ export function js_function_expression_simplify(ast) {
     let body2 = object_property_get(body, "body");
     if (list_size_1(body2)) {
       let f = list_first(body2);
+      if (false) {
+      }
       log({
         f,
       });
