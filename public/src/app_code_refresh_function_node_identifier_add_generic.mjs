@@ -1,3 +1,4 @@
+import { html_node_text_is } from "./html_node_text_is.mjs";
 import { html_element_wrap } from "./html_element_wrap.mjs";
 import { app_code_refresh_function_node_identifier_add_generic_style_selected } from "./app_code_refresh_function_node_identifier_add_generic_style_selected.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -75,9 +76,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
             html_visit(element, lambda);
             function lambda(v) {
               let e = object_property_get(v, "node");
-              if (e.nodeType === 3) {
-                let v2;
-                return v2;
+              if (html_node_text_is(e)) {
               }
               e = html_element_wrap(e);
               if (html_data_has(e, fn_name("app_code_section"))) {
