@@ -1,3 +1,4 @@
 export function html_node_text_is(e) {
-  return e.nodeType === 3;
+  let v = e.nodeType === 3;
+  return v;
 }
