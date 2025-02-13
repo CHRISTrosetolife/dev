@@ -1,3 +1,4 @@
+import { list_skip } from "./list_skip.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_map } from "./list_map.mjs";
@@ -50,7 +51,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       });
       let f = list_first(values);
       each_index(f, function (item, index) {
-        list_skip_1();
+        list_skip();
       });
       log({
         values,
