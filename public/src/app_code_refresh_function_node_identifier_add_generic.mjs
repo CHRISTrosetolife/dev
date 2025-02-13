@@ -57,6 +57,8 @@ export function app_code_refresh_function_node_identifier_add_generic(
       parents(selected, html_style_background_color_transparent);
       map_remove(selected, identifier);
     }
+    if (false) {
+    }
     each(id_list, function (i) {
       object_property_get(toggled, name)
         ? html_style_background_color(i, "#4c1406")
