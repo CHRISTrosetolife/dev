@@ -68,7 +68,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
         }
       });
       log({
-        values,
+        last_matching,
       });
     } else {
       map_remove(selected, identifier);
