@@ -337,6 +337,16 @@ export function js_dollar(ast) {
                 ]),
               ),
             );
+            list_insert(
+              s1,
+              index,
+              js_code_statement_let_assign(
+                js_name_unique(ast, "second"),
+                js_code_call_args(fn_name("list_second"), [
+                  js_code_array([remaining]),
+                ]),
+              ),
+            );
           }
         }
       }
