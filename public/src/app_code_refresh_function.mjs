@@ -19,6 +19,7 @@ import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { html_load } from "./html_load.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
+import { html_remove } from "./html_remove.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async function () {
     let root = app_code_screen_set(
@@ -53,7 +54,9 @@ export async function app_code_refresh_function(context) {
     html_style_monospace(container);
     let button_bottom = html_button(root, emoji_lightning(), function () {
       let overlay = html_overlay(fn_name("app_code_refresh_function"));
-      html_button_back(overlay, function () {});
+      html_button_back(overlay, function () {
+        html_remove(overlay);
+      });
     });
     html_style(button_bottom, {
       bottom: 0,
