@@ -1,3 +1,4 @@
+import { html_span } from "./html_span.mjs";
 import { map_new } from "./map_new.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { app_code_section } from "./app_code_section.mjs";
@@ -44,6 +45,7 @@ import { html_button } from "./html_button.mjs";
 import { map_set } from "./map_set.mjs";
 export function app_code_refresh_function_node(args) {
   let { parent, node } = args;
+  parent = html_span(parent);
   let data = object_property_get(args, "data");
   let nodes = object_property_initialize(data, "nodes", map_new());
   map_set(nodes, node, {
