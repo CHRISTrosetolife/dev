@@ -72,7 +72,8 @@ export function app_code_refresh_function_node_identifier_add_generic(
             );
             let element = html_element_get(parent);
             html_visit(element, lambda);
-            function lambda(e) {
+            function lambda(v) {
+              let e = object_property_get(v, "node");
               if (html_data_has(e, fn_name("app_code_section"))) {
                 app_code_refresh_function_node_identifier_add_generic_style_selected(
                   e,
