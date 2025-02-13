@@ -79,9 +79,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
           let next = list_get(v, index_next);
           let m = map_get(nodes, next);
           let parent = object_property_get(m, "parent");
-          app_code_refresh_function_node_identifier_add_generic_style_selected(
-            parent,
-          );
+          lambda2(parent);
           let element = html_element_get(parent);
           html_visit(element, lambda);
           function lambda(v) {
