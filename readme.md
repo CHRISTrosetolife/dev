@@ -4,6 +4,10 @@ https://letjesusbeexalted.web.app/
 ---
 ---
 
+If you have any questions or comments feel free to contact me: JESUSrosetolife@protonmail.com
+
+---
+
 to work with the code on your computer , see the following ( also see https://letjesusbeexalted.web.app/dev.html ) :
 
 ---
