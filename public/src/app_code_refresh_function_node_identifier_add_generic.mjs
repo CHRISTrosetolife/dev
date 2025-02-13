@@ -1,3 +1,4 @@
+import { map_size } from "./map_size.mjs";
 import { html_node_text_is } from "./html_node_text_is.mjs";
 import { html_element_wrap } from "./html_element_wrap.mjs";
 import { app_code_refresh_function_node_identifier_add_generic_style_selected } from "./app_code_refresh_function_node_identifier_add_generic_style_selected.mjs";
@@ -48,7 +49,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
     });
     let selected = object_property_initialize(data, "selected", map_new());
     if (object_property_toggle(toggled, name)) {
-      if (false) {
+      if (map_size(selected) > 2) {
       }
       parents(
         selected,
