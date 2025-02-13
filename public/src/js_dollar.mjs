@@ -326,6 +326,7 @@ export function js_dollar(ast) {
         let list = list_get(stack, statement_index_previous);
         let before = list_before(list, statement);
         if (js_node_type_is(before, "VariableDeclaration")) {
+          let declarations = object_property_get(before, "declarations");
         }
       }
       if (prefix_use(remaining, objection_prefix, prefixes)) {
