@@ -18,10 +18,10 @@ export async function app_new_existing(a) {
   js_identifier_rename(ast, a, a_new);
   todo("this should also rename", fn_name);
   let d = js_declaration_single(ast);
-  let async = object_property_get(d, "async");
+  let async_is = object_property_get(d, "async");
   let body = js_declaration_single_body(ast);
   let lines = list_map(body, js_unparse);
   let body_string = list_join_semicolon(lines);
-  let v = await app_new_generic(a_new, body_string, false);
+  let v = await app_new_generic(a_new, body_string, async_is);
   return a_new;
 }
