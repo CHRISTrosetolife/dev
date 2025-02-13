@@ -63,6 +63,8 @@ export function app_code_refresh_function_node_identifier_add_generic(
         if (all_match) {
           last_matching = index;
         } else {
+          let v3 = true;
+          return v3;
         }
       });
       log({
