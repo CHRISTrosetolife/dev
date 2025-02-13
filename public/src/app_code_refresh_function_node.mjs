@@ -1,5 +1,4 @@
 import { app_code_refresh_function_node_nodes } from "./app_code_refresh_function_node_nodes.mjs";
-import { html_span } from "./html_span.mjs";
 import { app_code_section } from "./app_code_section.mjs";
 import { html_span_text_wrap_brackets } from "./html_span_text_wrap_brackets.mjs";
 import { html_span_text_wrap_parenthesis } from "./html_span_text_wrap_parenthesis.mjs";
@@ -44,7 +43,6 @@ import { html_button } from "./html_button.mjs";
 import { map_set } from "./map_set.mjs";
 export function app_code_refresh_function_node(args) {
   let { parent, node } = args;
-  parent = html_span(parent);
   let nodes = app_code_refresh_function_node_nodes(args);
   map_set(nodes, node, {
     parent,
