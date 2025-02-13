@@ -74,7 +74,6 @@ export function app_code_refresh_function_node_identifier_add_generic(
     } else {
       map_remove(selected, identifier);
     }
-    let stack = object_property_get(v, "stack");
   });
   function each_lambda(p) {
     p + 1;
