@@ -1,5 +1,4 @@
 import { log } from "./log.mjs";
-import { js_code_array } from "./js_code_array.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { list_last } from "./list_last.mjs";
 import { list_before } from "./list_before.mjs";
@@ -334,15 +333,11 @@ export function js_dollar(ast) {
             let codes = [
               js_code_statement_let_assign(
                 js_name_unique(ast, "first"),
-                js_code_call_args(fn_name("list_first"), [
-                  js_code_array([remaining]),
-                ]),
+                js_code_call_args(fn_name("list_first"), [remaining]),
               ),
               js_code_statement_let_assign(
                 js_name_unique(ast, "second"),
-                js_code_call_args(fn_name("list_second"), [
-                  js_code_array([remaining]),
-                ]),
+                js_code_call_args(fn_name("list_second"), [remaining]),
               ),
             ];
             each(codes, function (item2) {
