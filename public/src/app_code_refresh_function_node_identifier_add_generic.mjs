@@ -42,23 +42,25 @@ export function app_code_refresh_function_node_identifier_add_generic(
   object_property_set(toggled, name, false);
   let ast = object_property_get(args, "ast");
   html_on_click(component, function () {
+    let selected = object_property_initialize(data, "selected", map_new());
+    if (object_property_toggle(toggled, name)) {
+      if (map_size(selected) >= 3) {
+        let v3;
+        return v3;
+      }
+      parents(
+        selected,
+        app_code_refresh_function_node_identifier_add_generic_style_selected,
+      );
+    } else {
+      parents(selected, html_style_background_color_transparent);
+      map_remove(selected, identifier);
+    }
     each(id_list, function (i) {
       object_property_get(toggled, name)
         ? html_style_background_color_transparent(i)
         : html_style_background_color(i, "#4c1406");
     });
-    let selected = object_property_initialize(data, "selected", map_new());
-    if (object_property_toggle(toggled, name)) {
-      if (map_size(selected) <= 2) {
-        parents(
-          selected,
-          app_code_refresh_function_node_identifier_add_generic_style_selected,
-        );
-      }
-    } else {
-      parents(selected, html_style_background_color_transparent);
-      map_remove(selected, identifier);
-    }
   });
   function parents(selected, styling) {
     let visitor = js_visit_find(ast, identifier);
