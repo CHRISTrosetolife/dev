@@ -30,7 +30,9 @@ export function app_code_refresh_function_node_identifier_add_generic(
         ? html_style_background_color_transparent(i)
         : html_style_background_color(i, "darkred"),
     );
-    object_property_toggle(toggled, name);
+    if (object_property_toggle(toggled, name)) {
+    } else {
+    }
     let v = js_visit_find(ast, identifier);
     let stack = object_property_get(v, "stack");
     let parents = object_property_get(data, "parents");
