@@ -73,13 +73,14 @@ import { list_all } from "./list_all.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { equal } from "./equal.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
+import { assert } from "./assert.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, async (v) => {
     let { node } = v;
     let { name } = node;
-    name = string_case_lower(name);
     let prefix = "$";
     if (string_starts_with(name, prefix)) {
+        name = string_case_lower(name);
       let { parent } = v;
       let lambda_prefix = "a";
       let objection_prefix = "o";
@@ -422,6 +423,7 @@ export function js_dollar(ast) {
         let s = string_split_dollar(remaining);
         let fr = list_first_remaining(s);
         let variable_name = object_property_get(fr, "first");
+        assert(string_empty_not_is,[variable_name])
         let property_names = object_property_get(fr, "remaining");
         list_reverse(property_names);
         let mapped = list_map(property_names, (property_name) => {
