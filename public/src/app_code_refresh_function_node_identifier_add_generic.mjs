@@ -1,3 +1,4 @@
+import { list_first } from "./list_first.mjs";
 import { list_map } from "./list_map.mjs";
 import { log } from "./log.mjs";
 import { map_remove } from "./map_remove.mjs";
@@ -46,6 +47,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
         let stack2 = object_property_get(visitor2, "stack");
         return stack2;
       });
+      let f = list_first();
       log({
         values,
       });
