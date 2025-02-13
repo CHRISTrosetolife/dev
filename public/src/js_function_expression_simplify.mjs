@@ -29,7 +29,8 @@ export function js_function_expression_simplify(ast) {
           let callee = object_property_get(expression, "callee");
           let arguments2 = object_property_get(expression, "arguments");
           if (list_all(arguments2, js_node_type_identifier_is)) {
-            let names = list_map_property_name(arguments2);
+            let names_params = list_map_property_name(params);
+            let names_arguments2 = list_map_property_name(arguments2);
           }
         }
       }
