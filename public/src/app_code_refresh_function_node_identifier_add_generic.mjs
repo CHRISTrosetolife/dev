@@ -58,6 +58,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
           let second = list_second(values);
           let first = list_first(values);
           let index = list_index(first, last_matching_item);
+          let index_next = index + 1;
         }
       }
     } else {
