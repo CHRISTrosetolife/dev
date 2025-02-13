@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { map_remove } from "./map_remove.mjs";
 import { map_set } from "./map_set.mjs";
 import { map_new } from "./map_new.mjs";
@@ -38,7 +39,10 @@ export function app_code_refresh_function_node_identifier_add_generic(
       map_set(selected, identifier, {
         visitor,
       });
-      map_properties(selected, (p) => map_get(selected, p));
+      let values = map_properties(selected, (p) => map_get(selected, p));
+      log({
+        values,
+      });
     } else {
       map_remove(selected, identifier);
     }
