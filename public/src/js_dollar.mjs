@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_before } from "./list_before.mjs";
 import { list_find_last_index } from "./list_find_last_index.mjs";
 import { list_get } from "./list_get.mjs";
@@ -326,9 +325,8 @@ export function js_dollar(ast) {
         let statement_index_previous = statement_index - 1;
         let list = list_get(stack, statement_index_previous);
         let before = list_before(list, statement);
-        log({
-          before,
-        });
+        if (false) {
+        }
       }
       if (prefix_use(remaining, objection_prefix, prefixes)) {
         let count = remaining_count_get(remaining, objection_prefix);
