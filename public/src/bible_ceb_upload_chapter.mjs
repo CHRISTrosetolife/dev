@@ -17,6 +17,7 @@ import { list_unique } from "./list_unique.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { list_first } from "./list_first.mjs";
+import { file_exists } from "./file_exists.mjs";
 export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
   let bible_folder = bible_storage_ceb_definitions_path(
     bible_version,
@@ -24,7 +25,8 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
   );
   let key = bible_storage_interlinear_chapter_definitions_name();
   let storage_path = bible_storage_path_file_version(bible_folder, key);
-  if (false) {
+  if (await file_exists(storage_path)) {
+    return;
   }
   let chapter = await bible_chapter(bible_version, chapter_code);
   let tokens_all = list_flatten(list_map_property(chapter, "tokens"));
