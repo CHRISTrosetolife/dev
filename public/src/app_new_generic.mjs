@@ -14,7 +14,7 @@ export async function app_new_generic(name, body_string, async_is) {
     body_string,
     open,
     [],
-    false,
+    async_is,
     false,
   );
   await apps_list_generate();
