@@ -19,5 +19,5 @@ export async function app_new_bible_ceb() {
   let v2 = b;
   return v2;
   let v = await app_new_generic(a_new, body_string);
-  return v;
+  return a_new;
 }
