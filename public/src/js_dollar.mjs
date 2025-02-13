@@ -318,6 +318,10 @@ export function js_dollar(ast) {
           object_replace(node, e);
         }
       }
+      if (remaining === "lfs") {
+        if (parent.type === "ExpressionStatement") {
+        }
+      }
       if (remaining === "v") {
         let { stack } = v;
         let statement_index = list_find_last_index(stack, function (n) {
