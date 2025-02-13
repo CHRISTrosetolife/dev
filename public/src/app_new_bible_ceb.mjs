@@ -1,3 +1,5 @@
+import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
+import { todo } from "./todo.mjs";
 import { string_unique } from "./string_unique.mjs";
 import { js_identifier_rename } from "./js_identifier_rename.mjs";
 import { function_transform } from "./function_transform.mjs";
@@ -11,7 +13,9 @@ export async function app_new_bible_ceb(name) {
   await function_transform(ast, function (ast) {
     let a_new = string_unique(a, fnns);
     js_identifier_rename(ast, a, a_new);
+    todo("this should also rename", fn_name);
   });
+  js_declaration_single_body();
   let body_string = "let root = html_style_default_initialize();";
   let v = await app_new_generic(name, body_string);
   return v;
