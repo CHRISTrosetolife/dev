@@ -8,6 +8,7 @@ import { js_visit_node } from "./js_visit_node.mjs";
 import { list_size_1 } from "./list_size_1.mjs";
 import { list_first } from "./list_first.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
+import { list_all } from "./list_all.mjs";
 export function js_function_expression_simplify(ast) {
   js_visit_node(ast, "FunctionExpression", (v) => {
     let { node } = v;
@@ -26,7 +27,7 @@ export function js_function_expression_simplify(ast) {
         if (js_node_type_is(expression, "CallExpression")) {
           let callee = object_property_get(expression, "callee");
           let arguments2 = object_property_get(expression, "arguments");
-          if (false) {
+          if (list_all(arguments2, js_node_type_identifier_is)) {
           }
         }
       }
