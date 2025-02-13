@@ -42,8 +42,9 @@ export function app_code_refresh_function_node_identifier_add_generic(
       });
       let values = list_map(map_properties(selected), function (p) {
         let m = map_get(selected, p);
-        m;
-        return m;
+        let visitor2 = object_property_get(m, "visitor");
+        let v2 = object_property_get(object, "property_name");
+        return v2;
       });
       log({
         values,
