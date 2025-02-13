@@ -18,6 +18,14 @@ import { list_map_property } from "./list_map_property.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { list_first } from "./list_first.mjs";
 export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
+  let bible_folder = bible_storage_ceb_definitions_path(
+    bible_version,
+    chapter_code,
+  );
+  let key = bible_storage_interlinear_chapter_definitions_name();
+  let storage_path = bible_storage_path_file_version(bible_folder, key);
+  if (false) {
+  }
   let chapter = await bible_chapter(bible_version, chapter_code);
   let tokens_all = list_flatten(list_map_property(chapter, "tokens"));
   let mapped = list_map(tokens_all, bible_word_map);
@@ -32,11 +40,5 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
     list_uniqueify(word_definitions);
     return result;
   });
-  let bible_folder = bible_storage_ceb_definitions_path(
-    bible_version,
-    chapter_code,
-  );
-  let key = bible_storage_interlinear_chapter_definitions_name();
-  let storage_path = bible_storage_path_file_version(bible_folder, key);
   await bible_storage_version_upload(bible_folder, key, definitions);
 }
