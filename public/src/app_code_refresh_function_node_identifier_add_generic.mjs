@@ -1,3 +1,4 @@
+import { object_property_exists } from "./object_property_exists.mjs";
 import { list_map } from "./list_map.mjs";
 import { log } from "./log.mjs";
 import { map_remove } from "./map_remove.mjs";
@@ -42,6 +43,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       });
       let values = list_map(map_properties(selected), function (p) {
         let m = map_get(selected, p);
+        object_property_exists(object, "property_name");
         return m;
       });
       log({
