@@ -16,7 +16,7 @@ export function js_function_expression_simplify(ast) {
     });
     let params = object_property_get(node, "params");
     let fn = js_node_type_identifier_is;
-    assert_multiple(params, fn);
+    assert_multiple(fn, params);
     let body = object_property_get(node, "body");
     assert(js_node_type_statement_block_is, [body]);
     let body2 = object_property_get(body, "body");
