@@ -37,7 +37,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       map_set(selected, identifier, {
         visitor,
       });
-      let properties = map_properties(selected);
+      let properties = map_properties(selected);$e
     } else {
       map_remove(selected, identifier);
     }
