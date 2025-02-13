@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { html_data_set } from "./html_data_set.mjs";
 import { html_style_flex_1 } from "./html_style_flex_1.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -23,5 +24,6 @@ export function app_code_section(args, indent) {
     list_add_multiple(cs, [left, section]);
   }
   html_data_set;
+  each(list, function (item) {});
   return section;
 }
