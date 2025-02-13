@@ -326,6 +326,7 @@ export function js_dollar(ast) {
           let { stack } = v;
           let s1 = list_get_end(stack, 1);
           js_code_statement_let_assign(
+            "first",
             js_code_call_args(fn_name("list_first"), [
               js_code_array([remaining]),
             ]),
