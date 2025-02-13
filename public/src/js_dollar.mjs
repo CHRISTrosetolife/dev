@@ -326,6 +326,7 @@ export function js_dollar(ast) {
           let { stack } = v;
           let s1 = list_get_end(stack, 1);
           if (list_is(s1)) {
+            let index = list_index(s1, parent);
             list_insert(
               s1,
               index,
