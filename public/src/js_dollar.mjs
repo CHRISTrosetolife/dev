@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { js_code_array } from "./js_code_array.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { list_last } from "./list_last.mjs";
@@ -325,6 +326,9 @@ export function js_dollar(ast) {
           remaining = string_prefix_without(remaining, first_second);
           let { stack } = v;
           let s1 = list_get_end(stack, 1);
+          log({
+            s1,
+          });
           if (list_is(s1)) {
             let index = list_index(s1, parent);
             list_insert(
