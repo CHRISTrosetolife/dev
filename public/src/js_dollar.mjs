@@ -277,7 +277,7 @@ export function js_dollar(ast) {
       if (remaining === "la") {
         let e = js_parse_expression(
           js_code_call_args(fn_name("list_adder"), [
-            js_code_arrow_block_args(["la"], ""),
+            js_code_arrow_block_args([js_name_unique(ast, "la")], ""),
           ]),
         );
         object_replace(node, e);
@@ -285,7 +285,7 @@ export function js_dollar(ast) {
       if (remaining === "laa") {
         let e = js_parse_expression(
           js_code_call_args(fn_name("list_adder_async"), [
-            js_code_arrow_block_args_async(["la"], ""),
+            js_code_arrow_block_args_async([js_name_unique(ast, "la")], ""),
           ]),
         );
         object_replace(node, e);
@@ -293,7 +293,7 @@ export function js_dollar(ast) {
       if (remaining === "lam") {
         let e = js_parse_expression(
           js_code_call_args(fn_name("list_adder_multiple"), [
-            js_code_arrow_block_args(["la"], ""),
+            js_code_arrow_block_args([js_name_unique(ast, "la")], ""),
           ]),
         );
         object_replace(node, e);
@@ -301,7 +301,7 @@ export function js_dollar(ast) {
       if (remaining === "lau") {
         let e = js_parse_expression(
           js_code_call_args(fn_name("list_adder_unique"), [
-            js_code_arrow_block_args(["la"], ""),
+            js_code_arrow_block_args([js_name_unique(ast, "la")], ""),
           ]),
         );
         object_replace(node, e);
