@@ -1,3 +1,4 @@
+import { app_code_refresh_function_node_identifier_add_generic_style_selected } from "./app_code_refresh_function_node_identifier_add_generic_style_selected.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { html_data_has } from "./html_data_has.mjs";
 import { html_visit } from "./html_visit.mjs";
@@ -66,7 +67,9 @@ export function app_code_refresh_function_node_identifier_add_generic(
             let next = list_get(v, index_next);
             let m = map_get(nodes, next);
             let parent = object_property_get(m, "parent");
-            html_style_background_color(parent, "DarkSlateGray");
+            app_code_refresh_function_node_identifier_add_generic_style_selected(
+              parent,
+            );
             let element = html_element_get(parent);
             html_visit(element, lambda);
             function lambda(e) {
