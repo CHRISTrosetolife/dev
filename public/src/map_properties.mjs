@@ -1,3 +1,4 @@
+import { list_to } from "./list_to.mjs";
 export function map_properties(selected) {
-  returnlist_to(selected.keys());
+  return list_to(selected.keys());
 }
