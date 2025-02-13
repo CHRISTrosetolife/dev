@@ -1,3 +1,4 @@
+import { html_style_display_inline_block } from "./html_style_display_inline_block.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { app_code_refresh_function_node_nodes } from "./app_code_refresh_function_node_nodes.mjs";
 import { app_code_section } from "./app_code_section.mjs";
@@ -45,6 +46,7 @@ import { map_set } from "./map_set.mjs";
 export function app_code_refresh_function_node(args) {
   let { parent, node } = args;
   parent = html_div(parent);
+  html_style_display_inline_block(parent);
   object_property_set(args, "parent", parent);
   let nodes = app_code_refresh_function_node_nodes(args);
   map_set(nodes, node, {
