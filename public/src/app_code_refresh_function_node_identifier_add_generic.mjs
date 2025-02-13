@@ -28,6 +28,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
         : html_style_background_color(i, "darkred"),
     );
     if (object_property_toggle(toggled, name)) {
+      object_property_initialize(object, "property_name", null);
     } else {
     }
     let v = js_visit_find(ast, identifier);
