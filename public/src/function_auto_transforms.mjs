@@ -9,8 +9,10 @@ import { js_await_add } from "./js_await_add.mjs";
 import { js_const_to_let } from "./js_const_to_let.mjs";
 import { js_imports_fix } from "./js_imports_fix.mjs";
 import { js_outside_move } from "./js_outside_move.mjs";
+import { js_arrow_to_function } from "./js_arrow_to_function.mjs";
+import { js_return_variablize } from "./js_return_variablize.mjs";
 export function function_auto_transforms() {
-  return [
+  let v = [
     js_dollar,
     js_fn_name,
     js_template_to_function,
@@ -21,6 +23,9 @@ export function function_auto_transforms() {
     js_assign_to_let,
     js_await_add,
     js_outside_move,
-    js_imports_fix,js_arrow_to_function,js_return_variablize
+    js_imports_fix,
+    js_arrow_to_function,
+    js_return_variablize,
   ];
+  return v;
 }
