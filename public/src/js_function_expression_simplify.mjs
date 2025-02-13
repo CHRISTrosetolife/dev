@@ -1,4 +1,4 @@
-import { never } from "./never.mjs";
+import { js_node_type_identifier_is } from "./js_node_type_identifier_is.mjs";
 import { each } from "./each.mjs";
 import { log } from "./log.mjs";
 import { js_node_type_statement_block_is } from "./js_node_type_statement_block_is.mjs";
@@ -15,8 +15,9 @@ export function js_function_expression_simplify(ast) {
       node,
     });
     let params = object_property_get(node, "params");
+    let fn = js_node_type_identifier_is;
     each(params, (param) => {
-      assert(never, []);
+      assert(js_node_type_identifier_is, [param]);
     });
     let body = object_property_get(node, "body");
     assert(js_node_type_statement_block_is, [body]);
