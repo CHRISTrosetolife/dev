@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { object_replace } from "./object_replace.mjs";
 import { list_equal } from "./list_equal.mjs";
 import { list_map_property_name } from "./list_map_property_name.mjs";
@@ -15,6 +16,9 @@ export function js_function_expression_simplify(ast) {
   js_visit_node(ast, "FunctionExpression", (v) => {
     let { node } = v;
     let params = object_property_get(node, "params");
+    log({
+      node,
+    });
     assert_list(js_node_type_identifier_is, params);
     let body = object_property_get(node, "body");
     assert(js_node_type_statement_block_is, [body]);
