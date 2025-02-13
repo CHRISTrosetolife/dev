@@ -321,8 +321,10 @@ export function js_dollar(ast) {
           let v4 = js_node_type_is(n, "ExpressionStatement");
           return v4;
         });
+        let statement = list_get(stack, statement_index);
         let statement_index_previous = statement_index - 1;
         let list = list_get(stack, statement_index_previous);
+        let statement_list_index = list_index(statement);
         assert(list_is, [list]);
         if (list_index_is(statement_index_previous)) {
           let previous = list_get(parent, index_previous);
