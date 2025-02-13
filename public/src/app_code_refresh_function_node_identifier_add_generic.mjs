@@ -1,4 +1,4 @@
-import { list_skip } from "./list_skip.mjs";
+import { list_get } from "./list_get.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_map } from "./list_map.mjs";
 import { log } from "./log.mjs";
@@ -52,8 +52,9 @@ export function app_code_refresh_function_node_identifier_add_generic(
       let fr = list_first_remaining(values);
       let first = object_property_get(fr, "first");
       let remaining = object_property_get(fr, "remaining");
-      each_index(f, function (item, index) {
-        list_skip(value);
+      each_index(first, function (r, index) {
+        each(list, function (item) {});
+        list_get(r);
       });
       log({
         values,
