@@ -1,6 +1,6 @@
+import { log } from "./log.mjs";
 import { list_before } from "./list_before.mjs";
 import { list_find_last_index } from "./list_find_last_index.mjs";
-import { list_index_is } from "./list_index_is.mjs";
 import { list_get } from "./list_get.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_reverse } from "./list_reverse.mjs";
@@ -325,13 +325,10 @@ export function js_dollar(ast) {
         let statement = list_get(stack, statement_index);
         let statement_index_previous = statement_index - 1;
         let list = list_get(stack, statement_index_previous);
-        list_before(list, statement);
-        assert(list_is, [list]);
-        if (list_index_is(statement_index_previous)) {
-          let previous = list_get(parent, index_previous);
-        }
-        list_add(list_first(e.arguments).elements, next);
-        object_replace(node, e);
+        let before = list_before(list, statement);
+        log({
+          before,
+        });
       }
       if (prefix_use(remaining, objection_prefix, prefixes)) {
         let count = remaining_count_get(remaining, objection_prefix);
