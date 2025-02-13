@@ -75,8 +75,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
             html_visit(element, lambda);
             function lambda(v) {
               let e = object_property_get(v, "node");
-              if (false) {
-                e.nodeType === 3;
+              if (e.nodeType === 3) {
               }
               e = html_element_wrap(e);
               if (html_data_has(e, fn_name("app_code_section"))) {
