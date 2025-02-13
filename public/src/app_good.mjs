@@ -117,6 +117,7 @@ export function app_good() {
           "Give every Christian peace at all times in every way",
           "equip every Chritian with everything good that each does his will",
           "Work in every Christian that which is pleasing in God's sight, through Jesus Christ",
+          "May grace and peace be multiplied to every Christian in the knowledge of God and of Jesus our Lord",
           "Let there be no adultery",
           "Let there be no murder",
           "Let there be no sickness",
