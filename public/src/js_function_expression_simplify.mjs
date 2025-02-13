@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { object_replace } from "./object_replace.mjs";
 import { list_equal } from "./list_equal.mjs";
 import { list_map_property_name } from "./list_map_property_name.mjs";
