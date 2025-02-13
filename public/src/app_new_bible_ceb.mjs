@@ -15,7 +15,9 @@ export async function app_new_bible_ceb(name) {
     js_identifier_rename(ast, a, a_new);
     todo("this should also rename", fn_name);
   });
-  js_declaration_single_body();
+  let b = js_declaration_single_body(ast);
+  let v2 = b;
+  return v2;
   let body_string = "let root = html_style_default_initialize();";
   let v = await app_new_generic(name, body_string);
   return v;
