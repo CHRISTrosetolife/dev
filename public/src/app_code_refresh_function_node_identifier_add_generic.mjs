@@ -48,10 +48,10 @@ export function app_code_refresh_function_node_identifier_add_generic(
     });
     let selected = object_property_initialize(data, "selected", map_new());
     if (object_property_toggle(toggled, name)) {
-      function lambda2(e) {
-        app_code_refresh_function_node_identifier_add_generic_style_selected(e);
-      }
-      parents(selected, lambda2);
+      parents(
+        selected,
+        app_code_refresh_function_node_identifier_add_generic_style_selected,
+      );
     } else {
       map_remove(selected, identifier);
     }
