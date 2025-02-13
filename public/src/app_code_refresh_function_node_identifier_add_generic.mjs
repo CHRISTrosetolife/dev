@@ -48,6 +48,9 @@ export function app_code_refresh_function_node_identifier_add_generic(
     });
     let selected = object_property_initialize(data, "selected", map_new());
     if (object_property_toggle(toggled, name)) {
+      function lambda(e) {
+        app_code_refresh_function_node_identifier_add_generic_style_selected(e);
+      }
       let visitor = js_visit_find(ast, identifier);
       map_set(selected, identifier, {
         visitor,
@@ -82,9 +85,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
               }
               e = html_element_wrap(e);
               if (html_data_has(e, fn_name("app_code_section"))) {
-                app_code_refresh_function_node_identifier_add_generic_style_selected(
-                  e,
-                );
+                lambda(e);
               }
             }
           });
