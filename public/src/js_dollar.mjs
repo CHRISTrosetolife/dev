@@ -1,3 +1,4 @@
+import { list_find_last_index } from "./list_find_last_index.mjs";
 import { list_index_is } from "./list_index_is.mjs";
 import { list_get } from "./list_get.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
@@ -316,7 +317,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "v") {
         let { stack } = v;
-        list_find_last(stack, function (n) {
+        let statement_index = list_find_last_index(stack, function (n) {
           let v4 = js_node_type_is(n, "ExpressionStatement");
           return v4;
         });
