@@ -84,7 +84,7 @@ export function js_dollar(ast) {
       let question_prefix = "q";
       let scm_prefix = "s";
       let sermon_prefix = "se";
-      let log_prefix_start = "l";
+      let log_prefix_start = "L";
       let get_prefix = "g";
       let log_prefix = string_trail_dollar(log_prefix_start);
       let prefixes = [
