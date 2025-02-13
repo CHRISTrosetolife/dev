@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { map_size } from "./map_size.mjs";
 import { html_node_text_is } from "./html_node_text_is.mjs";
 import { html_element_wrap } from "./html_element_wrap.mjs";
@@ -47,7 +46,6 @@ export function app_code_refresh_function_node_identifier_add_generic(
     if (object_property_toggle(toggled, name)) {
       if (map_size(selected) >= 3) {
         let v3;
-        log("here");
         return v3;
       }
       parents(
@@ -60,8 +58,8 @@ export function app_code_refresh_function_node_identifier_add_generic(
     }
     each(id_list, function (i) {
       object_property_get(toggled, name)
-        ? html_style_background_color_transparent(i)
-        : html_style_background_color(i, "#4c1406");
+        ? html_style_background_color(i, "#4c1406")
+        : html_style_background_color_transparent(i);
     });
   });
   function parents(selected, styling) {
