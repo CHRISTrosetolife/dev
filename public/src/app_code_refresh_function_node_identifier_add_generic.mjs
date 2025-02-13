@@ -1,3 +1,4 @@
+import { tautology } from "./tautology.mjs";
 import { html_child_nodes } from "./html_child_nodes.mjs";
 import { html_element_get } from "./html_element_get.mjs";
 import { app_code_refresh_function_node_nodes } from "./app_code_refresh_function_node_nodes.mjs";
@@ -74,7 +75,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
                 let v2 = cs;
                 return v2;
               },
-              always,
+              tautology,
             );
           });
         }
