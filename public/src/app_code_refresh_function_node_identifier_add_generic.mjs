@@ -60,7 +60,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       map_remove(selected, identifier);
     }
     let display_block = 1 <= selected_size && selected_size <= 2;
-    html_style_display_block_or_none();
+    html_style_display_block_or_none(button_bottom, display_block);
     each(id_list, function (i) {
       object_property_get(toggled, name)
         ? html_style_background_color(i, "#4c1406")
