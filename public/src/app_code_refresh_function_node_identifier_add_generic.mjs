@@ -1,4 +1,4 @@
-import { html_style_display_none } from "./html_style_display_none.mjs";
+import { html_style_display_block_or_none } from "./html_style_display_block_or_none.mjs";
 import { map_size } from "./map_size.mjs";
 import { html_node_text_is } from "./html_node_text_is.mjs";
 import { html_element_wrap } from "./html_element_wrap.mjs";
@@ -29,7 +29,6 @@ import { object_property_get } from "./object_property_get.mjs";
 import { map_properties } from "./map_properties.mjs";
 import { map_get } from "./map_get.mjs";
 import { list_is } from "./list_is.mjs";
-import { html_style_display_block } from "./html_style_display_block.mjs";
 export function app_code_refresh_function_node_identifier_add_generic(
   args,
   identifier,
@@ -61,11 +60,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       map_remove(selected, identifier);
     }
     let display_block = 1 <= selected_size && selected_size <= 2;
-    if (display_block) {
-      html_style_display_block(button_bottom);
-    } else {
-      html_style_display_none(button_bottom);
-    }
+    html_style_display_block_or_none();
     each(id_list, function (i) {
       object_property_get(toggled, name)
         ? html_style_background_color(i, "#4c1406")
