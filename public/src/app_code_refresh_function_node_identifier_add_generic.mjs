@@ -11,17 +11,17 @@ import { object_property_get } from "./object_property_get.mjs";
 export function app_code_refresh_function_node_identifier_add_generic(
   args,
   identifier,
-  i,
+  component,
 ) {
   let name = object_property_get(identifier, "name");
   let data = object_property_get(args, "data");
   let ids = object_property_initialize(data, "identifiers", []);
   let id_list = object_property_initialize(ids, name, []);
-  list_add(id_list, i);
+  list_add(id_list, component);
   let toggled = object_property_initialize(data, "toggled", {});
   object_property_set(toggled, name, false);
   let ast = object_property_get(args, "ast");
-  html_on_click(i, () => {
+  html_on_click(component, () => {
     each(id_list, (i) =>
       object_property_get(toggled, name)
         ? html_style_background_color_transparent(i)
