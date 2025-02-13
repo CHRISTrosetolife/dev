@@ -35,6 +35,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
 ) {
   let name = object_property_get(identifier, "name");
   let data = object_property_get(args, "data");
+  let button_bottom = object_property_get(args, "button_bottom");
   let ids = object_property_initialize(data, "identifiers", []);
   let id_list = object_property_initialize(ids, name, []);
   list_add(id_list, component);
