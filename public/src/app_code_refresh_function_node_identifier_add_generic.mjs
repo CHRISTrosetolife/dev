@@ -44,7 +44,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
     each(id_list, function (i) {
       object_property_get(toggled, name)
         ? html_style_background_color_transparent(i)
-        : html_style_background_color(i, "#6a1805");
+        : html_style_background_color(i, "#4c1406");
     });
     let selected = object_property_initialize(data, "selected", map_new());
     if (object_property_toggle(toggled, name)) {
