@@ -15,6 +15,7 @@ import { fn_name } from "./fn_name.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { html_load } from "./html_load.mjs";
 import { html_div } from "./html_div.mjs";
+import { html_style_display_none } from "./html_style_display_none.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async function () {
     let root = app_code_screen_set(
@@ -54,6 +55,7 @@ export async function app_code_refresh_function(context) {
       bottom: 0,
       position: "sticky",
     });
+    html_style_display_none(button_bottom);
     app_code_refresh_function_node({
       parent: container,
       node: ast,
