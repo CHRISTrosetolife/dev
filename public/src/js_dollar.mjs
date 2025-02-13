@@ -1,3 +1,4 @@
+import { list_last } from "./list_last.mjs";
 import { list_before } from "./list_before.mjs";
 import { list_find_last_index } from "./list_find_last_index.mjs";
 import { list_get } from "./list_get.mjs";
@@ -327,6 +328,7 @@ export function js_dollar(ast) {
         let before = list_before(list, statement);
         if (js_node_type_is(before, "VariableDeclaration")) {
           let declarations = object_property_get(before, "declarations");
+          list_last(declarations);
         }
       }
       if (prefix_use(remaining, objection_prefix, prefixes)) {
