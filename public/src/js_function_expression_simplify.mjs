@@ -1,3 +1,5 @@
+import { object_replace } from "./object_replace.mjs";
+import { list_equal } from "./list_equal.mjs";
 import { list_map_property_name } from "./list_map_property_name.mjs";
 import { assert_list } from "./assert_list.mjs";
 import { js_node_type_identifier_is } from "./js_node_type_identifier_is.mjs";
@@ -26,12 +28,13 @@ export function js_function_expression_simplify(ast) {
       if (js_node_type_is(f, "ExpressionStatement")) {
         let expression = object_property_get(f, "expression");
         if (js_node_type_is(expression, "CallExpression")) {
-          let callee = object_property_get(expression, "callee");
           let arguments2 = object_property_get(expression, "arguments");
           if (list_all(arguments2, js_node_type_identifier_is)) {
             let names_params = list_map_property_name(params);
             let names_arguments2 = list_map_property_name(arguments2);
-            if (false) {
+            if (list_equal(names_params, names_arguments2)) {
+              let callee = object_property_get(expression, "callee");
+              object_replace(node, callee);
             }
           }
         }
