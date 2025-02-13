@@ -1,3 +1,4 @@
+import { html_style_display_none } from "./html_style_display_none.mjs";
 import { map_size } from "./map_size.mjs";
 import { html_node_text_is } from "./html_node_text_is.mjs";
 import { html_element_wrap } from "./html_element_wrap.mjs";
@@ -62,6 +63,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
     if (1 <= selected_size && selected_size <= 2) {
       html_style_display_block(button_bottom);
     } else {
+      html_style_display_none(button_bottom);
     }
     each(id_list, function (i) {
       object_property_get(toggled, name)
