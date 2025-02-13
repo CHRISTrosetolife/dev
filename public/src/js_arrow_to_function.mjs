@@ -11,7 +11,7 @@ export function js_arrow_to_function(ast) {
     object_property_set(node, "type", "FunctionExpression");
     let body = object_property_get(node, "body");
     if (!js_node_type_is(body, "BlockStatement")) {
-      let wrapped = js_block_statement(object_copy_shallow(body));
+      let wrapped = js_block_statement([object_copy_shallow(body)]);
       object_replace(body, wrapped);
     }
   });
