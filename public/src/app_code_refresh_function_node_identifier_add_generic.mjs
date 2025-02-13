@@ -71,6 +71,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       if (last_matching_index !== null) {
         last_matching_item = list_get(first, last_matching_index);
       } else {
+        last_matching_item = null;
       }
     } else {
       map_remove(selected, identifier);
