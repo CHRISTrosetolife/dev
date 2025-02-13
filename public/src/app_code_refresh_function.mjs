@@ -47,10 +47,10 @@ export async function app_code_refresh_function(context) {
     html_style_background_color_black(container);
     html_style_rounded_padded(container);
     html_style_monospace(container);
-    let b2 = html_button(root, "bottom menu", function () {
+    let button_bottom = html_button(root, "bottom menu", function () {
       app_code_refresh_function_menu(context);
     });
-    html_style(b2, {
+    html_style(button_bottom, {
       bottom: 0,
       position: "sticky",
     });
@@ -59,6 +59,7 @@ export async function app_code_refresh_function(context) {
       node: ast,
       data: {},
       ast,
+      button_bottom,
     });
   });
 }
