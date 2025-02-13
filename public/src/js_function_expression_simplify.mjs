@@ -1,5 +1,5 @@
+import { assert_multiple } from "./assert_multiple.mjs";
 import { js_node_type_identifier_is } from "./js_node_type_identifier_is.mjs";
-import { each } from "./each.mjs";
 import { log } from "./log.mjs";
 import { js_node_type_statement_block_is } from "./js_node_type_statement_block_is.mjs";
 import { assert } from "./assert.mjs";
@@ -16,9 +16,7 @@ export function js_function_expression_simplify(ast) {
     });
     let params = object_property_get(node, "params");
     let fn = js_node_type_identifier_is;
-    each(params, (param) => {
-      assert(js_node_type_identifier_is, [param]);
-    });
+    assert_multiple(params, fn);
     let body = object_property_get(node, "body");
     assert(js_node_type_statement_block_is, [body]);
     let body2 = object_property_get(body, "body");
