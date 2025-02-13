@@ -21,6 +21,6 @@ export function function_auto_transforms() {
     js_assign_to_let,
     js_await_add,
     js_outside_move,
-    js_imports_fix,
+    js_imports_fix,js_arrow_to_function,js_return_variablize
   ];
 }
