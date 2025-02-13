@@ -1,3 +1,4 @@
+import { never } from "./never.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { list_skip } from "./list_skip.mjs";
@@ -75,12 +76,12 @@ import { equal } from "./equal.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
 import { assert } from "./assert.mjs";
 export function js_dollar(ast) {
-  js_visit_identifiers(ast, async (v) => {
+  js_visit_identifiers(ast, async function (v) {
     let { node } = v;
     let { name } = node;
     let prefix = "$";
     if (string_starts_with(name, prefix)) {
-        name = string_case_lower(name);
+      name = string_case_lower(name);
       let { parent } = v;
       let lambda_prefix = "a";
       let objection_prefix = "o";
@@ -210,7 +211,7 @@ export function js_dollar(ast) {
             if (js_node_type_is(id, "Identifier")) {
               let name_id = object_property_get(id, "name");
               let { init } = d;
-              js_visit_identifiers_named(ast, name_id, (node) => {
+              js_visit_identifiers_named(ast, name_id, function (node) {
                 object_copy_replace(node, init);
               });
               list_remove_multiple(s1, [parent, next]);
@@ -226,7 +227,7 @@ export function js_dollar(ast) {
             let e = object_property_get(next, "expression");
             await js_dollar_expand_await(e, ast, null, a, parent);
           }
-          await js_node_if_declaration(next, async (d) => {
+          await js_node_if_declaration(next, async function (d) {
             let { init, id } = d;
             await js_dollar_expand_await(init, ast, id, a, parent);
           });
@@ -305,6 +306,15 @@ export function js_dollar(ast) {
             js_code_array_empty(),
           ]),
         );
+        if (list_is(parent)) {
+          let index = list_index(parent, node);
+          let next = list_remove_at(parent, index + 1);
+          list_add(list_first(e.arguments).elements, next);
+          object_replace(node, e);
+        }
+      }
+      if (remaining === "v") {
+        assert(never, []);
         if (list_is(parent)) {
           let index = list_index(parent, node);
           let next = list_remove_at(parent, index + 1);
@@ -423,10 +433,10 @@ export function js_dollar(ast) {
         let s = string_split_dollar(remaining);
         let fr = list_first_remaining(s);
         let variable_name = object_property_get(fr, "first");
-        assert(string_empty_not_is,[variable_name])
+        assert(string_empty_not_is, [variable_name]);
         let property_names = object_property_get(fr, "remaining");
         list_reverse(property_names);
-        let mapped = list_map(property_names, (property_name) => {
+        let mapped = list_map(property_names, function (property_name) {
           let c = js_code_statement_let_assign(
             js_name_unique(ast, property_name),
             object_property_get_code(
@@ -437,9 +447,9 @@ export function js_dollar(ast) {
           let r = js_parse_first(c);
           return r;
         });
-        await js_dollar_grandparent(v, (a) => {
+        await js_dollar_grandparent(v, function (a) {
           let { index, s1 } = a;
-          each(mapped, (m) => {
+          each(mapped, function (m) {
             list_insert(s1, index, m);
           });
           list_remove(s1, parent);
@@ -497,7 +507,7 @@ export function js_dollar(ast) {
             if (!number_is(count)) {
               count = list_index_last(parent) - index;
             }
-            each_range(count, () => {
+            each_range(count, function () {
               let removed = list_remove_at(parent, next_index);
               list_add(es, removed);
             });
@@ -526,13 +536,13 @@ export function js_dollar(ast) {
   }
   function prefix_use(remaining, prefix, prefixes) {
     let p1 = string_starts_with(remaining, prefix);
-    return (
+    let v2 =
       p1 &&
-      list_all(
-        prefixes,
-        (p) =>
-          !string_starts_with(remaining, p) || string_starts_with(prefix, p),
-      )
-    );
+      list_all(prefixes, function (p) {
+        let v3 =
+          !string_starts_with(remaining, p) || string_starts_with(prefix, p);
+        return v3;
+      });
+    return v2;
   }
 }
