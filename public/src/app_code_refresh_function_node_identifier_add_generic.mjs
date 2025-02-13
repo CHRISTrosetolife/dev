@@ -18,6 +18,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { map_properties } from "./map_properties.mjs";
 import { map_get } from "./map_get.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
+import { list_is } from "./list_is.mjs";
 export function app_code_refresh_function_node_identifier_add_generic(
   args,
   identifier,
@@ -73,7 +74,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       } else {
         last_matching_item = null;
       }
-      if (false) {
+      if (list_is(last_matching_item)) {
       }
     } else {
       map_remove(selected, identifier);
