@@ -1,3 +1,3 @@
-export function map_remove(identifier) {
-  selected.delete(identifier);
+export function map_remove(map, item) {
+  map.delete(item);
 }
