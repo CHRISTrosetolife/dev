@@ -325,7 +325,7 @@ export function js_dollar(ast) {
         let statement_index_previous = statement_index - 1;
         let list = list_get(stack, statement_index_previous);
         let before = list_before(list, statement);
-        if (false) {
+        if (js_node_type_is(before, "VariableDeclaration")) {
         }
       }
       if (prefix_use(remaining, objection_prefix, prefixes)) {
