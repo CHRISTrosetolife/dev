@@ -13,6 +13,7 @@ export function html_visit(element, lambda) {
     tautology,
     function (v) {
       let node = object_property_get(v, "node");
+      lambda(node);
     },
     [],
   );
