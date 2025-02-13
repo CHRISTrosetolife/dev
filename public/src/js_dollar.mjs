@@ -325,18 +325,18 @@ export function js_dollar(ast) {
           remaining = string_prefix_without(remaining, first_second);
           let { stack } = v;
           let s1 = list_get_end(stack, 1);
-          if (false) {
+          if (list_is(s1)) {
+            list_insert(
+              s1,
+              index,
+              js_code_statement_let_assign(
+                js_name_unique(ast, "first"),
+                js_code_call_args(fn_name("list_first"), [
+                  js_code_array([remaining]),
+                ]),
+              ),
+            );
           }
-          list_insert(
-            s1,
-            index,
-            js_code_statement_let_assign(
-              js_name_unique(ast, "first"),
-              js_code_call_args(fn_name("list_first"), [
-                js_code_array([remaining]),
-              ]),
-            ),
-          );
         }
       }
       if (remaining === "v") {
