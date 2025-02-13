@@ -16,13 +16,13 @@ import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { html_load } from "./html_load.mjs";
 import { html_div } from "./html_div.mjs";
 export async function app_code_refresh_function(context) {
-  await html_load(async () => {
+  await html_load(async function () {
     let root = app_code_screen_set(
       context,
       fn_name("app_code_refresh_function"),
     );
     html_style_left(root);
-    let b = html_button(root, "Function menu", () => {
+    let b = html_button(root, "Function menu", function () {
       app_code_refresh_function_menu(context);
     });
     html_style(b, {
@@ -52,6 +52,10 @@ export async function app_code_refresh_function(context) {
       node: ast,
       data: {},
       ast,
+    });
+    html_style(button_back(), {
+      top: 0,
+      position: "sticky",
     });
   });
 }
