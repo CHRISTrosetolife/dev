@@ -1,3 +1,4 @@
+import { js_code_array } from "./js_code_array.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { list_last } from "./list_last.mjs";
 import { list_before } from "./list_before.mjs";
@@ -324,9 +325,7 @@ export function js_dollar(ast) {
           remaining = string_prefix_without(remaining, first_second);
           let { stack } = v;
           let s1 = list_get_end(stack, 1);
-          js_code_call_args(fn_name("list_random_item"), [
-            js_code_array_empty(),
-          ]);
+          js_code_call_args(fn_name("list_random_item"), [js_code_array()]);
           list_insert(s1, index, m);
         }
       }
