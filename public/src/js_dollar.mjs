@@ -325,7 +325,7 @@ export function js_dollar(ast) {
         let statement = list_get(stack, statement_index);
         let statement_index_previous = statement_index - 1;
         let list = list_get(stack, statement_index_previous);
-        list_before();
+        list_before(list, statement);
         assert(list_is, [list]);
         if (list_index_is(statement_index_previous)) {
           let previous = list_get(parent, index_previous);
