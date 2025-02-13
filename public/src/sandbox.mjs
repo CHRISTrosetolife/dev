@@ -1,3 +1,4 @@
+import { github_username } from "./github_username.mjs";
 import { js_code_statement } from "./js_code_statement.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
@@ -5,7 +6,6 @@ import { js_code_import_path } from "./js_code_import_path.mjs";
 import { folder_current } from "./folder_current.mjs";
 import { app_html_generate_import_path } from "./app_html_generate_import_path.mjs";
 import { html_parse_append } from "./html_parse_append.mjs";
-import { repository_name } from "./repository_name.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_html_generate_global } from "./app_html_generate_global.mjs";
@@ -32,7 +32,7 @@ export async function sandbox() {
       list_join_newline([
         string_combine_multiple([
           '<script id="',
-          string_combine_multiple([repository_name(), "_global"]),
+          string_combine_multiple([github_username(), "_global"]),
           '">',
         ]),
         app_html_generate_global(),
@@ -43,7 +43,7 @@ export async function sandbox() {
     let lines = [
       string_combine_multiple([
         '<script type="module" id="',
-        string_combine_multiple([repository_name(), "_app"]),
+        string_combine_multiple([github_username(), "_app"]),
         '">',
       ]),
       js_code_import_path(import_path, fn_name("app_load")),
