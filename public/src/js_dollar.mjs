@@ -80,6 +80,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { equal } from "./equal.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
 import { assert } from "./assert.mjs";
+import { list_map_property } from "./list_map_property.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, async function (v) {
     let { node } = v;
@@ -330,12 +331,13 @@ export function js_dollar(ast) {
         let before = list_before(list, statement);
         if (js_node_type_is(before, "VariableDeclaration")) {
           let declarations = object_property_get(before, "declarations");
-          let fs = list_filter(declarations, function (d) {
-            let id2 = object_property_get(d, "id");
+          let ms = list_map_property(declarations, "id");
+          let fs = list_filter(ms, function (id2) {
             let v5 = js_node_type_is(id2, "Identifier");
             return v5;
           });
           let d = list_last(fs);
+          let name2 = object_property_get(d, "name");
           log({
             d,
           });
