@@ -1,5 +1,4 @@
-import { tautology } from "./tautology.mjs";
-import { html_child_nodes } from "./html_child_nodes.mjs";
+import { html_visit } from "./html_visit.mjs";
 import { html_element_get } from "./html_element_get.mjs";
 import { app_code_refresh_function_node_nodes } from "./app_code_refresh_function_node_nodes.mjs";
 import { list_get } from "./list_get.mjs";
@@ -23,7 +22,6 @@ import { object_property_get } from "./object_property_get.mjs";
 import { map_properties } from "./map_properties.mjs";
 import { map_get } from "./map_get.mjs";
 import { list_is } from "./list_is.mjs";
-import { visit } from "./visit.mjs";
 export function app_code_refresh_function_node_identifier_add_generic(
   args,
   identifier,
@@ -68,17 +66,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
             let parent = object_property_get(m, "parent");
             html_style_background_color(parent, "DarkSlateGray");
             let element = html_element_get(parent);
-            visit(
-              element,
-              function (p) {
-                let cs = html_child_nodes(p);
-                let v2 = cs;
-                return v2;
-              },
-              tautology,
-              lambda,
-              [],
-            );
+            html_visit(element, lambda);
             function lambda() {}
           });
         }
