@@ -49,7 +49,9 @@ export function app_code_refresh_function_node_identifier_add_generic(
         return stack2;
       });
       let f = list_first(values);
-      each_index(list, function (item, index) {});
+      each_index(f, function (item, index) {
+        list_skip_1();
+      });
       log({
         values,
       });
