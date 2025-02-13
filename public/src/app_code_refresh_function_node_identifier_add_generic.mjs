@@ -1,6 +1,5 @@
 import { list_skip } from "./list_skip.mjs";
 import { each_index } from "./each_index.mjs";
-import { list_first } from "./list_first.mjs";
 import { list_map } from "./list_map.mjs";
 import { log } from "./log.mjs";
 import { map_remove } from "./map_remove.mjs";
@@ -18,6 +17,7 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { map_properties } from "./map_properties.mjs";
 import { map_get } from "./map_get.mjs";
+import { list_first_remaining } from "./list_first_remaining.mjs";
 export function app_code_refresh_function_node_identifier_add_generic(
   args,
   identifier,
@@ -49,9 +49,11 @@ export function app_code_refresh_function_node_identifier_add_generic(
         let stack2 = object_property_get(visitor2, "stack");
         return stack2;
       });
-      let f = list_first(values);
+      let fr = list_first_remaining(values);
+      let first = object_property_get(fr, "first");
+      let remaining = object_property_get(fr, "remaining");
       each_index(f, function (item, index) {
-        list_skip();
+        list_skip(value);
       });
       log({
         values,
