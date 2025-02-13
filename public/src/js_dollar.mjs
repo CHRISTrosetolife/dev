@@ -321,7 +321,7 @@ export function js_dollar(ast) {
         }
       }
       let first_second = "fs";
-      if (remaining === first_second) {
+      if (string_starts_with(remaining, first_second)) {
         if (parent.type === "ExpressionStatement") {
           remaining = string_prefix_without(remaining, first_second);
           let { stack } = v;
