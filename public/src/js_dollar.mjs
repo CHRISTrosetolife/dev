@@ -1,3 +1,4 @@
+import { list_filter } from "./list_filter.mjs";
 import { log } from "./log.mjs";
 import { list_last } from "./list_last.mjs";
 import { list_before } from "./list_before.mjs";
@@ -329,6 +330,7 @@ export function js_dollar(ast) {
         let before = list_before(list, statement);
         if (js_node_type_is(before, "VariableDeclaration")) {
           let declarations = object_property_get(before, "declarations");
+          let fs = list_filter(declarations, function (d) {});
           let d = list_last(declarations);
           log({
             d,
