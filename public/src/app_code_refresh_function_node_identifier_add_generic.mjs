@@ -62,7 +62,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
             let next = list_get(v, index_next);
             let m = map_get(nodes, next);
             let parent = object_property_get(m, "parent");
-            html_style_background_color(parent, "Maroon");
+            html_style_background_color(parent, "DarkSlateGray");
           });
         }
       }
