@@ -1,3 +1,4 @@
+import { html_data_has } from "./html_data_has.mjs";
 import { html_visit } from "./html_visit.mjs";
 import { html_element_get } from "./html_element_get.mjs";
 import { app_code_refresh_function_node_nodes } from "./app_code_refresh_function_node_nodes.mjs";
@@ -67,7 +68,9 @@ export function app_code_refresh_function_node_identifier_add_generic(
             html_style_background_color(parent, "DarkSlateGray");
             let element = html_element_get(parent);
             html_visit(element, lambda);
-            function lambda() {}
+            function lambda(e) {
+              html_data_has();
+            }
           });
         }
       }
