@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { js_declaration_single } from "./js_declaration_single.mjs";
 import { app_new_generic } from "./app_new_generic.mjs";
 import { list_join_semicolon } from "./list_join_semicolon.mjs";
@@ -17,8 +18,7 @@ export async function app_new_existing(a) {
   js_identifier_rename(ast, a, a_new);
   todo("this should also rename", fn_name);
   let d = js_declaration_single(ast);
-  let v2 = d;
-  return v2;
+  let async = object_property_get(d, "async");
   let body = js_declaration_single_body(ast);
   let lines = list_map(body, js_unparse);
   let body_string = list_join_semicolon(lines);
