@@ -1,4 +1,4 @@
-import { each_map } from "./each_map.mjs";
+import { each_map_value } from "./each_map_value.mjs";
 import { map_remove } from "./map_remove.mjs";
 import { map_set } from "./map_set.mjs";
 import { map_new } from "./map_new.mjs";
@@ -37,9 +37,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       map_set(selected, identifier, {
         visitor,
       });
-      each_map(selected, (component2, value) => {
-        let selected2 = object_property_get(value, "selected");
-      });
+      each_map_value(selected, each_lambda);
     } else {
       map_remove(selected, identifier);
     }
