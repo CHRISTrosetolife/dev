@@ -47,7 +47,7 @@ export function app_code_refresh_function_node(args) {
   let { parent, node } = args;
   parent = html_div(parent);
   html_style(parent, {
-    display: "inline",
+    display: "inline-block",
   });
   object_property_set(args, "parent", parent);
   let nodes = app_code_refresh_function_node_nodes(args);
