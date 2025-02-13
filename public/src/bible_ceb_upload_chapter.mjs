@@ -22,14 +22,13 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
   let mapped = list_map(tokens_all, bible_word_map);
   let unique = list_unique(mapped);
   let filtered = list_filter(unique, null_not_is);
-  let definitions = await list_to_lookup_value_async(filtered, async (u) => {
-    let d2 = await ceb_definition_2(u);
-    let word_definitions = object_property_initialize(d2, u, []);
-    let d = await definition_bohol(u, "Cebuano", "English");
+  let definitions = await list_to_lookup_value_async(filtered, async (word) => {
+    let result = await ceb_definition_2(word);
+    let word_definitions = object_property_initialize(result, word, []);
+    let d = await definition_bohol(word, "Cebuano", "English");
     let mapped2 = list_map(d, list_first);
     list_add_multiple(word_definitions, mapped2);
     list_uniqueify(word_definitions);
-    let result = d2;
     return result;
   });
   await bible_storage_version_upload(
