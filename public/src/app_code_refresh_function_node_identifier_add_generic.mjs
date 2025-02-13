@@ -67,7 +67,8 @@ export function app_code_refresh_function_node_identifier_add_generic(
           return v3;
         }
       });
-      if (false) {
+      if (last_matching_index !== null) {
+        let last_matching_item = list_get(list, index2);
       }
     } else {
       map_remove(selected, identifier);
