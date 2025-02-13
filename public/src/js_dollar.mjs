@@ -323,9 +323,7 @@ export function js_dollar(ast) {
         });
         let statement_index_previous = statement_index - 1;
         let list = list_get(stack, statement_index_previous);
-        assert(list_is, [parent]);
-        let index = list_index(parent, node);
-        let index_previous = index - 1;
+        assert(list_is, [list]);
         if (list_index_is(statement_index_previous)) {
           let previous = list_get(parent, index_previous);
         }
