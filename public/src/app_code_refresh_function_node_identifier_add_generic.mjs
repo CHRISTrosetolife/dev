@@ -47,7 +47,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
         let stack2 = object_property_get(visitor2, "stack");
         return stack2;
       });
-      let f = list_first();
+      let f = list_first(values);
       log({
         values,
       });
