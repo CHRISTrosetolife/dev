@@ -339,7 +339,7 @@ export function js_dollar(ast) {
           let d = list_last(fs);
           let name2 = object_property_get(d, "name");
           log({
-            d,
+            name2,
           });
         }
       }
