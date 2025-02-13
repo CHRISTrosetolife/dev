@@ -4,6 +4,7 @@ import { app_identifier } from "./app_identifier.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
 import { app_html_generate } from "./app_html_generate.mjs";
 export async function app_new(name) {
+  let body_string = "let root = html_style_default_initialize();";
   await app_html_generate(name);
   await app_html_generate_dev(name);
   let name_prefixed = app_identifier(name);
@@ -11,7 +12,7 @@ export async function app_new(name) {
   await function_new_generic(
     name_prefixed,
     "",
-    "let root = html_style_default_initialize();",
+    body_string,
     open,
     [],
     false,
