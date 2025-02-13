@@ -1,3 +1,5 @@
+import { list_first } from "./list_first.mjs";
+import { list_second } from "./list_second.mjs";
 import { list_size_2 } from "./list_size_2.mjs";
 import { list_last_match } from "./list_last_match.mjs";
 import { list_map } from "./list_map.mjs";
@@ -52,7 +54,8 @@ export function app_code_refresh_function_node_identifier_add_generic(
       let last_matching_item = list_last_match(values);
       if (list_is(last_matching_item)) {
         if (list_size_2(values)) {
-          $fsvalues;
+          let second = list_second([values]);
+          let first = list_first([values]);
         }
       }
     } else {
