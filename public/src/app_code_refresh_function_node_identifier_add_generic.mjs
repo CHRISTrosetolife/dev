@@ -47,7 +47,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
     if (object_property_toggle(toggled, name)) {
       if (map_size(selected) >= 3) {
         let v3;
-        log("");
+        log("here");
         return v3;
       }
       parents(
