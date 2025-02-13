@@ -1,4 +1,4 @@
-import { log } from "./log.mjs";
+import { list_reverse } from "./list_reverse.mjs";
 import { list_skip } from "./list_skip.mjs";
 import { js_code_arrow_block_args_choose } from "./js_code_arrow_block_args_choose.mjs";
 import { string_trail_dollar } from "./string_trail_dollar.mjs";
@@ -421,6 +421,7 @@ export function js_dollar(ast) {
         let fr = list_first_remaining(s);
         let variable_name = object_property_get(fr, "first");
         let property_names = object_property_get(fr, "remaining");
+        list_reverse(property_names);
         let mapped = list_map(property_names, (property_name) => {
           let c = js_code_statement_let_assign(
             js_name_unique(ast, property_name),
@@ -449,7 +450,7 @@ export function js_dollar(ast) {
           let arg;
           if (log_prefix_start_is) {
             inside = "";
-            arg = ('""');
+            arg = '""';
           } else {
             remaining = string_prefix_without(remaining, log_prefix);
             inside = remaining;
