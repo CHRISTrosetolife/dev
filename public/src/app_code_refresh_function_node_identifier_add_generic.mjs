@@ -49,12 +49,12 @@ export function app_code_refresh_function_node_identifier_add_generic(
     });
     let selected = object_property_initialize(data, "selected", map_new());
     if (object_property_toggle(toggled, name)) {
-      if (map_size(selected) > 2) {
+      if (map_size(selected) <= 2) {
+        parents(
+          selected,
+          app_code_refresh_function_node_identifier_add_generic_style_selected,
+        );
       }
-      parents(
-        selected,
-        app_code_refresh_function_node_identifier_add_generic_style_selected,
-      );
     } else {
       parents(selected, html_style_background_color_transparent);
       map_remove(selected, identifier);
