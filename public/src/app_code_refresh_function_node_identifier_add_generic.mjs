@@ -28,6 +28,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { map_properties } from "./map_properties.mjs";
 import { map_get } from "./map_get.mjs";
 import { list_is } from "./list_is.mjs";
+import { html_style_display_block } from "./html_style_display_block.mjs";
 export function app_code_refresh_function_node_identifier_add_generic(
   args,
   identifier,
@@ -44,8 +45,9 @@ export function app_code_refresh_function_node_identifier_add_generic(
   let ast = object_property_get(args, "ast");
   html_on_click(component, function () {
     let selected = object_property_initialize(data, "selected", map_new());
+    let selected_size = map_size(selected);
     if (object_property_toggle(toggled, name)) {
-      if (map_size(selected) >= 2) {
+      if (selected_size >= 2) {
         let v3;
         return v3;
       }
@@ -57,7 +59,9 @@ export function app_code_refresh_function_node_identifier_add_generic(
       parents(selected, html_style_background_color_transparent);
       map_remove(selected, identifier);
     }
-    if (false) {
+    if (1 <= selected_size && selected_size <= 2) {
+      html_style_display_block(button_bottom);
+    } else {
     }
     each(id_list, function (i) {
       object_property_get(toggled, name)
