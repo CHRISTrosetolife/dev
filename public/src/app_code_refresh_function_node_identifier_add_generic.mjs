@@ -69,6 +69,8 @@ export function app_code_refresh_function_node_identifier_add_generic(
             let element = html_element_get(parent);
             visit(element, function (p) {
               let cs = html_child_nodes(p);
+              let v2 = cs;
+              return v2;
             });
           });
         }
