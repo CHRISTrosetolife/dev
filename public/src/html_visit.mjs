@@ -10,7 +10,7 @@ export function html_visit(element, lambda) {
       return v2;
     },
     tautology,
-    lambda,
+    function (v) {},
     [],
   );
 }
