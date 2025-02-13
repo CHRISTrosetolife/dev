@@ -1,6 +1,4 @@
-import { list_all } from "./list_all.mjs";
-import { list_get } from "./list_get.mjs";
-import { each_index } from "./each_index.mjs";
+import { list_last_match } from "./list_last_match.mjs";
 import { list_map } from "./list_map.mjs";
 import { map_remove } from "./map_remove.mjs";
 import { map_set } from "./map_set.mjs";
@@ -17,7 +15,6 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { map_properties } from "./map_properties.mjs";
 import { map_get } from "./map_get.mjs";
-import { list_first_remaining } from "./list_first_remaining.mjs";
 import { list_is } from "./list_is.mjs";
 export function app_code_refresh_function_node_identifier_add_generic(
   args,
@@ -51,29 +48,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
         let stack2 = object_property_get(visitor2, "stack");
         return stack2;
       });
-      let fr = list_first_remaining(values);
-      let first = object_property_get(fr, "first");
-      let remaining = object_property_get(fr, "remaining");
-      let last_matching_index = null;
-      each_index(first, function (item, index) {
-        let all_match = list_all(remaining, function (r) {
-          let item2 = list_get(r, index);
-          let v2 = item2 === item;
-          return v2;
-        });
-        if (all_match) {
-          last_matching_index = index;
-        } else {
-          let v3 = true;
-          return v3;
-        }
-      });
-      let last_matching_item;
-      if (last_matching_index !== null) {
-        last_matching_item = list_get(first, last_matching_index);
-      } else {
-        last_matching_item = null;
-      }
+      let last_matching_item = list_last_match(values);
       if (list_is(last_matching_item)) {
       }
     } else {
