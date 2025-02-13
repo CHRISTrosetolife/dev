@@ -48,53 +48,56 @@ export function app_code_refresh_function_node_identifier_add_generic(
     });
     let selected = object_property_initialize(data, "selected", map_new());
     if (object_property_toggle(toggled, name)) {
-      function lambda(e) {
+      function lambda2(e) {
         app_code_refresh_function_node_identifier_add_generic_style_selected(e);
       }
-      let visitor = js_visit_find(ast, identifier);
-      map_set(selected, identifier, {
-        visitor,
-        component,
-      });
-      let values = list_map(map_properties(selected), function (p) {
-        let m = map_get(selected, p);
-        let visitor2 = object_property_get(m, "visitor");
-        let stack2 = object_property_get(visitor2, "stack");
-        return stack2;
-      });
-      let last_matching_item = list_last_match(values);
-      if (list_is(last_matching_item)) {
-        if (list_size_2(values)) {
-          let nodes = app_code_refresh_function_node_nodes(args);
-          list_map(values, function (v) {
-            let index = list_index(v, last_matching_item);
-            let index_next = index + 1;
-            let next = list_get(v, index_next);
-            let m = map_get(nodes, next);
-            let parent = object_property_get(m, "parent");
-            app_code_refresh_function_node_identifier_add_generic_style_selected(
-              parent,
-            );
-            let element = html_element_get(parent);
-            html_visit(element, lambda);
-            function lambda(v) {
-              let e = object_property_get(v, "node");
-              if (html_node_text_is(e)) {
-                let v2;
-                return v2;
-              }
-              e = html_element_wrap(e);
-              if (html_data_has(e, fn_name("app_code_section"))) {
-                lambda(e);
-              }
-            }
-          });
-        }
-      }
+      parents(selected, lambda2);
     } else {
       map_remove(selected, identifier);
     }
   });
+  function parents(selected, lambda2) {
+    let visitor = js_visit_find(ast, identifier);
+    map_set(selected, identifier, {
+      visitor,
+      component,
+    });
+    let values = list_map(map_properties(selected), function (p) {
+      let m = map_get(selected, p);
+      let visitor2 = object_property_get(m, "visitor");
+      let stack2 = object_property_get(visitor2, "stack");
+      return stack2;
+    });
+    let last_matching_item = list_last_match(values);
+    if (list_is(last_matching_item)) {
+      if (list_size_2(values)) {
+        let nodes = app_code_refresh_function_node_nodes(args);
+        list_map(values, function (v) {
+          let index = list_index(v, last_matching_item);
+          let index_next = index + 1;
+          let next = list_get(v, index_next);
+          let m = map_get(nodes, next);
+          let parent = object_property_get(m, "parent");
+          app_code_refresh_function_node_identifier_add_generic_style_selected(
+            parent,
+          );
+          let element = html_element_get(parent);
+          html_visit(element, lambda);
+          function lambda(v) {
+            let e = object_property_get(v, "node");
+            if (html_node_text_is(e)) {
+              let v2;
+              return v2;
+            }
+            e = html_element_wrap(e);
+            if (html_data_has(e, fn_name("app_code_section"))) {
+              lambda2(e);
+            }
+          }
+        });
+      }
+    }
+  }
   function each_lambda(p) {
     p + 1;
   }
