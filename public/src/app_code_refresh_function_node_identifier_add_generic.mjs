@@ -5,8 +5,6 @@ import { map_new } from "./map_new.mjs";
 import { js_visit_find } from "./js_visit_find.mjs";
 import { object_property_toggle } from "./object_property_toggle.mjs";
 import { object_property_set } from "./object_property_set.mjs";
-import { html_style_background_color_transparent } from "./html_style_background_color_transparent.mjs";
-import { html_style_background_color } from "./html_style_background_color.mjs";
 import { each } from "./each.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { list_add } from "./list_add.mjs";
