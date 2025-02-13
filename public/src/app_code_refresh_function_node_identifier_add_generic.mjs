@@ -30,8 +30,8 @@ export function app_code_refresh_function_node_identifier_add_generic(
         ? html_style_background_color_transparent(i)
         : html_style_background_color(i, "darkred"),
     );
+    let selected = object_property_initialize(data, "selected", map_new());
     if (object_property_toggle(toggled, name)) {
-      let selected = object_property_initialize(data, "selected", map_new());
       map_set(selected, identifier, {});
     } else {
       map_remove(selected, identifier);
