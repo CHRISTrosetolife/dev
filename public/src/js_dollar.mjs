@@ -340,6 +340,7 @@ export function js_dollar(ast) {
                 js_code_call_args(fn_name("list_second"), [remaining]),
               ),
             ];
+            list_reverse(codes);
             each(codes, function (item2) {
               list_insert(s1, index, js_parse_first(item2));
             });
