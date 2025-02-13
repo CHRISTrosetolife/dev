@@ -1,3 +1,4 @@
+import { list_get } from "./list_get.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { list_skip } from "./list_skip.mjs";
@@ -315,7 +316,10 @@ export function js_dollar(ast) {
       if (remaining === "v") {
         assert(list_is, [parent]);
         let index = list_index(parent, node);
-        let next = list_remove_at(parent, index + 1);
+        let index_previous = index - 1;
+        if (false) {
+        }
+        let next = list_get(parent, index_previous);
         list_add(list_first(e.arguments).elements, next);
         object_replace(node, e);
       }
