@@ -41,7 +41,6 @@ import { html_div } from "./html_div.mjs";
 import { html_button } from "./html_button.mjs";
 export function app_code_refresh_function_node(args) {
   let { parent, node } = args;
-  let data = object_property_get(args, "data");
   if (js_node_type_is(node, "Program")) {
     let body = object_property_get(node, "body");
     let imports_container = html_div(parent);
