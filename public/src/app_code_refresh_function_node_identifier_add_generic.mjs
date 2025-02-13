@@ -53,7 +53,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       let fr = list_first_remaining(values);
       let first = object_property_get(fr, "first");
       let remaining = object_property_get(fr, "remaining");
-      let last_matching = null;
+      let last_matching_index = null;
       each_index(first, function (item, index) {
         let all_match = list_all(remaining, function (r) {
           let item2 = list_get(r, index);
@@ -61,7 +61,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
           return v2;
         });
         if (all_match) {
-          last_matching = index;
+          last_matching_index = index;
         } else {
           let v3 = true;
           return v3;
