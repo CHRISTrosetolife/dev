@@ -337,7 +337,7 @@ export function js_dollar(ast) {
             return v5;
           });
           let d = list_last(fs);
-          let name2 = object_property_get(d, "name");
+          object_replace(node, d);
           log({
             name2,
           });
