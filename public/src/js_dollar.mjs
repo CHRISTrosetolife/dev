@@ -1,3 +1,4 @@
+import { string_case_lower } from "./string_case_lower.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { list_skip } from "./list_skip.mjs";
 import { js_code_arrow_block_args_choose } from "./js_code_arrow_block_args_choose.mjs";
@@ -76,6 +77,7 @@ export function js_dollar(ast) {
   js_visit_identifiers(ast, async (v) => {
     let { node } = v;
     let { name } = node;
+    name = string_case_lower(name);
     let prefix = "$";
     if (string_starts_with(name, prefix)) {
       let { parent } = v;
