@@ -67,8 +67,10 @@ export function app_code_refresh_function_node_identifier_add_generic(
           return v3;
         }
       });
+      let last_matching_item;
       if (last_matching_index !== null) {
-        let last_matching_item = list_get(list, index2);
+        last_matching_item = list_get(first, last_matching_index);
+      } else {
       }
     } else {
       map_remove(selected, identifier);
