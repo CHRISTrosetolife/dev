@@ -57,7 +57,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
         if (list_size_2(values)) {
           let second = list_second(values);
           let first = list_first(values);
-          list_index(first, last_matching_item);
+          let index = list_index(first, last_matching_item);
         }
       }
     } else {
