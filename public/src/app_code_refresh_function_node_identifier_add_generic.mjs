@@ -1,3 +1,4 @@
+import { html_child_nodes } from "./html_child_nodes.mjs";
 import { html_element_get } from "./html_element_get.mjs";
 import { app_code_refresh_function_node_nodes } from "./app_code_refresh_function_node_nodes.mjs";
 import { list_get } from "./list_get.mjs";
@@ -66,7 +67,9 @@ export function app_code_refresh_function_node_identifier_add_generic(
             let parent = object_property_get(m, "parent");
             html_style_background_color(parent, "DarkSlateGray");
             let element = html_element_get(parent);
-            visit(element, function (p) {});
+            visit(element, function (p) {
+              let cs = html_child_nodes(p);
+            });
           });
         }
       }
