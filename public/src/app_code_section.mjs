@@ -24,7 +24,6 @@ export function app_code_section(args, indent) {
     html_style_flex_1(section);
     list_add_multiple(cs, [left, section]);
   }
-  html_data_set;
   each(cs, function (item) {
     html_data_set(item, fn_name("app_code_section"), "");
   });
