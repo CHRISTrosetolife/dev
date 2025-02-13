@@ -331,26 +331,22 @@ export function js_dollar(ast) {
           });
           if (list_is(s1)) {
             let index = list_index(s1, parent);
-            list_insert(
-              s1,
-              index,
+            let codes = [
               js_code_statement_let_assign(
                 js_name_unique(ast, "first"),
                 js_code_call_args(fn_name("list_first"), [
                   js_code_array([remaining]),
                 ]),
               ),
-            );
-            list_insert(
-              s1,
-              index,
               js_code_statement_let_assign(
                 js_name_unique(ast, "second"),
                 js_code_call_args(fn_name("list_second"), [
                   js_code_array([remaining]),
                 ]),
               ),
-            );
+            ];
+            list_insert(s1, index, c);
+            each(list2, function (item2) {});
             list_remove(s1, parent);
           }
         }
