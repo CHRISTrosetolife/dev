@@ -57,7 +57,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       map_remove(selected, identifier);
     }
   });
-  function parents(selected, lambda2) {
+  function parents(selected, styling) {
     let visitor = js_visit_find(ast, identifier);
     map_set(selected, identifier, {
       visitor,
@@ -79,7 +79,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
           let next = list_get(v, index_next);
           let m = map_get(nodes, next);
           let parent = object_property_get(m, "parent");
-          lambda2(parent);
+          styling(parent);
           let element = html_element_get(parent);
           html_visit(element, lambda);
           function lambda(v) {
@@ -90,7 +90,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
             }
             e = html_element_wrap(e);
             if (html_data_has(e, fn_name("app_code_section"))) {
-              lambda2(e);
+              styling(e);
             }
           }
         });
