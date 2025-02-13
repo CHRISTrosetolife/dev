@@ -54,7 +54,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       let first = object_property_get(fr, "first");
       let remaining = object_property_get(fr, "remaining");
       each_index(first, function (item, index) {
-        list_all(remaining, function (r) {
+        let all_match = list_all(remaining, function (r) {
           let item2 = list_get(r, index);
           let v2 = item2 === item;
           return v2;
