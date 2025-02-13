@@ -111,6 +111,7 @@ export function app_good() {
           "May the whole spirits and souls and bodies of all Christians be kept blameless at the coming of our Lord Jesus Christ",
           "Make every Christian worthy of God's calling",
           "may God fulfill every resolve for good and every work of faith of every Christian by God's power",
+          "Comfort the hearts of every Christian and establish them in every good work and word",
           "Let there be no adultery",
           "Let there be no murder",
           "Let there be no sickness",
