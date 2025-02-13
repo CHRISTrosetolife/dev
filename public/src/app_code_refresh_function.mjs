@@ -1,3 +1,4 @@
+import { html_button_back } from "./html_button_back.mjs";
 import { html_overlay } from "./html_overlay.mjs";
 import { emoji_lightning } from "./emoji_lightning.mjs";
 import { app_code_file_contents } from "./app_code_file_contents.mjs";
@@ -52,6 +53,7 @@ export async function app_code_refresh_function(context) {
     html_style_monospace(container);
     let button_bottom = html_button(root, emoji_lightning(), function () {
       let overlay = html_overlay(fn_name("app_code_refresh_function"));
+      html_button_back(overlay);
     });
     html_style(button_bottom, {
       bottom: 0,
