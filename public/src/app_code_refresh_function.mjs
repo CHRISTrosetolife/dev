@@ -49,9 +49,7 @@ export async function app_code_refresh_function(context) {
     html_style_background_color_black(container);
     html_style_rounded_padded(container);
     html_style_monospace(container);
-    let button_bottom = html_button(root, emoji_lightning(), function () {
-      app_code_refresh_function_menu(context);
-    });
+    let button_bottom = html_button(root, emoji_lightning(), function () {});
     html_style(button_bottom, {
       bottom: 0,
       position: "sticky",
