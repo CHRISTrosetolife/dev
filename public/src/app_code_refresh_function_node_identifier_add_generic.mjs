@@ -39,7 +39,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       map_set(selected, identifier, {
         visitor,
       });
-      each_object_generic(map_properties, map_get, object, lambda);
+      each_object_generic(map_properties, map_get, selected, each_lambda);
     } else {
       map_remove(selected, identifier);
     }
