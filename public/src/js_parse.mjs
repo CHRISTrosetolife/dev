@@ -8,6 +8,7 @@ export function js_parse(code) {
   try {
     return a.parse(code, js_parse_options());
   } catch (e) {
+    $L$code;
     throw e;
   }
 }
