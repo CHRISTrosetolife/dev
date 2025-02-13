@@ -20,6 +20,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { map_properties } from "./map_properties.mjs";
 import { map_get } from "./map_get.mjs";
 import { list_is } from "./list_is.mjs";
+import { visit } from "./visit.mjs";
 export function app_code_refresh_function_node_identifier_add_generic(
   args,
   identifier,
@@ -63,6 +64,8 @@ export function app_code_refresh_function_node_identifier_add_generic(
             let m = map_get(nodes, next);
             let parent = object_property_get(m, "parent");
             html_style_background_color(parent, "DarkSlateGray");
+            let element = object_property_get(parent, "element");
+            visit(parent, function (p) {});
           });
         }
       }
