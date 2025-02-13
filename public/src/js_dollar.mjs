@@ -330,7 +330,9 @@ export function js_dollar(ast) {
         let before = list_before(list, statement);
         if (js_node_type_is(before, "VariableDeclaration")) {
           let declarations = object_property_get(before, "declarations");
-          let fs = list_filter(declarations, function (d) {});
+          let fs = list_filter(declarations, function (d) {
+            let id2 = object_property_get(d, "id");
+          });
           let d = list_last(declarations);
           log({
             d,
