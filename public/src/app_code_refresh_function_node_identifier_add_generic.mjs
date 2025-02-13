@@ -1,3 +1,4 @@
+import { list_get } from "./list_get.mjs";
 import { list_index } from "./list_index.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_second } from "./list_second.mjs";
@@ -59,6 +60,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
           let first = list_first(values);
           let index = list_index(first, last_matching_item);
           let index_next = index + 1;
+          list_get(first, index_next);
         }
       }
     } else {
