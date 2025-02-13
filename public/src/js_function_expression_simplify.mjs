@@ -1,3 +1,4 @@
+import { list_map_property } from "./list_map_property.mjs";
 import { assert_list } from "./assert_list.mjs";
 import { js_node_type_identifier_is } from "./js_node_type_identifier_is.mjs";
 import { log } from "./log.mjs";
@@ -28,6 +29,7 @@ export function js_function_expression_simplify(ast) {
           let callee = object_property_get(expression, "callee");
           let arguments2 = object_property_get(expression, "arguments");
           if (list_all(arguments2, js_node_type_identifier_is)) {
+            let names = list_map_property(arguments2, "name");
           }
         }
       }
