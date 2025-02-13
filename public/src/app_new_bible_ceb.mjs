@@ -5,6 +5,7 @@ import { fn_name } from "./fn_name.mjs";
 import { app_new_generic } from "./app_new_generic.mjs";
 export async function app_new_bible_ceb(name) {
   let ast = await function_parse(fn_name("app_bible_ceb"));
+  let fnns = function_names();
   await function_transform(ast, function (ast) {
     js_identifier_rename();
   });
