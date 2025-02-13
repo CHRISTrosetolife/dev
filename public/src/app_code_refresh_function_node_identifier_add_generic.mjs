@@ -25,12 +25,12 @@ export function app_code_refresh_function_node_identifier_add_generic(
   let toggled = object_property_initialize(data, "toggled", {});
   object_property_set(toggled, name, false);
   let ast = object_property_get(args, "ast");
-  html_on_click(component, function () {
-    each(id_list, function (i) {
+  html_on_click(component, () => {
+    each(id_list, (i) =>
       object_property_get(toggled, name)
         ? html_style_background_color_transparent(i)
-        : html_style_background_color(i, "darkred");
-    });
+        : html_style_background_color(i, "darkred"),
+    );
     let selected = object_property_initialize(data, "selected", map_new());
     if (object_property_toggle(toggled, name)) {
       let visitor = js_visit_find(ast, identifier);
@@ -38,7 +38,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
         visitor,
       });
       let properties = map_properties(selected);
-      each(properties, function (p) {
+      each(properties, (p) => {
         each_lambda(p);
       });
     } else {
