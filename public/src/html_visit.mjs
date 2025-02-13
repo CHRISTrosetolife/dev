@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { tautology } from "./tautology.mjs";
 import { html_child_nodes } from "./html_child_nodes.mjs";
 import { visit } from "./visit.mjs";
@@ -10,7 +11,9 @@ export function html_visit(element, lambda) {
       return v2;
     },
     tautology,
-    function (v) {},
+    function (v) {
+      let node = object_property_get(v, "node");
+    },
     [],
   );
 }
