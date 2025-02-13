@@ -37,7 +37,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       map_set(selected, identifier, {
         visitor,
       });
-      map_properties_each(selected, each_lambda);
+      map_properties_each(selected, (p) => {});
     } else {
       map_remove(selected, identifier);
     }
