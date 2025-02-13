@@ -8,8 +8,8 @@ export function app_good() {
   let body = html_style_default_initialize();
   let morning = "morning";
   let messages = [morning, "night"];
-  each(messages, (message) => {
-    html_button(body, message, () => {
+  each(messages, function (message) {
+    html_button(body, message, function () {
       grace_good_generic_copy(message);
       if (message === morning) {
         html_p_text(
@@ -30,12 +30,14 @@ export function app_good() {
           "Bless the family of love",
           "Bless papa",
           "Bless mama",
+          "Bless brothers",
+          "Bless sister",
           "Bless my family",
-          "Bless dad",
-          "Bless mom",
-          "Bless granddaddy",
-          "Bless grandma",
-          "Bless nana",
+          "Bless Kent",
+          "Bless Merry",
+          "Bless Jess",
+          "Bless Nancy",
+          "Bless Sharon",
           "Bless Thom",
           "Bless Micah",
           "Bless Alexa",
@@ -80,6 +82,7 @@ export function app_good() {
           "Unite the church about bible copyrights",
           "Unite the church about believer-to-believer lawsuits",
           "Unite the church about abortion",
+          "Unite the church about the Bible",
           "Unite Catholics",
           "Unite Eastern Orthodox",
           "Unite Oriental Orthodox",
@@ -99,6 +102,10 @@ export function app_good() {
           "Help me learn Cebuano",
           "Help my muscles grow",
           "Let there be harvest workers",
+          "give Christians the Spirit of wisdom and of revelation in the knowledge of God",
+          "enlightened the eyes of the hearts of Christians Let Christians know what the hope God called us",
+          "Let Christians know the riches of God's glorious inheritance in the saints",
+          "Let Christians know what is the immeasurable greatness of his power toward us who believe",
           "Let there be no adultery",
           "Let there be no murder",
           "Let there be no sickness",
