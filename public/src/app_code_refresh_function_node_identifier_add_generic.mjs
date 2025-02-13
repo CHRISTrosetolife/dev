@@ -67,11 +67,15 @@ export function app_code_refresh_function_node_identifier_add_generic(
             let parent = object_property_get(m, "parent");
             html_style_background_color(parent, "DarkSlateGray");
             let element = html_element_get(parent);
-            visit(element, function (p) {
-              let cs = html_child_nodes(p);
-              let v2 = cs;
-              return v2;
-            });
+            visit(
+              element,
+              function (p) {
+                let cs = html_child_nodes(p);
+                let v2 = cs;
+                return v2;
+              },
+              always,
+            );
           });
         }
       }
