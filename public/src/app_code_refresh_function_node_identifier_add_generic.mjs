@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_index } from "./list_index.mjs";
 import { list_first } from "./list_first.mjs";
@@ -62,6 +63,9 @@ export function app_code_refresh_function_node_identifier_add_generic(
           let index_next = index + 1;
           let first_next = list_get(first, index_next);
           let second_next = list_get(second, index_next);
+          log({
+            first_next$second_next,
+          });
         }
       }
     } else {
