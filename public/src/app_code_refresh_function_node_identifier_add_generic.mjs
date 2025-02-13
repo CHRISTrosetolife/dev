@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { html_data_has } from "./html_data_has.mjs";
 import { html_visit } from "./html_visit.mjs";
 import { html_element_get } from "./html_element_get.mjs";
@@ -69,7 +70,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
             let element = html_element_get(parent);
             html_visit(element, lambda);
             function lambda(e) {
-              html_data_has();
+              html_data_has(fn_name("app_code_section"));
             }
           });
         }
