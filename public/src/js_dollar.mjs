@@ -325,7 +325,7 @@ export function js_dollar(ast) {
           remaining = string_prefix_without(remaining, first_second);
           let { stack } = v;
           let s1 = list_get_end(stack, 1);
-          js_code_call_args(fn_name("list_random_item"), [
+          js_code_call_args(fn_name("list_first"), [
             js_code_array([remaining]),
           ]);
           list_insert(s1, index, m);
