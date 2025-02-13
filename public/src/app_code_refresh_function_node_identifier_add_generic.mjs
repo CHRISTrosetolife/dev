@@ -60,7 +60,8 @@ export function app_code_refresh_function_node_identifier_add_generic(
       parents(selected, html_style_background_color_transparent);
       map_remove(selected, identifier);
     }
-    if (1 <= selected_size && selected_size <= 2) {
+    let display_block = 1 <= selected_size && selected_size <= 2;
+    if (display_block) {
       html_style_display_block(button_bottom);
     } else {
       html_style_display_none(button_bottom);
