@@ -1,3 +1,4 @@
+import { js_function_expression_simplify } from "./js_function_expression_simplify.mjs";
 import { js_fn_name } from "./js_fn_name.mjs";
 import { js_template_to_function } from "./js_template_to_function.mjs";
 import { js_dollar } from "./js_dollar.mjs";
@@ -16,6 +17,7 @@ export function function_auto_transforms() {
     js_dollar,
     js_fn_name,
     js_template_to_function,
+    js_function_expression_simplify,
     js_assert_arguments_length,
     js_if_to_block,
     js_while_to_block,
