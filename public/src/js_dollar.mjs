@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { list_last } from "./list_last.mjs";
 import { list_before } from "./list_before.mjs";
@@ -320,6 +321,10 @@ export function js_dollar(ast) {
       }
       if (remaining === "lfs") {
         if (parent.type === "ExpressionStatement") {
+          let s1 = list_get_end_1(stack);
+          log({
+            s1,
+          });
         }
       }
       if (remaining === "v") {
