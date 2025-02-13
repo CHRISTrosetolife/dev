@@ -1,3 +1,4 @@
+import { bible_storage_path_file_version } from "./bible_storage_path_file_version.mjs";
 import { list_uniqueify } from "./list_uniqueify.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
@@ -31,9 +32,11 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
     list_uniqueify(word_definitions);
     return result;
   });
-  await bible_storage_version_upload(
-    bible_storage_ceb_definitions_path(bible_version, chapter_code),
-    bible_storage_interlinear_chapter_definitions_name(),
-    definitions,
+  let bible_folder = bible_storage_ceb_definitions_path(
+    bible_version,
+    chapter_code,
   );
+  let key = bible_storage_interlinear_chapter_definitions_name();
+  let storage_path = bible_storage_path_file_version(bible_folder, key);
+  await bible_storage_version_upload(bible_folder, key, definitions);
 }
