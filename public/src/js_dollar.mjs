@@ -1,5 +1,4 @@
 import { list_filter } from "./list_filter.mjs";
-import { log } from "./log.mjs";
 import { list_last } from "./list_last.mjs";
 import { list_before } from "./list_before.mjs";
 import { list_find_last_index } from "./list_find_last_index.mjs";
@@ -338,9 +337,6 @@ export function js_dollar(ast) {
           });
           let d = list_last(fs);
           object_replace(node, d);
-          log({
-            name2,
-          });
         }
       }
       if (prefix_use(remaining, objection_prefix, prefixes)) {
