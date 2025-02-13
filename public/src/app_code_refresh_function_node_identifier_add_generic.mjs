@@ -34,7 +34,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       let selected = object_property_initialize(data, "selected", map_new());
       map_set(selected, identifier, {});
     } else {
-      map_remove(selected,identifier);
+      map_remove(selected, identifier);
     }
     let v = js_visit_find(ast, identifier);
     let stack = object_property_get(v, "stack");
