@@ -50,6 +50,8 @@ export function app_code_refresh_function_node_identifier_add_generic(
       });
       let last_matching_item = list_last_match(values);
       if (list_is(last_matching_item)) {
+        if (false) {
+        }
       }
     } else {
       map_remove(selected, identifier);
