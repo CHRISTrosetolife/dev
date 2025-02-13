@@ -1,5 +1,6 @@
 export function apps_list() {
   return [
+    "app_bible_ceb2",
     "bible_ceb",
     "bible",
     "bible2",
