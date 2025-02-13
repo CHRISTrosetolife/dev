@@ -31,6 +31,8 @@ export function js_function_expression_simplify(ast) {
           if (list_all(arguments2, js_node_type_identifier_is)) {
             let names_params = list_map_property_name(params);
             let names_arguments2 = list_map_property_name(arguments2);
+            if (false) {
+            }
           }
         }
       }
