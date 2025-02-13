@@ -1,3 +1,4 @@
+import { map_properties } from "./map_properties.mjs";
 import { map_remove } from "./map_remove.mjs";
 import { map_set } from "./map_set.mjs";
 import { map_new } from "./map_new.mjs";
@@ -36,6 +37,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       map_set(selected, identifier, {
         visitor,
       });
+      let properties = map_properties(selected);
     } else {
       map_remove(selected, identifier);
     }
