@@ -3,8 +3,8 @@ import { list_all } from "./list_all.mjs";
 import { each_index } from "./each_index.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
-export function list_last_match(values) {
-  let fr = list_first_remaining(values);
+export function list_last_match(lists) {
+  let fr = list_first_remaining(lists);
   let first = object_property_get(fr, "first");
   let remaining = object_property_get(fr, "remaining");
   let last_matching_index = null;
