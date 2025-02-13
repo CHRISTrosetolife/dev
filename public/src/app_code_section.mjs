@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { each } from "./each.mjs";
 import { html_data_set } from "./html_data_set.mjs";
 import { html_style_flex_1 } from "./html_style_flex_1.mjs";
@@ -24,6 +25,8 @@ export function app_code_section(args, indent) {
     list_add_multiple(cs, [left, section]);
   }
   html_data_set;
-  each(list, function (item) {});
+  each(cs, function (item) {
+    html_data_set(item, fn_name("app_code_section"), "");
+  });
   return section;
 }
