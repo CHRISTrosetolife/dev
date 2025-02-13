@@ -81,6 +81,7 @@ import { equal } from "./equal.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
 import { assert } from "./assert.mjs";
 import { list_map_property } from "./list_map_property.mjs";
+import { string_replace } from "./string_replace.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, async function (v) {
     let { node } = v;
@@ -514,7 +515,7 @@ export function js_dollar(ast) {
             arg = '""';
           } else {
             remaining = string_prefix_without(remaining, log_prefix);
-            inside = remaining;
+            inside = string_replace(remaining, "$", ",");
             arg = js_code_braces_inside(inside);
           }
           let e = js_parse_expression(js_code_call_args(fn_name("log"), [arg]));
