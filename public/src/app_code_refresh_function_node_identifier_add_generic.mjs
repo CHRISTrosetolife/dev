@@ -38,7 +38,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
         visitor,
       });
       let properties = map_properties(selected);
-      each(list, (item) => {});
+      each(properties, (p) => {});
     } else {
       map_remove(selected, identifier);
     }
