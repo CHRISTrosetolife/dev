@@ -1,3 +1,4 @@
+import { html_overlay } from "./html_overlay.mjs";
 import { emoji_lightning } from "./emoji_lightning.mjs";
 import { app_code_file_contents } from "./app_code_file_contents.mjs";
 import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
@@ -49,7 +50,7 @@ export async function app_code_refresh_function(context) {
     html_style_background_color_black(container);
     html_style_rounded_padded(container);
     html_style_monospace(container);
-    let button_bottom = html_button(root, emoji_lightning(), function () {});
+    let button_bottom = html_button(root, emoji_lightning(), html_overlay);
     html_style(button_bottom, {
       bottom: 0,
       position: "sticky",
