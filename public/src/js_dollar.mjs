@@ -332,6 +332,8 @@ export function js_dollar(ast) {
           let declarations = object_property_get(before, "declarations");
           let fs = list_filter(declarations, function (d) {
             let id2 = object_property_get(d, "id");
+            let v5 = js_node_type_is(id2, "Identifier");
+            return v5;
           });
           let d = list_last(declarations);
           log({
