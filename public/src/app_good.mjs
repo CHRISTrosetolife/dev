@@ -115,6 +115,8 @@ export function app_good() {
           "Deliver all Christians from wicked and evil men",
           "Direct the hearts of every Christian to the love of God and to the steadfastness of Christ",
           "Give every Christian peace at all times in every way",
+          "equip every Chritian with everything good that each does his will",
+          "Work in every Christian that which is pleasing in God's sight, through Jesus Christ",
           "Let there be no adultery",
           "Let there be no murder",
           "Let there be no sickness",
