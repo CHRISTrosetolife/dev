@@ -1,3 +1,4 @@
+import { app_code_refresh_function_node_nodes } from "./app_code_refresh_function_node_nodes.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_index } from "./list_index.mjs";
 import { list_size_2 } from "./list_size_2.mjs";
@@ -54,10 +55,12 @@ export function app_code_refresh_function_node_identifier_add_generic(
       let last_matching_item = list_last_match(values);
       if (list_is(last_matching_item)) {
         if (list_size_2(values)) {
+          let nodes = app_code_refresh_function_node_nodes(args);
           list_map(values, function (v) {
             let index = list_index(v, last_matching_item);
             let index_next = index + 1;
             let next = list_get(v, index_next);
+            map_get(nodes, next);
           });
         }
       }
