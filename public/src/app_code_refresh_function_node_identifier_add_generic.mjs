@@ -64,7 +64,8 @@ export function app_code_refresh_function_node_identifier_add_generic(
           let first_next = list_get(first, index_next);
           let second_next = list_get(second, index_next);
           log({
-            first_next$second_next,
+            first_next,
+            second_next,
           });
         }
       }
