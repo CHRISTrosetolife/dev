@@ -109,6 +109,8 @@ export function app_good() {
           "Let Christians know the immeasurable greatness of God's power toward us who believe",
           "May the God of peace himself sanctify all Christians completely",
           "May the whole spirits and souls and bodies of all Christians be kept blameless at the coming of our Lord Jesus Christ",
+          "Make every Christian worthy of God's calling",
+          "may God fulfill every resolve for good and every work of faith of every Christian by God's power",
           "Let there be no adultery",
           "Let there be no murder",
           "Let there be no sickness",
