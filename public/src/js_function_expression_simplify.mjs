@@ -16,9 +16,6 @@ export function js_function_expression_simplify(ast) {
   js_visit_node(ast, "FunctionExpression", (v) => {
     let { node } = v;
     let params = object_property_get(node, "params");
-    log({
-      node,
-    });
     assert_list(params, js_node_type_identifier_is);
     let body = object_property_get(node, "body");
     assert(js_node_type_statement_block_is, [body]);
