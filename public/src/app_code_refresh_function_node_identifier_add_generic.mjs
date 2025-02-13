@@ -1,3 +1,4 @@
+import { each_index } from "./each_index.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_map } from "./list_map.mjs";
 import { log } from "./log.mjs";
@@ -48,6 +49,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
         return stack2;
       });
       let f = list_first(values);
+      each_index(list, function (item, index) {});
       log({
         values,
       });
