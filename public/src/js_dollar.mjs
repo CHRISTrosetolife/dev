@@ -315,6 +315,11 @@ export function js_dollar(ast) {
         }
       }
       if (remaining === "v") {
+        let { stack } = v;
+        list_find_last(stack, function (n) {
+          let v4 = js_node_type_is(n, "ExpressionStatement");
+          return v4;
+        });
         assert(list_is, [parent]);
         let index = list_index(parent, node);
         let index_previous = index - 1;
