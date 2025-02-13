@@ -7,6 +7,8 @@ export function js_arrow_to_function(ast) {
     let { node } = v;
     object_property_set(node, "type", "FunctionExpression");
     let body = object_property_get(node, "body");
+    if (false) {
+    }
     log({
       node,
     });
