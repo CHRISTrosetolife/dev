@@ -76,7 +76,6 @@ export function js_dollar(ast) {
   js_visit_identifiers(ast, async (v) => {
     let { node } = v;
     let { name } = node;
-    name = string_lower_case_to(name);
     let prefix = "$";
     if (string_starts_with(name, prefix)) {
       let { parent } = v;
