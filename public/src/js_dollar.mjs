@@ -347,6 +347,7 @@ export function js_dollar(ast) {
                 ]),
               ),
             );
+            list_remove(s1, parent);
           }
         }
       }
