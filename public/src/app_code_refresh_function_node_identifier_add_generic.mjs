@@ -60,7 +60,8 @@ export function app_code_refresh_function_node_identifier_add_generic(
             let index = list_index(v, last_matching_item);
             let index_next = index + 1;
             let next = list_get(v, index_next);
-            map_get(nodes, next);
+            let m = map_get(nodes, next);
+            let parent = object_property_get(m, "parent");
           });
         }
       }
