@@ -65,7 +65,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
             let parent = object_property_get(m, "parent");
             html_style_background_color(parent, "DarkSlateGray");
             let element = object_property_get(parent, "element");
-            visit(parent, function (p) {});
+            visit(element, function (p) {});
           });
         }
       }
