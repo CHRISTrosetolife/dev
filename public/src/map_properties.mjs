@@ -1,3 +1,3 @@
 export function map_properties(selected) {
-  return selected.keys();
+  returnlist_to(selected.keys());
 }
