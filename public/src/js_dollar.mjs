@@ -1,3 +1,4 @@
+import { list_before } from "./list_before.mjs";
 import { list_find_last_index } from "./list_find_last_index.mjs";
 import { list_index_is } from "./list_index_is.mjs";
 import { list_get } from "./list_get.mjs";
@@ -324,7 +325,7 @@ export function js_dollar(ast) {
         let statement = list_get(stack, statement_index);
         let statement_index_previous = statement_index - 1;
         let list = list_get(stack, statement_index_previous);
-        let statement_list_index = list_index(statement);
+        list_before();
         assert(list_is, [list]);
         if (list_index_is(statement_index_previous)) {
           let previous = list_get(parent, index_previous);
