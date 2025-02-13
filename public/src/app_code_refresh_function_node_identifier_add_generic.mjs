@@ -57,6 +57,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       let last_matching_item = list_last_match(values);
       if (list_is(last_matching_item)) {
         if (list_size_2(values)) {
+          list_map(values, function (v) {});
           let second = list_second(values);
           let first = list_first(values);
           let index = list_index(first, last_matching_item);
