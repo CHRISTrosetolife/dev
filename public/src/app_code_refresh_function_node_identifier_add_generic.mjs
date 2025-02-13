@@ -33,7 +33,9 @@ export function app_code_refresh_function_node_identifier_add_generic(
     let selected = object_property_initialize(data, "selected", map_new());
     if (object_property_toggle(toggled, name)) {
       let v = js_visit_find(ast, identifier);
-      map_set(selected, identifier, {});
+      map_set(selected, identifier, {
+        v,
+      });
     } else {
       map_remove(selected, identifier);
     }
