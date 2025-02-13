@@ -52,9 +52,10 @@ export function app_code_refresh_function_node_identifier_add_generic(
       let fr = list_first_remaining(values);
       let first = object_property_get(fr, "first");
       let remaining = object_property_get(fr, "remaining");
-      each_index(first, function (r, index) {
-        each(list, function (item) {});
-        list_get(r);
+      each_index(first, function (item, index) {
+        each(remaining, function (r) {
+          let item2 = list_get(r, index);
+        });
       });
       log({
         values,
