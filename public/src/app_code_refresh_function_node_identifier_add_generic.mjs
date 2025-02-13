@@ -1,3 +1,5 @@
+import { map_set } from "./map_set.mjs";
+import { map_new } from "./map_new.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { js_visit_find } from "./js_visit_find.mjs";
 import { object_property_toggle } from "./object_property_toggle.mjs";
@@ -29,8 +31,8 @@ export function app_code_refresh_function_node_identifier_add_generic(
         : html_style_background_color(i, "darkred"),
     );
     if (object_property_toggle(toggled, name)) {
-      let selected = object_property_initialize(data, "selected", []);
-      list_add(selected, identifier);
+      let selected = object_property_initialize(data, "selected", map_new());
+      map_set(selected, identifier, {});
     } else {
       list_remove(selected, identifier);
     }
