@@ -1,4 +1,4 @@
-import { map_new } from "./map_new.mjs";
+import { set_new } from "./set_new.mjs";
 import { js_visit_find } from "./js_visit_find.mjs";
 import { object_property_toggle } from "./object_property_toggle.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -29,7 +29,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
         : html_style_background_color(i, "darkred"),
     );
     if (object_property_toggle(toggled, name)) {
-      object_property_initialize(data, "selected", map_new());
+      object_property_initialize(data, "selected", set_new());
     } else {
     }
     let v = js_visit_find(ast, identifier);
