@@ -112,6 +112,7 @@ export function app_good() {
           "Make every Christian worthy of God's calling",
           "Fulfill every resolve for good and every work of faith of every Christian by God's power",
           "Comfort the hearts of every Christian and establish them in every good work and word",
+          "Deliver all Christians from wicked and evil men",
           "Let there be no adultery",
           "Let there be no murder",
           "Let there be no sickness",
