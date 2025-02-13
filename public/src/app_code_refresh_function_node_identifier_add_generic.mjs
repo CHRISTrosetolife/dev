@@ -1,3 +1,4 @@
+import { html_element_get } from "./html_element_get.mjs";
 import { app_code_refresh_function_node_nodes } from "./app_code_refresh_function_node_nodes.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_index } from "./list_index.mjs";
@@ -64,7 +65,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
             let m = map_get(nodes, next);
             let parent = object_property_get(m, "parent");
             html_style_background_color(parent, "DarkSlateGray");
-            let element = object_property_get(parent, "element");
+            let element = html_element_get(parent);
             visit(element, function (p) {});
           });
         }
