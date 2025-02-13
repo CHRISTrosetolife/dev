@@ -23,5 +23,5 @@ export async function app_new_existing(a) {
   let lines = list_map(body, js_unparse);
   let body_string = list_join_semicolon(lines);
   let v = await app_new_generic(a_new, body_string, async_is);
-  return a_new;
+  return v;
 }
