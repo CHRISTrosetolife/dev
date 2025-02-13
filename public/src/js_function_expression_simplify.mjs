@@ -16,10 +16,10 @@ export function js_function_expression_simplify(ast) {
       let f = list_first(body2);
       if (js_node_type_is(f, "ExpressionStatement")) {
         let expression = object_property_get(f, "expression");
+        log({
+          expression,
+        });
       }
-      log({
-        f,
-      });
     }
   });
 }
