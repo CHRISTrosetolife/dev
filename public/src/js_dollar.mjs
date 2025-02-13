@@ -322,7 +322,7 @@ export function js_dollar(ast) {
       if (remaining === "lfs") {
         if (parent.type === "ExpressionStatement") {
           let { stack } = v;
-          let s1 = list_get_end(stack, 2);
+          let s1 = list_get_end(stack, 1);
           log({
             s1,
           });
