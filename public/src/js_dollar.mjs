@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { list_last } from "./list_last.mjs";
 import { list_before } from "./list_before.mjs";
@@ -319,13 +318,16 @@ export function js_dollar(ast) {
           object_replace(node, e);
         }
       }
-      if (remaining === "lfs") {
+      let first_second = "fs";
+      if (remaining === first_second) {
         if (parent.type === "ExpressionStatement") {
+          remaining = string_prefix_without(remaining, first_second);
           let { stack } = v;
           let s1 = list_get_end(stack, 1);
-          log({
-            s1,
-          });
+          js_code_call_args(fn_name("list_random_item"), [
+            js_code_array_empty(),
+          ]);
+          list_insert(s1, index, m);
         }
       }
       if (remaining === "v") {
