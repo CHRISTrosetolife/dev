@@ -1,3 +1,4 @@
+import { app_code_refresh_function_node_nodes } from "./app_code_refresh_function_node_nodes.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { html_data_has } from "./html_data_has.mjs";
 import { html_element_wrap } from "./html_element_wrap.mjs";
@@ -64,6 +65,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
     });
     let result = app_code_refresh_function_selection(args, styling);
     if (false) {
+      let nodes = app_code_refresh_function_node_nodes(args);
       each(list, function (item) {
         let m = map_get(nodes, next);
         let parent = object_property_get(m, "parent");
