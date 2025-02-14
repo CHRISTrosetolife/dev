@@ -14,10 +14,10 @@ import { functions_names } from "./functions_names.mjs";
 import { function_parse } from "./function_parse.mjs";
 export async function app_new_existing(a) {
   let prefixed = app_identifier(a);
-  let ast = await function_parse(a);
+  let ast = await function_parse(prefixed);
   let fnns = await functions_names();
-  let a_new = string_unique(a, fnns);
-  js_identifier_rename(ast, a, a_new);
+  let a_new = string_unique(prefixed, fnns);
+  js_identifier_rename(ast, prefixed, a_new);
   todo("this should also rename", fn_name);
   let d = js_declaration_single(ast);
   let async_is = object_property_get(d, "async");
