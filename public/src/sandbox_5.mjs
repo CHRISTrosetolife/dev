@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { js_identifiers_scoped } from "./js_identifiers_scoped.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -8,6 +9,8 @@ export async function sandbox_5() {
   js_visit(ast, function (v) {
     let node = object_property_get(v, "node");
     let names = js_identifiers_scoped(v);
-    $Lnames;
+    log({
+      names,
+    });
   });
 }
