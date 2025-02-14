@@ -14,7 +14,6 @@ import { list_after } from "./list_after.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
-import { js_unparse } from "./js_unparse.mjs";
 export function js_identifiers_scoped(visitor) {
   let { stack, node } = visitor;
   let names = list_adder(function (la) {
@@ -42,7 +41,7 @@ export function js_identifiers_scoped(visitor) {
             "ImportDeclaration",
           );
           if (list_empty_not_is(filtered2)) {
-            log(js_unparse(list_first(filtered2)));
+            log(list_first(filtered2));
           }
         }
       } else {
