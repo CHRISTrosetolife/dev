@@ -41,7 +41,9 @@ export async function app_code_refresh_function(context) {
           html_remove(overlay);
         },
       );
-      app_code_button_menu_app(context, overlay, function () { html_remove(overlay)});
+      app_code_button_menu_app(context, overlay, function () {
+        html_remove(overlay);
+      });
     });
     html_style(b, {
       top: 0,
