@@ -19,6 +19,7 @@ import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { html_load } from "./html_load.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_remove } from "./html_remove.mjs";
+import { object_merge_strict } from "./object_merge_strict.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async function () {
     let root = app_code_screen_set(
@@ -64,10 +65,12 @@ export async function app_code_refresh_function(context) {
     html_style_background_color_black(container);
     html_style_rounded_padded(container);
     html_style_monospace(container);
-    app_code_refresh_function_node({
-      parent: container,
-      node: ast,
-      ast,
-    });
+    app_code_refresh_function_node(
+      object_merge_strict(args, {
+        parent: container,
+        node: ast,
+        ast,
+      }),
+    );
   });
 }
