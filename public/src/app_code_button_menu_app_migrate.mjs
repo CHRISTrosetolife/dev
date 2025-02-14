@@ -14,11 +14,12 @@ export async function app_code_button_menu_app_migrate() {
       log({
         f_name_result,
       });
-      js_visit_calls(ast, f_name, function (params) {
-        let p = list_single(params);
-        object_property_set(p, "name", "root");
-      });
+      js_visit_calls(ast, f_name, migrate);
     });
   });
   return results;
+  function migrate(params) {
+    let p = list_single(params);
+    object_property_set(p, "name", "root");
+  }
 }
