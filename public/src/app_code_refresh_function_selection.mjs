@@ -19,12 +19,14 @@ export function app_code_refresh_function_selection(args) {
     let stack2 = object_property_get(visitor2, "stack");
     return stack2;
   });
-  let result = {};
-  let last_matching_item = list_last_match(values);
-  if (list_is(last_matching_item)) {
+  let ancestor_common = list_last_match(values);
+  let result = {
+    ancestor_common,
+  };
+  if (list_is(ancestor_common)) {
     if (list_size_2(values)) {
       let two = list_map(values, function (v) {
-        let index = list_index(v, last_matching_item);
+        let index = list_index(v, ancestor_common);
         let index_next = index + 1;
         let next = list_get(v, index_next);
         return next;
