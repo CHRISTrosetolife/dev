@@ -41,7 +41,7 @@ export function js_identifiers_scoped(visitor) {
             "ImportDeclaration",
           );
           if (list_empty_not_is(filtered2)) {
-            list_map(filtered2, js_imports_existing);
+            let imports_names = list_map(filtered2, js_imports_existing);
           }
         }
       } else {
