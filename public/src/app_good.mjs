@@ -199,6 +199,8 @@ export function app_good() {
           "Help widows",
           "Help foreigners",
           "Help the poor",
+          "Help the elderly",
+          "Help the prisoners",
           "Help the sick",
         ]);
       }
