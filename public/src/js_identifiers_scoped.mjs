@@ -12,7 +12,6 @@ import { list_after_or } from "./list_after_or.mjs";
 import { list_after } from "./list_after.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
-import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_map } from "./list_map.mjs";
 export function js_identifiers_scoped(visitor) {
   let { stack, node } = visitor;
@@ -40,10 +39,8 @@ export function js_identifiers_scoped(visitor) {
             "type",
             "ImportDeclaration",
           );
-          if (list_empty_not_is(filtered2)) {
-            let imports_names = list_map(filtered2, js_imports_existing);
-            identifiers_add(imports_names);
-          }
+          let imports_names = list_map(filtered2, js_imports_existing);
+          identifiers_add(imports_names);
         }
       } else {
         if (js_function_types_is(s_type)) {
