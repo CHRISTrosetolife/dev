@@ -66,7 +66,7 @@ export async function app_code_refresh_function(context) {
           list_sort(indices);
           let low = list_first(indices);
           let high = list_second(indices);
-          let slice = list_slice(ancestor_common, low, high + 1);
+          let removed = list_slice(ancestor_common, low, high + 1);
           list_remove_multiple_from(ancestor_common, low, high);
           log({
             two,
