@@ -1,3 +1,5 @@
+import { list_second } from "./list_second.mjs";
+import { list_first } from "./list_first.mjs";
 import { list_is } from "./list_is.mjs";
 import { assert } from "./assert.mjs";
 import { log } from "./log.mjs";
@@ -26,6 +28,7 @@ import { html_load } from "./html_load.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
+import { list_index } from "./list_index.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async function () {
     let root = app_code_screen_set(
@@ -49,8 +52,11 @@ export async function app_code_refresh_function(context) {
         let result = app_code_refresh_function_selection(args);
         if (object_property_exists(result, "two")) {
           let two = object_property_get(result, "two");
+          let first = list_first(two);
+          let second = list_second(two);
           let ancestor_common = object_property_get(two, "ancestor_common");
           assert(list_is, [ancestor_common]);
+          list_index(ancestor_common);
           log({
             two,
           });
