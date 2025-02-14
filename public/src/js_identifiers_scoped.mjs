@@ -1,5 +1,4 @@
-import { list_first } from "./list_first.mjs";
-import { log } from "./log.mjs";
+import { js_imports_existing } from "./js_imports_existing.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { list_last_is } from "./list_last_is.mjs";
 import { equal } from "./equal.mjs";
@@ -14,6 +13,7 @@ import { list_after } from "./list_after.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
+import { list_map } from "./list_map.mjs";
 export function js_identifiers_scoped(visitor) {
   let { stack, node } = visitor;
   let names = list_adder(function (la) {
@@ -41,7 +41,7 @@ export function js_identifiers_scoped(visitor) {
             "ImportDeclaration",
           );
           if (list_empty_not_is(filtered2)) {
-            log(list_first(filtered2));
+            list_map(filtered2, js_imports_existing);
           }
         }
       } else {
