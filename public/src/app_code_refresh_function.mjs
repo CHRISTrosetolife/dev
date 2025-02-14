@@ -60,6 +60,7 @@ export async function app_code_refresh_function(context) {
             let v = list_index(ancestor_common, t);
             return v;
           });
+          list_sort(indices);
           let first = list_first(indices);
           let second = list_second(indices);
           log({
