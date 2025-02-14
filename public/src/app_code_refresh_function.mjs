@@ -47,17 +47,19 @@ export async function app_code_refresh_function(context) {
       if (object_property_exists(selection_result, "two")) {
         html_button(overlay, "Selection remove", async function () {
           app_code_refresh_function_selection_remove(selection_result);
-          refresh();
-          overlay_remove();
+          refresh_overlay_remove();
         });
         html_button(overlay, "Selection functionize", async function () {
           app_code_refresh_function_selection_remove(selection_result);
-          refresh();
-          overlay_remove();
+          refresh_overlay_remove();
         });
       }
       app_code_button_menu_app(context, overlay, overlay_remove);
       function overlay_remove() {
+        html_remove(overlay);
+      }
+      function refresh_overlay_remove() {
+        refresh();
         html_remove(overlay);
       }
     });
