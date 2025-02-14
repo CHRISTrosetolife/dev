@@ -62,8 +62,8 @@ export async function app_code_refresh_function(context) {
             return v;
           });
           list_sort(indices);
-          let first = list_first(indices);
-          let second = list_second(indices);
+          let low = list_first(indices);
+          let high = list_second(indices);
           log({
             two,
           });
