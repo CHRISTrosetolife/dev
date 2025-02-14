@@ -8,8 +8,9 @@ export async function function_imports_local(function_name) {
   let imports = js_imports_existing_names(ast);
   let sources = js_imports_sources(ast);
   sources = list_filter(sources, js_import_external_is);
-  return {
+  let v = {
     imports,
     sources,
   };
+  return v;
 }
