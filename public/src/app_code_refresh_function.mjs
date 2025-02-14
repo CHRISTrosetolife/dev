@@ -52,9 +52,9 @@ export async function app_code_refresh_function(context) {
         string_combine_multiple(["to function: ", function_selected]),
         overlay_remove,
       );
-      html_button(overlay, "Selection remove", async function () {
-        let result = app_code_refresh_function_selection(args);
-        if (object_property_exists(result, "two")) {
+      let result = app_code_refresh_function_selection(args);
+      if (object_property_exists(result, "two")) {
+        html_button(overlay, "Selection remove", async function () {
           let two = object_property_get(result, "two");
           let ancestor_common = object_property_get(result, "ancestor_common");
           assert(list_is, [ancestor_common]);
@@ -69,8 +69,8 @@ export async function app_code_refresh_function(context) {
           list_remove_multiple_from(ancestor_common, low, high);
           refresh();
           overlay_remove();
-        }
-      });
+        });
+      }
       app_code_button_menu_app(context, overlay, overlay_remove);
       function overlay_remove() {
         html_remove(overlay);
