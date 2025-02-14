@@ -27,8 +27,7 @@ export function app_code_refresh_function_selection(args, on_element) {
         let index = list_index(v, last_matching_item);
         let index_next = index + 1;
         let next = list_get(v, index_next);
-        let v2 = next;
-        return v2;
+        return next;
       });
       object_merge_strict(result, {
         two,
