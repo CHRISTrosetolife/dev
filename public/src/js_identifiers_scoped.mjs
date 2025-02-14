@@ -45,6 +45,9 @@ export function js_identifiers_scoped(visitor) {
         if (list_empty_not_is(filtered2)) {
           log(js_unparse(list_first(filtered2)));
         }
+        log({
+          filtered2,
+        });
       } else {
         if (js_function_types_is(s_type)) {
           let { params } = s;
