@@ -33,6 +33,7 @@ import { html_remove } from "./html_remove.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
 import { list_index } from "./list_index.mjs";
 import { list_map } from "./list_map.mjs";
+import { html_clear } from "./html_clear.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async function () {
     let root = app_code_screen_set(
@@ -71,6 +72,7 @@ export async function app_code_refresh_function(context) {
           log({
             removed,
           });
+          refresh();
         }
       });
       app_code_button_menu_app(context, overlay, overlay_remove);
@@ -96,13 +98,17 @@ export async function app_code_refresh_function(context) {
     html_style_background_color_black(container);
     html_style_rounded_padded(container);
     html_style_monospace(container);
-    app_code_refresh_function_node(
-      object_merge_strict(args, {
-        data: {},
-        parent: container,
-        node: ast,
-        ast,
-      }),
-    );
+    refresh();
+    function refresh() {
+      html_clear(container);
+      app_code_refresh_function_node(
+        object_merge_strict(args, {
+          data: {},
+          parent: container,
+          node: ast,
+          ast,
+        }),
+      );
+    }
   });
 }
