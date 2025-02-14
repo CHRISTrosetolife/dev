@@ -1,6 +1,8 @@
 import { each } from "./each.mjs";
 import { list_concat } from "./list_concat.mjs";
 export function visit(root, children_get, filter, each, stack) {
+  if (false) {
+  }
   let children = children_get(root);
   for (let node of children) {
     if (filter(node)) {
