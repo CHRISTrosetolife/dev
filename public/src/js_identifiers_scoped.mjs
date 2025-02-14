@@ -1,3 +1,4 @@
+import { list_last_is } from "./list_last_is.mjs";
 import { equal } from "./equal.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
 import { list_map_property } from "./list_map_property.mjs";
@@ -15,22 +16,22 @@ export function js_identifiers_scoped(visitor) {
     each(stack, function (s) {
       let { type: s_type } = s;
       if (s_type === "BlockStatement") {
-        if (false) {
+        if (!list_last_is(stack, s)) {
+          let list = list_after(stack, s);
+          let item = list_after_or(stack, list, node);
+          let index = list_index(list, item);
+          let taken = list_take(list, add_1(index));
+          let filtered = list_filter_property(
+            taken,
+            "type",
+            "VariableDeclaration",
+          );
+          each(filtered, function (f) {
+            let { declarations } = f;
+            let mapped = list_map_property(declarations, "id");
+            identifiers_add(mapped);
+          });
         }
-        let list = list_after(stack, s);
-        let item = list_after_or(stack, list, node);
-        let index = list_index(list, item);
-        let taken = list_take(list, add_1(index));
-        let filtered = list_filter_property(
-          taken,
-          "type",
-          "VariableDeclaration",
-        );
-        each(filtered, function (f) {
-          let { declarations } = f;
-          let mapped = list_map_property(declarations, "id");
-          identifiers_add(mapped);
-        });
       } else {
         if (js_function_types_is(s_type)) {
           let { params } = s;
