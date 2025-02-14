@@ -7,7 +7,7 @@ import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function js_node_types(ast) {
   assert_arguments_length(arguments, 1);
   assert(js_node_is, [ast]);
-  return list_adder_unique((la) => {
+  let v2 = list_adder_unique(function (la) {
     js_visit(ast, lambda);
     function lambda(v) {
       let { node } = v;
@@ -17,4 +17,5 @@ export function js_node_types(ast) {
       }
     }
   });
+  return v2;
 }
