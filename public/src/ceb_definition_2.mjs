@@ -22,7 +22,8 @@ export async function ceb_definition_2(word) {
   let url = ceb_definition_url(word);
   let { children, form1 } = await ceb_html_cache_parse_form1(url);
   if (ceb_definition_no_results(children)) {
-    return {};
+    let v = {};
+    return v;
   }
   let table = html_parse_visit_tag_attribute_value(
     form1,
@@ -34,16 +35,19 @@ export async function ceb_definition_2(word) {
   let prefix_1 = ceb_definition_prefix_1();
   let prefix_2 = ceb_definition_prefix_en();
   let rows = html_parse_visit_tag_list(table, "tr");
-  each(rows, (row) => {
+  each(rows, function (row) {
     let row_text = html_parse_text(row);
     if (string_empty_is(row_text)) {
-      return;
+      let v2;
+      return v2;
     }
     let columns = html_parse_visit_tag_list(row, "td");
     assert(list_size_2, [columns]);
     let f = list_first(columns);
     let a_href_fs = html_parse_a_href_starts_with(f, prefix_1);
     let word_cebs = html_parse_map_text_trim(a_href_fs);
+    if (false) {
+    }
     let s = list_second(columns);
     let a_href_ss = html_parse_a_href_starts_with(s, prefix_2);
     let word_ens = html_parse_map_text_trim(a_href_ss);
