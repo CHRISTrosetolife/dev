@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
 import { functions_calls_migrate } from "./functions_calls_migrate.mjs";
@@ -9,7 +10,7 @@ export async function app_code_button_menu_app_migrate() {
   function migrate(params) {
     let first = list_first(params);
     let second = list_second(params);
-    if (false) {
+    if (object_property_get(object, "property_name")) {
     }
   }
 }
