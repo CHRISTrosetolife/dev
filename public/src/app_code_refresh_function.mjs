@@ -37,7 +37,7 @@ export async function app_code_refresh_function(context) {
         string_combine_multiple(["to function: ", function_selected]),
         overlay_remove,
       );
-      html_button(overlay, "Functionize", async function () {});
+      html_button(overlay, "Functionize selection", async function () {});
       app_code_button_menu_app(context, overlay, overlay_remove);
       function overlay_remove() {
         html_remove(overlay);
