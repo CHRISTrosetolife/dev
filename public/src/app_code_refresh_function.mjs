@@ -35,13 +35,12 @@ export async function app_code_refresh_function(context) {
       html_button_back_after(
         overlay,
         string_combine_multiple(["to function: ", function_selected]),
-        async function () {
-          html_remove(overlay);
-        },
+        overlay_remove,
       );
-      app_code_button_menu_app(context, overlay, function () {
+      app_code_button_menu_app(context, overlay, overlay_remove);
+      function overlay_remove() {
         html_remove(overlay);
-      });
+      }
     });
     html_style(button_menu, {
       top: 0,
