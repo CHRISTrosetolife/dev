@@ -1,11 +1,4 @@
-import { list_remove_multiple_from } from "./list_remove_multiple_from.mjs";
-import { list_slice } from "./list_slice.mjs";
-import { list_sort } from "./list_sort.mjs";
-import { list_second } from "./list_second.mjs";
-import { list_first } from "./list_first.mjs";
-import { list_is } from "./list_is.mjs";
-import { assert } from "./assert.mjs";
-import { object_property_get } from "./object_property_get.mjs";
+import { app_code_refresh_function_selection_remove } from "./app_code_refresh_function_selection_remove.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { app_code_refresh_function_selection } from "./app_code_refresh_function_selection.mjs";
 import { app_code_button_menu_app } from "./app_code_button_menu_app.mjs";
@@ -30,8 +23,6 @@ import { html_load } from "./html_load.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
-import { list_index } from "./list_index.mjs";
-import { list_map } from "./list_map.mjs";
 import { html_clear } from "./html_clear.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async function () {
@@ -52,21 +43,10 @@ export async function app_code_refresh_function(context) {
         string_combine_multiple(["to function: ", function_selected]),
         overlay_remove,
       );
-      let result = app_code_refresh_function_selection(args);
-      if (object_property_exists(result, "two")) {
+      let selection_result = app_code_refresh_function_selection(args);
+      if (object_property_exists(selection_result, "two")) {
         html_button(overlay, "Selection remove", async function () {
-          let two = object_property_get(result, "two");
-          let ancestor_common = object_property_get(result, "ancestor_common");
-          assert(list_is, [ancestor_common]);
-          let indices = list_map(two, function (t) {
-            let v = list_index(ancestor_common, t);
-            return v;
-          });
-          list_sort(indices);
-          let low = list_first(indices);
-          let high = list_second(indices);
-          let removed = list_slice(ancestor_common, low, high + 1);
-          list_remove_multiple_from(ancestor_common, low, high);
+          app_code_refresh_function_selection_remove(selection_result);
           refresh();
           overlay_remove();
         });
