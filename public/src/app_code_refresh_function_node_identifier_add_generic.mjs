@@ -1,4 +1,3 @@
-import { html_style_display_block_or_none } from "./html_style_display_block_or_none.mjs";
 import { map_size } from "./map_size.mjs";
 import { html_node_text_is } from "./html_node_text_is.mjs";
 import { html_element_wrap } from "./html_element_wrap.mjs";
@@ -36,7 +35,6 @@ export function app_code_refresh_function_node_identifier_add_generic(
 ) {
   let name = object_property_get(identifier, "name");
   let data = object_property_get(args, "data");
-  let button_bottom = object_property_get(args, "button_bottom");
   let ids = object_property_initialize(data, "identifiers", []);
   let id_list = object_property_initialize(ids, name, []);
   list_add(id_list, component);
@@ -58,9 +56,6 @@ export function app_code_refresh_function_node_identifier_add_generic(
       parents(selected, html_style_background_color_transparent);
       map_remove(selected, identifier);
     }
-    let selected_size = map_size(selected);
-    let display_block = 1 <= selected_size && selected_size <= 2;
-    html_style_display_block_or_none(button_bottom, display_block);
     each(id_list, function (i) {
       object_property_get(toggled, name)
         ? html_style_background_color(i, "#4c1406")
