@@ -1,3 +1,4 @@
+import { list_map } from "./list_map.mjs";
 import { js_visit_find } from "./js_visit_find.mjs";
 import { list_first } from "./list_first.mjs";
 import { js_identifiers_scoped } from "./js_identifiers_scoped.mjs";
@@ -27,6 +28,7 @@ import { html_div } from "./html_div.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
 import { html_clear } from "./html_clear.mjs";
+import { js_identifiers } from "./js_identifiers.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async function () {
     let root = app_code_screen_set(
@@ -63,6 +65,7 @@ export async function app_code_refresh_function(context) {
           let f = list_first(removed);
           let v = js_visit_find(ast, f);
           let inputs_possible = js_identifiers_scoped(v, f);
+          list_map(removed, js_identifiers);
           refresh_overlay_remove();
         });
       }
