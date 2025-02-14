@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { list_last_is } from "./list_last_is.mjs";
 import { equal } from "./equal.mjs";
@@ -37,6 +38,7 @@ export function js_identifiers_scoped(visitor) {
             "type",
             "ImportDeclaration",
           );
+          log("");
         }
       } else {
         if (js_function_types_is(s_type)) {
