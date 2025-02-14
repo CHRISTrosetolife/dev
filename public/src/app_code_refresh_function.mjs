@@ -50,6 +50,11 @@ export async function app_code_refresh_function(context) {
           refresh();
           overlay_remove();
         });
+        html_button(overlay, "Selection functionize", async function () {
+          app_code_refresh_function_selection_remove(selection_result);
+          refresh();
+          overlay_remove();
+        });
       }
       app_code_button_menu_app(context, overlay, overlay_remove);
       function overlay_remove() {
