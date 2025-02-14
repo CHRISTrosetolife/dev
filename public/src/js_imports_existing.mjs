@@ -16,7 +16,7 @@ export function js_imports_existing(ast) {
       }
       let { imported } = node;
       if (imported.type === "Identifier") {
-        la(imported.name);
+        la(imported);
       }
     });
   });
