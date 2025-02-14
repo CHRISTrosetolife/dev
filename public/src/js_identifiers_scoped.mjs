@@ -38,6 +38,8 @@ export function js_identifiers_scoped(visitor) {
             "type",
             "ImportDeclaration",
           );
+          if (false) {
+          }
           log("");
         }
       } else {
