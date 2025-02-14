@@ -5,7 +5,6 @@ import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_is } from "./list_is.mjs";
 import { assert } from "./assert.mjs";
-import { log } from "./log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { app_code_refresh_function_selection } from "./app_code_refresh_function_selection.mjs";
@@ -68,9 +67,6 @@ export async function app_code_refresh_function(context) {
           let high = list_second(indices);
           let removed = list_slice(ancestor_common, low, high + 1);
           list_remove_multiple_from(ancestor_common, low, high);
-          log({
-            removed,
-          });
           refresh();
           overlay_remove();
         }
