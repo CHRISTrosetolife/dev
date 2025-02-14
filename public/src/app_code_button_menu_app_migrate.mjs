@@ -1,4 +1,4 @@
-import { object_property_change } from "./object_property_change.mjs";
+import { object_property_set } from "./object_property_set.mjs";
 import { log } from "./log.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { js_visit_calls } from "./js_visit_calls.mjs";
@@ -16,7 +16,7 @@ export async function app_code_button_menu_app_migrate() {
       });
       js_visit_calls(ast, f_name, function (params) {
         let p = list_single(params);
-        object_property_change;
+        object_property_set(p, "name", "root");
         log({
           p,
         });
