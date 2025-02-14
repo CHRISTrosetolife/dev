@@ -148,7 +148,7 @@ export function app_good() {
           "Help the Ecumenical Patriarch",
           "Help Hillsong",
           "Help Cityalight",
-          "Help Wickam",
+          "Help Wickham",
           "Help Tomlin",
           "Help Redman",
           "Help Lauren Daigle",
