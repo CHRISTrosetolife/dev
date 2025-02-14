@@ -3,12 +3,12 @@ import { visit_each } from "./visit_each.mjs";
 import { each } from "./each.mjs";
 export function visit_each_children(
   children_get,
-  root,
+  parent,
   filter,
   each,
   stack,
   node,
 ) {
-  let stacked = visit_each(each, node, root, stack);
+  let stacked = visit_each(each, node, parent, stack);
   visit_children(node, children_get, filter, each, stacked);
 }
