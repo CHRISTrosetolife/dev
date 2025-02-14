@@ -20,9 +20,6 @@ export function js_identifiers_scoped(visitor) {
   let names = list_adder(function (la) {
     each(stack, function (s) {
       let { type: s_type } = s;
-      log({
-        s_type,
-      });
       if (list_includes(["BlockStatement", "Program"], s_type)) {
         if (!list_last_is(stack, s)) {
           let list = list_after(stack, s);
