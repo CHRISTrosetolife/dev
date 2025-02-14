@@ -12,7 +12,7 @@ import { functions_identifier } from "./functions_identifier.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { object_replace } from "./object_replace.mjs";
 export async function app_code_button_menu_app_migrate() {
-  let f_name = fn_name("function_new_generic");
+  let f_name = fn_name("app_code_button_menu_app");
   let results = await functions_identifier(f_name);
   let param_names = await function_params_names(f_name);
   await each_object_async(results, async function (f_name_result) {
