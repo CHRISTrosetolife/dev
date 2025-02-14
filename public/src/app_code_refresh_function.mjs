@@ -39,10 +39,10 @@ export async function app_code_refresh_function(context) {
         overlay,
         string_combine_multiple(["to function: ", function_selected]),
         async function () {
-          html_remove(overlay);
+         ;
         },
       );
-      app_code_button_menu_app(context, overlay, noop);
+      app_code_button_menu_app(context, overlay, $a);
     });
     html_style(b, {
       top: 0,
