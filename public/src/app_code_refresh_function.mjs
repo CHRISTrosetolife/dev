@@ -42,7 +42,6 @@ export async function app_code_refresh_function(context) {
         },
       );
       app_code_button_menu_app(overlay);
-      app_code_button_menu_app(root);
     });
     html_style(b, {
       top: 0,
