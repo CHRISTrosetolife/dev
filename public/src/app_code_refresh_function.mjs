@@ -41,7 +41,9 @@ export async function app_code_refresh_function(context) {
     let path = function_name_to_path(function_selected);
     let contents = await app_code_file_contents(path);
     let ast = js_parse(contents);
-    let args = {};
+    let args = {
+      ast,
+    };
     let button_menu = html_button(root, "Function menu", function () {
       let overlay = html_overlay(fn_name("app_code_refresh_function"));
       html_button_back_after(
@@ -96,7 +98,6 @@ export async function app_code_refresh_function(context) {
           data: {},
           parent: container,
           node: ast,
-          ast,
         }),
       );
     }
