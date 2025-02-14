@@ -66,6 +66,7 @@ export async function app_code_refresh_function(context) {
       node: ast,
       data: {},
       ast,
+      button_menu,
     });
   });
 }
