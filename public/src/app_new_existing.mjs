@@ -1,3 +1,4 @@
+import { app_identifier } from "./app_identifier.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { js_declaration_single } from "./js_declaration_single.mjs";
 import { app_new_generic } from "./app_new_generic.mjs";
@@ -12,6 +13,7 @@ import { string_unique } from "./string_unique.mjs";
 import { functions_names } from "./functions_names.mjs";
 import { function_parse } from "./function_parse.mjs";
 export async function app_new_existing(a) {
+  let prefixed = app_identifier(a);
   let ast = await function_parse(a);
   let fnns = await functions_names();
   let a_new = string_unique(a, fnns);
