@@ -32,7 +32,7 @@ export function data_update_single(ast, data) {
   let u = list_unique(filtered);
   list_sort_string_map(u, identity);
   let ids = js_identifiers_names(ast);
-  js_visit_calls_fn_name(ast, (arg) => {
+  js_visit_calls_fn_name(ast, function (arg) {
     let v = object_property_get(arg, "value");
     list_add(ids, v);
   });
@@ -48,10 +48,13 @@ export function data_update_single(ast, data) {
       key: "identifiers",
     },
   ];
-  each(list, (item) => {
+  each(list, function (item) {
     let data_key = object_property_initialize(data, item.key, {});
-    each(item.ast_list, (s) => object_property_initialize(data_key, s, []));
-    each_object(data_key, (k, k_functions) => {
+    each(item.ast_list, function (s) {
+      let v2 = object_property_initialize(data_key, s, []);
+      return v2;
+    });
+    each_object(data_key, function (k, k_functions) {
       if (list_includes(item.ast_list, k)) {
         list_add_if_exists_not(k_functions, name);
       } else {

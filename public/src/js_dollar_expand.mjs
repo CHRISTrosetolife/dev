@@ -45,7 +45,7 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
         identifiers,
         list_concat([name_c], fns),
       );
-      each(needs_enhance, (item) => {
+      each(needs_enhance, function (item) {
         let replacement = js_name_unique_multiple([ast, ast_c], item);
         js_identifier_rename(ast_c, item, replacement);
       });
@@ -53,12 +53,13 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
       let params = js_declaration_to_params(d);
       let params_names = js_identifiers_names(params);
       if (false) {
-        assert_message(list_empty_is, [needs_enhance], () =>
-          string_combine_multiple([
+        assert_message(list_empty_is, [needs_enhance], function () {
+          let v = string_combine_multiple([
             "code needs enhancing to handle variables: ",
             needs_enhance,
-          ]),
-        );
+          ]);
+          return v;
+        });
       }
       js_identifier_rename_multiple(d, params_names, args_names);
       let body = js_declaration_to_body(d);
@@ -76,11 +77,11 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
         );
       }
       let taken = list_take_but(body, take_but_count);
-      taken = list_filter(
-        taken,
-        (t) => !js_statement_call_is(t, fn_name("assert_arguments_length")),
-      );
-      each_reverse(taken, (b) => {
+      taken = list_filter(taken, function (t) {
+        let v2 = !js_statement_call_is(t, fn_name("assert_arguments_length"));
+        return v2;
+      });
+      each_reverse(taken, function (b) {
         list_insert(s1, index, b);
       });
       list_remove_multiple(s1, [next, parent]);
