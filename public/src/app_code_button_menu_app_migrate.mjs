@@ -14,5 +14,8 @@ export async function app_code_button_menu_app_migrate() {
     if (object_property_get(first, "name") === "root") {
       object_property_set(first, "name", "context");
     }
+    if (object_property_get(second, "name") === "context") {
+      object_property_set(second, "name", "root");
+    }
   }
 }
