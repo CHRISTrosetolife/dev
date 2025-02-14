@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { app_code_refresh_function_selection } from "./app_code_refresh_function_selection.mjs";
@@ -46,6 +47,9 @@ export async function app_code_refresh_function(context) {
         let result = app_code_refresh_function_selection(args);
         if (object_property_exists(result, "two")) {
           let two = object_property_get(result, "two");
+          log({
+            two,
+          });
         }
       });
       app_code_button_menu_app(context, overlay, overlay_remove);
