@@ -41,6 +41,7 @@ export function js_identifiers_scoped(visitor) {
             "ImportDeclaration",
           );
           let imports_names = list_map(filtered2, js_imports_existing);
+          each(list2, function (item2) {});
           log({
             imports_names,
           });
