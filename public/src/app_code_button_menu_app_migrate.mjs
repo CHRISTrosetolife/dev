@@ -1,4 +1,5 @@
-import { log } from "./log.mjs";
+import { list_second } from "./list_second.mjs";
+import { list_first } from "./list_first.mjs";
 import { functions_calls_migrate } from "./functions_calls_migrate.mjs";
 import { fn_name } from "./fn_name.mjs";
 export async function app_code_button_menu_app_migrate() {
@@ -6,8 +7,7 @@ export async function app_code_button_menu_app_migrate() {
   let v = await functions_calls_migrate(f_name, migrate);
   return v;
   function migrate(params) {
-    log({
-      params,
-    });
+    let first = list_first(params);
+    let second = list_second(params);
   }
 }
