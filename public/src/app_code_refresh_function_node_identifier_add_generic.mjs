@@ -1,3 +1,4 @@
+import { object_property_exists } from "./object_property_exists.mjs";
 import { app_code_refresh_function_node_nodes } from "./app_code_refresh_function_node_nodes.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { html_data_has } from "./html_data_has.mjs";
@@ -64,7 +65,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       component,
     });
     let result = app_code_refresh_function_selection(args, styling);
-    if (false) {
+    if (object_property_exists(object, "property_name")) {
       let nodes = app_code_refresh_function_node_nodes(args);
       each(list, function (item) {
         let m = map_get(nodes, next);
