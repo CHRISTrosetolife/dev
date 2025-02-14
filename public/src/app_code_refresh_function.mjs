@@ -58,7 +58,7 @@ export async function app_code_refresh_function(context) {
           let ancestor_common = object_property_get(two, "ancestor_common");
           assert(list_is, [ancestor_common]);
           list_index(ancestor_common);
-          list_map(two, function (t) {
+          let indices = list_map(two, function (t) {
             let v = list_index(ancestor_common, t);
             return v;
           });
