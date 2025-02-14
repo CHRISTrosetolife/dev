@@ -32,9 +32,6 @@ export function app_code_refresh_function_selection(args, on_element) {
     if (list_size_2(values)) {
       let nodes = app_code_refresh_function_node_nodes(args);
       let two = list_map(values, function (v) {
-        object_merge_strict(result, {
-          two,
-        });
         let index = list_index(v, last_matching_item);
         let index_next = index + 1;
         let next = list_get(v, index_next);
@@ -54,6 +51,9 @@ export function app_code_refresh_function_selection(args, on_element) {
             on_element(e);
           }
         }
+      });
+      object_merge_strict(result, {
+        two,
       });
     }
   }
