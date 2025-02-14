@@ -32,6 +32,11 @@ export function js_identifiers_scoped(visitor) {
             let mapped = list_map_property(declarations, "id");
             identifiers_add(mapped);
           });
+          let filtered2 = list_filter_property(
+            taken,
+            "type",
+            "ImportDeclaration",
+          );
         }
       } else {
         if (js_function_types_is(s_type)) {
