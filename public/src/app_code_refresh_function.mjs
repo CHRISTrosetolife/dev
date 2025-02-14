@@ -27,6 +27,10 @@ export async function app_code_refresh_function(context) {
       fn_name("app_code_refresh_function"),
     );
     html_style_left(root);
+    let function_selected = storage_local_get_context(
+      context,
+      "function_selected",
+    );
     let b = html_button(root, "Function menu", function () {
       app_code_refresh_function_menu(context);
     });
@@ -34,10 +38,6 @@ export async function app_code_refresh_function(context) {
       top: 0,
       position: "sticky",
     });
-    let function_selected = storage_local_get_context(
-      context,
-      "function_selected",
-    );
     let functions_recent_limit = 15;
     storage_local_recent_add(
       context,
