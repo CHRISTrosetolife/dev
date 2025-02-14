@@ -39,9 +39,9 @@ export async function app_code_refresh_function(context) {
         string_combine_multiple(["to function: ", function_selected]),
         async function () {
           html_remove(overlay);
-          app_code_button_menu_app(overlay);
         },
       );
+      app_code_button_menu_app(overlay);
       app_code_button_menu_app(root);
     });
     html_style(b, {
