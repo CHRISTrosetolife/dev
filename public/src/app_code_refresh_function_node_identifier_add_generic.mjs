@@ -71,7 +71,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       each(two, function (next) {
         let m = map_get(nodes, next);
         let parent = object_property_get(m, "parent");
-        on_element(parent);
+        styling(parent);
         let element = html_element_get(parent);
         html_visit(element, lambda);
         function lambda(v) {
