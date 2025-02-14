@@ -25,6 +25,7 @@ export function app_code_refresh_function_selection(args, on_element) {
     let stack2 = object_property_get(visitor2, "stack");
     return stack2;
   });
+  let result = {};
   let last_matching_item = list_last_match(values);
   if (list_is(last_matching_item)) {
     if (list_size_2(values)) {
