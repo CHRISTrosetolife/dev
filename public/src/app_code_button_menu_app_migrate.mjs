@@ -15,12 +15,12 @@ export async function app_code_button_menu_app_migrate() {
   let f_name = fn_name("function_new_generic");
   let results = await functions_identifier(f_name);
   let param_names = await function_params_names(f_name);
-  await each_object_async(results, async (f_name_result) => {
-    await function_transform(f_name_result, async (ast) => {
+  await each_object_async(results, async function (f_name_result) {
+    await function_transform(f_name_result, async function (ast) {
       log({
         f_name_result,
       });
-      js_visit_calls(ast, f_name, (params) => {
+      js_visit_calls(ast, f_name, function (params) {
         assert(lists_sizes_equal, [[params, param_names]]);
         let last = list_last(params);
         if (js_node_identifier_named(last, fn_name("file_overwrite"))) {
