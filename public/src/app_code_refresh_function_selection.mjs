@@ -10,7 +10,7 @@ import { list_map } from "./list_map.mjs";
 import { app_code_refresh_function_selected_get } from "./app_code_refresh_function_selected_get.mjs";
 import { app_code_refresh_function_data_get } from "./app_code_refresh_function_data_get.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
-export function app_code_refresh_function_selection(args, on_element) {
+export function app_code_refresh_function_selection(args) {
   let data = app_code_refresh_function_data_get(args);
   let selected = app_code_refresh_function_selected_get(data);
   let values = list_map(map_properties(selected), function (p) {
