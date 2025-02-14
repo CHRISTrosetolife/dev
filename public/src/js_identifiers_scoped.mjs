@@ -42,7 +42,9 @@ export function js_identifiers_scoped(visitor) {
           );
           let imports_names = list_map(filtered2, js_imports_existing);
           identifiers_add(imports_names);
-          log(imports_names);
+          log({
+            imports_names,
+          });
         }
       } else {
         if (js_function_types_is(s_type)) {
