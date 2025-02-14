@@ -18,5 +18,4 @@ export async function sandbox_5() {
       });
     }
   });
-  let js_unparse = 2;
 }
