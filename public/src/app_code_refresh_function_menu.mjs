@@ -22,5 +22,5 @@ export function app_code_refresh_function_menu(context) {
       return v;
     },
   );
-  app_code_button_menu_app(context);
+  app_code_button_menu_app(root);
 }

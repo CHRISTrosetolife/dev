@@ -42,7 +42,7 @@ export async function app_code_refresh_functions_search(context) {
       context,
       fn_name("app_code_refresh_functions_search"),
     );
-    app_code_button_menu_app(context);
+    app_code_button_menu_app(root);
     html_cycle_p(
       root,
       [noop, html_style_bold],
