@@ -72,6 +72,7 @@ export async function app_code_refresh_function(context) {
             removed,
           });
           refresh();
+          overlay_remove();
         }
       });
       app_code_button_menu_app(context, overlay, overlay_remove);
