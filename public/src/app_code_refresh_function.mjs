@@ -62,7 +62,7 @@ export async function app_code_refresh_function(context) {
             app_code_refresh_function_selection_remove(selection_result);
           let f = list_first(removed);
           let v = js_visit_find(ast, f);
-          js_identifiers_scoped(v, f);
+          let inputs_possible = js_identifiers_scoped(v, f);
           refresh_overlay_remove();
         });
       }
