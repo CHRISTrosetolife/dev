@@ -12,7 +12,7 @@ export function app_code_refresh_functions_recent(context) {
     context,
     fn_name("app_code_refresh_functions_recent"),
   );
-  app_code_button_menu_app(context, root);
+  app_code_button_menu_app(root, context);
   html_p_text(
     root,
     "These are the most recent functions you have viewed. Choose a function to open it.",
