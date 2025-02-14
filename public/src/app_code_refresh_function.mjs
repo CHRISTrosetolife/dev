@@ -1,3 +1,5 @@
+import { list_is } from "./list_is.mjs";
+import { assert } from "./assert.mjs";
 import { log } from "./log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -48,6 +50,7 @@ export async function app_code_refresh_function(context) {
         if (object_property_exists(result, "two")) {
           let two = object_property_get(result, "two");
           let ancestor_common = object_property_get(two, "ancestor_common");
+          assert(list_is, [ancestor_common]);
           log({
             two,
           });
