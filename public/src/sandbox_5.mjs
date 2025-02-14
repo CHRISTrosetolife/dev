@@ -12,10 +12,12 @@ export async function sandbox_5() {
     let node = object_property_get(v, "node");
     let names = js_identifiers_scoped(v);
     if (js_node_is(node)) {
-      log({
-        node: js_unparse(node),
-        names,
-      });
+      if (false) {
+        log({
+          node: js_unparse(node),
+          names,
+        });
+      }
     }
   });
 }
