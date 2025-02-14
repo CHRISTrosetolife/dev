@@ -9,7 +9,7 @@ import { list_after_or } from "./list_after_or.mjs";
 import { list_after } from "./list_after.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
-export function js_identifiers_scoped(visitor, node) {
+export function js_identifiers_scoped(visitor) {
   let { stack } = visitor;
   let names = list_adder(function (la) {
     each(stack, function (s) {

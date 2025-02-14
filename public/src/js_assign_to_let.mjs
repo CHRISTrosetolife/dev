@@ -15,7 +15,7 @@ export function js_assign_to_let(ast) {
       let { left } = expression;
       if (left.type === "Identifier") {
         let { name } = left;
-        let names = js_identifiers_scoped(v, node);
+        let names = js_identifiers_scoped(v);
         if (list_includes_not(names, name)) {
           let parsed = js_code_declare_assign_0(name);
           let { declarations } = parsed;

@@ -64,8 +64,8 @@ export async function app_code_refresh_function(context) {
             app_code_refresh_function_selection_remove(selection_result);
           let f = list_first(removed);
           let v = js_visit_find(ast, f);
-          let inputs_possible = js_identifiers_scoped(v, f);
-          removed_identifiers_names=list_map(removed, js_identifiers_names);
+          let inputs_possible = js_identifiers_scoped(v);
+          removed_identifiers_names = list_map(removed, js_identifiers_names);
           refresh_overlay_remove();
         });
       }
