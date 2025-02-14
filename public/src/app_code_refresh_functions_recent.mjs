@@ -1,3 +1,4 @@
+import { noop } from "./noop.mjs";
 import { app_code_refresh_function_change } from "./app_code_refresh_function_change.mjs";
 import { each_index_1 } from "./each_index_1.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -12,7 +13,7 @@ export function app_code_refresh_functions_recent(context) {
     context,
     fn_name("app_code_refresh_functions_recent"),
   );
-  app_code_button_menu_app(root, context);
+  app_code_button_menu_app(root, context, noop);
   html_p_text(
     root,
     "These are the most recent functions you have viewed. Choose a function to open it.",

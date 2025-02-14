@@ -1,3 +1,4 @@
+import { noop } from "./noop.mjs";
 import { app_code_button_menu_app } from "./app_code_button_menu_app.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_back_after } from "./html_button_back_after.mjs";
@@ -41,7 +42,7 @@ export async function app_code_refresh_function(context) {
           html_remove(overlay);
         },
       );
-      app_code_button_menu_app(context, overlay);
+      app_code_button_menu_app(context, overlay, noop);
     });
     html_style(b, {
       top: 0,
