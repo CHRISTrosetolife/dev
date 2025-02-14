@@ -1,3 +1,6 @@
+import { app_code_button_menu_app } from "./app_code_button_menu_app.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { html_button_back_after } from "./html_button_back_after.mjs";
 import { html_button_back } from "./html_button_back.mjs";
 import { html_overlay } from "./html_overlay.mjs";
 import { emoji_lightning } from "./emoji_lightning.mjs";
@@ -7,7 +10,6 @@ import { html_style_background_color_black } from "./html_style_background_color
 import { html_style } from "./html_style.mjs";
 import { app_code_refresh_function_node } from "./app_code_refresh_function_node.mjs";
 import { html_style_left } from "./html_style_left.mjs";
-import { app_code_refresh_function_menu } from "./app_code_refresh_function_menu.mjs";
 import { storage_local_recent_add } from "./storage_local_recent_add.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_style_monospace } from "./html_style_monospace.mjs";
@@ -18,7 +20,6 @@ import { fn_name } from "./fn_name.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { html_load } from "./html_load.mjs";
 import { html_div } from "./html_div.mjs";
-import { html_style_display_none } from "./html_style_display_none.mjs";
 import { html_remove } from "./html_remove.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async function () {
@@ -32,7 +33,16 @@ export async function app_code_refresh_function(context) {
       "function_selected",
     );
     let b = html_button(root, "Function menu", function () {
-      app_code_refresh_function_menu(context);
+      let overlay = html_overlay(fn_name("app_code_refresh_function"));
+      html_button_back_after(
+        overlay,
+        string_combine_multiple(["to function: ", function_selected]),
+        async function () {
+          let v = await app_code_refresh_function(context);
+          return v;
+        },
+      );
+      app_code_button_menu_app(overlay);
     });
     html_style(b, {
       top: 0,
@@ -58,11 +68,6 @@ export async function app_code_refresh_function(context) {
         html_remove(overlay);
       });
     });
-    html_style(button_bottom, {
-      bottom: 0,
-      position: "sticky",
-    });
-    html_style_display_none(button_bottom);
     app_code_refresh_function_node({
       parent: container,
       node: ast,
