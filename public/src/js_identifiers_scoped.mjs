@@ -14,7 +14,6 @@ import { list_after } from "./list_after.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_map } from "./list_map.mjs";
-import { js_unparse } from "./js_unparse.mjs";
 export function js_identifiers_scoped(visitor) {
   let { stack, node } = visitor;
   let names = list_adder(function (la) {
@@ -43,7 +42,7 @@ export function js_identifiers_scoped(visitor) {
           );
           let imports_names = list_map(filtered2, js_imports_existing);
           identifiers_add(imports_names);
-          log(list_map(taken, js_unparse));
+          log(imports_names);
         }
       } else {
         if (js_function_types_is(s_type)) {
