@@ -52,7 +52,7 @@ export async function app_code_refresh_function(context) {
         string_combine_multiple(["to function: ", function_selected]),
         overlay_remove,
       );
-      html_button(overlay, "Functionize selection", async function () {
+      html_button(overlay, "Selection remove", async function () {
         let result = app_code_refresh_function_selection(args);
         if (object_property_exists(result, "two")) {
           let two = object_property_get(result, "two");
