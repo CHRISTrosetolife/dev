@@ -30,7 +30,7 @@ export async function app_code_refresh_function(context) {
       context,
       "function_selected",
     );
-    let b = html_button(root, "Function menu", function () {
+    let button_menu = html_button(root, "Function menu", function () {
       let overlay = html_overlay(fn_name("app_code_refresh_function"));
       html_button_back_after(
         overlay,
@@ -43,7 +43,7 @@ export async function app_code_refresh_function(context) {
         html_remove(overlay);
       });
     });
-    html_style(b, {
+    html_style(button_menu, {
       top: 0,
       position: "sticky",
     });
