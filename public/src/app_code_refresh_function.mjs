@@ -1,3 +1,4 @@
+import { list_slice } from "./list_slice.mjs";
 import { list_sort } from "./list_sort.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
@@ -64,6 +65,7 @@ export async function app_code_refresh_function(context) {
           list_sort(indices);
           let low = list_first(indices);
           let high = list_second(indices);
+          list_slice(ancestor_common, low, high + 1);
           log({
             two,
           });
