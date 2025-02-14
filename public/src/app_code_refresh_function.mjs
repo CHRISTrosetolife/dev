@@ -1,4 +1,4 @@
-import { list_sort_map } from "./list_sort_map.mjs";
+import { list_sort } from "./list_sort.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_is } from "./list_is.mjs";
@@ -31,7 +31,6 @@ import { html_remove } from "./html_remove.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
 import { list_index } from "./list_index.mjs";
 import { list_map } from "./list_map.mjs";
-import { identity } from "./identity.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async function () {
     let root = app_code_screen_set(
@@ -62,7 +61,7 @@ export async function app_code_refresh_function(context) {
             let v = list_index(ancestor_common, t);
             return v;
           });
-          list_sort_map(indices, identity);
+          list_sort(indices);
           let first = list_first(indices);
           let second = list_second(indices);
           log({
