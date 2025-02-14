@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { equal } from "./equal.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
 import { list_map_property } from "./list_map_property.mjs";
@@ -15,6 +16,9 @@ export function js_identifiers_scoped(visitor) {
     each(stack, function (s) {
       let { type: s_type } = s;
       if (s_type === "BlockStatement") {
+        log({
+          s,
+        });
         let list = list_after(stack, s);
         let item = list_after_or(stack, list, node);
         let index = list_index(list, item);
