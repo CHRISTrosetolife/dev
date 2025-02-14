@@ -16,6 +16,7 @@ import { map_properties } from "./map_properties.mjs";
 import { list_map } from "./list_map.mjs";
 import { app_code_refresh_function_selected_get } from "./app_code_refresh_function_selected_get.mjs";
 import { app_code_refresh_function_data_get } from "./app_code_refresh_function_data_get.mjs";
+import { object_merge_strict } from "./object_merge_strict.mjs";
 export function app_code_refresh_function_selection(args, on_element) {
   let data = app_code_refresh_function_data_get(args);
   let selected = app_code_refresh_function_selected_get(data);
@@ -31,6 +32,9 @@ export function app_code_refresh_function_selection(args, on_element) {
     if (list_size_2(values)) {
       let nodes = app_code_refresh_function_node_nodes(args);
       let two = list_map(values, function (v) {
+        object_merge_strict(result, {
+          two,
+        });
         let index = list_index(v, last_matching_item);
         let index_next = index + 1;
         let next = list_get(v, index_next);
@@ -53,4 +57,6 @@ export function app_code_refresh_function_selection(args, on_element) {
       });
     }
   }
+  let v3 = result;
+  return v3;
 }
