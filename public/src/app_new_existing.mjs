@@ -12,6 +12,8 @@ import { js_identifier_rename } from "./js_identifier_rename.mjs";
 import { string_unique } from "./string_unique.mjs";
 import { functions_names } from "./functions_names.mjs";
 import { function_parse } from "./function_parse.mjs";
+import { string_prefix_without } from "./string_prefix_without.mjs";
+import { app_prefix } from "./app_prefix.mjs";
 export async function app_new_existing(a) {
   let prefixed = app_identifier(a);
   let ast = await function_parse(prefixed);
@@ -24,6 +26,7 @@ export async function app_new_existing(a) {
   let body = js_declaration_single_body(ast);
   let lines = list_map(body, js_unparse);
   let body_string = list_join_semicolon(lines);
+  let a_new_unprefixed = string_prefix_without(a_new, app_prefix());
   let v = await app_new_generic(a_new, body_string, async_is);
   return v;
 }
