@@ -38,8 +38,7 @@ export async function app_code_refresh_function(context) {
         overlay,
         string_combine_multiple(["to function: ", function_selected]),
         async function () {
-          let v = await app_code_refresh_function(context);
-          return v;
+          html_remove(overlay);
         },
       );
       app_code_button_menu_app(root);
