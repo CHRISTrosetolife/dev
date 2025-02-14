@@ -66,6 +66,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
     });
     let result = app_code_refresh_function_selection(args, styling);
     if (object_property_exists(result, "two")) {
+      let two = object_property_get(result, "two");
       let nodes = app_code_refresh_function_node_nodes(args);
       each(list, function (item) {
         let m = map_get(nodes, next);
