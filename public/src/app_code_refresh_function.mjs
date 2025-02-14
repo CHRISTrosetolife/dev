@@ -1,3 +1,4 @@
+import { js_identifiers_scoped } from "./js_identifiers_scoped.mjs";
 import { app_code_refresh_function_selection_remove } from "./app_code_refresh_function_selection_remove.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { app_code_refresh_function_selection } from "./app_code_refresh_function_selection.mjs";
@@ -52,6 +53,7 @@ export async function app_code_refresh_function(context) {
         html_button(overlay, "Selection functionize", async function () {
           let removed =
             app_code_refresh_function_selection_remove(selection_result);
+          js_identifiers_scoped(v, node);
           refresh_overlay_remove();
         });
       }
