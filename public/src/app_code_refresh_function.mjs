@@ -60,7 +60,7 @@ export async function app_code_refresh_function(context) {
       }
       function refresh_overlay_remove() {
         refresh();
-        html_remove(overlay);
+        overlay_remove();
       }
     });
     html_style(button_menu, {
