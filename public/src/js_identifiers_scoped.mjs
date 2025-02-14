@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { js_imports_existing } from "./js_imports_existing.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { list_last_is } from "./list_last_is.mjs";
@@ -41,11 +40,9 @@ export function js_identifiers_scoped(visitor) {
             "ImportDeclaration",
           );
           let imports_names = list_map(filtered2, js_imports_existing);
-          each(list2, function (item2) {});
-          log({
-            imports_names,
+          each(imports_names, function (item2) {
+            identifiers_add(item2);
           });
-          identifiers_add(imports_names);
         }
       } else {
         if (js_function_types_is(s_type)) {
