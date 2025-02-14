@@ -1,4 +1,10 @@
-import { list_map_property } from "./list_map_property.mjs";
-export function js_identifiers_names(args) {
-  return list_map_property(args, "name");
+import { js_visit_identifiers } from "./js_visit_identifiers.mjs";
+import { list_adder_unique } from "./list_adder_unique.mjs";
+export function js_identifiers_names(ast) {
+  return list_adder_unique((la) => {
+    js_visit_identifiers(ast, (v) => {
+      let { node } = v;
+      la(node.name);
+    });
+  });
 }

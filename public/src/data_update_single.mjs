@@ -1,3 +1,4 @@
+import { js_identifiers_names } from "./js_identifiers_names.mjs";
 import { js_visit_calls_fn_name } from "./js_visit_calls_fn_name.mjs";
 import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -6,7 +7,6 @@ import { each } from "./each.mjs";
 import { list_remove_if_exists } from "./list_remove_if_exists.mjs";
 import { each_object } from "./each_object.mjs";
 import { list_add_if_exists_not } from "./list_add_if_exists_not.mjs";
-import { js_identifiers } from "./js_identifiers.mjs";
 import { js_node_type } from "./js_node_type.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
@@ -31,7 +31,7 @@ export function data_update_single(ast, data) {
   let filtered = list_filter(mapped, string_is);
   let u = list_unique(filtered);
   list_sort_string_map(u, identity);
-  let ids = js_identifiers(ast);
+  let ids = js_identifiers_names(ast);
   js_visit_calls_fn_name(ast, (arg) => {
     let v = object_property_get(arg, "value");
     list_add(ids, v);

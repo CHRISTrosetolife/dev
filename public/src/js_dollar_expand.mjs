@@ -20,7 +20,6 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { js_identifiers_intersect_difference } from "./js_identifiers_intersect_difference.mjs";
-import { js_identifiers } from "./js_identifiers.mjs";
 import { js_identifiers_names } from "./js_identifiers_names.mjs";
 import { js_declaration_to_params } from "./js_declaration_to_params.mjs";
 import { js_declaration_single } from "./js_declaration_single.mjs";
@@ -39,7 +38,7 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
       js_return_variablize(ast_c);
       let { arguments: args } = call;
       let args_names = js_identifiers_names(args);
-      let identifiers = js_identifiers(ast);
+      let identifiers = js_identifiers_names(ast);
       let fns = await functions_names();
       let needs_enhance = js_identifiers_intersect_difference(
         ast_c,
