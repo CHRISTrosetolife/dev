@@ -1,3 +1,5 @@
+import { object_property_get } from "./object_property_get.mjs";
+import { object_property_exists } from "./object_property_exists.mjs";
 import { app_code_refresh_function_selection } from "./app_code_refresh_function_selection.mjs";
 import { app_code_button_menu_app } from "./app_code_button_menu_app.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -42,6 +44,9 @@ export async function app_code_refresh_function(context) {
       );
       html_button(overlay, "Functionize selection", async function () {
         let result = app_code_refresh_function_selection(args);
+        if (object_property_exists(result, "two")) {
+          let two = object_property_get(result, "two");
+        }
       });
       app_code_button_menu_app(context, overlay, overlay_remove);
       function overlay_remove() {
