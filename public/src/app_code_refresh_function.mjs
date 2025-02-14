@@ -47,6 +47,7 @@ export async function app_code_refresh_function(context) {
         let result = app_code_refresh_function_selection(args);
         if (object_property_exists(result, "two")) {
           let two = object_property_get(result, "two");
+          let ancestor_common = object_property_get(two, "ancestor_common");
           log({
             two,
           });
