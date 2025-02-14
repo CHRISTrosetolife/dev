@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_multiple_is } from "./list_multiple_is.mjs";
 import { ceb_definition_prefix_en } from "./ceb_definition_prefix_en.mjs";
 import { list_second } from "./list_second.mjs";
@@ -49,6 +50,9 @@ export async function ceb_definition_2(word) {
     let a_href_fs = html_parse_a_href_starts_with(f, prefix_1);
     let word_cebs = html_parse_map_text_trim(a_href_fs);
     if (list_multiple_is(word_cebs)) {
+      log({
+        word,
+      });
       error(word);
     }
     let s = list_second(columns);
