@@ -5,18 +5,24 @@ import { list_is } from "./list_is.mjs";
 import { null_is } from "./null_is.mjs";
 import { undefined_is } from "./undefined_is.mjs";
 export function js_visit(ast, lambda) {
+  lambda(ast);
   visit(
     ast,
-    (n) => {
+    function (n) {
       if (js_node_is(n)) {
-        return object_values(n);
+        let v = object_values(n);
+        return v;
       }
       if (list_is(n)) {
         return n;
       }
-      return [];
+      let v2 = [];
+      return v2;
     },
-    (n) => !null_is(n) && !undefined_is(n),
+    function (n) {
+      let v3 = !null_is(n) && !undefined_is(n);
+      return v3;
+    },
     lambda,
     [],
   );
