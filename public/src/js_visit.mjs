@@ -1,4 +1,3 @@
-import { todo } from "./todo.mjs";
 import { visit } from "./visit.mjs";
 import { object_values } from "./object_values.mjs";
 import { js_node_is } from "./js_node_is.mjs";
@@ -6,8 +5,6 @@ import { list_is } from "./list_is.mjs";
 import { null_is } from "./null_is.mjs";
 import { undefined_is } from "./undefined_is.mjs";
 export function js_visit(ast, lambda) {
-  todo("maybe visiting root should happen inside visit");
-  lambda(ast);
   visit(
     ast,
     function (n) {
