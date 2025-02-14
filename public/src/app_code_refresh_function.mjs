@@ -59,7 +59,7 @@ export async function app_code_refresh_function(context) {
           assert(list_is, [ancestor_common]);
           list_index(ancestor_common);
           list_map(two, function (t) {
-            let v = list_index(ancestor_common);
+            let v = list_index(ancestor_common, t);
             return v;
           });
           log({
