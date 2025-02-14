@@ -69,7 +69,7 @@ export async function app_code_refresh_function(context) {
           let removed = list_slice(ancestor_common, low, high + 1);
           list_remove_multiple_from(ancestor_common, low, high);
           log({
-            two,
+            removed,
           });
         }
       });
