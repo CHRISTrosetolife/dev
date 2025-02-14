@@ -9,5 +9,7 @@ export async function app_code_button_menu_app_migrate() {
   function migrate(params) {
     let first = list_first(params);
     let second = list_second(params);
+    if (false) {
+    }
   }
 }
