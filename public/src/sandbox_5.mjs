@@ -10,9 +10,11 @@ export async function sandbox_5() {
   js_visit(ast, function (v) {
     let node = object_property_get(v, "node");
     let names = js_identifiers_scoped(v);
-    log({
-      node: js_unparse(node),
-      names,
-    });
+    if (false) {
+      log({
+        node: js_unparse(node),
+        names,
+      });
+    }
   });
 }
