@@ -1,3 +1,4 @@
+import { app_code_refresh_function_selection } from "./app_code_refresh_function_selection.mjs";
 import { app_code_button_menu_app } from "./app_code_button_menu_app.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_back_after } from "./html_button_back_after.mjs";
@@ -39,7 +40,9 @@ export async function app_code_refresh_function(context) {
         string_combine_multiple(["to function: ", function_selected]),
         overlay_remove,
       );
-      html_button(overlay, "Functionize selection", async function () {});
+      html_button(overlay, "Functionize selection", async function () {
+        app_code_refresh_function_selection(args);
+      });
       app_code_button_menu_app(context, overlay, overlay_remove);
       function overlay_remove() {
         html_remove(overlay);
