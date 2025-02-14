@@ -1,9 +1,3 @@
-import { fn_name } from "./fn_name.mjs";
-import { html_data_has } from "./html_data_has.mjs";
-import { html_element_wrap } from "./html_element_wrap.mjs";
-import { html_node_text_is } from "./html_node_text_is.mjs";
-import { html_visit } from "./html_visit.mjs";
-import { html_element_get } from "./html_element_get.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_index } from "./list_index.mjs";
 import { app_code_refresh_function_node_nodes } from "./app_code_refresh_function_node_nodes.mjs";
@@ -35,22 +29,8 @@ export function app_code_refresh_function_selection(args, on_element) {
         let index = list_index(v, last_matching_item);
         let index_next = index + 1;
         let next = list_get(v, index_next);
-        let m = map_get(nodes, next);
-        let parent = object_property_get(m, "parent");
-        on_element(parent);
-        let element = html_element_get(parent);
-        html_visit(element, lambda);
-        function lambda(v) {
-          let e = object_property_get(v, "node");
-          if (html_node_text_is(e)) {
-            let v2;
-            return v2;
-          }
-          e = html_element_wrap(e);
-          if (html_data_has(e, fn_name("app_code_section"))) {
-            on_element(e);
-          }
-        }
+        let v2 = next;
+        return v2;
       });
       object_merge_strict(result, {
         two,
