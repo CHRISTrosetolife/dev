@@ -1,3 +1,10 @@
+import { fn_name } from "./fn_name.mjs";
+import { html_data_has } from "./html_data_has.mjs";
+import { html_element_wrap } from "./html_element_wrap.mjs";
+import { html_node_text_is } from "./html_node_text_is.mjs";
+import { html_visit } from "./html_visit.mjs";
+import { html_element_get } from "./html_element_get.mjs";
+import { map_get } from "./map_get.mjs";
 import { app_code_refresh_function_selection } from "./app_code_refresh_function_selection.mjs";
 import { app_code_refresh_function_selected_get } from "./app_code_refresh_function_selected_get.mjs";
 import { app_code_refresh_function_data_get } from "./app_code_refresh_function_data_get.mjs";
@@ -57,7 +64,24 @@ export function app_code_refresh_function_node_identifier_add_generic(
     });
     let result = app_code_refresh_function_selection(args, styling);
     if (false) {
-      each(list, function (item) {});
+      each(list, function (item) {
+        let m = map_get(nodes, next);
+        let parent = object_property_get(m, "parent");
+        on_element(parent);
+        let element = html_element_get(parent);
+        html_visit(element, lambda);
+        function lambda(v) {
+          let e = object_property_get(v, "node");
+          if (html_node_text_is(e)) {
+            let v2;
+            return v2;
+          }
+          e = html_element_wrap(e);
+          if (html_data_has(e, fn_name("app_code_section"))) {
+            on_element(e);
+          }
+        }
+      });
     }
   }
 }
