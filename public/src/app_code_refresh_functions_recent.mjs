@@ -18,9 +18,13 @@ export function app_code_refresh_functions_recent(context) {
     "These are the most recent functions you have viewed. Choose a function to open it.",
   );
   let functions_recent = app_code_functions_recent_get(context);
-  each_index_1(functions_recent, (fr, index) => {
-    html_button(root, string_combine_multiple([index, ". ", fr]), async () => {
-      await app_code_refresh_function_change(context, fr);
-    });
+  each_index_1(functions_recent, function (fr, index) {
+    html_button(
+      root,
+      string_combine_multiple([index, ". ", fr]),
+      async function () {
+        await app_code_refresh_function_change(context, fr);
+      },
+    );
   });
 }

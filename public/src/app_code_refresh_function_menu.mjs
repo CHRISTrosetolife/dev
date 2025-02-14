@@ -17,7 +17,10 @@ export function app_code_refresh_function_menu(context) {
   html_button_back_after(
     root,
     string_combine_multiple(["to function: ", function_selected]),
-    async () => await app_code_refresh_function(context),
+    async function () {
+      let v = await app_code_refresh_function(context);
+      return v;
+    },
   );
   app_code_button_menu_app(context);
 }
