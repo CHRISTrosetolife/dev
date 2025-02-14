@@ -29,6 +29,7 @@ import { html_div } from "./html_div.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
 import { list_index } from "./list_index.mjs";
+import { list_map } from "./list_map.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async function () {
     let root = app_code_screen_set(
@@ -57,6 +58,10 @@ export async function app_code_refresh_function(context) {
           let ancestor_common = object_property_get(two, "ancestor_common");
           assert(list_is, [ancestor_common]);
           list_index(ancestor_common);
+          list_map(two, function (t) {
+            let v = list_index(ancestor_common);
+            return v;
+          });
           log({
             two,
           });
