@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { js_code_declare_assign_0 } from "./js_code_declare_assign_0.mjs";
 import { add_1 } from "./add_1.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
@@ -17,7 +16,7 @@ import { list_after } from "./list_after.mjs";
 import { list_index } from "./list_index.mjs";
 export function js_assign_to_let(ast) {
   let ess = js_node_type_visitor(ast, "ExpressionStatement");
-  each(ess, (v) => {
+  each(ess, function (v) {
     let { node } = v;
     let { expression } = node;
     let { type } = expression;
@@ -25,9 +24,9 @@ export function js_assign_to_let(ast) {
       let { left } = expression;
       if (left.type === "Identifier") {
         let { name } = left;
-        let names = list_adder((la) => {
-          let { stack } = v;
-          each(stack, (s) => {
+        let { stack } = v;
+        let names = list_adder(function (la) {
+          each(stack, function (s) {
             let { type: s_type } = s;
             if (s_type === "BlockStatement") {
               let list = list_after(stack, s);
@@ -39,7 +38,7 @@ export function js_assign_to_let(ast) {
                 "type",
                 "VariableDeclaration",
               );
-              each(filtered, (f) => {
+              each(filtered, function (f) {
                 let { declarations } = f;
                 let mapped = list_map_property(declarations, "id");
                 identifiers_add(mapped);
@@ -51,7 +50,7 @@ export function js_assign_to_let(ast) {
               }
             }
             function identifiers_add(list) {
-              each(list, (m) => {
+              each(list, function (m) {
                 let { type: m_type } = m;
                 if (equal(m_type, "Identifier")) {
                   let { name: m_name } = m;
