@@ -153,7 +153,7 @@ export function app_good() {
           "Help Redman",
           "Help Lauren Daigle",
           "Help Tauren Wells",
-          "Help Nig Daddy Weave",
+          "Help Big Daddy Weave",
           "Help Maverick City",
           "Let Elon be generous and Christian",
           "Let Zuckerberg be generous and Christian",
