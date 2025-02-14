@@ -21,4 +21,6 @@ export function app_code_refresh_function_selection_remove(result) {
   let high = list_second(indices);
   let removed = list_slice(ancestor_common, low, high + 1);
   list_remove_multiple_from(ancestor_common, low, high);
+  let v2 = removed;
+  return v2;
 }
