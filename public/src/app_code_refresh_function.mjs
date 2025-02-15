@@ -32,6 +32,7 @@ import { object_merge_strict } from "./object_merge_strict.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
+import { list_intersect } from "./list_intersect.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async function () {
     let root = app_code_screen_set(
@@ -82,6 +83,10 @@ export async function app_code_refresh_function(context) {
           let removed_identifiers_names = list_map(
             removed,
             js_identifiers_names,
+          );
+          let param_names = list_intersect(
+            inputs_possible,
+            removed_identifiers_names,
           );
           refresh_overlay_remove();
         });
