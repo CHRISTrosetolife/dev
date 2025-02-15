@@ -4,12 +4,17 @@ import { http_data_get } from "./http_data_get.mjs";
 import { import_multi } from "./import_multi.mjs";
 export async function http_get(url) {
   let axios = await import_multi("axios", "axios");
+  let get;
   if (web_is()) {
-    await html_load(result_get);
+    get = async function () {
+      let v3 = await html_load(result_get);
+      return v3;
+    };
   } else {
     axios = axios.default;
+    get = result_get;
   }
-  let result = await result_get();
+  let result = await get();
   let v = http_data_get(result);
   return v;
   async function result_get() {
