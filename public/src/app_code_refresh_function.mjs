@@ -134,7 +134,7 @@ export async function app_code_refresh_function(context) {
         let prettied = await file_js_unparse(path, ast);
         let file = await app_code_file_get(path);
         let batch_path = await app_code_batch_path_get();
-        object_property_set(file, "batch_path_previous", value);
+        object_property_set(file, "batch_path_previous", batch_path);
         refresh();
         overlay_remove();
       }
