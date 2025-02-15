@@ -15,7 +15,7 @@ import { list_adder } from "./list_adder.mjs";
 import { list_map } from "./list_map.mjs";
 export function js_identifiers_scoped(visitor) {
   let { stack, node } = visitor;
-  let names = list_adder(function (la) {
+  let names = list_adder(function (la, names_result) {
     each(stack, function (s) {
       let { type: s_type } = s;
       if (list_includes(["BlockStatement", "Program"], s_type)) {
