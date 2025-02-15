@@ -19,8 +19,8 @@ export function app_code_refresh_function_selection(args) {
     let stack2 = object_property_get(visitor2, "stack");
     return stack2;
   });
-  let ancestor_common = list_last_match(values);
   let result = {};
+  let ancestor_common = list_last_match(values);
   object_merge_strict(result, {
     ancestor_common,
   });
