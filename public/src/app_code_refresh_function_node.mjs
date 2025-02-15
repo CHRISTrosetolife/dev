@@ -143,12 +143,14 @@ export function app_code_refresh_function_node(args) {
       }),
     );
   } else if (js_node_type_is(node, "ReturnStatement")) {
+    html_span_text_gray(parent, js_keyword_return());
     let argument2 = object_property_get(node, "argument");
     app_code_refresh_function_node(
       object_copy_merge(args, {
         node: argument2,
       }),
     );
+    html_span_text_gray(parent, js_code_statement_end());
   } else if (js_node_type_is(node, "LogicalExpression")) {
     let left2 = object_property_get(node, "left");
     let right2 = object_property_get(node, "right");
