@@ -4,7 +4,6 @@ import { js_visit } from "./js_visit.mjs";
 export function js_identifiers_duplicates(ast) {
   js_visit(ast, function (v) {
     let node = object_property_get(v, "node");
-    let stack = object_property_get(node, "stack");
-    js_identifiers_scoped_each();
+    js_identifiers_scoped_each(v, node);
   });
 }
