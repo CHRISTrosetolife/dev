@@ -5,20 +5,20 @@ export function visit_each_children(
   children_get,
   filter,
   lambda_each,
-  stack,
+  stack_parent,
   node,
 ) {
-  let stacked = list_concat(stack, [node]);
+  let stack = list_concat(stack_parent, [node]);
   if (
     lambda_each({
       node,
       parent,
-      stacked,
+      stacked: stack,
     }) === true
   ) {
     let v = true;
     return v;
   }
-  let v2 = visit_children(node, children_get, filter, lambda_each, stacked);
+  let v2 = visit_children(node, children_get, filter, lambda_each, stack);
   return v2;
 }
