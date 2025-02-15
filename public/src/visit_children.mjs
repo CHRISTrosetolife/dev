@@ -5,9 +5,15 @@ export function visit_children(parent, children_get, filter, each, stack) {
   let children = children_get(parent);
   for (let node of children) {
     if (filter(node)) {
-      result =
-        visit_each_children(parent, children_get, filter, each, stack, node) ||
-        result;
+      let result2 = visit_each_children(
+        parent,
+        children_get,
+        filter,
+        each,
+        stack,
+        node,
+      );
+      result = result2 || result;
     }
   }
   let v = result;
