@@ -13,7 +13,7 @@ import { list_after } from "./list_after.mjs";
 import { list_last_is } from "./list_last_is.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { list_adder } from "./list_adder.mjs";
-export function js_identifiers_scoped_each(stack_item, visitor) {
+export function js_identifiers_scoped_each(visitor, stack_item) {
   let names = list_adder(function (la) {
     let { stack, node } = visitor;
     let { type: s_type } = stack_item;
