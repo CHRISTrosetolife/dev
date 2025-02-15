@@ -45,7 +45,7 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
     }
     function identifiers_add(m) {
       if (list_is(m)) {
-        each(list, function (l) {
+        each(m, function (l) {
           identifiers_add(l);
         });
       } else {
