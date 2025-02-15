@@ -92,6 +92,7 @@ export async function app_code_refresh_function(context) {
           );
           log({
             param_names,
+            inputs_possible,
           });
           refresh_overlay_remove();
         });
