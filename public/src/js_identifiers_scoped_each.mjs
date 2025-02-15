@@ -65,8 +65,8 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
           let mapped = list_map_property(declarations, "id");
           identifiers_add(mapped);
         } else if (equal(m_type, "ImportDeclaration")) {
-          js_imports_existing(m);
-          identifiers_add(mapped);
+          let imports = js_imports_existing(m);
+          identifiers_add(imports);
         }
       });
     }
