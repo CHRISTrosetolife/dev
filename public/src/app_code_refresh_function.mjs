@@ -1,3 +1,4 @@
+import { file_overwrite } from "./file_overwrite.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_next } from "./list_next.mjs";
 import { js_node_type_statement_block_is } from "./js_node_type_statement_block_is.mjs";
@@ -126,7 +127,8 @@ export async function app_code_refresh_function(context) {
       function overlay_remove() {
         html_remove(overlay);
       }
-      function ast_change_finish() {
+      async function ast_change_finish() {
+        await file_overwrite();
         refresh();
         overlay_remove();
       }
