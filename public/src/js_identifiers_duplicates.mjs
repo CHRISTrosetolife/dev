@@ -10,6 +10,7 @@ export function js_identifiers_duplicates(ast) {
       let node = object_property_get(v, "node");
       let identifiers = js_identifiers_defines(node);
       each(identifiers, la);
+      let identifiers_all;
     });
   });
   let v2 = list_duplicates(identifiers_all);
