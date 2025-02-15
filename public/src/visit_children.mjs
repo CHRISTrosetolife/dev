@@ -4,7 +4,7 @@ export function visit_children(parent, children_get, filter, each, stack) {
   let children = children_get(parent);
   for (let node of children) {
     if (filter(node)) {
-      let result2 = visit_each_children(
+      let result = visit_each_children(
         parent,
         children_get,
         filter,
@@ -12,7 +12,7 @@ export function visit_children(parent, children_get, filter, each, stack) {
         stack,
         node,
       );
-      if (result2 === true) {
+      if (result === true) {
         let v = true;
         return v;
       }
