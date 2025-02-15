@@ -22,4 +22,9 @@ export function app_weights() {
     html_div_text(weight_values_preview, list_join_comma_space(weight_values));
   });
   weight_values_preview = html_div();
+  let target_weight_text = "Set target weight";
+  let target_weight = html_input_width_full_placeholder(
+    root,
+    target_weight_text,
+  );
 }
