@@ -129,7 +129,7 @@ export async function app_code_refresh_function(context) {
         html_remove(overlay);
       }
       async function ast_change_finish() {
-        function_name_to_path();
+        path = function_name_to_path(function_selected);
         await file_overwrite(path, js_unparse(ast));
         refresh();
         overlay_remove();
