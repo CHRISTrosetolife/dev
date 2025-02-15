@@ -19,8 +19,8 @@ export function app_code_refresh_function_selection(args) {
   let values = list_map(map_properties(selected), function (p) {
     let m = map_get(selected, p);
     let visitor2 = object_property_get(m, "visitor");
-    let stack2 = object_property_get(visitor2, "stack");
-    return stack2;
+    let stack = object_property_get(visitor2, "stack");
+    return stack;
   });
   let result = {};
   if (list_empty_not_is(values)) {
