@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
 import { js_imports_existing } from "./js_imports_existing.mjs";
 import { list_map_property } from "./list_map_property.mjs";
@@ -50,9 +49,7 @@ export function js_identifiers_defines(node) {
           identifiers_add_recursive(imports);
         } else if (js_function_types_is(m_type)) {
           let { params } = m;
-          log({
-            m,
-          });
+          let id = object_property_get(m, "id");
           identifiers_add_recursive(params);
         }
       }
