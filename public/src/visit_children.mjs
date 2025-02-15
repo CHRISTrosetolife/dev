@@ -1,7 +1,6 @@
 import { visit_each_children } from "./visit_each_children.mjs";
 import { each } from "./each.mjs";
 export function visit_children(parent, children_get, filter, each, stack) {
-  let result = false;
   let children = children_get(parent);
   for (let node of children) {
     if (filter(node)) {
@@ -13,10 +12,10 @@ export function visit_children(parent, children_get, filter, each, stack) {
         stack,
         node,
       );
-      if (false) {
+      if (result2 === true) {
+        let v = true;
+        return v;
       }
     }
   }
-  let v = result;
-  return v;
 }
