@@ -16,4 +16,6 @@ export async function sandbox_5() {
       return v2;
     }
   });
+  let v3 = duplicates_has;
+  return v3;
 }
