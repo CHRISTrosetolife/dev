@@ -30,11 +30,7 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
           "type",
           "VariableDeclaration",
         );
-        each(filtered, function (f) {
-          let { declarations } = f;
-          let mapped = list_map_property(declarations, "id");
-          identifiers_add(mapped);
-        });
+        identifiers_add(filtered);
         let filtered2 = list_filter_property(
           taken,
           "type",
