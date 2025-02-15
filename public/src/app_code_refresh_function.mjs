@@ -1,3 +1,4 @@
+import { js_variablize } from "./js_variablize.mjs";
 import { js_imports_existing_names } from "./js_imports_existing_names.mjs";
 import { list_flatten } from "./list_flatten.mjs";
 import { app_code_refresh_function_selection_removals } from "./app_code_refresh_function_selection_removals.mjs";
@@ -106,7 +107,7 @@ export async function app_code_refresh_function(context) {
         });
       } else if (object_property_exists(selection_result, "one")) {
         html_button(overlay, "Selection variablize", async function () {
-          app_code_refresh_function_selection_remove(selection_result);
+          js_variablize();
           refresh_overlay_remove();
         });
       }
