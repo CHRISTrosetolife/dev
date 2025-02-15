@@ -112,6 +112,8 @@ export async function app_code_refresh_function(context) {
       } else if (object_property_exists(selection_result, "one")) {
         html_button(overlay, "Selection variablize", async function () {
           let stack = object_property_get(selection_result, "one");
+          let visitor = object_property_get(m, "visitor");
+          let node2 = object_property_get(visitor, "node");
           let b = list_find_last(stack, js_node_type_statement_block_is);
           let list = list_next(stack, b);
           js_variablize();
