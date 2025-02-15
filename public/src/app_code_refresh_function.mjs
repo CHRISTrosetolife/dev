@@ -131,7 +131,7 @@ export async function app_code_refresh_function(context) {
       }
       async function ast_change_finish() {
         let prettied = await file_js_unparse(path, ast);
-        let path2 = object_property_get(files, "path");
+        let file = object_property_get(files, path);
         refresh();
         overlay_remove();
       }
