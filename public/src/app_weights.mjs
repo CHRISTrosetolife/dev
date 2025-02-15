@@ -45,7 +45,8 @@ export function app_weights() {
       }
       value -= w;
       list_add(results, w);
-      if (false) {
+      if (value <= 0) {
+        break;
       }
     }
     html_clear(result);
