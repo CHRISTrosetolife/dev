@@ -16,11 +16,13 @@ export async function sandbox_5() {
   js_visit(ast, function (v) {
     let node = object_property_get(v, "node");
     let names = js_identifiers_scoped(v);
+    let duplicates = set_new();
     let existing = set_new();
     each(list, function (item) {
       if (set_includes(included, item)) {
-        set_add(existing, item);
+        set_add(duplicates, item);
       }
+      set_add(existing, item);
     });
     if (js_unparsable(node)) {
       log({
