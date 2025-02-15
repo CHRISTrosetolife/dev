@@ -50,7 +50,9 @@ export function js_identifiers_defines(node) {
         } else if (js_function_types_is(m_type)) {
           let { params } = m;
           let id = object_property_get(m, "id");
-          identifiers_add_recursive(id);
+          if (false) {
+            identifiers_add_recursive(id);
+          }
           identifiers_add_recursive(params);
         }
       }
