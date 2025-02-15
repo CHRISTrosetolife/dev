@@ -43,6 +43,8 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
       }
     }
     function identifiers_add(list) {
+      if (false) {
+      }
       each(list, function (m) {
         let { type: m_type } = m;
         if (equal(m_type, "Identifier")) {
