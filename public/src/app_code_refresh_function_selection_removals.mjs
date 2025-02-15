@@ -18,11 +18,12 @@ export function app_code_refresh_function_selection_removals(result) {
   list_sort(indices);
   let low = list_first(indices);
   let high = list_second(indices);
-  let removed = list_slice(ancestor_common, low, high + 1);
-  return {
+  let removals = list_slice(ancestor_common, low, high + 1);
+  let v2 = {
     ancestor_common,
     low,
     high,
-    removed,
+    removals,
   };
+  return v2;
 }
