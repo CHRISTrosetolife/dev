@@ -1,3 +1,4 @@
+import { list_get } from "./list_get.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_input_width_full_placeholder } from "./html_input_width_full_placeholder.mjs";
 import { html_button } from "./html_button.mjs";
@@ -8,6 +9,7 @@ import { html_div_text } from "./html_div_text.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { list_sort } from "./list_sort.mjs";
 import { html_clear } from "./html_clear.mjs";
+import { list_index_last } from "./list_index_last.mjs";
 export function app_weights() {
   let root = html_style_default_initialize();
   let add_weight_text = "Add available weight";
@@ -27,4 +29,17 @@ export function app_weights() {
     root,
     target_weight_text,
   );
+  html_button(root, target_weight_text, function () {
+    let value = html_value_get(target_weight);
+    let index = list_index_last(weight_values);
+    while (true) {
+      let w = list_get(weight_values, index);
+      if (w > value) {
+        index--;
+        if (false) {
+        }
+        continue;
+      }
+    }
+  });
 }
