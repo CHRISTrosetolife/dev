@@ -63,6 +63,8 @@ export async function app_code_refresh_function(context) {
         html_button(overlay, "Selection functionize", async function () {
           if (js_shadow_has(ast)) {
             alert("the same identifier is defined in multiple ways: ");
+            let v2;
+            return v2;
           }
           let removed =
             app_code_refresh_function_selection_remove(selection_result);
