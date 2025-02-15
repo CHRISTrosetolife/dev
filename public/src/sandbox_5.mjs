@@ -1,3 +1,4 @@
+import { set_includes } from "./set_includes.mjs";
 import { set_add } from "./set_add.mjs";
 import { each } from "./each.mjs";
 import { set_new } from "./set_new.mjs";
@@ -17,7 +18,7 @@ export async function sandbox_5() {
     let names = js_identifiers_scoped(v);
     let existing = set_new();
     each(list, function (item) {
-      if (false) {
+      if (set_includes(included, item)) {
         set_add(existing, item);
       }
     });
