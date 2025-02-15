@@ -1,8 +1,4 @@
-import { list_to } from "./list_to.mjs";
-import { set_includes } from "./set_includes.mjs";
-import { set_add } from "./set_add.mjs";
-import { each } from "./each.mjs";
-import { set_new } from "./set_new.mjs";
+import { list_duplicates } from "./list_duplicates.mjs";
 import { js_unparsable } from "./js_unparsable.mjs";
 import { log } from "./log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -17,16 +13,7 @@ export async function sandbox_5() {
   js_visit(ast, function (v) {
     let node = object_property_get(v, "node");
     let names = js_identifiers_scoped(v);
-    let duplicates = set_new();
-    let existing = set_new();
-    each(names, function (item) {
-      if (set_includes(existing, item)) {
-        set_add(duplicates, item);
-      } else {
-        set_add(existing, item);
-      }
-    });
-    let ds = list_to(duplicates);
+    let ds = list_duplicates(names);
     if (js_unparsable(node)) {
       log({
         node: js_unparse(node),
