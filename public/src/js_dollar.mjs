@@ -206,7 +206,7 @@ export function js_dollar(ast) {
       if (equal(remaining, "ag")) {
         await js_dollar_grandparent_next(v, lambda);
         async function lambda(a) {
-          let { next, s1 } = a;
+          let { next, s2 } = a;
           await js_node_if_declaration(next, async function lambda_inner(d) {
             let { id } = d;
             if (js_node_type_is(id, "Identifier")) {
@@ -215,7 +215,7 @@ export function js_dollar(ast) {
               js_visit_identifiers_named(ast, name_id, function (node) {
                 object_copy_replace(node, init);
               });
-              list_remove_multiple(s1, [parent, next]);
+              list_remove_multiple(s2, [parent, next]);
             }
           });
         }
