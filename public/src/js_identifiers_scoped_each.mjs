@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { equal } from "./equal.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
 import { js_imports_existing } from "./js_imports_existing.mjs";
@@ -50,6 +51,7 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
         });
       } else {
         let { type: m_type } = m;
+        let type2 = object_property_get(m, "type");
         if (equal(m_type, "Identifier")) {
           let { name: m_name } = m;
           la(m_name);
