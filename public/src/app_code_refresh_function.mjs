@@ -1,3 +1,4 @@
+import { app_code_files_get } from "./app_code_files_get.mjs";
 import { file_js_unparse } from "./file_js_unparse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_next } from "./list_next.mjs";
@@ -56,6 +57,7 @@ export async function app_code_refresh_function(context) {
       "function_selected",
     );
     let path = function_name_to_path(function_selected);
+    let files = await app_code_files_get();
     let contents = await app_code_file_contents(path);
     let ast = js_parse(contents);
     let args = {
@@ -129,9 +131,7 @@ export async function app_code_refresh_function(context) {
       }
       async function ast_change_finish() {
         let prettied = await file_js_unparse(path, ast);
-        log({
-          prettied,
-        });
+        let path2 = object_property_get(files, "path");
         refresh();
         overlay_remove();
       }
