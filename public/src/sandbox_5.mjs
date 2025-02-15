@@ -5,6 +5,7 @@ export async function sandbox_5() {
   let ast = await function_parse(fn_name("sandbox_5b"));
   let v3 = js_identifiers_shadowed_names(ast);
   let y, z;
-  let x = y + z;
+  let w = 4;
+  let x = y + z + w;
   return x;
 }
