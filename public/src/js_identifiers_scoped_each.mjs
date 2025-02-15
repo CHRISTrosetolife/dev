@@ -40,8 +40,8 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
           "type",
           "ImportDeclaration",
         );
-        let imports_names = list_map(filtered2, js_imports_existing);
-        each(imports_names, function (item2) {
+        let imports = list_map(filtered2, js_imports_existing);
+        each(imports, function (item2) {
           identifiers_add(item2);
         });
       }
