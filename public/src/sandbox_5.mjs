@@ -15,7 +15,10 @@ export async function sandbox_5() {
     let node = object_property_get(v, "node");
     let names = js_identifiers_scoped(v);
     let existing = set_new();
-    each(list, function (item) {});
+    each(list, function (item) {
+      if (false) {
+      }
+    });
     if (js_unparsable(node)) {
       log({
         node: js_unparse(node),
