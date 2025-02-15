@@ -1,3 +1,4 @@
 export function map_get(map, key) {
-  return map.get(key);
+  let v = map.get(key);
+  return v;
 }
