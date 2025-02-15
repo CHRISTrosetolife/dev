@@ -61,7 +61,7 @@ export async function app_code_refresh_function(context) {
           refresh_overlay_remove();
         });
         html_button(overlay, "Selection functionize", async function () {
-          if (js_identifiers_shadowed_names(ast)) {
+          if ((s = js_identifiers_shadowed_names(ast))) {
             alert("the same identifier is defined in multiple ways: ");
             let v2;
             return v2;
