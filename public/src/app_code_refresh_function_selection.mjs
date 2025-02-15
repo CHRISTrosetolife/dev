@@ -43,7 +43,7 @@ export function app_code_refresh_function_selection(args) {
           two,
         });
       } else if (list_size_1(values)) {
-        let one = list_single(values);
+        let one = list_single(mapped);
         object_merge_strict(result, {
           one,
         });
