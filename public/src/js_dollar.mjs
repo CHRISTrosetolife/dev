@@ -1,3 +1,4 @@
+import { js_stack_find_list } from "./js_stack_find_list.mjs";
 import { log } from "./log.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { list_last } from "./list_last.mjs";
@@ -27,9 +28,6 @@ import { js_node_if_declaration } from "./js_node_if_declaration.mjs";
 import { string_split } from "./string_split.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { js_node_is } from "./js_node_is.mjs";
-import { list_previous } from "./list_previous.mjs";
-import { list_next } from "./list_next.mjs";
-import { list_find_last } from "./list_find_last.mjs";
 import { list_remove_multiple } from "./list_remove_multiple.mjs";
 import { js_code_brackets } from "./js_code_brackets.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
@@ -194,10 +192,7 @@ export function js_dollar(ast) {
       if (remaining === "ep") {
         let value_new = js_parse_first(js_code_if_false());
         let { stack } = v;
-        let predicate = list_is;
-        let list = list_find_last(stack, predicate);
-        let item = list_next(stack, list);
-        let current = list_previous(list, item);
+        let { current, list, item } = js_stack_find_list(stack);
         let previous = null;
         while (js_node_is(current) && current.type === "IfStatement") {
           previous = current;
