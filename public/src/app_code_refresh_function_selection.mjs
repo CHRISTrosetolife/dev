@@ -1,3 +1,4 @@
+import { list_single } from "./list_single.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_index } from "./list_index.mjs";
 import { list_size_2 } from "./list_size_2.mjs";
@@ -39,6 +40,10 @@ export function app_code_refresh_function_selection(args) {
           two,
         });
       } else if (list_size_1(values)) {
+        let one = list_single(values);
+        object_merge_strict(result, {
+          one,
+        });
       }
     }
   }
