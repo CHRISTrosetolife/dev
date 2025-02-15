@@ -39,8 +39,7 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
       }
     } else {
       if (js_function_types_is(s_type)) {
-        let { params } = stack_item;
-        identifiers_add(params);
+        identifiers_add([stack_item]);
       }
     }
     function identifiers_add(list) {
