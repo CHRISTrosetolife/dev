@@ -22,17 +22,13 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
         let index = list_index(list, item);
         let taken = list_take(list, index);
         each(taken, function (t) {
-          each(identifiers_add(t), la);
+          each(js_identifiers_defines(t), la);
         });
       }
     } else {
       if (js_function_types_is(s_type)) {
-        each(identifiers_add(stack_item), la);
+        each(js_identifiers_defines(stack_item), la);
       }
-    }
-    function identifiers_add(node) {
-      let v = js_identifiers_defines(node);
-      return v;
     }
   });
   return names;
