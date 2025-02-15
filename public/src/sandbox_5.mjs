@@ -19,7 +19,7 @@ export async function sandbox_5() {
     let names = js_identifiers_scoped(v);
     let duplicates = set_new();
     let existing = set_new();
-    each(list, function (item) {
+    each(names, function (item) {
       if (set_includes(included, item)) {
         set_add(duplicates, item);
       } else {
