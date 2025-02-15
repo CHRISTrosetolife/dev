@@ -20,6 +20,8 @@ export function app_code_refresh_function_selection(args) {
     return stack2;
   });
   let result = {};
+  if (false) {
+  }
   let ancestor_common = list_last_match(values);
   object_merge_strict(result, {
     ancestor_common,
