@@ -104,7 +104,7 @@ export async function app_code_refresh_function(context) {
           });
           refresh_overlay_remove();
         });
-      } else {
+      } else if (object_property_exists(selection_result, "one")) {
         html_button(overlay, "Selection variablize", async function () {
           app_code_refresh_function_selection_remove(selection_result);
           refresh_overlay_remove();
