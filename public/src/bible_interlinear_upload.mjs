@@ -18,8 +18,8 @@ import { list_map_property } from "./list_map_property.mjs";
 export async function bible_interlinear_upload() {
   let language = "greek";
   let books = await bible_interlinear_cache_new();
-  let chapters = list_adder((la) => {
-    bible_interlinear_each_chapter(books, (chapter, book_name) => {
+  let chapters = list_adder(function (la) {
+    bible_interlinear_each_chapter(books, function (chapter, book_name) {
       let r = object_merge_strict(
         {
           book_name,
@@ -29,7 +29,7 @@ export async function bible_interlinear_upload() {
       la(r);
     });
   });
-  await each_async(chapters, async (chapter) => {
+  await each_async(chapters, async function (chapter) {
     let book_name = object_property_get(chapter, "book_name");
     let chapter_name = object_property_get(chapter, "chapter_name");
     await bible_storage_version_upload(
@@ -37,15 +37,21 @@ export async function bible_interlinear_upload() {
       chapter_name,
       chapter,
     );
-    let tokens = list_adder_unique((la) => {
+    let tokens = list_adder_unique(function (la) {
       bible_interlinear_chapter_each_token(chapter, la);
     });
     let strongs = list_map_property(tokens, "strong");
-    strongs = list_unique(strongs);
-    let definitions = await list_to_lookup_value_async(strongs, async (s) => ({
-      [bible_storage_interlinear_chapter_definitions_property()]:
-        await bible_interlinear_definition(language, s),
-    }));
+    let strongs = list_unique(strongs);
+    let definitions = await list_to_lookup_value_async(
+      strongs,
+      async function (s) {
+        let v = {
+          [bible_storage_interlinear_chapter_definitions_property()]:
+            await bible_interlinear_definition(language, s),
+        };
+        return v;
+      },
+    );
     await bible_storage_version_upload(
       bible_storage_interlinear_chapter_definitions_path(
         book_name,
