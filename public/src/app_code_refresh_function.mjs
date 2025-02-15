@@ -97,7 +97,7 @@ export async function app_code_refresh_function(context) {
             removed_identifiers_names,
           );
           let imports_names = js_imports_existing_names(ast);
-          list_difference(intersected, param_names);
+          let param_names = list_difference(intersected, imports_names);
           log({
             param_names,
             inputs_possible,
