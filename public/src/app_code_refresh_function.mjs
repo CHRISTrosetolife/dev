@@ -68,10 +68,6 @@ export async function app_code_refresh_function(context) {
           app_code_refresh_function_selection_remove(selection_result);
           refresh_overlay_remove();
         });
-        html_button(overlay, "Selection variablize", async function () {
-          app_code_refresh_function_selection_remove(selection_result);
-          refresh_overlay_remove();
-        });
         html_button(overlay, "Selection functionize", async function () {
           let s = js_identifiers_shadowed_names(ast);
           if (list_empty_not_is(s)) {
@@ -108,6 +104,7 @@ export async function app_code_refresh_function(context) {
           });
           refresh_overlay_remove();
         });
+      } else {
       }
       app_code_button_menu_app(context, overlay, overlay_remove);
       function overlay_remove() {
