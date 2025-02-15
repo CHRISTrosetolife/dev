@@ -398,14 +398,14 @@ export function js_dollar(ast) {
       if (remaining === "i") {
         await js_dollar_grandparent_next(v, lambda);
         function lambda(a) {
-          let { s1, next } = a;
+          let { s2, next } = a;
           let statement = js_parse_first(js_code_if_false());
           let { consequent } = statement;
           let { body } = consequent;
           list_add(body, next);
-          let index = list_index(s1, next);
-          list_set(s1, index, statement);
-          list_remove(s1, parent);
+          let index = list_index(s2, next);
+          list_set(s2, index, statement);
+          list_remove(s2, parent);
         }
       }
       if (remaining === "ib") {
