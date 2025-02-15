@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { js_identifiers_shadowed_names } from "./js_identifiers_shadowed_names.mjs";
 import { js_identifiers_names } from "./js_identifiers_names.mjs";
 import { list_map } from "./list_map.mjs";
@@ -88,6 +89,9 @@ export async function app_code_refresh_function(context) {
             inputs_possible,
             removed_identifiers_names,
           );
+          log({
+            param_names,
+          });
           refresh_overlay_remove();
         });
       }
