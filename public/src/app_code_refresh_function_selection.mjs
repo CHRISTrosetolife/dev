@@ -31,8 +31,8 @@ export function app_code_refresh_function_selection(args) {
     object_merge_strict(result, {
       ancestor_common,
     });
-    if (list_is(ancestor_common)) {
-      if (list_size_2(values)) {
+    if (list_size_2(values)) {
+      if (list_is(ancestor_common)) {
         let two = list_map(values, function (v) {
           let index = list_index(v, ancestor_common);
           let index_next = index + 1;
@@ -42,12 +42,12 @@ export function app_code_refresh_function_selection(args) {
         object_merge_strict(result, {
           two,
         });
-      } else if (list_size_1(values)) {
-        let one = list_single(mapped);
-        object_merge_strict(result, {
-          one,
-        });
       }
+    } else if (list_size_1(values)) {
+      let one = list_single(mapped);
+      object_merge_strict(result, {
+        one,
+      });
     }
   }
   return result;
