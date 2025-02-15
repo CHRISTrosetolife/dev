@@ -1,4 +1,4 @@
-import { js_shadow_has } from "./js_shadow_has.mjs";
+import { js_identifiers_shadowed_names } from "./js_identifiers_shadowed_names.mjs";
 import { js_identifiers_names } from "./js_identifiers_names.mjs";
 import { list_map } from "./list_map.mjs";
 import { js_visit_find } from "./js_visit_find.mjs";
@@ -61,7 +61,7 @@ export async function app_code_refresh_function(context) {
           refresh_overlay_remove();
         });
         html_button(overlay, "Selection functionize", async function () {
-          if (js_shadow_has(ast)) {
+          if (js_identifiers_shadowed_names(ast)) {
             alert("the same identifier is defined in multiple ways: ");
             let v2;
             return v2;
