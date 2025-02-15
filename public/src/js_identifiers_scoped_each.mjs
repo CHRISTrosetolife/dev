@@ -10,9 +10,9 @@ import { list_take } from "./list_take.mjs";
 import { list_index } from "./list_index.mjs";
 import { list_after_or } from "./list_after_or.mjs";
 import { list_after } from "./list_after.mjs";
-import { list_last_is } from "./list_last_is.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { list_adder } from "./list_adder.mjs";
+import { list_index_last } from "./list_index_last.mjs";
 export function js_identifiers_scoped_each(visitor, stack_item) {
   let names = list_adder(function (la) {
     let { stack, node } = visitor;
@@ -20,7 +20,7 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
     if (list_includes(["BlockStatement", "Program"], s_type)) {
       if (
         list_includes(stack, stack_item) &&
-        !list_last_is(stack, stack_item)
+        list_index(stack, stack_item) < list_index_last(stack)
       ) {
         let list = list_after(stack, stack_item);
         let item = list_after_or(stack, list, node);
