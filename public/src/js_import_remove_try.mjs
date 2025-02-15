@@ -7,10 +7,11 @@ export function js_import_remove_try(ast, e) {
   let { body } = ast;
   let existing2 = js_imports_existing_named(ast, e);
   if (list_empty_is(existing2)) {
-    return;
+    let v;
+    return v;
   }
   let e2 = list_single(existing2);
   let { stack } = e2;
-  let ancestor = list_get_end(stack, 1);
+  let ancestor = list_get_end(stack, 2);
   list_remove(body, ancestor);
 }
