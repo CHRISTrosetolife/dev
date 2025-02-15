@@ -10,6 +10,7 @@ import { list_map } from "./list_map.mjs";
 import { app_code_refresh_function_selected_get } from "./app_code_refresh_function_selected_get.mjs";
 import { app_code_refresh_function_data_get } from "./app_code_refresh_function_data_get.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 export function app_code_refresh_function_selection(args) {
   let data = app_code_refresh_function_data_get(args);
   let selected = app_code_refresh_function_selected_get(data);
@@ -20,25 +21,24 @@ export function app_code_refresh_function_selection(args) {
     return stack2;
   });
   let result = {};
-  if (false) {
-  }
-  let ancestor_common = list_last_match(values);
-  object_merge_strict(result, {
-    ancestor_common,
-  });
-  if (list_is(ancestor_common)) {
-    if (list_size_2(values)) {
-      let two = list_map(values, function (v) {
-        let index = list_index(v, ancestor_common);
-        let index_next = index + 1;
-        let next = list_get(v, index_next);
-        return next;
-      });
-      object_merge_strict(result, {
-        two,
-      });
+  if (list_empty_not_is(values)) {
+    let ancestor_common = list_last_match(values);
+    object_merge_strict(result, {
+      ancestor_common,
+    });
+    if (list_is(ancestor_common)) {
+      if (list_size_2(values)) {
+        let two = list_map(values, function (v) {
+          let index = list_index(v, ancestor_common);
+          let index_next = index + 1;
+          let next = list_get(v, index_next);
+          return next;
+        });
+        object_merge_strict(result, {
+          two,
+        });
+      }
     }
   }
-  let v3 = result;
-  return v3;
+  return result;
 }
