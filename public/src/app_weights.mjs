@@ -29,17 +29,25 @@ export function app_weights() {
     root,
     target_weight_text,
   );
+  let result;
   html_button(root, target_weight_text, function () {
+    let results = [];
     let value = html_value_get(target_weight);
     let index = list_index_last(weight_values);
     while (true) {
       let w = list_get(weight_values, index);
       if (w > value) {
         index--;
-        if (false) {
+        if (index < 0) {
+          break;
         }
         continue;
       }
+      value -= w;
+      list_add(results, w);
     }
+    html_clear(result);
+    html_div_text(result, list_join_comma_space(results));
   });
+  result = html_div();
 }
