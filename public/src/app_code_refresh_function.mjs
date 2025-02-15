@@ -1,3 +1,4 @@
+import { list_next } from "./list_next.mjs";
 import { js_node_type_statement_block_is } from "./js_node_type_statement_block_is.mjs";
 import { list_find_last } from "./list_find_last.mjs";
 import { js_variablize } from "./js_variablize.mjs";
@@ -109,7 +110,8 @@ export async function app_code_refresh_function(context) {
         });
       } else if (object_property_exists(selection_result, "one")) {
         html_button(overlay, "Selection variablize", async function () {
-          let list = list_find_last(stack, js_node_type_statement_block_is);
+          let b = list_find_last(stack, js_node_type_statement_block_is);
+          let list = list_next(stack, b);
           js_variablize();
           refresh_overlay_remove();
         });
