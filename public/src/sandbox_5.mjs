@@ -1,3 +1,4 @@
+import { set_add } from "./set_add.mjs";
 import { each } from "./each.mjs";
 import { set_new } from "./set_new.mjs";
 import { js_unparsable } from "./js_unparsable.mjs";
@@ -17,6 +18,7 @@ export async function sandbox_5() {
     let existing = set_new();
     each(list, function (item) {
       if (false) {
+        set_add(existing, item);
       }
     });
     if (js_unparsable(node)) {
