@@ -490,11 +490,11 @@ export function js_dollar(ast) {
           return r;
         });
         await js_dollar_grandparent(v, function (a) {
-          let { index, s1 } = a;
+          let { index, s2 } = a;
           each(mapped, function (m) {
-            list_insert(s1, index, m);
+            list_insert(s2, index, m);
           });
-          list_remove(s1, parent);
+          list_remove(s2, parent);
         });
       } else {
         let log_prefix_start_is = remaining === log_prefix_start;
