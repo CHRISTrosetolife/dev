@@ -28,7 +28,7 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
         let index = list_index(list, item);
         let taken = list_take(list, index);
         each(taken, function (t) {
-          each(list2, function (item2) {});
+          each(identifiers_add(t), la);
         });
       }
     } else {
@@ -37,7 +37,7 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
       }
     }
     function identifiers_add(node) {
-      let v = list_adder(function (la) {
+      let v = list_adder(function (la2) {
         let { type: s_type } = node;
         if (
           list_includes(
@@ -59,7 +59,7 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
             let m_type = object_property_get(m, "type");
             if (equal(m_type, "Identifier")) {
               let { name: m_name } = m;
-              la(m_name);
+              la2(m_name);
             } else if (equal(m_type, "ObjectPattern")) {
               let { properties } = m;
               let keys = list_map_property(properties, "value");
