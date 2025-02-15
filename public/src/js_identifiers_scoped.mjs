@@ -6,7 +6,7 @@ export function js_identifiers_scoped(visitor) {
   let names = list_adder(function (la) {
     each(stack, function (stack_item) {
       let stack_item_names = js_identifiers_scoped_each(stack_item, visitor);
-      each(list2, function (item3) {});
+      each(stack_item_names, la);
     });
   });
   return names;
