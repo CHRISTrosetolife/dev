@@ -60,6 +60,8 @@ export async function app_code_refresh_function(context) {
           refresh_overlay_remove();
         });
         html_button(overlay, "Selection functionize", async function () {
+          if (false) {
+          }
           let removed =
             app_code_refresh_function_selection_remove(selection_result);
           let f = list_first(removed);
