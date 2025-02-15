@@ -61,7 +61,7 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
           let { elements } = m;
           identifiers_add(elements);
         } else if (equal(m_type, "VariableDeclaration")) {
-          let { declarations } = f;
+          let { declarations } = m;
           let mapped = list_map_property(declarations, "id");
           identifiers_add(mapped);
         }
