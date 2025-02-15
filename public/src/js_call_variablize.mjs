@@ -16,15 +16,15 @@ export function js_call_variablize(ast) {
     let { stack } = v;
     let { arguments: args } = node;
     let copy = list_copy(args);
-    each_index(copy, (arg, arg_i) => {
+    each_index(copy, function (arg, arg_i) {
       let { type } = arg;
       if (list_includes(move_types, type)) {
-        let ancestor = list_get_end(stack, 2);
+        let ancestor = list_get_end(stack, 3);
         let { type: ancestor_type } = ancestor;
         if (equal(ancestor_type, "BlockStatement")) {
-          let body = list_get_end(stack, 1);
+          let body = list_get_end(stack, 2);
           assert(list_is, [body]);
-          let es = list_get_end(stack, 0);
+          let es = list_get_end(stack, 1);
           let { type: es_type } = es;
           assert(equal, [es_type, "ExpressionStatement"]);
           let parsed2 = js_variablize(ast, body, es, arg);
