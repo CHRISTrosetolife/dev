@@ -1,3 +1,4 @@
+import { list_flatten } from "./list_flatten.mjs";
 import { app_code_refresh_function_selection_removals } from "./app_code_refresh_function_selection_removals.mjs";
 import { log } from "./log.mjs";
 import { js_identifiers_shadowed_names } from "./js_identifiers_shadowed_names.mjs";
@@ -82,9 +83,12 @@ export async function app_code_refresh_function(context) {
           let f = list_first(removals);
           let v = js_visit_find(ast, f);
           let inputs_possible = js_identifiers_scoped(v);
-          let removed_identifiers_names = list_map(
+          let removed_identifiers_names_lists = list_map(
             removals,
             js_identifiers_names,
+          );
+          let removed_identifiers_names = list_flatten(
+            removed_identifiers_names_lists,
           );
           let param_names = list_intersect(
             inputs_possible,
