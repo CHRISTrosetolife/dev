@@ -16,8 +16,11 @@ import { list_size_1 } from "./list_size_1.mjs";
 export function app_code_refresh_function_selection(args) {
   let data = app_code_refresh_function_data_get(args);
   let selected = app_code_refresh_function_selected_get(data);
-  let values = list_map(map_properties(selected), function (p) {
+  let mapped = list_map(map_properties(selected), function (p) {
     let m = map_get(selected, p);
+    return m;
+  });
+  let values = list_map(mapped, function (m) {
     let visitor = object_property_get(m, "visitor");
     let stack = object_property_get(visitor, "stack");
     return stack;
