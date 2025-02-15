@@ -9,12 +9,15 @@ export function visit_each_children(
   stack,
   node,
 ) {
-  if (false) {
+  if (
     each({
       node,
       parent,
       stack,
-    });
+    }) === true
+  ) {
+    let v = true;
+    return v;
   }
   let stacked = list_concat(stack, [node]);
   visit_children(node, children_get, filter, each, stacked);
