@@ -4,14 +4,12 @@ import { list_duplicates } from "./list_duplicates.mjs";
 import { js_identifiers_scoped } from "./js_identifiers_scoped.mjs";
 import { js_visit } from "./js_visit.mjs";
 export function js_shadow_has(ast) {
-  let duplicates_has = false;
-  list_adder_unique(function (la) {
+  let v3 = list_adder_unique(function (la) {
     js_visit(ast, function (v) {
       let names = js_identifiers_scoped(v);
       let ds = list_duplicates(names);
-      each(list, function (item) {});
+      each(ds, la);
     });
   });
-  let v3 = duplicates_has;
   return v3;
 }
