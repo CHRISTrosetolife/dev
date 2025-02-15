@@ -8,18 +8,23 @@ import { global_get } from "./global_get.mjs";
 export async function app_code_files_get() {
   let v2 = await html_load(async function () {
     let g = global_get();
-    let files = await object_property_initialize_get_async(
+    let batch = await object_property_initialize_get_async(
       g,
       global_files(),
       async function () {
-        let v = await http_storage_get(app_code_local_files_path_latest());
-        let batch_path = object_property_get(v, "batch_path");
+        let latest = await http_storage_get(app_code_local_files_path_latest());
+        let batch_path = object_property_get(latest, "batch_path");
         let batch = await http_storage_get(batch_path);
-        let files2 = object_property_get(batch, "files");
-        return files2;
+        let v = {
+          batch,
+          batch_path,
+        };
+        return v;
       },
     );
-    return files;
+    return batch;
   });
+  let files2 = object_property_get(batch, "files");
+  return files2;
   return v2;
 }
