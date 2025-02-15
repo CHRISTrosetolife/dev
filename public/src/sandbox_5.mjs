@@ -22,8 +22,8 @@ export async function sandbox_5() {
       if (set_includes(included, item)) {
         set_add(duplicates, item);
       } else {
+        set_add(existing, item);
       }
-      set_add(existing, item);
     });
     if (js_unparsable(node)) {
       log({
