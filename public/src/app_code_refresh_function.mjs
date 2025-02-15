@@ -135,6 +135,9 @@ export async function app_code_refresh_function(context) {
         let file = await app_code_file_get(path);
         let batch_path = await app_code_batch_path_get();
         object_property_set(file, "batch_path_previous", batch_path);
+        let batch_new = {
+          files,
+        };
         refresh();
         overlay_remove();
       }
