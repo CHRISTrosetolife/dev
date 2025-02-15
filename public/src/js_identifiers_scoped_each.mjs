@@ -18,7 +18,7 @@ export function js_identifiers_scoped_each(stack_item, visitor) {
     let { stack, node } = visitor;
     let { type: s_type } = stack_item;
     if (list_includes(["BlockStatement", "Program"], s_type)) {
-      if (list_includes(stack_item) && !list_last_is(stack, stack_item)) {
+      if (list_includes(stack,stack_item) && !list_last_is(stack, stack_item)) {
         let list = list_after(stack, stack_item);
         let item = list_after_or(stack, list, node);
         let index = list_index(list, item);
