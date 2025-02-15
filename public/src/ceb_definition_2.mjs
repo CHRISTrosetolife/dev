@@ -1,5 +1,4 @@
 import { log } from "./log.mjs";
-import { list_multiple_is } from "./list_multiple_is.mjs";
 import { ceb_definition_prefix_en } from "./ceb_definition_prefix_en.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
@@ -21,6 +20,7 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { list_uniqueify } from "./list_uniqueify.mjs";
 import { error } from "./error.mjs";
+import { list_size_1 } from "./list_size_1.mjs";
 export async function ceb_definition_2(word) {
   let url = ceb_definition_url(word);
   let { children, form1 } = await ceb_html_cache_parse_form1(url);
@@ -49,7 +49,7 @@ export async function ceb_definition_2(word) {
     let f = list_first(columns);
     let a_href_fs = html_parse_a_href_starts_with(f, prefix_1);
     let word_cebs = html_parse_map_text_trim(a_href_fs);
-    if (list_multiple_is(word_cebs)) {
+    if (!list_size_1(word_cebs)) {
       log({
         word,
       });
