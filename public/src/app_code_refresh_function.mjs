@@ -108,7 +108,7 @@ export async function app_code_refresh_function(context) {
             param_names,
             inputs_possible,
           });
-          ast_change_finish();
+          await ast_change_finish();
         });
       } else if (object_property_exists(selection_result, "one")) {
         html_button(overlay, "Selection variablize", async function () {
@@ -120,7 +120,7 @@ export async function app_code_refresh_function(context) {
           let list = list_next(stack2, b);
           let list_item = list_next(stack2, list);
           js_variablize(ast, list, list_item, node2);
-          ast_change_finish();
+          await ast_change_finish();
         });
       }
       app_code_button_menu_app(context, overlay, overlay_remove);
