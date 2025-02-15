@@ -11,6 +11,7 @@ import { list_after } from "./list_after.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_index_last } from "./list_index_last.mjs";
+import { list_is } from "./list_is.mjs";
 export function js_identifiers_scoped_each(visitor, stack_item) {
   let names = list_adder(function (la) {
     let { stack, node } = visitor;
@@ -42,10 +43,12 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
         identifiers_add([stack_item]);
       }
     }
-    function identifiers_add(list) {
-      if (false) {
-      }
-      each(list, function (m) {
+    function identifiers_add(m) {
+      if (list_is(m)) {
+        each(list, function (l) {
+          identifiers_add(l);
+        });
+      } else {
         let { type: m_type } = m;
         if (equal(m_type, "Identifier")) {
           let { name: m_name } = m;
@@ -68,7 +71,7 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
           let { params } = m;
           identifiers_add(params);
         }
-      });
+      }
     }
   });
   return names;
