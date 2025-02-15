@@ -59,34 +59,34 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
       ) {
         identifiers_add_recursive(stack_item);
       }
-    }
-    function identifiers_add_recursive(m) {
-      if (list_is(m)) {
-        each(m, function (l) {
-          identifiers_add_recursive(l);
-        });
-      } else {
-        let m_type = object_property_get(m, "type");
-        if (equal(m_type, "Identifier")) {
-          let { name: m_name } = m;
-          la(m_name);
-        } else if (equal(m_type, "ObjectPattern")) {
-          let { properties } = m;
-          let keys = list_map_property(properties, "value");
-          identifiers_add_recursive(keys);
-        } else if (equal(m_type, "ArrayPattern")) {
-          let { elements } = m;
-          identifiers_add_recursive(elements);
-        } else if (equal(m_type, "VariableDeclaration")) {
-          let { declarations } = m;
-          let mapped = list_map_property(declarations, "id");
-          identifiers_add_recursive(mapped);
-        } else if (equal(m_type, "ImportDeclaration")) {
-          let imports = js_imports_existing(m);
-          identifiers_add_recursive(imports);
-        } else if (js_function_types_is(m_type)) {
-          let { params } = m;
-          identifiers_add_recursive(params);
+      function identifiers_add_recursive(m) {
+        if (list_is(m)) {
+          each(m, function (l) {
+            identifiers_add_recursive(l);
+          });
+        } else {
+          let m_type = object_property_get(m, "type");
+          if (equal(m_type, "Identifier")) {
+            let { name: m_name } = m;
+            la(m_name);
+          } else if (equal(m_type, "ObjectPattern")) {
+            let { properties } = m;
+            let keys = list_map_property(properties, "value");
+            identifiers_add_recursive(keys);
+          } else if (equal(m_type, "ArrayPattern")) {
+            let { elements } = m;
+            identifiers_add_recursive(elements);
+          } else if (equal(m_type, "VariableDeclaration")) {
+            let { declarations } = m;
+            let mapped = list_map_property(declarations, "id");
+            identifiers_add_recursive(mapped);
+          } else if (equal(m_type, "ImportDeclaration")) {
+            let imports = js_imports_existing(m);
+            identifiers_add_recursive(imports);
+          } else if (js_function_types_is(m_type)) {
+            let { params } = m;
+            identifiers_add_recursive(params);
+          }
         }
       }
     }
