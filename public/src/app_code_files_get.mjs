@@ -25,7 +25,7 @@ export async function app_code_files_get() {
     return data;
   });
   let batch2 = object_property_get(data, "batch");
-  let files2 = object_property_get(batch, "files");
+  let files2 = object_property_get(batch2, "files");
   return files2;
   return v2;
 }
