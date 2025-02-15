@@ -27,7 +27,7 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
         let item = list_after_or(stack, list, node);
         let index = list_index(list, item);
         let taken = list_take(list, index);
-        let filtered = each(taken, identifiers_add);
+        each(taken, identifiers_add);
       }
     } else {
       if (js_function_types_is(s_type)) {
