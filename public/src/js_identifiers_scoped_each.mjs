@@ -45,7 +45,7 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
           s_type,
         )
       ) {
-        identifiers_add_recursive(stack_item);
+        identifiers_add_recursive(node);
       }
       function identifiers_add_recursive(m) {
         if (list_is(m)) {
