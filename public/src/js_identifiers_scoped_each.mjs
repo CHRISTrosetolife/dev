@@ -20,7 +20,7 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
     if (list_includes(["BlockStatement", "Program"], s_type)) {
       if (
         list_includes(stack, stack_item) &&
-        list_index(stack, stack_item) < list_index_last(stack)
+        list_index(stack, stack_item) < list_index_last(stack) - 1
       ) {
         let list = list_after(stack, stack_item);
         let item = list_after_or(stack, list, node);
