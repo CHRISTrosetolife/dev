@@ -4,5 +4,5 @@ import { log } from "./log.mjs";
 export function log_error(message) {
   let truncated = string_take(message, 1000);
   let fn = log;
-  log_error_generic(fn, message);
+  log_error_generic(fn, truncated);
 }
