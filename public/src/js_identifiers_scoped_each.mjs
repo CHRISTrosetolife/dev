@@ -35,48 +35,50 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
       }
     }
     function identifiers_add(node) {
-      let { type: s_type } = node;
-      if (
-        list_includes(
-          list_concat(js_function_types(), [
-            "VariableDeclaration",
-            "ImportDeclaration",
-          ]),
-          s_type,
-        )
-      ) {
-        identifiers_add_recursive(node);
-      }
-      function identifiers_add_recursive(m) {
-        if (list_is(m)) {
-          each(m, function (l) {
-            identifiers_add_recursive(l);
-          });
-        } else {
-          let m_type = object_property_get(m, "type");
-          if (equal(m_type, "Identifier")) {
-            let { name: m_name } = m;
-            la(m_name);
-          } else if (equal(m_type, "ObjectPattern")) {
-            let { properties } = m;
-            let keys = list_map_property(properties, "value");
-            identifiers_add_recursive(keys);
-          } else if (equal(m_type, "ArrayPattern")) {
-            let { elements } = m;
-            identifiers_add_recursive(elements);
-          } else if (equal(m_type, "VariableDeclaration")) {
-            let { declarations } = m;
-            let mapped = list_map_property(declarations, "id");
-            identifiers_add_recursive(mapped);
-          } else if (equal(m_type, "ImportDeclaration")) {
-            let imports = js_imports_existing(m);
-            identifiers_add_recursive(imports);
-          } else if (js_function_types_is(m_type)) {
-            let { params } = m;
-            identifiers_add_recursive(params);
+      list_adder(function (la) {
+        let { type: s_type } = node;
+        if (
+          list_includes(
+            list_concat(js_function_types(), [
+              "VariableDeclaration",
+              "ImportDeclaration",
+            ]),
+            s_type,
+          )
+        ) {
+          identifiers_add_recursive(node);
+        }
+        function identifiers_add_recursive(m) {
+          if (list_is(m)) {
+            each(m, function (l) {
+              identifiers_add_recursive(l);
+            });
+          } else {
+            let m_type = object_property_get(m, "type");
+            if (equal(m_type, "Identifier")) {
+              let { name: m_name } = m;
+              la(m_name);
+            } else if (equal(m_type, "ObjectPattern")) {
+              let { properties } = m;
+              let keys = list_map_property(properties, "value");
+              identifiers_add_recursive(keys);
+            } else if (equal(m_type, "ArrayPattern")) {
+              let { elements } = m;
+              identifiers_add_recursive(elements);
+            } else if (equal(m_type, "VariableDeclaration")) {
+              let { declarations } = m;
+              let mapped = list_map_property(declarations, "id");
+              identifiers_add_recursive(mapped);
+            } else if (equal(m_type, "ImportDeclaration")) {
+              let imports = js_imports_existing(m);
+              identifiers_add_recursive(imports);
+            } else if (js_function_types_is(m_type)) {
+              let { params } = m;
+              identifiers_add_recursive(params);
+            }
           }
         }
-      }
+      });
     }
   });
   return names;
