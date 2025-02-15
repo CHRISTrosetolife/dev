@@ -116,7 +116,7 @@ export async function app_code_refresh_function(context) {
           let node2 = object_property_get(visitor, "node");
           let b = list_find_last(stack, js_node_type_statement_block_is);
           let list = list_next(stack, b);
-          let list_tem = list_next(stack, list);
+          let list_item = list_next(stack, list);
           js_variablize(ast, list, list_item, node2);
           refresh_overlay_remove();
         });
