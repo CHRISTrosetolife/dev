@@ -16,5 +16,4 @@ export function js_variablize(ast, parent_list, list_item, expression) {
   first.init = object_copy(expression);
   let parsed2 = js_parse_expression(variable_name);
   object_replace(expression, parsed2);
-  return parsed2;
 }
