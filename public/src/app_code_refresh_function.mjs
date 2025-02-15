@@ -128,7 +128,10 @@ export async function app_code_refresh_function(context) {
         html_remove(overlay);
       }
       async function ast_change_finish() {
-        await file_js_unparse(path, ast);
+        let prettied = await file_js_unparse(path, ast);
+        log({
+          prettied,
+        });
         refresh();
         overlay_remove();
       }
