@@ -1,1 +1,5 @@
-export function sandbox_5b() {x=1;$ib}
+export function sandbox_5b() {
+  let x = 1;
+  if (false) {
+  }
+}
