@@ -5,7 +5,6 @@ import { js_function_types_is } from "./js_function_types_is.mjs";
 import { js_imports_existing } from "./js_imports_existing.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { each } from "./each.mjs";
-import { list_filter_property } from "./list_filter_property.mjs";
 import { list_take } from "./list_take.mjs";
 import { list_index } from "./list_index.mjs";
 import { list_after_or } from "./list_after_or.mjs";
@@ -28,22 +27,11 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
         let item = list_after_or(stack, list, node);
         let index = list_index(list, item);
         let taken = list_take(list, index);
-        let filtered = list_filter_property(
-          taken,
-          "type",
-          "VariableDeclaration",
-        );
-        identifiers_add_recursive(filtered);
-        let filtered2 = list_filter_property(
-          taken,
-          "type",
-          "ImportDeclaration",
-        );
-        identifiers_add_recursive(filtered2);
+        let filtered = each(taken, identifiers_add);
       }
     } else {
       if (js_function_types_is(s_type)) {
-        identifiers_add_recursive([stack_item]);
+        identifiers_add([stack_item]);
       }
     }
     function identifiers_add(node) {
