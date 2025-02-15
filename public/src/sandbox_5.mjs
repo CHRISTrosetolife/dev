@@ -26,12 +26,12 @@ export async function sandbox_5() {
         set_add(existing, item);
       }
     });
-    list_to(duplicates);
+    let ds = list_to(duplicates);
     if (js_unparsable(node)) {
       log({
         node: js_unparse(node),
         names,
-        names_each,
+        ds,
       });
     }
   });
