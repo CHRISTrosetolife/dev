@@ -144,7 +144,7 @@ export function app_code_refresh_function_node(args) {
       }),
     );
   } else if (js_node_type_is(node, "ReturnStatement")) {
-    html_span_text_gray(parent,$s, js_keyword_return());
+    html_span_text_gray(parent, string_combine_multiple([js_keyword_return()]));
     let argument2 = object_property_get(node, "argument");
     app_code_refresh_function_node(
       object_copy_merge(args, {
