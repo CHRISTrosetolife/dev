@@ -1,3 +1,4 @@
+import { app_code_refresh_function_selection_removals } from "./app_code_refresh_function_selection_removals.mjs";
 import { log } from "./log.mjs";
 import { js_identifiers_shadowed_names } from "./js_identifiers_shadowed_names.mjs";
 import { js_identifiers_names } from "./js_identifiers_names.mjs";
@@ -76,8 +77,8 @@ export async function app_code_refresh_function(context) {
             let v2;
             return v2;
           }
-          let removed =
-            app_code_refresh_function_selection_remove(selection_result);
+          let { removed } =
+            app_code_refresh_function_selection_removals(selection_result);
           let f = list_first(removed);
           let v = js_visit_find(ast, f);
           let inputs_possible = js_identifiers_scoped(v);
