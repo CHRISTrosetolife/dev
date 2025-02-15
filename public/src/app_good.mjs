@@ -176,6 +176,7 @@ export function app_good() {
           "Help Redman",
           "Help Lauren Daigle",
           "Help Brooke Ligertwood",
+          "Help Elevation",
           "Help Tauren Wells",
           "Help Big Daddy Weave",
           "Help Maverick City",
