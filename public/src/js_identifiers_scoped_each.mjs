@@ -63,6 +63,9 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
         } else if (equal(m_type, "ImportDeclaration")) {
           let imports = js_imports_existing(m);
           identifiers_add(imports);
+        } else if (js_function_types_is(m_type)) {
+          let { params } = m;
+          identifiers_add(params);
         }
       });
     }
