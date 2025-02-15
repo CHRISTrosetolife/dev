@@ -319,12 +319,12 @@ export function js_dollar(ast) {
         if (parent.type === "ExpressionStatement") {
           remaining = string_prefix_without(remaining, first_second);
           let { stack } = v;
-          let s1 = list_get_end(stack, 1);
+          let s2 = list_get_end(stack, 2);
           log({
-            s1,
+            s2,
           });
-          if (list_is(s1)) {
-            let index = list_index(s1, parent);
+          if (list_is(s2)) {
+            let index = list_index(s2, parent);
             let codes = [
               js_code_statement_let_assign(
                 js_name_unique(ast, "first"),
@@ -337,9 +337,9 @@ export function js_dollar(ast) {
             ];
             list_reverse(codes);
             each(codes, function (item2) {
-              list_insert(s1, index, js_parse_first(item2));
+              list_insert(s2, index, js_parse_first(item2));
             });
-            list_remove(s1, parent);
+            list_remove(s2, parent);
           }
         }
       }
