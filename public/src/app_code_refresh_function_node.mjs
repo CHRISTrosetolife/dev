@@ -143,9 +143,9 @@ export function app_code_refresh_function_node(args) {
     );
   } else if (js_node_type_is(node, "ReturnStatement")) {
     let argument2 = object_property_get(node, "argument");
-    app_code_refresh_function_node_block(
+    app_code_refresh_function_node(
       object_copy_merge(args, {
-        node: body2,
+        node: argument2,
       }),
     );
   } else if (js_node_type_is(node, "VariableDeclaration")) {
