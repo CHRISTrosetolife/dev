@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_get } from "./list_get.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_input_width_full_placeholder } from "./html_input_width_full_placeholder.mjs";
@@ -31,6 +32,7 @@ export function app_weights() {
   );
   let result;
   html_button(root, target_weight_text, function () {
+    log("");
     let results = [];
     let value = html_value_get(target_weight);
     let index = list_index_last(weight_values);
@@ -51,6 +53,7 @@ export function app_weights() {
     }
     html_clear(result);
     html_div_text(result, list_join_comma_space(results));
+    log("");
   });
   result = html_div(root);
 }
