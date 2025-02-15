@@ -35,7 +35,7 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
       }
     }
     function identifiers_add(node) {
-      list_adder(function (la) {
+      let v = list_adder(function (la) {
         let { type: s_type } = node;
         if (
           list_includes(
@@ -79,6 +79,7 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
           }
         }
       });
+      return v;
     }
   });
   return names;
