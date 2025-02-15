@@ -7,6 +7,7 @@ import { html_div } from "./html_div.mjs";
 import { html_div_text } from "./html_div_text.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { list_sort } from "./list_sort.mjs";
+import { html_clear } from "./html_clear.mjs";
 export function app_weights() {
   let root = html_style_default_initialize();
   let add_weight_text = "Add available weight";
@@ -17,6 +18,7 @@ export function app_weights() {
     let value = html_value_get(add_weight);
     list_add(weight_values, value);
     list_sort(weight_values);
+    html_clear(weight_values_preview);
     html_div_text(weight_values_preview, list_join_comma_space(weight_values));
   });
   weight_values_preview = html_div();
