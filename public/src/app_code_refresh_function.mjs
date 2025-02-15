@@ -1,4 +1,4 @@
-import { file_overwrite } from "./file_overwrite.mjs";
+import { file_js_unparse } from "./file_js_unparse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_next } from "./list_next.mjs";
 import { js_node_type_statement_block_is } from "./js_node_type_statement_block_is.mjs";
@@ -130,7 +130,7 @@ export async function app_code_refresh_function(context) {
       }
       async function ast_change_finish() {
         path = function_name_to_path(function_selected);
-        await file_overwrite(path, js_unparse(ast));
+        await file_js_unparse(path, js_unparse(ast));
         refresh();
         overlay_remove();
       }
