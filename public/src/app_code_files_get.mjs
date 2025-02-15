@@ -6,7 +6,7 @@ import { global_files } from "./global_files.mjs";
 import { object_property_initialize_get_async } from "./object_property_initialize_get_async.mjs";
 import { global_get } from "./global_get.mjs";
 export async function app_code_files_get() {
-  let v2 = await html_load(async function () {
+  let data = await html_load(async function () {
     let g = global_get();
     let data = await object_property_initialize_get_async(
       g,
