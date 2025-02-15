@@ -111,6 +111,7 @@ export function app_good() {
           "Unite Seventh-Day Adventist",
           "Unite Mormons",
           "Unite Jehovah's Witness",
+          "Unite Quakers",
           "May all shepherds be in communion with each other",
           "May all shepherds be humble",
           "Heal me",
