@@ -9,7 +9,7 @@ export async function js_dollar_grandparent(v, lambda) {
     let index = list_index_next(s2, parent);
     await lambda({
       index,
-      s1: s2,
+      s2,
     });
   }
   return s2;
