@@ -33,7 +33,7 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
       }
     } else {
       if (js_function_types_is(s_type)) {
-        identifiers_add([stack_item]);
+        each(identifiers_add(stack_item), la);
       }
     }
     function identifiers_add(node) {
