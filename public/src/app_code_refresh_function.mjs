@@ -1,3 +1,4 @@
+import { js_imports_existing_names } from "./js_imports_existing_names.mjs";
 import { list_flatten } from "./list_flatten.mjs";
 import { app_code_refresh_function_selection_removals } from "./app_code_refresh_function_selection_removals.mjs";
 import { log } from "./log.mjs";
@@ -94,6 +95,7 @@ export async function app_code_refresh_function(context) {
             inputs_possible,
             removed_identifiers_names,
           );
+          let imports_names = js_imports_existing_names(ast);
           log({
             param_names,
             inputs_possible,
