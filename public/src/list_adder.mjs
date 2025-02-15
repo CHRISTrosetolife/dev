@@ -4,6 +4,6 @@ export function list_adder(lambda) {
   lambda(function (item) {
     let v = list_add(result, item);
     return v;
-  }, result);
+  });
   return result;
 }
