@@ -71,7 +71,7 @@ export async function app_code_refresh_function(context) {
       if (object_property_exists(selection_result, "two")) {
         html_button(overlay, "Selection remove", async function () {
           app_code_refresh_function_selection_remove(selection_result);
-          refresh_overlay_remove();
+          ast_change_finish();
         });
         html_button(overlay, "Selection functionize", async function () {
           let s = js_identifiers_shadowed_names(ast);
@@ -107,7 +107,7 @@ export async function app_code_refresh_function(context) {
             param_names,
             inputs_possible,
           });
-          refresh_overlay_remove();
+          ast_change_finish();
         });
       } else if (object_property_exists(selection_result, "one")) {
         html_button(overlay, "Selection variablize", async function () {
@@ -119,14 +119,14 @@ export async function app_code_refresh_function(context) {
           let list = list_next(stack2, b);
           let list_item = list_next(stack2, list);
           js_variablize(ast, list, list_item, node2);
-          refresh_overlay_remove();
+          ast_change_finish();
         });
       }
       app_code_button_menu_app(context, overlay, overlay_remove);
       function overlay_remove() {
         html_remove(overlay);
       }
-      function refresh_overlay_remove() {
+      function ast_change_finish() {
         refresh();
         overlay_remove();
       }
