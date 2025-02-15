@@ -17,7 +17,7 @@ export function js_visit(ast, lambda) {
       return v2;
     },
     function (n) {
-      let v3 = js_node_is(n);
+      let v3 = js_node_is(n) || list_is(n);
       return v3;
     },
     lambda,
