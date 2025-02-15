@@ -21,6 +21,7 @@ export async function sandbox_5() {
     each(list, function (item) {
       if (set_includes(included, item)) {
         set_add(duplicates, item);
+      } else {
       }
       set_add(existing, item);
     });
