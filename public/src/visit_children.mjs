@@ -13,7 +13,8 @@ export function visit_children(parent, children_get, filter, each, stack) {
         stack,
         node,
       );
-      result = result2 || result;
+      if (false) {
+      }
     }
   }
   let v = result;
