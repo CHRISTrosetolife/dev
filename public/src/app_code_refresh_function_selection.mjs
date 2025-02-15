@@ -11,6 +11,7 @@ import { app_code_refresh_function_selected_get } from "./app_code_refresh_funct
 import { app_code_refresh_function_data_get } from "./app_code_refresh_function_data_get.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
+import { list_size_1 } from "./list_size_1.mjs";
 export function app_code_refresh_function_selection(args) {
   let data = app_code_refresh_function_data_get(args);
   let selected = app_code_refresh_function_selected_get(data);
@@ -37,7 +38,7 @@ export function app_code_refresh_function_selection(args) {
         object_merge_strict(result, {
           two,
         });
-      } else if (false) {
+      } else if (list_size_1(values)) {
       }
     }
   }
