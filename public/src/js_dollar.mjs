@@ -1,3 +1,4 @@
+import { list_get_end_2 } from "./list_get_end_2.mjs";
 import { js_stack_find_list_visitor } from "./js_stack_find_list_visitor.mjs";
 import { log } from "./log.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -37,7 +38,6 @@ import { js_dollar_if_block } from "./js_dollar_if_block.mjs";
 import { js_code_if_false } from "./js_code_if_false.mjs";
 import { list_set } from "./list_set.mjs";
 import { js_parse_first } from "./js_parse_first.mjs";
-import { list_get_end_1 } from "./list_get_end_1.mjs";
 import { js_code_braces_inside } from "./js_code_braces_inside.mjs";
 import { js_function_property_name } from "./js_function_property_name.mjs";
 import { js_code_dot } from "./js_code_dot.mjs";
@@ -381,16 +381,16 @@ export function js_dollar(ast) {
       if (remaining === "r") {
         let { stack } = v;
         let e = js_parse_first_function("return");
-        let s1 = list_get_end_1(stack);
-        let s2 = list_get_end(stack, 2);
+        let s2 = list_get_end_2(stack);
+        let s3 = list_get_end(stack, 3);
         if (
           list_is(parent) &&
-          s1.type === "SequenceExpression" &&
-          s2.type === "ExpressionStatement"
+          s2.type === "SequenceExpression" &&
+          s3.type === "ExpressionStatement"
         ) {
           list_remove_first(parent);
-          e.argument = s1;
-          object_replace(s2, e);
+          e.argument = s2;
+          object_replace(s3, e);
         } else if (parent.type === "ExpressionStatement") {
           object_replace(parent, e);
         }
