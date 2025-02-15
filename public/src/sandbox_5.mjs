@@ -1,3 +1,4 @@
+import { js_identifiers_scoped_each } from "./js_identifiers_scoped_each.mjs";
 import { js_unparsable } from "./js_unparsable.mjs";
 import { log } from "./log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -11,10 +12,12 @@ export async function sandbox_5() {
   js_visit(ast, function (v) {
     let node = object_property_get(v, "node");
     let names = js_identifiers_scoped(v);
+    let names_each = js_identifiers_scoped_each(v);
     if (js_unparsable(node)) {
       log({
         node: js_unparse(node),
         names,
+        names_each,
       });
     }
   });
