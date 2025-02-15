@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_style_display_inline } from "./html_style_display_inline.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { app_code_refresh_function_node_nodes } from "./app_code_refresh_function_node_nodes.mjs";
@@ -151,12 +152,13 @@ export function app_code_refresh_function_node(args) {
   } else if (js_node_type_is(node, "LogicalExpression")) {
     let left2 = object_property_get(node, "left");
     let right2 = object_property_get(node, "right");
+    let operator2 = object_property_get(node, "operator");
     app_code_refresh_function_node(
       object_copy_merge(args, {
         node: left2,
       }),
     );
-    html_span_text_gray(parent, " = ");
+    html_span_text_gray(parent, string_combine_multiple([" ", operator, " "]));
     app_code_refresh_function_node(
       object_copy_merge(args, {
         node: right2,
