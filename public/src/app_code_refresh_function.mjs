@@ -73,7 +73,7 @@ export async function app_code_refresh_function(context) {
           if (list_empty_not_is(s)) {
             alert(
               string_combine_multiple([
-                "the same identifier is defined in multiple ways: ",
+                "the same identifier is defined as a shadow: ",
                 list_join_comma_space(s),
               ]),
             );
