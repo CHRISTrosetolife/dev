@@ -44,6 +44,7 @@ import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { list_intersect } from "./list_intersect.mjs";
 import { list_difference } from "./list_difference.mjs";
+import { js_unparse } from "./js_unparse.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async function () {
     let root = app_code_screen_set(
@@ -128,7 +129,8 @@ export async function app_code_refresh_function(context) {
         html_remove(overlay);
       }
       async function ast_change_finish() {
-        await file_overwrite();
+        function_name_to_path();
+        await file_overwrite(path, js_unparse(ast));
         refresh();
         overlay_remove();
       }
