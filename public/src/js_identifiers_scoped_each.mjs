@@ -1,3 +1,4 @@
+import { js_function_types } from "./js_function_types.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { equal } from "./equal.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
@@ -42,6 +43,12 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
     } else {
       if (js_function_types_is(s_type)) {
         identifiers_add_recursive([stack_item]);
+      }
+    }
+    function identifiers_add(node) {
+      let { type: s_type } = node;
+      if (list_includes(js_function_types(), s_type)) {
+        identifiers_add_recursive(stack_item);
       }
     }
     function identifiers_add_recursive(m) {
