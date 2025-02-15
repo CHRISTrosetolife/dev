@@ -5,7 +5,7 @@ import { import_multi } from "./import_multi.mjs";
 export async function http_get(url) {
   let axios = await import_multi("axios", "axios");
   if (web_is()) {
-    await html_load();
+    await html_load(result_get);
   } else {
     axios = axios.default;
   }
