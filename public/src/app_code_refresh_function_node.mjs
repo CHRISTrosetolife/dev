@@ -158,7 +158,7 @@ export function app_code_refresh_function_node(args) {
         node: left2,
       }),
     );
-    html_span_text_gray(parent, string_combine_multiple([" ", operator, " "]));
+    html_span_text_gray(parent, string_combine_multiple([" ", operator2, " "]));
     app_code_refresh_function_node(
       object_copy_merge(args, {
         node: right2,
