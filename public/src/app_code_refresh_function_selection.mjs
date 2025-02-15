@@ -20,9 +20,10 @@ export function app_code_refresh_function_selection(args) {
     return stack2;
   });
   let ancestor_common = list_last_match(values);
-  let result = {
+  let result = {};
+  object_merge_strict(result, {
     ancestor_common,
-  };
+  });
   if (list_is(ancestor_common)) {
     if (list_size_2(values)) {
       let two = list_map(values, function (v) {
