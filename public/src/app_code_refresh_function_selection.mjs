@@ -37,7 +37,7 @@ export function app_code_refresh_function_selection(args) {
         object_merge_strict(result, {
           two,
         });
-      } else {
+      } else if (false) {
       }
     }
   }
