@@ -1,7 +1,6 @@
 import { equal } from "./equal.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
 import { js_imports_existing } from "./js_imports_existing.mjs";
-import { list_map } from "./list_map.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { each } from "./each.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
@@ -36,10 +35,7 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
           "type",
           "ImportDeclaration",
         );
-        let imports = list_map(filtered2, js_imports_existing);
-        each(imports, function (item2) {
-          identifiers_add(item2);
-        });
+        identifiers_add(filtered2);
       }
     } else {
       if (js_function_types_is(s_type)) {
