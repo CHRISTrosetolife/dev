@@ -142,7 +142,7 @@ export function app_code_refresh_function_node(args) {
       }),
     );
   } else if (js_node_type_is(node, "ReturnStatement")) {
-    let body2 = object_property_get(node, "body");
+    let argument2 = object_property_get(node, "argument");
     app_code_refresh_function_node_block(
       object_copy_merge(args, {
         node: body2,
