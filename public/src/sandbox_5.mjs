@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { set_new } from "./set_new.mjs";
 import { js_unparsable } from "./js_unparsable.mjs";
 import { log } from "./log.mjs";
@@ -14,6 +15,7 @@ export async function sandbox_5() {
     let node = object_property_get(v, "node");
     let names = js_identifiers_scoped(v);
     let existing = set_new();
+    each(list, function (item) {});
     if (js_unparsable(node)) {
       log({
         node: js_unparse(node),
