@@ -14,6 +14,7 @@ import { list_includes } from "./list_includes.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { list_is } from "./list_is.mjs";
+import { list_concat } from "./list_concat.mjs";
 export function js_identifiers_scoped_each(visitor, stack_item) {
   let names = list_adder(function (la) {
     let { stack, node } = visitor;
@@ -47,7 +48,15 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
     }
     function identifiers_add(node) {
       let { type: s_type } = node;
-      if (list_includes(js_function_types(), s_type)) {
+      if (
+        list_includes(
+          list_concat(js_function_types(), [
+            "VariableDeclaration",
+            "ImportDeclaration",
+          ]),
+          s_type,
+        )
+      ) {
         identifiers_add_recursive(stack_item);
       }
     }
