@@ -13,7 +13,9 @@ export function js_identifiers_duplicates(ast) {
       let identifiers_all;
     });
   });
-  function v() {}
+  function v() {
+    let v;
+  }
   let v2 = list_duplicates(identifiers_all);
   return v2;
 }
