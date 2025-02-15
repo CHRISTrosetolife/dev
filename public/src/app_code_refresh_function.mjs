@@ -77,13 +77,13 @@ export async function app_code_refresh_function(context) {
             let v2;
             return v2;
           }
-          let { removed } =
+          let { removals } =
             app_code_refresh_function_selection_removals(selection_result);
-          let f = list_first(removed);
+          let f = list_first(removals);
           let v = js_visit_find(ast, f);
           let inputs_possible = js_identifiers_scoped(v);
           let removed_identifiers_names = list_map(
-            removed,
+            removals,
             js_identifiers_names,
           );
           let param_names = list_intersect(
