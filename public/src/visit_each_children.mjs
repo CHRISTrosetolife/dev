@@ -1,16 +1,15 @@
 import { list_concat } from "./list_concat.mjs";
 import { visit_children } from "./visit_children.mjs";
-import { each } from "./each.mjs";
 export function visit_each_children(
   parent,
   children_get,
   filter,
-  each,
+  lambda_each,
   stack,
   node,
 ) {
   if (
-    each({
+    lambda_each({
       node,
       parent,
       stack,
@@ -20,6 +19,6 @@ export function visit_each_children(
     return v;
   }
   let stacked = list_concat(stack, [node]);
-  let v2 = visit_children(node, children_get, filter, each, stacked);
+  let v2 = visit_children(node, children_get, filter, lambda_each, stacked);
   return v2;
 }
