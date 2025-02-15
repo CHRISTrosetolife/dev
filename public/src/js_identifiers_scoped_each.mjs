@@ -50,8 +50,7 @@ export function js_identifiers_scoped_each(visitor, stack_item) {
           identifiers_add(l);
         });
       } else {
-        let { type: m_type } = m;
-        let type2 = object_property_get(m, "type");
+        let m_type = object_property_get(m, "type");
         if (equal(m_type, "Identifier")) {
           let { name: m_name } = m;
           la(m_name);
