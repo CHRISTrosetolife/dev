@@ -45,6 +45,8 @@ export function app_weights() {
       }
       value -= w;
       list_add(results, w);
+      if (false) {
+      }
     }
     html_clear(result);
     html_div_text(result, list_join_comma_space(results));
