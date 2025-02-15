@@ -159,8 +159,11 @@ export function app_code_refresh_function_node(args) {
     html_span_text_gray(parent, js_code_statement_end());
   } else if (js_node_type_is(node, "VariableDeclarator")) {
     let id2 = object_property_get(node, "id");
-    assert(js_node_type_is, [id2, "Identifier"]);
-    app_code_refresh_function_node_identifier_add(parent, id2, args);
+    app_code_refresh_function_node(
+      object_copy_merge(args, {
+        node: id2,
+      }),
+    );
     html_span_text_gray(parent, " = ");
     let init = object_property_get(node, "init");
     app_code_refresh_function_node(
