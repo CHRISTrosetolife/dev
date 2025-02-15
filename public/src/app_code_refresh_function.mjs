@@ -30,6 +30,8 @@ import { html_div } from "./html_div.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
 import { html_clear } from "./html_clear.mjs";
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
+import { list_join_comma_space } from "./list_join_comma_space.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async function () {
     let root = app_code_screen_set(
@@ -62,8 +64,13 @@ export async function app_code_refresh_function(context) {
         });
         html_button(overlay, "Selection functionize", async function () {
           let s = js_identifiers_shadowed_names(ast);
-          if (s) {
-            alert("the same identifier is defined in multiple ways: ");
+          if (list_empty_not_is(s)) {
+            alert(
+              string_combine_multiple([
+                "the same identifier is defined in multiple ways: ",
+                list_join_comma_space(s),
+              ]),
+            );
             let v2;
             return v2;
           }
