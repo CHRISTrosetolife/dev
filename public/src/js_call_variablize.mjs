@@ -26,7 +26,7 @@ export function js_call_variablize(ast) {
           let es = list_get_end(stack, 1);
           let { type: es_type } = es;
           assert(equal, [es_type, "ExpressionStatement"]);
-          let parsed2 = js_variablize(ast, body, es, arg);
+          js_variablize(ast, body, es, arg);
         }
       }
     });
