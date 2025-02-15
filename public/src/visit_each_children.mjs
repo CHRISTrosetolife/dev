@@ -13,7 +13,7 @@ export function visit_each_children(
     lambda_each({
       node,
       parent,
-      stacked: stack,
+      stack,
     }) === true
   ) {
     let v = true;
