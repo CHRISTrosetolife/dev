@@ -8,17 +8,17 @@ export function visit_each_children(
   stack,
   node,
 ) {
+  let stacked = list_concat(stack, [node]);
   if (
     lambda_each({
       node,
       parent,
-      stack,
+      stacked,
     }) === true
   ) {
     let v = true;
     return v;
   }
-  let stacked = list_concat(stack, [node]);
   let v2 = visit_children(node, children_get, filter, lambda_each, stacked);
   return v2;
 }
