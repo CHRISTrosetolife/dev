@@ -1,4 +1,4 @@
-import { js_stack_find_list } from "./js_stack_find_list.mjs";
+import { js_stack_find_list_visitor } from "./js_stack_find_list_visitor.mjs";
 import { log } from "./log.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { list_last } from "./list_last.mjs";
@@ -191,8 +191,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "ep") {
         let value_new = js_parse_first(js_code_if_false());
-        let { stack } = v;
-        let { current, list, item } = js_stack_find_list(stack);
+        let { current, list, item } = js_stack_find_list_visitor(v);
         let previous = null;
         while (js_node_is(current) && current.type === "IfStatement") {
           previous = current;
