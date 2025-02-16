@@ -39,6 +39,9 @@ export async function html_load(lambda) {
       let overlay = object_property_get(g, "overlay");
       html_remove(overlay);
     } else {
+      log({
+        s,
+      });
     }
   }
 }
