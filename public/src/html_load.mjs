@@ -24,9 +24,9 @@ export async function html_load(lambda) {
   let o = {};
   set_add(s, o);
   try {
-    log("");
+    log("here1");
     let result = await lambda();
-    log("");
+    log("here2");
     return result;
   } catch (e) {
     log({
