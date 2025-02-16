@@ -7,8 +7,7 @@ export function assert_message(fn, args, message_get) {
     let j = json_to(message_get());
     let limit = 1000;
     if (string_size(j) > limit) {
-      let v2 = string_take(j, limit);
-      return v2;
+      j = string_take(j, limit);
     }
     return j;
   });
