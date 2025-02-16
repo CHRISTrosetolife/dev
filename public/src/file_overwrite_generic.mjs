@@ -5,8 +5,15 @@ import { global_get } from "./global_get.mjs";
 import { web_is } from "./web_is.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
+import { todo } from "./todo.mjs";
+import { global_function } from "./global_function.mjs";
 export async function file_overwrite_generic(path, contents, encoding) {
   if (web_is()) {
+    todo(
+      "maybe this should use ",
+      global_function,
+      "instead of a specific property name",
+    );
     let { files } = global_get();
     let existing = object_property_initialize(files, path, {});
     object_property_set(existing, "contents", contents);
