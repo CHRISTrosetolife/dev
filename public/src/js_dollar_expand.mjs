@@ -29,7 +29,7 @@ import { js_node_type_is } from "./js_node_type_is.mjs";
 import { null_not_is } from "./null_not_is.mjs";
 import { list_concat } from "./list_concat.mjs";
 export async function js_dollar_expand(ast, call, result_id, a, parent) {
-  let { next, s1, index } = a;
+  let { next, s2, index } = a;
   if (js_node_type_is(call, "CallExpression")) {
     let { callee } = call;
     if (js_node_type_is(callee, "Identifier")) {
@@ -82,9 +82,9 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
         return v2;
       });
       each_reverse(taken, function (b) {
-        list_insert(s1, index, b);
+        list_insert(s2, index, b);
       });
-      list_remove_multiple(s1, [next, parent]);
+      list_remove_multiple(s2, [next, parent]);
     }
   }
 }
