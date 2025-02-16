@@ -145,7 +145,7 @@ export async function app_code_refresh_function(context) {
           files,
           batch_path_previous: batch_path,
         };
-        let batch_path = await app_code_batch_path_get();$r
+        let batch_path = await app_code_batch_path_get();
         await firebase_upload_object(storage_path, batch_new);
         refresh();
         overlay_remove();
