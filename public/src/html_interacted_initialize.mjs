@@ -1,3 +1,4 @@
+import { html_on_remove } from "./html_on_remove.mjs";
 import { html_on_keydown } from "./html_on_keydown.mjs";
 import { each } from "./each.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -15,6 +16,7 @@ export function html_interacted_initialize() {
       if (start) {
         object_property_set(g, "interacted", true);
         start = false;
+        html_on_remove(result);
       }
     });
   });
