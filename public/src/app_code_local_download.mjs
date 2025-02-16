@@ -17,9 +17,8 @@ export async function app_code_local_download(username) {
     if (!next_exists(batch)) {
       break;
     }
-    batch = await current_get(batch_path);
+    batch = await next_get(batch);
     list_add(batches, batch);
-    batch_path = next_get(batch);
   }
   async function current_get(batch_path) {
     let file_path_batch = app_code_local_user_path(username, batch_path);
