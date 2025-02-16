@@ -14,11 +14,11 @@ export async function app_code_local_download(username) {
   let batches = [];
   let batch = await current_get(batch_path);
   while (true) {
-    list_add(batches, batch);
     if (!next_exists(batch)) {
       break;
     }
     batch = await current_get(batch_path);
+    list_add(batches, batch);
     batch_path = next_get(batch);
   }
   async function current_get(batch_path) {
