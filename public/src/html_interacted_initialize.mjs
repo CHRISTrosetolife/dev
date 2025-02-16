@@ -22,6 +22,7 @@ export function html_interacted_initialize() {
         });
       }
     });
-    return result;
+    let v = result;
+    return v;
   });
 }
