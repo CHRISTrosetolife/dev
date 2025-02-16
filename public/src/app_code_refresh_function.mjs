@@ -1,3 +1,4 @@
+import { object_properties_new } from "./object_properties_new.mjs";
 import { app_code_latest_object } from "./app_code_latest_object.mjs";
 import { app_code_file_name_latest } from "./app_code_file_name_latest.mjs";
 import { app_code_user_upload } from "./app_code_user_upload.mjs";
@@ -142,10 +143,11 @@ export async function app_code_refresh_function(context) {
         let files = {};
         each(fcs, function (fc) {
           let path2 = object_property_get(fc, "path");
-          let contents = object_property_get(fc, "contents");
-          object_property_set(files, path2, {
-            contents,
-          });
+          object_property_set(
+            files,
+            path2,
+            object_properties_new(fc, ["contents"]),
+          );
         });
         let batch_path_previous = await app_code_batch_path_get();
         let batch_new = {
