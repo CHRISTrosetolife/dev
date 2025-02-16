@@ -1,10 +1,10 @@
-import { app_code_local_user_path } from "./app_code_local_user_path.mjs";
+import { app_code_file_name_latest } from "./app_code_file_name_latest.mjs";
+import { app_code_user_upload } from "./app_code_user_upload.mjs";
 import { app_code_batch_name } from "./app_code_batch_name.mjs";
 import { app_code_file_get } from "./app_code_file_get.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { each } from "./each.mjs";
 import { global_file_changes } from "./global_file_changes.mjs";
-import { firebase_upload_object } from "./firebase_upload_object.mjs";
 import { app_code_batch_path_get } from "./app_code_batch_path_get.mjs";
 import { file_js_unparse } from "./file_js_unparse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -150,8 +150,8 @@ export async function app_code_refresh_function(context) {
           batch_path_previous,
         };
         let batch_name = await app_code_batch_name();
-        let batch_path_new = app_code_local_user_path(context, batch_name);
-        await firebase_upload_object(batch_path_new, batch_new);
+        await app_code_user_upload(context, batch_name, batch_new);
+        app_code_file_name_latest();
         refresh();
         overlay_remove();
       }
