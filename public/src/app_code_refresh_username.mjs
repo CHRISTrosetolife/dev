@@ -1,5 +1,5 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { html_condition_identifier_fn_part } from "./html_condition_identifier_fn_part.mjs";
-import { app_code } from "./app_code.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { html_input_validated_button } from "./html_input_validated_button.mjs";
 import { html_button } from "./html_button.mjs";
@@ -21,12 +21,13 @@ export function app_code_refresh_username(context) {
     html_condition_identifier_fn_part(),
     "Save",
     function on_submit(value) {
-      storage_local_set(app_code, "username", value);
+      let app_fn = object_property_get(context, "app_fn");
+      storage_local_set(app_fn, "username", value);
       next();
     },
   );
   html_hr(root);
-  html_button(root, "Skip", () => {
+  html_button(root, "Skip", function () {
     next();
   });
   async function next() {
