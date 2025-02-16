@@ -7,16 +7,18 @@ import { object_property_get } from "./object_property_get.mjs";
 export async function app_code_files_get() {
   let v = await html_load(async function () {
     let g = global_get();
-    let data = await object_property_initialize_get_async(
+    let files = await object_property_initialize_get_async(
       g,
       global_files(),
       async function () {
         let data = await app_code_data_get();
+        let batch2 = object_property_get(data, "batch");
+        let files2 = object_property_get(batch2, "files");
+        let v2 = files2;
+        return v2;
       },
     );
-    return data;
+    return files;
   });
-  let batch2 = object_property_get(data, "batch");
-  let files2 = object_property_get(batch2, "files");
   return files2;
 }
