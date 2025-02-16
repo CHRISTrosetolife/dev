@@ -18,8 +18,7 @@ export function html_interacted_initialize() {
         object_property_set(g, "interacted", true);
         start = false;
         each(mapped, function (item) {
-          let v2 = html_on_remove_result(item);
-          return v2;
+          html_on_remove_result(item);
         });
       }
     });
