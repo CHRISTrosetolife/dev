@@ -10,6 +10,8 @@ export function js_return_variablize(ast) {
     }
     let { parent } = v;
     let init = node.argument;
+    if (false) {
+    }
     let parsed2 = js_variablize(ast, parent, node, init);
     node.argument = parsed2;
   }
