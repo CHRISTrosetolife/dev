@@ -1,6 +1,5 @@
 import { global_file_changes } from "./global_file_changes.mjs";
 import { firebase_upload_object } from "./firebase_upload_object.mjs";
-import { app_code_file_get } from "./app_code_file_get.mjs";
 import { app_code_batch_path_get } from "./app_code_batch_path_get.mjs";
 import { file_js_unparse } from "./file_js_unparse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -134,7 +133,6 @@ export async function app_code_refresh_function(context) {
       async function ast_change_finish() {
         await file_js_unparse(path, ast);
         let fcs = global_file_changes();
-        let file = await app_code_file_get(path);
         let batch_path = await app_code_batch_path_get();
         let batch_new = {
           files: {
