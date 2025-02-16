@@ -136,15 +136,15 @@ export async function app_code_refresh_function(context) {
         await file_js_unparse(path, ast);
         let fcs = global_file_changes();
         let files = {};
-        let batch_new = {
-          files,
-          batch_path_previous: batch_path,
-        };
         each(fcs, function (fc) {
           let path2 = object_property_get(fc, "path");
           let contents2 = object_property_get(fc, "contents");
           object_property_set(files, path2, contents2);
         });
+        let batch_new = {
+          files,
+          batch_path_previous: batch_path,
+        };
         let batch_path = await app_code_batch_path_get();
         await firebase_upload_object(storage_path, batch_new);
         refresh();
