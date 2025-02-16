@@ -1,3 +1,4 @@
 export function file_extension_json() {
-  return ".json";
+  let v = ".json";
+  return v;
 }
