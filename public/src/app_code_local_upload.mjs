@@ -1,3 +1,4 @@
+import { app_code_latest_object } from "./app_code_latest_object.mjs";
 import { file_extension_json } from "./file_extension_json.mjs";
 import { folder_read_shallow_extensions } from "./folder_read_shallow_extensions.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -39,7 +40,5 @@ export async function app_code_local_upload() {
     files,
   });
   let latest_path = app_code_local_files_path_latest();
-  await storage_upload_object(latest_path, {
-    batch_path,
-  });
+  await storage_upload_object(latest_path, app_code_latest_object(batch_path));
 }
