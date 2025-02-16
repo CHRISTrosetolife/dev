@@ -13,10 +13,7 @@ export async function app_code_local_download(username) {
   let batch_path = object_property_get(latest_object, "batch_path");
   let batch = await current_get(batch_path);
   let batches = [];
-  while (true) {
-    if (!next_exists(batch)) {
-      break;
-    }
+  while (next_exists(batch)) {
     batch = await next_get(batch);
     list_add(batches, batch);
   }
