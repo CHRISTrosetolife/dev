@@ -1,3 +1,4 @@
+import { list_adder } from "./list_adder.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { storage_file_download } from "./storage_file_download.mjs";
@@ -12,7 +13,7 @@ export async function app_code_local_download(username) {
   let latest_object = await storage_file_download(file_path_latest);
   let batch_path = object_property_get(latest_object, "batch_path");
   let batch = await current_get(batch_path);
-  let batches = [];
+  list_adder(function (la) {});
   while (next_exists(batch)) {
     batch = await next_get(batch);
     list_add(batches, batch);
