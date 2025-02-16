@@ -1,6 +1,7 @@
 export function app_code_latest_object(batch_path, when) {
   let v = {
-    batch_path,when
+    batch_path,
+    when,
   };
   return v;
 }
