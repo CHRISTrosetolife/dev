@@ -149,8 +149,11 @@ export async function app_code_refresh_function(context) {
           files,
           batch_path_previous,
         };
-        let batch_name = await app_code_batch_name();
-        await app_code_user_upload(context, batch_name, batch_new);
+        await app_code_user_upload(
+          context,
+          await app_code_batch_name(),
+          batch_new,
+        );
         app_code_file_name_latest();
         refresh();
         overlay_remove();
