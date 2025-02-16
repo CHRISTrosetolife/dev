@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { global_file_changes } from "./global_file_changes.mjs";
 import { firebase_upload_object } from "./firebase_upload_object.mjs";
 import { app_code_batch_path_get } from "./app_code_batch_path_get.mjs";
@@ -133,6 +134,7 @@ export async function app_code_refresh_function(context) {
       async function ast_change_finish() {
         await file_js_unparse(path, ast);
         let fcs = global_file_changes();
+        each(list2, function (item) {});
         let batch_path = await app_code_batch_path_get();
         let batch_new = {
           files: {
