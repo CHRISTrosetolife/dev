@@ -41,7 +41,7 @@ export async function bible_interlinear_upload() {
       bible_interlinear_chapter_each_token(chapter, la);
     });
     let strongs = list_map_property(tokens, "strong");
-    let strongs = list_unique(strongs);
+     strongs = list_unique(strongs);
     let definitions = await list_to_lookup_value_async(
       strongs,
       async function (s) {
