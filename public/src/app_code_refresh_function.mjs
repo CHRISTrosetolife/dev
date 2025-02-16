@@ -1,8 +1,9 @@
+import { app_code_batch_name_when } from "./app_code_batch_name_when.mjs";
+import { date_string_iso_file } from "./date_string_iso_file.mjs";
 import { object_properties_new } from "./object_properties_new.mjs";
 import { app_code_latest_object } from "./app_code_latest_object.mjs";
 import { app_code_file_name_latest } from "./app_code_file_name_latest.mjs";
 import { app_code_user_upload } from "./app_code_user_upload.mjs";
-import { app_code_batch_name } from "./app_code_batch_name.mjs";
 import { app_code_file_get } from "./app_code_file_get.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { each } from "./each.mjs";
@@ -154,7 +155,8 @@ export async function app_code_refresh_function(context) {
           files,
           batch_path_previous,
         };
-        let batch_name = await app_code_batch_name();
+        let when2 = date_string_iso_file();
+        let batch_name = await app_code_batch_name_when(when2);
         let batch_path = await app_code_user_upload(
           context,
           batch_name,
