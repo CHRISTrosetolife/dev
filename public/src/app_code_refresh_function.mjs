@@ -143,11 +143,14 @@ export async function app_code_refresh_function(context) {
           let contents2 = object_property_get(fc, "contents");
           object_property_set(files, path2, contents2);
         });
+        let batch_path = await app_code_batch_path_get();
         let batch_new = {
           files,
           batch_path_previous: batch_path,
         };
-        let batch_path = await app_code_batch_path_get();
+        log({
+          batch_new,
+        });
         return;
         await firebase_upload_object(storage_path, batch_new);
         refresh();
