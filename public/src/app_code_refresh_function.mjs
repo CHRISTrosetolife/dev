@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { each } from "./each.mjs";
 import { global_file_changes } from "./global_file_changes.mjs";
 import { firebase_upload_object } from "./firebase_upload_object.mjs";
@@ -141,7 +142,9 @@ export async function app_code_refresh_function(context) {
           files,
           batch_path_previous: batch_path,
         };
-        each(fcs, function (fc) {});
+        each(fcs, function (fc) {
+          object_property_set(object, "property_name", value);
+        });
         let batch_path = await app_code_batch_path_get();
         await firebase_upload_object(storage_path, batch_new);
         refresh();
