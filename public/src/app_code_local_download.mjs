@@ -1,4 +1,4 @@
-import { object_property_exists_not } from "./object_property_exists_not.mjs";
+import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { storage_file_download } from "./storage_file_download.mjs";
 import { app_code_file_name_latest } from "./app_code_file_name_latest.mjs";
@@ -12,12 +12,13 @@ export async function app_code_local_download(username) {
   let latest_object = await storage_file_download(file_path_latest);
   let batch_path = object_property_get(latest_object, "batch_path");
   let batches = [];
+  let batch = await current_get(batch_path);
   while (true) {
-    let batch = await current_get(batch_path);
     list_add(batches, batch);
-    if (next_exists(batch)) {
+    if (!next_exists(batch)) {
       break;
     }
+    batch = await current_get(batch_path);
     batch_path = next_get(batch);
   }
   async function current_get(batch_path) {
@@ -26,7 +27,7 @@ export async function app_code_local_download(username) {
     return batch;
   }
   function next_exists(batch) {
-    let v = object_property_exists_not(batch, "batch_path_previous");
+    let v = object_property_exists(batch, "batch_path_previous");
     return v;
   }
   function next_get(batch) {
