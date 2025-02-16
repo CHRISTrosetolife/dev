@@ -3,14 +3,15 @@ import { object_property_set } from "./object_property_set.mjs";
 import { global_get } from "./global_get.mjs";
 import { web_is } from "./web_is.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
-export async function file_overwrite_generic(file_name, data, encoding) {
+export async function file_overwrite_generic(file_name, contents, encoding) {
   if (web_is()) {
     let { files } = global_get();
     let existing = object_property_initialize(files, file_name, {});
-    object_property_set(existing, "contents", data);
+    object_property_set(existing, "contents", contents);
   } else {
     let fs = await import("fs");
     await folder_parent_exists_ensure(file_name);
-    return await fs.promises.writeFile(file_name, data, encoding);
+    let v = await fs.promises.writeFile(file_name, contents, encoding);
+    return v;
   }
 }
