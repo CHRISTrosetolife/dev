@@ -15,6 +15,6 @@ export async function app_code_local_download(username) {
   let batches = await app_code_batches(batch_path, username);
   await each_async(batches, async function (batch) {
     let files = object_property_get(batch, "files");
-    await each_object_async(object, async function (key, value) {});
+    await each_object_async(files, async function (file, value) {});
   });
 }
