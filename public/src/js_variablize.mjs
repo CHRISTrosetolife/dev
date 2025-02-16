@@ -21,6 +21,8 @@ export function js_variablize(ast, parent_list, list_item, expression) {
   comment(
     "cannot use ",
     object_replace,
+    " on ",
+    expression,
     " because ",
     expression,
     " might be null",
