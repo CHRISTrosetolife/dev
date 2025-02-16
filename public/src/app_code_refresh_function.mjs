@@ -134,10 +134,11 @@ export async function app_code_refresh_function(context) {
       async function ast_change_finish() {
         await file_js_unparse(path, ast);
         let fcs = global_file_changes();
+        let files = {
+          [path]: file,
+        };
         let batch_new = {
-          files: {
-            [path]: file,
-          },
+          files,
           batch_path_previous: batch_path,
         };
         each(fcs, function (fc) {});
