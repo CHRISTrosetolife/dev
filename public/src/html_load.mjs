@@ -38,6 +38,7 @@ export async function html_load(lambda) {
     if (set_empty_is(s)) {
       let overlay = object_property_get(g, "overlay");
       html_remove(overlay);
+    } else {
     }
   }
 }
