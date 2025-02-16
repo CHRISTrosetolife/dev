@@ -13,8 +13,9 @@ export async function app_code_files_get() {
       let data = await app_code_data_get();
       let batch2 = object_property_get(data, "batch");
       let files2 = object_property_get(batch2, "files");
+      let property_name = "contents";
       let v = object_map(files, function (f) {
-        let v2 = object_property_get(object, "property_name");
+        let v2 = object_property_get(f, property_name);
         return v2;
       });
       return v;
