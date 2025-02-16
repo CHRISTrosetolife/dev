@@ -3,6 +3,7 @@ import { object_property_initialize_get_async } from "./object_property_initiali
 import { global_get } from "./global_get.mjs";
 import { app_code_data_get } from "./app_code_data_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { object_map } from "./object_map.mjs";
 export async function app_code_files_get() {
   let g = global_get();
   let files = await object_property_initialize_get_async(
@@ -12,7 +13,11 @@ export async function app_code_files_get() {
       let data = await app_code_data_get();
       let batch2 = object_property_get(data, "batch");
       let files2 = object_property_get(batch2, "files");
-      return files2;
+      let v = object_map(files, function (f) {
+        let v2 = object_property_get(object, "property_name");
+        return v2;
+      });
+      return v;
     },
   );
   return files;
