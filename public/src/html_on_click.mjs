@@ -6,7 +6,7 @@ export function html_on_click(component, lambda) {
     await html_load(lambda);
   }
   let v = {
-    lambdalambda,
+    lambda: lambda,
   };
   return v;
 }
