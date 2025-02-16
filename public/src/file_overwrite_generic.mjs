@@ -12,7 +12,7 @@ export async function file_overwrite_generic(path, contents, encoding) {
     let existing = object_property_initialize(files, path, {});
     object_property_set(existing, "contents", contents);
     let fcs = object_property_initialize(g, "files_changes", []);
-    list_add({
+    list_add(fcs, {
       path,
       contents,
     });
