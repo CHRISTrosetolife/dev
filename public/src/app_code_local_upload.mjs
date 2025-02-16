@@ -1,5 +1,5 @@
+import { date_now } from "./date_now.mjs";
 import { app_code_batch_name_when } from "./app_code_batch_name_when.mjs";
-import { date_string_iso_file } from "./date_string_iso_file.mjs";
 import { app_code_latest_object } from "./app_code_latest_object.mjs";
 import { file_extension_json } from "./file_extension_json.mjs";
 import { folder_read_shallow_extensions } from "./folder_read_shallow_extensions.mjs";
@@ -29,7 +29,7 @@ export async function app_code_local_upload() {
   let htmls = await files_contents_lookup(paths_mapped);
   let mjss = await functions_source_get();
   let combined = object_merge_strict(mjss, htmls);
-  let when = date_string_iso_file();
+  let when = date_now();
   let batch_name = await app_code_batch_name_when(when);
   let batch_path = app_code_local_files_path(batch_name);
   let files = object_map(combined, function (contents) {
