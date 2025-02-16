@@ -1,6 +1,5 @@
-import { folder_read } from "./folder_read.mjs";
-import { folder_read_shallow } from "./folder_read_shallow.mjs";
 import { file_extension_json } from "./file_extension_json.mjs";
+import { folder_read_shallow_extensions } from "./folder_read_shallow_extensions.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { folder_path_slash_forward } from "./folder_path_slash_forward.mjs";
 import { list_map } from "./list_map.mjs";
@@ -16,20 +15,16 @@ import { functions_source_get } from "./functions_source_get.mjs";
 import { folder_current_prefix } from "./folder_current_prefix.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
 export async function app_code_local_upload() {
-  let paths_html = await folder_read_shallow(
+  let paths_html_json = await folder_read_shallow_extensions(
     folder_path_public(),
-    app_extension_html(),
+    [app_extension_html(), file_extension_json()],
   );
-  let paths_json = await folder_read(
-    folder_path_public(),
-    file_extension_json(),
-  );
-  let paths_html_mapped = list_map(paths_html, function (p) {
+  let paths_mapped = list_map(paths_html_json, function (p) {
     let m = folder_path_slash_forward(p);
     let m2 = string_combine_multiple([folder_current_prefix(), m]);
     return m2;
   });
-  let htmls = await files_contents_lookup(paths_html_mapped);
+  let htmls = await files_contents_lookup(paths_mapped);
   let mjss = await functions_source_get();
   let combined = object_merge_strict(mjss, htmls);
   let batch_name = await app_code_batch_name();
