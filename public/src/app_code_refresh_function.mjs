@@ -154,7 +154,11 @@ export async function app_code_refresh_function(context) {
           await app_code_batch_name(),
           batch_new,
         );
-        app_code_file_name_latest();
+        await app_code_user_upload(
+          context,
+          app_code_file_name_latest(),
+          batch_new,
+        );
         refresh();
         overlay_remove();
       }
