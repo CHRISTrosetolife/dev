@@ -5,7 +5,7 @@ import { list_remove_all } from "./list_remove_all.mjs";
 export async function html_recorder_media_stop(mr) {
   let { media_recorder, chunks } = mr;
   let type = "stop";
-  return await new Promise((resolve) => {
+  let v = await new Promise(function (resolve) {
     html_event_listener_add(media_recorder, type, async function on_stop() {
       html_event_listener_remove(media_recorder, type, on_stop);
       let blob = new Blob(chunks, {
@@ -17,4 +17,5 @@ export async function html_recorder_media_stop(mr) {
     });
     media_recorder.stop();
   });
+  return v;
 }
