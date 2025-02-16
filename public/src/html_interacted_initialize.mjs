@@ -10,8 +10,8 @@ export function html_interacted_initialize() {
   let g = global_function(html_interacted);
   object_property_initialize(g, "interacted", false);
   let start = true;
-  each([html_on_keydown, html_on_click], (on) => {
-    on(html_document_get(), () => {
+  each([html_on_keydown, html_on_click], function (on) {
+    let result = on(html_document_get(), function () {
       if (start) {
         object_property_set(g, "interacted", true);
         start = false;
