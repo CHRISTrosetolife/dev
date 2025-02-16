@@ -19,10 +19,10 @@ export async function html_load(lambda) {
   if (set_empty_is(s)) {
     let overlay = html_loader();
     object_property_set(g, "overlay", overlay);
-    await sleep_0();
   }
   let o = {};
   set_add(s, o);
+  await sleep_0();
   try {
     log(lambda);
     let result = await lambda();
