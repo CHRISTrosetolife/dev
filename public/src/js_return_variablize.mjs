@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { js_return_argument_type } from "./js_return_argument_type.mjs";
 import { js_variablize } from "./js_variablize.mjs";
 import { js_node_type_visitor } from "./js_node_type_visitor.mjs";
