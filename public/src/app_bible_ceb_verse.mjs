@@ -26,6 +26,7 @@ import { app_bible_verse_common } from "./app_bible_verse_common.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { object_properties } from "./object_properties.mjs";
+import { unawait } from "./unawait.mjs";
 export async function app_bible_ceb_verse(
   context,
   book_code,
@@ -45,7 +46,10 @@ export async function app_bible_ceb_verse(
   let verses_ceb = await global_function_property_async(
     app_lambda,
     string_combine_multiple([ceb_version, "_", chapter_code]),
-    async () => await bible_storage_version_http_get(ceb_version, chapter_code),
+    async function () {
+      let v = await bible_storage_version_http_get(ceb_version, chapter_code);
+      return v;
+    },
   );
   html_bible_verse_number(middle, book_code, chapter, verse_number);
   let tokens_component = html_span(middle);
@@ -59,16 +63,18 @@ export async function app_bible_ceb_verse(
       "_",
       bible_storage_interlinear_chapter_definitions_name(),
     ]),
-    async () =>
-      await bible_storage_version_http_get(
+    async function () {
+      let v2 = await bible_storage_version_http_get(
         bible_storage_ceb_definitions_path(ceb_version, chapter_code),
         bible_storage_interlinear_chapter_definitions_name(),
-      ),
+      );
+      return v2;
+    },
   );
   let verse_word_selected = null;
   let row_selected = null;
   let tokens = bible_verses_to_verse_tokens(verses_ceb, verse_number);
-  each(tokens, (word) => {
+  each(tokens, function (word) {
     html_spacer(tokens_component);
     let verse_word = html_span_text(tokens_component, word);
     let mapped = bible_word_map(word);
@@ -76,18 +82,19 @@ export async function app_bible_ceb_verse(
       return;
     }
     let row = html_div(middle);
-    html_on_click(verse_word, () => {
+    html_on_click(verse_word, function () {
       row_selected = html_style_background_color_select(row_selected, row);
       html_scroll_center_generic(row, {});
     });
     let verse_word_red = html_bible_word(row, word);
-    html_on_click(verse_word_red, async () => {
+    html_on_click(verse_word_red, async function () {
       verse_word_selected = html_style_background_color_select(
         verse_word_selected,
         verse_word,
       );
       row_selected = html_style_background_color_select(row_selected, null);
       html_scroll_center_generic(verse_word, {});
+      unawait(async function () {});
       await sleep(1000);
       html_style_background_color_transparent(verse_word);
     });
@@ -97,7 +104,7 @@ export async function app_bible_ceb_verse(
       let definition = ceb_definition_html_a(row, definition_entry, mapped);
       html_style_green(definition);
     }
-    each(object_properties(definition_entry), (word_defined) => {
+    each(object_properties(definition_entry), function (word_defined) {
       if (word_defined === mapped) {
         return;
       }
