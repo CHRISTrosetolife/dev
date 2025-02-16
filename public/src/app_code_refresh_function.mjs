@@ -125,7 +125,8 @@ export async function app_code_refresh_function(context) {
           let b = list_find_last(stack2, js_node_type_statement_block_is);
           let list = list_next(stack2, b);
           let list_item = list_next(stack2, list);
-          p=js_variablize(ast, list, list_item, node2);object_replace(node2,p)  
+          let p = js_variablize(ast, list, list_item, node2);
+          object_replace(node2, p);
           await ast_change_finish();
         });
       }
@@ -147,7 +148,8 @@ export async function app_code_refresh_function(context) {
           batch_path_previous: batch_path,
         };
         let batch_path = await app_code_batch_path_get();
-        $r; 
+        let v3;
+        return v3;
         await firebase_upload_object(storage_path, batch_new);
         refresh();
         overlay_remove();
