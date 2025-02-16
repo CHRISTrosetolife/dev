@@ -4,7 +4,6 @@ import { folder_parent_exists_ensure } from "./folder_parent_exists_ensure.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { global_get } from "./global_get.mjs";
 import { web_is } from "./web_is.mjs";
-import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
 import { todo } from "./todo.mjs";
 import { global_function } from "./global_function.mjs";
@@ -16,8 +15,7 @@ export async function file_overwrite_generic(path, contents, encoding) {
       "instead of a specific property name",
     );
     let { [global_files()]: files } = global_get();
-    let existing = object_property_initialize(files, path, {});
-    object_property_set(existing, "contents", contents);
+    object_property_set(files, path, contents);
     let fcs = global_file_changes();
     list_add(fcs, {
       path,
