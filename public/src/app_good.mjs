@@ -200,6 +200,7 @@ export function app_good() {
           "Bless my works",
           "Bless my word of God speech",
           "Bless my programming",
+          "Bless my programming speed",
           "Bless my apps",
           "Bless my music",
           "Bless my songs",
