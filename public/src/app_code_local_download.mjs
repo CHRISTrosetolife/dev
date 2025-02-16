@@ -11,8 +11,8 @@ export async function app_code_local_download(username) {
   );
   let latest_object = await storage_file_download(file_path_latest);
   let batch_path = object_property_get(latest_object, "batch_path");
-  let batches = [];
   let batch = await current_get(batch_path);
+  let batches = [];
   while (true) {
     if (!next_exists(batch)) {
       break;
@@ -30,8 +30,9 @@ export async function app_code_local_download(username) {
     let v = object_property_exists(batch, "batch_path_previous");
     return v;
   }
-  function next_get(batch) {
-    let v2 = object_property_get(batch, "batch_path_previous");
+  async function next_get(batch) {
+    let batch_path = object_property_get(batch, "batch_path_previous");
+    let v2 = await current_get(batch_path);
     return v2;
   }
 }
