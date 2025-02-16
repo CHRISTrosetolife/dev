@@ -13,6 +13,6 @@ export function html_loader() {
   html_spacer_vertical_n(label, 10);
   html_style_centered(label);
   html_style_font_size_default_multiplied(label, 2);
-  log("");
+  log("new loader");
   return overlay;
 }
