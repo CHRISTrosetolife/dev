@@ -5,7 +5,7 @@ import { html_load } from "./html_load.mjs";
 import { app_code_data_get } from "./app_code_data_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export async function app_code_files_get() {
-  let v = await html_load(async function () {
+  let files3 = await html_load(async function () {
     let g = global_get();
     let files = await object_property_initialize_get_async(
       g,
@@ -20,5 +20,5 @@ export async function app_code_files_get() {
     );
     return files;
   });
-  return files2;
+  return files3;
 }
