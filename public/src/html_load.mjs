@@ -18,8 +18,8 @@ export async function html_load(lambda) {
   });
   if (set_empty_is(s)) {
     let overlay = html_loader();
-    await sleep_0();
     object_property_set(g, "overlay", overlay);
+    await sleep_0();
   }
   let o = {};
   set_add(s, o);
