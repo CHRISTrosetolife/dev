@@ -18,7 +18,7 @@ export function html_interacted_initialize() {
         object_property_set(g, "interacted", true);
         start = false;
         each(mapped, function (item) {
-          html_on_remove_result(item); 
+          html_on_remove_result(item);
         });
       }
     });
