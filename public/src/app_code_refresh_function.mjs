@@ -151,11 +151,7 @@ export async function app_code_refresh_function(context) {
         };
         let batch_name = await app_code_batch_name();
         let batch_path_new = app_code_local_user_path(context, batch_name);
-        log({
-          batch_new,
-        });
-        return;
-        await firebase_upload_object(storage_path, batch_new);
+        await firebase_upload_object(batch_path_new, batch_new);
         refresh();
         overlay_remove();
       }
