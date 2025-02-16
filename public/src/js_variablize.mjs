@@ -1,3 +1,4 @@
+import { null_or_undefined } from "./null_or_undefined.mjs";
 import { object_replace } from "./object_replace.mjs";
 import { js_name_unique_v_parsed } from "./js_name_unique_v_parsed.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
@@ -13,7 +14,9 @@ export function js_variablize(ast, parent_list, list_item, expression) {
   parent_list.splice(index, 0, parsed);
   let { declarations } = parsed;
   let first = list_first(declarations);
-  first.init = null_or_undefined(expression)? expression:object_copy(expression);
+  first.init = null_or_undefined(expression)
+    ? expression
+    : object_copy(expression);
   let parsed2 = js_parse_expression(variable_name);
   object_replace(expression, parsed2);
 }
