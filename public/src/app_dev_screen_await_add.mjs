@@ -1,4 +1,4 @@
-import { function_transform_return } from "./function_transform_return.mjs";
+import { function_transform_command_line } from "./function_transform_command_line.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
@@ -133,7 +133,7 @@ export function app_dev_screen_await_add() {
           ]),
         ),
         async function () {
-          let v3 = await function_transform_return(
+          let v3 = await function_transform_command_line(
             fn.name,
             function_name_unique,
           );
