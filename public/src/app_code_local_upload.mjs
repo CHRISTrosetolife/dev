@@ -15,18 +15,18 @@ import { functions_source_get } from "./functions_source_get.mjs";
 import { folder_current_prefix } from "./folder_current_prefix.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
 export async function app_code_local_upload() {
-  let paths_html = await folder_read_shallow_extensions(folder_path_public(), [
-    app_extension_html(),
-    file_extension_json(),
-  ]);
-  let paths_html_mapped = list_map(paths_html, function (p) {
+  let paths_html_json = await folder_read_shallow_extensions(
+    folder_path_public(),
+    [app_extension_html(), file_extension_json()],
+  );
+  let paths_html_json_mapped = list_map(paths_html_json, function (p) {
     let m = folder_path_slash_forward(p);
     let m2 = string_combine_multiple([folder_current_prefix(), m]);
     return m2;
   });
-  let htmls = await files_contents_lookup(paths_html_mapped);
+  let htmls_jsons = await files_contents_lookup(paths_html_json_mapped);
   let mjss = await functions_source_get();
-  let combined = object_merge_strict(mjss, htmls);
+  let combined = object_merge_strict(mjss, htmls_jsons);
   let batch_name = await app_code_batch_name();
   let batch_path = app_code_local_files_path(batch_name);
   let files = object_map(combined, function (contents) {
