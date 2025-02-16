@@ -28,7 +28,7 @@ export async function app_code_refresh_menu(context) {
     if (app_code_username_exists(context)) {
       html_button(
         root,
-        string_combine_multiple(["Log out: ", app_code_username_get()]),
+        string_combine_multiple(["Log out: ", app_code_username_get(context)]),
         function () {
           let app_fn = object_property_get(context, "app_fn");
           storage_local_remove(app_fn, "username");
