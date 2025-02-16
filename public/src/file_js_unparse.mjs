@@ -6,12 +6,13 @@ export async function file_js_unparse(file_name, ast) {
   let before = null;
   let code = js_unparse(ast);
   let result;
-  if (code !== before) {
+  if (code === before) {
+    result = before;
+  } else {
     let prettied = await js_code_format(code);
     await file_overwrite(file_name, prettied);
     await js_data(ast);
     result = prettied;
-  } else {
   }
   let v = result;
   return v;
