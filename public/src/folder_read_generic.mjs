@@ -1,5 +1,4 @@
 import { list_any } from "./list_any.mjs";
-import { list_is } from "./list_is.mjs";
 import { folder_path_slash_forward } from "./folder_path_slash_forward.mjs";
 import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { folder_is } from "./folder_is.mjs";
@@ -9,10 +8,11 @@ import { identity } from "./identity.mjs";
 import { assert } from "./assert.mjs";
 import { import_node } from "./import_node.mjs";
 import { string_ends_with } from "./string_ends_with.mjs";
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 export async function folder_read_generic(folder, file_extensions, recursive) {
   let fs = await import_node("fs");
   let path = await import_node("path");
-  assert(list_is, [file_extensions]);
+  assert(list_empty_not_is, [file_extensions]);
   folder = folder_path_slash_forward(folder);
   folder += "/";
   async function traverse(dir, lambda_each) {
