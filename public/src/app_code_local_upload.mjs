@@ -41,9 +41,9 @@ export async function app_code_local_upload() {
   await storage_upload_object(batch_path, {
     files,
   });
-  let latest_path = app_code_local_files_path_latest();
+  let latest_path_local = app_code_local_files_path_latest();
   await storage_upload_object(
-    latest_path,
+    latest_path_local,
     app_code_latest_object(batch_path, when),
   );
 }
