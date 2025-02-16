@@ -1,7 +1,7 @@
+import { function_transform_command_line } from "./function_transform_command_line.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { html_style_link_blank } from "./html_style_link_blank.mjs";
 import { app_dev_screen_if_to_block_if_else } from "./app_dev_screen_if_to_block_if_else.mjs";
-import { function_transform } from "./function_transform.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
 import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
@@ -19,9 +19,10 @@ import { js_if_to_block } from "./js_if_to_block.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
 export function app_dev_screen_if_to_block() {
-  return {
+  let v = {
     name: function if_to_block_name(root) {
-      return html_cycle_code_span(root, "changing `if` statements to blocks");
+      let v2 = html_cycle_code_span(root, "changing `if` statements to blocks");
+      return v2;
     },
     screen: async function if_to_block_screen(root) {
       html_cycle_p(
@@ -75,8 +76,15 @@ export function app_dev_screen_if_to_block() {
             function_name_unique,
           ]),
         ),
-        async () => await function_transform(fn.name, function_name_unique),
+        async function () {
+          let v3 = await function_transform_command_line(
+            fn.name,
+            function_name_unique,
+          );
+          return v3;
+        },
       );
     },
   };
+  return v;
 }

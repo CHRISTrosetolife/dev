@@ -1,10 +1,10 @@
+import { function_transform_command_line } from "./function_transform_command_line.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
-import { function_transform } from "./function_transform.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
 import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
@@ -17,9 +17,13 @@ import { app_dev_p_transformer } from "./app_dev_p_transformer.mjs";
 import { js_assign_to_let } from "./js_assign_to_let.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 export function app_dev_screen_assign_to_let() {
-  return {
+  let v = {
     name: function assign_to_let_name(root) {
-      return html_cycle_code_span(root, "adding `let` to variable assignments");
+      let v2 = html_cycle_code_span(
+        root,
+        "adding `let` to variable assignments",
+      );
+      return v2;
     },
     screen: async function assign_to_let_screen(root) {
       let i = 1;
@@ -64,8 +68,15 @@ export function app_dev_screen_assign_to_let() {
             function_name_unique,
           ]),
         ),
-        async () => await function_transform(fn.name, function_name_unique),
+        async function () {
+          let v3 = await function_transform_command_line(
+            fn.name,
+            function_name_unique,
+          );
+          return v3;
+        },
       );
     },
   };
+  return v;
 }
