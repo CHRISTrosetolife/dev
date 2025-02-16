@@ -3,7 +3,7 @@ export function html_on(component, type, lambda) {
   let { element } = component;
   html_event_listener_add(element, type, lambda);
   let v = {
-    lambda,
+    remove: function () {html_event_listener_remove()},
   };
   return v;
 }
