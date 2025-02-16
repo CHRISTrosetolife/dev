@@ -89,8 +89,7 @@ export async function app_code_refresh_function(context) {
                 list_join_comma_space(s),
               ]),
             );
-            let v2;
-            return v2;
+            return;
           }
           let { removals } =
             app_code_refresh_function_selection_removals(selection_result);
