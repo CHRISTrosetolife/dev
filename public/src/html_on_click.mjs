@@ -5,4 +5,8 @@ export function html_on_click(component, lambda) {
   async function on_click() {
     await html_load(lambda);
   }
+  let v = {
+    on_click,
+  };
+  return v;
 }
