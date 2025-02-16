@@ -8,8 +8,7 @@ export async function file_read(file_name) {
     let g = global_get();
     let { [global_files()]: files } = g;
     let existing = object_property_get(files, file_name);
-    let v = object_property_get(existing, "contents");
-    return v;
+    return existing;
   }
   let encoding = "utf-8";
   let v2 = await file_read_generic(file_name, encoding);
