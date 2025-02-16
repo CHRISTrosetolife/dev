@@ -13,7 +13,7 @@ export function js_variablize(ast, parent_list, list_item, expression) {
   parent_list.splice(index, 0, parsed);
   let { declarations } = parsed;
   let first = list_first(declarations);
-  first.init = object_copy(expression);
+  first.init = null_or_undefined(expression)? expression:object_copy(expression);
   let parsed2 = js_parse_expression(variable_name);
   object_replace(expression, parsed2);
 }

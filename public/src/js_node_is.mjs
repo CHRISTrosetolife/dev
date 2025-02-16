@@ -1,9 +1,10 @@
+import { null_or_undefined } from "./null_or_undefined.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
-import { null_is } from "./null_is.mjs";
-import { undefined_is } from "./undefined_is.mjs";
 export function js_node_is(candidate) {
-  if (null_is(candidate) || undefined_is(candidate)) {
-    return false;
+  if (null_or_undefined(candidate)) {
+    let v = false;
+    return v;
   }
-  return object_property_exists(candidate, "type");
+  let v2 = object_property_exists(candidate, "type");
+  return v2;
 }
