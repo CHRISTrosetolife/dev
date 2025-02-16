@@ -84,7 +84,7 @@ export function app_good() {
           "Give all Christians patience",
           "Perfectly open up the eyes and ears of all to scripture and truth",
           "Perfectly engraft the word of God into every heart",
-          "Cause all to be a perfect hearer and doer of the word of God",
+          "Cause all to be a perfect hearer and perfect doer of the word of God",
           "Cause the increase of your word being planted and watered to be maximized perfectly",
           "Cause Christians to be faithful in singleness",
           "Cause Christians to be faithful in marriage",
