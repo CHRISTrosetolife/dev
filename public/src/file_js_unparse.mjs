@@ -1,19 +1,6 @@
-import { js_data } from "./js_data.mjs";
-import { js_code_format } from "./js_code_format.mjs";
-import { file_overwrite } from "./file_overwrite.mjs";
-import { js_unparse } from "./js_unparse.mjs";
+import { file_js_unparse_code } from "./file_js_unparse_code.mjs";
 export async function file_js_unparse(file_name, ast) {
   let before = null;
-  let code = js_unparse(ast);
-  let result;
-  if (code === before) {
-    result = before;
-  } else {
-    let prettied = await js_code_format(code);
-    await file_overwrite(file_name, prettied);
-    await js_data(ast);
-    result = prettied;
-  }
-  let v = result;
+  let v = await file_js_unparse_code(ast, before, file_name);
   return v;
 }
