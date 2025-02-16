@@ -76,6 +76,7 @@ export function app_good() {
           "Cause me to be faithful in marriage",
           "Let my prayer be perfect",
           "Lead all souls to Jesus",
+          "Protect all humans and angels from demons",
           "Cause all to choose good",
           "Cause all Christians to love",
           "Wisen all Christians",
