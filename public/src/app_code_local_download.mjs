@@ -1,3 +1,4 @@
+import { each_async } from "./each_async.mjs";
 import { list_linked_traverse } from "./list_linked_traverse.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -13,6 +14,7 @@ export async function app_code_local_download(username) {
   let batch_path = object_property_get(latest_object, "batch_path");
   let batch = await current_get(batch_path);
   let batches = await list_linked_traverse(batch, next_get, next_exists);
+  await each_async(list, async function (item) {});
   async function current_get(batch_path) {
     let file_path_batch = app_code_local_user_path(username, batch_path);
     let batch = await storage_file_download(file_path_batch);
