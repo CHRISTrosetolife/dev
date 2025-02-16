@@ -49,6 +49,7 @@ import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { list_intersect } from "./list_intersect.mjs";
 import { list_difference } from "./list_difference.mjs";
+import { object_replace } from "./object_replace.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async function () {
     let root = app_code_screen_set(
@@ -124,7 +125,7 @@ export async function app_code_refresh_function(context) {
           let b = list_find_last(stack2, js_node_type_statement_block_is);
           let list = list_next(stack2, b);
           let list_item = list_next(stack2, list);
-          js_variablize(ast, list, list_item, node2);
+          p=js_variablize(ast, list, list_item, node2);object_replace(node2,p)  
           await ast_change_finish();
         });
       }

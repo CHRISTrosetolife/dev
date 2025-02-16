@@ -18,15 +18,13 @@ export function js_variablize(ast, parent_list, list_item, expression) {
     ? expression
     : object_copy(expression);
   let parsed2 = js_parse_expression(variable_name);
-  comment(
-    "cannot use ",
+  "cannot use ",
     object_replace,
     " on ",
     expression,
     " because ",
     expression,
-    " might be null",
-  );
+    " might be null";
   let v = parsed2;
   return v;
 }
