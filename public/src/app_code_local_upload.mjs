@@ -27,7 +27,7 @@ export async function app_code_local_upload() {
   });
   let htmls = await files_contents_lookup(paths_mapped);
   let mjss = await functions_source_get();
-  let combined = object_merge_strict(mjss, htmls);
+  let combined = object_merge_strict(mjss, htmls);$ex
   let batch_name = await app_code_batch_name();
   let batch_path = app_code_local_files_path(batch_name);
   let files = object_map(combined, function (contents) {
