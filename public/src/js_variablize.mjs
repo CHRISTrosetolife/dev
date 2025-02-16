@@ -27,5 +27,6 @@ export function js_variablize(ast, parent_list, list_item, expression) {
     expression,
     " might be null",
   );
-  object_replace(expression, parsed2);
+  let v = parsed2;
+  return v;
 }

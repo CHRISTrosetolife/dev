@@ -1,3 +1,4 @@
+import { list_set } from "./list_set.mjs";
 import { list_copy } from "./list_copy.mjs";
 import { js_variablize } from "./js_variablize.mjs";
 import { list_is } from "./list_is.mjs";
@@ -26,7 +27,8 @@ export function js_call_variablize(ast) {
           let es = list_get_end(stack, 1);
           let { type: es_type } = es;
           assert(equal, [es_type, "ExpressionStatement"]);
-          js_variablize(ast, body, es, arg);
+          let parsed2 = js_variablize(ast, body, es, arg);
+          list_set(args, arg_i, parsed2);
         }
       }
     });
