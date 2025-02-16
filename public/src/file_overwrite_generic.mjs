@@ -7,10 +7,10 @@ import { global_function } from "./global_function.mjs";
 import { list_add } from "./list_add.mjs";
 export async function file_overwrite_generic(path, contents, encoding) {
   if (web_is()) {
-    let g = global_function(file_overwrite_generic);
     let { files } = global_get();
     let existing = object_property_initialize(files, path, {});
     object_property_set(existing, "contents", contents);
+    let g = global_function(file_overwrite_generic);
     let fcs = object_property_initialize(g, "files_changes", []);
     list_add(fcs, {
       path,
