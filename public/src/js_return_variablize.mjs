@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { js_return_argument_type } from "./js_return_argument_type.mjs";
 import { js_variablize } from "./js_variablize.mjs";
 import { js_node_type_visitor } from "./js_node_type_visitor.mjs";
@@ -10,6 +11,7 @@ export function js_return_variablize(ast) {
     }
     let { parent } = v;
     let init = node.argument;
-    js_variablize(ast, parent, node, init);
+    let parsed2 = js_variablize(ast, parent, node, init);
+    node.argument = parsed2;
   }
 }
