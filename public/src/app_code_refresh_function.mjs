@@ -1,6 +1,5 @@
 import { app_code_file_get } from "./app_code_file_get.mjs";
 import { app_code_batch_path_get } from "./app_code_batch_path_get.mjs";
-import { object_property_set } from "./object_property_set.mjs";
 import { file_js_unparse } from "./file_js_unparse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_next } from "./list_next.mjs";
@@ -134,11 +133,11 @@ export async function app_code_refresh_function(context) {
         await file_js_unparse(path, ast);
         let file = await app_code_file_get(path);
         let batch_path = await app_code_batch_path_get();
-        object_property_set(file, "batch_path_previous", batch_path);
         let batch_new = {
           files: {
             [path]: file,
           },
+          batch_path_previous: batch_path,
         };
         refresh();
         overlay_remove();
