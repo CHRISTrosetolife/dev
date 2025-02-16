@@ -1,3 +1,4 @@
+import { app_code_file_get } from "./app_code_file_get.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { each } from "./each.mjs";
 import { global_file_changes } from "./global_file_changes.mjs";
@@ -61,7 +62,7 @@ export async function app_code_refresh_function(context) {
       "function_selected",
     );
     let path = function_name_to_path(function_selected);
-    let contents = await app_code_file(path);
+    let contents = await app_code_file_get(path);
     let ast = js_parse(contents);
     let args = {
       ast,
