@@ -1,5 +1,4 @@
 import { global_files } from "./global_files.mjs";
-import { object_properties_new } from "./object_properties_new.mjs";
 import { file_open } from "./file_open.mjs";
 import { folder_parent_exists_ensure } from "./folder_parent_exists_ensure.mjs";
 import { import_node } from "./import_node.mjs";
@@ -14,11 +13,7 @@ export async function file_copy_generic(file_name_from, file_name_to, open) {
   if (web_is()) {
     let { [global_files()]: files } = global_get();
     let existing = object_property_get(files, file_name_from);
-    object_property_set(
-      files,
-      file_name_to,
-      object_properties_new(existing, ["contents"]),
-    );
+    object_property_set(files, file_name_to, existing);
   } else {
     let fs = await import_node("fs");
     await folder_parent_exists_ensure(file_name_to);
