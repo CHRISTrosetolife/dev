@@ -9,7 +9,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { global_function } from "./global_function.mjs";
 export async function app_code_files_get() {
   let data = await app_code_data_get();
-  global_function(app_code_data_get);
+  let g = global_function(app_code_data_get);
   let v = await html_load(async function () {
     let g = global_get();
     let data = await object_property_initialize_get_async(
