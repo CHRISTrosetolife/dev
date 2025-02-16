@@ -162,7 +162,7 @@ export async function app_code_refresh_function(context) {
         await app_code_user_upload(
           context,
           app_code_file_name_latest(),
-          app_code_latest_object(batch_path),
+          app_code_latest_object(batch_path, when),
         );
         refresh();
         overlay_remove();
