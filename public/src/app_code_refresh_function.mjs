@@ -26,7 +26,6 @@ import { app_code_button_menu_app } from "./app_code_button_menu_app.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_back_after } from "./html_button_back_after.mjs";
 import { html_overlay } from "./html_overlay.mjs";
-import { app_code_file_contents } from "./app_code_file_contents.mjs";
 import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
 import { html_style_background_color_black } from "./html_style_background_color_black.mjs";
 import { html_style } from "./html_style.mjs";
@@ -62,7 +61,7 @@ export async function app_code_refresh_function(context) {
       "function_selected",
     );
     let path = function_name_to_path(function_selected);
-    let contents = await app_code_file_contents(path);
+    let contents = await app_code_file(path);
     let ast = js_parse(contents);
     let args = {
       ast,
