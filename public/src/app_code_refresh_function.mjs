@@ -143,6 +143,8 @@ export async function app_code_refresh_function(context) {
           batch_path_previous: batch_path,
         };
         each(fcs, function (fc) {
+          let path2 = object_property_get(fc, "path");
+          let contents2 = object_property_get(fc, "contents");
           object_property_set(object, "property_name", value);
         });
         let batch_path = await app_code_batch_path_get();
