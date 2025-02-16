@@ -15,13 +15,16 @@ export async function html_load(lambda) {
     let v = set_new();
     return v;
   });
-  if (set_empty_is(s)) {
+  let needs_loader = set_empty_is(s);
+  if (needs_loader) {
     let overlay = html_loader();
     object_property_set(g, "overlay", overlay);
   }
   let o = {};
   set_add(s, o);
-  await sleep_0();
+  if (needs_loader) {
+    await sleep_0();
+  }
   try {
     let result = await lambda();
     return result;
