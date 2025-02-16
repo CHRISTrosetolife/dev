@@ -154,9 +154,10 @@ export async function app_code_refresh_function(context) {
           files,
           batch_path_previous,
         };
+        let batch_name = await app_code_batch_name();
         let batch_path = await app_code_user_upload(
           context,
-          await app_code_batch_name(),
+          batch_name,
           batch_new,
         );
         await app_code_user_upload(
