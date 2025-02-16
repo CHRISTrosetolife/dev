@@ -167,7 +167,7 @@ export function app_good() {
           "Bless all worship singing voices",
           "May the voice of every Christian lead all to Christ",
           "Bless my singing voices",
-          "May my voice lead all to Christ",
+          "May my voice lead all listeners to Christ",
           "Bless Christian songwriting",
           "Bless Christian speaking",
           "Bless Christian writing",
