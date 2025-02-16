@@ -22,7 +22,6 @@ export function html_interacted_initialize() {
         });
       }
     });
-    let v = result;
-    return v;
+    return result;
   });
 }
