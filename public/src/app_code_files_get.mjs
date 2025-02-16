@@ -6,8 +6,10 @@ import { global_get } from "./global_get.mjs";
 import { html_load } from "./html_load.mjs";
 import { app_code_data_get } from "./app_code_data_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { global_function } from "./global_function.mjs";
 export async function app_code_files_get() {
   let data = await app_code_data_get();
+  global_function(app_code_data_get);
   let v = await html_load(async function () {
     let g = global_get();
     let data = await object_property_initialize_get_async(
