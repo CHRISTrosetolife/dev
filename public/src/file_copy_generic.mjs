@@ -11,7 +11,7 @@ import { assert_not_async } from "./assert_not_async.mjs";
 export async function file_copy_generic(file_name_from, file_name_to, open) {
   await assert_not_async(file_exists, [file_name_to]);
   if (web_is()) {
-    let { files } = global_get();
+    let { [global_files()]: files } = global_get();
     let existing = object_property_get(files, file_name_from);
     object_property_set(
       files,
