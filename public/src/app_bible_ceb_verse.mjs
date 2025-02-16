@@ -94,9 +94,10 @@ export async function app_bible_ceb_verse(
       );
       row_selected = html_style_background_color_select(row_selected, null);
       html_scroll_center_generic(verse_word, {});
-      unawait(async function () {});
-      await sleep(1000);
-      html_style_background_color_transparent(verse_word);
+      unawait(async function () {
+        await sleep(1000);
+        html_style_background_color_transparent(verse_word);
+      });
     });
     html_spacer(row);
     let definition_entry = object_property_get(definitions, mapped);
