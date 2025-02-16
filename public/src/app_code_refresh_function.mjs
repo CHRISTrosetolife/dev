@@ -134,14 +134,14 @@ export async function app_code_refresh_function(context) {
       async function ast_change_finish() {
         await file_js_unparse(path, ast);
         let fcs = global_file_changes();
-        each(list2, function (item) {});
-        let batch_path = await app_code_batch_path_get();
         let batch_new = {
           files: {
             [path]: file,
           },
           batch_path_previous: batch_path,
         };
+        each(fcs, function (fc) {});
+        let batch_path = await app_code_batch_path_get();
         await firebase_upload_object(storage_path, batch_new);
         refresh();
         overlay_remove();
