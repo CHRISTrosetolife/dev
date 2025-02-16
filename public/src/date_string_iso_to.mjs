@@ -1,3 +1,4 @@
 export function date_string_iso_to(d) {
-  return d.toISOString();
+  let v = d.toISOString();
+  return v;
 }
