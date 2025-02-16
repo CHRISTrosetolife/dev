@@ -30,6 +30,7 @@ export async function app_code_local_download(username) {
   async function list_linked_traverse(first, next_get, next_exists) {
     let current = first;
     let v3 = await list_adder_async(async function (la) {
+      la(current);
       while (next_exists(current)) {
         current = await next_get(current);
         la(current);
