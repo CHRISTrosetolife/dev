@@ -10,7 +10,7 @@ export async function app_code_data_get() {
     g,
     "data",
     async function () {
-      let v = await html_load(async function () {
+      let data = await html_load(async function () {
         let latest = await http_storage_get(app_code_local_files_path_latest());
         let batch_path = object_property_get(latest, "batch_path");
         let batch = await http_storage_get(batch_path);
@@ -20,7 +20,7 @@ export async function app_code_data_get() {
         };
         return data;
       });
-      return v;
+      return data;
     },
   );
   return data;
