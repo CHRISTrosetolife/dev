@@ -1,4 +1,4 @@
-import { app_code_local_files_path } from "./app_code_local_files_path.mjs";
+import { app_code_local_user_path } from "./app_code_local_user_path.mjs";
 import { app_code_batch_name } from "./app_code_batch_name.mjs";
 import { app_code_file_get } from "./app_code_file_get.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -150,7 +150,7 @@ export async function app_code_refresh_function(context) {
           batch_path_previous,
         };
         let batch_name = await app_code_batch_name();
-        let batch_path_new = app_code_local_files_path(batch_name);
+        let batch_path_new = app_code_local_user_path(context, batch_name);
         log({
           batch_new,
         });
