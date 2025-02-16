@@ -13,6 +13,7 @@ export async function app_code_local_download(username) {
   );
   let latest_user = await storage_file_download(latest_path_user);
   let when_user = object_property_get(latest_user, "when");
+  let when_user_date = new Date(when_user);
   let latest_path_local = app_code_local_files_path_latest();
   let latest_local = await storage_file_download(latest_path_local);
   let when_local = object_property_get(latest_local, "when");
