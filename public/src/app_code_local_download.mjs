@@ -12,12 +12,17 @@ export async function app_code_local_download(username) {
   let latest_object = await storage_file_download(file_path_latest);
   let batch_path = object_property_get(latest_object, "batch_path");
   let batch = await current_get(batch_path);
-  let batches = await list_adder_async(async function (la) {
-    while (next_exists(batch)) {
-      batch = await next_get(batch);
-      la(batch);
-    }
-  });
+  let batches = await list_linked_traverse(batch, next_get, next_exists);
+  async function list_linked_traverse(first, next_get, next_exists) {
+    let current = first;
+    let v3 = await list_adder_async(async function (la) {
+      while (next_exists(current)) {
+        current = await next_get(current);
+        la(current);
+      }
+    });
+    return v3;
+  }
   async function current_get(batch_path) {
     let file_path_batch = app_code_local_user_path(username, batch_path);
     let batch = await storage_file_download(file_path_batch);
