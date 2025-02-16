@@ -155,8 +155,8 @@ export async function app_code_refresh_function(context) {
           files,
           batch_path_previous,
         };
-        let when2 = date_string_iso_file();
-        let batch_name = await app_code_batch_name_when(when2);
+        let when = date_string_iso_file();
+        let batch_name = await app_code_batch_name_when(when);
         let batch_path = await app_code_user_upload(
           context,
           batch_name,
