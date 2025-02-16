@@ -25,7 +25,7 @@ export async function app_code_refresh_menu(context) {
         app_code_refresh_functions_recent(context);
       });
     }
-    if (app_code_username_exists()) {
+    if (app_code_username_exists(context)) {
       html_button(
         root,
         string_combine_multiple(["Log out: ", app_code_username_get()]),
