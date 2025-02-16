@@ -18,9 +18,13 @@ import { app_dev_p_transformer } from "./app_dev_p_transformer.mjs";
 import { js_outside_move } from "./js_outside_move.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 export function app_dev_screen_outside_move() {
-  return {
+  let v = {
     name: function outside_move_name(root) {
-      return html_cycle_code_span(root, "moving `function`s to their own file");
+      let v2 = html_cycle_code_span(
+        root,
+        "moving `function`s to their own file",
+      );
+      return v2;
     },
     screen: async function outside_move_screen(root) {
       let i = 1;
@@ -67,19 +71,24 @@ export function app_dev_screen_outside_move() {
         true,
         fn_a,
         "moving `function`s to their own file",
-        (fn_name) =>
-          string_delimit_backtick(
+        function (f_name) {
+          let v3 = string_delimit_backtick(
             string_combine_multiple([
               fn_name("function_transform_command_line"),
               " ",
               fn.name,
               " ",
-              fn_name,
+              f_name,
             ]),
-          ),
-        async (fn_name) =>
-          await function_transform_command_line(fn.name, fn_name),
+          );
+          return v3;
+        },
+        async function (f_name) {
+          let v4 = await function_transform_command_line(fn.name, f_name);
+          return v4;
+        },
       );
     },
   };
+  return v;
 }
