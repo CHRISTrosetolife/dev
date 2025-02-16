@@ -18,5 +18,12 @@ export function js_variablize(ast, parent_list, list_item, expression) {
     ? expression
     : object_copy(expression);
   let parsed2 = js_parse_expression(variable_name);
+  comment(
+    "cannot use ",
+    object_replace,
+    " because ",
+    expression,
+    " might be null",
+  );
   object_replace(expression, parsed2);
 }
