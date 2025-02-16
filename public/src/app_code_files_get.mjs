@@ -12,10 +12,10 @@ export async function app_code_files_get() {
     async function () {
       let data = await app_code_data_get();
       let batch2 = object_property_get(data, "batch");
-      let files2 = object_property_get(batch2, "files");$ag
-      let property_name = "contents";
-      let v = object_map_property(files2, property_name);
+      let files2 = object_property_get(batch2, "files");
+      let v = object_map_property(files2, "contents");
       return v;
     },
   );
   return files;
+}
