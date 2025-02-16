@@ -6,5 +6,5 @@ export async function app_code_local_download(username) {
     username,
     app_code_file_name_latest(),
   );
-  await storage_file_download();
+  let latest_object = await storage_file_download(file_path_latest);
 }
