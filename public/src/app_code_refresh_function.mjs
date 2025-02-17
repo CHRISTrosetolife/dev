@@ -1,3 +1,4 @@
+import { app_code_property_message } from "./app_code_property_message.mjs";
 import { app_code_property_contents } from "./app_code_property_contents.mjs";
 import { app_code_batch_name_when } from "./app_code_batch_name_when.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
@@ -167,7 +168,7 @@ export async function app_code_refresh_function(context) {
         let batch_new = {
           files,
           batch_path_previous,
-          message: message,
+          [app_code_property_message()]: message,
         };
         let when = date_string_iso_file();
         let batch_name = await app_code_batch_name_when(when);
