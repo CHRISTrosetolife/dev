@@ -12,7 +12,6 @@ export async function storage_files(prefix) {
     prefix,
   });
   let files = list_single(data);
-  let property_name = "name";
-  list_sort_string_map_property(files, property_name);
+  list_sort_string_map_property(files, "name");
   return files;
 }
