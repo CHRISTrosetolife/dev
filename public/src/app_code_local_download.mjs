@@ -23,8 +23,11 @@ export async function app_code_local_download(username) {
   let when_local = object_property_get(latest_local, "when");
   let when_local_date = new Date(when_local);
   if (when_local_date > when_user_date) {
-    return;
+    let v = "a";
+    return v;
   }
+  let v2 = "ab";
+  return v2;
   let batch_path = object_property_get(latest_user, "batch_path");
   let batches = await app_code_batches(batch_path, username);
   await each_async(batches, async function (batch) {
