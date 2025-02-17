@@ -9,10 +9,7 @@ export async function app_code_batches(batch_path, username) {
   let batches = await list_linked_traverse(
     batch,
     previous_get,
-    function previous_exists(batch) {
-      let v = app_code_batch_previous_exists(batch);
-      return v;
-    },
+    app_code_batch_previous_exists,
   );
   list_reverse(batches);
   async function current_get(batch_path) {
