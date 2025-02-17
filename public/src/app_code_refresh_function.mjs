@@ -1,4 +1,3 @@
-import { never } from "./never.mjs";
 import { assert } from "./assert.mjs";
 import { app_code_property_message } from "./app_code_property_message.mjs";
 import { app_code_property_contents } from "./app_code_property_contents.mjs";
@@ -60,6 +59,7 @@ import { list_intersect } from "./list_intersect.mjs";
 import { list_difference } from "./list_difference.mjs";
 import { object_replace } from "./object_replace.mjs";
 import { js_unparse } from "./js_unparse.mjs";
+import { string_is } from "./string_is.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async function () {
     let root = app_code_screen_set(
@@ -155,7 +155,7 @@ export async function app_code_refresh_function(context) {
         html_remove(overlay);
       }
       async function ast_change_finish(message) {
-        assert(never, []);
+        assert(string_is, [message]);
         await file_js_unparse(path, ast);
         let fcs = global_file_changes();
         let files = {};
