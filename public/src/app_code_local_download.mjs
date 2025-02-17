@@ -1,4 +1,4 @@
-import { log } from "./log.mjs";
+import { log_json } from "./log_json.mjs";
 import { app_code_batch_previous_exists } from "./app_code_batch_previous_exists.mjs";
 import { string_is } from "./string_is.mjs";
 import { assert } from "./assert.mjs";
@@ -34,7 +34,7 @@ export async function app_code_local_download(username) {
   let batch_path = object_property_get(latest_user, "batch_path");
   let batches = await app_code_batches(batch_path, username);
   let batches_later = list_filter(batches, app_code_batch_previous_exists);
-  log({
+  log_json({
     batches_later,
   });
   return;
