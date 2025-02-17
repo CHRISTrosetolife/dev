@@ -1,3 +1,4 @@
+import { app_code_property_contents } from "./app_code_property_contents.mjs";
 import { app_code_batch_name_when } from "./app_code_batch_name_when.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
 import { object_properties_new } from "./object_properties_new.mjs";
@@ -147,7 +148,7 @@ export async function app_code_refresh_function(context) {
           object_property_set(
             files,
             path2,
-            object_properties_new(fc, ["contents"]),
+            object_properties_new(fc, [app_code_property_contents()]),
           );
         });
         let batch_path_previous = await app_code_batch_path_get();
