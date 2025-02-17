@@ -132,7 +132,9 @@ export async function app_code_refresh_function(context) {
           let list_item = list_next(stack2, list);
           let p = js_variablize(ast, list, list_item, node2);
           object_replace(node2, p);
-          await ast_change_finish();
+          await ast_change_finish(
+            string_combine_multiple([fn_name("js_variablize")]),
+          );
         });
       }
       app_code_button_menu_app(context, overlay, overlay_remove);
