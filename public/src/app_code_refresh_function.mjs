@@ -136,6 +136,8 @@ export async function app_code_refresh_function(context) {
           await ast_change_finish(
             string_combine_multiple([
               fn_name("js_variablize"),
+              " ",
+              function_selected,
               ' "',
               js_unparse(node2),
               '" to "',
