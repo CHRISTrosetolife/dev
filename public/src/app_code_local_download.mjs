@@ -1,4 +1,4 @@
-import { never } from "./never.mjs";
+import { string_is } from "./string_is.mjs";
 import { assert } from "./assert.mjs";
 import { each_object_unordered_async } from "./each_object_unordered_async.mjs";
 import { git_ac_message } from "./git_ac_message.mjs";
@@ -13,7 +13,7 @@ import { app_code_file_name_latest } from "./app_code_file_name_latest.mjs";
 import { app_code_local_user_path } from "./app_code_local_user_path.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 export async function app_code_local_download(username) {
-  assert(never, []);
+  assert(string_is, [username]);
   let latest_path_user = app_code_local_user_path(
     username,
     app_code_file_name_latest(),
