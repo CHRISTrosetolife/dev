@@ -8,7 +8,6 @@ export async function each_object_generic_async(
   let keys = object_properties(object);
   await lambda_fn(keys, async function (key) {
     let value = object_property_get(object, key);
-    let v = await lambda_each(key, value);
-    return v;
+    await lambda_each(key, value);
   });
 }
