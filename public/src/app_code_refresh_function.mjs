@@ -1,9 +1,9 @@
+import { date_now } from "./date_now.mjs";
 import { error } from "./error.mjs";
 import { assert } from "./assert.mjs";
 import { app_code_property_message } from "./app_code_property_message.mjs";
 import { app_code_property_contents } from "./app_code_property_contents.mjs";
 import { app_code_batch_name_when } from "./app_code_batch_name_when.mjs";
-import { date_string_iso_file } from "./date_string_iso_file.mjs";
 import { object_properties_new } from "./object_properties_new.mjs";
 import { app_code_latest_object } from "./app_code_latest_object.mjs";
 import { app_code_file_name_latest } from "./app_code_file_name_latest.mjs";
@@ -176,7 +176,7 @@ export async function app_code_refresh_function(context) {
           batch_path_previous,
           [app_code_property_message()]: message,
         };
-        let when = date_string_iso_file();
+        let when = date_now();
         let batch_name = await app_code_batch_name_when(when);
         let batch_path = await app_code_user_upload(
           context,
