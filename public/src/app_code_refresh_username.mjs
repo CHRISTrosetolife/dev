@@ -20,9 +20,11 @@ export function app_code_refresh_username(context) {
     "Username",
     html_condition_identifier_fn_part(),
     "Save",
-    function on_submit(value) {
+    function on_submit(username) {
       let app_fn = object_property_get(context, "app_fn");
-      storage_local_set(app_fn, "username", value);
+      storage_local_set(app_fn, "username", {
+        username,
+      });
       next();
     },
   );
