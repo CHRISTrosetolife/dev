@@ -138,7 +138,7 @@ export async function app_code_refresh_function(context) {
               fn_name("js_variablize"),
               " ",
               function_selected,
-              ' "',
+              ' : "',
               js_unparse(node2),
               '" to "',
               js_unparse(p),
