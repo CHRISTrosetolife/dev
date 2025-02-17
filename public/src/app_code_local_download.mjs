@@ -1,3 +1,5 @@
+import { app_code_batch_previous_exists } from "./app_code_batch_previous_exists.mjs";
+import { list_filter } from "./list_filter.mjs";
 import { string_is } from "./string_is.mjs";
 import { assert } from "./assert.mjs";
 import { each_object_unordered_async } from "./each_object_unordered_async.mjs";
@@ -30,6 +32,7 @@ export async function app_code_local_download(username) {
   }
   let batch_path = object_property_get(latest_user, "batch_path");
   let batches = await app_code_batches(batch_path, username);
+  let batches_later = list_filter(batches, app_code_batch_previous_exists);
   await each_async(batches, async function (batch) {
     let files = object_property_get(batch, "files");
     let message = object_property_get(batch, app_code_property_message());
