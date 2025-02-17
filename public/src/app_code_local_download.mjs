@@ -28,9 +28,9 @@ export async function app_code_local_download(username) {
   let batches = await app_code_batches(batch_path, username);
   await each_async(batches, async function (batch) {
     let files = object_property_get(batch, "files");
+    let message = object_property_get(batch, app_code_property_message());
     await each_object_async(files, async function (file_path, value) {
       let contents = object_property_get(value, app_code_property_contents());
-      let message = object_property_get(value, app_code_property_message());
       await file_overwrite(file_path, contents);
     });
   });
