@@ -1,3 +1,4 @@
+import { app_code_property_message } from "./app_code_property_message.mjs";
 import { app_code_property_contents } from "./app_code_property_contents.mjs";
 import { app_code_local_files_path_latest } from "./app_code_local_files_path_latest.mjs";
 import { each_object_async } from "./each_object_async.mjs";
@@ -29,6 +30,7 @@ export async function app_code_local_download(username) {
     let files = object_property_get(batch, "files");
     await each_object_async(files, async function (file_path, value) {
       let contents = object_property_get(value, app_code_property_contents());
+      let message = object_property_get(value, app_code_property_message());
       await file_overwrite(file_path, contents);
     });
   });
