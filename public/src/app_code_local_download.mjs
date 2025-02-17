@@ -1,8 +1,8 @@
+import { each_object_unordered_async } from "./each_object_unordered_async.mjs";
 import { git_ac_message } from "./git_ac_message.mjs";
 import { app_code_property_message } from "./app_code_property_message.mjs";
 import { app_code_property_contents } from "./app_code_property_contents.mjs";
 import { app_code_local_files_path_latest } from "./app_code_local_files_path_latest.mjs";
-import { each_object_async } from "./each_object_async.mjs";
 import { app_code_batches } from "./app_code_batches.mjs";
 import { each_async } from "./each_async.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -30,7 +30,7 @@ export async function app_code_local_download(username) {
   await each_async(batches, async function (batch) {
     let files = object_property_get(batch, "files");
     let message = object_property_get(batch, app_code_property_message());
-    await each_object_async(files, async function (file_path, value) {
+    await each_object_unordered_async(files, async function (file_path, value) {
       let contents = object_property_get(value, app_code_property_contents());
       await file_overwrite(file_path, contents);
     });
