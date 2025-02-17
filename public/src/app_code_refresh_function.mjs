@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import { assert } from "./assert.mjs";
 import { app_code_property_message } from "./app_code_property_message.mjs";
 import { app_code_property_contents } from "./app_code_property_contents.mjs";
@@ -125,7 +126,7 @@ export async function app_code_refresh_function(context) {
             param_names,
             inputs_possible,
           });
-          await ast_change_finish();
+          await ast_change_finish(error("todo"));
         });
       } else if (object_property_exists(selection_result, "one")) {
         html_button(overlay, "Selection variablize", async function () {
