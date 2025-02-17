@@ -1,3 +1,4 @@
+import { each_async } from "./each_async.mjs";
 import { each_object_async_lambda } from "./each_object_async_lambda.mjs";
 import { object_properties } from "./object_properties.mjs";
 import { list_map_unordered } from "./list_map_unordered.mjs";
