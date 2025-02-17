@@ -1,13 +1,8 @@
+import { storage_bucket_prefix } from "./storage_bucket_prefix.mjs";
 import { list_sort_string_map_property } from "./list_sort_string_map_property.mjs";
 import { list_single } from "./list_single.mjs";
-import { storage_bucket } from "./storage_bucket.mjs";
-import { error } from "./error.mjs";
-import { string_starts_with } from "./string_starts_with.mjs";
 export async function storage_files(prefix) {
-  if (string_starts_with(prefix, "/")) {
-    error();
-  }
-  let bucket = await storage_bucket();
+  let bucket = await storage_bucket_prefix(prefix);
   let data = await bucket.getFiles({
     prefix,
   });
