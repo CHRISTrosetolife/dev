@@ -1,7 +1,7 @@
-import { global_get } from "./global_get.mjs";
-import { object_merge } from "./object_merge.mjs";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { global_function } from "./global_function.mjs";
+import { object_merge_strict } from "./object_merge_strict.mjs";
 export function firebase_initialize() {
   let firebaseConfig = {
     apiKey: "AIzaSyBzIDxtdV44GoO3NH_a6KSw7iJ9Oa-trQU",
@@ -13,10 +13,9 @@ export function firebase_initialize() {
   };
   let app = initializeApp(firebaseConfig);
   let auth = getAuth(app);
-  object_merge(global_get(), {
-    firebase: {
-      app,
-      auth,
-    },
+  let g = global_function(firebase_initialize);
+  object_merge_strict(g, {
+    app,
+    auth,
   });
 }
