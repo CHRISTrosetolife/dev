@@ -9,5 +9,5 @@ export async function storage_file_path_download(latest_path_user) {
   let destination = storage_file_download_path(f);
   let v = await file_read(destination);
   let p = json_from(v);
-  return p
+  return p;
 }
