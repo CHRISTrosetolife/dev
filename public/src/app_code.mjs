@@ -1,3 +1,4 @@
+import { firebase_initialize } from "./firebase_initialize.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { global_function_initialize } from "./global_function_initialize.mjs";
 import { file_rename_on_renames } from "./file_rename_on_renames.mjs";
@@ -12,10 +13,13 @@ import { html_scripts_load } from "./html_scripts_load.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 export async function app_code() {
   if (false) {
-    let g = global_function_initialize(app_code, () => ({
-      apps_list_name: fn_name("apps_list"),
-    }));
-    let on_rename = (file_name_from, file_name_to) => {
+    let g = global_function_initialize(app_code, function () {
+      let v = {
+        apps_list_name: fn_name("apps_list"),
+      };
+      return v;
+    });
+    let on_rename = function (file_name_from, file_name_to) {
       let apps_list_name = object_property_get(g, "apps_list_name");
     };
   }
@@ -29,6 +33,7 @@ export async function app_code() {
     "prettier_standalone",
     "prettier_parser_babel",
   ]);
+  firebase_initialize();
   let app_fn = app_code;
   let context = {
     root,
