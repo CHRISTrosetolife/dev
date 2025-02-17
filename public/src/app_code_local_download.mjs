@@ -1,4 +1,4 @@
-import { storage_file_path_download } from "./storage_file_path_download.mjs";
+import { storage_file_path_download_json } from "./storage_file_path_download_json.mjs";
 import { log } from "./log.mjs";
 import { log_json } from "./log_json.mjs";
 import { app_code_batch_previous_exists } from "./app_code_batch_previous_exists.mjs";
@@ -22,14 +22,14 @@ export async function app_code_local_download(username) {
     username,
     app_code_file_name_latest(),
   );
-  let latest_user = await storage_file_path_download(latest_path_user);
+  let latest_user = await storage_file_path_download_json(latest_path_user);
   log({
     latest_user,
   });
   let when_user = object_property_get(latest_user, "when");
   let when_user_date = new Date(when_user);
   let latest_path_local = app_code_local_files_path_latest();
-  let latest_local = await storage_file_path_download(latest_path_local);
+  let latest_local = await storage_file_path_download_json(latest_path_local);
   let when_local = object_property_get(latest_local, "when");
   let when_local_date = new Date(when_local);
   if (when_local_date > when_user_date) {
