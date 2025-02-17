@@ -88,7 +88,9 @@ export async function app_code_refresh_function(context) {
       if (object_property_exists(selection_result, "two")) {
         html_button(overlay, "Selection remove", async function () {
           app_code_refresh_function_selection_remove(selection_result);
-          ast_change_finish();
+          ast_change_finish(
+            fn_name("app_code_refresh_function_selection_remove"),
+          );
         });
         html_button(overlay, "Selection functionize", async function () {
           let s = js_identifiers_shadowed_names(ast);
