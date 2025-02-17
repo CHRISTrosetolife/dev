@@ -1,5 +1,5 @@
+import { app_code_batch_previous_exists } from "./app_code_batch_previous_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { object_property_exists } from "./object_property_exists.mjs";
 import { storage_file_download } from "./storage_file_download.mjs";
 import { app_code_local_user_path } from "./app_code_local_user_path.mjs";
 import { list_reverse } from "./list_reverse.mjs";
@@ -18,7 +18,7 @@ export async function app_code_batches(batch_path, username) {
     return batch;
   }
   function previous_exists(batch) {
-    let v = object_property_exists(batch, "batch_path_previous");
+    let v = app_code_batch_previous_exists(batch);
     return v;
   }
   async function previous_get(batch) {
