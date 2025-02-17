@@ -1,4 +1,4 @@
-import { storage_file } from "./storage_file.mjs";
+import { storage_file_path_download } from "./storage_file_path_download.mjs";
 import { log } from "./log.mjs";
 import { log_json } from "./log_json.mjs";
 import { app_code_batch_previous_exists } from "./app_code_batch_previous_exists.mjs";
@@ -23,8 +23,7 @@ export async function app_code_local_download(username) {
     username,
     app_code_file_name_latest(),
   );
-  let f = await storage_file(latest_path_user);
-  let latest_user = await storage_file_download(f);
+  let latest_user = await storage_file_path_download(latest_path_user);
   log({
     latest_user,
   });
