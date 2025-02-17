@@ -1,3 +1,5 @@
+import { never } from "./never.mjs";
+import { assert } from "./assert.mjs";
 import { app_code_property_message } from "./app_code_property_message.mjs";
 import { app_code_property_contents } from "./app_code_property_contents.mjs";
 import { app_code_batch_name_when } from "./app_code_batch_name_when.mjs";
@@ -153,6 +155,7 @@ export async function app_code_refresh_function(context) {
         html_remove(overlay);
       }
       async function ast_change_finish(message) {
+        assert(never, []);
         await file_js_unparse(path, ast);
         let fcs = global_file_changes();
         let files = {};
