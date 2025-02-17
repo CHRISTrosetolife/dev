@@ -1,3 +1,4 @@
+import { git_acp_message } from "./git_acp_message.mjs";
 import { app_code_property_message } from "./app_code_property_message.mjs";
 import { app_code_property_contents } from "./app_code_property_contents.mjs";
 import { app_code_local_files_path_latest } from "./app_code_local_files_path_latest.mjs";
@@ -33,5 +34,6 @@ export async function app_code_local_download(username) {
       let contents = object_property_get(value, app_code_property_contents());
       await file_overwrite(file_path, contents);
     });
+    await git_acp_message(message);
   });
 }
