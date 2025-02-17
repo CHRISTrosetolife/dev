@@ -7,6 +7,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { storage_file_download } from "./storage_file_download.mjs";
 import { app_code_file_name_latest } from "./app_code_file_name_latest.mjs";
 import { app_code_local_user_path } from "./app_code_local_user_path.mjs";
+import { file_overwrite } from "./file_overwrite.mjs";
 export async function app_code_local_download(username) {
   let latest_path_user = app_code_local_user_path(
     username,
@@ -28,6 +29,7 @@ export async function app_code_local_download(username) {
     let files = object_property_get(batch, "files");
     await each_object_async(files, async function (file_path, value) {
       let contents = object_property_get(value, app_code_property_contents());
+      await file_overwrite(file_path, contents);
     });
   });
 }
