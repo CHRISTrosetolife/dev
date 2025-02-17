@@ -13,8 +13,8 @@ export async function storage_files(prefix) {
     prefix,
   });
   let files = list_single(data);
+  let property_name = "name";
   list_sort_string_map(files, function (f) {
-    let property_name = "name";
     let v = object_property_get(f, property_name);
     return v;
   });
