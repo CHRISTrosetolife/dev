@@ -151,7 +151,7 @@ export async function app_code_refresh_function(context) {
       function overlay_remove() {
         html_remove(overlay);
       }
-      async function ast_change_finish() {
+      async function ast_change_finish(message) {
         await file_js_unparse(path, ast);
         let fcs = global_file_changes();
         let files = {};
@@ -167,6 +167,7 @@ export async function app_code_refresh_function(context) {
         let batch_new = {
           files,
           batch_path_previous,
+          message: message,
         };
         let when = date_string_iso_file();
         let batch_name = await app_code_batch_name_when(when);
