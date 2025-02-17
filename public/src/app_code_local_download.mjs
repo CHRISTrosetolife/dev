@@ -1,3 +1,4 @@
+import { app_code_property_contents } from "./app_code_property_contents.mjs";
 import { app_code_local_files_path_latest } from "./app_code_local_files_path_latest.mjs";
 import { each_object_async } from "./each_object_async.mjs";
 import { app_code_batches } from "./app_code_batches.mjs";
@@ -26,7 +27,7 @@ export async function app_code_local_download(username) {
   await each_async(batches, async function (batch) {
     let files = object_property_get(batch, "files");
     await each_object_async(files, async function (file, value) {
-      object_property_get(object, "property_name");
+      let contents = object_property_get(file, app_code_property_contents());
     });
   });
 }
