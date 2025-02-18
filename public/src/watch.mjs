@@ -1,4 +1,3 @@
-import { global_function } from "./global_function.mjs";
 import { run } from "./run.mjs";
 import { folder_gitignore_path_function_parent } from "./folder_gitignore_path_function_parent.mjs";
 import { folder_read_shallow } from "./folder_read_shallow.mjs";
@@ -48,10 +47,6 @@ export async function watch() {
       return;
     }
     await folder_read_shallow(folder_gitignore_path_function_parent(run), "");
-    let g = global_function(run);
-    log({
-      g,
-    });
     path = string_replace(path, "\\", "/");
     path = folder_current_prefix_combine(path);
     object_property_initialize(cache, path, {});
