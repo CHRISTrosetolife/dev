@@ -1,3 +1,5 @@
+import { list_first } from "./list_first.mjs";
+import { list_second } from "./list_second.mjs";
 import { list_sort } from "./list_sort.mjs";
 import { function_param_move_index } from "./function_param_move_index.mjs";
 import { function_params_names } from "./function_params_names.mjs";
@@ -14,5 +16,9 @@ export async function function_params_move_name(
   let index_new = list_index(params_names, name_new);
   let indices = [index_old, index_new];
   list_sort(indices);
-  await function_param_move_index(function_name, index_old, index_new);
+  await function_param_move_index(
+    function_name,
+    list_second(indices),
+    list_first(indices),
+  );
 }
