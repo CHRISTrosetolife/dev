@@ -9,7 +9,8 @@ export async function uuid_file(fn, lambda) {
   let file_name = file_name_json(u);
   let file_path = folder_gitignore_path_function(fn, file_name);
   try {
-    await lambda(file_path);
+    let v = await lambda(file_path);
+    return v;
   } finally {
     await file_delete_if_exists(file_path);
   }
