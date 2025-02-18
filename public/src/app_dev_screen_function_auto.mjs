@@ -61,6 +61,7 @@ export function app_dev_screen_function_auto() {
         fn_c,
         "a,b",
         js_code_statement_call_args(fn_name("multiply"), ["a", "b"]),
+        false,
       );
       let contents_b = js_code_function_declare(
         fn_b,
@@ -69,6 +70,7 @@ export function app_dev_screen_function_auto() {
           "a",
           js_code_call_args(fn_c, ["b", "c"]),
         ]),
+        false,
       );
       let contents_a = js_code_export_function_declare(
         fn_a,

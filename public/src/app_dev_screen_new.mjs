@@ -44,11 +44,13 @@ export async function app_dev_screen_new(name) {
                 string_delimit(name),
               ]),
             ),
+            false,
           ),
           js_code_function_declare(
             string_combine_multiple([name, "_screen"]),
             root,
             screen_body,
+            false,
           ),
         ],
       ),

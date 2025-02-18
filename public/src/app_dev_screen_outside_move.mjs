@@ -47,6 +47,7 @@ export function app_dev_screen_outside_move() {
         fn_c,
         "a,b",
         js_code_statement_call_args(fn_name("multiply"), ["a", "b"]),
+        false,
       );
       let contents_b = js_code_function_declare(
         fn_b,
@@ -55,6 +56,7 @@ export function app_dev_screen_outside_move() {
           "a",
           js_code_call_args(fn_c, ["b", "c"]),
         ]),
+        false,
       );
       let contents_a = js_code_export_function_declare(
         fn_a,

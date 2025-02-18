@@ -4,6 +4,7 @@ export function js_code_function_declare(
   function_name,
   args_string,
   body_string,
+  async_is,
 ) {
   return string_combine_multiple([
     "function ",
