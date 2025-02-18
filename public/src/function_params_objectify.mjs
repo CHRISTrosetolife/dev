@@ -8,7 +8,12 @@ export async function function_params_objectify(function_name) {
   assert_arguments_length(arguments, 1);
   await data_identifiers_each(function_name, async function lambda(fn_name) {
     await function_transform(fn_name, function js_params_objectify(ast) {
-      js_param_generic();
+      js_param_generic(
+        ast,
+        function_name,
+        function () {},
+        function () {},
+      );
     });
   });
 }
