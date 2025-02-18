@@ -19,10 +19,10 @@ export async function function_params_objectify(function_name) {
         noop,
         function (params, declaration, ast) {
           let params_names = js_identifiers_to_names(params);
-          let body = js_declaration_to_body(declaration);
           let duplicates = js_identifiers_duplicates(ast);
           let i = list_intersect(params_names, duplicates);
           assert(list_empty_is, [i]);
+          let body = js_declaration_to_body(declaration);
         },
       );
     });
