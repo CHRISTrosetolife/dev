@@ -7,8 +7,8 @@ export async function functions_rename_replace(
   replacement_before,
   replacement_after,
 ) {
+  assert_arguments_length(arguments, 2);
   let v = await watch_lock(async function () {
-    assert_arguments_length(arguments, 2);
     await functions_rename_generic(fn_new_get);
     function fn_new_get(fn) {
       let fn_new = fn;
