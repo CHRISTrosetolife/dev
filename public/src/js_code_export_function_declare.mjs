@@ -8,7 +8,10 @@ export function js_code_export_function_declare(
   async_is,
 ) {
   let space = async_is
-    ? string_combine_multiple([" ", $s,js_keyword_async(), " "])
+    ? string_combine_multiple([
+        " ",
+        string_combine_multiple([js_keyword_async(), " "]),
+      ])
     : " ";
   let declare = js_code_function_declare(
     function_name,
