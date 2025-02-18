@@ -37,7 +37,10 @@ export async function function_params_objectify(function_name) {
   await data_identifiers_each_transform_params(
     function_name,
     function on_call(params, declaration, ast) {
-      list_map_index(params, function (p) {});
+      list_map_index(params, function (p) {
+        let v = {};
+        return v;
+      });
       let params_names = js_identifiers_to_names(params);
       let duplicates = js_identifiers_duplicates(ast);
       let i = list_intersect(params_names, duplicates);
