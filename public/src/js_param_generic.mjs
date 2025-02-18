@@ -5,7 +5,7 @@ import { js_declaration_single_name } from "./js_declaration_single_name.mjs";
 import { equal } from "./equal.mjs";
 export function js_param_generic(ast, function_name, on_caller, on_define) {
   js_visit_calls(ast, function_name, function (args) {
-    on_caller(args);
+    on_caller(args, function_name);
   });
   let name = js_declaration_single_name(ast);
   if (!equal(name, function_name)) {
