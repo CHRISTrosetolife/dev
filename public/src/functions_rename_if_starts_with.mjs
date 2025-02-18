@@ -1,3 +1,4 @@
+import { watch_lock } from "./watch_lock.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { functions_rename_generic } from "./functions_rename_generic.mjs";
 import { string_prefix_change } from "./string_prefix_change.mjs";
@@ -6,8 +7,8 @@ export async function functions_rename_if_starts_with(
   prefix_before,
   prefix_after,
 ) {
-  return await watch_lock(async function () {
-    assert_arguments_length(arguments, 2);
+  assert_arguments_length(arguments, 2);
+  let v = await watch_lock(async function () {
     await functions_rename_generic(fn_new_get);
     function fn_new_get(fn) {
       let fn_new = fn;
@@ -17,4 +18,5 @@ export async function functions_rename_if_starts_with(
       return fn_new;
     }
   });
+  return v;
 }
