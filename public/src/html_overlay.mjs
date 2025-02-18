@@ -1,3 +1,4 @@
+import { html_style_font_color_white } from "./html_style_font_color_white.mjs";
 import { html_overlay_z } from "./html_overlay_z.mjs";
 import { list_index } from "./list_index.mjs";
 import { html_style_background_color_transparent_mix } from "./html_style_background_color_transparent_mix.mjs";
@@ -19,5 +20,6 @@ export function html_overlay(overlay_level_name) {
     "background-color": "rgba(0, 0, 0, 0.15)",
   });
   html_style_background_color_transparent_mix(overlay, "black", 85);
+  html_style_font_color_white(overlay);
   return overlay;
 }
