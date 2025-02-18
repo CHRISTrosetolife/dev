@@ -1,3 +1,4 @@
+import { function_params_names } from "./function_params_names.mjs";
 import { range } from "./range.mjs";
 import { js_code_object_properties } from "./js_code_object_properties.mjs";
 import { function_calls_params_size_assert_list } from "./function_calls_params_size_assert_list.mjs";
@@ -43,7 +44,7 @@ export async function function_params_objectify(function_name) {
       },
     );
   }
-  params_names;
+  params_names = await function_params_names(function_name);
   assert(list_is, [params_names]);
   await function_calls_params_size_assert_list(function_name, params_names);
   await data_identifiers_each_transform_params(
