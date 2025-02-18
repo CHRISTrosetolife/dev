@@ -1,3 +1,5 @@
+import { js_expression_call } from "./js_expression_call.mjs";
+import { fn_name } from "./fn_name.mjs";
 import { js_expression_await } from "./js_expression_await.mjs";
 import { list_add } from "./list_add.mjs";
 import { js_statement_return } from "./js_statement_return.mjs";
@@ -9,6 +11,7 @@ export function js_watch_lockify(ast) {
   let b = js_declaration_single_body(ast);
   let copy = list_copy(b);
   list_clear(b);
+  let e = js_expression_call(fn_name("watch_lock"));
   let argument = js_expression_await(node);
   let r = js_statement_return(argument);
   list_add(b, r);
