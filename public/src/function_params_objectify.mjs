@@ -1,3 +1,4 @@
+import { js_identifiers_duplicates } from "./js_identifiers_duplicates.mjs";
 import { js_declaration_to_body } from "./js_declaration_to_body.mjs";
 import { js_identifiers_to_names } from "./js_identifiers_to_names.mjs";
 import { function_transform } from "./function_transform.mjs";
@@ -15,6 +16,7 @@ export async function function_params_objectify(function_name) {
         noop,
         function (params, declaration) {
           let body = js_declaration_to_body(declaration);
+          js_identifiers_duplicates();
           js_identifiers_to_names(params);
         },
       );
