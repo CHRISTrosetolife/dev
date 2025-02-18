@@ -122,13 +122,13 @@ export function app_code_refresh_function_menu(arg) {
             js_identifier_rename(ast, before, after_value);
             await ast_change_finish(
               string_combine_multiple([
-                fn_name("js_variablize"),
+                fn_name("js_identifier_rename"),
                 " ",
                 function_selected,
                 ' : "',
-                node2_code,
+                before,
                 '" to "',
-                js_unparse(p),
+                after_value,
                 '"',
               ]),
             );
