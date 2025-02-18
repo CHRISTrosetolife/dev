@@ -25,8 +25,7 @@ export async function function_params_objectify(function_name) {
           let i = list_intersect(params_names, duplicates);
           assert(list_empty_is, [i]);
           let body = js_declaration_to_body(declaration);
-          js_code_object_pattern(params_names);
-          js_code_declare_assign();
+          js_code_declare_assign(js_code_object_pattern(params_names));
         },
       );
     });
