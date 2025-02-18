@@ -19,6 +19,7 @@ import { list_is } from "./list_is.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_size } from "./list_size.mjs";
+import { js_parse_expression } from "./js_parse_expression.mjs";
 export async function function_params_objectify(function_name) {
   assert_arguments_length(arguments, 1);
   let params_names;
@@ -49,6 +50,7 @@ export async function function_params_objectify(function_name) {
           return v2;
         }),
       );
+      let p = js_parse_expression(c);
       list_map_index(params, function (param) {
         let v = {
           key: list_get(),
