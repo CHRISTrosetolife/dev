@@ -33,7 +33,7 @@ export async function function_params_objectify(function_name) {
     },
   );
   assert(list_is, [params_names]);
-  await function_calls_params_size_assert_list(params_names, function_name);
+  await function_calls_params_size_assert_list(function_name, params_names);
   await data_identifiers_each_transform_params(
     function_name,
     function on_call(params, declaration, ast) {
