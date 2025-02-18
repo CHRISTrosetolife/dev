@@ -1,3 +1,4 @@
+import { range } from "./range.mjs";
 import { js_code_object_properties } from "./js_code_object_properties.mjs";
 import { function_calls_params_size_assert_list } from "./function_calls_params_size_assert_list.mjs";
 import { list_map_index } from "./list_map_index.mjs";
@@ -16,6 +17,8 @@ import { list_empty_is } from "./list_empty_is.mjs";
 import { js_parse_first } from "./js_parse_first.mjs";
 import { list_is } from "./list_is.mjs";
 import { list_get } from "./list_get.mjs";
+import { list_map } from "./list_map.mjs";
+import { list_size } from "./list_size.mjs";
 export async function function_params_objectify(function_name) {
   assert_arguments_length(arguments, 1);
   let params_names;
@@ -39,7 +42,10 @@ export async function function_params_objectify(function_name) {
   await data_identifiers_each_transform_params(
     function_name,
     function on_call(params, declaration, ast) {
-      js_code_object_properties();
+      js_code_object_properties(
+        params_names,
+        list_map(range(list_size(params_names)), function () {}),
+      );
       list_map_index(params, function (param) {
         let v = {
           key: list_get(),
