@@ -44,7 +44,10 @@ export async function function_params_objectify(function_name) {
     function on_call(params, declaration, ast) {
       js_code_object_properties(
         params_names,
-        list_map(range(list_size(params_names)), function () {}),
+        list_map(range(list_size(params_names)), function () {
+          let v2 = "0";
+          return v2;
+        }),
       );
       list_map_index(params, function (param) {
         let v = {
