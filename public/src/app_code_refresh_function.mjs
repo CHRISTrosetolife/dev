@@ -1,4 +1,4 @@
-import { never } from "./never.mjs";
+import { js_node_type_identifier_is } from "./js_node_type_identifier_is.mjs";
 import { app_code_refresh_function_selection_one_get } from "./app_code_refresh_function_selection_one_get.mjs";
 import { emoji_lightning } from "./emoji_lightning.mjs";
 import { date_now } from "./date_now.mjs";
@@ -138,7 +138,7 @@ export async function app_code_refresh_function(context) {
           html_button(overlay, "Selection rename", async function () {
             let { node } =
               app_code_refresh_function_selection_one_get(selection_result);
-            assert(never, []);
+            assert(js_node_type_identifier_is, [node]);
             let name = object_property_get(node, "name");
           });
           html_button(overlay, "Selection variablize", async function () {
