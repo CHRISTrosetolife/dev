@@ -1,6 +1,5 @@
-export function js_declaration_to_body(d) {
-  let { body: body_d } = d;
-  let { body: b } = body_d;
-  let body_block = b;
-  return body_block;
+export function js_declaration_to_body(e) {
+  let { body: body_outer } = e;
+  let { body: body_inner } = body_outer;
+  return body_inner;
 }
