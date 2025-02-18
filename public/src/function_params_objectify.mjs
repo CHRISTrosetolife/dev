@@ -34,10 +34,11 @@ export async function function_params_objectify(function_name) {
     },
   );
   assert(list_is, [params_names]);
+  let expected = list_size(params_names);
   await data_identifiers_each_transform_params(
     function_name,
     function on_call(params) {
-      assert(list_size_equal, [params, list_size(params_names)]);
+      assert(list_size_equal, [params, expected]);
     },
     noop,
   );
