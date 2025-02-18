@@ -1,4 +1,4 @@
-import { run } from "./run.mjs";
+import { watch_lock } from "./watch_lock.mjs";
 import { folder_gitignore_path_function_parent } from "./folder_gitignore_path_function_parent.mjs";
 import { folder_read_shallow } from "./folder_read_shallow.mjs";
 import { sermon_path_to_name } from "./sermon_path_to_name.mjs";
@@ -48,7 +48,7 @@ export async function watch() {
       return;
     }
     let locks = await folder_read_shallow(
-      folder_gitignore_path_function_parent(run),
+      folder_gitignore_path_function_parent(watch_lock),
       "",
     );
     if (list_empty_not_is(locks)) {
