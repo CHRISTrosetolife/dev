@@ -56,6 +56,10 @@ import { html_value_get } from "./html_value_get.mjs";
 import { html_focus } from "./html_focus.mjs";
 export function app_code_refresh_function_menu(arg) {
   let { overlay, function_selected, args, ast, context, path, refresh } = arg;
+  let menu_refresh = function () {
+    let v2 = app_code_refresh_function_menu(arg);
+    return v2;
+  };
   html_clear(overlay);
   html_button_back_after(
     overlay,
@@ -110,7 +114,7 @@ export function app_code_refresh_function_menu(arg) {
       let selection_rename_text = "Selection rename";
       html_button(overlay, selection_rename_text, async function () {
         html_clear(overlay);
-        html_button_back;
+        html_button_back(overlay);
         let { node } =
           app_code_refresh_function_selection_one_get(selection_result);
         let before = object_property_get(node, "name");
