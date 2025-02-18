@@ -27,7 +27,7 @@ export async function function_params_objectify(function_name) {
           assert(list_empty_is, [i]);
           let body = js_declaration_to_body(declaration);
           let arg_name = js_name_unique(ast, "arg");
-          js_code_declare_assign(
+          let destructure = js_code_declare_assign(
             js_code_object_pattern(params_names),
             arg_name,
           );
