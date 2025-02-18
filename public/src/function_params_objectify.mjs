@@ -11,6 +11,7 @@ import { list_intersect } from "./list_intersect.mjs";
 import { assert } from "./assert.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { js_parse_first } from "./js_parse_first.mjs";
+import { list_is } from "./list_is.mjs";
 export async function function_params_objectify(function_name) {
   assert_arguments_length(arguments, 1);
   let params_names;
@@ -29,6 +30,7 @@ export async function function_params_objectify(function_name) {
       list_add_first(body, destructure);
     },
   );
+  assert(list_is, [params_names]);
   await data_identifiers_each_transform_params(
     function_name,
     function on_call(params, declaration, ast) {
