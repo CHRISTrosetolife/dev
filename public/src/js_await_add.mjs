@@ -25,8 +25,7 @@ export async function js_await_add(ast) {
           let { parent } = v;
           let { type: parent_type } = parent;
           if (parent_type !== "AwaitExpression") {
-            js_code_await();
-            let a = js_parse_expression("await 0");
+            let a = js_parse_expression(js_code_await("0"));
             a.argument = node;
             js_parent_replace(v, node, a);
             let { stack } = v;
