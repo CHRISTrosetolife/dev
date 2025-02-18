@@ -134,7 +134,10 @@ export async function app_code_refresh_function(context) {
             await ast_change_finish(error("todo"));
           });
         } else if (object_property_exists(selection_result, "one")) {
-          html_button(overlay, "Selection rename", async function () {});
+          html_button(overlay, "Selection rename", async function () {
+            let { node } =
+              app_code_refresh_function_selection_one_get(selection_result);
+          });
           html_button(overlay, "Selection variablize", async function () {
             let { visitor, node } =
               app_code_refresh_function_selection_one_get(selection_result);
