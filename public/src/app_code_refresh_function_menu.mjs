@@ -120,6 +120,7 @@ export function app_code_refresh_function_menu(arg) {
         let before = object_property_get(node, "name");
         html_p_text(overlay, "Name before:");
         html_p_text(overlay, before);
+        let input;
         let after = html_input_validated_button(
           overlay,
           "Name after",
@@ -142,7 +143,7 @@ export function app_code_refresh_function_menu(arg) {
             );
           },
         );
-        let input = object_property_get(after, "input");
+        input = object_property_get(after, "input");
         html_focus(input);
       });
     }
