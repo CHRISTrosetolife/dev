@@ -102,6 +102,7 @@ export function app_code_refresh_function_menu(arg) {
       app_code_refresh_function_selection_one_get(selection_result);
     if (js_node_type_identifier_is(node)) {
       html_button(overlay, "Selection rename", async function () {
+        html_clear(overlay);
         let { node } =
           app_code_refresh_function_selection_one_get(selection_result);
         let name = object_property_get(node, "name");
