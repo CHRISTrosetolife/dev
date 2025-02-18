@@ -52,6 +52,9 @@ export async function watch() {
       "",
     );
     if (list_empty_not_is(locks)) {
+      log({
+        locks,
+      });
       return;
     }
     path = string_replace(path, "\\", "/");
