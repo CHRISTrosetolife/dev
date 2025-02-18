@@ -1,5 +1,5 @@
+import { js_expression_call_args } from "./js_expression_call_args.mjs";
 import { fn_name } from "./fn_name.mjs";
-import { js_call } from "./js_call.mjs";
 import { each_reverse } from "./each_reverse.mjs";
 import { js_init_index_insert } from "./js_init_index_insert.mjs";
 import { js_variable_declarators } from "./js_variable_declarators.mjs";
@@ -15,12 +15,12 @@ export function js_array_init_functionize(ast) {
     let { init } = node;
     let { elements } = init;
     each_reverse(elements, function (e) {
-      let call = js_call(fn_name("list_add"), [id, e]);
+      let call = js_expression_call_args(fn_name("list_add"), [id, e]);
       let { stack } = v;
       let variable_declaration_parent = list_get_end(stack, 3);
       list_insert(variable_declaration_parent, index_insert, call);
     });
-    let init_new = js_call(fn_name("object_new"), []);
+    let init_new = js_expression_call_args(fn_name("object_new"), []);
     object_property_set(node, "init", init_new);
   }
 }

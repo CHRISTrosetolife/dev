@@ -1,3 +1,4 @@
+import { js_expression_call_args } from "./js_expression_call_args.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { js_code_declare_assign_0 } from "./js_code_declare_assign_0.mjs";
 import { js_imports_add_specified } from "./js_imports_add_specified.mjs";
@@ -8,7 +9,6 @@ import { js_identifier_to_expression } from "./js_identifier_to_expression.mjs";
 import { js_node_type_visitor } from "./js_node_type_visitor.mjs";
 import { list_insert } from "./list_insert.mjs";
 import { list_get_end } from "./list_get_end.mjs";
-import { js_call } from "./js_call.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { each_reverse } from "./each_reverse.mjs";
 import { js_init_index_insert } from "./js_init_index_insert.mjs";
@@ -29,7 +29,7 @@ export function js_object_pattern_functionize(ast) {
       let parsed = js_code_declare_assign_0(value_name);
       let key_string = js_identifier_to_expression(key);
       let variable_name_identifier = js_parse_expression(variable_name);
-      let call = js_call(fn_name("object_property_get"), [
+      let call = js_expression_call_args(fn_name("object_property_get"), [
         variable_name_identifier,
         key_string,
       ]);

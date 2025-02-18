@@ -1,6 +1,6 @@
+import { js_expression_call_args } from "./js_expression_call_args.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { js_identifier_to_expression } from "./js_identifier_to_expression.mjs";
-import { js_call } from "./js_call.mjs";
 import { each_reverse } from "./each_reverse.mjs";
 import { js_init_index_insert } from "./js_init_index_insert.mjs";
 import { js_variable_declarators } from "./js_variable_declarators.mjs";
@@ -20,7 +20,7 @@ export function js_object_init_functionize(ast) {
     each_reverse(properties, function (p) {
       let { key, value } = p;
       let key_string = js_identifier_to_expression(key);
-      let call = js_call(fn_name("object_property_set"), [
+      let call = js_expression_call_args(fn_name("object_property_set"), [
         id,
         key_string,
         value,
@@ -30,7 +30,7 @@ export function js_object_init_functionize(ast) {
       assert(list_is, [variable_declaration_parent]);
       list_insert(variable_declaration_parent, index_insert, call);
     });
-    let init_new = js_call(fn_name("object_new"), []);
+    let init_new = js_expression_call_args(fn_name("object_new"), []);
     object_property_set(node, "init", init_new);
   }
 }
