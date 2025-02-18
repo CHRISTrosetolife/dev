@@ -45,6 +45,7 @@ import { js_unparse } from "./js_unparse.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_button } from "./html_button.mjs";
 import { map_set } from "./map_set.mjs";
+import { list_any } from "./list_any.mjs";
 export function app_code_refresh_function_node(args) {
   let { parent, node } = args;
   parent = html_div(parent);
@@ -125,7 +126,12 @@ export function app_code_refresh_function_node(args) {
         node: declaration,
       }),
     );
-  } else if (js_node_type_is(node, "FunctionDeclaration")) {
+  } else if (
+    list_any(["FunctionDeclaration"], function (t) {
+      let v3 = js_node_type_is(node, t);
+      return v3;
+    })
+  ) {
     html_code_keyword_space(parent, js_keyword_function());
     let id = object_property_get(node, "id");
     if (id !== null) {
