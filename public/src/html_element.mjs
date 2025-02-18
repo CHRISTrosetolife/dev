@@ -12,6 +12,7 @@ export function html_element(parent, tag_name) {
     element: e,
   };
   if (false) {
+    ("not sure why this is here");
     html_style_font_color_default_set(result);
   }
   html_style(result, html_style_default());
