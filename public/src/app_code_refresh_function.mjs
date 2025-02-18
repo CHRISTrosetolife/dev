@@ -42,15 +42,15 @@ export async function app_code_refresh_function(context) {
       string_combine_multiple([emoji_lightning(), " Function menu"]),
       function () {
         let overlay = html_overlay(fn_name("app_code_refresh_function"));
-        app_code_refresh_function_menu({
-          overlay: overlay,
-          function_selected: function_selected,
-          args: args,
-          ast: ast,
-          context: context,
-          path: path,
-          refresh: refresh,
-        });
+        app_code_refresh_function_menu(
+          overlay,
+          function_selected,
+          args,
+          ast,
+          context,
+          path,
+          refresh,
+        );
       },
     );
     html_style(button_menu, {
