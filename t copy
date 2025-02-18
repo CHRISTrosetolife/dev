@@ -1,2 +1,2 @@
-import {terminal} from './public/src/terminal.mjs';
-terminal();
+import {hub} from './public/src/hub.mjs';
+hub();

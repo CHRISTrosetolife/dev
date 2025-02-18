@@ -46,7 +46,12 @@ export async function watch() {
     if (event !== "change") {
       return;
     }
-    await folder_read_shallow(folder_gitignore_path_function_parent(run), "");
+    let locks = await folder_read_shallow(
+      folder_gitignore_path_function_parent(run),
+      "",
+    );
+    if (false) {
+    }
     path = string_replace(path, "\\", "/");
     path = folder_current_prefix_combine(path);
     object_property_initialize(cache, path, {});
