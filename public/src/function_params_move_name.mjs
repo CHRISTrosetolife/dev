@@ -1,4 +1,4 @@
-import { list_sort_reverse } from "./list_sort_reverse.mjs";
+import { list_sort } from "./list_sort.mjs";
 import { function_param_move_index } from "./function_param_move_index.mjs";
 import { function_params_names } from "./function_params_names.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
@@ -13,6 +13,6 @@ export async function function_params_move_name(
   let index_old = list_index(params_names, name_old);
   let index_new = list_index(params_names, name_new);
   let indices = [index_old, index_new];
-  list_sort_reverse(indices);
+  list_sort(indices);
   await function_param_move_index(function_name, index_old, index_new);
 }
