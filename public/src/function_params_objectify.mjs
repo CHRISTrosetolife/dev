@@ -1,4 +1,4 @@
-import { list_clear } from "./list_clear.mjs";
+import { list_replace_single } from "./list_replace_single.mjs";
 import { each_two } from "./each_two.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -23,7 +23,7 @@ import { list_is } from "./list_is.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_size } from "./list_size.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
-import { list_add } from "./list_add.mjs";
+import { list_copy } from "./list_copy.mjs";
 export async function function_params_objectify(function_name) {
   assert_arguments_length(arguments, 1);
   let params_names_fn;
@@ -31,7 +31,7 @@ export async function function_params_objectify(function_name) {
     function_name,
     noop,
     function on_define(params, declaration, ast) {
-      params_names_fn = js_identifiers_to_names(params);
+      params_names_fn = list_copy(js_identifiers_to_names(params));
       let duplicates = js_identifiers_duplicates(ast);
       let i = list_intersect(params_names_fn, duplicates);
       assert(list_empty_is, [i]);
@@ -43,6 +43,7 @@ export async function function_params_objectify(function_name) {
       );
       let destructure = js_parse_first(destructure_code);
       list_add_first(body, destructure);
+      list_replace_single(params, js_parse_expression(arg_name));
     },
   );
   params_names_fn = await function_params_names(function_name);
@@ -50,7 +51,7 @@ export async function function_params_objectify(function_name) {
   await function_calls_params_size_assert_list(function_name, params_names_fn);
   await data_identifiers_each_transform_params(
     function_name,
-    function on_call(params, declaration, ast) {
+    function on_call(params) {
       let c = js_code_object_properties(
         params_names_fn,
         list_map(range(list_size(params_names_fn)), function () {
@@ -63,8 +64,7 @@ export async function function_params_objectify(function_name) {
       each_two(properties, params, function (property, param) {
         object_property_set(property, "value", param);
       });
-      list_clear(params);
-      list_add(p);
+      list_replace_single(params, p);
     },
     noop,
   );
