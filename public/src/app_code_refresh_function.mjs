@@ -1,3 +1,4 @@
+import { js_identifier_rename } from "./js_identifier_rename.mjs";
 import { js_node_type_identifier_is } from "./js_node_type_identifier_is.mjs";
 import { app_code_refresh_function_selection_one_get } from "./app_code_refresh_function_selection_one_get.mjs";
 import { emoji_lightning } from "./emoji_lightning.mjs";
@@ -142,6 +143,7 @@ export async function app_code_refresh_function(context) {
               let { node } =
                 app_code_refresh_function_selection_one_get(selection_result);
               let name = object_property_get(node, "name");
+              js_identifier_rename;
             });
           }
           html_button(overlay, "Selection variablize", async function () {
