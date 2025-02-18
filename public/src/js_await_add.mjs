@@ -26,9 +26,9 @@ export async function js_await_add(ast) {
           let { type: parent_type } = parent;
           if (parent_type !== "AwaitExpression") {
             js_code_await();
-            let parsed = js_parse_expression("await 0");
-            parsed.argument = node;
-            js_parent_replace(v, node, parsed);
+            let a = js_parse_expression("await 0");
+            a.argument = node;
+            js_parent_replace(v, node, a);
             let { stack } = v;
             let found = false;
             each_reverse(stack, function (s) {
