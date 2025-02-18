@@ -136,7 +136,8 @@ export function app_code_refresh_function_menu(arg) {
             );
           },
         );
-        let input = object_property_get(after, "input");html_focus(input)
+        let input = object_property_get(after, "input");
+        html_focus(input);
       });
     }
     html_button(overlay, "Selection variablize", async function () {
