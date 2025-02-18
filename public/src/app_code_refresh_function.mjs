@@ -141,7 +141,6 @@ export async function app_code_refresh_function(context) {
             html_button(overlay, "Selection rename", async function () {
               let { node } =
                 app_code_refresh_function_selection_one_get(selection_result);
-              assert(js_node_type_identifier_is, [node]);
               let name = object_property_get(node, "name");
             });
           }
