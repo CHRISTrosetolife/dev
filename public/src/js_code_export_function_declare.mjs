@@ -1,3 +1,4 @@
+import { js_keyword_async } from "./js_keyword_async.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { js_code_function_declare } from "./js_code_function_declare.mjs";
 export function js_code_export_function_declare(
@@ -6,7 +7,9 @@ export function js_code_export_function_declare(
   body_string,
   async_is,
 ) {
-  let space = async_is ? string_combine_multiple([" ", "async", " "]) : " ";
+  let space = async_is
+    ? string_combine_multiple([" ", $s,js_keyword_async(), " "])
+    : " ";
   let declare = js_code_function_declare(
     function_name,
     args_string,
