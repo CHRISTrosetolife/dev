@@ -16,7 +16,7 @@ export function js_watch_lockify(ast) {
   list_clear(b);
   let fc = js_code_function_declare("", "", "", true);
   let f = js_parse_expression(fc);
-  js_body_body_get(f);
+  let b2 = js_body_body_get(f);
   let v = f;
   return v;
   let e = js_expression_call_args(fn_name("watch_lock"), []);
