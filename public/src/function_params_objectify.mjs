@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { log } from "./log.mjs";
 import { function_params_names } from "./function_params_names.mjs";
 import { range } from "./range.mjs";
@@ -60,6 +61,7 @@ export async function function_params_objectify(function_name) {
         }),
       );
       let p = js_parse_expression(c);
+      let properties = object_property_get(p, "properties");
       log({
         p,
       });
