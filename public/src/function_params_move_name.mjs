@@ -15,11 +15,9 @@ export async function function_params_move_name(
   let index_old = list_index(params_names, name_old);
   let index_new = list_index(params_names, name_new);
   let indices = [index_old, index_new];
-  comment(
-    "at this time, ",
+  "at this time, ",
     function_param_move_index,
-    " requires the larger index to be first",
-  );
+    " requires the larger index to be first";
   list_sort(indices);
   await function_param_move_index(
     function_name,
