@@ -1,3 +1,4 @@
+import { list_add_first } from "./list_add_first.mjs";
 import { log } from "./log.mjs";
 import { app_language_atom_size } from "./app_language_atom_size.mjs";
 import { bible_words_definitions_pairs } from "./bible_words_definitions_pairs.mjs";
@@ -7,7 +8,6 @@ import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_pr
 import { log_json } from "./log_json.mjs";
 import { list_take_soft } from "./list_take_soft.mjs";
 import { list_size } from "./list_size.mjs";
-import { list_add_beginning } from "./list_add_beginning.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { each } from "./each.mjs";
@@ -95,7 +95,7 @@ export async function bible_words_definitions_atoms_old(language) {
       });
       if (equal(list_size(atom_result), atom_count)) {
         la(atom_result);
-        list_add_beginning(previous, atom_result);
+        list_add_first(previous, atom_result);
       }
     }
   });

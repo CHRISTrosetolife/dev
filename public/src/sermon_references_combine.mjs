@@ -1,7 +1,7 @@
+import { list_add_first } from "./list_add_first.mjs";
 import { string_digit_is } from "./string_digit_is.mjs";
 import { string_first } from "./string_first.mjs";
 import { bible_reference_multiple } from "./bible_reference_multiple.mjs";
-import { list_add_beginning } from "./list_add_beginning.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_last } from "./list_last.mjs";
 import { list_remove_all } from "./list_remove_all.mjs";
@@ -114,7 +114,7 @@ export async function sermon_references_combine(sermon_name) {
       let m = list_map_property(ns, "verse_number");
       let r = bible_reference_multiple(book, chapter_name, m);
       let rs = list_map_property(group, "remaining");
-      list_add_beginning(rs, r);
+      list_add_first(rs, r);
       let j2 = list_join_space(rs);
       la(j2);
       list_remove_all(group);
