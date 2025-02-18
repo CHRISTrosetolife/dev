@@ -1,5 +1,4 @@
-import { file_exists } from "./file_exists.mjs";
-import { watch_git_pause_path } from "./watch_git_pause_path.mjs";
+import { watch_git_paused_is } from "./watch_git_paused_is.mjs";
 import { watch_lock } from "./watch_lock.mjs";
 import { folder_gitignore_path_function_parent } from "./folder_gitignore_path_function_parent.mjs";
 import { folder_read_shallow } from "./folder_read_shallow.mjs";
@@ -101,8 +100,7 @@ export async function watch() {
       return;
     }
     object_property_set(c, "contents", after);
-    let p = watch_git_pause_path();
-    if (await file_exists(p)) {
+    if (await watch_git_paused_is()) {
       return;
     }
     await git_ac_message(list_join_space([fn_name("watch"), " ", message]));
