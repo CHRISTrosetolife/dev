@@ -14,7 +14,7 @@ export async function function_params_objectify(function_name) {
         ast,
         function_name,
         noop,
-        function (params, declaration) {
+        function (params, declaration, ast) {
           let body = js_declaration_to_body(declaration);
           js_identifiers_duplicates();
           js_identifiers_to_names(params);
