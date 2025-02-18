@@ -1,8 +1,7 @@
+import { fn_name } from "./fn_name.mjs";
 import { log } from "./log.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { js_param_generic } from "./js_param_generic.mjs";
-import { js_params_objectify } from "./js_params_objectify.mjs";
-import { fn_name } from "./fn_name.mjs";
 import { data_identifiers_each } from "./data_identifiers_each.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { noop } from "./noop.mjs";
