@@ -11,6 +11,7 @@ import { noop } from "./noop.mjs";
 import { list_intersect } from "./list_intersect.mjs";
 import { assert } from "./assert.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
+import { js_parse_first } from "./js_parse_first.mjs";
 export async function function_params_objectify(function_name) {
   assert_arguments_length(arguments, 1);
   await data_identifiers_each(function_name, async function lambda(f_name) {
@@ -26,7 +27,11 @@ export async function function_params_objectify(function_name) {
           assert(list_empty_is, [i]);
           let body = js_declaration_to_body(declaration);
           let arg_name = js_name_unique(ast, "arg");
-          let destructure = js_code_destructure_assign(params_names, arg_name);
+          let destructure_code = js_code_destructure_assign(
+            params_names,
+            arg_name,
+          );
+          let destructure = js_parse_first(destructure_code);
         },
       );
     });
