@@ -4,6 +4,7 @@ import { data_identifiers_each_transform } from "./data_identifiers_each_transfo
 export async function data_identifiers_each_transform_params(
   function_name,
   on_define,
+  on_call,
 ) {
   await data_identifiers_each_transform(
     function_name,

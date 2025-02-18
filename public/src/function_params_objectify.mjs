@@ -12,7 +12,11 @@ import { list_empty_is } from "./list_empty_is.mjs";
 import { js_parse_first } from "./js_parse_first.mjs";
 export async function function_params_objectify(function_name) {
   assert_arguments_length(arguments, 1);
-  await data_identifiers_each_transform_params(function_name, on_define);
+  await data_identifiers_each_transform_params(
+    function_name,
+    on_define,
+    on_call,
+  );
   function on_define(params, declaration, ast) {
     let params_names = js_identifiers_to_names(params);
     let duplicates = js_identifiers_duplicates(ast);
