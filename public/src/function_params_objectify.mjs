@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { function_params_names } from "./function_params_names.mjs";
 import { range } from "./range.mjs";
 import { js_code_object_properties } from "./js_code_object_properties.mjs";
@@ -21,6 +22,7 @@ import { list_get } from "./list_get.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_size } from "./list_size.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
+import { error } from "./error.mjs";
 export async function function_params_objectify(function_name) {
   assert_arguments_length(arguments, 1);
   let params_names;
@@ -58,6 +60,10 @@ export async function function_params_objectify(function_name) {
         }),
       );
       let p = js_parse_expression(c);
+      log({
+        p,
+      });
+      error();
       list_map_index(params, function (param) {
         let v = {
           key: list_get(),
