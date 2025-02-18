@@ -1,9 +1,10 @@
+import { watch_lock } from "./watch_lock.mjs";
 import { functions_rename_generic } from "./functions_rename_generic.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 export async function functions_rename_if_starts_with_remove(prefix, removal) {
-  return await watch_lock(async function () {
+  let v = await watch_lock(async function () {
     await functions_rename_generic(fn_new_get);
     function fn_new_get(fn) {
       let fn_new = fn;
@@ -15,4 +16,5 @@ export async function functions_rename_if_starts_with_remove(prefix, removal) {
       }
     }
   });
+  return v;
 }
