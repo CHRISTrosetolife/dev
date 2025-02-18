@@ -1,3 +1,4 @@
+import { js_declaration_to_body } from "./js_declaration_to_body.mjs";
 import { js_identifiers_to_names } from "./js_identifiers_to_names.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { js_param_generic } from "./js_param_generic.mjs";
@@ -13,6 +14,7 @@ export async function function_params_objectify(function_name) {
         function_name,
         noop,
         function (params, declaration) {
+          js_declaration_to_body();
           js_identifiers_to_names(params);
         },
       );
