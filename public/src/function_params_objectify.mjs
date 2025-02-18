@@ -23,21 +23,27 @@ import { js_parse_expression } from "./js_parse_expression.mjs";
 export async function function_params_objectify(function_name) {
   assert_arguments_length(arguments, 1);
   let params_names;
-  await data_identifiers_each_transform_params(
-    function_name,
-    noop,
-    function on_define(params, declaration, ast) {
-      params_names = js_identifiers_to_names(params);
-      let duplicates = js_identifiers_duplicates(ast);
-      let i = list_intersect(params_names, duplicates);
-      assert(list_empty_is, [i]);
-      let body = js_declaration_to_body(declaration);
-      let arg_name = js_name_unique(ast, "arg");
-      let destructure_code = js_code_destructure_assign(params_names, arg_name);
-      let destructure = js_parse_first(destructure_code);
-      list_add_first(body, destructure);
-    },
-  );
+  if (false) {
+    await data_identifiers_each_transform_params(
+      function_name,
+      noop,
+      function on_define(params, declaration, ast) {
+        params_names = js_identifiers_to_names(params);
+        let duplicates = js_identifiers_duplicates(ast);
+        let i = list_intersect(params_names, duplicates);
+        assert(list_empty_is, [i]);
+        let body = js_declaration_to_body(declaration);
+        let arg_name = js_name_unique(ast, "arg");
+        let destructure_code = js_code_destructure_assign(
+          params_names,
+          arg_name,
+        );
+        let destructure = js_parse_first(destructure_code);
+        list_add_first(body, destructure);
+      },
+    );
+  }
+  params_names;
   assert(list_is, [params_names]);
   await function_calls_params_size_assert_list(function_name, params_names);
   await data_identifiers_each_transform_params(
