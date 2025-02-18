@@ -1,3 +1,4 @@
+import { folder_gitignore_path_function } from "./folder_gitignore_path_function.mjs";
 import { watch_git_pause } from "./watch_git_pause.mjs";
 import { watch_lock } from "./watch_lock.mjs";
 import { folder_gitignore_path_function_parent } from "./folder_gitignore_path_function_parent.mjs";
@@ -100,7 +101,7 @@ export async function watch() {
       return;
     }
     object_property_set(c, "contents", after);
-    folder_gitignore_path_function_parent(watch_git_pause);
+    folder_gitignore_path_function(watch_git_pause);
     await git_ac_message(list_join_space([fn_name("watch"), " ", message]));
     await git_push();
   }
