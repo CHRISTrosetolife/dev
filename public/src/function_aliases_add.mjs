@@ -1,3 +1,4 @@
+import { assert } from "./assert.mjs";
 import { function_aliases } from "./function_aliases.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_array_string } from "./js_code_array_string.mjs";
@@ -6,9 +7,18 @@ import { app_list_add } from "./app_list_add.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { string_split_comma } from "./string_split_comma.mjs";
 import { string_delimit } from "./string_delimit.mjs";
+import { object_property_exists_not } from "./object_property_exists_not.mjs";
+import { list_all } from "./list_all.mjs";
 export async function function_aliases_add(aliases, function_name) {
   let existing = function_aliases();
   let split = string_split_comma(aliases);
+  assert(list_all, [
+    split,
+    function (s) {
+      let v = object_property_exists_not(existing, s);
+      return v;
+    },
+  ]);
   let list_code = js_code_array_string(split);
   await app_list_add(function_aliases, function inserted_code() {
     let c = js_code_statement_call_args(fn_name("function_aliases_register"), [
