@@ -1,5 +1,4 @@
 import { folder_gitignore_path_function } from "./folder_gitignore_path_function.mjs";
-import { watch_git_pause } from "./watch_git_pause.mjs";
 import { watch_lock } from "./watch_lock.mjs";
 import { folder_gitignore_path_function_parent } from "./folder_gitignore_path_function_parent.mjs";
 import { folder_read_shallow } from "./folder_read_shallow.mjs";
@@ -25,6 +24,7 @@ import { import_node } from "./import_node.mjs";
 import { folder_path_src } from "./folder_path_src.mjs";
 import { function_path_to_name } from "./function_path_to_name.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
+import { file_name_json } from "./file_name_json.mjs";
 export async function watch() {
   let chokidar = await import_node("chokidar");
   let cache = {};
@@ -101,7 +101,7 @@ export async function watch() {
       return;
     }
     object_property_set(c, "contents", after);
-    folder_gitignore_path_function(watch_git_pause);
+    folder_gitignore_path_function(watch, file_name_json("git_pause"));
     await git_ac_message(list_join_space([fn_name("watch"), " ", message]));
     await git_push();
   }
