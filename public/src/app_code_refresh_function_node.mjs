@@ -128,7 +128,7 @@ export function app_code_refresh_function_node(args) {
   } else if (js_node_type_is(node, "FunctionDeclaration")) {
     html_code_keyword_space(parent, js_keyword_function());
     let id = object_property_get(node, "id");
-    if (false) {
+    if (id !== null) {
       app_code_refresh_function_node_identifier_add_fn(parent, id, args);
     }
     html_span_text_list_comma_parenthesis_params(parent, node, args);
