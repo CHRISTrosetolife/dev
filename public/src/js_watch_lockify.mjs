@@ -10,6 +10,7 @@ import { list_clear } from "./list_clear.mjs";
 import { list_copy } from "./list_copy.mjs";
 import { log } from "./log.mjs";
 import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
+import { list_add_multiple } from "./list_add_multiple.mjs";
 export function js_watch_lockify(ast) {
   let b = js_declaration_single_body(ast);
   let copy = list_copy(b);
@@ -17,7 +18,7 @@ export function js_watch_lockify(ast) {
   let fc = js_code_function_declare("", "", "", true);
   let f = js_parse_expression(fc);
   let b2 = js_body_body_get(f);
-  let v = f;
+  list_add_multiple(b2, b);
   return v;
   let e = js_expression_call_args(fn_name("watch_lock"), []);
   let argument = js_expression_await(e);
