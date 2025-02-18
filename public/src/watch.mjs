@@ -101,6 +101,7 @@ export async function watch() {
     }
     object_property_set(c, "contents", after);
     if (await watch_git_paused_is()) {
+      log("");
       return;
     }
     await git_ac_message(list_join_space([fn_name("watch"), " ", message]));
