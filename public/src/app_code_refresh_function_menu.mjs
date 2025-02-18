@@ -118,9 +118,10 @@ export function app_code_refresh_function_menu(arg) {
           "Name after",
           [html_condition_letters_numbers_underscores_spaces()],
           "Rename",
-          function () {},
+          function () {
+            js_identifier_rename(ast, name, error());
+          },
         );
-        js_identifier_rename(ast, name, error());
       });
     }
     html_button(overlay, "Selection variablize", async function () {
