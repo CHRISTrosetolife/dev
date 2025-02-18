@@ -127,7 +127,7 @@ export function app_code_refresh_function_node(args) {
       }),
     );
   } else if (
-    list_any(["FunctionDeclaration"], function (t) {
+    list_any(["FunctionDeclaration", "FunctionExpression"], function (t) {
       let v3 = js_node_type_is(node, t);
       return v3;
     })
