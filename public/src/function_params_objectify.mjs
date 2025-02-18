@@ -33,7 +33,7 @@ export async function function_params_objectify(function_name) {
             arg_name,
           );
           let destructure = js_parse_first(destructure_code);
-          list_add_first;
+          list_add_first(body, destructure);
         },
       );
     });
