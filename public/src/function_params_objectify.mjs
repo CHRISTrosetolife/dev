@@ -14,7 +14,7 @@ export async function function_params_objectify(function_name) {
         function_name,
         noop,
         function (params, declaration) {
-          js_declaration_to_body();
+          let body = js_declaration_to_body(declaration);
           js_identifiers_to_names(params);
         },
       );
