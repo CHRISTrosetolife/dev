@@ -33,7 +33,7 @@ export async function app_code_local_download(username) {
     return;
   }
   let batch_path = object_property_get(latest_user, "batch_path");
-  let batches = await app_code_batches(batch_path, username);
+  let batches = await app_code_batches(batch_path);
   let batches_later = list_filter(batches, app_code_batch_previous_exists);
   log(object_properties(batches_later));
   return;
