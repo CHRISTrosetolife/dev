@@ -112,11 +112,14 @@ export function app_code_refresh_function_menu(arg) {
         let name = object_property_get(node, "name");
         html_p_text(overlay, "Name before:");
         html_p_text(overlay, name);
-        html_p_text(overlay, "Name after:");
-        html_input_validated_focus(root, "Search query", [
-          html_condition_letters_numbers_underscores_spaces(),
-        ]);
-        html_input_validated_button();
+        html_input_validated_focus(root, "Search query");
+        html_input_validated_button(
+          overlay,
+          "Name after",
+          [html_condition_letters_numbers_underscores_spaces()],
+          "Rename",
+          function () {},
+        );
         js_identifier_rename(ast, name, error());
       });
     }
