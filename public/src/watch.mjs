@@ -22,6 +22,7 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { import_node } from "./import_node.mjs";
 import { folder_path_src } from "./folder_path_src.mjs";
 import { function_path_to_name } from "./function_path_to_name.mjs";
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 export async function watch() {
   let chokidar = await import_node("chokidar");
   let cache = {};
@@ -50,7 +51,8 @@ export async function watch() {
       folder_gitignore_path_function_parent(run),
       "",
     );
-    if (false) {
+    if (list_empty_not_is(locks)) {
+      return;
     }
     path = string_replace(path, "\\", "/");
     path = folder_current_prefix_combine(path);
