@@ -52,6 +52,7 @@ import { html_button_back_after } from "./html_button_back_after.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_value_get } from "./html_value_get.mjs";
+import { html_focus } from "./html_focus.mjs";
 export function app_code_refresh_function_menu(arg) {
   let { overlay, function_selected, args, ast, context, path, refresh } = arg;
   html_clear(overlay);
@@ -135,6 +136,7 @@ export function app_code_refresh_function_menu(arg) {
             );
           },
         );
+        let input = object_property_get(after, "input");html_focus(input)
       });
     }
     html_button(overlay, "Selection variablize", async function () {
