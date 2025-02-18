@@ -11,8 +11,12 @@ import { list_intersect } from "./list_intersect.mjs";
 import { assert } from "./assert.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { js_parse_first } from "./js_parse_first.mjs";
-export async function function_params_move_name(function_name) {
-  assert_arguments_length(arguments, 1);
+export async function function_params_move_name(
+  function_name,
+  name_old,
+  name_new,
+) {
+  assert_arguments_length(arguments, 3);
   await data_identifiers_each_transform_params(
     function_name,
     function on_define(params, declaration, ast) {
