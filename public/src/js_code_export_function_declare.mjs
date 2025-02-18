@@ -6,7 +6,7 @@ export function js_code_export_function_declare(
   body_string,
   async_is,
 ) {
-  let space = async_is ? string_combine_multiple([" async "]) : " ";
+  let space = async_is ? string_combine_multiple([" ", "async", " "]) : " ";
   let declare = js_code_function_declare(
     function_name,
     args_string,
