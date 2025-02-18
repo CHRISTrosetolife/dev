@@ -42,7 +42,7 @@ export async function function_params_objectify(function_name) {
   await data_identifiers_each_transform_params(
     function_name,
     function on_call(params, declaration, ast) {
-      js_code_object_properties(
+      let c = js_code_object_properties(
         params_names,
         list_map(range(list_size(params_names)), function () {
           let v2 = "0";
