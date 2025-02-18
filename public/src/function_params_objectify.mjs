@@ -11,12 +11,8 @@ export async function function_params_objectify(
 ) {
   assert_arguments_length(arguments, 3);
   await data_identifiers_each(function_name, async function lambda(fn_name) {
-    await function_transform(
-      fn_name,
-      function js_params_objectify(ast) {
-        js_param_generic();
-      },
-      [function_name, param_index, param_index_new],
-    );
+    await function_transform(fn_name, function js_params_objectify(ast) {
+      js_param_generic();
+    });
   });
 }
