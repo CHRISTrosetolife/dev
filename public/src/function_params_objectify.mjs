@@ -64,7 +64,7 @@ export async function function_params_objectify(function_name) {
         );
         let p = js_parse_expression(c);
         let properties = object_property_get(p, "properties");
-        object_property_set(properties, "value", js_par);
+        object_property_set(properties, "value", param);
       });
       error();
       list_map_index(params, function (param) {
