@@ -18,5 +18,5 @@ export function js_param_generic(
   }
   let declaration = js_declaration_single(ast);
   let params = js_declaration_to_params(declaration);
-  lambda_if_match(params, declaration);
+  lambda_if_match(params, declaration, ast);
 }
