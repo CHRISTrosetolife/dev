@@ -137,8 +137,6 @@ export async function app_code_refresh_function(context) {
         } else if (object_property_exists(selection_result, "one")) {
           let { visitor, node } =
             app_code_refresh_function_selection_one_get(selection_result);
-          if (false) {
-          }
           html_button(overlay, "Selection rename", async function () {
             let { node } =
               app_code_refresh_function_selection_one_get(selection_result);
