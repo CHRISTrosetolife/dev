@@ -1,5 +1,5 @@
+import { each_two } from "./each_two.mjs";
 import { object_property_set } from "./object_property_set.mjs";
-import { each } from "./each.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { function_params_names } from "./function_params_names.mjs";
 import { range } from "./range.mjs";
@@ -54,17 +54,17 @@ export async function function_params_objectify(function_name) {
   await data_identifiers_each_transform_params(
     function_name,
     function on_call(params, declaration, ast) {
-      let c = js_code_object_properties(
-        params_names_fn,
-        list_map(range(list_size(params_names_fn)), function () {
-          let v2 = "0";
-          return v2;
-        }),
-      );
-      let p = js_parse_expression(c);
-      let properties = object_property_get(p, "properties");
-      each(properties, function (property) {
-        object_property_set(object, "property_name", value);
+      each_two(params, params_names_fn, function (param, param_name) {
+        let c = js_code_object_properties(
+          params_names_fn,
+          list_map(range(list_size(params_names_fn)), function () {
+            let v2 = "0";
+            return v2;
+          }),
+        );
+        let p = js_parse_expression(c);
+        let properties = object_property_get(p, "properties");
+        object_property_set(properties, "value", js_par);
       });
       error();
       list_map_index(params, function (param) {
