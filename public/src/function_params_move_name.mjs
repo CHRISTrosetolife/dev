@@ -10,5 +10,6 @@ export async function function_params_move_name(
   assert_arguments_length(arguments, 3);
   let params_names = await function_params_names(function_name);
   let index_old = list_index(name_old);
+  let index_new = list_index(name_new);
   await function_param_move_index();
 }
