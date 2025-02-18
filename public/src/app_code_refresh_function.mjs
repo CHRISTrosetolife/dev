@@ -1,3 +1,4 @@
+import { emoji_lightning } from "./emoji_lightning.mjs";
 import { date_now } from "./date_now.mjs";
 import { error } from "./error.mjs";
 import { assert } from "./assert.mjs";
@@ -80,7 +81,7 @@ export async function app_code_refresh_function(context) {
     };
     let button_menu = html_button(
       root,
-      string_combine_multiple(["Function menu"]),
+      string_combine_multiple([emoji_lightning(), " Function menu"]),
       function () {
         let overlay = html_overlay(fn_name("app_code_refresh_function"));
         html_button_back_after(
