@@ -63,9 +63,10 @@ export async function function_params_objectify(function_name) {
       );
       let p = js_parse_expression(c);
       let properties = object_property_get(p, "properties");
-      each(list, function (item) {});
-      log({
-        p,
+      each(properties, function (property) {
+        log({
+          property,
+        });
       });
       error();
       list_map_index(params, function (param) {
