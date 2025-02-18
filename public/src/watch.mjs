@@ -101,7 +101,7 @@ export async function watch() {
       return;
     }
     object_property_set(c, "contents", after);
-    folder_gitignore_path_function(watch, file_name_json("git_pause"));
+    let p = folder_gitignore_path_function(watch, file_name_json("git_pause"));
     await git_ac_message(list_join_space([fn_name("watch"), " ", message]));
     await git_push();
   }
