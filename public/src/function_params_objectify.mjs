@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_replace_single } from "./list_replace_single.mjs";
 import { each_two } from "./each_two.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -46,6 +47,10 @@ export async function function_params_objectify(function_name) {
       list_replace_single(params, js_parse_expression(arg_name));
     },
   );
+  log({
+    params_names_fn,
+  });
+  return;
   params_names_fn = await function_params_names(function_name);
   assert(list_is, [params_names_fn]);
   await function_calls_params_size_assert_list(function_name, params_names_fn);
