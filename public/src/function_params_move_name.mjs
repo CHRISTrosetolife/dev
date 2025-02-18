@@ -11,5 +11,6 @@ export async function function_params_move_name(
   let params_names = await function_params_names(function_name);
   let index_old = list_index(params_names, name_old);
   let index_new = list_index(params_names, name_new);
+  let indices = [index_old, index_new];
   await function_param_move_index(function_name, index_old, index_new);
 }
