@@ -129,6 +129,7 @@ export async function app_code_refresh_function(context) {
           await ast_change_finish(error("todo"));
         });
       } else if (object_property_exists(selection_result, "one")) {
+        html_button(overlay, "Selection variablize", async function () {});
         html_button(overlay, "Selection variablize", async function () {
           let one = object_property_get(selection_result, "one");
           let visitor = object_property_get(one, "visitor");
