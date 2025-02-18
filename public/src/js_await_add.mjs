@@ -1,3 +1,4 @@
+import { js_code_await } from "./js_code_await.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
 import { js_parent_replace } from "./js_parent_replace.mjs";
@@ -12,7 +13,7 @@ import { object_property_set } from "./object_property_set.mjs";
 import { equal } from "./equal.mjs";
 export async function js_await_add(ast) {
   let functions = await data_functions();
-  js_visit_node(ast, "CallExpression", (v) => {
+  js_visit_node(ast, "CallExpression", function (v) {
     let { node } = v;
     let { callee } = node;
     if (callee.type === "Identifier") {
@@ -24,12 +25,13 @@ export async function js_await_add(ast) {
           let { parent } = v;
           let { type: parent_type } = parent;
           if (parent_type !== "AwaitExpression") {
+            js_code_await();
             let parsed = js_parse_expression("await 0");
             parsed.argument = node;
             js_parent_replace(v, node, parsed);
             let { stack } = v;
             let found = false;
-            each_reverse(stack, (s) => {
+            each_reverse(stack, function (s) {
               if (found) {
                 return;
               }
