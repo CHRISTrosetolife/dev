@@ -1,3 +1,6 @@
+import { html_input_validated_button } from "./html_input_validated_button.mjs";
+import { html_condition_letters_numbers_underscores_spaces } from "./html_condition_letters_numbers_underscores_spaces.mjs";
+import { html_input_validated_focus } from "./html_input_validated_focus.mjs";
 import { app_code_latest_object } from "./app_code_latest_object.mjs";
 import { app_code_file_name_latest } from "./app_code_file_name_latest.mjs";
 import { app_code_user_upload } from "./app_code_user_upload.mjs";
@@ -48,6 +51,7 @@ import { app_code_refresh_function_selection } from "./app_code_refresh_function
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_back_after } from "./html_button_back_after.mjs";
 import { html_clear } from "./html_clear.mjs";
+import { html_p_text } from "./html_p_text.mjs";
 export function app_code_refresh_function_menu(arg) {
   let { overlay, function_selected, args, ast, context, path, refresh } = arg;
   html_clear(overlay);
@@ -106,6 +110,13 @@ export function app_code_refresh_function_menu(arg) {
         let { node } =
           app_code_refresh_function_selection_one_get(selection_result);
         let name = object_property_get(node, "name");
+        html_p_text(overlay, "Name before:");
+        html_p_text(overlay, name);
+        html_p_text(overlay, "Name after:");
+        html_input_validated_focus(root, "Search query", [
+          html_condition_letters_numbers_underscores_spaces(),
+        ]);
+        html_input_validated_button();
         js_identifier_rename(ast, name, error());
       });
     }
