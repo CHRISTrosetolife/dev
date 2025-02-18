@@ -20,6 +20,7 @@ import { html_load } from "./html_load.mjs";
 import { html_div } from "./html_div.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
 import { html_clear } from "./html_clear.mjs";
+import { html_style_font_color_white } from "./html_style_font_color_white.mjs";
 export async function app_code_refresh_function(context) {
   await html_load(async function () {
     let root = app_code_screen_set(
@@ -42,6 +43,7 @@ export async function app_code_refresh_function(context) {
       string_combine_multiple([emoji_lightning(), " Function menu"]),
       function () {
         let overlay = html_overlay(fn_name("app_code_refresh_function"));
+        html_style_font_color_white(overlay);
         app_code_refresh_function_menu({
           overlay: overlay,
           function_selected: function_selected,
