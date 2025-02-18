@@ -1,3 +1,4 @@
+import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { folder_read_shallow } from "./folder_read_shallow.mjs";
 import { sermon_path_to_name } from "./sermon_path_to_name.mjs";
 import { function_auto_after_path } from "./function_auto_after_path.mjs";
@@ -44,7 +45,7 @@ export async function watch() {
     if (event !== "change") {
       return;
     }
-    await folder_read_shallow();
+    await folder_read_shallow(folder_gitignore_path(), "");
     path = string_replace(path, "\\", "/");
     path = folder_current_prefix_combine(path);
     object_property_initialize(cache, path, {});
