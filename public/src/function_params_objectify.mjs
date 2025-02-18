@@ -1,6 +1,6 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { each } from "./each.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { log } from "./log.mjs";
 import { function_params_names } from "./function_params_names.mjs";
 import { range } from "./range.mjs";
 import { js_code_object_properties } from "./js_code_object_properties.mjs";
@@ -64,9 +64,7 @@ export async function function_params_objectify(function_name) {
       let p = js_parse_expression(c);
       let properties = object_property_get(p, "properties");
       each(properties, function (property) {
-        log({
-          property,
-        });
+        object_property_set(object, "property_name", value);
       });
       error();
       list_map_index(params, function (param) {
