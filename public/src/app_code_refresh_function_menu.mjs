@@ -117,10 +117,10 @@ export function app_code_refresh_function_menu(arg) {
           "Name after",
           [html_condition_letters_numbers_underscores_spaces()],
           "Rename",
-          function () {
+          async function () {
             let after_value = html_value_get(after);
             js_identifier_rename(ast, before, after_value);
-            ast_change_finish(
+            await ast_change_finish(
               string_combine_multiple([
                 fn_name("js_variablize"),
                 " ",
