@@ -135,6 +135,10 @@ export async function app_code_refresh_function(context) {
             await ast_change_finish(error("todo"));
           });
         } else if (object_property_exists(selection_result, "one")) {
+          let { visitor, node } =
+            app_code_refresh_function_selection_one_get(selection_result);
+          if (false) {
+          }
           html_button(overlay, "Selection rename", async function () {
             let { node } =
               app_code_refresh_function_selection_one_get(selection_result);
@@ -142,8 +146,6 @@ export async function app_code_refresh_function(context) {
             let name = object_property_get(node, "name");
           });
           html_button(overlay, "Selection variablize", async function () {
-            let { visitor, node } =
-              app_code_refresh_function_selection_one_get(selection_result);
             let stack2 = object_property_get(visitor, "stack");
             let b = list_find_last(stack2, js_node_type_statement_block_is);
             let list = list_next(stack2, b);
