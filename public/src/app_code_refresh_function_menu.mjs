@@ -48,15 +48,8 @@ import { app_code_refresh_function_selection } from "./app_code_refresh_function
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_back_after } from "./html_button_back_after.mjs";
 import { html_clear } from "./html_clear.mjs";
-export function app_code_refresh_function_menu(
-  overlay,
-  function_selected,
-  args,
-  ast,
-  context,
-  path,
-  refresh,
-) {
+export function app_code_refresh_function_menu(arg) {
+  let { overlay, function_selected, args, ast, context, path, refresh } = arg;
   html_clear(overlay);
   html_button_back_after(
     overlay,
