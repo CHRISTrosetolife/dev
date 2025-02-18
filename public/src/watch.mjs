@@ -57,7 +57,6 @@ export async function watch() {
       });
       return;
     }
-    log('nolock');
     path = string_replace(path, "\\", "/");
     path = folder_current_prefix_combine(path);
     object_property_initialize(cache, path, {});
