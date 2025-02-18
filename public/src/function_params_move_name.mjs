@@ -1,3 +1,4 @@
+import { function_calls_params_size_assert_list } from "./function_calls_params_size_assert_list.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_sort } from "./list_sort.mjs";
@@ -12,6 +13,7 @@ export async function function_params_move_name(
 ) {
   assert_arguments_length(arguments, 3);
   let params_names = await function_params_names(function_name);
+  await function_calls_params_size_assert_list(function_name, params_names);
   let index_old = list_index(params_names, name_old);
   let index_new = list_index(params_names, name_new);
   let indices = [index_old, index_new];
