@@ -15,6 +15,7 @@ export async function function_params_objectify(function_name) {
   assert_arguments_length(arguments, 1);
   await data_identifiers_each_transform_params(
     function_name,
+    noop,
     function on_define(params, declaration, ast) {
       let params_names = js_identifiers_to_names(params);
       let duplicates = js_identifiers_duplicates(ast);
@@ -26,6 +27,5 @@ export async function function_params_objectify(function_name) {
       let destructure = js_parse_first(destructure_code);
       list_add_first(body, destructure);
     },
-    noop,
   );
 }

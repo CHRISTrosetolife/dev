@@ -2,8 +2,8 @@ import { js_param_generic } from "./js_param_generic.mjs";
 import { data_identifiers_each_transform } from "./data_identifiers_each_transform.mjs";
 export async function data_identifiers_each_transform_params(
   function_name,
-  on_define,
   on_call,
+  on_define,
 ) {
   await data_identifiers_each_transform(
     function_name,
