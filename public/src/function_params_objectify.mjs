@@ -14,26 +14,28 @@ import { list_empty_is } from "./list_empty_is.mjs";
 import { js_parse_first } from "./js_parse_first.mjs";
 export async function function_params_objectify(function_name) {
   assert_arguments_length(arguments, 1);
-  await data_identifiers_each_transform(function_name, js_params_objectify);
-  function js_params_objectify(ast) {
-    js_param_generic(
-      ast,
-      function_name,
-      noop,
-      function (params, declaration, ast) {
-        let params_names = js_identifiers_to_names(params);
-        let duplicates = js_identifiers_duplicates(ast);
-        let i = list_intersect(params_names, duplicates);
-        assert(list_empty_is, [i]);
-        let body = js_declaration_to_body(declaration);
-        let arg_name = js_name_unique(ast, "arg");
-        let destructure_code = js_code_destructure_assign(
-          params_names,
-          arg_name,
-        );
-        let destructure = js_parse_first(destructure_code);
-        list_add_first(body, destructure);
-      },
-    );
-  }
+  await data_identifiers_each_transform(
+    function_name,
+    function js_params_objectify(ast) {
+      js_param_generic(
+        ast,
+        function_name,
+        noop,
+        function (params, declaration, ast) {
+          let params_names = js_identifiers_to_names(params);
+          let duplicates = js_identifiers_duplicates(ast);
+          let i = list_intersect(params_names, duplicates);
+          assert(list_empty_is, [i]);
+          let body = js_declaration_to_body(declaration);
+          let arg_name = js_name_unique(ast, "arg");
+          let destructure_code = js_code_destructure_assign(
+            params_names,
+            arg_name,
+          );
+          let destructure = js_parse_first(destructure_code);
+          list_add_first(body, destructure);
+        },
+      );
+    },
+  );
 }
