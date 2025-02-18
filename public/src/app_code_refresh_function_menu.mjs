@@ -105,7 +105,7 @@ export function app_code_refresh_function_menu(arg) {
         let { node } =
           app_code_refresh_function_selection_one_get(selection_result);
         let name = object_property_get(node, "name");
-        js_identifier_rename;
+        js_identifier_rename(ast, name, error());
       });
     }
     html_button(overlay, "Selection variablize", async function () {
