@@ -9,7 +9,10 @@ export async function function_calls_params_size_assert(
   await data_identifiers_each_transform_params(
     function_name,
     function on_call(params, function_name) {
-      assert_message(list_size_equal, [params, expected], function () {});
+      assert_message(list_size_equal, [params, expected], function () {
+        let v = function_name;
+        return v;
+      });
     },
     noop,
   );
