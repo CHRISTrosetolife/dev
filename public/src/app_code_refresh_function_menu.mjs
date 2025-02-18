@@ -105,7 +105,8 @@ export function app_code_refresh_function_menu(arg) {
     let { visitor, node } =
       app_code_refresh_function_selection_one_get(selection_result);
     if (js_node_type_identifier_is(node)) {
-      html_button(overlay, "Selection rename", async function () {
+      let selection_rename_text = "Selection rename";
+      html_button(overlay, selection_rename_text, async function () {
         html_clear(overlay);
         let { node } =
           app_code_refresh_function_selection_one_get(selection_result);
@@ -116,7 +117,7 @@ export function app_code_refresh_function_menu(arg) {
           overlay,
           "Name after",
           [html_condition_letters_numbers_underscores_spaces()],
-          "Rename",
+          selection_rename_text,
           async function () {
             let after_value = html_value_get(after);
             js_identifier_rename(ast, before, after_value);
