@@ -9,12 +9,11 @@ export async function function_params_objectify(
   param_index_new,
 ) {
   assert_arguments_length(arguments, 3);
-  await data_identifiers_each(function_name, lambda);
-  async function lambda(fn_name) {
+  await data_identifiers_each(function_name, async function lambda(fn_name) {
     await function_transform_args_split_lambda(
       fn_name,
       [js_param_move],
       [function_name, param_index, param_index_new],
     );
-  }
+  });
 }
