@@ -7,7 +7,7 @@ import { fn_name } from "./fn_name.mjs";
 import { string_split_comma } from "./string_split_comma.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 export async function function_aliases_add(aliases, function_name) {
-  let existing = aliases();
+  let existing = function_aliases();
   let split = string_split_comma(aliases);
   let list_code = js_code_array_string(split);
   await app_list_add(function_aliases, function inserted_code() {
