@@ -16,7 +16,8 @@ import { js_parse_first } from "./js_parse_first.mjs";
 export async function function_params_objectify(function_name) {
   assert_arguments_length(arguments, 1);
   await data_identifiers_each(function_name, async function lambda(f_name) {
-    await function_transform(f_name, function js_params_objectify(ast) {
+    await function_transform(f_name, js_params_objectify);
+    function js_params_objectify(ast) {
       js_param_generic(
         ast,
         function_name,
@@ -36,6 +37,6 @@ export async function function_params_objectify(function_name) {
           list_add_first(body, destructure);
         },
       );
-    });
+    }
   });
 }
