@@ -1,3 +1,4 @@
+import { js_body_body_get } from "./js_body_body_get.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { js_code_function_declare } from "./js_code_function_declare.mjs";
 import { js_expression_call_args } from "./js_expression_call_args.mjs";
@@ -15,6 +16,7 @@ export function js_watch_lockify(ast) {
   list_clear(b);
   let fc = js_code_function_declare("", "", "", true);
   let f = js_parse_expression(fc);
+  js_body_body_get(f);
   let v = f;
   return v;
   let e = js_expression_call_args(fn_name("watch_lock"), []);
