@@ -7,6 +7,8 @@ import { data_identifiers_each } from "./data_identifiers_each.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { noop } from "./noop.mjs";
 import { list_intersect } from "./list_intersect.mjs";
+import { assert } from "./assert.mjs";
+import { list_empty_is } from "./list_empty_is.mjs";
 export async function function_params_objectify(function_name) {
   assert_arguments_length(arguments, 1);
   await data_identifiers_each(function_name, async function lambda(f_name) {
@@ -20,6 +22,7 @@ export async function function_params_objectify(function_name) {
           let body = js_declaration_to_body(declaration);
           let duplicates = js_identifiers_duplicates(ast);
           let i = list_intersect(params_names, duplicates);
+          assert(list_empty_is, [i]);
         },
       );
     });
