@@ -78,122 +78,126 @@ export async function app_code_refresh_function(context) {
     let args = {
       ast,
     };
-    let button_menu = html_button(root, "Function menu", function () {
-      let overlay = html_overlay(fn_name("app_code_refresh_function"));
-      html_button_back_after(
-        overlay,
-        string_combine_multiple(["to function: ", function_selected]),
-        overlay_remove,
-      );
-      let selection_result = app_code_refresh_function_selection(args);
-      if (object_property_exists(selection_result, "two")) {
-        html_button(overlay, "Selection remove", async function () {
-          app_code_refresh_function_selection_remove(selection_result);
-          ast_change_finish(
-            fn_name("app_code_refresh_function_selection_remove"),
-          );
-        });
-        html_button(overlay, "Selection functionize", async function () {
-          let s = js_identifiers_shadowed_names(ast);
-          if (list_empty_not_is(s)) {
-            alert(
+    let button_menu = html_button(
+      root,
+      string_combine_multiple(["Function menu"]),
+      function () {
+        let overlay = html_overlay(fn_name("app_code_refresh_function"));
+        html_button_back_after(
+          overlay,
+          string_combine_multiple(["to function: ", function_selected]),
+          overlay_remove,
+        );
+        let selection_result = app_code_refresh_function_selection(args);
+        if (object_property_exists(selection_result, "two")) {
+          html_button(overlay, "Selection remove", async function () {
+            app_code_refresh_function_selection_remove(selection_result);
+            ast_change_finish(
+              fn_name("app_code_refresh_function_selection_remove"),
+            );
+          });
+          html_button(overlay, "Selection functionize", async function () {
+            let s = js_identifiers_shadowed_names(ast);
+            if (list_empty_not_is(s)) {
+              alert(
+                string_combine_multiple([
+                  "the same identifier is defined as a shadow: ",
+                  list_join_comma_space(s),
+                ]),
+              );
+              return;
+            }
+            let { removals } =
+              app_code_refresh_function_selection_removals(selection_result);
+            let f = list_first(removals);
+            let v = js_visit_find(ast, f);
+            let inputs_possible = js_identifiers_scoped(v);
+            let removed_identifiers_names_lists = list_map(
+              removals,
+              js_identifiers_names,
+            );
+            let removed_identifiers_names = list_flatten(
+              removed_identifiers_names_lists,
+            );
+            let intersected = list_intersect(
+              inputs_possible,
+              removed_identifiers_names,
+            );
+            let imports_names = js_imports_existing_names(ast);
+            let param_names = list_difference(intersected, imports_names);
+            log({
+              param_names,
+              inputs_possible,
+            });
+            await ast_change_finish(error("todo"));
+          });
+        } else if (object_property_exists(selection_result, "one")) {
+          html_button(overlay, "Selection variablize", async function () {});
+          html_button(overlay, "Selection variablize", async function () {
+            let one = object_property_get(selection_result, "one");
+            let visitor = object_property_get(one, "visitor");
+            let node2 = object_property_get(visitor, "node");
+            let stack2 = object_property_get(visitor, "stack");
+            let b = list_find_last(stack2, js_node_type_statement_block_is);
+            let list = list_next(stack2, b);
+            let list_item = list_next(stack2, list);
+            let p = js_variablize(ast, list, list_item, node2);
+            let node2_code = js_unparse(node2);
+            object_replace(node2, p);
+            await ast_change_finish(
               string_combine_multiple([
-                "the same identifier is defined as a shadow: ",
-                list_join_comma_space(s),
+                fn_name("js_variablize"),
+                " ",
+                function_selected,
+                ' : "',
+                node2_code,
+                '" to "',
+                js_unparse(p),
+                '"',
               ]),
             );
-            return;
-          }
-          let { removals } =
-            app_code_refresh_function_selection_removals(selection_result);
-          let f = list_first(removals);
-          let v = js_visit_find(ast, f);
-          let inputs_possible = js_identifiers_scoped(v);
-          let removed_identifiers_names_lists = list_map(
-            removals,
-            js_identifiers_names,
-          );
-          let removed_identifiers_names = list_flatten(
-            removed_identifiers_names_lists,
-          );
-          let intersected = list_intersect(
-            inputs_possible,
-            removed_identifiers_names,
-          );
-          let imports_names = js_imports_existing_names(ast);
-          let param_names = list_difference(intersected, imports_names);
-          log({
-            param_names,
-            inputs_possible,
           });
-          await ast_change_finish(error("todo"));
-        });
-      } else if (object_property_exists(selection_result, "one")) {
-        html_button(overlay, "Selection variablize", async function () {});
-        html_button(overlay, "Selection variablize", async function () {
-          let one = object_property_get(selection_result, "one");
-          let visitor = object_property_get(one, "visitor");
-          let node2 = object_property_get(visitor, "node");
-          let stack2 = object_property_get(visitor, "stack");
-          let b = list_find_last(stack2, js_node_type_statement_block_is);
-          let list = list_next(stack2, b);
-          let list_item = list_next(stack2, list);
-          let p = js_variablize(ast, list, list_item, node2);
-          let node2_code = js_unparse(node2);
-          object_replace(node2, p);
-          await ast_change_finish(
-            string_combine_multiple([
-              fn_name("js_variablize"),
-              " ",
-              function_selected,
-              ' : "',
-              node2_code,
-              '" to "',
-              js_unparse(p),
-              '"',
-            ]),
-          );
-        });
-      }
-      app_code_button_menu_app(context, overlay, overlay_remove);
-      function overlay_remove() {
-        html_remove(overlay);
-      }
-      async function ast_change_finish(message) {
-        assert(string_is, [message]);
-        await file_js_unparse(path, ast);
-        let fcs = global_file_changes();
-        let files = {};
-        each(fcs, function (fc) {
-          let path2 = object_property_get(fc, "path");
-          object_property_set(
+        }
+        app_code_button_menu_app(context, overlay, overlay_remove);
+        function overlay_remove() {
+          html_remove(overlay);
+        }
+        async function ast_change_finish(message) {
+          assert(string_is, [message]);
+          await file_js_unparse(path, ast);
+          let fcs = global_file_changes();
+          let files = {};
+          each(fcs, function (fc) {
+            let path2 = object_property_get(fc, "path");
+            object_property_set(
+              files,
+              path2,
+              object_properties_new(fc, [app_code_property_contents()]),
+            );
+          });
+          let batch_path_previous = await app_code_batch_path_get();
+          let batch_new = {
             files,
-            path2,
-            object_properties_new(fc, [app_code_property_contents()]),
+            batch_path_previous,
+            [app_code_property_message()]: message,
+          };
+          let when = date_now();
+          let batch_name = await app_code_batch_name_when(when);
+          let batch_path = await app_code_user_upload(
+            context,
+            batch_name,
+            batch_new,
           );
-        });
-        let batch_path_previous = await app_code_batch_path_get();
-        let batch_new = {
-          files,
-          batch_path_previous,
-          [app_code_property_message()]: message,
-        };
-        let when = date_now();
-        let batch_name = await app_code_batch_name_when(when);
-        let batch_path = await app_code_user_upload(
-          context,
-          batch_name,
-          batch_new,
-        );
-        await app_code_user_upload(
-          context,
-          app_code_file_name_latest(),
-          app_code_latest_object(batch_path, when),
-        );
-        refresh();
-        overlay_remove();
-      }
-    });
+          await app_code_user_upload(
+            context,
+            app_code_file_name_latest(),
+            app_code_latest_object(batch_path, when),
+          );
+          refresh();
+          overlay_remove();
+        }
+      },
+    );
     html_style(button_menu, {
       top: 0,
       position: "sticky",
