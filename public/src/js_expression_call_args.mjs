@@ -7,5 +7,5 @@ export function js_expression_call_args(fn_name, args) {
   for (let a of args) {
     list_add(args2, a);
   }
-  return call;
+  return expression;
 }
