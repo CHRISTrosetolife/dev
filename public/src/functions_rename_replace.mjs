@@ -1,3 +1,4 @@
+import { watch_lock } from "./watch_lock.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { functions_rename_generic } from "./functions_rename_generic.mjs";
 import { string_includes } from "./string_includes.mjs";
@@ -6,7 +7,7 @@ export async function functions_rename_replace(
   replacement_before,
   replacement_after,
 ) {
-  return await watch_lock(async function () {
+  let v = await watch_lock(async function () {
     assert_arguments_length(arguments, 2);
     await functions_rename_generic(fn_new_get);
     function fn_new_get(fn) {
@@ -17,4 +18,5 @@ export async function functions_rename_replace(
       return fn_new;
     }
   });
+  return v;
 }
