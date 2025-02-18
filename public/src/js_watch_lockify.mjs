@@ -1,3 +1,4 @@
+import { list_add } from "./list_add.mjs";
 import { js_statement_return } from "./js_statement_return.mjs";
 import { list_clear } from "./list_clear.mjs";
 import { list_copy } from "./list_copy.mjs";
@@ -8,6 +9,7 @@ export function js_watch_lockify(ast) {
   let copy = list_copy(b);
   list_clear(b);
   let r = js_statement_return(argument);
+  list_add(b, r);
   log({
     b,
   });
