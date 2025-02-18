@@ -1,3 +1,4 @@
+import { list_clear } from "./list_clear.mjs";
 import { each_two } from "./each_two.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -22,6 +23,7 @@ import { list_is } from "./list_is.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_size } from "./list_size.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
+import { list_add } from "./list_add.mjs";
 export async function function_params_objectify(function_name) {
   assert_arguments_length(arguments, 1);
   let params_names_fn;
@@ -58,11 +60,13 @@ export async function function_params_objectify(function_name) {
           return v2;
         }),
       );
-      each_two(params, params_names_fn, function (param, param_name) {
-        let p = js_parse_expression(c);
-        let properties = object_property_get(p, "properties");
-        object_property_set(properties, "value", param);
+      let p = js_parse_expression(c);
+      let properties = object_property_get(p, "properties");
+      each_two(properties, params, function (property, param) {
+        object_property_set(property, "value", param);
       });
+      list_clear(params);
+      list_add(p);
     },
     noop,
   );
