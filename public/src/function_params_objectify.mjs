@@ -1,3 +1,4 @@
+import { js_code_declare_assign } from "./js_code_declare_assign.mjs";
 import { js_code_braces_inside } from "./js_code_braces_inside.mjs";
 import { js_identifiers_duplicates } from "./js_identifiers_duplicates.mjs";
 import { js_declaration_to_body } from "./js_declaration_to_body.mjs";
@@ -26,6 +27,7 @@ export async function function_params_objectify(function_name) {
           assert(list_empty_is, [i]);
           let body = js_declaration_to_body(declaration);
           js_code_braces_inside(list_join_comma_space(params_names));
+          js_code_declare_assign();
         },
       );
     });
