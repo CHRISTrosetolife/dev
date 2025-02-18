@@ -1,3 +1,4 @@
+import { list_size_equal } from "./list_size_equal.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 import { noop } from "./noop.mjs";
 import { data_identifiers_each_transform_params } from "./data_identifiers_each_transform_params.mjs";
@@ -33,6 +34,13 @@ export async function function_params_objectify(function_name) {
     },
   );
   assert(list_is, [params_names]);
+  await data_identifiers_each_transform_params(
+    function_name,
+    function on_call(params, declaration, ast) {
+      assert(list_size_equal, [params, list_size(params_names)]);
+    },
+    noop,
+  );
   await data_identifiers_each_transform_params(
     function_name,
     function on_call(params, declaration, ast) {
