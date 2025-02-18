@@ -87,6 +87,7 @@ export async function app_code_refresh_function(context) {
       string_combine_multiple([emoji_lightning(), " Function menu"]),
       function () {
         let overlay = html_overlay(fn_name("app_code_refresh_function"));
+        html_clear(overlay);
         html_button_back_after(
           overlay,
           string_combine_multiple(["to function: ", function_selected]),
