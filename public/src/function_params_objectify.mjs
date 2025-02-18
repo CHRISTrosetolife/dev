@@ -1,5 +1,5 @@
+import { js_code_destructure } from "./js_code_destructure.mjs";
 import { js_name_unique } from "./js_name_unique.mjs";
-import { js_code_object_pattern } from "./js_code_object_pattern.mjs";
 import { js_code_declare_assign } from "./js_code_declare_assign.mjs";
 import { js_identifiers_duplicates } from "./js_identifiers_duplicates.mjs";
 import { js_declaration_to_body } from "./js_declaration_to_body.mjs";
@@ -28,7 +28,7 @@ export async function function_params_objectify(function_name) {
           let body = js_declaration_to_body(declaration);
           let arg_name = js_name_unique(ast, "arg");
           let destructure = js_code_declare_assign(
-            js_code_object_pattern(params_names),
+            js_code_destructure(params_names),
             arg_name,
           );
         },
