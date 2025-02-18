@@ -1,3 +1,4 @@
+import { folder_read_shallow } from "./folder_read_shallow.mjs";
 import { sermon_path_to_name } from "./sermon_path_to_name.mjs";
 import { function_auto_after_path } from "./function_auto_after_path.mjs";
 import { noop } from "./noop.mjs";
@@ -26,13 +27,10 @@ export async function watch() {
   start(folder_path_src(), function_auto_after_path, function_path_to_name);
   start(sermon_folder(), noop, sermon_path_to_name);
   async function start(folder_path, fn, message_get) {
-    let result = chokidar
-      .watch(folder_path)
-      .on(
-        "all",
-        (event, path) =>
-          (base = base.then(on_watch(event, path, fn, message_get))),
-      );
+    let result = chokidar.watch(folder_path).on("all", function (event, path) {
+      let v = (base = base.then(on_watch(event, path, fn, message_get)));
+      return v;
+    });
     log(
       string_combine_multiple([
         fn_name("watch"),
@@ -46,6 +44,7 @@ export async function watch() {
     if (event !== "change") {
       return;
     }
+    await folder_read_shallow();
     path = string_replace(path, "\\", "/");
     path = folder_current_prefix_combine(path);
     object_property_initialize(cache, path, {});
