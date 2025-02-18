@@ -137,14 +137,14 @@ export async function app_code_refresh_function(context) {
           html_button(overlay, "Selection variablize", async function () {
             let one = object_property_get(selection_result, "one");
             let visitor = object_property_get(one, "visitor");
-            let node2 = object_property_get(visitor, "node");
+            let node = object_property_get(visitor, "node");
             let stack2 = object_property_get(visitor, "stack");
             let b = list_find_last(stack2, js_node_type_statement_block_is);
             let list = list_next(stack2, b);
             let list_item = list_next(stack2, list);
-            let p = js_variablize(ast, list, list_item, node2);
-            let node2_code = js_unparse(node2);
-            object_replace(node2, p);
+            let p = js_variablize(ast, list, list_item, node);
+            let node2_code = js_unparse(node);
+            object_replace(node, p);
             await ast_change_finish(
               string_combine_multiple([
                 fn_name("js_variablize"),
