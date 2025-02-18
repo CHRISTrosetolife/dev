@@ -138,6 +138,7 @@ export async function app_code_refresh_function(context) {
           let list = list_next(stack2, b);
           let list_item = list_next(stack2, list);
           let p = js_variablize(ast, list, list_item, node2);
+          let node2_code = js_unparse(node2);
           object_replace(node2, p);
           await ast_change_finish(
             string_combine_multiple([
@@ -145,7 +146,7 @@ export async function app_code_refresh_function(context) {
               " ",
               function_selected,
               ' : "',
-              js_unparse(node2),
+              node2_code,
               '" to "',
               js_unparse(p),
               '"',
