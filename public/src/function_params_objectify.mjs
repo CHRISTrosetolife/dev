@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_replace_single } from "./list_replace_single.mjs";
 import { each_two } from "./each_two.mjs";
 import { object_property_set } from "./object_property_set.mjs";
