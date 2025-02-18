@@ -51,14 +51,14 @@ export async function function_params_objectify(function_name) {
   await data_identifiers_each_transform_params(
     function_name,
     function on_call(params, declaration, ast) {
+      let c = js_code_object_properties(
+        params_names_fn,
+        list_map(range(list_size(params_names_fn)), function () {
+          let v2 = "0";
+          return v2;
+        }),
+      );
       each_two(params, params_names_fn, function (param, param_name) {
-        let c = js_code_object_properties(
-          params_names_fn,
-          list_map(range(list_size(params_names_fn)), function () {
-            let v2 = "0";
-            return v2;
-          }),
-        );
         let p = js_parse_expression(c);
         let properties = object_property_get(p, "properties");
         object_property_set(properties, "value", param);
