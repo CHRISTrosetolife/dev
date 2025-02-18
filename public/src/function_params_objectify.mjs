@@ -1,3 +1,4 @@
+import { js_name_unique } from "./js_name_unique.mjs";
 import { js_code_object_pattern } from "./js_code_object_pattern.mjs";
 import { js_code_declare_assign } from "./js_code_declare_assign.mjs";
 import { js_identifiers_duplicates } from "./js_identifiers_duplicates.mjs";
@@ -25,6 +26,7 @@ export async function function_params_objectify(function_name) {
           let i = list_intersect(params_names, duplicates);
           assert(list_empty_is, [i]);
           let body = js_declaration_to_body(declaration);
+          let arg_name = js_name_unique(ast, "arg");
           js_code_declare_assign(js_code_object_pattern(params_names));
         },
       );
