@@ -1,3 +1,4 @@
+import { html_button_back } from "./html_button_back.mjs";
 import { html_input_validated_button } from "./html_input_validated_button.mjs";
 import { html_condition_letters_numbers_underscores_spaces } from "./html_condition_letters_numbers_underscores_spaces.mjs";
 import { app_code_latest_object } from "./app_code_latest_object.mjs";
@@ -109,6 +110,7 @@ export function app_code_refresh_function_menu(arg) {
       let selection_rename_text = "Selection rename";
       html_button(overlay, selection_rename_text, async function () {
         html_clear(overlay);
+        html_button_back;
         let { node } =
           app_code_refresh_function_selection_one_get(selection_result);
         let before = object_property_get(node, "name");
