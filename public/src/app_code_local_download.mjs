@@ -1,6 +1,5 @@
 import { storage_file_path_download_json } from "./storage_file_path_download_json.mjs";
 import { log } from "./log.mjs";
-import { log_json } from "./log_json.mjs";
 import { app_code_batch_previous_exists } from "./app_code_batch_previous_exists.mjs";
 import { string_is } from "./string_is.mjs";
 import { assert } from "./assert.mjs";
@@ -16,6 +15,7 @@ import { app_code_file_name_latest } from "./app_code_file_name_latest.mjs";
 import { app_code_local_user_path } from "./app_code_local_user_path.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { list_filter } from "./list_filter.mjs";
+import { object_properties } from "./object_properties.mjs";
 export async function app_code_local_download(username) {
   assert(string_is, [username]);
   let latest_path_user = app_code_local_user_path(
@@ -38,9 +38,7 @@ export async function app_code_local_download(username) {
   let batch_path = object_property_get(latest_user, "batch_path");
   let batches = await app_code_batches(batch_path, username);
   let batches_later = list_filter(batches, app_code_batch_previous_exists);
-  log_json({
-    batches_later,
-  });
+  log(object_properties(batches_later));
   return;
   await each_async(batches_later, async function (batch) {
     let files = object_property_get(batch, "files");
