@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { data_identifiers_each_lock } from "./data_identifiers_each_lock.mjs";
 import { js_param_new } from "./js_param_new.mjs";
 import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
