@@ -1,4 +1,6 @@
+import { app_preach_sermon_contents } from "./app_preach_sermon_contents.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
-export function app_supper() {
+export async function app_supper() {
   let root = html_style_default_initialize();
+  await app_preach_sermon_contents(root, "supper");
 }
