@@ -137,7 +137,7 @@ export function app_code_refresh_function_menu(arg) {
               message: function (i) {
                 return "Identifier already exists";
               },
-              conditon: function (i) {
+              condition: function (i) {
                 return list_includes_not(existing, i);
               },
             },
