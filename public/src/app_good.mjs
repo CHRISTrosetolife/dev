@@ -166,6 +166,7 @@ export function app_good() {
           "Let there be no greed",
           "Let there be life and life abundantly",
           "Let all church meeting buildings be as You desire",
+          "Let all Lord’s Supper bread and drink be as You desire",
           "Bless every elder",
           "Bless every overseer",
           "Bless every bishop",
