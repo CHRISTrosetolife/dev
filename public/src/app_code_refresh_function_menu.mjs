@@ -136,6 +136,10 @@ export function app_code_refresh_function_menu(arg) {
         async_is,
       });
       let d = html_overlay_container(overlay, menu_refresh);
+      html_p_text_multiple(d, [
+        "New function params:",
+        list_join_comma_space(param_names),
+      ]);
       list_remove_multiple_from(ancestor_common, low, high);
       js_code_export_function_declare();
       return;
