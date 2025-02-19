@@ -119,7 +119,7 @@ export function app_code_refresh_function_menu(arg) {
       let async_is = false;
       each(removals, function (r) {
         js_visit_generic(
-          ast,
+          r,
           function (v) {
             let node2 = object_property_get(v, "node");
             if (js_node_type_is(node2, "AwaitExpression")) {
