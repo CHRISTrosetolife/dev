@@ -114,7 +114,7 @@ export function app_code_refresh_function_menu(arg) {
       });
       let async_is = false;
       each(removals, function (r) {
-        js_visit_generic(ast, lambda, filter);
+        js_visit_generic(ast, function (v) {}, filter);
       });
       await ast_change_finish(error("todo"));
     });
