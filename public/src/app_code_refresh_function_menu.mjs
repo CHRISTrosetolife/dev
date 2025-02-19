@@ -135,6 +135,10 @@ export function app_code_refresh_function_menu(arg) {
           return true;
         }
       });
+      log({
+        async_is,
+      });
+      return;
       await ast_change_finish(error("todo"));
     });
   } else if (object_property_exists(selection_result, "one")) {
