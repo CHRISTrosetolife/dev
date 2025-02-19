@@ -125,11 +125,11 @@ export function app_code_refresh_function_menu(arg) {
         let { node } =
           app_code_refresh_function_selection_one_get(selection_result);
         let before = object_property_get(node, "name");
-        html_p_text_multiple(overlay, ["Name before:", before]);
+        html_p_text_multiple(d, ["Name before:", before]);
         let existing = js_identifiers_names(ast);
         let input;
         let after = html_input_validated_button(
-          overlay,
+          d,
           "Name after",
           [
             html_condition_letters_numbers_underscores_spaces(),
