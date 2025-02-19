@@ -128,7 +128,7 @@ export function app_code_refresh_function_menu(arg) {
             }
           },
           function (n) {
-            return !js_node_is(n) && js_function_types_is(js_node_type_get(n));
+            return !js_node_is(n) || !js_function_types_is(js_node_type_get(n));
           },
         );
         if (async_is) {
