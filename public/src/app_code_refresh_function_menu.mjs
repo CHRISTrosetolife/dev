@@ -1,15 +1,10 @@
+import { html_overlay_container } from "./html_overlay_container.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { list_remove_multiple_from } from "./list_remove_multiple_from.mjs";
 import { js_node_type_get } from "./js_node_type_get.mjs";
 import { js_node_is } from "./js_node_is.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
 import { js_visit_generic } from "./js_visit_generic.mjs";
-import { html_style_units } from "./html_style_units.mjs";
-import { html_style_margin } from "./html_style_margin.mjs";
-import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
-import { html_style_background_color_white } from "./html_style_background_color_white.mjs";
-import { html_div } from "./html_div.mjs";
-import { html_button_back } from "./html_button_back.mjs";
 import { html_input_validated_button } from "./html_input_validated_button.mjs";
 import { html_condition_letters_numbers_underscores_spaces } from "./html_condition_letters_numbers_underscores_spaces.mjs";
 import { app_code_latest_object } from "./app_code_latest_object.mjs";
@@ -151,12 +146,7 @@ export function app_code_refresh_function_menu(arg) {
     if (js_node_type_identifier_is(node)) {
       let selection_rename_text = "Selection rename";
       html_button(overlay, selection_rename_text, async function () {
-        html_clear(overlay);
-        let d = html_div(overlay);
-        html_style_background_color_white(d);
-        html_style_rounded_padded(d);
-        html_style_margin(d, html_style_units(2));
-        html_button_back(d, menu_refresh);
+        let d = html_overlay_container(overlay, menu_refresh);
         let { node } =
           app_code_refresh_function_selection_one_get(selection_result);
         let before = object_property_get(node, "name");
