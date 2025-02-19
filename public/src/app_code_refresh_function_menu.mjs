@@ -135,6 +135,7 @@ export function app_code_refresh_function_menu(arg) {
       log({
         async_is,
       });
+      let d = html_overlay_container(overlay, menu_refresh);
       list_remove_multiple_from(ancestor_common, low, high);
       js_code_export_function_declare();
       return;
