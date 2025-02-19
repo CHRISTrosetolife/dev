@@ -1,3 +1,4 @@
+import { js_node_type_get } from "./js_node_type_get.mjs";
 import { js_node_is } from "./js_node_is.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
 import { js_visit_generic } from "./js_visit_generic.mjs";
@@ -127,7 +128,7 @@ export function app_code_refresh_function_menu(arg) {
             }
           },
           function (n) {
-            return !js_node_is(n) && js_function_types_is();
+            return !js_node_is(n) && js_function_types_is(js_node_type_get(n));
           },
         );
         if (async_is) {
