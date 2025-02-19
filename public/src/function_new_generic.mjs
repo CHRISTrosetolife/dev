@@ -1,10 +1,10 @@
+import { js_unparse_format } from "./js_unparse_format.mjs";
 import { error } from "./error.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { function_open } from "./function_open.mjs";
 import { function_exists } from "./function_exists.mjs";
 import { file_write } from "./file_write.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
-import { js_code_format } from "./js_code_format.mjs";
 import { js_imports_fix } from "./js_imports_fix.mjs";
 import { file_open } from "./file_open.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
@@ -14,7 +14,6 @@ import { list_concat } from "./list_concat.mjs";
 import { list_join } from "./list_join.mjs";
 import { newline } from "./newline.mjs";
 import { js_parse } from "./js_parse.mjs";
-import { js_unparse } from "./js_unparse.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 export async function function_new_generic(
   function_name,
@@ -47,8 +46,7 @@ export async function function_new_generic(
   let contents = list_join(concat, newline());
   let parsed = js_parse(contents);
   await js_imports_fix(parsed);
-  let unparsed = js_unparse(parsed);
-  unparsed = await js_code_format(unparsed);
+  let unparsed = await js_unparse_format(parsed);
   let file_path = function_name_to_path(function_name);
   await write(file_path, unparsed);
   if (open) {
