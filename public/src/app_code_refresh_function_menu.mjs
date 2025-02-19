@@ -1,3 +1,4 @@
+import { js_function_types_is } from "./js_function_types_is.mjs";
 import { js_visit_generic } from "./js_visit_generic.mjs";
 import { html_style_units } from "./html_style_units.mjs";
 import { html_style_margin } from "./html_style_margin.mjs";
@@ -124,7 +125,7 @@ export function app_code_refresh_function_menu(arg) {
               return true;
             }
           },
-          filter,
+          js_function_types_is(),
         );
         if (async_is) {
           return true;
