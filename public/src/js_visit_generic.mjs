@@ -2,7 +2,7 @@ import { list_is } from "./list_is.mjs";
 import { object_values } from "./object_values.mjs";
 import { js_node_is } from "./js_node_is.mjs";
 import { visit } from "./visit.mjs";
-export function js_visit_generic(ast, filter, lambda) {
+export function js_visit_generic(ast, lambda, filter) {
   visit(
     ast,
     function (n) {
