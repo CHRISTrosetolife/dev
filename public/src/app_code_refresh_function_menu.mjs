@@ -53,9 +53,9 @@ import { app_code_refresh_function_selection } from "./app_code_refresh_function
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_back_after } from "./html_button_back_after.mjs";
 import { html_clear } from "./html_clear.mjs";
-import { html_p_text } from "./html_p_text.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_focus } from "./html_focus.mjs";
+import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 export function app_code_refresh_function_menu(arg) {
   let { overlay, function_selected, args, ast, context, path, refresh } = arg;
   let menu_refresh = function () {
@@ -122,8 +122,7 @@ export function app_code_refresh_function_menu(arg) {
         let { node } =
           app_code_refresh_function_selection_one_get(selection_result);
         let before = object_property_get(node, "name");
-        html_p_text(overlay, "Name before:");
-        html_p_text(overlay, before);
+        html_p_text_multiple(overlay, ["Name before:"]);
         let input;
         let after = html_input_validated_button(
           overlay,
