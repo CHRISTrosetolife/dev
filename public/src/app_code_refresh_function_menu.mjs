@@ -115,7 +115,7 @@ export function app_code_refresh_function_menu(arg) {
       let selection_rename_text = "Selection rename";
       html_button(overlay, selection_rename_text, async function () {
         html_clear(overlay);
-        html_div(overlay);
+        let d = html_div(overlay);
         html_button_back(overlay, menu_refresh);
         let { node } =
           app_code_refresh_function_selection_one_get(selection_result);
