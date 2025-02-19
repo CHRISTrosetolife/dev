@@ -1,3 +1,5 @@
+import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
+import { list_remove_multiple_from } from "./list_remove_multiple_from.mjs";
 import { js_node_type_get } from "./js_node_type_get.mjs";
 import { js_node_is } from "./js_node_is.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
@@ -94,7 +96,7 @@ export function app_code_refresh_function_menu(arg) {
         );
         return;
       }
-      let { removals } =
+      let { ancestor_common, low, high, removals } =
         app_code_refresh_function_selection_removals(selection_result);
       let f = list_first(removals);
       let v = js_visit_find(ast, f);
@@ -138,6 +140,8 @@ export function app_code_refresh_function_menu(arg) {
       log({
         async_is,
       });
+      list_remove_multiple_from(ancestor_common, low, high);
+      js_code_export_function_declare();
       return;
       await ast_change_finish(error("todo"));
     });
