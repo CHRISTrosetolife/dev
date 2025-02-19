@@ -119,7 +119,8 @@ export function app_code_refresh_function_menu(arg) {
           ast,
           function (v) {
             let node2 = object_property_get(v, "node");
-            if (js_node_type_is()) {
+            if (js_node_type_is(node2, "AwaitExpression")) {
+              async_is = true;
             }
           },
           filter,
