@@ -1,3 +1,4 @@
+import { html_style_background_color } from "./html_style_background_color.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_button_back } from "./html_button_back.mjs";
 import { html_input_validated_button } from "./html_input_validated_button.mjs";
@@ -116,6 +117,7 @@ export function app_code_refresh_function_menu(arg) {
       html_button(overlay, selection_rename_text, async function () {
         html_clear(overlay);
         let d = html_div(overlay);
+        html_style_background_color(d, "white");
         html_button_back(overlay, menu_refresh);
         let { node } =
           app_code_refresh_function_selection_one_get(selection_result);
