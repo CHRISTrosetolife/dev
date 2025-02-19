@@ -5,7 +5,7 @@ import { sermon_folder_name } from "./sermon_folder_name.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { path_join } from "./path_join.mjs";
 import { http_get } from "./http_get.mjs";
-export async function app_preach_sermon_contents(s, root) {
+export async function app_preach_sermon_contents(root, s) {
   let t = await http_get(
     path_join([
       string_combine_multiple(["/", sermon_folder_name()]),

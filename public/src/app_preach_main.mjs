@@ -14,7 +14,7 @@ export function app_preach_main(root) {
         let v = app_preach_main(root);
         return v;
       });
-      await app_preach_sermon_contents(s, root);
+      await app_preach_sermon_contents(root, s);
       html_button_back(root, function () {
         let v2 = app_preach_main(root);
         return v2;
