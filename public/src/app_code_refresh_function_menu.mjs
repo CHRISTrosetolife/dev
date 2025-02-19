@@ -61,6 +61,7 @@ import { html_value_get } from "./html_value_get.mjs";
 import { html_focus } from "./html_focus.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
+import { js_node_type_is } from "./js_node_type_is.mjs";
 export function app_code_refresh_function_menu(arg) {
   let { overlay, function_selected, args, ast, context, path, refresh } = arg;
   let menu_refresh = function () {
@@ -117,7 +118,8 @@ export function app_code_refresh_function_menu(arg) {
         js_visit_generic(
           ast,
           function (v) {
-            if (false) {
+            let node2 = object_property_get(v, "node");
+            if (js_node_type_is()) {
             }
           },
           filter,
