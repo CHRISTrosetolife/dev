@@ -46,12 +46,15 @@ export async function app_code_local_download(username) {
           log({
             file_path,
           });
-          if (false) {
-          }
           let contents = object_property_get(
             value,
             app_code_property_contents(),
           );
+          if ("./public/src/bible_interlinear_upload.mjs" === file_path) {
+            log({
+              contents,
+            });
+          }
           await file_overwrite(file_path, contents);
         },
       );
