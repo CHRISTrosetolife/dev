@@ -1,3 +1,4 @@
+import { html_conditions_letters_numbers_underscores_spaces_list_includes_not } from "./html_conditions_letters_numbers_underscores_spaces_list_includes_not.mjs";
 import { html_overlay_container } from "./html_overlay_container.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { list_remove_multiple_from } from "./list_remove_multiple_from.mjs";
@@ -6,7 +7,6 @@ import { js_node_is } from "./js_node_is.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
 import { js_visit_generic } from "./js_visit_generic.mjs";
 import { html_input_validated_button } from "./html_input_validated_button.mjs";
-import { html_condition_letters_numbers_underscores_spaces } from "./html_condition_letters_numbers_underscores_spaces.mjs";
 import { app_code_latest_object } from "./app_code_latest_object.mjs";
 import { app_code_file_name_latest } from "./app_code_file_name_latest.mjs";
 import { app_code_user_upload } from "./app_code_user_upload.mjs";
@@ -60,7 +60,6 @@ import { html_clear } from "./html_clear.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_focus } from "./html_focus.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
-import { list_includes_not } from "./list_includes_not.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
 export function app_code_refresh_function_menu(arg) {
   let { overlay, function_selected, args, ast, context, path, refresh } = arg;
@@ -162,17 +161,10 @@ export function app_code_refresh_function_menu(arg) {
         let after = html_input_validated_button(
           d,
           "Name after",
-          [
-            html_condition_letters_numbers_underscores_spaces(),
-            {
-              message: function (i) {
-                return message;
-              },
-              condition: function (i) {
-                return list_includes_not(existing, i);
-              },
-            },
-          ],
+          html_conditions_letters_numbers_underscores_spaces_list_includes_not(
+            message,
+            existing,
+          ),
           selection_rename_text,
           async function () {
             let after_value = html_value_get(input);
