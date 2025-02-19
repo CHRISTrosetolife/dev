@@ -147,7 +147,7 @@ export function app_code_refresh_function_menu(arg) {
           ],
           selection_rename_text,
           async function () {
-            let after_value = html_value_get(after);
+            let after_value = html_value_get(input);
             js_identifier_rename(ast, before, after_value);
             await ast_change_finish(
               string_combine_multiple([
