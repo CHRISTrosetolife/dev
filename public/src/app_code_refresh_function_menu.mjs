@@ -1,3 +1,4 @@
+import { js_visit_generic } from "./js_visit_generic.mjs";
 import { html_style_units } from "./html_style_units.mjs";
 import { html_style_margin } from "./html_style_margin.mjs";
 import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
@@ -111,6 +112,9 @@ export function app_code_refresh_function_menu(arg) {
         param_names,
         inputs_possible,
       });
+      let async_is = false;
+      each(list2, function (item) {});
+      js_visit_generic(ast, lambda, filter);
       await ast_change_finish(error("todo"));
     });
   } else if (object_property_exists(selection_result, "one")) {
