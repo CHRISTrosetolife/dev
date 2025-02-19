@@ -130,7 +130,13 @@ export function app_code_refresh_function_menu(arg) {
         let after = html_input_validated_button(
           overlay,
           "Name after",
-          [html_condition_letters_numbers_underscores_spaces()],
+          [
+            html_condition_letters_numbers_underscores_spaces(),
+            {
+              message: function (i) {},
+              conditon: function (i) {},
+            },
+          ],
           selection_rename_text,
           async function () {
             let after_value = html_value_get(after);
