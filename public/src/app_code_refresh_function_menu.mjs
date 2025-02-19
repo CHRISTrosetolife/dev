@@ -127,7 +127,7 @@ export function app_code_refresh_function_menu(arg) {
           filter,
         );
         if (async_is) {
-            return true;
+          return true;
         }
       });
       await ast_change_finish(error("todo"));
