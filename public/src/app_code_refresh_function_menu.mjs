@@ -124,7 +124,7 @@ export function app_code_refresh_function_menu(arg) {
         html_style_background_color_white(d);
         html_style_rounded_padded(d);
         html_style_margin(d, html_style_units(2));
-        html_button_back(overlay, menu_refresh);
+        html_button_back(d, menu_refresh);
         let { node } =
           app_code_refresh_function_selection_one_get(selection_result);
         let before = object_property_get(node, "name");
