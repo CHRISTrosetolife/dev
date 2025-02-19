@@ -158,6 +158,7 @@ export function app_code_refresh_function_menu(arg) {
         html_p_text_multiple(d, ["Name before:", before]);
         let existing = js_identifiers_names(ast);
         let input;
+        let message = "Identifier already exists";
         let after = html_input_validated_button(
           d,
           "Name after",
@@ -165,7 +166,7 @@ export function app_code_refresh_function_menu(arg) {
             html_condition_letters_numbers_underscores_spaces(),
             {
               message: function (i) {
-                return "Identifier already exists";
+                return message;
               },
               condition: function (i) {
                 return list_includes_not(existing, i);
