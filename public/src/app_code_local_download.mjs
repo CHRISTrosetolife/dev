@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { watch_lock } from "./watch_lock.mjs";
 import { storage_file_path_download_json } from "./storage_file_path_download_json.mjs";
 import { app_code_batch_previous_exists } from "./app_code_batch_previous_exists.mjs";
@@ -16,7 +17,7 @@ import { app_code_local_user_path } from "./app_code_local_user_path.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { list_filter } from "./list_filter.mjs";
 export async function app_code_local_download(username) {
-  return await watch_lock(async function () {
+  let v = await watch_lock(async function () {
     assert(string_is, [username]);
     let latest_path_user = app_code_local_user_path(
       username,
@@ -30,6 +31,7 @@ export async function app_code_local_download(username) {
     let when_local = object_property_get(latest_local, "when");
     let when_local_date = new Date(when_local);
     if (when_local_date > when_user_date) {
+      log("");
       return;
     }
     let batch_path = object_property_get(latest_user, "batch_path");
@@ -51,4 +53,5 @@ export async function app_code_local_download(username) {
       await git_ac_message(message);
     });
   });
+  return v;
 }
