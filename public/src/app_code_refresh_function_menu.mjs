@@ -1,4 +1,3 @@
-import { list_includes } from "./list_includes.mjs";
 import { html_style_background_color_white } from "./html_style_background_color_white.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_button_back } from "./html_button_back.mjs";
@@ -126,7 +125,6 @@ export function app_code_refresh_function_menu(arg) {
         let before = object_property_get(node, "name");
         html_p_text_multiple(overlay, ["Name before:", before]);
         let existing = js_identifiers_names(ast);
-        let exists = list_includes(existing, identifier_to_name);
         let input;
         let after = html_input_validated_button(
           overlay,
