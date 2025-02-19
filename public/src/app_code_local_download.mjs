@@ -43,6 +43,9 @@ export async function app_code_local_download(username) {
       await each_object_unordered_async(
         files,
         async function (file_path, value) {
+          log({
+            file_path,
+          });
           let contents = object_property_get(
             value,
             app_code_property_contents(),
