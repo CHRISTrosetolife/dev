@@ -113,8 +113,9 @@ export function app_code_refresh_function_menu(arg) {
         inputs_possible,
       });
       let async_is = false;
-      each(list2, function (item) {});
-      js_visit_generic(ast, lambda, filter);
+      each(removals, function (r) {
+        js_visit_generic(ast, lambda, filter);
+      });
       await ast_change_finish(error("todo"));
     });
   } else if (object_property_exists(selection_result, "one")) {
