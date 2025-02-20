@@ -22,8 +22,15 @@ export function app_code_button_rename_generic(
   html_button(overlay, button_text, async function () {
     let function_selected = app_code_function_selected_get(context);
     let d = html_overlay_container(overlay, menu_refresh);
-    html_p_text(d, string_combine_multiple(["Function: ", function_selected]));
-    button_text;
+    html_p_text(
+      d,
+      string_combine_multiple([
+        "Function: ",
+        function_selected,
+        " : ",
+        button_text,
+      ]),
+    );
     let on_overlay_result = on_overlay(d);
     let invalid = await invalid_list_get();
     let input;
