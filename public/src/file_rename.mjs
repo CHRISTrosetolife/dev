@@ -7,10 +7,10 @@ export async function file_rename(file_name_from, file_name_to) {
   if (web_is()) {
     return;
   } else {
+    let fs = await import_node("fs");
+    await folder_parent_exists_ensure(file_name_to);
+    await fs.promises.rename(file_name_from, file_name_to);
   }
-  let fs = await import_node("fs");
-  await folder_parent_exists_ensure(file_name_to);
-  await fs.promises.rename(file_name_from, file_name_to);
   let on_renames = file_rename_on_renames();
   await each_async(on_renames, async function (on_renames) {
     await on_renames(file_name_from, file_name_to);
