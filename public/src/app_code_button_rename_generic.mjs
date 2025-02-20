@@ -18,7 +18,7 @@ export function app_code_button_rename_generic(
   html_button(overlay, selection_rename_text, async function () {
     let d = html_overlay_container(overlay, menu_refresh);
     let on_overlay_result = on_overlay(d);
-    let invalid = invalid_list_get();
+    let invalid = await invalid_list_get();
     let input;
     let after = html_input_validated_button(
       d,
