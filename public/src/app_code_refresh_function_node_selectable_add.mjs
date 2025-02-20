@@ -29,6 +29,7 @@ export function app_code_refresh_function_node_selectable_add(
   args,
   data_property_name,
   component,
+  key,
 ) {
   let name = object_property_get(node, "name");
   let data = app_code_refresh_function_data_get(args);

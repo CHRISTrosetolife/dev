@@ -277,6 +277,7 @@ export function app_code_refresh_function_node(args) {
       args,
       "literals",
       component,
+      key,
     );
   } else if (js_node_type_is(node, "AssignmentExpression")) {
     let right = object_property_get(node, "right");
