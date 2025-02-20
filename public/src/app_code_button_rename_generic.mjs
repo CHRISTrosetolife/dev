@@ -1,3 +1,6 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { html_p_text } from "./html_p_text.mjs";
+import { app_code_function_selected_get } from "./app_code_function_selected_get.mjs";
 import { html_focus } from "./html_focus.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_value_get } from "./html_value_get.mjs";
@@ -16,7 +19,10 @@ export function app_code_button_rename_generic(
   on_click,
 ) {
   html_button(overlay, button_text, async function () {
+    let function_selected = app_code_function_selected_get(context);
     let d = html_overlay_container(overlay, menu_refresh);
+    html_p_text(d, string_combine_multiple(["Function: ", function_selected]));
+    button_text;
     let on_overlay_result = on_overlay(d);
     let invalid = await invalid_list_get();
     let input;
