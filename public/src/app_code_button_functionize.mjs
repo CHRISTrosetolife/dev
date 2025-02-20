@@ -134,7 +134,6 @@ export function app_code_button_functionize(
       on_overlay_result;
     let function_selected = app_code_function_selected_get(context);
     list_remove_multiple_from(ancestor_common, low, high);
-    await js_imports_fix(ast);
     let declare_code = js_code_export_function_declare(
       function_name_new,
       list_join_comma_space(param_names),
@@ -145,6 +144,7 @@ export function app_code_button_functionize(
     let body = js_declaration_single_body(ast_new);
     list_add_multiple(body, removals);
     await function_new_generic_ast(function_name_new, ast_new, false, false);
+    await js_imports_fix(ast);
     await ast_change_finish(
       string_combine_multiple([
         fn_name("app_code_button_functionize"),
