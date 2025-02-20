@@ -26,8 +26,8 @@ export async function function_new_generic_code(
   let contents = list_join(concat, newline());
   let ast = js_parse(contents);
   let v = await function_new_generic_ast(
-    overwrite,
     function_name,
+    overwrite,
     ast,
     open,
     contents,
