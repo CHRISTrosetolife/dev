@@ -21,7 +21,7 @@ export function app_code_button_rename(
 ) {
   let selection_rename_text = "Selection rename";
   let input_placeholder = "Name after";
-  let message = "Identifier already exists";
+  let error_message = "Identifier already exists";
   html_button(overlay, selection_rename_text, async function () {
     let d = html_overlay_container(overlay, menu_refresh);
     let { node } =
@@ -34,7 +34,7 @@ export function app_code_button_rename(
       d,
       input_placeholder,
       html_conditions_letters_numbers_underscores_spaces_list_includes_not(
-        message,
+        error_message,
         existing,
       ),
       selection_rename_text,
