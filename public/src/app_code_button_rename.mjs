@@ -14,7 +14,6 @@ export function app_code_button_rename(
   ast,
   selection_result,
 ) {
-  let function_selected = app_code_function_selected_get(context);
   let selection_rename_text = "Selection rename";
   let input_placeholder = "Name after";
   let error_message = "Identifier already exists";
@@ -24,6 +23,7 @@ export function app_code_button_rename(
     return v;
   };
   async function on_click(on_overlay_result, after_value) {
+    let function_selected = app_code_function_selected_get(context);
     js_identifier_rename(ast, on_overlay_result, after_value);
     await ast_change_finish(
       string_combine_multiple([
