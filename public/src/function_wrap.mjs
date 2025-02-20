@@ -25,5 +25,4 @@ export async function function_wrap(function_name, function_name_wrapped) {
     0,
   );
   await function_new_generic_ast(function_name_wrapped, ast);
-  return v;
 }
