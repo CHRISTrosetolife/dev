@@ -61,7 +61,9 @@ export function function_aliases() {
   function_aliases_register(all, fn_name("function_param_move_beginning"), [
     "pb",
   ]);
-  function_aliases_register(all, fn_name("function_param_delete"), ["pd"]);
+  function_aliases_register(all, fn_name("function_param_delete_index"), [
+    "pd",
+  ]);
   function_aliases_register(all, fn_name("function_param_move_first"), ["pf"]);
   function_aliases_register(all, fn_name("function_param_move_index"), ["pmi"]);
   function_aliases_register(all, fn_name("function_rename_open"), [
