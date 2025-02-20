@@ -55,6 +55,7 @@ export function app_code_refresh_function_menu(arg) {
       selection_result,
       menu_refresh,
       ast_change_finish,
+      context,
     );
   } else if (object_property_exists(selection_result, "one")) {
     let { visitor, node } =
