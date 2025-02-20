@@ -88,21 +88,25 @@ export function app_code_refresh_function_menu(arg) {
         object_properties_new(fc, [app_code_property_contents()]),
       );
     });
+    await app_code_user_upload_batch(files, batch_message, context);
+    refresh();
+    overlay_remove();
+  }
+}
+async function app_code_user_upload_batch(files, batch_message, context) {
     let batch_path_previous = await app_code_batch_path_get();
     let batch_new = {
-      files,
-      batch_path_previous,
-      [app_code_property_message()]: batch_message,
+        files,
+        batch_path_previous,
+        [app_code_property_message()]: batch_message,
     };
     let when = date_now();
     let batch_name = await app_code_batch_name_when(when);
     let batch_path = await app_code_user_upload(context, batch_name, batch_new);
     await app_code_user_upload(
-      context,
-      app_code_file_name_latest(),
-      app_code_latest_object(batch_path, when),
+        context,
+        app_code_file_name_latest(),
+        app_code_latest_object(batch_path, when)
     );
-    refresh();
-    overlay_remove();
-  }
 }
+
