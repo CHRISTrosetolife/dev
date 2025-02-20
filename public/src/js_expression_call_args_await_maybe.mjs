@@ -5,8 +5,8 @@ import { identity } from "./identity.mjs";
 import { js_expression_await } from "./js_expression_await.mjs";
 import { function_name_new } from "./function_name_new.mjs";
 export function js_expression_call_args_await_maybe(
-  async_is,
   function_name_new,
+  async_is,
   args_names,
 ) {
   let wrapper = async_is ? js_expression_await : identity;
