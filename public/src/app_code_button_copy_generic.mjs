@@ -1,4 +1,3 @@
-import { app_code_refresh_function_change } from "./app_code_refresh_function_change.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_between } from "./list_between.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -30,7 +29,7 @@ export function app_code_button_copy_generic(
           list_between(list_concat([fn.name], fn_args), " "),
         ),
       );
-      await app_code_refresh_function_change(after_value);
+      await on_finish(after_value);
       overlay_remove();
     },
   );
