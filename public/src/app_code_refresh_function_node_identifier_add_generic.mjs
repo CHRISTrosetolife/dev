@@ -6,7 +6,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
   component,
 ) {
   let data_property_name = "identifiers";
-  let key = object_property_get(node, "name");
+  let key = object_property_get(identifier, "name");
   app_code_refresh_function_node_selectable_add(
     identifier,
     args,
