@@ -1,3 +1,4 @@
+import { html_p_text } from "./html_p_text.mjs";
 import { app_code_button_rename_generic } from "./app_code_button_rename_generic.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { js_identifier_rename } from "./js_identifier_rename.mjs";
@@ -114,6 +115,7 @@ export function app_code_button_functionize(
       "New function params:",
       list_join_comma_space(param_names),
     ]);
+    html_p_text(d, string_combine_multiple(["Async:"]));
   }
   app_code_button_rename_generic(
     overlay,
