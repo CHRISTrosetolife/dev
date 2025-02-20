@@ -169,5 +169,6 @@ export function app_code_button_functionize(
     input_placeholder,
     error_message,
     on_click,
+    context,
   );
 }

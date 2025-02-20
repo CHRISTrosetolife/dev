@@ -35,5 +35,6 @@ export function app_code_button_copy_generic(
       await app_code_refresh_function_change(context, after_value);
       overlay_remove();
     },
+    context,
   );
 }

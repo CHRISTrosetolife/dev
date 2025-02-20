@@ -17,6 +17,7 @@ export function app_code_button_rename_generic(
   input_placeholder,
   error_message,
   on_click,
+  context,
 ) {
   html_button(overlay, button_text, async function () {
     let function_selected = app_code_function_selected_get(context);
