@@ -1,3 +1,4 @@
+import { js_export_function_declare } from "./js_export_function_declare.mjs";
 import { js_expression_await } from "./js_expression_await.mjs";
 import { js_expression_call_args } from "./js_expression_call_args.mjs";
 import { js_imports_fix } from "./js_imports_fix.mjs";
@@ -10,7 +11,6 @@ import { html_p_text } from "./html_p_text.mjs";
 import { app_code_button_rename_generic } from "./app_code_button_rename_generic.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { error } from "./error.mjs";
-import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { list_remove_multiple_from } from "./list_remove_multiple_from.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { js_node_type_get } from "./js_node_type_get.mjs";
@@ -36,7 +36,6 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { js_identifiers_shadowed_names } from "./js_identifiers_shadowed_names.mjs";
 import { functions_names } from "./functions_names.mjs";
-import { js_parse } from "./js_parse.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { list_insert } from "./list_insert.mjs";
 import { identity } from "./identity.mjs";
@@ -139,13 +138,11 @@ export function app_code_button_functionize(
       on_overlay_result;
     let function_selected = app_code_function_selected_get(context);
     list_remove_multiple_from(ancestor_common, low, high);
-    let declare_code = js_code_export_function_declare(
+    let ast_new = js_export_function_declare(
       function_name_new,
-      list_join_comma_space(param_names),
-      "",
+      param_names,
       async_is,
     );
-    let ast_new = js_parse(declare_code);
     let body = js_declaration_single_body(ast_new);
     list_add_multiple(body, removals);
     await function_new_generic_ast(function_name_new, ast_new, false, false);
