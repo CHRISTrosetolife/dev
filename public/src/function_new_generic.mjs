@@ -24,6 +24,16 @@ export async function function_new_generic(
   async_is,
   overwrite,
 ) {
+  let contents_function = js_code_export_function_declare(
+    function_name,
+    args_string,
+    body_string,
+    async_is,
+  );
+  let mapped = list_map(imports, js_code_import);
+  let concat = list_concat(mapped, [contents_function]);
+  let contents = list_join(concat, newline());
+  let ast = js_parse(contents);
   let write;
   if (overwrite) {
     write = file_overwrite;
@@ -35,16 +45,6 @@ export async function function_new_generic(
     }
     write = file_write;
   }
-  let contents_function = js_code_export_function_declare(
-    function_name,
-    args_string,
-    body_string,
-    async_is,
-  );
-  let mapped = list_map(imports, js_code_import);
-  let concat = list_concat(mapped, [contents_function]);
-  let contents = list_join(concat, newline());
-  let ast = js_parse(contents);
   await js_imports_fix(ast);
   let unparsed = await js_unparse_format(ast);
   let file_path = function_name_to_path(function_name);
