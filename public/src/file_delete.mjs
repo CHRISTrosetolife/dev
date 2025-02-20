@@ -7,6 +7,7 @@ export async function file_delete(file_path) {
   if (web_is()) {
     let { [global_files()]: files } = global_get();
     object_property_delete(files, file_path);
+    return;
   }
   let fs = await import_node("fs");
   let v = await fs.promises.rm(file_path);
