@@ -17,7 +17,13 @@ export async function function_wrap(function_name, function_name_wrapped) {
     async_is,
   );
   let body = js_declaration_to_body(ast);
-  js_expression_call_args_await_maybe_insert();
+  js_expression_call_args_await_maybe_insert(
+    function_name,
+    param_names,
+    async_is,
+    body,
+    0,
+  );
   await function_new_generic_ast(function_name_wrapped, ast);
   return v;
 }
