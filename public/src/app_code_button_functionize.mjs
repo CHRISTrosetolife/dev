@@ -1,3 +1,4 @@
+import { js_expression_await } from "./js_expression_await.mjs";
 import { js_expression_call_args } from "./js_expression_call_args.mjs";
 import { js_imports_fix } from "./js_imports_fix.mjs";
 import { function_new_generic_ast } from "./function_new_generic_ast.mjs";
@@ -38,6 +39,7 @@ import { functions_names } from "./functions_names.mjs";
 import { js_parse } from "./js_parse.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { list_insert } from "./list_insert.mjs";
+import { identity } from "./identity.mjs";
 export function app_code_button_functionize(
   overlay,
   ast,
@@ -146,7 +148,8 @@ export function app_code_button_functionize(
     let body = js_declaration_single_body(ast_new);
     list_add_multiple(body, removals);
     await function_new_generic_ast(function_name_new, ast_new, false, false);
-    list_insert(ancestor_common, js_expression_call_args());
+    let wrapper = async ? js_expression_await : identity;
+    list_insert(ancestor_common, wrapper(js_expression_call_args()));
     await js_imports_fix(ast);
     await ast_change_finish(
       string_combine_multiple([
