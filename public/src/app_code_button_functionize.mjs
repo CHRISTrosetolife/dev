@@ -143,7 +143,7 @@ export function app_code_button_functionize(
     await ast_change_finish(
       string_combine_multiple([
         error("todo"),
-        fn_name("js_identifier_rename"),
+        fn_name("app_code_button_functionize"),
         " ",
         function_selected,
         ' : "',
