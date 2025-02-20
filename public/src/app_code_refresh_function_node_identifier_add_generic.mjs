@@ -32,9 +32,9 @@ export function app_code_refresh_function_node_identifier_add_generic(
   let data_property_name = "identifiers";
   let name = object_property_get(identifier, "name");
   let data = app_code_refresh_function_data_get(args);
-  let ids = object_property_initialize(data, data_property_name, []);
-  let id_list = object_property_initialize(ids, name, []);
-  list_add(id_list, component);
+  let nodes = object_property_initialize(data, data_property_name, []);
+  let nodes_list = object_property_initialize(nodes, name, []);
+  list_add(nodes_list, component);
   let toggled = object_property_initialize(data, "toggled", {});
   object_property_set(toggled, name, false);
   let ast = object_property_get(args, "ast");
@@ -53,7 +53,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
       parents(selected, html_style_background_color_transparent);
       map_remove(selected, identifier);
     }
-    each(id_list, function (i) {
+    each(nodes_list, function (i) {
       object_property_get(toggled, name)
         ? html_style_background_color(i, "#4c1406")
         : html_style_background_color_transparent(i);
