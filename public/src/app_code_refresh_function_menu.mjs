@@ -85,7 +85,7 @@ export function app_code_refresh_function_menu(arg) {
         object_properties_new(fc, [app_code_property_contents()]),
       );
     });
-    let upload = false;
+    let upload = true;
     if (upload) {
       await app_code_user_upload_batch(context, files, batch_message);
     }
