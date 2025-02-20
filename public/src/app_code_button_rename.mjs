@@ -29,7 +29,7 @@ export function app_code_button_rename(
   };
   html_button(overlay, selection_rename_text, async function () {
     let d = html_overlay_container(overlay, menu_refresh);
-    let before = on_overlay(d);
+    let on_overlay_result = on_overlay(d);
     let invalid = invalid_list_get();
     let input;
     let after = html_input_validated_button(
@@ -42,14 +42,14 @@ export function app_code_button_rename(
       selection_rename_text,
       async function () {
         let after_value = html_value_get(input);
-        js_identifier_rename(ast, before, after_value);
+        js_identifier_rename(ast, on_overlay_result, after_value);
         await ast_change_finish(
           string_combine_multiple([
             fn_name("js_identifier_rename"),
             " ",
             function_selected,
             ' : "',
-            before,
+            on_overlay_result,
             '" to "',
             after_value,
             '"',
