@@ -10,7 +10,6 @@ import { error } from "./error.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { list_remove_multiple_from } from "./list_remove_multiple_from.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
-import { html_overlay_container } from "./html_overlay_container.mjs";
 import { js_node_type_get } from "./js_node_type_get.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
 import { js_node_is } from "./js_node_is.mjs";
@@ -33,7 +32,6 @@ import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { js_identifiers_shadowed_names } from "./js_identifiers_shadowed_names.mjs";
-import { html_button } from "./html_button.mjs";
 import { functions_names } from "./functions_names.mjs";
 import { js_parse } from "./js_parse.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
@@ -168,11 +166,4 @@ export function app_code_button_functionize(
     error_message,
     on_click,
   );
-  html_button(overlay, "", async function () {
-    let d = html_overlay_container(overlay, menu_refresh);
-    html_p_text_multiple(d, [
-      "New function params:",
-      list_join_comma_space(param_names),
-    ]);
-  });
 }
