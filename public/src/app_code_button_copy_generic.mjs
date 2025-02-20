@@ -1,3 +1,4 @@
+import { function_run } from "./function_run.mjs";
 import { app_code_refresh_function_change } from "./app_code_refresh_function_change.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_between } from "./list_between.mjs";
@@ -9,7 +10,7 @@ export function app_code_button_copy_generic(
   overlay,
   button_text,
   menu_refresh,
-  fn,
+  f_name,
   fn_args_get,
   ast_change_finish,
   overlay_remove,
@@ -24,10 +25,10 @@ export function app_code_button_copy_generic(
     "Function already exists",
     async function (function_selected, after_value) {
       let fn_args = fn_args_get(after_value);
-      await fn(...fn_args);
+      await function_run(f_name, fn_args);
       await ast_change_finish(
         string_combine_multiple(
-          list_between(list_concat([fn.name], fn_args), " "),
+          list_between(list_concat([f_name], fn_args), " "),
         ),
       );
       await app_code_refresh_function_change(after_value);
