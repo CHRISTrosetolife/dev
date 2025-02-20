@@ -34,6 +34,7 @@ import { js_identifiers_shadowed_names } from "./js_identifiers_shadowed_names.m
 import { html_button } from "./html_button.mjs";
 import { functions_names } from "./functions_names.mjs";
 import { js_parse } from "./js_parse.mjs";
+import { list_add_multiple } from "./list_add_multiple.mjs";
 export function app_code_button_functionize(
   overlay,
   ast,
@@ -122,11 +123,12 @@ export function app_code_button_functionize(
       high,
       param_names,
       async_is,
+      removals,
     };
     return v5;
   }
   async function on_click(on_overlay_result, function_name_new) {
-    let { ancestor_common, low, high, param_names, async_is } =
+    let { ancestor_common, low, high, param_names, async_is, removals } =
       on_overlay_result;
     list_remove_multiple_from(ancestor_common, low, high);
     let declare_code = js_code_export_function_declare(
@@ -137,6 +139,7 @@ export function app_code_button_functionize(
     );
     let ast_new = js_parse(declare_code);
     let body = js_declaration_single_body(ast);
+    list_add_multiple(body, removals);
     await ast_change_finish(
       string_combine_multiple([
         error("todo"),
