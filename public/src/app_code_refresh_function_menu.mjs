@@ -77,7 +77,7 @@ export function app_code_refresh_function_menu(arg) {
         let v = [function_selected, after_value];
         return v;
       },
-      ast_change_finish,
+      ast_change_finish_outside,
       overlay_remove,
     );
     app_code_button_copy_generic(
@@ -101,6 +101,9 @@ export function app_code_refresh_function_menu(arg) {
     assert(string_is, [batch_message]);
     let before = await file_read(path);
     await file_js_unparse_code(ast, path, before);
+    await ast_change_finish_outside(batch_message);
+  }
+  async function ast_change_finish_outside(batch_message) {
     let fcs = global_file_changes();
     let files = {};
     each(fcs, function (fc) {
