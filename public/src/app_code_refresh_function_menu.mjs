@@ -148,8 +148,8 @@ export function app_code_refresh_function_menu(arg) {
         overlay,
         menu_refresh,
         ast_change_finish,
-        selection_result,
         ast,
+        selection_result,
         function_selected,
       );
     }
