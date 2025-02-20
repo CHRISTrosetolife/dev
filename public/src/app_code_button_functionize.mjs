@@ -1,3 +1,4 @@
+import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
 import { function_name_new } from "./function_name_new.mjs";
 import { string_case_upper_first } from "./string_case_upper_first.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -135,6 +136,7 @@ export function app_code_button_functionize(
       async_is,
     );
     let ast_new = js_parse(declare_code);
+    let body = js_declaration_single_body(ast);
     await ast_change_finish(
       string_combine_multiple([
         error("todo"),
