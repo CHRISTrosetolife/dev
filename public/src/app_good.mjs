@@ -163,6 +163,7 @@ export function app_good() {
           "Let there be no pornography",
           "Let there be no rape",
           "Let there be no sexual sin",
+          "Let there be no sexual sin sin against children",
           "Let there be no fornication",
           "Let there be no kidnapping",
           "Let there be no hostages",
