@@ -40,6 +40,7 @@ import { js_parse } from "./js_parse.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { list_insert } from "./list_insert.mjs";
 import { identity } from "./identity.mjs";
+import { js_parse_expression } from "./js_parse_expression.mjs";
 export function app_code_button_functionize(
   overlay,
   ast,
@@ -155,7 +156,7 @@ export function app_code_button_functionize(
       wrapper(
         js_expression_call_args(
           function_name_new,
-          list_map(param_names, js_parse),
+          list_map(param_names, js_parse_expression),
         ),
       ),
     );
