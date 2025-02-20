@@ -1,3 +1,4 @@
+import { app_code_refresh_function_change } from "./app_code_refresh_function_change.mjs";
 import { function_rename } from "./function_rename.mjs";
 import { app_code_button_copy_generic } from "./app_code_button_copy_generic.mjs";
 import { function_copy } from "./function_copy.mjs";
@@ -28,7 +29,7 @@ import { app_code_refresh_function_selection } from "./app_code_refresh_function
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_back_after } from "./html_button_back_after.mjs";
 import { html_clear } from "./html_clear.mjs";
-export function app_code_refresh_function_menu(arg) {
+export async function app_code_refresh_function_menu(arg) {
   let { overlay, args, ast, context, path, refresh } = arg;
   let menu_refresh = function () {
     let v2 = app_code_refresh_function_menu(arg);
@@ -70,6 +71,7 @@ export function app_code_refresh_function_menu(arg) {
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
   } else {
+    await app_code_refresh_function_change(after_value);
     app_code_button_copy_generic(
       overlay,
       "Function rename",
