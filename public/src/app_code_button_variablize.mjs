@@ -1,3 +1,4 @@
+import { app_code_function_selected_get } from "./app_code_function_selected_get.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { object_replace } from "./object_replace.mjs";
@@ -23,6 +24,7 @@ export function app_code_button_variablize(
     let p = js_variablize(ast, list, list_item, node);
     let node2_code = js_unparse(node);
     object_replace(node, p);
+    let function_selected = app_code_function_selected_get(context);
     await ast_change_finish(
       string_combine_multiple([
         fn_name("js_variablize"),
