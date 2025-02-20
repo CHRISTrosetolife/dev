@@ -13,7 +13,6 @@ export async function function_new_generic_ast(
   ast,
   overwrite,
   open,
-  contents,
 ) {
   let write;
   if (overwrite) {

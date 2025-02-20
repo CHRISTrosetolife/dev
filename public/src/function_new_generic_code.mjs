@@ -25,7 +25,7 @@ export async function function_new_generic_code(
   let concat = list_concat(mapped, [contents_function]);
   let contents = list_join(concat, newline());
   let ast = js_parse(contents);
-  await function_new_generic_ast(function_name, ast, overwrite, open, contents);
+  await function_new_generic_ast(function_name, ast, overwrite, open);
   let v = {
     contents,
   };
