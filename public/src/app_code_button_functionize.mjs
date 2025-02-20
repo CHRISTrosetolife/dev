@@ -149,7 +149,15 @@ export function app_code_button_functionize(
     list_add_multiple(body, removals);
     await function_new_generic_ast(function_name_new, ast_new, false, false);
     let wrapper = async ? js_expression_await : identity;
-    list_insert(ancestor_common, wrapper(js_expression_call_args()));
+    list_insert(
+      ancestor_common,
+      wrapper(
+        js_expression_call_args(
+          function_name_new,
+          list_map(param_names, js_parse),
+        ),
+      ),
+    );
     await js_imports_fix(ast);
     await ast_change_finish(
       string_combine_multiple([
