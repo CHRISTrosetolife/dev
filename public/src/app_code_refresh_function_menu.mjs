@@ -79,7 +79,6 @@ export function app_code_refresh_function_menu(arg) {
       function_rename,
       async function (after_value) {
         let v = [selection_result, after_value];
-        await app_code_refresh_function_change(after_value);
         return v;
       },
       ast_change_finish,
@@ -97,7 +96,9 @@ export function app_code_refresh_function_menu(arg) {
       },
       ast_change_finish,
       overlay_remove,
-      async function () {},
+      async function (after_value) {
+        await app_code_refresh_function_change(after_value);
+      },
     );
   }
   app_code_button_menu_app(context, overlay, overlay_remove);
