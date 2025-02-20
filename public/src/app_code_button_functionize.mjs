@@ -39,7 +39,7 @@ export function app_code_button_functionize(
 ) {
   let selection_rename_text = "Selection functionize";
   let input_placeholder = "New function name";
-  let error_message = "Identifier already exists";
+  let error_message = "Function name already exists";
   let invalid_list_get = function () {
     let existing = js_identifiers_names(ast);
     let v = existing;
