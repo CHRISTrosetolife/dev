@@ -80,7 +80,7 @@ export function app_code_refresh_function_menu(arg) {
         let v = [function_selected, after_value];
         return v;
       },
-      ast_change_finish_outside,
+      ast_change_finish_change,
       overlay_remove,
     );
     app_code_button_copy_generic(
@@ -93,7 +93,7 @@ export function app_code_refresh_function_menu(arg) {
         let v3 = [function_selected, after_value];
         return v3;
       },
-      ast_change_finish,
+      ast_change_finish_change,
       overlay_remove,
     );
   }
