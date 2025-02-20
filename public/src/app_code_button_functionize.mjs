@@ -84,7 +84,7 @@ export function app_code_button_functionize(
           list_join_comma_space(s),
         ]),
       );
-      return;
+      error();
     }
     let { ancestor_common, low, high, removals } =
       app_code_refresh_function_selection_removals(selection_result);
@@ -116,15 +116,18 @@ export function app_code_button_functionize(
           let node2 = object_property_get(v, "node");
           if (js_node_type_is(node2, "AwaitExpression")) {
             async_is = true;
-            return true;
+            let v2 = true;
+            return v2;
           }
         },
         function (n) {
-          return !js_node_is(n) || !js_function_types_is(js_node_type_get(n));
+          let v3 = !js_node_is(n) || !js_function_types_is(js_node_type_get(n));
+          return v3;
         },
       );
       if (async_is) {
-        return true;
+        let v4 = true;
+        return v4;
       }
     });
     log({
