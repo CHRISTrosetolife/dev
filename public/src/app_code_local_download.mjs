@@ -1,3 +1,4 @@
+import { file_delete } from "./file_delete.mjs";
 import { app_code_property_deleted } from "./app_code_property_deleted.mjs";
 import { storage_file_path_download_json_force } from "./storage_file_path_download_json_force.mjs";
 import { log } from "./log.mjs";
@@ -57,9 +58,11 @@ export async function app_code_local_download(username) {
             app_code_property_contents(),
           );
           let deleted = object_property_get(value, app_code_property_deleted());
-          if (false) {
+          if (deleted) {
+            await file_delete(file_path);
+          } else {
+              await file_overwrite(file_path, contents);
           }
-          await file_overwrite(file_path, contents);
         },
       );
       await git_ac_message(message);
