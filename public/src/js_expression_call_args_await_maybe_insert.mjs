@@ -1,15 +1,14 @@
 import { list_insert } from "./list_insert.mjs";
 import { js_expression_call_args_await_maybe } from "./js_expression_call_args_await_maybe.mjs";
-import { function_name_new } from "./function_name_new.mjs";
 export function js_expression_call_args_await_maybe_insert(
-  function_name_new,
+  function_name_called,
   param_names,
   async_is,
   list,
   index_insert,
 ) {
   let e = js_expression_call_args_await_maybe(
-    function_name_new,
+    function_name_called,
     param_names,
     async_is,
   );
