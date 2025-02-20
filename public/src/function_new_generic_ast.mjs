@@ -32,8 +32,5 @@ export async function function_new_generic_ast(
   if (open) {
     await file_open(file_path);
   }
-  let v = {
-    contents,
-  };
   return v;
 }
