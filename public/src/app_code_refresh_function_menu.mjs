@@ -70,6 +70,7 @@ export function app_code_refresh_function_menu(arg) {
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
   } else {
     app_code_button_copy_generic(
+      context,
       overlay,
       "Function rename",
       menu_refresh,
@@ -80,9 +81,9 @@ export function app_code_refresh_function_menu(arg) {
       },
       ast_change_finish_outside,
       overlay_remove,
-      context,
     );
     app_code_button_copy_generic(
+      context,
       overlay,
       "Function copy",
       menu_refresh,
@@ -93,7 +94,6 @@ export function app_code_refresh_function_menu(arg) {
       },
       ast_change_finish,
       overlay_remove,
-      context,
     );
   }
   app_code_button_menu_app(context, overlay, overlay_remove);

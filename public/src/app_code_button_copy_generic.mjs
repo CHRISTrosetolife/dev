@@ -7,6 +7,7 @@ import { functions_names } from "./functions_names.mjs";
 import { noop } from "./noop.mjs";
 import { app_code_button_rename_generic } from "./app_code_button_rename_generic.mjs";
 export function app_code_button_copy_generic(
+  context,
   overlay,
   button_text,
   menu_refresh,
@@ -14,7 +15,6 @@ export function app_code_button_copy_generic(
   fn_args_get,
   ast_change_finish,
   overlay_remove,
-  context,
 ) {
   app_code_button_rename_generic(
     overlay,
