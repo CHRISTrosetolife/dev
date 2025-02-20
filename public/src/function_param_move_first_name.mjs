@@ -7,5 +7,4 @@ export async function function_param_move_first_name(
 ) {
   assert_arguments_length(arguments, 2);
   let index = await function_param_index(function_name, param_name_to_move);
-  await function_param_delete_index(function_name, index);
-}
+  await function_param_move_first_index(function_name, index)
