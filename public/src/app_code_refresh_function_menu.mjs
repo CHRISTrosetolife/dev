@@ -62,6 +62,7 @@ export function app_code_refresh_function_menu(arg) {
         ast_change_finish,
         ast,
         selection_result,
+        context,
       );
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
