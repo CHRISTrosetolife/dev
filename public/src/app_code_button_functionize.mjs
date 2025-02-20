@@ -123,7 +123,7 @@ export function app_code_button_functionize(
   async function on_click(on_overlay_result, after_value) {
     let { ancestor_common, low, high } = on_overlay_result;
     list_remove_multiple_from(ancestor_common, low, high);
-    js_code_export_function_declare();
+    js_code_export_function_declare(after_value);
     await ast_change_finish(
       string_combine_multiple([
         error("todo"),
