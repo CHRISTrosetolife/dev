@@ -10,7 +10,7 @@ export function app_code_button_copy_generic(
   button_text,
   menu_refresh,
   fn,
-  fn_args,
+  fn_args_get,
   ast_change_finish,
   overlay_remove,
 ) {
@@ -23,6 +23,7 @@ export function app_code_button_copy_generic(
     "Function name new",
     "Function already exists",
     async function (function_selected, after_value) {
+      let fn_args = fn_args_get(after_value);
       await fn(...fn_args);
       await ast_change_finish(
         string_combine_multiple(
