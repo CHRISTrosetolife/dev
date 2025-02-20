@@ -88,26 +88,6 @@ export function app_code_button_functionize(
     );
     let imports_names = js_imports_existing_names(ast);
     let param_names = list_difference(intersected, imports_names);
-    html_p_text_multiple(d, [
-      "New function params:",
-      list_join_comma_space(param_names),
-    ]);
-  }
-  app_code_button_rename_generic(
-    overlay,
-    selection_rename_text,
-    menu_refresh,
-    on_overlay,
-    invalid_list_get,
-    input_placeholder,
-    error_message,
-    on_click,
-  );
-  html_button(overlay, "", async function () {
-    log({
-      param_names,
-      inputs_possible,
-    });
     let async_is = false;
     each(removals, function (r) {
       js_visit_generic(
@@ -129,6 +109,26 @@ export function app_code_button_functionize(
         let v4 = true;
         return v4;
       }
+    });
+    html_p_text_multiple(d, [
+      "New function params:",
+      list_join_comma_space(param_names),
+    ]);
+  }
+  app_code_button_rename_generic(
+    overlay,
+    selection_rename_text,
+    menu_refresh,
+    on_overlay,
+    invalid_list_get,
+    input_placeholder,
+    error_message,
+    on_click,
+  );
+  html_button(overlay, "", async function () {
+    log({
+      param_names,
+      inputs_possible,
     });
     log({
       async_is,
