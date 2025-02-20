@@ -22,16 +22,6 @@ export function app_code_button_rename(
     let v = existing;
     return v;
   };
-  app_code_button_rename_generic(
-    overlay,
-    selection_rename_text,
-    menu_refresh,
-    on_overlay,
-    invalid_list_get,
-    input_placeholder,
-    error_message,
-    on_click,
-  );
   async function on_click(on_overlay_result, after_value) {
     js_identifier_rename(ast, on_overlay_result, after_value);
     await ast_change_finish(
@@ -54,4 +44,14 @@ export function app_code_button_rename(
     html_p_text_multiple(d, ["Name before:", before]);
     return before;
   }
+  app_code_button_rename_generic(
+    overlay,
+    selection_rename_text,
+    menu_refresh,
+    on_overlay,
+    invalid_list_get,
+    input_placeholder,
+    error_message,
+    on_click,
+  );
 }
