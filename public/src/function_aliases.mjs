@@ -66,6 +66,9 @@ export function function_aliases() {
   ]);
   function_aliases_register(all, fn_name("function_param_delete_name"), ["pd"]);
   function_aliases_register(all, fn_name("function_param_move_first_index"), [
+    "pfi",
+  ]);
+  function_aliases_register(all, fn_name("function_param_move_first_name"), [
     "pf",
   ]);
   function_aliases_register(all, fn_name("function_param_move_index"), ["pmi"]);
