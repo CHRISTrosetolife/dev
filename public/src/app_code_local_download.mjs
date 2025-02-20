@@ -55,11 +55,6 @@ export async function app_code_local_download(username) {
             value,
             app_code_property_contents(),
           );
-          if ("./public/src/bible_interlinear_upload.mjs" === file_path) {
-            log({
-              contents,
-            });
-          }
           await file_overwrite(file_path, contents);
         },
       );
