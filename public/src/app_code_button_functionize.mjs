@@ -119,7 +119,7 @@ export function app_code_button_functionize(
     js_code_export_function_declare();
     await ast_change_finish(
       string_combine_multiple([
-        eror("todo"),
+        error("todo"),
         fn_name("js_identifier_rename"),
         " ",
         function_selected,
