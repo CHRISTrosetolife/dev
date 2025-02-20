@@ -83,10 +83,6 @@ export function app_code_refresh_function_menu(arg) {
         await function_copy(selection_result, after_value);
       },
     );
-    html_button(overlay, async function () {
-      app_code_refresh_function_selection_remove(selection_result);
-      ast_change_finish(fn_name("app_code_refresh_function_selection_remove"));
-    });
   }
   app_code_button_menu_app(context, overlay, overlay_remove);
   function overlay_remove() {
