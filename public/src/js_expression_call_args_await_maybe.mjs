@@ -1,0 +1,20 @@
+import { js_parse_expression } from "./js_parse_expression.mjs";
+import { list_map } from "./list_map.mjs";
+import { js_expression_call_args } from "./js_expression_call_args.mjs";
+import { identity } from "./identity.mjs";
+import { js_expression_await } from "./js_expression_await.mjs";
+import { function_name_new } from "./function_name_new.mjs";
+export function js_expression_call_args_await_maybe(
+  async_is,
+  function_name_new,
+  args_names,
+) {
+  let wrapper = async_is ? js_expression_await : identity;
+  let e = wrapper(
+    js_expression_call_args(
+      function_name_new,
+      list_map(args_names, js_parse_expression),
+    ),
+  );
+  return e;
+}

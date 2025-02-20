@@ -1,6 +1,5 @@
+import { js_expression_call_args_await_maybe } from "./js_expression_call_args_await_maybe.mjs";
 import { js_export_function_declare } from "./js_export_function_declare.mjs";
-import { js_expression_await } from "./js_expression_await.mjs";
-import { js_expression_call_args } from "./js_expression_call_args.mjs";
 import { js_imports_fix } from "./js_imports_fix.mjs";
 import { function_new_generic_ast } from "./function_new_generic_ast.mjs";
 import { app_code_function_selected_get } from "./app_code_function_selected_get.mjs";
@@ -38,8 +37,6 @@ import { js_identifiers_shadowed_names } from "./js_identifiers_shadowed_names.m
 import { functions_names } from "./functions_names.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { list_insert } from "./list_insert.mjs";
-import { identity } from "./identity.mjs";
-import { js_parse_expression } from "./js_parse_expression.mjs";
 export function app_code_button_functionize(
   overlay,
   ast,
@@ -146,12 +143,10 @@ export function app_code_button_functionize(
     let body = js_declaration_single_body(ast_new);
     list_add_multiple(body, removals);
     await function_new_generic_ast(function_name_new, ast_new, false, false);
-    let wrapper = async_is ? js_expression_await : identity;
-    let e = wrapper(
-      js_expression_call_args(
-        function_name_new,
-        list_map(param_names, js_parse_expression),
-      ),
+    let e = js_expression_call_args_await_maybe(
+      async_is,
+      function_name_new,
+      param_names,
     );
     list_insert(ancestor_common, low, e);
     await js_imports_fix(ast);
