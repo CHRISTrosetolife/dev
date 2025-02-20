@@ -3,14 +3,14 @@ import { file_read_generic } from "./file_read_generic.mjs";
 import { global_get } from "./global_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { web_is } from "./web_is.mjs";
-export async function file_read(file_name) {
+export async function file_read(file_path) {
   if (web_is()) {
     let g = global_get();
     let { [global_files()]: files } = g;
-    let existing = object_property_get(files, file_name);
+    let existing = object_property_get(files, file_path);
     return existing;
   }
   let encoding = "utf-8";
-  let v2 = await file_read_generic(file_name, encoding);
+  let v2 = await file_read_generic(file_path, encoding);
   return v2;
 }
