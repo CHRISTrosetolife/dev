@@ -10,8 +10,8 @@ import { function_exists } from "./function_exists.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 export async function function_new_generic_ast(
   function_name,
-  overwrite,
   ast,
+  overwrite,
   open,
   contents,
 ) {

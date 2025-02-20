@@ -27,8 +27,8 @@ export async function function_new_generic_code(
   let ast = js_parse(contents);
   let v = await function_new_generic_ast(
     function_name,
-    overwrite,
     ast,
+    overwrite,
     open,
     contents,
   );
