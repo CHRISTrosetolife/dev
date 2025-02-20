@@ -1,3 +1,4 @@
+import { list_between } from "./list_between.mjs";
 import { function_copy } from "./function_copy.mjs";
 import { functions_names } from "./functions_names.mjs";
 import { noop } from "./noop.mjs";
@@ -81,7 +82,15 @@ export function app_code_refresh_function_menu(arg) {
       "Function already exists",
       async function (on_overlay_result, after_value) {
         await function_copy(selection_result, after_value);
-        ast_change_finish(string_combine_multiple([]));
+        ast_change_finish(
+          string_combine_multiple(
+            list_between([
+              fn_name("function_copy"),
+              selection_result,
+              after_value,
+            ]),
+          ),
+        );
       },
     );
   }
