@@ -1,3 +1,4 @@
+import { function_rename } from "./function_rename.mjs";
 import { app_code_button_copy_generic } from "./app_code_button_copy_generic.mjs";
 import { function_copy } from "./function_copy.mjs";
 import { file_read } from "./file_read.mjs";
@@ -69,6 +70,15 @@ export function app_code_refresh_function_menu(arg) {
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
   } else {
+    app_code_button_copy_generic(
+      overlay,
+      "Function rename",
+      menu_refresh,
+      function_rename,
+      [selection_result, after_value],
+      ast_change_finish,
+      overlay_remove,
+    );
     app_code_button_copy_generic(
       overlay,
       "Function copy",
