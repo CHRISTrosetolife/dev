@@ -30,7 +30,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_back_after } from "./html_button_back_after.mjs";
 import { html_clear } from "./html_clear.mjs";
 export function app_code_refresh_function_menu(arg) {
-  let { overlay, function_selected, args, ast, context, path, refresh } = arg;
+  let { overlay, args, ast, context, path, refresh } = arg;
   let menu_refresh = function () {
     let v2 = app_code_refresh_function_menu(arg);
     return v2;
