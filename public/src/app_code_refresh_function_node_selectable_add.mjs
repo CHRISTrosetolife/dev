@@ -25,12 +25,12 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { app_code_refresh_function_data_get } from "./app_code_refresh_function_data_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export function app_code_refresh_function_node_selectable_add(
-  identifier,
+  node,
   args,
   data_property_name,
   component,
 ) {
-  let name = object_property_get(identifier, "name");
+  let name = object_property_get(node, "name");
   let data = app_code_refresh_function_data_get(args);
   let nodes = object_property_initialize(data, data_property_name, []);
   let nodes_list = object_property_initialize(nodes, name, []);
@@ -51,7 +51,7 @@ export function app_code_refresh_function_node_selectable_add(
       );
     } else {
       parents(selected, html_style_background_color_transparent);
-      map_remove(selected, identifier);
+      map_remove(selected, node);
     }
     each(nodes_list, function (i) {
       object_property_get(toggled, name)
@@ -60,8 +60,8 @@ export function app_code_refresh_function_node_selectable_add(
     });
   });
   function parents(selected, styling) {
-    let visitor = js_visit_find(ast, identifier);
-    map_set(selected, identifier, {
+    let visitor = js_visit_find(ast, node);
+    map_set(selected, node, {
       visitor,
       component,
     });
