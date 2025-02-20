@@ -95,6 +95,13 @@ export function app_code_button_functionize(
         return v4;
       }
     });
+    log({
+      param_names,
+      inputs_possible,
+    });
+    log({
+      async_is,
+    });
     html_p_text_multiple(d, [
       "New function params:",
       list_join_comma_space(param_names),
@@ -128,13 +135,6 @@ export function app_code_button_functionize(
     on_click,
   );
   html_button(overlay, "", async function () {
-    log({
-      param_names,
-      inputs_possible,
-    });
-    log({
-      async_is,
-    });
     let d = html_overlay_container(overlay, menu_refresh);
     html_p_text_multiple(d, [
       "New function params:",
