@@ -1,6 +1,5 @@
 import { function_rename } from "./function_rename.mjs";
 import { app_code_button_copy_generic } from "./app_code_button_copy_generic.mjs";
-import { function_copy } from "./function_copy.mjs";
 import { file_read } from "./file_read.mjs";
 import { file_js_unparse_code } from "./file_js_unparse_code.mjs";
 import { app_code_user_upload_batch } from "./app_code_user_upload_batch.mjs";
@@ -74,7 +73,8 @@ export function app_code_refresh_function_menu(arg) {
       overlay,
       "Function rename",
       menu_refresh,
-      function_rename,
+      function_rename.
+      name,
       async function (after_value) {
         let v = [selection_result, after_value];
         return v;
@@ -86,7 +86,7 @@ export function app_code_refresh_function_menu(arg) {
       overlay,
       "Function copy",
       menu_refresh,
-      function_copy,
+      fn_name("function_copy"),
       function (after_value) {
         let v3 = [selection_result, after_value];
         return v3;
