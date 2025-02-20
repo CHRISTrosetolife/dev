@@ -1,3 +1,5 @@
+import { app_code_property_deleted } from "./app_code_property_deleted.mjs";
+import { app_code_property_contents } from "./app_code_property_contents.mjs";
 import { list_add } from "./list_add.mjs";
 import { global_file_changes } from "./global_file_changes.mjs";
 import { global_get } from "./global_get.mjs";
@@ -12,7 +14,8 @@ export async function file_delete(file_path) {
     let fcs = global_file_changes();
     list_add(fcs, {
       file_path,
-      deleted: true,
+      [app_code_property_contents()]: null,
+      [app_code_property_deleted()]: true,
     });
     return;
   }

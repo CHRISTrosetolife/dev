@@ -111,7 +111,7 @@ export function app_code_refresh_function_menu(arg) {
       object_property_set(
         files,
         path2,
-        object_properties_new(fc, [app_code_property_contents()]),
+        object_properties_new(fc, [app_code_property_contents(),app_code_property_deleted()]),
       );
     });
     let upload = true;
