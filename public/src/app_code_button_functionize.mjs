@@ -1,3 +1,4 @@
+import { js_imports_fix } from "./js_imports_fix.mjs";
 import { function_new_generic_ast } from "./function_new_generic_ast.mjs";
 import { app_code_function_selected_get } from "./app_code_function_selected_get.mjs";
 import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
@@ -143,7 +144,7 @@ export function app_code_button_functionize(
     let body = js_declaration_single_body(ast_new);
     list_add_multiple(body, removals);
     await function_new_generic_ast(function_name_new, ast_new, false, false);
-    function_imports_fix(ast);
+    await js_imports_fix(ast);
     await ast_change_finish(
       string_combine_multiple([
         fn_name("app_code_button_functionize"),
