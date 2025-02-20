@@ -1,3 +1,4 @@
+import { function_new_generic_code } from "./function_new_generic_code.mjs";
 import { js_code_array } from "./js_code_array.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
@@ -7,12 +8,11 @@ import { function_data } from "./function_data.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_await } from "./js_code_await.mjs";
-import { function_new_generic } from "./function_new_generic.mjs";
 export async function function_cache_new(function_name) {
   let param_names = await function_params_names(function_name);
   let joined = list_join_comma_space(param_names);
   let cache_name = function_cache_name(function_name);
-  await function_new_generic(
+  await function_new_generic_code(
     cache_name,
     joined,
     js_code_statement_return(

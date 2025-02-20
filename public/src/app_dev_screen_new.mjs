@@ -1,3 +1,4 @@
+import { function_new_generic_code } from "./function_new_generic_code.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
@@ -8,7 +9,6 @@ import { function_open } from "./function_open.mjs";
 import { app_dev_screens } from "./app_dev_screens.mjs";
 import { js_code_function_declare } from "./js_code_function_declare.mjs";
 import { js_code_object_properties } from "./js_code_object_properties.mjs";
-import { function_new_generic } from "./function_new_generic.mjs";
 import { app_dev_screen_name } from "./app_dev_screen_name.mjs";
 import { app_list_add } from "./app_list_add.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
@@ -28,7 +28,7 @@ export async function app_dev_screen_new(name) {
       js_code_increment(image_index_name),
     ]),
   ]);
-  await function_new_generic(
+  await function_new_generic_code(
     screen_name,
     "",
     js_code_statement_return(

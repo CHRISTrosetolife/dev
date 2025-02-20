@@ -1,3 +1,4 @@
+import { function_new_generic_code } from "./function_new_generic_code.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { string_size } from "./string_size.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
@@ -9,7 +10,6 @@ import { js_parent_replace } from "./js_parent_replace.mjs";
 import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
 import { string_slashes_escape } from "./string_slashes_escape.mjs";
 import { string_delimit } from "./string_delimit.mjs";
-import { function_new_generic } from "./function_new_generic.mjs";
 import { log } from "./log.mjs";
 import { data_functions } from "./data_functions.mjs";
 import { each_object } from "./each_object.mjs";
@@ -34,7 +34,7 @@ export async function functions_string_prefix_to_constant(
     let code = js_code_statement_return(
       string_delimit(string_slashes_escape(prefix)),
     );
-    await function_new_generic(
+    await function_new_generic_code(
       constant_name,
       "",
       code,

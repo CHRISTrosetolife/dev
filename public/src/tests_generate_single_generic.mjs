@@ -1,3 +1,4 @@
+import { function_new_generic_code } from "./function_new_generic_code.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { js_code_string } from "./js_code_string.mjs";
 import { js_code_array } from "./js_code_array.mjs";
@@ -5,7 +6,6 @@ import { string_to } from "./string_to.mjs";
 import { equal } from "./equal.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
-import { function_new_generic } from "./function_new_generic.mjs";
 import { json_to } from "./json_to.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_map_index } from "./list_map_index.mjs";
@@ -93,7 +93,7 @@ export async function tests_generate_single_generic(
     json_to(result),
     "))",
   ]);
-  await function_new_generic(
+  await function_new_generic_code(
     string_combine_multiple([function_name, "_test_", test_number]),
     string_combine_multiple([]),
     body_string,

@@ -1,3 +1,4 @@
+import { function_new_generic_code } from "./function_new_generic_code.mjs";
 import { app_gs_bible_chapter_prefix } from "./app_gs_bible_chapter_prefix.mjs";
 import { js_string } from "./js_string.mjs";
 import { list_find } from "./list_find.mjs";
@@ -15,7 +16,6 @@ import { object_property_delete } from "./object_property_delete.mjs";
 import { each } from "./each.mjs";
 import { js_code_array } from "./js_code_array.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
-import { function_new_generic } from "./function_new_generic.mjs";
 import { list_map } from "./list_map.mjs";
 import { function_open } from "./function_open.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -90,7 +90,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
       each_verse(item);
     });
     let jsons = list_map(verses, json_to);
-    await function_new_generic(
+    await function_new_generic_code(
       function_name,
       "",
       js_code_statement_return(js_code_array(jsons)),

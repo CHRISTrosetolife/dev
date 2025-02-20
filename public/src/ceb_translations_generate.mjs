@@ -1,10 +1,10 @@
+import { function_new_generic_code } from "./function_new_generic_code.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { folder_read } from "./folder_read.mjs";
 import { file_read } from "./file_read.mjs";
 import { newline } from "./newline.mjs";
 import { string_split } from "./string_split.mjs";
 import { string_get } from "./string_get.mjs";
-import { function_new_generic } from "./function_new_generic.mjs";
 import { list_join } from "./list_join.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -43,7 +43,7 @@ export async function ceb_translations_generate() {
   let body_string = js_code_statement_return(
     string_combine_multiple(["{ ", entries_string, " }"]),
   );
-  await function_new_generic(
+  await function_new_generic_code(
     string_combine_multiple(["ceb_translations"]),
     string_combine_multiple([]),
     body_string,

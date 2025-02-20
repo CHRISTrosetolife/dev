@@ -8,7 +8,7 @@ import { fn_name } from "./fn_name.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { object_replace } from "./object_replace.mjs";
 export async function function_new_generic_migrate() {
-  let f_name = fn_name("function_new_generic");
+  let f_name = fn_name("function_new_generic_code");
   let v = await functions_calls_migrate(f_name, migrate);
   let param_names = await function_params_names(f_name);
   return v;

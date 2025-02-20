@@ -15,7 +15,7 @@ import { list_join } from "./list_join.mjs";
 import { newline } from "./newline.mjs";
 import { js_parse } from "./js_parse.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
-export async function function_new_generic(
+export async function function_new_generic_code(
   function_name,
   args_string,
   body_string,

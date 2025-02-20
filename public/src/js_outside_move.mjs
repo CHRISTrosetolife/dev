@@ -1,3 +1,4 @@
+import { function_new_generic_code } from "./function_new_generic_code.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { js_imports_remove } from "./js_imports_remove.mjs";
 import { function_imports_add } from "./function_imports_add.mjs";
@@ -6,7 +7,6 @@ import { list_join_comma } from "./list_join_comma.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { js_parse } from "./js_parse.mjs";
 import { js_unparse } from "./js_unparse.mjs";
-import { function_new_generic } from "./function_new_generic.mjs";
 import { js_declaration_to_name } from "./js_declaration_to_name.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { list_copy } from "./list_copy.mjs";
@@ -27,7 +27,7 @@ export async function js_outside_move(ast) {
     let parsed = js_parse(string_combine_multiple([]));
     parsed.body = body;
     let unparsed = js_unparse(parsed);
-    await function_new_generic(
+    await function_new_generic_code(
       function_name,
       args_string,
       unparsed,
