@@ -12,7 +12,6 @@ export function app_code_button_rename(
   ast_change_finish,
   ast,
   selection_result,
-  function_selected,
 ) {
   let selection_rename_text = "Selection rename";
   let input_placeholder = "Name after";

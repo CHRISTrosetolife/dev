@@ -14,7 +14,6 @@ export function app_code_button_variablize(
   ast,
   node,
   ast_change_finish,
-  function_selected,
 ) {
   html_button(overlay, "Selection variablize", async function () {
     let stack2 = object_property_get(visitor, "stack");

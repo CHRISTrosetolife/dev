@@ -55,7 +55,6 @@ export function app_code_refresh_function_menu(arg) {
       selection_result,
       menu_refresh,
       ast_change_finish,
-      function_selected,
     );
   } else if (object_property_exists(selection_result, "one")) {
     let { visitor, node } =
@@ -67,17 +66,9 @@ export function app_code_refresh_function_menu(arg) {
         ast_change_finish,
         ast,
         selection_result,
-        function_selected,
       );
     }
-    app_code_button_variablize(
-      overlay,
-      visitor,
-      ast,
-      node,
-      ast_change_finish,
-      function_selected,
-    );
+    app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
   }
   app_code_button_menu_app(context, overlay, overlay_remove);
   function overlay_remove() {
