@@ -1,5 +1,4 @@
 import { app_code_button_rename_generic } from "./app_code_button_rename_generic.mjs";
-import { app_code_refresh_function_selection_one_get } from "./app_code_refresh_function_selection_one_get.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { js_identifier_rename } from "./js_identifier_rename.mjs";
 import { error } from "./error.mjs";
@@ -61,11 +60,10 @@ export function app_code_button_functionize(
     );
   }
   function on_overlay(d) {
-    let { node } =
-      app_code_refresh_function_selection_one_get(selection_result);
-    let before = object_property_get(node, "name");
-    html_p_text_multiple(d, ["Name before:", before]);
-    return before;
+    html_p_text_multiple(d, [
+      "New function params:",
+      list_join_comma_space(param_names),
+    ]);
   }
   app_code_button_rename_generic(
     overlay,
