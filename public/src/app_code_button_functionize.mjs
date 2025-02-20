@@ -134,7 +134,7 @@ export function app_code_button_functionize(
       "",
       async_is,
     );
-    js_parse(declare_code);
+    let ast_new = js_parse(declare_code);
     await ast_change_finish(
       string_combine_multiple([
         error("todo"),
