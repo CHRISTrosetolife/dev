@@ -9,6 +9,7 @@ import { html_input_validated_button } from "./html_input_validated_button.mjs";
 import { html_overlay_container } from "./html_overlay_container.mjs";
 import { html_button } from "./html_button.mjs";
 export function app_code_button_rename_generic(
+  context,
   overlay,
   button_text,
   menu_refresh,
@@ -17,7 +18,6 @@ export function app_code_button_rename_generic(
   input_placeholder,
   error_message,
   on_click,
-  context,
 ) {
   html_button(overlay, button_text, async function () {
     let function_selected = app_code_function_selected_get(context);

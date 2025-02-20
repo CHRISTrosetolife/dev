@@ -47,6 +47,7 @@ export function app_code_button_rename(
     return before;
   }
   app_code_button_rename_generic(
+    context,
     overlay,
     selection_rename_text,
     menu_refresh,
@@ -55,6 +56,5 @@ export function app_code_button_rename(
     input_placeholder,
     error_message,
     on_click,
-    context,
   );
 }
