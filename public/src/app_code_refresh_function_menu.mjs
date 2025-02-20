@@ -1,5 +1,4 @@
 import { noop } from "./noop.mjs";
-import { app_code_refresh_function_change } from "./app_code_refresh_function_change.mjs";
 import { function_rename } from "./function_rename.mjs";
 import { app_code_button_copy_generic } from "./app_code_button_copy_generic.mjs";
 import { function_copy } from "./function_copy.mjs";
@@ -96,9 +95,7 @@ export function app_code_refresh_function_menu(arg) {
       },
       ast_change_finish,
       overlay_remove,
-      async function (after_value) {
-        await app_code_refresh_function_change(after_value);
-      },
+      async function (after_value) {},
     );
   }
   app_code_button_menu_app(context, overlay, overlay_remove);
