@@ -1,3 +1,4 @@
+import { app_code_function_selected_get } from "./app_code_function_selected_get.mjs";
 import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
 import { function_name_new } from "./function_name_new.mjs";
 import { string_case_upper_first } from "./string_case_upper_first.mjs";
@@ -42,6 +43,7 @@ export function app_code_button_functionize(
   menu_refresh,
   ast_change_finish,
 ) {
+  let function_selected = app_code_function_selected_get(context);
   let selection_rename_text = "Selection functionize";
   let input_placeholder = "New function name";
   let error_message = "Function name already exists";

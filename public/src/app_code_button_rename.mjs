@@ -13,6 +13,7 @@ export function app_code_button_rename(
   ast,
   selection_result,
 ) {
+  let function_selected = app_code_function_selected_get(context);
   let selection_rename_text = "Selection rename";
   let input_placeholder = "Name after";
   let error_message = "Identifier already exists";
