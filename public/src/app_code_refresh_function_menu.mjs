@@ -108,7 +108,7 @@ export function app_code_refresh_function_menu(arg) {
     refresh();
     overlay_remove();
   }
-  async function ast_change_finish_outside(batch_message) {
+  async function ast_change_finish_change(batch_message) {
     await ast_change_finish_outside(batch_message);
     refresh();
     overlay_remove();
