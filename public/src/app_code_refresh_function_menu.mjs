@@ -1,3 +1,4 @@
+import { function_copy } from "./function_copy.mjs";
 import { functions_names } from "./functions_names.mjs";
 import { noop } from "./noop.mjs";
 import { app_code_button_rename_generic } from "./app_code_button_rename_generic.mjs";
@@ -78,7 +79,9 @@ export function app_code_refresh_function_menu(arg) {
       functions_names,
       "Function name new",
       "Function already exists",
-      function () {},
+      async function (on_overlay_result, after_value) {
+        await function_copy();
+      },
     );
     html_button(overlay, async function () {
       app_code_refresh_function_selection_remove(selection_result);
