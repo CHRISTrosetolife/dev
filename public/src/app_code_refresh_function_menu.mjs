@@ -66,6 +66,7 @@ export function app_code_refresh_function_menu(arg) {
       );
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
+  } else {
   }
   app_code_button_menu_app(context, overlay, overlay_remove);
   function overlay_remove() {
