@@ -1,3 +1,4 @@
+import { app_code_property_path } from "./app_code_property_path.mjs";
 import { app_code_property_deleted } from "./app_code_property_deleted.mjs";
 import { app_code_property_contents } from "./app_code_property_contents.mjs";
 import { global_files } from "./global_files.mjs";
@@ -9,7 +10,7 @@ import { web_is } from "./web_is.mjs";
 import { list_add } from "./list_add.mjs";
 import { todo } from "./todo.mjs";
 import { global_function } from "./global_function.mjs";
-export async function file_overwrite_generic(path, contents, encoding) {
+export async function file_overwrite_generic(file_path, contents, encoding) {
   if (web_is()) {
     todo(
       "maybe this should use ",
@@ -17,17 +18,17 @@ export async function file_overwrite_generic(path, contents, encoding) {
       "instead of a specific property name",
     );
     let { [global_files()]: files } = global_get();
-    object_property_set(files, path, contents);
+    object_property_set(files, file_path, contents);
     let fcs = global_file_changes();
     list_add(fcs, {
-      path,
+      [app_code_property_path()]: file_path,
       [app_code_property_contents()]: contents,
       [app_code_property_deleted()]: false,
     });
   } else {
     let fs = await import("fs");
-    await folder_parent_exists_ensure(path);
-    let v = await fs.promises.writeFile(path, contents, encoding);
+    await folder_parent_exists_ensure(file_path);
+    let v = await fs.promises.writeFile(file_path, contents, encoding);
     return v;
   }
 }
