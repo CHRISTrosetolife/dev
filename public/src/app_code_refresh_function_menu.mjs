@@ -1,5 +1,4 @@
 import { file_js_unparse_code } from "./file_js_unparse_code.mjs";
-import { todo } from "./todo.mjs";
 import { app_code_user_upload_batch } from "./app_code_user_upload_batch.mjs";
 import { app_code_function_selected_get } from "./app_code_function_selected_get.mjs";
 import { app_code_button_variablize } from "./app_code_button_variablize.mjs";
@@ -72,14 +71,8 @@ export function app_code_refresh_function_menu(arg) {
   }
   async function ast_change_finish(batch_message) {
     assert(string_is, [batch_message]);
-    todo(
-      "maybe this function should not exist to modify ast's and all code should use ",
-      file_js_unparse_code,
-      " so that file operations are only when there are changes",
-    );
-    let before = null;
-    let v = await file_js_unparse_code(ast, path, before);
-    return v;
+    let before = file_js_read();
+    await file_js_unparse_code(ast, path, before);
     let fcs = global_file_changes();
     let files = {};
     each(fcs, function (fc) {
