@@ -83,7 +83,7 @@ export function app_code_refresh_function_menu(arg) {
       );
     });
     let upload = false;
-    if (false) {
+    if (upload) {
       await app_code_user_upload_batch(context, files, batch_message);
     }
     refresh();
