@@ -30,7 +30,6 @@ export function app_code_button_copy_generic(
           list_between(list_concat([fn.name], fn_args), " "),
         ),
       );
-      await on_finish(after_value);
       await app_code_refresh_function_change(after_value);
       overlay_remove();
     },
