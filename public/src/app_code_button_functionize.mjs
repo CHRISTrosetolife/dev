@@ -151,6 +151,7 @@ export function app_code_button_functionize(
     let wrapper = async ? js_expression_await : identity;
     list_insert(
       ancestor_common,
+      low,
       wrapper(
         js_expression_call_args(
           function_name_new,
