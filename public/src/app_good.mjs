@@ -28,6 +28,8 @@ export function app_good() {
           "Cause me to suffer in the flesh and cease from sin",
           "Cause me to either speak perfectly or be silent",
           "If possible have mercy on all creation",
+          "If possible may all come to repentance",
+          "May the coming of the day of God be hastened",
           "Help Christians be perfect in mercy",
           "Bless the family of love",
           "Bless papa",
