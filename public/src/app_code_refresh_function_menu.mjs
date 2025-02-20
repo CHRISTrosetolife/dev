@@ -147,9 +147,9 @@ export function app_code_refresh_function_menu(arg) {
       app_code_button_rename(
         overlay,
         menu_refresh,
+        ast_change_finish,
         selection_result,
         ast,
-        ast_change_finish,
         function_selected,
       );
     }

@@ -14,9 +14,9 @@ import { html_button } from "./html_button.mjs";
 export function app_code_button_rename(
   overlay,
   menu_refresh,
+  ast_change_finish,
   selection_result,
   ast,
-  ast_change_finish,
   function_selected,
 ) {
   let selection_rename_text = "Selection rename";
