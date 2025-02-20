@@ -33,6 +33,7 @@ export async function app_code_refresh_function(context) {
     let contents = await app_code_file_get(path);
     if (contents === null) {
       app_code_refresh_functions_recent(context);
+      return;
     }
     let ast = js_parse(contents);
     let args = {
