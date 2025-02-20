@@ -61,7 +61,7 @@ export async function app_code_local_download(username) {
           if (deleted) {
             await file_delete(file_path);
           } else {
-              await file_overwrite(file_path, contents);
+            await file_overwrite(file_path, contents);
           }
         },
       );
