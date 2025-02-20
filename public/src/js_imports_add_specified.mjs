@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_add_first } from "./list_add_first.mjs";
 import { js_imports_existing_names } from "./js_imports_existing_names.mjs";
 import { js_identifiers_intersect_difference } from "./js_identifiers_intersect_difference.mjs";
@@ -12,9 +11,6 @@ export function js_imports_add_specified(ast, specified) {
   let existing = js_imports_existing_names(ast);
   let combined = list_concat(existing, self);
   let missing = js_identifiers_intersect_difference(ast, specified, combined);
-  log({
-    missing,
-  });
   let { body } = ast;
   for (let m of missing) {
     let code = js_code_import(m);
