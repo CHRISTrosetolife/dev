@@ -7,7 +7,7 @@ import { html_overlay_container } from "./html_overlay_container.mjs";
 import { html_button } from "./html_button.mjs";
 export function app_code_button_rename_generic(
   overlay,
-  selection_rename_text,
+  button_text,
   menu_refresh,
   on_overlay,
   invalid_list_get,
@@ -15,7 +15,7 @@ export function app_code_button_rename_generic(
   error_message,
   on_click,
 ) {
-  html_button(overlay, selection_rename_text, async function () {
+  html_button(overlay, button_text, async function () {
     let d = html_overlay_container(overlay, menu_refresh);
     let on_overlay_result = on_overlay(d);
     let invalid = await invalid_list_get();
@@ -27,7 +27,7 @@ export function app_code_button_rename_generic(
         error_message,
         invalid,
       ),
-      selection_rename_text,
+      button_text,
       async function () {
         let after_value = html_value_get(input);
         await on_click(on_overlay_result, after_value);
