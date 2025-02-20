@@ -82,7 +82,7 @@ export function app_code_refresh_function_menu(arg) {
         object_properties_new(fc, [app_code_property_contents()]),
       );
     });
-    await app_code_user_upload_batch(files, batch_message, context);
+    await app_code_user_upload_batch(context, files, batch_message);
     refresh();
     overlay_remove();
   }

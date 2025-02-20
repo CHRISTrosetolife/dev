@@ -6,9 +6,9 @@ import { date_now } from "./date_now.mjs";
 import { app_code_property_message } from "./app_code_property_message.mjs";
 import { app_code_batch_path_get } from "./app_code_batch_path_get.mjs";
 export async function app_code_user_upload_batch(
+  context,
   files,
   batch_message,
-  context,
 ) {
   let batch_path_previous = await app_code_batch_path_get();
   let batch_new = {
