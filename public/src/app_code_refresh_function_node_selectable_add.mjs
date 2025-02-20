@@ -30,6 +30,7 @@ export function app_code_refresh_function_node_selectable_add(
   data_property_name,
   component,
   key,
+) {
   let data = app_code_refresh_function_data_get(args);
   let nodes = object_property_initialize(data, data_property_name, []);
   let nodes_list = object_property_initialize(nodes, key, []);
