@@ -1,3 +1,4 @@
+import { app_code_property_contents } from "./app_code_property_contents.mjs";
 import { global_files } from "./global_files.mjs";
 import { global_file_changes } from "./global_file_changes.mjs";
 import { folder_parent_exists_ensure } from "./folder_parent_exists_ensure.mjs";
@@ -19,7 +20,7 @@ export async function file_overwrite_generic(path, contents, encoding) {
     let fcs = global_file_changes();
     list_add(fcs, {
       path,
-      contents,
+      [app_code_property_contents()]: contents,
     });
   } else {
     let fs = await import("fs");
