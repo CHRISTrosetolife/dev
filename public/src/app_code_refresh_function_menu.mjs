@@ -73,7 +73,7 @@ export function app_code_refresh_function_menu(arg) {
       "Function rename",
       menu_refresh,
       fn_name("function_rename"),
-      async function (after_value) {
+      function (after_value) {
         let v = [selection_result, after_value];
         return v;
       },
