@@ -1,3 +1,4 @@
+import { function_new_generic_ast } from "./function_new_generic_ast.mjs";
 import { app_code_function_selected_get } from "./app_code_function_selected_get.mjs";
 import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
 import { function_name_new } from "./function_name_new.mjs";
@@ -142,6 +143,7 @@ export function app_code_button_functionize(
     let ast_new = js_parse(declare_code);
     let body = js_declaration_single_body(ast_new);
     list_add_multiple(body, removals);
+    await function_new_generic_ast(function_name_new, ast_new, false, false);
     await ast_change_finish(
       string_combine_multiple([
         error("todo"),
