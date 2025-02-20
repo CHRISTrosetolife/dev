@@ -29,10 +29,7 @@ export function app_code_button_rename(
   };
   html_button(overlay, selection_rename_text, async function () {
     let d = html_overlay_container(overlay, menu_refresh);
-    let { node } =
-      app_code_refresh_function_selection_one_get(selection_result);
-    let before = object_property_get(node, "name");
-    html_p_text_multiple(d, ["Name before:", before]);
+    let before = on_overlay(d);
     let invalid = invalid_list_get();
     let input;
     let after = html_input_validated_button(
@@ -63,4 +60,11 @@ export function app_code_button_rename(
     input = object_property_get(after, "input");
     html_focus(input);
   });
+  function on_overlay(d) {
+    let { node } =
+      app_code_refresh_function_selection_one_get(selection_result);
+    let before = object_property_get(node, "name");
+    html_p_text_multiple(d, ["Name before:", before]);
+    return before;
+  }
 }
