@@ -128,6 +128,7 @@ export function app_code_button_functionize(
     js_code_export_function_declare(
       function_name_new,
       list_join_comma_space(param_names),
+      "",
     );
     await ast_change_finish(
       string_combine_multiple([
