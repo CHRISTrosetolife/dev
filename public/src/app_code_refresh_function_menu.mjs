@@ -105,6 +105,8 @@ export function app_code_refresh_function_menu(arg) {
     let before = await file_read(path);
     await file_js_unparse_code(ast, path, before);
     await ast_change_finish_outside(batch_message);
+    refresh();
+    overlay_remove();
   }
   async function ast_change_finish_outside(batch_message) {
     let fcs = global_file_changes();
@@ -124,7 +126,5 @@ export function app_code_refresh_function_menu(arg) {
     if (upload) {
       await app_code_user_upload_batch(context, files, batch_message);
     }
-    refresh();
-    overlay_remove();
   }
 }
