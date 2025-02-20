@@ -81,7 +81,7 @@ export function app_code_refresh_function_menu(arg) {
       functions_names,
       "Function name new",
       "Function already exists",
-      async function (on_overlay_result, after_value) {
+      async function (function_selected, after_value) {
         await function_copy(selection_result, after_value);
         await ast_change_finish(
           string_combine_multiple(
