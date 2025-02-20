@@ -30,6 +30,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { js_identifiers_shadowed_names } from "./js_identifiers_shadowed_names.mjs";
 import { html_button } from "./html_button.mjs";
+import { functions_names } from "./functions_names.mjs";
 export function app_code_button_functionize(
   overlay,
   ast,
@@ -40,10 +41,9 @@ export function app_code_button_functionize(
   let selection_rename_text = "Selection functionize";
   let input_placeholder = "New function name";
   let error_message = "Function name already exists";
-  let invalid_list_get = function () {
-    let existing = js_identifiers_names(ast);
-    let v = existing;
-    return v;
+  let invalid_list_get = async function () {
+    let existing = await functions_names();
+    return existing;
   };
   function on_overlay(d) {
     let s = js_identifiers_shadowed_names(ast);
