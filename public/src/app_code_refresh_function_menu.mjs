@@ -1,3 +1,4 @@
+import { app_code_property_deleted } from "./app_code_property_deleted.mjs";
 import { app_code_button_copy_generic } from "./app_code_button_copy_generic.mjs";
 import { file_read } from "./file_read.mjs";
 import { file_js_unparse_code } from "./file_js_unparse_code.mjs";
@@ -111,7 +112,10 @@ export function app_code_refresh_function_menu(arg) {
       object_property_set(
         files,
         path2,
-        object_properties_new(fc, [app_code_property_contents(),app_code_property_deleted()]),
+        object_properties_new(fc, [
+          app_code_property_contents(),
+          app_code_property_deleted(),
+        ]),
       );
     });
     let upload = true;
