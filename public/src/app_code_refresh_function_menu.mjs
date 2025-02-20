@@ -80,6 +80,7 @@ export function app_code_refresh_function_menu(arg) {
       },
       ast_change_finish_outside,
       overlay_remove,
+      context,
     );
     app_code_button_copy_generic(
       overlay,
@@ -92,6 +93,7 @@ export function app_code_refresh_function_menu(arg) {
       },
       ast_change_finish,
       overlay_remove,
+      context,
     );
   }
   app_code_button_menu_app(context, overlay, overlay_remove);
