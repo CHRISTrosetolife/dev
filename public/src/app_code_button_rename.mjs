@@ -33,14 +33,14 @@ export function app_code_button_rename(
       app_code_refresh_function_selection_one_get(selection_result);
     let before = object_property_get(node, "name");
     html_p_text_multiple(d, ["Name before:", before]);
-    let existing = js_identifiers_names(ast);
+    let invalid = invalid_list_get();
     let input;
     let after = html_input_validated_button(
       d,
       input_placeholder,
       html_conditions_letters_numbers_underscores_spaces_list_includes_not(
         error_message,
-        existing,
+        invalid,
       ),
       selection_rename_text,
       async function () {
