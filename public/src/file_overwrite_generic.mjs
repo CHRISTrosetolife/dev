@@ -1,3 +1,4 @@
+import { app_code_property_deleted } from "./app_code_property_deleted.mjs";
 import { app_code_property_contents } from "./app_code_property_contents.mjs";
 import { global_files } from "./global_files.mjs";
 import { global_file_changes } from "./global_file_changes.mjs";
@@ -21,6 +22,7 @@ export async function file_overwrite_generic(path, contents, encoding) {
     list_add(fcs, {
       path,
       [app_code_property_contents()]: contents,
+      [app_code_property_deleted()]: false,
     });
   } else {
     let fs = await import("fs");
