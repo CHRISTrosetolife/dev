@@ -20,6 +20,7 @@ export function app_code_button_rename(
   function_selected,
 ) {
   let selection_rename_text = "Selection rename";
+  let input_placeholder = "Name after";
   html_button(overlay, selection_rename_text, async function () {
     let d = html_overlay_container(overlay, menu_refresh);
     let { node } =
@@ -31,7 +32,7 @@ export function app_code_button_rename(
     let message = "Identifier already exists";
     let after = html_input_validated_button(
       d,
-      "Name after",
+      input_placeholder,
       html_conditions_letters_numbers_underscores_spaces_list_includes_not(
         message,
         existing,
