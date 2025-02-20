@@ -145,8 +145,8 @@ export function app_code_button_functionize(
     await function_new_generic_ast(function_name_new, ast_new, false, false);
     let e = js_expression_call_args_await_maybe(
       function_name_new,
-      async_is,
       param_names,
+      async_is,
     );
     list_insert(ancestor_common, low, e);
     await js_imports_fix(ast);
