@@ -75,71 +75,7 @@ export function app_code_refresh_function_menu(arg) {
       app_code_refresh_function_selection_remove(selection_result);
       ast_change_finish(fn_name("app_code_refresh_function_selection_remove"));
     });
-    html_button(overlay, "Selection functionize", async function () {
-      let s = js_identifiers_shadowed_names(ast);
-      if (list_empty_not_is(s)) {
-        alert(
-          string_combine_multiple([
-            "the same identifier is defined as a shadow: ",
-            list_join_comma_space(s),
-          ]),
-        );
-        return;
-      }
-      let { ancestor_common, low, high, removals } =
-        app_code_refresh_function_selection_removals(selection_result);
-      let f = list_first(removals);
-      let v = js_visit_find(ast, f);
-      let inputs_possible = js_identifiers_scoped(v);
-      let removed_identifiers_names_lists = list_map(
-        removals,
-        js_identifiers_names,
-      );
-      let removed_identifiers_names = list_flatten(
-        removed_identifiers_names_lists,
-      );
-      let intersected = list_intersect(
-        inputs_possible,
-        removed_identifiers_names,
-      );
-      let imports_names = js_imports_existing_names(ast);
-      let param_names = list_difference(intersected, imports_names);
-      log({
-        param_names,
-        inputs_possible,
-      });
-      let async_is = false;
-      each(removals, function (r) {
-        js_visit_generic(
-          r,
-          function (v) {
-            let node2 = object_property_get(v, "node");
-            if (js_node_type_is(node2, "AwaitExpression")) {
-              async_is = true;
-              return true;
-            }
-          },
-          function (n) {
-            return !js_node_is(n) || !js_function_types_is(js_node_type_get(n));
-          },
-        );
-        if (async_is) {
-          return true;
-        }
-      });
-      log({
-        async_is,
-      });
-      let d = html_overlay_container(overlay, menu_refresh);
-      html_p_text_multiple(d, [
-        "New function params:",
-        list_join_comma_space(param_names),
-      ]);
-      list_remove_multiple_from(ancestor_common, low, high);
-      js_code_export_function_declare();
-      return;
-      await ast_change_finish(error("todo"));
-    });
+    app_code_button_functionize(overlay, ast, selection_result, menu_refresh, ast_change_finish);
   } else if (object_property_exists(selection_result, "one")) {
     let { visitor, node } =
       app_code_refresh_function_selection_one_get(selection_result);
@@ -210,3 +146,70 @@ export function app_code_refresh_function_menu(arg) {
     overlay_remove();
   }
 }
+function app_code_button_functionize(overlay, ast, selection_result, menu_refresh, ast_change_finish) {
+    html_button(overlay, "Selection functionize", async function () {
+        let s = js_identifiers_shadowed_names(ast);
+        if (list_empty_not_is(s)) {
+            alert(
+                string_combine_multiple([
+                    "the same identifier is defined as a shadow: ",
+                    list_join_comma_space(s),
+                ])
+            );
+            return;
+        }
+        let { ancestor_common, low, high, removals } = app_code_refresh_function_selection_removals(selection_result);
+        let f = list_first(removals);
+        let v = js_visit_find(ast, f);
+        let inputs_possible = js_identifiers_scoped(v);
+        let removed_identifiers_names_lists = list_map(
+            removals,
+            js_identifiers_names
+        );
+        let removed_identifiers_names = list_flatten(
+            removed_identifiers_names_lists
+        );
+        let intersected = list_intersect(
+            inputs_possible,
+            removed_identifiers_names
+        );
+        let imports_names = js_imports_existing_names(ast);
+        let param_names = list_difference(intersected, imports_names);
+        log({
+            param_names,
+            inputs_possible,
+        });
+        let async_is = false;
+        each(removals, function (r) {
+            js_visit_generic(
+                r,
+                function (v) {
+                    let node2 = object_property_get(v, "node");
+                    if (js_node_type_is(node2, "AwaitExpression")) {
+                        async_is = true;
+                        return true;
+                    }
+                },
+                function (n) {
+                    return !js_node_is(n) || !js_function_types_is(js_node_type_get(n));
+                }
+            );
+            if (async_is) {
+                return true;
+            }
+        });
+        log({
+            async_is,
+        });
+        let d = html_overlay_container(overlay, menu_refresh);
+        html_p_text_multiple(d, [
+            "New function params:",
+            list_join_comma_space(param_names),
+        ]);
+        list_remove_multiple_from(ancestor_common, low, high);
+        js_code_export_function_declare();
+        return;
+        await ast_change_finish(error("todo"));
+    });
+}
+
