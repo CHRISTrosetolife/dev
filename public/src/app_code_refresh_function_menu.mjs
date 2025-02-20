@@ -1,4 +1,3 @@
-import { noop } from "./noop.mjs";
 import { function_rename } from "./function_rename.mjs";
 import { app_code_button_copy_generic } from "./app_code_button_copy_generic.mjs";
 import { function_copy } from "./function_copy.mjs";
