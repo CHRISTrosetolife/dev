@@ -1,3 +1,4 @@
+import { app_code_refresh_function_node_selectable_add } from "./app_code_refresh_function_node_selectable_add.mjs";
 import { js_keyword_return } from "./js_keyword_return.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_style_display_inline } from "./html_style_display_inline.mjs";
@@ -265,11 +266,18 @@ export function app_code_refresh_function_node(args) {
     }
   } else if (js_node_type_is(node, "Literal")) {
     let raw2 = object_property_get(node, "raw");
+    let component;
     if (string_is(raw2)) {
-      html_code_string(parent, raw2);
+      component = html_code_string(parent, raw2);
     } else {
       unknown();
     }
+    app_code_refresh_function_node_selectable_add(
+      node,
+      args,
+      "literals",
+      component,
+    );
   } else if (js_node_type_is(node, "AssignmentExpression")) {
     let right = object_property_get(node, "right");
     let left = object_property_get(node, "left");
