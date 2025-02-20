@@ -145,15 +145,11 @@ export function app_code_button_functionize(
     await function_new_generic_ast(function_name_new, ast_new, false, false);
     await ast_change_finish(
       string_combine_multiple([
-        error("todo"),
         fn_name("app_code_button_functionize"),
         " ",
         function_selected,
-        ' : "',
-        on_overlay_result,
-        '" to "',
+        " to ",
         function_name_new,
-        '"',
       ]),
     );
   }
