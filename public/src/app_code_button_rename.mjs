@@ -22,7 +22,11 @@ export function app_code_button_rename(
   let selection_rename_text = "Selection rename";
   let input_placeholder = "Name after";
   let error_message = "Identifier already exists";
-  let invalid_list_get = function () {};
+  let invalid_list_get = function () {
+    let existing = js_identifiers_names(ast);
+    let v = existing;
+    return v;
+  };
   html_button(overlay, selection_rename_text, async function () {
     let d = html_overlay_container(overlay, menu_refresh);
     let { node } =
