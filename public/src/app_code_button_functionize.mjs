@@ -43,7 +43,6 @@ export function app_code_button_functionize(
   menu_refresh,
   ast_change_finish,
 ) {
-  let function_selected = app_code_function_selected_get(context);
   let selection_rename_text = "Selection functionize";
   let input_placeholder = "New function name";
   let error_message = "Function name already exists";
@@ -132,6 +131,7 @@ export function app_code_button_functionize(
   async function on_click(on_overlay_result, function_name_new) {
     let { ancestor_common, low, high, param_names, async_is, removals } =
       on_overlay_result;
+    let function_selected = app_code_function_selected_get(context);
     list_remove_multiple_from(ancestor_common, low, high);
     let declare_code = js_code_export_function_declare(
       function_name_new,
