@@ -15,8 +15,7 @@ export async function file_overwrite_generic(file_path, contents, encoding) {
     );
     let { [global_files()]: files } = global_get();
     object_property_set(files, file_path, contents);
-    let deleted = false;
-    global_file_changes_add(file_path, contents, deleted);
+    global_file_changes_add(file_path, contents, false);
   } else {
     let fs = await import("fs");
     await folder_parent_exists_ensure(file_path);
