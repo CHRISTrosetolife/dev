@@ -41,7 +41,6 @@ export async function app_code_refresh_function(context) {
         let overlay = html_overlay(fn_name("app_code_refresh_function"));
         app_code_refresh_function_menu({
           overlay: overlay,
-          function_selected: function_selected,
           args: args,
           ast: ast,
           context: context,
