@@ -69,10 +69,9 @@ export function app_code_refresh_function_menu(arg) {
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
   } else {
-    let button_text = "Function copy";
     app_code_button_copy_generic(
       overlay,
-      button_text,
+      "Function copy",
       menu_refresh,
       function_copy,
       [selection_result, after_value],
