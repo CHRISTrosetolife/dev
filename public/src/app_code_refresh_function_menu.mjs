@@ -80,7 +80,7 @@ export function app_code_refresh_function_menu(arg) {
       "Function name new",
       "Function already exists",
       async function (on_overlay_result, after_value) {
-        await function_copy();
+        await function_copy(selection_result, after_value);
       },
     );
     html_button(overlay, async function () {
