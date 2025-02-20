@@ -1,3 +1,4 @@
+import { js_declaration_to_body } from "./js_declaration_to_body.mjs";
 import { js_export_function_declare } from "./js_export_function_declare.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { function_new_generic_ast } from "./function_new_generic_ast.mjs";
@@ -14,6 +15,7 @@ export async function function_wrap(function_name, function_name_wrapped) {
     param_names,
     async_is,
   );
+  js_declaration_to_body(ast);
   await function_new_generic_ast(function_name_wrapped, ast);
   return v;
 }
