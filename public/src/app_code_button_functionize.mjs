@@ -32,6 +32,7 @@ import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { js_identifiers_shadowed_names } from "./js_identifiers_shadowed_names.mjs";
 import { html_button } from "./html_button.mjs";
 import { functions_names } from "./functions_names.mjs";
+import { js_parse } from "./js_parse.mjs";
 export function app_code_button_functionize(
   overlay,
   ast,
@@ -133,6 +134,7 @@ export function app_code_button_functionize(
       "",
       async_is,
     );
+    js_parse(declare_code);
     await ast_change_finish(
       string_combine_multiple([
         error("todo"),
