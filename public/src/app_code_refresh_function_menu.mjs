@@ -74,7 +74,7 @@ export function app_code_refresh_function_menu(arg) {
       menu_refresh,
       fn_name("function_rename"),
       function (after_value) {
-        let v = [selection_result, after_value];
+        let v = [function_selected, after_value];
         return v;
       },
       ast_change_finish,
@@ -86,7 +86,7 @@ export function app_code_refresh_function_menu(arg) {
       menu_refresh,
       fn_name("function_copy"),
       function (after_value) {
-        let v3 = [selection_result, after_value];
+        let v3 = [function_selected, after_value];
         return v3;
       },
       ast_change_finish,
