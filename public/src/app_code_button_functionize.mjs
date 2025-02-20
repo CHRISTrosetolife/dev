@@ -1,3 +1,4 @@
+import { function_name_new } from "./function_name_new.mjs";
 import { string_case_upper_first } from "./string_case_upper_first.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { app_code_button_rename_generic } from "./app_code_button_rename_generic.mjs";
@@ -120,10 +121,10 @@ export function app_code_button_functionize(
     };
     return v5;
   }
-  async function on_click(on_overlay_result, after_value) {
+  async function on_click(on_overlay_result, function_name_new) {
     let { ancestor_common, low, high } = on_overlay_result;
     list_remove_multiple_from(ancestor_common, low, high);
-    js_code_export_function_declare(after_value);
+    js_code_export_function_declare(function_name_new);
     await ast_change_finish(
       string_combine_multiple([
         error("todo"),
@@ -133,7 +134,7 @@ export function app_code_button_functionize(
         ' : "',
         on_overlay_result,
         '" to "',
-        after_value,
+        function_name_new,
         '"',
       ]),
     );
