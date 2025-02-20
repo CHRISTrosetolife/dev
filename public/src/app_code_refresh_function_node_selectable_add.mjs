@@ -30,17 +30,16 @@ export function app_code_refresh_function_node_selectable_add(
   data_property_name,
   component,
   key,
-) {
   let data = app_code_refresh_function_data_get(args);
   let nodes = object_property_initialize(data, data_property_name, []);
-  let nodes_list = object_property_initialize(nodes, name, []);
+  let nodes_list = object_property_initialize(nodes, key, []);
   list_add(nodes_list, component);
   let toggled = object_property_initialize(data, "toggled", {});
-  object_property_set(toggled, name, false);
+  object_property_set(toggled, key, false);
   let ast = object_property_get(args, "ast");
   html_on_click(component, function () {
     let selected = app_code_refresh_function_selected_get(data);
-    if (object_property_toggle(toggled, name)) {
+    if (object_property_toggle(toggled, key)) {
       if (map_size(selected) >= 2) {
         let v3;
         return v3;
@@ -54,7 +53,7 @@ export function app_code_refresh_function_node_selectable_add(
       map_remove(selected, node);
     }
     each(nodes_list, function (i) {
-      object_property_get(toggled, name)
+      object_property_get(toggled, key)
         ? html_style_background_color(i, "#4c1406")
         : html_style_background_color_transparent(i);
     });

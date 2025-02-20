@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { app_code_refresh_function_node_selectable_add } from "./app_code_refresh_function_node_selectable_add.mjs";
 export function app_code_refresh_function_node_identifier_add_generic(
   args,
@@ -5,7 +6,7 @@ export function app_code_refresh_function_node_identifier_add_generic(
   component,
 ) {
   let data_property_name = "identifiers";
-    let key = object_property_get(node, "name");
+  let key = object_property_get(node, "name");
   app_code_refresh_function_node_selectable_add(
     identifier,
     args,
