@@ -29,8 +29,8 @@ import { html_button_back_after } from "./html_button_back_after.mjs";
 import { html_clear } from "./html_clear.mjs";
 export function app_code_refresh_function_menu(arg) {
   let { overlay, args, ast, context, path, refresh } = arg;
-  let menu_refresh = async function () {
-    let v2 = await app_code_refresh_function_menu(arg);
+  let menu_refresh = function () {
+    let v2 = app_code_refresh_function_menu(arg);
     return v2;
   };
   let function_selected = app_code_function_selected_get(context);
