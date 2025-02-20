@@ -127,7 +127,7 @@ export function app_code_button_functionize(
     let { ancestor_common, low, high, param_names, async_is } =
       on_overlay_result;
     list_remove_multiple_from(ancestor_common, low, high);
-    js_code_export_function_declare(
+    let declare_code = js_code_export_function_declare(
       function_name_new,
       list_join_comma_space(param_names),
       "",
