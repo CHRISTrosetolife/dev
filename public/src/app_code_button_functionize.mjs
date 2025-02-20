@@ -1,3 +1,4 @@
+import { string_case_upper_first } from "./string_case_upper_first.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { app_code_button_rename_generic } from "./app_code_button_rename_generic.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -106,7 +107,12 @@ export function app_code_button_functionize(
       "New function params:",
       list_join_comma_space(param_names),
     ]);
-    html_p_text(d, string_combine_multiple(["Async:"]));
+    html_p_text(
+      d,
+      string_case_upper_first(
+        string_combine_multiple([async_is ? "" : "not ", "async"]),
+      ),
+    );
   }
   async function on_click(on_overlay_result, after_value) {
     list_remove_multiple_from(ancestor_common, low, high);
