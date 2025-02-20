@@ -41,6 +41,7 @@ export function app_code_button_functionize(
   selection_result,
   menu_refresh,
   ast_change_finish,
+  function_selected,
 ) {
   let selection_rename_text = "Selection functionize";
   let input_placeholder = "New function name";
