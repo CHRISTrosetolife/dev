@@ -92,7 +92,7 @@ export function app_code_refresh_function_menu(arg) {
             ]),
           ),
         );
-        await app_code_refresh_function_change();
+        await app_code_refresh_function_change(after_value);
         overlay_remove();
       },
     );
