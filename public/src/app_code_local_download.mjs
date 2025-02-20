@@ -56,7 +56,9 @@ export async function app_code_local_download(username) {
             value,
             app_code_property_contents(),
           );
-          let deleted = object_property_get(value, app_code_property_deleted());$ib
+          let deleted = object_property_get(value, app_code_property_deleted());
+          if (false) {
+          }
           await file_overwrite(file_path, contents);
         },
       );
