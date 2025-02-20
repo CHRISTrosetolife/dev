@@ -1,3 +1,4 @@
+import { app_code_function_selected_get } from "./app_code_function_selected_get.mjs";
 import { app_code_refresh_function_menu } from "./app_code_refresh_function_menu.mjs";
 import { emoji_lightning } from "./emoji_lightning.mjs";
 import { app_code_file_get } from "./app_code_file_get.mjs";
@@ -13,7 +14,6 @@ import { html_button } from "./html_button.mjs";
 import { html_style_monospace } from "./html_style_monospace.mjs";
 import { js_parse } from "./js_parse.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
-import { storage_local_get_context } from "./storage_local_get_context.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { html_load } from "./html_load.mjs";
@@ -27,10 +27,7 @@ export async function app_code_refresh_function(context) {
       fn_name("app_code_refresh_function"),
     );
     html_style_left(root);
-    let function_selected = storage_local_get_context(
-      context,
-      "function_selected",
-    );
+    let function_selected = app_code_function_selected_get(context);
     let path = function_name_to_path(function_selected);
     let contents = await app_code_file_get(path);
     let ast = js_parse(contents);
