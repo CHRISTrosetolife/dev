@@ -1,3 +1,4 @@
+import { file_read } from "./file_read.mjs";
 import { file_js_unparse_code } from "./file_js_unparse_code.mjs";
 import { app_code_user_upload_batch } from "./app_code_user_upload_batch.mjs";
 import { app_code_function_selected_get } from "./app_code_function_selected_get.mjs";
@@ -71,7 +72,7 @@ export function app_code_refresh_function_menu(arg) {
   }
   async function ast_change_finish(batch_message) {
     assert(string_is, [batch_message]);
-    let before = file_js_read();
+    let before = await file_read(path);
     await file_js_unparse_code(ast, path, before);
     let fcs = global_file_changes();
     let files = {};
