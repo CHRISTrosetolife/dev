@@ -148,7 +148,7 @@ export function app_code_button_functionize(
     let body = js_declaration_single_body(ast_new);
     list_add_multiple(body, removals);
     await function_new_generic_ast(function_name_new, ast_new, false, false);
-    let wrapper = async ? js_expression_await : identity;
+    let wrapper = async_is ? js_expression_await : identity;
     list_insert(
       ancestor_common,
       low,
