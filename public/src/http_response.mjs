@@ -12,6 +12,7 @@ export async function http_response(url) {
     6,
     lambda,
     retry_if([
+      "EAI_AGAIN",
       "ECONNRESET",
       "ENOTFOUND",
       "ETIMEDOUT",
