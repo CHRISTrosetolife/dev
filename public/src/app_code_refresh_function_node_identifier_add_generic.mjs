@@ -31,7 +31,8 @@ export function app_code_refresh_function_node_identifier_add_generic(
 ) {
   let name = object_property_get(identifier, "name");
   let data = app_code_refresh_function_data_get(args);
-  let ids = object_property_initialize(data, "identifiers", []);
+  let data_property_name = "identifiers";
+  let ids = object_property_initialize(data, data_property_name, []);
   let id_list = object_property_initialize(ids, name, []);
   list_add(id_list, component);
   let toggled = object_property_initialize(data, "toggled", {});
