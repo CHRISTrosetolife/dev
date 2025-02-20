@@ -80,10 +80,7 @@ export function app_code_refresh_function_menu(arg) {
         let v = [function_selected, after_value];
         return v;
       },
-      function (batch_message) {
-        let v4 = ast_change_finish(batch_message);
-        return v4;
-      },
+      ast_change_finish_outside,
       overlay_remove,
     );
     app_code_button_copy_generic(
@@ -96,10 +93,7 @@ export function app_code_refresh_function_menu(arg) {
         let v3 = [function_selected, after_value];
         return v3;
       },
-      function (batch_message) {
-        let v5 = ast_change_finish(batch_message);
-        return v5;
-      },
+      ast_change_finish,
       overlay_remove,
     );
   }
