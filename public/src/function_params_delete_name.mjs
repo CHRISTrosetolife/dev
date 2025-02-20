@@ -1,6 +1,4 @@
-import { list_first } from "./list_first.mjs";
-import { list_second } from "./list_second.mjs";
-import { function_param_move_index } from "./function_param_move_index.mjs";
+import { function_param_delete_index } from "./function_param_delete_index.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { list_index } from "./list_index.mjs";
 import { function_params_names } from "./function_params_names.mjs";
@@ -11,9 +9,5 @@ export async function function_params_delete_name(
   assert_arguments_length(arguments, 2);
   let params_names = await function_params_names(function_name);
   let index = list_index(params_names, param_name_to_delete);
-  await function_param_move_index(
-    function_name,
-    list_second(indices),
-    list_first(indices),
-  );
+  await function_param_delete_index(function_name, index);
 }
