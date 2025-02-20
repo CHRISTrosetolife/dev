@@ -1,3 +1,4 @@
+import { list_concat } from "./list_concat.mjs";
 import { app_code_refresh_function_change } from "./app_code_refresh_function_change.mjs";
 import { list_between } from "./list_between.mjs";
 import { function_copy } from "./function_copy.mjs";
@@ -88,7 +89,7 @@ export function app_code_refresh_function_menu(arg) {
         await fn(...fn_args);
         await ast_change_finish(
           string_combine_multiple(
-            list_between([fn.name, selection_result, after_value], " "),
+            list_between(list_concat([fn.name], fn_args), " "),
           ),
         );
         await app_code_refresh_function_change(after_value);
