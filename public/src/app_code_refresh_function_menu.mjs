@@ -1,3 +1,5 @@
+import { functions_names } from "./functions_names.mjs";
+import { noop } from "./noop.mjs";
 import { app_code_button_rename_generic } from "./app_code_button_rename_generic.mjs";
 import { file_read } from "./file_read.mjs";
 import { file_js_unparse_code } from "./file_js_unparse_code.mjs";
@@ -68,8 +70,16 @@ export function app_code_refresh_function_menu(arg) {
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
   } else {
-    app_code_button_rename_generic();
-    html_button(overlay, "Function copy", async function () {
+    app_code_button_rename_generic(
+      overlay,
+      "Function copy",
+      menu_refresh,
+      noop,
+      functions_names,
+      "Function name new",
+      "",
+    );
+    html_button(overlay, async function () {
       app_code_refresh_function_selection_remove(selection_result);
       ast_change_finish(fn_name("app_code_refresh_function_selection_remove"));
     });
