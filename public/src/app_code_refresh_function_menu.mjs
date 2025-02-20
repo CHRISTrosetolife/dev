@@ -1,4 +1,4 @@
-import { html_conditions_letters_numbers_underscores_spaces_list_includes_not } from "./html_conditions_letters_numbers_underscores_spaces_list_includes_not.mjs";
+import { app_code_button_rename } from "./app_code_button_rename.mjs";
 import { html_overlay_container } from "./html_overlay_container.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { list_remove_multiple_from } from "./list_remove_multiple_from.mjs";
@@ -6,7 +6,6 @@ import { js_node_type_get } from "./js_node_type_get.mjs";
 import { js_node_is } from "./js_node_is.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
 import { js_visit_generic } from "./js_visit_generic.mjs";
-import { html_input_validated_button } from "./html_input_validated_button.mjs";
 import { app_code_latest_object } from "./app_code_latest_object.mjs";
 import { app_code_file_name_latest } from "./app_code_file_name_latest.mjs";
 import { app_code_user_upload } from "./app_code_user_upload.mjs";
@@ -30,7 +29,6 @@ import { js_variablize } from "./js_variablize.mjs";
 import { list_next } from "./list_next.mjs";
 import { js_node_type_statement_block_is } from "./js_node_type_statement_block_is.mjs";
 import { list_find_last } from "./list_find_last.mjs";
-import { js_identifier_rename } from "./js_identifier_rename.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { js_node_type_identifier_is } from "./js_node_type_identifier_is.mjs";
 import { app_code_refresh_function_selection_one_get } from "./app_code_refresh_function_selection_one_get.mjs";
@@ -57,8 +55,6 @@ import { app_code_refresh_function_selection } from "./app_code_refresh_function
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_back_after } from "./html_button_back_after.mjs";
 import { html_clear } from "./html_clear.mjs";
-import { html_value_get } from "./html_value_get.mjs";
-import { html_focus } from "./html_focus.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
 export function app_code_refresh_function_menu(arg) {
@@ -148,44 +144,14 @@ export function app_code_refresh_function_menu(arg) {
     let { visitor, node } =
       app_code_refresh_function_selection_one_get(selection_result);
     if (js_node_type_identifier_is(node)) {
-      let selection_rename_text = "Selection rename";
-      html_button(overlay, selection_rename_text, async function () {
-        let d = html_overlay_container(overlay, menu_refresh);
-        let { node } =
-          app_code_refresh_function_selection_one_get(selection_result);
-        let before = object_property_get(node, "name");
-        html_p_text_multiple(d, ["Name before:", before]);
-        let existing = js_identifiers_names(ast);
-        let input;
-        let message = "Identifier already exists";
-        let after = html_input_validated_button(
-          d,
-          "Name after",
-          html_conditions_letters_numbers_underscores_spaces_list_includes_not(
-            message,
-            existing,
-          ),
-          selection_rename_text,
-          async function () {
-            let after_value = html_value_get(input);
-            js_identifier_rename(ast, before, after_value);
-            await ast_change_finish(
-              string_combine_multiple([
-                fn_name("js_identifier_rename"),
-                " ",
-                function_selected,
-                ' : "',
-                before,
-                '" to "',
-                after_value,
-                '"',
-              ]),
-            );
-          },
-        );
-        input = object_property_get(after, "input");
-        html_focus(input);
-      });
+      app_code_button_rename(
+        overlay,
+        menu_refresh,
+        selection_result,
+        ast,
+        ast_change_finish,
+        function_selected,
+      );
     }
     html_button(overlay, "Selection variablize", async function () {
       let stack2 = object_property_get(visitor, "stack");
