@@ -111,7 +111,8 @@ export function app_code_refresh_function_menu(arg) {
   async function ast_change_finish_outside(batch_message) {
     await ast_change_finish_outside(batch_message);
     refresh();
-    overlay_remove();}
+    overlay_remove();
+  }
   async function ast_change_finish_outside(batch_message) {
     let fcs = global_file_changes();
     let files = {};
