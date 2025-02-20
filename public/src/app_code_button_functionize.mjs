@@ -138,7 +138,7 @@ export function app_code_button_functionize(
       async_is,
     );
     let ast_new = js_parse(declare_code);
-    let body = js_declaration_single_body(ast);
+    let body = js_declaration_single_body(ast_new);
     list_add_multiple(body, removals);
     await ast_change_finish(
       string_combine_multiple([
