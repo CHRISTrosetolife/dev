@@ -37,7 +37,7 @@ export function app_code_button_functionize(
   menu_refresh,
   ast_change_finish,
 ) {
-  let selection_rename_text = "Selection rename";
+  let selection_rename_text = "Selection functionize";
   let input_placeholder = "Name after";
   let error_message = "Identifier already exists";
   let invalid_list_get = function () {
@@ -77,7 +77,7 @@ export function app_code_button_functionize(
     error_message,
     on_click,
   );
-  html_button(overlay, "Selection functionize", async function () {
+  html_button(overlay, "", async function () {
     let s = js_identifiers_shadowed_names(ast);
     if (list_empty_not_is(s)) {
       alert(
