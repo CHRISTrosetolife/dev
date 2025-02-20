@@ -44,9 +44,9 @@ export async function function_new_generic(
   let mapped = list_map(imports, js_code_import);
   let concat = list_concat(mapped, [contents_function]);
   let contents = list_join(concat, newline());
-  let parsed = js_parse(contents);
-  await js_imports_fix(parsed);
-  let unparsed = await js_unparse_format(parsed);
+  let ast = js_parse(contents);
+  await js_imports_fix(ast);
+  let unparsed = await js_unparse_format(ast);
   let file_path = function_name_to_path(function_name);
   await write(file_path, unparsed);
   if (open) {
