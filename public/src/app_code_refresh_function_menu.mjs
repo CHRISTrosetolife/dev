@@ -77,7 +77,8 @@ export function app_code_refresh_function_menu(arg) {
       noop,
       functions_names,
       "Function name new",
-      "",
+      "Function already exists",
+      function () {},
     );
     html_button(overlay, async function () {
       app_code_refresh_function_selection_remove(selection_result);
