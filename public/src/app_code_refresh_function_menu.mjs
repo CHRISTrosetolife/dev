@@ -1,3 +1,4 @@
+import { app_code_refresh_function_change } from "./app_code_refresh_function_change.mjs";
 import { list_between } from "./list_between.mjs";
 import { function_copy } from "./function_copy.mjs";
 import { functions_names } from "./functions_names.mjs";
@@ -91,6 +92,8 @@ export function app_code_refresh_function_menu(arg) {
             ]),
           ),
         );
+        await app_code_refresh_function_change();
+        overlay_remove();
       },
     );
   }
