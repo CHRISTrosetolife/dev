@@ -53,14 +53,14 @@ export async function app_code_local_download(username) {
           log({
             file_path,
           });
-          let contents = object_property_get(
-            value,
-            app_code_property_contents(),
-          );
           let deleted = object_property_get(value, app_code_property_deleted());
           if (deleted) {
             await file_delete(file_path);
           } else {
+            let contents = object_property_get(
+              value,
+              app_code_property_contents(),
+            );
             await file_overwrite(file_path, contents);
           }
         },
