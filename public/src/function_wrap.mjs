@@ -1,5 +1,4 @@
 import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
-import { log } from "./log.mjs";
 import { js_expression_call_args_await_maybe_insert } from "./js_expression_call_args_await_maybe_insert.mjs";
 import { js_export_function_declare } from "./js_export_function_declare.mjs";
 import { list_map_property } from "./list_map_property.mjs";
@@ -19,9 +18,6 @@ export async function function_wrap(function_name, function_name_wrapped) {
     async_is,
   );
   let body = js_declaration_single_body(ast);
-  log({
-    body,
-  });
   js_expression_call_args_await_maybe_insert(
     function_name,
     param_names,
