@@ -1,3 +1,4 @@
+import { app_code_refresh_functions_recent } from "./app_code_refresh_functions_recent.mjs";
 import { app_code_function_selected_get } from "./app_code_function_selected_get.mjs";
 import { app_code_refresh_function_menu } from "./app_code_refresh_function_menu.mjs";
 import { emoji_lightning } from "./emoji_lightning.mjs";
@@ -31,6 +32,7 @@ export async function app_code_refresh_function(context) {
     let path = function_name_to_path(function_selected);
     let contents = await app_code_file_get(path);
     if (contents === null) {
+      app_code_refresh_functions_recent(context);
     }
     let ast = js_parse(contents);
     let args = {
