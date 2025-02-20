@@ -227,6 +227,7 @@ export function app_good() {
           "Bless my apps",
           "Bless my music",
           "Bless my songs",
+          "Bless my composing and improvising",
           "Bless my piano",
           "Bless the works of Christians",
           "Help orphans",
