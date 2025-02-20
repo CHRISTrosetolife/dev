@@ -31,5 +31,4 @@ export async function function_new_generic_ast(
   if (open) {
     await file_open(file_path);
   }
-  return v;
 }
