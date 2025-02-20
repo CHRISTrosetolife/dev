@@ -1,7 +1,6 @@
 import { html_p_text } from "./html_p_text.mjs";
 import { app_code_button_rename_generic } from "./app_code_button_rename_generic.mjs";
 import { fn_name } from "./fn_name.mjs";
-import { js_identifier_rename } from "./js_identifier_rename.mjs";
 import { error } from "./error.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { list_remove_multiple_from } from "./list_remove_multiple_from.mjs";
@@ -45,21 +44,6 @@ export function app_code_button_functionize(
     let v = existing;
     return v;
   };
-  async function on_click(on_overlay_result, after_value) {
-    js_identifier_rename(ast, on_overlay_result, after_value);
-    await ast_change_finish(
-      string_combine_multiple([
-        fn_name("js_identifier_rename"),
-        " ",
-        function_selected,
-        ' : "',
-        on_overlay_result,
-        '" to "',
-        after_value,
-        '"',
-      ]),
-    );
-  }
   function on_overlay(d) {
     let s = js_identifiers_shadowed_names(ast);
     if (list_empty_not_is(s)) {
@@ -117,6 +101,22 @@ export function app_code_button_functionize(
     ]);
     html_p_text(d, string_combine_multiple(["Async:"]));
   }
+  async function on_click(on_overlay_result, after_value) {
+    list_remove_multiple_from(ancestor_common, low, high);
+    js_code_export_function_declare();
+    await ast_change_finish(
+      string_combine_multiple([
+        fn_name("js_identifier_rename"),
+        " ",
+        function_selected,
+        ' : "',
+        on_overlay_result,
+        '" to "',
+        after_value,
+        '"',
+      ]),
+    );
+  }
   app_code_button_rename_generic(
     overlay,
     selection_rename_text,
@@ -140,8 +140,6 @@ export function app_code_button_functionize(
       "New function params:",
       list_join_comma_space(param_names),
     ]);
-    list_remove_multiple_from(ancestor_common, low, high);
-    js_code_export_function_declare();
     return;
     await ast_change_finish(error("todo"));
   });
