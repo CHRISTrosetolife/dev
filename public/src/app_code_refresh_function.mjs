@@ -30,7 +30,7 @@ export async function app_code_refresh_function(context) {
     let function_selected = app_code_function_selected_get(context);
     let path = function_name_to_path(function_selected);
     let contents = await app_code_file_get(path);
-    if (false) {
+    if (contents === null) {
     }
     let ast = js_parse(contents);
     let args = {
