@@ -10,12 +10,12 @@ export async function function_wrap(function_name, function_name_wrapped) {
   let params = js_declaration_to_params(d);
   let param_names = list_map_property(params, "name");
   let async_is = object_property_get(d, "async");
-  let ast_new = js_export_function_declare(
+  let ast = js_export_function_declare(
     function_name_wrapped,
     param_names,
     async_is,
   );
-  js_declaration_to_body(ast);
+  let body = js_declaration_to_body(ast);
   await function_new_generic_ast(function_name_wrapped, ast);
   return v;
 }
