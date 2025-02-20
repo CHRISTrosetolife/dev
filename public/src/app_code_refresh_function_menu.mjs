@@ -73,23 +73,22 @@ export function app_code_refresh_function_menu(arg) {
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
   } else {
+    let fn = function_copy;
+    let fn_args = [selection_result, after_value];
+    let button_text = "Function copy";
     app_code_button_rename_generic(
       overlay,
-      "Function copy",
+      button_text,
       menu_refresh,
       noop,
       functions_names,
       "Function name new",
       "Function already exists",
       async function (function_selected, after_value) {
-        await function_copy(selection_result, after_value);
+        await fn(...fn_args);
         await ast_change_finish(
           string_combine_multiple(
-            list_between([
-              fn_name("function_copy"),
-              selection_result,
-              after_value,
-            ]),
+            list_between([fn.name, selection_result, after_value], " "),
           ),
         );
         await app_code_refresh_function_change(after_value);
