@@ -172,7 +172,5 @@ export function app_code_button_functionize(
       "New function params:",
       list_join_comma_space(param_names),
     ]);
-    return;
-    await ast_change_finish(error("todo"));
   });
 }
