@@ -13,7 +13,7 @@ export async function file_delete(file_path) {
     object_property_delete(files, file_path);
     let fcs = global_file_changes();
     list_add(fcs, {
-      file_path,
+       [ app_code_property_path()]:file_path,
       [app_code_property_contents()]: null,
       [app_code_property_deleted()]: true,
     });
