@@ -213,8 +213,8 @@ export function app_code_refresh_function_menu(arg) {
   function overlay_remove() {
     html_remove(overlay);
   }
-  async function ast_change_finish(message) {
-    assert(string_is, [message]);
+  async function ast_change_finish(batch_message) {
+    assert(string_is, [batch_message]);
     await file_js_unparse(path, ast);
     let fcs = global_file_changes();
     let files = {};
@@ -230,7 +230,7 @@ export function app_code_refresh_function_menu(arg) {
     let batch_new = {
       files,
       batch_path_previous,
-      [app_code_property_message()]: message,
+      [app_code_property_message()]: batch_message,
     };
     let when = date_now();
     let batch_name = await app_code_batch_name_when(when);
