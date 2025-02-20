@@ -42,24 +42,27 @@ export function app_code_button_rename(
       selection_rename_text,
       async function () {
         let after_value = html_value_get(input);
-        js_identifier_rename(ast, on_overlay_result, after_value);
-        await ast_change_finish(
-          string_combine_multiple([
-            fn_name("js_identifier_rename"),
-            " ",
-            function_selected,
-            ' : "',
-            on_overlay_result,
-            '" to "',
-            after_value,
-            '"',
-          ]),
-        );
+        await on_click(on_overlay_result, after_value);
       },
     );
     input = object_property_get(after, "input");
     html_focus(input);
   });
+  async function on_click(on_overlay_result, after_value) {
+    js_identifier_rename(ast, on_overlay_result, after_value);
+    await ast_change_finish(
+      string_combine_multiple([
+        fn_name("js_identifier_rename"),
+        " ",
+        function_selected,
+        ' : "',
+        on_overlay_result,
+        '" to "',
+        after_value,
+        '"',
+      ]),
+    );
+  }
   function on_overlay(d) {
     let { node } =
       app_code_refresh_function_selection_one_get(selection_result);
