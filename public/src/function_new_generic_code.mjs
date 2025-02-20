@@ -41,7 +41,6 @@ export async function function_new_generic_code(
     if (await function_exists(function_name)) {
       await function_open(function_name);
       error(string_combine_multiple(["already exists: ", function_name]));
-      return;
     }
     write = file_write;
   }
@@ -52,7 +51,8 @@ export async function function_new_generic_code(
   if (open) {
     await file_open(file_path);
   }
-  return {
+  let v = {
     contents,
   };
+  return v;
 }
