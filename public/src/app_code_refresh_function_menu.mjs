@@ -1,3 +1,4 @@
+import { app_code_button_rename_generic } from "./app_code_button_rename_generic.mjs";
 import { file_read } from "./file_read.mjs";
 import { file_js_unparse_code } from "./file_js_unparse_code.mjs";
 import { app_code_user_upload_batch } from "./app_code_user_upload_batch.mjs";
@@ -67,6 +68,7 @@ export function app_code_refresh_function_menu(arg) {
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
   } else {
+    app_code_button_rename_generic();
     html_button(overlay, "Function copy", async function () {
       app_code_refresh_function_selection_remove(selection_result);
       ast_change_finish(fn_name("app_code_refresh_function_selection_remove"));
