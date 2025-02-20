@@ -6,7 +6,7 @@ import { import_node } from "./import_node.mjs";
 export async function file_delete(file_name) {
   if (web_is()) {
     let { [global_files()]: files } = global_get();
-    let existing = object_property_get(files, file_name_from);
+    let existing = object_property_get(files, file_name);
   }
   let fs = await import_node("fs");
   let v = await fs.promises.rm(file_name);
