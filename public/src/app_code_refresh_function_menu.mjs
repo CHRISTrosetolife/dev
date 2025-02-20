@@ -1,3 +1,4 @@
+import { app_code_refresh_function_change } from "./app_code_refresh_function_change.mjs";
 import { app_code_property_deleted } from "./app_code_property_deleted.mjs";
 import { app_code_button_copy_generic } from "./app_code_button_copy_generic.mjs";
 import { file_read } from "./file_read.mjs";
@@ -108,9 +109,12 @@ export function app_code_refresh_function_menu(arg) {
     refresh();
     overlay_remove();
   }
-  async function ast_change_finish_change(batch_message) {
+  async function ast_change_finish_change(
+    batch_message,
+    function_name_change_to,
+  ) {
     await ast_change_finish_outside(batch_message);
-    refresh();
+    await app_code_refresh_function_change(function_name_change_to);
     overlay_remove();
   }
   async function ast_change_finish_outside(batch_message) {
