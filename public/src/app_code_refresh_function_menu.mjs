@@ -69,14 +69,13 @@ export function app_code_refresh_function_menu(arg) {
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
   } else {
-    let fn = function_copy;
     let fn_args = [selection_result, after_value];
     let button_text = "Function copy";
     app_code_button_copy_generic(
       overlay,
       button_text,
       menu_refresh,
-      fn,
+      function_copy,
       fn_args,
       ast_change_finish,
       overlay_remove,
