@@ -60,22 +60,6 @@ export function app_code_button_functionize(
     );
   }
   function on_overlay(d) {
-    html_p_text_multiple(d, [
-      "New function params:",
-      list_join_comma_space(param_names),
-    ]);
-  }
-  app_code_button_rename_generic(
-    overlay,
-    selection_rename_text,
-    menu_refresh,
-    on_overlay,
-    invalid_list_get,
-    input_placeholder,
-    error_message,
-    on_click,
-  );
-  html_button(overlay, "", async function () {
     let s = js_identifiers_shadowed_names(ast);
     if (list_empty_not_is(s)) {
       alert(
@@ -104,6 +88,22 @@ export function app_code_button_functionize(
     );
     let imports_names = js_imports_existing_names(ast);
     let param_names = list_difference(intersected, imports_names);
+    html_p_text_multiple(d, [
+      "New function params:",
+      list_join_comma_space(param_names),
+    ]);
+  }
+  app_code_button_rename_generic(
+    overlay,
+    selection_rename_text,
+    menu_refresh,
+    on_overlay,
+    invalid_list_get,
+    input_placeholder,
+    error_message,
+    on_click,
+  );
+  html_button(overlay, "", async function () {
     log({
       param_names,
       inputs_possible,
