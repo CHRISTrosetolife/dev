@@ -15,6 +15,7 @@ export function app_code_function_string_change_generic(
   button_text,
   input_placeholder,
   node,
+  ast,
 ) {
   app_code_function_action(
     context,
