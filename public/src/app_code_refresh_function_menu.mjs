@@ -1,8 +1,6 @@
+import { app_code_function_string_change_generic } from "./app_code_function_string_change_generic.mjs";
 import { js_node_type_literal_string_is } from "./js_node_type_literal_string_is.mjs";
 import { js_string } from "./js_string.mjs";
-import { js_unparse } from "./js_unparse.mjs";
-import { list_empty_arrow } from "./list_empty_arrow.mjs";
-import { app_code_function_action } from "./app_code_function_action.mjs";
 import { app_code_refresh_function_change } from "./app_code_refresh_function_change.mjs";
 import { app_code_property_deleted } from "./app_code_property_deleted.mjs";
 import { app_code_button_copy_generic } from "./app_code_button_copy_generic.mjs";
@@ -34,8 +32,6 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_back_after } from "./html_button_back_after.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { list_join_space } from "./list_join_space.mjs";
-import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
-import { object_replace } from "./object_replace.mjs";
 export function app_code_refresh_function_menu(arg) {
   let { overlay, args, ast, context, path, refresh } = arg;
   let menu_refresh = function () {
@@ -88,34 +84,17 @@ export function app_code_refresh_function_menu(arg) {
         let v6 = js_string(value_new);
         return v6;
       }
-      html_button(overlay, button_text, async function () {
-        app_code_function_action(
-          context,
-          overlay,
-          button_text,
-          menu_refresh,
-          function on_overlay(node) {
-            html_p_text_multiple(overlay, ["Old value:", js_unparse(node)]);
-            let value_old = input_value_get(node);
-            let v4 = {
-              [fn_name("app_code_function_action")]: {
-                input_value: value_old,
-              },
-            };
-            return v4;
-          },
-          list_empty_arrow(),
-          input_placeholder,
-          async function (on_overlay_result, value_new) {
-            let node_new = value_to_node(value_new);
-            let node_code_old = js_unparse(node);
-            object_replace(node, node_new);
-            await ast_change_finish(
-              list_join_space([node_code_old, "to", js_unparse(node_new)]),
-            );
-          },
-        );
-      });
+      app_code_function_string_change_generic(
+        overlay,
+        button_text,
+        context,
+        menu_refresh,
+        input_value_get,
+        input_placeholder,
+        value_to_node,
+        node,
+        ast_change_finish,
+      );
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
   } else {
