@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { html_value_get } from "./html_value_get.mjs";
@@ -38,7 +39,9 @@ export function app_code_function_action(
       button_text,
       on_submit,
     );
-    if (object_property_exists(object, fn_name("app_code_function_action"))) {
+    let f = fn_name("app_code_function_action");
+    if (object_property_exists(on_overlay_result, f)) {
+      object_property_get(object, "property_name");
     }
     async function on_submit() {
       let after_value = html_value_get(input);
