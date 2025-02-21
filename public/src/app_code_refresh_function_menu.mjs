@@ -90,7 +90,7 @@ export function app_code_refresh_function_menu(arg) {
               "Old string value:",
               js_unparse(node),
             ]);
-            let value_old = object_property_get(node, "value");
+            let value_old = input_value_get(node);
             let v4 = {
               [fn_name("app_code_function_action")]: {
                 input_value: value_old,
@@ -109,6 +109,10 @@ export function app_code_refresh_function_menu(arg) {
             );
           },
         );
+        function input_value_get(node) {
+          let v5 = object_property_get(node, "value");
+          return v5;
+        }
       });
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
