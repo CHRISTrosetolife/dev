@@ -1,5 +1,4 @@
 import { list_filter_string_empty_not_is } from "./list_filter_string_empty_not_is.mjs";
-import { log } from "./log.mjs";
 import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
 import { bible_storage_interlinear_chapter_definitions_path } from "./bible_storage_interlinear_chapter_definitions_path.mjs";
 import { bible_interlinear_definition } from "./bible_interlinear_definition.mjs";
