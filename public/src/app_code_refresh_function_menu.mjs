@@ -36,6 +36,7 @@ import { html_button_back_after } from "./html_button_back_after.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
+import { object_replace } from "./object_replace.mjs";
 export function app_code_refresh_function_menu(arg) {
   let { overlay, args, ast, context, path, refresh } = arg;
   let menu_refresh = function () {
@@ -104,6 +105,7 @@ export function app_code_refresh_function_menu(arg) {
           async function (on_overlay_result, value_new) {
             let value_old = object_property_get(on_overlay_result, "value_old");
             let node_new = js_string(value_new);
+            object_replace(node, node_new);
             await ast_change_finish(
               list_join_space([
                 js_code_string(value_old),
