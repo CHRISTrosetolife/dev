@@ -34,13 +34,15 @@ export function app_code_button_rename_generic(
     let on_overlay_result = on_overlay(d);
     let invalid = await invalid_list_get();
     let input;
-    let after = html_input_validated_button(
-      d,
-      input_placeholder,
+    let conditions =
       html_conditions_letters_numbers_underscores_spaces_list_includes_not(
         error_message,
         invalid,
-      ),
+      );
+    let after = html_input_validated_button(
+      d,
+      input_placeholder,
+      conditions,
       button_text,
       async function () {
         let after_value = html_value_get(input);
