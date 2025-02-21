@@ -35,6 +35,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_back_after } from "./html_button_back_after.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { html_value_get } from "./html_value_get.mjs";
+import { list_join_space } from "./list_join_space.mjs";
 export function app_code_refresh_function_menu(arg) {
   let { overlay, args, ast, context, path, refresh } = arg;
   let menu_refresh = function () {
@@ -162,12 +163,7 @@ export function app_code_refresh_function_menu(arg) {
     });
     let upload = true;
     if (upload) {
-      let list = [function_selected, batch_message];
       await app_code_user_upload_batch(
         context,
         files,
-        list_between_space(list),
-      );
-    }
-  }
-}
+        l
