@@ -33,6 +33,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_back_after } from "./html_button_back_after.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { list_join_space } from "./list_join_space.mjs";
+import { js_parse_expression } from "./js_parse_expression.mjs";
 export function app_code_refresh_function_menu(arg) {
   let { overlay, args, ast, context, path, refresh } = arg;
   let menu_refresh = function () {
@@ -75,17 +76,28 @@ export function app_code_refresh_function_menu(arg) {
         context,
       );
     } else if (js_node_type_literal_string_is(node)) {
-      app_code_function_string_change_generic(
-        context,
-        overlay,
-        js_string,
-        object_property_get_curry("value"),
-        menu_refresh,
-        ast_change_finish,
-        "String value change",
-        "New string value",
-        node,
-      );
+        app_code_function_string_change_generic(
+          context,
+          overlay,
+          js_string,
+          object_property_get_curry("value"),
+          menu_refresh,
+          ast_change_finish,
+          "String value change",
+          "New string value",
+          node,
+        );
+        app_code_function_string_change_generic(
+          context,
+          overlay,
+          js_parse_expression,
+          object_property_get_curry("value"),
+          menu_refresh,
+          ast_change_finish,
+          "String value change",
+          "New string value",
+          node,
+        );
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
   } else {

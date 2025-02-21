@@ -9,8 +9,8 @@ import { html_button } from "./html_button.mjs";
 export function app_code_function_string_change_generic(
   context,
   overlay,
-  value_to_node,
-  input_value_get,
+  input_value_to_node,
+  node_to_input_value,
   menu_refresh,
   ast_change_finish,
   button_text,
@@ -25,7 +25,7 @@ export function app_code_function_string_change_generic(
       menu_refresh,
       function on_overlay(node) {
         html_p_text_multiple(overlay, ["Old value:", js_unparse(node)]);
-        let value_old = input_value_get(node);
+        let value_old = node_to_input_value(node);
         let v4 = {
           [fn_name("app_code_function_action")]: {
             input_value: value_old,
@@ -36,7 +36,7 @@ export function app_code_function_string_change_generic(
       list_empty_arrow(),
       input_placeholder,
       async function (on_overlay_result, value_new) {
-        let node_new = value_to_node(value_new);
+        let node_new = input_value_to_node(value_new);
         let node_code_old = js_unparse(node);
         object_replace(node, node_new);
         await ast_change_finish(
