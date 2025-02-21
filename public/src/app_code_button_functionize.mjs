@@ -153,8 +153,6 @@ export function app_code_button_functionize(
     await ast_change_finish(
       string_combine_multiple([
         fn_name("app_code_button_functionize"),
-        " ",
-        function_selected,
         " to ",
         function_name_new,
       ]),
