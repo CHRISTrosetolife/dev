@@ -1,3 +1,4 @@
+import { js_code_string } from "./js_code_string.mjs";
 import { html_value_set } from "./html_value_set.mjs";
 import { js_value_string_set } from "./js_value_string_set.mjs";
 import { html_overlay_container } from "./html_overlay_container.mjs";
@@ -80,21 +81,25 @@ export function app_code_refresh_function_menu(arg) {
       let button_text = "Literal value change";
       html_button(overlay, button_text, async function () {
         let d = html_overlay_container(overlay, menu_refresh);
+        let value_old = object_property_get(node, "value");
         let input = html_input_validated_button_focus(
           d,
           "New string value",
           [],
           button_text,
-          function () {
-            let v = html_value_get(input);
-            js_value_string_set(node, v);
+          async function () {
+            let value_new = html_value_get(input);
+            js_value_string_set(node, value_new);
+            await ast_change_finish(
+              list_join_space([
+                fn_name("js_value_string_set"),
+                js_code_string(value_old),
+                js_code_string(),
+              ]),
+            );
           },
         );
-        let value = object_property_get(n, "value");
-        html_value_set(input, value);
-        ast_change_finish(
-          fn_name("app_code_refresh_function_selection_remove"),
-        );
+        html_value_set(input, value_old);
       });
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
