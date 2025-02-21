@@ -21,8 +21,8 @@ export function app_code_function_string_change_generic(
     overlay,
     button_text,
     menu_refresh,
-    function on_overlay(node) {
-      html_p_text_multiple(overlay, ["Old value:", js_unparse(node)]);
+    function on_overlay(d) {
+      html_p_text_multiple(d, ["Old value:", js_unparse(node)]);
       let value_old = node_to_input_value(node);
       let v4 = {
         [fn_name("app_code_function_action")]: {
