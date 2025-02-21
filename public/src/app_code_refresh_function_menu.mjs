@@ -82,6 +82,7 @@ export function app_code_refresh_function_menu(arg) {
       );
     } else if (js_node_type_literal_is(node)) {
       let button_text = "Literal value change";
+      let on_click = js_value_string_set;
       app_code_function_action(
         overlay,
         button_text,
@@ -92,7 +93,6 @@ export function app_code_refresh_function_menu(arg) {
         input_placeholder,
         on_click,
       );
-      let on_submit = js_value_string_set;
       html_button(overlay, button_text, async function () {
         let d = html_overlay_container(overlay, menu_refresh);
         let value_old = on_overlay(node);
