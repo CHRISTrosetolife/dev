@@ -43,6 +43,7 @@ export async function bible_interlinear_upload_generic(language, books_get) {
     strongs = list_unique(strongs);
     log({
       strongs,
+      chapter,
     });
     let definitions = await list_to_lookup_value_async(
       strongs,
