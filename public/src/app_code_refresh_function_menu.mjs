@@ -1,3 +1,5 @@
+import { html_input_validated_button_focus } from "./html_input_validated_button_focus.mjs";
+import { js_node_type_literal_is } from "./js_node_type_literal_is.mjs";
 import { app_code_refresh_function_change } from "./app_code_refresh_function_change.mjs";
 import { app_code_property_deleted } from "./app_code_property_deleted.mjs";
 import { app_code_button_copy_generic } from "./app_code_button_copy_generic.mjs";
@@ -68,6 +70,13 @@ export function app_code_refresh_function_menu(arg) {
         context,
       );
     } else if (js_node_type_literal_is(node)) {
+      let input = html_input_validated_button_focus(
+        d,
+        input_placeholder,
+        conditions,
+        button_text,
+        on_submit,
+      );
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
   } else {
