@@ -4,8 +4,6 @@ import { html_element_select } from "./html_element_select.mjs";
 import { js_code_string } from "./js_code_string.mjs";
 import { html_value_set } from "./html_value_set.mjs";
 import { js_value_string_set } from "./js_value_string_set.mjs";
-import { html_overlay_container } from "./html_overlay_container.mjs";
-import { html_input_validated_button_focus } from "./html_input_validated_button_focus.mjs";
 import { js_node_type_literal_is } from "./js_node_type_literal_is.mjs";
 import { app_code_refresh_function_change } from "./app_code_refresh_function_change.mjs";
 import { app_code_property_deleted } from "./app_code_property_deleted.mjs";
@@ -37,7 +35,6 @@ import { app_code_refresh_function_selection } from "./app_code_refresh_function
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_back_after } from "./html_button_back_after.mjs";
 import { html_clear } from "./html_clear.mjs";
-import { html_value_get } from "./html_value_get.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 export function app_code_refresh_function_menu(arg) {
@@ -93,19 +90,7 @@ export function app_code_refresh_function_menu(arg) {
           on_overlay,
           list_empty_arrow(),
           "New string value",
-          function (on_overlay_result, after_value) {
-            on_click;
-          },
-        );
-        let d = html_overlay_container(overlay, menu_refresh);
-        let value_old = on_overlay(node);
-        let input = html_input_validated_button_focus(
-          d,
-          "New string value",
-          [],
-          button_text,
-          async function () {
-            let value_new = html_value_get(input);
+          async function (value_old, value_new) {
             js_value_string_set(node, value_new);
             await ast_change_finish(
               list_join_space([
