@@ -1,8 +1,6 @@
 import { list_empty_arrow } from "./list_empty_arrow.mjs";
 import { app_code_function_action } from "./app_code_function_action.mjs";
-import { html_element_select } from "./html_element_select.mjs";
 import { js_code_string } from "./js_code_string.mjs";
-import { html_value_set } from "./html_value_set.mjs";
 import { js_value_string_set } from "./js_value_string_set.mjs";
 import { js_node_type_literal_is } from "./js_node_type_literal_is.mjs";
 import { app_code_refresh_function_change } from "./app_code_refresh_function_change.mjs";
@@ -105,8 +103,6 @@ export function app_code_refresh_function_menu(arg) {
             );
           },
         );
-        html_value_set(input, value_old);
-        html_element_select(input);
       });
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
