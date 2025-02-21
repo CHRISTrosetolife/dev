@@ -79,8 +79,12 @@ export function app_code_refresh_function_menu(arg) {
       );
     } else if (js_node_type_literal_is(node)) {
       let button_text = "Literal value change";
+      let input_placeholder = "New string value";
+      function input_value_get(node) {
+        let v5 = object_property_get(node, "value");
+        return v5;
+      }
       html_button(overlay, button_text, async function () {
-        let input_placeholder = "New string value";
         app_code_function_action(
           context,
           overlay,
@@ -107,10 +111,6 @@ export function app_code_refresh_function_menu(arg) {
             );
           },
         );
-        function input_value_get(node) {
-          let v5 = object_property_get(node, "value");
-          return v5;
-        }
       });
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
