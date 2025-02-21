@@ -74,11 +74,10 @@ export function app_code_refresh_function_menu(arg) {
         context,
       );
     } else if (js_node_type_literal_string_is(node)) {
-      let button_text = "String value change";
       app_code_function_string_change_generic(
         context,
         overlay,
-        button_text,
+        "String value change",
         menu_refresh,
         function input_value_get(node) {
           let v5 = object_property_get(node, "value");
