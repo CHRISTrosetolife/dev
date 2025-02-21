@@ -1,3 +1,4 @@
+import { html_overlay_container } from "./html_overlay_container.mjs";
 import { html_input_validated_button_focus } from "./html_input_validated_button_focus.mjs";
 import { js_node_type_literal_is } from "./js_node_type_literal_is.mjs";
 import { app_code_refresh_function_change } from "./app_code_refresh_function_change.mjs";
@@ -70,13 +71,15 @@ export function app_code_refresh_function_menu(arg) {
         context,
       );
     } else if (js_node_type_literal_is(node)) {
-      html_button(overlay, "Selection remove", async function () {
+      let button_text = "Literal value change";
+      html_button(overlay, button_text, async function () {
+        let d = html_overlay_container(overlay, menu_refresh);
         let input = html_input_validated_button_focus(
-          overlay,
+          d,
           "New string value",
           [],
           button_text,
-          on_submit,
+          function () {},
         );
       });
     }
