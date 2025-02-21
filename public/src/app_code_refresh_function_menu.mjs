@@ -81,12 +81,12 @@ export function app_code_refresh_function_menu(arg) {
           let v6 = js_string(value_new);
           return v6;
         },
-        "String value change",
-        menu_refresh,
         function input_value_get(node) {
           let v5 = object_property_get(node, "value");
           return v5;
         },
+        "String value change",
+        menu_refresh,
         "New string value",
         node,
         ast_change_finish,
