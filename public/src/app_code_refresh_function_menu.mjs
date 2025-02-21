@@ -1,3 +1,4 @@
+import { object_property_get_curry } from "./object_property_get_curry.mjs";
 import { app_code_function_string_change_generic } from "./app_code_function_string_change_generic.mjs";
 import { js_node_type_literal_string_is } from "./js_node_type_literal_string_is.mjs";
 import { js_string } from "./js_string.mjs";
@@ -78,10 +79,7 @@ export function app_code_refresh_function_menu(arg) {
         context,
         overlay,
         js_string,
-        function input_value_get(node) {
-          let v5 = object_property_get(node, "value");
-          return v5;
-        },
+        object_property_get_curry("value"),
         menu_refresh,
         ast_change_finish,
         "String value change",
