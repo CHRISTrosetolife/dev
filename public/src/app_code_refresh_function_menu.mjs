@@ -94,6 +94,7 @@ export function app_code_refresh_function_menu(arg) {
               list_join_space([
                 fn_name("js_value_string_set"),
                 js_code_string(value_old),
+                "to",
                 js_code_string(value_new),
               ]),
             );
