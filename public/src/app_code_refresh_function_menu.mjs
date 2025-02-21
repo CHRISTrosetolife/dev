@@ -1,3 +1,4 @@
+import { js_value_string_set } from "./js_value_string_set.mjs";
 import { html_overlay_container } from "./html_overlay_container.mjs";
 import { html_input_validated_button_focus } from "./html_input_validated_button_focus.mjs";
 import { js_node_type_literal_is } from "./js_node_type_literal_is.mjs";
@@ -79,7 +80,9 @@ export function app_code_refresh_function_menu(arg) {
           "New string value",
           [],
           button_text,
-          function () {},
+          function () {
+            js_value_string_set();
+          },
         );
       });
     }
