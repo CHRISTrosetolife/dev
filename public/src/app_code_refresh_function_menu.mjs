@@ -71,8 +71,8 @@ export function app_code_refresh_function_menu(arg) {
       );
     } else if (js_node_type_literal_is(node)) {
       let input = html_input_validated_button_focus(
-        d,
-        input_placeholder,
+        overlay,
+        "New string value",
         conditions,
         button_text,
         on_submit,
