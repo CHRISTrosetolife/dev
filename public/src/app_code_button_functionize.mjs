@@ -1,4 +1,3 @@
-import { list_join_space } from "./list_join_space.mjs";
 import { js_expression_call_args_await_maybe_insert } from "./js_expression_call_args_await_maybe_insert.mjs";
 import { js_export_function_declare } from "./js_export_function_declare.mjs";
 import { js_imports_fix } from "./js_imports_fix.mjs";
@@ -37,6 +36,7 @@ import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { js_identifiers_shadowed_names } from "./js_identifiers_shadowed_names.mjs";
 import { functions_names } from "./functions_names.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
+import { list_join_space } from "./list_join_space.mjs";
 export function app_code_button_functionize(
   overlay,
   ast,
