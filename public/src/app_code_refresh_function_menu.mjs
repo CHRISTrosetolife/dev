@@ -82,18 +82,18 @@ export function app_code_refresh_function_menu(arg) {
       );
     } else if (js_node_type_literal_is(node)) {
       let button_text = "Literal value change";
-      let on_click = js_value_string_set;
-      app_code_function_action(
-        overlay,
-        button_text,
-        context,
-        menu_refresh,
-        on_overlay,
-        conditions_get,
-        input_placeholder,
-        on_click,
-      );
       html_button(overlay, button_text, async function () {
+        let on_click = js_value_string_set;
+        app_code_function_action(
+          overlay,
+          button_text,
+          context,
+          menu_refresh,
+          on_overlay,
+          conditions_get,
+          input_placeholder,
+          on_click,
+        );
         let d = html_overlay_container(overlay, menu_refresh);
         let value_old = on_overlay(node);
         let input = html_input_validated_button_focus(
