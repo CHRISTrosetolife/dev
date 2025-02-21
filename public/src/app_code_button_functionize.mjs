@@ -1,3 +1,4 @@
+import { list_join_space } from "./list_join_space.mjs";
 import { js_expression_call_args_await_maybe_insert } from "./js_expression_call_args_await_maybe_insert.mjs";
 import { js_export_function_declare } from "./js_export_function_declare.mjs";
 import { js_imports_fix } from "./js_imports_fix.mjs";
@@ -151,9 +152,9 @@ export function app_code_button_functionize(
     );
     await js_imports_fix(ast);
     await ast_change_finish(
-      string_combine_multiple([
+      list_join_space([
         fn_name("app_code_button_functionize"),
-        " to ",
+        "to",
         function_name_new,
       ]),
     );
