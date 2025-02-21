@@ -130,6 +130,10 @@ export function app_code_refresh_function_menu(arg) {
       overlay_remove,
     );
   }
+  let imports_fix = "Imports fix";
+  html_button(overlay, imports_fix, async function () {
+    await ast_change_finish(imports_fix);
+  });
   app_code_button_menu_app(context, overlay, overlay_remove);
   function overlay_remove() {
     html_remove(overlay);
