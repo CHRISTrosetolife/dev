@@ -88,7 +88,7 @@ export function app_code_refresh_function_menu(arg) {
           },
         );
         let value = object_property_get(n, "value");
-        html_value_set(input);
+        html_value_set(input, value);
       });
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
