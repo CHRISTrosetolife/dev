@@ -1,3 +1,4 @@
+import { js_unparse } from "./js_unparse.mjs";
 import { object_property_get_curry } from "./object_property_get_curry.mjs";
 import { app_code_function_string_change_generic } from "./app_code_function_string_change_generic.mjs";
 import { js_node_type_literal_string_is } from "./js_node_type_literal_string_is.mjs";
@@ -76,28 +77,28 @@ export function app_code_refresh_function_menu(arg) {
         context,
       );
     } else if (js_node_type_literal_string_is(node)) {
-        app_code_function_string_change_generic(
-          context,
-          overlay,
-          js_string,
-          object_property_get_curry("value"),
-          menu_refresh,
-          ast_change_finish,
-          "String value change",
-          "New string value",
-          node,
-        );
-        app_code_function_string_change_generic(
-          context,
-          overlay,
-          js_parse_expression,
-          object_property_get_curry("value"),
-          menu_refresh,
-          ast_change_finish,
-          "String value change",
-          "New string value",
-          node,
-        );
+      app_code_function_string_change_generic(
+        context,
+        overlay,
+        js_string,
+        object_property_get_curry("value"),
+        menu_refresh,
+        ast_change_finish,
+        "String value change",
+        "New string value",
+        node,
+      );
+      app_code_function_string_change_generic(
+        context,
+        overlay,
+        js_parse_expression,
+        js_unparse,
+        menu_refresh,
+        ast_change_finish,
+        "String value change",
+        "New string value",
+        node,
+      );
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
   } else {
