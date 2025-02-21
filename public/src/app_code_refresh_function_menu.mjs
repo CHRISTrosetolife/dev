@@ -1,3 +1,4 @@
+import { js_unparse } from "./js_unparse.mjs";
 import { list_empty_arrow } from "./list_empty_arrow.mjs";
 import { app_code_function_action } from "./app_code_function_action.mjs";
 import { js_code_string } from "./js_code_string.mjs";
@@ -85,8 +86,11 @@ export function app_code_refresh_function_menu(arg) {
           button_text,
           menu_refresh,
           function on_overlay(node) {
+            html_p_text_multiple(overlay, [
+              "Old string value:",
+              js_unparse(node),
+            ]);
             let value_old = object_property_get(node, "value");
-            html_p_text_multiple(overlay, ["Old string value:", value_old]);
             let v4 = {
               [fn_name("app_code_function_action")]: {
                 input_value: value_old,
