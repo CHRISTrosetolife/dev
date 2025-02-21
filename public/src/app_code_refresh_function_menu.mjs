@@ -36,6 +36,7 @@ import { html_button_back_after } from "./html_button_back_after.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { list_join_space } from "./list_join_space.mjs";
+import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 export function app_code_refresh_function_menu(arg) {
   let { overlay, args, ast, context, path, refresh } = arg;
   let menu_refresh = function () {
@@ -82,6 +83,7 @@ export function app_code_refresh_function_menu(arg) {
       html_button(overlay, button_text, async function () {
         let d = html_overlay_container(overlay, menu_refresh);
         let value_old = object_property_get(node, "value");
+        html_p_text_multiple(overlay, ["Old string value:", value_old]);
         let input = html_input_validated_button_focus(
           d,
           "New string value",
