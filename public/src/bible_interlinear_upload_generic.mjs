@@ -1,3 +1,4 @@
+import { list_filter } from "./list_filter.mjs";
 import { log } from "./log.mjs";
 import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
 import { bible_storage_interlinear_chapter_definitions_path } from "./bible_storage_interlinear_chapter_definitions_path.mjs";
@@ -15,6 +16,7 @@ import { each_async } from "./each_async.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
 import { bible_interlinear_each_chapter } from "./bible_interlinear_each_chapter.mjs";
 import { list_adder } from "./list_adder.mjs";
+import { string_empty_not_is } from "./string_empty_not_is.mjs";
 export async function bible_interlinear_upload_generic(language, books_get) {
   let books = await books_get();
   let chapters = list_adder(function (la) {
@@ -41,6 +43,7 @@ export async function bible_interlinear_upload_generic(language, books_get) {
     });
     let strongs = list_map_property(tokens, "strong");
     strongs = list_unique(strongs);
+    strongs = list_filter(strongs, string_empty_not_is);
     log({
       strongs,
       chapter,
