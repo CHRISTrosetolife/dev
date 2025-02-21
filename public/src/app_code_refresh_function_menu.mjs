@@ -70,13 +70,15 @@ export function app_code_refresh_function_menu(arg) {
         context,
       );
     } else if (js_node_type_literal_is(node)) {
-      let input = html_input_validated_button_focus(
-        overlay,
-        "New string value",
-        conditions,
-        button_text,
-        on_submit,
-      );
+      html_button(overlay, "Selection remove", async function () {
+        let input = html_input_validated_button_focus(
+          overlay,
+          "New string value",
+          [],
+          button_text,
+          on_submit,
+        );
+      });
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
   } else {
