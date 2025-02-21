@@ -24,14 +24,11 @@ export function app_code_button_rename(
     return v;
   };
   async function on_click(on_overlay_result, after_value) {
-    let function_selected = app_code_function_selected_get(context);
     js_identifier_rename(ast, on_overlay_result, after_value);
     await ast_change_finish(
       string_combine_multiple([
         fn_name("js_identifier_rename"),
-        " ",
-        function_selected,
-        ' : "',
+        '"',
         on_overlay_result,
         '" to "',
         after_value,
