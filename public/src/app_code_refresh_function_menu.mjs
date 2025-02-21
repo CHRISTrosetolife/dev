@@ -67,7 +67,7 @@ export function app_code_refresh_function_menu(arg) {
         selection_result,
         context,
       );
-    } else {
+    } else if (js_node_type_identifier_is(node)) {
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
   } else {
