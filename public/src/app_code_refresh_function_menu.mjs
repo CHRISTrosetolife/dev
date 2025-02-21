@@ -78,7 +78,7 @@ export function app_code_refresh_function_menu(arg) {
         context,
       );
     } else if (js_node_type_literal_string_is(node)) {
-      let button_text = "Literal value change";
+      let button_text = "String value change";
       let input_placeholder = "New string value";
       function input_value_get(node) {
         let v5 = object_property_get(node, "value");
