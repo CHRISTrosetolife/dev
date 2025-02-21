@@ -77,6 +77,10 @@ export function app_code_refresh_function_menu(arg) {
       app_code_function_string_change_generic(
         context,
         overlay,
+        function value_to_node(value_new) {
+          let v6 = js_string(value_new);
+          return v6;
+        },
         "String value change",
         menu_refresh,
         function input_value_get(node) {
@@ -84,10 +88,6 @@ export function app_code_refresh_function_menu(arg) {
           return v5;
         },
         "New string value",
-        function value_to_node(value_new) {
-          let v6 = js_string(value_new);
-          return v6;
-        },
         node,
         ast_change_finish,
       );
