@@ -86,10 +86,10 @@ export function app_code_refresh_function_menu(arg) {
           return v5;
         },
         menu_refresh,
+        ast_change_finish,
         "String value change",
         "New string value",
         node,
-        ast_change_finish,
       );
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);

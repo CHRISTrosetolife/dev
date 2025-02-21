@@ -12,10 +12,10 @@ export function app_code_function_string_change_generic(
   value_to_node,
   input_value_get,
   menu_refresh,
+  ast_change_finish,
   button_text,
   input_placeholder,
   node,
-  ast_change_finish,
 ) {
   html_button(overlay, button_text, async function () {
     app_code_function_action(
