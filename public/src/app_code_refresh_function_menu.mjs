@@ -164,7 +164,7 @@ export function app_code_refresh_function_menu(arg) {
       await app_code_user_upload_batch(
         context,
         files,
-        string_combine_multiple([batch_message]),
+        string_combine_multiple([function_selected, " ", batch_message]),
       );
     }
   }
