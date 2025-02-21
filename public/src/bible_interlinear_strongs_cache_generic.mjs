@@ -1,4 +1,4 @@
-import { never } from "./never.mjs";
+import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { assert } from "./assert.mjs";
 import { http_cache } from "./http_cache.mjs";
 import { url_secure_w3 } from "./url_secure_w3.mjs";
@@ -8,7 +8,7 @@ export async function bible_interlinear_strongs_cache_generic(
   language,
   strong,
 ) {
-  assert(never, []);
+  assert(string_empty_not_is, [strong]);
   let url = string_combine_multiple([
     url_secure_w3(),
     url_base,
