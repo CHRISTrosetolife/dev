@@ -85,8 +85,8 @@ export function app_code_refresh_function_menu(arg) {
           let v5 = object_property_get(node, "value");
           return v5;
         },
-        "String value change",
         menu_refresh,
+        "String value change",
         "New string value",
         node,
         ast_change_finish,
