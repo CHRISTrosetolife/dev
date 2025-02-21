@@ -32,6 +32,7 @@ import { app_code_refresh_function_selection } from "./app_code_refresh_function
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_back_after } from "./html_button_back_after.mjs";
 import { html_clear } from "./html_clear.mjs";
+import { html_value_get } from "./html_value_get.mjs";
 export function app_code_refresh_function_menu(arg) {
   let { overlay, args, ast, context, path, refresh } = arg;
   let menu_refresh = function () {
@@ -81,6 +82,7 @@ export function app_code_refresh_function_menu(arg) {
           [],
           button_text,
           function () {
+            let v = html_value_get(input);
             js_value_string_set();
           },
         );
