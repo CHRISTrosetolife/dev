@@ -36,6 +36,8 @@ export function app_code_function_action(
       button_text,
       on_submit,
     );
+    if (false) {
+    }
     async function on_submit() {
       let after_value = html_value_get(input);
       await on_click(on_overlay_result, after_value);
