@@ -86,10 +86,7 @@ export function app_code_refresh_function_menu(arg) {
           button_text,
           menu_refresh,
           function on_overlay(node) {
-            html_p_text_multiple(overlay, [
-              "Old string value:",
-              js_unparse(node),
-            ]);
+            html_p_text_multiple(overlay, ["Old value:", js_unparse(node)]);
             let value_old = input_value_get(node);
             let v4 = {
               [fn_name("app_code_function_action")]: {
