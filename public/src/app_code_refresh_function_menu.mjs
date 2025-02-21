@@ -87,6 +87,7 @@ export function app_code_refresh_function_menu(arg) {
             js_value_string_set();
           },
         );
+        let value = object_property_get(n, "value");
         html_value_set(input);
       });
     }
