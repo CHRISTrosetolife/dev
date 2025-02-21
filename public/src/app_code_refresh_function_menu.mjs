@@ -1,3 +1,4 @@
+import { html_element_select } from "./html_element_select.mjs";
 import { js_code_string } from "./js_code_string.mjs";
 import { html_value_set } from "./html_value_set.mjs";
 import { js_value_string_set } from "./js_value_string_set.mjs";
@@ -103,6 +104,7 @@ export function app_code_refresh_function_menu(arg) {
           },
         );
         html_value_set(input, value_old);
+        html_element_select(input);
       });
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
