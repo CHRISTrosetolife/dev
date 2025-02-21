@@ -98,11 +98,7 @@ export function app_code_refresh_function_menu(arg) {
           list_empty_arrow(),
           "New string value",
           async function (on_overlay_result, value_new) {
-            let { value_old } = on_overlay_result;
-            let value_old2 = object_property_get(
-              on_overlay_result,
-              "value_old",
-            );
+            let value_old = object_property_get(on_overlay_result, "value_old");
             js_value_string_set(node, value_new);
             await ast_change_finish(
               list_join_space([
