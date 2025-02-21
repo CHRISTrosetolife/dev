@@ -90,7 +90,10 @@ export function app_code_refresh_function_menu(arg) {
           button_text,
           menu_refresh,
           on_overlay,
-          function () {},
+          function () {
+            let v4 = [];
+            return v4;
+          },
           "New string value",
           on_click,
         );
