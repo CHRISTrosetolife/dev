@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_input_validated_button_focus } from "./html_input_validated_button_focus.mjs";
@@ -37,7 +38,7 @@ export function app_code_function_action(
       button_text,
       on_submit,
     );
-    if (object_property_exists(object, "property_name")) {
+    if (object_property_exists(object, fn_name("app_code_function_action"))) {
     }
     async function on_submit() {
       let after_value = html_value_get(input);
