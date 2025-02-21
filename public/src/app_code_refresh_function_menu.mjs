@@ -1,8 +1,8 @@
+import { js_string } from "./js_string.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { list_empty_arrow } from "./list_empty_arrow.mjs";
 import { app_code_function_action } from "./app_code_function_action.mjs";
 import { js_code_string } from "./js_code_string.mjs";
-import { js_value_string_set } from "./js_value_string_set.mjs";
 import { js_node_type_literal_is } from "./js_node_type_literal_is.mjs";
 import { app_code_refresh_function_change } from "./app_code_refresh_function_change.mjs";
 import { app_code_property_deleted } from "./app_code_property_deleted.mjs";
@@ -103,10 +103,9 @@ export function app_code_refresh_function_menu(arg) {
           "New string value",
           async function (on_overlay_result, value_new) {
             let value_old = object_property_get(on_overlay_result, "value_old");
-            js_value_string_set(node, value_new);
+            let node_new = js_string(value_new);
             await ast_change_finish(
               list_join_space([
-                fn_name("js_value_string_set"),
                 js_code_string(value_old),
                 "to",
                 js_code_string(value_new),
