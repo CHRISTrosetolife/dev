@@ -90,8 +90,8 @@ export function app_code_refresh_function_menu(arg) {
           button_text,
           menu_refresh,
           on_overlay,
-          conditions_get,
-          input_placeholder,
+          function () {},
+          "New string value",
           on_click,
         );
         let d = html_overlay_container(overlay, menu_refresh);
