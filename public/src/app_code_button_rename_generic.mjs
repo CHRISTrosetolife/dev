@@ -30,12 +30,7 @@ export function app_code_button_rename_generic(
       ]),
     );
     let on_overlay_result = on_overlay(d);
-    let invalid = await invalid_list_get();
-    let conditions =
-      html_conditions_letters_numbers_underscores_spaces_list_includes_not(
-        error_message,
-        invalid,
-      );
+    let conditions = await conditions_get();
     let input = html_input_validated_button_focus(
       d,
       input_placeholder,
@@ -48,4 +43,13 @@ export function app_code_button_rename_generic(
       await on_click(on_overlay_result, after_value);
     }
   });
+  async function conditions_get() {
+    let invalid = await invalid_list_get();
+    let conditions =
+      html_conditions_letters_numbers_underscores_spaces_list_includes_not(
+        error_message,
+        invalid,
+      );
+    return conditions;
+  }
 }
