@@ -87,7 +87,11 @@ export function app_code_refresh_function_menu(arg) {
           function on_overlay(node) {
             let value_old = object_property_get(node, "value");
             html_p_text_multiple(overlay, ["Old string value:", value_old]);
-            return value_old;
+            let v4 = {
+              [fn_name("app_code_function_action")]: {},
+              value_old,
+            };
+            return v4;
           },
           list_empty_arrow(),
           "New string value",
