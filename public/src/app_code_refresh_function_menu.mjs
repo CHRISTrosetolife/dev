@@ -1,3 +1,4 @@
+import { html_value_set } from "./html_value_set.mjs";
 import { js_value_string_set } from "./js_value_string_set.mjs";
 import { html_overlay_container } from "./html_overlay_container.mjs";
 import { html_input_validated_button_focus } from "./html_input_validated_button_focus.mjs";
@@ -86,6 +87,7 @@ export function app_code_refresh_function_menu(arg) {
             js_value_string_set();
           },
         );
+        html_value_set(input);
       });
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
