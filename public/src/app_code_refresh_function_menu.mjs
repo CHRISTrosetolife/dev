@@ -88,18 +88,18 @@ export function app_code_refresh_function_menu(arg) {
         "New string value",
         node,
       );
-      app_code_function_string_change_generic(
-        context,
-        overlay,
-        js_parse_expression,
-        js_unparse,
-        menu_refresh,
-        ast_change_finish,
-        "Expression value change",
-        "New expression value",
-        node,
-      );
     }
+    app_code_function_string_change_generic(
+      context,
+      overlay,
+      js_parse_expression,
+      js_unparse,
+      menu_refresh,
+      ast_change_finish,
+      "Expression value change",
+      "New expression value",
+      node,
+    );
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
   } else {
     app_code_button_copy_generic(
