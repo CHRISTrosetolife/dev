@@ -85,9 +85,9 @@ export function app_code_refresh_function_menu(arg) {
         return v6;
       }
       app_code_function_string_change_generic(
+        context,
         overlay,
         button_text,
-        context,
         menu_refresh,
         input_value_get,
         input_placeholder,
