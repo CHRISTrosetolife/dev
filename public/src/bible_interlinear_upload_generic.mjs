@@ -43,10 +43,6 @@ export async function bible_interlinear_upload_generic(language, books_get) {
     let strongs = list_map_property(tokens, "strong");
     strongs = list_unique(strongs);
     strongs = list_filter_string_empty_not_is(strongs);
-    log({
-      strongs,
-      chapter,
-    });
     let definitions = await list_to_lookup_value_async(
       strongs,
       async function (s) {
