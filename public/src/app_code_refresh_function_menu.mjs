@@ -105,6 +105,11 @@ export function app_code_refresh_function_menu(arg) {
         );
         html_value_set(input, value_old);
         html_element_select(input);
+        function on_overlay(node) {
+          let value_old = object_property_get(node, "value");
+          html_p_text_multiple(overlay, ["Old string value:", value_old]);
+          return value_old;
+        }
       });
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
@@ -137,11 +142,6 @@ export function app_code_refresh_function_menu(arg) {
     );
   }
   app_code_button_menu_app(context, overlay, overlay_remove);
-  function on_overlay(node) {
-    let value_old = object_property_get(node, "value");
-    html_p_text_multiple(overlay, ["Old string value:", value_old]);
-    return value_old;
-  }
   function overlay_remove() {
     html_remove(overlay);
   }
