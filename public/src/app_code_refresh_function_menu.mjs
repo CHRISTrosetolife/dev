@@ -79,7 +79,7 @@ export function app_code_refresh_function_menu(arg) {
       );
     } else if (
       js_node_type_literal_is(node) &&
-      string_is(object_property_get(object, "value"))
+      string_is(object_property_get(node, "value"))
     ) {
       let button_text = "Literal value change";
       let input_placeholder = "New string value";
