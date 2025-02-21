@@ -162,11 +162,8 @@ export function app_code_refresh_function_menu(arg) {
     });
     let upload = true;
     if (upload) {
-      await app_code_user_upload_batch(
-        context,
-        files,
-        list_between([function_selected, batch_message], " "),
-      );
+      let list = [function_selected, batch_message];
+      await app_code_user_upload_batch(context, files, list_between(list, " "));
     }
   }
 }
