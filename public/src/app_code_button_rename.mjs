@@ -1,12 +1,12 @@
-import { app_code_function_selected_get } from "./app_code_function_selected_get.mjs";
+import { string_delimit_double } from "./string_delimit_double.mjs";
 import { app_code_button_rename_generic } from "./app_code_button_rename_generic.mjs";
 import { fn_name } from "./fn_name.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { js_identifier_rename } from "./js_identifier_rename.mjs";
 import { js_identifiers_names } from "./js_identifiers_names.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_code_refresh_function_selection_one_get } from "./app_code_refresh_function_selection_one_get.mjs";
+import { list_join_space } from "./list_join_space.mjs";
 export function app_code_button_rename(
   overlay,
   menu_refresh,
@@ -26,13 +26,11 @@ export function app_code_button_rename(
   async function on_click(on_overlay_result, after_value) {
     js_identifier_rename(ast, on_overlay_result, after_value);
     await ast_change_finish(
-      string_combine_multiple([
+      list_join_space([
         fn_name("js_identifier_rename"),
-        '"',
-        on_overlay_result,
-        '" to "',
-        after_value,
-        '"',
+        string_delimit_double(on_overlay_result),
+        "to",
+        string_delimit_double(after_value),
       ]),
     );
   }
