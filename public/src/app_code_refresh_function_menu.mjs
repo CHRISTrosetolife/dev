@@ -161,7 +161,11 @@ export function app_code_refresh_function_menu(arg) {
     });
     let upload = true;
     if (upload) {
-      await app_code_user_upload_batch(context, files, batch_message);
+      await app_code_user_upload_batch(
+        context,
+        files,
+        string_combine_multiple([batch_message]),
+      );
     }
   }
 }
