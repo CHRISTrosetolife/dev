@@ -77,7 +77,10 @@ export function app_code_refresh_function_menu(arg) {
         selection_result,
         context,
       );
-    } else if (js_node_type_literal_is(node)) {
+    } else if (
+      js_node_type_literal_is(node) &&
+      object_property_get(object, "property_name")
+    ) {
       let button_text = "Literal value change";
       let input_placeholder = "New string value";
       function input_value_get(node) {
