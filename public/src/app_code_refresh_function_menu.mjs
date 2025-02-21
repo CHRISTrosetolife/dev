@@ -77,10 +77,7 @@ export function app_code_refresh_function_menu(arg) {
       app_code_function_string_change_generic(
         context,
         overlay,
-        function value_to_node(value_new) {
-          let v6 = js_string(value_new);
-          return v6;
-        },
+        js_string,
         function input_value_get(node) {
           let v5 = object_property_get(node, "value");
           return v5;
