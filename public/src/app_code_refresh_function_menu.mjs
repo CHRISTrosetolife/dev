@@ -95,8 +95,8 @@ export function app_code_refresh_function_menu(arg) {
         js_unparse,
         menu_refresh,
         ast_change_finish,
-        "String value change",
-        "New string value",
+        "Expression value change",
+        "New expression value",
         node,
       );
     }
