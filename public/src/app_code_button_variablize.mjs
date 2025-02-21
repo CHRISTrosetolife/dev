@@ -1,5 +1,5 @@
+import { string_delimit_double } from "./string_delimit_double.mjs";
 import { fn_name } from "./fn_name.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { object_replace } from "./object_replace.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { js_variablize } from "./js_variablize.mjs";
@@ -8,6 +8,7 @@ import { js_node_type_statement_block_is } from "./js_node_type_statement_block_
 import { list_find_last } from "./list_find_last.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_button } from "./html_button.mjs";
+import { list_join_space } from "./list_join_space.mjs";
 export function app_code_button_variablize(
   overlay,
   visitor,
@@ -24,14 +25,11 @@ export function app_code_button_variablize(
     let node2_code = js_unparse(node);
     object_replace(node, p);
     await ast_change_finish(
-      string_combine_multiple([
+      list_join_space([
         fn_name("js_variablize"),
-        " ",
-        ' : "',
-        node2_code,
-        '" to "',
-        js_unparse(p),
-        '"',
+        string_delimit_double(node2_code),
+        "to",
+        string_delimit_double(js_unparse(p)),
       ]),
     );
   });
