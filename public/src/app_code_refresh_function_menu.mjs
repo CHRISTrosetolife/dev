@@ -51,7 +51,9 @@ export function app_code_refresh_function_menu(arg) {
   if (object_property_exists(selection_result, "two")) {
     html_button(overlay, "Selection remove", async function () {
       app_code_refresh_function_selection_remove(selection_result);
-      ast_change_finish(fn_name("app_code_refresh_function_selection_remove"));
+      await ast_change_finish(
+        fn_name("app_code_refresh_function_selection_remove"),
+      );
     });
     app_code_button_functionize(
       overlay,
