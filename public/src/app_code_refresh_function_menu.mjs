@@ -88,7 +88,6 @@ export function app_code_refresh_function_menu(arg) {
         "String value change",
         "New string value",
         node,
-        ast,
       );
     }
     app_code_function_string_change_generic(
@@ -101,7 +100,6 @@ export function app_code_refresh_function_menu(arg) {
       "Expression value change",
       "New expression value",
       node,
-      ast,
     );
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
   } else {
