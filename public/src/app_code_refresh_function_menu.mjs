@@ -1,4 +1,4 @@
-import { list_between } from "./list_between.mjs";
+import { list_between_space } from "./list_between_space.mjs";
 import { html_value_set } from "./html_value_set.mjs";
 import { js_value_string_set } from "./js_value_string_set.mjs";
 import { html_overlay_container } from "./html_overlay_container.mjs";
@@ -163,7 +163,11 @@ export function app_code_refresh_function_menu(arg) {
     let upload = true;
     if (upload) {
       let list = [function_selected, batch_message];
-      await app_code_user_upload_batch(context, files, list_between(list, " "));
+      await app_code_user_upload_batch(
+        context,
+        files,
+        list_between_space(list),
+      );
     }
   }
 }
