@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { set_remove } from "./set_remove.mjs";
@@ -29,6 +30,9 @@ export async function html_load(lambda) {
     let result = await lambda();
     return result;
   } catch (e) {
+    log({
+      e,
+    });
     throw e;
   } finally {
     set_remove(s, o);
