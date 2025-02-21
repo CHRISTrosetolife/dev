@@ -84,7 +84,7 @@ export function app_code_refresh_function_menu(arg) {
           button_text,
           function () {
             let v = html_value_get(input);
-            js_value_string_set();
+            js_value_string_set(node);
           },
         );
         let value = object_property_get(n, "value");
