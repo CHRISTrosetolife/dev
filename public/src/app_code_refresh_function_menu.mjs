@@ -86,7 +86,11 @@ export function app_code_refresh_function_menu(arg) {
           overlay,
           button_text,
           menu_refresh,
-          on_overlay,
+          function on_overlay(node) {
+            let value_old = object_property_get(node, "value");
+            html_p_text_multiple(overlay, ["Old string value:", value_old]);
+            return value_old;
+          },
           list_empty_arrow(),
           "New string value",
           async function (value_old, value_new) {
@@ -103,11 +107,6 @@ export function app_code_refresh_function_menu(arg) {
         );
         html_value_set(input, value_old);
         html_element_select(input);
-        function on_overlay(node) {
-          let value_old = object_property_get(node, "value");
-          html_p_text_multiple(overlay, ["Old string value:", value_old]);
-          return value_old;
-        }
       });
     }
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
