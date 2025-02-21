@@ -88,14 +88,17 @@ export function app_code_refresh_function_menu(arg) {
             let value_old = object_property_get(node, "value");
             html_p_text_multiple(overlay, ["Old string value:", value_old]);
             let v4 = {
-              [fn_name("app_code_function_action")]: {},
+              [fn_name("app_code_function_action")]: {
+                input_value: value_old,
+              },
               value_old,
             };
             return v4;
           },
           list_empty_arrow(),
           "New string value",
-          async function (value_old, value_new) {
+          async function (on_overlay_result, value_new) {
+            let value_old = on_overlay_result;
             js_value_string_set(node, value_new);
             await ast_change_finish(
               list_join_space([
