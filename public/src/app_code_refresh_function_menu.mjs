@@ -84,6 +84,10 @@ export function app_code_refresh_function_menu(arg) {
         let v5 = object_property_get(node, "value");
         return v5;
       }
+      function value_to_node(value_new) {
+        let v6 = js_string(value_new);
+        return v6;
+      }
       html_button(overlay, button_text, async function () {
         app_code_function_action(
           context,
@@ -103,7 +107,7 @@ export function app_code_refresh_function_menu(arg) {
           list_empty_arrow(),
           input_placeholder,
           async function (on_overlay_result, value_new) {
-            let node_new = js_string(value_new);
+            let node_new = value_to_node(value_new);
             let node_code_old = js_unparse(node);
             object_replace(node, node_new);
             await ast_change_finish(
