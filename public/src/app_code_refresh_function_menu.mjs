@@ -81,10 +81,10 @@ export function app_code_refresh_function_menu(arg) {
       );
     } else if (js_node_type_literal_is(node)) {
       let button_text = "Literal value change";
+      let on_submit = js_value_string_set;
       html_button(overlay, button_text, async function () {
         let d = html_overlay_container(overlay, menu_refresh);
-        let value_old = object_property_get(node, "value");
-        html_p_text_multiple(overlay, ["Old string value:", value_old]);
+        let value_old = on_overlay(node);
         let input = html_input_validated_button_focus(
           d,
           "New string value",
@@ -137,6 +137,11 @@ export function app_code_refresh_function_menu(arg) {
     );
   }
   app_code_button_menu_app(context, overlay, overlay_remove);
+  function on_overlay(node) {
+    let value_old = object_property_get(node, "value");
+    html_p_text_multiple(overlay, ["Old string value:", value_old]);
+    return value_old;
+  }
   function overlay_remove() {
     html_remove(overlay);
   }
