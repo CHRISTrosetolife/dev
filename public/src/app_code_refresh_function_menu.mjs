@@ -1,8 +1,8 @@
+import { js_node_type_literal_string_is } from "./js_node_type_literal_string_is.mjs";
 import { js_string } from "./js_string.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { list_empty_arrow } from "./list_empty_arrow.mjs";
 import { app_code_function_action } from "./app_code_function_action.mjs";
-import { js_node_type_literal_is } from "./js_node_type_literal_is.mjs";
 import { app_code_refresh_function_change } from "./app_code_refresh_function_change.mjs";
 import { app_code_property_deleted } from "./app_code_property_deleted.mjs";
 import { app_code_button_copy_generic } from "./app_code_button_copy_generic.mjs";
@@ -77,10 +77,7 @@ export function app_code_refresh_function_menu(arg) {
         selection_result,
         context,
       );
-    } else if (
-      js_node_type_literal_is(node) &&
-      string_is(object_property_get(node, "value"))
-    ) {
+    } else if (js_node_type_literal_string_is(node)) {
       let button_text = "Literal value change";
       let input_placeholder = "New string value";
       function input_value_get(node) {
