@@ -12,9 +12,9 @@ export function app_code_button_rename_generic(
   on_click,
 ) {
   app_code_function_action(
+    context,
     overlay,
     button_text,
-    context,
     menu_refresh,
     on_overlay,
     conditions_get,

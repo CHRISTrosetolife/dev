@@ -85,9 +85,9 @@ export function app_code_refresh_function_menu(arg) {
       html_button(overlay, button_text, async function () {
         let on_click = js_value_string_set;
         app_code_function_action(
+          context,
           overlay,
           button_text,
-          context,
           menu_refresh,
           on_overlay,
           conditions_get,
