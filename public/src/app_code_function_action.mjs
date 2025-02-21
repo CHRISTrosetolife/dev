@@ -1,3 +1,5 @@
+import { html_element_select } from "./html_element_select.mjs";
+import { html_value_set } from "./html_value_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -41,7 +43,13 @@ export function app_code_function_action(
     );
     let f = fn_name("app_code_function_action");
     if (object_property_exists(on_overlay_result, f)) {
-      object_property_get(object, "property_name");
+      let o = object_property_get(on_overlay_result, f);
+      let p = "input_value";
+      if (object_property_exists(o, p)) {
+        let v = object_property_get(o, p);
+        html_value_set(input, v);
+        html_element_select(input);
+      }
     }
     async function on_submit() {
       let after_value = html_value_get(input);
