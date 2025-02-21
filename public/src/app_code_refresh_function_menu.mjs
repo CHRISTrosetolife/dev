@@ -76,22 +76,20 @@ export function app_code_refresh_function_menu(arg) {
     } else if (js_node_type_literal_string_is(node)) {
       let button_text = "String value change";
       let input_placeholder = "New string value";
-      function input_value_get(node) {
-        let v5 = object_property_get(node, "value");
-        return v5;
-      }
-      function value_to_node(value_new) {
-        let v6 = js_string(value_new);
-        return v6;
-      }
       app_code_function_string_change_generic(
         context,
         overlay,
         button_text,
         menu_refresh,
-        input_value_get,
+        function input_value_get(node) {
+          let v5 = object_property_get(node, "value");
+          return v5;
+        },
         input_placeholder,
-        value_to_node,
+        function value_to_node(value_new) {
+          let v6 = js_string(value_new);
+          return v6;
+        },
         node,
         ast_change_finish,
       );
