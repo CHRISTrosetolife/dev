@@ -1,3 +1,4 @@
+import { js_imports_fix } from "./js_imports_fix.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { object_property_get_curry } from "./object_property_get_curry.mjs";
 import { app_code_function_string_change_generic } from "./app_code_function_string_change_generic.mjs";
@@ -138,6 +139,7 @@ export function app_code_refresh_function_menu(arg) {
   async function ast_change_finish(batch_message) {
     assert(string_is, [batch_message]);
     let before = await file_read(path);
+    await js_imports_fix(ast);
     await file_js_unparse_code(ast, path, before);
     await ast_change_finish_outside(batch_message);
     refresh();
