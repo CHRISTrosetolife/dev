@@ -1,3 +1,4 @@
+import { app_code_function_action } from "./app_code_function_action.mjs";
 import { html_element_select } from "./html_element_select.mjs";
 import { js_code_string } from "./js_code_string.mjs";
 import { html_value_set } from "./html_value_set.mjs";
@@ -81,6 +82,16 @@ export function app_code_refresh_function_menu(arg) {
       );
     } else if (js_node_type_literal_is(node)) {
       let button_text = "Literal value change";
+      app_code_function_action(
+        overlay,
+        button_text,
+        context,
+        menu_refresh,
+        on_overlay,
+        conditions_get,
+        input_placeholder,
+        on_click,
+      );
       let on_submit = js_value_string_set;
       html_button(overlay, button_text, async function () {
         let d = html_overlay_container(overlay, menu_refresh);
