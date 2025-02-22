@@ -23,6 +23,7 @@ export function html_input_validated_button(
   let m = map_new();
   html_input_validated_on_input_lambda_initial(input, function (valid) {
     map_set(m, input, valid);
+    let valid_all = true;
     html_button_enable_if(button, valid);
   });
   function on_click() {
