@@ -1,8 +1,8 @@
+import { app_code_function_names } from "./app_code_function_names.mjs";
 import { app_code_refresh_app_new_generic } from "./app_code_refresh_app_new_generic.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_filter_starts_with } from "./list_filter_starts_with.mjs";
 import { app_prefix } from "./app_prefix.mjs";
-import { functions_names } from "./functions_names.mjs";
 import { app_code_invoke } from "./app_code_invoke.mjs";
 import { app_new } from "./app_new.mjs";
 import { html_condition_includes_not } from "./html_condition_includes_not.mjs";
@@ -11,7 +11,7 @@ import { fn_name } from "./fn_name.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 export async function app_code_refresh_app_new(context) {
-  let fns_all = await functions_names();
+  let fns_all = await app_code_function_names();
   let prefix = app_prefix();
   let fns_prefixed = list_filter_starts_with(fns_all, prefix);
   let fns_without_prefix = list_map(fns_prefixed, function (f) {
