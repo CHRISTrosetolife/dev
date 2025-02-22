@@ -14,7 +14,7 @@ export function html_input_validated_button(
   let input = html_input_validated(root, placeholder, conditions);
   html_on_keydown(input, function (event) {
     if (event.key === "Enter") {
-      document.getElementById("myButton").click();
+      on_click();
     }
   });
   let button = html_button(root, button_text, on_click);
