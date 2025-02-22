@@ -17,7 +17,7 @@ export async function app_code_refresh_function_new(context) {
   );
   let on_submit = async function (name) {
     let v = await function_new(name);
-    return v;
+    return name;
   };
   app_code_refresh_app_new_generic(
     context,
