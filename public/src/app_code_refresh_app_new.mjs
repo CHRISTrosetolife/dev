@@ -12,8 +12,9 @@ import { fn_name } from "./fn_name.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { list_concat } from "./list_concat.mjs";
 export async function app_code_refresh_app_new(context) {
-  let root = app_code_screen_set(context, fn_name("app_code_refresh_app_new"));
-  app_code_button_menu_app(context, root, noop);
+  let function_this = fn_name("app_code_refresh_app_new");
+  let root = app_code_screen_set(context, function_this);
+  app_code_button_menu_app(context, root, noop);$ag
   let f_name = fn_name("apps_list");
   let existing = await app_code_invoke(f_name);
   let message = "not be the name of an existing app";
