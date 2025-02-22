@@ -14,8 +14,9 @@ export function html_input_validated_button(
 ) {
   let input = html_input_validated(root, placeholder, conditions);
   let inputs = [input];
-  each(list, function (item) {});
-  html_on_keydown_enter(input, on_click);
+  each(inputs, function (input) {
+    html_on_keydown_enter(input, on_click);
+  });
   let button = html_button(root, button_text, on_click);
   html_input_validated_on_input_lambda_initial(input, function (valid) {
     html_button_enable_if(button, valid);
