@@ -33,6 +33,7 @@ import { html_button_back_after } from "./html_button_back_after.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
+import { js_identifiers_names } from "./js_identifiers_names.mjs";
 export function app_code_refresh_function_menu(arg) {
   let { overlay, args, ast, context, path, refresh } = arg;
   let menu_refresh = function () {
@@ -108,6 +109,7 @@ export function app_code_refresh_function_menu(arg) {
         menu_refresh,
         button_text,
       );
+      let existing = js_identifiers_names(ast);
       let input_param_name = html_input_validated(d, "Param name", [
         html_condition_identifier_fn(),
         html_condition_includes_not(),
