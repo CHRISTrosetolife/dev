@@ -27,6 +27,8 @@ export function html_input_validated_button(
     let valid_all = true;
     each(inputs, function (input) {
       if (map_exists_not(input)) {
+        valid_all = false;
+      } else {
       }
     });
     html_button_enable_if(button, valid_all);
