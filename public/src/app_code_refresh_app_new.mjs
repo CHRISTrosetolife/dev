@@ -34,6 +34,7 @@ export async function app_code_refresh_app_new(context) {
   let conditions = list_concat(html_condition_identifier_fn_part(), [
     html_condition_includes_not(fns_without_prefix, message),
   ]);
+  let on_submit = app_new;
   let root = app_code_screen_set(context, function_this);
   app_code_button_menu_app(context, root, noop);
   let ib = html_input_validated_button(
@@ -41,8 +42,8 @@ export async function app_code_refresh_app_new(context) {
     input_placeholder,
     conditions,
     button_text,
-    async function on_submit(value) {
-      let f_name_new = await app_new(value);
+    async function (value) {
+      let f_name_new = await on_submit(value);
       await app_code_refresh_function_change(context, f_name_new);
     },
   );
