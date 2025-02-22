@@ -43,7 +43,9 @@ export function html_input_validated_button(
   });
   function on_click() {
     let values = map_new();
-    each(list, function (item) {});
+    each(inputs, function (input) {
+      map_set(values, html_value_get(input));
+    });
     let value = html_value_get(input);
     on_submit(value);
   }
