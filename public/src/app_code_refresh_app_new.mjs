@@ -14,9 +14,8 @@ import { list_concat } from "./list_concat.mjs";
 export async function app_code_refresh_app_new(context) {
   let function_this = fn_name("app_code_refresh_app_new");
   let root = app_code_screen_set(context, function_this);
-  app_code_button_menu_app(context, root, noop);$ag
-  let f_name = fn_name("apps_list");
-  let existing = await app_code_invoke(f_name);
+  app_code_button_menu_app(context, root, noop);
+  let existing = await app_code_invoke(fn_name("apps_list"));
   let message = "not be the name of an existing app";
   let input_placeholder = "App name";
   let ib = html_input_validated_button(
@@ -27,8 +26,8 @@ export async function app_code_refresh_app_new(context) {
     ]),
     "New app",
     async function on_submit(value) {
-      let f_name = await app_new(value);
-      await app_code_refresh_function_change(context, f_name);
+      let f_name_new = await app_new(value);
+      await app_code_refresh_function_change(context, f_name_new);
     },
   );
   html_focus(object_property_get(ib, "input"));
