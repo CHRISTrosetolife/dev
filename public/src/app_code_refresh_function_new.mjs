@@ -1,3 +1,4 @@
+import { html_condition_number_starts_with_not } from "./html_condition_number_starts_with_not.mjs";
 import { app_code_refresh_app_new_generic } from "./app_code_refresh_app_new_generic.mjs";
 import { functions_names } from "./functions_names.mjs";
 import { app_new } from "./app_new.mjs";
@@ -12,6 +13,7 @@ export async function app_code_refresh_function_new(context) {
   let button_text = "New function";
   let function_this = fn_name("app_code_refresh_function_new");
   let conditions = list_concat(html_condition_identifier_fn_part(), [
+    html_condition_number_starts_with_not(),
     html_condition_includes_not(existing, message),
   ]);
   let on_submit = app_new;
