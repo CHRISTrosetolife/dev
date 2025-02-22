@@ -46,12 +46,15 @@ export function html_input_validated_button(
     each(inputs, function (input) {
       map_set(values, html_value_get(input));
     });
-    let value = map_get(values, input);
-    on_submit(value);
+    on_click_lambda(values);
   }
   let v = {
     input,
     button,
   };
   return v;
+  function on_click_lambda(values) {
+    let value = map_get(values, input);
+    on_submit(value);
+  }
 }
