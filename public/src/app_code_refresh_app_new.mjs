@@ -31,14 +31,15 @@ export async function app_code_refresh_app_new(context) {
   let input_placeholder = "App name";
   let button_text = "New app";
   let function_this = fn_name("app_code_refresh_app_new");
+  let conditions = list_concat(html_condition_identifier_fn_part(), [
+    html_condition_includes_not(fns_without_prefix, message),
+  ]);
   let root = app_code_screen_set(context, function_this);
   app_code_button_menu_app(context, root, noop);
   let ib = html_input_validated_button(
     root,
     input_placeholder,
-    list_concat(html_condition_identifier_fn_part(), [
-      html_condition_includes_not(fns_without_prefix, message),
-    ]),
+    conditions,
     button_text,
     async function on_submit(value) {
       let f_name_new = await app_new(value);
