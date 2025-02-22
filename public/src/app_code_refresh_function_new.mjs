@@ -1,3 +1,4 @@
+import { app_code_files_get } from "./app_code_files_get.mjs";
 import { html_condition_identifier_fn } from "./html_condition_identifier_fn.mjs";
 import { function_new } from "./function_new.mjs";
 import { app_code_refresh_app_new_generic } from "./app_code_refresh_app_new_generic.mjs";
@@ -6,6 +7,7 @@ import { html_condition_includes_not } from "./html_condition_includes_not.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { list_concat } from "./list_concat.mjs";
 export async function app_code_refresh_function_new(context) {
+  await app_code_files_get();
   let existing = await functions_names();
   let message = "not be the name of an existing function";
   let input_placeholder = "Function name";
