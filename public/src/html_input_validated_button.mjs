@@ -17,10 +17,11 @@ export function html_input_validated_button(
       document.getElementById("myButton").click();
     }
   });
-  let button = html_button(root, button_text, function () {
+  let button = html_button(root, button_text, on_click);
+  function on_click() {
     let value = html_value_get(input);
     on_submit(value);
-  });
+  }
   html_input_validated_on_input_lambda_initial(input, function (valid) {
     html_button_enable_if(button, valid);
   });
