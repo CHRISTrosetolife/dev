@@ -155,7 +155,11 @@ export function app_code_refresh_function_menu(arg) {
     await app_code_refresh_function_change(function_name_change_to);
     overlay_remove();
   }
-  async function ast_change_finish_outside(batch_message) {
+  async function ast_change_finish_outside(batch_message_part) {
+    let batch_message = list_join_space([
+      function_selected,
+      batch_message_part,
+    ]);
     let fcs = global_file_changes();
     let files = {};
     each(fcs, function (fc) {
@@ -171,11 +175,7 @@ export function app_code_refresh_function_menu(arg) {
     });
     let upload = true;
     if (upload) {
-      await app_code_user_upload_batch(
-        context,
-        files,
-        list_join_space([function_selected, batch_message]),
-      );
+      await app_code_user_upload_batch(context, files, batch_message);
     }
   }
 }
