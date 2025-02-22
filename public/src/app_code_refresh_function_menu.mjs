@@ -114,7 +114,10 @@ export function app_code_refresh_function_menu(arg) {
         html_condition_identifier_fn(),
         html_condition_includes_not(
           existing,
-          "not be an existing identifier for",
+          string_combine_multiple([
+            "not be an existing identifier in ",
+            function_selected,
+          ]),
         ),
       ]);
     });
