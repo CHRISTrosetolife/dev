@@ -32,28 +32,33 @@ export function html_input_validated(
   html_style_rounded_padded(error_message);
   let error_color = html_input_validated_error_color();
   html_style_font_color(error_message, error_color);
-  let input_username = object_merge_strict(
+  let input = object_merge_strict(
     {
       on_input,
     },
     input_username_inner,
   );
-  let title = object_property_get(input_username, "title");
+  let title = object_property_get(input, "title");
   html_on_input(input_username_inner, on_input);
-  return input_username;
+  return input;
   function on_input() {
-    let value = html_value_get(input_username);
+    let value = html_value_get(input);
     let mapped = list_map(
       html_condition_letters_numbers_underscores_conditions,
-      (c) =>
-        object_merge(
+      function (c) {
+        let v = object_merge(
           {
             valid: object_property_get(c, "condition")(value),
           },
           c,
-        ),
+        );
+        return v;
+      },
     );
-    let errors = list_filter(mapped, (c) => !object_property_get(c, "valid"));
+    let errors = list_filter(mapped, function (c) {
+      let v2 = !object_property_get(c, "valid");
+      return v2;
+    });
     let valid = list_empty_is(errors);
     html_style_display_block_or_none(error_message, !valid);
     let message = valid
@@ -62,21 +67,22 @@ export function html_input_validated(
           placeholder,
           " invalid: ",
           list_join_comma_space(
-            list_map(errors, (c) =>
-              string_combine_multiple([
+            list_map(errors, function (c) {
+              let v3 = string_combine_multiple([
                 "must ",
                 object_property_get(c, "message")(value),
-              ]),
-            ),
+              ]);
+              return v3;
+            }),
           ),
         ]);
     html_inner_set(error_message, message);
     let border_color = valid ? "green" : html_input_validated_error_color();
     let input_border_style = html_style_default_border_value(border_color);
-    html_style(input_username, input_border_style);
+    html_style(input, input_border_style);
     html_style_font_color(title, border_color);
-    if (object_property_exists(input_username, "on_input_lambda")) {
-      let on_input = object_property_get(input_username, "on_input_lambda");
+    if (object_property_exists(input, "on_input_lambda")) {
+      let on_input = object_property_get(input, "on_input_lambda");
       on_input(valid, value);
     }
   }
