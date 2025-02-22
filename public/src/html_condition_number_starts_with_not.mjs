@@ -8,8 +8,8 @@ export function html_condition_number_starts_with_not() {
       return v2;
     },
     condition: function (value) {
-      let v3 = list_map(range(10), string_to);
-      return v3;
+      let digits = list_map(range(10), string_to);
+      return digits;
     },
   };
   return v;
