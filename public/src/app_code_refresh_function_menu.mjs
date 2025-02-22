@@ -1,3 +1,4 @@
+import { html_condition_includes_not } from "./html_condition_includes_not.mjs";
 import { html_condition_identifier_fn } from "./html_condition_identifier_fn.mjs";
 import { html_input_validated } from "./html_input_validated.mjs";
 import { app_code_function_menu_overlay } from "./app_code_function_menu_overlay.mjs";
@@ -109,6 +110,7 @@ export function app_code_refresh_function_menu(arg) {
       );
       let input_param_name = html_input_validated(d, "Param name", [
         html_condition_identifier_fn(),
+        html_condition_includes_not(),
       ]);
     });
     app_code_button_copy_generic(
