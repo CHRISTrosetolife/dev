@@ -24,7 +24,7 @@ export function html_input_validated_button(
   html_input_validated_on_input_lambda_initial(input, function (valid) {
     map_set(m, input, valid);
     let valid_all = true;
-    html_button_enable_if(button, valid);
+    html_button_enable_if(button, valid_all);
   });
   function on_click() {
     let value = html_value_get(input);
