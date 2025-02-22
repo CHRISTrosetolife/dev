@@ -1,3 +1,4 @@
+import { app_code_batch_upload } from "./app_code_batch_upload.mjs";
 import { js_imports_fix } from "./js_imports_fix.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { object_property_get_curry } from "./object_property_get_curry.mjs";
@@ -5,25 +6,17 @@ import { app_code_function_string_change_generic } from "./app_code_function_str
 import { js_node_type_literal_string_is } from "./js_node_type_literal_string_is.mjs";
 import { js_string } from "./js_string.mjs";
 import { app_code_refresh_function_change } from "./app_code_refresh_function_change.mjs";
-import { app_code_property_deleted } from "./app_code_property_deleted.mjs";
 import { app_code_button_copy_generic } from "./app_code_button_copy_generic.mjs";
 import { file_read } from "./file_read.mjs";
 import { file_js_unparse_code } from "./file_js_unparse_code.mjs";
-import { app_code_user_upload_batch } from "./app_code_user_upload_batch.mjs";
 import { app_code_function_selected_get } from "./app_code_function_selected_get.mjs";
 import { app_code_button_variablize } from "./app_code_button_variablize.mjs";
 import { app_code_button_functionize } from "./app_code_button_functionize.mjs";
 import { app_code_button_rename } from "./app_code_button_rename.mjs";
-import { app_code_property_contents } from "./app_code_property_contents.mjs";
-import { object_properties_new } from "./object_properties_new.mjs";
-import { object_property_set } from "./object_property_set.mjs";
-import { each } from "./each.mjs";
-import { global_file_changes } from "./global_file_changes.mjs";
 import { string_is } from "./string_is.mjs";
 import { assert } from "./assert.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { app_code_button_menu_app } from "./app_code_button_menu_app.mjs";
-import { object_property_get } from "./object_property_get.mjs";
 import { js_node_type_identifier_is } from "./js_node_type_identifier_is.mjs";
 import { app_code_refresh_function_selection_one_get } from "./app_code_refresh_function_selection_one_get.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -160,22 +153,6 @@ export function app_code_refresh_function_menu(arg) {
       function_selected,
       batch_message_part,
     ]);
-    let fcs = global_file_changes();
-    let files = {};
-    each(fcs, function (fc) {
-      let path2 = object_property_get(fc, "path");
-      object_property_set(
-        files,
-        path2,
-        object_properties_new(fc, [
-          app_code_property_contents(),
-          app_code_property_deleted(),
-        ]),
-      );
-    });
-    let upload = true;
-    if (upload) {
-      await app_code_user_upload_batch(context, files, batch_message);
-    }
+    await app_code_batch_upload(context, batch_message);
   }
 }
