@@ -12,6 +12,7 @@ export function html_input_validated_button(
   on_submit,
 ) {
   let input = html_input_validated(root, placeholder, conditions);
+  let inputs = [input];
   html_on_keydown_enter(input, on_click);
   let button = html_button(root, button_text, on_click);
   html_input_validated_on_input_lambda_initial(input, function (valid) {
