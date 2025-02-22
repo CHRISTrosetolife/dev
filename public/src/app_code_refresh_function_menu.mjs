@@ -112,7 +112,10 @@ export function app_code_refresh_function_menu(arg) {
       let existing = js_identifiers_names(ast);
       let input_param_name = html_input_validated(d, "Param name", [
         html_condition_identifier_fn(),
-        html_condition_includes_not(),
+        html_condition_includes_not(
+          existing,
+          "not be an existing identifier for",
+        ),
       ]);
     });
     app_code_button_copy_generic(
