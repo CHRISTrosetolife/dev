@@ -1,8 +1,7 @@
-import { app_code_files_get } from "./app_code_files_get.mjs";
+import { app_code_function_names } from "./app_code_function_names.mjs";
 import { html_condition_identifier_fn } from "./html_condition_identifier_fn.mjs";
 import { function_new } from "./function_new.mjs";
 import { app_code_refresh_app_new_generic } from "./app_code_refresh_app_new_generic.mjs";
-import { functions_names } from "./functions_names.mjs";
 import { html_condition_includes_not } from "./html_condition_includes_not.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { list_concat } from "./list_concat.mjs";
@@ -26,9 +25,3 @@ export async function app_code_refresh_function_new(context) {
     on_submit,
   );
 }
-async function app_code_function_names() {
-    await app_code_files_get();
-    let existing = await functions_names();
-    return existing;
-}
-
