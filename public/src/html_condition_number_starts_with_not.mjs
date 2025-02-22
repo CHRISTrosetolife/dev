@@ -11,7 +11,7 @@ export function html_condition_number_starts_with_not() {
     },
     condition: function (value) {
       if (string_empty_is(value)) {
-        let v3 = false;
+        let v3 = true;
         return v3;
       }
       let f = string_first(value);
