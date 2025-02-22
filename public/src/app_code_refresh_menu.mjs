@@ -25,6 +25,10 @@ export async function app_code_refresh_menu(context) {
         app_code_refresh_functions_recent(context);
       });
     }
+    html_button(root, "New app", async function () {
+      await app_code_refresh_app_new(context);
+    });
+    await app_code_button_html_files(context);
     if (app_code_username_exists(context)) {
       html_button(
         root,
@@ -40,9 +44,5 @@ export async function app_code_refresh_menu(context) {
         app_code_refresh_username(context);
       });
     }
-    await app_code_button_html_files(context);
-    html_button(root, "New app", async function () {
-      await app_code_refresh_app_new(context);
-    });
   });
 }
