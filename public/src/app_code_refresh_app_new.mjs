@@ -27,18 +27,19 @@ export async function app_code_refresh_app_new(context) {
   if (false) {
     let existing = await app_code_invoke(fn_name("apps_list"));
   }
+  let message = "not be the name of an existing app";
+  let input_placeholder = "App name";
+  let button_text = "New app";
   let function_this = fn_name("app_code_refresh_app_new");
   let root = app_code_screen_set(context, function_this);
   app_code_button_menu_app(context, root, noop);
-  let message = "not be the name of an existing app";
-  let input_placeholder = "App name";
   let ib = html_input_validated_button(
     root,
     input_placeholder,
     list_concat(html_condition_identifier_fn_part(), [
       html_condition_includes_not(fns_without_prefix, message),
     ]),
-    "New app",
+    button_text,
     async function on_submit(value) {
       let f_name_new = await app_new(value);
       await app_code_refresh_function_change(context, f_name_new);
