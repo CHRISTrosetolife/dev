@@ -1,3 +1,4 @@
+import { emoji_add } from "./emoji_add.mjs";
 import { app_code_refresh_function_new } from "./app_code_refresh_function_new.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_code_refresh_app_new } from "./app_code_refresh_app_new.mjs";
@@ -28,14 +29,18 @@ export async function app_code_refresh_menu(context) {
     }
     html_button(
       root,
-      string_combine_multiple(["New function"]),
+      string_combine_multiple([emoji_add(), " New function"]),
       async function () {
         await app_code_refresh_function_new(context);
       },
     );
-    html_button(root, string_combine_multiple(["New app"]), async function () {
-      await app_code_refresh_app_new(context);
-    });
+    html_button(
+      root,
+      string_combine_multiple([emoji_add(), " New app"]),
+      async function () {
+        await app_code_refresh_app_new(context);
+      },
+    );
     await app_code_button_html_files(context);
     if (app_code_username_exists(context)) {
       html_button(
