@@ -96,6 +96,7 @@ export function app_code_refresh_function_menu(arg) {
     );
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
   } else {
+    let button_text = "Param new";
     html_button(overlay, button_text, async function () {});
     app_code_button_copy_generic(
       context,
