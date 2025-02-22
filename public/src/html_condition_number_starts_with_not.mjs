@@ -1,7 +1,7 @@
+import { list_includes_not } from "./list_includes_not.mjs";
 import { digits_10 } from "./digits_10.mjs";
 import { string_first } from "./string_first.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
-import { list_includes } from "./list_includes.mjs";
 export function html_condition_number_starts_with_not() {
   let digits = digits_10();
   let v = {
@@ -15,7 +15,7 @@ export function html_condition_number_starts_with_not() {
         return v3;
       }
       let f = string_first(value);
-      let v4 = list_includes(digits, f);
+      let v4 = list_includes_not(digits, f);
       return v4;
     },
   };
