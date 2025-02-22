@@ -31,8 +31,9 @@ export async function app_code_refresh_function(context) {
     html_style_left(root);
     let function_selected = app_code_function_selected_get(context);
     log("no selected function");
-    if (false) {
+    if (function_selected === null) {
       await app_code_refresh_function(context);
+      return;
     }
     let path = function_name_to_path(function_selected);
     let contents = await app_code_file_get(path);
