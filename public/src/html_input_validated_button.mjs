@@ -23,23 +23,25 @@ export function html_input_validated_button(
   });
   let button = html_button(root, button_text, on_click);
   let m = map_new();
-  html_input_validated_on_input_lambda_initial(input, function (valid) {
-    map_set(m, input, valid);
-    let valid_all = true;
-    each(inputs, function (input) {
-      if (map_exists(input)) {
-        if (map_get(m, input) === false) {
+  each(inputs, function (input) {
+    html_input_validated_on_input_lambda_initial(input, function (valid) {
+      map_set(m, input, valid);
+      let valid_all = true;
+      each(inputs, function (input) {
+        if (map_exists(input)) {
+          if (map_get(m, input) === false) {
+            valid_all = false;
+          }
+        } else {
           valid_all = false;
         }
-      } else {
-        valid_all = false;
-      }
-      if (!valid_all) {
-        let v2 = true;
-        return v2;
-      }
+        if (!valid_all) {
+          let v2 = true;
+          return v2;
+        }
+      });
+      html_button_enable_if(button, valid_all);
     });
-    html_button_enable_if(button, valid_all);
   });
   function on_click() {
     let values = map_new();
