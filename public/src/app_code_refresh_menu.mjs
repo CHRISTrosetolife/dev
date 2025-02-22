@@ -26,10 +26,14 @@ export async function app_code_refresh_menu(context) {
         app_code_refresh_functions_recent(context);
       });
     }
-    html_button(root, "New function", async function () {
-      await app_code_refresh_function_new(context);
-    });
-    html_button(root, "New app", async function () {
+    html_button(
+      root,
+      string_combine_multiple(["New function"]),
+      async function () {
+        await app_code_refresh_function_new(context);
+      },
+    );
+    html_button(root, string_combine_multiple(["New app"]), async function () {
       await app_code_refresh_app_new(context);
     });
     await app_code_button_html_files(context);
