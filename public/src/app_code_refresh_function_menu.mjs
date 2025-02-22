@@ -1,3 +1,5 @@
+import { html_condition_identifier_fn } from "./html_condition_identifier_fn.mjs";
+import { html_input_validated } from "./html_input_validated.mjs";
 import { app_code_function_menu_overlay } from "./app_code_function_menu_overlay.mjs";
 import { app_code_batch_upload } from "./app_code_batch_upload.mjs";
 import { js_imports_fix } from "./js_imports_fix.mjs";
@@ -105,6 +107,9 @@ export function app_code_refresh_function_menu(arg) {
         menu_refresh,
         button_text,
       );
+      let input_param_name = html_input_validated(d, "Param name", [
+        html_condition_identifier_fn(),
+      ]);
     });
     app_code_button_copy_generic(
       context,
