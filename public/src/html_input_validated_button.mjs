@@ -8,6 +8,7 @@ import { html_button } from "./html_button.mjs";
 import { html_input_validated } from "./html_input_validated.mjs";
 import { map_new } from "./map_new.mjs";
 import { map_set } from "./map_set.mjs";
+import { map_get } from "./map_get.mjs";
 export function html_input_validated_button(
   root,
   placeholder,
@@ -27,10 +28,13 @@ export function html_input_validated_button(
     let valid_all = true;
     each(inputs, function (input) {
       if (map_exists(input)) {
-        if (false) {
+        if (map_get(m, input) === false) {
+          valid_all = false;
         }
       } else {
         valid_all = false;
+      }
+      if (false) {
       }
     });
     html_button_enable_if(button, valid_all);
