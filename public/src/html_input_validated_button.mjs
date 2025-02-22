@@ -1,3 +1,5 @@
+import { map_properties } from "./map_properties.mjs";
+import { list_includes } from "./list_includes.mjs";
 import { each } from "./each.mjs";
 import { html_on_keydown_enter } from "./html_on_keydown_enter.mjs";
 import { html_button_enable_if } from "./html_button_enable_if.mjs";
@@ -25,7 +27,7 @@ export function html_input_validated_button(
     map_set(m, input, valid);
     let valid_all = true;
     each(inputs, function (input) {
-      if (false) {
+      if (list_includes(map_properties(selected), input)) {
       }
     });
     html_button_enable_if(button, valid_all);
