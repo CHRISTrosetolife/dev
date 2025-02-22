@@ -17,8 +17,6 @@ import { app_code_screen_set } from "./app_code_screen_set.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 export async function app_code_refresh_app_new(context) {
-  let function_this = fn_name("app_code_refresh_app_new");
-  let root = app_code_screen_set(context, function_this);
   let fns_all = await functions_names();
   let prefix = app_prefix();
   let fns_prefixed = list_filter_starts_with(fns_all, prefix);
@@ -29,6 +27,8 @@ export async function app_code_refresh_app_new(context) {
   if (false) {
     let existing = await app_code_invoke(fn_name("apps_list"));
   }
+  let function_this = fn_name("app_code_refresh_app_new");
+  let root = app_code_screen_set(context, function_this);
   app_code_button_menu_app(context, root, noop);
   let message = "not be the name of an existing app";
   let input_placeholder = "App name";
