@@ -13,12 +13,7 @@ export function html_input_validated_button(
   on_submit,
 ) {
   let input = html_input_validated(root, placeholder, conditions);
-  html_on_keydown(input, function (event) {
-    let key2 = object_property_get(event, "key");
-    if (event.key === "Enter") {
-      on_click();
-    }
-  });
+  html_on_keydown_enter(input, on_click);
   let button = html_button(root, button_text, on_click);
   function on_click() {
     let value = html_value_get(input);
@@ -33,3 +28,12 @@ export function html_input_validated_button(
   };
   return v;
 }
+function html_on_keydown_enter(input, on_click) {
+    html_on_keydown(input, function (event) {
+        let key = object_property_get(event, "key");
+        if (key === "Enter") {
+            on_click();
+        }
+    });
+}
+
