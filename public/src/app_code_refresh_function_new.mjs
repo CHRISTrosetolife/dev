@@ -15,7 +15,10 @@ export async function app_code_refresh_function_new(context) {
     html_condition_identifier_fn(),
     html_condition_includes_not(existing, message),
   );
-  let on_submit = function_new;
+  let on_submit = async function (name) {
+    let v = await function_new(name);
+    return v;
+  };
   app_code_refresh_app_new_generic(
     context,
     function_this,
