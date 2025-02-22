@@ -36,6 +36,9 @@ import { html_clear } from "./html_clear.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { js_identifiers_names } from "./js_identifiers_names.mjs";
+import { html_focus } from "./html_focus.mjs";
+import { html_value_set } from "./html_value_set.mjs";
+import { js_code_call } from "./js_code_call.mjs";
 export function app_code_refresh_function_menu(arg) {
   let { overlay, args, ast, context, path, refresh } = arg;
   let menu_refresh = function () {
@@ -122,11 +125,13 @@ export function app_code_refresh_function_menu(arg) {
           ]),
         ),
       ]);
+      html_focus(input_param_name);
       let input_value_initial = html_input_validated(
         d,
         "Initial value for calling functions",
         [html_condition_empty_not(), html_condition_js_expression_valid()],
       );
+      html_value_set(input_value_initial, js_code_call(fn_name("error")));
     });
     app_code_button_copy_generic(
       context,
