@@ -1,3 +1,4 @@
+import { app_code_function_menu_overlay } from "./app_code_function_menu_overlay.mjs";
 import { html_element_select } from "./html_element_select.mjs";
 import { html_value_set } from "./html_value_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -5,10 +6,6 @@ import { fn_name } from "./fn_name.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_input_validated_button_focus } from "./html_input_validated_button_focus.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { html_p_text } from "./html_p_text.mjs";
-import { html_overlay_container } from "./html_overlay_container.mjs";
-import { app_code_function_selected_get } from "./app_code_function_selected_get.mjs";
 import { html_button } from "./html_button.mjs";
 export function app_code_function_action(
   context,
@@ -21,7 +18,12 @@ export function app_code_function_action(
   on_click,
 ) {
   html_button(overlay, button_text, async function () {
-    let d = app_code_function_menu_overlay(context, overlay, menu_refresh, button_text);
+    let d = app_code_function_menu_overlay(
+      context,
+      overlay,
+      menu_refresh,
+      button_text,
+    );
     let on_overlay_result = on_overlay(d);
     let conditions = await conditions_get();
     let input = html_input_validated_button_focus(
@@ -46,19 +48,4 @@ export function app_code_function_action(
       await on_click(on_overlay_result, after_value);
     }
   });
-}
-
-function app_code_function_menu_overlay(context, overlay, menu_refresh, button_text) {
-    let function_selected = app_code_function_selected_get(context);
-    let d = html_overlay_container(overlay, menu_refresh);
-    html_p_text(
-        d,
-        string_combine_multiple([
-            "Function: ",
-            function_selected,
-            " : ",
-            button_text,
-        ])
-    );
-    return d;
 }
