@@ -12,7 +12,11 @@ export function html_input_validated_button(
   on_submit,
 ) {
   let input = html_input_validated(root, placeholder, conditions);
-  html_on_keydown(input, function (event) {});
+  html_on_keydown(input, function (event) {
+    if (event.key === "Enter") {
+      document.getElementById("myButton").click();
+    }
+  });
   let button = html_button(root, button_text, function () {
     let value = html_value_get(input);
     on_submit(value);
