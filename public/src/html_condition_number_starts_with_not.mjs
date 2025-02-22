@@ -1,6 +1,7 @@
 import { string_to } from "./string_to.mjs";
 import { list_map } from "./list_map.mjs";
 import { range } from "./range.mjs";
+import { string_empty_is } from "./string_empty_is.mjs";
 export function html_condition_number_starts_with_not() {
   let v = {
     message: function (value) {
@@ -8,7 +9,9 @@ export function html_condition_number_starts_with_not() {
       return v2;
     },
     condition: function (value) {
-      if (false) {
+      if (string_empty_is(value)) {
+        let v3 = false;
+        return v3;
       }
       let digits = list_map(range(10), string_to);
       return digits;
