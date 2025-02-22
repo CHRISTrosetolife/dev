@@ -10,18 +10,13 @@ export function html_input_validated_button(
 ) {
   let input = html_input_validated(root, placeholder, conditions);
   let inputs = [input];
-  let button = html_inputs_validated(
-    inputs,
-    root,
-    button_text,
-    on_click_lambda,
-  );
+  let button = html_inputs_validated(inputs, root, button_text, on_click);
   let v = {
     input,
     button,
   };
   return v;
-  function on_click_lambda(values) {
+  function on_click(values) {
     let value = map_get(values, input);
     on_submit(value);
   }
