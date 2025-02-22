@@ -1,3 +1,4 @@
 export function emoji_search() {
-  return "➕";
+  let v = "➕";
+  return v;
 }
