@@ -1,3 +1,4 @@
+import { html_condition_empty_not } from "./html_condition_empty_not.mjs";
 import { html_condition_includes_not } from "./html_condition_includes_not.mjs";
 import { html_condition_identifier_fn } from "./html_condition_identifier_fn.mjs";
 import { html_input_validated } from "./html_input_validated.mjs";
@@ -120,6 +121,20 @@ export function app_code_refresh_function_menu(arg) {
           ]),
         ),
       ]);
+      let input_value_initial = html_input_validated(
+        d,
+        "Initial value for calling functions",
+        [
+          html_condition_empty_not(),
+          html_condition_includes_not(
+            existing,
+            string_combine_multiple([
+              "not be an existing identifier in ",
+              function_selected,
+            ]),
+          ),
+        ],
+      );
     });
     app_code_button_copy_generic(
       context,
