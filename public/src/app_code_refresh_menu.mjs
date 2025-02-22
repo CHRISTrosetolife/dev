@@ -1,3 +1,4 @@
+import { app_code_refresh_function_new } from "./app_code_refresh_function_new.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_code_refresh_app_new } from "./app_code_refresh_app_new.mjs";
 import { app_code_button_html_files } from "./app_code_button_html_files.mjs";
@@ -25,6 +26,9 @@ export async function app_code_refresh_menu(context) {
         app_code_refresh_functions_recent(context);
       });
     }
+    html_button(root, "New function", async function () {
+      await app_code_refresh_function_new(context);
+    });
     html_button(root, "New app", async function () {
       await app_code_refresh_app_new(context);
     });
