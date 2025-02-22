@@ -1,3 +1,4 @@
+import { app_prefix } from "./app_prefix.mjs";
 import { functions_names } from "./functions_names.mjs";
 import { noop } from "./noop.mjs";
 import { app_code_button_menu_app } from "./app_code_button_menu_app.mjs";
@@ -16,6 +17,7 @@ export async function app_code_refresh_app_new(context) {
   let function_this = fn_name("app_code_refresh_app_new");
   let root = app_code_screen_set(context, function_this);
   let fns_all = await functions_names();
+  let prefix = app_prefix();
   app_code_button_menu_app(context, root, noop);
   let existing = await app_code_invoke(fn_name("apps_list"));
   let message = "not be the name of an existing app";
