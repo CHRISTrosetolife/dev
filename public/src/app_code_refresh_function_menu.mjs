@@ -126,13 +126,22 @@ export function app_code_refresh_function_menu(arg) {
         "Initial value for calling functions",
         [
           html_condition_empty_not(),
-          html_condition_includes_not(
-            existing,
-            string_combine_multiple([
-              "not be an existing identifier in ",
-              function_selected,
-            ]),
-          ),
+          {
+            message: function (value) {
+              let v4 = "be valid a JavaScript expression";
+              return v4;
+            },
+            condition: function (value) {
+              try {
+                js_parse_expression(value);
+              } catch (e) {
+                let v5 = false;
+                return v5;
+              }
+              let v6 = true;
+              return v6;
+            },
+          },
         ],
       );
     });
