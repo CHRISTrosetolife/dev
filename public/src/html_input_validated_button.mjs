@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { html_on_keydown } from "./html_on_keydown.mjs";
 import { html_button_enable_if } from "./html_button_enable_if.mjs";
 import { html_input_validated_on_input_lambda_initial } from "./html_input_validated_on_input_lambda_initial.mjs";
@@ -13,6 +14,7 @@ export function html_input_validated_button(
 ) {
   let input = html_input_validated(root, placeholder, conditions);
   html_on_keydown(input, function (event) {
+    let key2 = object_property_get(event, "key");
     if (event.key === "Enter") {
       on_click();
     }
