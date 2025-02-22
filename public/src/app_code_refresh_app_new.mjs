@@ -17,9 +17,10 @@ export async function app_code_refresh_app_new(context) {
   let f_name = fn_name("apps_list");
   let existing = await app_code_invoke(f_name);
   let message = "not be the name of an existing app";
+  let input_placeholder = "App name";
   let ib = html_input_validated_button(
     root,
-    "App name",
+    input_placeholder,
     list_concat(html_condition_identifier_fn_part(), [
       html_condition_includes_not(existing, message),
     ]),
