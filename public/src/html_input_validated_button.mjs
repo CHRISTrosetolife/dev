@@ -34,7 +34,9 @@ export function html_input_validated_button(
       } else {
         valid_all = false;
       }
-      if (false) {
+      if (!valid_all) {
+        let v2 = true;
+        return v2;
       }
     });
     html_button_enable_if(button, valid_all);
