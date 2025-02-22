@@ -1,3 +1,4 @@
+import { app_code_batches_download } from "./app_code_batches_download.mjs";
 import { file_delete } from "./file_delete.mjs";
 import { app_code_property_deleted } from "./app_code_property_deleted.mjs";
 import { storage_file_path_download_json_force } from "./storage_file_path_download_json_force.mjs";
@@ -11,7 +12,6 @@ import { git_ac_message } from "./git_ac_message.mjs";
 import { app_code_property_message } from "./app_code_property_message.mjs";
 import { app_code_property_contents } from "./app_code_property_contents.mjs";
 import { app_code_local_files_path_latest } from "./app_code_local_files_path_latest.mjs";
-import { app_code_batches } from "./app_code_batches.mjs";
 import { each_async } from "./each_async.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_code_file_name_latest } from "./app_code_file_name_latest.mjs";
@@ -39,7 +39,7 @@ export async function app_code_local_download(username) {
       return;
     }
     let batch_path = object_property_get(latest_user, "batch_path");
-    let batches = await app_code_batches(batch_path);
+    let batches = await app_code_batches_download(batch_path);
     log({
       batch_path,
     });

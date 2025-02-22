@@ -3,7 +3,7 @@ import { app_code_batch_previous_exists } from "./app_code_batch_previous_exists
 import { object_property_get } from "./object_property_get.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { list_linked_traverse } from "./list_linked_traverse.mjs";
-export async function app_code_batches(batch_path) {
+export async function app_code_batches_download(batch_path) {
   let batch = await storage_file_path_download_json(batch_path);
   let batches = await list_linked_traverse(
     batch,
