@@ -3,7 +3,9 @@ import { string_to } from "./string_to.mjs";
 import { list_map } from "./list_map.mjs";
 import { range } from "./range.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
+import { list_includes } from "./list_includes.mjs";
 export function html_condition_number_starts_with_not() {
+  let digits = list_map(range(10), string_to);
   let v = {
     message: function (value) {
       let v2 = "not start with a number";
@@ -15,8 +17,8 @@ export function html_condition_number_starts_with_not() {
         return v3;
       }
       let f = string_first(value);
-      let digits = list_map(range(10), string_to);
-      return digits;
+      let v4 = list_includes(digits, f);
+      return v4;
     },
   };
   return v;
