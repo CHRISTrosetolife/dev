@@ -27,6 +27,8 @@ export function html_input_validated_button(
     let valid_all = true;
     each(inputs, function (input) {
       if (map_exists(input)) {
+        if (false) {
+        }
       } else {
         valid_all = false;
       }
