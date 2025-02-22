@@ -46,7 +46,7 @@ export function html_input_validated_button(
     each(inputs, function (input) {
       map_set(values, html_value_get(input));
     });
-    let value = html_value_get(input);
+    let value = map_get(values, input);
     on_submit(value);
   }
   let v = {
