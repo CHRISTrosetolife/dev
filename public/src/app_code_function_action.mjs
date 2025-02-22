@@ -21,17 +21,7 @@ export function app_code_function_action(
   on_click,
 ) {
   html_button(overlay, button_text, async function () {
-    let function_selected = app_code_function_selected_get(context);
-    let d = html_overlay_container(overlay, menu_refresh);
-    html_p_text(
-      d,
-      string_combine_multiple([
-        "Function: ",
-        function_selected,
-        " : ",
-        button_text,
-      ]),
-    );
+    let d = app_code_function_menu_overlay(context, overlay, menu_refresh, button_text);
     let on_overlay_result = on_overlay(d);
     let conditions = await conditions_get();
     let input = html_input_validated_button_focus(
@@ -56,4 +46,19 @@ export function app_code_function_action(
       await on_click(on_overlay_result, after_value);
     }
   });
+}
+
+function app_code_function_menu_overlay(context, overlay, menu_refresh, button_text) {
+    let function_selected = app_code_function_selected_get(context);
+    let d = html_overlay_container(overlay, menu_refresh);
+    html_p_text(
+        d,
+        string_combine_multiple([
+            "Function: ",
+            function_selected,
+            " : ",
+            button_text,
+        ])
+    );
+    return d;
 }
