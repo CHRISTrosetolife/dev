@@ -126,22 +126,7 @@ export function app_code_refresh_function_menu(arg) {
         "Initial value for calling functions",
         [
           html_condition_empty_not(),
-          {
-            message: function (value) {
-              let v4 = "be valid a JavaScript expression";
-              return v4;
-            },
-            condition: function (value) {
-              try {
-                js_parse_expression(value);
-              } catch (e) {
-                let v5 = false;
-                return v5;
-              }
-              let v6 = true;
-              return v6;
-            },
-          },
+          html_condition_js_expression_valid(),
         ],
       );
     });
@@ -205,3 +190,22 @@ export function app_code_refresh_function_menu(arg) {
     await app_code_batch_upload(context, batch_message);
   }
 }
+function html_condition_js_expression_valid() {
+    return {
+        message: function (value) {
+            let v4 = "be valid a JavaScript expression";
+            return v4;
+        },
+        condition: function (value) {
+            try {
+                js_parse_expression(value);
+            } catch (e) {
+                let v5 = false;
+                return v5;
+            }
+            let v6 = true;
+            return v6;
+        },
+    };
+}
+
