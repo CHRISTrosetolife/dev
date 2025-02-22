@@ -1,3 +1,4 @@
+import { app_code_refresh_menu } from "./app_code_refresh_menu.mjs";
 import { log } from "./log.mjs";
 import { app_code_refresh_functions_recent } from "./app_code_refresh_functions_recent.mjs";
 import { app_code_function_selected_get } from "./app_code_function_selected_get.mjs";
@@ -32,7 +33,7 @@ export async function app_code_refresh_function(context) {
     let function_selected = app_code_function_selected_get(context);
     log("no selected function");
     if (function_selected === null) {
-      await app_code_refresh_function(context);
+      await app_code_refresh_menu(context);
       return;
     }
     let path = function_name_to_path(function_selected);
