@@ -1,3 +1,4 @@
+import { app_code_batch_upload } from "./app_code_batch_upload.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_focus } from "./html_focus.mjs";
 import { app_code_refresh_function_change } from "./app_code_refresh_function_change.mjs";
@@ -22,6 +23,7 @@ export function app_code_refresh_app_new_generic(
     button_text,
     async function (value) {
       let f_name_new = await on_submit(value);
+      await app_code_batch_upload(context, batch_message);
       await app_code_refresh_function_change(context, f_name_new);
     },
   );
