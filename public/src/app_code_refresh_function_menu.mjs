@@ -1,3 +1,4 @@
+import { app_code_function_menu_overlay } from "./app_code_function_menu_overlay.mjs";
 import { app_code_batch_upload } from "./app_code_batch_upload.mjs";
 import { js_imports_fix } from "./js_imports_fix.mjs";
 import { js_unparse } from "./js_unparse.mjs";
@@ -97,7 +98,14 @@ export function app_code_refresh_function_menu(arg) {
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
   } else {
     let button_text = "Param new";
-    html_button(overlay, button_text, async function () {});
+    html_button(overlay, button_text, async function () {
+      let d = app_code_function_menu_overlay(
+        context,
+        overlay,
+        menu_refresh,
+        button_text,
+      );
+    });
     app_code_button_copy_generic(
       context,
       overlay,
