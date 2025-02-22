@@ -1,7 +1,7 @@
+import { function_new } from "./function_new.mjs";
 import { html_condition_number_starts_with_not } from "./html_condition_number_starts_with_not.mjs";
 import { app_code_refresh_app_new_generic } from "./app_code_refresh_app_new_generic.mjs";
 import { functions_names } from "./functions_names.mjs";
-import { app_new } from "./app_new.mjs";
 import { html_condition_includes_not } from "./html_condition_includes_not.mjs";
 import { html_condition_identifier_fn_part } from "./html_condition_identifier_fn_part.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -16,7 +16,7 @@ export async function app_code_refresh_function_new(context) {
     html_condition_number_starts_with_not(),
     html_condition_includes_not(existing, message),
   ]);
-  let on_submit = app_new;
+  let on_submit = function_new;
   app_code_refresh_app_new_generic(
     context,
     function_this,
