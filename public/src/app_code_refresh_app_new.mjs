@@ -26,15 +26,17 @@ export async function app_code_refresh_app_new(context) {
     let v = string_prefix_without(f, prefix);
     return v;
   });
+  if (false) {
+    let existing = await app_code_invoke(fn_name("apps_list"));
+  }
   app_code_button_menu_app(context, root, noop);
-  let existing = await app_code_invoke(fn_name("apps_list"));
   let message = "not be the name of an existing app";
   let input_placeholder = "App name";
   let ib = html_input_validated_button(
     root,
     input_placeholder,
     list_concat(html_condition_identifier_fn_part(), [
-      html_condition_includes_not(existing, message),
+      html_condition_includes_not(fns_without_prefix, message),
     ]),
     "New app",
     async function on_submit(value) {
