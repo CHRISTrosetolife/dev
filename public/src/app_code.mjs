@@ -1,7 +1,6 @@
 import { firebase_initialize } from "./firebase_initialize.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { global_function_initialize } from "./global_function_initialize.mjs";
-import { file_rename_on_renames } from "./file_rename_on_renames.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_code_screen_prefix_get } from "./app_code_screen_prefix_get.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -23,7 +22,6 @@ export async function app_code() {
       let apps_list_name = object_property_get(g, "apps_list_name");
     };
   }
-  let on_renames = file_rename_on_renames();
   let body = html_style_default_initialize();
   let root = html_div(body);
   await html_scripts_load(body, [
