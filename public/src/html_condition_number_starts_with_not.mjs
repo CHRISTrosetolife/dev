@@ -1,3 +1,4 @@
+import { string_first } from "./string_first.mjs";
 import { string_to } from "./string_to.mjs";
 import { list_map } from "./list_map.mjs";
 import { range } from "./range.mjs";
@@ -13,6 +14,7 @@ export function html_condition_number_starts_with_not() {
         let v3 = false;
         return v3;
       }
+      let f = string_first(value);
       let digits = list_map(range(10), string_to);
       return digits;
     },
