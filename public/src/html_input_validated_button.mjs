@@ -1,3 +1,4 @@
+import { html_on_keydown } from "./html_on_keydown.mjs";
 import { html_button_enable_if } from "./html_button_enable_if.mjs";
 import { html_input_validated_on_input_lambda_initial } from "./html_input_validated_on_input_lambda_initial.mjs";
 import { html_value_get } from "./html_value_get.mjs";
@@ -11,15 +12,17 @@ export function html_input_validated_button(
   on_submit,
 ) {
   let input = html_input_validated(root, placeholder, conditions);
-  let button = html_button(root, button_text, () => {
+  html_on_keydown(input, function (event) {});
+  let button = html_button(root, button_text, function () {
     let value = html_value_get(input);
     on_submit(value);
   });
-  html_input_validated_on_input_lambda_initial(input, (valid) => {
+  html_input_validated_on_input_lambda_initial(input, function (valid) {
     html_button_enable_if(button, valid);
   });
-  return {
+  let v = {
     input,
     button,
   };
+  return v;
 }
