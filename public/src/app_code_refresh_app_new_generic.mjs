@@ -6,6 +6,7 @@ import { html_input_validated_button } from "./html_input_validated_button.mjs";
 import { noop } from "./noop.mjs";
 import { app_code_button_menu_app } from "./app_code_button_menu_app.mjs";
 import { app_code_screen_set } from "./app_code_screen_set.mjs";
+import { list_join_space } from "./list_join_space.mjs";
 export function app_code_refresh_app_new_generic(
   context,
   function_this,
@@ -23,7 +24,10 @@ export function app_code_refresh_app_new_generic(
     button_text,
     async function (value) {
       let f_name_new = await on_submit(value);
-      await app_code_batch_upload(context, batch_message);
+      await app_code_batch_upload(
+        context,
+        list_join_space([on_submit.name, value]),
+      );
       await app_code_refresh_function_change(context, f_name_new);
     },
   );
