@@ -10,7 +10,7 @@ export function html_input_validated_button(
 ) {
   let input = html_input_validated(root, placeholder, conditions);
   let inputs = [input];
-  let button = html_inputs_validated(inputs, root, button_text, on_click);
+  let button = html_inputs_validated(root, inputs, button_text, on_click);
   let v = {
     input,
     button,

@@ -9,8 +9,8 @@ import { html_button } from "./html_button.mjs";
 import { html_on_keydown_enter } from "./html_on_keydown_enter.mjs";
 import { each } from "./each.mjs";
 export function html_inputs_validated(
-  inputs,
   root,
+  inputs,
   button_text,
   on_click_lambda,
 ) {
