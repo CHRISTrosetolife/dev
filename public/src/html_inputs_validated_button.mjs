@@ -8,7 +8,7 @@ import { map_new } from "./map_new.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_on_keydown_enter } from "./html_on_keydown_enter.mjs";
 import { each } from "./each.mjs";
-export function html_inputs_validated(
+export function html_inputs_validated_button(
   root,
   inputs,
   button_text,

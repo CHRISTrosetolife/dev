@@ -1,4 +1,4 @@
-import { html_inputs_validated } from "./html_inputs_validated.mjs";
+import { html_inputs_validated_button } from "./html_inputs_validated_button.mjs";
 import { html_input_validated } from "./html_input_validated.mjs";
 import { map_get } from "./map_get.mjs";
 export function html_input_validated_button(
@@ -10,7 +10,12 @@ export function html_input_validated_button(
 ) {
   let input = html_input_validated(root, placeholder, conditions);
   let inputs = [input];
-  let button = html_inputs_validated(root, inputs, button_text, on_click);
+  let button = html_inputs_validated_button(
+    root,
+    inputs,
+    button_text,
+    on_click,
+  );
   let v = {
     input,
     button,
