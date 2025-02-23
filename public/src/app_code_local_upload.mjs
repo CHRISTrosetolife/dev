@@ -1,3 +1,4 @@
+import { data_update } from "./data_update.mjs";
 import { date_now } from "./date_now.mjs";
 import { app_code_batch_name_when } from "./app_code_batch_name_when.mjs";
 import { app_code_latest_object } from "./app_code_latest_object.mjs";
@@ -17,6 +18,7 @@ import { functions_source_get } from "./functions_source_get.mjs";
 import { folder_current_prefix } from "./folder_current_prefix.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
 export async function app_code_local_upload() {
+  await data_update();
   let paths_html_json = await folder_read_shallow_extensions(
     folder_path_public(),
     [app_extension_html(), file_extension_json()],
