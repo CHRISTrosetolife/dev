@@ -31,8 +31,8 @@ export async function app_code_refresh_function(context) {
     );
     html_style_left(root);
     let function_selected = app_code_function_selected_get(context);
-    log("no selected function");
     if (function_selected === null) {
+      log("no selected function");
       await app_code_refresh_menu(context);
       return;
     }
