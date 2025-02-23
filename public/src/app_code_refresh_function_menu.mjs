@@ -133,7 +133,7 @@ export function app_code_refresh_function_menu(arg) {
       menu_refresh,
       ast,
       function_selected,
-      ast_change_finish_ast,
+      ast_change_finish,
     );
   }
   let imports_fix = "Imports fix";
