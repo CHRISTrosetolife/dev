@@ -137,6 +137,7 @@ export function app_code_refresh_function_menu(arg) {
   });
   app_code_button_menu_app(context, overlay, overlay_remove);
   async function overlay_remove() {
+    "sleep in case that lets the ui update";
     await sleep_0();
     html_remove(overlay);
   }
