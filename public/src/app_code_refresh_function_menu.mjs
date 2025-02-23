@@ -47,7 +47,7 @@ export function app_code_refresh_function_menu(arg) {
   if (object_property_exists(selection_result, "two")) {
     html_button(overlay, "Selection remove", async function () {
       app_code_refresh_function_selection_remove(selection_result);
-      await ast_change_finish_ast(
+      await ast_change_finish(
         fn_name("app_code_refresh_function_selection_remove"),
       );
     });
@@ -56,7 +56,7 @@ export function app_code_refresh_function_menu(arg) {
       ast,
       selection_result,
       menu_refresh,
-      ast_change_finish_ast,
+      ast_change_finish,
       context,
     );
   } else if (object_property_exists(selection_result, "one")) {
@@ -66,7 +66,7 @@ export function app_code_refresh_function_menu(arg) {
       app_code_button_rename(
         overlay,
         menu_refresh,
-        ast_change_finish_ast,
+        ast_change_finish,
         ast,
         selection_result,
         context,
@@ -78,7 +78,7 @@ export function app_code_refresh_function_menu(arg) {
         js_string,
         object_property_get_curry("value"),
         menu_refresh,
-        ast_change_finish_ast,
+        ast_change_finish,
         "String value change",
         "New string value",
         node,
@@ -90,18 +90,12 @@ export function app_code_refresh_function_menu(arg) {
       js_parse_expression,
       js_unparse,
       menu_refresh,
-      ast_change_finish_ast,
+      ast_change_finish,
       "Expression value change",
       "New expression value",
       node,
     );
-    app_code_button_variablize(
-      overlay,
-      visitor,
-      ast,
-      node,
-      ast_change_finish_ast,
-    );
+    app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
   } else {
     app_code_button_copy_generic(
       context,
@@ -138,13 +132,13 @@ export function app_code_refresh_function_menu(arg) {
   }
   let imports_fix = "Imports fix";
   html_button(overlay, imports_fix, async function () {
-    await ast_change_finish_ast(imports_fix);
+    await ast_change_finish(imports_fix);
   });
   app_code_button_menu_app(context, overlay, overlay_remove);
   function overlay_remove() {
     html_remove(overlay);
   }
-  async function ast_change_finish_ast(batch_message) {
+  async function ast_change_finish(batch_message) {
     assert(string_is, [batch_message]);
     let before = await file_read(path);
     await js_imports_fix(ast);
