@@ -142,7 +142,11 @@ export function app_code_refresh_function_menu(arg) {
         async function () {
           let param_name = html_value_get(input_param_name);
           let value_initial = html_value_get(input_value_initial);
-          await function_param_new();
+          await function_param_new(
+            function_selected,
+            param_name,
+            value_initial,
+          );
         },
       );
     });
