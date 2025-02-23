@@ -1,3 +1,4 @@
+import { function_param_new } from "./function_param_new.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_inputs_validated_button } from "./html_inputs_validated_button.mjs";
 import { html_condition_js_expression_valid } from "./html_condition_js_expression_valid.mjs";
@@ -138,9 +139,10 @@ export function app_code_refresh_function_menu(arg) {
         root,
         [input_param_name, input_value_initial],
         button_text,
-        function () {
+        async function () {
           let param_name = html_value_get(input_param_name);
           let value_initial = html_value_get(input_value_initial);
+          await function_param_new();
         },
       );
     });
