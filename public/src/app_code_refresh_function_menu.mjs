@@ -147,7 +147,7 @@ export function app_code_refresh_function_menu(arg) {
     await file_js_unparse_code(ast, path, before);
     await ast_change_finish_outside(batch_message);
     refresh();
-    overlay_remove();
+    await overlay_remove();
   }
   async function ast_change_finish_change_self(batch_message) {
     await ast_change_finish_change(batch_message, function_selected);
@@ -158,7 +158,7 @@ export function app_code_refresh_function_menu(arg) {
   ) {
     await ast_change_finish_outside(batch_message);
     await app_code_refresh_function_change(context, function_name_change_to);
-    overlay_remove();
+    await overlay_remove();
   }
   async function ast_change_finish_outside(batch_message_part) {
     let batch_message = list_join_space([
