@@ -1,1 +1,1 @@
-export function html_on_error() {}
+export function html_on_error(message) {}
