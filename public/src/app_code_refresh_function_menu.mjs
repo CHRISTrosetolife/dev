@@ -1,3 +1,4 @@
+import { html_inputs_validated_button } from "./html_inputs_validated_button.mjs";
 import { html_condition_js_expression_valid } from "./html_condition_js_expression_valid.mjs";
 import { html_condition_empty_not } from "./html_condition_empty_not.mjs";
 import { html_condition_includes_not } from "./html_condition_includes_not.mjs";
@@ -132,6 +133,12 @@ export function app_code_refresh_function_menu(arg) {
         [html_condition_empty_not(), html_condition_js_expression_valid()],
       );
       html_value_set(input_value_initial, js_code_call(fn_name("error")));
+      let button = html_inputs_validated_button(
+        root,
+        [input_param_name, input_value_initial],
+        button_text,
+        function () {},
+      );
     });
     app_code_button_copy_generic(
       context,
