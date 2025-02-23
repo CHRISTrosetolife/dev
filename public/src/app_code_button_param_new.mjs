@@ -50,7 +50,7 @@ export function app_code_button_param_new(
     );
     html_value_set(input_value_default, js_code_call(fn_name("error")));
     let button = html_inputs_validated_button(
-      root,
+      d,
       [input_param_name, input_value_default],
       button_text,
       async function () {
