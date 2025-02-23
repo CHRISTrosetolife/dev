@@ -68,7 +68,6 @@ export function app_code_button_param_new(
             value_default,
           ]),
         );
-        overlay_remove();
       },
     );
   });
