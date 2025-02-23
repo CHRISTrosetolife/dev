@@ -1,3 +1,4 @@
+import { html_conditions_identifier_fn } from "./html_conditions_identifier_fn.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { function_param_new } from "./function_param_new.mjs";
 import { html_value_get } from "./html_value_get.mjs";
@@ -10,7 +11,6 @@ import { html_condition_empty_not } from "./html_condition_empty_not.mjs";
 import { html_focus } from "./html_focus.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_condition_includes_not } from "./html_condition_includes_not.mjs";
-import { html_condition_identifier_fn } from "./html_condition_identifier_fn.mjs";
 import { html_input_validated } from "./html_input_validated.mjs";
 import { js_identifiers_names } from "./js_identifiers_names.mjs";
 import { app_code_function_menu_overlay } from "./app_code_function_menu_overlay.mjs";
@@ -33,7 +33,7 @@ export function app_code_button_param_new(
     );
     let existing = js_identifiers_names(ast);
     let input_param_name = html_input_validated(d, "Param name", [
-      html_condition_identifier_fn(),
+      html_conditions_identifier_fn(),
       html_condition_includes_not(
         existing,
         string_combine_multiple([
