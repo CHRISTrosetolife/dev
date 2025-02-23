@@ -1,3 +1,4 @@
+import { list_concat } from "./list_concat.mjs";
 import { html_conditions_identifier_fn } from "./html_conditions_identifier_fn.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { function_param_new } from "./function_param_new.mjs";
@@ -32,16 +33,19 @@ export function app_code_button_param_new(
       button_text,
     );
     let existing = js_identifiers_names(ast);
-    let input_param_name = html_input_validated(d, "Param name", [
-      html_conditions_identifier_fn(),
-      html_condition_includes_not(
-        existing,
-        string_combine_multiple([
-          "not be an existing identifier in ",
-          function_selected,
-        ]),
-      ),
-    ]);
+    let input_param_name = html_input_validated(
+      d,
+      "Param name",
+      list_concat(html_conditions_identifier_fn(), [
+        html_condition_includes_not(
+          existing,
+          string_combine_multiple([
+            "not be an existing identifier in ",
+            function_selected,
+          ]),
+        ),
+      ]),
+    );
     html_focus(input_param_name);
     let input_value_default = html_input_validated(
       d,
