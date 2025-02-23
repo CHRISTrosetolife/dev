@@ -1,3 +1,4 @@
+import { sleep_0 } from "./sleep_0.mjs";
 import { app_code_button_param_new } from "./app_code_button_param_new.mjs";
 import { app_code_batch_upload } from "./app_code_batch_upload.mjs";
 import { js_imports_fix } from "./js_imports_fix.mjs";
@@ -135,7 +136,8 @@ export function app_code_refresh_function_menu(arg) {
     await ast_change_finish(imports_fix);
   });
   app_code_button_menu_app(context, overlay, overlay_remove);
-  function overlay_remove() {
+  async function overlay_remove() {
+    await sleep_0();
     html_remove(overlay);
   }
   async function ast_change_finish(batch_message) {
