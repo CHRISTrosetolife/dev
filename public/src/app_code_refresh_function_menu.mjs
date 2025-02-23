@@ -109,57 +109,7 @@ export function app_code_refresh_function_menu(arg) {
     );
     app_code_button_variablize(overlay, visitor, ast, node, ast_change_finish);
   } else {
-    let button_text = "Param new";
-    html_button(overlay, button_text, async function () {
-      let d = app_code_function_menu_overlay(
-        context,
-        overlay,
-        menu_refresh,
-        button_text,
-      );
-      let existing = js_identifiers_names(ast);
-      let input_param_name = html_input_validated(d, "Param name", [
-        html_condition_identifier_fn(),
-        html_condition_includes_not(
-          existing,
-          string_combine_multiple([
-            "not be an existing identifier in ",
-            function_selected,
-          ]),
-        ),
-      ]);
-      html_focus(input_param_name);
-      let input_value_default = html_input_validated(
-        d,
-        "Default value for calling functions",
-        [html_condition_empty_not(), html_condition_js_expression_valid()],
-      );
-      html_value_set(input_value_default, js_code_call(fn_name("error")));
-      let button = html_inputs_validated_button(
-        root,
-        [input_param_name, input_value_default],
-        button_text,
-        async function () {
-          let param_name = html_value_get(input_param_name);
-          let value_default = html_value_get(input_value_default);
-          await function_param_new(
-            function_selected,
-            param_name,
-            value_default,
-          );
-          await ast_change_finish(
-            list_join_space(
-              fn_name("function_param_new"),
-              function_selected,
-              param_name,
-              value_default,
-            ),
-            after_value,
-          );
-          overlay_remove();
-        },
-      );
-    });
+    app_code_button_param_new(overlay, context, menu_refresh, ast, function_selected, ast_change_finish, overlay_remove);
     app_code_button_copy_generic(
       context,
       overlay,
@@ -220,3 +170,57 @@ export function app_code_refresh_function_menu(arg) {
     await app_code_batch_upload(context, batch_message);
   }
 }
+function app_code_button_param_new(overlay, context, menu_refresh, ast, function_selected, ast_change_finish, overlay_remove) {
+    let button_text = "Param new";
+    html_button(overlay, button_text, async function () {
+        let d = app_code_function_menu_overlay(
+            context,
+            overlay,
+            menu_refresh,
+            button_text
+        );
+        let existing = js_identifiers_names(ast);
+        let input_param_name = html_input_validated(d, "Param name", [
+            html_condition_identifier_fn(),
+            html_condition_includes_not(
+                existing,
+                string_combine_multiple([
+                    "not be an existing identifier in ",
+                    function_selected,
+                ])
+            ),
+        ]);
+        html_focus(input_param_name);
+        let input_value_default = html_input_validated(
+            d,
+            "Default value for calling functions",
+            [html_condition_empty_not(), html_condition_js_expression_valid()]
+        );
+        html_value_set(input_value_default, js_code_call(fn_name("error")));
+        let button = html_inputs_validated_button(
+            root,
+            [input_param_name, input_value_default],
+            button_text,
+            async function () {
+                let param_name = html_value_get(input_param_name);
+                let value_default = html_value_get(input_value_default);
+                await function_param_new(
+                    function_selected,
+                    param_name,
+                    value_default
+                );
+                await ast_change_finish(
+                    list_join_space(
+                        fn_name("function_param_new"),
+                        function_selected,
+                        param_name,
+                        value_default
+                    ),
+                    after_value
+                );
+                overlay_remove();
+            }
+        );
+    });
+}
+
