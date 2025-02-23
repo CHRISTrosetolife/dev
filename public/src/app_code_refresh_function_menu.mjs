@@ -125,7 +125,7 @@ export function app_code_refresh_function_menu(arg) {
       menu_refresh,
       ast,
       function_selected,
-      finish,
+      ast_change_finish_change_self,
     );
   }
   let imports_fix = "Imports fix";
@@ -147,6 +147,9 @@ export function app_code_refresh_function_menu(arg) {
     await ast_change_finish_outside(batch_message);
     refresh();
     overlay_remove();
+  }
+  async function ast_change_finish_change_self(batch_message) {
+    await ast_change_finish_change(batch_message, function_selected);
   }
   async function ast_change_finish_change(
     batch_message,
