@@ -42,9 +42,7 @@ export async function app_code_local_download(username) {
     let batches = await app_code_batches_download(batch_path);
     log({
       batch_path,
-      batches,
     });
-    return;
     let batches_later = list_filter(batches, app_code_batch_previous_exists);
     await each_async(batches_later, async function (batch) {
       let files = object_property_get(batch, "files");
