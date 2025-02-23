@@ -147,6 +147,16 @@ export function app_code_refresh_function_menu(arg) {
             param_name,
             value_default,
           );
+          await ast_change_finish(
+            list_join_space(
+              fn_name("function_param_new"),
+              function_selected,
+              param_name,
+              value_default,
+            ),
+            after_value,
+          );
+          overlay_remove();
         },
       );
     });
