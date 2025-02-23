@@ -129,23 +129,23 @@ export function app_code_refresh_function_menu(arg) {
         ),
       ]);
       html_focus(input_param_name);
-      let input_value_initial = html_input_validated(
+      let input_value_default = html_input_validated(
         d,
-        "Initial value for calling functions",
+        "Default value for calling functions",
         [html_condition_empty_not(), html_condition_js_expression_valid()],
       );
-      html_value_set(input_value_initial, js_code_call(fn_name("error")));
+      html_value_set(input_value_default, js_code_call(fn_name("error")));
       let button = html_inputs_validated_button(
         root,
-        [input_param_name, input_value_initial],
+        [input_param_name, input_value_default],
         button_text,
         async function () {
           let param_name = html_value_get(input_param_name);
-          let value_initial = html_value_get(input_value_initial);
+          let value_default = html_value_get(input_value_default);
           await function_param_new(
             function_selected,
             param_name,
-            value_initial,
+            value_default,
           );
         },
       );
