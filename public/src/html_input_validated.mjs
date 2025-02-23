@@ -1,4 +1,3 @@
-import { html_condition_letters_numbers_underscores_conditions } from "./html_condition_letters_numbers_underscores_conditions.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_style_default_border_value } from "./html_style_default_border_value.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
@@ -19,11 +18,7 @@ import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_input_width_full_placeholder } from "./html_input_width_full_placeholder.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
-export function html_input_validated(
-  root,
-  placeholder,
-  html_condition_letters_numbers_underscores_conditions,
-) {
+export function html_input_validated(root, placeholder, conditions) {
   let input_username_inner = html_input_width_full_placeholder(
     root,
     placeholder,
@@ -43,18 +38,15 @@ export function html_input_validated(
   return input;
   function on_input() {
     let value = html_value_get(input);
-    let mapped = list_map(
-      html_condition_letters_numbers_underscores_conditions,
-      function (c) {
-        let v = object_merge(
-          {
-            valid: object_property_get(c, "condition")(value),
-          },
-          c,
-        );
-        return v;
-      },
-    );
+    let mapped = list_map(conditions, function (c) {
+      let v = object_merge(
+        {
+          valid: object_property_get(c, "condition")(value),
+        },
+        c,
+      );
+      return v;
+    });
     let errors = list_filter(mapped, function (c) {
       let v2 = !object_property_get(c, "valid");
       return v2;
