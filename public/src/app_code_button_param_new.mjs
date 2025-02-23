@@ -62,12 +62,12 @@ export function app_code_button_param_new(
         let value_default = html_value_get(input_value_default);
         await function_param_new(function_selected, param_name, value_default);
         await ast_change_finish(
-          list_join_space(
+          list_join_space([
             fn_name("function_param_new"),
             function_selected,
             param_name,
             value_default,
-          ),
+          ]),
           after_value,
         );
         overlay_remove();
