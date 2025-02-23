@@ -64,11 +64,9 @@ export function app_code_button_param_new(
         await ast_change_finish(
           list_join_space([
             fn_name("function_param_new"),
-            function_selected,
             param_name,
             value_default,
           ]),
-          after_value,
         );
         overlay_remove();
       },
