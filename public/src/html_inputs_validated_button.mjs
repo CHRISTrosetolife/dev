@@ -42,7 +42,7 @@ export function html_inputs_validated_button(
   function on_click() {
     let values = map_new();
     each(inputs, function (input) {
-      map_set(values, html_value_get(input));
+      map_set(values, input, html_value_get(input));
     });
     on_click_lambda(values);
   }
