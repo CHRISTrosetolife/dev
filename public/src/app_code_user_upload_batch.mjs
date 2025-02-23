@@ -1,3 +1,4 @@
+import { app_code_data_get } from "./app_code_data_get.mjs";
 import { app_code_latest_object } from "./app_code_latest_object.mjs";
 import { app_code_file_name_latest } from "./app_code_file_name_latest.mjs";
 import { app_code_user_upload } from "./app_code_user_upload.mjs";
@@ -24,4 +25,5 @@ export async function app_code_user_upload_batch(
     app_code_file_name_latest(),
     app_code_latest_object(batch_path, when),
   );
+  let d = await app_code_data_get();
 }
