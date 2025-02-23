@@ -104,7 +104,6 @@ export function app_code_refresh_function_menu(arg) {
       ast,
       function_selected,
       ast_change_finish,
-      overlay_remove,
     );
     app_code_button_copy_generic(
       context,

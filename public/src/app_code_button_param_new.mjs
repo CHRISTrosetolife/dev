@@ -22,7 +22,6 @@ export function app_code_button_param_new(
   ast,
   function_selected,
   ast_change_finish,
-  overlay_remove,
 ) {
   let button_text = "Param new";
   html_button(overlay, button_text, async function () {
