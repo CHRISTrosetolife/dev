@@ -156,7 +156,7 @@ export function app_code_refresh_function_menu(arg) {
     function_name_change_to,
   ) {
     await ast_change_finish_outside(batch_message);
-    await app_code_refresh_function_change(function_name_change_to);
+    await app_code_refresh_function_change(context, function_name_change_to);
     overlay_remove();
   }
   async function ast_change_finish_outside(batch_message_part) {
