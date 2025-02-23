@@ -117,7 +117,6 @@ export function app_code_refresh_function_menu(arg) {
         return v;
       },
       ast_change_finish_change,
-      overlay_remove,
     );
     app_code_button_copy_generic(
       context,
@@ -130,7 +129,6 @@ export function app_code_refresh_function_menu(arg) {
         return v3;
       },
       ast_change_finish_change,
-      overlay_remove,
     );
   }
   let imports_fix = "Imports fix";

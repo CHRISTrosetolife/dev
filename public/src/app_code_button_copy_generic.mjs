@@ -13,7 +13,6 @@ export function app_code_button_copy_generic(
   f_name,
   fn_args_get,
   ast_change_finish,
-  overlay_remove,
 ) {
   app_code_button_rename_generic(
     context,
