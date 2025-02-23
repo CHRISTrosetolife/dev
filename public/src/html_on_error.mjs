@@ -1,1 +1,1 @@
-export function html_on_error(message, source, line, column, err) {}
+export function html_on_error(message2, source, line, column, err) {}
