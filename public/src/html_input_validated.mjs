@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_style_default_border_value } from "./html_style_default_border_value.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
@@ -39,6 +40,9 @@ export function html_input_validated(root, placeholder, conditions) {
   function on_input() {
     let value = html_value_get(input);
     let mapped = list_map(conditions, function (c) {
+      log({
+        c,
+      });
       let v = object_merge(
         {
           valid: object_property_get(c, "condition")(value),
