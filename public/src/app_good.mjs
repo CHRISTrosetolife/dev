@@ -1,3 +1,4 @@
+import { prayers_music } from "./prayers_music.mjs";
 import { prayers_bible } from "./prayers_bible.mjs";
 import { prayers_unity } from "./prayers_unity.mjs";
 import { prayers_family } from "./prayers_family.mjs";
@@ -120,17 +121,7 @@ export function app_good() {
             "Help the president",
             "Help the Pope",
             "Help the Ecumenical Patriarch",
-            "Help Hillsong",
-            "Help Cityalight",
-            "Help Wickham",
-            "Help Tomlin",
-            "Help Redman",
-            "Help Lauren Daigle",
-            "Help Brooke Ligertwood",
-            "Help Elevation",
-            "Help Tauren Wells",
-            "Help Big Daddy Weave",
-            "Help Maverick City",
+            prayers_music(),
             "Let Elon be generous and Christian",
             "Let Zuckerberg be generous and Christian",
             "Let Bezos be generous and Christian",
