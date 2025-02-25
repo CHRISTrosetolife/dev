@@ -1,5 +1,8 @@
 export function prayers_family() {
   return [
+    "Bless our marriage",
+    "Bless trip",
+    "Bless our children",
     "Bless the family of love",
     "Bless papa",
     "Bless mama",
