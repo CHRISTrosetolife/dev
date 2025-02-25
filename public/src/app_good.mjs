@@ -38,6 +38,7 @@ export function app_good() {
             "Help Christians be perfect in mercy",
             prayers_family(),
             "Cause me to love",
+            "Cause me to be merciful",
             "Give me wisdom",
             "Give me humility",
             "Give me hope",
