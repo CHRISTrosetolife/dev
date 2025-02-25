@@ -1,3 +1,4 @@
+import { list_sort_string } from "./list_sort_string.mjs";
 import { bible_storage_path_file_version } from "./bible_storage_path_file_version.mjs";
 import { list_uniqueify } from "./list_uniqueify.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
@@ -33,14 +34,18 @@ export async function bible_ceb_upload_chapter(bible_version, chapter_code) {
   let mapped = list_map(tokens_all, bible_word_map);
   let unique = list_unique(mapped);
   let filtered = list_filter(unique, null_not_is);
-  let definitions = await list_to_lookup_value_async(filtered, async (word) => {
-    let result = await ceb_definition_2(word);
-    let word_definitions = object_property_initialize(result, word, []);
-    let d = await definition_bohol(word, "Cebuano", "English");
-    let mapped2 = list_map(d, list_first);
-    list_add_multiple(word_definitions, mapped2);
-    list_uniqueify(word_definitions);
-    return result;
-  });
+  let definitions = await list_to_lookup_value_async(
+    filtered,
+    async function (word) {
+      let result = await ceb_definition_2(word);
+      let word_definitions = object_property_initialize(result, word, []);
+      let d = await definition_bohol(word, "Cebuano", "English");
+      let mapped2 = list_map(d, list_first);
+      list_add_multiple(word_definitions, mapped2);
+      list_uniqueify(word_definitions);
+      list_sort_string(word_definitions);
+      return result;
+    },
+  );
   await bible_storage_version_upload(bible_folder, key, definitions);
 }
