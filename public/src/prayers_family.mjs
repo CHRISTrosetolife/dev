@@ -1,5 +1,5 @@
 export function prayers_family() {
-  return [
+  let v = [
     "Bless our marriage",
     "Bless trip",
     "Bless our children",
@@ -44,4 +44,5 @@ export function prayers_family() {
     "Bless Nancy",
     "Bless Zachary",
   ];
+  return v;
 }
