@@ -1,5 +1,6 @@
 export function prayers_bible() {
-  return [
+  let v = [
+    "Let there be harvest workers",
     "Give all Christians the Spirit of wisdom and of revelation in the knowledge of God",
     "Enlighten the eyes of the hearts of every Christian",
     "Let all Christians know the hope God called us",
@@ -21,4 +22,5 @@ export function prayers_bible() {
     "May every Christian be in good health",
     "May it go well with the soul of every Christian",
   ];
+  return v;
 }
