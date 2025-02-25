@@ -35,6 +35,7 @@ export function prayers() {
     "Give me hope",
     "Cause me to be diligent",
     "Cause every Christian to be diligent",
+    "Cause me to have zero negative emotions",
     "Give me patience",
     "Give all Christians patience",
     "Give me the faith of a mustard seed",
