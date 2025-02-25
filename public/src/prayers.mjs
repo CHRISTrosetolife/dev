@@ -88,6 +88,8 @@ export function prayers() {
     "Bless Christian prayer",
     prayers_music(),
     prayers_famous(),
+    "Bless the USA",
+    "Bless the Philippines",
     "Bless the nails of love",
     "Bless my works",
     "Bless my word of God speech",
