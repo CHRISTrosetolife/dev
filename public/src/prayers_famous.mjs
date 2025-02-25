@@ -1,5 +1,5 @@
 export function prayers_famous() {
-  return [
+  let v = [
     "Help the president",
     "Help the Pope",
     "Help the Ecumenical Patriarch",
@@ -13,5 +13,7 @@ export function prayers_famous() {
     "Let Taylor Swift be generous and Christian",
     "Let Kanye be generous and Christian",
     "Let MrBeast be generous and Christian",
+    "Let Bieber be generous",
   ];
+  return v;
 }

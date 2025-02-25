@@ -121,7 +121,6 @@ export function app_good() {
             "Bless Christian prayer",
             prayers_music(),
             prayers_famous(),
-            "Let Bieber be generous",
             "Bless the nails of love",
             "Bless my works",
             "Bless my word of God speech",
