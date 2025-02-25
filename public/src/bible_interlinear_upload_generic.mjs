@@ -1,7 +1,7 @@
+import { bible_interlinear_definition_hub } from "./bible_interlinear_definition_hub.mjs";
 import { list_filter_string_empty_not_is } from "./list_filter_string_empty_not_is.mjs";
 import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
 import { bible_storage_interlinear_chapter_definitions_path } from "./bible_storage_interlinear_chapter_definitions_path.mjs";
-import { bible_interlinear_definition } from "./bible_interlinear_definition.mjs";
 import { bible_storage_interlinear_chapter_definitions_property } from "./bible_storage_interlinear_chapter_definitions_property.mjs";
 import { list_to_lookup_value_async } from "./list_to_lookup_value_async.mjs";
 import { list_unique } from "./list_unique.mjs";
@@ -47,7 +47,7 @@ export async function bible_interlinear_upload_generic(language, books_get) {
       async function (s) {
         let v = {
           [bible_storage_interlinear_chapter_definitions_property()]:
-            await bible_interlinear_definition(language, s),
+            await bible_interlinear_definition_hub(language, s),
         };
         return v;
       },
