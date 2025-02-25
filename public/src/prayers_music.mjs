@@ -1,5 +1,5 @@
 export function prayers_music() {
-  return [
+  let v = [
     "Help Hillsong",
     "Help Cityalight",
     "Help Wickham",
@@ -11,5 +11,8 @@ export function prayers_music() {
     "Help Tauren Wells",
     "Help Big Daddy Weave",
     "Help Maverick City",
+    "Help Tenth Avenue North",
+    "Help MercyMe",
   ];
+  return v;
 }
