@@ -214,6 +214,7 @@ export function app_good() {
           "Help Maverick City",
           "Let Elon be generous and Christian",
           "Let Zuckerberg be generous and Christian",
+          "Let Bezos be generous and Christian",
           "Let Altman be generous and Christian",
           "Let Gates be generous and Christian",
           "Let Rowling be generous and Christian",
