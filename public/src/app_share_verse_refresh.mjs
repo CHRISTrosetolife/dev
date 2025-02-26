@@ -34,6 +34,7 @@ import { string_split_plus } from "./string_split_plus.mjs";
 import { app_share_bible_folders } from "./app_share_bible_folders.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_record_verse_buttons } from "./app_record_verse_buttons.mjs";
+import { html_style_display_none } from "./html_style_display_none.mjs";
 export async function app_share_verse_refresh(
   context,
   book_code,
@@ -124,7 +125,9 @@ export async function app_share_verse_refresh(
       root,
       object_property_get(t, "button_text"),
       function () {
-        object_property_get(t, "value");
+        let v = object_property_get(t, "value");
+        html_style_display_none(b);
+        list_add(texts_extra_chosen, v);
       },
     );
   });
