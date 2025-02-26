@@ -120,7 +120,7 @@ export async function app_share_verse_refresh(
     },
   ];
   each(texts_extra, function (t) {
-    b=html_button_text_click(
+    let b = html_button_text_click(
       root,
       object_property_get(t, "button_text"),
       function () {},
