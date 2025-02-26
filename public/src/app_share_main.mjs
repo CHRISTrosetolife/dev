@@ -33,9 +33,13 @@ export function app_share_main(context) {
       text: "Hindi and English",
       code: "hin2017+engbsb",
     },
+    {
+      text: "Luganda and English",
+      code: "lug+engbsb",
+    },
   ];
-  each(folders, (folder) => {
-    html_button(root, object_property_get(folder, "text"), async () => {
+  each(folders, function (folder) {
+    html_button(root, object_property_get(folder, "text"), async function () {
       let books_new = list_take_bible_books_new(
         object_property_get(context, "books"),
       );
