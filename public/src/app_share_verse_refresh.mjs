@@ -98,6 +98,7 @@ export async function app_share_verse_refresh(
         [bible_reference_code(chapter, verse_numbers)],
         texts,
         ["", string_combine_multiple([next_text, url_next])],
+        texts_extra_chosen,
       ]),
     );
     return v2;
