@@ -38,9 +38,14 @@ export function app_share_main(context) {
       code: "lug+engbsb",
     },
     {
+      text: "Telugu (India) and English",
+      code: "tel2017+engbsb",
+    },
+    {
       text: "Hausa (Nigeria) and English",
       code: "hausa+engbsb",
     },
+    tel2017Telugu,
   ];
   each(folders, function (folder) {
     html_button(root, object_property_get(folder, "text"), async function () {
