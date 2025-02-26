@@ -12,7 +12,8 @@ export async function bible_verses_upload(bible_folder) {
     log({
       chapter,
     });
-    if (false) {
+    if (bible_folder === "hausa" && chapter === "DAN14") {
+      return;
     }
     let verses = await bible_chapter(bible_folder, chapter);
     ("seems to be a race condition; code errors when multiple threads create folder; therefore create folder outside of loop");
