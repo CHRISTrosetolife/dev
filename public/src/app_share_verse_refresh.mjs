@@ -127,6 +127,7 @@ export async function app_share_verse_refresh(
       function () {
         let v = object_property_get(t, "value");
         html_style_display_none(b);
+        list_add(texts_extra_chosen, "");
         list_add(texts_extra_chosen, v);
       },
     );
