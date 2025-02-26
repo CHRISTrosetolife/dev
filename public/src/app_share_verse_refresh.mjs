@@ -57,20 +57,22 @@ export async function app_share_verse_refresh(
     object_property_get(lookup, app_share_bible_folders()),
   );
   if (false) {
-    html_button(root, "versions", () => {
+    html_button(root, "versions", function () {
       html_clear_scroll_top(root);
       let f = "engbsb";
       html_list_chooser(
         root,
         [f, "urdgvu+engbsb"],
         list_includes(bible_folders_text) ? bible_folders_text : f,
-        async () =>
-          await app_share_verse_refresh(
+        async function () {
+          let v = await app_share_verse_refresh(
             context,
             book_code,
             chapter_code,
             verse_number_next,
-          ),
+          );
+          return v;
+        },
         bible_folders_text_set,
       );
     });
@@ -88,16 +90,27 @@ export async function app_share_verse_refresh(
   let url_next;
   await download();
   html_button_add(root, "verse", download);
-  html_button_copy_get(root, () =>
-    list_join_newline(
+  html_button_copy_get(root, function () {
+    let v2 = list_join_newline(
       list_concat_multiple([
         [bible_reference_code(chapter, verse_numbers)],
         texts,
         ["", string_combine_multiple([next_text, url_next])],
       ]),
-    ),
-  );
-  html_button_home(root, () => app_share_main(context));
+    );
+    return v2;
+  });
+  texts = [
+    {
+      button_text: "Greet",
+      text: "Greetings in the name of Jesus",
+    },
+  ];
+  html_button_click(root, "");
+  html_button_home(root, function () {
+    let v3 = app_share_main(context);
+    return v3;
+  });
   function bible_folders_text_set(value) {
     bible_folders_text = value;
     bible_folders = string_split_plus(bible_folders_text);
@@ -115,18 +128,20 @@ export async function app_share_verse_refresh(
     let p = bible_chapter_name_parse(chapter_next);
     book_code = object_property_get(p, "book_code");
     chapter_code = object_property_get(p, "chapter_code");
-    let next = await new Promise(async (resolve) => {
+    let next = await new Promise(async function (resolve) {
       await html_bible_verse_navigation_next(
         app_share,
         book_code,
         chapter_code,
         verse_number_next,
-        (book_code, chapter, verse_number_next) =>
-          resolve({
+        function (book_code, chapter, verse_number_next) {
+          let v4 = resolve({
             book_code,
             chapter,
             verse_number_next,
-          }),
+          });
+          return v4;
+        },
         context,
         noop,
       );
@@ -147,7 +162,7 @@ export async function app_share_verse_refresh(
     url_next = string_combine_multiple([without_hash, "#", joined]);
     html_inner_set(next_url_component, url_next);
     html_style_link(url_next)(next_url_component);
-    html_on_click(next_url_component, async () => {
+    html_on_click(next_url_component, async function () {
       await app_share_verse_refresh(
         context,
         book_code_next,
