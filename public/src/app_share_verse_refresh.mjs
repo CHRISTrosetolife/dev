@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_button_home } from "./html_button_home.mjs";
 import { app_share_main } from "./app_share_main.mjs";
@@ -90,6 +91,7 @@ export async function app_share_verse_refresh(
   let url_next;
   await download();
   html_button_add(root, "verse", download);
+  let texts_extra_chosen = [];
   html_button_copy_get(root, function () {
     let v2 = list_join_newline(
       list_concat_multiple([
@@ -115,6 +117,7 @@ export async function app_share_verse_refresh(
         "🙏🏿 God bless you in the name of the Father and of the Son and of the Holy Spirit amen ❤️‍🔥✝️🕊",
     },
   ];
+  each(list, function (item) {});
   html_button_click(root, "");
   html_button_home(root, function () {
     let v3 = app_share_main(context);
