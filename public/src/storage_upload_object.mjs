@@ -8,7 +8,7 @@ import { file_exists } from "./file_exists.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 export async function storage_upload_object(storage_path, result_new) {
   let existing_path = folder_gitignore_path(storage_path);
-  if (false && (await file_exists(existing_path))) {
+  if (await file_exists(existing_path)) {
     let result_existing = await file_read_json(existing_path);
     if (equal_json(result_existing, result_new)) {
       if (false) {
