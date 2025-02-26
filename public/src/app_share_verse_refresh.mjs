@@ -1,3 +1,4 @@
+import { html_button_text_click } from "./html_button_text_click.mjs";
 import { each } from "./each.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_button_home } from "./html_button_home.mjs";
@@ -118,8 +119,9 @@ export async function app_share_verse_refresh(
         "🙏🏿 God bless you in the name of the Father and of the Son and of the Holy Spirit amen ❤️‍🔥✝️🕊",
     },
   ];
-  each(list, function (item) {});
-  html_button_click(root, "");
+  each(texts_extra, function (t) {
+    html_button_text_click(root, "");
+  });
   html_button_home(root, function () {
     let v3 = app_share_main(context);
     return v3;
