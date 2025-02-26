@@ -103,7 +103,16 @@ export async function app_share_verse_refresh(
   texts = [
     {
       button_text: "Greet",
-      text: "Greetings in the name of Jesus",
+      value: "Greetings in the name of Jesus",
+    },
+    {
+      button_text: "How r u",
+      value: "I am doing good through the grace of God",
+    },
+    {
+      button_text: "Bless",
+      value:
+        "God bless you in the name of the Father and of the Son and of the Holy Spirit amen",
     },
   ];
   html_button_click(root, "");
