@@ -120,7 +120,11 @@ export async function app_share_verse_refresh(
     },
   ];
   each(texts_extra, function (t) {
-    html_button_text_click(root, object_property_get(object, "property_name"));
+    b=html_button_text_click(
+      root,
+      object_property_get(t, "button_text"),
+      function () {},
+    );
   });
   html_button_home(root, function () {
     let v3 = app_share_main(context);
