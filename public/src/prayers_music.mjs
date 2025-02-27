@@ -13,6 +13,7 @@ export function prayers_music() {
     "Help Maverick City",
     "Help Tenth Avenue North",
     "Help MercyMe",
+    "Help Brandon Lake",
   ];
   return v;
 }
