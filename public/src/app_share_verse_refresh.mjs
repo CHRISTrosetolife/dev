@@ -124,6 +124,10 @@ export async function app_share_verse_refresh(
       button_text: "🙏🏿 Amen",
       value: "🙏🏿 Amen ✝️",
     },
+    {
+      button_text: "🙏🏿 Glory to God",
+      value: "🙏🏿 Glory to God ❤️‍🔥✝️🕊",
+    },
   ];
   each(texts_extra, function (t) {
     let b = html_button_text_click(
