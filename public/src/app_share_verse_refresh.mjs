@@ -97,10 +97,10 @@ export async function app_share_verse_refresh(
   html_button_copy_get(root, function () {
     let v2 = list_join_newline(
       list_concat_multiple([
+        texts_extra_chosen,
         [bible_reference_code(chapter, verse_numbers)],
         texts,
         ["", string_combine_multiple([next_text, url_next])],
-        texts_extra_chosen,
       ]),
     );
     return v2;
