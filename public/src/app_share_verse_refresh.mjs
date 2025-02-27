@@ -119,6 +119,10 @@ export async function app_share_verse_refresh(
       value:
         "🙏🏿 God bless you in the name of the Father and of the Son and of the Holy Spirit amen ❤️‍🔥✝️🕊",
     },
+    {
+      button_text: "🙏🏿 Amen",
+      value: "🙏🏿 Amen ✝️",
+    },
   ];
   each(texts_extra, function (t) {
     let b = html_button_text_click(
