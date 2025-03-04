@@ -21,8 +21,8 @@ export function html_input_validated_button(
     button,
   };
   return v;
-  function on_click(values) {
+  async function on_click(values) {
     let value = map_get(values, input);
-    on_submit(value);
+    await on_submit(value);
   }
 }
