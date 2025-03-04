@@ -66,7 +66,7 @@ export function prayers() {
     "Let there be life and life abundantly",
     "Let all church meeting buildings be as You desire",
     "Let all Lord’s Supper bread and drink be as You desire",
-    "May all shepherds be humble",
+    "Let all shepherds be humble",
     "Bless every elder",
     "Bless every overseer",
     "Bless every bishop",
