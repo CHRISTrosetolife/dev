@@ -8,6 +8,8 @@ export function prayers_family() {
     "Bless mama",
     "Bless sister",
     "Bless brothers",
+    "Bless nephews",
+    "Bless nieces",
     "Bless my family",
     "Bless Kent",
     "Bless Merry",
