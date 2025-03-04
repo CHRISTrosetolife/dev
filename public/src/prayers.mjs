@@ -107,7 +107,7 @@ export function prayers() {
     "Bless my piano",
     "Bless my teaching",
     "Bless the works of Christians",
-    "Let me fellowship in person with any Christians from the generation Jesus spoke of",
+    "Let me fellowship with any Christians from the generation Jesus spoke of",
     "Help orphans",
     "Help children",
     "Help widows",
