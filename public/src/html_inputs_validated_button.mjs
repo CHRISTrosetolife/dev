@@ -39,12 +39,12 @@ export function html_inputs_validated_button(
       html_button_enable_if(button, valid_all);
     });
   });
-  function on_click() {
+  async function on_click() {
     let values = map_new();
     each(inputs, function (input) {
       map_set(values, input, html_value_get(input));
     });
-    on_click_lambda(values);
+    await on_click_lambda(values);
   }
   return button;
 }
