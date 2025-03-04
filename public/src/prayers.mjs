@@ -27,7 +27,7 @@ export function prayers() {
     "Cause love and I to be merciful",
     "Cause all Christians to be perfect in mercy",
     "Cause all my vows to be fulfilled",
-    "Cause all vows of all Christians to be fulfilled",
+    "Cause all vows of Christians to be fulfilled",
     "Give love and I wisdom",
     "Wisen all Christians",
     "Give love and I humility",
