@@ -1,6 +1,7 @@
 export function prayers_unity() {
-  return [
+  let v = [
     "Unite the church",
+    "Unite the church about God",
     "Unite the church about Jesus",
     "Unite the church about the Holy Spirit",
     "Unite the church about the Bible canon",
@@ -32,4 +33,5 @@ export function prayers_unity() {
     "Unite Amish",
     "May all shepherds be in communion with each other",
   ];
+  return v;
 }
