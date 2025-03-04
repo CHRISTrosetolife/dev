@@ -33,7 +33,7 @@ export function prayers() {
     "Give love and I humility",
     "Give all Christians humility",
     "Give love and I hope",
-    "Cause me to be diligent",
+    "Cause love and I to be diligent",
     "Cause every Christian to be diligent",
     "Cause love and I to have zero negative emotions",
     "Give love and I patience",
