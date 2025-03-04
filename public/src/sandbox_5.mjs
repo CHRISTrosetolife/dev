@@ -1,1 +1,3 @@
-export async function sandbox_5() {}
+export async function sandbox_5() {
+  let url = "";
+}
