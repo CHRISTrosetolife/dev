@@ -9,7 +9,7 @@ export function prayers_sins() {
     "Let there be no thievery",
     "Let there be no doubt",
     "Let there be no jealousy or envy",
-    "Let there be no sinful anger or wrath",
+    "Let there be no wrath or sinful anger",
     "Let there be no pornography",
     "Let there be no rape",
     "Let there be no sexual sin",
