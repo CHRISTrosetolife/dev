@@ -118,7 +118,7 @@ export function prayers() {
     "Help foreigners",
     "Help the poor",
     "Help the elderly",
-    "Help the prisoners",
+    "Help prisoners",
     "Help the sick",
   ]);
   return v;
