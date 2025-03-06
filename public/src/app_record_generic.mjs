@@ -30,6 +30,8 @@ export async function app_record_generic(
   async function on_logged_in(context) {
     let { root } = context;
     object_property_set(context, "app_lambda", app_lambda);
+    let v = await next();
+    return v;
     html_prayer(root, app_pray_word());
     html_button_next(root, next);
     async function next() {
