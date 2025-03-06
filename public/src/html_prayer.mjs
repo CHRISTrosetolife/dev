@@ -6,7 +6,7 @@ export function html_prayer(root, prayer) {
     list_concat_multiple([
       [
         "Heavenly Father,",
-        "In the name of the Trinity:",
+        "In the name of Jesus:",
         "Have mercy on me, a sinner;",
       ],
       prayer,
