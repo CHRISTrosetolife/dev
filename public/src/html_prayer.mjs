@@ -10,7 +10,7 @@ export function html_prayer(root, prayer) {
         "Have mercy on me, a sinner;",
       ],
       prayer,
-      ["Amen"],
+      "Amen",
     ]),
   );
 }
