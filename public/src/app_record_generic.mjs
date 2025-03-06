@@ -31,7 +31,7 @@ export async function app_record_generic(
     let { root } = context;
     object_property_set(context, "app_lambda", app_lambda);
     html_prayer(root, app_pray_word());
-    html_button_next(root, async () => {
+    html_button_next(root, async function () {
       if (mr_initialize) {
         context.mr = await html_recorder_media();
       }
