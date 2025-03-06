@@ -10,6 +10,8 @@ export function prayers_famous() {
     "Let Gates be generous and Christian",
     "Let Rowling be generous and Christian",
     "Let Putin be generous and Christian",
+    "Let Larry Page be generous and Christian",
+    "Let Warren Buffet be generous and Christian",
     "Let Taylor Swift be generous and Christian",
     "Let Kanye be generous and Christian",
     "Let MrBeast be generous and Christian",
