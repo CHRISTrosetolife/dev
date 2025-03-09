@@ -1,3 +1,4 @@
+import { html_style_link_blank } from "./html_style_link_blank.mjs";
 import { html_button_text } from "./html_button_text.mjs";
 import { emoji_book } from "./emoji_book.mjs";
 import { html_button } from "./html_button.mjs";
@@ -62,11 +63,11 @@ export async function app_search() {
           verse_number,
         );
         let text = string_combine_multiple([reference, " ", joined]);
-        html_button_text(
+        let button_chapter = html_button_text(
           search_result_component,
           string_combine_multiple([emoji_book(), " open chapter"]),
-          function () {},
         );
+        html_style_link_blank("chapter.html")(button_chapter);
         html_button_copy(search_result_component, text);
         html_p_text_centered(search_result_component, text);
       };
