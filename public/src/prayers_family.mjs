@@ -23,6 +23,7 @@ export function prayers_family() {
     "Bless Hallie",
     "Bless Brandon",
     "Bless Eric",
+    "Bless Lori",
     "Bless Naila",
     "Bless Peter",
     "Bless Naheed",
