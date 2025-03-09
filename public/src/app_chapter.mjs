@@ -17,6 +17,6 @@ export async function app_chapter() {
   let version_code = "engbsb";
   let chapter_name = object_property_get(lookup, app_share_chapter());
   let verses = await bible_storage_version_http_get(version_code, chapter_name);
-  bible_chapter_name_parse(chapter_name);
+  let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   html_bible_verse_define(root);
 }
