@@ -21,8 +21,8 @@ export async function app_record_generic(
     });
   } else {
     let root = html_style_default_initialize();
-    html_style_a_plain();
     await html_script_axios(root);
+    html_style_a_plain();
     await on_logged_in({
       root,
     });
