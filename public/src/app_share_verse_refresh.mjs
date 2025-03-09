@@ -1,3 +1,4 @@
+import { html_hr } from "./html_hr.mjs";
 import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
 import { me_phone } from "./me_phone.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -35,6 +36,7 @@ import { app_share_bible_folders } from "./app_share_bible_folders.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_record_verse_buttons } from "./app_record_verse_buttons.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
+import { html_clear } from "./html_clear.mjs";
 export async function app_share_verse_refresh(
   context,
   book_code,
@@ -60,6 +62,7 @@ export async function app_share_verse_refresh(
     object_property_get(lookup, app_share_bible_folders()),
   );
   let texts = [];
+  let copy_message = html_div(root);
   let texts_component = html_div(root);
   let verses_component = html_p(root);
   let lookup_next;
@@ -209,5 +212,11 @@ export async function app_share_verse_refresh(
   }
   async function copy() {
     await clipboard_copy_web(copy_get());
+    html_clear(copy_message);
+    html_p_text(
+      copy_message,
+      "The following has been copied to your clipboard: ",
+    );
+    html_hr(copy_message);
   }
 }
