@@ -1,4 +1,4 @@
 export function invoke_once(fn) {
-  let v = $a;
+  let v = function () {};
   return v;
 }
