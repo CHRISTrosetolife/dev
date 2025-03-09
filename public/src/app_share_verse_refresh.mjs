@@ -1,3 +1,4 @@
+import { html_p_text } from "./html_p_text.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
 import { each } from "./each.mjs";
@@ -115,7 +116,7 @@ export async function app_share_verse_refresh(
         html_style_display_none(b);
         list_add(texts_extra_chosen, v);
         list_add(texts_extra_chosen, "");
-        html_p(texts_component, v);
+        html_p_text(texts_component, v);
       },
     );
   });
