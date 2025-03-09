@@ -1,4 +1,4 @@
-import { html_interacted } from "./html_interacted.mjs";
+import { error } from "./error.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
 import { me_phone } from "./me_phone.mjs";
@@ -207,8 +207,10 @@ export async function app_share_verse_refresh(
         verse_number_next,
       );
     });
-    if (html_interacted()) {
+    try {
       await copy();
+    } catch (e) {
+      console.error(e);
     }
   }
   async function copy() {
