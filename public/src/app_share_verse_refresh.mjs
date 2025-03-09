@@ -1,3 +1,4 @@
+import { html_div } from "./html_div.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
 import { each } from "./each.mjs";
 import { html_button_home } from "./html_button_home.mjs";
@@ -56,6 +57,7 @@ export async function app_share_verse_refresh(
     object_property_get(lookup, app_share_bible_folders()),
   );
   let texts = [];
+  let texts_component = html_div(root);
   let verses_component = html_p(root);
   let lookup_next;
   let next_text = "Next verse: ";
