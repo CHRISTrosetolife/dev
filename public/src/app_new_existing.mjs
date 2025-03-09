@@ -13,7 +13,7 @@ import { functions_names } from "./functions_names.mjs";
 import { function_parse } from "./function_parse.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { app_prefix } from "./app_prefix.mjs";
-export async function app_new_bible_ceb(prefixed) {
+export async function app_new_existing(prefixed) {
   let ast = await function_parse(prefixed);
   let fnns = await functions_names();
   let a_new = string_unique(prefixed, fnns);
