@@ -7,6 +7,7 @@ export function invoke_once(fn) {
       return v;
     }
     result = fn(...arguments);
+    invoked = true;
     return result;
   }
   return inner;
