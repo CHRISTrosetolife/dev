@@ -106,6 +106,10 @@ export async function app_share_verse_refresh(
       button_text: "🙏🏿 Glory",
       value: "🙏🏿 Glory to God ❤️‍🔥✝️🕊",
     },
+    {
+      button_text: "📞 Phone",
+      value: "📞 Here is my WhatsApp phone number: ",
+    },
   ];
   each(texts_extra, function (t) {
     let b = html_button_text_click(
