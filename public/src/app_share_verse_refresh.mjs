@@ -112,6 +112,7 @@ export async function app_share_verse_refresh(
       value: string_combine_multiple([
         "📞 Here is my WhatsApp phone number: ",
         me_phone(),
+        " ☎️",
       ]),
     },
   ];
