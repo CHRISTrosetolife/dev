@@ -1,3 +1,4 @@
 export function emoji_book() {
-  return "👂";
+  let v = "👂";
+  return v;
 }
