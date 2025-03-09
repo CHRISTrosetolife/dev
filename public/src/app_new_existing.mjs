@@ -1,4 +1,3 @@
-import { app_identifier } from "./app_identifier.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { js_declaration_single } from "./js_declaration_single.mjs";
 import { app_new_generic } from "./app_new_generic.mjs";
@@ -14,8 +13,7 @@ import { functions_names } from "./functions_names.mjs";
 import { function_parse } from "./function_parse.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { app_prefix } from "./app_prefix.mjs";
-export async function app_new_existing(a) {
-  let prefixed = app_identifier(a);
+export async function app_new_bible_ceb(prefixed) {
   let ast = await function_parse(prefixed);
   let fnns = await functions_names();
   let a_new = string_unique(prefixed, fnns);
