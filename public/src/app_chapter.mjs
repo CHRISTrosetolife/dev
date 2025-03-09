@@ -1,5 +1,4 @@
 import { html_scroll_center } from "./html_scroll_center.mjs";
-import { log } from "./log.mjs";
 import { html_style_background_color_yellow } from "./html_style_background_color_yellow.mjs";
 import { app_share_verse } from "./app_share_verse.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -27,9 +26,6 @@ export async function app_chapter() {
   if (object_property_exists(lookup, app_share_verse())) {
     verse_number_selected = object_property_get(lookup, app_share_verse());
   }
-  log({
-    verse_number_selected,
-  });
   let version_code = "engbsb";
   let chapter_name = object_property_get(lookup, app_share_chapter());
   let verses = await bible_storage_version_http_get(version_code, chapter_name);
