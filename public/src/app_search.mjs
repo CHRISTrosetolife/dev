@@ -1,3 +1,4 @@
+import { emoji_book } from "./emoji_book.mjs";
 import { html_button } from "./html_button.mjs";
 import { list_sort_string_map } from "./list_sort_string_map.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -60,7 +61,7 @@ export async function app_search() {
           verse_number,
         );
         let text = string_combine_multiple([reference, " ", joined]);
-        html_button();
+        html_button(string_combine_multiple([emoji_book(), " open chapter"]));
         html_button_copy(result, text);
         html_p_text_centered(result, text);
       };
