@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { html_style_background_color_yellow } from "./html_style_background_color_yellow.mjs";
 import { app_share_verse } from "./app_share_verse.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -23,8 +24,11 @@ export async function app_chapter() {
   }
   let verse_number_selected = null;
   if (object_property_exists(lookup, app_share_verse())) {
-    let verse_number_selected = object_property_get(lookup, app_share_verse());
+    verse_number_selected = object_property_get(lookup, app_share_verse());
   }
+  log({
+    verse_number_selected,
+  });
   let version_code = "engbsb";
   let chapter_name = object_property_get(lookup, app_share_chapter());
   let verses = await bible_storage_version_http_get(version_code, chapter_name);
@@ -32,6 +36,9 @@ export async function app_chapter() {
   each(verses, function (verse) {
     let v_component = html_div(root);
     let { verse_number } = verse;
+    log({
+      verse_number,
+    });
     if (verse_number === verse_number_selected) {
       html_style_background_color_yellow(v_component);
     }
