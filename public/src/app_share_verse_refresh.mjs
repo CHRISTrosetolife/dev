@@ -71,9 +71,9 @@ export async function app_share_verse_refresh(
   let origin = object_property_get(location, "origin");
   let without_hash = string_combine_multiple([origin, pathname]);
   let url_next;
+  let texts_extra_chosen = [];
   await download();
   html_button_add(root, "verse", download);
-  let texts_extra_chosen = [];
   if (false) {
     html_button_copy_get(root, copy_get);
   }
