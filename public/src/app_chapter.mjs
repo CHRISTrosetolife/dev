@@ -1,4 +1,4 @@
-import { html_scroll_nearest } from "./html_scroll_nearest.mjs";
+import { html_scroll_center } from "./html_scroll_center.mjs";
 import { sleep_0 } from "./sleep_0.mjs";
 import { noop } from "./noop.mjs";
 import { html_style_background_color_yellow } from "./html_style_background_color_yellow.mjs";
@@ -39,7 +39,7 @@ export async function app_chapter() {
     if (verse_number === verse_number_selected) {
       html_style_background_color_yellow(v_component);
       after = function () {
-        return html_scroll_nearest(v_component);
+        return html_scroll_center(v_component);
       };
     }
     html_bible_verse_define(v_component, book_code, chapter_code, verse);
