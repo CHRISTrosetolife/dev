@@ -59,12 +59,12 @@ export async function app_search() {
     html_button(root, "expand all", expand_all);
     let on_clicks = list_map(filtered, function (f) {
       let { chapter_code, verse_number, reference } = f;
-      log({
-        f,
-      });
       html_hr(root);
       let search_result_component = html_div(root);
       let on_click = async function () {
+        log({
+          f,
+        });
         html_remove(b);
         let joined = await firebase_download_bible_verse_search(
           chapter_code,
