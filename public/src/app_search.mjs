@@ -1,3 +1,4 @@
+import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { app_share_chapter } from "./app_share_chapter.mjs";
 import { html_style_link_blank } from "./html_style_link_blank.mjs";
 import { html_button_text } from "./html_button_text.mjs";
@@ -28,6 +29,7 @@ import { object_merge } from "./object_merge.mjs";
 import { html_hr } from "./html_hr.mjs";
 export async function app_search() {
   let root = await firebase_initialize_axios();
+  html_style_a_plain();
   html_p_text_centered(root, "enter words separated by spaces");
   let i = html_input_width_full_focus(root);
   html_button(root, "🔎 search", async function () {
