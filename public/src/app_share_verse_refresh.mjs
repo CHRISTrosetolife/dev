@@ -1,13 +1,9 @@
 import { html_button_text_click } from "./html_button_text_click.mjs";
 import { each } from "./each.mjs";
-import { html_button } from "./html_button.mjs";
 import { html_button_home } from "./html_button_home.mjs";
 import { app_share_main } from "./app_share_main.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { html_style_link } from "./html_style_link.mjs";
-import { list_includes } from "./list_includes.mjs";
-import { html_list_chooser } from "./html_list_chooser.mjs";
-import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_hash_unparse } from "./html_hash_unparse.mjs";
@@ -59,27 +55,6 @@ export async function app_share_verse_refresh(
   bible_folders_text_set(
     object_property_get(lookup, app_share_bible_folders()),
   );
-  if (false) {
-    html_button(root, "versions", function () {
-      html_clear_scroll_top(root);
-      let f = "engbsb";
-      html_list_chooser(
-        root,
-        [f, "urdgvu+engbsb"],
-        list_includes(bible_folders_text) ? bible_folders_text : f,
-        async function () {
-          let v = await app_share_verse_refresh(
-            context,
-            book_code,
-            chapter_code,
-            verse_number_next,
-          );
-          return v;
-        },
-        bible_folders_text_set,
-      );
-    });
-  }
   let texts = [];
   let verses_component = html_p(root);
   let lookup_next;
@@ -125,7 +100,7 @@ export async function app_share_verse_refresh(
       value: "🙏🏿 Amen ✝️",
     },
     {
-      button_text: "🙏🏿 Glory to God",
+      button_text: "🙏🏿 Glory",
       value: "🙏🏿 Glory to God ❤️‍🔥✝️🕊",
     },
   ];
