@@ -40,7 +40,7 @@ export async function app_chapter() {
     if (verse_number === verse_number_selected) {
       html_style_background_color_yellow(v_component);
       after = function () {
-        log("");
+        log("here");
         return html_scroll_center(v_component);
       };
     }
