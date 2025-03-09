@@ -153,7 +153,7 @@ export async function app_share_verse_refresh(
     bible_folders_text = value;
     bible_folders = string_split_plus(bible_folders_text);
   }
-  async function download(copy) {
+  async function download() {
     list_add(verse_numbers, verse_number_next);
     await app_share_verse_download(
       bible_folders,
@@ -208,9 +208,7 @@ export async function app_share_verse_refresh(
         verse_number_next,
       );
     });
-    if (false) {
-      await copy();
-    }
+    await copy();
   }
   async function copy() {
     await clipboard_copy_web(copy_get());
