@@ -20,16 +20,16 @@ export async function app_chapter() {
     html_p_text(root, "Needs chapter in URL");
     return;
   }
+  let verse_number_selected = null;
+  if (object_property_exists(lookup, app_share_verse())) {
+    let verse_number_selected = object_property_get(lookup, app_share_verse());
+  }
   let version_code = "engbsb";
   let chapter_name = object_property_get(lookup, app_share_chapter());
   let verses = await bible_storage_version_http_get(version_code, chapter_name);
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   each(verses, function (verse) {
     let { verse_number } = verse;
-    if (object_property_exists(lookup, app_share_verse())) {
-      if (false) {
-      }
-    }
     let v_component = html_div(root);
     html_bible_verse_define(v_component, book_code, chapter_code, verse);
   });
