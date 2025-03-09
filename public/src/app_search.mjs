@@ -1,3 +1,4 @@
+import { html_style_flex_row_centered } from "./html_style_flex_row_centered.mjs";
 import { window_open } from "./window_open.mjs";
 import { log } from "./log.mjs";
 import { invoke_once } from "./invoke_once.mjs";
@@ -70,6 +71,7 @@ export async function app_search() {
           verse_number,
         );
         let text = string_combine_multiple([reference, " ", joined]);
+        let row = html_style_flex_row_centered(search_result_component);
         html_button(
           search_result_component,
           string_combine_multiple([emoji_book(), " open chapter"]),
