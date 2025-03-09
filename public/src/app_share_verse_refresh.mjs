@@ -205,7 +205,7 @@ export async function app_share_verse_refresh(
       );
     });
     await copy();
-    async function copy(copy_get) {
+    async function copy() {
       await clipboard_copy_web(copy_get());
     }
   }
