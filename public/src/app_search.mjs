@@ -1,3 +1,4 @@
+import { app_share_verse } from "./app_share_verse.mjs";
 import { html_hash_unparse } from "./html_hash_unparse.mjs";
 import { html_style_flex_row_centered } from "./html_style_flex_row_centered.mjs";
 import { window_open } from "./window_open.mjs";
@@ -79,6 +80,7 @@ export async function app_search() {
                 "chapter.html#",
                 html_hash_unparse({
                   [app_share_chapter()]: chapter_code,
+                  [app_share_verse()]: verse_number,
                 }),
               ]),
             );
