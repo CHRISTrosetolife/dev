@@ -64,6 +64,7 @@ export async function app_search() {
         html_button(
           search_result_component,
           string_combine_multiple([emoji_book(), " open chapter"]),
+          function () {},
         );
         html_button_copy(search_result_component, text);
         html_p_text_centered(search_result_component, text);
