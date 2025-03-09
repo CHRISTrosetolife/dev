@@ -56,6 +56,7 @@ export function prayers() {
     "Help me fast",
     "Help all Christians fast",
     "Protect all humans and all angels of the Lord from demons",
+    "Let all Christians speak and behave worthily in the presence of heavenly angels",
     "Perfectly open up the eyes and ears of all to scripture and truth",
     "Perfectly engraft the word of God into every heart",
     "Cause all to be a perfect hearer and perfect doer of the word of God",
