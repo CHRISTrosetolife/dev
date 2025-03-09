@@ -1,8 +1,8 @@
+import { window_open } from "./window_open.mjs";
 import { log } from "./log.mjs";
 import { invoke_once } from "./invoke_once.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { app_share_chapter } from "./app_share_chapter.mjs";
-import { html_style_link_blank } from "./html_style_link_blank.mjs";
 import { emoji_book } from "./emoji_book.mjs";
 import { html_button } from "./html_button.mjs";
 import { list_sort_string_map } from "./list_sort_string_map.mjs";
@@ -70,19 +70,20 @@ export async function app_search() {
           verse_number,
         );
         let text = string_combine_multiple([reference, " ", joined]);
-        let button_chapter = html_button(
+        html_button(
           search_result_component,
           string_combine_multiple([emoji_book(), " open chapter"]),
-          function () {},
+          function () {
+            window_open(
+              string_combine_multiple([
+                "chapter.html#",
+                app_share_chapter(),
+                "=",
+                chapter_code,
+              ]),
+            );
+          },
         );
-        html_style_link_blank(
-          string_combine_multiple([
-            "chapter.html#",
-            app_share_chapter(),
-            "=",
-            chapter_code,
-          ]),
-        )(button_chapter);
         html_button_copy(search_result_component, text);
         html_p_text_centered(search_result_component, text);
       });
