@@ -212,14 +212,14 @@ export async function app_share_verse_refresh(
   async function copy() {
     try {
       await clipboard_copy_web(copy_get());
+      html_clear(copy_message);
+      html_p_text(
+        copy_message,
+        "The following has been copied to your clipboard: ",
+      );
+      html_hr(copy_message);
     } catch (e) {
       console.error(e);
     }
-    html_clear(copy_message);
-    html_p_text(
-      copy_message,
-      "The following has been copied to your clipboard: ",
-    );
-    html_hr(copy_message);
   }
 }
