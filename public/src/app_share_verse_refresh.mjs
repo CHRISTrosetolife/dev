@@ -207,14 +207,14 @@ export async function app_share_verse_refresh(
         verse_number_next,
       );
     });
+    await copy();
+  }
+  async function copy() {
     try {
-      await copy();
+      await clipboard_copy_web(copy_get());
     } catch (e) {
       console.error(e);
     }
-  }
-  async function copy() {
-    await clipboard_copy_web(copy_get());
     html_clear(copy_message);
     html_p_text(
       copy_message,
