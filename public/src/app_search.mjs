@@ -53,7 +53,7 @@ export async function app_search() {
     let on_clicks = list_map(filtered, function (f) {
       let { chapter_code, verse_number, reference } = f;
       html_hr(root);
-      let result = html_div(root);
+      let search_result_component = html_div(root);
       let on_click = async function () {
         html_remove(b);
         let joined = await firebase_download_bible_verse_search(
@@ -61,9 +61,12 @@ export async function app_search() {
           verse_number,
         );
         let text = string_combine_multiple([reference, " ", joined]);
-        html_button(string_combine_multiple([emoji_book(), " open chapter"]));
-        html_button_copy(result, text);
-        html_p_text_centered(result, text);
+        html_button(
+          search_result_component,
+          string_combine_multiple([emoji_book(), " open chapter"]),
+        );
+        html_button_copy(search_result_component, text);
+        html_p_text_centered(search_result_component, text);
       };
       let b = html_button(root, reference, on_click);
       return on_click;
