@@ -41,9 +41,9 @@ export async function app_chapter() {
       after = function () {
         return html_scroll_center(v_component);
       };
-      after();
     }
     html_bible_verse_define(v_component, book_code, chapter_code, verse);
   });
   await sleep_0();
+  after();
 }
