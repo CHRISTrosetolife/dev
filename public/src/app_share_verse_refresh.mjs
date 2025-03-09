@@ -1,3 +1,4 @@
+import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
 import { me_phone } from "./me_phone.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_div } from "./html_div.mjs";
@@ -73,8 +74,8 @@ export async function app_share_verse_refresh(
   await download();
   html_button_add(root, "verse", download);
   let texts_extra_chosen = [];
-  html_button_copy_get(root, copy);
-  function copy() {
+  html_button_copy_get(root, copy_get);
+  function copy_get() {
     let v2 = list_join_newline(
       list_concat_multiple([
         texts_extra_chosen,
@@ -201,5 +202,6 @@ export async function app_share_verse_refresh(
         verse_number_next,
       );
     });
+    await clipboard_copy_web(copy_get());
   }
 }
