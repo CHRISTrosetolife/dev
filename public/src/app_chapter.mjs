@@ -1,3 +1,4 @@
+import { html_scroll_center } from "./html_scroll_center.mjs";
 import { log } from "./log.mjs";
 import { html_style_background_color_yellow } from "./html_style_background_color_yellow.mjs";
 import { app_share_verse } from "./app_share_verse.mjs";
@@ -36,11 +37,9 @@ export async function app_chapter() {
   each(verses, function (verse) {
     let v_component = html_div(root);
     let { verse_number } = verse;
-    log({
-      verse_number,
-    });
     if (verse_number === verse_number_selected) {
       html_style_background_color_yellow(v_component);
+      html_scroll_center(v_component);
     }
     html_bible_verse_define(v_component, book_code, chapter_code, verse);
   });
