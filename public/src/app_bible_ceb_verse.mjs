@@ -84,7 +84,7 @@ export async function app_bible_ceb_verse(
     let row = html_div(middle);
     html_on_click(verse_word, function () {
       row_selected = html_style_background_color_select(row_selected, row);
-      html_scroll_center_generic(row, {});
+      html_scroll_center(row);
     });
     let verse_word_red = html_bible_word(row, word);
     html_on_click(verse_word_red, async function () {
@@ -93,7 +93,7 @@ export async function app_bible_ceb_verse(
         verse_word,
       );
       row_selected = html_style_background_color_select(row_selected, null);
-      html_scroll_center_generic(verse_word, {});
+      html_scroll_center(verse_word);
       unawait(async function () {
         await sleep(1000);
         html_style_background_color_transparent(verse_word);
@@ -126,3 +126,7 @@ export async function app_bible_ceb_verse(
     });
   });
 }
+function html_scroll_center(verse_word) {
+    html_scroll_center_generic(verse_word, {});
+}
+
