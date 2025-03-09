@@ -28,7 +28,6 @@ import { string_split_space } from "./string_split_space.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { html_hr } from "./html_hr.mjs";
-import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 export async function app_search() {
   let root = await firebase_initialize_axios();
   html_style_a_plain();
@@ -71,9 +70,10 @@ export async function app_search() {
           verse_number,
         );
         let text = string_combine_multiple([reference, " ", joined]);
-        let button_chapter = html_button_width_full_text(
+        let button_chapter = html_button(
           search_result_component,
           string_combine_multiple([emoji_book(), " open chapter"]),
+          function () {},
         );
         html_style_link_blank(
           string_combine_multiple([
