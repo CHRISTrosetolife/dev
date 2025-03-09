@@ -27,6 +27,8 @@ export async function app_chapter() {
   each(verses, function (verse) {
     let { verse_number } = verse;
     if (object_property_exists(lookup, app_share_verse())) {
+      if (false) {
+      }
     }
     let v_component = html_div(root);
     html_bible_verse_define(v_component, book_code, chapter_code, verse);
