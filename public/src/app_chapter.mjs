@@ -1,3 +1,4 @@
+import { sleep_0 } from "./sleep_0.mjs";
 import { noop } from "./noop.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
 import { html_style_background_color_yellow } from "./html_style_background_color_yellow.mjs";
@@ -43,5 +44,6 @@ export async function app_chapter() {
     }
     html_bible_verse_define(v_component, book_code, chapter_code, verse);
   });
+  await sleep_0();
   after();
 }
