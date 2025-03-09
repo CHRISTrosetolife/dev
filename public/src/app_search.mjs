@@ -1,3 +1,4 @@
+import { app_share_chapter } from "./app_share_chapter.mjs";
 import { html_style_link_blank } from "./html_style_link_blank.mjs";
 import { html_button_text } from "./html_button_text.mjs";
 import { emoji_book } from "./emoji_book.mjs";
@@ -67,7 +68,12 @@ export async function app_search() {
           search_result_component,
           string_combine_multiple([emoji_book(), " open chapter"]),
         );
-        html_style_link_blank("chapter.html#", chapter_code)(button_chapter);
+        html_style_link_blank(
+          "chapter.html#",
+          app_share_chapter(),
+          "=",
+          chapter_code,
+        )(button_chapter);
         html_button_copy(search_result_component, text);
         html_p_text_centered(search_result_component, text);
       };
