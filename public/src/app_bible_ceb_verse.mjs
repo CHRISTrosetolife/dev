@@ -1,10 +1,10 @@
+import { html_scroll_center } from "./html_scroll_center.mjs";
 import { html_style } from "./html_style.mjs";
 import { ceb_definition_html_a } from "./ceb_definition_html_a.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { html_style_background_color_transparent } from "./html_style_background_color_transparent.mjs";
 import { sleep } from "./sleep.mjs";
 import { html_style_background_color_select } from "./html_style_background_color_select.mjs";
-import { html_scroll_center_generic } from "./html_scroll_center_generic.mjs";
 import { html_span } from "./html_span.mjs";
 import { html_bible_verse_number } from "./html_bible_verse_number.mjs";
 import { html_style_green } from "./html_style_green.mjs";
@@ -126,7 +126,3 @@ export async function app_bible_ceb_verse(
     });
   });
 }
-function html_scroll_center(verse_word) {
-    html_scroll_center_generic(verse_word, {});
-}
-
