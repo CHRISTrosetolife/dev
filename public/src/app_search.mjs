@@ -70,10 +70,8 @@ export async function app_search() {
         let text = string_combine_multiple([reference, " ", joined]);
         let row = html_div(search_result_component);
         html_style_flex_row_centered(row);
-        let d = html_div(row);
-        html_style_flex_1(d);
         html_button(
-          search_result_component,
+          row,
           string_combine_multiple([emoji_book(), " open chapter"]),
           function () {
             window_open(
@@ -101,3 +99,8 @@ export async function app_search() {
     return v3;
   }
 }
+function html_div_flex_1(row) {
+    let d = html_div(row);
+    html_style_flex_1(d);
+}
+
