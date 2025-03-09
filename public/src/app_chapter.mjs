@@ -30,6 +30,8 @@ export async function app_chapter() {
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   each(verses, function (verse) {
     let { verse_number } = verse;
+    if (false) {
+    }
     let v_component = html_div(root);
     html_bible_verse_define(v_component, book_code, chapter_code, verse);
   });
