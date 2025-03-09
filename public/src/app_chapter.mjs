@@ -1,3 +1,4 @@
+import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { html_div } from "./html_div.mjs";
 import { each } from "./each.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
@@ -11,6 +12,7 @@ import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 export async function app_chapter() {
   let root = await html_style_default_initialize_axios();
+  html_style_a_plain();
   let lookup = html_hash_lookup();
   if (object_property_exists_not(lookup, app_share_chapter())) {
     html_p_text("Needs chapter in URL");
