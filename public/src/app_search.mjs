@@ -1,4 +1,3 @@
-import { html_style_flex_1 } from "./html_style_flex_1.mjs";
 import { html_style_flex_row_centered } from "./html_style_flex_row_centered.mjs";
 import { window_open } from "./window_open.mjs";
 import { invoke_once } from "./invoke_once.mjs";
@@ -99,8 +98,3 @@ export async function app_search() {
     return v3;
   }
 }
-function html_div_flex_1(row) {
-    let d = html_div(row);
-    html_style_flex_1(d);
-}
-
