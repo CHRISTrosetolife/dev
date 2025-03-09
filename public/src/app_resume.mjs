@@ -1,3 +1,4 @@
+import { me_phone } from "./me_phone.mjs";
 import { html_style_link_blank } from "./html_style_link_blank.mjs";
 import { me_email } from "./me_email.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
@@ -37,7 +38,7 @@ export function app_resume() {
   html_spacer_bullet(row);
   html_span_text(row, html_replace_nb("Jacksonville, Florida 32207"));
   html_spacer_bullet(row);
-  html_phone(row, "+1 (904) 314-4052");
+  html_phone(row, me_phone());
   html_spacer_bullet(row);
   html_email(row, me_email());
   app_resume_header_2(root, "Projects");
