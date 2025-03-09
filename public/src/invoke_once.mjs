@@ -6,8 +6,8 @@ export function invoke_once(fn) {
       let v = result;
       return v;
     }
-    result = fn(...arguments);
     invoked = true;
+    result = fn(...arguments);
     return result;
   }
   return inner;
