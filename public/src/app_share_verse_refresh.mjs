@@ -115,6 +115,7 @@ export async function app_share_verse_refresh(
         html_style_display_none(b);
         list_add(texts_extra_chosen, v);
         list_add(texts_extra_chosen, "");
+        html_p(texts_component, v);
       },
     );
   });
