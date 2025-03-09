@@ -204,6 +204,9 @@ export async function app_share_verse_refresh(
         verse_number_next,
       );
     });
-    await clipboard_copy_web(copy_get());
+    await copy();
+    async function copy(copy_get) {
+      await clipboard_copy_web(copy_get());
+    }
   }
 }
