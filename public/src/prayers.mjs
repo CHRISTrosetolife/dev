@@ -77,6 +77,8 @@ export function prayers() {
     "Bless every apostle",
     "Bless every prophet",
     "Bless every deacon",
+    "Bless every servant",
+    "Bless every messenger",
     "Let all preaching be perfect",
     "Let all teaching be perfect",
     "Let all shepherding be perfect",
