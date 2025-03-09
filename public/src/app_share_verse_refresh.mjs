@@ -132,12 +132,13 @@ export async function app_share_verse_refresh(
     let b = html_button_text_click(
       root,
       object_property_get(t, "button_text"),
-      function () {
+      async function () {
         let v = object_property_get(t, "value");
         html_style_display_none(b);
         list_add(texts_extra_chosen, v);
         list_add(texts_extra_chosen, "");
         html_p_text(texts_component, v);
+        await copy();
       },
     );
   });
@@ -205,8 +206,8 @@ export async function app_share_verse_refresh(
       );
     });
     await copy();
-    async function copy() {
-      await clipboard_copy_web(copy_get());
-    }
+  }
+  async function copy() {
+    await clipboard_copy_web(copy_get());
   }
 }
