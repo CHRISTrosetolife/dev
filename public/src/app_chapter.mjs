@@ -1,6 +1,6 @@
+import { html_style_default_initialize_axios } from "./html_style_default_initialize_axios.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
-import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
-export function app_chapter() {
-  let root = html_style_default_initialize();
+export async function app_chapter() {
+  let root = await html_style_default_initialize_axios();
   let lookup = html_hash_lookup();
 }
