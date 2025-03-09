@@ -55,35 +55,38 @@ export async function app_search() {
     });
     html_hr(root);
     html_button(root, "expand all", expand_all);
-    let on_clicks = list_map(filtered, function (f) {
-      let { chapter_code, verse_number, reference } = f;
-      html_hr(root);
-      let search_result_component = html_div(root);
-      let on_click = async function () {
-        html_remove(b);
-        let joined = await firebase_download_bible_verse_search(
-          chapter_code,
-          verse_number,
-        );
-        let text = string_combine_multiple([reference, " ", joined]);
-        let button_chapter = html_button_width_full_text(
-          search_result_component,
-          string_combine_multiple([emoji_book(), " open chapter"]),
-        );
-        html_style_link_blank(
-          string_combine_multiple([
-            "chapter.html#",
-            app_share_chapter(),
-            "=",
+    let on_clicks = list_map(
+      filtered,
+      invoke_once(function (f) {
+        let { chapter_code, verse_number, reference } = f;
+        html_hr(root);
+        let search_result_component = html_div(root);
+        let on_click = async function () {
+          html_remove(b);
+          let joined = await firebase_download_bible_verse_search(
             chapter_code,
-          ]),
-        )(button_chapter);
-        html_button_copy(search_result_component, text);
-        html_p_text_centered(search_result_component, text);
-      };
-      let b = html_button(root, reference, on_click);
-      return on_click;
-    });
+            verse_number,
+          );
+          let text = string_combine_multiple([reference, " ", joined]);
+          let button_chapter = html_button_width_full_text(
+            search_result_component,
+            string_combine_multiple([emoji_book(), " open chapter"]),
+          );
+          html_style_link_blank(
+            string_combine_multiple([
+              "chapter.html#",
+              app_share_chapter(),
+              "=",
+              chapter_code,
+            ]),
+          )(button_chapter);
+          html_button_copy(search_result_component, text);
+          html_p_text_centered(search_result_component, text);
+        };
+        let b = html_button(root, reference, on_click);
+        return on_click;
+      }),
+    );
     async function expand_all() {
       invoke_multiple(on_clicks);
     }
