@@ -74,7 +74,9 @@ export async function app_share_verse_refresh(
   await download();
   html_button_add(root, "verse", download);
   let texts_extra_chosen = [];
-  html_button_copy_get(root, copy_get);
+  if (false) {
+    html_button_copy_get(root, copy_get);
+  }
   function copy_get() {
     let v2 = list_join_newline(
       list_concat_multiple([
