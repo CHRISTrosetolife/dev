@@ -60,7 +60,7 @@ export async function app_search() {
     let on_clicks = list_map(
       filtered,
       invoke_once(function (f) {
-        log("");
+        log("here");
         let { chapter_code, verse_number, reference } = f;
         html_hr(root);
         let search_result_component = html_div(root);
