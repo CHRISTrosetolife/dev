@@ -71,7 +71,8 @@ export async function app_search() {
           verse_number,
         );
         let text = string_combine_multiple([reference, " ", joined]);
-        let row = html_style_flex_row_centered(search_result_component);
+        let row = html_div(search_result_component);
+        html_style_flex_row_centered(row);
         html_button(
           search_result_component,
           string_combine_multiple([emoji_book(), " open chapter"]),
