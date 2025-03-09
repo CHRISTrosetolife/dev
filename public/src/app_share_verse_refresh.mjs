@@ -208,7 +208,9 @@ export async function app_share_verse_refresh(
         verse_number_next,
       );
     });
-    await copy();
+    if (false) {
+      await copy();
+    }
   }
   async function copy() {
     await clipboard_copy_web(copy_get());
