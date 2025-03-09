@@ -73,7 +73,8 @@ export async function app_share_verse_refresh(
   await download();
   html_button_add(root, "verse", download);
   let texts_extra_chosen = [];
-  html_button_copy_get(root, function () {
+  html_button_copy_get(root, copy);
+  function copy() {
     let v2 = list_join_newline(
       list_concat_multiple([
         texts_extra_chosen,
@@ -83,7 +84,7 @@ export async function app_share_verse_refresh(
       ]),
     );
     return v2;
-  });
+  }
   let texts_extra = [
     {
       button_text: "👋🏿 Greet",
