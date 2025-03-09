@@ -43,6 +43,8 @@ export function prayers() {
     "Cause love and I to be faithful in marriage",
     "Let the prayer of love and I be perfect",
     "Let the prayer of every Christian be perfect",
+    "Let love and I to be generous",
+    "Let every Christian to be generous",
     "Cause all to choose good",
     "Answer all the prayer requests I should be praying",
     "Answer all the prayer requests every Christian should be praying",
