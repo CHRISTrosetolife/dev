@@ -1,3 +1,4 @@
+import { html_hash_unparse } from "./html_hash_unparse.mjs";
 import { html_style_flex_row_centered } from "./html_style_flex_row_centered.mjs";
 import { window_open } from "./window_open.mjs";
 import { invoke_once } from "./invoke_once.mjs";
@@ -76,9 +77,9 @@ export async function app_search() {
             window_open(
               string_combine_multiple([
                 "chapter.html#",
-                app_share_chapter(),
-                "=",
-                chapter_code,
+                html_hash_unparse({
+                  [app_share_chapter()]: chapter_code,
+                }),
               ]),
             );
           },
