@@ -26,7 +26,7 @@ export async function app_search() {
   let root = await firebase_initialize_axios();
   html_p_text_centered(root, "enter words separated by spaces");
   let i = html_input_width_full_focus(root);
-  html_button(root, "🔎 search", async () => {
+  html_button(root, "🔎 search", async function () {
     let v = html_value_get(i);
     html_clear_scroll_top(root);
     html_p_text_centered(root, v);
@@ -36,27 +36,31 @@ export async function app_search() {
       word_to_results,
       tautology,
     );
-    each(filtered, (f) => {
+    each(filtered, function (f) {
       let { chapter_code, verse_number } = f;
       let reference = bible_reference_code(chapter_code, [verse_number]);
       object_merge(f, {
         reference,
       });
     });
-    list_sort_string_map(filtered, (f) => object_property_get(f, "reference"));
+    list_sort_string_map(filtered, function (f) {
+      let v2 = object_property_get(f, "reference");
+      return v2;
+    });
     html_hr(root);
     html_button(root, "expand all", expand_all);
-    let on_clicks = list_map(filtered, (f) => {
+    let on_clicks = list_map(filtered, function (f) {
       let { chapter_code, verse_number, reference } = f;
       html_hr(root);
       let result = html_div(root);
-      let on_click = async () => {
+      let on_click = async function () {
         html_remove(b);
         let joined = await firebase_download_bible_verse_search(
           chapter_code,
           verse_number,
         );
         let text = string_combine_multiple([reference, " ", joined]);
+        html_button();
         html_button_copy(result, text);
         html_p_text_centered(result, text);
       };
@@ -68,6 +72,7 @@ export async function app_search() {
     }
   });
   async function word_to_results(word) {
-    return await firebase_download_bible(app_search_folder(), word);
+    let v3 = await firebase_download_bible(app_search_folder(), word);
+    return v3;
   }
 }
