@@ -109,7 +109,7 @@ export async function app_share_verse_refresh(
     },
     {
       button_text: "🙏🏿 Thanks",
-      value: "🙏🏿 Thank you very much ",
+      value: "🙌🏿 Thank you very much ",
     },
     {
       button_text: "📞 Phone",
