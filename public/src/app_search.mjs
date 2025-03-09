@@ -61,7 +61,7 @@ export async function app_search() {
       let { chapter_code, verse_number, reference } = f;
       html_hr(root);
       let search_result_component = html_div(root);
-      let on_click = async function () {
+      let on_click = invoke_once(async function () {
         log({
           f,
         });
@@ -85,10 +85,9 @@ export async function app_search() {
         )(button_chapter);
         html_button_copy(search_result_component, text);
         html_p_text_centered(search_result_component, text);
-      };
+      });
       let b = html_button(root, reference, on_click);
-      let v4 = invoke_once(on_click);
-      return v4;
+      return on_click;
     });
     async function expand_all() {
       invoke_multiple(on_clicks);
