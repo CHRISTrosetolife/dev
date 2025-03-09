@@ -1,3 +1,4 @@
+import { invoke_once } from "./invoke_once.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { app_share_chapter } from "./app_share_chapter.mjs";
 import { html_style_link_blank } from "./html_style_link_blank.mjs";
