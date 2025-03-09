@@ -1,3 +1,4 @@
+import { html_div } from "./html_div.mjs";
 import { each } from "./each.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { html_bible_verse_define } from "./html_bible_verse_define.mjs";
@@ -20,6 +21,7 @@ export async function app_chapter() {
   let verses = await bible_storage_version_http_get(version_code, chapter_name);
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   each(verses, function (verse) {
-    html_bible_verse_define(root, book_code, chapter_code, verse);
+    let v_component = html_div(root);
+    html_bible_verse_define(v_component, book_code, chapter_code, verse);
   });
 }
