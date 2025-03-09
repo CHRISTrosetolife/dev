@@ -112,6 +112,10 @@ export async function app_share_verse_refresh(
       value: "🙌🏿 Thank you very much 😁",
     },
     {
+      button_text: "🙏🏿 Praise",
+      value: "🎶 Praise the LORD our God 🎵",
+    },
+    {
       button_text: "📞 Phone",
       value: string_combine_multiple([
         "📞 Here is my WhatsApp phone number: ",
