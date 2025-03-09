@@ -86,7 +86,7 @@ export async function app_search() {
             );
           },
         );
-        html_button_copy(search_result_component, text);
+        html_button_copy(row, text);
         html_p_text_centered(search_result_component, text);
       });
       let b = html_button(root, reference, on_click);
