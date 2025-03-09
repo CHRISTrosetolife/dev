@@ -1,3 +1,4 @@
+import { html_scroll_nearest } from "./html_scroll_nearest.mjs";
 import { html_button } from "./html_button.mjs";
 import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
 import { list_join_comma } from "./list_join_comma.mjs";
@@ -6,7 +7,6 @@ import { list_map_index } from "./list_map_index.mjs";
 import { html_button_width_full_text_click_hr } from "./html_button_width_full_text_click_hr.mjs";
 import { app_list_choice_update } from "./app_list_choice_update.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
-import { html_scroll_center } from "./html_scroll_center.mjs";
 import { app_list_root } from "./app_list_root.mjs";
 import { storage_local_remove } from "./storage_local_remove.mjs";
 import { log } from "./log.mjs";
@@ -40,7 +40,7 @@ export function app_list_choose(body) {
     if (last === null) {
       return;
     }
-    html_scroll_center(last);
+    html_scroll_nearest(last);
   });
   html_button_width_full_text_click_hr(body, "clear list", () => {
     storage_local_remove(app_list, "list");

@@ -1,3 +1,4 @@
+import { html_scroll_nearest } from "./html_scroll_nearest.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
 import { app_memorize_save } from "./app_memorize_save.mjs";
@@ -19,7 +20,6 @@ import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { mod } from "./mod.mjs";
-import { html_scroll_center } from "./html_scroll_center.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { html_strong_text } from "./html_strong_text.mjs";
 import { each_index } from "./each_index.mjs";
@@ -83,7 +83,7 @@ export async function app_memorize_refresh_memorize(context) {
         save.token_index = 0;
         save.verse_index = vi;
         app_memorize_save(context);
-        html_scroll_center(verse_element);
+        html_scroll_nearest(verse_element);
       });
       let token_objects = list_adder((la) => {
         each_index(tokens, (token, ti) => {
