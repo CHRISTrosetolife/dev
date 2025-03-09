@@ -107,6 +107,7 @@ export function prayers() {
     "Save and bless all Hindus",
     "Save and bless all Buddhists",
     "Bless the nails of love",
+    "Protect the teeth of love and I",
     "Bless my works",
     "Bless my word of God singing and speaking",
     "Bless my programming",
