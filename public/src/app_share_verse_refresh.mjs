@@ -1,3 +1,4 @@
+import { me_phone } from "./me_phone.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
@@ -108,7 +109,10 @@ export async function app_share_verse_refresh(
     },
     {
       button_text: "📞 Phone",
-      value: "📞 Here is my WhatsApp phone number: ",
+      value: string_combine_multiple([
+        "📞 Here is my WhatsApp phone number: ",
+        me_phone(),
+      ]),
     },
   ];
   each(texts_extra, function (t) {
