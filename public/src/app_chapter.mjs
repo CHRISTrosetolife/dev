@@ -15,7 +15,7 @@ export async function app_chapter() {
   html_style_a_plain();
   let lookup = html_hash_lookup();
   if (object_property_exists_not(lookup, app_share_chapter())) {
-    html_p_text("Needs chapter in URL");
+    html_p_text(root, "Needs chapter in URL");
     return;
   }
   let version_code = "engbsb";
