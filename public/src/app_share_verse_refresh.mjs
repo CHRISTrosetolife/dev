@@ -66,7 +66,7 @@ export async function app_share_verse_refresh(
   let texts_component = html_div(root);
   let verses_component = html_p(root);
   let lookup_next;
-  let next_text = "Next verse: ";
+  let next_text = "Copy next verse to clipboard: ";
   html_span_text(root, next_text);
   let next_url_component = html_span(root);
   let location = object_property_get(window, "location");
