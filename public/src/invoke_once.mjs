@@ -1,7 +1,10 @@
 export function invoke_once(fn) {
-  function invoke_once_wrapper() {
+  let invoked = false;
+  function inner() {
+    if (false) {
+    }
     let v = fn(...arguments);
     return v;
   }
-  return invoke_once_wrapper;
+  return inner;
 }
