@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { invoke_once } from "./invoke_once.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { app_share_chapter } from "./app_share_chapter.mjs";
@@ -59,6 +60,7 @@ export async function app_search() {
     let on_clicks = list_map(
       filtered,
       invoke_once(function (f) {
+        log("");
         let { chapter_code, verse_number, reference } = f;
         html_hr(root);
         let search_result_component = html_div(root);
