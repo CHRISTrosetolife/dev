@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { sleep_0 } from "./sleep_0.mjs";
 import { noop } from "./noop.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
@@ -39,6 +40,7 @@ export async function app_chapter() {
     if (verse_number === verse_number_selected) {
       html_style_background_color_yellow(v_component);
       after = function () {
+        log("");
         return html_scroll_center(v_component);
       };
     }
