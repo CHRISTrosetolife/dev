@@ -1,6 +1,6 @@
+import { html_style_flex_1 } from "./html_style_flex_1.mjs";
 import { html_style_flex_row_centered } from "./html_style_flex_row_centered.mjs";
 import { window_open } from "./window_open.mjs";
-import { log } from "./log.mjs";
 import { invoke_once } from "./invoke_once.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { app_share_chapter } from "./app_share_chapter.mjs";
@@ -62,9 +62,6 @@ export async function app_search() {
       html_hr(root);
       let search_result_component = html_div(root);
       let on_click = invoke_once(async function () {
-        log({
-          f,
-        });
         html_remove(b);
         let joined = await firebase_download_bible_verse_search(
           chapter_code,
@@ -73,6 +70,8 @@ export async function app_search() {
         let text = string_combine_multiple([reference, " ", joined]);
         let row = html_div(search_result_component);
         html_style_flex_row_centered(row);
+        let d = html_div(row);
+        html_style_flex_1(d);
         html_button(
           search_result_component,
           string_combine_multiple([emoji_book(), " open chapter"]),
