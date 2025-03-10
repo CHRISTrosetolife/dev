@@ -12,8 +12,7 @@ import { list_filter } from "./list_filter.mjs";
 export async function app_language_2_upload_pairs(pairs, from, to) {
   pairs = list_filter(pairs, function (p) {
     let v = list_all(p, function (i) {
-      let a = " ";
-      let v2 = string_includes_not(i, a);
+      let v2 = string_includes_not(i, " ");
       return v2;
     });
     return v;
