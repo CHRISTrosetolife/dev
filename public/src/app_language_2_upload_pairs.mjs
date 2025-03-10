@@ -21,7 +21,11 @@ export async function app_language_2_upload_pairs(pairs, from, to) {
   each(pairs, function (p) {
     let first = list_first(p);
     let second = list_second(p);
-    if (object_property_exists(object, "property_name")) {
+    if (
+      object_property_exists(lefts, first) ||
+      object_property_exists(rights, second)
+    ) {
+      return;
     }
   });
   log({
