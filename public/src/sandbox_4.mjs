@@ -10,7 +10,7 @@ export async function sandbox_4() {
     word,
   ]);
   let root = await html_cache_parse(url);
-  html_parse_visit_attribute_value_single(root, "cellspacing", "3");
+  html_parse_visit_attribute_value_single(root, "cellpadding", "3");
   return;
   let filtered2 = await english_words_dictionary();
   await each_log_async(filtered2, function () {});
