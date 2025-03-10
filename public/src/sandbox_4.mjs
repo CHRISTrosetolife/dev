@@ -22,7 +22,7 @@ export async function sandbox_4() {
     list_map(rows, function (row) {
       let v = list_first(html_parse_children(row));
       let v2 = html_parse_text(v);
-      return v2;
+      return v;
     }),
   );
   return;
