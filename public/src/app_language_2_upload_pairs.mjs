@@ -20,6 +20,8 @@ export async function app_language_2_upload_pairs(pairs, from, to) {
   each(pairs, function (p) {
     let first = list_first(p);
     let second = list_second(p);
+    if (false) {
+    }
   });
   log({
     pairs,
