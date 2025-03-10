@@ -13,7 +13,7 @@ export async function sandbox_4() {
   log({
     result,
   });
-  return v;
+  return result;
   let filtered2 = await english_words_dictionary();
   await each_log_async(filtered2, function () {});
 }
