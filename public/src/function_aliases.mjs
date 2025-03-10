@@ -24,9 +24,11 @@ export function function_aliases() {
   function_aliases_register(all, fn_name("function_cache_delete"), ["fcd"]);
   function_aliases_register(all, fn_name("function_cache_new"), ["fcn"]);
   function_aliases_register(all, fn_name("function_cache_path_open"), ["fco"]);
-  function_aliases_register(all, fn_name("function_cache_refresh_args"), [
-    "fca",
-  ]);
+  function_aliases_register(
+    all,
+    fn_name("function_cache_refresh_args_command_line"),
+    ["fca"],
+  );
   function_aliases_register(all, fn_name("function_cache_refresh"), ["fcr"]);
   function_aliases_register(all, fn_name("function_transform_command_line"), [
     "ft",
