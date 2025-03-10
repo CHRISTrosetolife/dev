@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_unique_json } from "./list_unique_json.mjs";
 import { each } from "./each.mjs";
 import { definition_bohol } from "./definition_bohol.mjs";
@@ -10,6 +11,7 @@ export async function app_language_2_upload_pairs_bohol(
   language_to,
   limit,
 ) {
+  log("");
   let filtered2 = await english_words_dictionary();
   let taken = list_take_soft(filtered2, limit);
   let pairs = await list_adder_async(async function (la) {
