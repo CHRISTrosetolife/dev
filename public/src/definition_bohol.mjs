@@ -1,3 +1,4 @@
+import { string_case_lower } from "./string_case_lower.mjs";
 import { list_unique_json } from "./list_unique_json.mjs";
 import { list_size } from "./list_size.mjs";
 import { string_split_space } from "./string_split_space.mjs";
@@ -93,6 +94,7 @@ export async function definition_bohol(word, language_from, language_to) {
           }
         }
         let pair = [word_tgl, word_en];
+        pair = list_map(pair, string_case_lower);
         la_inner(pair);
       });
     });
