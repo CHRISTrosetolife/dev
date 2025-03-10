@@ -1,3 +1,5 @@
+import { never } from "./never.mjs";
+import { assert } from "./assert.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { each } from "./each.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
@@ -23,12 +25,13 @@ export async function sandbox_4() {
   list_adder(function (la) {});
   each(rows, function (row) {
     let columns = html_parse_visit_tag_list(row, "td");
+    assert(never, []);
     let column_first = list_first(columns);
     let column_first_text = string_trim_whitespace(
       html_parse_text(column_first),
     );
     let lower = string_case_lower(column_first_text);
-    if (false) {
+    if (lower === word) {
       log(lower);
     }
   });
