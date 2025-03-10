@@ -1,6 +1,5 @@
 import { list_second } from "./list_second.mjs";
 import { list_size } from "./list_size.mjs";
-import { equal } from "./equal.mjs";
 import { assert } from "./assert.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { each } from "./each.mjs";
@@ -27,7 +26,9 @@ export async function sandbox_4() {
   list_adder(function (la) {});
   each(rows, function (row) {
     let columns = html_parse_visit_tag_list(row, "td");
-    assert(equal, [list_size(columns), 4]);
+    if (false) {
+    }
+    assert(gr, [list_size(columns), 4]);
     let column_first = list_first(columns);
     let columen_first_text = html_parse_text(column_first);
     let column_first_text_trimmed = string_trim_whitespace(columen_first_text);
