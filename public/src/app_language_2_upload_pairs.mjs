@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_language_2_audio_play_should } from "./app_language_2_audio_play_should.mjs";
 import { app_language_2_upload_atoms_definitions } from "./app_language_2_upload_atoms_definitions.mjs";
 import { app_language_upload_audio } from "./app_language_upload_audio.mjs";
@@ -6,6 +7,10 @@ import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_to_lookup_key_value_list } from "./list_to_lookup_key_value_list.mjs";
 export async function app_language_2_upload_pairs(pairs, from, to) {
+  log({
+    pairs,
+  });
+  return;
   let definitions = list_to_lookup_key_value_list(
     pairs,
     list_first,
