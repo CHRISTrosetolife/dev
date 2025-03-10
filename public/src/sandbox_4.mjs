@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { html_parse_children } from "./html_parse_children.mjs";
 import { list_first } from "./list_first.mjs";
@@ -18,6 +19,7 @@ export async function sandbox_4() {
   let root = await html_cache_parse(url);
   let table = html_parse_visit_attribute_value_single(root, "cellpadding", "3");
   let rows = html_parse_visit_tag_list(table, "tr");
+  each(list, function (item) {});
   log(
     list_map(rows, function (row) {
       let v = list_first(html_parse_children(row));
