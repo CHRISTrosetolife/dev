@@ -5,9 +5,13 @@ import { keyboard_greek } from "./keyboard_greek.mjs";
 import { string_includes } from "./string_includes.mjs";
 export async function bible_interlinear_words_hebrew_audio_upload() {
   let excluded = "־׀׃";
-  let filter = (character) => !string_includes(excluded, character);
+  let filter = function (character) {
+    let v = !string_includes(excluded, character);
+    return v;
+  };
   let words = await bible_interlinear_words(bible_interlinear_cache_old);
   let language_code = "he";
+  return;
   await bible_interlinear_words_audio_upload_generic(
     bible_interlinear_cache_old,
     keyboard_greek,
