@@ -1,3 +1,4 @@
+import { list_sort_string } from "./list_sort_string.mjs";
 import { bible_interlinear_words_audio_upload_map } from "./bible_interlinear_words_audio_upload_map.mjs";
 import { each } from "./each.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
@@ -21,6 +22,7 @@ export async function bible_interlinear_words_hebrew_audio_upload() {
       each(letters, la);
     });
   });
+  list_sort_string(letters);
   let language_code = "he";
   let v2 = string_symbols_multiple(words);
   return letters;
