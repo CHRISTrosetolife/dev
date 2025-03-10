@@ -1,3 +1,6 @@
+import { html_parse_children } from "./html_parse_children.mjs";
+import { list_first } from "./list_first.mjs";
+import { list_map } from "./list_map.mjs";
 import { log } from "./log.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { html_parse_visit_attribute_value_single } from "./html_parse_visit_attribute_value_single.mjs";
@@ -14,7 +17,12 @@ export async function sandbox_4() {
   let root = await html_cache_parse(url);
   let table = html_parse_visit_attribute_value_single(root, "cellpadding", "3");
   let rows = html_parse_visit_tag_list(table, "tr");
-  log("");
+  log(
+    list_map(rows, function (row) {
+      let v = list_first(html_parse_children(row));
+      return v;
+    }),
+  );
   return;
   let filtered2 = await english_words_dictionary();
   await each_log_async(filtered2, function () {});
