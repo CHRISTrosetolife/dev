@@ -20,7 +20,7 @@ export async function app_language_2_upload_pairs(pairs, from, to) {
   });
   let lefts = {};
   let rights = {};
-  list_adder(function (la) {
+  pairs = list_adder(function (la) {
     each(pairs, function (p) {
       let first = list_first(p);
       let second = list_second(p);
