@@ -1,4 +1,4 @@
-import { string_includes_not } from "./string_includes_not.mjs";
+import { string_includes_space_not } from "./string_includes_space_not.mjs";
 import { log } from "./log.mjs";
 import { list_all } from "./list_all.mjs";
 import { app_language_2_audio_play_should } from "./app_language_2_audio_play_should.mjs";
@@ -11,10 +11,7 @@ import { list_to_lookup_key_value_list } from "./list_to_lookup_key_value_list.m
 import { list_filter } from "./list_filter.mjs";
 export async function app_language_2_upload_pairs(pairs, from, to) {
   pairs = list_filter(pairs, function (p) {
-    let v = list_all(p, function (i) {
-      let v2 = string_includes_not(i, " ");
-      return v2;
-    });
+    let v = list_all(p, string_includes_space_not);
     return v;
   });
   log({
