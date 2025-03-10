@@ -28,10 +28,9 @@ export async function sandbox_4() {
     let columns = html_parse_visit_tag_list(row, "td");
     assert(equal, [list_size(columns), 4]);
     let column_first = list_first(columns);
-    let column_first_text = string_trim_whitespace(
-      html_parse_text(column_first),
-    );
-    let lower = string_case_lower(column_first_text);
+    let columen_first_text = html_parse_text(column_first);
+    let column_first_text_trimmed = string_trim_whitespace(columen_first_text);
+    let lower = string_case_lower(column_first_text_trimmed);
     if (lower === word) {
       log(lower);
     }
