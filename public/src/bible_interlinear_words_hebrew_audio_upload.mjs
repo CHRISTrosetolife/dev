@@ -1,4 +1,4 @@
-import { string_symbols } from "./string_symbols.mjs";
+import { string_symbols_multiple } from "./string_symbols_multiple.mjs";
 import { bible_interlinear_words } from "./bible_interlinear_words.mjs";
 import { bible_interlinear_cache_old } from "./bible_interlinear_cache_old.mjs";
 import { bible_interlinear_words_audio_upload_generic } from "./bible_interlinear_words_audio_upload_generic.mjs";
@@ -12,7 +12,7 @@ export async function bible_interlinear_words_hebrew_audio_upload() {
   };
   let words = await bible_interlinear_words(bible_interlinear_cache_old);
   let language_code = "he";
-  let v2 = string_symbols(words);
+  let v2 = string_symbols_multiple(words);
   return v2;
   await bible_interlinear_words_audio_upload_generic(
     bible_interlinear_cache_old,
