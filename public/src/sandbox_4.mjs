@@ -19,14 +19,15 @@ export async function sandbox_4() {
   let root = await html_cache_parse(url);
   let table = html_parse_visit_attribute_value_single(root, "cellpadding", "3");
   let rows = html_parse_visit_tag_list(table, "tr");
-  each(list, function (item) {});
-  log(
-    list_map(rows, function (row) {
-      let v = list_first(html_parse_children(row));
-      let v2 = html_parse_text(v);
-      return v;
-    }),
-  );
+  each(list, function (item) {
+    log(
+      list_map(rows, function (row) {
+        let v = list_first(html_parse_children(row));
+        let v2 = html_parse_text(v);
+        return v;
+      }),
+    );
+  });
   return;
   let filtered2 = await english_words_dictionary();
   await each_log_async(filtered2, function () {});
