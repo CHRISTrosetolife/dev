@@ -16,8 +16,8 @@ export async function bible_interlinear_words_hebrew_audio_upload() {
   list_adder_unique(function (la) {
     each(words, function (word) {
       let letters = word.match(/([\u05D0-\u05EA][\u0591-\u05C7]*)+/g);
+      each(letters, la);
     });
-    each(list, function (item) {});
   });
   let language_code = "he";
   let v2 = string_symbols_multiple(words);
