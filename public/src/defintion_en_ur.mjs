@@ -34,7 +34,7 @@ export async function defintion_en_ur(word) {
         let column_second_text = html_parse_text(column_second);
         let column_first_text_trimmed =
           string_trim_whitespace(column_second_text);
-        la([word, column_first_text_trimmed]);
+        la(column_first_text_trimmed);
       }
     });
   });
