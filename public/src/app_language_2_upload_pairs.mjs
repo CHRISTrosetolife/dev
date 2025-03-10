@@ -19,6 +19,7 @@ export async function app_language_2_upload_pairs(pairs, from, to) {
   log({
     pairs,
   });
+  return;
   let definitions = list_to_lookup_key_value_list(
     pairs,
     list_first,
