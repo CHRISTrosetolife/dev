@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { each } from "./each.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
 import { string_symbols_multiple } from "./string_symbols_multiple.mjs";
@@ -16,12 +17,15 @@ export async function bible_interlinear_words_hebrew_audio_upload() {
   let letters = list_adder_unique(function (la) {
     each(words, function (word) {
       let letters = word.match(/([\u05D0-\u05EA][\u0591-\u05C7]*)+/g);
+      log({
+        letters,
+      });
       each(letters, la);
     });
   });
   let language_code = "he";
   let v2 = string_symbols_multiple(words);
-  return v2;
+  return letters;
   await bible_interlinear_words_audio_upload_generic(
     bible_interlinear_cache_old,
     keyboard_greek,
