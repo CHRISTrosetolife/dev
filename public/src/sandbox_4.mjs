@@ -1,3 +1,4 @@
+import { html_parse_text } from "./html_parse_text.mjs";
 import { html_parse_children } from "./html_parse_children.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_map } from "./list_map.mjs";
@@ -20,7 +21,8 @@ export async function sandbox_4() {
   log(
     list_map(rows, function (row) {
       let v = list_first(html_parse_children(row));
-      return v;
+      let v2 = html_parse_text(v);
+      return v2;
     }),
   );
   return;
