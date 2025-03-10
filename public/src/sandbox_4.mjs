@@ -19,9 +19,9 @@ export async function sandbox_4() {
   let rows = html_parse_visit_tag_list(table, "tr");
   each(rows, function (row) {
     let v3 = html_parse_visit_tag_list(row, "td");
-    log(v3);
     let v = list_first(v3);
     let v2 = html_parse_text(v);
+    log(v2);
     log("");
   });
   return;
