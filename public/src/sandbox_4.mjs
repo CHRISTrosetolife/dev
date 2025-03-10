@@ -21,7 +21,7 @@ export async function sandbox_4() {
   let root = await html_cache_parse(url);
   let table = html_parse_visit_attribute_value_single(root, "cellpadding", "3");
   let rows = html_parse_visit_tag_list(table, "tr");
-  list_adder(function (la) {
+  let pairs = list_adder(function (la) {
     each(rows, function (row) {
       let columns = html_parse_visit_tag_list(row, "td");
       if (list_size(columns) <= 1) {
@@ -41,7 +41,7 @@ export async function sandbox_4() {
       }
     });
   });
-  return;
+  return pairs;
   let filtered2 = await english_words_dictionary();
   await each_log_async(filtered2, function () {});
 }
