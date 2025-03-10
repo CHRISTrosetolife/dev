@@ -1,3 +1,4 @@
+import { object_property_exists } from "./object_property_exists.mjs";
 import { each } from "./each.mjs";
 import { string_includes_space_not } from "./string_includes_space_not.mjs";
 import { log } from "./log.mjs";
@@ -20,7 +21,7 @@ export async function app_language_2_upload_pairs(pairs, from, to) {
   each(pairs, function (p) {
     let first = list_first(p);
     let second = list_second(p);
-    if (false) {
+    if (object_property_exists(object, "property_name")) {
     }
   });
   log({
