@@ -26,7 +26,7 @@ export async function sandbox_4() {
       html_parse_text(column_first),
     );
     let lower = string_case_lower(column_first_text);
-    log("");
+    log(lower);
   });
   return;
   let filtered2 = await english_words_dictionary();
