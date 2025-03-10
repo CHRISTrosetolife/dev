@@ -30,9 +30,9 @@ export async function sandbox_4() {
     let column_first = list_first(columns);
     let columen_first_text = html_parse_text(column_first);
     let column_first_text_trimmed = string_trim_whitespace(columen_first_text);
-    let lower = string_case_lower(column_first_text_trimmed);
-    if (lower === word) {
-      log(lower);
+    let column_first_lower = string_case_lower(column_first_text_trimmed);
+    if (column_first_lower === word) {
+      log(column_first_lower);
     }
   });
   return;
