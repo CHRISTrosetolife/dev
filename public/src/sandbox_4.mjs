@@ -4,7 +4,6 @@ import { list_adder } from "./list_adder.mjs";
 import { each } from "./each.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { list_first } from "./list_first.mjs";
-import { log } from "./log.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { html_parse_visit_attribute_value_single } from "./html_parse_visit_attribute_value_single.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
@@ -37,7 +36,7 @@ export async function sandbox_4() {
       let column_second_text = html_parse_text(column_second);
       let column_first_text_trimmed =
         string_trim_whitespace(column_second_text);
-      log(column_first_text_trimmed);
+      la([word, column_first_text_trimmed]);
     }
   });
   return;
