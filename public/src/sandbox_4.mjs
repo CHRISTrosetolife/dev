@@ -1,6 +1,5 @@
 import { each } from "./each.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
-import { html_parse_children } from "./html_parse_children.mjs";
 import { list_first } from "./list_first.mjs";
 import { log } from "./log.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
@@ -19,7 +18,7 @@ export async function sandbox_4() {
   let table = html_parse_visit_attribute_value_single(root, "cellpadding", "3");
   let rows = html_parse_visit_tag_list(table, "tr");
   each(rows, function (row) {
-    let v3 = html_parse_children(row);
+    let v3 = html_parse_visit_tag_list(row, "td");
     log(v3);
     let v = list_first(v3);
     let v2 = html_parse_text(v);
