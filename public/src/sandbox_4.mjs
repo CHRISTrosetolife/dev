@@ -1,3 +1,4 @@
+import { list_adder } from "./list_adder.mjs";
 import { each } from "./each.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { list_first } from "./list_first.mjs";
@@ -19,6 +20,7 @@ export async function sandbox_4() {
   let root = await html_cache_parse(url);
   let table = html_parse_visit_attribute_value_single(root, "cellpadding", "3");
   let rows = html_parse_visit_tag_list(table, "tr");
+  list_adder(function (la) {});
   each(rows, function (row) {
     let columns = html_parse_visit_tag_list(row, "td");
     let column_first = list_first(columns);
