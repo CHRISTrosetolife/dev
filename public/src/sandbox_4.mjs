@@ -9,6 +9,8 @@ export async function sandbox_4() {
     word,
   ]);
   let result = await html_cache_parse(url);
+  let v = result;
+  return v;
   let filtered2 = await english_words_dictionary();
   await each_log_async(filtered2, function () {});
 }
