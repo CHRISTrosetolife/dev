@@ -34,7 +34,7 @@ export async function sandbox_4() {
     let column_first_lower = string_case_lower(column_first_text_trimmed);
     if (column_first_lower === word) {
       let column_second = list_second(columns);
-      let column_second_text = html_parse_text(column_first);
+      let column_second_text = html_parse_text(column_second);
       log(column_second_text);
     }
   });
