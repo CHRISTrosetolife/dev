@@ -8,6 +8,8 @@ import { html_cache_parse } from "./html_cache_parse.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { english_words_dictionary } from "./english_words_dictionary.mjs";
 import { each_log_async } from "./each_log_async.mjs";
+import { string_case_lower } from "./string_case_lower.mjs";
+import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 export async function sandbox_4() {
   let word = "system";
   let url = string_combine_multiple([
@@ -18,10 +20,12 @@ export async function sandbox_4() {
   let table = html_parse_visit_attribute_value_single(root, "cellpadding", "3");
   let rows = html_parse_visit_tag_list(table, "tr");
   each(rows, function (row) {
-    let v3 = html_parse_visit_tag_list(row, "td");
-    let v = list_first(v3);
-    let v2 = html_parse_text(v);
-    log(v2);
+    let columns = html_parse_visit_tag_list(row, "td");
+    let column_first = list_first(columns);
+    let column_first_text = string_trim_whitespace(
+      html_parse_text(column_first),
+    );
+    let lower = string_case_lower(column_first_text);
     log("");
   });
   return;
