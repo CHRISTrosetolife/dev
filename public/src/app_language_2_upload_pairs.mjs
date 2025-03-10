@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { string_includes_space_not } from "./string_includes_space_not.mjs";
 import { log } from "./log.mjs";
 import { list_all } from "./list_all.mjs";
@@ -16,6 +17,7 @@ export async function app_language_2_upload_pairs(pairs, from, to) {
   });
   let lefts = {};
   let rights = {};
+  each(list, function (item) {});
   log({
     pairs,
   });
