@@ -16,7 +16,7 @@ export async function bible_interlinear_words_hebrew_audio_upload() {
   let words = await bible_interlinear_words(bible_interlinear_cache_old);
   let letters = list_adder_unique(function (la) {
     each(words, function (word) {
-      let letters = word.match(/([\u05D0-\u05EA][\u0591-\u05C7]*)+/g);
+      let letters = word.match(/([\u05D0-\u05EA][\u0591-\u05C7]*)/g);
       log({
         letters,
       });
