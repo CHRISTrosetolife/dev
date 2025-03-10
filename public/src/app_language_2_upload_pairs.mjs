@@ -14,6 +14,8 @@ export async function app_language_2_upload_pairs(pairs, from, to) {
     let v = list_all(p, string_includes_space_not);
     return v;
   });
+  let lefts = {};
+  let rights = {};
   log({
     pairs,
   });
