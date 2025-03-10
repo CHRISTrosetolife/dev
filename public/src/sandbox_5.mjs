@@ -4,7 +4,5 @@ import { audio_upload } from "./audio_upload.mjs";
 export async function sandbox_5() {
   let words = await english_words_dictionary();
   let w = list_first(words);
-  let v = w;
-  return v;
   await audio_upload("en", w);
 }
