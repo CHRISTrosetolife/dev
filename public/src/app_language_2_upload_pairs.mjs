@@ -31,7 +31,8 @@ export async function app_language_2_upload_pairs(pairs, from, to) {
         return;
       }
       la(p);
-      object_property_set(object, "property_name", value);
+      object_property_set(lefts, first, true);
+      object_property_set(rights, second, true);
     });
   });
   log({
