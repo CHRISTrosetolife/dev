@@ -11,6 +11,5 @@ export async function app_tgl_upload() {
     language_to,
     limit,
   );
-  let v = await app_language_2_upload_pairs(pairs, from, to);
-  return v;
+  await app_language_2_upload_pairs(pairs, from, to);
 }
