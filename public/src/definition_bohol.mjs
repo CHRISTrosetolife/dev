@@ -28,7 +28,7 @@ import { html_parse_visit_id } from "./html_parse_visit_id.mjs";
 import { definition_bohol_http_parse } from "./definition_bohol_http_parse.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 export async function definition_bohol(word, language_from, language_to) {
-  let pairs = await list_adder_async(async (la_inner) => {
+  let pairs = await list_adder_async(async function (la_inner) {
     let p = await definition_bohol_http_parse(word, language_from);
     let center = html_parse_visit_id(p, "center");
     let contents = html_parse_visit_class_single(center, "contents");
@@ -60,7 +60,7 @@ export async function definition_bohol(word, language_from, language_to) {
     assert(equal_json, [languages, expected]);
     let en_index = list_index(expected, language_from);
     let tgl_index = list_index(expected, language_to);
-    each(remaining, (row) => {
+    each(remaining, function (row) {
       let row_tds = html_parse_visit_tag_list(row, "td");
       assert(list_size_equal, [row_tds, expected]);
       let td_en = list_get(row_tds, en_index);
@@ -79,7 +79,7 @@ export async function definition_bohol(word, language_from, language_to) {
           string_combine_multiple(["&lang=", language_to]),
         ]);
       }
-      list_map(split, (s) => {
+      list_map(split, function (s) {
         let word_tgl = string_parenthesis_remove(s);
         word_tgl = string_trim_whitespace(word_tgl);
         if (string_empty_is(word_tgl)) {
@@ -92,7 +92,8 @@ export async function definition_bohol(word, language_from, language_to) {
             return;
           }
         }
-        la_inner([word_tgl, word_en]);
+        let pair = [word_tgl, word_en];
+        la_inner(pair);
       });
     });
   });
