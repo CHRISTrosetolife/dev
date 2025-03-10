@@ -21,23 +21,25 @@ export async function sandbox_4() {
   let root = await html_cache_parse(url);
   let table = html_parse_visit_attribute_value_single(root, "cellpadding", "3");
   let rows = html_parse_visit_tag_list(table, "tr");
-  list_adder(function (la) {});
-  each(rows, function (row) {
-    let columns = html_parse_visit_tag_list(row, "td");
-    if (list_size(columns) <= 1) {
-      return;
-    }
-    let column_first = list_first(columns);
-    let columen_first_text = html_parse_text(column_first);
-    let column_first_text_trimmed = string_trim_whitespace(columen_first_text);
-    let column_first_lower = string_case_lower(column_first_text_trimmed);
-    if (column_first_lower === word) {
-      let column_second = list_second(columns);
-      let column_second_text = html_parse_text(column_second);
+  list_adder(function (la) {
+    each(rows, function (row) {
+      let columns = html_parse_visit_tag_list(row, "td");
+      if (list_size(columns) <= 1) {
+        return;
+      }
+      let column_first = list_first(columns);
+      let columen_first_text = html_parse_text(column_first);
       let column_first_text_trimmed =
-        string_trim_whitespace(column_second_text);
-      la([word, column_first_text_trimmed]);
-    }
+        string_trim_whitespace(columen_first_text);
+      let column_first_lower = string_case_lower(column_first_text_trimmed);
+      if (column_first_lower === word) {
+        let column_second = list_second(columns);
+        let column_second_text = html_parse_text(column_second);
+        let column_first_text_trimmed =
+          string_trim_whitespace(column_second_text);
+        la([word, column_first_text_trimmed]);
+      }
+    });
   });
   return;
   let filtered2 = await english_words_dictionary();
