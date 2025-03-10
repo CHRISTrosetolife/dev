@@ -3,7 +3,6 @@ import { list_adder } from "./list_adder.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { each } from "./each.mjs";
 import { string_includes_space_not } from "./string_includes_space_not.mjs";
-import { log } from "./log.mjs";
 import { list_all } from "./list_all.mjs";
 import { app_language_2_audio_play_should } from "./app_language_2_audio_play_should.mjs";
 import { app_language_2_upload_atoms_definitions } from "./app_language_2_upload_atoms_definitions.mjs";
@@ -35,10 +34,6 @@ export async function app_language_2_upload_pairs(pairs, from, to) {
       object_property_set(rights, second, true);
     });
   });
-  log({
-    pairs,
-  });
-  return;
   let definitions = list_to_lookup_key_value_list(
     pairs,
     list_first,
