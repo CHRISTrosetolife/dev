@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { each } from "./each.mjs";
@@ -17,18 +18,21 @@ export async function app_language_2_upload_pairs(pairs, from, to) {
     let v = list_all(p, string_includes_space_not);
     return v;
   });
-  list_adder(function (la) {});
   let lefts = {};
   let rights = {};
-  each(pairs, function (p) {
-    let first = list_first(p);
-    let second = list_second(p);
-    if (
-      object_property_exists(lefts, first) ||
-      object_property_exists(rights, second)
-    ) {
-      return;
-    }
+  list_adder(function (la) {
+    each(pairs, function (p) {
+      let first = list_first(p);
+      let second = list_second(p);
+      if (
+        object_property_exists(lefts, first) ||
+        object_property_exists(rights, second)
+      ) {
+        return;
+      }
+      la(p);
+      object_property_set(object, "property_name", value);
+    });
   });
   log({
     pairs,
