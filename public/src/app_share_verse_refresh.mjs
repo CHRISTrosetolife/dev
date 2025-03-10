@@ -211,11 +211,13 @@ export async function app_share_verse_refresh(
   }
   async function copy() {
     html_clear(copy_message);
-    let message = "The following has been copied to your clipboard: ";
+    let message;
     try {
       await clipboard_copy_web(copy_get());
+      message = "The following has been copied to your clipboard: ";
     } catch (e) {
       console.error(e);
+      message = "Error copying to your clipboard: ";
     }
     html_p_text(copy_message, message);
     html_hr(copy_message);
