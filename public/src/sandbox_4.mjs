@@ -19,9 +19,10 @@ export async function sandbox_4() {
   let table = html_parse_visit_attribute_value_single(root, "cellpadding", "3");
   let rows = html_parse_visit_tag_list(table, "tr");
   each(rows, function (row) {
-    let v = list_first(html_parse_children(row));
+    let v3 = html_parse_children(row);
+    log(v3);
+    let v = list_first(v3);
     let v2 = html_parse_text(v);
-    log(v2);
   });
   return;
   let filtered2 = await english_words_dictionary();
