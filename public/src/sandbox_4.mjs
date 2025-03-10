@@ -1,3 +1,4 @@
+import { list_second } from "./list_second.mjs";
 import { list_size } from "./list_size.mjs";
 import { equal } from "./equal.mjs";
 import { assert } from "./assert.mjs";
@@ -32,7 +33,9 @@ export async function sandbox_4() {
     let column_first_text_trimmed = string_trim_whitespace(columen_first_text);
     let column_first_lower = string_case_lower(column_first_text_trimmed);
     if (column_first_lower === word) {
-      log(column_first_lower);
+      let column_second = list_second(columns);
+      let column_second_text = html_parse_text(column_first);
+      log(column_second_text);
     }
   });
   return;
