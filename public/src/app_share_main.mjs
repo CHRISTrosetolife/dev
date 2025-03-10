@@ -45,6 +45,10 @@ export function app_share_main(context) {
       text: "Hausa (Nigeria) and English",
       code: "hausa+engbsb",
     },
+    {
+      text: "French and English",
+      code: "frasbl+engbsb",
+    },
   ];
   each(folders, function (folder) {
     html_button(root, object_property_get(folder, "text"), async function () {
