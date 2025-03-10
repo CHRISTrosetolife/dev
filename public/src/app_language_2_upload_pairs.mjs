@@ -1,3 +1,4 @@
+import { list_adder } from "./list_adder.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { each } from "./each.mjs";
 import { string_includes_space_not } from "./string_includes_space_not.mjs";
@@ -16,6 +17,7 @@ export async function app_language_2_upload_pairs(pairs, from, to) {
     let v = list_all(p, string_includes_space_not);
     return v;
   });
+  list_adder(function (la) {});
   let lefts = {};
   let rights = {};
   each(pairs, function (p) {
