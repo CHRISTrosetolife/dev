@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
 import { string_symbols_multiple } from "./string_symbols_multiple.mjs";
 import { bible_interlinear_words } from "./bible_interlinear_words.mjs";
@@ -12,7 +13,9 @@ export async function bible_interlinear_words_hebrew_audio_upload() {
     return v;
   };
   let words = await bible_interlinear_words(bible_interlinear_cache_old);
-  list_adder_unique(function (la) {});
+  list_adder_unique(function (la) {
+    each(list, function (item) {});
+  });
   let language_code = "he";
   let v2 = string_symbols_multiple(words);
   return v2;
