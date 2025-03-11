@@ -33,7 +33,8 @@ export async function ceb_definition_en_2(d) {
   let prefix_2 = ceb_definition_prefix_en();
   if (
     list_all(as, function (a) {
-      let v5 = string_starts_with_not(a, prefix_2);
+      let h = html_parse_href(a);
+      let v5 = string_starts_with_not(h, prefix_2);
       return v5;
     })
   ) {
