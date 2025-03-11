@@ -1,6 +1,6 @@
+import { ceb_definition_prefix_ceb } from "./ceb_definition_prefix_ceb.mjs";
 import { html_parse_tag_named_a_list_filter } from "./html_parse_tag_named_a_list_filter.mjs";
 import { ceb_definition_en } from "./ceb_definition_en.mjs";
-import { ceb_definition_prefix_1 } from "./ceb_definition_prefix_1.mjs";
 import { ceb_definition_no_results } from "./ceb_definition_no_results.mjs";
 import { ceb_definition_url } from "./ceb_definition_url.mjs";
 import { ceb_html_cache_parse_form1 } from "./ceb_html_cache_parse_form1.mjs";
@@ -216,7 +216,7 @@ export async function ceb_definition(word) {
     assert(equal, [f4_first_a_tag, "b"]);
     word = f4_first_a_text;
   }
-  let prefix_1 = ceb_definition_prefix_1();
+  let prefix_1 = ceb_definition_prefix_ceb();
   let a_href_lefts = html_parse_a_href_starts_with(parsed, prefix_1);
   let mapped3 = html_parse_map_text_trim(a_href_lefts);
   let mapped4 = list_map_index(mapped3, function (m, index) {

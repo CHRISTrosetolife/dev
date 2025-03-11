@@ -1,3 +1,4 @@
+import { ceb_definition_prefix_ceb } from "./ceb_definition_prefix_ceb.mjs";
 import { ceb_definition_prefix_en } from "./ceb_definition_prefix_en.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
@@ -6,7 +7,6 @@ import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { html_parse_visit_tag_attribute_value } from "./html_parse_visit_tag_attribute_value.mjs";
 import { html_parse_map_text_trim } from "./html_parse_map_text_trim.mjs";
 import { html_parse_a_href_starts_with } from "./html_parse_a_href_starts_with.mjs";
-import { ceb_definition_prefix_1 } from "./ceb_definition_prefix_1.mjs";
 import { ceb_definition_no_results } from "./ceb_definition_no_results.mjs";
 import { ceb_html_cache_parse_form1 } from "./ceb_html_cache_parse_form1.mjs";
 import { ceb_definition_url } from "./ceb_definition_url.mjs";
@@ -33,7 +33,7 @@ export async function ceb_definition_2(word) {
     "border-top:none;color:black",
   );
   let result = {};
-  let prefix_1 = ceb_definition_prefix_1();
+  let prefix_1 = ceb_definition_prefix_ceb();
   let prefix_2 = ceb_definition_prefix_en();
   let rows = html_parse_visit_tag_list(table, "tr");
   each(rows, function (row) {
