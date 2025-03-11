@@ -1,3 +1,4 @@
+import { html_parse_tag_named_a_list_filter } from "./html_parse_tag_named_a_list_filter.mjs";
 import { ceb_definition_en } from "./ceb_definition_en.mjs";
 import { ceb_definition_prefix_1 } from "./ceb_definition_prefix_1.mjs";
 import { ceb_definition_no_results } from "./ceb_definition_no_results.mjs";
@@ -68,10 +69,11 @@ export async function ceb_definition(word) {
     didto: ["there"],
   };
   if (object_property_exists(known, word)) {
-    return {
+    let v = {
       word,
       definitions: object_property_get(known, word),
     };
+    return v;
   }
   let replaced = ["distuinguish,distinguish"];
   let replaced_split = list_map_split_comma(replaced);
@@ -172,7 +174,7 @@ export async function ceb_definition(word) {
   let skipped_text2 =
     "transact,albeit,handicraft,adjourn,potent,sentry,errand,limelight,hardy,lampshade,indigent,zest,abduct,genial,remit,hurtle,deaden,precipitation,insanitary,razed,hoist,over-bearing,sordid,cesspool,gauze,confederation,underwent,scram,cuss,nude,garb,upbraid,outset,appraisal,expedite,enflame,feud,meager,spearhead,stickler,outclass,sawtooth,buck,plume,keystone,unhearing,nook,ethereal,oblige,suckle,depreciate,vigilant,disdainful,reminisce,outclassed,stifle,meteoric,lagoon,unsightly,dryout,beat-up,affluent,ambient,repute,putrid,precipitate,sensuous,footgear,margarine,enrapture,satiable,cognize,bicker,wrangle,tarnish,insulate,sulphur,firewall,stonewall,spotty,decayable,hack,berate,pseudo,genitalia,blindside,gallbladder,addressee,cornstarch,doorsill,dope,induce,buttock,cock,connote,grinder,pandemonium,foxy,inlet,defecate,live-in,eerie,deplorable,appointee,unchain,darn,pout,outgrowth,regurgitate,docile,palatable,chicken-hearted,fantasm,amenity,slippy,depute,flounder,lonesome,stipulate,outback,eminence,dapper,barb,freight,penancing,bulrush,primal,impertinent,memento,siphon,ploy,whorl,dunno,nimbus,sesame,painstaking,bench-warmer,abasement,indemnify,biggish,pail,locomotive,waken,suicide,embroider,booze,whitish,raping,apiece,periphery,tiresome,frigthen,alluring,slop,perspiration,handkerchief,curate,upstage,vogue,by-pass,back-to-back,hound,trouser,caress,opaque,fill-in,castrate,pageant,mope,unmold,ladyfish,disseminate,deface,metropolis,metropolitan,guise,dishevelled,boarder,weedy,talisman,leaflet,edging,embezzle,coax,catchphrase,incubate,thunderclap,vagabond,rectify,bawling,adoptee,boo,backbite,wisecrack,mangle,provocative,con,dunce,nuzzle,idiom,vice,lumbar,wean,dazzle,vend,spay,limbo,subdivider,beatable,advisory,fondness,enshrine,shush,dissipate,redress,disarrayed,oblique,well-off,lacerate,stinger,incapacitated,side-glance,clobber,axle,trek,replant,feeder,stopper,earwig,slat,poise,crumple,diffuse,lob,billow,cascade,ruffle,keynote,playhouse,crispness,commandant,china,ostensible,expletive,reverberation,actualize,bendy,buffet,comprise,reseed,reek,decollate,cheep,guzzled,gobble,unresisting,spurt,missy,airwave,coop,cupboard,sensational,throb,migratory,maltreatment,horsemanship,delude,recuperate,unsubstantiated,coarse,seep,beep-beep,poach,spawn,intertwine,warp,cockfight,cockfighting,phlegm,engross,whop,blab,solder,nostalgia,precinct,outpace,villa,coachman,char,giddyup,limestone,bandy-legged,bowleg,bowlegged,flaccid,hoodlum,misfit,gully,steamroller,deform,crewman,embroidery,flop,prearrange,double-cross,crested,hush-hush,nursemaid,rut,pinworm,sulk,instigate,delve,leafstalk,hornbill,embassador,frisk,wide-eyed,pier,battalion,grime,smut,hellhole,kerosene,crash-dive,plunk,twang,monstrance,scaffold,scaffolding,constipate";
   let skipped_texts = [skipped_text, skipped_text2];
-  each(skipped_texts, (s) => {
+  each(skipped_texts, function (s) {
     list_add_multiple(skipped, string_split_comma(s));
   });
   let skipped_pairs = [
@@ -182,23 +184,28 @@ export async function ceb_definition(word) {
     "kanila,cinnamon",
   ];
   let skipped_pairs_split = list_map_split_comma(skipped_pairs);
-  each([skipped_pairs_split, replaced_split], (split) =>
-    each(split, (s) => assert(list_size_2, [s])),
-  );
+  each([skipped_pairs_split, replaced_split], function (split) {
+    let v2 = each(split, function (s) {
+      let v3 = assert(list_size_2, [s]);
+      return v3;
+    });
+    return v2;
+  });
   let lookup = list_pairs_to_lookup(skipped_pairs_split);
   let url = ceb_definition_url(word);
   let { parsed, children } = await ceb_html_cache_parse_form1(url);
   if (ceb_definition_no_results(children)) {
-    return {
+    let v4 = {
       word,
       definitions: [],
     };
+    return v4;
   }
-  let filtered4 = list_filter(
-    children,
-    (c) =>
-      c.type === "text" && string_includes(c.data, "Word - rootword - affixes"),
-  );
+  let filtered4 = list_filter(children, function (c) {
+    let v5 =
+      c.type === "text" && string_includes(c.data, "Word - rootword - affixes");
+    return v5;
+  });
   if (list_empty_not_is(filtered4)) {
     let f4_first = list_first(filtered4);
     let f4_first_index = list_index(children, f4_first);
@@ -212,11 +219,12 @@ export async function ceb_definition(word) {
   let prefix_1 = ceb_definition_prefix_1();
   let a_href_lefts = html_parse_a_href_starts_with(parsed, prefix_1);
   let mapped3 = html_parse_map_text_trim(a_href_lefts);
-  let mapped4 = list_map_index(mapped3, (m, index) => {
-    return {
+  let mapped4 = list_map_index(mapped3, function (m, index) {
+    let v6 = {
       text: m,
       index,
     };
+    return v6;
   });
   let prefix_2 = ceb_definition_prefix_en();
   let matches = list_filter_property(mapped4, "text", word);
@@ -226,7 +234,10 @@ export async function ceb_definition(word) {
     matches = list_filter_property(mapped4, "text", word);
   }
   let indices = list_map_property(matches, "index");
-  let indices_at = list_map(indices, (i) => list_get(a_href_lefts, i));
+  let indices_at = list_map(indices, function (i) {
+    let v7 = list_get(a_href_lefts, i);
+    return v7;
+  });
   let definitions = [];
   for (let index_at of indices_at) {
     let parent = index_at;
@@ -245,9 +256,9 @@ export async function ceb_definition(word) {
     assert(equal, [list_size(childNodes), 2]);
     let right = list_second(childNodes);
     let filtered6 = html_parse_a_href_starts_with(right, "");
-    let skips = await list_adder_async(async (la) => {
+    let skips = await list_adder_async(async function (la) {
       if (greater_than_equal(list_size(filtered6), 2)) {
-        await each_pairs_async(filtered6, async (f, g) => {
+        await each_pairs_async(filtered6, async function (f, g) {
           let after = html_parse_href(g);
           let sense = "/sense/";
           if (string_starts_with(after, sense)) {
@@ -257,23 +268,26 @@ export async function ceb_definition(word) {
             ]);
             let { children: children_sense } =
               await ceb_html_cache_parse_form1(url_sense);
-            let filtered7 = list_filter(children_sense, (c) =>
-              html_parse_tag_named(c, "a"),
-            );
+            let filtered7 = list_filter(children_sense, function (c) {
+              let v8 = html_parse_tag_named(c, "a");
+              return v8;
+            });
             let mapped7 = list_map(filtered7, html_parse_href);
-            let filtered8 = list_filter(mapped7, (m) =>
-              string_starts_with(m, prefix_2),
-            );
-            let mapped8 = list_map(filtered8, (f) =>
-              string_prefix_without(f, prefix_2),
-            );
+            let filtered8 = list_filter(mapped7, function (m) {
+              let v9 = string_starts_with(m, prefix_2);
+              return v9;
+            });
+            let mapped8 = list_map(filtered8, function (f) {
+              let v10 = string_prefix_without(f, prefix_2);
+              return v10;
+            });
             each(mapped8, la);
           }
         });
       }
     });
     let defs = html_parse_map_text_trim(filtered6);
-    defs = list_map(defs, (d) => {
+    defs = list_map(defs, function (d) {
       for (let r of replaced_split) {
         if (equal(d, list_first(r))) {
           d = list_last(r);
@@ -286,13 +300,20 @@ export async function ceb_definition(word) {
         defs,
       });
     }
-    defs = list_filter(defs, (d) => list_includes_not(skips, d));
-    defs = list_filter(defs, (d) => string_starts_with_not(d, "*"));
+    defs = list_filter(defs, function (d) {
+      let v11 = list_includes_not(skips, d);
+      return v11;
+    });
+    defs = list_filter(defs, function (d) {
+      let v12 = string_starts_with_not(d, "*");
+      return v12;
+    });
     list_add_multiple(definitions, defs);
   }
-  definitions = list_map(definitions, (d) => {
+  definitions = list_map(definitions, function (d) {
     if (object_property_exists(lookup, d)) {
-      return object_property_get(lookup, d);
+      let v13 = object_property_get(lookup, d);
+      return v13;
     }
     let index = string_index(d, "[");
     if (greater_than_equal(index, 0)) {
@@ -302,23 +323,27 @@ export async function ceb_definition(word) {
     return d;
   });
   definitions = list_map(definitions, string_whitespace_normalize);
-  definitions = await list_filter_async(definitions, async (d) => {
+  definitions = await list_filter_async(definitions, async function (d) {
     let replaced = string_replace(d, "s", "z");
     if (equal_not(replaced, d)) {
       if (list_includes(definitions, replaced)) {
-        return false;
+        let v14 = false;
+        return v14;
       }
     }
     if (list_includes(skipped, d)) {
-      return false;
+      let v15 = false;
+      return v15;
     }
     if (
-      list_any(skipped_pairs_split, (s) => {
+      list_any(skipped_pairs_split, function (s) {
         let [left, right] = s;
-        return and(equal(word, left), equal(right, d));
+        let v16 = and(equal(word, left), equal(right, d));
+        return v16;
       })
     ) {
-      return false;
+      let v17 = false;
+      return v17;
     }
     let split_d = string_split_space(d);
     if (list_multiple_is(split_d)) {
@@ -329,18 +354,21 @@ export async function ceb_definition(word) {
           skip_because: "contains spaces",
         });
       }
-      return false;
+      let v18 = false;
+      return v18;
     }
     let children2 = await ceb_definition_en(d);
-    let as = list_filter(children2, (c) => html_parse_tag_named(c, "a"));
+    let as = html_parse_tag_named_a_list_filter(children2);
     let mapped5 = list_map(as, html_parse_href);
     let filtered5 = list_filter_starts_with(mapped5, prefix_1);
-    let mapped6 = list_map(filtered5, (f) =>
-      string_prefix_without(f, prefix_1),
-    );
-    let tables = list_filter(children2, (c) =>
-      html_parse_tag_named(c, "table"),
-    );
+    let mapped6 = list_map(filtered5, function (f) {
+      let v19 = string_prefix_without(f, prefix_1);
+      return v19;
+    });
+    let tables = list_filter(children2, function (c) {
+      let v20 = html_parse_tag_named(c, "table");
+      return v20;
+    });
     let tables_length = list_size(tables);
     assert(less_than_equal, [tables_length, 3]);
     if (0) {
@@ -351,16 +379,20 @@ export async function ceb_definition(word) {
       }
     }
     if (list_empty_is(mapped6)) {
-      return false;
+      let v21 = false;
+      return v21;
     }
     if (list_includes_not(mapped6, word)) {
-      return false;
+      let v22 = false;
+      return v22;
     }
-    return true;
+    let v23 = true;
+    return v23;
   });
   definitions = list_unique(definitions);
-  return {
+  let v24 = {
     word,
     definitions,
   };
+  return v24;
 }
