@@ -15,7 +15,7 @@ export async function ceb_definition_en_2(d) {
   each(as, function (a) {
     let h = html_parse_href(a);
     let t = html_parse_text(a);
-    let word_tgl = string_trim_whitespace(word_tgl);
+    t = string_trim_whitespace(t);
     if (string_starts_with(h, prefix_2)) {
     } else if (string_starts_with(h, prefix_1)) {
     }
