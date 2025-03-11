@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { ceb_definition_en_2 } from "./ceb_definition_en_2.mjs";
@@ -8,6 +9,7 @@ export async function app_language_2_upload_pairs_ceb2() {
   await each_async(words, async function (word) {
     let r = await ceb_definition_en_2(word);
     if (object_property_exists(object, word)) {
+      let ds = object_property_get(object2, "property_name");
       each(list, function (item) {});
     }
   });
