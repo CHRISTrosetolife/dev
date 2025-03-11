@@ -5,7 +5,5 @@ export async function app_ceb2_upload() {
   let to = "en";
   let limit = 2000;
   let pairs = await app_language_2_upload_pairs_ceb2_cache(limit);
-  let v = pairs;
-  return v;
   await app_language_2_upload_pairs(pairs, from, to);
 }
