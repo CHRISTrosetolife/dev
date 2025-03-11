@@ -7,7 +7,7 @@ import { each_async } from "./each_async.mjs";
 import { english_words_dictionary } from "./english_words_dictionary.mjs";
 export async function app_language_2_upload_pairs_ceb2() {
   let words = await english_words_dictionary();
-  let v = await list_adder_async(async function (la) {
+  let pairs = await list_adder_async(async function (la) {
     await each_async(words, async function (word) {
       let r = await ceb_definition_en_2(word);
       if (object_property_exists(r, word)) {
@@ -18,5 +18,5 @@ export async function app_language_2_upload_pairs_ceb2() {
       }
     });
   });
-  return v;
+  return pairs;
 }
