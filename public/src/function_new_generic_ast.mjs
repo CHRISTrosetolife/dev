@@ -1,3 +1,4 @@
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { file_open } from "./file_open.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { js_unparse_format } from "./js_unparse_format.mjs";
@@ -13,7 +14,8 @@ export async function function_new_generic_ast(
   ast,
   overwrite,
   open,
-) {$aa
+) {
+  assert_arguments_length(arguments, 4);
   let write;
   if (overwrite) {
     write = file_overwrite;
