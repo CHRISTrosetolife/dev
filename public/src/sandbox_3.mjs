@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_multiple_is } from "./list_multiple_is.mjs";
 import { ceb_definition_en_2 } from "./ceb_definition_en_2.mjs";
 import { english_words_dictionary } from "./english_words_dictionary.mjs";
@@ -12,7 +13,10 @@ export async function sandbox_3() {
   await each_log_async(filtered, async function (t) {
     let r = await ceb_definition_en_2(t);
     let p = object_properties(r);
-    if (list_multiple_is()) {
+    if (list_multiple_is(p)) {
+      log({
+        r,
+      });
     }
   });
 }
