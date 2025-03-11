@@ -13,7 +13,7 @@ export async function app_language_2_upload_pairs_ceb2(limit) {
       if (object_property_exists(r, word)) {
         let ds = object_property_get(r, word);
         each(ds, function (d) {
-          la([word, d]);
+          la([d, word]);
         });
       }
     });
