@@ -1,4 +1,4 @@
-import { html_button } from "./html_button.mjs";
+import { html_button_noload } from "./html_button_noload.mjs";
 import { html_div } from "./html_div.mjs";
 import { app_language_refresh_quiz_text_ready } from "./app_language_refresh_quiz_text_ready.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -10,7 +10,7 @@ export async function app_language_button_ready(root, f, language_fluent) {
   let quiz_container;
   let ready_container = html_div(root);
   let ready_above = html_div(ready_container);
-  let button_ready = html_button(ready_container, "", () => {
+  let button_ready = html_button_noload(ready_container, "", function () {
     html_style_display_none(ready_container);
     html_style_display_block(quiz_container);
   });
@@ -24,8 +24,9 @@ export async function app_language_button_ready(root, f, language_fluent) {
   );
   quiz_container = html_div(root);
   html_style_display_none(quiz_container);
-  return {
+  let v = {
     quiz_container,
     ready_above,
   };
+  return v;
 }
