@@ -9,6 +9,7 @@ export function html_flag_language_get(language) {
     en: html_flag_us(),
     el: "gr",
     he: "il",
+    ur: "pk",
   };
   let g = object_property_get(languages_to_flags, language);
   return g;
