@@ -16,18 +16,20 @@ import { list_any } from "./list_any.mjs";
 export async function ceb_definition_en_2(d) {
   let children = await ceb_definition_en(d);
   let mapped = list_map(children, html_parse_text);
+  let result = {};
   if (
     list_any(mapped, function (m) {
       let v3 = string_starts_with(m, "No results found for the English word ");
       return v3;
     })
   ) {
+    let v4 = result;
+    return v4;
   }
   let as = html_parse_tag_named_a_list_filter(children);
   let prefix_1 = ceb_definition_prefix_ceb();
   let prefix_2 = ceb_definition_prefix_en();
   let en = null;
-  let result = {};
   each(as, function (a) {
     let h = html_parse_href(a);
     let t = html_parse_text_trim_whitespace(a);
