@@ -12,10 +12,11 @@ import { ceb_definition_en } from "./ceb_definition_en.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
+import { list_any } from "./list_any.mjs";
 export async function ceb_definition_en_2(d) {
   let children = await ceb_definition_en(d);
   let mapped = list_map(children, html_parse_text);
-  if (false) {
+  if (list_any(mapped, function (m) {})) {
   }
   let as = html_parse_tag_named_a_list_filter(children);
   let prefix_1 = ceb_definition_prefix_ceb();
