@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import { list_map_async } from "./list_map_async.mjs";
 import { log_json } from "./log_json.mjs";
 import { log } from "./log.mjs";
@@ -19,7 +20,8 @@ export async function app_language_upload_audio(group, from) {
         log({
           from,
           b,
-        });error()
+        });
+        error();
         let r = await audio_upload(from, b);
         return r;
       });
@@ -30,4 +32,5 @@ export async function app_language_upload_audio(group, from) {
     if (object_property_get(list_any_created(createds), "created")) {
       log("chunk finished");
     }
- 
+  });
+}
