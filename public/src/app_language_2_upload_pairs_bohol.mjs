@@ -9,6 +9,10 @@ export async function app_language_2_upload_pairs_bohol(
   language_to,
   limit,
 ) {
+  let definitions_get = async function (w) {
+    let v = await definition_bohol(w, language_from, language_to);
+    return v;
+  };
   let taken = await english_words_dictionary_take_soft(limit);
   let pairs = await list_adder_async(async function (la) {
     await each_log_async(taken, async function (w) {
