@@ -121,7 +121,7 @@ export async function app_language_2_refresh_learn(context) {
       language,
       question,
     );
-    app_language_2_audio(question_component2);
+    app_language_2_audio(question_component2, language_learn);
     app_language2_word_titled(root, "Answer", language_other, answer_text);
     html_br2(root);
     app_language_2_tutorial_message(
@@ -189,7 +189,7 @@ export async function app_language_2_refresh_learn(context) {
       boxed,
       context,
     );
-    app_language_2_audio(question_component);
+    app_language_2_audio(question_component, language_learn);
     let m_size = list_size(mapped);
     if (m_size >= 2) {
       let m_size_span = html_span_text(
