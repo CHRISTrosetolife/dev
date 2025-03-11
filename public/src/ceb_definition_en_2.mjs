@@ -1,3 +1,4 @@
+import { list_adder } from "./list_adder.mjs";
 import { html_parse_text_trim_whitespace } from "./html_parse_text_trim_whitespace.mjs";
 import { html_parse_href } from "./html_parse_href.mjs";
 import { ceb_definition_prefix_en } from "./ceb_definition_prefix_en.mjs";
@@ -12,6 +13,7 @@ export async function ceb_definition_en_2(d) {
   let prefix_1 = ceb_definition_prefix_ceb();
   let prefix_2 = ceb_definition_prefix_en();
   let en = null;
+  list_adder(function (la) {});
   each(as, function (a) {
     let h = html_parse_href(a);
     let t = html_parse_text_trim_whitespace(a);
