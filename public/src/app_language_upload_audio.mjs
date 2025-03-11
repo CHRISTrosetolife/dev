@@ -13,17 +13,21 @@ export async function app_language_upload_audio(group, from) {
     log_json({
       chunk,
     });
-    let mapped = list_map(chunk, async (atom) => {
-      let createds = await list_map_async(atom, async (pair) => {
+    let mapped = list_map(chunk, async function (atom) {
+      let createds = await list_map_async(atom, async function (pair) {
         let b = list_first(pair);
+        log({
+          from,
+          b,
+        });error()
         let r = await audio_upload(from, b);
         return r;
       });
-      return list_any_created(createds);
+      let v = list_any_created(createds);
+      return v;
     });
     let createds = await list_wait(mapped);
     if (object_property_get(list_any_created(createds), "created")) {
       log("chunk finished");
     }
-  });
-}
+ 
