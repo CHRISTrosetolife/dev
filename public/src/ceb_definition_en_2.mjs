@@ -1,3 +1,4 @@
+import { list_map } from "./list_map.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { list_add } from "./list_add.mjs";
 import { null_not_is } from "./null_not_is.mjs";
@@ -10,8 +11,10 @@ import { html_parse_tag_named_a_list_filter } from "./html_parse_tag_named_a_lis
 import { ceb_definition_en } from "./ceb_definition_en.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
+import { html_parse_text } from "./html_parse_text.mjs";
 export async function ceb_definition_en_2(d) {
   let children = await ceb_definition_en(d);
+  let mapped = list_map(children, html_parse_text);
   let as = html_parse_tag_named_a_list_filter(children);
   let prefix_1 = ceb_definition_prefix_ceb();
   let prefix_2 = ceb_definition_prefix_en();
