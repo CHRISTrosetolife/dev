@@ -16,7 +16,7 @@ export async function app_language_2_upload_pairs_bohol(
   let taken = await english_words_dictionary_take_soft(limit);
   let pairs = await list_adder_async(async function (la) {
     await each_log_async(taken, async function (w) {
-      let inner = await definition_bohol(w, language_from, language_to);
+      let inner = await definitions_get(w);
       each(inner, la);
     });
   });
