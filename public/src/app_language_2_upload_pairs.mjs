@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -19,6 +20,9 @@ export async function app_language_2_upload_pairs(pairs, from, to) {
   });
   let lefts = {};
   let rights = {};
+  log({
+    pairs,
+  });
   pairs = list_adder(function (la) {
     each(pairs, function (p) {
       let first = list_first(p);
