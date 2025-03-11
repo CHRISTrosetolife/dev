@@ -9,6 +9,6 @@ export async function app_language_2_upload_pairs_bohol(
     let v = await definition_bohol(w, language_from, language_to);
     return v;
   };
-  let v2 = await app_language_2_upload_pairs_get(limit, definitions_get);
+  let v2 = await app_language_2_upload_pairs_get(definitions_get, limit);
   return v2;
 }
