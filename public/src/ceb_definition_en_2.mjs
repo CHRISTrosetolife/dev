@@ -1,3 +1,5 @@
+import { string_starts_with_not } from "./string_starts_with_not.mjs";
+import { list_all } from "./list_all.mjs";
 import { list_map } from "./list_map.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { list_add } from "./list_add.mjs";
@@ -27,7 +29,12 @@ export async function ceb_definition_en_2(d) {
     return v4;
   }
   let as = html_parse_tag_named_a_list_filter(children);
-  if (false) {
+  if (
+    list_all(as, function (a) {
+      let v5 = string_starts_with_not(h, prefix_2);
+      return v5;
+    })
+  ) {
   }
   let prefix_1 = ceb_definition_prefix_ceb();
   let prefix_2 = ceb_definition_prefix_en();
