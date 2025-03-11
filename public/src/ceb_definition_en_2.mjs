@@ -10,5 +10,8 @@ export async function ceb_definition_en_2(d) {
   let prefix_1 = ceb_definition_prefix_ceb();
   let prefix_2 = ceb_definition_prefix_en();
   each(as, function (a) {
-    let h = html_parse_href(a);$ib
+    let h = html_parse_href(a);
+    if (false) {
+    }
   });
+}
