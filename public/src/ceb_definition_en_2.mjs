@@ -29,15 +29,17 @@ export async function ceb_definition_en_2(d) {
     return v4;
   }
   let as = html_parse_tag_named_a_list_filter(children);
+  let prefix_1 = ceb_definition_prefix_ceb();
+  let prefix_2 = ceb_definition_prefix_en();
   if (
     list_all(as, function (a) {
       let v5 = string_starts_with_not(h, prefix_2);
       return v5;
     })
   ) {
+    let v4 = result;
+    return v4;
   }
-  let prefix_1 = ceb_definition_prefix_ceb();
-  let prefix_2 = ceb_definition_prefix_en();
   let en = null;
   each(as, function (a) {
     let h = html_parse_href(a);
