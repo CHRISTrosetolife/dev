@@ -1,6 +1,7 @@
-import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
-export function app_en_ur() {
+import { app_tgl } from "./app_tgl.mjs";
+import { app_language_2 } from "./app_language_2.mjs";
+export async function app_en_ur() {
   let language_learn = "en";
   let language_fluent = "ur";
-   app_language_2(app_tgl, language_learn, language_fluent);
+  await app_language_2(app_en_ur, language_learn, language_fluent);
 }
