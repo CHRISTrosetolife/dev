@@ -12,11 +12,13 @@ export async function ceb_definition_en_2(d) {
   let as = html_parse_tag_named_a_list_filter(children);
   let prefix_1 = ceb_definition_prefix_ceb();
   let prefix_2 = ceb_definition_prefix_en();
+  let en = null;
   each(as, function (a) {
     let h = html_parse_href(a);
     let t = html_parse_text(a);
     t = string_trim_whitespace(t);
     if (string_starts_with(h, prefix_2)) {
+      en = t;
     } else if (string_starts_with(h, prefix_1)) {
     }
   });
