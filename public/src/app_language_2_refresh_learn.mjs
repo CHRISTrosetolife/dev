@@ -324,7 +324,8 @@ export async function app_language_2_refresh_learn(context) {
         app_language_2_recent_update(context, word, recent_count);
         if (
           list_size(mapped) === 1 &&
-          app_language_2_audio_play_should(language_other)
+          app_language_2_audio_play_should(language_other) &&
+          language_other === language_learn
         ) {
           try {
             await app_language_audio(language_other, answer_text);
