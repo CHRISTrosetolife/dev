@@ -13,7 +13,7 @@ export async function ceb_definition_en_2(d) {
   each(as, function (a) {
     let h = html_parse_href(a);
     if (string_starts_with(h, prefix_1)) {
-    } else {
+    } else if (string_starts_with(h, prefix_2)) {
     }
   });
 }
