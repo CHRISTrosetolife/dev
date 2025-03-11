@@ -1,4 +1,3 @@
-import { error } from "./error.mjs";
 import { list_map_async } from "./list_map_async.mjs";
 import { log_json } from "./log_json.mjs";
 import { log } from "./log.mjs";
@@ -17,11 +16,6 @@ export async function app_language_upload_audio(group, from) {
     let mapped = list_map(chunk, async function (atom) {
       let createds = await list_map_async(atom, async function (pair) {
         let b = list_first(pair);
-        log({
-          from,
-          b,
-        });
-        error();
         let r = await audio_upload(from, b);
         return r;
       });
