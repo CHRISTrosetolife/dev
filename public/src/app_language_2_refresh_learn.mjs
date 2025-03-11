@@ -70,7 +70,7 @@ import { html_remove } from "./html_remove.mjs";
 export async function app_language_2_refresh_learn(context) {
   let { language_learn, language_fluent, root } = context;
   html_clear_scroll_top_centered(root);
-  html_button_home(root, () => {
+  html_button_home(root, function () {
     app_language_2_refresh_home(context);
   });
   html_spacer_vertical_2(root);
@@ -100,7 +100,10 @@ export async function app_language_2_refresh_learn(context) {
       list_size(list_filter_property(values_skip_manual, "learning", true)),
       list_size(values_skip_manual),
     );
-    if (app_language_2_audio_play_should(language)) {
+    if (
+      language === language_learn &&
+      app_language_2_audio_play_should(language)
+    ) {
       app_language_2_tutorial_message(
         context,
         string_combine_multiple([
@@ -126,7 +129,7 @@ export async function app_language_2_refresh_learn(context) {
       "You will be quizzed on this question and answer. You will be given the question. You will need to remember the answer.",
       root,
     );
-    html_button_next(root, async () => {
+    html_button_next(root, async function () {
       app_language_2_on_learn(
         u,
         max_indexes,
@@ -153,7 +156,7 @@ export async function app_language_2_refresh_learn(context) {
       language_learn,
       language_fluent,
     );
-    let questions_recent_keys = list_map(questions_recent, (key) => {
+    let questions_recent_keys = list_map(questions_recent, function (key) {
       let list;
       if (language === language_fluent) {
         list = list_copy_reverse(key);
@@ -161,7 +164,8 @@ export async function app_language_2_refresh_learn(context) {
         list = key;
       }
       let concat = list_concat(list, [language]);
-      return json_to(concat);
+      let v2 = json_to(concat);
+      return v2;
     });
     let choices_count = app_language_2_answer_count_get(context);
     log({
@@ -211,12 +215,19 @@ export async function app_language_2_refresh_learn(context) {
     );
     let v_words = list_map_property(values_all, "word");
     let v_filtered = list_filter_property(v_words, "language", language);
-    let v_filtered2 = list_filter(
-      v_filtered,
-      (w) => object_property_get(w, "question") !== question,
-    );
-    let [recent_choices, older_choices] = list_partition(v_filtered2, (w) =>
-      list_includes(questions_recent_keys, object_property_get(w, "key")),
+    let v_filtered2 = list_filter(v_filtered, function (w) {
+      let v3 = object_property_get(w, "question") !== question;
+      return v3;
+    });
+    let [recent_choices, older_choices] = list_partition(
+      v_filtered2,
+      function (w) {
+        let v4 = list_includes(
+          questions_recent_keys,
+          object_property_get(w, "key"),
+        );
+        return v4;
+      },
     );
     let other_taken_recent = app_language_2_answers_take(
       recent_choices,
@@ -239,7 +250,7 @@ export async function app_language_2_refresh_learn(context) {
       list_size(mapped) * (choices_count - 1),
     );
     let chunked = list_chunk(other_taken, list_size(mapped));
-    each(chunked, (c) => {
+    each(chunked, function (c) {
       list_sort_string_map(c, identity);
     });
     let other = list_map(chunked, list_join_comma_space);
@@ -247,7 +258,7 @@ export async function app_language_2_refresh_learn(context) {
     let choices = list_concat([answer_text], other);
     list_shuffle(choices);
     let correct = true;
-    each(choices, (c) => {
+    each(choices, function (c) {
       let choice_div = html_div(quiz_container);
       let emoji_wrong = emoji_question();
       let emoji_right = emoji_check();
@@ -271,7 +282,7 @@ export async function app_language_2_refresh_learn(context) {
       );
       let row = html_p(choice_div);
       html_style_flex_row_centered(row);
-      let b2 = html_button_text_click(row, emoji_wrong, async () => {
+      let b2 = html_button_text_click(row, emoji_wrong, async function () {
         correct = false;
         if (c === answer_text) {
           await on_answer_match(b2);
@@ -288,7 +299,7 @@ export async function app_language_2_refresh_learn(context) {
       );
       let { container } = word_component;
       html_style_flex_1(container);
-      let b = html_button_text_click(row, emoji_right, async () => {
+      let b = html_button_text_click(row, emoji_right, async function () {
         if (c === answer_text) {
           await on_answer_match(b);
         } else {
@@ -325,7 +336,7 @@ export async function app_language_2_refresh_learn(context) {
         }
         await app_language_2_refresh_learn(context);
       }
-      each([b, b2], (bi) => {
+      each([b, b2], function (bi) {
         html_style_font_size_default_multiplied(bi, 1.2);
       });
       html_spacer_vertical(quiz_container);
