@@ -1,3 +1,4 @@
+import { string_includes_space_not } from "./string_includes_space_not.mjs";
 import { list_second } from "./list_second.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
@@ -34,7 +35,7 @@ export async function defintion_en_ur(word) {
         let column_second_text = html_parse_text(column_second);
         let column_first_text_trimmed =
           string_trim_whitespace(column_second_text);
-        if (false) {
+        if (string_includes_space_not(column_first_text_trimmed)) {
           la([word, column_first_text_trimmed]);
         }
       }
