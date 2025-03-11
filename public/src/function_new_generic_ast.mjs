@@ -13,7 +13,7 @@ export async function function_new_generic_ast(
   ast,
   overwrite,
   open,
-) {
+) {$aa
   let write;
   if (overwrite) {
     write = file_overwrite;
