@@ -14,7 +14,6 @@ import { app_language_2_answer_count_get } from "./app_language_2_answer_count_g
 import { html_spacer_vertical } from "./html_spacer_vertical.mjs";
 import { html_style_font_size_default_multiplied } from "./html_style_font_size_default_multiplied.mjs";
 import { html_p } from "./html_p.mjs";
-import { html_button_text_click } from "./html_button_text_click.mjs";
 import { app_language_2_questions_recent_get } from "./app_language_2_questions_recent_get.mjs";
 import { json_to } from "./json_to.mjs";
 import { list_copy_reverse } from "./list_copy_reverse.mjs";
@@ -304,14 +303,18 @@ export async function app_language_2_refresh_learn(context) {
       );
       let { container } = word_component;
       html_style_flex_1(container);
-      let b = html_button_text_click(row, emoji_right, async function () {
-        if (c === answer_text) {
-          await on_answer_match(b);
-        } else {
-          correct = false;
-          await on_answer_wrong(b);
-        }
-      });
+      let b = html_button_text_click_noload(
+        row,
+        emoji_right,
+        async function () {
+          if (c === answer_text) {
+            await on_answer_match(b);
+          } else {
+            correct = false;
+            await on_answer_wrong(b);
+          }
+        },
+      );
       async function on_answer_wrong(button) {
         html_style_wrong(button);
         await app_language_2_answer_delay();
