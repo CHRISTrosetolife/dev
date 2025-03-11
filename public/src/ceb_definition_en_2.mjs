@@ -23,7 +23,7 @@ export async function ceb_definition_en_2(d) {
     if (string_starts_with(h, prefix_2)) {
       en = t;
     } else if (string_starts_with(h, prefix_1)) {
-      assert_message(null_not_is, [en]);
+      assert_message(null_not_is, [en], function () {});
       let r = object_property_initialize(result, en, []);
       list_add(r, t);
     }
