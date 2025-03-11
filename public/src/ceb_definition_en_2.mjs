@@ -1,3 +1,5 @@
+import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
+import { html_parse_text } from "./html_parse_text.mjs";
 import { html_parse_href } from "./html_parse_href.mjs";
 import { ceb_definition_prefix_en } from "./ceb_definition_prefix_en.mjs";
 import { ceb_definition_prefix_ceb } from "./ceb_definition_prefix_ceb.mjs";
@@ -12,8 +14,10 @@ export async function ceb_definition_en_2(d) {
   let prefix_2 = ceb_definition_prefix_en();
   each(as, function (a) {
     let h = html_parse_href(a);
-    if (string_starts_with(h, prefix_1)) {
-    } else if (string_starts_with(h, prefix_2)) {
+    let t = html_parse_text(a);
+    let word_tgl = string_trim_whitespace(word_tgl);
+    if (string_starts_with(h, prefix_2)) {
+    } else if (string_starts_with(h, prefix_1)) {
     }
   });
 }
