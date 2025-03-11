@@ -1,3 +1,4 @@
+import { assert_message } from "./assert_message.mjs";
 import { list_add } from "./list_add.mjs";
 import { null_not_is } from "./null_not_is.mjs";
 import { html_parse_text_trim_whitespace } from "./html_parse_text_trim_whitespace.mjs";
@@ -8,7 +9,6 @@ import { each } from "./each.mjs";
 import { html_parse_tag_named_a_list_filter } from "./html_parse_tag_named_a_list_filter.mjs";
 import { ceb_definition_en } from "./ceb_definition_en.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
-import { assert } from "./assert.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 export async function ceb_definition_en_2(d) {
   let children = await ceb_definition_en(d);
@@ -23,7 +23,7 @@ export async function ceb_definition_en_2(d) {
     if (string_starts_with(h, prefix_2)) {
       en = t;
     } else if (string_starts_with(h, prefix_1)) {
-      assert(null_not_is, [en]);
+      assert_message(null_not_is, [en]);
       let r = object_property_initialize(result, en, []);
       list_add(r, t);
     }
