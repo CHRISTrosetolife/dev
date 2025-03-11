@@ -8,11 +8,12 @@ import { object_property_get } from "./object_property_get.mjs";
 export function app_language_2_audio(word, language_learn) {
   let language = object_property_get(word, "language");
   if (language === language_learn) {
+    let text = object_property_get(word, "text");
     log({
       language,
       language_learn,
+      text,
     });
-    let text = object_property_get(word, "text");
     if (app_language_2_audio_play_should(language)) {
       let container = object_property_get(word, "container");
       html_span_text_emoji_ear(container);
