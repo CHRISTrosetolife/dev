@@ -1,3 +1,5 @@
+import { never } from "./never.mjs";
+import { assert } from "./assert.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -13,6 +15,7 @@ import { list_first } from "./list_first.mjs";
 import { list_to_lookup_key_value_list } from "./list_to_lookup_key_value_list.mjs";
 import { list_filter } from "./list_filter.mjs";
 export async function app_language_2_upload_pairs(pairs, from, to) {
+  assert(never, []);
   pairs = list_filter(pairs, function (p) {
     let v = list_all(p, string_includes_space_not);
     return v;
