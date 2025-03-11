@@ -1,3 +1,4 @@
+import { html_button_text_click_noload } from "./html_button_text_click_noload.mjs";
 import { error } from "./error.mjs";
 import { app_language_audio } from "./app_language_audio.mjs";
 import { app_language_2_recent_update } from "./app_language_2_recent_update.mjs";
@@ -282,14 +283,18 @@ export async function app_language_2_refresh_learn(context) {
       );
       let row = html_p(choice_div);
       html_style_flex_row_centered(row);
-      let b2 = html_button_text_click(row, emoji_wrong, async function () {
-        correct = false;
-        if (c === answer_text) {
-          await on_answer_match(b2);
-        } else {
-          await on_answer_wrong(b2);
-        }
-      });
+      let b2 = html_button_text_click_noload(
+        row,
+        emoji_wrong,
+        async function () {
+          correct = false;
+          if (c === answer_text) {
+            await on_answer_match(b2);
+          } else {
+            await on_answer_wrong(b2);
+          }
+        },
+      );
       let word_component = app_language_2_word(
         row,
         language_other,
