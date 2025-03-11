@@ -1,7 +1,7 @@
+import { ceb_definition_en } from "./ceb_definition_en.mjs";
 import { ceb_definition_prefix_1 } from "./ceb_definition_prefix_1.mjs";
 import { ceb_definition_no_results } from "./ceb_definition_no_results.mjs";
 import { ceb_definition_url } from "./ceb_definition_url.mjs";
-import { ceb_defintion_en } from "./ceb_defintion_en.mjs";
 import { ceb_html_cache_parse_form1 } from "./ceb_html_cache_parse_form1.mjs";
 import { ceb_definition_prefix_en } from "./ceb_definition_prefix_en.mjs";
 import { ceb_definition_prefix } from "./ceb_definition_prefix.mjs";
@@ -331,7 +331,7 @@ export async function ceb_definition(word) {
       }
       return false;
     }
-    let children2 = await ceb_defintion_en(d);
+    let children2 = await ceb_definition_en(d);
     let as = list_filter(children2, (c) => html_parse_tag_named(c, "a"));
     let mapped5 = list_map(as, html_parse_href);
     let filtered5 = list_filter_starts_with(mapped5, prefix_1);
