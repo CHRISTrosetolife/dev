@@ -1,3 +1,5 @@
+import { countries_names } from "./countries_names.mjs";
+import { list_map } from "./list_map.mjs";
 import { prayers_sins } from "./prayers_sins.mjs";
 import { prayers_famous } from "./prayers_famous.mjs";
 import { prayers_music } from "./prayers_music.mjs";
@@ -96,18 +98,10 @@ export function prayers() {
     "Bless Christian prayer",
     prayers_music(),
     prayers_famous(),
-    "Save and bless the USA",
-    "Save and bless the Philippines",
-    "Save and bless India",
-    "Save and bless China",
-    "Save and bless Asia",
-    "Save and bless Africa",
-    "Save and bless Australia",
-    "Save and bless Americas",
-    "Save and bless Pakistan",
-    "Save and bless India",
-    "Save and bless Uganda",
-    "Save and bless Kenya",
+    list_map(countries_names(), function (a) {
+      let v2 = ("Save and bless ", a);
+      return v2;
+    }),
     "Save and bless all Jews",
     "Save and bless all Muslims",
     "Save and bless all Hindus",
