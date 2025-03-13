@@ -21,6 +21,7 @@ export function prayers_sins() {
     "Let there be no violence",
     "Let there be no drugs",
     "Let there be no greed",
+    "Let there be no idolatry",
   ];
   return v;
 }
