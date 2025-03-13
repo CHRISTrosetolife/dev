@@ -1,11 +1,14 @@
 export function prayers_family() {
   let v = [
     "Bless our marriage",
-    "Bless trip",
     "Bless our children",
+    "Bless trip",
+    "Bless our legal marriage",
+    "Bless our marriage ceremony",
+    "Bless Visa together in person",
     "Bless the family of love",
-    "Bless papa",
-    "Bless mama",
+    "Bless Papa",
+    "Bless Mama",
     "Bless sister",
     "Bless brothers",
     "Bless nephews",
