@@ -21,6 +21,8 @@ export function prayers_bible() {
     "May all go well with every Christian",
     "May every Christian be in good health",
     "May it go well with the soul of every Christian",
+    "Let the name of our Lord Jesus be glorified in every Christian",
+    "Let every Christian be glorified in Jesus according to the grace of our God and of Jesus",
   ];
   return v;
 }
