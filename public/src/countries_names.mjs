@@ -1,3 +1,5 @@
+import { string_size } from "./string_size.mjs";
+import { list_filter } from "./list_filter.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_split_newline } from "./string_split_newline.mjs";
@@ -8,4 +10,10 @@ export function countries_names() {
   ]);
   let s = string_split_newline(text);
   let m = list_map(s, string_trim_whitespace);
+  let f = list_filter(m, function (n) {
+    let v = string_size(n) >= 2;
+    return v;
+  });
+  let v2 = f;
+  return v2;
 }
