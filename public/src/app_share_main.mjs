@@ -34,7 +34,7 @@ export function app_share_main(context) {
       code: "hin2017+engbsb",
     },
     {
-      text: "Luganda and English",
+      text: "Luganda (+256) and English",
       code: "lug+engbsb",
     },
     {
