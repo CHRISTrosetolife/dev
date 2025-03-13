@@ -50,6 +50,8 @@ export function prayers() {
     "Answer all the prayer requests I should be praying",
     "Answer all the prayer requests every Christian should be praying",
     "Heal me or may I rather be sick than healed",
+    "Heal my sleep",
+    "Heal my depression",
     "Help me learn Cebuano",
     "Help my muscles grow",
     "Help me lose weight",
