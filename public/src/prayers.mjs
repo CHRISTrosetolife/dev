@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { countries_names } from "./countries_names.mjs";
 import { list_map } from "./list_map.mjs";
 import { prayers_sins } from "./prayers_sins.mjs";
@@ -99,7 +100,7 @@ export function prayers() {
     prayers_music(),
     prayers_famous(),
     list_map(countries_names(), function (a) {
-      let v2 = ("Save and bless ", a);
+      let v2 = string_combine_multiple(["Save and bless ", a]);
       return v2;
     }),
     "Save and bless all Jews",
