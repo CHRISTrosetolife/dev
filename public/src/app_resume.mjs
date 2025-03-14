@@ -44,21 +44,19 @@ export function app_resume() {
   html_email(row, me_email());
   app_resume_header_2(root, "Projects");
   let dev = app_resume_header_3(root, "Development Tools");
+  let fns = [
+    fn_name("function_transform_args"),
+    fn_name("js_parse"),
+    fn_name("terminal"),
+    fn_name("function_aliases"),
+    fn_name("js_dollar"),
+    fn_name("watch"),
+    fn_name("function_rename"),
+  ];
   html_cycle_p(
     root,
     list_between_after(
-      list_map(
-        [
-          fn_name("function_transform_args"),
-          fn_name("js_parse"),
-          fn_name("terminal"),
-          fn_name("function_aliases"),
-          fn_name("js_dollar"),
-          fn_name("watch"),
-          fn_name("function_rename"),
-        ],
-        function_name_to_url_github_style_link,
-      ),
+      list_map(fns, function_name_to_url_github_style_link),
       noop,
     ),
     string_combine_multiple([
