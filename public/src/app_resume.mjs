@@ -76,7 +76,10 @@ export function app_resume() {
     function_name_to_url_github_style_link_list_bewteen_noop([
       fn_name("bible_words_language_count"),
       fn_name("english_words_dictionary"),
-      html_style_link_blank("ceb.html"),
+      html_style_link_blank("ceb2.html"),
+      html_style_link_blank("tgl.html"),
+      html_style_link_blank("he.html"),
+      html_style_link_blank("el.html"),
     ]),
     'Allows user to learn most common words in a language; Most frequent words in English are `computed from either the Bible` or the `most common words found in an English dictionary`; User is presented with words in one language and must remember choose the corresponding word or words in another language; Sometimes user is presented with words from the language they already know and sometimes the user is presented with words from the language they are learning; "both directions" are taught. There are apps for: `English to Cebuano`, `English to Tagalog (with audio)`, `English to Ancient Greek (with Audio)`, `English to Ancient Hebrew` and `Urdu to English`.',
   );
