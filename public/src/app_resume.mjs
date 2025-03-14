@@ -71,12 +71,12 @@ export function app_resume() {
     "User is presented with JavaScript programming concepts; For each concept: User is presented with randomly generated source code and output examples; Then user chooses correct output given randomly generated source code; Then user chooses correct source code given a randomly generated output",
   );
   let ceb = app_resume_header_3(root, "Language Vocabularly Learning");
-  html_style_link_blank("ceb.html")(ceb);
   html_cycle_p(
     root,
     function_name_to_url_github_style_link_list_bewteen_noop([
       fn_name("bible_words_language_count"),
       fn_name("english_words_dictionary"),
+      html_style_link_blank("ceb.html"),
     ]),
     'Allows user to learn most common words in a language; Most frequent words in English are `computed from either the Bible` or the `most common words found in an English dictionary`; User is presented with words in one language and must remember choose the corresponding word or words in another language; Sometimes user is presented with words from the language they already know and sometimes the user is presented with words from the language they are learning; "both directions" are taught. There are apps for: `English to Cebuano`, `English to Tagalog (with audio)`, `English to Ancient Greek (with Audio)`, `English to Ancient Hebrew` and `Urdu to English`.',
   );
