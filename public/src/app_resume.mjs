@@ -43,18 +43,17 @@ export function app_resume() {
   html_email(row, me_email());
   app_resume_header_2(root, "Projects");
   let dev = app_resume_header_3(root, "Development Tools");
-  let fns = [
-    fn_name("function_transform_args"),
-    fn_name("js_parse"),
-    fn_name("terminal"),
-    fn_name("function_aliases"),
-    fn_name("js_dollar"),
-    fn_name("watch"),
-    fn_name("function_rename"),
-  ];
   html_cycle_p(
     root,
-    function_name_to_url_github_style_link_list_bewteen_noop(fns),
+    function_name_to_url_github_style_link_list_bewteen_noop([
+      fn_name("function_transform_args"),
+      fn_name("js_parse"),
+      fn_name("terminal"),
+      fn_name("function_aliases"),
+      fn_name("js_dollar"),
+      fn_name("watch"),
+      fn_name("function_rename"),
+    ]),
     string_combine_multiple([
       'Transforms` source code files through its `abstract syntax tree`; Includes a `terminal` for running functions, `aliases` for running commonly used functions and `$-prefixed "macros"` that transform code `when a file is saved`; For example: ',
       function_rename_alias(),
