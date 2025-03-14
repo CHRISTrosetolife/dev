@@ -1,3 +1,4 @@
+import { bible_words_language_count } from "./bible_words_language_count.mjs";
 import { me_phone } from "./me_phone.mjs";
 import { html_style_link_blank } from "./html_style_link_blank.mjs";
 import { me_email } from "./me_email.mjs";
@@ -77,12 +78,12 @@ export function app_resume() {
     [noop],
     "User is presented with JavaScript programming concepts; For each concept: User is presented with randomly generated source code and output examples; Then user chooses correct output given randomly generated source code; Then user chooses correct source code given a randomly generated output",
   );
-  let ceb = app_resume_header_3(root, "Learn Cebuano Language");
+  let ceb = app_resume_header_3(root, "Language Vocabularly Learning");
   html_style_link_blank("ceb.html")(ceb);
   html_cycle_p(
     root,
-    [noop],
-    "Allows user to learn most common Cebuano words; Most frequent words in English and Cebuano are computed from Bible word frequencies; User is presented Cebuano words and their English translations; Then user chooses English translation for each Cebuano word; then user chooses Cebuano word for each English translation; Then user review new and old words until 96 words are learned; Then user chooses the next group of 96 words to study, beginning with the first 6 words in the group; When quizzing, user chooses between choosing an entire word at once or 1, 2 or 3 letters at a time",
+    [noop, bible_words_language_count],
+    "Allows user to learn most common words in a language; Most frequent words in English are computed from either the Bible or the most common words found in an English dictionary -- Most frequent words in English and Cebuano are computed from Bible word frequencies; User is presented Cebuano words and their English translations; Then user chooses English translation for each Cebuano word; then user chooses Cebuano word for each English translation; Then user review new and old words until 96 words are learned; Then user chooses the next group of 96 words to study, beginning with the first 6 words in the group; When quizzing, user chooses between choosing an entire word at once or 1, 2 or 3 letters at a time",
   );
   if (false) {
     app_resume_audio_bible(root);
