@@ -1,6 +1,6 @@
 export function countries_names_list() {
-  return [
-    "Afghanistan",
+  let v = [
+    "Afghanistan:info@moi.gov.af",
     "Albania",
     "Algeria",
     "Andorra",
@@ -197,4 +197,5 @@ export function countries_names_list() {
     "Zambia",
     "Zimbabwe",
   ];
+  return v;
 }
