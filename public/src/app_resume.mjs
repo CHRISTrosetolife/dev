@@ -77,7 +77,7 @@ export function app_resume() {
     function_name_to_url_github_style_link_list_bewteen_noop([
       fn_name("bible_words_language_count"),
     ]),
-    "Allows user to learn most common words in a language; Most frequent words in English are computed from either the Bible or the most common words found in an English dictionary -- Most frequent words in English and Cebuano are computed from Bible word frequencies; User is presented Cebuano words and their English translations; Then user chooses English translation for each Cebuano word; then user chooses Cebuano word for each English translation; Then user review new and old words until 96 words are learned; Then user chooses the next group of 96 words to study, beginning with the first 6 words in the group; When quizzing, user chooses between choosing an entire word at once or 1, 2 or 3 letters at a time",
+    "Allows user to learn most common words in a language; Most frequent words in English are computed from either the `Bible` or the most common words found in an English dictionary -- Most frequent words in English and Cebuano are computed from Bible word frequencies; User is presented Cebuano words and their English translations; Then user chooses English translation for each Cebuano word; then user chooses Cebuano word for each English translation; Then user review new and old words until 96 words are learned; Then user chooses the next group of 96 words to study, beginning with the first 6 words in the group; When quizzing, user chooses between choosing an entire word at once or 1, 2 or 3 letters at a time",
   );
   if (false) {
     app_resume_audio_bible(root);
