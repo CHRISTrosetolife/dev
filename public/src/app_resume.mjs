@@ -90,7 +90,7 @@ export function app_resume() {
       ),
       noop,
     ),
-    'Allows user to learn most common words in a language; Most frequent words in English are computed from either `the Bible` or the `most common words found in an English dictionary`; User is presented with words in one language and must remember choose the corresponding word or words in another language; Sometimes user is presented with words from the language they already know and sometimes the user is presented with words from the language they are learning; "both directions" are taught. There are apps for: `English to Cebuano`, `English to Tagalog (with audio)`, `English to Biblical Greek (with Audio)`, `English to Biblical Hebrew` and `Urdu to English`.',
+    'Allows user to learn most common words in a language; Most frequent words in English are computed from either the `Bible` or the `most common words found in an English dictionary`; User is presented with words in one language and must remember choose the corresponding word or words in another language; Sometimes user is presented with words from the language they already know and sometimes the user is presented with words from the language they are learning; "both directions" are taught. There are apps for: `English to Cebuano`, `English to Tagalog (with audio)`, `English to Biblical Greek (with Audio)`, `English to Biblical Hebrew` and `Urdu to English`.',
   );
   if (false) {
     app_resume_audio_bible(root);
