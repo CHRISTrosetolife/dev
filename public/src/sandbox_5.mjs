@@ -1,7 +1,5 @@
-import { prayers_countries } from "./prayers_countries.mjs";
-import { list_join_newline } from "./list_join_newline.mjs";
-import { prayers_list } from "./prayers_list.mjs";
+import { countries_names } from "./countries_names.mjs";
+import { generate_list_string } from "./generate_list_string.mjs";
 export async function sandbox_5() {
-  let v = list_join_newline(prayers_list(prayers_countries()));
-  return v;
+  await generate_list_string(countries_names(), "countries_names_list");
 }
