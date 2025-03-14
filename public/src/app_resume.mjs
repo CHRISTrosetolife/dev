@@ -84,7 +84,9 @@ export function app_resume() {
     [noop],
     "Allows user to learn most common Cebuano words; Most frequent words in English and Cebuano are computed from Bible word frequencies; User is presented Cebuano words and their English translations; Then user chooses English translation for each Cebuano word; then user chooses Cebuano word for each English translation; Then user review new and old words until 96 words are learned; Then user chooses the next group of 96 words to study, beginning with the first 6 words in the group; When quizzing, user chooses between choosing an entire word at once or 1, 2 or 3 letters at a time",
   );
-  app_resume_audio_bible(root);
+  if (false) {
+    app_resume_audio_bible(root);
+  }
   let memorize = app_resume_header_3(root, "Memorize Bible");
   html_style_link_blank("memorize.html")(memorize);
   html_cycle_p(
