@@ -10,6 +10,7 @@ export function app_learn_math() {
     html_clear_scroll_top(root);
     let answer_1 = 1;
     let answer_2 = 1;
-    sum - answer_1 + answer_2;
+    let sum = answer_1 + answer_2;
+    let product = answer_1 * answer_2;
   });
 }
