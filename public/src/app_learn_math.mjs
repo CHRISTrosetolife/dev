@@ -8,5 +8,7 @@ export function app_learn_math() {
   }
   html_button(root, "Factoring polynomials", function () {
     html_clear_scroll_top(root);
+    let answer = 1;
+    let answer_2 = 1;
   });
 }
