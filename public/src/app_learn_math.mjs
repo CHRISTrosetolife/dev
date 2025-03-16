@@ -86,6 +86,7 @@ export function app_learn_math() {
         let possible = list_filter_starts_with(expecteds, selected);
         if (list_empty_is(possible)) {
           html_style_wrong(button);
+          selected = selected_old;
         } else {
           each(buttons, html_style_button_default_value);
           html_inner_set(answer_div, selected);
