@@ -1,4 +1,3 @@
-import { list_size_1 } from "./list_size_1.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_filter_starts_with } from "./list_filter_starts_with.mjs";
 import { list_reverse } from "./list_reverse.mjs";
@@ -81,11 +80,9 @@ export function app_learn_math() {
         if (list_empty_is(possible)) {
           alert("invalid");
         }
-        if (list_size_1(possible)) {
-          let p = list_first(possible);
-          if (p === selected) {
-            alert("match");
-          }
+        let p = list_first(possible);
+        if (p === selected) {
+          alert("match");
         }
       };
       return v;
