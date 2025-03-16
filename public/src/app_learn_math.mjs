@@ -1,3 +1,4 @@
+import { list_shuffle } from "./list_shuffle.mjs";
 import { list_unique_json } from "./list_unique_json.mjs";
 import { each_range_1_nested } from "./each_range_1_nested.mjs";
 import { html_button_next_after } from "./html_button_next_after.mjs";
@@ -41,6 +42,7 @@ export function app_learn_math() {
     list_add(factor_polynomials_choices, [answer_1, answer_2]);
   });
   factor_polynomials_choices = list_unique_json(factor_polynomials_choices);
+  list_shuffle(factor_polynomials_choices);
   factor_polynomials();
   function factor_polynomials() {
     html_clear_scroll_top_centered(root);
