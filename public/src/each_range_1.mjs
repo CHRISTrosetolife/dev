@@ -1,4 +1,5 @@
+import { range_1 } from "./range_1.mjs";
 import { each } from "./each.mjs";
-export function each_range_1(list, lambda) {
-  each(list, lambda);
+export function each_range_1(n, lambda) {
+  each(range_1(n), lambda);
 }
