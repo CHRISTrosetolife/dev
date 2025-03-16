@@ -15,10 +15,10 @@ import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { list_add } from "./list_add.mjs";
-import { list_concat } from "./list_concat.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
+import { list_concat_multiple } from "./list_concat_multiple.mjs";
 export function app_learn_math() {
   let root = html_style_default_initialize();
   if (false) {
@@ -62,9 +62,16 @@ export function app_learn_math() {
     expected_add(choices);
     let selected = "";
     let keyboard_div = html_div(root);
-    each(list_concat(digits_10(), string_split_empty("()+")), function (d) {
-      html_button_text_click(keyboard_div, d, symbol_add(d));
-    });
+    each(
+      list_concat_multiple([
+        digits_10(),
+        string_split_empty("()+"),
+        [variable],
+      ]),
+      function (d) {
+        html_button_text_click(keyboard_div, d, symbol_add(d));
+      },
+    );
     let answer_div = html_div(root);
     function symbol_add(s) {
       let v = function () {
