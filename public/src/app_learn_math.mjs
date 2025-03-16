@@ -60,6 +60,8 @@ export function app_learn_math() {
       let v = function () {
         selected += s;
         let possible = list_filter_starts_with(expecteds, selected);
+        if (false) {
+        }
       };
       return v;
     }
