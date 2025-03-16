@@ -74,6 +74,7 @@ export function app_learn_math() {
     let answer_div = html_div(root);
     function symbol_add(s) {
       let v = function () {
+        let selected_old = selected;
         selected += s;
         html_inner_set(answer_div, selected);
         let possible = list_filter_starts_with(expecteds, selected);
