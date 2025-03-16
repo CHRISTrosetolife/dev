@@ -94,12 +94,12 @@ export function app_learn_math() {
           html_inner_set(answer_div, selected);
           let p = list_first(possible);
           html_style_success(button);
+          app_learn_code_correct_timeout(function () {
+            html_style_button_default(button);
+          });
           if (p === selected) {
             alert("match");
           } else {
-            app_learn_code_correct_timeout(function () {
-              html_style_button_default(button);
-            });
           }
         }
       };
