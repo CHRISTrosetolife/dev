@@ -1,3 +1,4 @@
+import { list_pop } from "./list_pop.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { list_unique_json } from "./list_unique_json.mjs";
 import { each_range_1_nested } from "./each_range_1_nested.mjs";
@@ -39,6 +40,7 @@ export function app_learn_math() {
   let max = 12;
   let factor_polynomials_choices = [];
   factor_polynomials_choices_refill();
+  let c = list_pop(factor_polynomials_choices);
   factor_polynomials();
   function factor_polynomials_choices_refill() {
     each_range_1_nested(max, function each(answer_1, answer_2) {
