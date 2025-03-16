@@ -22,7 +22,9 @@ export function app_learn_math() {
   if (false) {
     html_button(root, "Factoring whole numbers", function () {});
   }
-  html_button(root, "Factoring polynomials", function () {
+  html_button(root, "Factoring polynomials", factor_polynomials);
+  factor_polynomials();
+  function factor_polynomials() {
     html_clear_scroll_top(root);
     let variable = "x";
     let answer_1 = 1;
@@ -76,5 +78,5 @@ export function app_learn_math() {
       };
       return v;
     }
-  });
+  }
 }
