@@ -1,3 +1,5 @@
+import { html_on_click } from "./html_on_click.mjs";
+import { html_button_text } from "./html_button_text.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
@@ -6,7 +8,6 @@ import { list_reverse } from "./list_reverse.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { html_button_text_click } from "./html_button_text_click.mjs";
 import { digits_10 } from "./digits_10.mjs";
 import { each } from "./each.mjs";
 import { html_sup_text } from "./html_sup_text.mjs";
@@ -70,7 +71,9 @@ export function app_learn_math() {
       ]),
       function (d) {
         let f = symbol_add(d);
-        html_button_text_click(keyboard_div, d, f);
+        let b = html_button_text(keyboard_div, d);
+        html_on_click(b, f);
+        return b;
       },
     );
     let answer_div = html_div(root);
