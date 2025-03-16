@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
 import { digits_10 } from "./digits_10.mjs";
 import { each } from "./each.mjs";
@@ -27,6 +28,7 @@ export function app_learn_math() {
     html_span_text(equation, variable);
     html_span_text(equation, "+");
     html_span_text(equation, product);
+    let expected = string_combine_multiple(["("]);
     each(digits_10(), function (d) {
       html_button_text_click(root, d, symbol_add(d));
     });
