@@ -26,6 +26,8 @@ export function app_learn_math() {
     html_span_text(equation, variable);
     html_span_text(equation, "+");
     html_span_text(equation, product);
-    each(digits_10(), function (d) {});
+    each(digits_10(), function (d) {
+      html_button();
+    });
   });
 }
