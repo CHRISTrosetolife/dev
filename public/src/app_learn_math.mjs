@@ -80,10 +80,10 @@ export function app_learn_math() {
         if (list_empty_is(possible)) {
           alert("invalid");
         } else {
-        }
-        let p = list_first(possible);
-        if (p === selected) {
-          alert("match");
+          let p = list_first(possible);
+          if (p === selected) {
+            alert("match");
+          }
         }
       };
       return v;
