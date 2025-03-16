@@ -101,6 +101,7 @@ export function app_learn_math() {
           });
           if (p === selected) {
             app_learn_code_answer_correct(container_bottom);
+            html_button(root, "Next problem");
           }
         }
       };
