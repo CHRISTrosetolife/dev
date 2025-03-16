@@ -70,20 +70,20 @@ export function app_learn_math() {
         [variable],
       ]),
       function (d) {
-        let f = symbol_add(d);
         let b = html_button_text(keyboard_div, d);
+        let f = symbol_add(d, b);
         html_on_click(b, f);
         return b;
       },
     );
     let answer_div = html_div(root);
-    function symbol_add(s) {
+    function symbol_add(s, button) {
       let v = function () {
         let selected_old = selected;
         selected += s;
         let possible = list_filter_starts_with(expecteds, selected);
         if (list_empty_is(possible)) {
-          html_style_wrong(keyboard_button_actual);
+          html_style_wrong(button);
         } else {
           html_inner_set(answer_div, selected);
           let p = list_first(possible);
