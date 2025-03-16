@@ -36,7 +36,9 @@ export function app_learn_math() {
   ("max is 12 because students have been taught times tables up to 12");
   let max = 12;
   let factor_polynomials_choices = [];
-  each_range_1_nested(max, function each(a, b) {});
+  each_range_1_nested(max, function each(a, b) {
+    list_add(factor_polynomials_choices, [a, b]);
+  });
   factor_polynomials();
   function factor_polynomials() {
     html_clear_scroll_top_centered(root);
