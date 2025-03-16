@@ -79,6 +79,7 @@ export function app_learn_math() {
         let possible = list_filter_starts_with(expecteds, selected);
         if (list_empty_is(possible)) {
           alert("invalid");
+        } else {
         }
         let p = list_first(possible);
         if (p === selected) {
