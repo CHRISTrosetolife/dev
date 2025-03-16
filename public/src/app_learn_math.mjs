@@ -64,6 +64,7 @@ export function app_learn_math() {
     each(list_concat(digits_10(), string_split_empty("()+")), function (d) {
       html_button_text_click(keyboard_div, d, symbol_add(d));
     });
+    let answer_div = html_div(root);
     function symbol_add(s) {
       let v = function () {
         selected += s;
