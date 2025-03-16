@@ -68,7 +68,7 @@ export function app_learn_math() {
         }
         if (list_size_1(possible)) {
           let p = list_first(possible);
-          if (false) {
+          if (p === selected) {
           }
         }
       };
