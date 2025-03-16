@@ -1,3 +1,5 @@
+import { html_style_button_default_value } from "./html_style_button_default_value.mjs";
+import { list_map } from "./list_map.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { html_button_text } from "./html_button_text.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
@@ -63,7 +65,7 @@ export function app_learn_math() {
     expected_add(choices);
     let selected = "";
     let keyboard_div = html_div(root);
-    each(
+    let buttons = list_map(
       list_concat_multiple([
         digits_10(),
         string_split_empty("()+"),
@@ -85,6 +87,8 @@ export function app_learn_math() {
         if (list_empty_is(possible)) {
           html_style_wrong(button);
         } else {
+          each(list, function (item) {});
+          html_style_button_default_value();
           html_inner_set(answer_div, selected);
           let p = list_first(possible);
           if (p === selected) {
