@@ -91,10 +91,11 @@ export function app_learn_math() {
         } else {
           each(buttons, html_style_button_default);
           html_inner_set(answer_div, selected);
-          html_style_success();
           let p = list_first(possible);
+          html_style_success();
           if (p === selected) {
             alert("match");
+          } else {
           }
         }
       };
