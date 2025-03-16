@@ -1,3 +1,4 @@
+import { app_learn_code_answer_correct } from "./app_learn_code_answer_correct.mjs";
 import { html_on_click_noload } from "./html_on_click_noload.mjs";
 import { app_learn_code_correct_timeout } from "./app_learn_code_correct_timeout.mjs";
 import { html_style_success } from "./html_style_success.mjs";
@@ -98,7 +99,7 @@ export function app_learn_math() {
             html_style_button_default(button);
           });
           if (p === selected) {
-            html_style_success(answer_div);
+            app_learn_code_answer_correct();
           }
         }
       };
