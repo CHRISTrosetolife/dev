@@ -32,6 +32,7 @@ export function app_learn_math() {
     html_button(root, "Factoring whole numbers", function () {});
   }
   html_button(root, "Factoring polynomials", factor_polynomials);
+  ("max is 12 because students have been taught times tables up to 12");
   let max = 12;
   each_range_1(count, function (item) {});
   factor_polynomials();
