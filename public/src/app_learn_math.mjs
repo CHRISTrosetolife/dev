@@ -20,5 +20,9 @@ export function app_learn_math() {
     html_span_text(equation, variable);
     html_sup_text(equation, "2");
     html_span_text(equation, "+");
+    html_span_text(equation, sum);
+    html_span_text(equation, variable);
+    html_span_text(equation, "+");
+    html_span_text(equation, product);
   });
 }
