@@ -51,11 +51,14 @@ export function app_learn_math() {
     expected_add(choices);
     list_reverse();
     expected_add(choices);
+    let selected = [];
     each(digits_10(), function (d) {
       html_button_text_click(root, d, symbol_add(d));
     });
     function symbol_add(s) {
-      let v = function () {};
+      let v = function () {
+        list_add(selected, s);
+      };
       return v;
     }
   });
