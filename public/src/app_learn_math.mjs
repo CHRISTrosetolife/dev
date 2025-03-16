@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_span } from "./html_span.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
@@ -19,5 +20,8 @@ export function app_learn_math() {
     let equation = html_span(root);
     html_span_text(equation, variable);
     html_element(root, "sup");
+    log({
+      s,
+    });
   });
 }
