@@ -69,7 +69,8 @@ export function app_learn_math() {
         [variable],
       ]),
       function (d) {
-        html_button_text_click(keyboard_div, d, symbol_add(d));
+        let f = symbol_add(d);
+        html_button_text_click(keyboard_div, d, f);
       },
     );
     let answer_div = html_div(root);
