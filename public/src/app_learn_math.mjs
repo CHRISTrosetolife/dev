@@ -15,6 +15,8 @@ import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { list_add } from "./list_add.mjs";
+import { list_concat } from "./list_concat.mjs";
+import { string_split_empty } from "./string_split_empty.mjs";
 export function app_learn_math() {
   let root = html_style_default_initialize();
   if (false) {
@@ -55,7 +57,7 @@ export function app_learn_math() {
     list_reverse();
     expected_add(choices);
     let selected = "";
-    each(digits_10(), function (d) {
+    each(list_concat(digits_10(), string_split_empty("()+")), function (d) {
       html_button_text_click(root, d, symbol_add(d));
     });
     function symbol_add(s) {
