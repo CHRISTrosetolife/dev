@@ -19,8 +19,7 @@ export function app_learn_math() {
     let product = answer_1 * answer_2;
     let equation = html_span(root);
     html_span_text(equation, variable);
-    let e = 2;
-    let exponent = html_sup_text(root, e);
+    let exponent = html_sup_text(root, 2);
     log({
       s: exponent,
     });
