@@ -42,7 +42,10 @@ export function app_learn_math() {
   factor_polynomials(...c);
   function factor_polynomials_choices_refill() {
     each_range_1_nested(max, function each(answer_1, answer_2) {
-      list_add(factor_polynomials_choices, [answer_1, answer_2]);
+      list_add(factor_polynomials_choices, {
+        answer_1,
+        answer_2,
+      });
     });
     factor_polynomials_choices = list_unique_json(factor_polynomials_choices);
     list_shuffle(factor_polynomials_choices);
@@ -51,7 +54,7 @@ export function app_learn_math() {
     if (list_empty_is(factor_polynomials_choices)) {
       factor_polynomials_choices_refill();
     }
-    let [answer_1, answer_2] = list_pop(factor_polynomials_choices);
+    let { answer_1, answer_2 } = list_pop(factor_polynomials_choices);
     html_clear_scroll_top_centered(root);
     let variable = "x";
     let sum = answer_1 + answer_2;
@@ -118,7 +121,7 @@ export function app_learn_math() {
           });
           if (p === selected) {
             app_learn_code_answer_correct(container_bottom);
-            html_button_next_after(root, "problem", next_on_click);
+            html_button_next_after(root, "problem", factor_polynomials);
           }
         }
       };
