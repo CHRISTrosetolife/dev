@@ -38,8 +38,8 @@ export function app_learn_math() {
   html_button(root, "Factoring polynomials", factor_polynomials);
   let factor_polynomials_choices = [];
   function factor_polynomials_choices_refill() {
-    "max is 12 because students have been taught times tables up to 12";
-    let max = 12;
+    "max is seven because that is what was covered";
+    let max = 7;
     each_range_1_nested(max, function each(answer_1, answer_2) {
       list_add(factor_polynomials_choices, {
         answer_1,
