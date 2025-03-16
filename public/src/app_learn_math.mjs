@@ -81,7 +81,8 @@ export function app_learn_math() {
         return b;
       },
     );
-    let answer_div = html_div(root);
+    let container_bottom = html_div(root);
+    let answer_div = html_div(container_bottom);
     function symbol_add(s, button) {
       let v = function () {
         let selected_old = selected;
@@ -99,7 +100,7 @@ export function app_learn_math() {
             html_style_button_default(button);
           });
           if (p === selected) {
-            app_learn_code_answer_correct();
+            app_learn_code_answer_correct(container_bottom);
           }
         }
       };
