@@ -1,3 +1,4 @@
+import { list_unique_json } from "./list_unique_json.mjs";
 import { each_range_1_nested } from "./each_range_1_nested.mjs";
 import { html_button_next_after } from "./html_button_next_after.mjs";
 import { app_learn_code_answer_correct } from "./app_learn_code_answer_correct.mjs";
@@ -36,9 +37,10 @@ export function app_learn_math() {
   ("max is 12 because students have been taught times tables up to 12");
   let max = 12;
   let factor_polynomials_choices = [];
-  each_range_1_nested(max, function each(a, b) {
-    list_add(factor_polynomials_choices, [a, b]);
+  each_range_1_nested(max, function each(answer_1, answer_2) {
+    list_add(factor_polynomials_choices, [answer_1, answer_2]);
   });
+  factor_polynomials_choices = list_unique_json(factor_polynomials_choices);
   factor_polynomials();
   function factor_polynomials() {
     html_clear_scroll_top_centered(root);
