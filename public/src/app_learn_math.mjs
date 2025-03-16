@@ -54,7 +54,7 @@ export function app_learn_math() {
       list_add(expecteds, expected);
     }
     expected_add(choices);
-    list_reverse();
+    list_reverse(choices);
     expected_add(choices);
     let selected = "";
     each(list_concat(digits_10(), string_split_empty("()+")), function (d) {
