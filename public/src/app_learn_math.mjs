@@ -47,11 +47,9 @@ export function app_learn_math() {
     factor_polynomials_choices = list_unique_json(factor_polynomials_choices);
     list_shuffle(factor_polynomials_choices);
   }
-  function factor_polynomials() {
+  function factor_polynomials(answer_1, answer_2) {
     html_clear_scroll_top_centered(root);
     let variable = "x";
-    let answer_1 = 1;
-    let answer_2 = 1;
     let sum = answer_1 + answer_2;
     let product = answer_1 * answer_2;
     let equation = html_span(root);
