@@ -51,7 +51,7 @@ export function app_learn_math() {
     if (list_empty_is(factor_polynomials_choices)) {
       factor_polynomials_choices_refill();
     }
-    let c = list_pop(factor_polynomials_choices);
+    let [answer_1, answer_2] = list_pop(factor_polynomials_choices);
     html_clear_scroll_top_centered(root);
     let variable = "x";
     let sum = answer_1 + answer_2;
