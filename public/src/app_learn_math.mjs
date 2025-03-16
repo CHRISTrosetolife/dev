@@ -36,6 +36,8 @@ export function app_learn_math() {
       answer_1,
       ")(",
       variable,
+      "+",
+      answer_2,
       ")",
     ]);
     each(digits_10(), function (d) {
