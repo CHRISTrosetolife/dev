@@ -20,6 +20,7 @@ export function app_learn_math() {
     let equation = html_span(root);
     html_span_text(equation, variable);
     let exponent = html_sup_text(root, "2");
+    html_span_text(equation, "+");
     log({
       s: exponent,
     });
