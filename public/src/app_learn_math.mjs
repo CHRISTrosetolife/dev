@@ -1,3 +1,4 @@
+import { list_size_1 } from "./list_size_1.mjs";
 import { error } from "./error.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_filter_starts_with } from "./list_filter_starts_with.mjs";
@@ -63,6 +64,9 @@ export function app_learn_math() {
         selected += s;
         let possible = list_filter_starts_with(expecteds, selected);
         if (list_empty_is(possible)) {
+          error("invalid");
+        }
+        if (list_size_1(possible)) {
           error("invalid");
         }
       };
