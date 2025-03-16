@@ -18,6 +18,7 @@ import { list_add } from "./list_add.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { html_div } from "./html_div.mjs";
+import { html_inner_set } from "./html_inner_set.mjs";
 export function app_learn_math() {
   let root = html_style_default_initialize();
   if (false) {
@@ -68,6 +69,7 @@ export function app_learn_math() {
     function symbol_add(s) {
       let v = function () {
         selected += s;
+        html_inner_set(answer_div, selected);
         let possible = list_filter_starts_with(expecteds, selected);
         if (list_empty_is(possible)) {
           alert("invalid");
