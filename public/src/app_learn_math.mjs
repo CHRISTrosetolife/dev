@@ -1,8 +1,8 @@
+import { html_on_click_noload } from "./html_on_click_noload.mjs";
 import { app_learn_code_correct_timeout } from "./app_learn_code_correct_timeout.mjs";
 import { html_style_success } from "./html_style_success.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
 import { list_map } from "./list_map.mjs";
-import { html_on_click } from "./html_on_click.mjs";
 import { html_button_text } from "./html_button_text.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
@@ -76,7 +76,7 @@ export function app_learn_math() {
       function (d) {
         let b = html_button_text(keyboard_div, d);
         let f = symbol_add(d, b);
-        html_on_click(b, f);
+        html_on_click_noload(b, f);
         return b;
       },
     );
