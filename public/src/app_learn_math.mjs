@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { html_sup_text } from "./html_sup_text.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_span } from "./html_span.mjs";
@@ -24,5 +25,6 @@ export function app_learn_math() {
     html_span_text(equation, variable);
     html_span_text(equation, "+");
     html_span_text(equation, product);
+    each(list, function (item) {});
   });
 }
