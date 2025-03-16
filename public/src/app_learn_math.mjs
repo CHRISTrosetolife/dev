@@ -1,3 +1,5 @@
+import { list_second } from "./list_second.mjs";
+import { list_first } from "./list_first.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
 import { digits_10 } from "./digits_10.mjs";
@@ -8,6 +10,7 @@ import { html_span } from "./html_span.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
+import { list_add } from "./list_add.mjs";
 export function app_learn_math() {
   let root = html_style_default_initialize();
   if (false) {
@@ -30,18 +33,19 @@ export function app_learn_math() {
     html_span_text(equation, product);
     let choices = [answer_1, answer_2];
     let expecteds = [];
-    function expected_add() {
+    function expected_add(choices2) {
       let expected = string_combine_multiple([
         "(",
         variable,
         "+",
-        answer_1,
+        list_first(choices2),
         ")(",
         variable,
         "+",
-        answer_2,
+        list_second(choices2),
         ")",
       ]);
+      list_add(expecteds, expected);
     }
     each(digits_10(), function (d) {
       html_button_text_click(root, d, symbol_add(d));
