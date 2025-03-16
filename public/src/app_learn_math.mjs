@@ -1,4 +1,4 @@
-import { html_button_next } from "./html_button_next.mjs";
+import { html_button_next_after } from "./html_button_next_after.mjs";
 import { app_learn_code_answer_correct } from "./app_learn_code_answer_correct.mjs";
 import { html_on_click_noload } from "./html_on_click_noload.mjs";
 import { app_learn_code_correct_timeout } from "./app_learn_code_correct_timeout.mjs";
@@ -102,7 +102,7 @@ export function app_learn_math() {
           });
           if (p === selected) {
             app_learn_code_answer_correct(container_bottom);
-            html_button_next(root, "Next problem");
+            html_button_next_after(root, "problem", next_on_click);
           }
         }
       };
