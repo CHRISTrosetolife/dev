@@ -29,17 +29,20 @@ export function app_learn_math() {
     html_span_text(equation, "+");
     html_span_text(equation, product);
     let choices = [answer_1, answer_2];
-    let expected = string_combine_multiple([
-      "(",
-      variable,
-      "+",
-      answer_1,
-      ")(",
-      variable,
-      "+",
-      answer_2,
-      ")",
-    ]);
+    let expecteds = [];
+    function expected_add() {
+      let expected = string_combine_multiple([
+        "(",
+        variable,
+        "+",
+        answer_1,
+        ")(",
+        variable,
+        "+",
+        answer_2,
+        ")",
+      ]);
+    }
     each(digits_10(), function (d) {
       html_button_text_click(root, d, symbol_add(d));
     });
