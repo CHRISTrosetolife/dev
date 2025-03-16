@@ -31,7 +31,7 @@ export function app_learn_math() {
       html_button_text_click(root, d, symbol_add(d));
     });
     function symbol_add(s) {
-      let v = $a;
+      let v = function () {};
       return v;
     }
   });
