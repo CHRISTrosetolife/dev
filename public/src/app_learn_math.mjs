@@ -1,3 +1,4 @@
+import { list_filter } from "./list_filter.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
@@ -51,13 +52,14 @@ export function app_learn_math() {
     expected_add(choices);
     list_reverse();
     expected_add(choices);
-    let selected = [];
+    let selected = "";
     each(digits_10(), function (d) {
       html_button_text_click(root, d, symbol_add(d));
     });
     function symbol_add(s) {
       let v = function () {
-        list_add(selected, s);
+        selected += s;
+        let possible = list_filter(expecteds);
       };
       return v;
     }
