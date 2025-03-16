@@ -14,5 +14,6 @@ export function app_learn_math() {
     let sum = answer_1 + answer_2;
     let product = answer_1 * answer_2;
     let equation = html_span(root);
+    let variable = "x";
   });
 }
