@@ -17,6 +17,7 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { list_add } from "./list_add.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
+import { html_div } from "./html_div.mjs";
 export function app_learn_math() {
   let root = html_style_default_initialize();
   if (false) {
@@ -59,8 +60,9 @@ export function app_learn_math() {
     list_reverse(choices);
     expected_add(choices);
     let selected = "";
+    let keyboard_div = html_div(root);
     each(list_concat(digits_10(), string_split_empty("()+")), function (d) {
-      html_button_text_click(root, d, symbol_add(d));
+      html_button_text_click(keyboard_div, d, symbol_add(d));
     });
     function symbol_add(s) {
       let v = function () {
