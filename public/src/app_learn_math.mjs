@@ -96,7 +96,7 @@ export function app_learn_math() {
       ]),
       function (d) {
         let b = html_button_text(keyboard_div, d);
-        html_style_font_size_default_multiplied(b, 1.5);
+        html_style_font_size_default_multiplied(b, 1.25);
         let f = symbol_add(d, b);
         html_on_click_noload(b, f);
         return b;
