@@ -19,7 +19,7 @@ export function app_learn_math() {
     let product = answer_1 * answer_2;
     let equation = html_span(root);
     html_span_text(equation, variable);
-    html_element(root, "sup");
+    let s = html_element(root, "sup");
     log({
       s,
     });
