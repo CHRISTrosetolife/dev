@@ -28,7 +28,11 @@ export function app_learn_math() {
     html_span_text(equation, "+");
     html_span_text(equation, product);
     each(digits_10(), function (d) {
-      html_button_text_click(root, d, function () {});
+      html_button_text_click(root, d, symbol_add(d));
     });
+    function symbol_add(s) {
+      let v = $a;
+      return v;
+    }
   });
 }
