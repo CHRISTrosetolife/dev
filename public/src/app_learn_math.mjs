@@ -35,8 +35,7 @@ export function app_learn_math() {
   html_button(root, "Factoring polynomials", factor_polynomials);
   ("max is 12 because students have been taught times tables up to 12");
   let max = 12;
-  each_range_1_nested(max, each);
-  function each(a, b) {}
+  each_range_1_nested(max, function each(a, b) {});
   factor_polynomials();
   function factor_polynomials() {
     html_clear_scroll_top_centered(root);
