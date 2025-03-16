@@ -67,7 +67,9 @@ export function app_learn_math() {
           error("invalid");
         }
         if (list_size_1(possible)) {
-          error("invalid");
+          let p = list_first(possible);
+          if (false) {
+          }
         }
       };
       return v;
