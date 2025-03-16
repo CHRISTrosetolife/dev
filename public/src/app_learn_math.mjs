@@ -1,3 +1,4 @@
+import { app_learn_code_correct_timeout } from "./app_learn_code_correct_timeout.mjs";
 import { html_style_success } from "./html_style_success.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
 import { list_map } from "./list_map.mjs";
@@ -96,6 +97,7 @@ export function app_learn_math() {
           if (p === selected) {
             alert("match");
           } else {
+            app_learn_code_correct_timeout(function () {});
           }
         }
       };
