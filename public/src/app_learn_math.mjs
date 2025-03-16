@@ -50,6 +50,7 @@ export function app_learn_math() {
     }
     expected_add(choices);
     list_reverse();
+    expected_add(choices);
     each(digits_10(), function (d) {
       html_button_text_click(root, d, symbol_add(d));
     });
