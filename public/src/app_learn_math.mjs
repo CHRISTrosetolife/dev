@@ -1,3 +1,4 @@
+import { list_reverse } from "./list_reverse.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_first } from "./list_first.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -47,6 +48,8 @@ export function app_learn_math() {
       ]);
       list_add(expecteds, expected);
     }
+    expected_add(choices);
+    list_reverse();
     each(digits_10(), function (d) {
       html_button_text_click(root, d, symbol_add(d));
     });
