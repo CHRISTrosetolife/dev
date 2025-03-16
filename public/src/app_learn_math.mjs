@@ -39,7 +39,6 @@ export function app_learn_math() {
   ("max is 12 because students have been taught times tables up to 12");
   let max = 12;
   let factor_polynomials_choices = [];
-  factor_polynomials_choices_refill();
   factor_polynomials(...c);
   function factor_polynomials_choices_refill() {
     each_range_1_nested(max, function each(answer_1, answer_2) {
@@ -49,7 +48,8 @@ export function app_learn_math() {
     list_shuffle(factor_polynomials_choices);
   }
   function factor_polynomials() {
-    if (false) {
+    if (list_empty_is(factor_polynomials_choices)) {
+      factor_polynomials_choices_refill();
     }
     let c = list_pop(factor_polynomials_choices);
     html_clear_scroll_top_centered(root);
