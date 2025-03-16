@@ -36,10 +36,10 @@ export function app_learn_math() {
     html_button(root, "Factoring whole numbers", function () {});
   }
   html_button(root, "Factoring polynomials", factor_polynomials);
-  ("max is 12 because students have been taught times tables up to 12");
-  let max = 12;
   let factor_polynomials_choices = [];
   function factor_polynomials_choices_refill() {
+    "max is 12 because students have been taught times tables up to 12";
+    let max = 12;
     each_range_1_nested(max, function each(answer_1, answer_2) {
       list_add(factor_polynomials_choices, {
         answer_1,
