@@ -98,8 +98,7 @@ export function app_learn_math() {
             html_style_button_default(button);
           });
           if (p === selected) {
-            alert("match");
-          } else {
+            html_style_success(button);
           }
         }
       };
