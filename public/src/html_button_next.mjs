@@ -5,7 +5,7 @@ export function html_button_next(root, next_on_click) {
   let after = "";
   let v = html_button(
     root,
-    string_combine_multiple([html_button_next_text()]),
+    string_combine_multiple([html_button_next_text(), after]),
     next_on_click,
   );
   return v;
