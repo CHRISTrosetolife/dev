@@ -1,3 +1,4 @@
+import { html_style_font_size_default_multiplied } from "./html_style_font_size_default_multiplied.mjs";
 import { list_pop } from "./list_pop.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { list_unique_json } from "./list_unique_json.mjs";
@@ -95,6 +96,7 @@ export function app_learn_math() {
       ]),
       function (d) {
         let b = html_button_text(keyboard_div, d);
+        html_style_font_size_default_multiplied(b, 1.5);
         let f = symbol_add(d, b);
         html_on_click_noload(b, f);
         return b;
