@@ -98,7 +98,7 @@ export function app_learn_math() {
             html_style_button_default(button);
           });
           if (p === selected) {
-            html_style_success(button);
+            html_style_success(answer_div);
           }
         }
       };
