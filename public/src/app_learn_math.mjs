@@ -1,3 +1,4 @@
+import { html_span } from "./html_span.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
@@ -12,5 +13,6 @@ export function app_learn_math() {
     let answer_2 = 1;
     let sum = answer_1 + answer_2;
     let product = answer_1 * answer_2;
+    let equation = html_span(root);
   });
 }
