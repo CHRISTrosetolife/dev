@@ -1,4 +1,3 @@
-import { each_range } from "./each_range.mjs";
 import { html_button_next_after } from "./html_button_next_after.mjs";
 import { app_learn_code_answer_correct } from "./app_learn_code_answer_correct.mjs";
 import { html_on_click_noload } from "./html_on_click_noload.mjs";
@@ -33,7 +32,7 @@ export function app_learn_math() {
     html_button(root, "Factoring whole numbers", function () {});
   }
   html_button(root, "Factoring polynomials", factor_polynomials);
-  each_range(count, function (item) {});
+  each_range_1(count, function (item) {});
   factor_polynomials();
   function factor_polynomials() {
     html_clear_scroll_top_centered(root);
