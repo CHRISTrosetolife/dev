@@ -1,4 +1,4 @@
-import { html_style_button_default_value } from "./html_style_button_default_value.mjs";
+import { html_style_button_default } from "./html_style_button_default.mjs";
 import { list_map } from "./list_map.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { html_button_text } from "./html_button_text.mjs";
@@ -88,7 +88,7 @@ export function app_learn_math() {
           html_style_wrong(button);
           selected = selected_old;
         } else {
-          each(buttons, html_style_button_default_value);
+          each(buttons, html_style_button_default);
           html_inner_set(answer_div, selected);
           let p = list_first(possible);
           if (p === selected) {
