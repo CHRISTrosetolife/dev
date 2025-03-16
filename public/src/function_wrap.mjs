@@ -1,3 +1,4 @@
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
 import { js_expression_call_args_await_maybe_insert } from "./js_expression_call_args_await_maybe_insert.mjs";
 import { js_export_function_declare } from "./js_export_function_declare.mjs";
@@ -7,6 +8,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { js_declaration_to_params } from "./js_declaration_to_params.mjs";
 import { function_declaration } from "./function_declaration.mjs";
 export async function function_wrap(function_name, function_name_wrapped) {
+  assert_arguments_length(arguments, 2);
   let d = await function_declaration(function_name);
   let params = js_declaration_to_params(d);
   let param_names = list_map_property(params, "name");
