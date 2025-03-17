@@ -1,3 +1,5 @@
+import { list_pop } from "./list_pop.mjs";
+import { list_unique_json_shuffle } from "./list_unique_json_shuffle.mjs";
 import { html_button_next_after } from "./html_button_next_after.mjs";
 import { app_learn_code_answer_correct } from "./app_learn_code_answer_correct.mjs";
 import { app_learn_code_correct_timeout } from "./app_learn_code_correct_timeout.mjs";
@@ -27,6 +29,13 @@ export function app_learn_math_quiz(
   html_button_back(root, function () {
     app_learn_math_main(root);
   });
+  if (list_empty_is(factor_polynomials_choices)) {
+    refill();
+    let factor_polynomials_choices = list_unique_json_shuffle(
+      factor_polynomials_choices,
+    );
+  }
+  let popped = list_pop(factor_polynomials_choices);
   let expecteds = question(root);
   let selected = "";
   let keyboard_div = html_div(root);
