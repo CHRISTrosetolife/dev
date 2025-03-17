@@ -1,3 +1,4 @@
+import { digits_10 } from "./digits_10.mjs";
 import { app_learn_math_quiz } from "./app_learn_math_quiz.mjs";
 import { list_unique_json_shuffle } from "./list_unique_json_shuffle.mjs";
 import { list_add } from "./list_add.mjs";
@@ -22,7 +23,7 @@ export function app_learn_math_multiplication(root) {
     multiplication_choices = list_unique_json_shuffle(multiplication_choices);
     app_learn_math_quiz(
       root,
-      button_strings,
+      digits_10(),
       expecteds,
       problem_next,
       refill,
