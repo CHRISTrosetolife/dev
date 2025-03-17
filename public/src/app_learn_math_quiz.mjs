@@ -26,49 +26,52 @@ export function app_learn_math_quiz(
   refill,
   choices,
 ) {
-  html_clear_scroll_top_centered(root);
-  html_button_back(root, function () {
-    app_learn_math_main(root);
-  });
-  if (list_empty_is(choices)) {
-    refill(choices);
-    choices = list_unique_json_shuffle(choices);
-  }
-  let popped = list_pop(choices);
-  let expecteds = expecteds_get(root, popped);
-  let selected = "";
-  let keyboard_div = html_div(root);
-  let button_components = list_map(buttons, function (d) {
-    let b = html_button_text(keyboard_div, d);
-    html_style_font_size_default_multiplied(b, 1.25);
-    let f = symbol_add(d, b);
-    html_on_click_noload(b, f);
-    return b;
-  });
-  let container_bottom = html_div(root);
-  let answer_div = html_div(container_bottom);
-  function symbol_add(s, button) {
-    let v = function () {
-      let selected_old = selected;
-      selected += s;
-      let possible = list_filter_starts_with(expecteds, selected);
-      if (list_empty_is(possible)) {
-        html_style_wrong(button);
-        selected = selected_old;
-      } else {
-        each(button_components, html_style_button_default);
-        html_inner_set(answer_div, selected);
-        let p = list_first(possible);
-        html_style_success(button);
-        app_learn_code_correct_timeout(function () {
-          html_style_button_default(button);
-        });
-        if (p === selected) {
-          app_learn_code_answer_correct(container_bottom);
-          html_button_next_after(root, "problem", problem_next);
+  inner();
+  function inner() {
+    html_clear_scroll_top_centered(root);
+    html_button_back(root, function () {
+      app_learn_math_main(root);
+    });
+    if (list_empty_is(choices)) {
+      refill(choices);
+      choices = list_unique_json_shuffle(choices);
+    }
+    let popped = list_pop(choices);
+    let expecteds = expecteds_get(root, popped);
+    let selected = "";
+    let keyboard_div = html_div(root);
+    let button_components = list_map(buttons, function (d) {
+      let b = html_button_text(keyboard_div, d);
+      html_style_font_size_default_multiplied(b, 1.25);
+      let f = symbol_add(d, b);
+      html_on_click_noload(b, f);
+      return b;
+    });
+    let container_bottom = html_div(root);
+    let answer_div = html_div(container_bottom);
+    function symbol_add(s, button) {
+      let v = function () {
+        let selected_old = selected;
+        selected += s;
+        let possible = list_filter_starts_with(expecteds, selected);
+        if (list_empty_is(possible)) {
+          html_style_wrong(button);
+          selected = selected_old;
+        } else {
+          each(button_components, html_style_button_default);
+          html_inner_set(answer_div, selected);
+          let p = list_first(possible);
+          html_style_success(button);
+          app_learn_code_correct_timeout(function () {
+            html_style_button_default(button);
+          });
+          if (p === selected) {
+            app_learn_code_answer_correct(container_bottom);
+            html_button_next_after(root, "problem", problem_next);
+          }
         }
-      }
-    };
-    return v;
+      };
+      return v;
+    }
   }
 }
