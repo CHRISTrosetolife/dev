@@ -38,9 +38,8 @@ export function app_learn_math_main(root) {
     html_button(root, "Factoring whole numbers", function () {});
   }
   ("max is seven because older son learned this");
-  let factoring_min = 1;
-  let factoring_max = 7;
-  factoring_button(factoring_min, factoring_max);
+  let factoring_threshold = 7;
+  factoring_button(1, factoring_threshold);
   function factoring_button(factoring_min, factoring_max) {
     let factor_polynomials_choices = [];
     function factor_polynomials_choices_refill(factoring_min, factoring_max) {
