@@ -62,7 +62,7 @@ export function app_learn_math() {
     list_shuffle(factor_polynomials_choices);
   }
   function factor_polynomials(factoring_min, factoring_max) {
-    function factor_polynomials() {
+    function factor_polynomials_inner() {
       if (list_empty_is(factor_polynomials_choices)) {
         factor_polynomials_choices_refill();
       }
