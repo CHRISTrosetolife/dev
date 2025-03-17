@@ -13,14 +13,15 @@ export function app_learn_math_multiplication_choices(root) {
   html_button_back(root, function () {
     app_learn_math_main(root);
   });
-  let max = 10 + 1;
-  each_range(max, function (by) {
+  let max = 10;
+  let max_ranged = max + 1;
+  each_range(max_ranged, function (by) {
     html_button(
       root,
       string_combine_multiple(["Multiply by ", by]),
       function () {
         function refill(multiplication_choices) {
-          each_range(max, function (other) {
+          each_range(max_ranged, function (other) {
             list_add(multiplication_choices, {
               left: other,
               right: by,
@@ -37,7 +38,7 @@ export function app_learn_math_multiplication_choices(root) {
   });
   html_button(root, string_combine_multiple(["Multiply by ", by]), function () {
     function refill(multiplication_choices) {
-      each_range(max, function (other) {
+      each_range(max_ranged, function (other) {
         list_add(multiplication_choices, {
           left: other,
           right: by,
