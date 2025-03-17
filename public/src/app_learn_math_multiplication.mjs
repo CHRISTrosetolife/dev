@@ -1,3 +1,4 @@
+import { html_span_text } from "./html_span_text.mjs";
 import { digits_10 } from "./digits_10.mjs";
 import { app_learn_math_quiz } from "./app_learn_math_quiz.mjs";
 import { list_add } from "./list_add.mjs";
@@ -26,6 +27,10 @@ export function app_learn_math_multiplication(root) {
         digits_10(),
         function (root, popped) {
           let { left, right } = popped;
+          html_span_text(question, left);
+          html_span_text(question, "+");
+          html_span_text(question, right);
+          html_span_text(question, "=?");
         },
         refill,
       );
