@@ -1,3 +1,4 @@
+import { html_button_back } from "./html_button_back.mjs";
 import { html_button_next_after } from "./html_button_next_after.mjs";
 import { app_learn_code_answer_correct } from "./app_learn_code_answer_correct.mjs";
 import { app_learn_code_correct_timeout } from "./app_learn_code_correct_timeout.mjs";
@@ -64,11 +65,12 @@ export function app_learn_math_main(root) {
       list_shuffle(factor_polynomials_choices);
     }
     let v2 = function factor_polynomials_inner() {
+      html_clear_scroll_top_centered(root);
+      html_button_back(root, function () {});
       if (list_empty_is(factor_polynomials_choices)) {
         factor_polynomials_choices_refill(factoring_min, factoring_max);
       }
       let { answer_1, answer_2 } = list_pop(factor_polynomials_choices);
-      html_clear_scroll_top_centered(root);
       let variable = "x";
       let sum = answer_1 + answer_2;
       let product = answer_1 * answer_2;
