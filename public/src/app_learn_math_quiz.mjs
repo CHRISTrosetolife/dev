@@ -25,19 +25,19 @@ export function app_learn_math_quiz(
   button_strings,
   problem_next,
   refill,
-  factor_polynomials_choices,
+  choices,
 ) {
   html_clear_scroll_top_centered(root);
   html_button_back(root, function () {
     app_learn_math_main(root);
   });
-  if (list_empty_is(factor_polynomials_choices)) {
+  if (list_empty_is(choices)) {
     refill();
     let factor_polynomials_choices = list_unique_json_shuffle(
       factor_polynomials_choices,
     );
   }
-  let popped = list_pop(factor_polynomials_choices);
+  let popped = list_pop(choices);
   let expecteds = question(root, popped);
   let selected = "";
   let keyboard_div = html_div(root);
