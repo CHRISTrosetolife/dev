@@ -26,19 +26,6 @@ export function app_learn_math_polynomials_factoring(root) {
   factoring_button(factoring_threshold + 1, factoring_max_upper, "harder");
   function factoring_button(factoring_min, factoring_max, description) {
     let factor_polynomials_choices = [];
-    function factor_polynomials_choices_refill(factoring_min, factoring_max) {
-      each_range_from(factoring_min, factoring_max, function (answer_1) {
-        each_range_1(factoring_max, function (answer_2) {
-          list_add(factor_polynomials_choices, {
-            answer_1,
-            answer_2,
-          });
-        });
-      });
-      factor_polynomials_choices = list_unique_json_shuffle(
-        factor_polynomials_choices,
-      );
-    }
     html_button(
       root,
       string_combine_multiple([
@@ -59,7 +46,17 @@ export function app_learn_math_polynomials_factoring(root) {
           [variable],
         ]);
         if (list_empty_is(factor_polynomials_choices)) {
-          factor_polynomials_choices_refill(factoring_min, factoring_max);
+          each_range_from(factoring_min, factoring_max, function (answer_1) {
+            each_range_1(factoring_max, function (answer_2) {
+              list_add(factor_polynomials_choices, {
+                answer_1,
+                answer_2,
+              });
+            });
+          });
+          factor_polynomials_choices = list_unique_json_shuffle(
+            factor_polynomials_choices,
+          );
         }
         let { answer_1, answer_2 } = list_pop(factor_polynomials_choices);
         let sum = answer_1 + answer_2;
