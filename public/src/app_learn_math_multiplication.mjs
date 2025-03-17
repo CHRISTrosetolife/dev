@@ -22,7 +22,7 @@ export function app_learn_math_multiplication(root) {
           });
         });
       }
-      app_learn_math_quiz(root, digits_10(), function () {}, refill, []);
+      app_learn_math_quiz(root, digits_10(), function () {}, refill);
     },
   );
 }
