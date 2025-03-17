@@ -62,7 +62,7 @@ export function app_learn_math_quiz(root, expecteds_get, buttons, refill) {
           });
           if (p === selected) {
             app_learn_code_answer_correct(container_bottom);
-            html_button_next_after(root, "problem", problem_next);
+            html_button_next_after(root, "problem", inner);
           }
         }
       };
