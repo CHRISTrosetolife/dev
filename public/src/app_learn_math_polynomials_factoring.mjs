@@ -73,10 +73,6 @@ export function app_learn_math_polynomials_factoring(root) {
           string_split_empty("()+"),
           [variable],
         ]);
-        html_clear_scroll_top_centered(root);
-        html_button_back(root, function () {
-          app_learn_math_main(root);
-        });
         if (list_empty_is(factor_polynomials_choices)) {
           factor_polynomials_choices_refill(factoring_min, factoring_max);
         }
@@ -104,6 +100,10 @@ export function app_learn_math_polynomials_factoring(root) {
         list_reverse(choices);
         expected_add(choices);
         let expecteds = [];
+        html_clear_scroll_top_centered(root);
+        html_button_back(root, function () {
+          app_learn_math_main(root);
+        });
         function question(root) {
           let equation = html_span(root);
           html_span_text(equation, variable);
