@@ -39,12 +39,12 @@ export function app_learn_math_main(root) {
   }
   let factoring_threshold = 7;
   factoring_threshold, " value is seven because older son learned this";
-  factoring_button(1, factoring_threshold);
+  factoring_button(1, factoring_threshold, "easier");
   let factoring_max_upper = 12;
   factoring_max_upper,
     " value because that is the max number learned in times tables in school";
-  factoring_button(factoring_threshold + 1, factoring_max_upper);
-  function factoring_button(factoring_min, factoring_max) {
+  factoring_button(factoring_threshold + 1, factoring_max_upper, "harder");
+  function factoring_button(factoring_min, factoring_max, description) {
     let factor_polynomials_choices = [];
     function factor_polynomials_choices_refill(factoring_min, factoring_max) {
       each_range_from(factoring_min, factoring_max, function (answer_1) {
@@ -65,6 +65,8 @@ export function app_learn_math_main(root) {
         factoring_min,
         " - ",
         factoring_max,
+        ") (",
+        description,
         ")",
       ]),
       function factor_polynomials() {
