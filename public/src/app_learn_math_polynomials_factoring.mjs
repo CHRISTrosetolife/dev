@@ -33,7 +33,7 @@ export function app_learn_math_polynomials_factoring(root) {
         description,
         ")",
       ]),
-      function factor_polynomials() {
+      function () {
         let variable = "x";
         let button_strings = list_concat_multiple([
           digits_10(),
