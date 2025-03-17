@@ -45,7 +45,7 @@ export function app_learn_math_polynomials_factoring(root) {
           string_split_empty("()+"),
           [variable],
         ]);
-        if (list_empty_is(factor_polynomials_choices)) {
+        function refill() {
           each_range_from(factoring_min, factoring_max, function (answer_1) {
             each_range_1(factoring_max, function (answer_2) {
               list_add(factor_polynomials_choices, {
@@ -54,11 +54,7 @@ export function app_learn_math_polynomials_factoring(root) {
               });
             });
           });
-          factor_polynomials_choices = list_unique_json_shuffle(
-            factor_polynomials_choices,
-          );
         }
-        let popped = list_pop(factor_polynomials_choices);
         function expecteds_get(root, popped) {
           let { answer_1, answer_2 } = popped;
           let sum = answer_1 + answer_2;
