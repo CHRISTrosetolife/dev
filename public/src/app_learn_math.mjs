@@ -4,7 +4,6 @@ import { html_style_font_size_default_multiplied } from "./html_style_font_size_
 import { list_pop } from "./list_pop.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { list_unique_json } from "./list_unique_json.mjs";
-import { each_range_1_nested } from "./each_range_1_nested.mjs";
 import { html_button_next_after } from "./html_button_next_after.mjs";
 import { app_learn_code_answer_correct } from "./app_learn_code_answer_correct.mjs";
 import { html_on_click_noload } from "./html_on_click_noload.mjs";
@@ -52,21 +51,20 @@ export function app_learn_math() {
     ]),
     factor_polynomials(factoring_min, factoring_max),
   );
-  let factor_polynomials_choices = [];
-  function factor_polynomials_choices_refill(factoring_min, factoring_max) {
-    each_range_from(factoring_min, factoring_max, function (answer_1) {
-      each_range_1(factoring_max, function (answer_2) {
-        list_add(factor_polynomials_choices, {
-          answer_1,
-          answer_2,
+  function factor_polynomials(factoring_min, factoring_max) {
+    let factor_polynomials_choices = [];
+    function factor_polynomials_choices_refill(factoring_min, factoring_max) {
+      each_range_from(factoring_min, factoring_max, function (answer_1) {
+        each_range_1(factoring_max, function (answer_2) {
+          list_add(factor_polynomials_choices, {
+            answer_1,
+            answer_2,
+          });
         });
       });
-    });
-    each_range_1_nested(factoring_max);
-    factor_polynomials_choices = list_unique_json(factor_polynomials_choices);
-    list_shuffle(factor_polynomials_choices);
-  }
-  function factor_polynomials(factoring_min, factoring_max) {
+      factor_polynomials_choices = list_unique_json(factor_polynomials_choices);
+      list_shuffle(factor_polynomials_choices);
+    }
     function factor_polynomials_inner() {
       if (list_empty_is(factor_polynomials_choices)) {
         factor_polynomials_choices_refill(factoring_min, factoring_max);
