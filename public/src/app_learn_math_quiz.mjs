@@ -38,7 +38,7 @@ export function app_learn_math_quiz(
     );
   }
   let popped = list_pop(factor_polynomials_choices);
-  let expecteds = question(root);
+  let expecteds = question(root, popped);
   let selected = "";
   let keyboard_div = html_div(root);
   let buttons = list_map(button_strings, function (d) {
