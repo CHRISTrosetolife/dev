@@ -1,3 +1,4 @@
+import { app_learn_math_main } from "./app_learn_math_main.mjs";
 import { app_learn_math_quiz } from "./app_learn_math_quiz.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { digits_10 } from "./digits_10.mjs";
@@ -82,7 +83,13 @@ export function app_learn_math_polynomials_factoring(root) {
           let v = expecteds;
           return v;
         }
-        app_learn_math_quiz(root, expecteds_get, button_strings, refill);
+        app_learn_math_quiz(
+          root,
+          expecteds_get,
+          button_strings,
+          refill,
+          app_learn_math_main,
+        );
       },
     );
   }

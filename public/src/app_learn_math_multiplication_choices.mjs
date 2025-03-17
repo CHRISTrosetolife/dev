@@ -1,3 +1,4 @@
+import { app_learn_math_main } from "./app_learn_math_main.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { digits_10 } from "./digits_10.mjs";
@@ -37,6 +38,7 @@ export function app_learn_math_multiplication_choices(root) {
           },
           digits_10(),
           refill,
+          app_learn_math_main,
         );
       },
     );
