@@ -42,19 +42,6 @@ export function app_learn_math_main(root) {
   let factoring_max = 7;
   factoring_button(factoring_min, factoring_max);
   function factoring_button(factoring_min, factoring_max) {
-    html_button(
-      root,
-      string_combine_multiple([
-        "Factoring polynomials (",
-        factoring_min,
-        " - ",
-        factoring_max,
-        ")",
-      ]),
-      factor_polynomials(factoring_min, factoring_max),
-    );
-  }
-  function factor_polynomials(factoring_min, factoring_max) {
     let factor_polynomials_choices = [];
     function factor_polynomials_choices_refill(factoring_min, factoring_max) {
       each_range_from(factoring_min, factoring_max, function (answer_1) {
@@ -68,88 +55,100 @@ export function app_learn_math_main(root) {
       factor_polynomials_choices = list_unique_json(factor_polynomials_choices);
       list_shuffle(factor_polynomials_choices);
     }
-    let v2 = function factor_polynomials_inner() {
-      html_clear_scroll_top_centered(root);
-      html_button_back(root, function () {
-        app_learn_math_main(root);
-      });
-      if (list_empty_is(factor_polynomials_choices)) {
-        factor_polynomials_choices_refill(factoring_min, factoring_max);
-      }
-      let { answer_1, answer_2 } = list_pop(factor_polynomials_choices);
-      let variable = "x";
-      let sum = answer_1 + answer_2;
-      let product = answer_1 * answer_2;
-      let equation = html_span(root);
-      html_span_text(equation, variable);
-      html_sup_text(equation, "2");
-      html_span_text(equation, "+");
-      html_span_text(equation, sum);
-      html_span_text(equation, variable);
-      html_span_text(equation, "+");
-      html_span_text(equation, product);
-      let choices = [answer_1, answer_2];
-      let expecteds = [];
-      function expected_add(choices2) {
-        let expected = string_combine_multiple([
-          "(",
-          variable,
-          "+",
-          list_first(choices2),
-          ")(",
-          variable,
-          "+",
-          list_second(choices2),
-          ")",
-        ]);
-        list_add(expecteds, expected);
-      }
-      expected_add(choices);
-      list_reverse(choices);
-      expected_add(choices);
-      let selected = "";
-      let keyboard_div = html_div(root);
-      let buttons = list_map(
-        list_concat_multiple([
-          digits_10(),
-          string_split_empty("()+"),
-          [variable],
-        ]),
-        function (d) {
-          let b = html_button_text(keyboard_div, d);
-          html_style_font_size_default_multiplied(b, 1.25);
-          let f = symbol_add(d, b);
-          html_on_click_noload(b, f);
-          return b;
-        },
-      );
-      let container_bottom = html_div(root);
-      let answer_div = html_div(container_bottom);
-      function symbol_add(s, button) {
-        let v = function () {
-          let selected_old = selected;
-          selected += s;
-          let possible = list_filter_starts_with(expecteds, selected);
-          if (list_empty_is(possible)) {
-            html_style_wrong(button);
-            selected = selected_old;
-          } else {
-            each(buttons, html_style_button_default);
-            html_inner_set(answer_div, selected);
-            let p = list_first(possible);
-            html_style_success(button);
-            app_learn_code_correct_timeout(function () {
-              html_style_button_default(button);
-            });
-            if (p === selected) {
-              app_learn_code_answer_correct(container_bottom);
-              html_button_next_after(root, "problem", factor_polynomials_inner);
+    html_button(
+      root,
+      string_combine_multiple([
+        "Factoring polynomials (",
+        factoring_min,
+        " - ",
+        factoring_max,
+        ")",
+      ]),
+      function factor_polynomials() {
+        html_clear_scroll_top_centered(root);
+        html_button_back(root, function () {
+          app_learn_math_main(root);
+        });
+        if (list_empty_is(factor_polynomials_choices)) {
+          factor_polynomials_choices_refill(factoring_min, factoring_max);
+        }
+        let { answer_1, answer_2 } = list_pop(factor_polynomials_choices);
+        let variable = "x";
+        let sum = answer_1 + answer_2;
+        let product = answer_1 * answer_2;
+        let equation = html_span(root);
+        html_span_text(equation, variable);
+        html_sup_text(equation, "2");
+        html_span_text(equation, "+");
+        html_span_text(equation, sum);
+        html_span_text(equation, variable);
+        html_span_text(equation, "+");
+        html_span_text(equation, product);
+        let choices = [answer_1, answer_2];
+        let expecteds = [];
+        function expected_add(choices2) {
+          let expected = string_combine_multiple([
+            "(",
+            variable,
+            "+",
+            list_first(choices2),
+            ")(",
+            variable,
+            "+",
+            list_second(choices2),
+            ")",
+          ]);
+          list_add(expecteds, expected);
+        }
+        expected_add(choices);
+        list_reverse(choices);
+        expected_add(choices);
+        let selected = "";
+        let keyboard_div = html_div(root);
+        let buttons = list_map(
+          list_concat_multiple([
+            digits_10(),
+            string_split_empty("()+"),
+            [variable],
+          ]),
+          function (d) {
+            let b = html_button_text(keyboard_div, d);
+            html_style_font_size_default_multiplied(b, 1.25);
+            let f = symbol_add(d, b);
+            html_on_click_noload(b, f);
+            return b;
+          },
+        );
+        let container_bottom = html_div(root);
+        let answer_div = html_div(container_bottom);
+        function symbol_add(s, button) {
+          let v = function () {
+            let selected_old = selected;
+            selected += s;
+            let possible = list_filter_starts_with(expecteds, selected);
+            if (list_empty_is(possible)) {
+              html_style_wrong(button);
+              selected = selected_old;
+            } else {
+              each(buttons, html_style_button_default);
+              html_inner_set(answer_div, selected);
+              let p = list_first(possible);
+              html_style_success(button);
+              app_learn_code_correct_timeout(function () {
+                html_style_button_default(button);
+              });
+              if (p === selected) {
+                app_learn_code_answer_correct(container_bottom);
+                html_button_next_after(root, "problem", factor_polynomials);
+              }
             }
-          }
-        };
-        return v;
-      }
-    };
+          };
+          return v;
+        }
+      },
+    );
+  }
+  function factor_polynomials(factoring_min, factoring_max) {
     return v2;
   }
 }
