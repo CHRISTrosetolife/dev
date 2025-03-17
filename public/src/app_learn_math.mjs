@@ -55,15 +55,13 @@ export function app_learn_math() {
   function factor_polynomials_choices_refill(factoring_min, factoring_max) {
     each_range_1(max, function (a) {
       each_range_1(max, function (b) {
-        each(a, b);
+        list_add(factor_polynomials_choices, {
+          answer_1,
+          answer_2,
+        });
       });
     });
-    each_range_1_nested(factoring_max, function each(answer_1, answer_2) {
-      list_add(factor_polynomials_choices, {
-        answer_1,
-        answer_2,
-      });
-    });
+    each_range_1_nested(factoring_max);
     factor_polynomials_choices = list_unique_json(factor_polynomials_choices);
     list_shuffle(factor_polynomials_choices);
   }
