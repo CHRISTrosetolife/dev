@@ -42,7 +42,9 @@ export function app_learn_math() {
   html_button(
     root,
     string_combine_multiple([
-      "Factoring polynomials (1 - ",
+      "Factoring polynomials (",
+      factoring_min,
+      " - ",
       factoring_max,
       ")",
     ]),
