@@ -66,7 +66,9 @@ export function app_learn_math_main(root) {
     }
     let v2 = function factor_polynomials_inner() {
       html_clear_scroll_top_centered(root);
-      html_button_back(root, function () {});
+      html_button_back(root, function () {
+        app_learn_math_main(root);
+      });
       if (list_empty_is(factor_polynomials_choices)) {
         factor_polynomials_choices_refill(factoring_min, factoring_max);
       }
