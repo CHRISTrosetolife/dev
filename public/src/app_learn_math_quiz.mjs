@@ -32,7 +32,7 @@ export function app_learn_math_quiz(
     app_learn_math_main(root);
   });
   if (list_empty_is(choices)) {
-    refill();
+    refill(choices);
     choices = list_unique_json_shuffle(choices);
   }
   let popped = list_pop(choices);
