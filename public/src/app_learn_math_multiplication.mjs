@@ -24,7 +24,9 @@ export function app_learn_math_multiplication(root) {
       app_learn_math_quiz(
         root,
         digits_10(),
-        function (root, popped) {},
+        function (root, popped) {
+          let { left, right } = popped;
+        },
         refill,
       );
     },
