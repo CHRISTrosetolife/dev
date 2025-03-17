@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { digits_10 } from "./digits_10.mjs";
 import { app_learn_math_quiz } from "./app_learn_math_quiz.mjs";
@@ -5,13 +6,13 @@ import { list_add } from "./list_add.mjs";
 import { each_range } from "./each_range.mjs";
 import { html_button } from "./html_button.mjs";
 export function app_learn_math_multiplication(root) {
+  let b = 0;
   html_button(
     root,
-    "Multiplication",
+    string_combine_multiple(["Multiply by "]),
     function app_learn_math_multiplication_quiz() {
       function refill(multiplication_choices) {
         each_range(11, function (a) {
-          let b = 0;
           list_add(multiplication_choices, {
             left: a,
             right: b,
