@@ -80,7 +80,16 @@ export function app_learn_math_polynomials_factoring(root) {
         let variable = "x";
         let sum = answer_1 + answer_2;
         let product = answer_1 * answer_2;
-        question(root);
+        function question(root) {
+          let equation = html_span(root);
+          html_span_text(equation, variable);
+          html_sup_text(equation, "2");
+          html_span_text(equation, "+");
+          html_span_text(equation, sum);
+          html_span_text(equation, variable);
+          html_span_text(equation, "+");
+          html_span_text(equation, product);
+        }
         let choices = [answer_1, answer_2];
         function expected_add(choices2) {
           let expected = string_combine_multiple([
@@ -104,16 +113,7 @@ export function app_learn_math_polynomials_factoring(root) {
         html_button_back(root, function () {
           app_learn_math_main(root);
         });
-        function question(root) {
-          let equation = html_span(root);
-          html_span_text(equation, variable);
-          html_sup_text(equation, "2");
-          html_span_text(equation, "+");
-          html_span_text(equation, sum);
-          html_span_text(equation, variable);
-          html_span_text(equation, "+");
-          html_span_text(equation, product);
-        }
+        question(root);
         let selected = "";
         let keyboard_div = html_div(root);
         let buttons = list_map(button_strings, function (d) {
