@@ -15,6 +15,7 @@ export function app_learn_math_multiplication_choices(root) {
   });
   let max = 10;
   let max_ranged = max + 1;
+  html_span_text(root, "Do each of these in order");
   each_range(max_ranged, function (by) {
     html_button(
       root,
