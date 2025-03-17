@@ -67,6 +67,7 @@ export function app_learn_math_polynomials_factoring(root) {
         ")",
       ]),
       function factor_polynomials() {
+        let variable = "x";
         let problem_next = factor_polynomials;
         let button_strings = list_concat_multiple([
           digits_10(),
@@ -77,7 +78,6 @@ export function app_learn_math_polynomials_factoring(root) {
           factor_polynomials_choices_refill(factoring_min, factoring_max);
         }
         let { answer_1, answer_2 } = list_pop(factor_polynomials_choices);
-        let variable = "x";
         let sum = answer_1 + answer_2;
         let product = answer_1 * answer_2;
         function question(root) {
