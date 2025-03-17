@@ -92,6 +92,7 @@ export function app_learn_math_polynomials_factoring(root) {
           button_strings,
           problem_next,
           refill,
+          factor_polynomials_choices,
         );
       },
     );
