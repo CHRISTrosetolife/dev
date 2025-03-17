@@ -38,7 +38,7 @@ export function app_learn_math_main(root) {
     html_button(root, "Factoring whole numbers", function () {});
   }
   let factoring_threshold = 7;
-  factoring_threshold, "value is seven because older son learned this";
+  factoring_threshold, " value is seven because older son learned this";
   factoring_button(1, factoring_threshold);
   let factoring_max_upper = 12;
   factoring_max_upper,
