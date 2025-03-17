@@ -6,19 +6,19 @@ import { list_add } from "./list_add.mjs";
 import { each_range } from "./each_range.mjs";
 import { html_button } from "./html_button.mjs";
 export function app_learn_math_multiplication(root) {
-  let b = 0;
+  let by = 0;
   html_button(
     root,
-    string_combine_multiple(["Multiply by ", b]),
+    string_combine_multiple(["Multiply by ", by]),
     function app_learn_math_multiplication_quiz() {
       function refill(multiplication_choices) {
         each_range(11, function (a) {
           list_add(multiplication_choices, {
             left: a,
-            right: b,
+            right: by,
           });
           list_add(multiplication_choices, {
-            left: b,
+            left: by,
             right: a,
           });
         });
