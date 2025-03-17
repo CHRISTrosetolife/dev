@@ -31,6 +31,7 @@ export function app_learn_math_multiplication(root) {
           html_span_text(question, right);
           html_span_text(question, "=?");
           let v = [left * right];
+          $$V;
           return v;
         },
         digits_10(),
