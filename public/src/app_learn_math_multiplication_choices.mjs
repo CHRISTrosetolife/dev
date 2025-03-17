@@ -13,14 +13,14 @@ export function app_learn_math_multiplication_choices(root) {
       string_combine_multiple(["Multiply by ", by]),
       function app_learn_math_multiplication_quiz() {
         function refill(multiplication_choices) {
-          each_range(max, function (a) {
+          each_range(max, function (other) {
             list_add(multiplication_choices, {
-              left: a,
+              left: other,
               right: by,
             });
             list_add(multiplication_choices, {
               left: by,
-              right: a,
+              right: other,
             });
           });
         }
