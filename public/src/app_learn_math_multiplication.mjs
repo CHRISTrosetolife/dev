@@ -6,6 +6,7 @@ import { html_button } from "./html_button.mjs";
 export function app_learn_math_multiplication(root) {
   let multiplication_choices;
   html_button(root, "Multiplication", function () {
+    multiplication_choices = [];
     each_range(11, function (a) {
       let b = 0;
       list_add(multiplication_choices, {
