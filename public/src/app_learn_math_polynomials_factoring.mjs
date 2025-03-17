@@ -35,7 +35,6 @@ export function app_learn_math_polynomials_factoring(root) {
       ]),
       function factor_polynomials() {
         let variable = "x";
-        let problem_next = factor_polynomials;
         let button_strings = list_concat_multiple([
           digits_10(),
           string_split_empty("()+"),
