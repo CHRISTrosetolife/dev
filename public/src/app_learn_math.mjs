@@ -36,6 +36,8 @@ export function app_learn_math() {
   if (false) {
     html_button(root, "Factoring whole numbers", function () {});
   }
+  ("max is seven because that is what was covered");
+  let factoring_max = 7;
   html_button(
     root,
     string_combine_multiple(["Factoring polynomials (1-", ")"]),
@@ -43,8 +45,6 @@ export function app_learn_math() {
   );
   let factor_polynomials_choices = [];
   function factor_polynomials_choices_refill() {
-    "max is seven because that is what was covered";
-    let factoring_max = 7;
     each_range_1_nested(factoring_max, function each(answer_1, answer_2) {
       list_add(factor_polynomials_choices, {
         answer_1,
