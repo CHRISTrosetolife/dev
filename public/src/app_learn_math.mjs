@@ -36,7 +36,7 @@ export function app_learn_math() {
   if (false) {
     html_button(root, "Factoring whole numbers", function () {});
   }
-  ("max is seven because that is what was covered");
+  ("max is seven because older son learned this");
   let factoring_max = 7;
   html_button(
     root,
