@@ -1,3 +1,4 @@
+import { html_span } from "./html_span.mjs";
 import { list_pop } from "./list_pop.mjs";
 import { list_unique_json_shuffle } from "./list_unique_json_shuffle.mjs";
 import { html_button_next_after } from "./html_button_next_after.mjs";
@@ -32,7 +33,8 @@ export function app_learn_math_quiz(root, expecteds_get, buttons, refill) {
       choices = list_unique_json_shuffle(choices);
     }
     let popped = list_pop(choices);
-    let expecteds = expecteds_get(root, popped);
+    let question = html_span(root);
+    let expecteds = expecteds_get(question, popped);
     let selected = "";
     let keyboard_div = html_div(root);
     let button_components = list_map(buttons, function (d) {
