@@ -7,6 +7,7 @@ import { each_range } from "./each_range.mjs";
 import { html_button } from "./html_button.mjs";
 export function app_learn_math_multiplication(root) {
   let by = 0;
+  each_range(count, function (item) {});
   html_button(
     root,
     string_combine_multiple(["Multiply by ", by]),
