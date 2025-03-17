@@ -28,7 +28,7 @@ export function app_learn_math_multiplication(root) {
         function (question, popped) {
           let { left, right } = popped;
           html_span_text(question, left);
-          html_span_text(question, "+");
+          html_span_text(question, "×");
           html_span_text(question, right);
           html_span_text(question, "=?");
         },
