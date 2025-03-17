@@ -35,6 +35,21 @@ export function app_learn_math_multiplication_choices(root) {
       },
     );
   });
+  html_button(root, string_combine_multiple(["Multiply by ", by]), function () {
+    function refill(multiplication_choices) {
+      each_range(max, function (other) {
+        list_add(multiplication_choices, {
+          left: other,
+          right: by,
+        });
+        list_add(multiplication_choices, {
+          left: by,
+          right: other,
+        });
+      });
+    }
+    app_learn_math_multiplication_quiz(refill);
+  });
   function app_learn_math_multiplication_quiz(refill) {
     app_learn_math_quiz(
       root,
