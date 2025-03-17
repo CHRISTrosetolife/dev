@@ -33,7 +33,7 @@ import { each_range_from } from "./each_range_from.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button } from "./html_button.mjs";
 export function app_learn_math_main(root) {
-    html_clear_scroll_top_centered(root);
+  html_clear_scroll_top_centered(root);
   if (false) {
     html_button(root, "Factoring whole numbers", function () {});
   }
