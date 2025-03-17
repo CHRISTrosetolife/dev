@@ -1,3 +1,4 @@
+import { list_unique_json_shuffle } from "./list_unique_json_shuffle.mjs";
 import { app_learn_math_quiz } from "./app_learn_math_quiz.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { digits_10 } from "./digits_10.mjs";
@@ -12,8 +13,6 @@ import { list_pop } from "./list_pop.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button } from "./html_button.mjs";
-import { list_shuffle } from "./list_shuffle.mjs";
-import { list_unique_json } from "./list_unique_json.mjs";
 import { list_add } from "./list_add.mjs";
 import { each_range_1 } from "./each_range_1.mjs";
 import { each_range_from } from "./each_range_from.mjs";
@@ -36,8 +35,9 @@ export function app_learn_math_polynomials_factoring(root) {
           });
         });
       });
-      factor_polynomials_choices = list_unique_json(factor_polynomials_choices);
-      list_shuffle(factor_polynomials_choices);
+      factor_polynomials_choices = list_unique_json_shuffle(
+        factor_polynomials_choices,
+      );
     }
     html_button(
       root,
