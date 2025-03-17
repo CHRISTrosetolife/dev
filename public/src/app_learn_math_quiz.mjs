@@ -21,7 +21,6 @@ export function app_learn_math_quiz(
   root,
   question,
   button_strings,
-  expecteds,
   problem_next,
 ) {
   html_clear_scroll_top_centered(root);
