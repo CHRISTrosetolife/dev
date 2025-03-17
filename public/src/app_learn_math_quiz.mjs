@@ -20,7 +20,7 @@ import { app_learn_math_main } from "./app_learn_math_main.mjs";
 import { html_button_back } from "./html_button_back.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 export function app_learn_math_quiz(root, expecteds_get, buttons, refill) {
-  choices = [];
+  let choices = [];
   inner();
   function inner() {
     html_clear_scroll_top_centered(root);

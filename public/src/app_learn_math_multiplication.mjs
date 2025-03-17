@@ -4,7 +4,6 @@ import { list_add } from "./list_add.mjs";
 import { each_range } from "./each_range.mjs";
 import { html_button } from "./html_button.mjs";
 export function app_learn_math_multiplication(root) {
-  let multiplication_choices = [];
   html_button(
     root,
     "Multiplication",
