@@ -36,7 +36,11 @@ export function app_learn_math() {
   if (false) {
     html_button(root, "Factoring whole numbers", function () {});
   }
-  html_button(root, "Factoring polynomials", factor_polynomials);
+  html_button(
+    root,
+    string_combine_multiple(["Factoring polynomials (1-)"]),
+    factor_polynomials,
+  );
   let factor_polynomials_choices = [];
   function factor_polynomials_choices_refill() {
     "max is seven because that is what was covered";
