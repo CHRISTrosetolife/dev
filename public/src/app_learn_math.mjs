@@ -65,7 +65,7 @@ export function app_learn_math() {
       factor_polynomials_choices = list_unique_json(factor_polynomials_choices);
       list_shuffle(factor_polynomials_choices);
     }
-    function factor_polynomials_inner() {
+    let v2 = function factor_polynomials_inner() {
       if (list_empty_is(factor_polynomials_choices)) {
         factor_polynomials_choices_refill(factoring_min, factoring_max);
       }
@@ -143,6 +143,7 @@ export function app_learn_math() {
         };
         return v;
       }
-    }
+    };
+    return v2;
   }
 }
