@@ -42,13 +42,15 @@ export function app_learn_math_multiplication_choices(root) {
     function () {
       function refill(multiplication_choices) {
         each_range(max_ranged, function (other) {
-          list_add(multiplication_choices, {
-            left: other,
-            right: by,
-          });
-          list_add(multiplication_choices, {
-            left: by,
-            right: other,
+          each_range(max_ranged, function (other) {
+            list_add(multiplication_choices, {
+              left: other,
+              right: by,
+            });
+            list_add(multiplication_choices, {
+              left: by,
+              right: other,
+            });
           });
         });
       }
