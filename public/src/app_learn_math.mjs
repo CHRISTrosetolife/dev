@@ -34,6 +34,7 @@ import { html_inner_set } from "./html_inner_set.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 export function app_learn_math() {
   let root = html_style_default_initialize();
+  html_clear_scroll_top_centered(root);
   if (false) {
     html_button(root, "Factoring whole numbers", function () {});
   }
