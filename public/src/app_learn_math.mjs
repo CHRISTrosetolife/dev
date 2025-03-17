@@ -54,8 +54,8 @@ export function app_learn_math() {
   );
   let factor_polynomials_choices = [];
   function factor_polynomials_choices_refill(factoring_min, factoring_max) {
-    each_range_from(factoring_min, factoring_max, function (a) {
-      each_range_1(factoring_max, function (b) {
+    each_range_from(factoring_min, factoring_max, function (answer_1) {
+      each_range_1(factoring_max, function (answer_2) {
         list_add(factor_polynomials_choices, {
           answer_1,
           answer_2,
