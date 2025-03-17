@@ -22,7 +22,6 @@ export function app_learn_math_polynomials_factoring(root) {
     " value because that is the max number learned in times tables in school";
   factoring_button(factoring_threshold + 1, factoring_max_upper, "harder");
   function factoring_button(factoring_min, factoring_max, description) {
-    let factor_polynomials_choices = [];
     html_button(
       root,
       string_combine_multiple([
@@ -42,7 +41,7 @@ export function app_learn_math_polynomials_factoring(root) {
           string_split_empty("()+"),
           [variable],
         ]);
-        function refill() {
+        function refill(factor_polynomials_choices) {
           each_range_from(factoring_min, factoring_max, function (answer_1) {
             each_range_1(factoring_max, function (answer_2) {
               list_add(factor_polynomials_choices, {
@@ -92,7 +91,7 @@ export function app_learn_math_polynomials_factoring(root) {
           button_strings,
           problem_next,
           refill,
-          factor_polynomials_choices,
+          [],
         );
       },
     );
