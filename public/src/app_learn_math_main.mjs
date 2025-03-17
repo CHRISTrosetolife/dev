@@ -40,17 +40,20 @@ export function app_learn_math_main(root) {
   ("max is seven because older son learned this");
   let factoring_min = 1;
   let factoring_max = 7;
-  html_button(
-    root,
-    string_combine_multiple([
-      "Factoring polynomials (",
-      factoring_min,
-      " - ",
-      factoring_max,
-      ")",
-    ]),
-    factor_polynomials(factoring_min, factoring_max),
-  );
+  factoring_button(factoring_min, factoring_max);
+  function factoring_button(factoring_min, factoring_max) {
+    html_button(
+      root,
+      string_combine_multiple([
+        "Factoring polynomials (",
+        factoring_min,
+        " - ",
+        factoring_max,
+        ")",
+      ]),
+      factor_polynomials(factoring_min, factoring_max),
+    );
+  }
   function factor_polynomials(factoring_min, factoring_max) {
     let factor_polynomials_choices = [];
     function factor_polynomials_choices_refill(factoring_min, factoring_max) {
