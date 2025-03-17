@@ -26,6 +26,7 @@ export function app_learn_math_quiz(
   refill,
   choices,
 ) {
+  choices = [];
   inner();
   function inner() {
     html_clear_scroll_top_centered(root);
