@@ -19,12 +19,6 @@ export function app_learn_math_multiplication(root) {
       });
     });
     multiplication_choices = list_unique_json_shuffle(multiplication_choices);
-    app_learn_math_quiz(
-      root,
-      question,
-      button_strings,
-      expecteds,
-      problem_next,
-    );
+    app_learn_math_quiz(root, button_strings, expecteds, problem_next);
   });
 }
