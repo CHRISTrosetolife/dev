@@ -24,7 +24,7 @@ export function app_learn_math_multiplication(root) {
     app_learn_math_quiz(
       root,
       digits_10(),
-      expecteds,
+      function () {},
       problem_next,
       refill,
       multiplication_choices,
