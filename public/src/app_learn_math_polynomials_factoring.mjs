@@ -49,17 +49,17 @@ export function app_learn_math_polynomials_factoring(root) {
             });
           });
         }
-        function expecteds_get(root, popped) {
+        function expecteds_get(question, popped) {
           let { answer_1, answer_2 } = popped;
           let sum = answer_1 + answer_2;
           let product = answer_1 * answer_2;
-          html_span_text(equation, variable);
-          html_sup_text(equation, "2");
-          html_span_text(equation, "+");
-          html_span_text(equation, sum);
-          html_span_text(equation, variable);
-          html_span_text(equation, "+");
-          html_span_text(equation, product);
+          html_span_text(question, variable);
+          html_sup_text(question, "2");
+          html_span_text(question, "+");
+          html_span_text(question, sum);
+          html_span_text(question, variable);
+          html_span_text(question, "+");
+          html_span_text(question, product);
           let choices = [answer_1, answer_2];
           let expecteds = [];
           function expected_add(choices2) {
