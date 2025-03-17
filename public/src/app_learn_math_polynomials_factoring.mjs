@@ -1,4 +1,3 @@
-import { list_unique_json_shuffle } from "./list_unique_json_shuffle.mjs";
 import { app_learn_math_quiz } from "./app_learn_math_quiz.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { digits_10 } from "./digits_10.mjs";
@@ -9,8 +8,6 @@ import { list_first } from "./list_first.mjs";
 import { html_sup_text } from "./html_sup_text.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_span } from "./html_span.mjs";
-import { list_pop } from "./list_pop.mjs";
-import { list_empty_is } from "./list_empty_is.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button } from "./html_button.mjs";
 import { list_add } from "./list_add.mjs";
