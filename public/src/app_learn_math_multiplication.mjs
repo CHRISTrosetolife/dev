@@ -4,20 +4,21 @@ import { list_add } from "./list_add.mjs";
 import { each_range } from "./each_range.mjs";
 import { html_button } from "./html_button.mjs";
 export function app_learn_math_multiplication(root) {
-  let multiplication_choices;
+  let multiplication_choices = [];
   html_button(root, "Multiplication", function () {
-    multiplication_choices = [];
-    each_range(11, function (a) {
-      let b = 0;
-      list_add(multiplication_choices, {
-        left: a,
-        right: b,
+    function refill() {
+      each_range(11, function (a) {
+        let b = 0;
+        list_add(multiplication_choices, {
+          left: a,
+          right: b,
+        });
+        list_add(multiplication_choices, {
+          left: b,
+          right: a,
+        });
       });
-      list_add(multiplication_choices, {
-        left: b,
-        right: a,
-      });
-    });
+    }
     multiplication_choices = list_unique_json_shuffle(multiplication_choices);
     app_learn_math_quiz(
       root,
@@ -25,7 +26,7 @@ export function app_learn_math_multiplication(root) {
       expecteds,
       problem_next,
       refill,
-      factor_polynomials_choices,
+      multiplication_choices,
     );
   });
 }
