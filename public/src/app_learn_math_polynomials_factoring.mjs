@@ -91,6 +91,7 @@ export function app_learn_math_polynomials_factoring(root) {
           html_span_text(equation, product);
         }
         let choices = [answer_1, answer_2];
+        let expecteds = [];
         function expected_add(choices2) {
           let expected = string_combine_multiple([
             "(",
@@ -108,7 +109,6 @@ export function app_learn_math_polynomials_factoring(root) {
         expected_add(choices);
         list_reverse(choices);
         expected_add(choices);
-        let expecteds = [];
         html_clear_scroll_top_centered(root);
         html_button_back(root, function () {
           app_learn_math_main(root);
