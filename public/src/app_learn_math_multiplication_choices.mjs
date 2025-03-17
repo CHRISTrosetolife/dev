@@ -5,7 +5,7 @@ import { app_learn_math_quiz } from "./app_learn_math_quiz.mjs";
 import { list_add } from "./list_add.mjs";
 import { each_range } from "./each_range.mjs";
 import { html_button } from "./html_button.mjs";
-export function app_learn_math_multiplication(root) {
+export function app_learn_math_multiplication_choices(root) {
   let max = 11;
   each_range(max, function (by) {
     html_button(
