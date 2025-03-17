@@ -33,9 +33,7 @@ export function app_learn_math_quiz(
   });
   if (list_empty_is(choices)) {
     refill();
-    let factor_polynomials_choices = list_unique_json_shuffle(
-      factor_polynomials_choices,
-    );
+    choices = list_unique_json_shuffle(choices);
   }
   let popped = list_pop(choices);
   let expecteds = expecteds_get(root, popped);
