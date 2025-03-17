@@ -68,6 +68,11 @@ export function app_learn_math_polynomials_factoring(root) {
       ]),
       function factor_polynomials() {
         let problem_next = factor_polynomials;
+        let button_strings = list_concat_multiple([
+          digits_10(),
+          string_split_empty("()+"),
+          [variable],
+        ]);
         html_clear_scroll_top_centered(root);
         html_button_back(root, function () {
           app_learn_math_main(root);
@@ -108,20 +113,13 @@ export function app_learn_math_polynomials_factoring(root) {
         expected_add(choices);
         let selected = "";
         let keyboard_div = html_div(root);
-        let buttons = list_map(
-          list_concat_multiple([
-            digits_10(),
-            string_split_empty("()+"),
-            [variable],
-          ]),
-          function (d) {
-            let b = html_button_text(keyboard_div, d);
-            html_style_font_size_default_multiplied(b, 1.25);
-            let f = symbol_add(d, b);
-            html_on_click_noload(b, f);
-            return b;
-          },
-        );
+        let buttons = list_map(button_strings, function (d) {
+          let b = html_button_text(keyboard_div, d);
+          html_style_font_size_default_multiplied(b, 1.25);
+          let f = symbol_add(d, b);
+          html_on_click_noload(b, f);
+          return b;
+        });
         let container_bottom = html_div(root);
         let answer_div = html_div(container_bottom);
         function symbol_add(s, button) {
