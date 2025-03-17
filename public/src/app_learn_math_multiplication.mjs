@@ -9,7 +9,7 @@ export function app_learn_math_multiplication(root) {
   let b = 0;
   html_button(
     root,
-    string_combine_multiple(["Multiply by "]),
+    string_combine_multiple(["Multiply by ", b]),
     function app_learn_math_multiplication_quiz() {
       function refill(multiplication_choices) {
         each_range(11, function (a) {
