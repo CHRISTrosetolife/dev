@@ -6,7 +6,7 @@ import { html_p_text } from "./html_p_text.mjs";
 export function app_learn_code_answer_correct(container_bottom) {
   let p = html_p_text(
     container_bottom,
-    "✅ 🎊 Congratulations! 🥳 Your answer is correct! 🎉",
+    "✅ 🎊 Congratulations! 🥳 You answered correctly! 🎉",
   );
   html_style_success(p);
   html_style_rounded_padded(p);
