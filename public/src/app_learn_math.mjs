@@ -40,7 +40,11 @@ export function app_learn_math() {
   let factoring_max = 7;
   html_button(
     root,
-    string_combine_multiple(["Factoring polynomials (1-", factoring_max, ")"]),
+    string_combine_multiple([
+      "Factoring polynomials (1 - ",
+      factoring_max,
+      ")",
+    ]),
     factor_polynomials,
   );
   let factor_polynomials_choices = [];
