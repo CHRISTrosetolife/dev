@@ -21,7 +21,7 @@ import { html_button_back } from "./html_button_back.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 export function app_learn_math_quiz(
   root,
-  question,
+  expecteds_get,
   buttons,
   problem_next,
   refill,
@@ -38,7 +38,7 @@ export function app_learn_math_quiz(
     );
   }
   let popped = list_pop(choices);
-  let expecteds = question(root, popped);
+  let expecteds = expecteds_get(root, popped);
   let selected = "";
   let keyboard_div = html_div(root);
   let button_components = list_map(buttons, function (d) {
