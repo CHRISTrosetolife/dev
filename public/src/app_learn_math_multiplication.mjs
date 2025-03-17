@@ -9,7 +9,7 @@ export function app_learn_math_multiplication(root) {
     root,
     "Multiplication",
     function app_learn_math_multiplication_quiz() {
-      function refill() {
+      function refill(multiplication_choices) {
         each_range(11, function (a) {
           let b = 0;
           list_add(multiplication_choices, {
@@ -28,7 +28,7 @@ export function app_learn_math_multiplication(root) {
         function () {},
         app_learn_math_multiplication_quiz,
         refill,
-        multiplication_choices,
+        [],
       );
     },
   );
