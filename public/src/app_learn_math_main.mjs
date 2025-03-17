@@ -1,3 +1,4 @@
+import { app_learn_math_quiz } from "./app_learn_math_quiz.mjs";
 import { app_learn_math_polynomials_factoring } from "./app_learn_math_polynomials_factoring.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_button } from "./html_button.mjs";
@@ -6,6 +7,14 @@ export function app_learn_math_main(root) {
   if (false) {
     html_button(root, "Factoring whole numbers", function () {});
   }
-  html_button(root, "Multiplication", function () {});
+  html_button(root, "Multiplication", function () {
+    app_learn_math_quiz(
+      root,
+      question,
+      button_strings,
+      expecteds,
+      problem_next,
+    );
+  });
   app_learn_math_polynomials_factoring(root);
 }
