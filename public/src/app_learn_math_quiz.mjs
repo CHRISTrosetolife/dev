@@ -22,7 +22,7 @@ import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered
 export function app_learn_math_quiz(
   root,
   question,
-  button_strings,
+  buttons,
   problem_next,
   refill,
   choices,
@@ -41,7 +41,7 @@ export function app_learn_math_quiz(
   let expecteds = question(root, popped);
   let selected = "";
   let keyboard_div = html_div(root);
-  let buttons = list_map(button_strings, function (d) {
+  let button_components = list_map(buttons, function (d) {
     let b = html_button_text(keyboard_div, d);
     html_style_font_size_default_multiplied(b, 1.25);
     let f = symbol_add(d, b);
@@ -59,7 +59,7 @@ export function app_learn_math_quiz(
         html_style_wrong(button);
         selected = selected_old;
       } else {
-        each(buttons, html_style_button_default);
+        each(button_components, html_style_button_default);
         html_inner_set(answer_div, selected);
         let p = list_first(possible);
         html_style_success(button);
