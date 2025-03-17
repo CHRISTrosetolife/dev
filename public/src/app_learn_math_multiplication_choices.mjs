@@ -22,14 +22,7 @@ export function app_learn_math_multiplication_choices(root) {
       function () {
         function refill(multiplication_choices) {
           each_range(max_ranged, function (other) {
-            list_add(multiplication_choices, {
-              left: other,
-              right: by,
-            });
-            list_add(multiplication_choices, {
-              left: by,
-              right: other,
-            });
+            list_add_left_right(multiplication_choices, by, other);
           });
         }
         app_learn_math_multiplication_quiz(refill);
@@ -41,22 +34,25 @@ export function app_learn_math_multiplication_choices(root) {
     string_combine_multiple(["Multiply by 1-", max]),
     function () {
       function refill(multiplication_choices) {
-        each_range(max_ranged, function (other) {
-          each_range(max_ranged, function (other) {
-            list_add(multiplication_choices, {
-              left: other,
-              right: by,
-            });
-            list_add(multiplication_choices, {
-              left: by,
-              right: other,
-            });
+        each_range(max_ranged, function (a) {
+          each_range(max_ranged, function (b) {
+            list_add_left_right(multiplication_choices, a, b);
           });
         });
       }
       app_learn_math_multiplication_quiz(refill);
     },
   );
+  function list_add_left_right(multiplication_choices, a, b) {
+    list_add(multiplication_choices, {
+      left: b,
+      right: a,
+    });
+    list_add(multiplication_choices, {
+      left: b,
+      right: a,
+    });
+  }
   function app_learn_math_multiplication_quiz(refill) {
     app_learn_math_quiz(
       root,
