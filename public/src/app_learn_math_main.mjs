@@ -1,3 +1,4 @@
+import { list_unique_json_shuffle } from "./list_unique_json_shuffle.mjs";
 import { each_range } from "./each_range.mjs";
 import { list_add } from "./list_add.mjs";
 import { app_learn_math_quiz } from "./app_learn_math_quiz.mjs";
@@ -9,6 +10,7 @@ export function app_learn_math_main(root) {
   if (false) {
     html_button(root, "Factoring whole numbers", function () {});
   }
+  let factor_polynomials_choices;
   html_button(root, "Multiplication", function () {
     each_range(11, function (a) {
       let b = 0;
@@ -21,6 +23,9 @@ export function app_learn_math_main(root) {
         right: a,
       });
     });
+    factor_polynomials_choices = list_unique_json_shuffle(
+      factor_polynomials_choices,
+    );
     app_learn_math_quiz(
       root,
       question,
