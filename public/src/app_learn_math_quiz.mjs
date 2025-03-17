@@ -23,7 +23,6 @@ export function app_learn_math_quiz(
   root,
   expecteds_get,
   buttons,
-  problem_next,
   refill,
   choices,
 ) {
