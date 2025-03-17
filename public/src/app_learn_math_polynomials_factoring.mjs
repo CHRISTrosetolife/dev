@@ -58,10 +58,11 @@ export function app_learn_math_polynomials_factoring(root) {
             factor_polynomials_choices,
           );
         }
-        let { answer_1, answer_2 } = list_pop(factor_polynomials_choices);
-        let sum = answer_1 + answer_2;
-        let product = answer_1 * answer_2;
-        function question(root) {
+        let popped = list_pop(factor_polynomials_choices);
+        function expecteds_get(root, popped) {
+          let { answer_1, answer_2 } = popped;
+          let sum = answer_1 + answer_2;
+          let product = answer_1 * answer_2;
           let equation = html_span(root);
           html_span_text(equation, variable);
           html_sup_text(equation, "2");
@@ -70,29 +71,31 @@ export function app_learn_math_polynomials_factoring(root) {
           html_span_text(equation, variable);
           html_span_text(equation, "+");
           html_span_text(equation, product);
+          let choices = [answer_1, answer_2];
+          let expecteds = [];
+          function expected_add(choices2) {
+            let expected = string_combine_multiple([
+              "(",
+              variable,
+              "+",
+              list_first(choices2),
+              ")(",
+              variable,
+              "+",
+              list_second(choices2),
+              ")",
+            ]);
+            list_add(expecteds, expected);
+          }
+          expected_add(choices);
+          list_reverse(choices);
+          expected_add(choices);
+          let v = expecteds;
+          return v;
         }
-        let choices = [answer_1, answer_2];
-        let expecteds = [];
-        function expected_add(choices2) {
-          let expected = string_combine_multiple([
-            "(",
-            variable,
-            "+",
-            list_first(choices2),
-            ")(",
-            variable,
-            "+",
-            list_second(choices2),
-            ")",
-          ]);
-          list_add(expecteds, expected);
-        }
-        expected_add(choices);
-        list_reverse(choices);
-        expected_add(choices);
         app_learn_math_quiz(
           root,
-          question,
+          expecteds_get,
           button_strings,
           expecteds,
           problem_next,
