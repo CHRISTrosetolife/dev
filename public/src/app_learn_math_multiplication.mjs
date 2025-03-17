@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { digits_10 } from "./digits_10.mjs";
 import { app_learn_math_quiz } from "./app_learn_math_quiz.mjs";
@@ -31,7 +32,9 @@ export function app_learn_math_multiplication(root) {
           html_span_text(question, right);
           html_span_text(question, "=?");
           let v = [left * right];
-          $$V;
+          log({
+            v,
+          });
           return v;
         },
         digits_10(),
