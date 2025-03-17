@@ -51,7 +51,7 @@ export function app_learn_math() {
     factor_polynomials(factoring_min, factoring_max),
   );
   let factor_polynomials_choices = [];
-  function factor_polynomials_choices_refill() {
+  function factor_polynomials_choices_refill(factoring_min, factoring_max) {
     each_range_1_nested(factoring_max, function each(answer_1, answer_2) {
       list_add(factor_polynomials_choices, {
         answer_1,
@@ -64,7 +64,7 @@ export function app_learn_math() {
   function factor_polynomials(factoring_min, factoring_max) {
     function factor_polynomials_inner() {
       if (list_empty_is(factor_polynomials_choices)) {
-        factor_polynomials_choices_refill();
+        factor_polynomials_choices_refill(factoring_min, factoring_max);
       }
       let { answer_1, answer_2 } = list_pop(factor_polynomials_choices);
       html_clear_scroll_top_centered(root);
