@@ -153,7 +153,4 @@ export function app_learn_math_main(root) {
       },
     );
   }
-  function factor_polynomials(factoring_min, factoring_max) {
-    return v2;
-  }
 }
