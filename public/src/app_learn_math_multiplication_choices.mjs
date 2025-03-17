@@ -31,22 +31,25 @@ export function app_learn_math_multiplication_choices(root) {
             });
           });
         }
-        app_learn_math_quiz(
-          root,
-          function (question, popped) {
-            let { left, right } = popped;
-            html_span_text(question, left);
-            html_span_text(question, "×");
-            html_span_text(question, right);
-            html_span_text(question, "=?");
-            let v = [left * right];
-            return v;
-          },
-          digits_10(),
-          refill,
-          app_learn_math_multiplication_choices,
-        );
+        app_learn_math_multiplication_quiz(refill);
       },
     );
   });
+  function app_learn_math_multiplication_quiz(refill) {
+    app_learn_math_quiz(
+      root,
+      function (question, popped) {
+        let { left, right } = popped;
+        html_span_text(question, left);
+        html_span_text(question, "×");
+        html_span_text(question, right);
+        html_span_text(question, "=?");
+        let v = [left * right];
+        return v;
+      },
+      digits_10(),
+      refill,
+      app_learn_math_multiplication_choices,
+    );
+  }
 }
