@@ -10,22 +10,20 @@ export function app_learn_math_main(root) {
   if (false) {
     html_button(root, "Factoring whole numbers", function () {});
   }
-  let factor_polynomials_choices;
+  let multiplication_choices;
   html_button(root, "Multiplication", function () {
     each_range(11, function (a) {
       let b = 0;
-      list_add(factor_polynomials_choices, {
+      list_add(multiplication_choices, {
         left: a,
         right: b,
       });
-      list_add(factor_polynomials_choices, {
+      list_add(multiplication_choices, {
         left: b,
         right: a,
       });
     });
-    factor_polynomials_choices = list_unique_json_shuffle(
-      factor_polynomials_choices,
-    );
+    multiplication_choices = list_unique_json_shuffle(multiplication_choices);
     app_learn_math_quiz(
       root,
       question,
