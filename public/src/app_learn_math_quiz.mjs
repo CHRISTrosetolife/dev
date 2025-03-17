@@ -27,7 +27,7 @@ export function app_learn_math_quiz(
   html_button_back(root, function () {
     app_learn_math_main(root);
   });
-  question(root);
+  let expecteds = question(root);
   let selected = "";
   let keyboard_div = html_div(root);
   let buttons = list_map(button_strings, function (d) {
