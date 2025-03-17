@@ -24,7 +24,6 @@ export function app_learn_math_multiplication(root) {
       }
       app_learn_math_quiz(
         root,
-        digits_10(),
         function (question, popped) {
           let { left, right } = popped;
           html_span_text(question, left);
@@ -32,6 +31,7 @@ export function app_learn_math_multiplication(root) {
           html_span_text(question, right);
           html_span_text(question, "=?");
         },
+        digits_10(),
         refill,
       );
     },
