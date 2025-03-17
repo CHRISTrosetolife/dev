@@ -13,7 +13,7 @@ export function app_learn_math_multiplication_choices(root) {
   html_button_back(root, function () {
     app_learn_math_main(root);
   });
-  let max = 11;
+  let max = 10 + 1;
   each_range(max, function (by) {
     html_button(
       root,
