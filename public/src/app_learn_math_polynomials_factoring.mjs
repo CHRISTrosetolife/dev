@@ -89,7 +89,13 @@ export function app_learn_math_polynomials_factoring(root) {
           let v = expecteds;
           return v;
         }
-        app_learn_math_quiz(root, expecteds_get, button_strings, problem_next);
+        app_learn_math_quiz(
+          root,
+          expecteds_get,
+          button_strings,
+          problem_next,
+          refill,
+        );
       },
     );
   }

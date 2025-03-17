@@ -24,6 +24,7 @@ export function app_learn_math_quiz(
   question,
   button_strings,
   problem_next,
+  refill,
 ) {
   html_clear_scroll_top_centered(root);
   html_button_back(root, function () {
