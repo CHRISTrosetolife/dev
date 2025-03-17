@@ -6,38 +6,39 @@ import { list_add } from "./list_add.mjs";
 import { each_range } from "./each_range.mjs";
 import { html_button } from "./html_button.mjs";
 export function app_learn_math_multiplication(root) {
-  let by = 0;
-  each_range(count, function (item) {});
-  html_button(
-    root,
-    string_combine_multiple(["Multiply by ", by]),
-    function app_learn_math_multiplication_quiz() {
-      function refill(multiplication_choices) {
-        each_range(11, function (a) {
-          list_add(multiplication_choices, {
-            left: a,
-            right: by,
+  let max = 11;
+  each_range(max, function (by) {
+    html_button(
+      root,
+      string_combine_multiple(["Multiply by ", by]),
+      function app_learn_math_multiplication_quiz() {
+        function refill(multiplication_choices) {
+          each_range(max, function (a) {
+            list_add(multiplication_choices, {
+              left: a,
+              right: by,
+            });
+            list_add(multiplication_choices, {
+              left: by,
+              right: a,
+            });
           });
-          list_add(multiplication_choices, {
-            left: by,
-            right: a,
-          });
-        });
-      }
-      app_learn_math_quiz(
-        root,
-        function (question, popped) {
-          let { left, right } = popped;
-          html_span_text(question, left);
-          html_span_text(question, "×");
-          html_span_text(question, right);
-          html_span_text(question, "=?");
-          let v = [left * right];
-          return v;
-        },
-        digits_10(),
-        refill,
-      );
-    },
-  );
+        }
+        app_learn_math_quiz(
+          root,
+          function (question, popped) {
+            let { left, right } = popped;
+            html_span_text(question, left);
+            html_span_text(question, "×");
+            html_span_text(question, right);
+            html_span_text(question, "=?");
+            let v = [left * right];
+            return v;
+          },
+          digits_10(),
+          refill,
+        );
+      },
+    );
+  });
 }
