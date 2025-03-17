@@ -30,6 +30,8 @@ export function app_learn_math_multiplication(root) {
           html_span_text(question, "×");
           html_span_text(question, right);
           html_span_text(question, "=?");
+          let v = [left * right];
+          return v;
         },
         digits_10(),
         refill,
