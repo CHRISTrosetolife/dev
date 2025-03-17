@@ -1,3 +1,4 @@
+import { each_range_from } from "./each_range_from.mjs";
 import { each_range_1 } from "./each_range_1.mjs";
 import { html_style_font_size_default_multiplied } from "./html_style_font_size_default_multiplied.mjs";
 import { list_pop } from "./list_pop.mjs";
@@ -53,8 +54,8 @@ export function app_learn_math() {
   );
   let factor_polynomials_choices = [];
   function factor_polynomials_choices_refill(factoring_min, factoring_max) {
-    each_range_1(max, function (a) {
-      each_range_1(max, function (b) {
+    each_range_from(factoring_min, factoring_max, function (a) {
+      each_range_1(factoring_max, function (b) {
         list_add(factor_polynomials_choices, {
           answer_1,
           answer_2,
