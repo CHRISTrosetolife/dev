@@ -45,6 +45,16 @@ export function app_learn_math_multiplication_choices(root) {
     },
   );
   function list_add_left_right(multiplication_choices, a, b) {
+    let lrs = [
+      {
+        left: b,
+        right: a,
+      },
+      {
+        left: b,
+        right: a,
+      },
+    ];
     list_add(multiplication_choices, {
       left: b,
       right: a,
