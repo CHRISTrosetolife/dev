@@ -45,6 +45,7 @@ export function app_learn_math_multiplication_choices_generic(
     string_combine_multiple([operation_word, " by 1-", max]),
     function () {
       function refill(choices) {
+        let max_ranged = app_learn_math_multiplication_choices_max_ranged(max);
         each_range(max_ranged, function (a) {
           each_range(max_ranged, function (b) {
             list_add_left_right(choices, a, b);
