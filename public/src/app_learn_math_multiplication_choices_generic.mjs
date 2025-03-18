@@ -56,7 +56,15 @@ export function app_learn_math_multiplication_choices_generic(
     },
   );
   function list_add_left_right(choices, a, b) {
-    let lrs = [
+    let lrs = lrs_get(a, b);
+    each(lrs, function (lr) {
+      if (filter(lr)) {
+        list_add(choices, lr);
+      }
+    });
+  }
+  function lrs_get(a, b) {
+    let v2 = [
       {
         left: b,
         right: a,
@@ -66,11 +74,7 @@ export function app_learn_math_multiplication_choices_generic(
         right: a,
       },
     ];
-    each(lrs, function (lr) {
-      if (filter(lr)) {
-        list_add(choices, lr);
-      }
-    });
+    return v2;
   }
   function app_learn_math_multiplication_quiz(refill) {
     app_learn_math_quiz(
