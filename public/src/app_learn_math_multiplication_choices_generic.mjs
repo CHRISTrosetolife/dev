@@ -26,15 +26,15 @@ export function app_learn_math_multiplication_choices_generic(
   let max_ranged = max + 1;
   html_span_text(root, "Do each of these in order");
   each_range(max_ranged, function (by) {
+    function refill(multiplication_choices) {
+      each_range(max_ranged, function (other) {
+        list_add_left_right(multiplication_choices, other, by);
+      });
+    }
     html_button(
       root,
       string_combine_multiple([operation_word, " by ", by]),
       function () {
-        function refill(multiplication_choices) {
-          each_range(max_ranged, function (other) {
-            list_add_left_right(multiplication_choices, other, by);
-          });
-        }
         app_learn_math_multiplication_quiz(refill);
       },
     );
