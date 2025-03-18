@@ -12,6 +12,10 @@ import { each_range } from "./each_range.mjs";
 import { html_button } from "./html_button.mjs";
 export function app_learn_math_multiplication_choices(root) {
   let filter = tautology;
+  function symbol_get() {
+    let v2 = "×";
+    return v2;
+  }
   html_clear_scroll_top_centered(root);
   html_button_back(root, function () {
     app_learn_math_main(root);
@@ -70,7 +74,7 @@ export function app_learn_math_multiplication_choices(root) {
       function (question, popped) {
         let { left, right } = popped;
         html_span_text(question, left);
-        html_span_text(question, "×");
+        html_span_text(question, symbol_get());
         html_span_text(question, right);
         html_span_text(question, "=?");
         let v = [left * right];
