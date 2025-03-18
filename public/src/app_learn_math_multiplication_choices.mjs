@@ -1,7 +1,5 @@
 import { app_learn_math_multiplication_choices_generic } from "./app_learn_math_multiplication_choices_generic.mjs";
-import { tautology } from "./tautology.mjs";
 export function app_learn_math_multiplication_choices(root) {
-  let filter = tautology;
   function symbol_get() {
     let v2 = "×";
     return v2;
@@ -11,10 +9,23 @@ export function app_learn_math_multiplication_choices(root) {
     let v3 = left * right;
     return v3;
   }
+  function lrs_get(a, b) {
+    let v2 = [
+      {
+        left: b,
+        right: a,
+      },
+      {
+        left: b,
+        right: a,
+      },
+    ];
+    return v2;
+  }
   app_learn_math_multiplication_choices_generic(
     root,
     operation_word,
-    filter,
+    lrs_get,
     symbol_get,
     operation,
   );
