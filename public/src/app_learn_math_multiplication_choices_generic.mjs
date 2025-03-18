@@ -15,7 +15,7 @@ import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered
 export function app_learn_math_multiplication_choices_generic(
   root,
   operation_word,
-  filter,
+  lrs_get,
   symbol_get,
   operation,
 ) {
@@ -58,23 +58,8 @@ export function app_learn_math_multiplication_choices_generic(
   function list_add_left_right(choices, a, b) {
     let lrs = lrs_get(a, b);
     each(lrs, function (lr) {
-      if (filter(lr)) {
-        list_add(choices, lr);
-      }
+      list_add(choices, lr);
     });
-  }
-  function lrs_get(a, b) {
-    let v2 = [
-      {
-        left: b,
-        right: a,
-      },
-      {
-        left: b,
-        right: a,
-      },
-    ];
-    return v2;
   }
   function app_learn_math_multiplication_quiz(refill) {
     app_learn_math_quiz(
