@@ -28,6 +28,7 @@ export function app_learn_math_multiplication_choices_generic(
   html_span_text(root, "Do each of these in order");
   each_range(max_ranged, function (by) {
     if (skip(by)) {
+      return;
     }
     html_button(
       root,
