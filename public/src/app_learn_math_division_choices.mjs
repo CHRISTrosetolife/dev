@@ -10,6 +10,8 @@ export function app_learn_math_division_choices(root) {
     return v3;
   }
   function lrs_get(a, b) {
+    if (false) {
+    }
     let v2 = [
       {
         left: b,
