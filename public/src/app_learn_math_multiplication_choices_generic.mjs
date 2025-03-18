@@ -56,7 +56,7 @@ export function app_learn_math_multiplication_choices_generic(
   function list_add_left_right(choices, a, b) {
     let lrs = lrs_get(a, b);
     log({
-      lrs,
+      lrs_get,
     });
     each(lrs, function (lr) {
       list_add(choices, lr);
