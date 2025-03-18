@@ -57,7 +57,7 @@ export function app_learn_math_multiplication_choices(root) {
       },
     ];
     each(lrs, function (lr) {
-      if (false) {
+      if (filter(lr)) {
         list_add(multiplication_choices, lr);
       }
     });
