@@ -17,6 +17,10 @@ export function app_learn_math_multiplication_choices(root) {
     return v2;
   }
   let operation_word = "Multiply";
+  function operation(left, right) {
+    let v3 = left * right;
+    return v3;
+  }
   html_clear_scroll_top_centered(root);
   html_button_back(root, function () {
     app_learn_math_main(root);
@@ -78,7 +82,7 @@ export function app_learn_math_multiplication_choices(root) {
         html_span_text(question, symbol_get());
         html_span_text(question, right);
         html_span_text(question, "=?");
-        let v = [left * right];
+        let v = [operation(left, right)];
         return v;
       },
       digits_10(),
