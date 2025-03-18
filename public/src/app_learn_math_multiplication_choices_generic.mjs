@@ -31,6 +31,8 @@ export function app_learn_math_multiplication_choices_generic(
         list_add_left_right(multiplication_choices, other, by);
       });
     }
+    if (false) {
+    }
     html_button(
       root,
       string_combine_multiple([operation_word, " by ", by]),
