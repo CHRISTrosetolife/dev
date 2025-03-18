@@ -57,7 +57,9 @@ export function app_learn_math_multiplication_choices(root) {
       },
     ];
     each(lrs, function (lr) {
-      list_add(multiplication_choices, lr);
+      if (false) {
+        list_add(multiplication_choices, lr);
+      }
     });
   }
   function app_learn_math_multiplication_quiz(refill) {
