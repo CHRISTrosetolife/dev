@@ -16,14 +16,9 @@ export function app_learn_math_division_choices(root) {
       let v = [];
       return v;
     }
-    let p = a * b;
     let v2 = [
       {
-        left: p,
-        right: a,
-      },
-      {
-        left: p,
+        left: a * b,
         right: b,
       },
     ];
