@@ -10,6 +10,7 @@ import { html_span_text } from "./html_span_text.mjs";
 import { app_learn_math_main } from "./app_learn_math_main.mjs";
 import { html_button_back } from "./html_button_back.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 export function app_learn_math_multiplication_choices_generic(
   root,
   operation_word,
@@ -31,15 +32,15 @@ export function app_learn_math_multiplication_choices_generic(
         list_add_left_right(multiplication_choices, other, by);
       });
     }
-    if (false) {
+    if (list_empty_not_is(refill([]))) {
+      html_button(
+        root,
+        string_combine_multiple([operation_word, " by ", by]),
+        function () {
+          app_learn_math_multiplication_quiz(refill);
+        },
+      );
     }
-    html_button(
-      root,
-      string_combine_multiple([operation_word, " by ", by]),
-      function () {
-        app_learn_math_multiplication_quiz(refill);
-      },
-    );
   });
   html_button(
     root,
