@@ -41,7 +41,7 @@ export function app_learn_math_multiplication_choices_generic(
   });
   html_button(
     root,
-    string_combine_multiple([operation_word, " by 1-", max]),
+    string_combine_multiple([operation_word, " by 1 - ", max]),
     function () {
       function refill(choices) {
         each_range(max_ranged, function (a) {
