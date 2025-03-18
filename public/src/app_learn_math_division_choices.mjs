@@ -32,7 +32,6 @@ export function app_learn_math_division_choices(root) {
       symbol_get,
       operation,
       inner,
-      skip,
     );
   });
 }

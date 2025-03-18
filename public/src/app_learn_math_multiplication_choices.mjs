@@ -31,7 +31,6 @@ export function app_learn_math_multiplication_choices(root) {
       symbol_get,
       operation,
       inner,
-      skip,
     );
   });
 }
