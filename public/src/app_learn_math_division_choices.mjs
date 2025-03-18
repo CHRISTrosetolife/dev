@@ -1,7 +1,10 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { app_learn_math_multiplication_choices_generic } from "./app_learn_math_multiplication_choices_generic.mjs";
-import { tautology } from "./tautology.mjs";
 export function app_learn_math_division_choices(root) {
-  let filter = tautology;
+  let filter = function (lr) {
+    let v = object_property_get(object, "property_name");
+    return v;
+  };
   function symbol_get() {
     let v2 = "×";
     return v2;
