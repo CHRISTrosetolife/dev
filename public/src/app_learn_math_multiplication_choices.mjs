@@ -52,7 +52,7 @@ export function app_learn_math_multiplication_choices(root) {
       app_learn_math_multiplication_quiz(refill);
     },
   );
-  function list_add_left_right(multiplication_choices, a, b) {
+  function list_add_left_right(choices, a, b) {
     let lrs = [
       {
         left: b,
@@ -65,7 +65,7 @@ export function app_learn_math_multiplication_choices(root) {
     ];
     each(lrs, function (lr) {
       if (filter(lr)) {
-        list_add(multiplication_choices, lr);
+        list_add(choices, lr);
       }
     });
   }
