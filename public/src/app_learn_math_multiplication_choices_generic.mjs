@@ -17,6 +17,7 @@ export function app_learn_math_multiplication_choices_generic(
   symbol_get,
   operation,
   back,
+  skip,
 ) {
   html_clear_scroll_top_centered(root);
   html_button_back(root, function () {
