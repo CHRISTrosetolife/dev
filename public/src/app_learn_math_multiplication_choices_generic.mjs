@@ -32,7 +32,7 @@ export function app_learn_math_multiplication_choices_generic(
       function () {
         function refill(multiplication_choices) {
           each_range(max_ranged, function (other) {
-            list_add_left_right(multiplication_choices, by, other);
+            list_add_left_right(multiplication_choices, other, by);
           });
         }
         app_learn_math_multiplication_quiz(refill);
