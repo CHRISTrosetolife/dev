@@ -7,8 +7,6 @@ export function app_learn_math_main(root) {
   if (false) {
     html_button(root, "Factoring whole numbers", function () {});
   }
-  html_button(root, "Multiplication", function () {
-    app_learn_math_multiplication_choices(root);
-  });
+  app_learn_math_multiplication_choices(root);
   app_learn_math_polynomials_factoring(root);
 }
