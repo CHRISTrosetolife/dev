@@ -40,7 +40,7 @@ export function app_learn_math_multiplication_choices(root) {
   });
   html_button(
     root,
-    string_combine_multiple(["Multiply by 1-", max]),
+    string_combine_multiple([operation_word, " by 1-", max]),
     function () {
       function refill(multiplication_choices) {
         each_range(max_ranged, function (a) {
