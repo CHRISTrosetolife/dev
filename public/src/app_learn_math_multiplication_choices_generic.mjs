@@ -50,6 +50,9 @@ export function app_learn_math_multiplication_choices_generic(
       function refill(choices) {
         each_range(max_ranged, function (a) {
           each_range(max_ranged, function (by) {
+            if (skip(by)) {
+              return;
+            }
             list_add_left_right(choices, a, by);
           });
         });
