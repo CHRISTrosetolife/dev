@@ -16,6 +16,7 @@ export function app_learn_math_multiplication_choices(root) {
     let v2 = "×";
     return v2;
   }
+  let operation_word = "Multiply";
   html_clear_scroll_top_centered(root);
   html_button_back(root, function () {
     app_learn_math_main(root);
@@ -26,7 +27,7 @@ export function app_learn_math_multiplication_choices(root) {
   each_range(max_ranged, function (by) {
     html_button(
       root,
-      string_combine_multiple(["Multiply", " by ", by]),
+      string_combine_multiple([operation_word, " by ", by]),
       function () {
         function refill(multiplication_choices) {
           each_range(max_ranged, function (other) {
