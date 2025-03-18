@@ -49,8 +49,8 @@ export function app_learn_math_multiplication_choices_generic(
     function () {
       function refill(choices) {
         each_range(max_ranged, function (a) {
-          each_range(max_ranged, function (b) {
-            list_add_left_right(choices, a, b);
+          each_range(max_ranged, function (by) {
+            list_add_left_right(choices, a, by);
           });
         });
       }
