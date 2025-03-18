@@ -1,5 +1,4 @@
 import { app_learn_math_multiplication_choices_max_ranged } from "./app_learn_math_multiplication_choices_max_ranged.mjs";
-import { app_learn_math_multiplication_choices_max } from "./app_learn_math_multiplication_choices_max.mjs";
 import { app_learn_math_multiplication_choices } from "./app_learn_math_multiplication_choices.mjs";
 import { digits_10 } from "./digits_10.mjs";
 import { app_learn_math_quiz } from "./app_learn_math_quiz.mjs";
@@ -23,8 +22,8 @@ export function app_learn_math_multiplication_choices_generic(
   html_button_back(root, function () {
     app_learn_math_main(root);
   });
-  let max = app_learn_math_multiplication_choices_max();
-  let max_ranged = app_learn_math_multiplication_choices_max_ranged(max);
+  let max = 10;
+  let max_ranged = max + 1;
   html_span_text(root, "Do each of these in order");
   each_range(max_ranged, function (by) {
     html_button(
