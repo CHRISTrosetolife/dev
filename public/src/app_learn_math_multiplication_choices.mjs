@@ -12,8 +12,8 @@ export function app_learn_math_multiplication_choices(root) {
   function lrs_get(a, b) {
     let v2 = [
       {
-        left: b,
-        right: a,
+        left: a,
+        right: b,
       },
       {
         left: b,
