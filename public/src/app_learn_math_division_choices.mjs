@@ -1,4 +1,4 @@
-import { app_learn_math_multiplication_choices } from "./app_learn_math_multiplication_choices.mjs";
+import { html_button } from "./html_button.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { app_learn_math_multiplication_choices_generic } from "./app_learn_math_multiplication_choices_generic.mjs";
 export function app_learn_math_division_choices(root) {
@@ -29,12 +29,14 @@ export function app_learn_math_division_choices(root) {
     ];
     return v2;
   }
-  app_learn_math_multiplication_choices_generic(
-    root,
-    operation_word,
-    lrs_get,
-    symbol_get,
-    operation,
-    app_learn_math_multiplication_choices,
-  );
+  html_button(root, operation_word, function inner() {
+    app_learn_math_multiplication_choices_generic(
+      root,
+      operation_word,
+      lrs_get,
+      symbol_get,
+      operation,
+      inner,
+    );
+  });
 }
