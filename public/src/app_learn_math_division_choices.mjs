@@ -4,7 +4,7 @@ export function app_learn_math_division_choices(root) {
     let v2 = "×";
     return v2;
   }
-  let operation_word = "Multiply";
+  let operation_word = "Divide";
   function operation(left, right) {
     let v3 = left / right;
     return v3;
