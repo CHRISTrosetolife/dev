@@ -23,7 +23,7 @@ export function app_learn_math_multiplication_choices(root) {
     ];
     return v2;
   }
-  html_button(root, "Multiplication", function inner() {
+  html_button(root, operation_word, function inner() {
     app_learn_math_multiplication_choices_generic(
       root,
       operation_word,
