@@ -1,5 +1,4 @@
 import { log } from "./log.mjs";
-import { app_learn_math_multiplication_choices } from "./app_learn_math_multiplication_choices.mjs";
 import { digits_10 } from "./digits_10.mjs";
 import { app_learn_math_quiz } from "./app_learn_math_quiz.mjs";
 import { list_add } from "./list_add.mjs";
@@ -77,7 +76,7 @@ export function app_learn_math_multiplication_choices_generic(
       },
       digits_10(),
       refill,
-      app_learn_math_multiplication_choices,
+      back,
     );
   }
 }
