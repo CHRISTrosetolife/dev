@@ -42,10 +42,10 @@ export function app_learn_math_multiplication_choices(root) {
     root,
     string_combine_multiple([operation_word, " by 1-", max]),
     function () {
-      function refill(multiplication_choices) {
+      function refill(choices) {
         each_range(max_ranged, function (a) {
           each_range(max_ranged, function (b) {
-            list_add_left_right(multiplication_choices, a, b);
+            list_add_left_right(choices, a, b);
           });
         });
       }
