@@ -1,3 +1,4 @@
+import { app_learn_math_multiplication_choices } from "./app_learn_math_multiplication_choices.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { app_learn_math_multiplication_choices_generic } from "./app_learn_math_multiplication_choices_generic.mjs";
 export function app_learn_math_division_choices(root) {
@@ -34,5 +35,6 @@ export function app_learn_math_division_choices(root) {
     lrs_get,
     symbol_get,
     operation,
+    app_learn_math_multiplication_choices,
   );
 }

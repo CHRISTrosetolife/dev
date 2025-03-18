@@ -28,5 +28,6 @@ export function app_learn_math_multiplication_choices(root) {
     lrs_get,
     symbol_get,
     operation,
+    app_learn_math_multiplication_choices,
   );
 }
