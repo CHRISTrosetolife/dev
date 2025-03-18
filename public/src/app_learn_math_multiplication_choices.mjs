@@ -23,14 +23,14 @@ export function app_learn_math_multiplication_choices(root) {
     ];
     return v2;
   }
-  html_button(root, "Multiplication", function () {
+  html_button(root, "Multiplication", function inner() {
     app_learn_math_multiplication_choices_generic(
       root,
       operation_word,
       lrs_get,
       symbol_get,
       operation,
-      app_learn_math_multiplication_choices,
+      inner,
     );
   });
 }
