@@ -56,8 +56,9 @@ export function app_learn_math_multiplication_choices(root) {
         right: a,
       },
     ];
-    each(list, function (item) {});
-    list_add(multiplication_choices, lr);
+    each(lrs, function (lr) {
+      list_add(multiplication_choices, lr);
+    });
   }
   function app_learn_math_multiplication_quiz(refill) {
     app_learn_math_quiz(
