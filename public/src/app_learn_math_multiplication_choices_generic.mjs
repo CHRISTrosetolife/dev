@@ -32,7 +32,9 @@ export function app_learn_math_multiplication_choices_generic(
         list_add_left_right(multiplication_choices, other, by);
       });
     }
-    if (list_empty_not_is(refill([]))) {
+    let l = [];
+    refill(l);
+    if (list_empty_not_is(l)) {
       html_button(
         root,
         string_combine_multiple([operation_word, " by ", by]),
