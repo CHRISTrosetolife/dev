@@ -2,7 +2,7 @@ import { list_random_item } from "./list_random_item.mjs";
 import { app_learn_math_multiplication_choices_generic } from "./app_learn_math_multiplication_choices_generic.mjs";
 export function app_learn_math_division_choices(root) {
   function symbol_get() {
-    let v2 = list_random_item(["÷"]);
+    let v2 = list_random_item(["÷", "/"]);
     return v2;
   }
   let operation_word = "Divide";
