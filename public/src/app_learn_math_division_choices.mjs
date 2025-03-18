@@ -6,7 +6,7 @@ export function app_learn_math_division_choices(root) {
   }
   let operation_word = "Multiply";
   function operation(left, right) {
-    let v3 = left * right;
+    let v3 = left / right;
     return v3;
   }
   function lrs_get(a, b) {
