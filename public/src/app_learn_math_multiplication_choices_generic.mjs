@@ -26,9 +26,6 @@ export function app_learn_math_multiplication_choices_generic(
   let max_ranged = max + 1;
   html_span_text(root, "Do each of these in order");
   each_range(max_ranged, function (by) {
-    if (skip(by)) {
-      return;
-    }
     html_button(
       root,
       string_combine_multiple([operation_word, " by ", by]),
@@ -49,9 +46,6 @@ export function app_learn_math_multiplication_choices_generic(
       function refill(choices) {
         each_range(max_ranged, function (a) {
           each_range(max_ranged, function (by) {
-            if (skip(by)) {
-              return;
-            }
             list_add_left_right(choices, a, by);
           });
         });
