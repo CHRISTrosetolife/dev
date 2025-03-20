@@ -16,6 +16,8 @@ export function prayers_music() {
     "Help Brandon Lake",
     "Help Damascus Worship",
     "Help Amanda Cook",
+    "Help Jenn Johnsn",
+    "Help Bethel",
   ];
   return v;
 }
