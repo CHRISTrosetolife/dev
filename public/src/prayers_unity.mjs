@@ -31,6 +31,9 @@ export function prayers_unity() {
     "Unite Jehovah's Witness",
     "Unite Quakers",
     "Unite Amish",
+    "Unite Evangelicals",
+    "Unite Protestants",
+    "Unite Charismatics",
     "May all shepherds be in communion with each other",
   ];
   return v;
