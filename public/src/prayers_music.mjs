@@ -14,6 +14,8 @@ export function prayers_music() {
     "Help Tenth Avenue North",
     "Help MercyMe",
     "Help Brandon Lake",
+    "Help Damascus Worship",
+    "Help Amanda Cook",
   ];
   return v;
 }
