@@ -49,6 +49,10 @@ export function app_share_main(context) {
       text: "French and English",
       code: "frasbl+engbsb",
     },
+    {
+      text: "Bengali (+880) and English",
+      code: "benirv+engbsb",
+    },
   ];
   each(folders, function (folder) {
     html_button(root, object_property_get(folder, "text"), async function () {
