@@ -48,6 +48,7 @@ export function prayers() {
     "Cause love and I to be generous",
     "Cause every Christian to be generous",
     "Cause all to choose good",
+    "Direct all my footsteps and thoughts",
     "Answer all the prayer requests I should be praying",
     "Answer all the prayer requests every Christian should be praying",
     "Heal me",
