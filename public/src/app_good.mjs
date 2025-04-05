@@ -1,3 +1,4 @@
+import { prayer_lords } from "./prayer_lords.mjs";
 import { prayers } from "./prayers.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_prayer } from "./html_prayer.mjs";
@@ -13,10 +14,7 @@ export function app_good() {
     html_button(body, message, function () {
       grace_good_generic_copy(message);
       if (message === morning) {
-        html_p_text(
-          body,
-          "Our Father, Who art in heaven, hallowed be Thy Name; Thy kingdom come; Thy will be done on earth as it is in heaven; give us this day our daily bread; And forgive us our trespasses as we forgive those who trespass against us; Lead us not into temptation, but deliver us from evil",
-        );
+        html_p_text(body, prayer_lords());
         html_prayer(body, prayers());
       }
     });
