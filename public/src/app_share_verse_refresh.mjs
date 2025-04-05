@@ -1,3 +1,4 @@
+import { emojis_trinity } from "./emojis_trinity.mjs";
 import { error } from "./error.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
@@ -111,7 +112,7 @@ export async function app_share_verse_refresh(
     },
     {
       button_text: "🙏🏿 Glory",
-      value: string_combine_multiple(["🙏🏿 Glory to God ", "❤️‍🔥✝️🕊"]),
+      value: string_combine_multiple(["🙏🏿 Glory to God ", emojis_trinity()]),
     },
     {
       button_text: "🙏🏿 Thanks",
