@@ -122,7 +122,7 @@ export async function app_share_verse_refresh(
     },
     {
       button_text: "🙏🏿 Praise",
-      value: "🎶 Praise the LORD our God 🎵",
+      value: string_combine_multiple(["🎶 Praise the LORD our God 🎵"]),
     },
     {
       button_text: "📞 Phone",
