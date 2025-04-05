@@ -111,7 +111,7 @@ export async function app_share_verse_refresh(
     },
     {
       button_text: "🙏🏿 Glory",
-      value: "🙏🏿 Glory to God ❤️‍🔥✝️🕊",
+      value: string_combine_multiple(["🙏🏿 Glory to God ❤️‍🔥✝️🕊"]),
     },
     {
       button_text: "🙏🏿 Thanks",
