@@ -57,6 +57,10 @@ export function app_share_main(context) {
       text: "Chichewa (Malawi) and English",
       code: "nya+engbsb",
     },
+    {
+      text: "bahasa Indonesia and English",
+      code: "indags+engbsb",
+    },
   ];
   each(folders, function (folder) {
     html_button(root, object_property_get(folder, "text"), async function () {
