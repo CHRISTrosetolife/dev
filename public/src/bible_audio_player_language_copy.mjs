@@ -11,6 +11,7 @@ export async function bible_audio_player_language_copy(language_folder_name) {
     let v = !string_starts_with(f, "zip");
     return v;
   });
+  folders = list_map_path_parse_name(folders);
   log({
     p,
     folders,
