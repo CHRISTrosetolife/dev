@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { prayers_countries } from "./prayers_countries.mjs";
 import { prayers_sins } from "./prayers_sins.mjs";
 import { prayers_famous } from "./prayers_famous.mjs";
@@ -58,8 +59,8 @@ export function prayers() {
     "Heal my thinking including any hallucinations or delusions",
     "Heal my memory",
     "Heal my sleep",
-    "Heal my depression",
-    "Heal my cough",
+    "Heal the depression that afflicted me",
+    string_combine_multiple(["Heal the ", "cough", " that afflicted me"]),
     "Heal my desire for soda",
     "Help me learn Cebuano",
     "Help my muscles grow",
