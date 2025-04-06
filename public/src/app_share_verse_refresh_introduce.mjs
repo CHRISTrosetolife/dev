@@ -1,3 +1,4 @@
+import { me_email } from "./me_email.mjs";
 import { app_share_verse_refresh_phone } from "./app_share_verse_refresh_phone.mjs";
 import { me_location } from "./me_location.mjs";
 import { me_age } from "./me_age.mjs";
@@ -15,6 +16,8 @@ export function app_share_verse_refresh_introduce() {
     me_location(),
     ". ",
     app_share_verse_refresh_phone(),
+    "Here is my WhatsApp phone number: ",
+    me_email(),
   ]);
   return v;
 }
