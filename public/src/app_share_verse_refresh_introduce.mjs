@@ -18,6 +18,7 @@ export function app_share_verse_refresh_introduce() {
     app_share_verse_refresh_phone(),
     " 📬 Here is my email: ",
     me_email(),
+    " 📧 ",
   ]);
   return v;
 }
