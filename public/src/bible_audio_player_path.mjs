@@ -6,7 +6,7 @@ export function bible_audio_player_path(name) {
   let drive_letter = bible_audio_player_drive_letter();
   let v = path_join([
     folder_external_root(string_combine_multiple([drive_letter, ":"])),
-    "..\\bible",
+    "bible",
     name,
   ]);
   return v;
