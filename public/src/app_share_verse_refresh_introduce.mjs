@@ -1,3 +1,4 @@
+import { app_share_verse_refresh_phone } from "./app_share_verse_refresh_phone.mjs";
 import { me_location } from "./me_location.mjs";
 import { me_age } from "./me_age.mjs";
 import { emoji_wrap_music } from "./emoji_wrap_music.mjs";
@@ -12,7 +13,8 @@ export function app_share_verse_refresh_introduce() {
     me_age(),
     " years old. ",
     me_location(),
-    ".",
+    ". ",
+    app_share_verse_refresh_phone(),
   ]);
   return v;
 }
