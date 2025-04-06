@@ -115,6 +115,7 @@ export async function app_share_verse_refresh(
         me_age(),
         " years old. ",
         me_location(),
+        ".",
       ]),
     },
     {
