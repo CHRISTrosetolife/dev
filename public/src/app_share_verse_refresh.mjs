@@ -109,7 +109,7 @@ export async function app_share_verse_refresh(
       button_text: "👋🏿 Introduce",
       value: string_combine_multiple([
         greet,
-        " My parents named me Jared Mathis. I believe Jesus died ✝️ , was buried 🪨 and rose ⬆️ to life ⛪ . I preach 🗣 the gospel ✝️. I am married. ",
+        " My parents named me Jared Mathis. I believe Jesus died ✝️ , was buried 🪨 and rose ⬆️ to life ⛪ . I preach 🗣 the gospel ✝️. I have a wife. ",
         emoji_wrap_music("I sing 🎤️ and play 🎹 Bible songs"),
         " . I am ",
         me_age(),
