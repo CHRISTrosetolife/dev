@@ -12,15 +12,20 @@ export async function bible_audio_player_generic(
   let from = path_join([path_language, download_folder]);
   let extension = ".mp3";
   let filtered = await folder_read_filter(from, extension, filter);
-  return filtered;
-  await folder_files_copy_generic(from, extension, to, filter, async (to) => {
-    let without = string_suffix_without(to, extension);
-    let with_id = string_combine_multiple([
-      without,
-      "_",
-      await uuid(),
-      extension,
-    ]);
-    return with_id;
-  });
+  await folder_files_copy_generic(
+    from,
+    extension,
+    to,
+    filter,
+    async function (to) {
+      let without = string_suffix_without(to, extension);
+      let with_id = string_combine_multiple([
+        without,
+        "_",
+        await uuid(),
+        extension,
+      ]);
+      return with_id;
+    },
+  );
 }
