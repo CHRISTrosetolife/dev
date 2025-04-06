@@ -91,15 +91,18 @@ export async function app_share_verse_refresh(
     );
     return v2;
   }
-  let greet = "👋🏿 Greetings in the name of Jesus ✝️";
+  let greet = "👋🏿 Greetings in the name of Jesus ✝️ !";
   let texts_extra = [
     {
       button_text: "👋🏿 Greet",
-      value: "👋🏿 Greetings in the name of Jesus ✝️",
+      value: greet,
     },
     {
       button_text: "👋🏿 Introduce",
-      value: string_combine_multiple([greet]),
+      value: string_combine_multiple([
+        greet,
+        " My parents named me Jared Mathis. I believe Jesus died, was buried and rose to life.",
+      ]),
     },
     {
       button_text: "👌🏿 How r u",
