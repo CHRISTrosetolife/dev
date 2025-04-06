@@ -108,7 +108,7 @@ export async function app_share_verse_refresh(
       value: string_combine_multiple([
         greet,
         " My parents named me Jared Mathis. I believe Jesus died ✝️ , was buried 🪨 and rose ⬆️ to life ⛪ . I preach 🗣 the gospel ✝️. ",
-        "I sing 🎤️ Bible songs 🎹",
+        emoji_wrap_music("I sing 🎤️ and play 🎹 Bible songs"),
         " .",
       ]),
     },
