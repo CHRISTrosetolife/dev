@@ -1,3 +1,4 @@
+import { emoji_music_up } from "./emoji_music_up.mjs";
 import { emoji_wrap_music } from "./emoji_wrap_music.mjs";
 import { emojis_trinity } from "./emojis_trinity.mjs";
 import { error } from "./error.mjs";
@@ -134,7 +135,7 @@ export async function app_share_verse_refresh(
       value: "🙌🏿 Thank you very much 😁",
     },
     {
-      button_text: string_combine_multiple([" Praise"]),
+      button_text: string_combine_multiple([emoji_music_up(), " Praise"]),
       value: emoji_wrap_music(praise),
     },
     {
