@@ -60,6 +60,7 @@ export function prayers() {
     "Heal my sleep",
     "Heal my depression",
     "Heal my cough",
+    "Heal my desire for soda",
     "Help me learn Cebuano",
     "Help my muscles grow",
     "Help me lose weight",
