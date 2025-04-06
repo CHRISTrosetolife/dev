@@ -60,7 +60,7 @@ export function prayers() {
     "Heal my thinking including any hallucinations or delusions",
     "Heal my memory",
     "Heal my sleep",
-    "Heal the depression that afflicted me",
+    prayers_heal_afflicted(cough),
     prayers_heal_afflicted(cough),
     "Heal my desire for soda",
     "Help me learn Cebuano",
