@@ -104,7 +104,7 @@ export async function app_share_verse_refresh(
     {
       button_text: "👌🏿 How r u",
       value:
-        "😁 I am doing good 💯 through the grace of God 👌🏿 But my health needs prayer 🙏🏿",
+        "😁 I am doing good 💯 through the grace of God 👌🏿 But please pray for my health 🙏🏿",
     },
     {
       button_text: "🙏🏿 Bless",
