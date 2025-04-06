@@ -1,3 +1,4 @@
+import { app_share_verse_refresh_phone } from "./app_share_verse_refresh_phone.mjs";
 import { app_share_verse_refresh_introduce } from "./app_share_verse_refresh_introduce.mjs";
 import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
 import { emoji_music_up } from "./emoji_music_up.mjs";
@@ -6,7 +7,6 @@ import { emojis_trinity } from "./emojis_trinity.mjs";
 import { error } from "./error.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
-import { me_phone } from "./me_phone.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
@@ -138,11 +138,7 @@ export async function app_share_verse_refresh(
     },
     {
       button_text: "📞 Phone",
-      value: string_combine_multiple([
-        "📞 Here is my WhatsApp phone number: ",
-        me_phone(),
-        " ☎️",
-      ]),
+      value: app_share_verse_refresh_phone(),
     },
   ];
   each(texts_extra, function (t) {
