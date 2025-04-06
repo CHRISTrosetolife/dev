@@ -95,8 +95,7 @@ export async function app_share_verse_refresh(
       ]),
     );
     return v2;
-  }$ag
-  let greet = app_share_verse_refresh_greet();
+  }
   let praise = string_combine_multiple([
     "Praise the LORD our God ",
     emojis_trinity(),
@@ -104,12 +103,12 @@ export async function app_share_verse_refresh(
   let texts_extra = [
     {
       button_text: "👋🏿 Greet",
-      value: greet,
+      value: app_share_verse_refresh_greet(),
     },
     {
       button_text: "👋🏿 Introduce",
       value: string_combine_multiple([
-        greet,
+        app_share_verse_refresh_greet(),
         " My parents named me Jared Mathis. I believe Jesus died ✝️ , was buried 🪨 and rose ⬆️ to life ⛪ . I preach 🗣 the gospel ✝️. I have a wife. ",
         emoji_wrap_music("I sing 🎤️ and play 🎹 Bible songs"),
         " . I am ",
