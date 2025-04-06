@@ -1,3 +1,4 @@
+import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
 import { me_location } from "./me_location.mjs";
 import { me_age } from "./me_age.mjs";
 import { emoji_music_up } from "./emoji_music_up.mjs";
@@ -94,8 +95,8 @@ export async function app_share_verse_refresh(
       ]),
     );
     return v2;
-  }
-  let greet = "👋🏿 Greetings in the name of Jesus ✝️ !";
+  }$ag
+  let greet = app_share_verse_refresh_greet();
   let praise = string_combine_multiple([
     "Praise the LORD our God ",
     emojis_trinity(),
