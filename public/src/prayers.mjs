@@ -66,6 +66,7 @@ export function prayers() {
     prayers_heal_afflicted("coughing"),
     "Heal my desire for soda",
     "Help me learn Cebuano",
+    "Help my face be clean-shaven without cut",
     "Help my muscles grow",
     "Help me lose weight",
     "Help all Christians lose weight",
