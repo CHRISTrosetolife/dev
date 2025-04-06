@@ -1,3 +1,4 @@
+import { me_age } from "./me_age.mjs";
 import { emoji_music_up } from "./emoji_music_up.mjs";
 import { emoji_wrap_music } from "./emoji_wrap_music.mjs";
 import { emojis_trinity } from "./emojis_trinity.mjs";
@@ -109,7 +110,9 @@ export async function app_share_verse_refresh(
         greet,
         " My parents named me Jared Mathis. I believe Jesus died ✝️ , was buried 🪨 and rose ⬆️ to life ⛪ . I preach 🗣 the gospel ✝️. ",
         emoji_wrap_music("I sing 🎤️ and play 🎹 Bible songs"),
-        " .",
+        " . I am ",
+        me_age(),
+        " years old. I live in ",
       ]),
     },
     {
