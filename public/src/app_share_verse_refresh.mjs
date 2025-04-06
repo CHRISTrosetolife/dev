@@ -91,10 +91,15 @@ export async function app_share_verse_refresh(
     );
     return v2;
   }
+  let greet = "👋🏿 Greetings in the name of Jesus ✝️";
   let texts_extra = [
     {
       button_text: "👋🏿 Greet",
       value: "👋🏿 Greetings in the name of Jesus ✝️",
+    },
+    {
+      button_text: "👋🏿 Introduce",
+      value: string_combine_multiple([greet]),
     },
     {
       button_text: "👌🏿 How r u",
