@@ -8,7 +8,6 @@ import { prayers_unity } from "./prayers_unity.mjs";
 import { prayers_family } from "./prayers_family.mjs";
 import { list_denest } from "./list_denest.mjs";
 export function prayers() {
-  let cough = "cough";
   let v = list_denest([
     "Cause me to perfectly obey the Father",
     "Cause me to perfectly obey Jesus",
@@ -64,7 +63,7 @@ export function prayers() {
     "Heal my memory",
     "Heal my sleep",
     prayers_heal_afflicted("depression"),
-    prayers_heal_afflicted(cough),
+    prayers_heal_afflicted("cough"),
     "Heal my desire for soda",
     "Help me learn Cebuano",
     "Help my muscles grow",
