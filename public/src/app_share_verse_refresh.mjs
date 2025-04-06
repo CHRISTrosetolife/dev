@@ -132,8 +132,7 @@ export async function app_share_verse_refresh(
       button_text: "🙏🏿 Praise",
       value: string_combine_multiple([
         "🎵 ",
-        "Praise the LORD our God ",
-        emojis_trinity(),
+        string_combine_multiple(["Praise the LORD our God ", emojis_trinity()]),
         " 🎶",
       ]),
     },
