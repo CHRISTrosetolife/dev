@@ -1,3 +1,4 @@
+import { me_location } from "./me_location.mjs";
 import { me_age } from "./me_age.mjs";
 import { emoji_music_up } from "./emoji_music_up.mjs";
 import { emoji_wrap_music } from "./emoji_wrap_music.mjs";
@@ -112,7 +113,8 @@ export async function app_share_verse_refresh(
         emoji_wrap_music("I sing 🎤️ and play 🎹 Bible songs"),
         " . I am ",
         me_age(),
-        " years old. I live in ",
+        " years old. ",
+        me_location(),
       ]),
     },
     {
