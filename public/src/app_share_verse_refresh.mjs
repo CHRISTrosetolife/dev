@@ -101,7 +101,7 @@ export async function app_share_verse_refresh(
       button_text: "👋🏿 Introduce",
       value: string_combine_multiple([
         greet,
-        " My parents named me Jared Mathis. I believe Jesus died ✝️, was buried 🪨 and rose ⬆️ to life.",
+        " My parents named me Jared Mathis. I believe Jesus died ✝️ , was buried 🪨 and rose ⬆️ to life ⛪ .",
       ]),
     },
     {
