@@ -58,6 +58,8 @@ export function prayers() {
     "Heal me",
     "Heal my emotions including self-harm desires",
     "Heal my thinking including any hallucinations or delusions",
+    prayers_heal_afflicted("hallucinations"),
+    prayers_heal_afflicted("delusions"),
     "Heal my memory",
     "Heal my sleep",
     prayers_heal_afflicted("depression"),
