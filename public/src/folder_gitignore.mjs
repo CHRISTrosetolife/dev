@@ -1,4 +1,6 @@
-import { path_join } from "./path_join.mjs";
+import { folder_external_root } from "./folder_external_root.mjs";
 export function folder_gitignore() {
-  return path_join(["D:","gitignore"]);
+  let folder = "gitignore";
+  let v = folder_external_root(folder);
+  return v;
 }
