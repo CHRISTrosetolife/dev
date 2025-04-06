@@ -4,7 +4,7 @@ export function app_share_verse_refresh_phone() {
   let v = string_combine_multiple([
     "📞 Here is my WhatsApp phone number: ",
     me_phone(),
-    " ☎️",
+    " ☎️ .",
   ]);
   return v;
 }
