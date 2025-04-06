@@ -134,7 +134,7 @@ export async function app_share_verse_refresh(
       value: "🙌🏿 Thank you very much 😁",
     },
     {
-      button_text: "🙏🏿 Praise",
+      button_text: string_combine_multiple([" Praise"]),
       value: emoji_wrap_music(praise),
     },
     {
