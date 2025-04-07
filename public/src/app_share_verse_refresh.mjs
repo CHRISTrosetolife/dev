@@ -158,7 +158,8 @@ export async function app_share_verse_refresh(
       await copy();
     }
     if (introduce) {
-      if (false) {
+      if (t === introduce_text) {
+        on_click();
       }
     }
   });
