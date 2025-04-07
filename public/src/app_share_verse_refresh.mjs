@@ -148,15 +148,15 @@ export async function app_share_verse_refresh(
       root,
       object_property_get(t, "button_text"),
       on_click,
-      async function on_click() {
-        let v = object_property_get(t, "value");
-        html_style_display_none(b);
-        list_add(texts_extra_chosen, v);
-        list_add(texts_extra_chosen, "");
-        html_p_text(texts_component, v);
-        await copy();
-      },
     );
+    async function on_click() {
+      let v = object_property_get(t, "value");
+      html_style_display_none(b);
+      list_add(texts_extra_chosen, v);
+      list_add(texts_extra_chosen, "");
+      html_p_text(texts_component, v);
+      await copy();
+    }
   });
   html_button_home(root, function () {
     let v3 = app_share_main(context);
