@@ -147,7 +147,8 @@ export async function app_share_verse_refresh(
     let b = html_button_text_click(
       root,
       object_property_get(t, "button_text"),
-      async function () {
+      on_click,
+      async function on_click() {
         let v = object_property_get(t, "value");
         html_style_display_none(b);
         list_add(texts_extra_chosen, v);
