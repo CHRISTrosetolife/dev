@@ -145,9 +145,9 @@ export async function app_share_verse_refresh(
     {
       button_text: "💵 Money",
       value: string_combine_multiple([
-        "May you delight yourself in the LORD our God ",
+        "May you delight 😃 yourself in the LORD our God ",
         emojis_trinity(),
-        "and may the LORD grant you the desires of your heart 💓 ! 😭 I'm sorry to hear that you are in need of money 😟 ! I have no money to give to you 😞 .",
+        "and may the LORD grant you the desires of your heart 💓😊 ! 😭 I'm sorry to hear that you are in need of money 😟 ! I have no money to give to you 😞 .",
       ]),
     },
   ];
