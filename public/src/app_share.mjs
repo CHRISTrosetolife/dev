@@ -32,6 +32,6 @@ export async function app_share() {
     book_code,
     chapter_code,
     verse_number_next,
-    introduce,
+    false,
   );
 }
