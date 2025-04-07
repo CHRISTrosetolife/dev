@@ -42,7 +42,7 @@ export function app_share_main(context) {
       code: "tel2017+engbsb",
     },
     {
-      text: "Hausa (Nigeria) and English",
+      text: "Hausa (+234) (Nigeria) and English",
       code: "hausa+engbsb",
     },
     {
