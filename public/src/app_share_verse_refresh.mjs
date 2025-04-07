@@ -100,15 +100,16 @@ export async function app_share_verse_refresh(
     "Praise the LORD our God ",
     emojis_trinity(),
   ]);
+  let introduce_text = {
+    button_text: "👋🏿 Introduce",
+    value: app_share_verse_refresh_introduce(),
+  };
   let texts_extra = [
     {
       button_text: "👋🏿 Greet",
       value: app_share_verse_refresh_greet(),
     },
-    {
-      button_text: "👋🏿 Introduce",
-      value: app_share_verse_refresh_introduce(),
-    },
+    introduce_text,
     {
       button_text: "👌🏿 How r u",
       value:
