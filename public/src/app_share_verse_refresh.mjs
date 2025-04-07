@@ -142,6 +142,10 @@ export async function app_share_verse_refresh(
       button_text: "📞 Phone",
       value: app_share_verse_refresh_phone(),
     },
+    {
+      button_text: "📞 Money",
+      value: "I",
+    },
   ];
   await each_async(texts_extra, async function (t) {
     let b = html_button_text_click(
