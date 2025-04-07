@@ -157,6 +157,8 @@ export async function app_share_verse_refresh(
       html_p_text(texts_component, v);
       await copy();
     }
+    if (false) {
+    }
   });
   html_button_home(root, function () {
     let v3 = app_share_main(context);
