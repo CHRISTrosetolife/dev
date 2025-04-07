@@ -48,6 +48,7 @@ export async function app_share_verse_refresh(
   book_code,
   chapter_code,
   verse_number_next,
+  introduce,
 ) {
   let lookup = html_hash_lookup();
   let { root } = context;
@@ -216,6 +217,7 @@ export async function app_share_verse_refresh(
         book_code_next,
         chapter_code_next,
         verse_number_next,
+        introduce,
       );
     });
     await copy();

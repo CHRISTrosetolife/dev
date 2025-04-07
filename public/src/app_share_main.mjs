@@ -87,6 +87,7 @@ export function app_share_main(context) {
         book_code,
         chapter_code,
         verse_number_next,
+        introduce,
       );
     });
   });
