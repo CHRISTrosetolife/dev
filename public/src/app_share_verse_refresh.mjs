@@ -1,3 +1,4 @@
+import { each_async } from "./each_async.mjs";
 import { app_share_verse_refresh_phone } from "./app_share_verse_refresh_phone.mjs";
 import { app_share_verse_refresh_introduce } from "./app_share_verse_refresh_introduce.mjs";
 import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
@@ -10,7 +11,6 @@ import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
-import { each } from "./each.mjs";
 import { html_button_home } from "./html_button_home.mjs";
 import { app_share_main } from "./app_share_main.mjs";
 import { html_on_click } from "./html_on_click.mjs";
@@ -143,7 +143,7 @@ export async function app_share_verse_refresh(
       value: app_share_verse_refresh_phone(),
     },
   ];
-  each(texts_extra, function (t) {
+  await each_async(texts_extra, async function (t) {
     let b = html_button_text_click(
       root,
       object_property_get(t, "button_text"),
@@ -159,7 +159,7 @@ export async function app_share_verse_refresh(
     }
     if (introduce) {
       if (t === introduce_text) {
-        on_click();
+        await on_click();
       }
     }
   });
