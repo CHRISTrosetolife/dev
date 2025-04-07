@@ -157,7 +157,9 @@ export async function app_share_verse_refresh(
       html_p_text(texts_component, v);
       await copy();
     }
-    if (false) {
+    if (introduce) {
+      if (false) {
+      }
     }
   });
   html_button_home(root, function () {
