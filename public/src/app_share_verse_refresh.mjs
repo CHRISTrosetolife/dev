@@ -105,11 +105,11 @@ export async function app_share_verse_refresh(
     value: app_share_verse_refresh_introduce(),
   };
   let texts_extra = [
+    introduce_text,
     {
       button_text: "👋🏿 Greet",
       value: app_share_verse_refresh_greet(),
     },
-    introduce_text,
     {
       button_text: "👌🏿 How r u",
       value:
