@@ -74,19 +74,23 @@ export function lesson_array_two() {
     ]);
   }
   function screen3(parent) {
+    lesson_array_sorted(parent);
+  }
+}
+function lesson_array_sorted(parent) {
     let a = app_learn_code_random_identifier();
     html_p_text_multiple(parent, [
-      "in this lesson numbers will appear from smallest to largest",
-      "for example , this is allowed :",
+        "in this lesson numbers will appear from smallest to largest",
+        "for example , this is allowed :",
     ]);
     app_learn_code_code_part_contrast(
-      parent,
-      js_code_statement_let_assign(a, js_code_array([1, 2])),
+        parent,
+        js_code_statement_let_assign(a, js_code_array([1, 2]))
     );
     html_p_text_multiple(parent, ["however , this is not allowed :"]);
     app_learn_code_code_part_contrast(
-      parent,
-      js_code_statement_let_assign(a, js_code_array([2, 1])),
+        parent,
+        js_code_statement_let_assign(a, js_code_array([2, 1]))
     );
-  }
 }
+
