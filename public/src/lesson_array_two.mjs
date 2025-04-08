@@ -1,3 +1,4 @@
+import { lesson_array_sorted } from "./lesson_array_sorted.mjs";
 import { lesson_array_two_indices } from "./lesson_array_two_indices.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { lesson_array_source_get } from "./lesson_array_source_get.mjs";
@@ -77,20 +78,3 @@ export function lesson_array_two() {
     lesson_array_sorted(parent);
   }
 }
-function lesson_array_sorted(parent) {
-    let a = app_learn_code_random_identifier();
-    html_p_text_multiple(parent, [
-        "in this lesson numbers will appear from smallest to largest",
-        "for example , this is allowed :",
-    ]);
-    app_learn_code_code_part_contrast(
-        parent,
-        js_code_statement_let_assign(a, js_code_array([1, 2]))
-    );
-    html_p_text_multiple(parent, ["however , this is not allowed :"]);
-    app_learn_code_code_part_contrast(
-        parent,
-        js_code_statement_let_assign(a, js_code_array([2, 1]))
-    );
-}
-
