@@ -24,7 +24,7 @@ export function lesson_array_two() {
     example_before,
     description,
     example_message,
-    [screen1, screen2, lesson_array_sorted],
+    [screen1, screen2, lesson_array_sorted(count)],
   );
   return v;
   function example_before(parent) {}
