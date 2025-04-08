@@ -1,3 +1,4 @@
+import { noop } from "./noop.mjs";
 import { lesson_array_sorted } from "./lesson_array_sorted.mjs";
 import { number_to_words } from "./number_to_words.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -14,7 +15,7 @@ export function lesson_array_four() {
   let example_message = string_combine("with an ", description);
   let v = lesson_simple(
     lesson_array_source_get(count),
-    example_before,
+    noop,
     description,
     example_message,
     [lesson_array_sorted(count)],
