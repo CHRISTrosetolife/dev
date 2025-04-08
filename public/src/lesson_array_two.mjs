@@ -19,16 +19,8 @@ export function lesson_array_two() {
   let example_message = string_combine("with an ", description);
   let count = 2;
   return lesson_simple(
-    function () {
-      let a = app_learn_code_random_identifier();
-      let values = integer_random_digit_single_positive_multiple_sorted(count);
-      let outputs = list_map(range(count), (i) => js_code_array_get(a, i));
-      const list = [
-        js_code_statement_let_assign(a, js_code_array(values)),
-        app_learn_code_log_combined(outputs),
-      ];
-      return list_join_newline(list);
-    },
+
+    lesson_array_source_get(count),
     example_before,
     description,
     example_message,
