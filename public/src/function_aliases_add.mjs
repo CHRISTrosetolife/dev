@@ -1,3 +1,4 @@
+import { never } from "./never.mjs";
 import { each } from "./each.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { assert } from "./assert.mjs";
@@ -14,7 +15,9 @@ import { list_empty_is } from "./list_empty_is.mjs";
 export async function function_aliases_add(aliases, function_name) {
   let existing = function_aliases();
   let split = string_split_comma(aliases);
-  each(list, function (item) {});
+  each(split, function (s) {
+    assert(never, []);
+  });
   let duplicates = list_filter(split, function (s) {
     let v = object_property_exists(existing, s);
     return v;
