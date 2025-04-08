@@ -21,7 +21,6 @@ export function lesson_array_three() {
       lesson_array_two_indices(),
       "Threfore:",
       "the number `2` refers to the third element",
-      ,
     ]);
   }
 }
