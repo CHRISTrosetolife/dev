@@ -1,3 +1,4 @@
+import { lesson_array_four } from "./lesson_array_four.mjs";
 import { lesson_array_three } from "./lesson_array_three.mjs";
 import { lesson_object_properties_shorthand_three } from "./lesson_object_properties_shorthand_three.mjs";
 import { lesson_object_properties_shorthand_two } from "./lesson_object_properties_shorthand_two.mjs";
@@ -189,7 +190,7 @@ export function app_learn_code_modules() {
   module_current = module_new(modules, "arrays (lists)");
   list_add(module_current, lesson_array_two);
   list_add(module_current, lesson_array_three);
-  list_add(module_current, lesson_lesson_array_four);
+  list_add(module_current, lesson_array_four);
   marker();
   return modules;
   function module_new(modules, module_name) {
