@@ -1,6 +1,7 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { lesson_array_source_get } from "./lesson_array_source_get.mjs";
 import { html_cycle_code_multiple } from "./html_cycle_code_multiple.mjs";
 import { html_cycle_bold_multiple } from "./html_cycle_bold_multiple.mjs";
-import { app_learn_code_log_combined } from "./app_learn_code_log_combined.mjs";
 import { js_code_array_get } from "./js_code_array_get.mjs";
 import { js_code_array } from "./js_code_array.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
@@ -12,20 +13,18 @@ import { list_join_newline } from "./list_join_newline.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { js_code_statement } from "./js_code_statement.mjs";
-import { range } from "./range.mjs";
-import { list_map } from "./list_map.mjs";
 export function lesson_array_two() {
   let description = "array with two items";
   let example_message = string_combine("with an ", description);
   let count = 2;
-  return lesson_simple(
-
+  let v = lesson_simple(
     lesson_array_source_get(count),
     example_before,
     description,
     example_message,
     [screen1, screen2, screen3],
   );
+  return v;
   function example_before(parent) {}
   function screen1(parent) {
     let a = app_learn_code_random_identifier();
@@ -60,8 +59,14 @@ export function lesson_array_two() {
       parent,
       list_join_newline([
         js_code_statement_let_assign(a, js_code_array(values)),
-        `${js_code_statement(js_code_array_get(a, 0))} // use 0 for the first element , 3.2`,
-        `${js_code_statement(js_code_array_get(a, 1))} // use 1 for the first element , 4.5`,
+        string_combine_multiple([
+          js_code_statement(js_code_array_get(a, 0)),
+          " // use 0 for the first element , 3.2",
+        ]),
+        string_combine_multiple([
+          js_code_statement(js_code_array_get(a, 1)),
+          " // use 1 for the first element , 4.5",
+        ]),
       ]),
     );
     html_cycle_code_multiple(parent, [
