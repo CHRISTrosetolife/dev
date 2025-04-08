@@ -4,7 +4,7 @@ import { lesson_simple } from "./lesson_simple.mjs";
 import { string_combine } from "./string_combine.mjs";
 export function lesson_array_four() {
   let count = 3;
-  let description = string_combine_multiple(["array with four items"]);
+  let description = string_combine_multiple(["array with ", count, " items"]);
   let example_message = string_combine("with an ", description);
   let v = lesson_simple(
     lesson_array_source_get(count),
