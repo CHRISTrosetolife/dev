@@ -18,7 +18,7 @@ import { list_map } from "./list_map.mjs";
 export function lesson_array_three() {
   let description = "array with three items";
   let example_message = string_combine("with an ", description);
-  let count = 2;
+  let count = 3;
   let v = lesson_simple(
     function () {
       let a = app_learn_code_random_identifier();
