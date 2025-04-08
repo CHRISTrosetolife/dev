@@ -50,6 +50,10 @@ export function app_share_main(context) {
       code: "frasbl+engbsb",
     },
     {
+      text: "Spanish and English",
+      code: "spablm+engbsb",
+    },
+    {
       text: "Bengali (+880) and English",
       code: "benirv+engbsb",
     },
