@@ -1,4 +1,4 @@
-import { never } from "./never.mjs";
+import { less_than_by } from "./less_than_by.mjs";
 import { each } from "./each.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { assert } from "./assert.mjs";
@@ -12,11 +12,12 @@ import { string_split_comma } from "./string_split_comma.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
+import { list_size } from "./list_size.mjs";
 export async function function_aliases_add(aliases, function_name) {
   let existing = function_aliases();
   let split = string_split_comma(aliases);
   each(split, function (s) {
-    assert(never, []);
+    assert(less_than_by, [s, function_name, list_size]);
   });
   let duplicates = list_filter(split, function (s) {
     let v = object_property_exists(existing, s);
