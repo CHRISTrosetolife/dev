@@ -10,7 +10,7 @@ export function lesson_array_three() {
     example_before,
     description,
     example_message,
-    [screen1, screen2, screen3],
+    [],
   );
   return v;
   function example_before(parent) {}
