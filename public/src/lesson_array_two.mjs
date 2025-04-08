@@ -1,3 +1,4 @@
+import { lesson_array_two_indices } from "./lesson_array_two_indices.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { lesson_array_source_get } from "./lesson_array_source_get.mjs";
 import { html_cycle_code_multiple } from "./html_cycle_code_multiple.mjs";
@@ -50,11 +51,7 @@ export function lesson_array_two() {
       "instead of starting at 1 , we could start with 0 like this : 0 , 1 , 2 , 3 , 4",
     ]);
     html_cycle_code_multiple(parent, [
-      [
-        "to tell javascript that you want the first element in an array , you use the number `0` , not the number `1`",
-        "the number `0` refers to the first element",
-        "the number `1` refers to the second element",
-      ],
+      lesson_array_two_indices(),
       "here is some example code :",
     ]);
     app_learn_code_code_part_contrast(
