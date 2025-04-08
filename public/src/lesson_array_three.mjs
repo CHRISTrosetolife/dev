@@ -16,7 +16,7 @@ import { js_code_statement } from "./js_code_statement.mjs";
 import { range } from "./range.mjs";
 import { list_map } from "./list_map.mjs";
 export function lesson_array_three() {
-  let description = "array with two items";
+  let description = "array with three items";
   let example_message = string_combine("with an ", description);
   let count = 2;
   let v = lesson_simple(
