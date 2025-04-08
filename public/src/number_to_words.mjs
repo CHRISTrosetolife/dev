@@ -1,5 +1,5 @@
 import { floor } from "./floor.mjs";
-export function number_to_words() {
+export function number_to_words(num) {
   let units = [
     "",
     "one",
