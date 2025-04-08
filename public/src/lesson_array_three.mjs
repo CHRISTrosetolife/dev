@@ -1,3 +1,4 @@
+import { lesson_array_two_indices } from "./lesson_array_two_indices.mjs";
 import { html_cycle_code_multiple } from "./html_cycle_code_multiple.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { lesson_array_source_get } from "./lesson_array_source_get.mjs";
@@ -18,9 +19,7 @@ export function lesson_array_three() {
   function example_before(parent) {
     html_span_text(parent, "Remember:");
     html_cycle_code_multiple(parent, [
-      "to tell javascript that you want the first element in an array , you use the number `0` , not the number `1`",
-      "the number `0` refers to the first element",
-      "the number `1` refers to the second element",
+      [lesson_array_two_indices()],
       "here is some example code :",
     ]);
   }
