@@ -111,7 +111,6 @@ export function function_aliases() {
     "pdb",
   ]);
   function_aliases_register(all, fn_name("function_wrap"), ["fw"]);
-  function_aliases_register(all, fn_name("l"), ["lesson_new"]);
   function_aliases_register(all, fn_name("lesson_new"), ["l"]);
   marker();
   return all;
