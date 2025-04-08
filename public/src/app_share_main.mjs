@@ -61,6 +61,10 @@ export function app_share_main(context) {
       text: "bahasa Indonesia and English",
       code: "indags+engbsb",
     },
+    {
+      text: "Malay (Malaysia) and English",
+      code: "zlmKSZI+engbsb",
+    },
   ];
   each(folders, function (folder) {
     html_button(root, object_property_get(folder, "text"), async function () {
