@@ -1,3 +1,4 @@
+import { lesson_array_sorted } from "./lesson_array_sorted.mjs";
 import { number_to_words } from "./number_to_words.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { lesson_array_source_get } from "./lesson_array_source_get.mjs";
@@ -16,7 +17,7 @@ export function lesson_array_four() {
     example_before,
     description,
     example_message,
-    [],
+    [lesson_array_sorted],
   );
   return v;
   function example_before(parent) {}
