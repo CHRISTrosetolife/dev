@@ -19,7 +19,8 @@ export function lesson_array_three() {
   function example_before(parent) {
     html_span_text(parent, "Remember:");
     html_cycle_code_multiple(parent, [
-      [lesson_array_two_indices()],
+      "Remember:",
+      lesson_array_two_indices(),
       "here is some example code :",
     ]);
   }
