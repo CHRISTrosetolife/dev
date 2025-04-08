@@ -21,5 +21,4 @@ export function lesson_array_four() {
     [lesson_array_sorted(count)],
   );
   return v;
-  function example_before(parent) {}
 }
