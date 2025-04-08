@@ -70,7 +70,7 @@ export function number_to_words(num) {
         (i > 0 ? " " + thousands[i] : "") +
         (result ? " " + result : "");
     }
-    let num = Math.floor(num / 1000);
+    num = Math.floor(num / 1000);
     i++;
   }
   return result;
