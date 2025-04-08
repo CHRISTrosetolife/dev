@@ -24,7 +24,7 @@ export function lesson_array_two() {
     example_before,
     description,
     example_message,
-    [screen1, screen2, screen3],
+    [screen1, screen2, lesson_array_sorted],
   );
   return v;
   function example_before(parent) {}
@@ -73,8 +73,5 @@ export function lesson_array_two() {
       "notice that `list[0]` is used to refer to the first element",
       "notice that `list[1]` is used to refer to the second element",
     ]);
-  }
-  function screen3(parent) {
-    lesson_array_sorted(parent);
   }
 }
