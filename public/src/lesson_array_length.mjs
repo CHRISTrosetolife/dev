@@ -40,7 +40,11 @@ export function lesson_array_length() {
   return v;
   function example_before(parent) {
     html_cycle_code_multiple(parent, [
-      string_combine_multiple(["In JavaScript, the ``"]),
+      string_combine_multiple([
+        "In JavaScript, the `",
+        js_code_dot("", js_code_length()),
+        "`",
+      ]),
     ]);
   }
   function screen1(parent) {
