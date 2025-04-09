@@ -1,5 +1,4 @@
 import { js_code_length_property } from "./js_code_length_property.mjs";
-import { js_code_dot_after } from "./js_code_dot_after.mjs";
 import { js_code_length } from "./js_code_length.mjs";
 import { js_code_dot } from "./js_code_dot.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
@@ -38,7 +37,7 @@ export function lesson_array_length() {
       ]),
       string_combine_multiple([
         "The `",
-        js_code_dot_after(js_code_length()),
+        js_code_length_property(),
         "` property will count the number of elements in an Array.",
       ]),
     ]);
