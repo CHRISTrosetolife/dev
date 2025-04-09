@@ -12,7 +12,6 @@ import { string_combine } from "./string_combine.mjs";
 export function lesson_array_length() {
   let description = "array length";
   let example_message = string_combine("with an ", description);
-  let count = 2;
   let count_max = 4;
   let v = lesson_simple(
     lesson_array_source_get_generic(
