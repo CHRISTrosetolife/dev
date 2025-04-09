@@ -40,8 +40,7 @@ export function lesson_array_length() {
   return v;
   function example_before(parent) {
     html_cycle_code_multiple(parent, [
-      "`[]` creates a new array",
-      "here is code to create a new array with two elements and assign the newly created array to a variable: ",
+      string_combine_multiple(["In JavaScript, the ``"]),
     ]);
   }
   function screen1(parent) {
