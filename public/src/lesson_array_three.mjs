@@ -1,5 +1,5 @@
 import { lesson_array_source_get } from "./lesson_array_source_get.mjs";
-import { lesson_array_source_get_count } from "./lesson_array_source_get_count.mjs";
+import { lesson_array_sorted } from "./lesson_array_sorted.mjs";
 import { lesson_array_two_indices } from "./lesson_array_two_indices.mjs";
 import { html_cycle_code_multiple } from "./html_cycle_code_multiple.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
@@ -9,11 +9,11 @@ export function lesson_array_three() {
   let example_message = string_combine("with an ", description);
   let count = 3;
   let v = lesson_simple(
-    lesson_array_source_get_count(count),
+    lesson_array_source_get(count),
     example_before,
     description,
     example_message,
-    [lesson_array_source_get(count)],
+    [lesson_array_sorted(count)],
   );
   return v;
   function example_before(parent) {
