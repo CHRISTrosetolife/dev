@@ -4,7 +4,7 @@ import { lesson_array_source_get_generic } from "./lesson_array_source_get_gener
 import { js_code_array_get } from "./js_code_array_get.mjs";
 import { range } from "./range.mjs";
 import { list_map } from "./list_map.mjs";
-export function lesson_array_source_get(count_get) {
+export function lesson_array_source_get(count) {
   let v = lesson_array_source_get_generic(count_get, second_get);
   return v;
   function second_get(list_identifier, count) {
