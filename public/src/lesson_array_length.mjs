@@ -1,3 +1,4 @@
+import { js_code_dot_after } from "./js_code_dot_after.mjs";
 import { js_code_length } from "./js_code_length.mjs";
 import { js_code_dot } from "./js_code_dot.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
@@ -39,10 +40,11 @@ export function lesson_array_length() {
   );
   return v;
   function example_before(parent) {
+    let after = js_code_length();
     html_cycle_code_multiple(parent, [
       string_combine_multiple([
         "In JavaScript, the `",
-        js_code_dot("", js_code_length()),
+        js_code_dot_after(after),
         "`",
       ]),
     ]);
