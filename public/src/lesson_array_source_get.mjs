@@ -7,7 +7,7 @@ import { list_map } from "./list_map.mjs";
 export function lesson_array_source_get(count_get) {
   let v = lesson_array_source_get_generic(count_get, second_get);
   return v;
-  function second_get(list_identifier, count) {
+  function second_get(list_identifier) {
     let outputs = list_map(range(count), function (i) {
       let v2 = js_code_array_get(list_identifier, i);
       return v2;
