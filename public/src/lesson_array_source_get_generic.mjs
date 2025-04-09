@@ -8,7 +8,7 @@ export function lesson_array_source_get_generic(count_get, second_get) {
     let list_identifier = app_learn_code_random_identifier();
     let values =
       integer_random_digit_single_positive_multiple_sorted(count_get());
-    let second = second_get(list_identifier);
+    let second = second_get(list_identifier, count);
     let list = [
       js_code_statement_let_assign(list_identifier, js_code_array(values)),
       second,
