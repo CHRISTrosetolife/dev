@@ -1,4 +1,4 @@
-import { lesson_array_source_get_count } from "./lesson_array_source_get_count.mjs";
+import { lesson_array_source_get } from "./lesson_array_source_get.mjs";
 import { noop } from "./noop.mjs";
 import { number_to_words } from "./number_to_words.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -13,7 +13,7 @@ export function lesson_array_one() {
   ]);
   let example_message = string_combine("with an ", description);
   let v = lesson_simple(
-    lesson_array_source_get_count(count),
+    lesson_array_source_get(count),
     noop,
     description,
     example_message,
