@@ -49,7 +49,7 @@ export function lesson_array_length() {
       string_combine_multiple([
         "The `",
         js_code_dot_after(js_code_length()),
-        "` property will count the number of elements in",
+        "` property will count the number of elements in an Array.",
       ]),
     ]);
   }
