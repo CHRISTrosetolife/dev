@@ -2,7 +2,6 @@ import { js_code_length } from "./js_code_length.mjs";
 import { js_code_dot } from "./js_code_dot.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { lesson_array_source_get_generic } from "./lesson_array_source_get_generic.mjs";
-import { noop } from "./noop.mjs";
 import { lesson_array_sorted } from "./lesson_array_sorted.mjs";
 import { lesson_array_two_indices } from "./lesson_array_two_indices.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -33,7 +32,7 @@ export function lesson_array_length() {
         return second;
       },
     ),
-    noop,
+    example_before,
     description,
     example_message,
     [screen1, screen2, lesson_array_sorted(count)],
