@@ -17,7 +17,7 @@ import { string_combine } from "./string_combine.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { js_code_statement } from "./js_code_statement.mjs";
 export function lesson_array_length() {
-  let description = "array with two items";
+  let description = "array length";
   let example_message = string_combine("with an ", description);
   let count = 2;
   let v = lesson_simple(
