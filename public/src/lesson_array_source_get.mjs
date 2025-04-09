@@ -8,7 +8,7 @@ export function lesson_array_source_get(count) {
   return v;
   function second_get(list_identifier, count) {
     let outputs = list_map(range(count), function (i) {
-      let v2 = js_code_array_get(a, i);
+      let v2 = js_code_array_get(list_identifier, i);
       return v2;
     });
     let second = app_learn_code_log_combined(outputs);
