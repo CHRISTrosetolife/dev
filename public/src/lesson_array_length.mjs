@@ -39,6 +39,7 @@ export function lesson_array_length() {
     [screen1, screen2, lesson_array_sorted(count)],
   );
   return v;
+  function example_before(parent) {}
   function screen1(parent) {
     let a = app_learn_code_random_identifier();
     let values = integer_random_digit_single_positive_multiple_sorted(count);
