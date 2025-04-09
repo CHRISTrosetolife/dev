@@ -5,6 +5,7 @@ import { js_code_array_get } from "./js_code_array_get.mjs";
 import { range } from "./range.mjs";
 import { list_map } from "./list_map.mjs";
 export function lesson_array_source_get(count_get) {
+  let count = count_get();
   let v = lesson_array_source_get_generic(count_get, second_get);
   return v;
   function second_get(list_identifier) {
