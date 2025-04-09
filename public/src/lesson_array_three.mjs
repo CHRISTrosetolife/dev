@@ -9,7 +9,9 @@ export function lesson_array_three() {
   let example_message = string_combine("with an ", description);
   let count = 3;
   let v = lesson_simple(
-    lesson_array_source_get(count),
+    lesson_array_source_get(function () {
+      return count;
+    }),
     example_before,
     description,
     example_message,
