@@ -1,3 +1,4 @@
+import { js_code_length_property } from "./js_code_length_property.mjs";
 import { js_code_dot_after } from "./js_code_dot_after.mjs";
 import { js_code_length } from "./js_code_length.mjs";
 import { js_code_dot } from "./js_code_dot.mjs";
@@ -32,7 +33,7 @@ export function lesson_array_length() {
     html_cycle_code_multiple(parent, [
       string_combine_multiple([
         "In JavaScript, Arrays have a `",
-        js_code_dot_after(js_code_length()),
+        js_code_length_property(),
         "` property.",
       ]),
       string_combine_multiple([
