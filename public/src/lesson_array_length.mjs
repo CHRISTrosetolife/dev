@@ -38,7 +38,12 @@ export function lesson_array_length() {
     [screen1, screen2, lesson_array_sorted(count)],
   );
   return v;
-  function example_before(parent) {}
+  function example_before(parent) {
+    html_cycle_code_multiple(parent, [
+      "`[]` creates a new array",
+      "here is code to create a new array with two elements and assign the newly created array to a variable: ",
+    ]);
+  }
   function screen1(parent) {
     let a = app_learn_code_random_identifier();
     let values = integer_random_digit_single_positive_multiple_sorted(count);
