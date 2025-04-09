@@ -42,9 +42,14 @@ export function lesson_array_length() {
   function example_before(parent) {
     html_cycle_code_multiple(parent, [
       string_combine_multiple([
-        "In JavaScript, the `",
+        "In JavaScript, Arrays have a `",
         js_code_dot_after(js_code_length()),
-        "`",
+        "` property.",
+      ]),
+      string_combine_multiple([
+        "The `",
+        js_code_dot_after(js_code_length()),
+        "` property will count the number of elements in",
       ]),
     ]);
   }
