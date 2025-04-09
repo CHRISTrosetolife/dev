@@ -1,8 +1,11 @@
+import { app_learn_code_log_combined } from "./app_learn_code_log_combined.mjs";
+import { range } from "./range.mjs";
+import { list_map } from "./list_map.mjs";
+import { lesson_array_source_get_generic } from "./lesson_array_source_get_generic.mjs";
 import { noop } from "./noop.mjs";
 import { lesson_array_sorted } from "./lesson_array_sorted.mjs";
 import { lesson_array_two_indices } from "./lesson_array_two_indices.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { lesson_array_source_get } from "./lesson_array_source_get.mjs";
 import { html_cycle_code_multiple } from "./html_cycle_code_multiple.mjs";
 import { html_cycle_bold_multiple } from "./html_cycle_bold_multiple.mjs";
 import { js_code_array_get } from "./js_code_array_get.mjs";
@@ -21,7 +24,14 @@ export function lesson_array_length() {
   let example_message = string_combine("with an ", description);
   let count = 2;
   let v = lesson_simple(
-    lesson_array_source_get(count),
+    lesson_array_source_get_generic(count, function second_get(count, a) {
+      let outputs = list_map(range(count), function (i) {
+        let v2 = js_code_array_get(a, i);
+        return v2;
+      });
+      let second = app_learn_code_log_combined(outputs);
+      return second;
+    }),
     noop,
     description,
     example_message,
