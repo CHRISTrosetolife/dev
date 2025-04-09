@@ -54,6 +54,7 @@ export function prayers() {
     "Direct all my footsteps and thoughts",
     "Answer all the prayer requests I should be praying",
     "Answer all the prayer requests every Christian should be praying",
+    "Bless and help and provide for everyone who has asked me to pray for them",
     "Heal me",
     "Heal my emotions",
     prayers_heal_afflicted("self-harm desires"),
