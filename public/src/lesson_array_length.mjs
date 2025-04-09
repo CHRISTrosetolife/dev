@@ -1,3 +1,4 @@
+import { js_code_length } from "./js_code_length.mjs";
 import { js_code_dot } from "./js_code_dot.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { lesson_array_source_get_generic } from "./lesson_array_source_get_generic.mjs";
@@ -26,7 +27,9 @@ export function lesson_array_length() {
     lesson_array_source_get_generic(
       count,
       function second_get(list_identifier, count) {
-        let second = app_learn_code_log(js_code_dot(list_identifier, "length"));
+        let second = app_learn_code_log(
+          js_code_dot(list_identifier, js_code_length()),
+        );
         return second;
       },
     ),
