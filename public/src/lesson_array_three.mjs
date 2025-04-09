@@ -13,7 +13,7 @@ export function lesson_array_three() {
     example_before,
     description,
     example_message,
-    [lesson_array_sorted(count)],
+    [lesson_array_source_get(count)],
   );
   return v;
   function example_before(parent) {

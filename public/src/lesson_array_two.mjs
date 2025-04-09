@@ -1,4 +1,4 @@
-import { lesson_array_source_get_count } from "./lesson_array_source_get_count.mjs";
+import { lesson_array_source_get } from "./lesson_array_source_get.mjs";
 import { noop } from "./noop.mjs";
 import { lesson_array_sorted } from "./lesson_array_sorted.mjs";
 import { lesson_array_two_indices } from "./lesson_array_two_indices.mjs";
@@ -21,7 +21,7 @@ export function lesson_array_two() {
   let example_message = string_combine("with an ", description);
   let count = 2;
   let v = lesson_simple(
-    lesson_array_source_get_count(count),
+    lesson_array_source_get(count),
     noop,
     description,
     example_message,
