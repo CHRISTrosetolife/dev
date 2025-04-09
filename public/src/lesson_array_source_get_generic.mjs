@@ -7,7 +7,7 @@ export function lesson_array_source_get_generic(count, second_get) {
   let v = function () {
     let a = app_learn_code_random_identifier();
     let values = integer_random_digit_single_positive_multiple_sorted(count);
-    let second = second_get(count, a);
+    let second = second_get(a, count);
     let list = [js_code_statement_let_assign(a, js_code_array(values)), second];
     let v3 = list_join_newline(list);
     return v3;
