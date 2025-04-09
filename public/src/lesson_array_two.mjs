@@ -21,7 +21,7 @@ export function lesson_array_two() {
   let example_message = string_combine("with an ", description);
   let count = 2;
   let v = lesson_simple(
-    lesson_array_source_get(count),
+    lesson_array_source_get_count(count),
     noop,
     description,
     example_message,
