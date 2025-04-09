@@ -15,7 +15,7 @@ export function lesson_array_length() {
   let v = lesson_simple(
     lesson_array_source_get_generic(
       count,
-      function second_get(list_identifier, count) {
+      function second_get(list_identifier) {
         let second = app_learn_code_log(
           js_code_dot(list_identifier, js_code_length()),
         );
