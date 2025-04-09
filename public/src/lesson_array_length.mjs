@@ -13,10 +13,11 @@ export function lesson_array_length() {
   let description = "array length";
   let example_message = string_combine("with an ", description);
   let count = 2;
+  let count_max = 4;
   let v = lesson_simple(
     lesson_array_source_get_generic(
       function () {
-        let v2 = integer_random(1, 4);
+        let v2 = integer_random(1, count_max);
         return v2;
       },
       function second_get(list_identifier, count) {
@@ -29,7 +30,7 @@ export function lesson_array_length() {
     example_before,
     description,
     example_message,
-    [lesson_array_sorted(count)],
+    [lesson_array_sorted(count_max)],
   );
   return v;
   function example_before(parent) {
