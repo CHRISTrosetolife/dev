@@ -7,6 +7,7 @@ import { range } from "./range.mjs";
 import { list_map } from "./list_map.mjs";
 import { integer_random_digit_single_positive_multiple_sorted } from "./integer_random_digit_single_positive_multiple_sorted.mjs";
 import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
+import { list_denest } from "./list_denest.mjs";
 export function lesson_array_source_get(count) {
   let v = function () {
     let a = app_learn_code_random_identifier();
@@ -19,6 +20,7 @@ export function lesson_array_source_get(count) {
       js_code_statement_let_assign(a, js_code_array(values)),
       app_learn_code_log_combined(outputs),
     ];
+    list = list_denest(list);
     let v3 = list_join_newline(list);
     return v3;
   };
