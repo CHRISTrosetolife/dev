@@ -1,7 +1,7 @@
 export function countries_names_list() {
   let v = [
     "Afghanistan:info@moi.gov.af,info@mfa.gov.af",
-    "Albania",
+    "Albania:suela.huta@parlament.al",
     "Algeria",
     "Andorra",
     "Angola",
