@@ -11,7 +11,7 @@ export function prayers_countries() {
     let v3 = s;
     return v3;
   });
-  let v = list_map(c, function (a) {
+  let v = list_map(m, function (a) {
     let v2 = string_combine_multiple(["Save and bless ", a]);
     return v2;
   });
