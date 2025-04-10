@@ -76,7 +76,7 @@ export function prayers() {
     "Protect love and I from all demons",
     "Protect all humans and all angels of the Lord from all demons",
     "Let all Christians speak and behave worthily in the presence of heavenly angels",
-    "Perfectly open up the eyes and ears of all to scripture and truth",
+    "Perfectly open up the hearts, eyes and ears of all to scripture and truth",
     "Perfectly engraft the word of God into every heart",
     "Cause all to be a perfect hearer and perfect doer of the word of God",
     "Cause the increase of your word being planted and watered to be perfectly maximized",
