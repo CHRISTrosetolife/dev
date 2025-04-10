@@ -3,12 +3,13 @@ import { countries_names } from "./countries_names.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_split } from "./string_split.mjs";
 import { list_reverse } from "./list_reverse.mjs";
+import { list_join_comma_space } from "./list_join_comma_space.mjs";
 export function prayers_countries() {
   let c = countries_names();
   let m = list_map(c, function (d) {
     let s = string_split(d, ", ");
     list_reverse(s);
-    let v3 = s;
+    let v3 = list_join_comma_space(s);
     return v3;
   });
   let v = list_map(m, function (a) {
