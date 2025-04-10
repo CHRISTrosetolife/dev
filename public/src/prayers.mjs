@@ -62,7 +62,7 @@ export function prayers() {
     prayers_heal_afflicted("hallucinations"),
     prayers_heal_afflicted("delusions"),
     "Heal me from remembering",
-    "Heal ne from sleep",
+    "Heal me from sleep",
     prayers_heal_afflicted("depression"),
     prayers_heal_afflicted("coughing"),
     "Banish my desire for soda",
