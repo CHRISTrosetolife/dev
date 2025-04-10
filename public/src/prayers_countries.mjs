@@ -6,7 +6,7 @@ import { list_reverse } from "./list_reverse.mjs";
 export function prayers_countries() {
   let c = countries_names();
   let m = list_map(c, function (d) {
-    let s = string_split(d, ",");
+    let s = string_split(d, ", ");
     list_reverse(s);
     let v3 = s;
     return v3;
