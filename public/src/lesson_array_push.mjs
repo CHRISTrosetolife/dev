@@ -1,5 +1,4 @@
 import { integer_random } from "./integer_random.mjs";
-import { js_code_length_property } from "./js_code_length_property.mjs";
 import { js_code_length } from "./js_code_length.mjs";
 import { js_code_dot } from "./js_code_dot.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
@@ -34,16 +33,7 @@ export function lesson_array_push() {
   return v;
   function example_before(parent) {
     html_cycle_code_multiple(parent, [
-      string_combine_multiple([
-        "In JavaScript, Arrays have a `",
-        js_code_length_property(),
-        "` property.",
-      ]),
-      string_combine_multiple([
-        "The `",
-        js_code_length_property(),
-        "` property will count the number of elements in an Array.",
-      ]),
+      string_combine_multiple(["Use `", "push", "`"]),
     ]);
   }
 }
