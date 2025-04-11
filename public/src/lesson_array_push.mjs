@@ -1,3 +1,4 @@
+import { js_code_push } from "./js_code_push.mjs";
 import { integer_random } from "./integer_random.mjs";
 import { js_code_length } from "./js_code_length.mjs";
 import { js_code_dot } from "./js_code_dot.mjs";
@@ -33,7 +34,7 @@ export function lesson_array_push() {
   return v;
   function example_before(parent) {
     html_cycle_code_multiple(parent, [
-      string_combine_multiple(["Use `", "push", "`"]),
+      string_combine_multiple(["Use `", js_code_push(), "`"]),
     ]);
   }
 }
