@@ -56,6 +56,7 @@ export function prayers() {
     "Answer all the prayer requests every Christian should be praying",
     "Bless and help and provide each person who has asked me to pray for them",
     "Heal me",
+    "May all who have commanded me to take medicine command me to stop medicine",
     "Heal me from emotions",
     prayers_heal_afflicted("self-harm desires"),
     "Heal me from thinking",
@@ -146,6 +147,10 @@ export function prayers() {
     "Help the elderly",
     "Help prisoners",
     "Help the sick",
+    "For each challenge God gave Job, if God desires, may I fulfill",
+    "Predestine all my remaining choices",
+    "May God choose all my remaining choices, not me",
+    "Not only me but anyone who would want this",
   ]);
   return v;
 }
