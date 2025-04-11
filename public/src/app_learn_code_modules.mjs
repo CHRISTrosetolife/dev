@@ -196,9 +196,9 @@ export function app_learn_code_modules() {
   list_add(module_current, lesson_array_four);
   list_add(module_current, lesson_array_one);
   list_add(module_current, lesson_array_length);
-  list_add(module_current, lesson_array_push);
   marker();
   return modules;
+  list_add(module_current, lesson_array_push);
   function module_new(modules, module_name) {
     let module_current = [];
     list_add(modules, {
