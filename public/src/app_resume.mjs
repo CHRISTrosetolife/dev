@@ -30,7 +30,7 @@ export function app_resume() {
   let print = true;
   let root = html_style_default_initialize();
   if (print) {
-    html_style_default_font_size(1.1);
+    html_style_default_font_size(1);
     html_style_a_plain();
   }
   app_resume_header(root, "JARED MATHIS");
