@@ -8,7 +8,8 @@ export function app_dev_screen_overview() {
     },
     screen: function overview_screen(root) {
       html_cycle_code_multiple(root, [
-        "This is an introduction to the development tools I",
+        "This is an introduction to the development tools I've created for myself",
+        "The primary goal is speed: what tools can speed up repetitive development tasks? For example I have a script that automatically adds the let JavaScript keyword so I do not have to type it out anymore",
         "one goal was that a recent college or bootcamp graduate could get started quickly",
         "rather than experts-only , be beginner-friendly",
         "with a larger candidate pool , an employer can find developers easier",
