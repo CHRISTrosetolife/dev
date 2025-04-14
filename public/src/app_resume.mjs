@@ -27,7 +27,7 @@ import { html_span_text } from "./html_span_text.mjs";
 import { html_p } from "./html_p.mjs";
 import { list_concat } from "./list_concat.mjs";
 export function app_resume() {
-  let print = true;
+  let print = false;
   let root = html_style_default_initialize();
   if (print) {
     html_style_default_font_size(1.3);
