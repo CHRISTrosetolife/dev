@@ -11,9 +11,10 @@ import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function app_dev_screen_git_auto() {
-  return {
+  let v = {
     name: function git_auto_name(root) {
-      return html_span_text(root, "automatically commit to git");
+      let v2 = html_span_text(root, "automatically commit to git");
+      return v2;
     },
     screen: function git_auto_screen(root) {
       html_cycle_code_multiple(root, [
@@ -59,8 +60,9 @@ export function app_dev_screen_git_auto() {
         root,
         "using `" +
           fn_name("run_git") +
-          ".mjs` , anytime a `function` is ran from the command-line that updates files , then git can be automatically updated",
+          ".mjs` , any time a `function` is ran from the command-line that updates files , then git can be automatically updated",
       );
     },
   };
+  return v;
 }
