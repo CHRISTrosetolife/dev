@@ -120,7 +120,7 @@ export function app_resume() {
   app_resume_header_3(root, "Contractor");
   html_p_text(
     root,
-    "~2022: Programmer; Created debt collections software; Used JavaScript, C#, AngularJS and T-SQL",
+    "~2022 - ~2023: Programmer; Created debt collections software; Used JavaScript, C#, AngularJS and T-SQL",
   );
   app_resume_header_3(root, "Greenshades");
   html_p_text(
