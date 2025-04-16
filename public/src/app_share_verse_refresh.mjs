@@ -103,53 +103,58 @@ export async function app_share_verse_refresh(
   ]);
   let introduce_text = {
     button_text: "👋🏿 Introduce",
-    value: app_share_verse_refresh_introduce(),
+    value: [app_share_verse_refresh_introduce()],
   };
   let texts_extra = [
     introduce_text,
     {
       button_text: "👋🏿 Greet",
-      value: app_share_verse_refresh_greet(),
+      value: [app_share_verse_refresh_greet()],
     },
     {
       button_text: "👌🏿 How r u",
-      value:
+      value: [
         "😁 I am doing good 💯 through the grace of God 👌🏿 But please pray for my health 🙏🏿",
+      ],
     },
     {
       button_text: "🙏🏿 Bless",
-      value: string_combine_multiple([
-        "🙏🏿 God bless you, your family, your friends and your country exceedingly and abundantly in the name of the Father and of the Son and of the Holy Spirit amen ",
-        emojis_trinity(),
-      ]),
+      value: [
+        string_combine_multiple([
+          "🙏🏿 God bless you, your family, your friends and your country exceedingly and abundantly in the name of the Father and of the Son and of the Holy Spirit amen ",
+          emojis_trinity(),
+        ]),
+      ],
     },
     {
       button_text: "🙏🏿 Amen",
-      value: "🙏🏿 Amen ✝️",
+      value: ["🙏🏿 Amen ✝️"],
     },
     {
       button_text: "🙏🏿 Glory",
-      value: string_combine_multiple(["🙏🏿 Glory to God ", emojis_trinity()]),
+      value: [string_combine_multiple(["🙏🏿 Glory to God ", emojis_trinity()])],
     },
     {
       button_text: "🙏🏿 Thanks",
-      value: "🙌🏿 Thank you very much 😁",
+      value: ["🙌🏿 Thank you very much 😁"],
     },
     {
       button_text: string_combine_multiple([emoji_music_up(), " Praise"]),
-      value: emoji_wrap_music(praise),
+      value: [emoji_wrap_music(praise)],
     },
     {
       button_text: "📞 Phone",
-      value: app_share_verse_refresh_phone(),
+      value: [app_share_verse_refresh_phone()],
     },
     {
       button_text: "💵 Money",
-      value: string_combine_multiple([
-        "🙏🏿 May you delight 😃 yourself in the LORD our God ",
-        emojis_trinity(),
-        " and may the LORD grant you the desires of your heart 💓😊 ! 😭 I'm sorry to hear that you are in need of money 😟 ! I have no money 🚫💲❌ to give to you right now 😞 .",
-      ]),
+      value: [
+        string_combine_multiple([
+          "🙏🏿 May you delight 😃 yourself in the LORD our God ",
+          emojis_trinity(),
+          " and may the LORD grant you the desires of your heart 💓😊 ! 😭 I'm sorry to hear that you are in need of money 😟 ! I have no money 🚫💲❌ to give to you right now 😞 .",
+        ]),
+      ],
     },
   ];
   await each_async(texts_extra, async function (t) {
