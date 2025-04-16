@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { each_async } from "./each_async.mjs";
 import { app_share_verse_refresh_phone } from "./app_share_verse_refresh_phone.mjs";
 import { app_share_verse_refresh_introduce } from "./app_share_verse_refresh_introduce.mjs";
@@ -160,6 +161,7 @@ export async function app_share_verse_refresh(
     async function on_click() {
       let v = object_property_get(t, "value");
       html_style_display_none(b);
+      each(list, function (item) {});
       list_add(texts_extra_chosen, v);
       list_add(texts_extra_chosen, "");
       html_p_text(texts_component, v);
