@@ -104,7 +104,7 @@ export async function app_share_verse_refresh(
   ]);
   let introduce_text = {
     button_text: "👋🏿 Introduce",
-    value: [app_share_verse_refresh_introduce()],
+    value: app_share_verse_refresh_introduce(),
   };
   let texts_extra = [
     introduce_text,
