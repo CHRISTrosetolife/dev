@@ -19,6 +19,8 @@ export function app_share_verse_refresh_introduce() {
       " years old. ",
       me_location(),
       ". ",
+    ]),
+    string_combine_multiple([
       app_share_verse_refresh_phone(),
       " 📬 Here is my email: ",
       me_email(),
