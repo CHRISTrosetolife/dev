@@ -1,13 +1,13 @@
+import { url_bible_songs } from "./url_bible_songs.mjs";
 import { html_style_link_blank } from "./html_style_link_blank.mjs";
 import { noop } from "./noop.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { function_name_to_url_github } from "./function_name_to_url_github.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
-import { url_audio_bible } from "./url_audio_bible.mjs";
 import { app_resume_header_3 } from "./app_resume_header_3.mjs";
 export function app_resume_audio_bible(root) {
   let audio_bible = app_resume_header_3(root, "Audio Bible");
-  html_style_link_blank(url_audio_bible())(audio_bible);
+  html_style_link_blank(url_bible_songs())(audio_bible);
   html_cycle_p(
     root,
     [

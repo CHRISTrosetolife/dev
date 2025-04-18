@@ -1,4 +1,4 @@
-import { url_audio_bible } from "./url_audio_bible.mjs";
+import { url_bible_songs } from "./url_bible_songs.mjs";
 import { html_replace_nb } from "./html_replace_nb.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_add } from "./list_add.mjs";
@@ -40,7 +40,7 @@ export function app_index_choices() {
   });
   list_add(choices, {
     text: "🎥 Bible Song videos",
-    href: url_audio_bible(),
+    href: url_bible_songs(),
   });
   list_add(choices, {
     text: "📙 book syntagmatis theologiae christianae",
