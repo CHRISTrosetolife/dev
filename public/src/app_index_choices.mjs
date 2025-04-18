@@ -39,7 +39,7 @@ export function app_index_choices() {
     page: "search",
   });
   list_add(choices, {
-    text: "🎥 audio bible videos",
+    text: "🎥 Bible Song videos",
     href: url_audio_bible(),
   });
   list_add(choices, {
