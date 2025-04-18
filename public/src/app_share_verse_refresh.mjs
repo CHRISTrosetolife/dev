@@ -1,3 +1,4 @@
+import { html_link_text } from "./html_link_text.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
 import { each } from "./each.mjs";
 import { each_async } from "./each_async.mjs";
@@ -16,9 +17,7 @@ import { html_button_text_click } from "./html_button_text_click.mjs";
 import { html_button_home } from "./html_button_home.mjs";
 import { app_share_main } from "./app_share_main.mjs";
 import { html_on_click } from "./html_on_click.mjs";
-import { html_style_link } from "./html_style_link.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
-import { html_inner_set } from "./html_inner_set.mjs";
 import { html_hash_unparse } from "./html_hash_unparse.mjs";
 import { app_share_verse } from "./app_share_verse.mjs";
 import { app_share_chapter } from "./app_share_chapter.mjs";
@@ -237,8 +236,7 @@ export async function app_share_verse_refresh(
     object_property_set(lookup_next, app_share_verse(), verse_number_next);
     let joined = html_hash_unparse(lookup_next);
     url_next = string_combine_multiple([without_hash, "#", joined]);
-    html_inner_set(next_url_component, url_next);
-    html_style_link(url_next)(next_url_component);
+    html_link_text(next_url_component, url_next);
     html_on_click(next_url_component, async function () {
       await app_share_verse_refresh(
         context,
