@@ -28,7 +28,7 @@ export function app_share_verse_refresh_introduce() {
     ]),
     emoji_wrap_music(
       string_combine_multiple([
-        "Here are my Bible Song videos: ",
+        "Here are my Bible song videos: ",
         url_bible_songs(),
       ]),
     ),
