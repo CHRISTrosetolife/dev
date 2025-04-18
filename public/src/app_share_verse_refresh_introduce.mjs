@@ -26,10 +26,12 @@ export function app_share_verse_refresh_introduce() {
       me_email(),
       " 📧 ",
     ]),
-    string_combine_multiple([
-      " 📬 Here are my Bible Song videos: ",
-      url_bible_songs(),
-    ]),
+    emoji_wrap_music(
+      string_combine_multiple([
+        "Here are my Bible Song videos: ",
+        url_bible_songs(),
+      ]),
+    ),
   ];
   return v;
 }
