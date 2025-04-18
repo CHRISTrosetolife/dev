@@ -163,7 +163,7 @@ export async function app_share_verse_refresh(
   let texts_extra_div = html_div(root);
   await each_async(texts_extra, async function (t) {
     let b = html_button_text_click(
-      root,
+      texts_extra_div,
       object_property_get(t, "button_text"),
       on_click,
     );
@@ -183,7 +183,7 @@ export async function app_share_verse_refresh(
       }
     }
   });
-  html_scroll_center();
+  html_scroll_center(texts_extra_div);
   html_button_home(root, function () {
     let v3 = app_share_main(context);
     return v3;
