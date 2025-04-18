@@ -1,3 +1,4 @@
+import { url_bible_songs } from "./url_bible_songs.mjs";
 import { me_email } from "./me_email.mjs";
 import { app_share_verse_refresh_phone } from "./app_share_verse_refresh_phone.mjs";
 import { me_location } from "./me_location.mjs";
@@ -25,6 +26,10 @@ export function app_share_verse_refresh_introduce() {
       " 📬 Here is my email: ",
       me_email(),
       " 📧 ",
+    ]),
+    string_combine_multiple([
+      " 📬 Here are my Bible Song videos: ",
+      url_bible_songs(),
     ]),
   ];
   return v;
