@@ -140,6 +140,10 @@ export function app_resume() {
     root,
     "~2009 - ~2017: From Intern to Team Lead, Senior Software Engineer; Created debt collections software; Used C#, AngularJS, EntityFramework, T-SQL and IIS",
   );
+  html_p_text(
+    root,
+    "(Resume date gaps due to long-term and Social Security disability; Recovered and ready to return to full-time work)",
+  );
   app_resume_header_2(root, "Education");
   app_resume_header_3(root, "University of North Florida");
   html_p_text(
