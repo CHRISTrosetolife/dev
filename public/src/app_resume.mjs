@@ -46,10 +46,8 @@ export function app_resume() {
   html_spacer_bullet(row);
   html_email(row, me_email());
   html_spacer_bullet(row);
-  html_link_text(
-    html_span(row),
-    "https://letjesusbeexalted.web.app/resume.html",
-  );
+    const website_url = "https://letjesusbeexalted.web.app/resume.html";
+  html_link(row, website_url);
   app_resume_header_2(root, "Projects");
   let dev = app_resume_header_3(root, "Development Tools");
   html_cycle_p(
@@ -158,3 +156,10 @@ export function app_resume() {
     "Bachelor of Science in Computer Science ~2013; Computer Science Student of the Year Award",
   );
 }
+function html_link(parent, website_url) {
+    html_link_text(
+        html_span(parent),
+        website_url
+    );
+}
+
