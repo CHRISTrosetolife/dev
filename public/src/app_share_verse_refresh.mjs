@@ -1,3 +1,4 @@
+import { html_scroll_center } from "./html_scroll_center.mjs";
 import { each } from "./each.mjs";
 import { each_async } from "./each_async.mjs";
 import { app_share_verse_refresh_phone } from "./app_share_verse_refresh_phone.mjs";
@@ -159,6 +160,7 @@ export async function app_share_verse_refresh(
       ],
     },
   ];
+  let texts_extra_div = html_div(root);
   await each_async(texts_extra, async function (t) {
     let b = html_button_text_click(
       root,
@@ -181,6 +183,7 @@ export async function app_share_verse_refresh(
       }
     }
   });
+  html_scroll_center();
   html_button_home(root, function () {
     let v3 = app_share_main(context);
     return v3;
