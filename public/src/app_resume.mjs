@@ -1,5 +1,4 @@
-import { html_link_text } from "./html_link_text.mjs";
-import { html_span } from "./html_span.mjs";
+import { html_link } from "./html_link.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_between_surround } from "./list_between_surround.mjs";
 import { function_name_to_url_github_style_link_list_bewteen_noop } from "./function_name_to_url_github_style_link_list_bewteen_noop.mjs";
@@ -46,7 +45,7 @@ export function app_resume() {
   html_spacer_bullet(row);
   html_email(row, me_email());
   html_spacer_bullet(row);
-    const website_url = "https://letjesusbeexalted.web.app/resume.html";
+  let website_url = "https://letjesusbeexalted.web.app/resume.html";
   html_link(row, website_url);
   app_resume_header_2(root, "Projects");
   let dev = app_resume_header_3(root, "Development Tools");
@@ -156,10 +155,3 @@ export function app_resume() {
     "Bachelor of Science in Computer Science ~2013; Computer Science Student of the Year Award",
   );
 }
-function html_link(parent, website_url) {
-    html_link_text(
-        html_span(parent),
-        website_url
-    );
-}
-
