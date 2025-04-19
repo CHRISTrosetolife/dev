@@ -1,1 +1,1 @@
-export function tampermonkey_update() {}
+export function tampermonkey_update(name) {}
