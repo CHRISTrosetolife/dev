@@ -4,5 +4,4 @@ export async function sandbox_5() {
     '// ==UserScript==\n// ==UserScript==\n\n(function(){alert("jesus");})();',
     "tampermonkey/jesus.js",
   );
-  s;
 }
