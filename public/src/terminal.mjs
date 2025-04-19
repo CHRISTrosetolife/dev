@@ -59,13 +59,17 @@ export async function terminal() {
   let commands = terminal_commands(context);
   async function history_index_get(transform) {
     let item = await terminal_index_history_transform(function lambda(index) {
-      return transform(index);
+      let v = transform(index);
+      return v;
     });
     buffer_clear();
     log_clear();
     log_clear_write_prompt();
     if (string_is(item)) {
-      each(item, (i) => keyboard_type(i));
+      each(item, function (i) {
+        let v2 = keyboard_type(i);
+        return v2;
+      });
     }
   }
   function log_buffer_clear() {
@@ -73,7 +77,8 @@ export async function terminal() {
     log_clear_write_prompt();
   }
   function buffer_to_string() {
-    return list_join_empty(buffer_get());
+    let v3 = list_join_empty(buffer_get());
+    return v3;
   }
   function log_clear_write_prompt() {
     log_clear();
@@ -95,10 +100,11 @@ export async function terminal() {
       object_property_add_1_initialize(counts, f_name_item);
       let history = object_property_initialize(d, "history", []);
       function predicate(h) {
-        return h === item;
+        let v4 = h === item;
+        return v4;
       }
       let indices = list_filter_indices(history, predicate);
-      each_reverse(indices, (index) => {
+      each_reverse(indices, function (index) {
         list_remove_at(history, index);
       });
       list_add(history, item);
@@ -126,8 +132,8 @@ export async function terminal() {
   async function on(chunk, key) {
     let { sequence, name, ctrl, meta, shift } = key;
     let actual = [ctrl, meta, shift];
-    let count = await counter_async(async (la) => {
-      await each_async(commands, async (command) => {
+    let count = await counter_async(async function (la) {
+      await each_async(commands, async function (command) {
         let match_is = false;
         if (object_property_exists(command, "keys")) {
           let { keys } = command;
@@ -135,7 +141,12 @@ export async function terminal() {
           let meta_c = list_includes(keys, "meta");
           let shift_c = list_includes(keys, "shift");
           let expected = [ctrl_c, meta_c, shift_c];
-          if (list_any([name, sequence], (ns) => list_includes(keys, ns))) {
+          if (
+            list_any([name, sequence], function (ns) {
+              let v5 = list_includes(keys, ns);
+              return v5;
+            })
+          ) {
             if (equal_json(actual, expected)) {
               match_is = true;
               if (0) {
@@ -167,7 +178,7 @@ export async function terminal() {
     }
   }
   function keyboard_type(input) {
-    each(input, (i) => {
+    each(input, function (i) {
       i = string_replace(i, "\n", " ");
       keyboard_write(i);
       list_add(buffer, i);
@@ -178,7 +189,11 @@ export async function terminal() {
     log_write(message);
   }
   async function next() {
-    return await new Promise((resolve) => list_add(on_returns, resolve));
+    let v6 = await new Promise(function (resolve) {
+      let v7 = list_add(on_returns, resolve);
+      return v7;
+    });
+    return v6;
   }
   while (true) {
     log_write(prompt);
@@ -209,13 +224,14 @@ export async function terminal() {
     } catch (e) {
       log_error(json_to(e));
     }
-    unawait(async () => {
+    unawait(async function () {
       await git_acp_message(input);
     });
   }
   function terminal_tokens_get(input) {
     let split_string = " ";
     let quote_string = "'";
-    return tokens_simple(input, quote_string, split_string);
+    let v8 = tokens_simple(input, quote_string, split_string);
+    return v8;
   }
 }
