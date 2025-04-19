@@ -1,3 +1,4 @@
+import { list_empty_is } from "./list_empty_is.mjs";
 import { function_declarations_unparse } from "./function_declarations_unparse.mjs";
 import { js_code_array } from "./js_code_array.mjs";
 import { function_imports_recursive } from "./function_imports_recursive.mjs";
@@ -45,7 +46,7 @@ export async function function_dependencies_string(function_name) {
   let dependency_names = object_properties(map);
   let us = await function_declarations_unparse(dependency_names);
   let beginning = [imports];
-  if (false) {
+  if (list_empty_is(e_import)) {
   }
   let c = list_concat_multiple([beginning, e_code, us]);
   let text = list_join_newline(c);
