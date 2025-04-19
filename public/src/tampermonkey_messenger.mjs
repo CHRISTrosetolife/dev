@@ -1,1 +1,3 @@
-export function tampermonkey_messenger() {}
+export function tampermonkey_messenger() {
+  alert("working");
+}
