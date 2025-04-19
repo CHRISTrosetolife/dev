@@ -8,7 +8,10 @@ export async function tampermonkey_update(name) {
   let id = "tampermonkey";
   let combined = function_name_combine(id, name);
   let functions = await function_dependencies_string(combined);
-  let contents = string_combine_multiple([js_code_statement_call(combined)]);
+  let contents = string_combine_multiple([
+    js_code_statement_call(combined),
+    functions,
+  ]);
   let output_path = path_join([id, string_combine_multiple([name, ".js"])]);
   await file_overwrite_open(output_path, functions);
 }
