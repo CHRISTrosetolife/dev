@@ -47,6 +47,7 @@ export async function function_dependencies_string(function_name) {
   let us = await function_declarations_unparse(dependency_names);
   let beginning = [imports];
   if (list_empty_is(e_import)) {
+    beginning = [];
   }
   let c = list_concat_multiple([beginning, e_code, us]);
   let text = list_join_newline(c);
