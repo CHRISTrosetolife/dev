@@ -1,5 +1,7 @@
-import { countries_names } from "./countries_names.mjs";
-import { generate_list_string } from "./generate_list_string.mjs";
+import { storage_upload_string } from "./storage_upload_string.mjs";
 export async function sandbox_5() {
-  await generate_list_string(countries_names(), "countries_names_list");
+  await storage_upload_string(
+    '// ==UserScript==\n// ==UserScript==\n\n(function(){alert("jesus");});',
+    "tampermonkey/jesus.js",
+  );
 }
