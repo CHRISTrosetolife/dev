@@ -1,3 +1,4 @@
+import { file_open } from "./file_open.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { function_name_combine } from "./function_name_combine.mjs";
 import { path_join } from "./path_join.mjs";
@@ -9,4 +10,5 @@ export async function tampermonkey_update(name) {
   let contents = await function_dependencies_string(combined);
   let output_path = path_join([id, string_combine_multiple([name, ".js"])]);
   await file_overwrite(output_path, contents);
+  await file_open(output_path);
 }
