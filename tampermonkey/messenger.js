@@ -1,7 +1,7 @@
 tampermonkey_messenger();
 async function tampermonkey_messenger() {
     alert("working");
-    await html_element_wait("div[aria-label=Thread composer]");
+    await html_element_wait("div[aria-label='Thread composer']");
     alert("It's loaded!");
 }
 async function html_element_wait(selector) {
