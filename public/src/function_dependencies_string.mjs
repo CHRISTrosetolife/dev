@@ -45,6 +45,8 @@ export async function function_dependencies_string(function_name) {
   let dependency_names = object_properties(map);
   let us = await function_declarations_unparse(dependency_names);
   let beginning = [imports];
+  if (false) {
+  }
   let c = list_concat_multiple([beginning, e_code, us]);
   let text = list_join_newline(c);
   return text;
