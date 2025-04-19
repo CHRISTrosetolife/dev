@@ -1,10 +1,11 @@
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-export function html_element_wait(selector) {
-  return new Promise((resolve) => {
+export async function html_element_wait(selector) {
+  let v = new Promise(function (resolve) {
     if (document.querySelector(selector)) {
-      return resolve(document.querySelector(selector));
+      let v2 = resolve(document.querySelector(selector));
+      return v2;
     }
-    let observer = new MutationObserver((mutations) => {
+    let observer = new MutationObserver(function (mutations) {
       if (document.querySelector(selector)) {
         observer.disconnect();
         resolve(document.querySelector(selector));
@@ -18,4 +19,5 @@ export function html_element_wait(selector) {
       subtree: true,
     });
   });
+  return v;
 }
