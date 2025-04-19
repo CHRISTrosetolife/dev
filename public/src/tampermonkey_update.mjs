@@ -4,5 +4,5 @@ import { path_join } from "./path_join.mjs";
 export function tampermonkey_update(name) {
   let id = "tampermonkey";
   let combined = function_name_combine(id, name);
-  let output_path = path_join([id, string_combine_multiple([name])]);
+  let output_path = path_join([id, string_combine_multiple([name, ".js"])]);
 }
