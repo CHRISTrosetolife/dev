@@ -14,5 +14,5 @@ export async function tampermonkey_update(name) {
     functions,
   ]);
   let output_path = path_join([id, string_combine_multiple([name, ".js"])]);
-  await file_overwrite_open(output_path, functions);
+  await file_overwrite_open(output_path, contents);
 }
