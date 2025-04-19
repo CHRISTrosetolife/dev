@@ -17,8 +17,8 @@ import { js_code_await } from "./js_code_await.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 export async function function_dependencies_string(function_name) {
   let map = await function_imports(function_name);
-  let externals = list_adder_unique((la) => {
-    each(object_values(map), (mapped) => {
+  let externals = list_adder_unique(function (la) {
+    each(object_values(map), function (mapped) {
       let { sources } = mapped;
       each(sources, la);
     });
@@ -27,24 +27,25 @@ export async function function_dependencies_string(function_name) {
     await function_imports_recursive(map, fn_name("list_wait"));
   }
   let e = function_dependencies_string_externals();
-  let mapped = list_map(externals, (n) => {
+  let mapped = list_map(externals, function (n) {
     let en = object_property_get(e, n);
     return en;
   });
-  let e_import = list_map(mapped, (en) => {
+  let e_import = list_map(mapped, function (en) {
     let import_ = object_property_get(en, "import_");
     return import_;
   });
   let imports = js_code_await(
     js_code_call_args(fn_name("list_wait"), [js_code_array(e_import)]),
   );
-  let e_code = list_map(mapped, (en) => {
+  let e_code = list_map(mapped, function (en) {
     let code = object_property_get(en, "code");
     return code;
   });
   let dependency_names = object_properties(map);
   let us = await function_declarations_unparse(dependency_names);
-  let c = list_concat_multiple([[imports], e_code, us]);
+  let beginning = [imports];
+  let c = list_concat_multiple([beginning, e_code, us]);
   let text = list_join_newline(c);
   return text;
 }
