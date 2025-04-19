@@ -1,7 +1,7 @@
 import { html_element_wait } from "./html_element_wait.mjs";
-export function tampermonkey_messenger() {
+export async function tampermonkey_messenger() {
   alert("working");
-  html_element_wait;
+  await html_element_wait("div[aria-label=Thread composer]");
   window.addEventListener("load", function () {
     alert("It's loaded!");
   });
