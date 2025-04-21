@@ -18,6 +18,7 @@ export function prayers_music() {
     "Save and Bless Amanda Cook",
     "Save and Bless Jenn Johnson",
     "Save and Bless Bethel",
+    "Save and Bless Micah Tyler",
   ];
   return v;
 }
