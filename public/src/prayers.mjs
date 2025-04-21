@@ -89,6 +89,7 @@ export function prayers() {
     prayers_sins(),
     "Let there be life and life abundantly",
     "Let all church meeting buildings be as You desire",
+    "Let all church meetings be as You desire",
     "Let all Lord’s Supper bread and drink be as You desire",
     "Let all shepherds be humble",
     "Bless every elder",
