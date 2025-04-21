@@ -1,8 +1,8 @@
 export function prayers_famous() {
   let v = [
-    "Help the president",
-    "Help the Pope",
-    "Help the Ecumenical Patriarch",
+    "Save and Bless the president",
+    "Save and Bless the Pope and any future Popes",
+    "Save and Bless the Ecumenical Patriarch",
     "Let Elon be generous and Christian",
     "Let Zuckerberg be generous and Christian",
     "Let Bezos be generous and Christian",
