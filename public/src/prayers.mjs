@@ -137,6 +137,7 @@ export function prayers() {
     "Bless my teaching",
     "Bless my proofs",
     "Bless my thinking",
+    "Bless my job search",
     "Bless my work",
     "Bless my business",
     "Bless the works of Christians",
