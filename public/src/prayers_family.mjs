@@ -5,7 +5,7 @@ export function prayers_family() {
     "Bless any trips",
     "Bless our legal marriage",
     "Bless any marriage ceremonies",
-    "Bless Visa together in person",
+    "Bless Visa, Green Card and together in person",
     "Save and bless the family of love",
     "Save and bless Papa",
     "Save and bless Mama",
