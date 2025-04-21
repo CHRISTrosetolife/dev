@@ -12,7 +12,7 @@ export function prayers_unity() {
     "May the church perfectly agree about homosexuality",
     "May the church perfectly agree about women in leadership",
     "May the church perfectly agree about marriage roles",
-    "May the church perfectly agree about bible copyrights",
+    "May the church perfectly agree about copyrighting the Bible",
     "May the church perfectly agree about believer-to-believer lawsuits",
     "May the church perfectly agree about abortion",
     "Unite Roman Catholics with the rest of the church",
