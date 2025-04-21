@@ -4,6 +4,8 @@ export function prayers_sins() {
     "Let there be no adultery",
     "Let there be no murder",
     "Let there be no rebellion against God",
+    "Let children obey their parents",
+    "Let wives submit to their husbands",
     "Let there be no divination",
     "Let there be no witchcraft",
     "Let there be no suicide",
