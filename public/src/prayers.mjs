@@ -80,7 +80,7 @@ export function prayers() {
     "Let all Christians speak and behave worthily in the presence of heavenly angels",
     "Perfectly open up the hearts, eyes and ears of all to scripture and truth",
     "Perfectly engraft the word of God into every heart",
-    "Cause all to be a perfect hearer and perfect doer of the word of God",
+    "Cause all to be a perfect hearer and a perfect doer of the word of God",
     "Cause the increase of your word being planted and watered to be perfectly maximized",
     "Cause all single Christians to be faithful in singleness",
     "Cause all married Christians to be faithful in marriage",
