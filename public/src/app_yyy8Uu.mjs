@@ -7,7 +7,6 @@ import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { list_map } from "./list_map.mjs";
-import { http_storage } from "./http_storage.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
 import { yyy8Uu_storage_path } from "./yyy8Uu_storage_path.mjs";
 import { html_hr } from "./html_hr.mjs";
@@ -97,7 +96,7 @@ export async function app_yyy8Uu() {
       },
     );
     let file_path = yyy8Uu_storage_path(chapter_index);
-    let chapter = await http_storage(file_path);
+    let chapter = await http_storage_get(file_path);
     let { english, latin } = chapter;
     let indices = range(list_size(english));
     for (let i of indices) {
