@@ -1,3 +1,4 @@
+import { firebase_save_index } from "./firebase_save_index.mjs";
 import { list_clear } from "./list_clear.mjs";
 import { html_br4 } from "./html_br4.mjs";
 import { emoji_danger } from "./emoji_danger.mjs";
@@ -45,12 +46,8 @@ export function app_todo_main(context) {
     });
     await app_todo_index_save_main(context);
   });
-  html_item_add(
-    context,
-    app_todo_main,
-    app_todo_firebase_path_index(),
-    on_complete,
-  );
+  let index_path = app_todo_firebase_path_index();
+  html_item_add(context, app_todo_main, index_path, on_complete);
   function on_complete(value) {
     let items = app_todo_items(context);
     app_todo_item_add(items, value);
@@ -77,9 +74,10 @@ export function app_todo_main(context) {
       html_button(
         c,
         string_combine_multiple([emoji_danger(), " Yes, delete all items"]),
-        function () {
+        async function () {
           let items = app_todo_items(context);
           list_clear(items);
+          await firebase_save_index(context, index_path);
           refresh();
         },
       );
