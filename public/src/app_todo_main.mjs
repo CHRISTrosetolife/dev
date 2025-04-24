@@ -1,3 +1,5 @@
+import { emoji_danger } from "./emoji_danger.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_overlay_container } from "./html_overlay_container.mjs";
 import { html_overlay } from "./html_overlay.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -64,9 +66,13 @@ export function app_todo_main(context) {
     refresh,
   );
   html_hr(root);
-  html_button_reset(root, "Delete all items", function () {
-    let o = html_overlay(fn_name("app_todo"));
-    let c = html_overlay_container(o, refresh);
-    html_button_reset(c, "Yes, delete all items", function () {});
-  });
+  html_button(
+    root,
+    string_combine_multiple([emoji_danger(), " Delete all items"]),
+    function () {
+      let o = html_overlay(fn_name("app_todo"));
+      let c = html_overlay_container(o, refresh);
+      html_button_reset(c, "Yes, delete all items", function () {});
+    },
+  );
 }
