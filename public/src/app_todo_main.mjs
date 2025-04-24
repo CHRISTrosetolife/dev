@@ -60,5 +60,5 @@ export function app_todo_main(context) {
     refresh,
   );
   html_hr(root);
-  html_button(root, "⚠️ delete all items");
+  html_button(root, "⚠️ delete all items", function () {});
 }
