@@ -24,6 +24,7 @@ import { app_todo_not_completed } from "./app_todo_not_completed.mjs";
 import { each } from "./each.mjs";
 import { app_todo_items } from "./app_todo_items.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
+import { html_remove } from "./html_remove.mjs";
 export function app_todo_main(context) {
   let { root } = context;
   html_clear_scroll_top(root);
@@ -79,6 +80,7 @@ export function app_todo_main(context) {
           list_clear(items);
           await firebase_save_index(context, index_path);
           refresh();
+          html_remove(o);
         },
       );
     },
