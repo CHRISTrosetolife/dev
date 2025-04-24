@@ -43,7 +43,12 @@ export function app_resume() {
     html_replace_nb(anonymous ? "Address Street" : "1612 Orlando Circle South"),
   );
   html_spacer_bullet(row);
-  html_span_text(row, html_replace_nb("Jacksonville, Florida 32207"));
+  html_span_text(
+    row,
+    html_replace_nb(
+      anonymous ? "City, State Zip" : "Jacksonville, Florida 32207",
+    ),
+  );
   html_spacer_bullet(row);
   html_phone(row, me_phone());
   html_spacer_bullet(row);
