@@ -38,7 +38,10 @@ export function app_resume() {
   app_resume_header(root, "JARED MATHIS");
   let row = html_p(root);
   html_style_centered(row);
-  html_span_text(row, html_replace_nb("1612 Orlando Circle South"));
+  html_span_text(
+    row,
+    html_replace_nb(anonymous ? "Address Street" : "1612 Orlando Circle South"),
+  );
   html_spacer_bullet(row);
   html_span_text(row, html_replace_nb("Jacksonville, Florida 32207"));
   html_spacer_bullet(row);
