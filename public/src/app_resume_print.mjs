@@ -1,4 +1,6 @@
-import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
+import { app_resume_generic } from "./app_resume_generic.mjs";
 export function app_resume_print() {
-  let root = html_style_default_initialize();
+  let anonymous = false;
+  let print = true;
+  app_resume_generic(print, anonymous);
 }
