@@ -72,8 +72,7 @@ export function app_todo_main(context) {
     function () {
       let o = html_overlay(fn_name("app_todo"));
       let c = html_overlay_container(o, refresh);
-      html_br2(c);
-      html_br2(c);
+      html_br4(c);
       html_button(
         c,
         string_combine_multiple([emoji_danger(), " Yes, delete all items"]),
@@ -82,3 +81,8 @@ export function app_todo_main(context) {
     },
   );
 }
+function html_br4(c) {
+    html_br2(c);
+    html_br2(c);
+}
+
