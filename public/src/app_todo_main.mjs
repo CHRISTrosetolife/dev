@@ -1,3 +1,4 @@
+import { html_hr } from "./html_hr.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_item_add } from "./html_item_add.mjs";
 import { app_todo_list_filtered } from "./app_todo_list_filtered.mjs";
@@ -19,16 +20,16 @@ export function app_todo_main(context) {
   let { root } = context;
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
-  html_button(root, app_todo_completed_value(), () => {
+  html_button(root, app_todo_completed_value(), function () {
     app_todo_completed_view(context);
   });
-  html_button(root, "🌅 add dailies", async () => {
+  html_button(root, "🌅 add dailies", async function () {
     let filtered = list_filter_property(
       items,
       app_todo_type(),
       app_todo_daily(),
     );
-    each(filtered, (item) => {
+    each(filtered, function (item) {
       object_property_set(
         item,
         app_todo_completed_property(),
@@ -47,7 +48,10 @@ export function app_todo_main(context) {
     let items = app_todo_items(context);
     app_todo_item_add(items, value);
   }
-  let refresh = () => app_todo_main(context);
+  let refresh = function () {
+    let v = app_todo_main(context);
+    return v;
+  };
   app_todo_list_filtered(
     context,
     items,
@@ -55,4 +59,5 @@ export function app_todo_main(context) {
     app_todo_not_completed(),
     refresh,
   );
+  html_hr(root);
 }
