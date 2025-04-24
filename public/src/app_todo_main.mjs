@@ -1,3 +1,4 @@
+import { html_overlay_container } from "./html_overlay_container.mjs";
 import { html_overlay } from "./html_overlay.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { html_button_reset } from "./html_button_reset.mjs";
@@ -65,5 +66,6 @@ export function app_todo_main(context) {
   html_hr(root);
   html_button_reset(root, "Delete all items", function () {
     let o = html_overlay(fn_name("app_todo"));
+    html_overlay_container(overlay, menu_refresh);
   });
 }
