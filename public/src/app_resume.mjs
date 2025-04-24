@@ -50,9 +50,9 @@ export function app_resume() {
     ),
   );
   html_spacer_bullet(row);
-  html_phone(row, me_phone());
+  html_phone(row, anonymous ? "phone" : me_phone());
   html_spacer_bullet(row);
-  html_email(row, me_email());
+  html_email(row, anonymous ? "email@address.com" : me_email());
   html_spacer_bullet(row);
   let website_url = "https://letjesusbeexalted.web.app/resume.html";
   html_link(row, website_url);
