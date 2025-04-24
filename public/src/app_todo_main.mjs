@@ -66,7 +66,7 @@ export function app_todo_main(context) {
   html_hr(root);
   html_button_reset(root, "Delete all items", function () {
     let o = html_overlay(fn_name("app_todo"));
-    let c = html_overlay_container(overlay, menu_refresh);
+    let c = html_overlay_container(overlay, refresh);
     html_button_reset(c, "Yes, delete all items", function () {});
   });
 }
