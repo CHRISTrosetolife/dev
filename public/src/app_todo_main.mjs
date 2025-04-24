@@ -76,7 +76,9 @@ export function app_todo_main(context) {
       html_button(
         c,
         string_combine_multiple([emoji_danger(), " Yes, delete all items"]),
-        function () {},
+        function () {
+          let items = app_todo_items(context);
+        },
       );
     },
   );
