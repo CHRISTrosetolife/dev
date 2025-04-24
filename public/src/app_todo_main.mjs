@@ -1,3 +1,4 @@
+import { html_button_reset } from "./html_button_reset.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_item_add } from "./html_item_add.mjs";
@@ -60,5 +61,5 @@ export function app_todo_main(context) {
     refresh,
   );
   html_hr(root);
-  html_button(root, "⚠️ delete all items", function () {});
+  html_button_reset(root, "Delete all items", function () {});
 }
