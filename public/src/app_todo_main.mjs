@@ -1,3 +1,4 @@
+import { list_clear } from "./list_clear.mjs";
 import { html_br4 } from "./html_br4.mjs";
 import { emoji_danger } from "./emoji_danger.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -78,6 +79,7 @@ export function app_todo_main(context) {
         string_combine_multiple([emoji_danger(), " Yes, delete all items"]),
         function () {
           let items = app_todo_items(context);
+          list_clear(items);
         },
       );
     },
