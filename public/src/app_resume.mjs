@@ -135,19 +135,21 @@ export function app_resume() {
     root,
     "~2022 - ~2023: Programmer; Created debt collections software; Used JavaScript, C#, AngularJS and T-SQL",
   );
-  app_resume_header_3(root, "Greenshades");
+  app_resume_header_3(root, anonymous ? "Company Name" : "Greenshades");
   html_p_text(
     root,
     "~2020: Software Developer; Created tax software; Used C# and T-SQL",
   );
-  app_resume_header_3(root, "RF-SMART/ICS");
+  app_resume_header_3(root, anonymous ? "Company Name" : "RF-SMART/ICS");
   html_p_text(
     root,
     "~2017 - ~2019: Senior Software Engineer; Created warehouse software; Used C#, React, Knockout, EntityFramework, MySQL",
   );
   app_resume_header_3(
     root,
-    "Genesys/Interactive Intelligence/Latitude Software",
+    anonymous
+      ? "Company Name"
+      : "Genesys/Interactive Intelligence/Latitude Software",
   );
   html_p_text(
     root,
