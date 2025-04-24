@@ -1,4 +1,4 @@
-import { html_br2 } from "./html_br2.mjs";
+import { html_br4 } from "./html_br4.mjs";
 import { emoji_danger } from "./emoji_danger.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_overlay_container } from "./html_overlay_container.mjs";
@@ -81,8 +81,3 @@ export function app_todo_main(context) {
     },
   );
 }
-function html_br4(c) {
-    html_br2(c);
-    html_br2(c);
-}
-
