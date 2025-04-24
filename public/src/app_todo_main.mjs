@@ -1,3 +1,4 @@
+import { html_br2 } from "./html_br2.mjs";
 import { emoji_danger } from "./emoji_danger.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_overlay_container } from "./html_overlay_container.mjs";
@@ -71,6 +72,7 @@ export function app_todo_main(context) {
     function () {
       let o = html_overlay(fn_name("app_todo"));
       let c = html_overlay_container(o, refresh);
+      html_br2(c);
       html_button(
         c,
         string_combine_multiple([emoji_danger(), " Yes, delete all items"]),
