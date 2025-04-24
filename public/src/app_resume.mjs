@@ -160,7 +160,10 @@ export function app_resume() {
     "(Resume date gaps due to long-term and Social Security disability; Recovered and ready to return to full-time work)",
   );
   app_resume_header_2(root, "Education");
-  app_resume_header_3(root, "University of North Florida");
+  app_resume_header_3(
+    root,
+    anonymous ? "University Name" : "University of North Florida",
+  );
   html_p_text(
     root,
     "Bachelor of Science in Computer Science ~2013; Computer Science Student of the Year Award",
