@@ -11,11 +11,12 @@ export function html_overlay(overlay_level_name) {
   let overlay = html_div(body);
   html_style_width_full(overlay);
   html_style_height_full(overlay);
+  let z_index = list_index(html_overlay_z(), overlay_level_name);
   html_style(overlay, {
     position: "fixed",
     top: 0,
     left: 0,
-    "z-index": 9999 - list_index(html_overlay_z(), overlay_level_name),
+    "z-index": 9999 - z_index,
     "background-color": "rgba(0, 0, 0, 0.15)",
   });
   html_style_background_color_transparent_mix(overlay, "black", 85);
