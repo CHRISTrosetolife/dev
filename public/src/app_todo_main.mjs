@@ -80,6 +80,7 @@ export function app_todo_main(context) {
         function () {
           let items = app_todo_items(context);
           list_clear(items);
+          refresh();
         },
       );
     },
