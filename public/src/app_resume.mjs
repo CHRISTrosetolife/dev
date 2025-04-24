@@ -35,7 +35,7 @@ export function app_resume() {
     html_style_default_font_size(1.25);
     html_style_a_plain();
   }
-  app_resume_header(root, "JARED MATHIS");
+  app_resume_header(root, anonymous ? "FIRST LAST" : "JARED MATHIS");
   let row = html_p(root);
   html_style_centered(row);
   html_span_text(
