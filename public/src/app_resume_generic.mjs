@@ -1,3 +1,4 @@
+import { string_case_upper } from "./string_case_upper.mjs";
 import { me_name } from "./me_name.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { app_resume_audio_bible } from "./app_resume_audio_bible.mjs";
@@ -34,7 +35,10 @@ export function app_resume_generic(print, anonymous) {
     html_style_default_font_size(1.25);
     html_style_a_plain();
   }
-  app_resume_header(root, anonymous ? "FIRST LAST" : me_name());
+  app_resume_header(
+    root,
+    anonymous ? "FIRST LAST" : string_case_upper(me_name()),
+  );
   let row = html_p(root);
   html_style_centered(row);
   html_span_text(
