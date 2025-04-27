@@ -21,5 +21,5 @@ export function app_portfolio() {
         "Teaches how to code in JavaScript. No prior experience needed.",
     },
   ];
-  each(list, function (item) {});
+  each(apps, function (app) {});
 }
