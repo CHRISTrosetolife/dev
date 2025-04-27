@@ -24,6 +24,6 @@ export function app_portfolio() {
     },
   ];
   each(apps, function (a) {
-    html_button(root, object_property_get(a, "name"));
+    html_button(root, object_property_get(a, "name"), function () {});
   });
 }
