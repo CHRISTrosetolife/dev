@@ -23,7 +23,7 @@ export function app_portfolio() {
         "Teaches how to code in JavaScript. No prior experience needed.",
     },
   ];
-  each(apps, function (app) {
-    html_button(root, object_property_get(object, "property_name"));
+  each(apps, function (a) {
+    html_button(root, object_property_get(a, "name"));
   });
 }
