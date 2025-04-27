@@ -16,6 +16,8 @@ export function app_portfolio() {
   let apps = [
     {
       name: app_portfolio_app_learn_to_code_name(),
+      description:
+        "Teaches how to code in JavaScript. No prior experience needed.",
     },
   ];
 }
