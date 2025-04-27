@@ -1,4 +1,4 @@
 export function me_name() {
-  let v = "JARED MATHIS";
+  let v = "Jared Mathis";
   return v;
 }
