@@ -1,6 +1,5 @@
 import { html_button_width_full_text_link_app } from "./html_button_width_full_text_link_app.mjs";
 import { fn_name } from "./fn_name.mjs";
-import { html_button_width_full_text_link } from "./html_button_width_full_text_link.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
@@ -15,9 +14,9 @@ export async function app_ceb() {
     "New Cebuano Language Learn App",
   );
   html_spacer_vertical_2(body);
-  html_button_width_full_text_link(
+  html_button_width_full_text_link_app(
     body,
-    "ceb1.html",
+    fn_name("app_ceb1"),
     "Original Cebuano Language Learn App",
   );
 }
