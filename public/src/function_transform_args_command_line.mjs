@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { function_transform_args_return } from "./function_transform_args_return.mjs";
 export async function function_transform_args_command_line(
   lambda_names,
@@ -9,6 +10,5 @@ export async function function_transform_args_command_line(
     function_name,
     args,
   );
-  let v = $g;
-  return v;
+  object_property_get(object, "property_name");
 }
