@@ -1,3 +1,4 @@
+import { html_hr } from "./html_hr.mjs";
 import { html_button_app } from "./html_button_app.mjs";
 import { app_name } from "./app_name.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -32,5 +33,7 @@ export function app_portfolio() {
       object_property_get(a, "app_name"),
       object_property_get(a, "name"),
     );
+    html_p_text(object_property_get(a, "description"));
+    html_hr(root);
   });
 }
