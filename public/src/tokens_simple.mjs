@@ -7,11 +7,12 @@ import { not } from "./not.mjs";
 import { each } from "./each.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 export function tokens_simple(input, quote_string, split_string) {
+  input = strimg_trim(input, split_string);
   let tokens = [];
   let current = [];
   let quoted = false;
   let split = string_split_empty(input);
-  each(split, (s) => {
+  each(split, function (s) {
     if (s === quote_string) {
       quoted = not(quoted);
     } else if (s === split_string && !quoted) {
