@@ -1,3 +1,4 @@
+import { window_location } from "./window_location.mjs";
 import { html_link_text } from "./html_link_text.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
 import { each } from "./each.mjs";
@@ -77,7 +78,7 @@ export async function app_share_verse_refresh(
   let next_text = "Copy next verse to clipboard: ";
   html_span_text(root, next_text);
   let next_url_component = html_span(root);
-  let location = object_property_get(window, "location");
+  let location = window_location();
   let pathname = object_property_get(location, "pathname");
   let origin = object_property_get(location, "origin");
   let without_hash = string_combine_multiple([origin, pathname]);
