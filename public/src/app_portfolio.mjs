@@ -33,7 +33,7 @@ export function app_portfolio() {
       object_property_get(a, "app_name"),
       object_property_get(a, "name"),
     );
-    html_p_text(object_property_get(a, "description"));
+    html_p_text(root, object_property_get(a, "description"));
     html_hr(root);
   });
 }
