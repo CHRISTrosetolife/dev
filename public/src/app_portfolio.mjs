@@ -29,8 +29,8 @@ export function app_portfolio() {
   each(apps, function (a) {
     html_button_width_full_text_link_app(
       root,
+      object_property_get(a, "app_name"),
       object_property_get(a, "name"),
-      function () {},
     );
   });
 }
