@@ -9,4 +9,6 @@ export async function function_transform_args_command_line(
     function_name,
     args,
   );
+  let v = $g;
+  return v;
 }
