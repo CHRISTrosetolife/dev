@@ -6,37 +6,37 @@ export function app_index_choices() {
   let choices = [];
   list_add(choices, {
     text: "💻 development tools documentation",
-    page: "dev",
+    app: "dev",
   });
   list_add(choices, {
     text: string_combine_multiple([
       "🧑‍💻️ learn to code ",
       html_replace_nb("( javascript )"),
     ]),
-    page: "learn_code",
+    app: "learn_code",
   });
   list_add(choices, {
     text: "🎓 learn language cebuano",
-    page: "ceb",
+    app: "ceb",
   });
   list_add(choices, {
     text: "📄 resume",
-    page: "resume",
+    app: "resume",
   });
   list_add(choices, {
     text: "📖 bible memorize",
-    page: "memorize",
+    app: "memorize",
   });
   list_add(choices, {
     text: string_combine_multiple([
       "🎓 learn language english ",
       html_replace_nb("( from cebuano )"),
     ]),
-    page: "en",
+    app: "en",
   });
   list_add(choices, {
     text: "🔍 search bible",
-    page: "search",
+    app: "search",
   });
   list_add(choices, {
     text: "🎥 Bible Song videos",
@@ -44,17 +44,17 @@ export function app_index_choices() {
   });
   list_add(choices, {
     text: "📙 book syntagmatis theologiae christianae",
-    page: "yyy8Uu",
+    app: "yyy8Uu",
   });
   if (false) {
     list_add(choices, {
       text: "🎮 game",
-      page: "gs",
+      app: "gs",
     });
   }
   list_add(choices, {
     text: "📃 personal links",
-    page: "links",
+    app: "links",
   });
   return choices;
 }
