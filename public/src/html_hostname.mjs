@@ -1,3 +1,3 @@
 export function html_hostname() {
-  return window.location.hostname;
+  return window_location().hostname;
 }
