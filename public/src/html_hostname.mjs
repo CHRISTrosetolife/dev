@@ -1,3 +1,5 @@
+import { window_location } from "./window_location.mjs";
 export function html_hostname() {
-  return window_location().hostname;
+  let v = window_location().hostname;
+  return v;
 }
