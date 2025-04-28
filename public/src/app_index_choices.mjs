@@ -21,6 +21,10 @@ export function app_index_choices() {
     app: fn_name("app_ceb"),
   });
   list_add(choices, {
+    text: "📄 portfolio",
+    app: fn_name("app_portfolio"),
+  });
+  list_add(choices, {
     text: "📄 resume",
     app: fn_name("app_resume"),
   });
