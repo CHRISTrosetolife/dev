@@ -1,3 +1,4 @@
+import { js_expression_call_args } from "./js_expression_call_args.mjs";
 import { js_node_type_literal_is } from "./js_node_type_literal_is.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { js_node_type_identifier_is } from "./js_node_type_identifier_is.mjs";
@@ -24,7 +25,11 @@ export async function app_index_choices_migrate() {
               let name = object_property_get(key, "name");
               if (name === "page") {
                 object_property_set(key, "name", app);
-                object_property_set(object, "property_name", value3);
+                object_property_set(
+                  object,
+                  "property_name",
+                  js_expression_call_args(fn_name("fn_name")),
+                );
               }
             }
           }
