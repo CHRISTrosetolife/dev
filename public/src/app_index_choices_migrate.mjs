@@ -1,3 +1,4 @@
+import { js_node_type_identifier_is } from "./js_node_type_identifier_is.mjs";
 import { list_filter_js_node_type_is } from "./list_filter_js_node_type_is.mjs";
 import { each } from "./each.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -13,7 +14,7 @@ export async function app_index_choices_migrate() {
       each(filtered, function (p) {
         let key = object_property_get(p, "key");
         let value = object_property_get(p, "value");
-        if (false) {
+        if (js_node_type_identifier_is(key)) {
         }
       });
     });
