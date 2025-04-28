@@ -1,3 +1,4 @@
+import { js_node_type_literal_is } from "./js_node_type_literal_is.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { js_node_type_identifier_is } from "./js_node_type_identifier_is.mjs";
 import { list_filter_js_node_type_is } from "./list_filter_js_node_type_is.mjs";
@@ -15,7 +16,7 @@ export async function app_index_choices_migrate() {
       each(filtered, function (p) {
         let key = object_property_get(p, "key");
         let value = object_property_get(p, "value");
-        if (false) {
+        if (js_node_type_literal_is(key)) {
           if (false) {
             if (js_node_type_identifier_is(key)) {
               let name = object_property_get(key, "name");
