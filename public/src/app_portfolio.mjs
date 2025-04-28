@@ -28,12 +28,12 @@ export function app_portfolio() {
     },
   ];
   each(apps, function (a) {
+    html_hr(root);
     html_button_app(
       root,
       object_property_get(a, "app_name"),
       object_property_get(a, "name"),
     );
     html_p_text(root, object_property_get(a, "description"));
-    html_hr(root);
   });
 }
