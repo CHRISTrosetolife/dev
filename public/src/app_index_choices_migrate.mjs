@@ -24,6 +24,7 @@ export async function app_index_choices_migrate() {
               let name = object_property_get(key, "name");
               if (name === "page") {
                 object_property_set(key, "name", app);
+                object_property_set(object, "property_name", value3);
               }
             }
           }
