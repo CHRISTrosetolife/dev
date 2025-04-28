@@ -2,8 +2,8 @@ import { html_button_width_full_text_link } from "./html_button_width_full_text_
 import { app_extension_html_combine } from "./app_extension_html_combine.mjs";
 import { app_name_string } from "./app_name_string.mjs";
 export function html_button_width_full_text_link_app(
-  a_name_prefixed,
   body,
+  a_name_prefixed,
   text,
 ) {
   let a_name = app_name_string(a_name_prefixed);
