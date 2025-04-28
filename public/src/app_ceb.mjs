@@ -9,9 +9,8 @@ export async function app_ceb() {
   let body = html_style_default_initialize();
   html_style_a_plain();
   html_p_text(body, "It is recommended to use the new app");
-  let a_name_prefixed = fn_name("app_ceb2");
   let text = "New Cebuano Language Learn App";
-  html_button_width_full_text_link_app(body, a_name_prefixed, text);
+  html_button_width_full_text_link_app(body, fn_name("app_ceb2"), text);
   html_spacer_vertical_2(body);
   html_button_width_full_text_link(
     body,
