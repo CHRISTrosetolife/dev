@@ -1,10 +1,8 @@
+import { html_mailto } from "./html_mailto.mjs";
+import { html_link_prefix } from "./html_link_prefix.mjs";
+import { html_button } from "./html_button.mjs";
 import { me_email } from "./me_email.mjs";
-import { html_style_email } from "./html_style_email.mjs";
-import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 export function html_button_me_email(parent) {
-  let email_button = html_button_width_full_text(
-    parent,
-    "📨 Contact developer by email",
-  );
-  html_style_email(me_email())(email_button);
+  html_button(parent, "📨 Contact developer by email");
+  let href = html_link_prefix(html_mailto(), me_email());
 }
