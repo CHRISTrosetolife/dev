@@ -6,37 +6,37 @@ export function app_index_choices() {
   let choices = [];
   list_add(choices, {
     text: "💻 development tools documentation",
-    page: "dev",
+    app: fn_name("app_dev"),
   });
   list_add(choices, {
     text: string_combine_multiple([
       "🧑‍💻️ learn to code ",
       html_replace_nb("( javascript )"),
     ]),
-    page: "learn_code",
+    app: fn_name("app_learn_code"),
   });
   list_add(choices, {
     text: "🎓 learn language cebuano",
-    page: "ceb",
+    app: fn_name("app_ceb"),
   });
   list_add(choices, {
     text: "📄 resume",
-    page: "resume",
+    app: fn_name("app_resume"),
   });
   list_add(choices, {
     text: "📖 bible memorize",
-    page: "memorize",
+    app: fn_name("app_memorize"),
   });
   list_add(choices, {
     text: string_combine_multiple([
       "🎓 learn language english ",
       html_replace_nb("( from cebuano )"),
     ]),
-    page: "en",
+    app: fn_name("app_en"),
   });
   list_add(choices, {
     text: "🔍 search bible",
-    page: "search",
+    app: fn_name("app_search"),
   });
   list_add(choices, {
     text: "🎥 Bible Song videos",
@@ -44,17 +44,17 @@ export function app_index_choices() {
   });
   list_add(choices, {
     text: "📙 book syntagmatis theologiae christianae",
-    page: "yyy8Uu",
+    app: fn_name("app_yyy8Uu"),
   });
   if (false) {
     list_add(choices, {
       text: "🎮 game",
-      page: "gs",
+      app: fn_name("app_gs"),
     });
   }
   list_add(choices, {
     text: "📃 personal links",
-    page: "links",
+    app: fn_name("app_links"),
   });
   return choices;
 }
