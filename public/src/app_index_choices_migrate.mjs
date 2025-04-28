@@ -18,7 +18,7 @@ export async function app_index_choices_migrate() {
         if (js_node_type_identifier_is(key)) {
           let name = object_property_get(key, "name");
           if (name === "page") {
-            object_property_set(object, "property_name", value2);
+            object_property_set(key, "name", app);
           }
         }
       });
