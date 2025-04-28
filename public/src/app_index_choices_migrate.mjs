@@ -1,3 +1,4 @@
+import { js_node_type_is } from "./js_node_type_is.mjs";
 import { each } from "./each.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -9,7 +10,10 @@ export async function app_index_choices_migrate() {
     js_visit_node(ast, "ObjectExpression", function (v) {
       let node = object_property_get(v, "node");
       let properties = object_property_get(node, "properties");
-      let filtered = list_filter();
+      let filtered = list_filter(properties, function (p) {
+        let v2 = js_node_type_is(p, "Property");
+        return v2;
+      });
       each(properties, function (p) {
         let key = object_property_get(p, "key");
         let value = object_property_get(p, "value");
