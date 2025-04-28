@@ -10,5 +10,6 @@ export async function function_transform_args_command_line(
     function_name,
     args,
   );
-  object_property_get(object, "property_name");
+  let v = object_property_get(r, "results");
+  return v;
 }
