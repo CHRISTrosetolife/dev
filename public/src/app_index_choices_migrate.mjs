@@ -1,20 +1,16 @@
-import { js_node_type_is } from "./js_node_type_is.mjs";
+import { list_filter_js_node_type_is } from "./list_filter_js_node_type_is.mjs";
 import { each } from "./each.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
-import { list_filter } from "./list_filter.mjs";
 export async function app_index_choices_migrate() {
   await function_transform(fn_name("app_index_choices"), function (ast) {
     js_visit_node(ast, "ObjectExpression", function (v) {
       let node = object_property_get(v, "node");
       let properties = object_property_get(node, "properties");
       let type = "Property";
-      let filtered = list_filter(properties, function (p) {
-        let v2 = js_node_type_is(p, type);
-        return v2;
-      });
+      let filtered = list_filter_js_node_type_is(properties, type);
       each(filtered, function (p) {
         let key = object_property_get(p, "key");
         let value = object_property_get(p, "value");
