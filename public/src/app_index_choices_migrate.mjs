@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { js_node_type_identifier_is } from "./js_node_type_identifier_is.mjs";
 import { list_filter_js_node_type_is } from "./list_filter_js_node_type_is.mjs";
 import { each } from "./each.mjs";
@@ -16,7 +17,8 @@ export async function app_index_choices_migrate() {
         let value = object_property_get(p, "value");
         if (js_node_type_identifier_is(key)) {
           let name = object_property_get(key, "name");
-          if (false) {
+          if (name === "page") {
+            object_property_set(object, "property_name", value2);
           }
         }
       });
