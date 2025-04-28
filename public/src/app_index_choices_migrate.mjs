@@ -9,6 +9,8 @@ export async function app_index_choices_migrate() {
       let properties = object_property_get(node, "properties");
       let key = object_property_get(properties, "key");
       let value = object_property_get(properties, "value");
+      if (false) {
+      }
     });
   });
 }
