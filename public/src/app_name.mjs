@@ -1,13 +1,6 @@
-import { app_prefix } from "./app_prefix.mjs";
-import { string_prefix_without } from "./string_prefix_without.mjs";
+import { app_name_string } from "./app_name_string.mjs";
 export function app_name(app_function) {
   let app_name_prefixed = app_function.name;
   let v = app_name_string(app_name_prefixed);
   return v;
 }
-function app_name_string(app_name_prefixed) {
-    let prefix = app_prefix();
-    let v = string_prefix_without(app_name_prefixed, prefix);
-    return v;
-}
-
