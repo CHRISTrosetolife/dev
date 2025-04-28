@@ -7,8 +7,8 @@ import { each } from "./each.mjs";
 export function app_index_choices_buttons(root, choices) {
   each(choices, function (choice) {
     let url;
-    if (object_property_exists(choice, "page")) {
-      url = app_extension_html_combine(object_property_get(choice, "page"));
+    if (object_property_exists(choice, "app")) {
+      url = app_extension_html_combine(object_property_get(choice, "app"));
     } else {
       url = object_property_get(choice, "href");
     }
