@@ -1,6 +1,6 @@
+import { html_button_app } from "./html_button_app.mjs";
 import { app_name } from "./app_name.mjs";
 import { fn_name } from "./fn_name.mjs";
-import { html_button_width_full_text_link_app } from "./html_button_width_full_text_link_app.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { app_portfolio_app_learn_to_code_name } from "./app_portfolio_app_learn_to_code_name.mjs";
@@ -27,7 +27,7 @@ export function app_portfolio() {
     },
   ];
   each(apps, function (a) {
-    html_button_width_full_text_link_app(
+    html_button_app(
       root,
       object_property_get(a, "app_name"),
       object_property_get(a, "name"),
