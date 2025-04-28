@@ -29,7 +29,7 @@ export async function app_index_choices_migrate() {
                 object_property_set(key, "name", "app");
                 object_property_set(
                   value,
-                  "property_name",
+                  "value",
                   js_expression_call_args(fn_name("fn_name"), [
                     js_string(app_prefix_combine(value2)),
                   ]),
