@@ -15,6 +15,7 @@ export async function app_index_choices_migrate() {
         let key = object_property_get(p, "key");
         let value = object_property_get(p, "value");
         if (js_node_type_identifier_is(key)) {
+          let name = object_property_get(key, "name");
         }
       });
     });
