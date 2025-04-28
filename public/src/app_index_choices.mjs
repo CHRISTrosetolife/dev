@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { url_bible_songs } from "./url_bible_songs.mjs";
 import { html_replace_nb } from "./html_replace_nb.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
