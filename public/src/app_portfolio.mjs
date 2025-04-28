@@ -1,3 +1,5 @@
+import { app_name } from "./app_name.mjs";
+import { fn_name } from "./fn_name.mjs";
 import { html_button_width_full_text_link_app } from "./html_button_width_full_text_link_app.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
@@ -19,6 +21,7 @@ export function app_portfolio() {
   let apps = [
     {
       name: app_portfolio_app_learn_to_code_name(),
+      app_name: fn_name("app_learn_code"),
       description:
         "Teaches how to code in JavaScript. No prior experience needed.",
     },
