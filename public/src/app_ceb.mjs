@@ -1,3 +1,4 @@
+import { app_extension_html_combine } from "./app_extension_html_combine.mjs";
 import { app_name_string } from "./app_name_string.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { html_button_width_full_text_link } from "./html_button_width_full_text_link.mjs";
@@ -10,9 +11,9 @@ export async function app_ceb() {
   html_style_a_plain();
   html_p_text(body, "It is recommended to use the new app");
   let a_name_prefixed = fn_name("app_ceb2");
-  let a_name = app_name_string(a_name_prefixed);
-  let url = "ceb2.html";
   let text = "New Cebuano Language Learn App";
+  let a_name = app_name_string(a_name_prefixed);
+  let url = app_extension_html_combine(a_name);
   html_button_width_full_text_link(body, url, text);
   html_spacer_vertical_2(body);
   html_button_width_full_text_link(
