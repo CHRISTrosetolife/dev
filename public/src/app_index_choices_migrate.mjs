@@ -1,3 +1,4 @@
+import { app_prefix_combine } from "./app_prefix_combine.mjs";
 import { js_string } from "./js_string.mjs";
 import { js_expression_call_args } from "./js_expression_call_args.mjs";
 import { js_node_type_literal_is } from "./js_node_type_literal_is.mjs";
@@ -30,7 +31,7 @@ export async function app_index_choices_migrate() {
                   value,
                   "property_name",
                   js_expression_call_args(fn_name("fn_name"), [
-                    js_string(app_name_combine(value2)),
+                    js_string(app_prefix_combine(value2)),
                   ]),
                 );
               }
