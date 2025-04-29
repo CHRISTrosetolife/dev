@@ -1,4 +1,4 @@
-import { app_portfolio_app_learn_to_code_name } from "./app_portfolio_app_learn_to_code_name.mjs";
+import { app_learn_code_name } from "./app_learn_code_name.mjs";
 import { string_case_upper } from "./string_case_upper.mjs";
 import { me_name } from "./me_name.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -83,10 +83,7 @@ export function app_resume_generic(print, anonymous) {
   );
   html_style_link_blank("dev.html")(dev);
   html_cycle_p(root, [noop], "");
-  let learn_code = app_resume_header_3(
-    root,
-    app_portfolio_app_learn_to_code_name(),
-  );
+  let learn_code = app_resume_header_3(root, app_learn_code_name());
   html_style_link_blank("learn_code.html")(learn_code);
   html_cycle_p(
     root,
