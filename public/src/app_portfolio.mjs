@@ -36,8 +36,7 @@ export function app_portfolio() {
     {
       name: app_dev_name(),
       app_name: fn_name("app_tgl"),
-      description:
-        "I created a framework to create all of my apps. This is an introduction.",
+      description: ".",
     },
   ];
   each(apps, function (a) {
