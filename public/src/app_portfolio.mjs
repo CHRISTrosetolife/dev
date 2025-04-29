@@ -31,7 +31,7 @@ export function app_portfolio() {
       name: app_dev_name(),
       app_name: fn_name("app_dev"),
       description:
-        "Teaches how to code in JavaScript. No prior experience needed.",
+        "I created a framework to create all of my apps. This is an introduction.",
     },
   ];
   each(apps, function (a) {
