@@ -1,3 +1,4 @@
+import { html_p_text_centered } from "./html_p_text_centered.mjs";
 import { app_dev_name } from "./app_dev_name.mjs";
 import { app_learn_code_name } from "./app_learn_code_name.mjs";
 import { html_hr } from "./html_hr.mjs";
@@ -46,6 +47,6 @@ export function app_portfolio() {
       object_property_get(a, "app_name"),
       object_property_get(a, "name"),
     );
-    html_p_text(root, object_property_get(a, "description"));
+    html_p_text_centered(root, object_property_get(a, "description"));
   });
 }
