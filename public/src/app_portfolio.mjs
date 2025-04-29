@@ -45,6 +45,12 @@ export function app_portfolio() {
       app_name: fn_name("app_tgl"),
       description: "Helps user memorize entire chapters of the Bible.",
     },
+    {
+      name: "English-Cebuano Bible",
+      app_name: fn_name("bible_ceb"),
+      description:
+        "Displays Bible verses in English and Cebuano, with Cebuano definitions.",
+    },
   ];
   each(apps, function (a) {
     html_hr(root);
