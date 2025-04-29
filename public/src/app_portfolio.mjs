@@ -1,3 +1,4 @@
+import { app_dev_name } from "./app_dev_name.mjs";
 import { app_learn_code_name } from "./app_learn_code_name.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { html_button_app } from "./html_button_app.mjs";
@@ -23,6 +24,12 @@ export function app_portfolio() {
     {
       name: app_learn_code_name(),
       app_name: fn_name("app_learn_code"),
+      description:
+        "Teaches how to code in JavaScript. No prior experience needed.",
+    },
+    {
+      name: app_dev_name(),
+      app_name: fn_name("app_dev"),
       description:
         "Teaches how to code in JavaScript. No prior experience needed.",
     },
