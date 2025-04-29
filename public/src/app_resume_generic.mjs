@@ -1,3 +1,4 @@
+import { app_memorize_name } from "./app_memorize_name.mjs";
 import { app_dev_name } from "./app_dev_name.mjs";
 import { app_learn_code_name } from "./app_learn_code_name.mjs";
 import { string_case_upper } from "./string_case_upper.mjs";
@@ -118,7 +119,7 @@ export function app_resume_generic(print, anonymous) {
   if (false) {
     app_resume_audio_bible(root);
   }
-  let memorize = app_resume_header_3(root, "Memorize Bible");
+  let memorize = app_resume_header_3(root, app_memorize_name());
   html_style_link_blank("memorize.html")(memorize);
   html_cycle_p(
     root,
