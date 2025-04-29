@@ -61,7 +61,7 @@ export function app_resume_generic(print, anonymous) {
   let website_url = "https://letjesusbeexalted.web.app/resume.html";
   html_link(row, website_url);
   app_resume_header_2(root, "Projects");
-  let dev = app_resume_header_3(root, "Development Tools");
+  let dev = app_resume_header_3(root, app_dev_name());
   html_cycle_p(
     root,
     function_name_to_url_github_style_link_list_bewteen_noop([
@@ -172,4 +172,8 @@ export function app_resume_generic(print, anonymous) {
     root,
     "Bachelor of Science in Computer Science ~2013; Computer Science Student of the Year Award",
   );
+}
+
+function app_dev_name() {
+    return "Development Tools";
 }
