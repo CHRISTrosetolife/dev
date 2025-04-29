@@ -41,7 +41,7 @@ export function app_portfolio() {
     },
     {
       name: app_memorize_name(),
-      app_name: fn_name("app_tgl"),
+      app_name: fn_name("app_memorize"),
       description: "Helps user memorize entire chapters of the Bible.",
     },
     {
