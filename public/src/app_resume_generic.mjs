@@ -1,3 +1,4 @@
+import { app_dev_name } from "./app_dev_name.mjs";
 import { app_learn_code_name } from "./app_learn_code_name.mjs";
 import { string_case_upper } from "./string_case_upper.mjs";
 import { me_name } from "./me_name.mjs";
@@ -172,8 +173,4 @@ export function app_resume_generic(print, anonymous) {
     root,
     "Bachelor of Science in Computer Science ~2013; Computer Science Student of the Year Award",
   );
-}
-
-function app_dev_name() {
-    return "Development Tools";
 }
