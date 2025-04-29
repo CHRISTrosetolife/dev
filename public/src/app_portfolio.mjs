@@ -35,7 +35,7 @@ export function app_portfolio() {
         "I created a framework to create all of my apps. This is an introduction to the framework.",
     },
     {
-      name: app_dev_name(),
+      name: "Learn Tagalog from English (with audio)",
       app_name: fn_name("app_tgl"),
       description: "Teaches Tagalog vocabulary words.",
     },
