@@ -39,6 +39,11 @@ export function app_portfolio() {
       app_name: fn_name("app_tgl"),
       description: "Teaches Tagalog vocabulary words.",
     },
+    {
+      name: "Learn Tagalog from English (with audio)",
+      app_name: fn_name("app_tgl"),
+      description: "Teaches Tagalog vocabulary words.",
+    },
   ];
   each(apps, function (a) {
     html_hr(root);
