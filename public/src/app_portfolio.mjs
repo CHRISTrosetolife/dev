@@ -32,7 +32,7 @@ export function app_portfolio() {
       name: app_dev_name(),
       app_name: fn_name("app_dev"),
       description:
-        "I created a framework to create all of my apps. This is an introduction.",
+        "I created a framework to create all of my apps. This is an introduction to the framework.",
     },
     {
       name: app_dev_name(),
