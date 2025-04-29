@@ -1,3 +1,4 @@
+import { app_memorize_name } from "./app_memorize_name.mjs";
 import { html_p_text_centered } from "./html_p_text_centered.mjs";
 import { app_dev_name } from "./app_dev_name.mjs";
 import { app_learn_code_name } from "./app_learn_code_name.mjs";
@@ -40,9 +41,9 @@ export function app_portfolio() {
       description: "Teaches Tagalog vocabulary words.",
     },
     {
-      name: "Learn Tagalog from English (with audio)",
+      name: app_memorize_name(),
       app_name: fn_name("app_tgl"),
-      description: "Teaches Tagalog vocabulary words.",
+      description: "Helps user memorize entire chapters of the Bible.",
     },
   ];
   each(apps, function (a) {
