@@ -47,7 +47,7 @@ export function app_portfolio() {
     },
     {
       name: "English-Cebuano Bible",
-      app_name: fn_name("bible_ceb"),
+      app_name: fn_name("app_bible_ceb"),
       description:
         "Displays Bible verses in English and Cebuano, with Cebuano definitions.",
     },
