@@ -33,6 +33,12 @@ export function app_portfolio() {
       description:
         "I created a framework to create all of my apps. This is an introduction.",
     },
+    {
+      name: app_dev_name(),
+      app_name: fn_name("app_tgl"),
+      description:
+        "I created a framework to create all of my apps. This is an introduction.",
+    },
   ];
   each(apps, function (a) {
     html_hr(root);
