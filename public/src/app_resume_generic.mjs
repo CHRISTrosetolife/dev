@@ -91,7 +91,7 @@ export function app_resume_generic(print, anonymous) {
     [noop],
     "User is presented with JavaScript programming concepts; For each concept: User is presented with randomly generated source code and output examples; Then user chooses correct output given randomly generated source code; Then user chooses correct source code given a randomly generated output",
   );
-  let ceb = app_resume_header_3(root, "Language Vocabularly Learning");
+  let ceb = app_resume_header_3(root, "Language Vocabulary Learning");
   html_cycle_p(
     root,
     list_between_surround(
