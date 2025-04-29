@@ -36,7 +36,7 @@ export function app_portfolio() {
     {
       name: app_dev_name(),
       app_name: fn_name("app_tgl"),
-      description: ".",
+      description: "Teaches Tagalog vocabulary words.",
     },
   ];
   each(apps, function (a) {
