@@ -6,6 +6,7 @@ export async function app_language_2_upload_bohol(
   limit,
   from,
   to,
+  name,
 ) {
   let pairs = await app_language_2_upload_pairs_bohol_cache(
     language_from,

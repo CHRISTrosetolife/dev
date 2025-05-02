@@ -11,5 +11,6 @@ export async function app_tgl_upload() {
     limit,
     from,
     to,
+    "all",
   );
 }
