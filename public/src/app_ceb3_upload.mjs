@@ -6,12 +6,13 @@ export async function app_ceb3_upload() {
   let limit = 1000;
   let language_to = "Cebuano";
   let language_from = "English";
+  let name = app_ceb3_group_index();
   await app_language_2_upload_bohol(
     language_from,
     language_to,
     limit,
     from,
     to,
-    app_ceb3_group_index(),
+    name,
   );
 }
