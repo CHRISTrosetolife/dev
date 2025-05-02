@@ -1,5 +1,5 @@
 export function apps_list() {
-  let v = [
+  return [
     "bible_ceb",
     "bible_ceb2",
     "bible_ceb3",
@@ -8,6 +8,7 @@ export function apps_list() {
     "ceb",
     "ceb1",
     "ceb2",
+    "ceb3",
     "chapter",
     "code",
     "demo_2024_05_19",
@@ -45,5 +46,4 @@ export function apps_list() {
     "todo",
     "yyy8Uu",
   ];
-  return v;
 }
