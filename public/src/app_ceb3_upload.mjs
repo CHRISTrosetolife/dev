@@ -1,3 +1,4 @@
+import { app_ceb3_group_index } from "./app_ceb3_group_index.mjs";
 import { app_language_2_upload_bohol } from "./app_language_2_upload_bohol.mjs";
 export async function app_ceb3_upload() {
   let from = "ceb";
@@ -11,6 +12,6 @@ export async function app_ceb3_upload() {
     limit,
     from,
     to,
-    "all_bohol",
+    app_ceb3_group_index(),
   );
 }
