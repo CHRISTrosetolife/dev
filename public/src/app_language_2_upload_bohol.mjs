@@ -12,5 +12,5 @@ export async function app_language_2_upload_bohol(
     language_to,
     limit,
   );
-  await app_language_2_upload_pairs(pairs, from, to);
+  await app_language_2_upload_pairs(pairs, from, to, "all");
 }
