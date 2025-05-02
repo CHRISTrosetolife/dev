@@ -20,10 +20,12 @@ export async function app_language_2_upload_pairs_ceb2(limit) {
           let v = [d, word];
           return v;
         });
-        list_sort_map(mapped, function (p) {
-          let v2 = string_size(list_first(p));
-          return v2;
-        });
+        if (false) {
+          list_sort_map(mapped, function (p) {
+            let v2 = string_size(list_first(p));
+            return v2;
+          });
+        }
         each(mapped, function (n) {
           la([n, word]);
         });
