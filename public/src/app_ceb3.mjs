@@ -1,4 +1,6 @@
-import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
-export function app_ceb3() {
-  let root = html_style_default_initialize();
+import { app_language_2 } from "./app_language_2.mjs";
+export async function app_ceb3() {
+  let language_learn = "ceb";
+  let language_fluent = "en";
+  await app_language_2(app_ceb3, language_learn, language_fluent);
 }
