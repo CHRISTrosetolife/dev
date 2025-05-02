@@ -25,10 +25,6 @@ export function app_index_choices() {
     app: fn_name("app_portfolio"),
   });
   list_add(choices, {
-    text: "📄 resume",
-    app: fn_name("app_resume"),
-  });
-  list_add(choices, {
     text: "📖 bible memorize",
     app: fn_name("app_memorize"),
   });
