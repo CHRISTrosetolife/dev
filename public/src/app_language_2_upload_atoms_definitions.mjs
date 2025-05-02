@@ -15,7 +15,7 @@ export async function app_language_2_upload_atoms_definitions(
       from,
       to,
     },
-    "all",
+    name,
     result_new,
   );
 }
