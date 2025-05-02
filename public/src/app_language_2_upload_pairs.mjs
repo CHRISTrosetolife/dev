@@ -46,5 +46,11 @@ export async function app_language_2_upload_pairs(pairs, from, to) {
   if (app_language_2_audio_play_should(from)) {
     await app_language_upload_audio(atoms, from);
   }
-  await app_language_2_upload_atoms_definitions(atoms, definitions, from, to);
+  await app_language_2_upload_atoms_definitions(
+    atoms,
+    definitions,
+    from,
+    to,
+    "all",
+  );
 }

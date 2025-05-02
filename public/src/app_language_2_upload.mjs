@@ -9,5 +9,6 @@ export async function app_language_2_upload(from) {
     definitions,
     from,
     to,
+    "all",
   );
 }
