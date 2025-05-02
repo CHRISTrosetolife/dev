@@ -4,11 +4,12 @@ export async function app_language_2_upload(from) {
   let to = "en";
   let { atoms, definitions, inverted } =
     await bible_words_definitions_atoms(from);
-  return await app_language_2_upload_atoms_definitions(
+  let v = await app_language_2_upload_atoms_definitions(
     atoms,
     definitions,
     from,
     to,
     "all",
   );
+  return v;
 }
