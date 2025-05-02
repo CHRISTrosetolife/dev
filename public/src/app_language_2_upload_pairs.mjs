@@ -51,6 +51,6 @@ export async function app_language_2_upload_pairs(pairs, from, to, name) {
     definitions,
     from,
     to,
-    "all",
+    name,
   );
 }
