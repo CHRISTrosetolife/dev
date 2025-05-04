@@ -1,4 +1,3 @@
-import { exit } from "./exit.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { bible_words_score_language } from "./bible_words_score_language.mjs";
 import { list_first } from "./list_first.mjs";
@@ -31,7 +30,7 @@ export async function app_language_2_upload_pairs_ceb2(limit) {
         });
         if (false) {
           list_sort_map(mapped, function (p) {
-            if (exit()) {
+            if (object_property_exists(object, "property_name")) {
             }
             let v2 = string_size(list_first(p));
             return v2;
