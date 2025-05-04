@@ -30,6 +30,8 @@ export async function app_language_2_upload_pairs_ceb2(limit) {
         });
         if (false) {
           list_sort_map(mapped, function (p) {
+            if (false) {
+            }
             let v2 = string_size(list_first(p));
             return v2;
           });
