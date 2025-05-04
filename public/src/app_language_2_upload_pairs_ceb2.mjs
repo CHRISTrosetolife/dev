@@ -29,10 +29,11 @@ export async function app_language_2_upload_pairs_ceb2(limit) {
           return v;
         });
         if (false) {
-          list_sort_map(mapped, function (p) {
-            if (object_property_exists(object, "property_name")) {
+          list_sort_map(mapped, function (m) {
+            if (object_property_exists(scores_lookup, m)) {
+              object_property_get(object, "property_name");
             }
-            let v2 = string_size(list_first(p));
+            let v2 = string_size(list_first(m));
             return v2;
           });
         }
