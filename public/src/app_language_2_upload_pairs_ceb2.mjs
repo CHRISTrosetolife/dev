@@ -26,16 +26,14 @@ export async function app_language_2_upload_pairs_ceb2(limit) {
           let v = [d, word];
           return v;
         });
-        if (false) {
-          list_sort_map(mapped, function (m) {
-            if (object_property_exists(scores_lookup, m)) {
-              let v2 = object_property_get(scores_lookup, m);
-              return v2;
-            }
-            let v3 = 0;
-            return v3;
-          });
-        }
+        list_sort_map(mapped, function (m) {
+          if (object_property_exists(scores_lookup, m)) {
+            let v2 = object_property_get(scores_lookup, m);
+            return v2;
+          }
+          let v3 = 0;
+          return v3;
+        });
         each(mapped, function (n) {
           la([n, word]);
         });
