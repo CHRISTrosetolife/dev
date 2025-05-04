@@ -30,9 +30,9 @@ export async function app_language_2_upload_pairs_ceb2(limit) {
           let v3 = 0;
           return v3;
         });
-        list_reverse(mapped);
-        each(mapped, function (n) {
-          la([n, word]);
+        list_reverse(ds);
+        each(ds, function (d) {
+          la([d, word]);
         });
       }
     });
