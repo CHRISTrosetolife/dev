@@ -1,7 +1,5 @@
-import { list_first } from "./list_first.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { bible_words_score_language } from "./bible_words_score_language.mjs";
-import { list_map } from "./list_map.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
@@ -24,14 +22,9 @@ export async function app_language_2_upload_pairs_ceb2(limit) {
       let r = await ceb_definition_en_2(word);
       if (object_property_exists(r, word)) {
         let ds = object_property_get(r, word);
-        let mapped = list_map(ds, function (d) {
-          let v = [d, word];
-          return v;
-        });
-        list_sort_map(mapped, function (m) {
-          let f = list_first(m);
-          if (object_property_exists(scores_lookup, f)) {
-            let v2 = object_property_get(scores_lookup, f);
+        list_sort_map(ds, function (d) {
+          if (object_property_exists(scores_lookup, d)) {
+            let v2 = object_property_get(scores_lookup, d);
             return v2;
           }
           let v3 = 0;
