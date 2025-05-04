@@ -1,3 +1,4 @@
+import { list_first } from "./list_first.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { bible_words_score_language } from "./bible_words_score_language.mjs";
 import { list_map } from "./list_map.mjs";
@@ -9,6 +10,7 @@ import { ceb_definition_en_2 } from "./ceb_definition_en_2.mjs";
 import { each_async } from "./each_async.mjs";
 import { english_words_dictionary_take_soft } from "./english_words_dictionary_take_soft.mjs";
 import { list_sort_map } from "./list_sort_map.mjs";
+import { list_reverse } from "./list_reverse.mjs";
 export async function app_language_2_upload_pairs_ceb2(limit) {
   let scores = await bible_words_score_language("ceb");
   let scores_lookup = list_to_lookup_key_value_property(
@@ -27,13 +29,15 @@ export async function app_language_2_upload_pairs_ceb2(limit) {
           return v;
         });
         list_sort_map(mapped, function (m) {
-          if (object_property_exists(scores_lookup, m)) {
-            let v2 = object_property_get(scores_lookup, m);
+          let f = list_first(m);
+          if (object_property_exists(scores_lookup, f)) {
+            let v2 = object_property_get(scores_lookup, f);
             return v2;
           }
           let v3 = 0;
           return v3;
         });
+        list_reverse(mapped);
         each(mapped, function (n) {
           la([n, word]);
         });
