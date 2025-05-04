@@ -1,3 +1,4 @@
+import { bible_words_score_language } from "./bible_words_score_language.mjs";
 import { list_first } from "./list_first.mjs";
 import { string_size } from "./string_size.mjs";
 import { list_map } from "./list_map.mjs";
@@ -10,6 +11,7 @@ import { each_async } from "./each_async.mjs";
 import { english_words_dictionary_take_soft } from "./english_words_dictionary_take_soft.mjs";
 import { list_sort_map } from "./list_sort_map.mjs";
 export async function app_language_2_upload_pairs_ceb2(limit) {
+  let scores = await bible_words_score_language("ceb");
   let words = await english_words_dictionary_take_soft(limit);
   let pairs = await list_adder_async(async function (la) {
     await each_async(words, async function (word) {
