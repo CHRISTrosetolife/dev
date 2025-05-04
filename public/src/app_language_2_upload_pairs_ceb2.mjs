@@ -1,4 +1,4 @@
-import { list_to_lookup_key_value } from "./list_to_lookup_key_value.mjs";
+import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { bible_words_score_language } from "./bible_words_score_language.mjs";
 import { list_first } from "./list_first.mjs";
 import { string_size } from "./string_size.mjs";
@@ -13,7 +13,11 @@ import { english_words_dictionary_take_soft } from "./english_words_dictionary_t
 import { list_sort_map } from "./list_sort_map.mjs";
 export async function app_language_2_upload_pairs_ceb2(limit) {
   let scores = await bible_words_score_language("ceb");
-  let scores_lookup = list_to_lookup_key_value();
+  let scores_lookup = list_to_lookup_key_value_property(
+    scores,
+    "word",
+    "count",
+  );
   let words = await english_words_dictionary_take_soft(limit);
   let pairs = await list_adder_async(async function (la) {
     await each_async(words, async function (word) {
