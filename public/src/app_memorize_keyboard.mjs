@@ -1,6 +1,6 @@
+import { html_on_click_noload } from "./html_on_click_noload.mjs";
 import { html_button_element } from "./html_button_element.mjs";
 import { app_memorize_on_keydown } from "./app_memorize_on_keydown.mjs";
-import { html_on_click } from "./html_on_click.mjs";
 import { app_memorize_button_keyboard_stylize } from "./app_memorize_button_keyboard_stylize.mjs";
 import { string_case_upper } from "./string_case_upper.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
@@ -28,7 +28,7 @@ export function app_memorize_keyboard(context) {
       object_property_set(context.keyboard_buttons, k, b);
       html_inner_set(b, string_case_upper(k));
       app_memorize_button_keyboard_stylize(context, b);
-      html_on_click(b, async () => {
+      html_on_click_noload(b, async function () {
         await app_memorize_on_keydown(context, k);
       });
     }
