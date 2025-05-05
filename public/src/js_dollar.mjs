@@ -158,6 +158,10 @@ export function js_dollar(ast) {
           }
           object_property_set(callee, "name", fn_name("each_index"));
           let arguments2 = object_property_get(expression, "arguments");
+          list_add(
+            arguments2,
+            js_parse_expression(js_name_unique(ast, "index")),
+          );
           log({
             expression,
           });
