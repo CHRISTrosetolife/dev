@@ -31,11 +31,11 @@ export function js_for_to_each(ast) {
       ast,
       function_name_combine("lambda", fn_name("each")),
     );
-    let lambda = js_expression_call_args(lambda_name, [id]);
+    let lambda = js_expression_call_args([id]);
     log({
       lambda,
     });
-    js_code_function_declare();
+    js_code_function_declare(lambda_name, "", "", async_is);
   });
   return v2;
 }
