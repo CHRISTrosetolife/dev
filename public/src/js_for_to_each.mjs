@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { js_code_function_declare } from "./js_code_function_declare.mjs";
 import { function_name_combine } from "./function_name_combine.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -34,6 +35,7 @@ export function js_for_to_each(ast) {
     let async_is = false;
     let lambda_code = js_code_function_declare(lambda_name, "", "", async_is);
     let lambda = js_parse_expression(lambda_code);
+    object_property_set(object, "property_name", value);
     log({
       lambda,
       body,
