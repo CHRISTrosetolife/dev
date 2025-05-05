@@ -12,7 +12,7 @@ export function app_pray() {
   each_index(pl, function lambda_each(prayer, index) {
     let p = html_p_text(body, prayer);
     html_on_click(p, function () {
-      storage_local_set();
+      storage_local_set(app_pray, "prayer_index", index);
     });
   });
 }
