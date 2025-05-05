@@ -18,6 +18,7 @@ export function app_pray() {
   let rows = list_map_index(pl, function lambda_each(prayer, index) {
     let p = html_p_text(body, prayer);
     p.selected = index === index_load;
+    colorize(p);
     html_on_click(p, function () {
       p.selected = !p.selected;
       let index_old = storage_local_get(app_pray, "prayer_index");
@@ -28,11 +29,14 @@ export function app_pray() {
       }
       let value = p.selected ? index : null;
       storage_local_set(app_pray, "prayer_index", value);
-      (p.selected
-        ? html_style_background_color_yellow
-        : html_style_background_color_transparent)(p);
+      colorize(p);
     });
     let v = p;
     return v;
   });
+  function colorize(p) {
+    (p.selected
+      ? html_style_background_color_yellow
+      : html_style_background_color_transparent)(p);
+  }
 }
