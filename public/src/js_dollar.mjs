@@ -163,19 +163,12 @@ export function js_dollar(ast) {
             return;
           }
           let s = list_second(arguments2);
-          log({
-            s,
-          });
           if (js_node_type_not_is(s, "FunctionExpression")) {
             return;
           }
           let params = object_property_get(s, "params");
-          return;
           object_property_set(callee, "name", fn_name("each_index"));
-          list_add(
-            arguments2,
-            js_parse_expression(js_name_unique(ast, "index")),
-          );
+          list_add(params, js_parse_expression(js_name_unique(ast, "index")));
         }
       }
       if (remaining === "er") {
