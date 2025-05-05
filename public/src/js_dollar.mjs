@@ -1,3 +1,4 @@
+import { js_node_type_not_is } from "./js_node_type_not_is.mjs";
 import { list_get_end_2 } from "./list_get_end_2.mjs";
 import { js_stack_find_list_visitor } from "./js_stack_find_list_visitor.mjs";
 import { log } from "./log.mjs";
@@ -140,7 +141,7 @@ export function js_dollar(ast) {
         await js_dollar_grandparent_next(v, lambda);
         async function lambda(a) {
           let { next } = a;
-          if (false) {
+          if (js_node_type_not_is(next, "ExpressionStatement")) {
           }
           log({
             next,
