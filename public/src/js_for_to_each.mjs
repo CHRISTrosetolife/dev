@@ -35,7 +35,7 @@ export function js_for_to_each(ast) {
     let async_is = false;
     let lambda = js_function_expression(lambda_name, async_is, params, body);
     let call = js_expression_call_args(fn_name("each"), [right, lambda]);
-    object_replace();
+    object_replace(node, call);
   });
   return v2;
 }
