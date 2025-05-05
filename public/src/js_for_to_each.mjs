@@ -1,4 +1,4 @@
-import { js_unparse } from "./js_unparse.mjs";
+import { object_replace } from "./object_replace.mjs";
 import { js_expression_call_args } from "./js_expression_call_args.mjs";
 import { js_function_expression } from "./js_function_expression.mjs";
 import { function_name_combine } from "./function_name_combine.mjs";
@@ -8,7 +8,6 @@ import { list_single } from "./list_single.mjs";
 import { list_size_1 } from "./list_size_1.mjs";
 import { js_node_type_not_is } from "./js_node_type_not_is.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { log } from "./log.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
 export function js_for_to_each(ast) {
   let v2 = js_visit_node(ast, "ForOfStatement", function (v) {
@@ -36,7 +35,7 @@ export function js_for_to_each(ast) {
     let async_is = false;
     let lambda = js_function_expression(lambda_name, async_is, params, body);
     let call = js_expression_call_args(fn_name("each"), [right, lambda]);
-    log(js_unparse(call));
+    object_replace();
   });
   return v2;
 }
