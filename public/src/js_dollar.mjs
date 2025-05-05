@@ -153,6 +153,8 @@ export function js_dollar(ast) {
             return;
           }
           let name2 = object_property_get(callee, "name");
+          if (false) {
+          }
           let arguments2 = object_property_get(expression, "arguments");
           log({
             expression,
