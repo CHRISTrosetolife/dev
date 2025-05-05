@@ -33,7 +33,7 @@ export function js_for_to_each(ast) {
     log({
       d,
     });
-    js_expression_call_args();
+    let lambda = js_expression_call_args(lambda_name, [id]);
   });
   return v2;
 }
