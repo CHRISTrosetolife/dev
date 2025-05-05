@@ -18,7 +18,7 @@ export function js_for_to_each(ast) {
     let d = list_single(declarations);
     let right = object_property_get(node, "right");
     log({
-      node,
+      d,
     });
   });
   return v2;
