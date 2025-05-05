@@ -161,7 +161,7 @@ export function js_dollar(ast) {
           if (!list_size_2(arguments2)) {
             return;
           }
-          let f = list_first(arguments2);
+          let f = list_second(arguments2);
           log({
             f,
           });
