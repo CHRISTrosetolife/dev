@@ -26,7 +26,10 @@ export function js_for_to_each(ast) {
     }
     let right = object_property_get(node, "right");
     let body = object_property_get(node, "body");
-    js_name_unique(ast, function_name_combine("lambda", fn_name("each")));
+    let lambda_name = js_name_unique(
+      ast,
+      function_name_combine("lambda", fn_name("each")),
+    );
     log({
       d,
     });
