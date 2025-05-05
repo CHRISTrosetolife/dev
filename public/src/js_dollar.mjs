@@ -162,6 +162,10 @@ export function js_dollar(ast) {
             return;
           }
           let f = list_first(arguments2);
+          log({
+            f,
+          });
+          return;
           object_property_set(callee, "name", fn_name("each_index"));
           list_add(
             arguments2,
