@@ -142,7 +142,7 @@ export function js_dollar(ast) {
       if (remaining === "2i") {
         await js_dollar_grandparent_next(v, lambda);
         async function lambda(a) {
-          let { next } = a;
+          let { next, s2 } = a;
           if (js_node_type_not_is(next, "ExpressionStatement")) {
             return;
           }
@@ -169,6 +169,7 @@ export function js_dollar(ast) {
           let params = object_property_get(s, "params");
           object_property_set(callee, "name", fn_name("each_index"));
           list_add(params, js_parse_expression(js_name_unique(ast, "index")));
+          list_remove(s2, parent);
         }
       }
       if (remaining === "er") {
