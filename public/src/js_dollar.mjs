@@ -84,6 +84,7 @@ import { assert } from "./assert.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { string_replace } from "./string_replace.mjs";
 export function js_dollar(ast) {
+    log('here') 
   js_visit_identifiers(ast, async function (v) {
     let { node } = v;
     let { name } = node;
@@ -162,9 +163,13 @@ export function js_dollar(ast) {
           if (!list_size_2(arguments2)) {
             return;
           }
-          let f = list_second(arguments2);
+          let s = list_second(arguments2);
+          if (js_node_type_not_is(s, "FunctionExpression")) {
+            return;
+          }
+          $a  
           log({
-            f,
+            f: s,
           });
           return;
           object_property_set(callee, "name", fn_name("each_index"));
