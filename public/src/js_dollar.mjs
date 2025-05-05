@@ -81,6 +81,7 @@ import { string_empty_is } from "./string_empty_is.mjs";
 import { assert } from "./assert.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { string_replace } from "./string_replace.mjs";
+import { list_size_1 } from "./list_size_1.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, async function (v) {
     let { node } = v;
@@ -156,8 +157,12 @@ export function js_dollar(ast) {
           if (name2 !== fn_name("each")) {
             return;
           }
-          object_property_set(callee, "name", fn_name("each_index"));
           let arguments2 = object_property_get(expression, "arguments");
+          if (!list_size_1(arguments2)) {
+            return;
+          }
+          let f = list_first(arguments2);
+          object_property_set(callee, "name", fn_name("each_index"));
           list_add(
             arguments2,
             js_parse_expression(js_name_unique(ast, "index")),
