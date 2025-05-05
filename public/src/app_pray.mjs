@@ -1,3 +1,4 @@
+import { storage_local_get } from "./storage_local_get.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { each_index } from "./each_index.mjs";
 import { html_on_click } from "./html_on_click.mjs";
@@ -14,6 +15,7 @@ export function app_pray() {
     let selected = false;
     html_on_click(p, function () {
       selected = !selected;
+      let index_old = storage_local_get(app_pray, "prayer_index");
       let value = selected ? null : index;
       storage_local_set(app_pray, "prayer_index", value);
     });
