@@ -145,6 +145,9 @@ export function js_dollar(ast) {
             return;
           }
           let expression = object_property_get(next, "expression");
+          if (js_node_type_not_is(expression, "CallExpression")) {
+            return;
+          }
           log({
             next,
           });
