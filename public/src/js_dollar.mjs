@@ -149,6 +149,10 @@ export function js_dollar(ast) {
             return;
           }
           let callee = object_property_get(expression, "callee");
+          if (js_node_type_not_is(callee, "Identifier")) {
+            return;
+          }
+          let name2 = object_property_get(callee, "name");
           let arguments2 = object_property_get(expression, "arguments");
           log({
             expression,
