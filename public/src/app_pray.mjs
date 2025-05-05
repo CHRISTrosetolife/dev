@@ -13,5 +13,4 @@ export function app_pray() {
     let p = html_p_text(body, prayer);
     html_on_click(p, function () {});
   });
-  (function () {});
 }
