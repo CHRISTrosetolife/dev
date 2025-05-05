@@ -1,3 +1,4 @@
+import { js_code_function_declare } from "./js_code_function_declare.mjs";
 import { function_name_combine } from "./function_name_combine.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { js_name_unique } from "./js_name_unique.mjs";
@@ -34,6 +35,7 @@ export function js_for_to_each(ast) {
     log({
       lambda,
     });
+    js_code_function_declare();
   });
   return v2;
 }
