@@ -1,3 +1,4 @@
+import { js_unparse } from "./js_unparse.mjs";
 import { js_expression_call_args } from "./js_expression_call_args.mjs";
 import { js_function_expression } from "./js_function_expression.mjs";
 import { function_name_combine } from "./function_name_combine.mjs";
@@ -34,11 +35,8 @@ export function js_for_to_each(ast) {
     let params = [id];
     let async_is = false;
     let lambda = js_function_expression(lambda_name, async_is, params, body);
-    js_expression_call_args();
-    log({
-      lambda,
-      body,
-    });
+    let call = js_expression_call_args(fn_name("each"), [right, lambda]);
+    log(js_unparse(lambda));
   });
   return v2;
 }
