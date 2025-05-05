@@ -1,3 +1,4 @@
+import { list_single } from "./list_single.mjs";
 import { list_size_1 } from "./list_size_1.mjs";
 import { js_node_type_not_is } from "./js_node_type_not_is.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -14,6 +15,7 @@ export function js_for_to_each(ast) {
     if (!list_size_1(declarations)) {
       return;
     }
+    let d = list_single(declarations);
     let right = object_property_get(node, "right");
     log({
       node,
