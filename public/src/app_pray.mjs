@@ -1,3 +1,4 @@
+import { html_scroll_nearest } from "./html_scroll_nearest.mjs";
 import { html_style_background_color_yellow } from "./html_style_background_color_yellow.mjs";
 import { list_get } from "./list_get.mjs";
 import { html_style_background_color_transparent } from "./html_style_background_color_transparent.mjs";
@@ -34,6 +35,7 @@ export function app_pray() {
     let v = p;
     return v;
   });
+  html_scroll_nearest(list_get(rows, index_load));
   function colorize(p) {
     (p.selected
       ? html_style_background_color_yellow
