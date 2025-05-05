@@ -1,3 +1,4 @@
+import { html_style_background_color_yellow } from "./html_style_background_color_yellow.mjs";
 import { list_get } from "./list_get.mjs";
 import { html_style_background_color_transparent } from "./html_style_background_color_transparent.mjs";
 import { list_map_index } from "./list_map_index.mjs";
@@ -25,6 +26,7 @@ export function app_pray() {
       }
       let value = selected ? null : index;
       storage_local_set(app_pray, "prayer_index", value);
+      html_style_background_color_yellow(p);
     });
     let v = p;
     return v;
