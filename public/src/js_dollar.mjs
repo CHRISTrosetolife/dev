@@ -169,6 +169,7 @@ export function js_dollar(ast) {
           if (js_node_type_not_is(s, "FunctionExpression")) {
             return;
           }
+          let params = object_property_get(s, "params");
           return;
           object_property_set(callee, "name", fn_name("each_index"));
           list_add(
