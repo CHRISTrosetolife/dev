@@ -142,6 +142,7 @@ export function js_dollar(ast) {
         async function lambda(a) {
           let { next } = a;
           if (js_node_type_not_is(next, "ExpressionStatement")) {
+            return;
           }
           log({
             next,
