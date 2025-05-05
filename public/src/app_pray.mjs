@@ -1,3 +1,4 @@
+import { html_on_click } from "./html_on_click.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { each } from "./each.mjs";
 import { prayers_list } from "./prayers_list.mjs";
@@ -9,5 +10,6 @@ export function app_pray() {
   let pl = prayers_list(ps);
   each(pl, function lambda_each(prayer) {
     let p = html_p_text(body, prayer);
+    html_on_click();
   });
 }
