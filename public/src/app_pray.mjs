@@ -7,7 +7,7 @@ export function app_pray() {
   let body = html_style_default_initialize();
   let ps = prayers();
   let pl = prayers_list(ps);
-  each(pl, function lambda_each(p) {
-    html_p_text(body, p);
+  each(pl, function lambda_each(prayer) {
+    let p = html_p_text(body, prayer);
   });
 }
