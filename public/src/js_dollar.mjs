@@ -162,9 +162,6 @@ export function js_dollar(ast) {
             arguments2,
             js_parse_expression(js_name_unique(ast, "index")),
           );
-          log({
-            expression,
-          });
         }
       }
       if (remaining === "er") {
