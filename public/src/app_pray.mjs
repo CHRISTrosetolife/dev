@@ -14,9 +14,10 @@ export function app_pray() {
   let body = html_style_default_initialize();
   let ps = prayers();
   let pl = prayers_list(ps);
+  let index_load = storage_local_get(app_pray, "prayer_index");
   let rows = list_map_index(pl, function lambda_each(prayer, index) {
     let p = html_p_text(body, prayer);
-    p.selected = false;
+    p.selected = index === index_load;
     html_on_click(p, function () {
       p.selected = !p.selected;
       let index_old = storage_local_get(app_pray, "prayer_index");
