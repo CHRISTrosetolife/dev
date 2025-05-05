@@ -9,7 +9,7 @@ export function app_pray() {
   let ps = prayers();
   let pl = prayers_list(ps);
   $2i;
-  each(pl, function lambda_each(prayer) {
+  each_index(pl, function lambda_each(prayer, index) {
     let p = html_p_text(body, prayer);
     html_on_click(p, function () {});
   });
