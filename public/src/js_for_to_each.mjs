@@ -33,6 +33,7 @@ export function js_for_to_each(ast) {
     let params = [id];
     let async_is = false;
     let lambda = js_function_expression(lambda_name, async_is, params, body);
+    js_call_args();
     log({
       lambda,
       body,
