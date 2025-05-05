@@ -16,17 +16,17 @@ export function app_pray() {
   let pl = prayers_list(ps);
   let rows = list_map_index(pl, function lambda_each(prayer, index) {
     let p = html_p_text(body, prayer);
-    let selected = false;
+    p.selected = false;
     html_on_click(p, function () {
-      selected = !selected;
+      p.selected = !p.selected;
       let index_old = storage_local_get(app_pray, "prayer_index");
       if (null_not_is(index_old)) {
         let p_old = list_get(rows, index_old);
         html_style_background_color_transparent(p_old);
       }
-      let value = selected ? index : null;
+      let value = p.selected ? index : null;
       storage_local_set(app_pray, "prayer_index", value);
-      (selected
+      (p.selected
         ? html_style_background_color_yellow
         : html_style_background_color_transparent)(p);
     });
