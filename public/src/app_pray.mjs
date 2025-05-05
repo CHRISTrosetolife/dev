@@ -1,3 +1,4 @@
+import { storage_local_set } from "./storage_local_set.mjs";
 import { each_index } from "./each_index.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -10,6 +11,8 @@ export function app_pray() {
   let pl = prayers_list(ps);
   each_index(pl, function lambda_each(prayer, index) {
     let p = html_p_text(body, prayer);
-    html_on_click(p, function () {});
+    html_on_click(p, function () {
+      storage_local_set();
+    });
   });
 }
