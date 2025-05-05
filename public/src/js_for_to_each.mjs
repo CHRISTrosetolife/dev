@@ -1,3 +1,4 @@
+import { list_size_1 } from "./list_size_1.mjs";
 import { js_node_type_not_is } from "./js_node_type_not_is.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { log } from "./log.mjs";
@@ -9,8 +10,11 @@ export function js_for_to_each(ast) {
     if (js_node_type_not_is(left, "VariableDeclaration")) {
       return;
     }
-    let right = object_property_get(node, "right");
     let declarations = object_property_get(left, "declarations");
+    if (list_size_1(declarations)) {
+      return;
+    }
+    let right = object_property_get(node, "right");
     log({
       node,
     });
