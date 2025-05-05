@@ -11,7 +11,7 @@ export function js_for_to_each(ast) {
       return;
     }
     let declarations = object_property_get(left, "declarations");
-    if (list_size_1(declarations)) {
+    if (!list_size_1(declarations)) {
       return;
     }
     let right = object_property_get(node, "right");
