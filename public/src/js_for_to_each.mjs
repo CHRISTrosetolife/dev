@@ -35,7 +35,8 @@ export function js_for_to_each(ast) {
     let async_is = false;
     let lambda_code = js_code_function_declare(lambda_name, "", "", async_is);
     let lambda = js_parse_expression(lambda_code);
-    object_property_set(object, "property_name", value);
+    let params = object_property_get(lambda, "params");
+    object_property_set(lambda, "body", body);
     log({
       lambda,
       body,
