@@ -8,6 +8,7 @@ import { html_p_text } from "./html_p_text.mjs";
 import { prayers_list } from "./prayers_list.mjs";
 import { prayers } from "./prayers.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
+import { null_not_is } from "./null_not_is.mjs";
 export function app_pray() {
   let body = html_style_default_initialize();
   let ps = prayers();
@@ -18,7 +19,7 @@ export function app_pray() {
     html_on_click(p, function () {
       selected = !selected;
       let index_old = storage_local_get(app_pray, "prayer_index");
-      if (false) {
+      if (null_not_is(index_old)) {
         let p_old = list_get(rows, index_old);
       }
       html_style_background_color_transparent();
