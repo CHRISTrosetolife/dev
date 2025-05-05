@@ -10,6 +10,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { log } from "./log.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
+import { list_add_multiple } from "./list_add_multiple.mjs";
 export function js_for_to_each(ast) {
   let v2 = js_visit_node(ast, "ForOfStatement", function (v) {
     let { node } = v;
@@ -32,10 +33,12 @@ export function js_for_to_each(ast) {
       ast,
       function_name_combine("lambda", fn_name("each")),
     );
+    let params = [id];
     let async_is = false;
     let lambda_code = js_code_function_declare(lambda_name, "", "", async_is);
     let lambda = js_parse_expression(lambda_code);
-    let params = object_property_get(lambda, "params");
+    let params2 = object_property_get(lambda, "params");
+    list_add_multiple(params2, params);
     object_property_set(lambda, "body", body);
     log({
       lambda,
