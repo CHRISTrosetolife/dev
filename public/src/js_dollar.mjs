@@ -140,6 +140,8 @@ export function js_dollar(ast) {
         await js_dollar_grandparent_next(v, lambda);
         async function lambda(a) {
           let { next } = a;
+          if (false) {
+          }
           log({
             next,
           });
