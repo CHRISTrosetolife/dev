@@ -13,7 +13,7 @@ export function app_pray() {
     let p = html_p_text(body, prayer);
     let selected = false;
     html_on_click(p, function () {
-      storage_local_set(app_pray, "prayer_index", index);
+      storage_local_set(app_pray, "prayer_index", selected ? null : sindex);
     });
   });
 }
