@@ -148,6 +148,7 @@ export function js_dollar(ast) {
           if (js_node_type_not_is(expression, "CallExpression")) {
             return;
           }
+          let arguments2 = object_property_get(callee, "arguments");
           log({
             next,
           });
