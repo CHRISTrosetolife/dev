@@ -18,7 +18,9 @@ export function app_pray() {
     html_on_click(p, function () {
       selected = !selected;
       let index_old = storage_local_get(app_pray, "prayer_index");
-      let p_old = list_get(list, index2);
+      if (false) {
+        let p_old = list_get(rows, index_old);
+      }
       html_style_background_color_transparent();
       let value = selected ? null : index;
       storage_local_set(app_pray, "prayer_index", value);
