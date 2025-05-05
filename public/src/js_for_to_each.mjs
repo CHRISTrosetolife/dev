@@ -31,6 +31,7 @@ export function js_for_to_each(ast) {
       ast,
       function_name_combine("lambda", fn_name("each")),
     );
+    let async_is = false;
     let lambda = js_expression_call_args([id]);
     log({
       lambda,
