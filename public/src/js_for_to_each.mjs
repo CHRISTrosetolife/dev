@@ -16,6 +16,10 @@ export function js_for_to_each(ast) {
       return;
     }
     let d = list_single(declarations);
+    let id = object_property_get(d, "id");
+    if (js_node_type_not_is(left, "VariableDeclaration")) {
+      return;
+    }
     let right = object_property_get(node, "right");
     let body = object_property_get(node, "body");
     log({
