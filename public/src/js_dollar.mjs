@@ -1,3 +1,4 @@
+import { list_size_2 } from "./list_size_2.mjs";
 import { js_node_type_not_is } from "./js_node_type_not_is.mjs";
 import { list_get_end_2 } from "./list_get_end_2.mjs";
 import { js_stack_find_list_visitor } from "./js_stack_find_list_visitor.mjs";
@@ -81,7 +82,6 @@ import { string_empty_is } from "./string_empty_is.mjs";
 import { assert } from "./assert.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { string_replace } from "./string_replace.mjs";
-import { list_size_1 } from "./list_size_1.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, async function (v) {
     let { node } = v;
@@ -158,7 +158,7 @@ export function js_dollar(ast) {
             return;
           }
           let arguments2 = object_property_get(expression, "arguments");
-          if (!list_size_1(arguments2)) {
+          if (!list_size_2(arguments2)) {
             return;
           }
           let f = list_first(arguments2);
