@@ -6,6 +6,7 @@ export function js_for_to_each(ast) {
     let { node } = v;
     let left = object_property_get(node, "left");
     let right = object_property_get(node, "right");
+    let declarations = object_property_get(left, "declarations");
     log({
       node,
     });
