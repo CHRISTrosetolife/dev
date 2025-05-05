@@ -22,6 +22,7 @@ export function app_pray() {
       let index_old = storage_local_get(app_pray, "prayer_index");
       if (null_not_is(index_old)) {
         let p_old = list_get(rows, index_old);
+        p_old.selected = false;
         html_style_background_color_transparent(p_old);
       }
       let value = p.selected ? index : null;
