@@ -1,3 +1,4 @@
+import { string_to } from "./string_to.mjs";
 import { watch_git_paused_is } from "./watch_git_paused_is.mjs";
 import { watch_lock } from "./watch_lock.mjs";
 import { folder_gitignore_path_function_parent } from "./folder_gitignore_path_function_parent.mjs";
@@ -85,6 +86,7 @@ export async function watch() {
       after = await fn(path);
       processed = true;
     } catch (e) {
+      log_error(string_to(e));
       log_error(
         string_combine_multiple([
           fn_name("watch"),

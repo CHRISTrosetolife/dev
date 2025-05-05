@@ -12,5 +12,6 @@ export function app_pray() {
   each(pl, function lambda_each(prayer) {
     let p = html_p_text(body, prayer);
     html_on_click(p, function () {});
-  });$a
+  });
+  (function () {});
 }
