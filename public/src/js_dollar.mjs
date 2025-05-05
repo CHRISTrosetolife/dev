@@ -91,7 +91,7 @@ export function js_dollar(ast) {
     if (string_starts_with(name, prefix)) {
       name = string_case_lower(name);
       let { parent } = v;
-      let lambda_prefix = "a"; 
+      let lambda_prefix = "a";
       let objection_prefix = "o";
       let question_prefix = "q";
       let scm_prefix = "s";
@@ -163,6 +163,9 @@ export function js_dollar(ast) {
             return;
           }
           let s = list_second(arguments2);
+          log({
+            s,
+          });
           if (js_node_type_not_is(s, "FunctionExpression")) {
             return;
           }
