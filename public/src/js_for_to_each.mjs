@@ -36,6 +36,7 @@ export function js_for_to_each(ast) {
     let lambda = js_parse_expression(lambda_code);
     log({
       lambda,
+      body,
     });
   });
   return v2;
