@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { js_name_unique } from "./js_name_unique.mjs";
 import { js_expression_call_args } from "./js_expression_call_args.mjs";
 import { list_single } from "./list_single.mjs";
@@ -24,7 +25,7 @@ export function js_for_to_each(ast) {
     }
     let right = object_property_get(node, "right");
     let body = object_property_get(node, "body");
-    js_name_unique();
+    js_name_unique(ast, string_combine_multiple(["lambda_"]));
     log({
       d,
     });
