@@ -1,3 +1,4 @@
+import { js_expression_call_args } from "./js_expression_call_args.mjs";
 import { list_single } from "./list_single.mjs";
 import { list_size_1 } from "./list_size_1.mjs";
 import { js_node_type_not_is } from "./js_node_type_not_is.mjs";
@@ -25,6 +26,7 @@ export function js_for_to_each(ast) {
     log({
       d,
     });
+    js_expression_call_args();
   });
   return v2;
 }
