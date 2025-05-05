@@ -1,4 +1,5 @@
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { function_name_combine } from "./function_name_combine.mjs";
+import { fn_name } from "./fn_name.mjs";
 import { js_name_unique } from "./js_name_unique.mjs";
 import { js_expression_call_args } from "./js_expression_call_args.mjs";
 import { list_single } from "./list_single.mjs";
@@ -25,7 +26,7 @@ export function js_for_to_each(ast) {
     }
     let right = object_property_get(node, "right");
     let body = object_property_get(node, "body");
-    js_name_unique(ast, string_combine_multiple(["lambda_"]));
+    js_name_unique(ast, function_name_combine("lambda", fn_name("each")));
     log({
       d,
     });
