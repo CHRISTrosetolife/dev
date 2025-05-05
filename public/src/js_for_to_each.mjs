@@ -30,10 +30,10 @@ export function js_for_to_each(ast) {
       ast,
       function_name_combine("lambda", fn_name("each")),
     );
-    log({
-      d,
-    });
     let lambda = js_expression_call_args(lambda_name, [id]);
+    log({
+      lambda,
+    });
   });
   return v2;
 }
