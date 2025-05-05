@@ -1,7 +1,7 @@
-import { app_pray_music } from "./app_pray_music.mjs";
+import { prayers } from "./prayers.mjs";
+import { html_prayer } from "./html_prayer.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 export function app_pray() {
-  let index = 0;
-  html_style_default_initialize();
-  app_pray_music(index);
+  let body = html_style_default_initialize();
+  html_prayer(body, prayers());
 }
