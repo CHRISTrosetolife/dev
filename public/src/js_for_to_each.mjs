@@ -2,13 +2,13 @@ import { js_code_function_declare } from "./js_code_function_declare.mjs";
 import { function_name_combine } from "./function_name_combine.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { js_name_unique } from "./js_name_unique.mjs";
-import { js_expression_call_args } from "./js_expression_call_args.mjs";
 import { list_single } from "./list_single.mjs";
 import { list_size_1 } from "./list_size_1.mjs";
 import { js_node_type_not_is } from "./js_node_type_not_is.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { log } from "./log.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
+import { js_parse_expression } from "./js_parse_expression.mjs";
 export function js_for_to_each(ast) {
   let v2 = js_visit_node(ast, "ForOfStatement", function (v) {
     let { node } = v;
@@ -32,11 +32,11 @@ export function js_for_to_each(ast) {
       function_name_combine("lambda", fn_name("each")),
     );
     let async_is = false;
-    let lambda = js_expression_call_args([id]);
+    let lambda_code = js_code_function_declare(lambda_name, "", "", async_is);
+    let lambda = js_parse_expression(lambda_code);
     log({
       lambda,
     });
-    js_code_function_declare(lambda_name, "", "", async_is);
   });
   return v2;
 }
