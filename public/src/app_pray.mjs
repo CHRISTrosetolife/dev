@@ -1,3 +1,4 @@
+import { sleep_0 } from "./sleep_0.mjs";
 import { html_scroll_nearest } from "./html_scroll_nearest.mjs";
 import { html_style_background_color_yellow } from "./html_style_background_color_yellow.mjs";
 import { list_get } from "./list_get.mjs";
@@ -11,7 +12,7 @@ import { prayers_list } from "./prayers_list.mjs";
 import { prayers } from "./prayers.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { null_not_is } from "./null_not_is.mjs";
-export function app_pray() {
+export async function app_pray() {
   let body = html_style_default_initialize();
   let ps = prayers();
   let pl = prayers_list(ps);
@@ -35,6 +36,7 @@ export function app_pray() {
     let v = p;
     return v;
   });
+  await sleep_0();
   html_scroll_nearest(list_get(rows, index_load));
   function colorize(p) {
     (p.selected
