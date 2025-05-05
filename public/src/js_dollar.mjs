@@ -144,6 +144,7 @@ export function js_dollar(ast) {
           if (js_node_type_not_is(next, "ExpressionStatement")) {
             return;
           }
+          let expression = object_property_get(next, "expression");
           log({
             next,
           });
