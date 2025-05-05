@@ -151,7 +151,7 @@ export function js_dollar(ast) {
           let callee = object_property_get(expression, "callee");
           let arguments2 = object_property_get(expression, "arguments");
           log({
-            next,
+            expression,
           });
         }
       }
