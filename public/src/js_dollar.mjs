@@ -156,6 +156,7 @@ export function js_dollar(ast) {
           if (name2 !== fn_name("each")) {
             return;
           }
+          object_property_set(object2, "property_name", value2);
           let arguments2 = object_property_get(expression, "arguments");
           log({
             expression,
