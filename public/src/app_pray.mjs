@@ -9,8 +9,12 @@ export function app_pray() {
   let ps = prayers();
   let pl = prayers_list(ps);
   $2i;
-  each(pl, function lambda_each(prayer) {
-    let p = html_p_text(body, prayer);
-    html_on_click(p, function () {});
-  });
+  each_index(
+    pl,
+    function lambda_each(prayer) {
+      let p = html_p_text(body, prayer);
+      html_on_click(p, function () {});
+    },
+    index,
+  );
 }
