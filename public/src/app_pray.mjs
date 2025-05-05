@@ -1,3 +1,4 @@
+import { list_get } from "./list_get.mjs";
 import { html_style_background_color_transparent } from "./html_style_background_color_transparent.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
@@ -17,6 +18,7 @@ export function app_pray() {
     html_on_click(p, function () {
       selected = !selected;
       let index_old = storage_local_get(app_pray, "prayer_index");
+      let p_old = list_get(list, index2);
       html_style_background_color_transparent();
       let value = selected ? null : index;
       storage_local_set(app_pray, "prayer_index", value);
