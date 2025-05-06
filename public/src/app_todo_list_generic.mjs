@@ -36,10 +36,7 @@ export function app_todo_list_generic(
         },
         index_path,
       );
-      each(properties, function (p) {
-        html_hr(root);
-        app_todo_item_choices(context, item, p);
-      });
+      middle(item);
       html_hr(root);
       app_todo_button_item_delete(
         items_all,
@@ -50,4 +47,10 @@ export function app_todo_list_generic(
       );
     });
   });
+  function middle(item) {
+    each(properties, function (p) {
+      html_hr(root);
+      app_todo_item_choices(context, item, p);
+    });
+  }
 }
