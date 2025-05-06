@@ -1,8 +1,6 @@
+import { app_todo_button_item_delete } from "./app_todo_button_item_delete.mjs";
 import { html_button } from "./html_button.mjs";
-import { html_button_delete } from "./html_button_delete.mjs";
 import { html_hr_each } from "./html_hr_each.mjs";
-import { list_remove } from "./list_remove.mjs";
-import { firebase_save_index } from "./firebase_save_index.mjs";
 import { app_todo_item_choices } from "./app_todo_item_choices.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { emoji_edit_combine } from "./emoji_edit_combine.mjs";
@@ -20,9 +18,9 @@ export function app_todo_list_generic(
   items_all,
 ) {
   let { root } = context;
-  html_hr_each(root, filtered, (item) => {
+  html_hr_each(root, filtered, function (item) {
     let name = object_property_get(item, "name");
-    html_button(root, name, () => {
+    html_button(root, name, function () {
       html_button_back_main(context, refresh);
       html_hr(root);
       app_todo_item_name(
@@ -38,15 +36,17 @@ export function app_todo_list_generic(
         },
         index_path,
       );
-      each(properties, (p) => {
+      each(properties, function (p) {
         html_hr(root);
         app_todo_item_choices(context, item, p);
       });
-      html_button_delete(root, "", async () => {
-        list_remove(items_all, item);
-        await firebase_save_index(context, index_path);
-        refresh(context);
-      });
+      app_todo_button_item_delete(
+        items_all,
+        item,
+        context,
+        index_path,
+        refresh,
+      );
     });
   });
 }
