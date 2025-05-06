@@ -15,13 +15,13 @@ export function html_item_add_generic(
   on_save,
 ) {
   let { root } = context;
-  html_button(root, button_text_first, () => {
+  html_button(root, button_text_first, function () {
     html_button_back_main(context, app_main_lambda);
     let input = html_input_width_full_focus(root);
     html_value_set(input, value_initial);
-    html_button(root, button_text_second, async () => {
+    html_button(root, button_text_second, async function () {
       let value = html_value_get(input);
-      on_complete(value);
+      await on_complete(value);
       await firebase_save_index(context, index_path);
       on_save();
     });
