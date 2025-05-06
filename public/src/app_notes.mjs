@@ -1,3 +1,5 @@
+import { app_firebase_path_index } from "./app_firebase_path_index.mjs";
+import { path_join } from "./path_join.mjs";
 import { firebase_storage_initialize_context } from "./firebase_storage_initialize_context.mjs";
 import { app_todo_main } from "./app_todo_main.mjs";
 import { app_firebase } from "./app_firebase.mjs";
@@ -8,7 +10,7 @@ export async function app_notes() {
   html_button_add(root, "note");
   await app_firebase({
     on_logged_in: async function (context) {
-      let index_path = "notes/index.json";
+      let index_path = path_join(["notes", app_firebase_path_index()]);
       await firebase_storage_initialize_context(index_path, context);
       app_todo_main(context);
     },
