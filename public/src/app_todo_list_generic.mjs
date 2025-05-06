@@ -40,6 +40,7 @@ export function app_todo_list_generic(
         html_hr(root);
         app_todo_item_choices(context, item, p);
       });
+      html_hr(root);
       app_todo_button_item_delete(
         items_all,
         item,
