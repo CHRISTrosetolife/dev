@@ -1,3 +1,4 @@
+import { object_property_initialize } from "./object_property_initialize.mjs";
 import { log } from "./log.mjs";
 import { app_notes_property_id } from "./app_notes_property_id.mjs";
 import { list_sort_string_property } from "./list_sort_string_property.mjs";
@@ -12,16 +13,17 @@ export function app_notes_main(context) {
   html_item_add(context, app_todo_main, index_path, on_complete);
   async function on_complete(value) {
     let index = object_property_get(context, "index");
+    let items = object_property_initialize(index, "items", []);
     log({
-      index,
+      items,
     });
-    list_add(index, {
+    list_add(items, {
       name: value,
       [app_notes_property_id()]: await uuid(),
     });
-    list_sort_string_property(index, app_notes_property_id());
+    list_sort_string_property(items, app_notes_property_id());
     log({
-      index,
+      items,
     });
   }
 }
