@@ -12,6 +12,9 @@ export function app_notes_main(context) {
   html_item_add(context, app_todo_main, index_path, on_complete);
   async function on_complete(value) {
     let index = object_property_get(context, "index");
+    log({
+      index,
+    });
     list_add(index, {
       name: value,
       [app_notes_property_id()]: await uuid(),
