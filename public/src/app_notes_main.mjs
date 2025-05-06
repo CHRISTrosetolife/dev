@@ -1,0 +1,7 @@
+import { app_todo_main } from "./app_todo_main.mjs";
+import { html_item_add } from "./html_item_add.mjs";
+import { app_notes_firebase_path_index } from "./app_notes_firebase_path_index.mjs";
+export function app_notes_main(context) {
+  let index_path = app_notes_firebase_path_index();
+  html_item_add(context, app_todo_main, index_path, on_complete);
+}
