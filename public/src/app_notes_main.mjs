@@ -1,3 +1,4 @@
+import { list_sort_string_property } from "./list_sort_string_property.mjs";
 import { uuid } from "./uuid.mjs";
 import { list_add } from "./list_add.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -13,5 +14,6 @@ export function app_notes_main(context) {
       name: value,
       id: await uuid(),
     });
+    list_sort_string_property(index, "id");
   }
 }
