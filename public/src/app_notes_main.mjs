@@ -1,6 +1,5 @@
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
-import { log } from "./log.mjs";
 import { app_notes_property_id } from "./app_notes_property_id.mjs";
 import { list_sort_string_property } from "./list_sort_string_property.mjs";
 import { uuid } from "./uuid.mjs";
@@ -16,16 +15,10 @@ export function app_notes_main(context) {
   async function on_complete(value) {
     let index = object_property_get(context, "index");
     let items = object_property_initialize(index, "items", []);
-    log({
-      items,
-    });
     list_add(items, {
       name: value,
       [app_notes_property_id()]: await uuid(),
     });
     list_sort_string_property(items, app_notes_property_id());
-    log({
-      items,
-    });
   }
 }
