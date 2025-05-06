@@ -1,3 +1,4 @@
+import { html_item_add } from "./html_item_add.mjs";
 import { app_firebase_path_index } from "./app_firebase_path_index.mjs";
 import { path_join } from "./path_join.mjs";
 import { firebase_storage_initialize_context } from "./firebase_storage_initialize_context.mjs";
@@ -12,7 +13,7 @@ export async function app_notes() {
     on_logged_in: async function (context) {
       let index_path = path_join(["notes", app_firebase_path_index()]);
       await firebase_storage_initialize_context(index_path, context);
-      app_todo_main(context);
+      html_item_add(context, app_todo_main, index_path, on_complete);
     },
   });
 }
