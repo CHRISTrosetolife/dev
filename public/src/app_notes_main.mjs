@@ -4,5 +4,5 @@ import { app_notes_firebase_path_index } from "./app_notes_firebase_path_index.m
 export function app_notes_main(context) {
   let index_path = app_notes_firebase_path_index();
   html_item_add(context, app_todo_main, index_path, on_complete);
-  (function on_complete() {});
+  function on_complete() {}
 }
