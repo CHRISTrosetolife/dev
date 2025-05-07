@@ -150,6 +150,7 @@ export function prayers() {
     "Help the elderly",
     "Help prisoners",
     "Help the sick",
+    "Bless the bodies and any tools of elect angels",
     "For each challenge God gave Job, if God desires, may I fulfill",
     "Predestine all my remaining choices",
     "May God choose all my remaining choices, not me",
