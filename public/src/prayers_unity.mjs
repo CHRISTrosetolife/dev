@@ -4,6 +4,7 @@ export function prayers_unity() {
     "May the church perfectly agree about God",
     "May the church perfectly agree about Jesus",
     "May the church perfectly agree about the Holy Spirit",
+    "May the church perfectly agree about the Trinity",
     "May the church perfectly agree about the Bible canon",
     "May the church perfectly agree about tradition",
     "May the church perfectly agree about head coverings",
