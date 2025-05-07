@@ -32,6 +32,8 @@ export function prayers_unity() {
     "Unite Jehovah's Witnesses with the rest of the church",
     "Unite Quakers with the rest of the church",
     "Unite the Amish with the rest of the church",
+    "Unite Southern Baptists with the rest of the church",
+    "Unite Northern Baptists with the rest of the church",
     "Unite Evangelicals with the rest of the church",
     "Unite Protestants with the rest of the church",
     "Unite Charismatics with the rest of the church",
