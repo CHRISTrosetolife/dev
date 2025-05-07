@@ -71,7 +71,7 @@ export function prayers() {
     "Help me speak and understand Cebuano",
     "Help my face be clean-shaven without any cuts",
     "Help me lose weight",
-    "Help all Christians lose weight",
+    "Help all Christians lose weight who need to",
     "Help my muscles grow",
     "Help me fast",
     "Help all Christians fast",
