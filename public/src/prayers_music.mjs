@@ -19,6 +19,8 @@ export function prayers_music() {
     "Save and Bless Jenn Johnson",
     "Save and Bless Bethel",
     "Save and Bless Micah Tyler",
+    "Save and Bless We Are Messengers",
+    "Save and Bless Vertical Worship",
   ];
   return v;
 }
