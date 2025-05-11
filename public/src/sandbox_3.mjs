@@ -1,8 +1,12 @@
-import { html_cache_parse_hrefs } from "./html_cache_parse_hrefs.mjs";
-import { tautology } from "./tautology.mjs";
+import { html_parse_a_href_starts_with_hrefs } from "./html_parse_a_href_starts_with_hrefs.mjs";
+import { http_cache_parse_parsed } from "./http_cache_parse_parsed.mjs";
 export async function sandbox_3() {
   let u =
     "https://bible.catholicgallery.org/world-english-bible-with-deuterocanon/";
-  let v = await html_cache_parse_hrefs(u, tautology);
+  let p = await http_cache_parse_parsed(u);
+  let v = await html_parse_a_href_starts_with_hrefs(
+    u,
+    "https://bible.catholicgallery.org/english/",
+  );
   return v;
 }
