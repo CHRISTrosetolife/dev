@@ -52,7 +52,7 @@ export function bible_verses_parse(verses) {
   let filtered = list_filter(result, function (r) {
     return list_empty_not_is(object_property_get(r, "tokens"));
   });
-  return result;
+  return filtered;
   function bible_verses_parse_text(c, verse_number, tokens) {
     if (c.type === "text" || html_parse_class_is(c, "wj")) {
       if (undefined_not_is(verse_number)) {
