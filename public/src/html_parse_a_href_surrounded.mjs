@@ -7,7 +7,7 @@ export function html_parse_a_href_surrounded(element, prefix, suffix) {
   let found = html_parse_a_hrefs(element);
   let filtered = list_filter(found, function (i) {
     let href = html_parse_href(i);
-    let v = string_ends_with(href, suffix) && string_starts_with(prefix);
+    let v = string_ends_with(href, suffix) && string_starts_with(href, prefix);
     return v;
   });
   return filtered;
