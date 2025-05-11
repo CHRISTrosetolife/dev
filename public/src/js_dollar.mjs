@@ -1,6 +1,4 @@
-import { list_second } from "./list_second.mjs";
-import { list_size_2 } from "./list_size_2.mjs";
-import { js_node_type_not_is } from "./js_node_type_not_is.mjs";
+import { js_dollar_grandparent_next_each } from "./js_dollar_grandparent_next_each.mjs";
 import { list_get_end_2 } from "./list_get_end_2.mjs";
 import { js_stack_find_list_visitor } from "./js_stack_find_list_visitor.mjs";
 import { log } from "./log.mjs";
@@ -140,71 +138,18 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (remaining === "2i") {
-        await js_dollar_grandparent_next(v, lambda);
-        async function lambda(a) {
-          let { next, s2 } = a;
-          if (js_node_type_not_is(next, "ExpressionStatement")) {
-            return;
-          }
-          let expression = object_property_get(next, "expression");
-          if (js_node_type_not_is(expression, "CallExpression")) {
-            return;
-          }
-          let callee = object_property_get(expression, "callee");
-          if (js_node_type_not_is(callee, "Identifier")) {
-            return;
-          }
-          let name2 = object_property_get(callee, "name");
-          if (name2 !== fn_name("each")) {
-            return;
-          }
-          let arguments2 = object_property_get(expression, "arguments");
-          if (!list_size_2(arguments2)) {
-            return;
-          }
-          let arg_second = list_second(arguments2);
-          if (js_node_type_not_is(arg_second, "FunctionExpression")) {
-            return;
-          }
-          lambda_inner(arg_second, callee, s2, parent);
-        }
-        function lambda_inner(arg_second, callee, s2, parent) {
+        await js_dollar_grandparent_next_each(v, lambda_inner);
+        function lambda_inner(arg_second, callee) {
           let params = object_property_get(arg_second, "params");
           object_property_set(callee, "name", fn_name("each_index"));
           list_add(params, js_parse_expression(js_name_unique(ast, "index")));
-          list_remove(s2, parent);
         }
       }
       if (remaining === "2a") {
-        await js_dollar_grandparent_next(v, lambda);
-        async function lambda(a) {
-          let { next, s2 } = a;
-          if (js_node_type_not_is(next, "ExpressionStatement")) {
-            return;
-          }
-          let expression = object_property_get(next, "expression");
-          if (js_node_type_not_is(expression, "CallExpression")) {
-            return;
-          }
-          let callee = object_property_get(expression, "callee");
-          if (js_node_type_not_is(callee, "Identifier")) {
-            return;
-          }
-          let name2 = object_property_get(callee, "name");
-          if (name2 !== fn_name("each")) {
-            return;
-          }
-          let arguments2 = object_property_get(expression, "arguments");
-          if (!list_size_2(arguments2)) {
-            return;
-          }
-          let s = list_second(arguments2);
-          if (js_node_type_not_is(s, "FunctionExpression")) {
-            return;
-          }
-          object_property_set(s, "async", true);
+        await js_dollar_grandparent_next_each(v, lambda_inner);
+        function lambda_inner(arg_second, callee) {
+          object_property_set(arg_second, "async", true);
           object_property_set(callee, "name", fn_name("each_async"));
-          list_remove(s2, parent);
         }
       }
       if (remaining === "er") {
