@@ -20,7 +20,6 @@ export function bible_verses_parse(verses) {
     let verse_number = "0",
       tokens = [];
     each(verses, function (v) {
-      log(html_parse_text(v));
       bible_verses_parse_text(v, verse_number, tokens);
       let { children } = v;
       each(children, function (c) {
@@ -50,6 +49,10 @@ export function bible_verses_parse(verses) {
     if (c.type === "text" || html_parse_class_is(c, "wj")) {
       if (undefined_not_is(verse_number)) {
         let text = html_parse_text(c);
+        log({
+          text,
+          verse_number,
+        });
         let n = string_trim_whitespace(string_whitespace_normalize(text));
         let dash = "—";
         let r = string_replace_pad(n, dash);
