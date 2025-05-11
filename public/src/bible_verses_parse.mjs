@@ -16,8 +16,8 @@ import { number_is } from "./number_is.mjs";
 import { string_to } from "./string_to.mjs";
 export function bible_verses_parse(verses) {
   let result = list_adder(function (la) {
-    let verse_number = "0",
-      tokens;
+    let verse_number = "0";
+    let tokens;
     verse_next();
     each(verses, function (v) {
       bible_verses_parse_text(v, verse_number, tokens);
