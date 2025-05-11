@@ -1,3 +1,4 @@
+import { list_includes_not } from "./list_includes_not.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_size_2 } from "./list_size_2.mjs";
@@ -21,7 +22,7 @@ export async function js_dollar_grandparent_next_each(v, lambda_inner) {
       return;
     }
     let name2 = object_property_get(callee, "name");
-    if (name2 !== fn_name("each")) {
+    if (list_includes_not([fn_name("each")], name2)) {
       return;
     }
     let arguments2 = object_property_get(expression, "arguments");
