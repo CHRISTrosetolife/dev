@@ -17,7 +17,7 @@ import { list_size_equal } from "./list_size_equal.mjs";
 import { list_add } from "./list_add.mjs";
 export async function sandbox_3() {
   let u2 = "https://bible.catholicgallery.org/english/web-2-thessalonians-3/";
-  let { root: root2 } = await http_cache_parse_parsed(u);
+  let { root: root2 } = await http_cache_parse_parsed(u2);
   let v = html_parse_text(root2);
   return v;
   let u =
