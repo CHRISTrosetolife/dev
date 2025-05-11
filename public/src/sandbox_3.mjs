@@ -121,6 +121,9 @@ export async function sandbox_3() {
     await each_index_async(chapters, async function (item, index2) {
       let split = string_split_dash(href);
       let last = list_remove_last(split);
+      log({
+        last,
+      });
       list_add(split, string_combine_multiple([add_1(index2), "/"]));
       let href_new = list_join_dash(split);
       await http_cache(href_new);
