@@ -16,7 +16,7 @@ export async function js_dollar_grandparent_next_each(v, lambda_inner) {
     }
     let expression = object_property_get(next, "expression");
     if (js_node_type_is(expression, "AwaitExpression")) {
-      object_property_get(object, "property_name");
+      expression = object_property_get(expression, "argument");
     }
     if (js_node_type_not_is(expression, "CallExpression")) {
       return;
