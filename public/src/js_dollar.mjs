@@ -142,6 +142,9 @@ export function js_dollar(ast) {
         function lambda_inner(arg_second, callee) {
           let name2 = object_property_get(callee, "name");
           let params = object_property_get(arg_second, "params");
+          let lookup = {
+            [fn_name("each")]: fn_name("each_index"),
+          };
           object_property_set(callee, "name", fn_name("each_index"));
           list_add(params, js_parse_expression(js_name_unique(ast, "index")));
         }
