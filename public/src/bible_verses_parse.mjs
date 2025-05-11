@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { string_split } from "./string_split.mjs";
 import { string_replace_pad } from "./string_replace_pad.mjs";
 import { integer_parse_roman } from "./integer_parse_roman.mjs";
@@ -15,6 +16,7 @@ import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { number_is } from "./number_is.mjs";
 import { string_to } from "./string_to.mjs";
 export function bible_verses_parse(verses) {
+  log("");
   let result = list_adder(function (la) {
     let verse_number = "0",
       tokens = [];
