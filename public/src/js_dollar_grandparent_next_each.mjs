@@ -12,10 +12,10 @@ export async function js_dollar_grandparent_next_each(v, lambda_inner) {
   await js_dollar_grandparent_next(v, lambda);
   async function lambda(a) {
     let { next, s2 } = a;
+    log({
+      next,
+    });
     if (js_node_type_is(next, "AwaitExpression")) {
-      log({
-        next,
-      });
     }
     if (js_node_type_not_is(next, "ExpressionStatement")) {
       return;
