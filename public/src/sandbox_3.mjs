@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { add_1 } from "./add_1.mjs";
 import { each_range_async } from "./each_range_async.mjs";
 import { bible_chapters } from "./bible_chapters.mjs";
@@ -109,11 +110,15 @@ export async function sandbox_3() {
     let book_code = list_get(books, index);
     let chapters = await bible_chapters("engwebu", book_code);
     await each_range_async(chapters, async function (item) {
-      string_suffix_change(
+      let href_new = string_suffix_change(
         href,
         suffix,
         string_combine_multiple(["-", add_1(item), "/"]),
       );
+      log({
+        href_new,
+      });
+      return;
       await http_cache(href);
     });
   });
