@@ -124,7 +124,10 @@ export async function sandbox_3() {
       log({
         last,
       });
-      list_add(split, string_combine_multiple([add_1(index2), "/"]));
+      list_add(
+        split,
+        string_combine_multiple([last === "151/" ? last : add_1(index2), "/"]),
+      );
       let href_new = list_join_dash(split);
       await http_cache(href_new);
     });
