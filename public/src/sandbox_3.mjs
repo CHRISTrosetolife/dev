@@ -109,7 +109,7 @@ export async function sandbox_3() {
   each_index(books, function (book, book_index) {
     log({
       book,
-      h: list_get(books, index),
+      h: list_get(hrefs, book_index),
     });
   });
   assert(list_size_equal, [books, hrefs]);
