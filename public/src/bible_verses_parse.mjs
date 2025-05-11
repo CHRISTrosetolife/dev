@@ -50,7 +50,7 @@ export function bible_verses_parse(verses) {
     }
   });
   let filtered = list_filter(result, function (r) {
-    return list_empty_not_is(object_property_get(object, "property_name"));
+    return list_empty_not_is(object_property_get(r, "tokens"));
   });
   return result;
   function bible_verses_parse_text(c, verse_number, tokens) {
