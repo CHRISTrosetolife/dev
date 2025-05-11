@@ -118,7 +118,8 @@ export async function sandbox_3() {
   assert(list_size_equal, [books, hrefs]);
   await each_index_async(hrefs, async function (href, index) {
     let book_code = list_get(books, index);
-    let chapters = await bible_chapters("engwebu", book_code);$2i
+    let chapters = await bible_chapters("engwebu", book_code);
+    $2i;
     await each_async(chapters, async function (item) {
       let split = string_split_dash(href);
       list_remove_last(split);
