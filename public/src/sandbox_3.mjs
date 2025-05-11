@@ -100,6 +100,7 @@ export async function sandbox_3() {
   ];
   assert(list_size_equal, [books, hrefs]);
   await each_index_async(hrefs, async function (href, index) {
+    string_suffix_replace();
     await http_cache(href);
   });
 }
