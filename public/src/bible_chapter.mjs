@@ -12,6 +12,7 @@ export async function bible_chapter(bible_folder, chapter_name) {
   let root = await bible_chapter_parsed(bible_folder, chapter_name);
   let attribute_values = [
     "d",
+    "ip",
     "m",
     "mi",
     "nb",
