@@ -172,6 +172,39 @@ export function js_dollar(ast) {
           list_remove(s2, parent);
         }
       }
+      if (remaining === "2a") {
+        await js_dollar_grandparent_next(v, lambda);
+        async function lambda(a) {
+          let { next, s2 } = a;
+          if (js_node_type_not_is(next, "ExpressionStatement")) {
+            return;
+          }
+          let expression = object_property_get(next, "expression");
+          if (js_node_type_not_is(expression, "CallExpression")) {
+            return;
+          }
+          let callee = object_property_get(expression, "callee");
+          if (js_node_type_not_is(callee, "Identifier")) {
+            return;
+          }
+          let name2 = object_property_get(callee, "name");
+          if (name2 !== fn_name("each")) {
+            return;
+          }
+          let arguments2 = object_property_get(expression, "arguments");
+          if (!list_size_2(arguments2)) {
+            return;
+          }
+          let s = list_second(arguments2);
+          if (js_node_type_not_is(s, "FunctionExpression")) {
+            return;
+          }
+          let params = object_property_get(s, "params");
+          object_property_set(callee, "name", fn_name("each_index"));
+          list_add(params, js_parse_expression(js_name_unique(ast, "index")));
+          list_remove(s2, parent);
+        }
+      }
       if (remaining === "er") {
         let count = js_name_unique(ast, "count");
         let item = js_name_unique(ast, "item");
