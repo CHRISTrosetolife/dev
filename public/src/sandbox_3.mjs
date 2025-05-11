@@ -1,4 +1,3 @@
-import { each_async } from "./each_async.mjs";
 import { list_join_dash } from "./list_join_dash.mjs";
 import { list_remove_last } from "./list_remove_last.mjs";
 import { string_split_dash } from "./string_split_dash.mjs";
@@ -122,7 +121,7 @@ export async function sandbox_3() {
     await each_index_async(chapters, async function (item, index2) {
       let split = string_split_dash(href);
       list_remove_last(split);
-      list_add(split, string_combine_multiple([add_1(item), "/"]));
+      list_add(split, string_combine_multiple([add_1(index2), "/"]));
       let href_new = list_join_dash(split);
       log({
         href_new,
