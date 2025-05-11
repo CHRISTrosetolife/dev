@@ -10,7 +10,6 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_get } from "./list_get.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { assert } from "./assert.mjs";
-import { http_cache } from "./http_cache.mjs";
 import { html_parse_a_href_surrounded_hrefs } from "./html_parse_a_href_surrounded_hrefs.mjs";
 import { http_cache_parse_parsed } from "./http_cache_parse_parsed.mjs";
 import { list_size_equal } from "./list_size_equal.mjs";
@@ -132,7 +131,7 @@ export async function sandbox_3() {
         last === "151/" ? last : string_combine_multiple([add_1(index2), "/"]),
       );
       let href_new = list_join_dash(split);
-      await http_cache(href_new);
+      let { root } = await http_cache_parse_parsed(href_new);
     });
   });
 }
