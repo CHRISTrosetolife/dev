@@ -1,3 +1,4 @@
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { string_split } from "./string_split.mjs";
 import { string_replace_pad } from "./string_replace_pad.mjs";
 import { integer_parse_roman } from "./integer_parse_roman.mjs";
@@ -46,6 +47,9 @@ export function bible_verses_parse(verses) {
         tokens,
       });
     }
+  });
+  let filtered = list_filter(result, function (r) {
+    return list_empty_not_is(tokens);
   });
   return result;
   function bible_verses_parse_text(c, verse_number, tokens) {
