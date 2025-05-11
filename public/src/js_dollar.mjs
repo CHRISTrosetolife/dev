@@ -201,7 +201,7 @@ export function js_dollar(ast) {
           }
           let params = object_property_get(s, "params");
           log({
-            params,
+            s,
           });
           return;
           object_property_set(callee, "name", fn_name("each_async"));
