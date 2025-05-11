@@ -199,7 +199,7 @@ export function js_dollar(ast) {
           if (js_node_type_not_is(s, "FunctionExpression")) {
             return;
           }
-          object_property_set(object2, "property_name", value2);
+          object_property_set(s, "async", true);
           object_property_set(callee, "name", fn_name("each_async"));
           list_remove(s2, parent);
         }
