@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { log } from "./log.mjs";
 import { add_1 } from "./add_1.mjs";
 import { each_range_async } from "./each_range_async.mjs";
@@ -105,6 +106,7 @@ export async function sandbox_3() {
     "JUD",
     "REV",
   ];
+  each(list, function (item2) {});
   assert(list_size_equal, [books, hrefs]);
   await each_index_async(hrefs, async function (href, index) {
     let book_code = list_get(books, index);
