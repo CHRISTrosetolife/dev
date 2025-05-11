@@ -18,7 +18,8 @@ import { string_to } from "./string_to.mjs";
 export function bible_verses_parse(verses) {
   let result = list_adder(function (la) {
     let verse_number = "0",
-      tokens = [];
+      tokens;
+    verse_next();
     each(verses, function (v) {
       bible_verses_parse_text(v, verse_number, tokens);
       let { children } = v;
@@ -32,17 +33,20 @@ export function bible_verses_parse(verses) {
               verse_number = integer_parse_roman(verse_number);
               verse_number = string_to(verse_number);
             }
-            tokens = [];
-            la({
-              verse_number,
-              tokens,
-            });
+            verse_next();
             return;
           }
         }
         bible_verses_parse_text(c, verse_number, tokens);
       });
     });
+    function verse_next() {
+      tokens = [];
+      la({
+        verse_number,
+        tokens,
+      });
+    }
   });
   return result;
   function bible_verses_parse_text(c, verse_number, tokens) {
