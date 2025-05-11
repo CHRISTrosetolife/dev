@@ -11,9 +11,6 @@ export async function sandbox_3() {
     "https://bible.catholicgallery.org/english/",
     "-1/",
   );
-  await each_async(hrefs, async function (href) {
-    await http_cache(href);
-  });
   ("greek daniel moved to end of old testament:");
   let books = [
     "GEN",
@@ -98,4 +95,7 @@ export async function sandbox_3() {
     "JUD",
     "REV",
   ];
+  await each_async(hrefs, async function (href) {
+    await http_cache(href);
+  });
 }
