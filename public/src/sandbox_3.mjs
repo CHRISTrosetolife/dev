@@ -106,7 +106,11 @@ export async function sandbox_3() {
     "JUD",
     "REV",
   ];
-  each_index(list, function (item2, index2) {});
+  each_index(books, function (book, book_index) {
+    log({
+      book,
+    });
+  });
   assert(list_size_equal, [books, hrefs]);
   await each_index_async(hrefs, async function (href, index) {
     let book_code = list_get(books, index);
