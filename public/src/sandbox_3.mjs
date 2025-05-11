@@ -118,9 +118,10 @@ export async function sandbox_3() {
   assert(list_size_equal, [books, hrefs]);
   await each_index_async(hrefs, async function (href, index) {
     let book_code = list_get(books, index);
-    let chapters = await bible_chapters("engwebu", book_code);
+    let bible_folder = "engwebu";
+    let chapters = await bible_chapters(bible_folder, book_code);
     await each_index_async(chapters, async function (chapter, index2) {
-      let c = await bible_chapter(chapter);
+      let c = await bible_chapter(bible_folder, chapter);
       log({
         c,
       });
