@@ -4,9 +4,6 @@ export async function sandbox_3() {
   let u =
     "https://bible.catholicgallery.org/world-english-bible-with-deuterocanon/";
   let p = await http_cache_parse_parsed(u);
-  let v = await html_parse_a_href_starts_with_hrefs(
-    p,
-    "https://bible.catholicgallery.org/english/",
-  );
+  let v = await html_parse_a_href_starts_with_hrefs(p, "");
   return v;
 }
