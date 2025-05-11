@@ -135,7 +135,12 @@ export async function sandbox_3() {
       let href_new = list_join_dash(split);
       let { root } = await http_cache_parse_parsed(href_new);
       let verses = html_parse_visit_class_list(root, "bibvtxt");
-      assert_message_string(list_size_equal, [verses, c], function () {});
+      assert_message_string(list_size_equal, [verses, c], function () {
+        let v = {
+          chapter,
+        };
+        return v;
+      });
     });
   });
 }
