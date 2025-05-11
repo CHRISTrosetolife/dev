@@ -1,3 +1,4 @@
+import { bible_chapters } from "./bible_chapters.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_suffix_change } from "./string_suffix_change.mjs";
 import { list_get } from "./list_get.mjs";
@@ -104,6 +105,7 @@ export async function sandbox_3() {
   assert(list_size_equal, [books, hrefs]);
   await each_index_async(hrefs, async function (href, index) {
     let book_code = list_get(books, index);
+    await bible_chapters();
     string_suffix_change(href, suffix, string_combine_multiple(["-", n, "/"]));
     await http_cache(href);
   });
