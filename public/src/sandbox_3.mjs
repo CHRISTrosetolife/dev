@@ -1,10 +1,10 @@
+import { each_async } from "./each_async.mjs";
 import { list_join_dash } from "./list_join_dash.mjs";
 import { list_remove_last } from "./list_remove_last.mjs";
 import { string_split_dash } from "./string_split_dash.mjs";
 import { each_index } from "./each_index.mjs";
 import { log } from "./log.mjs";
 import { add_1 } from "./add_1.mjs";
-import { each_range_async } from "./each_range_async.mjs";
 import { bible_chapters } from "./bible_chapters.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_get } from "./list_get.mjs";
@@ -118,11 +118,8 @@ export async function sandbox_3() {
   assert(list_size_equal, [books, hrefs]);
   await each_index_async(hrefs, async function (href, index) {
     let book_code = list_get(books, index);
-    let chapters = await bible_chapters("engwebu", book_code);
-    log({
-      chapters,
-    });
-    await each_range_async(chapters, async function (item) {
+    let chapters = await bible_chapters("engwebu", book_code);$2i
+    await each_async(chapters, async function (item) {
       let split = string_split_dash(href);
       list_remove_last(split);
       list_add(split, string_combine_multiple([add_1(item), "/"]));
