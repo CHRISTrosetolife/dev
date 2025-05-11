@@ -1,3 +1,5 @@
+import { list_join_dash } from "./list_join_dash.mjs";
+import { list_remove_last } from "./list_remove_last.mjs";
 import { string_split_dash } from "./string_split_dash.mjs";
 import { each_index } from "./each_index.mjs";
 import { log } from "./log.mjs";
@@ -5,7 +7,6 @@ import { add_1 } from "./add_1.mjs";
 import { each_range_async } from "./each_range_async.mjs";
 import { bible_chapters } from "./bible_chapters.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { string_suffix_change } from "./string_suffix_change.mjs";
 import { list_get } from "./list_get.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { assert } from "./assert.mjs";
@@ -13,6 +14,7 @@ import { http_cache } from "./http_cache.mjs";
 import { html_parse_a_href_surrounded_hrefs } from "./html_parse_a_href_surrounded_hrefs.mjs";
 import { http_cache_parse_parsed } from "./http_cache_parse_parsed.mjs";
 import { list_size_equal } from "./list_size_equal.mjs";
+import { list_add } from "./list_add.mjs";
 export async function sandbox_3() {
   let u =
     "https://bible.catholicgallery.org/world-english-bible-with-deuterocanon/";
@@ -119,11 +121,9 @@ export async function sandbox_3() {
     let chapters = await bible_chapters("engwebu", book_code);
     await each_range_async(chapters, async function (item) {
       let split = string_split_dash(href);
-      let href_new = string_suffix_change(
-        href,
-        suffix,
-        string_combine_multiple(["-", add_1(item), "/"]),
-      );
+      list_remove_last(split);
+      list_add(split, string_combine_multiple([add_1(item), "/"]));
+      let href_new = list_join_dash(split);
       log({
         href_new,
       });
