@@ -1,3 +1,4 @@
+import { bible_chapter } from "./bible_chapter.mjs";
 import { list_join_dash } from "./list_join_dash.mjs";
 import { list_remove_last } from "./list_remove_last.mjs";
 import { string_split_dash } from "./string_split_dash.mjs";
@@ -118,7 +119,11 @@ export async function sandbox_3() {
   await each_index_async(hrefs, async function (href, index) {
     let book_code = list_get(books, index);
     let chapters = await bible_chapters("engwebu", book_code);
-    await each_index_async(chapters, async function (item, index2) {
+    await each_index_async(chapters, async function (chapter, index2) {
+      let c = await bible_chapter(chapter);
+      log({
+        c,
+      });
       let split = string_split_dash(href);
       let last = list_remove_last(split);
       list_add(
