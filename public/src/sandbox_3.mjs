@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { html_parse_a_href_surrounded_hrefs } from "./html_parse_a_href_surrounded_hrefs.mjs";
 import { http_cache_parse_parsed } from "./http_cache_parse_parsed.mjs";
 export async function sandbox_3() {
@@ -9,5 +10,6 @@ export async function sandbox_3() {
     "https://bible.catholicgallery.org/english/",
     "-1/",
   );
+  each(list, function (item) {});
   return v;
 }
