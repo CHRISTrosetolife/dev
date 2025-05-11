@@ -10,6 +10,7 @@ export async function sandbox_3() {
     "https://bible.catholicgallery.org/english/",
     "-1/",
   );
+  $2a;
   each(list, function (item) {});
   return v;
 }
