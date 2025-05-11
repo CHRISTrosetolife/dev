@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
 import { list_remove } from "./list_remove.mjs";
@@ -12,15 +11,13 @@ export async function js_dollar_grandparent_next_each(v, lambda_inner) {
   await js_dollar_grandparent_next(v, lambda);
   async function lambda(a) {
     let { next, s2 } = a;
-    log({
-      next,
-    });
-    if (js_node_type_is(next, "AwaitExpression")) {
-    }
     if (js_node_type_not_is(next, "ExpressionStatement")) {
       return;
     }
     let expression = object_property_get(next, "expression");
+    if (js_node_type_is(expression, "AwaitExpression")) {
+      object_property_get(object, "property_name");
+    }
     if (js_node_type_not_is(expression, "CallExpression")) {
       return;
     }
