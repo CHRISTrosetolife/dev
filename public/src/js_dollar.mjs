@@ -199,9 +199,8 @@ export function js_dollar(ast) {
           if (js_node_type_not_is(s, "FunctionExpression")) {
             return;
           }
-          let params = object_property_get(s, "params");
-          object_property_set(callee, "name", fn_name("each_index"));
-          list_add(params, js_parse_expression(js_name_unique(ast, "index")));
+          return;
+          object_property_set(callee, "name", fn_name("each_async"));
           list_remove(s2, parent);
         }
       }
