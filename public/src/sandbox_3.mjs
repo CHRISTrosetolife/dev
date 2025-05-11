@@ -95,8 +95,7 @@ export async function sandbox_3() {
     "JUD",
     "REV",
   ];
-  $2i;
-  await each_async(hrefs, async function (href) {
+  await each_index_async(hrefs, async function (href, index) {
     await http_cache(href);
   });
 }
