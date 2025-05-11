@@ -144,8 +144,13 @@ export function js_dollar(ast) {
           let params = object_property_get(arg_second, "params");
           let lookup = {
             [fn_name("each")]: fn_name("each_index"),
+            [fn_name("each_async")]: fn_name("each_index_async"),
           };
-          object_property_set(callee, "name", fn_name("each_index"));
+          object_property_set(
+            callee,
+            "name",
+            object_property_get(object2, "property_name"),
+          );
           list_add(params, js_parse_expression(js_name_unique(ast, "index")));
         }
       }
