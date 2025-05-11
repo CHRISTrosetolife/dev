@@ -1,3 +1,4 @@
+import { add_1 } from "./add_1.mjs";
 import { each_range_async } from "./each_range_async.mjs";
 import { bible_chapters } from "./bible_chapters.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -107,8 +108,13 @@ export async function sandbox_3() {
   await each_index_async(hrefs, async function (href, index) {
     let book_code = list_get(books, index);
     let chapters = await bible_chapters("engwebu", book_code);
-    await each_range_async(count, async function (item) {});
-    string_suffix_change(href, suffix, string_combine_multiple(["-", n, "/"]));
-    await http_cache(href);
+    await each_range_async(chapters, async function (item) {
+      string_suffix_change(
+        href,
+        suffix,
+        string_combine_multiple(["-", add_1(item), "/"]),
+      );
+      await http_cache(href);
+    });
   });
 }
