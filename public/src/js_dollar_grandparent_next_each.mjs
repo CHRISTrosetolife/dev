@@ -22,7 +22,7 @@ export async function js_dollar_grandparent_next_each(v, lambda_inner) {
       return;
     }
     let name2 = object_property_get(callee, "name");
-    if (list_includes_not([fn_name("each")], name2)) {
+    if (list_includes_not([fn_name("each"), fn_name("each_async")], name2)) {
       return;
     }
     let arguments2 = object_property_get(expression, "arguments");
