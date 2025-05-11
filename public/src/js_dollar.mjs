@@ -155,7 +155,13 @@ export function js_dollar(ast) {
         await js_dollar_grandparent_next_each(v, lambda_inner);
         function lambda_inner(arg_second, callee) {
           object_property_set(arg_second, "async", true);
-          object_property_set(callee, "name", fn_name("each_async"));
+          let name2 = object_property_get(callee, "name");
+          let lookup = {
+            [fn_name("each")]: fn_name("each_async"),
+            [fn_name("each_range")]: fn_name("each_range_async"),
+          };
+          let name_new = object_property_get(lookup, name2);
+          object_property_set(callee, "name", name_new);
         }
       }
       if (remaining === "er") {
