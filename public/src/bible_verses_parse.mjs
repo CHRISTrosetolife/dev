@@ -49,7 +49,7 @@ export function bible_verses_parse(verses) {
     }
   });
   let filtered = list_filter(result, function (r) {
-    return list_empty_not_is(tokens);
+    return list_empty_not_is(r);
   });
   return result;
   function bible_verses_parse_text(c, verse_number, tokens) {
