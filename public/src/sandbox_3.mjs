@@ -123,11 +123,7 @@ export async function sandbox_3() {
       list_remove_last(split);
       list_add(split, string_combine_multiple([add_1(index2), "/"]));
       let href_new = list_join_dash(split);
-      log({
-        href_new,
-      });
-      return;
-      await http_cache(href);
+      await http_cache(href_new);
     });
   });
 }
