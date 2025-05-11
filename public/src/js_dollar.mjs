@@ -162,11 +162,14 @@ export function js_dollar(ast) {
           if (!list_size_2(arguments2)) {
             return;
           }
-          let s = list_second(arguments2);
-          if (js_node_type_not_is(s, "FunctionExpression")) {
+          let arg_second = list_second(arguments2);
+          if (js_node_type_not_is(arg_second, "FunctionExpression")) {
             return;
           }
-          let params = object_property_get(s, "params");
+          lambda_inner(arg_second, callee, s2, parent);
+        }
+        function lambda_inner(arg_second, callee, s2, parent) {
+          let params = object_property_get(arg_second, "params");
           object_property_set(callee, "name", fn_name("each_index"));
           list_add(params, js_parse_expression(js_name_unique(ast, "index")));
           list_remove(s2, parent);
