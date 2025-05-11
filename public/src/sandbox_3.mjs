@@ -107,6 +107,7 @@ export async function sandbox_3() {
   await each_index_async(hrefs, async function (href, index) {
     let book_code = list_get(books, index);
     let chapters = await bible_chapters("engwebu", book_code);
+    $2a;
     each_range(count, function (item) {});
     string_suffix_change(href, suffix, string_combine_multiple(["-", n, "/"]));
     await http_cache(href);
