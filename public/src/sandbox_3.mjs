@@ -1,3 +1,4 @@
+import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { list_join_dash } from "./list_join_dash.mjs";
 import { list_remove_last } from "./list_remove_last.mjs";
@@ -132,6 +133,7 @@ export async function sandbox_3() {
       );
       let href_new = list_join_dash(split);
       let { root } = await http_cache_parse_parsed(href_new);
+      let verses = html_parse_visit_class_list(root, "bibvtxt");
     });
   });
 }
