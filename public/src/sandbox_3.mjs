@@ -1,3 +1,4 @@
+import { string_split_dash } from "./string_split_dash.mjs";
 import { each_index } from "./each_index.mjs";
 import { log } from "./log.mjs";
 import { add_1 } from "./add_1.mjs";
@@ -117,6 +118,7 @@ export async function sandbox_3() {
     let book_code = list_get(books, index);
     let chapters = await bible_chapters("engwebu", book_code);
     await each_range_async(chapters, async function (item) {
+      let split = string_split_dash(href);
       let href_new = string_suffix_change(
         href,
         suffix,
