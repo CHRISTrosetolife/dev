@@ -1,9 +1,9 @@
 import { each_index_async } from "./each_index_async.mjs";
-import { never } from "./never.mjs";
 import { assert } from "./assert.mjs";
 import { http_cache } from "./http_cache.mjs";
 import { html_parse_a_href_surrounded_hrefs } from "./html_parse_a_href_surrounded_hrefs.mjs";
 import { http_cache_parse_parsed } from "./http_cache_parse_parsed.mjs";
+import { list_size_equal } from "./list_size_equal.mjs";
 export async function sandbox_3() {
   let u =
     "https://bible.catholicgallery.org/world-english-bible-with-deuterocanon/";
@@ -97,7 +97,7 @@ export async function sandbox_3() {
     "JUD",
     "REV",
   ];
-  assert(never, []);
+  assert(list_size_equal, [books, hrefs]);
   await each_index_async(hrefs, async function (href, index) {
     await http_cache(href);
   });
