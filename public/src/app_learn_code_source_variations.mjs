@@ -1,3 +1,4 @@
+import { list_remove_last } from "./list_remove_last.mjs";
 import { string_size } from "./string_size.mjs";
 import { list_size } from "./list_size.mjs";
 import { number_power_2 } from "./number_power_2.mjs";
@@ -22,7 +23,6 @@ import { string_combine } from "./string_combine.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { object_property_set } from "./object_property_set.mjs";
-import { list_pop } from "./list_pop.mjs";
 export function app_learn_code_source_variations(source) {
   let operators = ["+", "*", "===", "!=="];
   let { filtered, ast } = ast_filtered(source);
@@ -34,7 +34,7 @@ export function app_learn_code_source_variations(source) {
   let result = [];
   let remaining = [s];
   while (list_empty_not_is(remaining)) {
-    let r = list_pop(remaining);
+    let r = list_remove_last(remaining);
     let count = number_power_2(filtered_length);
     for (let i of range(count)) {
       let { filtered, ast } = ast_filtered(r);

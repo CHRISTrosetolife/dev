@@ -1,6 +1,6 @@
+import { list_remove_last } from "./list_remove_last.mjs";
 import { string_to } from "./string_to.mjs";
 import { html_span } from "./html_span.mjs";
-import { list_pop } from "./list_pop.mjs";
 import { list_unique_json_shuffle } from "./list_unique_json_shuffle.mjs";
 import { html_button_next_after } from "./html_button_next_after.mjs";
 import { app_learn_code_answer_correct } from "./app_learn_code_answer_correct.mjs";
@@ -38,7 +38,7 @@ export function app_learn_math_quiz(
       refill(choices);
       choices = list_unique_json_shuffle(choices);
     }
-    let popped = list_pop(choices);
+    let popped = list_remove_last(choices);
     let question = html_span(root);
     let expecteds = expecteds_get(question, popped);
     expecteds = list_map(expecteds, string_to);

@@ -1,3 +1,4 @@
+import { list_remove_last } from "./list_remove_last.mjs";
 import { object_property_add_1_initialize } from "./object_property_add_1_initialize.mjs";
 import { json_to } from "./json_to.mjs";
 import { log_error } from "./log_error.mjs";
@@ -19,7 +20,6 @@ import { on_keypress } from "./on_keypress.mjs";
 import { chalk } from "./chalk.mjs";
 import { exit_aliases } from "./exit_aliases.mjs";
 import { unawait } from "./unawait.mjs";
-import { list_pop } from "./list_pop.mjs";
 import { counter_async } from "./counter_async.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_any } from "./list_any.mjs";
@@ -114,7 +114,7 @@ export async function terminal() {
   async function history_pop() {
     let result = await terminal_data_transform(function lambda(d) {
       let history = object_property_initialize(d, "history", []);
-      let r = list_pop(history);
+      let r = list_remove_last(history);
       d.history_index = list_size(history);
       return r;
     });

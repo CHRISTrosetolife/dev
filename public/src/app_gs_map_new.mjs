@@ -1,3 +1,4 @@
+import { list_remove_last } from "./list_remove_last.mjs";
 import { list_size } from "./list_size.mjs";
 import { number_min } from "./number_min.mjs";
 import { integer_random } from "./integer_random.mjs";
@@ -22,7 +23,6 @@ import { divide } from "./divide.mjs";
 import { floor } from "./floor.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_random_item } from "./list_random_item.mjs";
-import { list_pop } from "./list_pop.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { each_range } from "./each_range.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -157,7 +157,7 @@ export function app_gs_map_new(game) {
   });
   list_shuffle(inside);
   each_range(map_overlays_count, (i) => {
-    let tile = list_pop(inside);
+    let tile = list_remove_last(inside);
     let id = list_random_item(overlays);
     overlay_add_base(tile, id);
   });
@@ -165,7 +165,7 @@ export function app_gs_map_new(game) {
   while (list_empty_not_is(objection_ids_all)) {
     let max = number_min(list_size(objection_ids_all), 3);
     let objection_ids = list_map(range(integer_random(0, max)), (i) =>
-      list_pop(objection_ids_all),
+      list_remove_last(objection_ids_all),
     );
     app_gs_npc_new(game, inside, objection_ids);
   }

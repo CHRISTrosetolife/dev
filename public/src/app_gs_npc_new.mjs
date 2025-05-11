@@ -1,12 +1,12 @@
+import { list_remove_last } from "./list_remove_last.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { bible_names_men } from "./bible_names_men.mjs";
 import { game_img_list_male } from "./game_img_list_male.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { app_gs_tile_overlay_add } from "./app_gs_tile_overlay_add.mjs";
-import { list_pop } from "./list_pop.mjs";
 import { object_merge } from "./object_merge.mjs";
 export function app_gs_npc_new(game, tile_choices, objections) {
-  let tile = list_pop(tile_choices);
+  let tile = list_remove_last(tile_choices);
   let npc = app_gs_tile_overlay_add(tile, "npc");
   npc.direction = "down";
   npc.character = list_random_item(game_img_list_male());

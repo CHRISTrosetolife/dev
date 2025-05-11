@@ -1,9 +1,9 @@
+import { list_remove_last } from "./list_remove_last.mjs";
 import { html_button } from "./html_button.mjs";
 import { app_gs_conversation_witness_choice } from "./app_gs_conversation_witness_choice.mjs";
 import { app_gs_conversation_witness_wrong } from "./app_gs_conversation_witness_wrong.mjs";
 import { list_without } from "./list_without.mjs";
 import { app_gs_objection_ids } from "./app_gs_objection_ids.mjs";
-import { list_pop } from "./list_pop.mjs";
 import { each } from "./each.mjs";
 import { app_gs_conversation_gospel } from "./app_gs_conversation_gospel.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -28,7 +28,7 @@ export async function app_gs_conversation_witness(context, menu_overlay, npc) {
   let choice_correct = await app_gs_conversation_witness_choice(
     objection_id_correct,
     async () => {
-      list_pop(npc.objections);
+      list_remove_last(npc.objections);
       await app_gs_conversation_gospel(context, menu_overlay, npc);
     },
   );

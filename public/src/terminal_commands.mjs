@@ -1,3 +1,4 @@
+import { list_remove_last } from "./list_remove_last.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { string_to } from "./string_to.mjs";
 import { range } from "./range.mjs";
@@ -12,7 +13,6 @@ import { string_combine } from "./string_combine.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_join_underscore } from "./list_join_underscore.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
-import { list_pop } from "./list_pop.mjs";
 import { list_multiple_is } from "./list_multiple_is.mjs";
 import { list_last } from "./list_last.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
@@ -93,7 +93,7 @@ export function terminal_commands(context) {
           if (list_multiple_is(last)) {
             let p;
             do {
-              p = list_pop(last);
+              p = list_remove_last(last);
             } while (string_empty_is(p));
             if (list_empty_not_is(last)) {
               extra = "_";
@@ -121,7 +121,7 @@ export function terminal_commands(context) {
         if (list_empty_is(b)) {
           return;
         }
-        list_pop(b);
+        list_remove_last(b);
         log_clear_write_prompt();
         each(b, keyboard_write);
       },
@@ -139,7 +139,7 @@ export function terminal_commands(context) {
         let tokens = terminal_tokens_get(input);
         let extra = "";
         if (list_empty_not_is(tokens)) {
-          list_pop(tokens);
+          list_remove_last(tokens);
           if (list_empty_not_is(tokens)) {
             extra = " ";
           }
