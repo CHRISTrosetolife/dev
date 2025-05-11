@@ -14,5 +14,4 @@ export async function sandbox_3() {
   await each_async(hrefs, async function (href) {
     await http_cache(href);
   });
-  return v;
 }
