@@ -1,3 +1,6 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { string_suffix_change } from "./string_suffix_change.mjs";
+import { list_get } from "./list_get.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { assert } from "./assert.mjs";
 import { http_cache } from "./http_cache.mjs";
@@ -100,7 +103,8 @@ export async function sandbox_3() {
   ];
   assert(list_size_equal, [books, hrefs]);
   await each_index_async(hrefs, async function (href, index) {
-    string_suffix_replace();
+    let book_code = list_get(list, index2);
+    string_suffix_change(href, suffix, string_combine_multiple(["-", n, "/"]));
     await http_cache(href);
   });
 }
