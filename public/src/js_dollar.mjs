@@ -146,11 +146,8 @@ export function js_dollar(ast) {
             [fn_name("each")]: fn_name("each_index"),
             [fn_name("each_async")]: fn_name("each_index_async"),
           };
-          object_property_set(
-            callee,
-            "name",
-            object_property_get(lookup, name2),
-          );
+          let name_new = object_property_get(lookup, name2);
+          object_property_set(callee, "name", name_new);
           list_add(params, js_parse_expression(js_name_unique(ast, "index")));
         }
       }
