@@ -105,7 +105,7 @@ export async function sandbox_3() {
   assert(list_size_equal, [books, hrefs]);
   await each_index_async(hrefs, async function (href, index) {
     let book_code = list_get(books, index);
-    await bible_chapters();
+    let chapters = await bible_chapters("engwebu", book_code);
     string_suffix_change(href, suffix, string_combine_multiple(["-", n, "/"]));
     await http_cache(href);
   });
