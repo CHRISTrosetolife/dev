@@ -15,12 +15,13 @@ import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { number_is } from "./number_is.mjs";
 import { string_to } from "./string_to.mjs";
 export function bible_verses_parse(verses) {
-  let result = list_adder((la) => {
-    let verse_number, tokens;
-    each(verses, (v) => {
+  let result = list_adder(function (la) {
+    let verse_number = "0",
+      tokens = [];
+    each(verses, function (v) {
       bible_verses_parse_text(v, verse_number, tokens);
       let { children } = v;
-      each(children, (c) => {
+      each(children, function (c) {
         if (c.type === "tag") {
           if (html_parse_class_is(c, "verse")) {
             verse_number = html_parse_text(c);
