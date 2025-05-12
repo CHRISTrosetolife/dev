@@ -1,3 +1,4 @@
+import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_parse_visit_attribute } from "./html_parse_visit_attribute.mjs";
 import { html_parse_visit_class_single } from "./html_parse_visit_class_single.mjs";
@@ -14,7 +15,7 @@ export async function sandbox_3() {
       let { node } = v;
       let { attribs } = node;
       let class2 = object_property_get(attribs, "class");
-      if (false) {
+      if (object_property_exists(object, "property_name")) {
       }
     });
     log({
