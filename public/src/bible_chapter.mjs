@@ -10,6 +10,10 @@ export async function bible_chapter(bible_folder, chapter_name) {
   let root = await bible_chapter_parsed(bible_folder, chapter_name);
   let attribute_values = [
     "d",
+    "li",
+    "li2",
+    "li3",
+    "li4",
     "m",
     "mi",
     "nb",
@@ -22,10 +26,6 @@ export async function bible_chapter(bible_folder, chapter_name) {
     "q2",
     "qm",
     "qr",
-    "li",
-    "li2",
-    "li3",
-    "li4",
   ];
   let verses = html_parse_visit_classes_list(root, attribute_values);
   let main = html_parse_visit_class_single(root, "main");
