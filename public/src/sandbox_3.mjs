@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { each } from "./each.mjs";
 import { list_sort } from "./list_sort.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -30,5 +31,7 @@ export async function sandbox_3() {
   });
   let ps = object_properties(found);
   list_sort(ps);
-  each(list, function (item) {});
+  each(ps, function (p) {
+    log("");
+  });
 }
