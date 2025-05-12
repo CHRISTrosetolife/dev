@@ -32,6 +32,9 @@ export async function sandbox_3() {
   let ps = object_properties(found);
   list_sort(ps);
   each(ps, function (p) {
-    log("");
+    log({
+      property: p,
+      value: object_property_get(object2, "property_name"),
+    });
   });
 }
