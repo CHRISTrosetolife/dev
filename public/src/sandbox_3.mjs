@@ -20,6 +20,9 @@ export async function sandbox_3() {
       let { node } = v;
       let { attribs } = node;
       let class2 = object_property_get(attribs, "class");
+      log({
+        class2,
+      });
       if (object_property_exists_not(found, class2)) {
         object_property_set(object, class2, {
           chapter_name,
