@@ -21,7 +21,7 @@ export async function sandbox_3() {
       let { attribs } = node;
       let class2 = object_property_get(attribs, "class");
       if (object_property_exists_not(found, class2)) {
-        object_property_set(object, class2, {
+        object_property_set(found, class2, {
           chapter_name,
           class: class2,
           text: html_parse_text(node),
