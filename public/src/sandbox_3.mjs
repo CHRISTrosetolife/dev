@@ -4,8 +4,8 @@ import { object_property_get } from "./object_property_get.mjs";
 import { html_parse_visit_attribute } from "./html_parse_visit_attribute.mjs";
 import { html_parse_visit_class_single } from "./html_parse_visit_class_single.mjs";
 import { bible_chapter_parsed } from "./bible_chapter_parsed.mjs";
-import { log } from "./log.mjs";
 import { bible_books_chapter_each } from "./bible_books_chapter_each.mjs";
+import { html_parse_text } from "./html_parse_text.mjs";
 export async function sandbox_3() {
   let found = {};
   let bible_folder = "engwebu";
@@ -17,11 +17,12 @@ export async function sandbox_3() {
       let { attribs } = node;
       let class2 = object_property_get(attribs, "class");
       if (object_property_exists_not(found, class2)) {
-        object_property_set(object, "property_name", value);
+        object_property_set(object, class2, {
+          chapter_name,
+          class: class2,
+          text: html_parse_text(node),
+        });
       }
-    });
-    log({
-      chapter,
     });
   });
 }
