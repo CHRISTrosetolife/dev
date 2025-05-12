@@ -1,3 +1,4 @@
+import { list_sort } from "./list_sort.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -27,4 +28,5 @@ export async function sandbox_3() {
     });
   });
   let ps = object_properties(found);
+  list_sort(ps);
 }
