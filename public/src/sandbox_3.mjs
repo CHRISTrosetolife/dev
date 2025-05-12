@@ -34,7 +34,7 @@ export async function sandbox_3() {
   each(ps, function (p) {
     log({
       property: p,
-      value: object_property_get(object2, "property_name"),
+      value: object_property_get(found, p),
     });
   });
 }
