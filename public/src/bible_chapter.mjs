@@ -26,6 +26,7 @@ export async function bible_chapter(bible_folder, chapter_name) {
     "q2",
     "qm",
     "qr",
+    "qs",
   ];
   let verses = html_parse_visit_classes_list(root, attribute_values);
   let main = html_parse_visit_class_single(root, "main");
