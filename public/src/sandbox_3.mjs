@@ -6,6 +6,7 @@ import { html_parse_visit_class_single } from "./html_parse_visit_class_single.m
 import { bible_chapter_parsed } from "./bible_chapter_parsed.mjs";
 import { bible_books_chapter_each } from "./bible_books_chapter_each.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
+import { object_properties } from "./object_properties.mjs";
 export async function sandbox_3() {
   let found = {};
   let bible_folder = "engwebu";
@@ -25,4 +26,5 @@ export async function sandbox_3() {
       }
     });
   });
+  let ps = object_properties(found);
 }
