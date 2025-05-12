@@ -16,13 +16,10 @@ export async function sandbox_3() {
   await bible_books_chapter_each(bible_folder, async function (chapter_name) {
     let root = await bible_chapter_parsed(bible_folder, chapter_name);
     let main = html_parse_visit_class_single(root, "main");
-    html_parse_visit_attribute(main, function (v) {
+    html_parse_visit_attribute(main, "class", function (v) {
       let { node } = v;
       let { attribs } = node;
       let class2 = object_property_get(attribs, "class");
-      log({
-        class2,
-      });
       if (object_property_exists_not(found, class2)) {
         object_property_set(object, class2, {
           chapter_name,
