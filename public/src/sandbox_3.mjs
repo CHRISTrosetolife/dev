@@ -23,20 +23,20 @@ export async function sandbox_3() {
       let text = list_join_space(
         list_map(list_map_property(verses, "tokens"), list_join_space),
       );
+      let output_path = folder_external_root(
+        path_join([
+          "bible\\english",
+          bible_folder,
+          "apocrypha",
+          string_combine_multiple([book_index_padded, "_", chapter]),
+        ]),
+      );
       log({
-        text,
+        output_path,
       });
       return;
       await uuid_file(sandbox_3, async function (file_path) {
         await file_write(file_path, text);
-        let output_path = folder_external_root(
-          path_join([
-            "bible\\english",
-            bible_folder,
-            "apocrypha",
-            string_combine_multiple([book_index_padded]),
-          ]),
-        );
         let program = folder_external_root(
           "programs\\WPy64-312100\\scripts\\python.bat",
         );
