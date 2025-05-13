@@ -1,5 +1,5 @@
+import { log } from "./log.mjs";
 import { folder_gitignore_path_function_json } from "./folder_gitignore_path_function_json.mjs";
-import { list_join } from "./list_join.mjs";
 import { folder_external_root } from "./folder_external_root.mjs";
 import { uuid_file } from "./uuid_file.mjs";
 import { list_map_property } from "./list_map_property.mjs";
@@ -10,6 +10,7 @@ import { list_first } from "./list_first.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { file_write } from "./file_write.mjs";
+import { command_line } from "./command_line.mjs";
 export async function sandbox_3() {
   let bible_folder = "engwebu";
   let books = await bible_books_apocrypha(bible_folder);
@@ -30,7 +31,14 @@ export async function sandbox_3() {
     let program = folder_external_root(
       "programs\\WPy64-312100\\scripts\\python.bat",
     );
-    list_join([program, "py/tts.py", file_path, output_path]);
+    let command = list_join_space([
+      program,
+      "py/tts.py",
+      file_path,
+      output_path,
+    ]);
+    let result = await command_line(command);
+    log("");
   });
   ("D:\\ ../file.py input.txt output");
   return text;
