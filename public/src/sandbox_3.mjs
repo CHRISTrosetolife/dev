@@ -35,16 +35,16 @@ export async function sandbox_3() {
       let program = folder_external_root(
         "programs\\WPy64-312100\\scripts\\python.bat",
       );
-      let command = list_join_space([
-        program,
-        "py/tts.py",
-        file_path,
-        output_path,
-      ]);
-      log({
-        command,
-      });
       await uuid_file(sandbox_3, async function (file_path) {
+        let command = list_join_space([
+          program,
+          "py/tts.py",
+          file_path,
+          output_path,
+        ]);
+        log({
+          command,
+        });
         await file_write(file_path, text);
         let result = await command_line(command);
         log(result);
