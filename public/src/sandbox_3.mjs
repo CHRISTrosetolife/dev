@@ -1,5 +1,5 @@
+import { folder_gitignore_path_function } from "./folder_gitignore_path_function.mjs";
 import { log } from "./log.mjs";
-import { folder_gitignore_path_function_json } from "./folder_gitignore_path_function_json.mjs";
 import { folder_external_root } from "./folder_external_root.mjs";
 import { uuid_file } from "./uuid_file.mjs";
 import { list_map_property } from "./list_map_property.mjs";
@@ -24,10 +24,7 @@ export async function sandbox_3() {
   );
   await uuid_file(sandbox_3, async function (file_path) {
     await file_write(file_path, text);
-    let output_path = folder_gitignore_path_function_json(
-      sandbox_3,
-      "test_output",
-    );
+    let output_path = folder_gitignore_path_function(sandbox_3, "test_output");
     let program = folder_external_root(
       "programs\\WPy64-312100\\scripts\\python.bat",
     );
