@@ -16,33 +16,34 @@ export async function sandbox_3() {
   let bible_folder = "engwebu";
   let books = await bible_books_apocrypha(bible_folder);
   await each_index_async(books, async function (book, book_index) {
-    await bible_chapters_each(list, async function (item) {});
-    let verses = await bible_chapter(
-      bible_folder,
-      string_combine_multiple([book, "01"]),
-    );
-    let text = list_join_space(
-      list_map(list_map_property(verses, "tokens"), list_join_space),
-    );
-    await uuid_file(sandbox_3, async function (file_path) {
-      await file_write(file_path, text);
-      let output_path = folder_external_root(
-        path_join(["bible\\english", bible_folder, "apocrypha"]),
+    await bible_chapters_each(bible_folder, book, async function (item) {
+      let verses = await bible_chapter(
+        bible_folder,
+        string_combine_multiple([book, "01"]),
       );
-      let program = folder_external_root(
-        "programs\\WPy64-312100\\scripts\\python.bat",
+      let text = list_join_space(
+        list_map(list_map_property(verses, "tokens"), list_join_space),
       );
-      let command = list_join_space([
-        program,
-        "py/tts.py",
-        file_path,
-        output_path,
-      ]);
-      log({
-        command,
+      await uuid_file(sandbox_3, async function (file_path) {
+        await file_write(file_path, text);
+        let output_path = folder_external_root(
+          path_join(["bible\\english", bible_folder, "apocrypha"]),
+        );
+        let program = folder_external_root(
+          "programs\\WPy64-312100\\scripts\\python.bat",
+        );
+        let command = list_join_space([
+          program,
+          "py/tts.py",
+          file_path,
+          output_path,
+        ]);
+        log({
+          command,
+        });
+        let result = await command_line(command);
+        log(result);
       });
-      let result = await command_line(command);
-      log(result);
     });
   });
 }
