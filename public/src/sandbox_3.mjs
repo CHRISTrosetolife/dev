@@ -13,8 +13,8 @@ export async function sandbox_3() {
     bible_folder,
     string_combine_multiple([first, "01"]),
   );
-  list_join_space(
+  let v = list_join_space(
     list_map(list_map_property(verses, "tokens"), list_join_space),
   );
-  return verses;
+  return v;
 }
