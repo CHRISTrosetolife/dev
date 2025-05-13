@@ -1,4 +1,4 @@
-import { folder_gitignore_path_function } from "./folder_gitignore_path_function.mjs";
+import { path_join } from "./path_join.mjs";
 import { log } from "./log.mjs";
 import { folder_external_root } from "./folder_external_root.mjs";
 import { uuid_file } from "./uuid_file.mjs";
@@ -24,7 +24,9 @@ export async function sandbox_3() {
   );
   await uuid_file(sandbox_3, async function (file_path) {
     await file_write(file_path, text);
-    let output_path = folder_gitignore_path_function(sandbox_3, "test_output");
+    let output_path = folder_external_root(
+      path_join(["bible\\english", bible_folder, "apocrypha"]),
+    );
     let program = folder_external_root(
       "programs\\WPy64-312100\\scripts\\python.bat",
     );
