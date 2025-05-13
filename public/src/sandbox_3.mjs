@@ -1,4 +1,6 @@
+import { list_join } from "./list_join.mjs";
 import { folder_external_root } from "./folder_external_root.mjs";
+import { uuid_file } from "./uuid_file.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
@@ -17,7 +19,11 @@ export async function sandbox_3() {
   let v = list_join_space(
     list_map(list_map_property(verses, "tokens"), list_join_space),
   );
-  ("D:programsWPy64-312100scriptspython.bat ../file.py input.txt output");
-  folder_external_root();
+  await uuid_file();
+  ("D:\\ ../file.py input.txt output");
+  let program = folder_external_root(
+    "programs\\WPy64-312100\\scripts\\python.bat",
+  );
+  list_join([program, "py/tts.py"]);
   return v;
 }
