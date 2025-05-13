@@ -38,7 +38,7 @@ export async function sandbox_3() {
       output_path,
     ]);
     let result = await command_line(command);
-    log("");
+    log(result);
   });
   ("D:\\ ../file.py input.txt output");
   return text;
