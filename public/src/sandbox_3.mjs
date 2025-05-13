@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { number_pad_2 } from "./number_pad_2.mjs";
 import { bible_chapters_each } from "./bible_chapters_each.mjs";
 import { command_line } from "./command_line.mjs";
@@ -29,7 +30,12 @@ export async function sandbox_3() {
       await uuid_file(sandbox_3, async function (file_path) {
         await file_write(file_path, text);
         let output_path = folder_external_root(
-          path_join(["bible\\english", bible_folder, "apocrypha"]),
+          path_join([
+            "bible\\english",
+            bible_folder,
+            "apocrypha",
+            string_combine_multiple([book_index_padded]),
+          ]),
         );
         let program = folder_external_root(
           "programs\\WPy64-312100\\scripts\\python.bat",
