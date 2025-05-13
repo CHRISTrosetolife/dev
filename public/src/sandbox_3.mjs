@@ -1,4 +1,3 @@
-import { fn_name } from "./fn_name.mjs";
 import { list_join } from "./list_join.mjs";
 import { folder_external_root } from "./folder_external_root.mjs";
 import { uuid_file } from "./uuid_file.mjs";
@@ -20,7 +19,7 @@ export async function sandbox_3() {
   let v = list_join_space(
     list_map(list_map_property(verses, "tokens"), list_join_space),
   );
-  await uuid_file(fn_name("sandbox_3"));
+  await uuid_file(sandbox_3, function () {});
   ("D:\\ ../file.py input.txt output");
   let program = folder_external_root(
     "programs\\WPy64-312100\\scripts\\python.bat",
