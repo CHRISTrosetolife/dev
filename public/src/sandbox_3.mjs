@@ -1,3 +1,4 @@
+import { number_pad_2 } from "./number_pad_2.mjs";
 import { bible_chapters_each } from "./bible_chapters_each.mjs";
 import { command_line } from "./command_line.mjs";
 import { log } from "./log.mjs";
@@ -16,6 +17,7 @@ export async function sandbox_3() {
   let bible_folder = "engwebu";
   let books = await bible_books_apocrypha(bible_folder);
   await each_index_async(books, async function (book, book_index) {
+    let book_index_padded = number_pad_2(book_index);
     await bible_chapters_each(bible_folder, book, async function (item) {
       let verses = await bible_chapter(
         bible_folder,
