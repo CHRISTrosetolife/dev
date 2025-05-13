@@ -1,3 +1,4 @@
+import { each_async } from "./each_async.mjs";
 import { command_line } from "./command_line.mjs";
 import { log } from "./log.mjs";
 import { path_join } from "./path_join.mjs";
@@ -15,6 +16,7 @@ export async function sandbox_3() {
   let bible_folder = "engwebu";
   let books = await bible_books_apocrypha(bible_folder);
   await each_index_async(books, async function (book, book_index) {
+    await each_async(list, async function (item) {});
     let verses = await bible_chapter(
       bible_folder,
       string_combine_multiple([book, "01"]),
