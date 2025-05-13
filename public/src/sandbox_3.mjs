@@ -25,7 +25,7 @@ export async function sandbox_3() {
       );
       let output_path = folder_external_root(
         path_join([
-          "bible\\english",
+          "bible/english",
           bible_folder,
           "apocrypha",
           string_combine_multiple([book_index_padded, "_", chapter]),
