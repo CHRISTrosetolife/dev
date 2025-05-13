@@ -1,5 +1,7 @@
-import { ebible_classes } from "./ebible_classes.mjs";
+import { bible_books_apocrypha } from "./bible_books_apocrypha.mjs";
+import { list_first } from "./list_first.mjs";
 export async function sandbox_3() {
   let bible_folder = "engwebu";
-  await ebible_classes(bible_folder);
+  let books = await bible_books_apocrypha(bible_folder);
+  let first = list_first(books);
 }
