@@ -6,5 +6,9 @@ export async function sandbox_3() {
   let bible_folder = "engwebu";
   let books = await bible_books_apocrypha(bible_folder);
   let first = list_first(books);
-  await bible_chapter(bible_folder, string_combine_multiple([first, "01"]));
+  let v = await bible_chapter(
+    bible_folder,
+    string_combine_multiple([first, "01"]),
+  );
+  return v;
 }
