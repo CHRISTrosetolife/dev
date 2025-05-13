@@ -23,11 +23,14 @@ export async function sandbox_3() {
   );
   await uuid_file(sandbox_3, async function (file_path) {
     await file_write(file_path, text);
-    let output_path = folder_gitignore_path_function_json(fn, u);
+    let output_path = folder_gitignore_path_function_json(
+      sandbox_3,
+      "test_output",
+    );
     let program = folder_external_root(
       "programs\\WPy64-312100\\scripts\\python.bat",
     );
-    list_join([program, "py/tts.py", file_path, git_]);
+    list_join([program, "py/tts.py", file_path, output_path]);
   });
   ("D:\\ ../file.py input.txt output");
   return text;
