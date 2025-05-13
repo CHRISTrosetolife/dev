@@ -6,6 +6,7 @@ export async function bible_books_html_elements(bible_folder) {
   let root = await bible_file_html_parse(bible_folder, "index");
   let vnavs = html_parse_visit_class_list(root, "vnav");
   let vnav = list_single(vnavs);
-  let book_elements = html_parse_visit_classes_list(vnav, ["oo", "aa", "nn"]);
+  let classes = ["oo", "aa", "nn"];
+  let book_elements = html_parse_visit_classes_list(vnav, classes);
   return book_elements;
 }
