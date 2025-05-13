@@ -1,3 +1,4 @@
+import { each_index_async } from "./each_index_async.mjs";
 import { path_join } from "./path_join.mjs";
 import { log } from "./log.mjs";
 import { folder_external_root } from "./folder_external_root.mjs";
@@ -22,7 +23,7 @@ export async function sandbox_3() {
   let text = list_join_space(
     list_map(list_map_property(verses, "tokens"), list_join_space),
   );
-  $eia;
+  await each_index_async(list, async function (item, index) {});
   await uuid_file(sandbox_3, async function (file_path) {
     await file_write(file_path, text);
     let output_path = folder_external_root(

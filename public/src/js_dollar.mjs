@@ -209,6 +209,19 @@ export function js_dollar(ast) {
         );
         object_replace(node, e);
       }
+      
+      if (remaining === "eia") {
+        let list = js_name_unique(ast, "list");
+        let item = js_name_unique(ast, "item");
+        let index = js_name_unique(ast, "index");
+        let e = js_parse_expression(
+          js_code_call_args(fn_name("each_index_async"), [
+            list,
+            js_code_arrow_block_args_async([item,index], ""),
+          ]),
+        );
+        object_replace(node, e);
+      }
       if (remaining === "el") {
         let value_new = js_block_statement([]);
         js_dollar_else(v, value_new);
