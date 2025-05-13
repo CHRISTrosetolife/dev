@@ -8,6 +8,7 @@ import { bible_books_apocrypha } from "./bible_books_apocrypha.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_join_space } from "./list_join_space.mjs";
+import { file_write } from "./file_write.mjs";
 export async function sandbox_3() {
   let bible_folder = "engwebu";
   let books = await bible_books_apocrypha(bible_folder);
@@ -16,14 +17,16 @@ export async function sandbox_3() {
     bible_folder,
     string_combine_multiple([first, "01"]),
   );
-  let v = list_join_space(
+  let text = list_join_space(
     list_map(list_map_property(verses, "tokens"), list_join_space),
   );
-  await uuid_file(sandbox_3, function () {});
+  await uuid_file(sandbox_3, async function (file_path) {
+    await file_write(file_path, text);
+  });
   ("D:\\ ../file.py input.txt output");
   let program = folder_external_root(
     "programs\\WPy64-312100\\scripts\\python.bat",
   );
   list_join([program, "py/tts.py"]);
-  return v;
+  return text;
 }
