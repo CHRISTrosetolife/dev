@@ -37,6 +37,9 @@ export async function sandbox_3() {
       file_path,
       output_path,
     ]);
+    log({
+      command,
+    });
     let result = await command_line(command);
     log(result);
   });
