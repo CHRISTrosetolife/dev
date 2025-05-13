@@ -22,6 +22,7 @@ export async function sandbox_3() {
   let text = list_join_space(
     list_map(list_map_property(verses, "tokens"), list_join_space),
   );
+  $eia;
   await uuid_file(sandbox_3, async function (file_path) {
     await file_write(file_path, text);
     let output_path = folder_external_root(
