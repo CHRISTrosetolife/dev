@@ -1,3 +1,4 @@
+import { folder_gitignore_path_function_json } from "./folder_gitignore_path_function_json.mjs";
 import { list_join } from "./list_join.mjs";
 import { folder_external_root } from "./folder_external_root.mjs";
 import { uuid_file } from "./uuid_file.mjs";
@@ -22,11 +23,12 @@ export async function sandbox_3() {
   );
   await uuid_file(sandbox_3, async function (file_path) {
     await file_write(file_path, text);
+    let output_path = folder_gitignore_path_function_json(fn, u);
+    let program = folder_external_root(
+      "programs\\WPy64-312100\\scripts\\python.bat",
+    );
+    list_join([program, "py/tts.py", file_path, git_]);
   });
   ("D:\\ ../file.py input.txt output");
-  let program = folder_external_root(
-    "programs\\WPy64-312100\\scripts\\python.bat",
-  );
-  list_join([program, "py/tts.py"]);
   return text;
 }
