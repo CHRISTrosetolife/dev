@@ -1,3 +1,4 @@
+import { json_format_to } from "./json_format_to.mjs";
 import { each } from "./each.mjs";
 import { string_split_comma_space } from "./string_split_comma_space.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
@@ -22,7 +23,7 @@ export async function sandbox_3() {
   let voices = string_split_comma_space(
     "am_adam, am_echo, am_eric, am_fenrir, am_liam, am_michael, am_onyx, am_puck",
   );
-  let outputs = await list_adder_async(async function (la) {
+  let units = await list_adder_async(async function (la) {
     await each_index_async(books, async function (book, book_index) {
       let book_index_padded = number_pad_2(book_index);
       await bible_chapters_each(
@@ -62,7 +63,12 @@ export async function sandbox_3() {
     log({
       command,
     });
-    await file_write(file_path, text);
+    await file_write(
+      file_path,
+      json_format_to({
+        units,
+      }),
+    );
     let result = await command_line(command);
     log(result);
   });
