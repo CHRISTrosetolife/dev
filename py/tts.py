@@ -3,6 +3,7 @@
 import sys
 if len(sys.argv) != 3:
     print("Usage: python file.py <file_path_input>")
+    print(sys.argv)
     sys.exit(1)
 file_path_input = sys.argv[1]
 
