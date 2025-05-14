@@ -24,25 +24,29 @@ export async function sandbox_3() {
   let outputs = await list_adder_async(async function (la) {
     await each_index_async(books, async function (book, book_index) {
       let book_index_padded = number_pad_2(book_index);
-      await bible_chapters_each(bible_folder, book, async function (chapter) {
-        let verses = await bible_chapter(bible_folder, chapter);
-        let text = list_join_space(
-          list_map(list_map_property(verses, "tokens"), list_join_space),
-        );
-        let path = folder_external_root(
-          path_join([
-            "bible",
-            "english",
-            bible_folder,
-            "apocrypha",
-            string_combine_multiple([book_index_padded, "_", chapter]),
-          ]),
-        );
-        la({
-          path,
-          text,
-        });
-      });
+      await bible_chapters_each(
+        bible_folder,
+        book,
+        async function (chapter_code) {
+          let verses = await bible_chapter(bible_folder, chapter_code);
+          let text = list_join_space(
+            list_map(list_map_property(verses, "tokens"), list_join_space),
+          );
+          let path = folder_external_root(
+            path_join([
+              "bible",
+              "english",
+              bible_folder,
+              "apocrypha",
+              string_combine_multiple([book_index_padded, "_", chapter_code]),
+            ]),
+          );
+          la({
+            path,
+            text,
+          });
+        },
+      );
     });
   });
   let program = folder_external_root(
