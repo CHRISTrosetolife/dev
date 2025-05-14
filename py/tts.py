@@ -18,6 +18,7 @@ import soundfile as sf
 import torch
 import os
 import json
+from pathlib import Path
 
 root = json.loads(contents)
 for unit in root['units']:
@@ -31,7 +32,8 @@ for unit in root['units']:
         print(i, gs, ps)
         display(Audio(data=audio, rate=24000, autoplay=i==0))
         file_path_output = folder_path_output + f"_{i + 1}.wav"
-        os.makedirs(file_path_output, exist_ok=True)
+        p = Path(file_path_output)
+        p.parent.mkdir(parents=True, exist_ok=True)
         sf.write(file_path_output, audio, 24000)
         count += 1
 
