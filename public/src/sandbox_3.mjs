@@ -33,19 +33,22 @@ export async function sandbox_3() {
           let text = list_join_space(
             list_map(list_map_property(verses, "tokens"), list_join_space),
           );
-          each(list, function (item) {});
-          let path = folder_external_root(
-            path_join([
-              "bible",
-              "english",
-              bible_folder,
-              "apocrypha",
-              string_combine_multiple([book_index_padded, "_", chapter_code]),
-            ]),
-          );
-          la({
-            path,
-            text,
+          each(voices, function (voice) {
+            let path = folder_external_root(
+              path_join([
+                "bible",
+                "english",
+                bible_folder,
+                "apocrypha",
+                voice,
+                string_combine_multiple([book_index_padded, "_", chapter_code]),
+              ]),
+            );
+            la({
+              path,
+              voice,
+              text,
+            });
           });
         },
       );
