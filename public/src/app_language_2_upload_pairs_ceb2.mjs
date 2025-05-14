@@ -1,3 +1,4 @@
+import { list_sort_map_descending } from "./list_sort_map_descending.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { bible_words_score_language } from "./bible_words_score_language.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
@@ -7,8 +8,6 @@ import { object_property_exists } from "./object_property_exists.mjs";
 import { ceb_definition_en_2 } from "./ceb_definition_en_2.mjs";
 import { each_async } from "./each_async.mjs";
 import { english_words_dictionary_take_soft } from "./english_words_dictionary_take_soft.mjs";
-import { list_sort_map } from "./list_sort_map.mjs";
-import { list_reverse } from "./list_reverse.mjs";
 export async function app_language_2_upload_pairs_ceb2(limit) {
   let scores = await bible_words_score_language("ceb");
   let scores_lookup = list_to_lookup_key_value_property(
