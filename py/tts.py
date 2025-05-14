@@ -20,12 +20,12 @@ import os
 import json
 
 root = json.loads(contents)
-for unit in root.units:
+for unit in root['units']:
     print(json.dump(unit))
-    folder_path_output = unit.path
+    folder_path_output = unit['path']
     pipeline = KPipeline(lang_code='a')
     speed=1
-    generator = pipeline(unit.text, voice=unit.voice, speed=speed)
+    generator = pipeline(unit['text'], voice=unit['voice'], speed=speed)
     count = 0
     for i, (gs, ps, audio) in enumerate(generator):
         print(i, gs, ps)
