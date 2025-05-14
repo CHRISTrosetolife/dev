@@ -20,6 +20,7 @@ import json
 
 root = json.loads(contents)
 for unit in root.units:
+    print(json.dump(unit))
     folder_path_output = unit.path
     pipeline = KPipeline(lang_code='a')
     speed=1
