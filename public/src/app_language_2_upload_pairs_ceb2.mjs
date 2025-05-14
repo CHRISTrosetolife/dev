@@ -31,12 +31,14 @@ export async function app_language_2_upload_pairs_ceb2(limit) {
             let v2 = object_property_get(scores_lookup, d);
             log({
               v2,
+              d,
             });
             return v2;
           }
           let v3 = 0;
           log({
             v3,
+            d,
           });
           return v3;
         });
