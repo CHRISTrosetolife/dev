@@ -1,3 +1,5 @@
+import { exit } from "./exit.mjs";
+import { log } from "./log.mjs";
 import { list_sort_map_descending } from "./list_sort_map_descending.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { bible_words_score_language } from "./bible_words_score_language.mjs";
@@ -29,6 +31,10 @@ export async function app_language_2_upload_pairs_ceb2(limit) {
           let v3 = 0;
           return v3;
         });
+        log({
+          ds,
+        });
+        exit();
         each(ds, function (d) {
           la([d, word]);
         });
