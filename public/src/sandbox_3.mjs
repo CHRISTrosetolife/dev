@@ -1,3 +1,4 @@
+import { each_async } from "./each_async.mjs";
 import { json_format_to } from "./json_format_to.mjs";
 import { each } from "./each.mjs";
 import { string_split_comma_space } from "./string_split_comma_space.mjs";
@@ -24,6 +25,7 @@ export async function sandbox_3() {
     "am_adam, am_echo, am_eric, am_fenrir, am_liam, am_michael, am_onyx, am_puck",
   );
   let units = await list_adder_async(async function (la) {
+    await each_async(list, async function (item) {});
     await each_index_async(books, async function (book, book_index) {
       let book_index_padded = number_pad_2(book_index + 1);
       await bible_chapters_each(
