@@ -25,7 +25,7 @@ export async function sandbox_3() {
         let text = list_join_space(
           list_map(list_map_property(verses, "tokens"), list_join_space),
         );
-        let output_path = folder_external_root(
+        let path = folder_external_root(
           path_join([
             "bible",
             "english",
@@ -34,6 +34,10 @@ export async function sandbox_3() {
             string_combine_multiple([book_index_padded, "_", chapter]),
           ]),
         );
+        la({
+          path,
+          text,
+        });
         let program = folder_external_root(
           "programs\\WPy64-312100\\scripts\\python.bat",
         );
@@ -42,7 +46,7 @@ export async function sandbox_3() {
             program,
             "py/tts.py",
             file_path,
-            output_path,
+            path,
           ]);
           log({
             command,
