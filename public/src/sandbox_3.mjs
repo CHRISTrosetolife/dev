@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { string_split_comma_space } from "./string_split_comma_space.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -32,6 +33,7 @@ export async function sandbox_3() {
           let text = list_join_space(
             list_map(list_map_property(verses, "tokens"), list_join_space),
           );
+          each(list, function (item) {});
           let path = folder_external_root(
             path_join([
               "bible",
