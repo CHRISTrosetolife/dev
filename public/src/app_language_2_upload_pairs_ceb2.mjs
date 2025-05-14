@@ -1,5 +1,3 @@
-import { exit } from "./exit.mjs";
-import { log } from "./log.mjs";
 import { list_sort_map_descending } from "./list_sort_map_descending.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { bible_words_score_language } from "./bible_words_score_language.mjs";
@@ -23,29 +21,14 @@ export async function app_language_2_upload_pairs_ceb2(limit) {
       let r = await ceb_definition_en_2(word);
       if (object_property_exists(r, word)) {
         let ds = object_property_get(r, word);
-        log({
-          ds,
-        });
         list_sort_map_descending(ds, function (d) {
           if (object_property_exists(scores_lookup, d)) {
             let v2 = object_property_get(scores_lookup, d);
-            log({
-              v2,
-              d,
-            });
             return v2;
           }
           let v3 = 0;
-          log({
-            v3,
-            d,
-          });
           return v3;
         });
-        log({
-          ds,
-        });
-        exit();
         each(ds, function (d) {
           la([d, word]);
         });
