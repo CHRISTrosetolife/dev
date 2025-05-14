@@ -59,7 +59,7 @@ export async function sandbox_3() {
     "programs\\WPy64-312100\\scripts\\python.bat",
   );
   await uuid_file(sandbox_3, async function (file_path) {
-    let command = list_join_space([program, "py/tts.py", file_path, path]);
+    let command = list_join_space([program, "py/tts.py", file_path]);
     log({
       command,
     });
