@@ -1,7 +1,7 @@
 #!pip install -q kokoro>=0.9.2 soundfile
 #!apt-get -qq -y install espeak-ng > /dev/null 2>&1
 import sys
-if len(sys.argv) != 3:
+if len(sys.argv) != 2:
     print("Usage: python file.py <file_path_input>")
     print(sys.argv)
     sys.exit(1)
@@ -10,7 +10,7 @@ file_path_input = sys.argv[1]
 contents = ''
 with open(file_path_input, 'r', encoding='utf-8') as f:
     contents = f.read()
-print(contents)
+#print(contents)
 
 from kokoro import KPipeline
 from IPython.display import display, Audio
