@@ -1,3 +1,4 @@
+import { list_adder_async } from "./list_adder_async.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { number_pad_2 } from "./number_pad_2.mjs";
 import { bible_chapters_each } from "./bible_chapters_each.mjs";
@@ -16,6 +17,7 @@ import { list_join_space } from "./list_join_space.mjs";
 export async function sandbox_3() {
   let bible_folder = "engwebu";
   let books = await bible_books_apocrypha(bible_folder);
+  let outputs = await list_adder_async(async function (la) {
   await each_index_async(books, async function (book, book_index) {
     let book_index_padded = number_pad_2(book_index);
     await bible_chapters_each(bible_folder, book, async function (chapter) {
@@ -50,5 +52,5 @@ export async function sandbox_3() {
         log(result);
       });
     });
-  });
+  });});
 }
