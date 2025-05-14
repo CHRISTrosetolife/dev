@@ -1,3 +1,4 @@
+import { string_split_comma_space } from "./string_split_comma_space.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { number_pad_2 } from "./number_pad_2.mjs";
@@ -41,24 +42,19 @@ export async function sandbox_3() {
           path,
           text,
         });
-        let program = folder_external_root(
-          "programs\\WPy64-312100\\scripts\\python.bat",
-        );
-        await uuid_file(sandbox_3, async function (file_path) {
-          let command = list_join_space([
-            program,
-            "py/tts.py",
-            file_path,
-            path,
-          ]);
-          log({
-            command,
-          });
-          await file_write(file_path, text);
-          let result = await command_line(command);
-          log(result);
-        });
       });
     });
+  });
+  let program = folder_external_root(
+    "programs\\WPy64-312100\\scripts\\python.bat",
+  );
+  await uuid_file(sandbox_3, async function (file_path) {
+    let command = list_join_space([program, "py/tts.py", file_path, path]);
+    log({
+      command,
+    });
+    await file_write(file_path, text);
+    let result = await command_line(command);
+    log(result);
   });
 }
