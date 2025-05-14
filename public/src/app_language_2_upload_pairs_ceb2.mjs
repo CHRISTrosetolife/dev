@@ -22,7 +22,7 @@ export async function app_language_2_upload_pairs_ceb2(limit) {
       let r = await ceb_definition_en_2(word);
       if (object_property_exists(r, word)) {
         let ds = object_property_get(r, word);
-        list_sort_map(ds, function (d) {
+        list_sort_map_descending(ds, function (d) {
           if (object_property_exists(scores_lookup, d)) {
             let v2 = object_property_get(scores_lookup, d);
             return v2;
@@ -30,7 +30,6 @@ export async function app_language_2_upload_pairs_ceb2(limit) {
           let v3 = 0;
           return v3;
         });
-        list_reverse(ds);
         each(ds, function (d) {
           la([d, word]);
         });
