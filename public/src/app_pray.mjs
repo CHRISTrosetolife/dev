@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { html_span } from "./html_span.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
 import { sleep_0 } from "./sleep_0.mjs";
@@ -38,6 +39,7 @@ export async function app_pray() {
     let v = p;
     return v;
   });
+  html_button(body, "Scroll to top", function () {});
   await sleep_0();
   html_scroll_center(list_get(rows, index_load));
   function colorize(p) {
