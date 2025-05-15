@@ -29,7 +29,7 @@ export async function catholic_bishops_letter(letter) {
   let s = list_second(uls);
   let s_children = html_parse_children(s);
   let v2 = list_map(s_children, function (li) {
-    log(html_parse_text(li));
+    log(li);
     let v3 = html_parse_text(html_parse_visit_tag_first(li, "a"));
     return v3;
   });
