@@ -1,3 +1,4 @@
+import { list_size } from "./list_size.mjs";
 import { log } from "./log.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
@@ -12,5 +13,5 @@ export async function catholic_bishops_letter(letter) {
   let { root } = await http_cache_parse_parsed(url);
   let body = html_parse_visit_tag_single(root, "body");
   let uls = html_parse_visit_tag_list(body, "ul");
-  log("");
+  log(list_size(uls));
 }
