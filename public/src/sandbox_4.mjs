@@ -13,6 +13,6 @@ export async function sandbox_4() {
     ]);
     let { root } = await http_cache_parse_parsed(url);
     let body = html_parse_visit_tag_single(root, "body");
-    html_parse_visit_tag_list();
+    let uls = html_parse_visit_tag_list(body, "ul");
   });
 }
