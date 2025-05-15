@@ -1,4 +1,3 @@
-import { app_en_ur_download } from "./app_en_ur_download.mjs";
 export async function sandbox_4() {
-  await app_en_ur_download();
+  let url = "https://www.catholic-hierarchy.org/bishop/laa.html";
 }
