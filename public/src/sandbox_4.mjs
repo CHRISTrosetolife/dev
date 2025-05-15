@@ -6,13 +6,17 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { keyboard_keys_sorted } from "./keyboard_keys_sorted.mjs";
 export async function sandbox_4() {
   await each_async(keyboard_keys_sorted(), async function (letter) {
+    await catholic_bishops_letter(letter);
+  });
+}
+async function catholic_bishops_letter(letter) {
     let url = string_combine_multiple([
-      "https://www.catholic-hierarchy.org/bishop/la",
-      letter,
-      ".html",
+        "https://www.catholic-hierarchy.org/bishop/la",
+        letter,
+        ".html",
     ]);
     let { root } = await http_cache_parse_parsed(url);
     let body = html_parse_visit_tag_single(root, "body");
     let uls = html_parse_visit_tag_list(body, "ul");
-  });
 }
+
