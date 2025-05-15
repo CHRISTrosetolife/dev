@@ -15,39 +15,43 @@ import { list_map } from "./list_map.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 export async function sandbox_3() {
   let bible_folder = "engwebu";
-  let books = await bible_books_apocrypha(bible_folder);
-  let voices = kokoro_voices_male();
-  let units = await list_adder_async(async function (la) {
-    await each_async(voices, async function (voice) {
-      await each_index_async(books, async function (book, book_index) {
-        let book_index_padded = number_pad_2(book_index + 1);
-        await bible_chapters_each(
-          bible_folder,
-          book,
-          async function (chapter_code) {
-            let verses = await bible_chapter(bible_folder, chapter_code);
-            let text = list_join_space(
-              list_map(list_map_property(verses, "tokens"), list_join_space),
-            );
-            let path = folder_external_root(
-              path_join([
-                "bible",
-                "english",
-                bible_folder,
-                "apocrypha",
-                voice,
-                string_combine_multiple([book_index_padded, "_", chapter_code]),
-              ]),
-            );
-            la({
-              path,
-              voice,
-              text,
-            });
-          },
-        );
-      });
-    });
-  });
-  await kokoro_tts(units);
+  await kokoro_tts_apocrypha(bible_folder);
 }
+async function kokoro_tts_apocrypha(bible_folder) {
+    let books = await bible_books_apocrypha(bible_folder);
+    let voices = kokoro_voices_male();
+    let units = await list_adder_async(async function (la) {
+        await each_async(voices, async function (voice) {
+            await each_index_async(books, async function (book, book_index) {
+                let book_index_padded = number_pad_2(book_index + 1);
+                await bible_chapters_each(
+                    bible_folder,
+                    book,
+                    async function (chapter_code) {
+                        let verses = await bible_chapter(bible_folder, chapter_code);
+                        let text = list_join_space(
+                            list_map(list_map_property(verses, "tokens"), list_join_space)
+                        );
+                        let path = folder_external_root(
+                            path_join([
+                                "bible",
+                                "english",
+                                bible_folder,
+                                "apocrypha",
+                                voice,
+                                string_combine_multiple([book_index_padded, "_", chapter_code]),
+                            ])
+                        );
+                        la({
+                            path,
+                            voice,
+                            text,
+                        });
+                    }
+                );
+            });
+        });
+    });
+    await kokoro_tts(units);
+}
+
