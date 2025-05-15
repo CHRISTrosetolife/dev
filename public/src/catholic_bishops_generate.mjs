@@ -1,3 +1,4 @@
+import { generate_list_fn } from "./generate_list_fn.mjs";
 import { catholic_bishops_letter } from "./catholic_bishops_letter.mjs";
 import { keyboard_keys_sorted } from "./keyboard_keys_sorted.mjs";
 import { each_async } from "./each_async.mjs";
@@ -9,4 +10,5 @@ export async function catholic_bishops_generate() {
       la(bishops);
     });
   });
+  await generate_list_fn();
 }
