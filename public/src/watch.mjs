@@ -46,6 +46,7 @@ export async function watch() {
     return result;
   }
   async function on_watch(event, path, fn, message_get) {
+    log("");
     if (event !== "change") {
       return;
     }
