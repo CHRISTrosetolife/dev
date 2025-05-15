@@ -39,7 +39,9 @@ export async function app_pray() {
     let v = p;
     return v;
   });
-  html_button(body, "Scroll to top", function () {});
+  html_button(body, "Scroll to top", function () {
+    html_scroll_center(top);
+  });
   await sleep_0();
   html_scroll_center(list_get(rows, index_load));
   function colorize(p) {
