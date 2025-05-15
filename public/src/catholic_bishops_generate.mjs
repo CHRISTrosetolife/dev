@@ -12,5 +12,5 @@ export async function catholic_bishops_generate() {
       });
     });
     return v;
-  });
+  }, catholic_bishops_generate);
 }
