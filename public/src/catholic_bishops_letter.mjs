@@ -21,7 +21,7 @@ export async function catholic_bishops_letter(letter) {
   let body = html_parse_visit_tag_single(root, "body");
   let tag_name = "ul";
   let uls = html_parse_children_named(body, tag_name);
-  log("");
+  log(html_parse_text(uls[0]));
   assert(equal, [list_size(uls), 2]);
   let s = list_second(uls);
   let s_children = html_parse_visit_tag_list(s, "li");
