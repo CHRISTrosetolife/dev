@@ -31,6 +31,7 @@ for unit in root['units']:
     for i, (gs, ps, audio) in enumerate(generator):
         print('i:')
         print(i)
+        ' this is the text to save :gs'
         print('gs:')
         print(gs)
         print('ps:')
