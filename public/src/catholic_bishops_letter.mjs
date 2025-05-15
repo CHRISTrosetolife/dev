@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { html_parse_visit_tag_first } from "./html_parse_visit_tag_first.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_second } from "./list_second.mjs";
@@ -28,7 +29,7 @@ export async function catholic_bishops_letter(letter) {
   let s = list_second(uls);
   let s_children = html_parse_children(s);
   let v2 = list_map(s_children, function (li) {
-    ongamepadconnected(html_parse_text(li));
+    log(html_parse_text(li));
     let v3 = html_parse_text(html_parse_visit_tag_first(li, "a"));
     return v3;
   });
