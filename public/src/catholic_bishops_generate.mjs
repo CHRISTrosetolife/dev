@@ -10,5 +10,5 @@ export async function catholic_bishops_generate() {
       la(bishops);
     });
   });
-  await generate_list_fn();
+  await generate_list_fn(function () {});
 }
