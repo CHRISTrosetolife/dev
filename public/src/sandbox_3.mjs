@@ -1,6 +1,6 @@
+import { kokoro_voices_male } from "./kokoro_voices_male.mjs";
 import { each_async } from "./each_async.mjs";
 import { json_format_to } from "./json_format_to.mjs";
-import { string_split_comma_space } from "./string_split_comma_space.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { number_pad_2 } from "./number_pad_2.mjs";
@@ -20,9 +20,7 @@ import { list_join_space } from "./list_join_space.mjs";
 export async function sandbox_3() {
   let bible_folder = "engwebu";
   let books = await bible_books_apocrypha(bible_folder);
-  let voices = string_split_comma_space(
-    "am_adam, am_echo, am_eric, am_fenrir, am_liam, am_michael, am_onyx, am_puck",
-  );
+  let voices = kokoro_voices_male();
   let units = await list_adder_async(async function (la) {
     await each_async(voices, async function (voice) {
       await each_index_async(books, async function (book, book_index) {
