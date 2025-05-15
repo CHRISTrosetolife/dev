@@ -1,3 +1,4 @@
+import { html_span } from "./html_span.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
 import { sleep_0 } from "./sleep_0.mjs";
 import { html_style_background_color_yellow } from "./html_style_background_color_yellow.mjs";
@@ -14,6 +15,7 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { null_not_is } from "./null_not_is.mjs";
 export async function app_pray() {
   let body = html_style_default_initialize();
+  let top = html_span(body);
   let ps = prayers();
   let pl = prayers_list(ps);
   let index_load = storage_local_get(app_pray, "prayer_index");
