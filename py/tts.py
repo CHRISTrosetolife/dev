@@ -29,7 +29,12 @@ for unit in root['units']:
     generator = pipeline(unit['text'], voice=unit['voice'], speed=speed)
     count = 0
     for i, (gs, ps, audio) in enumerate(generator):
-        print(i, gs, ps)
+        print('i:')
+        print(i)
+        print('gs:')
+        print(gs)
+        print('ps:')
+        print(ps)
         display(Audio(data=audio, rate=24000, autoplay=i==0))
         file_path_output = folder_path_output + f"_{i + 1}.wav"
         p = Path(file_path_output)
