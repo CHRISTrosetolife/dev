@@ -6,7 +6,8 @@ export async function app_pray2() {
   let bishops = catholic_bishops();
   let ps = list_map_index(bishops, function (b, index) {
     let v = string_combine_multiple([
-      "Save and bless ",
+      index + 1,
+      ": Save and bless ",
       b,
       " and his family, friends, and fans; Lead him and them to speak truth in love about unity, head coverings, homosexuality, transgender, and men and women regarding marriage and ministry;",
     ]);
