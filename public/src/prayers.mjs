@@ -14,7 +14,7 @@ export function prayers() {
     "Cause me to perfectly obey the Holy Spirit",
     "May the words of my mouth and the meditation of my heart be pleasing in your sight, O Lord, my Rock and my Redeemer",
     "Cause me to fulfill my ministry",
-    "Cause me to be with Jesus today or rather live on earth than die",
+    "Cause me to rather live on earth than die",
     "Cause me to suffer in the flesh and cease from sin",
     "From now on cause all disciples of Jesus to suffer in the flesh and cease from sin",
     "Cause me to either speak perfectly or be silent",
