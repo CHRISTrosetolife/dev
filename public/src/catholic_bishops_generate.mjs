@@ -1,3 +1,4 @@
+import { list_adder } from "./list_adder.mjs";
 import { each_async } from "./each_async.mjs";
 import { catholic_bishops_page } from "./catholic_bishops_page.mjs";
 import { list_without } from "./list_without.mjs";
@@ -18,7 +19,7 @@ export async function catholic_bishops_generate() {
     let { root } = await http_iso_8859_1_cache_parse_parsed(url);
     let pages = html_parse_a_href_starts_with_hrefs(root, page_prefix);
     pages = list_without(pages, page_file_name);
-    $lama;
+    list_adder(function (la) {});
     let result = await each_async(pages, async function (item) {
       let page_url = string_combine_multiple([folder, item]);
       let v = await catholic_bishops_page(page_url);
