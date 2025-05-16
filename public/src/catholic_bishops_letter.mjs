@@ -1,6 +1,5 @@
+import { http_iso_8859_1_cache_parse_parsed } from "./http_iso_8859_1_cache_parse_parsed.mjs";
 import { file_extension_html } from "./file_extension_html.mjs";
-import { http_iso_8859_1_cache } from "./http_iso_8859_1_cache.mjs";
-import { html_parse_parsed } from "./html_parse_parsed.mjs";
 import { html_parse_children_named } from "./html_parse_children_named.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { html_parse_visit_tag_first } from "./html_parse_visit_tag_first.mjs";
@@ -32,9 +31,3 @@ export async function catholic_bishops_letter(letter) {
   });
   return v2;
 }
-async function http_iso_8859_1_cache_parse_parsed(url) {
-    let html = await http_iso_8859_1_cache(url);
-    let p = await html_parse_parsed(html);
-    return p;
-}
-
