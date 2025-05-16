@@ -31,7 +31,8 @@ export async function app_pray_generic(ps) {
         p_old.selected = false;
         html_style_background_color_transparent(p_old);
       }
-      if (false) {
+      if (p.selected) {
+        html_scroll_center(p);
       }
       let value = p.selected ? index : null;
       storage_local_set(app_pray, "prayer_index", value);
