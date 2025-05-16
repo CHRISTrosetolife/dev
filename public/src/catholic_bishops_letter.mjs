@@ -12,13 +12,15 @@ import { list_size } from "./list_size.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
+import iconv from "iconv-lite";
 export async function catholic_bishops_letter(letter) {
   let url = string_combine_multiple([
     "https://www.catholic-hierarchy.org/bishop/la",
     letter,
     ".html",
   ]);
-  let html = await http_cache(url);
+  let html_encoded = await http_cache(url);
+  let html = iconv.decode(html_encoded, "ISO-8859-1");
   let p = await html_parse_parsed(html);
   let { root } = p;
   let body = html_parse_visit_tag_single(root, "body");
