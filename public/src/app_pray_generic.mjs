@@ -1,3 +1,4 @@
+import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { prayers_list_begin } from "./prayers_list_begin.mjs";
 import { list_get_wrap } from "./list_get_wrap.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
@@ -25,9 +26,10 @@ export async function app_pray_generic(ps) {
   let rows = list_map_index(pl, function lambda_each(prayer, index) {
     let d = html_div(body, prayer);
     d.selected = index === index_load;
-    if (false) {
+    if (d.selected) {
+      html_p_text_multiple(d, prayers_list_begin());
     }
-    prayers_list_begin(), html_p_text(d, prayer);
+    html_p_text(d, prayer);
     colorize(d, index);
     html_on_click(d, function () {
       d.selected = !d.selected;
