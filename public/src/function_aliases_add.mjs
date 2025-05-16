@@ -18,10 +18,6 @@ export async function function_aliases_add(aliases, function_name) {
   let existing = function_aliases();
   let split = string_split_comma(aliases);
   each(split, function (s) {
-    log({
-      s,
-      function_name,
-    });
     assert(less_than_by, [s, function_name, string_size]);
   });
   let duplicates = list_filter(split, function (s) {
