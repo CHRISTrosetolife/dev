@@ -1,4 +1,4 @@
-import { http_buffer } from "./http_buffer.mjs";
+import { http_iso_8859_1 } from "./http_iso_8859_1.mjs";
 import { html_parse_parsed } from "./html_parse_parsed.mjs";
 import { log } from "./log.mjs";
 import { html_parse_children_named } from "./html_parse_children_named.mjs";
@@ -19,8 +19,7 @@ export async function catholic_bishops_letter(letter) {
     letter,
     ".html",
   ]);
-  let b = await http_buffer(url);
-  let html = iconv.decode(b, "ISO-8859-1");
+  let html = await http_iso_8859_1(url);
   let p = await html_parse_parsed(html);
   let { root } = p;
   let body = html_parse_visit_tag_single(root, "body");
