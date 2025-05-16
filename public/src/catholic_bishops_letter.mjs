@@ -1,3 +1,4 @@
+import { file_extension_html } from "./file_extension_html.mjs";
 import { http_iso_8859_1_cache } from "./http_iso_8859_1_cache.mjs";
 import { html_parse_parsed } from "./html_parse_parsed.mjs";
 import { html_parse_children_named } from "./html_parse_children_named.mjs";
@@ -15,7 +16,7 @@ export async function catholic_bishops_letter(letter) {
   let url = string_combine_multiple([
     "https://www.catholic-hierarchy.org/bishop/la",
     letter,
-    ".html",
+    file_extension_html(),
   ]);
   let html = await http_iso_8859_1_cache(url);
   let p = await html_parse_parsed(html);

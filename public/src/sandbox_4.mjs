@@ -1,3 +1,4 @@
 export async function sandbox_4() {
-  let url = "https://www.catholic-hierarchy.org/bishop/ll.html";
+  let prefix = "https://www.catholic-hierarchy.org/bishop/ll";
+  let url = ($s,prefix,file_extension_html())
 }
