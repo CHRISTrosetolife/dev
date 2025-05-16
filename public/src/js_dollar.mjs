@@ -209,7 +209,6 @@ export function js_dollar(ast) {
         );
         object_replace(node, e);
       }
-      
       if (remaining === "eia") {
         let list = js_name_unique(ast, "list");
         let item = js_name_unique(ast, "item");
@@ -217,7 +216,7 @@ export function js_dollar(ast) {
         let e = js_parse_expression(
           js_code_call_args(fn_name("each_index_async"), [
             list,
-            js_code_arrow_block_args_async([item,index], ""),
+            js_code_arrow_block_args_async([item, index], ""),
           ]),
         );
         object_replace(node, e);
@@ -330,6 +329,14 @@ export function js_dollar(ast) {
         let e = js_parse_expression(
           js_code_call_args(fn_name("list_adder_multiple"), [
             js_code_arrow_block_args([js_name_unique(ast, "la")], ""),
+          ]),
+        );
+        object_replace(node, e);
+      }
+      if (remaining === "lama") {
+        let e = js_parse_expression(
+          js_code_call_args(fn_name("list_adder_multiple_async"), [
+            js_code_arrow_block_args_async([js_name_unique(ast, "la")], ""),
           ]),
         );
         object_replace(node, e);
