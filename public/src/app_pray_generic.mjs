@@ -1,4 +1,3 @@
-import { html_style_background_color } from "./html_style_background_color.mjs";
 import { sleep_0 } from "./sleep_0.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
 import { html_button } from "./html_button.mjs";
@@ -49,12 +48,7 @@ export async function app_pray_generic(ps) {
   function colorize(p, index) {
     let choices = ["MintGreen", "GrassGreen", "EmeraldGreen"];
     if (false) {
+    } else {
     }
-    (p.selected
-      ? function (q) {
-          let v2 = html_style_background_color(q);
-          return v2;
-        }
-      : html_style_background_color_transparent)(p);
   }
 }
