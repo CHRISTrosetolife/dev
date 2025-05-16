@@ -9,13 +9,17 @@ import { prayers_family } from "./prayers_family.mjs";
 import { list_denest } from "./list_denest.mjs";
 export function prayers() {
   let v = list_denest([
+    "Cause me to perfectly and maximally glorify the Father",
+    "Cause me to perfectly and maximally glorify Jesus",
+    "Cause me to perfectly and maximally glorify the Holy Spirit",
     "Cause me to perfectly obey the Father",
     "Cause me to perfectly obey Jesus",
     "Cause me to perfectly obey the Holy Spirit",
     "May the words of my mouth and the meditation of my heart be pleasing in your sight, O Lord, my Rock and my Redeemer",
     "Cause me to fulfill my ministry",
-    "Cause me to rather live on earth than die",
     "Cause me to suffer in the flesh and cease from sin",
+    "Cause me to never be hospitalized again",
+    "Cause me to rather live on earth than die",
     "From now on cause all disciples of Jesus to suffer in the flesh and cease from sin",
     "Cause me to either speak perfectly or be silent",
     "If possible have mercy on all creation",
