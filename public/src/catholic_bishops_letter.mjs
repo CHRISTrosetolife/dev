@@ -17,17 +17,21 @@ export async function catholic_bishops_letter(letter) {
     letter,
     file_extension_html(),
   ]);
-  let p = await http_iso_8859_1_cache_parse_parsed(url);
-  let { root } = p;
-  let body = html_parse_visit_tag_single(root, "body");
-  let tag_name = "ul";
-  let uls = html_parse_children_named(body, tag_name);
-  assert(equal, [list_size(uls), 2]);
-  let s = list_second(uls);
-  let s_children = html_parse_visit_tag_list(s, "li");
-  let v2 = list_map(s_children, function (li) {
-    let v3 = html_parse_text(html_parse_visit_tag_first(li, "a"));
-    return v3;
-  });
-  return v2;
+  return await catholic_bishops_page(url);
 }
+async function catholic_bishops_page(url) {
+    let p = await http_iso_8859_1_cache_parse_parsed(url);
+    let { root } = p;
+    let body = html_parse_visit_tag_single(root, "body");
+    let tag_name = "ul";
+    let uls = html_parse_children_named(body, tag_name);
+    assert(equal, [list_size(uls), 2]);
+    let s = list_second(uls);
+    let s_children = html_parse_visit_tag_list(s, "li");
+    let v2 = list_map(s_children, function (li) {
+        let v3 = html_parse_text(html_parse_visit_tag_first(li, "a"));
+        return v3;
+    });
+    return v2;
+}
+
