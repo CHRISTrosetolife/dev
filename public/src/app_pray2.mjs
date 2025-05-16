@@ -4,7 +4,7 @@ import { app_pray_generic } from "./app_pray_generic.mjs";
 import { list_map } from "./list_map.mjs";
 export async function app_pray2() {
   let bishops = catholic_bishops();
-  list_map(bishops, function (b) {
+  let ps = list_map(bishops, function (b) {
     let v = string_combine_multiple([
       "Save and bless ",
       b,
