@@ -6,7 +6,11 @@ export function prayers_countries() {
   let c = countries_names();
   let m = list_map(c, string_split_comma_space_reverse);
   let v = list_map(m, function (a) {
-    let v2 = string_combine_multiple(["Save and bless ", a]);
+    let v2 = string_combine_multiple([
+      "Save and bless ",
+      a,
+      " and may the people love perfectly",
+    ]);
     return v2;
   });
   return v;
