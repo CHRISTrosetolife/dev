@@ -20,7 +20,7 @@ export async function catholic_bishops_generate() {
     let pages = html_parse_a_href_starts_with_hrefs(root, page_prefix);
     pages = list_without(pages, page_file_name);
     await list_adder_multiple_async(async function (la) {
-      let result = await each_async(pages, async function (item) {
+      await each_async(pages, async function (item) {
         let page_url = string_combine_multiple([folder, item]);
         let v = await catholic_bishops_page(page_url);
         la(v);
