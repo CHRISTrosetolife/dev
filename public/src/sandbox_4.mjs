@@ -10,7 +10,7 @@ export async function sandbox_4() {
     ,
     file_extension_html(),
   ]);
-  let p = await http_iso_8859_1_cache_parse_parsed(url);
-  let v = html_parse_a_href_starts_with_hrefs(p, page_prefix);
+  let { root } = await http_iso_8859_1_cache_parse_parsed(url);
+  let v = html_parse_a_href_starts_with_hrefs(root, page_prefix);
   return v;
 }
