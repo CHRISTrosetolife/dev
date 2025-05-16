@@ -1,5 +1,4 @@
 import { string_size } from "./string_size.mjs";
-import { log } from "./log.mjs";
 import { less_than_by } from "./less_than_by.mjs";
 import { each } from "./each.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
