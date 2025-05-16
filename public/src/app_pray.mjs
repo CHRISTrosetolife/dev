@@ -15,9 +15,9 @@ import { prayers } from "./prayers.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { null_not_is } from "./null_not_is.mjs";
 export async function app_pray() {
+  let ps = prayers();
   let body = html_style_default_initialize();
   let top = html_span(body);
-  let ps = prayers();
   let pl = prayers_list(ps);
   let index_load = storage_local_get(app_pray, "prayer_index");
   let rows = list_map_index(pl, function lambda_each(prayer, index) {
