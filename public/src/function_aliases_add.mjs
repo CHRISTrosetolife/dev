@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { less_than_by } from "./less_than_by.mjs";
 import { each } from "./each.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -17,6 +18,10 @@ export async function function_aliases_add(aliases, function_name) {
   let existing = function_aliases();
   let split = string_split_comma(aliases);
   each(split, function (s) {
+    log({
+      s,
+      function_name,
+    });
     assert(less_than_by, [s, function_name, list_size]);
   });
   let duplicates = list_filter(split, function (s) {
