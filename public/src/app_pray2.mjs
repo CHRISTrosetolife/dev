@@ -9,7 +9,7 @@ export async function app_pray2() {
       index + 1,
       ": Save and bless ",
       b,
-      " and his family, friends, and fans; Lead him and them to always obey God perfectly and to speak truth in love about unity, head coverings, homosexuality, transgender, and men and women regarding marriage and ministry;",
+      " and his family, friends, and fans; Lead him and them to always obey God perfectly including speaking truth in love about unity, head coverings, homosexuality, transgender, and men and women regarding marriage and ministry;",
     ]);
     return v;
   });
