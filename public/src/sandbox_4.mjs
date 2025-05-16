@@ -1,3 +1,4 @@
+import { each_async } from "./each_async.mjs";
 import { html_parse_a_href_starts_with_hrefs } from "./html_parse_a_href_starts_with_hrefs.mjs";
 import { http_iso_8859_1_cache_parse_parsed } from "./http_iso_8859_1_cache_parse_parsed.mjs";
 import { file_extension_html } from "./file_extension_html.mjs";
@@ -11,5 +12,6 @@ export async function sandbox_4() {
   ]);
   let { root } = await http_iso_8859_1_cache_parse_parsed(url);
   let v = html_parse_a_href_starts_with_hrefs(root, page_prefix);
+  await each_async(list, async function (item) {});
   return v;
 }
