@@ -1,5 +1,5 @@
 export function catholic_bishops() {
-  return [
+  let v = [
     "Bishop Lüthold von Aarburg",
     "Bishop Petru Pavel Aaron",
     "Bishop Lucas Abadamloora",
@@ -4909,4 +4909,5 @@ export function catholic_bishops() {
     "Bishop Pedro José Zarandia y Endara",
     "Bishop Gabriel de Zarate",
   ];
+  return v;
 }
