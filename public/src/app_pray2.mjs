@@ -1,4 +1,6 @@
-import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
-export function app_pray2() {
-  let root = html_style_default_initialize();
+import { app_pray_generic } from "./app_pray_generic.mjs";
+import { prayers } from "./prayers.mjs";
+export async function app_pray2() {
+  let ps = prayers();
+  await app_pray_generic(ps);
 }
