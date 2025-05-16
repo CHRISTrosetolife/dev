@@ -31,6 +31,8 @@ export async function app_pray_generic(ps) {
         p_old.selected = false;
         html_style_background_color_transparent(p_old);
       }
+      if (false) {
+      }
       let value = p.selected ? index : null;
       storage_local_set(app_pray, "prayer_index", value);
       colorize(p);
