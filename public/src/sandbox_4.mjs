@@ -1,3 +1,4 @@
+import { html_parse_a_href_starts_with_hrefs } from "./html_parse_a_href_starts_with_hrefs.mjs";
 import { http_iso_8859_1_cache_parse_parsed } from "./http_iso_8859_1_cache_parse_parsed.mjs";
 import { file_extension_html } from "./file_extension_html.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -10,4 +11,5 @@ export async function sandbox_4() {
     file_extension_html(),
   ]);
   let p = await http_iso_8859_1_cache_parse_parsed(url);
+  html_parse_a_href_starts_with_hrefs();
 }
