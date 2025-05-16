@@ -47,10 +47,9 @@ export async function app_pray_generic(ps) {
   await sleep_0();
   html_scroll_center(list_get(rows, index_load));
   function colorize(p, index) {
-    let choices = ["MintGreen", "GrassGreen", "EmeraldGreen"](
-      p.selected
-        ? html_style_background_color_yellow
-        : html_style_background_color_transparent,
-    )(p);
+    let choices = ["MintGreen", "GrassGreen", "EmeraldGreen"];
+    (p.selected
+      ? html_style_background_color_yellow
+      : html_style_background_color_transparent)(p);
   }
 }
