@@ -7,7 +7,6 @@ export async function sandbox_4() {
   let url = string_combine_multiple([
     "https://www.catholic-hierarchy.org/bishop/",
     page_prefix,
-    ,
     file_extension_html(),
   ]);
   let { root } = await http_iso_8859_1_cache_parse_parsed(url);
