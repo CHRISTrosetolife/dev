@@ -5,7 +5,11 @@ import { list_map } from "./list_map.mjs";
 export async function app_pray2() {
   let bishops = catholic_bishops();
   list_map(bishops, function (b) {
-    let v = string_combine_multiple([""]);
+    let v = string_combine_multiple([
+      "Save and bless ",
+      b,
+      " and his family, friends, and fans; Lead him and them to speak truth in love about unity, head coverings, homosexuality, transgender, and men and women regarding marriage and ministry;",
+    ]);
     return v;
   });
   await app_pray_generic(ps);
