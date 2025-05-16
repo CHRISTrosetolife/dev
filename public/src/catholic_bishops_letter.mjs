@@ -18,8 +18,7 @@ export async function catholic_bishops_letter(letter) {
     letter,
     file_extension_html(),
   ]);
-  let html = await http_iso_8859_1_cache(url);
-  let p = await html_parse_parsed(html);
+  let p = await http_iso_8859_1_cache_parse_parsed(url);
   let { root } = p;
   let body = html_parse_visit_tag_single(root, "body");
   let tag_name = "ul";
@@ -33,3 +32,9 @@ export async function catholic_bishops_letter(letter) {
   });
   return v2;
 }
+async function http_iso_8859_1_cache_parse_parsed(url) {
+    let html = await http_iso_8859_1_cache(url);
+    let p = await html_parse_parsed(html);
+    return p;
+}
+
