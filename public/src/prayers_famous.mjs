@@ -16,6 +16,8 @@ export function prayers_famous() {
     "Let Kanye be Christian and generous",
     "Let MrBeast be Christian and generous",
     "Let Bieber be Christian and generous",
+    "Let Shaquille O'Neal be Christian and generous",
+    "Let Michael Jordan be Christian and generous",
   ];
   return v;
 }
