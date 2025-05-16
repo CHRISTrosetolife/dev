@@ -11,12 +11,10 @@ export async function app_new_from(name_existing, name_new) {
   let body = object_property_get(d, "body");
   let body2 = object_property_get(body, "body");
   let statements = list_join_newline(list_map(body2, js_unparse));
-  return d;
-  let body_string = "let root = html_style_default_initialize();";
   let v = await app_new_generic(
     name_new,
     statements,
-    object_property_get(object, "property_name"),
+    object_property_get(d, "async"),
   );
   return v;
 }
