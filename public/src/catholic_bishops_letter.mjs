@@ -1,3 +1,4 @@
+import { buffer_to } from "./buffer_to.mjs";
 import { html_parse_parsed } from "./html_parse_parsed.mjs";
 import { http_cache } from "./http_cache.mjs";
 import { log } from "./log.mjs";
@@ -20,7 +21,7 @@ export async function catholic_bishops_letter(letter) {
     ".html",
   ]);
   let html_encoded = await http_cache(url);
-  let html = iconv.decode(html_encoded, "ISO-8859-1");
+  let html = iconv.decode(buffer_to(html_encoded), "ISO-8859-1");
   let p = await html_parse_parsed(html);
   let { root } = p;
   let body = html_parse_visit_tag_single(root, "body");
