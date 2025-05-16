@@ -32,6 +32,7 @@ export function apps_list() {
     "portfolio",
     "pray",
     "pray2",
+    "pray3",
     "preach",
     "read",
     "record",
