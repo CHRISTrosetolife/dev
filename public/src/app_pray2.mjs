@@ -3,6 +3,9 @@ import { app_pray_generic } from "./app_pray_generic.mjs";
 import { list_map } from "./list_map.mjs";
 export async function app_pray2() {
   let bishops = catholic_bishops();
-  list_map(bishops, function () {});
+  list_map(bishops, function (b) {
+    let v = ($s, "");
+    return v;
+  });
   await app_pray_generic(ps);
 }
