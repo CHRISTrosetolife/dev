@@ -1,3 +1,4 @@
+import { list_get_wrap } from "./list_get_wrap.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { sleep_0 } from "./sleep_0.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
@@ -49,7 +50,7 @@ export async function app_pray_generic(ps) {
   function colorize(p, index) {
     let choices = ["MintGreen", "GrassGreen", "EmeraldGreen"];
     if (p.selected) {
-      html_style_background_color(q);
+      html_style_background_color(p, list_get_wrap(choices, index));
     } else {
       html_style_background_color_transparent(p);
     }
