@@ -1,6 +1,5 @@
 import { http_iso_8859_1_cache } from "./http_iso_8859_1_cache.mjs";
 import { html_parse_parsed } from "./html_parse_parsed.mjs";
-import { log } from "./log.mjs";
 import { html_parse_children_named } from "./html_parse_children_named.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { html_parse_visit_tag_first } from "./html_parse_visit_tag_first.mjs";
@@ -24,7 +23,6 @@ export async function catholic_bishops_letter(letter) {
   let body = html_parse_visit_tag_single(root, "body");
   let tag_name = "ul";
   let uls = html_parse_children_named(body, tag_name);
-  log(html_parse_text(uls[0]));
   assert(equal, [list_size(uls), 2]);
   let s = list_second(uls);
   let s_children = html_parse_visit_tag_list(s, "li");
