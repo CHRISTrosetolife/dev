@@ -1,3 +1,4 @@
 export function string_base64_from(input) {
-  return Buffer.from(input).toString("ascii");
+  let v = Buffer.from(input).toString("ascii");
+  return v;
 }
