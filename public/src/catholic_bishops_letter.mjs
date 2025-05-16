@@ -1,3 +1,5 @@
+import { html_parse_parsed } from "./html_parse_parsed.mjs";
+import { http_cache } from "./http_cache.mjs";
 import { log } from "./log.mjs";
 import { html_parse_children_named } from "./html_parse_children_named.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
@@ -8,7 +10,6 @@ import { equal } from "./equal.mjs";
 import { assert } from "./assert.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
-import { http_cache_parse_parsed } from "./http_cache_parse_parsed.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 export async function catholic_bishops_letter(letter) {
@@ -17,7 +18,9 @@ export async function catholic_bishops_letter(letter) {
     letter,
     ".html",
   ]);
-  let { root } = await http_cache_parse_parsed(url);
+  let html = await http_cache(url);
+  let p = await html_parse_parsed(html);
+  let { root } = p;
   let body = html_parse_visit_tag_single(root, "body");
   let tag_name = "ul";
   let uls = html_parse_children_named(body, tag_name);
