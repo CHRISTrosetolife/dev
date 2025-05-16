@@ -1,3 +1,5 @@
+import { buffer_to } from "./buffer_to.mjs";
 export function string_base64_to(input) {
-  return Buffer.from(input).toString("base64");
+  let v = buffer_to(input).toString("base64");
+  return v;
 }
