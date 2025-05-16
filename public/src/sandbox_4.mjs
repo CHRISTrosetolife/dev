@@ -14,11 +14,10 @@ export async function sandbox_4() {
   ]);
   let { root } = await http_iso_8859_1_cache_parse_parsed(url);
   let pages = html_parse_a_href_starts_with_hrefs(root, page_prefix);
-  await list_map_async(pages, async function (item) {
+  let result = await list_map_async(pages, async function (item) {
     let page_url = string_combine_multiple([folder, item]);
     let v = await catholic_bishops_page(page_url);
-    let v2 = v;
-    return v2;
+    return v;
   });
-  return pages;
+  return result;
 }
