@@ -11,9 +11,7 @@ import { html_parse_children_named } from "./html_parse_children_named.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { http_iso_8859_1_cache_parse_parsed } from "./http_iso_8859_1_cache_parse_parsed.mjs";
 export async function catholic_bishops_page(url) {
-  log({
-    url,
-  });
+
   let p = await http_iso_8859_1_cache_parse_parsed(url);
   let { root } = p;
   let body = html_parse_visit_tag_single(root, "body");
