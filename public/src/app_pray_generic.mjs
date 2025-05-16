@@ -48,13 +48,13 @@ export async function app_pray_generic(ps) {
   html_scroll_center(list_get(rows, index_load));
   function colorize(p, index) {
     let choices = ["MintGreen", "GrassGreen", "EmeraldGreen"];
-    $ib(
-      p.selected
-        ? function (q) {
-            let v2 = html_style_background_color(q);
-            return v2;
-          }
-        : html_style_background_color_transparent,
-    )(p);
+    if (false) {
+    }
+    (p.selected
+      ? function (q) {
+          let v2 = html_style_background_color(q);
+          return v2;
+        }
+      : html_style_background_color_transparent)(p);
   }
 }
