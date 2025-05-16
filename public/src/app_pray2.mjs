@@ -1,10 +1,10 @@
+import { list_map_index } from "./list_map_index.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { catholic_bishops } from "./catholic_bishops.mjs";
 import { app_pray_generic } from "./app_pray_generic.mjs";
-import { list_map } from "./list_map.mjs";
 export async function app_pray2() {
   let bishops = catholic_bishops();
-  let ps = list_map(bishops, function (b) {
+  let ps = list_map_index(bishops, function (b, index) {
     let v = string_combine_multiple([
       "Save and bless ",
       b,
