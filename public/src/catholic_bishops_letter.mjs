@@ -1,4 +1,4 @@
-import { http_iso_8859_1 } from "./http_iso_8859_1.mjs";
+import { http_iso_8859_1_cache } from "./http_iso_8859_1_cache.mjs";
 import { html_parse_parsed } from "./html_parse_parsed.mjs";
 import { log } from "./log.mjs";
 import { html_parse_children_named } from "./html_parse_children_named.mjs";
@@ -18,7 +18,7 @@ export async function catholic_bishops_letter(letter) {
     letter,
     ".html",
   ]);
-  let html = await http_iso_8859_1(url);
+  let html = await http_iso_8859_1_cache(url);
   let p = await html_parse_parsed(html);
   let { root } = p;
   let body = html_parse_visit_tag_single(root, "body");
