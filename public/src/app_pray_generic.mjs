@@ -12,7 +12,6 @@ import { null_not_is } from "./null_not_is.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { list_map_index } from "./list_map_index.mjs";
-import { app_pray } from "./app_pray.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { prayers_list } from "./prayers_list.mjs";
 import { html_span } from "./html_span.mjs";
@@ -22,7 +21,7 @@ export async function app_pray_generic(app_fn, ps) {
   let body = html_style_default_initialize();
   let top = html_span(body);
   let pl = prayers_list(ps);
-  let index_load = storage_local_get(app_pray, "prayer_index");
+  let index_load = storage_local_get(app_fn, "prayer_index");
   let rows = list_map_index(pl, function lambda_each(prayer, index) {
     let d = html_div(body, prayer);
     d.selected = index === index_load;
@@ -33,7 +32,7 @@ export async function app_pray_generic(app_fn, ps) {
     colorize(d, index);
     html_on_click(d, function () {
       d.selected = !d.selected;
-      let index_old = storage_local_get(app_pray, "prayer_index");
+      let index_old = storage_local_get(app_fn, "prayer_index");
       if (null_not_is(index_old)) {
         let p_old = list_get(rows, index_old);
         p_old.selected = false;
@@ -43,7 +42,7 @@ export async function app_pray_generic(app_fn, ps) {
         html_scroll_center(d);
       }
       let value = d.selected ? index : null;
-      storage_local_set(app_pray, "prayer_index", value);
+      storage_local_set(app_fn, "prayer_index", value);
       colorize(d, index);
     });
     let v = d;
