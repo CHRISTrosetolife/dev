@@ -1,3 +1,4 @@
+import { app_pray } from "./app_pray.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { catholic_bishops } from "./catholic_bishops.mjs";
@@ -13,5 +14,5 @@ export async function app_pray2() {
     ]);
     return v;
   });
-  await app_pray_generic(ps);
+  await app_pray_generic(ps, app_pray);
 }

@@ -18,7 +18,7 @@ import { prayers_list } from "./prayers_list.mjs";
 import { html_span } from "./html_span.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_div } from "./html_div.mjs";
-export async function app_pray_generic(ps) {
+export async function app_pray_generic(ps, app_fn) {
   let body = html_style_default_initialize();
   let top = html_span(body);
   let pl = prayers_list(ps);
