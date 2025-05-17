@@ -14,5 +14,5 @@ export async function app_pray2() {
     ]);
     return v;
   });
-  await app_pray_generic(ps, app_pray);
+  await app_pray_generic(app_pray, ps);
 }
