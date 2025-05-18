@@ -56,11 +56,11 @@ export async function app_pray_generic(app_fn, ps) {
   function colorize(d, index) {
     let choices = [
       "Salmon",
-      "SandyBrown ",
+      "SandyBrown",
       "Yellow",
       "lightgreen",
       "lightblue",
-      "MediumOrchid ",
+      "MediumPurple",
     ];
     if (d.selected) {
       html_style_background_color(d, list_get_wrap(choices, index));
