@@ -54,7 +54,14 @@ export async function app_pray_generic(app_fn, ps) {
   await sleep_0();
   html_scroll_center(list_get(rows, index_load));
   function colorize(d, index) {
-    let choices = ["lightgreen", "Salmon", "lightblue"];
+    let choices = [
+      "Salmon",
+      "SandyBrown ",
+      "Yellow",
+      "lightgreen",
+      "lightblue",
+      "MediumOrchid ",
+    ];
     if (d.selected) {
       html_style_background_color(d, list_get_wrap(choices, index));
     } else {
