@@ -9,7 +9,7 @@ export async function app_pray2() {
       index + 1,
       ": Save and bless beyond words ",
       b,
-      " and his family, friends, fans and the same for any successors and descendants; Lead him and them to always love and obey God perfectly, including speaking truth in love about unity, head coverings, homosexuality, transgender, race, and men and women regarding marriage and ministry;",
+      " and his family, friends, fans and the same for any successors and offspring; Lead him and them to always love and obey God perfectly, including speaking truth in love about unity, head coverings, homosexuality, transgender, race, and men and women regarding marriage and ministry;",
     ]);
     return v;
   });

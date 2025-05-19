@@ -9,7 +9,7 @@ export function prayers_countries() {
     let v2 = string_combine_multiple([
       "Save and bless ",
       a,
-      " and may the people and their descendants love perfectly",
+      " and may the people and their offspring love perfectly",
     ]);
     return v2;
   });
