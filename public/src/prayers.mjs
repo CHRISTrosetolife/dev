@@ -1,3 +1,4 @@
+import { prayers_sabbw } from "./prayers_sabbw.mjs";
 import { prayers_heal_afflicted } from "./prayers_heal_afflicted.mjs";
 import { prayers_countries } from "./prayers_countries.mjs";
 import { prayers_sins } from "./prayers_sins.mjs";
@@ -125,11 +126,11 @@ export function prayers() {
     prayers_music(),
     prayers_famous(),
     prayers_countries(),
-    "Save and bless all Jews",
-    "Save and bless all descendants of Abraham",
-    "Save and bless all Muslims",
-    "Save and bless all Hindus",
-    "Save and bless all Buddhists",
+    prayers_sabbw("all Jews"),
+    prayers_sabbw("all descendants of Abraham"),
+    prayers_sabbw("all Muslims"),
+    prayers_sabbw("all Hindus"),
+    prayers_sabbw("all Buddhists"),
     "Bless the nails of love",
     "Protect the teeth of love and I",
     "Bless my works",
