@@ -52,7 +52,7 @@ export function prayers_family() {
     "Bless any trips",
     "Bless our legal marriage",
     "Bless any marriage ceremonies",
-    "Bless Visa, Green Card",
+    "Bless Visa and Green Card",
     prayers_bbw("together in person"),
   ];
   return v;
