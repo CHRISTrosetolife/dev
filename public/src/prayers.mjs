@@ -1,3 +1,5 @@
+import { string_case_upper_first } from "./string_case_upper_first.mjs";
+import { list_map } from "./list_map.mjs";
 import { prayers_sabbwa } from "./prayers_sabbwa.mjs";
 import { prayers_heal_afflicted } from "./prayers_heal_afflicted.mjs";
 import { prayers_countries } from "./prayers_countries.mjs";
@@ -167,5 +169,6 @@ export function prayers() {
     "May God choose all my remaining choices, not me",
     "Not only me but anyone who would want this",
   ]);
-  return v;
+  let v2 = list_map(v, string_case_upper_first);
+  return v2;
 }
