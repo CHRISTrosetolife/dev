@@ -47,7 +47,7 @@ export function prayers_family() {
     "Save and bless Zachary",
   ];
   let v = [
-    prayers_bbw("Bless our marriage"),
+    prayers_bbw("our marriage"),
     prayers_sabbw("our children"),
     "Bless any trips",
     "Bless our legal marriage",
