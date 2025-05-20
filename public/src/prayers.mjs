@@ -1,4 +1,4 @@
-import { prayers_sabbw } from "./prayers_sabbw.mjs";
+import { prayers_sabbwa } from "./prayers_sabbwa.mjs";
 import { prayers_heal_afflicted } from "./prayers_heal_afflicted.mjs";
 import { prayers_countries } from "./prayers_countries.mjs";
 import { prayers_sins } from "./prayers_sins.mjs";
@@ -126,11 +126,14 @@ export function prayers() {
     prayers_music(),
     prayers_famous(),
     prayers_countries(),
-    prayers_sabbw("all Jews"),
-    prayers_sabbw("all descendants of Abraham"),
-    prayers_sabbw("all Muslims"),
-    prayers_sabbw("all Hindus"),
-    prayers_sabbw("all Buddhists"),
+    prayers_sabbwa("Jews"),
+    prayers_sabbwa("descendants of Abraham"),
+    prayers_sabbwa("Muslims"),
+    prayers_sabbwa("Hindus"),
+    prayers_sabbwa("Buddhists"),
+    "Let love maximally glorify the Father",
+    "Let love maximally glorify Jesus",
+    "Let love maximally glorify the Holy Spirit",
     "Bless the nails of love",
     "Protect the teeth of love and I",
     "Bless my works",
