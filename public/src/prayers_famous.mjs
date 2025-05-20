@@ -1,3 +1,5 @@
+import { prayers_sabbw } from "./prayers_sabbw.mjs";
+import { list_map } from "./list_map.mjs";
 export function prayers_famous() {
   let v = [
     "Save and Bless the president",
@@ -19,5 +21,9 @@ export function prayers_famous() {
     "Let Shaquille O'Neal be Christian and generous and thank You for his generosity",
     "Let Michael Jordan be Christian and generous",
   ];
-  return v;
+  let v2 = list_map(v, function (e) {
+    let v3 = prayers_sabbw(e);
+    return v3;
+  });
+  return v2;
 }
