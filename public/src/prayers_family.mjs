@@ -49,7 +49,7 @@ export function prayers_family() {
   ];
   let v = [
     prayers_bbw("our marriage"),
-    prayers_sabbw("our children"),
+    prayers_sabbw("our children and may they be obedient and healthy"),
     "Bless any trips",
     "Bless our legal marriage",
     "Bless any marriage ceremonies",
