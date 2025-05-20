@@ -1,11 +1,5 @@
 export function prayers_family() {
-  let v = [
-    "Bless our marriage",
-    "Save and bless our children",
-    "Bless any trips",
-    "Bless our legal marriage",
-    "Bless any marriage ceremonies",
-    "Bless Visa, Green Card and together in person",
+  let members = [
     "Save and bless the family of love",
     "Save and bless Papa",
     "Save and bless Mama",
@@ -49,6 +43,14 @@ export function prayers_family() {
     "Save and bless Michael",
     "Save and bless Nancy",
     "Save and bless Zachary",
+  ];
+  let v = [
+    "Bless our marriage",
+    "Save and bless our children",
+    "Bless any trips",
+    "Bless our legal marriage",
+    "Bless any marriage ceremonies",
+    "Bless Visa, Green Card and together in person",
   ];
   return v;
 }
