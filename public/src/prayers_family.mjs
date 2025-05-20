@@ -1,3 +1,4 @@
+import { prayers_sabbw } from "./prayers_sabbw.mjs";
 export function prayers_family() {
   let members = [
     "Save and bless the family of love",
@@ -46,7 +47,7 @@ export function prayers_family() {
   ];
   let v = [
     "Bless our marriage",
-    "Save and bless our children",
+    prayers_sabbw("our children"),
     "Bless any trips",
     "Bless our legal marriage",
     "Bless any marriage ceremonies",
