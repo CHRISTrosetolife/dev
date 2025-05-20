@@ -1,3 +1,4 @@
+import { prayers_bbw } from "./prayers_bbw.mjs";
 import { prayers_sabbwe } from "./prayers_sabbwe.mjs";
 import { string_case_upper_first } from "./string_case_upper_first.mjs";
 import { list_map } from "./list_map.mjs";
@@ -160,8 +161,8 @@ export function prayers() {
       "Bless my job search",
       "Bless my work",
       "Bless my business",
+      "Bless the works of Christians",
     ],
-    "Bless the works of Christians",
     "Let me fellowship with any Christians from the generation Jesus spoke of",
     "Help orphans",
     "Help children",
@@ -171,7 +172,7 @@ export function prayers() {
     "Help the elderly",
     "Help prisoners",
     "Help the sick",
-    "Bless the bodies and any tools of elect angels",
+    prayers_bbw("the bodies and any tools of elect angels"),
     "For each challenge God gave Job, if God desires, may I fulfill",
     "Predestine all my remaining choices",
     "May God choose all my remaining choices, not me",
