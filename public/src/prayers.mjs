@@ -1,3 +1,4 @@
+import { prayers_sabbwe } from "./prayers_sabbwe.mjs";
 import { string_case_upper_first } from "./string_case_upper_first.mjs";
 import { list_map } from "./list_map.mjs";
 import { prayers_sabbwa } from "./prayers_sabbwa.mjs";
@@ -114,7 +115,7 @@ export function prayers() {
         "Bless every servant",
         "Bless every messenger",
       ],
-      prayers_sabbwa,
+      prayers_sabbwe,
     ),
     "Let all preaching be perfect",
     "Let all teaching be perfect",
