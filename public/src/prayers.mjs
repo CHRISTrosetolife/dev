@@ -23,6 +23,7 @@ export function prayers() {
     "May the words of my mouth and the meditation of my heart be pleasing in your sight, O Lord, my Rock and my Redeemer",
     "Cause me to fulfill my ministry",
     "Cause me to suffer in the flesh and cease from sin",
+    "Thank You",
     "Cause me to never be hospitalized again",
     "Cause me to rather live on earth than die",
     "From now on cause all disciples of Jesus to suffer in the flesh and cease from sin",
