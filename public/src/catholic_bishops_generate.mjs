@@ -5,16 +5,19 @@ import { list_adder_multiple_async } from "./list_adder_multiple_async.mjs";
 import { each_async } from "./each_async.mjs";
 import { catholic_bishops_page } from "./catholic_bishops_page.mjs";
 import { generate_list_fn } from "./generate_list_fn.mjs";
+import { list_filter } from "./list_filter.mjs";
 export async function catholic_bishops_generate() {
   await generate_list_fn(async function () {
     let pages = await catholic_bishops_generate_pages();
     let v2 = await list_adder_multiple_async(async function (la) {
       await each_async(pages, async function (item) {
         let v = await catholic_bishops_page(item);
-        let lower = string_case_lower(v);
-        if (string_includes_not(lower, "sister")) {
-          la(v);
-        }
+        v = list_filter(v, function (item) {
+          let lower = string_case_lower(item);
+          let v3 = string_includes_not(lower, "sister");
+          return v3;
+        });
+        la(v);
       });
     });
     return v2;
