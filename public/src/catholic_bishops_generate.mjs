@@ -1,6 +1,5 @@
 import { list_includes_not } from "./list_includes_not.mjs";
 import { string_split_space } from "./string_split_space.mjs";
-import { log } from "./log.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { catholic_bishops_generate_pages } from "./catholic_bishops_generate_pages.mjs";
 import { list_adder_multiple_async } from "./list_adder_multiple_async.mjs";
