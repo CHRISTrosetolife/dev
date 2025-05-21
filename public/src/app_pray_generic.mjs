@@ -1,3 +1,4 @@
+import { html_scroll_top } from "./html_scroll_top.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { prayers_list_begin } from "./prayers_list_begin.mjs";
 import { list_get_wrap } from "./list_get_wrap.mjs";
@@ -39,7 +40,7 @@ export async function app_pray_generic(app_fn, ps) {
         html_style_background_color_transparent(p_old);
       }
       if (d.selected) {
-        html_scroll_center(d);
+        html_scroll_top(d);
       }
       let value = d.selected ? index : null;
       storage_local_set(app_fn, "prayer_index", value);
@@ -49,7 +50,7 @@ export async function app_pray_generic(app_fn, ps) {
     return v;
   });
   html_button(body, "Scroll to top", function () {
-    html_scroll_center(top);
+    html_scroll_top(top);
   });
   await sleep_0();
   html_scroll_center(list_get(rows, index_load));
