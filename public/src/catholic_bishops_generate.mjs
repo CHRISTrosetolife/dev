@@ -1,3 +1,4 @@
+import { string_split_space } from "./string_split_space.mjs";
 import { log } from "./log.mjs";
 import { string_includes_not } from "./string_includes_not.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
@@ -16,6 +17,7 @@ export async function catholic_bishops_generate() {
         let v = await catholic_bishops_page(item);
         let v4 = list_filter(v, function (item) {
           let lower = string_case_lower(item);
+          let split = string_split_space(lower);
           let v3 = string_includes_not(lower, "sister");
           return v3;
         });
