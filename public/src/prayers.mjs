@@ -124,7 +124,7 @@ export function prayers() {
     "Let all stewardship be perfect",
     "May the voice of every Christian lead all to Christ",
     "May my voice lead all listeners to Christ",
-    list_map(["worship", "worship singing voices"], prayers_sabbwa),
+    list_map(["all worship", "all worship singing voices"], prayers_bbw),
     [
       "Bless my singing voice",
       "Bless my speaking voice",
