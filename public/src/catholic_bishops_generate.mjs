@@ -1,3 +1,4 @@
+import { string_includes_not } from "./string_includes_not.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { catholic_bishops_generate_pages } from "./catholic_bishops_generate_pages.mjs";
 import { list_adder_multiple_async } from "./list_adder_multiple_async.mjs";
@@ -11,9 +12,9 @@ export async function catholic_bishops_generate() {
       await each_async(pages, async function (item) {
         let v = await catholic_bishops_page(item);
         let lower = string_case_lower(v);
-        if (false) {
+        if (string_includes_not(lower, "sister")) {
+          la(v);
         }
-        la(v);
       });
     });
     return v2;
