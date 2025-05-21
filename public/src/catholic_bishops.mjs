@@ -1,5 +1,5 @@
 export function catholic_bishops() {
-  let v = [
+  return [
     "Bishop David Abadías Aurín",
     "Archbishop Victor Abagna Mossa",
     "Bishop Guillermo Martín Abanto Guzmán",
@@ -451,7 +451,6 @@ export function catholic_bishops() {
     "Giovanni Angelo Cardinal Becciu",
     "Archbishop Hans-Josef Becker",
     "Bishop James Mark Beckman",
-    "Sister Nathalie Becquart",
     "Archbishop Ignazio Bedini",
     "Bishop Miklós Beer",
     "Bishop Ramón Bejarano",
@@ -647,7 +646,6 @@ export function catholic_bishops() {
     "Bishop Jacyr Francisco Braido",
     "Bishop Terence John Brain",
     "Bishop Franco Giulio Brambilla",
-    "Sister Simona Brambilla",
     "Bishop José Carlos Brandão Cabral",
     "Archbishop Orlando Brandes",
     "Walter Cardinal Brandmüller",
@@ -794,7 +792,6 @@ export function catholic_bishops() {
     "Bishop Ramón Calderón Batres",
     "Archbishop Jaime Calderón Calderón",
     "Bishop Félix Eduardo Antonio Calderón Cruz",
-    "Sister Núria Calduch-Benages",
     "Archbishop Domenico Caliandro",
     "Bishop William Patrick Callahan",
     "Archbishop Flavio Calle Zapata",
@@ -4228,7 +4225,6 @@ export function catholic_bishops() {
     "Bishop Ivica Petanjak",
     "Bishop Jörg Michael Peters",
     "Bishop João Carlos Petrini",
-    "Sister Raffaella Petrini",
     "Giuseppe Cardinal Petrocchi",
     "Abbot Michele Petruzzelli",
     "Bishop Augustinho Petry",
@@ -4291,7 +4287,6 @@ export function catholic_bishops() {
     "Bishop Marcos Pirán Gómez",
     "Archbishop Lorenzo Piretto",
     "Bishop Juan Piris Frígola",
-    "Sister Silvana Piro",
     "Bishop Wolfgang Pisa",
     "Bishop Vincenzo Pisanello",
     "Bishop Antioco Piseddu",
@@ -4650,7 +4645,6 @@ export function catholic_bishops() {
     "Archbishop Florencio Roselló Avellanas",
     "Bishop Roberto Rosmaninho Mariz",
     "Bishop Arturo Pablo Ros Murgadas",
-    "Sister Carmen Ros Nortes",
     "Bishop Armando José María Rossi",
     "Bishop Romano Rossi",
     "Ángel Sixto Cardinal Rossi",
@@ -5024,7 +5018,6 @@ export function catholic_bishops() {
     "Bishop Elias Khoury Sleman",
     "Father Franciszek Ślusarczyk",
     "Father Andrew Small",
-    "Sister Alessandra Smerilli",
     "Archbishop Wiesław Andrzej Śmigiel",
     "Archbishop Adrian Thomas Smith",
     "Bishop Michael Smith",
@@ -5874,5 +5867,4 @@ export function catholic_bishops() {
     "Archbishop Stanislav Zvolenský",
     "Bishop Joseph Anthony Zziwa",
   ];
-  return v;
 }
