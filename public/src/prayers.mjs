@@ -143,13 +143,16 @@ export function prayers() {
     "Let love maximally glorify the Father",
     "Let love maximally glorify Jesus",
     "Let love maximally glorify the Holy Spirit",
-    [
-      prayers_bbw("love"),
-      prayers_bbw("the love of love"),
-      prayers_bbw("the faith of love"),
-      prayers_bbw("the fruit of the Spirit of love"),
-      prayers_bbw("the nails of love"),
-    ],
+    list_map(
+      [
+        "love",
+        "the love of love",
+        "the faith of love",
+        "the fruit of the Spirit of love",
+        "the nails of love",
+      ],
+      prayers_bbw,
+    ),
     "Protect the teeth of love and I",
     [
       "Bless my works",
