@@ -1,3 +1,4 @@
+import { catholic_bishops_generate_folder } from "./catholic_bishops_generate_folder.mjs";
 import { list_adder_multiple_async } from "./list_adder_multiple_async.mjs";
 import { each_async } from "./each_async.mjs";
 import { catholic_bishops_page } from "./catholic_bishops_page.mjs";
@@ -29,7 +30,3 @@ export async function catholic_bishops_generate() {
     return v2;
   }, catholic_bishops_generate);
 }
-function catholic_bishops_generate_folder() {
-    return "https://www.catholic-hierarchy.org/bishop/";
-}
-
