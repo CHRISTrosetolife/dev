@@ -1,5 +1,5 @@
 export function catholic_bishops() {
-  let v = [
+  return [
     "Bishop David Abadías Aurín",
     "Archbishop Victor Abagna Mossa",
     "Bishop Guillermo Martín Abanto Guzmán",
@@ -5867,5 +5867,4 @@ export function catholic_bishops() {
     "Archbishop Stanislav Zvolenský",
     "Bishop Joseph Anthony Zziwa",
   ];
-  return v;
 }
