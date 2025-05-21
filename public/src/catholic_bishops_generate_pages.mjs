@@ -1,3 +1,4 @@
+import { list_unique } from "./list_unique.mjs";
 import { list_without } from "./list_without.mjs";
 import { html_parse_a_href_starts_with_hrefs } from "./html_parse_a_href_starts_with_hrefs.mjs";
 import { http_iso_8859_1_cache_parse_parsed } from "./http_iso_8859_1_cache_parse_parsed.mjs";
@@ -15,5 +16,6 @@ export async function catholic_bishops_generate_pages() {
   let { root } = await http_iso_8859_1_cache_parse_parsed(url);
   let pages = html_parse_a_href_starts_with_hrefs(root, page_prefix);
   pages = list_without(pages, page_file_name);
+  pages = list_unique(pages);
   return pages;
 }
