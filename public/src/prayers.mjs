@@ -149,10 +149,10 @@ export function prayers() {
         "the love of love",
         "the faith of love",
         "the fruit of the Spirit of love",
-        "the nails of love",
       ],
       prayers_bbw,
     ),
+    "Bless the nails of love",
     "Protect the teeth of love and I",
     [
       "Bless my works",
