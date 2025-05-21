@@ -31,6 +31,7 @@ export function prayers_family() {
     "Adam",
     "Alan",
     "Christian",
+    "Emily",
     "Erica",
     "Shalini",
     "Jennifer",
