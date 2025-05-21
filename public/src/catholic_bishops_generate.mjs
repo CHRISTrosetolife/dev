@@ -22,9 +22,6 @@ export async function catholic_bishops_generate() {
           return v3;
         });
         let difference = list_difference(v, v4);
-        log({
-          difference,
-        });
         la(v4);
       });
     });
