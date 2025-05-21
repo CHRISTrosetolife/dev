@@ -1,3 +1,5 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { catholic_bishops_generate_folder } from "./catholic_bishops_generate_folder.mjs";
 import { html_parse_visit_tag_first } from "./html_parse_visit_tag_first.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { list_map } from "./list_map.mjs";
@@ -9,7 +11,9 @@ import { assert } from "./assert.mjs";
 import { html_parse_children_named } from "./html_parse_children_named.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { http_iso_8859_1_cache_parse_parsed } from "./http_iso_8859_1_cache_parse_parsed.mjs";
-export async function catholic_bishops_page(url) {
+export async function catholic_bishops_page(item) {
+  let folder = catholic_bishops_generate_folder();
+  let url = string_combine_multiple([folder, item]);
   let p = await http_iso_8859_1_cache_parse_parsed(url);
   let { root } = p;
   let body = html_parse_visit_tag_single(root, "body");
