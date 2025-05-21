@@ -179,6 +179,7 @@ export function prayers() {
         "my job search",
         "my work",
         "my business",
+        "any leadership I have",
         "the works of Christians",
       ],
       prayers_bbw,
