@@ -33,6 +33,9 @@ export function prayers_sins() {
     "Let there be no excessive alcohol",
     "Let there be no greed",
     "Let there be no idolatry",
+    "Let there be no racism",
+    "Let there be no prejudice",
+    "Let there be no partiality",
   ];
   return v;
 }
