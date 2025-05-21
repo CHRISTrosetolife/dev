@@ -14,16 +14,16 @@ export async function catholic_bishops_generate() {
     let v2 = await list_adder_multiple_async(async function (la) {
       await each_async(pages, async function (item) {
         let v = await catholic_bishops_page(item);
-        v = list_filter(v, function (item) {
+        let v4 = list_filter(v, function (item) {
           let lower = string_case_lower(item);
           let v3 = string_includes_not(lower, "sister");
-          let difference = list_difference(v, v3);
-          log({
-            difference,
-          });
           return v3;
         });
-        la(v);
+        let difference = list_difference(v, v3);
+        log({
+          difference,
+        });
+        la(v4);
       });
     });
     return v2;
