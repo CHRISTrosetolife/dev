@@ -19,7 +19,7 @@ export async function catholic_bishops_generate() {
           let v3 = string_includes_not(lower, "sister");
           return v3;
         });
-        let difference = list_difference(v, v3);
+        let difference = list_difference(v, v4);
         log({
           difference,
         });
