@@ -1,5 +1,5 @@
 export function sermons_list() {
-  return [
+  let v = [
     "1cor7",
     "child",
     "child2",
@@ -32,4 +32,5 @@ export function sermons_list() {
     "women",
     "wren",
   ];
+  return v;
 }
