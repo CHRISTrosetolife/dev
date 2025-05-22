@@ -7,6 +7,7 @@ export function sermons_list() {
     "faith_works",
     "forsake",
     "forsake30",
+    "greatest",
     "healed",
     "joseph",
     "pastor_account",
