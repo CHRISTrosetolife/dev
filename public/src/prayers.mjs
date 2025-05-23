@@ -159,10 +159,11 @@ export function prayers() {
         "the love of love",
         "the faith of love",
         "the fruit of the Spirit of love",
-        "the nails of love",
       ],
       prayers_bbw,
     ),
+    "May the desire of the Father be done",
+    "May the desire of the Father be done regarding...",
     "Protect the teeth of love and I",
     list_map(
       [
