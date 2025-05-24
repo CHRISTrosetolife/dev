@@ -36,7 +36,7 @@ export async function command_line_generic(command, silent) {
           code2,
         });
       } else {
-        resolve(result);
+        resolve(code2);
       }
     });
     child.on("error", function (error) {
