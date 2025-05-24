@@ -7,4 +7,6 @@ export async function github_cli_install() {
       "winget install --id GitHub.cli -e --accept-package-agreements --accept-source-agreements",
     );
   }
+  let v = await command_line(command);
+  return v;
 }
