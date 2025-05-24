@@ -6,7 +6,6 @@ export function app_todo_list_generic(
   context,
   items_filtered,
   refresh,
-  properties,
   index_path,
   items_all,
 ) {

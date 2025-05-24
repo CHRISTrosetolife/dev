@@ -7,7 +7,6 @@ export function app_todo_list(context, filtered, refresh, items_all) {
     context,
     filtered,
     refresh,
-    properties,
     app_todo_firebase_path_index(),
     items_all,
   );
