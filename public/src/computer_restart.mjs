@@ -1,4 +1,4 @@
-import { command_line } from "./command_line.mjs";
+import { dir } from "./dir.mjs";
 export async function computer_restart() {
-  await command_line("shutdown -t 0 -r");
+  await dir("shutdown -t 0 -r");
 }

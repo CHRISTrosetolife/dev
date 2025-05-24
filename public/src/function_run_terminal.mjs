@@ -1,9 +1,9 @@
+import { dir } from "./dir.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { file_exists_not } from "./file_exists_not.mjs";
 import { function_path_suffix } from "./function_path_suffix.mjs";
 import { file_read_json } from "./file_read_json.mjs";
-import { command_line } from "./command_line.mjs";
 import { log } from "./log.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { uuid_file } from "./uuid_file.mjs";
@@ -40,7 +40,7 @@ export async function function_run_terminal(function_name, args) {
             command,
           });
         }
-        let command_result = await command_line(command);
+        let command_result = await dir(command);
         if (false) {
           log({
             file_path_output,

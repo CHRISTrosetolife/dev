@@ -14,7 +14,7 @@ export function function_aliases() {
   function_aliases_register(all, fn_name("bible_audio_player_book"), ["bp"]);
   function_aliases_register(all, fn_name("bible_chapter_text"), ["bt"]);
   function_aliases_register(all, fn_name("function_copy"), ["c"]);
-  function_aliases_register(all, fn_name("command_line"), ["cl"]);
+  function_aliases_register(all, fn_name("dir"), ["cl"]);
   function_aliases_register(all, fn_name("data_update"), ["d"]);
   function_aliases_register(all, fn_name("function_delete"), ["de"]);
   function_aliases_register(all, fn_name("app_dev_screenshots"), ["ds"]);

@@ -1,4 +1,4 @@
-import { command_line } from "./command_line.mjs";
+import { dir } from "./dir.mjs";
 import { json_format_to } from "./json_format_to.mjs";
 import { file_write } from "./file_write.mjs";
 import { log } from "./log.mjs";
@@ -21,7 +21,7 @@ export async function kokoro_tts(units) {
         units,
       }),
     );
-    let result = await command_line(command);
+    let result = await dir(command);
     log(result);
   });
 }
