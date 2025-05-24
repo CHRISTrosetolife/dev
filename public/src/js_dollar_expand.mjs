@@ -1,3 +1,4 @@
+import { never } from "./never.mjs";
 import { js_identifiers_names_duplicates } from "./js_identifiers_names_duplicates.mjs";
 import { log } from "./log.mjs";
 import { js_statement_call_is } from "./js_statement_call_is.mjs";
@@ -39,7 +40,9 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
       let ast_c = await function_parse(name_c);
       js_return_variablize(ast_c);
       let { arguments: args } = call;
-      each(list, function (item2) {});
+      each(args, function (a) {
+        assert(never, []);
+      });
       let args_names = js_identifiers_names_duplicates(args);
       let identifiers = js_identifiers_names(ast);
       let fns = await functions_names();
