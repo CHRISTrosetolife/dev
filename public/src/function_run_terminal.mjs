@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import { command_line } from "./command_line.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -12,15 +13,15 @@ import { json_to } from "./json_to.mjs";
 import { list_is } from "./list_is.mjs";
 import { assert } from "./assert.mjs";
 export async function function_run_terminal(function_name, args) {
-  return await new Promise(async (resolve, reject) => {
+  let v = await new Promise(async function (resolve, reject) {
     assert(list_is, [args]);
     let args_json = json_to({
       args,
     });
     let replaced = string_replace(args_json, "'", "''");
     replaced = string_replace(replaced, '"', '\\"');
-    await uuid_file(function_run_terminal, async (file_path_input) => {
-      await uuid_file(function_run_terminal, async (file_path_output) => {
+    await uuid_file(function_run_terminal, async function (file_path_input) {
+      await uuid_file(function_run_terminal, async function (file_path_output) {
         await file_overwrite(file_path_input, args_json);
         let command = string_combine_multiple([
           "node ",
@@ -39,12 +40,14 @@ export async function function_run_terminal(function_name, args) {
           log({
             command,
           });
-        }let command_result
+        }
+        let command_result;
         try {
-         command_result = await command_line(command);
-
+          command_result = await command_line(command);
         } catch (error) {
-            command_result={error}
+          command_result = {
+            error,
+          };
         }
         if (false) {
           log({
@@ -64,4 +67,5 @@ export async function function_run_terminal(function_name, args) {
       });
     });
   });
+  return v;
 }
