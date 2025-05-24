@@ -16,7 +16,20 @@ export async function command_line_generic(command, silent) {
     let { first, remaining } = list_first_remaining(
       string_split_space(command),
     );
-    let child = spawn(first);
+    let child = spawn(first, remaining);
+    if (!silent) {
+      let { stdout, stderr } = child;
+      stdout.setEncoding("utf8");
+      stdout.on("data", function (data) {
+        log_write(data);
+        list_add(result.stdout, data);
+      });
+      stderr.setEncoding("utf8");
+      stderr.on("data", function (data) {
+        log_error_write(data);
+        list_add(result.stderr, data);
+      });
+    }
     child.on("close", function (code) {
       if (code !== 0) {
         reject({
@@ -31,19 +44,6 @@ export async function command_line_generic(command, silent) {
         error,
       });
     });
-    if (!silent) {
-      let { stdout, stderr } = child;
-      stdout.setEncoding("utf8");
-      stdout.on("data", function (data) {
-        log_write(data);
-        list_add(result.stdout, data);
-      });
-      stderr.setEncoding("utf8");
-      stderr.on("data", function (data) {
-        log_error_write(data);
-        list_add(result.stderr, data);
-      });
-    }
   });
   return v;
 }
