@@ -7,7 +7,7 @@ import { app_todo_completed_property } from "./app_todo_completed_property.mjs";
 import { app_todo_main } from "./app_todo_main.mjs";
 import { app_todo_not_completed } from "./app_todo_not_completed.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
-export function app_todo_view(context) {
+export function app_todo_view(context, value) {
   let { root } = context;
   html_clear_scroll_top(root);
   let items = app_todo_items(context);

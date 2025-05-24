@@ -31,7 +31,7 @@ export function app_todo_main(context) {
   let items = app_todo_items(context);
   let value = app_todo_completed_value();
   html_button(root, value, function () {
-    app_todo_view(context);
+    app_todo_view(context, value);
   });
   html_button(root, "🌅 add dailies", async function () {
     let filtered = list_filter_property(
