@@ -8,34 +8,33 @@ export async function command_line_generic(command, silent) {
   let c = await import_node("child_process");
   let { spawn } = c;
   let v = await new Promise(function (resolve, reject) {
-    try {
-      let result = {
-        stdout: [],
-        stderr: [],
-      };
-      let { first, remaining } = list_first_remaining(
-        string_split_space(command),
-      );
-      let child = spawn(first, remaining);
-      if (!silent) {
-        let { stdout, stderr } = child;
-        stdout.setEncoding("utf8");
-        stdout.on("data", function (data) {
-          log_write(data);
-          list_add(result.stdout, data);
-        });
-        stderr.setEncoding("utf8");
-        stderr.on("data", function (data) {
-          log_error_write(data);
-          list_add(result.stderr, data);
-        });
-      }
-      child.on("close", function (code) {
-        resolve(result);
+    let result = {
+      stdout: [],
+      stderr: [],
+    };
+    let { first, remaining } = list_first_remaining(
+      string_split_space(command),
+    );
+    let child = spawn(first, remaining);
+    if (!silent) {
+      let { stdout, stderr } = child;
+      stdout.setEncoding("utf8");
+      stdout.on("data", function (data) {
+        log_write(data);
+        list_add(result.stdout, data);
       });
-    } catch (e) {
-      resolve(e);
+      stderr.setEncoding("utf8");
+      stderr.on("data", function (data) {
+        log_error_write(data);
+        list_add(result.stderr, data);
+      });
     }
+    child.on("close", function (code) {
+      resolve(result);
+    });
+    child.on("error", function (e) {
+      reject(e);
+    });
   });
   return v;
 }
