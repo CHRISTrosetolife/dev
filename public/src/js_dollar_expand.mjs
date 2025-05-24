@@ -39,6 +39,7 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
       let ast_c = await function_parse(name_c);
       js_return_variablize(ast_c);
       let { arguments: args } = call;
+      each(list, function (item2) {});
       let args_names = js_identifiers_names_duplicates(args);
       let identifiers = js_identifiers_names(ast);
       let fns = await functions_names();
