@@ -1,7 +1,8 @@
 import { js_visit_identifiers } from "./js_visit_identifiers.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
 export function js_identifiers_names(ast) {
-  let v2 = list_adder_unique(function (la) {
+  let la_fn = list_adder_unique;
+  let v2 = la_fn(function (la) {
     js_visit_identifiers(ast, function (v) {
       let { node } = v;
       la(node.name);
