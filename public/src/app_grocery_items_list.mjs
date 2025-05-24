@@ -10,7 +10,7 @@ export function app_grocery_items_list(context) {
   let index_path = app_grocery_firebase_path_index();
   html_item_add(context, app_grocery_items_list, index_path, on_complete);
   let refresh = () => app_grocery_items_list(context);
-  let items = app_grocery_index_items(context);$ex 
+  let items = app_grocery_index_items(context);$ex    
   app_todo_list_generic(context, items, refresh, index_path, items);
   function on_complete(value) {
     let items = app_grocery_index_items(context);
