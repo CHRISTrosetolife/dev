@@ -34,7 +34,7 @@ export async function command_line_generic(command, silent) {
         resolve(result);
       });
     } catch (e) {
-      reject(e);
+      resolve(e);
     }
   });
   return v;
