@@ -1,3 +1,4 @@
+import { app_todo_later_value } from "./app_todo_later_value.mjs";
 import { app_todo_view } from "./app_todo_view.mjs";
 import { firebase_save_index } from "./firebase_save_index.mjs";
 import { list_clear } from "./list_clear.mjs";
@@ -29,6 +30,8 @@ export function app_todo_main(context) {
   let { root } = context;
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
+  let values = [app_todo_completed_value(), app_todo_later_value()];
+  each(list, function (item2) {});
   let value = app_todo_completed_value();
   html_button(root, value, function () {
     app_todo_view(context, value);
