@@ -11,7 +11,13 @@ export function js_identifier_rename_multiple(
   assert_message(
     list_size_equal,
     [identifiers_from, identifiers_to],
-    function () {},
+    function () {
+      let v = {
+        identifiers_from,
+        identifiers_to,
+      };
+      return v;
+    },
   );
   each_index_only(identifiers_from, function (index) {
     js_identifier_rename(
