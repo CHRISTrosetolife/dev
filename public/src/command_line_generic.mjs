@@ -31,12 +31,13 @@ export async function command_line_generic(command, silent) {
       });
     }
     child.on("close", function (code) {
+      let result = {
+        code,
+      };
       if (code !== 0) {
-        reject({
-          code,
-        });
+        reject(result);
       } else {
-        resolve(code);
+        resolve(result);
       }
     });
     child.on("error", function (error) {
