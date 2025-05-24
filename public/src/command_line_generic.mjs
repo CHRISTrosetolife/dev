@@ -30,13 +30,13 @@ export async function command_line_generic(command, silent) {
         list_add(result.stderr, data);
       });
     }
-    child.on("close", function (code2) {
-      if (code2 !== 0) {
+    child.on("close", function (code) {
+      if (code !== 0) {
         reject({
-          code2,
+          code,
         });
       } else {
-        resolve(code2);
+        resolve(code);
       }
     });
     child.on("error", function (error) {
