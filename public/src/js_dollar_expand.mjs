@@ -1,3 +1,4 @@
+import { js_identifiers_names_duplicates } from "./js_identifiers_names_duplicates.mjs";
 import { js_statement_call_is } from "./js_statement_call_is.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -51,7 +52,7 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
       });
       let d = js_declaration_single(ast_c);
       let params = js_declaration_to_params(d);
-      let params_names = js_identifiers_names(params);
+      let params_names = js_identifiers_names_duplicates(params);
       if (false) {
         assert_message(list_empty_is, [needs_enhance], function () {
           let v = string_combine_multiple([
