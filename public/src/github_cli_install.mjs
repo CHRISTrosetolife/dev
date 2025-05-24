@@ -1,6 +1,8 @@
+import { command_line } from "./command_line.mjs";
 import { command_line_errors } from "./command_line_errors.mjs";
 export async function github_cli_install() {
   let command = "gh --version";
   if (await command_line_errors(command)) {
+    await command_line("winget install --id GitHub.cli -e");
   }
 }
