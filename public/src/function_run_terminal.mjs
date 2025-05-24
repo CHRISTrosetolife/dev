@@ -1,4 +1,4 @@
-import { dir } from "./dir.mjs";
+import { command_line } from "./command_line.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { file_exists_not } from "./file_exists_not.mjs";
@@ -40,7 +40,7 @@ export async function function_run_terminal(function_name, args) {
             command,
           });
         }
-        let command_result = await dir(command);
+        let command_result = await command_line(command);
         if (false) {
           log({
             file_path_output,

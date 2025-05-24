@@ -1,4 +1,4 @@
-import { dir } from "./dir.mjs";
+import { command_line } from "./command_line.mjs";
 import { unzip_folder } from "./unzip_folder.mjs";
 import { folder_exists_ensure } from "./folder_exists_ensure.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -18,6 +18,6 @@ export async function unzip(path_input) {
     output_path,
     "",
   ]);
-  await dir(command);
+  await command_line(command);
   return output_path;
 }

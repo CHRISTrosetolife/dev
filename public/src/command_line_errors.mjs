@@ -1,8 +1,8 @@
-import { dir } from "./dir.mjs";
+import { command_line } from "./command_line.mjs";
 export async function command_line_errors(command) {
   let v;
   try {
-    await dir(command);
+    await command_line(command);
   } catch (e) {
     v = true;
   }

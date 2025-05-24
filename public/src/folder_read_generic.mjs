@@ -1,3 +1,4 @@
+import { command_line } from "./command_line.mjs";
 import { list_any } from "./list_any.mjs";
 import { folder_path_slash_forward } from "./folder_path_slash_forward.mjs";
 import { list_sort_string_map } from "./list_sort_string_map.mjs";
@@ -15,10 +16,10 @@ export async function folder_read_generic(folder, file_extensions, recursive) {
   assert(list_empty_not_is, [file_extensions]);
   folder = folder_path_slash_forward(folder);
   folder += "/";
-  async function traverse(dir, lambda_each) {
-    let files = await fs.promises.readdir(dir);
+  async function traverse(command_line, lambda_each) {
+    let files = await fs.promises.readdir(command_line);
     await each_async(files, async function (file) {
-      let path_full = path.join(dir, file);
+      let path_full = path.join(command_line, file);
       if (recursive) {
         if (await folder_is(path_full)) {
           await traverse(path_full, lambda_each);
