@@ -1,4 +1,3 @@
-import { never } from "./never.mjs";
 import { js_identifiers_names_duplicates } from "./js_identifiers_names_duplicates.mjs";
 import { log } from "./log.mjs";
 import { js_statement_call_is } from "./js_statement_call_is.mjs";
@@ -31,6 +30,7 @@ import { function_parse } from "./function_parse.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
 import { null_not_is } from "./null_not_is.mjs";
 import { list_concat } from "./list_concat.mjs";
+import { js_node_type_identifier_is } from "./js_node_type_identifier_is.mjs";
 export async function js_dollar_expand(ast, call, result_id, a, parent) {
   let { next, s2, index } = a;
   if (js_node_type_is(call, "CallExpression")) {
@@ -41,7 +41,7 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
       js_return_variablize(ast_c);
       let { arguments: args } = call;
       each(args, function (a) {
-        assert(never, []);
+        assert(js_node_type_identifier_is, [a]);
       });
       let args_names = js_identifiers_names_duplicates(args);
       let identifiers = js_identifiers_names(ast);
