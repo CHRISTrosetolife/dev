@@ -19,7 +19,6 @@ import { object_property_set } from "./object_property_set.mjs";
 import { app_todo_daily } from "./app_todo_daily.mjs";
 import { app_todo_type } from "./app_todo_type.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
-import { app_todo_completed_value } from "./app_todo_completed_value.mjs";
 import { app_todo_completed_property } from "./app_todo_completed_property.mjs";
 import { app_todo_not_completed } from "./app_todo_not_completed.mjs";
 import { each } from "./each.mjs";
@@ -30,7 +29,7 @@ export function app_todo_main(context) {
   let { root } = context;
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
-  let values = [app_todo_completed_value(), app_todo_later_value()];
+  let values = [app_todo_not_completed(), app_todo_later_value()];
   each(values, function (value) {
     html_button(root, value, function () {
       app_todo_view(context, value);
