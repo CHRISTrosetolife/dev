@@ -1,12 +1,6 @@
-import { command_line } from "./command_line.mjs";
+import { command_line_errors } from "./command_line_errors.mjs";
 export async function github_cli_install() {
   let command = "gh --version";
-  try {
-    await command_line(command);
-  } catch (e) {
-    let v = true;
-    return v;
-  }
-  let v2 = false;
-  return v2;
+  let v = await command_line_errors(command);
+  return v;
 }
