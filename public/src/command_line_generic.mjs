@@ -1,4 +1,3 @@
-import { error } from "./error.mjs";
 import { list_add } from "./list_add.mjs";
 import { log_error_write } from "./log_error_write.mjs";
 import { log_write } from "./log_write.mjs";
@@ -30,20 +29,6 @@ export async function command_line_generic(command, silent) {
         list_add(result.stderr, data);
       });
     }
-    child.on("close", function (code2) {
-      if (code2 !== 0) {
-        reject({
-          code2,
-        });
-      } else {
-        resolve(result);
-      }
-    });
-    child.on("error", function (error) {
-      reject({
-        error,
-      });
-    });
   });
   return v;
 }
