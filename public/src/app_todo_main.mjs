@@ -31,10 +31,10 @@ export function app_todo_main(context) {
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
   let values = [app_todo_completed_value(), app_todo_later_value()];
-  each(list, function (item2) {});
-  let value = app_todo_completed_value();
-  html_button(root, value, function () {
-    app_todo_view(context, value);
+  each(values, function (value) {
+    html_button(root, value, function () {
+      app_todo_view(context, value);
+    });
   });
   html_button(root, "🌅 add dailies", async function () {
     let filtered = list_filter_property(
