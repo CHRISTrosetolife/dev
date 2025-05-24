@@ -16,7 +16,7 @@ export async function command_line_generic(command, silent) {
     let { first, remaining } = list_first_remaining(
       string_split_space(command),
     );
-    let child = spawn(first, remaining);
+    let child = spawn(first);
     child.on("close", function (code) {
       if (code !== 0) {
         reject({
