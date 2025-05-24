@@ -10,8 +10,8 @@ export function app_todo_properties() {
       name: app_todo_completed_property(),
       choices: [
         app_todo_not_completed(),
-        app_todo_completed_value(),
         app_todo_later_value(),
+        app_todo_completed_value(),
       ],
     },
     {
