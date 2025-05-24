@@ -39,8 +39,13 @@ export async function function_run_terminal(function_name, args) {
           log({
             command,
           });
+        }let command_result
+        try {
+         command_result = await command_line(command);
+
+        } catch (error) {
+            command_result={error}
         }
-        let command_result = await command_line(command);
         if (false) {
           log({
             file_path_output,
