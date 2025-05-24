@@ -29,7 +29,8 @@ export function app_todo_main(context) {
   let { root } = context;
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
-  html_button(root, app_todo_completed_value(), function () {
+  let value = app_todo_completed_value();
+  html_button(root, value, function () {
     app_todo_view(context);
   });
   html_button(root, "🌅 add dailies", async function () {
