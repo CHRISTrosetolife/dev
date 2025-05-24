@@ -40,7 +40,9 @@ export async function command_line_generic(command, silent) {
       }
     });
     child.on("error", function (error) {
-      reject(error);
+      reject({
+        error,
+      });
     });
   });
   return v;
