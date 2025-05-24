@@ -1,3 +1,4 @@
+import { app_todo_view } from "./app_todo_view.mjs";
 import { firebase_save_index } from "./firebase_save_index.mjs";
 import { list_clear } from "./list_clear.mjs";
 import { html_br4 } from "./html_br4.mjs";
@@ -12,7 +13,6 @@ import { html_item_add } from "./html_item_add.mjs";
 import { app_todo_list_filtered } from "./app_todo_list_filtered.mjs";
 import { app_todo_firebase_path_index } from "./app_todo_firebase_path_index.mjs";
 import { app_todo_item_add } from "./app_todo_item_add.mjs";
-import { app_todo_completed_view } from "./app_todo_completed_view.mjs";
 import { app_todo_index_save_main } from "./app_todo_index_save_main.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { app_todo_daily } from "./app_todo_daily.mjs";
@@ -30,7 +30,7 @@ export function app_todo_main(context) {
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
   html_button(root, app_todo_completed_value(), function () {
-    app_todo_completed_view(context);
+    app_todo_view(context);
   });
   html_button(root, "🌅 add dailies", async function () {
     let filtered = list_filter_property(
