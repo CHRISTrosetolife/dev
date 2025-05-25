@@ -1,6 +1,7 @@
 export function prayers_bible() {
   let v = [
     "Let there be harvest workers",
+    "Bless the LORD, O my soul, and all that is within me",
     "Give all Christians the Spirit of wisdom and of revelation in the knowledge of God",
     "Enlighten the eyes of the hearts of every Christian",
     "Let all Christians know the hope God called us",
