@@ -2,9 +2,9 @@ import { prayers_sabbw } from "./prayers_sabbw.mjs";
 import { list_map } from "./list_map.mjs";
 export function prayers_famous() {
   let v = [
-    "the president",
+    "the president and any future presidents",
     "[the Pope and] any future Popes",
-    "the Ecumenical Patriarch",
+    "the Ecumenical Patriarch and any future Ecumenical Patriarchs",
     "Elon and let him be generous",
     "Zuckerberg and let him be generous",
     "Bezos and let him be generous",
