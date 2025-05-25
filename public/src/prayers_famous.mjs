@@ -20,6 +20,8 @@ export function prayers_famous() {
     "Bieber, let him be generous and thank you for his Christian faith",
     "Shaquille O'Neal, let him be generous and thank You for his generosity",
     "Michael Jordan and let him be generous",
+    "Katy Perry and let her be generous",
+    "Joe Rogan and let him be generous",
   ];
   let v2 = list_map(v, function (e) {
     let v3 = prayers_sabbw(e);
