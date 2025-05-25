@@ -203,6 +203,7 @@ export function prayers() {
       ],
       prayers_bbw,
     ),
+    "If it means anyone is saved, may there be miracles, wonders, signs, healing",
     prayers_bbw("the bodies and any tools of elect angels"),
     "For each challenge God gave Job, if God desires, may I fulfill",
     "Predestine all my remaining choices",
