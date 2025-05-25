@@ -1,3 +1,4 @@
+import { prayers_bbw } from "./prayers_bbw.mjs";
 export function prayers_unity() {
   let v = [
     "Unite the church",
@@ -38,6 +39,7 @@ export function prayers_unity() {
     "Unite Protestants with the rest of the church",
     "Unite Charismatics with the rest of the church",
     "May all shepherds be in communion with each other",
+    prayers_bbw("every member of the body of Christ"),
   ];
   return v;
 }
