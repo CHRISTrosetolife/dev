@@ -11,7 +11,19 @@ export async function app_pray2() {
     let mod = index % count;
     let v;
     if (mod === 0) {
+      v = string_combine_multiple([
+        index + 1,
+        ": ",
+        prayers_sabbw(b),
+        " and his family, friends, fans and the same for any successors and offspring; Lead him and them to always love and obey God perfectly, including speaking truth in love about unity, head coverings, homosexuality, transgender, race, and men and women regarding marriage and ministry;",
+      ]);
     } else if (mod === count - 1) {
+      v = string_combine_multiple([
+        index + 1,
+        ": ",
+        prayers_sabbw(b),
+        " and his family, friends, fans and the same for any successors and offspring; Lead him and them to always love and obey God perfectly, including speaking truth in love about unity, head coverings, homosexuality, transgender, race, and men and women regarding marriage and ministry;",
+      ]);
     } else {
       v = string_combine_multiple([
         index + 1,
