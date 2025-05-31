@@ -1,3 +1,4 @@
+import { mod } from "./mod.mjs";
 import { prayers_sabbw } from "./prayers_sabbw.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -6,7 +7,11 @@ import { app_pray_generic } from "./app_pray_generic.mjs";
 export async function app_pray2() {
   let bishops = catholic_bishops();
   let ps = list_map_index(bishops, function (b, index) {
-    if (false) {
+    let count = 10;
+    let mod = index % count;
+    if (mod === 0) {
+    } else if (mod === count - 1) {
+    } else {
     }
     let v = string_combine_multiple([
       index + 1,
