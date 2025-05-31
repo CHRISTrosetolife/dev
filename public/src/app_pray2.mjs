@@ -6,6 +6,8 @@ import { app_pray_generic } from "./app_pray_generic.mjs";
 export async function app_pray2() {
   let bishops = catholic_bishops();
   let ps = list_map_index(bishops, function (b, index) {
+    if (false) {
+    }
     let v = string_combine_multiple([
       index + 1,
       ": ",
