@@ -8,12 +8,11 @@ export function prayers_countries() {
   let c = countries_names();
   let m = list_map(c, string_split_comma_space_reverse);
   let on_first = function (item) {
-    let v = prayers_sabbw(item);
+    let v = prayers_sabbw(string_combine_multiple(["the people of ", item]));
     return v;
   };
   function on_last(item) {
     let v3 = string_combine_multiple([
-      "the people of ",
       item,
       " and their offspring and may they all love perfectly",
     ]);
