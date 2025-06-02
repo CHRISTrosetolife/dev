@@ -1,3 +1,4 @@
+import { list_index_last_is } from "./list_index_last_is.mjs";
 import { mod } from "./mod.mjs";
 import { prayers_sabbw } from "./prayers_sabbw.mjs";
 import { list_map_index } from "./list_map_index.mjs";
@@ -12,7 +13,7 @@ export async function app_pray2() {
     let v;
     if (mod === 0) {
       v = string_combine_multiple([index + 1, ": ", prayers_sabbw(b), ", "]);
-    } else if (mod === count - 1) {
+    } else if (mod === count - 1 || list_index_last_is(bishops, index)) {
       v = string_combine_multiple([
         index + 1,
         ": ",
