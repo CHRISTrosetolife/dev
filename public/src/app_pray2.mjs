@@ -14,7 +14,11 @@ export async function app_pray2() {
     let v;
     let index_1 = index + 1;
     if (mod === 0) {
-      v = string_combine_multiple([index_1, ": ", on_first(b), ", "]);
+      v = string_combine_multiple([
+        string_combine_multiple([index_1, ": "]),
+        on_first(b),
+        ", ",
+      ]);
     } else if (mod === count - 1 || list_index_last_is(bishops, index)) {
       v = string_combine_multiple([
         index_1,
