@@ -12,18 +12,19 @@ export async function app_pray2() {
     let count = 10;
     let mod = index % count;
     let v;
+    let index_1 = index + 1;
     if (mod === 0) {
-      v = string_combine_multiple([index + 1, ": ", on_first(b), ", "]);
+      v = string_combine_multiple([index_1, ": ", on_first(b), ", "]);
     } else if (mod === count - 1 || list_index_last_is(bishops, index)) {
       v = string_combine_multiple([
-        index + 1,
+        index_1,
         ": ",
         b,
         ", ",
         " and their families, friends, fans and the same for any successors and offspring; Lead them to always love and obey God perfectly, including speaking truth in love about unity, head coverings, homosexuality, transgender, race, and men and women regarding marriage and ministry;",
       ]);
     } else {
-      v = string_combine_multiple([index + 1, ": ", b, ", "]);
+      v = string_combine_multiple([index_1, ": ", b, ", "]);
     }
     return v;
   });
