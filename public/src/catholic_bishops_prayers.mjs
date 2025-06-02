@@ -7,7 +7,7 @@ export function catholic_bishops_prayers() {
   let on_first = prayers_sabbw;
   function on_last(item) {
     let v2 =
-      "and their families, friends, fans and the same for any successors and offspring; Lead them to always love and obey God perfectly, including speaking truth in love about unity, head coverings, homosexuality, transgender, race, and men and women regarding marriage and ministry;";
+      " and their families, friends, fans and the same for any successors and offspring; Lead them to always love and obey God perfectly, including speaking truth in love about unity, head coverings, homosexuality, transgender, race, and men and women regarding marriage and ministry;";
     let v3 = string_combine_multiple([item, v2]);
     return v3;
   }
