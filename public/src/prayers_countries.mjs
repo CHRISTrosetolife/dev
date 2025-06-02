@@ -7,7 +7,10 @@ import { list_map } from "./list_map.mjs";
 export function prayers_countries() {
   let c = countries_names();
   let m = list_map(c, string_split_comma_space_reverse);
-  let on_first = prayers_sabbw;
+  let on_first = function (item) {
+    let v = prayers_sabbw(item);
+    return v;
+  };
   function on_last(item) {
     let v3 = string_combine_multiple([
       "the people of ",
