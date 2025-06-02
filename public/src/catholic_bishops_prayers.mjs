@@ -13,14 +13,12 @@ export function catholic_bishops_prayers() {
     let count = 10;
     let mod = index % count;
     let v;
-    let index_1 = index + 1;
-    let index_1_colon = string_combine_multiple([index_1, ": "]);
     if (mod === 0) {
-      v = string_combine_multiple([index_1_colon, on_first(b), ", "]);
+      v = string_number_colon(on_first(b), index);
     } else if (mod === count - 1 || list_index_last_is(bishops, index)) {
       v = string_combine_multiple([string_number_colon(b, index), last_after]);
     } else {
-      v = string_combine_multiple([index_1_colon, b, ", "]);
+      v = string_number_colon(b, index);
     }
     return v;
     function string_number_colon(b, index) {
