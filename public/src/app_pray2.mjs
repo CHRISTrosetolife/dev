@@ -7,12 +7,13 @@ import { catholic_bishops } from "./catholic_bishops.mjs";
 import { app_pray_generic } from "./app_pray_generic.mjs";
 export async function app_pray2() {
   let bishops = catholic_bishops();
+  let on_first = prayers_sabbw;
   let ps = list_map_index(bishops, function (b, index) {
     let count = 10;
     let mod = index % count;
     let v;
     if (mod === 0) {
-      v = string_combine_multiple([index + 1, ": ", prayers_sabbw(b), ", "]);
+      v = string_combine_multiple([index + 1, ": ", on_first(b), ", "]);
     } else if (mod === count - 1 || list_index_last_is(bishops, index)) {
       v = string_combine_multiple([
         index + 1,
