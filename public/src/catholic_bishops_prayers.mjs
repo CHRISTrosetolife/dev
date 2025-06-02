@@ -21,12 +21,12 @@ export function catholic_bishops_prayers() {
       v = string_number_colon(b, index);
     }
     return v;
-    function string_number_colon(b, index) {
-      let index_1 = index + 1;
-      let index_1_colon = string_combine_multiple([index_1, ": "]);
-      let v2 = string_combine_multiple([index_1_colon, b, ", "]);
-      return v2;
-    }
   });
   return ps;
+  function string_number_colon(b, index) {
+    let index_1 = index + 1;
+    let index_1_colon = string_combine_multiple([index_1, ": "]);
+    let v2 = string_combine_multiple([index_1_colon, b, ", "]);
+    return v2;
+  }
 }
