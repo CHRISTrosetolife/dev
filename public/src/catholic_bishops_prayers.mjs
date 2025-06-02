@@ -1,3 +1,4 @@
+import { list_take } from "./list_take.mjs";
 import { list_index_last_is } from "./list_index_last_is.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { mod } from "./mod.mjs";
@@ -5,7 +6,7 @@ import { list_map_index } from "./list_map_index.mjs";
 import { prayers_sabbw } from "./prayers_sabbw.mjs";
 import { catholic_bishops } from "./catholic_bishops.mjs";
 export function catholic_bishops_prayers() {
-  let bishops = catholic_bishops();
+  let bishops = list_take(catholic_bishops(), 15);
   let on_first = prayers_sabbw;
   let last_after =
     "and their families, friends, fans and the same for any successors and offspring; Lead them to always love and obey God perfectly, including speaking truth in love about unity, head coverings, homosexuality, transgender, race, and men and women regarding marriage and ministry;";
