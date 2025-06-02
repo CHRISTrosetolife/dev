@@ -4,8 +4,11 @@ import { catholic_bishops } from "./catholic_bishops.mjs";
 export function catholic_bishops_prayers() {
   let bishops = catholic_bishops();
   let on_first = prayers_sabbw;
-  let last_after =
-    "and their families, friends, fans and the same for any successors and offspring; Lead them to always love and obey God perfectly, including speaking truth in love about unity, head coverings, homosexuality, transgender, race, and men and women regarding marriage and ministry;";
-  let v = prayers_list_generic(bishops, on_first, last_after);
+  function on_last() {
+    let v2 =
+      "and their families, friends, fans and the same for any successors and offspring; Lead them to always love and obey God perfectly, including speaking truth in love about unity, head coverings, homosexuality, transgender, race, and men and women regarding marriage and ministry;";
+    return v2;
+  }
+  let v = prayers_list_generic(bishops, on_first, on_last);
   return v;
 }
