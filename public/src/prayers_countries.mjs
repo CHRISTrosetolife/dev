@@ -7,9 +7,6 @@ import { list_map } from "./list_map.mjs";
 export function prayers_countries() {
   let c = countries_names();
   let m = list_map(c, string_split_comma_space_reverse);
-  let v = list_map(m, function (a) {
-    return v2;
-  });
   let on_first = prayers_sabbw;
   function on_last(item) {
     let v3 = string_combine_multiple([
@@ -19,6 +16,6 @@ export function prayers_countries() {
     ]);
     return v3;
   }
-  let v4 = prayers_list_generic(bishops, on_first, on_last);
+  let v4 = prayers_list_generic(m, on_first, on_last);
   return v4;
 }
