@@ -8,7 +8,7 @@ export function catholic_bishops_prayers() {
   let bishops = catholic_bishops();
   let on_first = prayers_sabbw;
   let last_after =
-    " and their families, friends, fans and the same for any successors and offspring; Lead them to always love and obey God perfectly, including speaking truth in love about unity, head coverings, homosexuality, transgender, race, and men and women regarding marriage and ministry;";
+    "and their families, friends, fans and the same for any successors and offspring; Lead them to always love and obey God perfectly, including speaking truth in love about unity, head coverings, homosexuality, transgender, race, and men and women regarding marriage and ministry;";
   let ps = list_map_index(bishops, function (b, index) {
     let count = 10;
     let mod = index % count;
