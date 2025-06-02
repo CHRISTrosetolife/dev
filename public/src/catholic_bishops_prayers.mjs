@@ -18,7 +18,10 @@ export function catholic_bishops_prayers() {
     if (mod === 0) {
       v = string_combine_multiple([index_1_colon, on_first(b), ", "]);
     } else if (mod === count - 1 || list_index_last_is(bishops, index)) {
-      v = string_combine_multiple([index_1_colon, b, ", ", last_after]);
+      v = string_combine_multiple([
+        string_combine_multiple([index_1_colon, b, ", "]),
+        last_after,
+      ]);
     } else {
       v = string_combine_multiple([index_1_colon, b, ", "]);
     }
