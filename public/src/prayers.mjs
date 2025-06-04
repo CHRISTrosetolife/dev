@@ -74,6 +74,7 @@ export function prayers() {
     "Direct all my footsteps and thoughts",
     "Answer all the prayer requests I should be praying",
     "Answer all the prayer requests every Christian should be praying",
+    "Help any others You desire to pray like this",
     "Bless, help and provide for each person who has asked me to pray for them",
     "Heal me",
     "May all who have commanded me to take medicine command me to stop taking medicine",
