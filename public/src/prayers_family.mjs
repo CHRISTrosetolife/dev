@@ -47,7 +47,6 @@ export function prayers_family() {
     "Nancy",
     "Zachary",
   ];
-  list_map(members, prayers_sabbw);
   let v = [
     "bless beyond words our marriage",
     "Save and bless beyond words our children and may they be obedient and healthy",
