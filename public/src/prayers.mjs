@@ -29,7 +29,8 @@ export function prayers() {
     "Cause me to never be in therapy again",
     "Cause me to rather live on earth than die",
     "From now on cause all disciples of Jesus to suffer in the flesh and cease from sin",
-    "Maximize disciples of Jesus walking with God",
+    "Maximize disciples of Jesus walking with God who would want to",
+    "If possible tame every tongue that would want to be tamed",
     "Cause me to either speak perfectly or be silent",
     "If possible have mercy on all creation",
     "If possible may all come to repentance",
@@ -203,7 +204,7 @@ export function prayers() {
       prayers_bbw,
     ),
     prayers_bbw("Christian websites and programming"),
-    "May I fellowship with any Christians from the generation Jesus spoke of",
+    "May I fellowship with any Christians from the generation Jesus spoke of and if God desires may they be known to the body of Christ on earth",
     list_map(
       [
         "orphans",
