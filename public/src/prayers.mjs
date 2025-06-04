@@ -202,7 +202,8 @@ export function prayers() {
       ],
       prayers_bbw,
     ),
-    "May me fellowship with any Christians from the generation Jesus spoke of",
+    prayers_bbw("Christian websites and programming"),
+    "May I fellowship with any Christians from the generation Jesus spoke of",
     list_map(
       [
         "orphans",
