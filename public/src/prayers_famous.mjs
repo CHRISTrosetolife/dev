@@ -22,6 +22,7 @@ export function prayers_famous() {
     "Michael Jordan and let him be generous",
     "Katy Perry and let her be generous",
     "Joe Rogan and let him be generous",
+    "JD Vance and let him be generous",
   ];
   let v2 = list_map(v, function (e) {
     let v3 = prayers_sabbw(e);
