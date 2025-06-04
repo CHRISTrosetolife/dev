@@ -1,4 +1,4 @@
-import { noop } from "./noop.mjs";
+import { identity } from "./identity.mjs";
 import { prayers_bbw } from "./prayers_bbw.mjs";
 import { prayers_list_generic } from "./prayers_list_generic.mjs";
 export function prayers_family() {
@@ -55,7 +55,7 @@ export function prayers_family() {
         "Zachary",
       ],
       prayers_bbw,
-      noop,
+      identity,
     ),
     "bless beyond words parenting of Micah and Alexa",
   ];
