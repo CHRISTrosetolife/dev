@@ -18,10 +18,10 @@ export function prayers_list_generic(list, on_first, on_last) {
   return ps;
   function string_number_colon(item, index) {
     let ending = ",";
-    let v3 = string_number_colon_generic(index, item, ending);
+    let v3 = string_number_colon_generic(item, index, ending);
     return v3;
   }
-  function string_number_colon_generic(index, item, ending) {
+  function string_number_colon_generic(item, index, ending) {
     let index_1 = index + 1;
     let index_1_colon = string_combine_multiple([index_1, ": "]);
     let v2 = string_combine_multiple([index_1_colon, item, ending, " "]);
