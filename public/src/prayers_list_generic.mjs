@@ -9,9 +9,9 @@ export function prayers_list_generic(list, on_first, on_last) {
     if (m === 0) {
       v = string_number_colon(on_first(item), index);
     } else if (m === count - 1 || list_index_last_is(list, index)) {
-      v = string_number_colon_generic(on_last(item), index, ";");
+      v = string_number_colon(on_last(item), index, ";");
     } else {
-      v = string_number_colon(item, index);
+      v = string_number_colon_generic(item, index);
     }
     return v;
   });
