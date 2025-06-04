@@ -11,15 +11,20 @@ export function prayers_list_generic(list, on_first, on_last) {
     } else if (m === count - 1 || list_index_last_is(list, index)) {
       v = string_number_colon(on_last(item), index);
     } else {
-      v = string_number_colon(item, index);
+      v = string_number_colon_generic(item, index, ";");
     }
     return v;
   });
   return ps;
   function string_number_colon(item, index) {
+    let ending = ",";
+    let v3 = string_number_colon_generic(index, item, ending);
+    return v3;
+  }
+  function string_number_colon_generic(index, item, ending) {
     let index_1 = index + 1;
     let index_1_colon = string_combine_multiple([index_1, ": "]);
-    let v2 = string_combine_multiple([index_1_colon, item, ",", " "]);
+    let v2 = string_combine_multiple([index_1_colon, item, ending, " "]);
     return v2;
   }
 }
