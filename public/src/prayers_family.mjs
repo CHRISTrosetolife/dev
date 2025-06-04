@@ -57,6 +57,7 @@ export function prayers_family() {
     "Bless Visa and Green Card",
     prayers_bbw("together in person"),
     list_map(members, prayers_sabbw),
+    prayers_bbw("parenting of Micah and Alexa"),
   ];
   return v;
 }
