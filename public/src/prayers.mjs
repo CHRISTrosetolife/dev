@@ -65,6 +65,7 @@ export function prayers() {
     "Maximize the faith of love and I",
     "Maximize the faith of all Christians",
     "Cause all Christians including love and I to be gentle",
+    "Cause me to have no sinful or angry tone",
     "Cause love and I to be faithful in marriage",
     "Banish all desire for any woman that you have not given me as a wife",
     "May the prayer of love and I be perfect",
