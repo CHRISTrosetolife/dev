@@ -14,12 +14,7 @@ import { prayers_family } from "./prayers_family.mjs";
 import { list_denest } from "./list_denest.mjs";
 export function prayers() {
   let v = list_denest([
-    "Cause me to perfectly and maximally glorify the Father",
-    "Cause me to perfectly and maximally glorify Jesus",
-    "Cause me to perfectly and maximally glorify the Holy Spirit",
-    "Cause me to perfectly obey the Father",
-    "Cause me to perfectly obey Jesus",
-    "Cause me to perfectly obey the Holy Spirit",
+    "Cause me to perfectly and maximally glorify and obey the Father, Jesus and the Holy Spirit",
     "May the words of my mouth and the meditation of my heart be pleasing in your sight, O Lord, my Rock and my Redeemer",
     "Cause me to fulfill my ministry",
     "Cause me to suffer in the flesh and cease from sin",
@@ -84,6 +79,7 @@ export function prayers() {
     "Bless, help and provide for each person who has asked me to pray for them",
     "Heal me",
     "May all who have commanded me to take medicine command me to stop taking medicine",
+    "No more risperidone",
     "If I have emotions may they be healed",
     "If I have thoughts may they be healed",
     "If I have memories may they be healed",
@@ -174,7 +170,7 @@ export function prayers() {
         "the love of love",
         "the faith of love",
         "the fruit of the Spirit of love",
-        "the children of love and Jared",
+        "the offspring of love and Jared",
       ],
       prayers_bbw,
     ),
