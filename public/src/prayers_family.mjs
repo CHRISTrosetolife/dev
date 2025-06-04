@@ -48,12 +48,12 @@ export function prayers_family() {
     "Nancy",
     "Zachary",
   ];
+  list_map(members, prayers_sabbw);
   let v = [
     prayers_bbw("our marriage"),
     prayers_sabbw("our children and may they be obedient and healthy"),
     "Bless any trips, our legal marriage, any marriage ceremonies, Visa and Green Card",
     prayers_bbw("together in person"),
-    list_map(members, prayers_sabbw),
     prayers_bbw("parenting of Micah and Alexa"),
   ];
   return v;
