@@ -1,5 +1,4 @@
 import { list_map } from "./list_map.mjs";
-import { prayers_bbw } from "./prayers_bbw.mjs";
 import { prayers_sabbw } from "./prayers_sabbw.mjs";
 export function prayers_family() {
   let members = [
@@ -50,11 +49,12 @@ export function prayers_family() {
   ];
   list_map(members, prayers_sabbw);
   let v = [
-    prayers_bbw("our marriage"),
-    prayers_sabbw("our children and may they be obedient and healthy"),
+    "bless beyond words our marriage",
+    "Save and bless beyond words our children and may they be obedient and healthy",
     "Bless any trips, our legal marriage, any marriage ceremonies, Visa and Green Card",
-    prayers_bbw("together in person"),
-    prayers_bbw("parenting of Micah and Alexa"),
+    "bless beyond words together in person",
+    list_map(members, prayers_sabbw),
+    "bless beyond words parenting of Micah and Alexa",
   ];
   return v;
 }
