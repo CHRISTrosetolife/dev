@@ -29,6 +29,7 @@ export function prayers() {
     "Cause me to never be in therapy again",
     "Cause me to rather live on earth than die",
     "From now on cause all disciples of Jesus to suffer in the flesh and cease from sin",
+    "Maximize disciples of Jesus walking with God",
     "Cause me to either speak perfectly or be silent",
     "If possible have mercy on all creation",
     "If possible may all come to repentance",
