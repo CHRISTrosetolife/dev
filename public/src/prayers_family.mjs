@@ -1,4 +1,4 @@
-import { identity } from "./identity.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { prayers_bbw } from "./prayers_bbw.mjs";
 import { prayers_list_generic } from "./prayers_list_generic.mjs";
 export function prayers_family() {
@@ -55,7 +55,10 @@ export function prayers_family() {
         "Zachary",
       ],
       prayers_bbw,
-      identity,
+      function (w) {
+        let v2 = string_combine_multiple(["and ", w]);
+        return v2;
+      },
     ),
     "bless beyond words parenting of Micah and Alexa",
   ];
