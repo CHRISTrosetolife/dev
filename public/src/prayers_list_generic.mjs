@@ -19,7 +19,7 @@ export function prayers_list_generic(list, on_first, on_last) {
   function string_number_colon(item, index) {
     let index_1 = index + 1;
     let index_1_colon = string_combine_multiple([index_1, ": "]);
-    let v2 = string_combine_multiple([index_1_colon, item, ", "]);
+    let v2 = string_combine_multiple([index_1_colon, item, ",", " "]);
     return v2;
   }
 }
