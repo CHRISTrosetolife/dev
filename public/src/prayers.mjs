@@ -67,6 +67,8 @@ export function prayers() {
     "Cause all Christians including love and I to be gentle",
     "Cause me to have no sinful or angry tone",
     "Cause love and I to be faithful in marriage",
+    "Cause love to, according to the word of God, submit to Jared",
+    "Cause me to love love as Christ loved the church",
     "Banish all desire for any woman that you have not given me as a wife",
     "May the prayer of love and I be perfect",
     "May the prayer of every Christian be perfect",
