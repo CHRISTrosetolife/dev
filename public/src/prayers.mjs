@@ -103,7 +103,7 @@ export function prayers() {
           "Christian songwriting",
           "Christian speaking",
           "Christian writing",
-          "andChristian prayer",
+          "and Christian prayer",
         ]),
       ]),
     ),
