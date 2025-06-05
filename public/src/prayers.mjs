@@ -74,7 +74,7 @@ export function prayers() {
     "May all church meetings be as You desire",
     "May all Lord’s Supper bread and drink be as You desire",
     "May all shepherds be humble",
-    list_map(
+    prayers_list_generic(
       [
         "elder",
         "overseer",
@@ -87,7 +87,7 @@ export function prayers() {
         "servant",
         "messenger",
       ],
-      prayers_sabbwe,
+      string_prefix_and,
     ),
     "May all shepherding be perfect",
     "May all stewardship be perfect",
