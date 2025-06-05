@@ -2,8 +2,8 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_index_last_is } from "./list_index_last_is.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 export function prayers_list_generic_10(list, on_first, on_last) {
+  let count = 10;
   let ps = list_map_index(list, function (item, index) {
-    let count = 10;
     let m = index % count;
     let v;
     if (m === 0) {
