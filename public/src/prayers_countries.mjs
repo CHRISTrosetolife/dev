@@ -1,4 +1,4 @@
-import { prayers_list_generic_10 } from "./prayers_list_generic_10.mjs";
+import { prayers_list_generic_5 } from "./prayers_list_generic_5.mjs";
 import { prayers_sabbw } from "./prayers_sabbw.mjs";
 import { string_split_comma_space_reverse } from "./string_split_comma_space_reverse.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -18,6 +18,6 @@ export function prayers_countries() {
     ]);
     return v3;
   }
-  let v4 = prayers_list_generic_10(m, on_first, on_last);
+  let v4 = prayers_list_generic_5(m, on_first, on_last);
   return v4;
 }
