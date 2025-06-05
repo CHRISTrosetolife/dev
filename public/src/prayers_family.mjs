@@ -1,13 +1,13 @@
+import { prayers_list_generic_10 } from "./prayers_list_generic_10.mjs";
 import { string_prefix_and } from "./string_prefix_and.mjs";
 import { prayers_bbw } from "./prayers_bbw.mjs";
-import { prayers_list_generic } from "./prayers_list_generic.mjs";
 export function prayers_family() {
   let v = [
     "bless beyond words our marriage",
     "Save and bless beyond words our children and may they be obedient and healthy including no mental illness and no medication",
     "Bless any trips, our legal marriage, any marriage ceremonies, Visa and Green Card",
     "bless beyond words together in person",
-    prayers_list_generic(
+    prayers_list_generic_10(
       [
         "the family of love",
         "Papa",
