@@ -1,3 +1,4 @@
+import { prayers_sabbw } from "./prayers_sabbw.mjs";
 import { string_prefix_and } from "./string_prefix_and.mjs";
 import { prayers_list_generic } from "./prayers_list_generic.mjs";
 export function prayers_music() {
@@ -26,5 +27,6 @@ export function prayers_music() {
     "NEEDTOBREATHE",
   ];
   let v2 = prayers_list_generic(v, string_prefix_and);
-  return v2;
+  let v3 = [prayers_sabbw(":"), v2];
+  return v3;
 }
