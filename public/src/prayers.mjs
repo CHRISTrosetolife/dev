@@ -1,4 +1,4 @@
-import { prayers_list_generic_10 } from "./prayers_list_generic_10.mjs";
+import { prayers_list_generic_5 } from "./prayers_list_generic_5.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_prefix_and } from "./string_prefix_and.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
@@ -76,7 +76,7 @@ export function prayers() {
     "May all church meetings be as You desire",
     "May all Lord’s Supper bread and drink be as You desire",
     "May all shepherds be humble",
-    prayers_list_generic_10(
+    prayers_list_generic_5(
       [
         "elder",
         "overseer",
