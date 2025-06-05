@@ -90,10 +90,9 @@ export function prayers() {
       ],
       string_prefix_and,
     ),
-    "May all shepherding, stewardship, preaching, teaching be perfect",
+    "May all shepherding, stewardship, preaching and teaching be perfect",
     "If possible, may seminary and religious education be free and online",
-    "May the voice of every Christian lead all to Christ",
-    "May my voice lead all listeners to Christ",
+    "May the voice of every Christian including mine lead all listeners to Christ",
     list_map(["all worship", "all worship singing voices"], prayers_bbw),
     list_map(
       [
