@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_prefix_and } from "./string_prefix_and.mjs";
 import { prayers_list_generic } from "./prayers_list_generic.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
@@ -93,17 +94,18 @@ export function prayers() {
     "May all shepherding, stewardship, preaching and teaching be perfect",
     "If possible, may seminary and religious education be free and online",
     "May the voice of every Christian including mine lead all listeners to Christ",
-    list_map(["all worship", "all worship singing voices"], prayers_bbw),
-    list_map(
-      [
-        "my singing voice",
-        "my speaking voice",
-        "Christian songwriting",
-        "Christian speaking",
-        "Christian writing",
-        "Christian prayer",
-      ],
-      prayers_bbw,
+    prayers_bbw(
+      string_combine_multiple([
+        "all worship, all worship singing voices and ",
+        list_join_comma_space([
+          "my singing voice",
+          "my speaking voice",
+          "Christian songwriting",
+          "Christian speaking",
+          "Christian writing",
+          "andChristian prayer",
+        ]),
+      ]),
     ),
     prayers_music(),
     prayers_famous(),
