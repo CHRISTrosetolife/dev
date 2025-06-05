@@ -4,7 +4,7 @@ import { prayers_list_generic } from "./prayers_list_generic.mjs";
 export function prayers_family() {
   let v = [
     "bless beyond words our marriage",
-    "Save and bless beyond words our children and may they be obedient and healthy",
+    "Save and bless beyond words our children and may they be obedient and healthy including no mental illness and no medication",
     "Bless any trips, our legal marriage, any marriage ceremonies, Visa and Green Card",
     "bless beyond words together in person",
     prayers_list_generic(
