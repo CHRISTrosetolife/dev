@@ -51,7 +51,7 @@ export function prayers() {
         "delusions",
         "depression",
         "coughing",
-        "poor vision",
+        "or poor vision",
       ]),
     ),
     "Banish my desire for soda",
