@@ -1,4 +1,4 @@
-import { prayers_list_generic_10 } from "./prayers_list_generic_10.mjs";
+import { prayers_list_generic_5 } from "./prayers_list_generic_5.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { prayers_sabbw } from "./prayers_sabbw.mjs";
 import { catholic_bishops } from "./catholic_bishops.mjs";
@@ -14,6 +14,6 @@ export function catholic_bishops_prayers() {
     let v3 = string_combine_multiple([item, v2]);
     return v3;
   }
-  let v = prayers_list_generic_10(m, on_first, on_last);
+  let v = prayers_list_generic_5(m, on_first, on_last);
   return v;
 }
