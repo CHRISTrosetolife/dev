@@ -89,6 +89,7 @@ export function prayers() {
         "servant",
         "messenger",
       ],
+      prayers_bbwe,
       string_prefix_and,
     ),
     "May all shepherding, stewardship, preaching and teaching be perfect",
