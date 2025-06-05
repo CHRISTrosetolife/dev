@@ -1,3 +1,4 @@
+import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { prayers_bbw } from "./prayers_bbw.mjs";
 import { prayers_sabbwe } from "./prayers_sabbwe.mjs";
 import { string_case_upper_first } from "./string_case_upper_first.mjs";
@@ -38,24 +39,20 @@ export function prayers() {
     "Banish all sinful desire in all Christians including me for anyone that you have not given as a spouse",
     "Direct all my footsteps and thoughts",
     "Answer all the prayer requests every Christian including me should be praying and help any others You desire to pray like this",
-    "Bless, help and provide for each person who has asked me to pray for them",
+    "Bless, help and provide for each person who has asked me to pray for them or give materially",
     "Heal me",
     "May all who have commanded me to take medicine command me to stop taking medicine",
     "No more risperidone",
-    "If I have emotions may they be healed",
-    "If I have thoughts may they be healed",
-    "If I have memories may they be healed",
-    "If I have sleep may it be healed",
-    list_map(
-      [
+    "If I have emotions, thoughts, memories, or sleep may they be healed",
+    prayers_heal_afflicted(
+      list_join_comma_space([
         "self-harm desires",
         "hallucinations",
         "delusions",
         "depression",
         "coughing",
         "poor vision",
-      ],
-      prayers_heal_afflicted,
+      ]),
     ),
     "Banish my desire for soda",
     "Help me speak and understand Cebuano",
