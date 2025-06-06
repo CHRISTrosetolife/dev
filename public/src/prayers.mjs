@@ -19,11 +19,11 @@ export function prayers() {
   let v = list_denest([
     "Cause me to perfectly and maximally glorify and obey the Father, Jesus and the Holy Spirit",
     "May the words of my mouth and the meditation of my heart be pleasing in your sight, O Lord, my Rock and my Redeemer",
-    "From now on cause all disciples of Jesus, including me, to suffer in the flesh and cease from sin",
+    "From now on cause all Christians, including me, to suffer in the flesh and cease from sin",
     "If it means not sinning, take anything away, do anything",
     "Thank You",
     "Cause me to never be hospitalized again, never be in therapy again and desire your desire for my lifespan",
-    "Maximize disciples of Jesus walking with God who would want to",
+    "Maximize Christians walking with God who would want to",
     "If possible tame every tongue that would want to be tamed",
     "Cause me to either speak perfectly or be silent",
     "If possible have mercy on all creation, may all come to repentance, may the names of all always be written in the book of life and lead all souls to Jesus",
