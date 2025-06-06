@@ -32,7 +32,7 @@ export function prayers() {
     "May love feel and be strong during period and childbirth without pain",
     "Cause all Christians including love and I to love, be holy, perfect in mercy, to eagerly and joyfully do the desire of God, to be humble, gentle, patient, diligent, wise, generous, obedient to Scripture, perfect in prayer, to hope, to have pure hearts, to be faithful in marriage if married, to be faithful in singleness if single, to choose good, including not vowing",
     "Cause all vows of all Christians including mine to be fulfilled",
-    "Cause love and I to have zero negative emotions",
+    "Cause love and I to have zero negative emotions and be pure in heart",
     "Maximize the faith of love and I",
     "Maximize the faith of all Christians",
     "Cause me to have no sinful or angry tone",
