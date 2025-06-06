@@ -99,8 +99,7 @@ export function prayers() {
     "If possible, may all seminary and religious education be free and online",
     "May the voice of every Christian including mine lead all including listeners to Christ",
     prayers_bbw(
-      "all worship, all worship singing voices, my singing voice, my singing voice and my speaking voice",
-      list_join_comma_space([]),
+      "all worship, all worship singing voices, my singing voice, and my speaking voice",
     ),
     prayers_bbw(
       "all Christian songwriting, Christian speaking, Christian writing, and Christian prayer",
