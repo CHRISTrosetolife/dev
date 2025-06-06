@@ -10,7 +10,7 @@ export function prayers_unity() {
     "Unite Methodists, Pentecostals, Baptists, Assemblies of God, Seventh-Day Adventists, Mormons and Jehovah's Witnesses with the rest of the church",
     "Unite Quakers, the Amish, Southern Baptists, Northern Baptists and Evangelicals with the rest of the church",
     "Unite Protestants and Charismatics with the rest of the church",
-    "May all shepherds be in communion with each other",
+    "May all shepherds be humble and in communion with each other",
     prayers_bbw("every member of the body of Christ"),
   ];
   return v;

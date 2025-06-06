@@ -74,10 +74,8 @@ export function prayers() {
     prayers_unity(),
     prayers_bible(),
     prayers_sins(),
-    "May all church meeting buildings be as You desire",
-    "May all church meetings be as You desire",
+    "May all church meetings inlcuding buildings be as You desire",
     "May all Lord’s Supper bread and drink be as You desire",
-    "May all shepherds be humble",
     prayers_list_generic_5(
       [
         "elder",
