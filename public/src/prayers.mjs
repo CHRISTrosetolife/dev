@@ -96,8 +96,8 @@ export function prayers() {
       string_prefix_and,
     ),
     "May all shepherding, stewardship, preaching and teaching be perfect",
-    "If possible, may seminary and religious education be free and online",
-    "May the voice of every Christian including mine lead all listeners to Christ",
+    "If possible, may all seminary and religious education be free and online",
+    "May the voice of every Christian including mine lead all including listeners to Christ",
     prayers_bbw(
       string_combine_multiple([
         "all worship, all worship singing voices and ",
