@@ -121,10 +121,9 @@ export function prayers() {
         "her and my offspring",
       ]),
     ),
-    "May the desire of the Father be done",
-    "May the desire of the Father be done regarding...",
+    "May the desire of the Father be done, including regarding...",
     "Protect the teeth of love and I",
-    list_map(
+    prayers_list_generic_5(
       [
         "my works",
         "my word of God singing and speaking",
@@ -145,6 +144,7 @@ export function prayers() {
         "the works of Christians",
       ],
       prayers_bbw,
+      string_prefix_and,
     ),
     prayers_bbw("Christian websites and programming"),
     "May I fellowship with any Christians from the generation Jesus spoke of and if God desires may they be known to the body of Christ on earth",
