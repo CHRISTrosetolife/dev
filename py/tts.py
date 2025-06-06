@@ -20,11 +20,11 @@ import os
 import json
 from pathlib import Path
 
+pipeline = KPipeline(lang_code='a')
 root = json.loads(contents)
 for unit in root['units']:
     print(json.dumps(unit))
     folder_path_output = unit['path']
-    pipeline = KPipeline(lang_code='a')
     speed=1
     generator = pipeline(unit['text'], voice=unit['voice'], speed=speed)
     count = 0
