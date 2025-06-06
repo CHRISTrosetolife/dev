@@ -52,6 +52,7 @@ export function prayers() {
         "hallucinations",
         "delusions",
         "depression",
+        "oppression",
         "coughing",
         "or poor vision",
       ]),
