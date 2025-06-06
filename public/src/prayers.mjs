@@ -111,9 +111,7 @@ export function prayers() {
       ["Jews", "descendants of Abraham", "Muslims", "Hindus", "Buddhists"],
       prayers_sabbwa,
     ),
-    "May love maximally glorify the Father",
-    "May love maximally glorify Jesus",
-    "May love maximally glorify the Holy Spirit",
+    "May love maximally glorify the Father, Jesus and the Holy Spirit",
     list_map(
       [
         "love",
