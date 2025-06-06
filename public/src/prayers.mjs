@@ -115,10 +115,10 @@ export function prayers() {
     list_map(
       [
         "love",
-        "the love of love",
-        "the faith of love",
-        "the fruit of the Spirit of love",
-        "the offspring of love and Jared",
+        "her love",
+        "her faith",
+        "her fruit of the Spirit",
+        "her offspring",
       ],
       prayers_bbw,
     ),
