@@ -4,15 +4,15 @@ import { list_map_index } from "./list_map_index.mjs";
 export function prayers_list_generic(list, count, on_first, on_last) {
   let ps = list_map_index(list, function (item, index) {
     let m = index % count;
-    let v;
     if (m === 0) {
-      v = string_number_colon(on_first(item), index);
-    } else if (m === count - 1 || list_index_last_is(list, index)) {
-      v = string_number_colon_generic(on_last(item), index, ";");
-    } else {
-      v = string_number_colon(item, index);
+      item = string_number_colon(on_first(item), index);
     }
-    return v;
+    if (m === count - 1 || list_index_last_is(list, index)) {
+      item = string_number_colon_generic(on_last(item), index, ";");
+    } else {
+      item = string_number_colon(item, index);
+    }
+    return item;
   });
   return ps;
   function string_number_colon(item, index) {
