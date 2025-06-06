@@ -123,7 +123,29 @@ export function prayers() {
     ),
     "May the desire of the Father be done, including regarding...",
     "Protect the teeth of love and I",
-    pray_d(),
+    prayers_list_generic_5(
+      [
+        "my works",
+        "my word of God singing and speaking",
+        "my programming",
+        "my programming speed",
+        "my apps",
+        "my music",
+        "my songs",
+        "my composing and improvising",
+        "my piano",
+        "my teaching",
+        "my proofs",
+        "my thinking",
+        "my job search",
+        "my work",
+        "any organization or business of mine",
+        "any leadership I have",
+        "the works of Christians",
+      ],
+      prayers_bbw,
+      string_prefix_and,
+    ),
     prayers_bbw("Christian websites and programming"),
     "May I fellowship with any Christians from the generation Jesus spoke of and if God desires may they be known to the body of Christ on earth",
     list_map(
@@ -153,29 +175,3 @@ export function prayers() {
   let v2 = list_map(v, string_case_upper_first);
   return v2;
 }
-function pray_d() {
-    return prayers_list_generic_5(
-        [
-            "my works",
-            "my word of God singing and speaking",
-            "my programming",
-            "my programming speed",
-            "my apps",
-            "my music",
-            "my songs",
-            "my composing and improvising",
-            "my piano",
-            "my teaching",
-            "my proofs",
-            "my thinking",
-            "my job search",
-            "my work",
-            "any organization or business of mine",
-            "any leadership I have",
-            "the works of Christians",
-        ],
-        prayers_bbw,
-        string_prefix_and
-    );
-}
-

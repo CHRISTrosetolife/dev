@@ -2,7 +2,7 @@ import { string_prefix_and } from "./string_prefix_and.mjs";
 import { prayers_bbw } from "./prayers_bbw.mjs";
 import { prayers_list_generic_5 } from "./prayers_list_generic_5.mjs";
 export function pray_d() {
-  return prayers_list_generic_5(
+  let v = prayers_list_generic_5(
     [
       "my works",
       "my word of God singing and speaking",
@@ -25,4 +25,5 @@ export function pray_d() {
     prayers_bbw,
     string_prefix_and,
   );
+  return v;
 }
