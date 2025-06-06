@@ -148,7 +148,7 @@ export function prayers() {
     ),
     prayers_bbw("Christian websites and programming"),
     "May I fellowship with any Christians from the generation Jesus spoke of and if God desires may they be known to the body of Christ on earth",
-    list_map(
+    prayers_list_generic_5(
       [
         "orphans",
         "children",
@@ -162,6 +162,7 @@ export function prayers() {
         "the sick",
       ],
       prayers_bbw,
+      string_prefix_and,
     ),
     "If it means anyone is saved, may there be miracles, wonders, signs, healing",
     "May every thought be as if an optimal prayer is prayed",
