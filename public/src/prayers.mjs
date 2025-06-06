@@ -158,6 +158,7 @@ export function prayers() {
         "widows",
         "foreigners",
         "the poor",
+        "the hungry",
         "the elderly",
         "prisoners",
         "the sick",
