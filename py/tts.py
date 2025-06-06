@@ -48,6 +48,8 @@ for unit in root['units']:
         file_path_output = folder_path_output + f"_{i + 1}.wav"
         file_path_output_new = folder_path_output + f"_{(i + 1):0{padding}d}.wav"
         if file_path_output_new != file_path_output:
+            if os.path.exists(file_path_output_new):
+                os.remove(file_path_output_new)
             os.rename(file_path_output, file_path_output_new)
         print(file_path_output_new)
 

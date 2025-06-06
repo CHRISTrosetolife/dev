@@ -30,7 +30,7 @@ export function prayers() {
     "May the coming of the day of God be hastened",
     prayers_family(),
     "May love feel and be strong during period and childbirth without pain",
-    "Cause all Christians including love and I to love, be holy, perfect in mercy, to eagerly and joyfully do the desire of God, to be humble, to be gentle, to be patient, to hope, to be diligent, to be wise, to be generous, to obey Scripture, to pray perfectly, to faithful in marriage if married, to be faithful in singleness if single, to choose good, including not vowing",
+    "Cause all Christians including love and I to love, be holy, perfect in mercy, to eagerly and joyfully do the desire of God, to be humble, gentle, patient, diligent, wise, generous, obedient to Scripture, perfect in prayer, to hope, to be faithful in marriage if married, to be faithful in singleness if single, to choose good, including not vowing",
     "Cause all vows of all Christians including mine to be fulfilled",
     "Cause love and I to have zero negative emotions",
     "Maximize the faith of love and I",
