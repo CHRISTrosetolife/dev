@@ -19,7 +19,10 @@ export async function kokoro_tts_apocrypha(bible_folder) {
   let units = await list_adder_async(async function (la) {
     await each_async(voices, async function (voice) {
       await each_index_async(books, async function (book, book_index) {
-        let book_index_padded = number_pad_2(book_index + 1);
+        let book_index_1 = book_index + 1;
+        if (false) {
+        }
+        let book_index_padded = number_pad_2(book_index_1);
         await bible_chapters_each(
           bible_folder,
           book,
