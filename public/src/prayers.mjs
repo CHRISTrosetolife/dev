@@ -40,6 +40,7 @@ export function prayers() {
     "Cause Christian wives, including love, to submit to their husbands, according to the word of God",
     "Cause Christian husbands, including Jared, to love their wife as Christ loved the church",
     "Banish all sinful desire in all Christians including me for anyone that You have not given as a spouse",
+    "Let children obey their parents",
     "Direct all our footsteps and thoughts",
     "Answer all the prayer requests every Christian including me should be praying and help any others You desire to pray like this",
     "Bless, help and provide for each person who has asked me to pray for them or give materially",
