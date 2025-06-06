@@ -112,15 +112,14 @@ export function prayers() {
       prayers_sabbwa,
     ),
     "May love maximally glorify the Father, Jesus and the Holy Spirit",
-    list_map(
-      [
+    prayers_bbw(
+      list_join_comma_space([
         "love",
         "her love",
         "her faith",
         "her fruit of the Spirit",
-        "her offspring",
-      ],
-      prayers_bbw,
+        "her and my offspring",
+      ]),
     ),
     "May the desire of the Father be done",
     "May the desire of the Father be done regarding...",
