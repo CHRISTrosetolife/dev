@@ -53,6 +53,7 @@ export function prayers_family() {
         "Michael",
         "Nancy",
         "Zachary",
+        "Kelsey",
       ],
       prayers_bbw,
       string_prefix_and,
