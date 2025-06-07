@@ -9,6 +9,7 @@ export function sermons_list() {
     "forsake30",
     "greatest",
     "healed",
+    "holy_spirit_send",
     "joseph",
     "pastor_account",
     "pastor_church",
