@@ -18,6 +18,9 @@ export function app_todo_properties() {
       name: app_todo_type(),
       choices: ["one-time", app_todo_daily()],
     },
+    {
+      name: "app",
+    },
   ];
   return v;
 }
