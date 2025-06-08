@@ -1,4 +1,3 @@
-import { list_take } from "./list_take.mjs";
 import { prayers_list_generic_5 } from "./prayers_list_generic_5.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { prayers_sabbw } from "./prayers_sabbw.mjs";
