@@ -6,11 +6,10 @@ export function prayers_list_generic(list, count, on_first, on_last) {
     let m = index % count;
     let first_is = m === 0;
     let last_is = m === count - 1 || list_index_last_is(list, index);
-    if (first_is) {
-      item = string_number_colon(on_first(item), index);
-    }else
     if (last_is) {
       item = string_number_colon_generic(on_last(item), index, ";");
+    } else if (first_is) {
+      item = string_number_colon(on_first(item), index);
     } else {
       item = string_number_colon(item, index);
     }
