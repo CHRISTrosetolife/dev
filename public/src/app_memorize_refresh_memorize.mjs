@@ -52,8 +52,11 @@ export async function app_memorize_refresh_memorize(context) {
     let settings_element = html_div(root);
     let settings_button = html_button(
       settings_element,
-      "⚙️ settings",
-      async () => await app_memorize_refresh_settings(context),
+      "⚙️ Settings",
+      async function () {
+        let v = await app_memorize_refresh_settings(context);
+        return v;
+      },
     );
     html_style_margin_x(settings_button, 0);
   }
@@ -70,8 +73,8 @@ export async function app_memorize_refresh_memorize(context) {
   });
   let pattern_length = list_size(pattern);
   let token_count = 0;
-  context.verse_elements = list_adder((la) => {
-    each_index(context.save.group_current, (i, vi) => {
+  context.verse_elements = list_adder(function (la) {
+    each_index(context.save.group_current, function (i, vi) {
       let verse = list_get(context.verses, i);
       let verse_element = html_element(verses_element, "div");
       let { tokens, verse_number } = verse;
@@ -79,14 +82,14 @@ export async function app_memorize_refresh_memorize(context) {
       if (context.style.text) {
         html_style(number_element, context.style.text);
       }
-      html_on_click(number_element, () => {
+      html_on_click(number_element, function () {
         save.token_index = 0;
         save.verse_index = vi;
         app_memorize_save(context);
         html_scroll_nearest(verse_element);
       });
-      let token_objects = list_adder((la) => {
-        each_index(tokens, (token, ti) => {
+      let token_objects = list_adder(function (la) {
+        each_index(tokens, function (token, ti) {
           let m = mod(token_count, pattern_length);
           let token_pattern = list_get(pattern, m);
           let spacer = html_span_text(verse_element, " ");
