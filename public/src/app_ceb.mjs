@@ -7,8 +7,17 @@ import { html_p_text } from "./html_p_text.mjs";
 export async function app_ceb() {
   let body = html_style_default_initialize();
   html_style_a_plain();
-  html_p_text(body, "It is recommended to use the new app");
-  html_button_app(body, fn_name("app_ceb2"), "New Cebuano Language Learn App");
+  html_p_text(body, "It is recommended to use a new app");
+  html_button_app(
+    body,
+    fn_name("app_ceb2"),
+    "New Cebuano Language Learn App (Bible words)",
+  );
+  html_button_app(
+    body,
+    fn_name("app_ceb3"),
+    "New Cebuano Language Learn App (Dictionary words)",
+  );
   html_spacer_vertical_2(body);
   html_button_app(
     body,
