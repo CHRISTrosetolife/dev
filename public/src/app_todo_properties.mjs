@@ -1,4 +1,3 @@
-import { apps_list } from "./apps_list.mjs";
 import { app_todo_later_value } from "./app_todo_later_value.mjs";
 import { app_todo_completed_value } from "./app_todo_completed_value.mjs";
 import { app_todo_completed_property } from "./app_todo_completed_property.mjs";
@@ -18,10 +17,6 @@ export function app_todo_properties() {
     {
       name: app_todo_type(),
       choices: ["one-time", app_todo_daily()],
-    },
-    {
-      name: "app",
-      choices_get: apps_list,
     },
   ];
   return v;
