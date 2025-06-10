@@ -113,7 +113,7 @@ export function prayers() {
         "descendants of Abraham",
         "Muslims",
         "Hindus",
-        "Buddhists",
+        string_prefix_and("Buddhists"),
       ]),
     ),
     "Let love maximally glorify the Father, Jesus and the Holy Spirit",
