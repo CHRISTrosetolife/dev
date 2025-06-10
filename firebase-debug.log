@@ -1,0 +1,35 @@
+[debug] [2025-06-10T22:45:40.133Z] ----------------------------------------------------------------------
+[debug] [2025-06-10T22:45:40.153Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\JESUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2025-06-10T22:45:40.154Z] CLI Version:   13.11.2
+[debug] [2025-06-10T22:45:40.155Z] Platform:      win32
+[debug] [2025-06-10T22:45:40.155Z] Node Version:  v21.6.1
+[debug] [2025-06-10T22:45:40.158Z] Time:          Tue Jun 10 2025 18:45:40 GMT-0400 (Eastern Daylight Time)
+[debug] [2025-06-10T22:45:40.158Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-06-10T22:45:40.165Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-06-10T22:45:40.514Z] Object "" in "firebase.json" has unknown property: {"additionalProperty":"headers"}
+[debug] [2025-06-10T22:45:40.534Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-10T22:45:40.535Z] > authorizing via signed-in user (christrosetolife@gmail.com)
+[debug] [2025-06-10T22:45:40.535Z] [iam] checking project letjesusbeexalted for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-06-10T22:45:40.537Z] > refreshing access token with scopes: []
+[debug] [2025-06-10T22:45:40.540Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-06-10T22:45:40.540Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-10T22:45:40.727Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-06-10T22:45:40.728Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2025-06-10T22:45:40.752Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-06-10T22:45:40.753Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-10T22:45:40.765Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/letjesusbeexalted:testIamPermissions [none]
+[debug] [2025-06-10T22:45:40.765Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/letjesusbeexalted:testIamPermissions x-goog-quota-user=projects/letjesusbeexalted
+[debug] [2025-06-10T22:45:40.765Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/letjesusbeexalted:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-06-10T22:45:40.977Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/letjesusbeexalted:testIamPermissions 200
+[debug] [2025-06-10T22:45:40.978Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/letjesusbeexalted:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-06-10T22:45:40.979Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/letjesusbeexalted [none]
+[debug] [2025-06-10T22:45:41.296Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/letjesusbeexalted 200
+[debug] [2025-06-10T22:45:41.297Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/letjesusbeexalted {"projectId":"letjesusbeexalted","projectNumber":"1088010912651","displayName":"letJESUSbeexalted","name":"projects/letjesusbeexalted","resources":{"hostingSite":"letjesusbeexalted","locationId":"us-central"},"state":"ACTIVE","etag":"1_80cc5c9f-206f-4b26-af37-f5149bf685cf"}
+[info] 
+[info] === Deploying to 'letjesusbeexalted'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2025-06-10T22:45:41.305Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/letjesusbeexalted/versions [none]
+[debug] [2025-06-10T22:45:41.305Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/letjesusbeexalted/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-06-10T22:45:41.910Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/letjesusbeexalted/versions 200
