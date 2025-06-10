@@ -107,9 +107,14 @@ export function prayers() {
     prayers_music(),
     prayers_famous(),
     prayers_countries(),
-    list_map(
-      ["Jews", "descendants of Abraham", "Muslims", "Hindus", "Buddhists"],
-      prayers_sabbwa,
+    prayers_sabbwa(
+      list_join_comma_space([
+        "Jews",
+        "descendants of Abraham",
+        "Muslims",
+        "Hindus",
+        "Buddhists",
+      ]),
     ),
     "Let love maximally glorify the Father, Jesus and the Holy Spirit",
     prayers_bbw(
