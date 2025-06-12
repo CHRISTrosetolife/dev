@@ -1,3 +1,4 @@
+import { prayers_religions } from "./prayers_religions.mjs";
 import { prayers_sanctify } from "./prayers_sanctify.mjs";
 import { prayers_voices } from "./prayers_voices.mjs";
 import { prayers_church_leadership } from "./prayers_church_leadership.mjs";
@@ -6,11 +7,9 @@ import { prayers_big } from "./prayers_big.mjs";
 import { prayers_love } from "./prayers_love.mjs";
 import { prayers_list_generic_5 } from "./prayers_list_generic_5.mjs";
 import { string_prefix_and } from "./string_prefix_and.mjs";
-import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { prayers_bbw } from "./prayers_bbw.mjs";
 import { string_case_upper_first } from "./string_case_upper_first.mjs";
 import { list_map } from "./list_map.mjs";
-import { prayers_sabbwa } from "./prayers_sabbwa.mjs";
 import { prayers_countries } from "./prayers_countries.mjs";
 import { prayers_sins } from "./prayers_sins.mjs";
 import { prayers_famous } from "./prayers_famous.mjs";
@@ -50,15 +49,7 @@ export function prayers() {
     prayers_music(),
     prayers_famous(),
     prayers_countries(),
-    prayers_sabbwa(
-      list_join_comma_space([
-        "Jews",
-        "descendants of Abraham",
-        "Muslims",
-        "Hindus",
-        string_prefix_and("Buddhists"),
-      ]),
-    ),
+    prayers_religions(),
     prayers_list_generic_5(
       [
         "the works of Christians, including mine",
