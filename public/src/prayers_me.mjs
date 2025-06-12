@@ -1,9 +1,10 @@
+import { prayers_heal_me } from "./prayers_heal_me.mjs";
 import { string_prefix_and } from "./string_prefix_and.mjs";
 import { prayers_bbw } from "./prayers_bbw.mjs";
 import { prayers_list_generic_5 } from "./prayers_list_generic_5.mjs";
 export function prayers_me() {
-  return [
-      prayers_heal_me(),
+  let v = [
+    prayers_heal_me(),
     "May my muscles grow",
     prayers_list_generic_5(
       [
@@ -23,4 +24,5 @@ export function prayers_me() {
     ),
     prayers_bbw("my music, inlcuding songs, composing, improvising and piano"),
   ];
+  return v;
 }
