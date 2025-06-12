@@ -37,7 +37,6 @@ export function prayers() {
     prayers_sanctify(),
     "Bless, help and provide for each person who has asked me to pray for them or give materially",
     prayers_heal_me(),
-    "May my muscles grow",
     prayers_unity(),
     prayers_bible(),
     prayers_sins(),
@@ -47,6 +46,7 @@ export function prayers() {
     prayers_famous(),
     prayers_countries(),
     prayers_religions(),
+    "May my muscles grow",
     prayers_list_generic_5(
       [
         "the works of Christians, including mine",
