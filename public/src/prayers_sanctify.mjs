@@ -13,6 +13,7 @@ export function prayers_sanctify() {
     "Direct all our footsteps and thoughts",
     "May we fast",
     "May all Christians lose weight who should including myself",
+    prayers_sins(),
   ];
   return v;
 }

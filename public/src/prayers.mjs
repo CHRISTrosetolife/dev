@@ -8,7 +8,6 @@ import { prayers_love } from "./prayers_love.mjs";
 import { string_case_upper_first } from "./string_case_upper_first.mjs";
 import { list_map } from "./list_map.mjs";
 import { prayers_countries } from "./prayers_countries.mjs";
-import { prayers_sins } from "./prayers_sins.mjs";
 import { prayers_famous } from "./prayers_famous.mjs";
 import { prayers_music } from "./prayers_music.mjs";
 import { prayers_bible } from "./prayers_bible.mjs";
@@ -34,7 +33,6 @@ export function prayers() {
     prayers_sanctify(),
     prayers_unity(),
     prayers_bible(),
-    prayers_sins(),
     prayers_church_leadership(),
     prayers_voices(),
     prayers_music(),
