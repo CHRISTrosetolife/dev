@@ -1,4 +1,3 @@
-import { prayers_me } from "./prayers_me.mjs";
 import { prayers_needy } from "./prayers_needy.mjs";
 import { prayers_religions } from "./prayers_religions.mjs";
 import { prayers_sanctify } from "./prayers_sanctify.mjs";
@@ -42,7 +41,6 @@ export function prayers() {
     prayers_famous(),
     prayers_countries(),
     prayers_religions(),
-    prayers_me(),
     prayers_needy(),
     prayers_big(),
   ]);
