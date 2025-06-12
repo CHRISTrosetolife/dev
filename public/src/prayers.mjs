@@ -65,8 +65,6 @@ export function prayers() {
     "May we fast",
     "May all Christians lose weight who should including myself",
     "May my muscles grow",
-    "Protect all humans, including love and I, and all angels of the Lord from all demons",
-    "May all Christians speak and behave worthily in the presence of heavenly angels",
     "Perfectly open up the hearts, eyes and ears of all to scripture and truth",
     "Perfectly engraft the word of God into every heart",
     "Cause all to be a perfect hearer and a perfect doer of the word of God",
