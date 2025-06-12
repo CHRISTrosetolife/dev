@@ -132,13 +132,8 @@ export function prayers() {
       [
         "my works",
         "my word of God singing and speaking",
-        "my programming",
-        "my programming speed",
+        "my programming, including speed",
         "my apps",
-        "my music",
-        "my songs",
-        "my composing and improvising",
-        "my piano",
         "my teaching",
         "my proofs",
         "my thinking",
@@ -151,6 +146,7 @@ export function prayers() {
       prayers_bbw,
       string_prefix_and,
     ),
+    prayers_bbw("my music, inlcuding songs, composing, improvising and piano"),
     prayers_bbw("Christian websites and programming"),
     "May I fellowship with any Christians from the generation Jesus spoke of and if God desires may they be known to the body of Christ on earth",
     prayers_list_generic_5(
