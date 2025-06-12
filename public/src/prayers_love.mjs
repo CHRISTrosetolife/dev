@@ -14,6 +14,7 @@ export function prayers_love() {
     ),
     "May love feel and be strong during period and childbirth, without pain",
     "Protect the teeth of love and I",
+    "May I speak and understand Cebuano",
     "May the desire of the Father be done, including regarding...",
   ];
   return v;
