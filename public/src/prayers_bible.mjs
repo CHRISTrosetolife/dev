@@ -1,5 +1,7 @@
+import { prayers_bible_understand } from "./prayers_bible_understand.mjs";
 export function prayers_bible() {
   let v = [
+    prayers_bible_understand(),
     "Let there be harvest workers",
     "Bless the LORD, O my soul, and all that is within me",
     "Give all Christians the Spirit of wisdom and of revelation in the knowledge of God",

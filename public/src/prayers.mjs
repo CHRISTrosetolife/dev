@@ -1,4 +1,3 @@
-import { prayers_bible_understand } from "./prayers_bible_understand.mjs";
 import { prayers_heal_me } from "./prayers_heal_me.mjs";
 import { prayers_big } from "./prayers_big.mjs";
 import { prayers_love } from "./prayers_love.mjs";
@@ -51,7 +50,6 @@ export function prayers() {
     "May we fast",
     "May all Christians lose weight who should including myself",
     "May my muscles grow",
-    prayers_bible_understand(),
     prayers_unity(),
     prayers_bible(),
     prayers_sins(),
