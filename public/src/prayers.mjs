@@ -1,8 +1,8 @@
+import { prayers_church_leadership } from "./prayers_church_leadership.mjs";
 import { prayers_heal_me } from "./prayers_heal_me.mjs";
 import { prayers_big } from "./prayers_big.mjs";
 import { prayers_love } from "./prayers_love.mjs";
 import { prayers_list_generic_5 } from "./prayers_list_generic_5.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_prefix_and } from "./string_prefix_and.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { prayers_bbw } from "./prayers_bbw.mjs";
@@ -53,31 +53,7 @@ export function prayers() {
     prayers_unity(),
     prayers_bible(),
     prayers_sins(),
-    [
-      "May all church meetings inlcuding buildings be as You desire",
-      "May all Lord’s Supper bread and drink be as You desire",
-      prayers_list_generic_5(
-        [
-          "elder",
-          "overseer",
-          "bishop",
-          "pastor",
-          "teacher",
-          "apostle",
-          "prophet",
-          "deacon",
-          "servant",
-          "messenger",
-        ],
-        function (w) {
-          let v3 = prayers_bbw(string_combine_multiple(["every ", w]));
-          return v3;
-        },
-        string_prefix_and,
-      ),
-      "May all shepherding, stewardship, preaching and teaching be perfect",
-      "If possible, may all seminary and religious education be free and online",
-    ],
+    prayers_church_leadership(),
     "May the voice of every Christian, including mine, lead all including listeners to Christ",
     prayers_bbw(
       "all worship, all worship singing voices, my singing voice, and my speaking voice",
