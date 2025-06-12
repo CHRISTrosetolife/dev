@@ -1,17 +1,12 @@
+import { prayers_church } from "./prayers_church.mjs";
 import { prayers_needy } from "./prayers_needy.mjs";
 import { prayers_religions } from "./prayers_religions.mjs";
-import { prayers_sanctify } from "./prayers_sanctify.mjs";
-import { prayers_voices } from "./prayers_voices.mjs";
-import { prayers_church_leadership } from "./prayers_church_leadership.mjs";
 import { prayers_big } from "./prayers_big.mjs";
 import { prayers_love } from "./prayers_love.mjs";
 import { string_case_upper_first } from "./string_case_upper_first.mjs";
 import { list_map } from "./list_map.mjs";
 import { prayers_countries } from "./prayers_countries.mjs";
 import { prayers_famous } from "./prayers_famous.mjs";
-import { prayers_music } from "./prayers_music.mjs";
-import { prayers_bible } from "./prayers_bible.mjs";
-import { prayers_unity } from "./prayers_unity.mjs";
 import { prayers_family } from "./prayers_family.mjs";
 import { list_denest } from "./list_denest.mjs";
 export function prayers() {
@@ -30,12 +25,7 @@ export function prayers() {
     "May the coming of the day of God be hastened",
     prayers_love(),
     prayers_family(),
-    prayers_bible(),
-    prayers_sanctify(),
-    prayers_unity(),
-    prayers_church_leadership(),
-    prayers_voices(),
-    prayers_music(),
+    prayers_church(),
     prayers_famous(),
     prayers_countries(),
     prayers_religions(),
