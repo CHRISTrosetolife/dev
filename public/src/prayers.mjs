@@ -1,5 +1,5 @@
+import { prayers_big } from "./prayers_big.mjs";
 import { prayers_love } from "./prayers_love.mjs";
-import { prayers_large } from "./prayers_large.mjs";
 import { prayers_list_generic_5 } from "./prayers_list_generic_5.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_prefix_and } from "./string_prefix_and.mjs";
@@ -147,7 +147,7 @@ export function prayers() {
       prayers_bbw,
       string_prefix_and,
     ),
-    prayers_large(),
+    prayers_big(),
   ]);
   let v2 = list_map(v, string_case_upper_first);
   return v2;

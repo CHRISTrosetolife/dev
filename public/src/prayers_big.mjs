@@ -1,5 +1,5 @@
 import { prayers_bbw } from "./prayers_bbw.mjs";
-export function prayers_large() {
+export function prayers_big() {
   let v = [
     "Protect all humans, including love and I, and all angels of the Lord from all demons",
     "May all Christians speak and behave worthily in the presence of heavenly angels",
