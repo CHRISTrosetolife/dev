@@ -1,6 +1,7 @@
 import { prayers_bbw } from "./prayers_bbw.mjs";
 export function prayers_large() {
-  return [
+  let v = [
+    "May I fellowship with any Christians from the generation Jesus spoke of and if God desires may they be known to the body of Christ on earth",
     "If it means anyone is saved, may there be miracles, wonders, signs, healing",
     "May every thought be as if an optimal prayer is prayed",
     prayers_bbw("the bodies and any instruments and tools of elect angels"),
@@ -10,4 +11,5 @@ export function prayers_large() {
     "May God choose all my remaining choices, not me",
     "Not only me but anyone who would want this",
   ];
+  return v;
 }
