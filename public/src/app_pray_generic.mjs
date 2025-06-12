@@ -50,6 +50,7 @@ export async function app_pray_generic(app_fn, ps) {
     return v;
   });
   html_button(body, "Scroll to top", function () {
+    storage_local_set(app_fn, "prayer_index", null);
     html_scroll_top(top);
   });
   await sleep_0();
