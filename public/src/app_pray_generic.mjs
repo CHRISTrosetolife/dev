@@ -33,12 +33,7 @@ export async function app_pray_generic(app_fn, ps) {
     colorize(d, index);
     html_on_click(d, function () {
       d.selected = !d.selected;
-      let index_old = storage_local_get(app_fn, "prayer_index");
-      if (null_not_is(index_old)) {
-        let p_old = list_get(rows, index_old);
-        p_old.selected = false;
-        html_style_background_color_transparent(p_old);
-      }
+      prayer_index_old_transparent();
       if (d.selected) {
         html_scroll_top(d);
       }
@@ -51,10 +46,19 @@ export async function app_pray_generic(app_fn, ps) {
   });
   html_button(body, "Scroll to top", function () {
     storage_local_set(app_fn, "prayer_index", null);
+    prayer_index_old_transparent();
     html_scroll_top(top);
   });
   await sleep_0();
   html_scroll_center(list_get(rows, index_load));
+  function prayer_index_old_transparent() {
+    let index_old = storage_local_get(app_fn, "prayer_index");
+    if (null_not_is(index_old)) {
+      let p_old = list_get(rows, index_old);
+      p_old.selected = false;
+      html_style_background_color_transparent(p_old);
+    }
+  }
   function colorize(d, index) {
     let choices = [
       "Salmon",
