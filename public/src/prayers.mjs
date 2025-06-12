@@ -1,3 +1,4 @@
+import { prayers_bible_understand } from "./prayers_bible_understand.mjs";
 import { prayers_heal_me } from "./prayers_heal_me.mjs";
 import { prayers_big } from "./prayers_big.mjs";
 import { prayers_love } from "./prayers_love.mjs";
@@ -50,10 +51,7 @@ export function prayers() {
     "May we fast",
     "May all Christians lose weight who should including myself",
     "May my muscles grow",
-    "Perfectly open up the hearts, eyes and ears of all to scripture and truth",
-    "Perfectly engraft the word of God into every heart",
-    "Cause all to be a perfect hearer and a perfect doer of the word of God",
-    "Perfectly maximize the increase of Your word being planted and watered",
+    prayers_bible_understand(),
     prayers_unity(),
     prayers_bible(),
     prayers_sins(),
