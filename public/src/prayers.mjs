@@ -53,29 +53,31 @@ export function prayers() {
     prayers_unity(),
     prayers_bible(),
     prayers_sins(),
-    "May all church meetings inlcuding buildings be as You desire",
-    "May all Lord’s Supper bread and drink be as You desire",
-    prayers_list_generic_5(
-      [
-        "elder",
-        "overseer",
-        "bishop",
-        "pastor",
-        "teacher",
-        "apostle",
-        "prophet",
-        "deacon",
-        "servant",
-        "messenger",
-      ],
-      function (w) {
-        let v3 = prayers_bbw(string_combine_multiple(["every ", w]));
-        return v3;
-      },
-      string_prefix_and,
-    ),
-    "May all shepherding, stewardship, preaching and teaching be perfect",
-    "If possible, may all seminary and religious education be free and online",
+    [
+      "May all church meetings inlcuding buildings be as You desire",
+      "May all Lord’s Supper bread and drink be as You desire",
+      prayers_list_generic_5(
+        [
+          "elder",
+          "overseer",
+          "bishop",
+          "pastor",
+          "teacher",
+          "apostle",
+          "prophet",
+          "deacon",
+          "servant",
+          "messenger",
+        ],
+        function (w) {
+          let v3 = prayers_bbw(string_combine_multiple(["every ", w]));
+          return v3;
+        },
+        string_prefix_and,
+      ),
+      "May all shepherding, stewardship, preaching and teaching be perfect",
+      "If possible, may all seminary and religious education be free and online",
+    ],
     "May the voice of every Christian, including mine, lead all including listeners to Christ",
     prayers_bbw(
       "all worship, all worship singing voices, my singing voice, and my speaking voice",
