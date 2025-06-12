@@ -76,7 +76,7 @@ export function prayers() {
     ),
     "May all shepherding, stewardship, preaching and teaching be perfect",
     "If possible, may all seminary and religious education be free and online",
-    "May the voice of every Christian including mine lead all including listeners to Christ",
+    "May the voice of every Christian, including mine, lead all including listeners to Christ",
     prayers_bbw(
       "all worship, all worship singing voices, my singing voice, and my speaking voice",
     ),
