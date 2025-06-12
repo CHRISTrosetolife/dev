@@ -1,6 +1,8 @@
 import { prayers_bbw } from "./prayers_bbw.mjs";
 export function prayers_large() {
   let v = [
+    "Protect all humans, including love and I, and all angels of the Lord from all demons",
+    "May all Christians speak and behave worthily in the presence of heavenly angels",
     "May I fellowship with any Christians from the generation Jesus spoke of and if God desires may they be known to the body of Christ on earth",
     "If it means anyone is saved, may there be miracles, wonders, signs, healing",
     "May every thought be as if an optimal prayer is prayed",
