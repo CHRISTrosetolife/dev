@@ -35,7 +35,6 @@ export function prayers() {
     prayers_love(),
     prayers_family(),
     prayers_sanctify(),
-    "Bless, help and provide for each person who has asked me to pray for them or give materially",
     prayers_heal_me(),
     prayers_unity(),
     prayers_bible(),
