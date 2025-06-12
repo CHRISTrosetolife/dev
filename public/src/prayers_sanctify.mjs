@@ -1,5 +1,5 @@
 export function prayers_sanctify() {
-  return [
+  let v = [
     "Cause all Christians including love and I to love, to eagerly and joyfully do the desire of God, be holy, perfect in mercy, humble, gentle, patient, diligent, to be wise, generous, obedient to Scripture, perfect in prayer, to hope, to have pure hearts, to be faithful in marriage if married, to be faithful in singleness if single, to choose good, including not vowing",
     "Cause all vows of all Christians including mine to be fulfilled",
     "Cause love and I to have zero negative emotions and be pure in heart",
@@ -11,7 +11,8 @@ export function prayers_sanctify() {
     "Banish all sinful desire in all Christians including me for anyone that You have not given as a spouse",
     "Let children obey their parents",
     "Direct all our footsteps and thoughts",
-        "May we fast",
-        "May all Christians lose weight who should including myself",
+    "May we fast",
+    "May all Christians lose weight who should including myself",
   ];
+  return v;
 }
