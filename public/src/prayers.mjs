@@ -1,3 +1,4 @@
+import { prayers_love } from "./prayers_love.mjs";
 import { prayers_large } from "./prayers_large.mjs";
 import { prayers_list_generic_5 } from "./prayers_list_generic_5.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -117,20 +118,7 @@ export function prayers() {
         string_prefix_and("Buddhists"),
       ]),
     ),
-    [
-      "Let love maximally glorify the Father, Jesus and the Holy Spirit",
-      prayers_bbw(
-        list_join_comma_space([
-          "love",
-          "her love",
-          "her faith",
-          "her fruit of the Spirit",
-          "her and my offspring",
-        ]),
-      ),
-      "May the desire of the Father be done, including regarding...",
-      "Protect the teeth of love and I",
-    ],
+    prayers_love(),
     prayers_list_generic_5(
       [
         "the works of Christians, including mine",
