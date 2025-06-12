@@ -1,3 +1,4 @@
+import { prayers_voices } from "./prayers_voices.mjs";
 import { prayers_church_leadership } from "./prayers_church_leadership.mjs";
 import { prayers_heal_me } from "./prayers_heal_me.mjs";
 import { prayers_big } from "./prayers_big.mjs";
@@ -54,13 +55,7 @@ export function prayers() {
     prayers_bible(),
     prayers_sins(),
     prayers_church_leadership(),
-    "May the voice of every Christian, including mine, lead all including listeners to Christ",
-    prayers_bbw(
-      "all worship, all worship singing voices, my singing voice, and my speaking voice",
-    ),
-    prayers_bbw(
-      "all Christian songwriting, Christian speaking, Christian writing, and Christian prayer",
-    ),
+    prayers_voices(),
     prayers_music(),
     prayers_famous(),
     prayers_countries(),
