@@ -20,7 +20,7 @@ export function prayers_bible() {
     "Work in every Christian that which is pleasing in God's sight, through Jesus Christ",
     "May grace and peace be multiplied to every Christian in the knowledge of God and of Jesus our Lord",
     "May all go well with every Christian",
-    "May every Christian be in good health",
+    "May every Christian be in good and perfect health, including me",
     "May it go well with the soul of every Christian",
     "Let the name of our Lord Jesus be glorified in every Christian",
     "Let every Christian be glorified in Jesus according to the grace of our God and of Jesus Christ",
