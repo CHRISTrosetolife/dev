@@ -46,7 +46,6 @@ export function prayers() {
     "Direct all our footsteps and thoughts",
     "Answer all the prayer requests every Christian including me should be praying and help any others You desire to pray like this",
     "Bless, help and provide for each person who has asked me to pray for them or give materially",
-    "Heal us",
     "May all who have commanded me to take medicine command me to stop taking medicine",
     "No more risperidone",
     "If I have emotions, thoughts, memories, or sleep may they be healed",
