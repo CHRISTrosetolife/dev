@@ -135,7 +135,7 @@ export function prayers() {
       string_prefix_and,
     ),
     prayers_bbw("my music, inlcuding songs, composing, improvising and piano"),
-    prayers_bbw("Christian websites and programming"),
+    prayers_bbw("Christian websites, apps and programming, including mine"),
     prayers_list_generic_5(
       [
         "orphans",
