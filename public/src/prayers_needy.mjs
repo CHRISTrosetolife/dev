@@ -11,6 +11,7 @@ export function prayers_needy() {
       "the poor",
       "the hungry",
       "the thirsty",
+      "the unclothed",
       "the elderly",
       "prisoners",
       "the sick",
