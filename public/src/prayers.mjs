@@ -118,7 +118,6 @@ export function prayers() {
         string_prefix_and("Buddhists"),
       ]),
     ),
-    prayers_love(),
     prayers_list_generic_5(
       [
         "the works of Christians, including mine",
