@@ -26,10 +26,10 @@ export function prayers() {
     prayers_love(),
     prayers_family(),
     prayers_countries(),
+    prayers_needy(),
     prayers_church(),
     prayers_famous(),
     prayers_religions(),
-    prayers_needy(),
     prayers_big(),
   ]);
   let v2 = list_map(v, string_case_upper_first);
