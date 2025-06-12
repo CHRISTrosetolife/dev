@@ -3,6 +3,7 @@ export function prayers_bible() {
   let v = [
     prayers_bible_understand(),
     "Let there be harvest workers",
+    "may it be as if optimal prayers are prayed from the Bible",
     "Bless the LORD, O my soul, and all that is within me",
     "Give all Christians the Spirit of wisdom and of revelation in the knowledge of God",
     "Enlighten the eyes of the hearts of every Christian",
