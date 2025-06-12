@@ -4,7 +4,6 @@ import { prayers_religions } from "./prayers_religions.mjs";
 import { prayers_sanctify } from "./prayers_sanctify.mjs";
 import { prayers_voices } from "./prayers_voices.mjs";
 import { prayers_church_leadership } from "./prayers_church_leadership.mjs";
-import { prayers_heal_me } from "./prayers_heal_me.mjs";
 import { prayers_big } from "./prayers_big.mjs";
 import { prayers_love } from "./prayers_love.mjs";
 import { string_case_upper_first } from "./string_case_upper_first.mjs";
@@ -34,7 +33,6 @@ export function prayers() {
     prayers_love(),
     prayers_family(),
     prayers_sanctify(),
-    prayers_heal_me(),
     prayers_unity(),
     prayers_bible(),
     prayers_sins(),
