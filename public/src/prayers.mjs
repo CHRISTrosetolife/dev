@@ -1,3 +1,4 @@
+import { prayers_needy } from "./prayers_needy.mjs";
 import { prayers_religions } from "./prayers_religions.mjs";
 import { prayers_sanctify } from "./prayers_sanctify.mjs";
 import { prayers_voices } from "./prayers_voices.mjs";
@@ -63,22 +64,7 @@ export function prayers() {
       string_prefix_and,
     ),
     prayers_bbw("my music, inlcuding songs, composing, improvising and piano"),
-    prayers_list_generic_5(
-      [
-        "orphans",
-        "children",
-        "widows",
-        "foreigners",
-        "the poor",
-        "the hungry",
-        "the thirsty",
-        "the elderly",
-        "prisoners",
-        "the sick",
-      ],
-      prayers_bbw,
-      string_prefix_and,
-    ),
+    prayers_needy(),
     prayers_big(),
   ]);
   let v2 = list_map(v, string_case_upper_first);
