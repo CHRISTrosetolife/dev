@@ -11,5 +11,7 @@ export function prayers_sanctify() {
     "Banish all sinful desire in all Christians including me for anyone that You have not given as a spouse",
     "Let children obey their parents",
     "Direct all our footsteps and thoughts",
+        "May we fast",
+        "May all Christians lose weight who should including myself",
   ];
 }
