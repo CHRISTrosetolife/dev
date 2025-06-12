@@ -1,5 +1,4 @@
-import { prayers_church } from "./prayers_church.mjs";
-import { prayers_needy } from "./prayers_needy.mjs";
+import { prayers_orphans_widows_unstained_world } from "./prayers_orphans_widows_unstained_world.mjs";
 import { prayers_religions } from "./prayers_religions.mjs";
 import { prayers_big } from "./prayers_big.mjs";
 import { prayers_love } from "./prayers_love.mjs";
@@ -26,8 +25,7 @@ export function prayers() {
     prayers_love(),
     prayers_family(),
     prayers_countries(),
-    prayers_needy(),
-    prayers_church(),
+    prayers_orphans_widows_unstained_world(),
     prayers_famous(),
     prayers_religions(),
     prayers_big(),
