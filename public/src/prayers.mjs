@@ -35,7 +35,6 @@ export function prayers() {
     prayers_love(),
     prayers_family(),
     prayers_sanctify(),
-    "Answer all the prayer requests every Christian including me should be praying and help any others You desire to pray like this",
     "Bless, help and provide for each person who has asked me to pray for them or give materially",
     prayers_heal_me(),
     "May my muscles grow",
