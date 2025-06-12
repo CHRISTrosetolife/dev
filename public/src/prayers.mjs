@@ -63,7 +63,6 @@ export function prayers() {
       ),
     ],
     "Banish my desire for soda and sinful pleasure",
-    "May I speak and understand Cebuano",
     "May my face be clean-shaven without any cuts",
     "May all Christians lose weight who should including myself",
     "May my muscles grow",
