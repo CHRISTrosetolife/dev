@@ -1,8 +1,8 @@
+import { prayers_sabbw } from "./prayers_sabbw.mjs";
 import { string_prefix_and } from "./string_prefix_and.mjs";
-import { prayers_bbw } from "./prayers_bbw.mjs";
 import { prayers_list_generic_5 } from "./prayers_list_generic_5.mjs";
 export function prayers_needy() {
-  return prayers_list_generic_5(
+  let v = prayers_list_generic_5(
     [
       "orphans",
       "children",
@@ -15,7 +15,8 @@ export function prayers_needy() {
       "prisoners",
       "the sick",
     ],
-    prayers_bbw,
+    prayers_sabbw,
     string_prefix_and,
   );
+  return v;
 }
