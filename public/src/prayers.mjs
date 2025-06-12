@@ -117,18 +117,20 @@ export function prayers() {
         string_prefix_and("Buddhists"),
       ]),
     ),
-    "Let love maximally glorify the Father, Jesus and the Holy Spirit",
-    prayers_bbw(
-      list_join_comma_space([
-        "love",
-        "her love",
-        "her faith",
-        "her fruit of the Spirit",
-        "her and my offspring",
-      ]),
-    ),
-    "May the desire of the Father be done, including regarding...",
-    "Protect the teeth of love and I",
+    [
+      "Let love maximally glorify the Father, Jesus and the Holy Spirit",
+      prayers_bbw(
+        list_join_comma_space([
+          "love",
+          "her love",
+          "her faith",
+          "her fruit of the Spirit",
+          "her and my offspring",
+        ]),
+      ),
+      "May the desire of the Father be done, including regarding...",
+      "Protect the teeth of love and I",
+    ],
     prayers_list_generic_5(
       [
         "the works of Christians, including mine",
