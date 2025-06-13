@@ -1,11 +1,9 @@
 import { prayers_list_generic_10 } from "./prayers_list_generic_10.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { prayers_sabbw } from "./prayers_sabbw.mjs";
-import { catholic_bishops } from "./catholic_bishops.mjs";
 import { list_map } from "./list_map.mjs";
 import { identity } from "./identity.mjs";
-export function catholic_bishops_prayers() {
-  let names = catholic_bishops();
+export function catholic_bishops_prayers(names) {
   let m = list_map(names, prayers_sabbw);
   let on_first = identity;
   function on_last(item) {
