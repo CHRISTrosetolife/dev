@@ -5,8 +5,8 @@ import { catholic_bishops } from "./catholic_bishops.mjs";
 import { list_map } from "./list_map.mjs";
 import { identity } from "./identity.mjs";
 export function catholic_bishops_prayers() {
-  let bishops = catholic_bishops();
-  let m = list_map(bishops, prayers_sabbw);
+  let names = catholic_bishops();
+  let m = list_map(names, prayers_sabbw);
   let on_first = identity;
   function on_last(item) {
     let v2 =
