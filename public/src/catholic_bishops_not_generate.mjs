@@ -9,7 +9,7 @@ export async function catholic_bishops_not_generate() {
   }, catholic_bishops_not_generate);
   function include_split(split) {
     let items_to_exclude = catholic_bishop_ranks();
-    let v3 = list_includes_any(split, items_to_exclude);
+    let v3 = !list_includes_any(split, items_to_exclude);
     return v3;
   }
 }
