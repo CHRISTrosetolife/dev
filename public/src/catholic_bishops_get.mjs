@@ -1,4 +1,4 @@
-import { list_includes_multiple_not } from "./list_includes_multiple_not.mjs";
+import { list_excludes } from "./list_excludes.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -15,7 +15,7 @@ export async function catholic_bishops_get() {
         let lower = string_case_lower(item);
         let split = string_split_space(lower);
         let items_to_exclude = ["bishop", "archbishop", "cardinal"];
-        let v3 = list_includes_multiple_not(split, items_to_exclude);
+        let v3 = list_excludes(split, items_to_exclude);
         return v3;
       });
       la(v4);
