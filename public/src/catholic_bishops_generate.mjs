@@ -1,25 +1,8 @@
-import { string_split_space } from "./string_split_space.mjs";
-import { string_case_lower } from "./string_case_lower.mjs";
-import { catholic_bishops_generate_pages } from "./catholic_bishops_generate_pages.mjs";
-import { list_adder_multiple_async } from "./list_adder_multiple_async.mjs";
-import { each_async } from "./each_async.mjs";
-import { catholic_bishops_page } from "./catholic_bishops_page.mjs";
+import { catholic_bishops_get } from "./catholic_bishops_get.mjs";
 import { generate_list_fn } from "./generate_list_fn.mjs";
-import { list_filter } from "./list_filter.mjs";
 export async function catholic_bishops_generate() {
   await generate_list_fn(async function () {
-    let pages = await catholic_bishops_generate_pages();
-    let v2 = await list_adder_multiple_async(async function (la) {
-      await each_async(pages, async function (item) {
-        let v = await catholic_bishops_page(item);
-        let v4 = list_filter(v, function (item) {
-          let lower = string_case_lower(item);
-          let split = string_split_space(lower);
-          return split;
-        });
-        la(v4);
-      });
-    });
-    return v2;
+    let v = await catholic_bishops_get();
+    return v;
   }, catholic_bishops_generate);
 }
