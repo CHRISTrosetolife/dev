@@ -4,8 +4,8 @@ import { catholic_bishops_get } from "./catholic_bishops_get.mjs";
 import { generate_list_fn } from "./generate_list_fn.mjs";
 export async function catholic_bishops_generate() {
   await generate_list_fn(async function () {
-    let v = await catholic_bishops_get();
-    return v4;
+    let v = await catholic_bishops_get(include_split);
+    return v;
   }, catholic_bishops_generate);
   function include_split(split) {
     let items_to_exclude = catholic_bishop_ranks();
