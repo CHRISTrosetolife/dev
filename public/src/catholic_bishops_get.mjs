@@ -1,4 +1,4 @@
-import { list_includes_multiple } from "./list_includes_multiple.mjs";
+import { list_includes_multiple_not } from "./list_includes_multiple_not.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -14,7 +14,8 @@ export async function catholic_bishops_get() {
       let v4 = list_filter(v, function (item) {
         let lower = string_case_lower(item);
         let split = string_split_space(lower);
-        let v3 = list_includes_multiple(split, ["bishop"]);
+        let items_to_exclude = ["bishop"];
+        let v3 = list_includes_multiple_not(split, items_to_exclude);
         return v3;
       });
       la(v4);
