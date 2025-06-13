@@ -14,7 +14,7 @@ export async function catholic_bishops_get() {
       let v4 = list_filter(v, function (item) {
         let lower = string_case_lower(item);
         let split = string_split_space(lower);
-        let v3 = list_includes_multiple();
+        let v3 = list_includes_multiple(split, ["bishop"]);
         return v3;
       });
       la(v4);
