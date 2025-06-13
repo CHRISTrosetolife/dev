@@ -32,7 +32,6 @@ export function apps_list() {
     "portfolio",
     "pray_catholic_bishops",
     "pray",
-    "pray3",
     "preach",
     "read",
     "record",
