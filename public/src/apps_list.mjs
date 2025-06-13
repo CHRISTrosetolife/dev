@@ -1,5 +1,5 @@
 export function apps_list() {
-  return [
+  let v = [
     "app_pray_catholic_bishops_not",
     "bible_ceb",
     "bible_ceb2",
@@ -50,4 +50,5 @@ export function apps_list() {
     "todo",
     "yyy8Uu",
   ];
+  return v;
 }
