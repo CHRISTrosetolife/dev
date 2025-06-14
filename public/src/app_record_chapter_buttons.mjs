@@ -10,7 +10,10 @@ export function app_record_chapter_buttons(context, book_code, on_verse) {
   app_record_home_button(context, on_verse);
   html_button(
     root,
-    string_combine_multiple([bible_book_name_text(book_code)]),
+    string_combine_multiple([
+      bible_book_name_text(book_code),
+      " choose chapter",
+    ]),
     async function () {
       let v = await app_record_book(context, book_code, on_verse);
       return v;
