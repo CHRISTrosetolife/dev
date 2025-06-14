@@ -39,4 +39,18 @@ export function app_pray_catholic_bishops_settings(root) {
     "Text to display after the first name of each group",
     "",
   );
+  html_textarea_width_full_placeholder_storage_local(
+    fn,
+    root,
+    "name_last_before",
+    "Text to display before the first name of each group",
+    "",
+  );
+  html_textarea_width_full_placeholder_storage_local(
+    fn,
+    root,
+    "name_last_after",
+    "Text to display after the first name of each group",
+    "",
+  );
 }
