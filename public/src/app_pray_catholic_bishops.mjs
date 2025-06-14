@@ -1,4 +1,4 @@
-import { app_pray_generic_initialize } from "./app_pray_generic_initialize.mjs";
+import { app_pray_generic } from "./app_pray_generic.mjs";
 import { html_textarea_width_full_placeholder } from "./html_textarea_width_full_placeholder.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { html_on_input_value } from "./html_on_input_value.mjs";
@@ -27,5 +27,5 @@ export async function app_pray_catholic_bishops() {
   });
   let names = catholic_bishops();
   let ps = catholic_bishops_prayers(names);
-  await app_pray_generic_initialize(fn, ps);
+  await app_pray_generic(root, fn, ps);
 }
