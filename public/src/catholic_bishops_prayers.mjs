@@ -1,10 +1,12 @@
+import { storage_local_get } from "./storage_local_get.mjs";
 import { prayers_list_generic_10 } from "./prayers_list_generic_10.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_map } from "./list_map.mjs";
 import { identity } from "./identity.mjs";
-export function catholic_bishops_prayers(names) {
+export function catholic_bishops_prayers(fn, names) {
   let m = list_map(names, function (n) {
-    return $s;
+    let v4 = string_combine_multiple([storage_local_get(fn)]);
+    return v4;
   });
   let on_first = identity;
   function on_last(item) {
