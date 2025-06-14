@@ -11,13 +11,12 @@ export function app_pray_catholic_bishops_settings(root) {
     let v = await app_pray_catholic_bishops_main(root);
     return v;
   });
-  let value_initial = prayers_sabbw("");
   let placeholder = "Text to display before each name";
   html_textarea_width_full_placeholder_storage_local(
     fn,
     root,
     placeholder,
     "name_each_before",
-    value_initial,
+    prayers_sabbw(""),
   );
 }
