@@ -1,3 +1,4 @@
+import { app_pray_catholic_bishops_main } from "./app_pray_catholic_bishops_main.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { html_on_input_value } from "./html_on_input_value.mjs";
 import { html_value_set } from "./html_value_set.mjs";
@@ -6,9 +7,14 @@ import { html_textarea_width_full_placeholder } from "./html_textarea_width_full
 import { prayers_sabbw } from "./prayers_sabbw.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { app_pray_catholic_bishops } from "./app_pray_catholic_bishops.mjs";
+import { html_button_back } from "./html_button_back.mjs";
 export function app_pray_catholic_bishops_settings(root) {
   let fn = app_pray_catholic_bishops;
   html_clear_scroll_top(root);
+  html_button_back(root, async function () {
+    let v = await app_pray_catholic_bishops_main(body);
+    return v;
+  });
   let key = "name_each_before";
   let value_initial = prayers_sabbw("");
   let placeholder = "Text to display before each name";
