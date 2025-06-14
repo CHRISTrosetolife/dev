@@ -5,7 +5,11 @@ import { list_map } from "./list_map.mjs";
 import { identity } from "./identity.mjs";
 export function catholic_bishops_prayers(fn, names) {
   let m = list_map(names, function (n) {
-    let v4 = string_combine_multiple([storage_local_get(fn)]);
+    let v4 = string_combine_multiple([
+      storage_local_get(fn, "name_each_before"),
+      " ",
+      n,
+    ]);
     return v4;
   });
   let on_first = identity;
