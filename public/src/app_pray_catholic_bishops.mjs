@@ -9,7 +9,7 @@ export async function app_pray_catholic_bishops() {
   let root = html_document_body();
   html_button_settings(root, function () {
     html_clear_scroll_top(root);
-    html_textarea_width_full(root);
+    let t = html_textarea_width_full(root);
   });
   let names = catholic_bishops();
   let ps = catholic_bishops_prayers(names);
