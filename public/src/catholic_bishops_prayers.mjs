@@ -5,8 +5,7 @@ import { list_map } from "./list_map.mjs";
 import { identity } from "./identity.mjs";
 export function catholic_bishops_prayers(fn, names) {
   let m = list_map(names, function (n) {
-    let key_part = "each";
-    let v4 = catholic_bishops_prayers_wrap(fn, key_part, n);
+    let v4 = catholic_bishops_prayers_wrap(fn, "each", n);
     return v4;
   });
   let on_first = identity;
