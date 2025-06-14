@@ -17,7 +17,7 @@ export function app_pray_catholic_bishops_settings(root) {
     root,
     "group_count",
     "The number of names to pray together as a group",
-    "10",
+    10,
   );
   html_textarea_width_full_placeholder_storage_local(
     fn,
