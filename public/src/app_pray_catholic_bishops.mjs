@@ -1,17 +1,15 @@
-import { html_input_width_full_placeholder } from "./html_input_width_full_placeholder.mjs";
+import { html_textarea_width_full_placeholder } from "./html_textarea_width_full_placeholder.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { html_on_input_value } from "./html_on_input_value.mjs";
 import { prayers_sabbw } from "./prayers_sabbw.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { html_value_set } from "./html_value_set.mjs";
-import { html_textarea_width_full } from "./html_textarea_width_full.mjs";
 import { html_button_settings } from "./html_button_settings.mjs";
 import { html_document_body } from "./html_document_body.mjs";
 import { app_pray_generic } from "./app_pray_generic.mjs";
 import { catholic_bishops_prayers } from "./catholic_bishops_prayers.mjs";
 import { catholic_bishops } from "./catholic_bishops.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
-import { html_span_text } from "./html_span_text.mjs";
 export async function app_pray_catholic_bishops() {
   let fn = app_pray_catholic_bishops;
   let root = html_document_body();
@@ -20,9 +18,7 @@ export async function app_pray_catholic_bishops() {
     let key = "name_each_before";
     let value_initial = prayers_sabbw("");
     let placeholder = "Text to display before each name";
-    html_span_text(root, placeholder);
-    let t = html_textarea_width_full(root);
-    html_input_width_full_placeholder(root, placeholder);
+    let t = html_textarea_width_full_placeholder(root, placeholder);
     let value_before = storage_local_initialize(fn, key, value_initial);
     html_value_set(t, value_before);
     html_on_input_value(t, function (value_new) {
