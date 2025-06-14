@@ -1,3 +1,4 @@
+import { html_value_set } from "./html_value_set.mjs";
 import { html_textarea_width_full } from "./html_textarea_width_full.mjs";
 import { html_button_settings } from "./html_button_settings.mjs";
 import { html_document_body } from "./html_document_body.mjs";
@@ -10,6 +11,7 @@ export async function app_pray_catholic_bishops() {
   html_button_settings(root, function () {
     html_clear_scroll_top(root);
     let t = html_textarea_width_full(root);
+    html_value_set(t);
   });
   let names = catholic_bishops();
   let ps = catholic_bishops_prayers(names);
