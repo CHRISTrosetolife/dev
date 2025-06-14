@@ -13,9 +13,13 @@ export function app_record_verse_buttons(
   let { root } = context;
   app_record_chapter_buttons(context, book_code, on_verse);
   let chapter_text = bible_book_chapter_text(book_code, chapter);
-  html_button(root, string_combine_multiple([chapter_text]), async function () {
-    let v = await app_record_chapter(context, book_code, chapter, on_verse);
-    return v;
-  });
+  html_button(
+    root,
+    string_combine_multiple([chapter_text, " choose verse"]),
+    async function () {
+      let v = await app_record_chapter(context, book_code, chapter, on_verse);
+      return v;
+    },
+  );
   html_hr(root);
 }
