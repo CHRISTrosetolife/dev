@@ -23,6 +23,7 @@ export function prayers_me() {
       string_prefix_and,
     ),
     prayers_bbw("my music, inlcuding songs, composing, improvising and piano"),
+    "If it means forgiveness, may I forget",
     "May I have no memory of nor desire for A or any others",
   ];
   return v;
