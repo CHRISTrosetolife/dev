@@ -1,3 +1,4 @@
+import { html_input_width_full_placeholder } from "./html_input_width_full_placeholder.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { html_on_input_value } from "./html_on_input_value.mjs";
 import { prayers_sabbw } from "./prayers_sabbw.mjs";
@@ -18,9 +19,10 @@ export async function app_pray_catholic_bishops() {
     html_clear_scroll_top(root);
     let key = "name_each_before";
     let value_initial = prayers_sabbw("");
-    let label = "Text to display before each name";
-    html_span_text(root, label);
+    let placeholder = "Text to display before each name";
+    html_span_text(root, placeholder);
     let t = html_textarea_width_full(root);
+    html_input_width_full_placeholder(root, placeholder);
     let value_before = storage_local_initialize(fn, key, value_initial);
     html_value_set(t, value_before);
     html_on_input_value(t, function (value_new) {
