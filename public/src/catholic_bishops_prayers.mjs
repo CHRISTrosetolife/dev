@@ -7,11 +7,17 @@ export function catholic_bishops_prayers(fn, names) {
   let m = list_map(names, function (n) {
     let key_part = "each";
     let v4 = string_combine_multiple([
-      storage_local_get(fn, string_combine_multiple(["name_each_before"])),
+      storage_local_get(
+        fn,
+        string_combine_multiple(["name_", key_part, "_before"]),
+      ),
       " ",
       n,
       " ",
-      storage_local_get(fn, string_combine_multiple(["name_each_after"])),
+      storage_local_get(
+        fn,
+        string_combine_multiple(["name_", key_part, "_after"]),
+      ),
     ]);
     return v4;
   });
