@@ -19,8 +19,8 @@ export async function app_pray_catholic_bishops() {
     let key = "name_each_before";
     html_span_text(root, "Text to display before each name");
     let t = html_textarea_width_full(root);
-    let name_each_before = storage_local_initialize(fn, key, prayers_sabbw(""));
-    html_value_set(t, name_each_before);
+    let value_initial = storage_local_initialize(fn, key, prayers_sabbw(""));
+    html_value_set(t, value_initial);
     html_on_input_value(t, function (value_new) {
       storage_local_set(fn, key, value_new);
     });
