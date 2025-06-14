@@ -1,7 +1,7 @@
+import { html_input_type_number } from "./html_input_type_number.mjs";
 import { html_buttons_choices } from "./html_buttons_choices.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { html_hr } from "./html_hr.mjs";
-import { html_attribute_set } from "./html_attribute_set.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { html_button_delete } from "./html_button_delete.mjs";
 import { app_language_2_refresh_factor } from "./app_language_2_refresh_factor.mjs";
@@ -27,7 +27,7 @@ export function app_language_2_refresh_factor_configure(
   assert_arguments_length(arguments, 3);
   let root = object_property_get(context, "root");
   html_clear_scroll_top_centered(root);
-  html_button_back(root, async () => {
+  html_button_back(root, async function () {
     app_language_2_refresh_factor(context);
   });
   let threshold_value = object_property_get(factor, "threshold");
@@ -38,9 +38,9 @@ export function app_language_2_refresh_factor_configure(
   } else {
     html_p_text(root, "Enter a threshold:");
     let threshold = html_input_width_full(root);
-    html_attribute_set(threshold, "type", "number");
+    html_input_type_number(threshold);
     html_value_set(threshold, threshold_value);
-    html_on_input(threshold, () => {
+    html_on_input(threshold, function () {
       let v = html_value_get(threshold);
       v = integer_parse_try(v);
       if (!number_is(v)) {
@@ -55,12 +55,14 @@ export function app_language_2_refresh_factor_configure(
   }
   html_p_text(root, "Choose a factor:");
   let n = range_from(11, 40);
-  let factor_choices = list_map(n, (i) => i / 10);
+  let factor_choices = list_map(n, function (i) {
+    return i / 10;
+  });
   let factor_selected = object_property_get(factor, "factor");
   html_buttons_choices(root, factor_choices, on_choose, factor_selected);
   if (threshold_value >= threshold_min) {
     html_hr(root);
-    html_button_delete(root, "this factor and threshold", () => {
+    html_button_delete(root, "this factor and threshold", function () {
       list_remove(factors, factor);
       app_language_2_factor_set(context, factors);
       app_language_2_refresh_factor(context);
