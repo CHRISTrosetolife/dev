@@ -30,7 +30,7 @@ export function app_pray_catholic_bishops_settings(root) {
     root,
     "name_first_before",
     "Text to display before the first name of each group",
-    prayers_sabbw(""),
+    "",
   );
   html_textarea_width_full_placeholder_storage_local(
     fn,
