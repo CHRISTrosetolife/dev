@@ -14,8 +14,8 @@ export function app_pray_catholic_bishops_settings(root) {
   html_textarea_width_full_placeholder_storage_local(
     fn,
     root,
-    "Text to display before each name",
     "name_each_before",
+    "Text to display before each name",
     prayers_sabbw(""),
   );
 }

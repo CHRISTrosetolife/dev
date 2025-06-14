@@ -6,8 +6,8 @@ import { html_textarea_width_full_placeholder } from "./html_textarea_width_full
 export function html_textarea_width_full_placeholder_storage_local(
   fn,
   root,
-  placeholder,
   key,
+  placeholder,
   value_initial,
 ) {
   let t = html_textarea_width_full_placeholder(root, placeholder);
