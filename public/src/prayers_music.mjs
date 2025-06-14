@@ -27,6 +27,5 @@ export function prayers_music() {
     "NEEDTOBREATHE",
   ];
   let v2 = prayers_list_generic_5(v, prayers_sabbw, string_prefix_and);
-  let v3 = [prayers_sabbw(":"), v2];
-  return v3;
+  return v2;
 }
