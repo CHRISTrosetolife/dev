@@ -20,7 +20,9 @@ export async function app_pray_catholic_bishops() {
     let t = html_textarea_width_full(root);
     let name_each_before = storage_local_initialize(fn, key, prayers_sabbw(""));
     html_value_set(t, name_each_before);
-    html_on_input_value(t, function (value_new) {});
+    html_on_input_value(t, function (value_new) {
+      storage_local_initialize(fn, key, prayers_sabbw(""));
+    });
   });
   let names = catholic_bishops();
   let ps = catholic_bishops_prayers(names);
