@@ -1,3 +1,4 @@
+import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { html_value_set } from "./html_value_set.mjs";
 import { html_textarea_width_full } from "./html_textarea_width_full.mjs";
 import { html_button_settings } from "./html_button_settings.mjs";
@@ -13,6 +14,7 @@ export async function app_pray_catholic_bishops() {
     html_clear_scroll_top(root);
     html_span_text(root, "Text to display before each name");
     let t = html_textarea_width_full(root);
+    storage_local_initialize();
     html_value_set(t);
   });
   let names = catholic_bishops();
