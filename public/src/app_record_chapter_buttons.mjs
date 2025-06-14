@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button } from "./html_button.mjs";
 import { bible_book_name_text } from "./bible_book_name_text.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
@@ -9,7 +10,10 @@ export function app_record_chapter_buttons(context, book_code, on_verse) {
   app_record_home_button(context, on_verse);
   html_button(
     root,
-    bible_book_name_text(book_code),
-    async () => await app_record_book(context, book_code, on_verse),
+    string_combine_multiple([bible_book_name_text(book_code)]),
+    async function () {
+      let v = await app_record_book(context, book_code, on_verse);
+      return v;
+    },
   );
 }
