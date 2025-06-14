@@ -17,7 +17,7 @@ import { list_map_index } from "./list_map_index.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { prayers_list } from "./prayers_list.mjs";
 import { html_span } from "./html_span.mjs";
-export async function app_pray_generic(app_fn, body, ps) {
+export async function app_pray_generic(body, app_fn, ps) {
   let top = html_span(body);
   let pl = prayers_list(ps);
   let index_load = storage_local_get(app_fn, "prayer_index");
