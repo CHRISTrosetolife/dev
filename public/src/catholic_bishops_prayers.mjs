@@ -1,6 +1,5 @@
 import { catholic_bishops_prayers_wrap } from "./catholic_bishops_prayers_wrap.mjs";
 import { prayers_list_generic_10 } from "./prayers_list_generic_10.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_map } from "./list_map.mjs";
 import { identity } from "./identity.mjs";
 export function catholic_bishops_prayers(fn, names) {
@@ -9,9 +8,9 @@ export function catholic_bishops_prayers(fn, names) {
     return v4;
   });
   let on_first = identity;
-  function on_last(item) {
-    let v3 = string_combine_multiple([item, v2]);
-    return v3;
+  function on_last(n) {
+    let v4 = catholic_bishops_prayers_wrap(fn, "last", n);
+    return v4;
   }
   let v = prayers_list_generic_10(m, on_first, on_last);
   return v;
