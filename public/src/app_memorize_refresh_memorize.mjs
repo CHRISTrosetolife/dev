@@ -1,5 +1,5 @@
+import { html_button_settings } from "./html_button_settings.mjs";
 import { html_scroll_nearest } from "./html_scroll_nearest.mjs";
-import { html_button } from "./html_button.mjs";
 import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
 import { app_memorize_save } from "./app_memorize_save.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
@@ -50,11 +50,7 @@ export async function app_memorize_refresh_memorize(context) {
   let pattern = string_split(p, "");
   if (context.settings) {
     let settings_element = html_div(root);
-    let settings_button = html_button(
-      settings_element,
-      "⚙️ Settings",
-      on_click,
-    );
+    let settings_button = html_button_settings(settings_element, on_click);
     async function on_click() {
       let v = await app_memorize_refresh_settings(context);
       return v;
