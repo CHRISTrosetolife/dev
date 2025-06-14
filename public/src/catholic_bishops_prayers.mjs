@@ -9,6 +9,8 @@ export function catholic_bishops_prayers(fn, names) {
       storage_local_get(fn, "name_each_before"),
       " ",
       n,
+      " ",
+      storage_local_get(fn, "name_each_before"),
     ]);
     return v4;
   });
