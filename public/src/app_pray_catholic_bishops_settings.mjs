@@ -1,3 +1,4 @@
+import { html_input_width_full_placeholder_storage_local } from "./html_input_width_full_placeholder_storage_local.mjs";
 import { html_textarea_width_full_placeholder_storage_local } from "./html_textarea_width_full_placeholder_storage_local.mjs";
 import { app_pray_catholic_bishops_main } from "./app_pray_catholic_bishops_main.mjs";
 import { prayers_sabbw } from "./prayers_sabbw.mjs";
@@ -11,6 +12,13 @@ export function app_pray_catholic_bishops_settings(root) {
     let v = await app_pray_catholic_bishops_main(root);
     return v;
   });
+  html_input_width_full_placeholder_storage_local(
+    fn,
+    root,
+    "group_count",
+    "The number of names to pray together as a group",
+    "10",
+  );
   html_textarea_width_full_placeholder_storage_local(
     fn,
     root,
