@@ -1,3 +1,4 @@
+import { storage_local_set } from "./storage_local_set.mjs";
 import { html_on_input_value } from "./html_on_input_value.mjs";
 import { prayers_sabbw } from "./prayers_sabbw.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
@@ -21,7 +22,7 @@ export async function app_pray_catholic_bishops() {
     let name_each_before = storage_local_initialize(fn, key, prayers_sabbw(""));
     html_value_set(t, name_each_before);
     html_on_input_value(t, function (value_new) {
-      storage_local_initialize(fn, key, prayers_sabbw(""));
+      storage_local_set(fn, key, value_new);
     });
   });
   let names = catholic_bishops();
