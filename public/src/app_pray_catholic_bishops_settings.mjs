@@ -18,4 +18,11 @@ export function app_pray_catholic_bishops_settings(root) {
     "Text to display before each name",
     prayers_sabbw(""),
   );
+  html_textarea_width_full_placeholder_storage_local(
+    fn,
+    root,
+    "name_each_after",
+    "Text to display after each name",
+    "",
+  );
 }
