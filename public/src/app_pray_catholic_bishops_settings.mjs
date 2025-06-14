@@ -12,7 +12,7 @@ export function app_pray_catholic_bishops_settings(root) {
   let fn = app_pray_catholic_bishops;
   html_clear_scroll_top(root);
   html_button_back(root, async function () {
-    let v = await app_pray_catholic_bishops_main(body);
+    let v = await app_pray_catholic_bishops_main(root);
     return v;
   });
   let key = "name_each_before";
