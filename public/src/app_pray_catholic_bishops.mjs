@@ -15,12 +15,12 @@ export async function app_pray_catholic_bishops() {
     html_clear_scroll_top(root);
     html_span_text(root, "Text to display before each name");
     let t = html_textarea_width_full(root);
-    storage_local_initialize(
+    let name_each_before = storage_local_initialize(
       app_pray_catholic_bishops,
       "name_each_before",
       prayers_sabbw(""),
     );
-    html_value_set(t);
+    html_value_set(t, name_each_before);
   });
   let names = catholic_bishops();
   let ps = catholic_bishops_prayers(names);
