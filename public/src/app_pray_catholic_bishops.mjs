@@ -17,10 +17,12 @@ export async function app_pray_catholic_bishops() {
   html_button_settings(root, function () {
     html_clear_scroll_top(root);
     let key = "name_each_before";
-    html_span_text(root, "Text to display before each name");
+    let value_initial = prayers_sabbw("");
+    let label = "Text to display before each name";
+    html_span_text(root, label);
     let t = html_textarea_width_full(root);
-    let value_initial = storage_local_initialize(fn, key, prayers_sabbw(""));
-    html_value_set(t, value_initial);
+    let value_before = storage_local_initialize(fn, key, value_initial);
+    html_value_set(t, value_before);
     html_on_input_value(t, function (value_new) {
       storage_local_set(fn, key, value_new);
     });
