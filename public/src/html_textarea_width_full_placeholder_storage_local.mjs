@@ -4,9 +4,9 @@ import { html_value_set } from "./html_value_set.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { html_textarea_width_full_placeholder } from "./html_textarea_width_full_placeholder.mjs";
 export function html_textarea_width_full_placeholder_storage_local(
+  fn,
   root,
   placeholder,
-  fn,
   key,
   value_initial,
 ) {

@@ -15,9 +15,9 @@ export function app_pray_catholic_bishops_settings(root) {
   let value_initial = prayers_sabbw("");
   let placeholder = "Text to display before each name";
   html_textarea_width_full_placeholder_storage_local(
+    fn,
     root,
     placeholder,
-    fn,
     key,
     value_initial,
   );
