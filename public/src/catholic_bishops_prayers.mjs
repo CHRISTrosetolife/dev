@@ -16,8 +16,6 @@ export function catholic_bishops_prayers(fn, names) {
   });
   let on_first = identity;
   function on_last(item) {
-    let v2 =
-      ;
     let v3 = string_combine_multiple([item, v2]);
     return v3;
   }
