@@ -53,11 +53,12 @@ export async function app_memorize_refresh_memorize(context) {
     let settings_button = html_button(
       settings_element,
       "⚙️ Settings",
-      async function () {
-        let v = await app_memorize_refresh_settings(context);
-        return v;
-      },
+      on_click,
     );
+    async function on_click() {
+      let v = await app_memorize_refresh_settings(context);
+      return v;
+    }
     html_style_margin_x(settings_button, 0);
   }
   let verses_element = html_div(root);
