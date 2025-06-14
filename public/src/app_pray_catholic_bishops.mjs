@@ -6,10 +6,12 @@ import { app_pray_generic } from "./app_pray_generic.mjs";
 import { catholic_bishops_prayers } from "./catholic_bishops_prayers.mjs";
 import { catholic_bishops } from "./catholic_bishops.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
+import { html_span_text } from "./html_span_text.mjs";
 export async function app_pray_catholic_bishops() {
   let root = html_document_body();
   html_button_settings(root, function () {
     html_clear_scroll_top(root);
+    html_span_text(root, "Text to display before each name");
     let t = html_textarea_width_full(root);
     html_value_set(t);
   });
