@@ -49,8 +49,7 @@ export function app_language_2_refresh_factor_configure(
       if (v < threshold_min) {
         return;
       }
-      object_property_set(factor, "threshold", v);
-      app_language_2_factor_set(context, factors);
+      on_threshold_change(v);
     });
   }
   html_p_text(root, "Choose a factor:");
@@ -67,6 +66,10 @@ export function app_language_2_refresh_factor_configure(
       app_language_2_factor_set(context, factors);
       app_language_2_refresh_factor(context);
     });
+  }
+  function on_threshold_change(v) {
+    object_property_set(factor, "threshold", v);
+    app_language_2_factor_set(context, factors);
   }
   function on_choose(f) {
     object_property_set(factor, "factor", f);
