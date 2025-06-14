@@ -2,7 +2,7 @@ import { html_input_type_number_on_input } from "./html_input_type_number_on_inp
 import { html_input_width_full_placeholder } from "./html_input_width_full_placeholder.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
-export function html_input_width_full_placeholder_storage_local(
+export function html_input_width_full_placeholder_storage_local_number(
   fn,
   root,
   key,
