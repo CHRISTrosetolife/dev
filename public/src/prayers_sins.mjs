@@ -1,6 +1,6 @@
 export function prayers_sins() {
   let v = [
-    "Let parents not exparate their children to wrath",
+    "Let parents not exasparate their children to wrath",
     "Let there be no pride, no adultery, no murder, no stealing, no wage theft and no rebellion against God",
     "Let there be no divination, no witchcraft, no suicide and no sin against children",
     "Let there be no sin against babies, including unborn",
