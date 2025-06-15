@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_get_wrap } from "./list_get_wrap.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { html_style_background_color_transparent } from "./html_style_background_color_transparent.mjs";
@@ -51,6 +52,9 @@ export async function app_pray_generic(body, app_fn, ps) {
   html_scroll_center(list_get(rows, index_load));
   function prayer_index_old_transparent() {
     let index_old = storage_local_get(app_fn, "prayer_index");
+    log({
+      index_old,
+    });
     if (null_not_is(index_old)) {
       let p_old = list_get(rows, index_old);
       p_old.selected = false;
