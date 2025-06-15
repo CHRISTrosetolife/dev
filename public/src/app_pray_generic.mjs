@@ -48,7 +48,9 @@ export async function app_pray_generic(body, app_fn, ps) {
     html_scroll_top(top);
   });
   await sleep_0();
-  html_scroll_center(list_get(rows, index_load));
+  if (null_not_is(index_load)) {
+    html_scroll_center(list_get(rows, index_load));
+  }
   function prayer_index_old_transparent() {
     let index_old = storage_local_get(app_fn, "prayer_index");
     if (null_not_is(index_old)) {
