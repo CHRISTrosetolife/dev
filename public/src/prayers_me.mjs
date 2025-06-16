@@ -25,6 +25,7 @@ export function prayers_me() {
     prayers_bbw("my music, including songs, composing, improvising and piano"),
     "If it means forgiveness, may I forget",
     "May I have no memory of nor desire for A or any others",
+    "Thank You for love",
   ];
   return v;
 }
