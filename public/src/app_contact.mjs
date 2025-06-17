@@ -27,7 +27,7 @@ export function app_contact() {
     if (value === "hi") {
       html_p_text(
         response,
-        string_combine_multiple([app_share_verse_refresh_greet()]),
+        string_combine_multiple(["💻", app_share_verse_refresh_greet()]),
       );
       html_value_set(t, "");
       html_scroll_center(response);
