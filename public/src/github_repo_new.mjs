@@ -11,7 +11,7 @@ export async function github_repo_new(name) {
   let path = path_join([folder_previous(), name]);
   await assert_not_async(file_exists, [path]);
   await folder_new(path);
-  await file_write();
+  await file_write(path_join([path, "readme.txt"]), name);
   await command_line_git_cwd("init", path);
   await git_ac_message_options(fn_name("github_repo_new"), {
     cwd: path,
