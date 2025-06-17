@@ -31,6 +31,7 @@ export function app_contact() {
     html_inner_set(b, instructions_button_label());
   });
   function instructions_button_label() {
+    let value_old = storage_local_get(fn, name);
     let verb = value_old ? "Hide" : "Show";
     let label = string_combine_multiple([verb, " instructions"]);
     return label;
