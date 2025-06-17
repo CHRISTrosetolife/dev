@@ -9,7 +9,6 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { html_button } from "./html_button.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_value_set } from "./html_value_set.mjs";
-import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 export function app_contact() {
   let root = html_style_default_initialize();
@@ -27,7 +26,7 @@ export function app_contact() {
     let value = html_value_get(t);
     if (value === "hi") {
       html_p_text(response, "💻 Computer program answered for me:");
-      let r = html_p_text_multiple(response, app_share_verse_refresh_greet());
+      let r = html_p_text(response, app_share_verse_refresh_greet());
       html_style_bold(r);
       html_value_set(t, "");
       html_scroll_center(response);
