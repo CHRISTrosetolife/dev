@@ -1,3 +1,4 @@
+import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
 import { html_rows_set } from "./html_rows_set.mjs";
 import { html_textarea_width_full_placeholder_storage_local } from "./html_textarea_width_full_placeholder_storage_local.mjs";
 import { app_contact_instructions } from "./app_contact_instructions.mjs";
@@ -17,5 +18,6 @@ export function app_contact() {
   html_rows_set(t, 8);
   html_button(root, "Send message to me", function () {
     let value = html_value_get(t);
+    app_share_verse_refresh_greet();
   });
 }
