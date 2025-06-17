@@ -1,3 +1,4 @@
+import { uuid } from "./uuid.mjs";
 import { path_join } from "./path_join.mjs";
 import { firebase_upload_object } from "./firebase_upload_object.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -12,8 +13,10 @@ import { html_button } from "./html_button.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_value_set } from "./html_value_set.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
+import { storage_local_initialize } from "./storage_local_initialize.mjs";
 export function app_contact() {
   let root = html_style_default_initialize();
+  storage_local_initialize(app_contact, "id", uuid);
   app_contact_instructions(root);
   let t = html_textarea_width_full_placeholder_storage_local(
     app_contact,
