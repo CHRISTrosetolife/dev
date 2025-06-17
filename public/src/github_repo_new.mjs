@@ -10,7 +10,9 @@ export async function github_repo_new(name) {
   await assert_not_async(file_exists, [path]);
   await folder_new(path);
   await command_line_git_cwd("init", path);
-  await git_ac_message_options("initial commit", options);
+  await git_ac_message_options("initial commit", {
+    cwd: path,
+  });
   let v = path;
   return v;
 }
