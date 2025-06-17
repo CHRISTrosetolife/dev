@@ -27,6 +27,7 @@ export function app_contact() {
       html_inner_set(response, app_share_verse_refresh_greet());
       html_value_set(t, "");
       html_scroll_center(response);
+    } else {
     }
   });
   response = html_p(root);
