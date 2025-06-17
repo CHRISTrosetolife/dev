@@ -13,6 +13,7 @@ export function app_contact() {
     "Refresh the page to see if I have answered",
   ]);
   html_button(root, "Hide instructions", function () {
+    storage_local();
     html_style_display_block_or_none(instructions);
     html_style_hidden(instructions);
   });
