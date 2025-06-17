@@ -25,9 +25,13 @@ export function app_contact() {
   html_button(root, "Send message to me", function () {
     let value = html_value_get(t);
     if (value === "hi") {
-      html_p_text(response, "💻 Computer program answered for me:");
+      if (false) {
+        html_p_text(response, "💻 Computer program answered for me:");
+      }
       let r = html_p_text(response, app_share_verse_refresh_greet());
-      html_style_bold(r);
+      if (false) {
+        html_style_bold(r);
+      }
       html_value_set(t, "");
       html_scroll_center(response);
     } else {
