@@ -1,3 +1,4 @@
+import { git_ac_message_options } from "./git_ac_message_options.mjs";
 import { command_line_git_cwd } from "./command_line_git_cwd.mjs";
 import { folder_new } from "./folder_new.mjs";
 import { assert_not_async } from "./assert_not_async.mjs";
@@ -9,6 +10,7 @@ export async function github_repo_new(name) {
   await assert_not_async(file_exists, [path]);
   await folder_new(path);
   await command_line_git_cwd("init", path);
+  await git_ac_message_options("initial commit", options);
   let v = path;
   return v;
 }
