@@ -18,6 +18,8 @@ export function app_contact() {
   html_rows_set(t, 8);
   html_button(root, "Send message to me", function () {
     let value = html_value_get(t);
+    if (false) {
+    }
     app_share_verse_refresh_greet();
   });
 }
