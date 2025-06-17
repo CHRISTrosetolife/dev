@@ -1,3 +1,5 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { html_p_text } from "./html_p_text.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
 import { html_p } from "./html_p.mjs";
 import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
@@ -8,7 +10,6 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { html_button } from "./html_button.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_value_set } from "./html_value_set.mjs";
-import { html_inner_set } from "./html_inner_set.mjs";
 export function app_contact() {
   let root = html_style_default_initialize();
   app_contact_instructions(root);
@@ -24,7 +25,10 @@ export function app_contact() {
   html_button(root, "Send message to me", function () {
     let value = html_value_get(t);
     if (value === "hi") {
-      html_inner_set(response, app_share_verse_refresh_greet());
+      html_p_text(
+        response,
+        string_combine_multiple([app_share_verse_refresh_greet()]),
+      );
       html_value_set(t, "");
       html_scroll_center(response);
     } else {
