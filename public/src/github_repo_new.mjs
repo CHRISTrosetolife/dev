@@ -1,4 +1,4 @@
-import { command_line_git_options } from "./command_line_git_options.mjs";
+import { command_line_git_cwd } from "./command_line_git_cwd.mjs";
 import { folder_new } from "./folder_new.mjs";
 import { assert_not_async } from "./assert_not_async.mjs";
 import { file_exists } from "./file_exists.mjs";
@@ -9,9 +9,7 @@ export async function github_repo_new(name) {
   await assert_not_async(file_exists, [path]);
   await folder_new(path);
   let command = "init";
-  await command_line_git_options(command, {
-    cwd: path,
-  });
+  await command_line_git_cwd(command, path);
   let v = path;
   return v;
 }
