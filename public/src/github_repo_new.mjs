@@ -8,6 +8,7 @@ export async function github_repo_new(name) {
   let path = path_join([folder_previous(), name]);
   await assert_not_async(file_exists, [path]);
   await folder_new(path);
+  let command = "init";
   await command_line_git_options(command, {
     cwd: path,
   });
