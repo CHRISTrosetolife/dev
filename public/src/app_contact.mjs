@@ -9,7 +9,7 @@ export function app_contact() {
     app_contact,
     root,
     "message",
-    "Enter the message you want to send to me:",
+    "Enter the message that you want to send to me:",
     "",
   );
   html_rows_set(t, 8);
