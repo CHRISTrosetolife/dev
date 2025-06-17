@@ -16,6 +16,7 @@ import { html_value_get } from "./html_value_get.mjs";
 import { html_value_set } from "./html_value_set.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
+import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 export async function app_contact() {
   let root = html_style_default_initialize();
   firebase_initialize();
@@ -51,12 +52,11 @@ export async function app_contact() {
       await firebase_upload_object(path, {
         message: value,
       });
-      html_p_text(response, "Your message has been sent to me");
-      html_p_text(response, "Lord-willing, I will answer");
-      html_p_text(
-        response,
+      html_p_text_multiple(response, [
+        "Your message has been sent to me",
+        "Lord-willing, I will answer",
         "Please refresh this page later to see if I have answered",
-      );
+      ]);
     }
   });
   response = html_p(root);
