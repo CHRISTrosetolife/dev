@@ -1,5 +1,5 @@
+import { html_rows_set } from "./html_rows_set.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
-import { html_attribute_set } from "./html_attribute_set.mjs";
 import { app_dev_sandbox_result_text_set } from "./app_dev_sandbox_result_text_set.mjs";
 import { app_dev_sandbox_result_error } from "./app_dev_sandbox_result_error.mjs";
 import { app_dev_sandbox_result_show } from "./app_dev_sandbox_result_show.mjs";
@@ -36,7 +36,7 @@ export async function app_dev_sandbox_command_line(
   );
   let textarea = html_textarea_code(root);
   let rows = 4;
-  html_attribute_set(textarea, "rows", rows);
+  html_rows_set(textarea, rows);
   let prefix = app_dev_screen_command_line_prefix();
   html_value_set(
     textarea,
