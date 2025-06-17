@@ -1,3 +1,4 @@
+import { path_join } from "./path_join.mjs";
 import { firebase_upload_object } from "./firebase_upload_object.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
@@ -41,6 +42,7 @@ export function app_contact() {
         "💻 Computer program was not able to answer this message",
       );
       await firebase_upload_object();
+      path_join(["contact", id]);
     }
   });
   response = html_p(root);
