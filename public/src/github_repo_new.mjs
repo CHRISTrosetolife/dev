@@ -1,1 +1,3 @@
-export function github_repo_new() {}
+export function github_repo_new(name) {
+  path;
+}
