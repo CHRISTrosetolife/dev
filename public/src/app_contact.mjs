@@ -1,4 +1,4 @@
-import { firebase_storage_initialize } from "./firebase_storage_initialize.mjs";
+import { firebase_initialize } from "./firebase_initialize.mjs";
 import { file_name_json } from "./file_name_json.mjs";
 import { uuid } from "./uuid.mjs";
 import { path_join } from "./path_join.mjs";
@@ -18,7 +18,7 @@ import { html_style_bold } from "./html_style_bold.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 export async function app_contact() {
   let root = html_style_default_initialize();
-  await firebase_storage_initialize();
+  await firebase_initialize();
   let id = storage_local_initialize(app_contact, "id", await uuid());
   app_contact_instructions(root);
   let t = html_textarea_width_full_placeholder_storage_local(
