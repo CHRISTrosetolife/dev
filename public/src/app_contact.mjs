@@ -1,3 +1,4 @@
+import { firebase_upload_object } from "./firebase_upload_object.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
 import { html_p } from "./html_p.mjs";
@@ -22,7 +23,7 @@ export function app_contact() {
   );
   html_rows_set(t, 8);
   let response;
-  html_button(root, "Send message to me", function () {
+  html_button(root, "Send message to me", async function () {
     let value = html_value_get(t);
     if (value === "hi") {
       if (false) {
@@ -39,6 +40,7 @@ export function app_contact() {
         response,
         "💻 Computer program was not able to answer this message",
       );
+      await firebase_upload_object();
     }
   });
   response = html_p(root);
