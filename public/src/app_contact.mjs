@@ -56,7 +56,6 @@ export async function app_contact() {
         "📬 Your message has been sent to me",
         "📝 Lord-willing, I will answer",
         "⏰️ Please refresh this page later to see if I have answered",
-        "If you wish to send a different message, instead, change your message and send again",
       ]);
     }
   });
