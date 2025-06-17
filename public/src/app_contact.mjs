@@ -1,3 +1,4 @@
+import { file_name_json } from "./file_name_json.mjs";
 import { uuid } from "./uuid.mjs";
 import { path_join } from "./path_join.mjs";
 import { firebase_upload_object } from "./firebase_upload_object.mjs";
@@ -14,9 +15,9 @@ import { html_value_get } from "./html_value_get.mjs";
 import { html_value_set } from "./html_value_set.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
-export function app_contact() {
+export async function app_contact() {
   let root = html_style_default_initialize();
-  storage_local_initialize(app_contact, "id", uuid);
+  let id = storage_local_initialize(app_contact, "id", await uuid());
   app_contact_instructions(root);
   let t = html_textarea_width_full_placeholder_storage_local(
     app_contact,
@@ -44,8 +45,8 @@ export function app_contact() {
         response,
         "💻 Computer program was not able to answer this message",
       );
+      path_join(["contact", file_name_json(id)]);
       await firebase_upload_object();
-      path_join(["contact", id]);
     }
   });
   response = html_p(root);
