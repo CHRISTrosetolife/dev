@@ -1,3 +1,4 @@
+import { folder_parent } from "./folder_parent.mjs";
 import { app_name } from "./app_name.mjs";
 import { folder_img_path } from "./folder_img_path.mjs";
 import { files_rename_incrementing } from "./files_rename_incrementing.mjs";
@@ -33,14 +34,17 @@ export async function app_dev_screenshots(screen_name) {
   ]);
   let target_path = string_combine_multiple([".\\", prefix]);
   let target_files = await folder_read(target_path, file_extension);
-  let mapped = list_map(target_files, (file_path) => {
+  let mapped = list_map(target_files, function (file_path) {
     let name = path_parse_name(file_path);
     let parsed = integer_parse(name);
-    assert_message(number_is, [parsed], () => ({
-      parsed,
-      name,
-      file_path,
-    }));
+    assert_message(number_is, [parsed], function () {
+      let v = {
+        parsed,
+        name,
+        file_path,
+      };
+      return v;
+    });
     return parsed;
   });
   let starting = add_1(number_max_list_or(mapped, 0));
@@ -49,7 +53,7 @@ export async function app_dev_screenshots(screen_name) {
     file_extension,
     path_join([
       folder_path,
-      folder_parent(),
+      await folder_parent(),
       "screenshot_backups",
       date_string_iso_file(),
     ]),
@@ -57,7 +61,3 @@ export async function app_dev_screenshots(screen_name) {
   await files_rename_incrementing(folder_path, file_extension, starting);
   await folder_files_move(folder_path, file_extension, target_path);
 }
-function folder_parent() {
-    return "..";
-}
-
