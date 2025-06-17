@@ -1,3 +1,4 @@
+import { html_inner_set } from "./html_inner_set.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { storage_local_exists_not } from "./storage_local_exists_not.mjs";
@@ -23,10 +24,15 @@ export function app_contact() {
   }
   let value_old = storage_local_get(fn, name);
   html_style_display_block_or_none(instructions, value_old);
-  let verb = value_old ? "Hide" : "Show";
-  let label = string_combine_multiple([verb, " instructions"]);
-  let button_hide = html_button(root, label, function () {
+  let label = instructions_button_label();
+  let b = html_button(root, label, function () {
     let value_new = storage_local_toggle(fn, name);
     html_style_display_block_or_none(instructions, value_new);
+    html_inner_set(b, label);
   });
+  function instructions_button_label() {
+    let verb = value_old ? "Hide" : "Show";
+    let label = string_combine_multiple([verb, " instructions"]);
+    return label;
+  }
 }
