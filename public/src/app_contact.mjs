@@ -1,3 +1,4 @@
+import { storage_local_set } from "./storage_local_set.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { html_style_display_block_or_none } from "./html_style_display_block_or_none.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
@@ -18,6 +19,7 @@ export function app_contact() {
     let name = "instructions_show";
     let value = storage_local_get(fn, name);
     value = !value;
+    storage_local_set(fn, name, value);
     html_style_display_block_or_none(instructions);
     html_style_hidden(instructions);
   });
