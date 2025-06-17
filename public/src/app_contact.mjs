@@ -26,7 +26,7 @@ export function app_contact() {
     if (value === "hi") {
       html_inner_set(response, app_share_verse_refresh_greet());
       html_value_set(t, "");
-      html_clear_scroll_top_centered();
+      html_clear_scroll_top_centered(response);
     }
   });
   response = html_p(root);
