@@ -18,7 +18,7 @@ import { html_style_bold } from "./html_style_bold.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 export async function app_contact() {
   let root = html_style_default_initialize();
-  await firebase_initialize();
+  firebase_initialize();
   let id = storage_local_initialize(app_contact, "id", await uuid());
   app_contact_instructions(root);
   let t = html_textarea_width_full_placeholder_storage_local(
