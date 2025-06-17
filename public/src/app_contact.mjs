@@ -22,7 +22,7 @@ export function app_contact() {
   }
   let value_old = storage_local_get(fn, name);
   html_style_display_block_or_none(instructions, value_old);
-  html_button(root, "Hide instructions", function () {
+  let button_hide = html_button(root, "Hide instructions", function () {
     let value_new = storage_local_toggle(fn, name);
     html_style_display_block_or_none(instructions, value_new);
   });
