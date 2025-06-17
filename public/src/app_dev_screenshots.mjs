@@ -49,7 +49,7 @@ export async function app_dev_screenshots(screen_name) {
     file_extension,
     path_join([
       folder_path,
-      "..",
+      folder_parent(),
       "screenshot_backups",
       date_string_iso_file(),
     ]),
@@ -57,3 +57,7 @@ export async function app_dev_screenshots(screen_name) {
   await files_rename_incrementing(folder_path, file_extension, starting);
   await folder_files_move(folder_path, file_extension, target_path);
 }
+function folder_parent() {
+    return "..";
+}
+
