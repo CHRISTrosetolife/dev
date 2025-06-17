@@ -1,5 +1,4 @@
-import { storage_local_set } from "./storage_local_set.mjs";
-import { storage_local_get } from "./storage_local_get.mjs";
+import { storage_local_toggle } from "./storage_local_toggle.mjs";
 import { html_style_display_block_or_none } from "./html_style_display_block_or_none.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
@@ -17,9 +16,7 @@ export function app_contact() {
   ]);
   html_button(root, "Hide instructions", function () {
     let name = "instructions_show";
-    let value = storage_local_get(fn, name);
-    value = !value;
-    storage_local_set(fn, name, value);
+    storage_local_toggle(fn, name);
     html_style_display_block_or_none(instructions);
     html_style_hidden(instructions);
   });
