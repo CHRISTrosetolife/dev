@@ -3,6 +3,7 @@ import { html_textarea_width_full_placeholder_storage_local } from "./html_texta
 import { app_contact_instructions } from "./app_contact_instructions.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_button } from "./html_button.mjs";
+import { html_value_get } from "./html_value_get.mjs";
 export function app_contact() {
   let root = html_style_default_initialize();
   app_contact_instructions(root);
@@ -14,5 +15,7 @@ export function app_contact() {
     "",
   );
   html_rows_set(t, 8);
-  html_button(root, "Send message to me", function () {});
+  html_button(root, "Send message to me", function () {
+    let value = html_value_get(t);
+  });
 }
