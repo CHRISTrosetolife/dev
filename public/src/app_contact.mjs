@@ -14,6 +14,8 @@ export function app_contact() {
     "If my computer program cannot answer your message, then your message will be sent to me and Lord-willing I will answer later",
     "Refresh the page to see if I have answered",
   ]);
+  if (false) {
+  }
   let name = "instructions_show";
   let value_old = storage_local_get(fn, name);
   html_style_display_block_or_none(instructions, value_old);
