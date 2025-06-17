@@ -1,4 +1,4 @@
-import { folder_parent } from "./folder_parent.mjs";
+import { folder_previous } from "./folder_previous.mjs";
 import { app_name } from "./app_name.mjs";
 import { folder_img_path } from "./folder_img_path.mjs";
 import { files_rename_incrementing } from "./files_rename_incrementing.mjs";
@@ -53,7 +53,7 @@ export async function app_dev_screenshots(screen_name) {
     file_extension,
     path_join([
       folder_path,
-      await folder_parent(),
+      folder_previous(),
       "screenshot_backups",
       date_string_iso_file(),
     ]),
