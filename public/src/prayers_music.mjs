@@ -26,6 +26,7 @@ export function prayers_music() {
     "Vertical Worship",
     "NEEDTOBREATHE",
     "Reawaken Hymns",
+    "SovereignGraceMusic",
   ];
   let v2 = prayers_list_generic_5(v, prayers_sabbw, string_prefix_and);
   return v2;
