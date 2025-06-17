@@ -16,7 +16,7 @@ export function app_contact() {
   ]);
   html_button(root, "Hide instructions", function () {
     let name = "instructions_show";
-    let value = storage_local_get();
+    let value = storage_local_get(fn, name);
     html_style_display_block_or_none(instructions);
     html_style_hidden(instructions);
   });
