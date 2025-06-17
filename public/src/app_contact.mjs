@@ -27,5 +27,5 @@ export function app_contact() {
       html_value_set(t, "");
     }
   });
-  response = html_p();
+  response = html_p(root);
 }
