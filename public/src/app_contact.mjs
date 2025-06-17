@@ -51,6 +51,12 @@ export async function app_contact() {
       await firebase_upload_object(path, {
         message: value,
       });
+      html_p_text(response, "Your message has been sent to me");
+      html_p_text(response, "Lord-willing, I will answer");
+      html_p_text(
+        response,
+        "Please refresh this page later to see if I have answered",
+      );
     }
   });
   response = html_p(root);
