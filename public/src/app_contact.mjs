@@ -23,10 +23,8 @@ export function app_contact() {
   }
   let value_old = storage_local_get(fn, name);
   html_style_display_block_or_none(instructions, value_old);
-  let label = string_combine_multiple([
-    value_old ? "Hide" : "Show",
-    " instructions",
-  ]);
+  let verb = value_old ? "Hide" : "Show";
+  let label = string_combine_multiple([verb, " instructions"]);
   let button_hide = html_button(root, label, function () {
     let value_new = storage_local_toggle(fn, name);
     html_style_display_block_or_none(instructions, value_new);
