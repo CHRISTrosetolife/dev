@@ -35,6 +35,10 @@ export function app_contact() {
       html_value_set(t, "");
       html_scroll_center(response);
     } else {
+      html_p_text(
+        response,
+        "💻 Computer program was not able to answer this message",
+      );
     }
   });
   response = html_p(root);
