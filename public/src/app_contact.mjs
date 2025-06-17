@@ -9,5 +9,5 @@ export function app_contact() {
     "If my computer program cannot answer your message, then your message will be sent to me and Lord-willing I will answer later",
     "Refresh the page to see if I have answered",
   ]);
-  html_button(root, "");
+  html_button(root, "Hide instructions", function () {});
 }
