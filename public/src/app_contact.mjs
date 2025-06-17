@@ -1,7 +1,6 @@
 import { storage_local_toggle } from "./storage_local_toggle.mjs";
 import { html_style_display_block_or_none } from "./html_style_display_block_or_none.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
-import { html_style_hidden } from "./html_style_hidden.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 export function app_contact() {
@@ -18,6 +17,5 @@ export function app_contact() {
     let name = "instructions_show";
     storage_local_toggle(fn, name);
     html_style_display_block_or_none(instructions);
-    html_style_hidden(instructions);
   });
 }
