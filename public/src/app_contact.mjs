@@ -5,6 +5,7 @@ import { html_style_hidden } from "./html_style_hidden.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 export function app_contact() {
+  let fn = app_contact;
   let root = html_style_default_initialize();
   let instructions = html_p_text_multiple(root, [
     "This website will let you contact me",
