@@ -53,9 +53,9 @@ export async function app_contact() {
         message: value,
       });
       html_p_text_multiple(response, [
-        "Your message has been sent to me",
-        "Lord-willing, I will answer",
-        "Please refresh this page later to see if I have answered",
+        "📬 Your message has been sent to me",
+        "📝 Lord-willing, I will answer",
+        "⏰️ Please refresh this page later to see if I have answered",
       ]);
     }
   });
