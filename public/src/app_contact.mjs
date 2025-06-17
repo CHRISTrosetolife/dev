@@ -1,3 +1,4 @@
+import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_p } from "./html_p.mjs";
 import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
 import { html_rows_set } from "./html_rows_set.mjs";
@@ -25,6 +26,7 @@ export function app_contact() {
     if (value === "hi") {
       html_inner_set(response, app_share_verse_refresh_greet());
       html_value_set(t, "");
+      html_clear_scroll_top_centered();
     }
   });
   response = html_p(root);
