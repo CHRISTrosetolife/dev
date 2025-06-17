@@ -4,5 +4,11 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 export function app_contact() {
   let root = html_style_default_initialize();
   app_contact_instructions(root);
-  html_textarea_width_full_placeholder_storage_local();
+  html_textarea_width_full_placeholder_storage_local(
+    app_contact,
+    root,
+    "message",
+    "Enter the message you want to send to me:",
+    "",
+  );
 }
