@@ -4,7 +4,5 @@ import { folder_previous } from "./folder_previous.mjs";
 import { path_join } from "./path_join.mjs";
 export async function github_repo_new(name) {
   let path = path_join([folder_previous(), name]);
-  if (await file_exists(path)) {
-  }
-  await assert_not_async();
+  await assert_not_async(file_exists, [path]);
 }
