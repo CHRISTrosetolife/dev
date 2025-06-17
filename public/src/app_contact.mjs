@@ -1,3 +1,4 @@
+import { html_button } from "./html_button.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 export function app_contact() {
   let root = html_style_default_initialize();
@@ -8,4 +9,5 @@ export function app_contact() {
     "If my computer program cannot answer your message, then your message will be sent to me and Lord-willing I will answer later",
     "Refresh the page to see if I have answered",
   ]);
+  html_button(root, "");
 }
