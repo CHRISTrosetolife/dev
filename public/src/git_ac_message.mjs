@@ -15,5 +15,6 @@ export async function git_ac_message(commit_message) {
       '"',
     ]),
   ];
-  return await command_line_git_multiple(commands);
+  let v = await command_line_git_multiple(commands);
+  return v;
 }
