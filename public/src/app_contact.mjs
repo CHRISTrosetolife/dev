@@ -28,7 +28,7 @@ export function app_contact() {
   let b = html_button(root, label, function () {
     let value_new = storage_local_toggle(fn, name);
     html_style_display_block_or_none(instructions, value_new);
-    html_inner_set(b, label);
+    html_inner_set(b, instructions_button_label());
   });
   function instructions_button_label() {
     let verb = value_old ? "Hide" : "Show";
