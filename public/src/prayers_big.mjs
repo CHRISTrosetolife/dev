@@ -1,6 +1,7 @@
 import { prayers_bbw } from "./prayers_bbw.mjs";
 export function prayers_big() {
   let v = [
+    "for each member of the body of Christ, including future members, for each gift they could receive from God and each gift I have, if it would give the member more love or more treasure in heaven, may they they receive the gift, immediately and irrevocably",
     "Bless, help and provide for each person who has asked me to pray for them or give materially",
     "Answer all the prayer requests every Christian including me should be praying and help any others You desire to pray like this",
     "Protect all humans, including love and I, and all angels of the LORD from all spiritual beings who are acting against the LORD",
