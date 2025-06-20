@@ -1,10 +1,11 @@
 export function sermons_list() {
-  let v = [
+  return [
     "1cor7",
     "child",
     "child2",
     "child3",
     "faith_works",
+    "falling_away",
     "forsake",
     "forsake30",
     "greatest",
@@ -33,5 +34,4 @@ export function sermons_list() {
     "women",
     "wren",
   ];
-  return v;
 }
