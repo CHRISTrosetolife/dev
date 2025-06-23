@@ -8,7 +8,7 @@ import { storage_files_download } from "./storage_files_download.mjs";
 export async function app_contact_download() {
   let prefix = app_contact_firebase_folder_prefix();
   let file_paths = await storage_files_download(prefix);
-  let messages = list_map(file_paths, async function (file_path) {
+  let mapped = list_map(file_paths, async function (file_path) {
     let file = await file_read_json(file_path);
     let message = object_property_get(file, "message");
     let r = app_contact_respond(message);
@@ -20,7 +20,7 @@ export async function app_contact_download() {
     };
     return v;
   });
-  let filtered = list_filter(messages, function (m) {
+  let filtered = list_filter(mapped, function (m) {
     let v2 = object_property_get(m, "respond_null");
     return v2;
   });
