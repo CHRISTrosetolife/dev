@@ -1,7 +1,7 @@
+import { app_contact_firebase_folder_combine } from "./app_contact_firebase_folder_combine.mjs";
 import { firebase_initialize } from "./firebase_initialize.mjs";
 import { file_name_json } from "./file_name_json.mjs";
 import { uuid } from "./uuid.mjs";
-import { path_join } from "./path_join.mjs";
 import { firebase_upload_object } from "./firebase_upload_object.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
@@ -62,7 +62,3 @@ export async function app_contact() {
   });
   response = html_p(root);
 }
-function app_contact_firebase_folder_combine(file_name) {
-    return path_join(["contact", file_name]);
-}
-
