@@ -11,8 +11,10 @@ export async function app_contact_download() {
     let file = await file_read_json(file_path);
     let message = object_property_get(file, "message");
     let r = app_contact_respond(message);
+    let respond_null = r === null;
     let v = {
-      file,
+      file_path,
+      respond_null,
     };
     return v;
   });
