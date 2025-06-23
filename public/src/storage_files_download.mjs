@@ -4,7 +4,8 @@ import { storage_files } from "./storage_files.mjs";
 export async function storage_files_download(prefix) {
   let files = await storage_files(prefix);
   let v = await list_map_async(files, async function (firebase_file) {
-    await storage_file_download(firebase_file);
+    let v2 = await storage_file_download(firebase_file);
+    return v2;
   });
   return v;
 }
