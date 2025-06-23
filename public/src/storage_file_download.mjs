@@ -6,4 +6,6 @@ export async function storage_file_download(firebase_file) {
   if (await file_exists_not(destination)) {
     await storage_file_download_force(firebase_file);
   }
+  let v = destination;
+  return v;
 }
