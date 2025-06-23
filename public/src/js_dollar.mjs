@@ -522,6 +522,8 @@ export function js_dollar(ast) {
           if (js_node_type_is(removed, "BinaryExpression")) {
             let operator = object_property_get(removed, "operator");
             if (equal(operator, "===")) {
+              let left = object_property_get(removed, "left");
+              let right = object_property_get(removed, "right");
             }
           }
           return;
