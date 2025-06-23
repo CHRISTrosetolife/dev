@@ -1,3 +1,4 @@
+import { list_join_newline } from "./list_join_newline.mjs";
 import { log } from "./log.mjs";
 import { app_prefix_combine } from "./app_prefix_combine.mjs";
 import { js_code_call } from "./js_code_call.mjs";
@@ -16,6 +17,5 @@ export async function app_load(name) {
     function_deploy_path(name_prefixed, version),
   );
   log(script);
-  await eval(script);
-  await eval(js_code_call(name_prefixed));
+  await eval(list_join_newline([js_code_call(name_prefixed), script]));
 }
