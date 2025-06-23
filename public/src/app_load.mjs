@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_prefix_combine } from "./app_prefix_combine.mjs";
 import { js_code_call } from "./js_code_call.mjs";
 import { function_deploy_path } from "./function_deploy_path.mjs";
@@ -14,6 +15,7 @@ export async function app_load(name) {
   let script = await http_storage_get(
     function_deploy_path(name_prefixed, version),
   );
+  log("");
   await eval(script);
   await eval(js_code_call(name_prefixed));
 }
