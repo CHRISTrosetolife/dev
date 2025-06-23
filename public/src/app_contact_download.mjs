@@ -7,8 +7,12 @@ export async function app_contact_download() {
   let prefix = app_contact_firebase_folder_prefix();
   let file_paths = await storage_files_download(prefix);
   let messages = list_map(file_paths, async function (file_path) {
-    let read = await file_read_json(file_path);
-    let message = object_property_get(read, "message");
+    let file = await file_read_json(file_path);
+    let message = object_property_get(file, "message");
+    let v = {
+      file,
+    };
+    return v;
   });
   list_fil;
 }
