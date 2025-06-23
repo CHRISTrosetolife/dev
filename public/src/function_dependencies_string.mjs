@@ -50,6 +50,7 @@ export async function function_dependencies_string(function_name) {
     beginning = [];
   }
   let c = list_concat_multiple([beginning, e_code, us]);
+  c = [us];
   let text = list_join_newline(c);
   return text;
 }
