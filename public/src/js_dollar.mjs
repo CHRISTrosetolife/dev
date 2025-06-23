@@ -520,6 +520,9 @@ export function js_dollar(ast) {
             removed,
           });
           if (js_node_type_is(removed, "BinaryExpression")) {
+            let operator = object_property_get(removed, "operator");
+            if (js_node_type_is(removed, "BinaryExpression")) {
+            }
           }
           return;
           let e = js_parse_expression(
