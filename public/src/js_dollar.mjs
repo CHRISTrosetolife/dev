@@ -524,16 +524,15 @@ export function js_dollar(ast) {
             if (equal(operator, "===")) {
               let left = object_property_get(removed, "left");
               let right = object_property_get(removed, "right");
-              let value2 = object_property_get(right, "value");
               let e = js_parse_expression(
                 js_code_call_args(fn_name("list_includes"), [
                   js_code_array_empty(),
                 ]),
               );
               let ea = e.arguments;
+              list_add(ea, left);
               let es = list_first(ea).elements;
-              list_add(es, value2);
-              log("");
+              list_add(es, right);
               object_replace(node, e);
             }
           }
