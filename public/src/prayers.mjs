@@ -14,7 +14,6 @@ export function prayers() {
     "May the words of my mouth and the meditation of my heart be pleasing in your sight, O Lord, my Rock and my Redeemer",
     "May I fulfill my ministry",
     "Thank You",
-    "May there be life and life abundantly",
     prayers_love(),
     prayers_family(),
     prayers_countries(),
