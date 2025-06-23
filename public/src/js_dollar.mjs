@@ -533,6 +533,7 @@ export function js_dollar(ast) {
               let ea = e.arguments;
               let es = list_first(ea).elements;
               list_add(es, value2);
+              log("");
               object_replace(node, e);
             }
           }
