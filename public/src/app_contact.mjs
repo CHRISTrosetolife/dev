@@ -34,18 +34,7 @@ export async function app_contact() {
   html_button(root, "Send message to me", async function () {
     let value = html_value_get(t);
     let output = app_contact_respond(value);
-    if (value === "hi") {
-      if (false) {
-        html_p_text(response, "💻 Computer program answered for me:");
-      }
-      output = app_contact_respond(value);
-      let r = html_p_text(response, output);
-      if (false) {
-        html_style_bold(r);
-      }
-      html_value_set(t, "");
-      html_scroll_center(response);
-    } else {
+    if (value === null) {
       html_p_text(
         response,
         "💻 Computer program was not able to answer this message",
@@ -60,6 +49,16 @@ export async function app_contact() {
         "📝 Lord-willing, I will answer",
         "⏰️ Please refresh this page later to see if I have answered",
       ]);
+    } else {
+      if (false) {
+        html_p_text(response, "💻 Computer program answered for me:");
+      }
+      let r = html_p_text(response, output);
+      if (false) {
+        html_style_bold(r);
+      }
+      html_value_set(t, "");
+      html_scroll_center(response);
     }
   });
   response = html_p(root);
