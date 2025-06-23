@@ -18,48 +18,52 @@ import { html_style_bold } from "./html_style_bold.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 export async function app_contact() {
-  let root = html_style_default_initialize();
-  firebase_initialize();
-  let id = storage_local_initialize(app_contact, "id", await uuid());
-  app_contact_instructions(root);
-  let t = html_textarea_width_full_placeholder_storage_local(
-    app_contact,
-    root,
-    "message",
-    "Enter the message that you want to send to me:",
-    "",
-  );
-  html_rows_set(t, 8);
-  let response;
-  html_button(root, "Send message to me", async function () {
-    let value = html_value_get(t);
-    let output = app_contact_respond(value);
-    if (value === null) {
-      html_p_text(
-        response,
-        "💻 Computer program was not able to answer this message",
-      );
-      let file_name = file_name_json(id);
-      let path = app_contact_firebase_folder_combine(file_name);
-      await firebase_upload_object(path, {
-        message: value,
-      });
-      html_p_text_multiple(response, [
-        "📬 Your message has been sent to me",
-        "📝 Lord-willing, I will answer",
-        "⏰️ Please refresh this page later to see if I have answered",
-      ]);
-    } else {
-      if (false) {
-        html_p_text(response, "💻 Computer program answered for me:");
-      }
-      let r = html_p_text(response, output);
-      if (false) {
-        html_style_bold(r);
-      }
-      html_value_set(t, "");
-      html_scroll_center(response);
-    }
-  });
-  response = html_p(root);
+  await app_contact_main();
 }
+async function app_contact_main() {
+    let root = html_style_default_initialize();
+    firebase_initialize();
+    let id = storage_local_initialize(app_contact, "id", await uuid());
+    app_contact_instructions(root);
+    let t = html_textarea_width_full_placeholder_storage_local(
+        app_contact,
+        root,
+        "message",
+        "Enter the message that you want to send to me:",
+        ""
+    );
+    html_rows_set(t, 8);
+    let response;
+    html_button(root, "Send message to me", async function () {
+        let value = html_value_get(t);
+        let output = app_contact_respond(value);
+        if (value === null) {
+            html_p_text(
+                response,
+                "💻 Computer program was not able to answer this message"
+            );
+            let file_name = file_name_json(id);
+            let path = app_contact_firebase_folder_combine(file_name);
+            await firebase_upload_object(path, {
+                message: value,
+            });
+            html_p_text_multiple(response, [
+                "📬 Your message has been sent to me",
+                "📝 Lord-willing, I will answer",
+                "⏰️ Please refresh this page later to see if I have answered",
+            ]);
+        } else {
+            if (false) {
+                html_p_text(response, "💻 Computer program answered for me:");
+            }
+            let r = html_p_text(response, output);
+            if (false) {
+                html_style_bold(r);
+            }
+            html_value_set(t, "");
+            html_scroll_center(response);
+        }
+    });
+    response = html_p(root);
+}
+
