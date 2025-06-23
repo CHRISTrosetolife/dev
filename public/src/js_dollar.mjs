@@ -518,6 +518,7 @@ export function js_dollar(ast) {
           let removed = list_remove_at(parent, next_index);
           if (false) {
           }
+          return;
           let e = js_parse_expression(
             js_code_call_args(fn_name("list_includes"), [
               js_code_array_empty(),
