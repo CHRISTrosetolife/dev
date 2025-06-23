@@ -14,7 +14,7 @@ export function prayers_countries() {
   function on_last(item) {
     let v3 = string_combine_multiple([
       item,
-      " and their offspring and ancestors and according to Your desire may they all love perfectly",
+      " and their offspring and ancestors and according to Your desire may they all love perfectly and may the gospel be fully preached to each of these nations now",
     ]);
     return v3;
   }
