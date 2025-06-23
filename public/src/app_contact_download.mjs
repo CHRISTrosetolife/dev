@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { app_contact_respond } from "./app_contact_respond.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -18,9 +19,15 @@ export async function app_contact_download() {
       message,
       respond_null,
     };
+    log({
+      v,
+    });
     return v;
   });
   let filtered = list_filter(mapped, function (m) {
+    log({
+      m,
+    });
     let v2 = object_property_get(m, "respond_null");
     return v2;
   });
