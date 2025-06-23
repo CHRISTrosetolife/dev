@@ -23,3 +23,4 @@ export function prayers() {
   let v2 = list_map(v, string_case_upper_first);
   return v2;
 }
+up;
