@@ -525,16 +525,16 @@ export function js_dollar(ast) {
               let left = object_property_get(removed, "left");
               let right = object_property_get(removed, "right");
               let value2 = object_property_get(right, "value");
+              let e = js_parse_expression(
+                js_code_call_args(fn_name("list_includes"), [
+                  js_code_array_empty(),
+                ]),
+              );
+              let es = list_first(e.arguments).elements;
+              list_add(es, removed);
             }
           }
           return;
-          let e = js_parse_expression(
-            js_code_call_args(fn_name("list_includes"), [
-              js_code_array_empty(),
-            ]),
-          );
-          let es = list_first(e.arguments).elements;
-          list_add(es, removed);
           remaining = string_prefix_without(remaining, scm_prefix);
           let count = integer_parse_try(remaining);
           if (!number_is(count)) {
