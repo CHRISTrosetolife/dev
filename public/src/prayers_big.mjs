@@ -5,6 +5,7 @@ export function prayers_big() {
     "Maximize Christians walking with God who would want to",
     "If possible tame every tongue that would want to be tamed",
     "If possible have mercy on all creation, may all come to repentance, may the names of all always be written in the book of life and lead all souls to Jesus",
+    "May there be life and life abundantly",
     "May the coming of the day of God be hastened",
     "for each member of the body of Christ, including future members, for each gift they could receive from God and each gift I have, if it would give the member more love or more treasure in heaven, may they they receive the gift, immediately and irrevocably",
     "for each memeber of the body of Christ, including future members, let them perfectly use all of their money and possessions to maximize their love and treasure in heaven",
