@@ -511,7 +511,7 @@ export function js_dollar(ast) {
         let e = js_parse_expression(code);
         object_replace(node, e);
       }
-      if (prefix_use(remaining, scm_prefix, prefixes)) {
+      if (remaining === "c") {
         if (list_is(parent)) {
           let e = js_parse_expression(
             js_code_call_args(fn_name("string_combine_multiple"), [
