@@ -14,6 +14,7 @@ export async function app_contact_download() {
     let respond_null = r === null;
     let v = {
       file_path,
+      message,
       respond_null,
     };
     return v;
