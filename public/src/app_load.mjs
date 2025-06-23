@@ -14,6 +14,6 @@ export async function app_load(name) {
   let script = await http_storage_get(
     function_deploy_path(name_prefixed, version),
   );
-  await eval("(async () => {" + script + "})()");
+  await eval(script);
   await eval(js_code_call(name_prefixed));
 }
