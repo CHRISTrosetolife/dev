@@ -521,7 +521,7 @@ export function js_dollar(ast) {
           });
           if (js_node_type_is(removed, "BinaryExpression")) {
             let operator = object_property_get(removed, "operator");
-            if (js_node_type_is(removed, "BinaryExpression")) {
+            if (equal(operator, "===")) {
             }
           }
           return;
