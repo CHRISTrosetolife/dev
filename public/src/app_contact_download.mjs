@@ -20,5 +20,8 @@ export async function app_contact_download() {
     };
     return v;
   });
-  list_filter(messages, function () {});
+  list_filter(messages, function (m) {
+    let v2 = $g;
+    return v2;
+  });
 }
