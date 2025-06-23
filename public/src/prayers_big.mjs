@@ -1,6 +1,8 @@
 import { prayers_bbw } from "./prayers_bbw.mjs";
 export function prayers_big() {
   let v = [
+        "From now on cause all Christians, including me, to suffer in the flesh and cease from sin",
+    "Maximize Christians walking with God who would want to",
     "for each member of the body of Christ, including future members, for each gift they could receive from God and each gift I have, if it would give the member more love or more treasure in heaven, may they they receive the gift, immediately and irrevocably",
     "for each memeber of the body of Christ, including future members, let them perfectly use all of their money and possessions to maximize their love and treasure in heaven",
     "Bless, help and provide for each person who has asked me to pray for them or give materially",
