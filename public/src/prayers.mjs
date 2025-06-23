@@ -15,7 +15,6 @@ export function prayers() {
     "May I fulfill my ministry",
     "Thank You",
     "May there be life and life abundantly",
-    "May the coming of the day of God be hastened",
     prayers_love(),
     prayers_family(),
     prayers_countries(),
