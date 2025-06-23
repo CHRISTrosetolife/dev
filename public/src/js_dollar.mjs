@@ -524,6 +524,7 @@ export function js_dollar(ast) {
             if (equal(operator, "===")) {
               let left = object_property_get(removed, "left");
               let right = object_property_get(removed, "right");
+              let value2 = object_property_get(right, "value");
             }
           }
           return;
