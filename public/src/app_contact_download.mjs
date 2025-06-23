@@ -1,3 +1,4 @@
+import { list_filter } from "./list_filter.mjs";
 import { app_contact_respond } from "./app_contact_respond.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_map } from "./list_map.mjs";
@@ -19,5 +20,5 @@ export async function app_contact_download() {
     };
     return v;
   });
-  list_fil;
+  list_filter(messages, function () {});
 }
