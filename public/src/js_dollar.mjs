@@ -519,7 +519,7 @@ export function js_dollar(ast) {
           log({
             removed,
           });
-          if (false) {
+          if (js_node_type_is(removed, "BinaryExpression")) {
           }
           return;
           let e = js_parse_expression(
