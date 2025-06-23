@@ -511,6 +511,28 @@ export function js_dollar(ast) {
         let e = js_parse_expression(code);
         object_replace(node, e);
       }
+      if (prefix_use(remaining, scm_prefix, prefixes)) {
+        if (list_is(parent)) {
+          let e = js_parse_expression(
+            js_code_call_args(fn_name("string_combine_multiple"), [
+              js_code_array_empty(),
+            ]),
+          );
+          let es = list_first(e.arguments).elements;
+          let index = list_index(parent, node);
+          let next_index = index + 1;
+          remaining = string_prefix_without(remaining, scm_prefix);
+          let count = integer_parse_try(remaining);
+          if (!number_is(count)) {
+            count = list_index_last(parent) - index;
+          }
+          each_range(count, function () {
+            let removed = list_remove_at(parent, next_index);
+            list_add(es, removed);
+          });
+          object_replace(node, e);
+        }
+      }
       if (remaining === get_prefix) {
         let e = object_property_get_expression(
           ast,
