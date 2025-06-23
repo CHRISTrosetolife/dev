@@ -1,8 +1,12 @@
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { global_function } from "./global_function.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
-export function firebase_initialize() {
+export async function firebase_initialize() {
+  let { getAuth } = await import(
+    "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"
+  );
+  let { initializeApp } = await import(
+    "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"
+  );
   let firebaseConfig = {
     apiKey: "AIzaSyBzIDxtdV44GoO3NH_a6KSw7iJ9Oa-trQU",
     authDomain: "letjesusbeexalted.firebaseapp.com",
