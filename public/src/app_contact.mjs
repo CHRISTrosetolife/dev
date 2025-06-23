@@ -37,7 +37,8 @@ export async function app_contact() {
       if (false) {
         html_p_text(response, "💻 Computer program answered for me:");
       }
-      let r = html_p_text(response, app_share_verse_refresh_greet());
+      let output = app_share_verse_refresh_greet();
+      let r = html_p_text(response, output);
       if (false) {
         html_style_bold(r);
       }
