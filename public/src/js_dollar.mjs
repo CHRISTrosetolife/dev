@@ -511,7 +511,7 @@ export function js_dollar(ast) {
         let e = js_parse_expression(code);
         object_replace(node, e);
       }
-      if (remaining === "c") {
+      if (remaining === "li") {
         if (list_is(parent)) {
           let index = list_index(parent, node);
           let next_index = index + 1;
