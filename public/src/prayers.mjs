@@ -20,9 +20,9 @@ export function prayers() {
     prayers_family(),
     prayers_countries(),
     prayers_orphans_widows_unstained_world(),
+    prayers_big(),
     prayers_famous(),
     prayers_religions(),
-    prayers_big(),
   ]);
   let v2 = list_map(v, string_case_upper_first);
   return v2;
