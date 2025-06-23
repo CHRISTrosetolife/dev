@@ -1,3 +1,4 @@
+import { app_contact_respond } from "./app_contact_respond.mjs";
 import { app_contact_firebase_folder_combine } from "./app_contact_firebase_folder_combine.mjs";
 import { firebase_initialize } from "./firebase_initialize.mjs";
 import { file_name_json } from "./file_name_json.mjs";
@@ -6,7 +7,6 @@ import { firebase_upload_object } from "./firebase_upload_object.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
 import { html_p } from "./html_p.mjs";
-import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
 import { html_rows_set } from "./html_rows_set.mjs";
 import { html_textarea_width_full_placeholder_storage_local } from "./html_textarea_width_full_placeholder_storage_local.mjs";
 import { app_contact_instructions } from "./app_contact_instructions.mjs";
@@ -33,11 +33,12 @@ export async function app_contact() {
   let response;
   html_button(root, "Send message to me", async function () {
     let value = html_value_get(t);
+    let output = null;
     if (value === "hi") {
       if (false) {
         html_p_text(response, "💻 Computer program answered for me:");
       }
-      let output = app_share_verse_refresh_greet();
+      output = app_contact_respond(value);
       let r = html_p_text(response, output);
       if (false) {
         html_style_bold(r);
