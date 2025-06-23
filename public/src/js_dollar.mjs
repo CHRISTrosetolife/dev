@@ -516,6 +516,9 @@ export function js_dollar(ast) {
           let index = list_index(parent, node);
           let next_index = index + 1;
           let removed = list_remove_at(parent, next_index);
+          log({
+            removed,
+          });
           if (false) {
           }
           return;
