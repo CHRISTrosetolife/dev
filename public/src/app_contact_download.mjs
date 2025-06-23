@@ -21,7 +21,7 @@ export async function app_contact_download() {
     return v;
   });
   list_filter(messages, function (m) {
-    let v2 = $g;
+    let v2 = object_property_get(object, "property_name");
     return v2;
   });
 }
