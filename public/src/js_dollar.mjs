@@ -531,8 +531,9 @@ export function js_dollar(ast) {
                 ]),
               );
               let ea = e.arguments;
+              list_add(ea, left);
               let es = list_first(ea).elements;
-              list_add(es, removed);
+              list_add(es, value2);
               object_replace(node, e);
             }
           }
