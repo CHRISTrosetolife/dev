@@ -532,18 +532,9 @@ export function js_dollar(ast) {
               );
               let es = list_first(e.arguments).elements;
               list_add(es, removed);
+              object_replace(node, e);
             }
           }
-          return;
-          remaining = string_prefix_without(remaining, scm_prefix);
-          let count = integer_parse_try(remaining);
-          if (!number_is(count)) {
-            count = list_index_last(parent) - index;
-          }
-          each_range(count, function () {
-            list_add(es, removed);
-          });
-          object_replace(node, e);
         }
       }
       if (remaining === get_prefix) {
