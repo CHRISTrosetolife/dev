@@ -530,7 +530,8 @@ export function js_dollar(ast) {
                   js_code_array_empty(),
                 ]),
               );
-              let es = list_first(e.arguments).elements;
+              let ea = e.arguments;
+              let es = list_first(ea).elements;
               list_add(es, removed);
               object_replace(node, e);
             }
