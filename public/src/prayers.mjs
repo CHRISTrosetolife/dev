@@ -17,7 +17,6 @@ export function prayers() {
     "If it means not sinning, take anything away, do anything",
     "Cause me to never be hospitalized again, never be in therapy again and desire your desire for my lifespan",
     "Cause me to either speak perfectly or be silent",
-    "If possible have mercy on all creation, may all come to repentance, may the names of all always be written in the book of life and lead all souls to Jesus",
     "May there be life and life abundantly",
     "May the coming of the day of God be hastened",
     prayers_love(),
