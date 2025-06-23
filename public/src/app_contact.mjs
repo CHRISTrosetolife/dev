@@ -49,7 +49,7 @@ export async function app_contact() {
         "💻 Computer program was not able to answer this message",
       );
       let file_name = file_name_json(id);
-      let path = path_join(["contact", file_name]);
+      let path = app_contact_firebase_folder_combine(file_name);
       await firebase_upload_object(path, {
         message: value,
       });
@@ -62,3 +62,7 @@ export async function app_contact() {
   });
   response = html_p(root);
 }
+function app_contact_firebase_folder_combine(file_name) {
+    return path_join(["contact", file_name]);
+}
+
