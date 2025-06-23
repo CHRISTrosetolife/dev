@@ -5,7 +5,7 @@ import { storage_files_download } from "./storage_files_download.mjs";
 export async function app_contact_download() {
   let prefix = app_contact_firebase_folder_prefix();
   let file_paths = await storage_files_download(prefix);
-  let messages = list_map(file_path, async function () {
+  let messages = list_map(file_paths, async function () {
     let read = await file_read_json(file_path);
   });
   list_fil;
