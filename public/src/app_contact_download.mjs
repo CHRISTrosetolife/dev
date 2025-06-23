@@ -20,8 +20,10 @@ export async function app_contact_download() {
     };
     return v;
   });
-  list_filter(messages, function (m) {
-    let v2 = object_property_get(object, "property_name");
+  let filtered = list_filter(messages, function (m) {
+    let v2 = object_property_get(m, "respond_null");
     return v2;
   });
+  let v3 = filtered;
+  return v3;
 }
