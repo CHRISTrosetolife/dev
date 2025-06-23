@@ -1,4 +1,4 @@
-import { app_contact_main } from "./app_contact_main.mjs";
+import { app_load } from "./app_load.mjs";
 export async function app_contact() {
-  await app_contact_main();
+  await app_load("contact_main");
 }
