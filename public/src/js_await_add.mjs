@@ -20,8 +20,8 @@ import { equal } from "./equal.mjs";
 import { list_add } from "./list_add.mjs";
 import { assert } from "./assert.mjs";
 export async function js_await_add(ast) {
-  let functions = await data_functions();
   let stack = [];
+  let functions = await data_functions();
   let this_name = js_declaration_single_name(ast);
   list_add(stack, this_name);
   let async_before = js_declaration_single_async_is(ast);
