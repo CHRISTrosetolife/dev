@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { js_unparse_format } from "./js_unparse_format.mjs";
 import { js_data } from "./js_data.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
@@ -14,6 +15,7 @@ export async function file_js_unparse_code(ast, file_path, before) {
   } else {
     await file_overwrite(file_path, prettied);
     await js_data(ast);
+    log("");
     result = prettied;
   }
   let v = result;
