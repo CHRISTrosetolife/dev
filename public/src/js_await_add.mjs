@@ -1,7 +1,7 @@
+import { each } from "./each.mjs";
 import { data_functions_async_is } from "./data_functions_async_is.mjs";
 import { data_importing } from "./data_importing.mjs";
 import { functions_data_get_list } from "./functions_data_get_list.mjs";
-import { js_imports_existing_names } from "./js_imports_existing_names.mjs";
 import { list_remove_last } from "./list_remove_last.mjs";
 import { js_declaration_single_name } from "./js_declaration_single_name.mjs";
 import { js_declaration_single_async_is } from "./js_declaration_single_async_is.mjs";
@@ -65,7 +65,7 @@ export async function js_await_add(ast) {
   let async_after = js_declaration_single_async_is(ast);
   if (!async_before && async_after) {
     let importing = await functions_data_get_list(data_importing, this_name);
-    let imports = js_imports_existing_names(ast);
+    each(list, function (item) {});
   }
   let last = list_remove_last(stack);
   assert(equal, [last, this_name]);
