@@ -9,7 +9,7 @@ export async function functions_string(name) {
   let result = [];
   if (object_property_exists(literal_strings, name)) {
     let matches = object_property_get(literal_strings, name);
-    let v = function_names_to_lookup(matches);
-    return v;
+    result = function_names_to_lookup(matches);
   }
+  return result;
 }
