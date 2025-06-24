@@ -1,3 +1,4 @@
+import { js_declaration_single_name } from "./js_declaration_single_name.mjs";
 import { function_imports_recursive } from "./function_imports_recursive.mjs";
 import { js_declaration_single_async_is } from "./js_declaration_single_async_is.mjs";
 import { js_expression_await } from "./js_expression_await.mjs";
@@ -60,7 +61,7 @@ export async function js_await_add(ast) {
   let async_after = js_declaration_single_async_is(ast);
   if (!async_before && async_after) {
     let found = {};
-    js_declaration_name(ast);
+    js_declaration_single_name(ast);
     await function_imports_recursive(found);
   }
 }
