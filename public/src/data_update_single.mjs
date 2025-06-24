@@ -51,7 +51,7 @@ export function data_update_single(ast, data) {
     },
     {
       ast_list: imports,
-      key: "imported_by",
+      key: "importing",
     },
   ];
   each(list, function (item) {
