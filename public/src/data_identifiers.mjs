@@ -1,6 +1,5 @@
 import { data_get } from "./data_get.mjs";
 export async function data_identifiers() {
-  let property_name = "identifiers";
-  let v = await data_get(property_name);
+  let v = await data_get("identifiers");
   return v;
 }
