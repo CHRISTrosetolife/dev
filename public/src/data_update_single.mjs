@@ -53,8 +53,7 @@ export function data_update_single(ast, data) {
     let ast_list = object_property_get(item, "ast_list");
     let data_key = object_property_initialize(data, key, {});
     each(ast_list, function (ast_list_item) {
-      let v2 = object_property_initialize(data_key, ast_list_item, []);
-      return v2;
+      object_property_initialize(data_key, ast_list_item, []);
     });
     each_object(data_key, function (k, k_functions) {
       if (list_includes(ast_list, k)) {
