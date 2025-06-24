@@ -29,22 +29,22 @@ export function data_update_single(ast, data) {
   let ast_literals = js_node_type(ast, "Literal");
   let mapped = list_map_property(ast_literals, "value");
   let filtered = list_filter(mapped, string_is);
-  let u = list_unique(filtered);
-  list_sort_string_map(u, identity);
+  let literal_strings = list_unique(filtered);
+  list_sort_string_map(literal_strings, identity);
   let ids = js_identifiers_names(ast);
   js_visit_calls_fn_name(ast, function (arg) {
     let v = object_property_get(arg, "value");
     list_add(ids, v);
   });
-  let ids_u = list_unique(ids);
-  list_sort_string_map(ids_u, identity);
+  let identifiers_unique = list_unique(ids);
+  list_sort_string_map(identifiers_unique, identity);
   let list = [
     {
-      ast_list: u,
+      ast_list: literal_strings,
       key: "literal_strings",
     },
     {
-      ast_list: ids_u,
+      ast_list: identifiers_unique,
       key: "identifiers",
     },
   ];
