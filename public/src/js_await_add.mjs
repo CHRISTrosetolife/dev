@@ -1,3 +1,4 @@
+import { function_imports_recursive } from "./function_imports_recursive.mjs";
 import { js_declaration_single_async_is } from "./js_declaration_single_async_is.mjs";
 import { js_expression_await } from "./js_expression_await.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
@@ -58,5 +59,6 @@ export async function js_await_add(ast) {
   });
   let async_after = js_declaration_single_async_is(ast);
   if (!async_before && async_after) {
+    await function_imports_recursive();
   }
 }
