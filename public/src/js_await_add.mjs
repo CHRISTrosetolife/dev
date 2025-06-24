@@ -1,5 +1,5 @@
+import { js_imports_existing_names } from "./js_imports_existing_names.mjs";
 import { list_remove_last } from "./list_remove_last.mjs";
-import { function_imports_local } from "./function_imports_local.mjs";
 import { js_declaration_single_name } from "./js_declaration_single_name.mjs";
 import { js_declaration_single_async_is } from "./js_declaration_single_async_is.mjs";
 import { js_expression_await } from "./js_expression_await.mjs";
@@ -66,7 +66,7 @@ export async function js_await_add(ast) {
   });
   let async_after = js_declaration_single_async_is(ast);
   if (!async_before && async_after) {
-    let imports = await function_imports_local(this_name);
+    let imports = js_imports_existing_names(ast);
   }
   let last = list_remove_last(stack);
   assert(equal, [last, this_name]);
