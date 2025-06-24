@@ -66,7 +66,7 @@ export async function js_await_add(ast) {
   });
   let async_after = js_declaration_single_async_is(ast);
   if (!async_before && async_after) {
-    await function_imports_local(this_name);
+    let imports = await function_imports_local(this_name);
   }
   let last = list_remove_last(stack);
   assert(equal, [last, this_name]);
