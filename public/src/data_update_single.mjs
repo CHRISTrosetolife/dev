@@ -24,8 +24,8 @@ export function data_update_single(ast, data) {
     id: { name },
   } = declaration;
   let functions = object_property_initialize(data, "functions", {});
-  let f = object_property_initialize(functions, name, {});
-  object_property_set(f, "async", async);
+  let this_function = object_property_initialize(functions, name, {});
+  object_property_set(this_function, "async", async);
   let ast_literals = js_node_type(ast, "Literal");
   let mapped = list_map_property(ast_literals, "value");
   let filtered = list_filter(mapped, string_is);
