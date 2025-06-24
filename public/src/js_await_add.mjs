@@ -62,6 +62,6 @@ export async function js_await_add(ast) {
   if (!async_before && async_after) {
     let found = {};
     let this_name = js_declaration_single_name(ast);
-    await function_imports_recursive(found);
+    await function_imports_recursive(found, this_name);
   }
 }
