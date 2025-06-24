@@ -1,4 +1,4 @@
-import { js_declaration_single } from "./js_declaration_single.mjs";
+import { js_declaration_single_async_is } from "./js_declaration_single_async_is.mjs";
 import { js_expression_await } from "./js_expression_await.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
@@ -13,8 +13,7 @@ import { object_property_set } from "./object_property_set.mjs";
 import { equal } from "./equal.mjs";
 export async function js_await_add(ast) {
   let functions = await data_functions();
-  let d = js_declaration_single(ast);
-  let d_async = object_property_get(d, "async");
+  let d_async = js_declaration_single_async_is(ast);
   js_visit_node(ast, "CallExpression", function (v) {
     let { node } = v;
     let { callee } = node;
