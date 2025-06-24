@@ -13,10 +13,12 @@ import { js_visit_node } from "./js_visit_node.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { equal } from "./equal.mjs";
+import { list_add } from "./list_add.mjs";
 export async function js_await_add(ast) {
   let functions = await data_functions();
   let stack = [];
   let this_name = js_declaration_single_name(ast);
+  list_add(stack, this_name);
   let async_before = js_declaration_single_async_is(ast);
   js_visit_node(ast, "CallExpression", function (v) {
     let { node } = v;
