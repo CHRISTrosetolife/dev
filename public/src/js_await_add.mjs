@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { log } from "./log.mjs";
 import { each } from "./each.mjs";
 import { data_functions_async_is } from "./data_functions_async_is.mjs";
@@ -64,7 +65,7 @@ export async function js_await_add(ast) {
   });
   let async_after = js_declaration_single_async_is(ast);
   if (!async_before && async_after) {
-    log("");
+    log(string_combine_multiple([this_name, " made async"]));
     let importings = await functions_data_get_list(data_importing, this_name);
     each(importings, function (importing) {
       if (!data_functions_async_is(functions, importing)) {
