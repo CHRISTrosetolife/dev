@@ -67,7 +67,7 @@ export async function js_await_add(ast) {
   });
   let async_after = js_declaration_single_async_is(ast);
   if (!async_before && async_after) {
-    let imported_by = await functions_importing();
+    let imported_by = await functions_importing(this_name);
     let imports = js_imports_existing_names(ast);
   }
   let last = list_remove_last(stack);
