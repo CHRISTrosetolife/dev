@@ -62,6 +62,6 @@ export async function js_await_add(ast) {
   if (!async_before && async_after) {
     let found = {};
     let this_name = js_declaration_single_name(ast);
-    await function_imports_local(found, this_name);
+    await function_imports_local(this_name);
   }
 }
