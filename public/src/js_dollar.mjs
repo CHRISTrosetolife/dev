@@ -505,8 +505,7 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (remaining === "t") {
-        let d = js_declaration_single(ast);
-        let this_name = js_declaration_to_name(d);
+        let this_name = js_declaration_single_name(ast);
         let code = js_code_dot(this_name, js_function_property_name());
         let e = js_parse_expression(code);
         object_replace(node, e);
@@ -663,3 +662,4 @@ export function js_dollar(ast) {
     return v2;
   }
 }
+
