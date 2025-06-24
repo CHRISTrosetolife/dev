@@ -16,6 +16,7 @@ import { equal } from "./equal.mjs";
 export async function js_await_add(ast) {
   let functions = await data_functions();
   let stack = [];
+  let this_name = js_declaration_single_name(ast);
   let async_before = js_declaration_single_async_is(ast);
   js_visit_node(ast, "CallExpression", function (v) {
     let { node } = v;
@@ -61,7 +62,6 @@ export async function js_await_add(ast) {
   });
   let async_after = js_declaration_single_async_is(ast);
   if (!async_before && async_after) {
-    let this_name = js_declaration_single_name(ast);
     await function_imports_local(this_name);
   }
 }
