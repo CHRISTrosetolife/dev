@@ -15,6 +15,7 @@ import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { equal } from "./equal.mjs";
 import { list_add } from "./list_add.mjs";
+import { assert } from "./assert.mjs";
 export async function js_await_add(ast) {
   let functions = await data_functions();
   let stack = [];
@@ -67,5 +68,6 @@ export async function js_await_add(ast) {
   if (!async_before && async_after) {
     await function_imports_local(this_name);
   }
-  list_remove_last();
+  let last = list_remove_last(stack);
+  assert(equal, [last, this_name]);
 }
