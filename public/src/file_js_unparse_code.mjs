@@ -15,7 +15,7 @@ export async function file_js_unparse_code(ast, file_path, before) {
   } else {
     await file_overwrite(file_path, prettied);
     await js_data(ast);
-    log("");
+    log("js_data");
     result = prettied;
   }
   let v = result;
