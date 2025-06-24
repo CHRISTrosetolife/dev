@@ -1,3 +1,4 @@
+import { js_imports_existing_names } from "./js_imports_existing_names.mjs";
 import { js_identifiers_names } from "./js_identifiers_names.mjs";
 import { js_visit_calls_fn_name } from "./js_visit_calls_fn_name.mjs";
 import { list_sort_string_map } from "./list_sort_string_map.mjs";
@@ -38,6 +39,7 @@ export function data_update_single(ast, data) {
   });
   let identifiers_unique = list_unique(ids);
   list_sort_string_map(identifiers_unique, identity);
+  let imports = js_imports_existing_names(ast);
   let list = [
     {
       ast_list: literal_strings,
@@ -46,6 +48,10 @@ export function data_update_single(ast, data) {
     {
       ast_list: identifiers_unique,
       key: "identifiers",
+    },
+    {
+      ast_list: imports,
+      key: "imports",
     },
   ];
   each(list, function (item) {
