@@ -66,4 +66,5 @@ export async function js_await_add(ast) {
   if (!async_before && async_after) {
     await function_imports_local(this_name);
   }
+  list_pop();
 }
