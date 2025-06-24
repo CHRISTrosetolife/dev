@@ -1,6 +1,5 @@
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { command_line } from "./command_line.mjs";
+import { computer_shutdown_generic } from "./computer_shutdown_generic.mjs";
 export async function computer_restart() {
   let flag = "r";
-  await command_line(string_combine_multiple(["shutdown -t 0 -", flag]));
+  await computer_shutdown_generic(flag);
 }
