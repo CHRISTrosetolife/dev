@@ -19,6 +19,7 @@ import { js_declaration_single_async_is } from "./js_declaration_single_async_is
 import { list_add } from "./list_add.mjs";
 import { js_declaration_single_name } from "./js_declaration_single_name.mjs";
 import { data_functions } from "./data_functions.mjs";
+import { list_difference } from "./list_difference.mjs";
 export async function js_await_add_recursive(ast, stack) {
   let functions = await data_functions();
   let this_name = js_declaration_single_name(ast);
@@ -66,6 +67,7 @@ export async function js_await_add_recursive(ast, stack) {
   if (!async_before && async_after) {
     log(string_combine_multiple([this_name, " made async"]));
     let importings = await functions_data_get_list(data_importing, this_name);
+    list_difference(importings, stack);
     each(importings, async function (importing) {
       if (!data_functions_async_is(functions, importing)) {
         await js_await_add_recursive(ast, stack);
