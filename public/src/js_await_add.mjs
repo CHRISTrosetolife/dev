@@ -1,4 +1,5 @@
-import { functions_importing } from "./functions_importing.mjs";
+import { data_importing } from "./data_importing.mjs";
+import { functions_data_get_list } from "./functions_data_get_list.mjs";
 import { js_imports_existing_names } from "./js_imports_existing_names.mjs";
 import { list_remove_last } from "./list_remove_last.mjs";
 import { js_declaration_single_name } from "./js_declaration_single_name.mjs";
@@ -67,7 +68,7 @@ export async function js_await_add(ast) {
   });
   let async_after = js_declaration_single_async_is(ast);
   if (!async_before && async_after) {
-    let imported_by = await functions_importing(this_name);
+    let importing = await functions_data_get_list(data_importing, this_name);
     let imports = js_imports_existing_names(ast);
   }
   let last = list_remove_last(stack);
