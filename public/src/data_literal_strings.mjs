@@ -1,7 +1,5 @@
-import { data_path } from "./data_path.mjs";
-import { file_read_json } from "./file_read_json.mjs";
+import { data_get } from "./data_get.mjs";
 export async function data_literal_strings() {
-  let data = await file_read_json(data_path());
-  let { literal_strings } = data;
-  return literal_strings;
+  let v = await data_get("literal_strings");
+  return v;
 }
