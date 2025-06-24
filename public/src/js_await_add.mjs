@@ -56,4 +56,5 @@ export async function js_await_add(ast) {
       }
     }
   });
+  let async_after = js_declaration_single_async_is(ast);
 }
