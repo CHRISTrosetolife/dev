@@ -5,6 +5,10 @@ export function data_functions_async_is(functions, name) {
     let f = object_property_get(functions, name);
     let { async } = f;
     if (async) {
+      let v = true;
+      return v;
     }
   }
+  let v2 = false;
+  return v2;
 }
