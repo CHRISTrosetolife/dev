@@ -14,6 +14,7 @@ import { equal } from "./equal.mjs";
 export async function js_await_add(ast) {
   let functions = await data_functions();
   let d = js_declaration_single(ast);
+  let d_async = object_property_get(asyncable, "async");
   js_visit_node(ast, "CallExpression", function (v) {
     let { node } = v;
     let { callee } = node;
