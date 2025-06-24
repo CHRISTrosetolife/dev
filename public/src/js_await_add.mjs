@@ -1,3 +1,4 @@
+import { list_remove_last } from "./list_remove_last.mjs";
 import { function_imports_local } from "./function_imports_local.mjs";
 import { js_declaration_single_name } from "./js_declaration_single_name.mjs";
 import { js_declaration_single_async_is } from "./js_declaration_single_async_is.mjs";
@@ -66,5 +67,5 @@ export async function js_await_add(ast) {
   if (!async_before && async_after) {
     await function_imports_local(this_name);
   }
-  list_pop();
+  list_remove_last();
 }
