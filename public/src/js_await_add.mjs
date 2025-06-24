@@ -1,3 +1,4 @@
+import { data_imported_by } from "./data_imported_by.mjs";
 import { js_imports_existing_names } from "./js_imports_existing_names.mjs";
 import { list_remove_last } from "./list_remove_last.mjs";
 import { js_declaration_single_name } from "./js_declaration_single_name.mjs";
@@ -66,6 +67,7 @@ export async function js_await_add(ast) {
   });
   let async_after = js_declaration_single_async_is(ast);
   if (!async_before && async_after) {
+    let imported_by = await data_imported_by();
     let imports = js_imports_existing_names(ast);
   }
   let last = list_remove_last(stack);
