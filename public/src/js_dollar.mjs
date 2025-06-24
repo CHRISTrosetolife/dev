@@ -1,3 +1,4 @@
+import { js_declaration_single_name } from "./js_declaration_single_name.mjs";
 import { js_dollar_grandparent_next_each } from "./js_dollar_grandparent_next_each.mjs";
 import { list_get_end_2 } from "./list_get_end_2.mjs";
 import { js_stack_find_list_visitor } from "./js_stack_find_list_visitor.mjs";
@@ -42,8 +43,6 @@ import { js_parse_first } from "./js_parse_first.mjs";
 import { js_code_braces_inside } from "./js_code_braces_inside.mjs";
 import { js_function_property_name } from "./js_function_property_name.mjs";
 import { js_code_dot } from "./js_code_dot.mjs";
-import { js_declaration_to_name } from "./js_declaration_to_name.mjs";
-import { js_declaration_single } from "./js_declaration_single.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { js_block_statement } from "./js_block_statement.mjs";
@@ -662,4 +661,3 @@ export function js_dollar(ast) {
     return v2;
   }
 }
-
