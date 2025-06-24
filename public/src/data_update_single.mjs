@@ -50,6 +50,8 @@ export function data_update_single(ast, data) {
   ];
   each(list, function (item) {
     let data_key = object_property_initialize(data, item.key, {});
+    let ky = object_property_get(item, "ky");
+    let ast_list2 = object_property_get(item, "ast_list");
     each(item.ast_list, function (s) {
       let v2 = object_property_initialize(data_key, s, []);
       return v2;
