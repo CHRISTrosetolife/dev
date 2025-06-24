@@ -1,3 +1,4 @@
+import { data_functions_async_is } from "./data_functions_async_is.mjs";
 import { data_importing } from "./data_importing.mjs";
 import { functions_data_get_list } from "./functions_data_get_list.mjs";
 import { js_imports_existing_names } from "./js_imports_existing_names.mjs";
@@ -21,12 +22,7 @@ import { assert } from "./assert.mjs";
 export async function js_await_add(ast) {
   let functions = await data_functions();
   let name = "te";
-  if (object_property_exists(functions, name)) {
-    let f = object_property_get(functions, name);
-    let { async } = f;
-    if (async) {
-    }
-  }
+  data_functions_async_is(functions, name);
   let stack = [];
   let this_name = js_declaration_single_name(ast);
   list_add(stack, this_name);
