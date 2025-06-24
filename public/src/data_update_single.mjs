@@ -49,15 +49,15 @@ export function data_update_single(ast, data) {
     },
   ];
   each(list, function (item) {
-    let data_key = object_property_initialize(data, item.key, {});
-    let ky = object_property_get(item, "ky");
-    let ast_list2 = object_property_get(item, "ast_list");
-    each(item.ast_list, function (s) {
+    let key = object_property_get(item, "key");
+    let ast_list = object_property_get(item, "ast_list");
+    let data_key = object_property_initialize(data, key, {});
+    each(ast_list, function (s) {
       let v2 = object_property_initialize(data_key, s, []);
       return v2;
     });
     each_object(data_key, function (k, k_functions) {
-      if (list_includes(item.ast_list, k)) {
+      if (list_includes(ast_list, k)) {
         list_add_if_exists_not(k_functions, name);
       } else {
         list_remove_if_exists(k_functions, name);
