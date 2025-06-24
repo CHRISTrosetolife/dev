@@ -19,7 +19,6 @@ import { list_add } from "./list_add.mjs";
 import { assert } from "./assert.mjs";
 export async function js_await_add(ast) {
   let functions = await data_functions();
-  let name = "te";
   let stack = [];
   let this_name = js_declaration_single_name(ast);
   list_add(stack, this_name);
