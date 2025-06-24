@@ -66,7 +66,7 @@ export async function js_await_add(ast) {
   if (!async_before && async_after) {
     let importings = await functions_data_get_list(data_importing, this_name);
     each(importings, function (importing) {
-      if (data_functions_async_is(functions, name)) {
+      if (!data_functions_async_is(functions, importing)) {
       }
     });
   }
