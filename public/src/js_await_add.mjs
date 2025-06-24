@@ -20,6 +20,13 @@ import { list_add } from "./list_add.mjs";
 import { assert } from "./assert.mjs";
 export async function js_await_add(ast) {
   let functions = await data_functions();
+  let name = "te";
+  if (object_property_exists(functions, name)) {
+    let f = object_property_get(functions, name);
+    let { async } = f;
+    if (async) {
+    }
+  }
   let stack = [];
   let this_name = js_declaration_single_name(ast);
   list_add(stack, this_name);
