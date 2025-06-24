@@ -55,11 +55,11 @@ export function data_update_single(ast, data) {
     each(ast_list, function (ast_list_item) {
       object_property_initialize(data_key, ast_list_item, []);
     });
-    each_object(data_key, function (k, k_functions) {
-      if (list_includes(ast_list, k)) {
-        list_add_if_exists_not(k_functions, name);
+    each_object(data_key, function (dk, dk_functions) {
+      if (list_includes(ast_list, dk)) {
+        list_add_if_exists_not(dk_functions, name);
       } else {
-        list_remove_if_exists(k_functions, name);
+        list_remove_if_exists(dk_functions, name);
       }
     });
   });
