@@ -35,5 +35,5 @@ export async function sandbox_5() {
   });
   let v6 = list_map(v2, file_read);
   let v4 = await list_wait(v6);
-  return v6;
+  return v4;
 }
