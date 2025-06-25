@@ -3,14 +3,17 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { grace_facebook_data_htmls_cache } from "./grace_facebook_data_htmls_cache.mjs";
 import { list_any } from "./list_any.mjs";
+import { list_map } from "./list_map.mjs";
 export async function sandbox_5() {
   let folders = ["your_activity_off_meta_technologies"];
   let v = await grace_facebook_data_htmls_cache();
+  let mapped = list_map(folders, function (f) {
+    let v5 = string_combine_multiple(["\\", f, "\\"]);
+    return v5;
+  });
   let v2 = list_filter(folders, function (s) {
     let v3 = list_any(folders, function (f) {
-      let v4 = string_includes_multiple(
-        string_combine_multiple(["\\", f, "\\"]),
-      );
+      let v4 = string_includes_multiple(s);
       return v4;
     });
     return v3;
