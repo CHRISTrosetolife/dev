@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { html_parse } from "./html_parse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each_async } from "./each_async.mjs";
@@ -8,6 +9,7 @@ export async function sandbox_5() {
   await each_async(v4, async function (item) {
     let contents = object_property_get(item, "contents");
     let p = await html_parse(contents);
+    object_property_set(object, "property_name", value);
   });
   log({
     v2,
