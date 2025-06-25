@@ -1,3 +1,4 @@
+import { list_map_async } from "./list_map_async.mjs";
 import { string_includes_multiple } from "./string_includes_multiple.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -32,6 +33,6 @@ export async function sandbox_5() {
     let v3 = string_includes_multiple(s, conversations);
     return v3;
   });
-  let v4 = list_map(v2, file_read);
+  let v4 = await list_map_async(v2, file_read);
   return v2;
 }
