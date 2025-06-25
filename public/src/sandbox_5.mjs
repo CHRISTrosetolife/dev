@@ -3,6 +3,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { grace_facebook_data_htmls_cache } from "./grace_facebook_data_htmls_cache.mjs";
 import { list_map } from "./list_map.mjs";
+import { file_read } from "./file_read.mjs";
 export async function sandbox_5() {
   let folders = [
     "your_activity_off_meta_technologies",
@@ -31,5 +32,6 @@ export async function sandbox_5() {
     let v3 = string_includes_multiple(s, conversations);
     return v3;
   });
-  return v2;
+  let v4 = list_map(v2, file_read);
+  return v4;
 }
