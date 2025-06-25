@@ -15,6 +15,7 @@ export async function sandbox_5() {
     "facebook_payments",
     "fundraisers",
     "facebook_support",
+    "groups",
   ];
   let v = await grace_facebook_data_htmls_cache();
   let mapped = list_map(folders, function (f) {
