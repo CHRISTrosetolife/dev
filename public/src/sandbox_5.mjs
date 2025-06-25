@@ -17,16 +17,16 @@ export async function sandbox_5() {
     "facebook_support",
     "groups",
   ];
-  let conversations = [
-    "jama_122103294650748074",
-    "jaredmathis_3001988360102013",
-  ];
   let folders_in = ["messages"];
   let mapped = list_map(folders_in, function (f) {
     let v5 = string_combine_multiple(["\\", f, "\\"]);
     return v5;
   });
   let v = await grace_facebook_data_htmls_cache();
+  let conversations = [
+    "jama_122103294650748074",
+    "jaredmathis_3001988360102013",
+  ];
   let v2 = list_filter(v, function (s) {
     let v3 = string_includes_multiple(s, conversations);
     return v3;
