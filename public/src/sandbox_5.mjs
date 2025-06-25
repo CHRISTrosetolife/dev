@@ -6,5 +6,5 @@ export async function sandbox_5() {
   let v4 = await grace_facebook_data_messages_jared_cache();
   let v = list_map(v4, html_parse);
   let v2 = await list_wait(v);
-  return v2;
+  $Lv2;
 }
