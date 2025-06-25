@@ -22,15 +22,13 @@ export async function sandbox_5() {
     "jaredmathis_3001988360102013",
   ];
   let folders_in = ["messages"];
-  let v = await grace_facebook_data_htmls_cache();
   let mapped = list_map(folders_in, function (f) {
     let v5 = string_combine_multiple(["\\", f, "\\"]);
     return v5;
   });
+  let v = await grace_facebook_data_htmls_cache();
   let v2 = list_filter(v, function (s) {
-    let v3 =
-      string_includes_multiple(s, mapped) &&
-      string_includes_multiple(s, ["jared"]);
+    let v3 = string_includes_multiple(s, conversations);
     return v3;
   });
   return v2;
