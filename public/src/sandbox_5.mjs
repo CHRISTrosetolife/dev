@@ -17,7 +17,10 @@ export async function sandbox_5() {
     "facebook_support",
     "groups",
   ];
-  ["jama_122103294650748074", "jaredmathis_3001988360102013"];
+  let conversations = [
+    "jama_122103294650748074",
+    "jaredmathis_3001988360102013",
+  ];
   let folders_in = ["messages"];
   let v = await grace_facebook_data_htmls_cache();
   let mapped = list_map(folders_in, function (f) {
