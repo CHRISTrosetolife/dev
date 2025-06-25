@@ -4,8 +4,11 @@ import { object_property_get } from "./object_property_get.mjs";
 import { each_async } from "./each_async.mjs";
 import { log } from "./log.mjs";
 import { grace_facebook_data_messages_jared_cache } from "./grace_facebook_data_messages_jared_cache.mjs";
+import { list_first } from "./list_first.mjs";
 export async function sandbox_5() {
   let v4 = await grace_facebook_data_messages_jared_cache();
+  let f = list_first(v4);
+  on_item(v4);
   return;
   await each_async(v4, async function (item) {
     await on_item(item);
