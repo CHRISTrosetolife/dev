@@ -1,4 +1,4 @@
-import { html_parse_visit_tag } from "./html_parse_visit_tag.mjs";
+import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { html_parse } from "./html_parse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -17,6 +17,6 @@ export async function sandbox_5() {
     let contents = object_property_get(item, "contents");
     let root = await html_parse(contents);
     object_property_set(item, "parsed", root);
-    let main = html_parse_visit_tag(root);
+    let main = html_parse_visit_tag_single(root);
   }
 }
