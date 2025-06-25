@@ -8,7 +8,7 @@ export async function sandbox_5() {
   let v = await grace_facebook_data_htmls_cache();
   let v2 = list_filter(folders, function (s) {
     let v3 = list_any(folders, function (f) {
-      let v4 = string_includes(string_combine_multiple(["\\", s, "\\"]));
+      let v4 = string_includes(string_combine_multiple(["\\", f, "\\"]));
       return v4;
     });
     return v3;
