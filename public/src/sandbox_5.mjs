@@ -33,7 +33,7 @@ export async function sandbox_5() {
     let v3 = string_includes_multiple(s, conversations);
     return v3;
   });
-  let v4 = await list_wait(v2, file_read);
   let v6 = list_map(v2, file_read);
+  let v4 = await list_wait(v6);
   return v6;
 }
