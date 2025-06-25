@@ -20,17 +20,17 @@ export async function grace_facebook_data_messages_jared() {
     "groups",
   ];
   let folders_in = ["messages"];
-  let mapped = list_map(folders_in, function (f) {
-    let v5 = string_combine_multiple(["\\", f, "\\"]);
-    return v5;
-  });
   let v = await grace_facebook_data_htmls_cache();
   let conversations = [
     "jama_122103294650748074",
     "jaredmathis_3001988360102013",
   ];
+  let mapped = list_map(conversations, function (f) {
+    let v5 = string_combine_multiple(["\\", f, "\\"]);
+    return v5;
+  });
   let v2 = list_filter(v, function (s) {
-    let v3 = string_includes_multiple(s, conversations);
+    let v3 = string_includes_multiple(s, mapped);
     return v3;
   });
   let v6 = list_map(v2, file_read);
