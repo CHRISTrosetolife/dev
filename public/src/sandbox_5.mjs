@@ -11,9 +11,9 @@ export async function sandbox_5() {
     let v5 = string_combine_multiple(["\\", f, "\\"]);
     return v5;
   });
-  let v2 = list_filter(folders, function (s) {
+  let v2 = list_filter(v, function (s) {
     let v3 = list_any(folders, function (f) {
-      let v4 = string_includes_multiple(s);
+      let v4 = string_includes_multiple(s, mapped);
       return v4;
     });
     return v3;
