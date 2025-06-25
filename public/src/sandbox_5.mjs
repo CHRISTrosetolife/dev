@@ -24,7 +24,7 @@ export async function sandbox_5() {
     return v5;
   });
   let v2 = list_filter(v, function (s) {
-    let v3 = string_includes_multiple(s, mapped);
+    let v3 = string_includes_multiple(s, mapped) && string_includes_multiple();
     return v3;
   });
   return v2;
