@@ -13,6 +13,7 @@ export async function sandbox_5() {
     "facebook_marketplace",
     "events",
     "facebook_payments",
+    "facebook_support",
   ];
   let v = await grace_facebook_data_htmls_cache();
   let mapped = list_map(folders, function (f) {
