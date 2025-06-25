@@ -1,4 +1,4 @@
-import { folder_read } from "./folder_read.mjs";
+import { grace_facebook_data_htmls } from "./grace_facebook_data_htmls.mjs";
 export async function sandbox_5() {
-  await folder_read("D:/g", [".html"]);
+  await grace_facebook_data_htmls();
 }
