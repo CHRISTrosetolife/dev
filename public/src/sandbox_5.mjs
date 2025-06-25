@@ -15,8 +15,8 @@ export async function sandbox_5() {
   });
   async function on_item(item) {
     let contents = object_property_get(item, "contents");
-    let p = await html_parse(contents);
-    object_property_set(item, "parsed", p);
-    let main = html_parse_visit_tag();
+    let root = await html_parse(contents);
+    object_property_set(item, "parsed", root);
+    let main = html_parse_visit_tag(root);
   }
 }
