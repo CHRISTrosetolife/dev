@@ -17,13 +17,14 @@ export async function sandbox_5() {
     "facebook_support",
     "groups",
   ];
+  let folders_in = ["messages"];
   let v = await grace_facebook_data_htmls_cache();
-  let mapped = list_map(folders, function (f) {
+  let mapped = list_map(folders_in, function (f) {
     let v5 = string_combine_multiple(["\\", f, "\\"]);
     return v5;
   });
   let v2 = list_filter(v, function (s) {
-    let v3 = !string_includes_multiple(s, mapped);
+    let v3 = string_includes_multiple(s, mapped);
     return v3;
   });
   return v2;
