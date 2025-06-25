@@ -9,6 +9,7 @@ export async function sandbox_5() {
     "preferences",
     "comments_and_reactions",
     "dating",
+    "facebook_gaming",
   ];
   let v = await grace_facebook_data_htmls_cache();
   let mapped = list_map(folders, function (f) {
