@@ -1,3 +1,4 @@
+import { list_map_async } from "./list_map_async.mjs";
 import { file_read } from "./file_read.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_wait } from "./list_wait.mjs";
@@ -33,8 +34,13 @@ export async function grace_facebook_data_messages_jared() {
     let v3 = string_includes_multiple(s, mapped);
     return v3;
   });
-  let v6 = list_map(v2, async function (path) {
+  let v6 = await list_map_async(v2, async function (path) {
     let contents = await file_read(path);
+    let v7 = {
+      contents,
+      path,
+    };
+    return v7;
   });
   let v4 = await list_wait(v6);
   return v4;
