@@ -1,7 +1,6 @@
 import { list_map_async } from "./list_map_async.mjs";
 import { file_read } from "./file_read.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { list_wait } from "./list_wait.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_includes_multiple } from "./string_includes_multiple.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -42,6 +41,5 @@ export async function grace_facebook_data_messages_jared() {
     };
     return v7;
   });
-  let v4 = await list_wait(v6);
-  return v4;
+  return v6;
 }
