@@ -18,7 +18,7 @@ export async function sandbox_5() {
     let p = await html_parse(contents);
     object_property_set(item, "parsed", p);
     log({
-      p,
+      item,
     });
   }
 }
