@@ -5,9 +5,9 @@ import { grace_facebook_data_htmls_cache } from "./grace_facebook_data_htmls_cac
 export async function sandbox_5() {
   let folders = ["your_activity_off_meta_technologies"];
   let v = await grace_facebook_data_htmls_cache();
-  let v2 = list_filter(
-    folders,
-    (s = string_includes(string_combine_multiple(["\\", s, "\\"]))),
-  );
+  let v2 = list_filter(folders, function (s) {
+    let v3 = string_includes(string_combine_multiple(["\\", s, "\\"]));
+    return v3;
+  });
   return v2;
 }
