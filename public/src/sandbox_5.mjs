@@ -9,7 +9,7 @@ export async function sandbox_5() {
   await each_async(v4, async function (item) {
     let contents = object_property_get(item, "contents");
     let p = await html_parse(contents);
-    object_property_set(object, "property_name", value);
+    object_property_set(item, "parsed", p);
   });
   log({
     v2,
