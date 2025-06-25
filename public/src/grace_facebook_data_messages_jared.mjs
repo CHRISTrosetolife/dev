@@ -4,7 +4,24 @@ import { list_map } from "./list_map.mjs";
 import { string_includes_multiple } from "./string_includes_multiple.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { grace_facebook_data_htmls_cache } from "./grace_facebook_data_htmls_cache.mjs";
-export async function grace_facebook_data_messages_jared() {
+export async function grace_facebook_data_messages_jared() { let folders = [
+    "your_activity_off_meta_technologies",
+    "preferences",
+    "comments_and_reactions",
+    "dating",
+    "facebook_gaming",
+    "facebook_marketplace",
+    "events",
+    "facebook_payments",
+    "fundraisers",
+    "facebook_support",
+    "groups",
+  ];
+  let folders_in = ["messages"];
+  let mapped = list_map(folders_in, function (f) {
+    let v5 = string_combine_multiple(["\\", f, "\\"]);
+    return v5;
+  });
   let v = await grace_facebook_data_htmls_cache();
   let conversations = [
     "jama_122103294650748074",
