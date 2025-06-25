@@ -2,7 +2,6 @@ import { string_includes_multiple } from "./string_includes_multiple.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { grace_facebook_data_htmls_cache } from "./grace_facebook_data_htmls_cache.mjs";
-import { list_any } from "./list_any.mjs";
 import { list_map } from "./list_map.mjs";
 export async function sandbox_5() {
   let folders = ["your_activity_off_meta_technologies"];
@@ -12,10 +11,7 @@ export async function sandbox_5() {
     return v5;
   });
   let v2 = list_filter(v, function (s) {
-    let v3 = list_any(folders, function (f) {
-      let v4 = string_includes_multiple(s, mapped);
-      return v4;
-    });
+    let v3 = string_includes_multiple(s, mapped);
     return v3;
   });
   return v2;
