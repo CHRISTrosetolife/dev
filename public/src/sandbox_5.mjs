@@ -34,5 +34,5 @@ export async function sandbox_5() {
     return v3;
   });
   let v4 = await list_wait(v2, file_read);
-  return v2;
+  return v4;
 }
