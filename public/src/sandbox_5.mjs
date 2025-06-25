@@ -4,7 +4,7 @@ import { list_filter } from "./list_filter.mjs";
 import { grace_facebook_data_htmls_cache } from "./grace_facebook_data_htmls_cache.mjs";
 import { list_map } from "./list_map.mjs";
 export async function sandbox_5() {
-  let folders = ["your_activity_off_meta_technologies"];
+  let folders = ["your_activity_off_meta_technologies", "preferences"];
   let v = await grace_facebook_data_htmls_cache();
   let mapped = list_map(folders, function (f) {
     let v5 = string_combine_multiple(["\\", f, "\\"]);
