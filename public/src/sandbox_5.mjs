@@ -28,10 +28,10 @@ export async function sandbox_5() {
     let sections = html_parse_visit_tag_list(main, "section");
     f = list_first(sections);
     let c = html_parse_children(f);
-    let fs = list_first(c);
     log({
-      c: list_size(fs),
+      c: list_size(c),
     });
+    let fs = list_first(c);
     assert(equal, [list_size(fs), 3]);
     let h2 = html_parse_visit_tag_single(fs, "h2");
     let div = html_parse_visit_tag_single(fs, "div");
