@@ -9,7 +9,9 @@ export async function sandbox_5() {
   let threads = await grace_facebook_data_messages_jared_parsed_cache();
   let thread = list_first(threads);
   let messages = object_property_get(thread, "messages");
-  messages = list_filter(messages, function (m) {});
+  messages = list_filter(messages, function (m) {
+    let message = object_property_get(m, "message");
+  });
   let result = list_to_groups(messages, facebook_data_messages_date_get);
   let v = result;
   return v;
