@@ -1,5 +1,3 @@
-import { object_property_set } from "./object_property_set.mjs";
-import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_take } from "./list_take.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
@@ -10,6 +8,7 @@ import { list_first } from "./list_first.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { identity } from "./identity.mjs";
+import { object_property_initialize } from "./object_property_initialize.mjs";
 export async function sandbox_5() {
   let threads = await grace_facebook_data_messages_jared_parsed_cache();
   let thread = list_first(threads);
@@ -19,9 +18,7 @@ export async function sandbox_5() {
   let result = {};
   each(messages, function (message) {
     let key = key_get(message);
-    if (object_property_exists_not(result, key)) {
-      object_property_set(object, "property_name", value);
-    }
+    let values = object_property_initialize(result, key, []);
   });
   function key_get(message) {
     let when = object_property_get(message, "when");
