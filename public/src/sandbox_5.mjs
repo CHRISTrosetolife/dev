@@ -9,7 +9,7 @@ export async function sandbox_5() {
   let threads = await grace_facebook_data_messages_jared_parsed_cache();
   let thread = list_first(threads);
   let messages = object_property_get(thread, "messages");
-  list_filter(messages, string_empty_not_is);
+  messages = list_filter(messages, string_empty_not_is);
   each(messages, function (message) {
     let when = object_property_get(message, "when");
     let s = string_split_space(when);
