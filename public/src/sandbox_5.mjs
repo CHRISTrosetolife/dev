@@ -79,8 +79,8 @@ export async function sandbox_5() {
       user_mapped,
       " @ ",
       when2,
-      "\n",
-      string_replace(message, "  ", "\n"),
+      "<br>",
+      string_replace(message, "  ", "<br><br>"),
       "</p>",
       "\n\n",
     ]);
