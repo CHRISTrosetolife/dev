@@ -14,8 +14,11 @@ export async function sandbox_5() {
   let messages = object_property_get(thread, "messages");
   messages = list_filter(messages, string_empty_not_is);
   let value_get = identity;
+  let result = {};
   each(messages, function (message) {
     let key = key_get(message);
+    if (false) {
+    }
   });
   function key_get(message) {
     let when = object_property_get(message, "when");
