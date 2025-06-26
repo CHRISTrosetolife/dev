@@ -1,3 +1,4 @@
+import { list_take_reverse } from "./list_take_reverse.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { object_filter } from "./object_filter.mjs";
@@ -41,6 +42,7 @@ export async function sandbox_5() {
     let v4 = d > cutoff;
     return v4;
   }
+  let count = 5;
   let before = object_filter(merged, before_trip);
   let after = object_filter(merged, after_trip);
   let parsed = list_adder(function (la) {
@@ -53,6 +55,7 @@ export async function sandbox_5() {
     });
   });
   list_sort_property(parsed, "date");
+  list_take_reverse(parsed, count);
   let v = merged;
   return v;
 }
