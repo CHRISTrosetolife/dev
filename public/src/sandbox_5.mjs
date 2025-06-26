@@ -17,7 +17,7 @@ export async function sandbox_5() {
   });
   let merged = {};
   each(mapped, function (group) {
-    object_merge_list_strict(group, merged);
+    object_merge_list(group, merged);
   });
   let v = merged;
   return v;
