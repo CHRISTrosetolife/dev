@@ -24,7 +24,7 @@ export async function sandbox_5() {
       let message = object_property_get(item, "message");
       let when = object_property_get(item, "when");
       let wd = date_to(when);
-      object_property_set(object, "property_name", value);
+      object_property_set(item, "when_date", wd);
     });
   });
   let v = merged;
