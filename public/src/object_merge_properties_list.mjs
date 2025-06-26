@@ -6,7 +6,7 @@ import { each } from "./each.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function object_merge_properties_list(properties, from, to, strict) {
   assert_arguments_length(arguments, 4);
-  each(properties, (p) => {
+  each(properties, function (p) {
     let value = object_property_get(from, p);
     if (strict) {
       assert(object_property_exists_not, [from, p]);
