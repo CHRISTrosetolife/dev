@@ -103,7 +103,7 @@ export async function sandbox_5() {
   let output_folder = folder_external_root_combine("output");
   let output_path = path_join([
     output_folder,
-    string_combine_multiple([name, ".html"]),
+    string_combine_multiple(["output", ".html"]),
   ]);
   await command_line_exec(output_path);
   function longest(merged, filter) {
