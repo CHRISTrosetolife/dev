@@ -1,3 +1,4 @@
+import { list_sort_map } from "./list_sort_map.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { date_to } from "./date_to.mjs";
 import { each } from "./each.mjs";
@@ -26,6 +27,7 @@ export async function sandbox_5() {
       let wd = date_to(when);
       object_property_set(item, "when_date", wd);
     });
+    list_sort_map(messages);
   });
   let v = merged;
   return v;
