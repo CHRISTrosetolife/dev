@@ -66,5 +66,8 @@ export async function sandbox_5() {
       let v5 = list_size(messages2);
       return v5;
     });
+    let recent = list_take_reverse(filtered, count);
+    let v6 = recent;
+    return v6;
   }
 }
