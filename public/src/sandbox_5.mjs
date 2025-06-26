@@ -116,6 +116,7 @@ export async function sandbox_5() {
       let v5 = list_includes_not(
         [
           "Dec 22, 2022",
+          "Dec 25, 2022",
           "Dec 27, 2022",
           "Dec 28, 2022",
           "Jun 13, 2023",
