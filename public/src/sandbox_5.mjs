@@ -32,9 +32,9 @@ export async function sandbox_5() {
       c: list_size(c),
     });
     assert(equal, [list_size(c), 3]);
-    let h2 = html_parse_visit_tag_single(c, "h2");
-    let div = html_parse_visit_tag_single(c, "div");
-    let footer = html_parse_visit_tag_single(c, "footer");
+    let h2 = html_parse_visit_tag_single(f, "h2");
+    let div = html_parse_visit_tag_single(f, "div");
+    let footer = html_parse_visit_tag_single(f, "footer");
     log({
       user: html_parse_text(h2),
       message: html_parse_text(div),
