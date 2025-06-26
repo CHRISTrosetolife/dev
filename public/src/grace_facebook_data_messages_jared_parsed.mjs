@@ -17,22 +17,13 @@ import { list_map_async } from "./list_map_async.mjs";
 export async function grace_facebook_data_messages_jared_parsed() {
   let v4 = await grace_facebook_data_messages_jared_cache();
   let v2 = await list_map_async(v4, async function (item) {
-    let messages = await on_item(item);
-    let path = object_property_get(item, "path");
-    let v = {
-      path,
-      messages,
-    };
-    return v;
-  });
-  return v2;
-  async function on_item(item) {
     let contents = object_property_get(item, "contents");
+    let path = object_property_get(item, "path");
     let root = await html_parse(contents);
     object_property_set(item, "parsed", root);
     let main = html_parse_visit_tag_single(root, "main");
     let sections = html_parse_visit_tag_list(main, "section");
-    let m = list_map(sections, function (section) {
+    let messages = list_map(sections, function (section) {
       let c = html_parse_children(section);
       assert(equal, [list_size(c), 3]);
       let h2 = html_parse_visit_tag_single(section, "h2");
@@ -48,6 +39,12 @@ export async function grace_facebook_data_messages_jared_parsed() {
       };
       return v5;
     });
-    return m;
-  }
+    let v = {
+      path,
+      messages,
+    };
+    return v;
+  });
+  return v2;
+  async function on_item(item) {}
 }
