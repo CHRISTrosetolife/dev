@@ -55,7 +55,7 @@ export async function sandbox_5() {
     });
   });
   list_sort_property(parsed, "date");
-  list_take_reverse(parsed, count);
+  let recent = list_take_reverse(parsed, count);
   let v = merged;
   return v;
 }
