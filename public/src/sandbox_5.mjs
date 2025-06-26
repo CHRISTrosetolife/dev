@@ -76,7 +76,7 @@ export async function sandbox_5() {
   let after = conversations_filter(merged, after_trip);
   let messages = list_random_item(before);
   let recent = list_first(recents);
-  messages = recent;
+  messages = object_property_get(recent, "messages");
   let result = "";
   each(messages, function (item2) {
     let name_grace = "Grace";
