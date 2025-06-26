@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { grace_facebook_data_messages_jared_parsed_cache } from "./grace_facebook_data_messages_jared_parsed_cache.mjs";
@@ -6,7 +7,9 @@ export async function sandbox_5() {
   let threads = await grace_facebook_data_messages_jared_parsed_cache();
   let thread = list_first(threads);
   let messages = object_property_get(thread, "messages");
-  each(messages, function (message) {});
+  each(messages, function (message) {
+    object_property_set(object, "property_name", value);
+  });
   let v = messages;
   return v;
   each(threads, function (item) {});
