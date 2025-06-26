@@ -1,3 +1,4 @@
+import { html_parse_text } from "./html_parse_text.mjs";
 import { equal } from "./equal.mjs";
 import { list_map } from "./list_map.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
@@ -30,9 +31,14 @@ export async function sandbox_5() {
     f = list_first(sections);
     let c = html_parse_children(f);
     assert(equal, [list_size(c), 3]);
+    let h2 = html_parse_visit_tag_single(root, "h2");
+    let div = html_parse_visit_tag_single(root, "div");
+    let footer = html_parse_visit_tag_single(root, "footer");
     let m = list_map(c, html_parse_tag_name);
     log({
-      m,
+      user: html_parse_text(h2),
+      message: html_parse_text(div),
+      when: html_parse_text(footer),
     });
   }
 }
