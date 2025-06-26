@@ -61,10 +61,14 @@ export async function sandbox_5() {
   });
   list_sort_property(parsed, "date");
   let recent = list_take_reverse(parsed, count);
-  let v = list_get(before, 0);
+  let messages = list_get(before, 0);
   let result = "";
-  each(v, function (item2) {});
-  return v;
+  each(messages, function (item2) {
+    let users = {
+      ["Gra Cia"]: "Grace",
+    };
+  });
+  return messages;
   function longest(merged, filter) {
     let filtered = object_filter(merged, filter);
     let filtered2 = object_filter(filtered, function (key, value) {
