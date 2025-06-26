@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_take } from "./list_take.mjs";
@@ -19,6 +20,7 @@ export async function sandbox_5() {
   each(messages, function (message) {
     let key = key_get(message);
     if (object_property_exists_not(result, key)) {
+      object_property_set(object, "property_name", value);
     }
   });
   function key_get(message) {
