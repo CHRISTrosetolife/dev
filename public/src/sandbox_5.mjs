@@ -42,12 +42,13 @@ export async function sandbox_5() {
   }
   let before = object_filter(merged, before_trip);
   let after = object_filter(merged, after_trip);
-  list_adder(function (la2) {});
-  each_object(merged, function (date_string, messages) {
-    let date = date_to(date_string);
-    la({
-      date,
-      messages,
+  list_adder(function (la) {
+    each_object(merged, function (date_string, messages) {
+      let date = date_to(date_string);
+      la({
+        date,
+        messages,
+      });
     });
   });
   let v = merged;
