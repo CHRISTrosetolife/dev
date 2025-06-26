@@ -27,7 +27,7 @@ export async function sandbox_5() {
       let wd = date_to(when);
       object_property_set(item, "when_date", wd);
     });
-    list_sort_map(messages);
+    list_sort_map(messages, function (item) {});
   });
   let v = merged;
   return v;
