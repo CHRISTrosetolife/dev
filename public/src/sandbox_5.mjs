@@ -70,8 +70,6 @@ export async function sandbox_5() {
   list_sort_property(parsed, "date");
   let recent = list_take_reverse(parsed, count);
   let dates_recent = list_map_property(recent, "day");
-  let v = dates_recent;
-  return v;
   let before = conversations_filter(merged, before_trip);
   let after = conversations_filter(merged, after_trip);
   let messages = list_random_item(before);
@@ -120,30 +118,33 @@ export async function sandbox_5() {
     let filtered = object_filter(merged, filter);
     let filtered2 = object_filter(filtered, function (key, value) {
       let v5 = list_includes_not(
-        [
-          "Dec 22, 2022",
-          "Dec 25, 2022",
-          "Dec 27, 2022",
-          "Dec 28, 2022",
-          "Dec 30, 2022",
-          "Dec 31, 2022",
-          "Jun 13, 2023",
-          "Jul 08, 2023",
-          "Jul 19, 2023",
-          "Jul 20, 2023",
-          "Feb 12, 2024",
-          "Feb 26, 2024",
-          "Apr 22, 2024",
-          "May 18, 2024",
-          "Jul 16, 2024",
-          "Jul 22, 2024",
-          "Nov 02, 2024",
-          "Nov 28, 2024",
-          "Jan 08, 2025",
-          "Feb 27, 2025",
-          "Mar 13, 2025",
-          "Mar 19, 2025",
-        ],
+        list_combine(
+          [
+            "Dec 22, 2022",
+            "Dec 25, 2022",
+            "Dec 27, 2022",
+            "Dec 28, 2022",
+            "Dec 30, 2022",
+            "Dec 31, 2022",
+            "Jun 13, 2023",
+            "Jul 08, 2023",
+            "Jul 19, 2023",
+            "Jul 20, 2023",
+            "Feb 12, 2024",
+            "Feb 26, 2024",
+            "Apr 22, 2024",
+            "May 18, 2024",
+            "Jul 16, 2024",
+            "Jul 22, 2024",
+            "Nov 02, 2024",
+            "Nov 28, 2024",
+            "Jan 08, 2025",
+            "Feb 27, 2025",
+            "Mar 13, 2025",
+            "Mar 19, 2025",
+          ],
+          dates_recent,
+        ),
         key,
       );
       return v5;
