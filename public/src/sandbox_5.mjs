@@ -20,7 +20,7 @@ export async function sandbox_5() {
   each(messages, function (message) {
     let key = key_get(message);
     let values = object_property_initialize(result, key, []);
-    list_add(values, message);
+    list_add(values, value_get(message));
   });
   function key_get(message) {
     let when = object_property_get(message, "when");
