@@ -25,6 +25,7 @@ import { string_replace } from "./string_replace.mjs";
 import { path_join } from "./path_join.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { string_includes } from "./string_includes.mjs";
+import { list_first } from "./list_first.mjs";
 export async function sandbox_5() {
   let threads = await grace_facebook_data_messages_jared_parsed_cache();
   let mapped = list_map(threads, function (thread) {
@@ -68,12 +69,13 @@ export async function sandbox_5() {
     });
   });
   list_sort_property(parsed, "date");
-  let recent = list_take_reverse(parsed, 1);
-  let dates_recent = list_map_property(recent, "day");
+  let recents = list_take_reverse(parsed, 1);
+  let dates_recent = list_map_property(recents, "day");
   let before = conversations_filter(merged, before_trip);
   let after = conversations_filter(merged, after_trip);
   let messages = list_random_item(before);
-  messages = object_property_get(recent, "messages");
+  let recent = list_first(recents);
+  messages = object_property_get(recents, "messages");
   let result = "";
   each(messages, function (item2) {
     let name_grace = "Grace";
