@@ -14,15 +14,15 @@ export async function sandbox_5() {
   messages = list_filter(messages, string_empty_not_is);
   each(messages, function (message) {
     let key = key_get(message);
-    function key_get(message) {
-      let when = object_property_get(message, "when");
-      let s = string_split_space(when);
-      let s3 = list_take(s, 3);
-      let s3j = list_join_space(s3);
-      let v2 = s3j;
-      return v2;
-    }
   });
+  function key_get(message) {
+    let when = object_property_get(message, "when");
+    let s = string_split_space(when);
+    let s3 = list_take(s, 3);
+    let s3j = list_join_space(s3);
+    let v2 = s3j;
+    return v2;
+  }
   let v = messages;
   return v;
   each(threads, function (item) {});
