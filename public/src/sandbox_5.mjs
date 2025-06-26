@@ -1,3 +1,4 @@
+import { list_map_property } from "./list_map_property.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { command_line_exec } from "./command_line_exec.mjs";
@@ -66,6 +67,7 @@ export async function sandbox_5() {
   });
   list_sort_property(parsed, "date");
   let recent = list_take_reverse(parsed, count);
+  let dates_recent = list_map_property(recent, "date");
   let before = conversations_filter(merged, before_trip);
   let after = conversations_filter(merged, after_trip);
   let messages = list_random_item(before);
