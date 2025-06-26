@@ -31,8 +31,8 @@ export async function sandbox_5() {
     log({
       c: list_size(c),
     });
+    assert(equal, [list_size(c), 3]);
     let fs = list_first(c);
-    assert(equal, [list_size(fs), 3]);
     let h2 = html_parse_visit_tag_single(fs, "h2");
     let div = html_parse_visit_tag_single(fs, "div");
     let footer = html_parse_visit_tag_single(fs, "footer");
