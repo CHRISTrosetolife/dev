@@ -24,7 +24,6 @@ export async function sandbox_5() {
     return v;
   });
   return v2;
-  return;
   async function on_item(item) {
     let contents = object_property_get(item, "contents");
     let root = await html_parse(contents);
@@ -36,14 +35,16 @@ export async function sandbox_5() {
       assert(equal, [list_size(c), 3]);
       let h2 = html_parse_visit_tag_single(section, "h2");
       let divs = list_filter(c, function (child) {
-        return html_parse_tag_named(child, "div");
+        let v3 = html_parse_tag_named(child, "div");
+        return v3;
       });
       let footer = html_parse_visit_tag_single(section, "footer");
-      return {
+      let v5 = {
         user: html_parse_text(h2),
         message: html_parse_text(list_single(divs)),
         when: html_parse_text(footer),
       };
+      return v5;
     });
     return m;
   }
