@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { command_line_exec } from "./command_line_exec.mjs";
 import { folder_external_root_combine } from "./folder_external_root_combine.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -103,7 +104,7 @@ export async function sandbox_5() {
   let output_folder = folder_external_root_combine("output");
   let output_path = path_join([
     output_folder,
-    string_combine_multiple(["output", ".html"]),
+    string_combine_multiple([fn_name("sandbox_5"), ".html"]),
   ]);
   await command_line_exec(output_path);
   function longest(merged, filter) {
