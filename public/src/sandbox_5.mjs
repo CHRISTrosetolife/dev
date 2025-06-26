@@ -54,8 +54,8 @@ export async function sandbox_5() {
     return v4;
   }
   let count = 5;
-  let before = longest(merged, before_trip);
-  let after = longest(merged, after_trip);
+  let before = conversations_filter(merged, before_trip);
+  let after = conversations_filter(merged, after_trip);
   let parsed = list_adder(function (la) {
     each_object(merged, function (date_string, messages) {
       let date = date_to(date_string);
@@ -109,7 +109,7 @@ export async function sandbox_5() {
   ]);
   await file_overwrite(output_path, result);
   await command_line_exec(output_path);
-  function longest(merged, filter) {
+  function conversations_filter(merged, filter) {
     let filtered = object_filter(merged, filter);
     let filtered2 = object_filter(filtered, function (key, value) {
       let v5 = list_includes_not(
