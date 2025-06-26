@@ -64,10 +64,10 @@ export async function sandbox_5() {
   function longest(merged, filter) {
     let filtered = object_filter(merged, filter);
     let filtered2 = object_filter(filtered, function (key, value) {
-      let v5 = list_includes_not(["Dec 22, 2022"]);
+      let v5 = list_includes_not(["Dec 22, 2022"], key);
       return v5;
     });
-    let parsed = object_values_to_list(filtered);
+    let parsed = object_values_to_list(filtered2);
     list_sort_property(parsed, list_size);
     let recent = list_take_reverse(parsed, count);
     let v6 = recent;
