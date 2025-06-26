@@ -1,3 +1,4 @@
+import { html_parse_tag_name } from "./html_parse_tag_name.mjs";
 import { list_map } from "./list_map.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { equal } from "./equal.mjs";
@@ -30,7 +31,7 @@ export async function sandbox_5() {
     f = list_first(sections);
     let c = html_parse_children(f);
     log({
-      c: list_map(c, html_parse_node_name),
+      c: list_map(c, html_parse_tag_name),
     });
     assert(equal, [list_size(c), 3]);
     let h2 = html_parse_visit_tag_single(f, "h2");
