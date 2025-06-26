@@ -66,9 +66,15 @@ export async function sandbox_5() {
   let messages = list_get(before, 0);
   let result = "";
   each(messages, function (item2) {
+    let name_grace = "Grace";
+    let name_jared = "Jared";
     let users = {
-      ["Gra Cia"]: "Grace",
-      ["Jared Mathis"]: "Jared",
+      ["Gra Cia"]: name_grace,
+      ["Jared Mathis"]: name_jared,
+    };
+    let colors = {
+      [name_grace]: "darkgreen",
+      [name_jared]: "darkred",
     };
     let user = object_property_get(item2, "user");
     let message = object_property_get(item2, "message");
@@ -77,7 +83,7 @@ export async function sandbox_5() {
     result += string_combine_multiple([
       "<p>",
       '<span style="color: ',
-      '"',
+      '">',
       user_mapped,
       " @ ",
       when2,
