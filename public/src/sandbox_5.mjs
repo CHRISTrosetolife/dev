@@ -73,7 +73,7 @@ export async function sandbox_5() {
       return v5;
     });
     let parsed = object_values_to_list(filtered2);
-    list_sort_property(parsed, list_size);
+    list_sort_map(parsed, list_size);
     let recent = list_take(parsed, count);
     let v6 = recent;
     return v6;
