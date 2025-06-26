@@ -77,6 +77,7 @@ export async function sandbox_5() {
   let messages = list_random_item(before);
   let recent = list_first(recents);
   messages = object_property_get(recent, "messages");
+  messages = list_random_item(after);
   let result = "";
   each(messages, function (item2) {
     let name_grace = "Grace";
