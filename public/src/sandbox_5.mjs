@@ -1,4 +1,3 @@
-import { list_take } from "./list_take.mjs";
 import { object_values_to_list } from "./object_values_to_list.mjs";
 import { list_size } from "./list_size.mjs";
 import { list_take_reverse } from "./list_take_reverse.mjs";
@@ -74,7 +73,7 @@ export async function sandbox_5() {
     });
     let parsed = object_values_to_list(filtered2);
     list_sort_map(parsed, list_size);
-    let recent = list_take(parsed, count);
+    let recent = list_take_reverse(parsed, count);
     let v6 = recent;
     return v6;
   }
