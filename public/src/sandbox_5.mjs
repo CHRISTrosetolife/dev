@@ -1,11 +1,9 @@
-import { list_take } from "./list_take.mjs";
 import { list_single } from "./list_single.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
 import { list_map } from "./list_map.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { equal } from "./equal.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
-import { log } from "./log.mjs";
 import { html_parse_children } from "./html_parse_children.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -31,23 +29,19 @@ export async function sandbox_5() {
     object_property_set(item, "parsed", root);
     let main = html_parse_visit_tag_single(root, "main");
     let sections = html_parse_visit_tag_list(main, "section");
-    let fs = list_take(sections, 10);
-    let m = list_map(fs, function (f) {
-      let c = html_parse_children(f);
+    let m = list_map(sections, function (section) {
+      let c = html_parse_children(section);
       assert(equal, [list_size(c), 3]);
-      let h2 = html_parse_visit_tag_single(f, "h2");
+      let h2 = html_parse_visit_tag_single(section, "h2");
       let divs = list_filter(c, function (child) {
         return html_parse_tag_named(child, "div");
       });
-      let footer = html_parse_visit_tag_single(f, "footer");
+      let footer = html_parse_visit_tag_single(section, "footer");
       return {
         user: html_parse_text(h2),
         message: html_parse_text(list_single(divs)),
         when: html_parse_text(footer),
       };
-    });
-    log({
-      m,
     });
     return m;
   }
