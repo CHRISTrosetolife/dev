@@ -16,8 +16,6 @@ import { list_map } from "./list_map.mjs";
 import { grace_facebook_data_messages_jared_cache } from "./grace_facebook_data_messages_jared_cache.mjs";
 export async function grace_facebook_data_messages_jared_parsed() {
   let v4 = await grace_facebook_data_messages_jared_cache();
-  let v6 = 1;
-  return v6;
   let v2 = await list_wait(v4, async function (item) {
     let messages = await on_item(item);
     let path = object_property_get(item, "path");
