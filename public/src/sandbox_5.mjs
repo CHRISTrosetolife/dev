@@ -1,3 +1,4 @@
+import { folder_external_root } from "./folder_external_root.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each } from "./each.mjs";
 import { object_values_to_list } from "./object_values_to_list.mjs";
@@ -97,7 +98,8 @@ export async function sandbox_5() {
       "\n\n",
     ]);
   });
-  return result;
+  let v = folder_external_root();
+  return v;
   function longest(merged, filter) {
     let filtered = object_filter(merged, filter);
     let filtered2 = object_filter(filtered, function (key, value) {
