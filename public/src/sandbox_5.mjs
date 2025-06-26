@@ -1,3 +1,4 @@
+import { list_size } from "./list_size.mjs";
 import { list_take_reverse } from "./list_take_reverse.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -62,6 +63,8 @@ export async function sandbox_5() {
     let filtered = object_filter(merged, filter);
     list_sort_map(filtered, function (item) {
       let messages2 = object_property_get(item, "messages");
+      let v5 = list_size(messages2);
+      return v5;
     });
   }
 }
