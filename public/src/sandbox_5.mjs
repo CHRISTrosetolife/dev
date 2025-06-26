@@ -27,12 +27,12 @@ export async function sandbox_5() {
     });
   });
   let result = [];
-  let predicate = function (key, value) {
+  function before_trip(key, value) {
     let d = date_to(key);
     let cutoff = new Date("2025-03-22");
     let v4 = d < cutoff;
     return v4;
-  };
+  }
   each_object(merged, function (date, messages) {});
   let v = merged;
   return v;
