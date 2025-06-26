@@ -1,3 +1,4 @@
+import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { log } from "./log.mjs";
 import { html_parse_tag_name } from "./html_parse_tag_name.mjs";
 import { html_parse_children } from "./html_parse_children.mjs";
@@ -21,6 +22,7 @@ export async function sandbox_5() {
     let root = await html_parse(contents);
     object_property_set(item, "parsed", root);
     let main = html_parse_visit_tag_single(root, "main");
+    html_parse_visit_tag_list(main);
     let c = html_parse_children(main);
     f = list_first(c);
     let n = html_parse_tag_name(f);
