@@ -1,3 +1,4 @@
+import { list_single } from "./list_single.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
 import { html_parse_tag_name } from "./html_parse_tag_name.mjs";
 import { list_map } from "./list_map.mjs";
@@ -37,13 +38,13 @@ export async function sandbox_5() {
     });
     assert(equal, [list_size(c), 3]);
     let h2 = html_parse_visit_tag_single(f, "h2");
-    let div = list_filter(c, function (child) {
+    let divs = list_filter(c, function (child) {
       return html_parse_tag_named(child, "div");
     });
     let footer = html_parse_visit_tag_single(f, "footer");
     log({
       user: html_parse_text(h2),
-      message: html_parse_text(div),
+      message: html_parse_text(list_single(divs)),
       when: html_parse_text(footer),
     });
   }
