@@ -1,3 +1,4 @@
+import { list_take } from "./list_take.mjs";
 import { list_single } from "./list_single.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
 import { html_parse_tag_name } from "./html_parse_tag_name.mjs";
@@ -31,7 +32,7 @@ export async function sandbox_5() {
     object_property_set(item, "parsed", root);
     let main = html_parse_visit_tag_single(root, "main");
     let sections = html_parse_visit_tag_list(main, "section");
-    f = list_first(sections);
+    let fs = list_take(sections, 10);
     let c = html_parse_children(f);
     log({
       c: list_map(c, html_parse_tag_name),
