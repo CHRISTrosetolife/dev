@@ -50,5 +50,6 @@ export async function sandbox_5() {
         when: html_parse_text(footer),
       };
     });
+    return m;
   }
 }
