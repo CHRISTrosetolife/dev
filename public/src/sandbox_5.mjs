@@ -23,6 +23,7 @@ import { list_includes_not } from "./list_includes_not.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { path_join } from "./path_join.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
+import { string_includes } from "./string_includes.mjs";
 export async function sandbox_5() {
   let threads = await grace_facebook_data_messages_jared_parsed_cache();
   let mapped = list_map(threads, function (thread) {
@@ -44,7 +45,7 @@ export async function sandbox_5() {
   function before_trip(key, value) {
     let d = date_to(key);
     let cutoff = new Date("2025-03-22");
-    let v4 = d < cutoff;
+    let v4 = d < cutoff && string_includes(key, "2021");
     return v4;
   }
   function after_trip(key, value) {
