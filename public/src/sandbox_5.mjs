@@ -29,9 +29,9 @@ export async function sandbox_5() {
     f = list_first(sections);
     let c = html_parse_children(f);
     assert(equal, [list_size(c), 3]);
-    let h2 = html_parse_visit_tag_single(root, "h2");
-    let div = html_parse_visit_tag_single(root, "div");
-    let footer = html_parse_visit_tag_single(root, "footer");
+    let h2 = html_parse_visit_tag_single(c, "h2");
+    let div = html_parse_visit_tag_single(c, "div");
+    let footer = html_parse_visit_tag_single(c, "footer");
     log({
       user: html_parse_text(h2),
       message: html_parse_text(div),
