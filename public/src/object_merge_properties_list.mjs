@@ -4,7 +4,7 @@ import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 export function object_merge_properties_list(from, to) {
   assert_arguments_length(arguments, 2);
-  each_object(properties, function (key, value) {
+  each_object(from, function (key, value) {
     let existing = object_property_initialize(to, key, []);
     list_add(existing, value);
   });
