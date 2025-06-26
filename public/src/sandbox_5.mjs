@@ -59,7 +59,9 @@ export async function sandbox_5() {
   let parsed = list_adder(function (la) {
     each_object(merged, function (date_string, messages) {
       let date = date_to(date_string);
+      let day = date_string;
       la({
+        day,
         date,
         messages,
       });
@@ -67,7 +69,7 @@ export async function sandbox_5() {
   });
   list_sort_property(parsed, "date");
   let recent = list_take_reverse(parsed, count);
-  let dates_recent = list_map_property(recent, "date");
+  let dates_recent = list_map_property(recent, "day");
   let v = dates_recent;
   return v;
   let before = conversations_filter(merged, before_trip);
