@@ -19,7 +19,7 @@ export async function sandbox_5() {
     let messages = await on_item(item);
     let path = object_property_get(item, "path");
     let v = {
-      item,
+      path,
       messages,
     };
     return v;
