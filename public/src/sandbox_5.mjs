@@ -15,10 +15,15 @@ export async function sandbox_5() {
     let v2 = result;
     return v2;
   });
-  let merged = {};
-  each(mapped, function (group) {
-    object_merge_list(group, merged);
-  });
+  let merged = groups_merge(mapped);
   let v = merged;
   return v;
 }
+function groups_merge(mapped) {
+    let merged = {};
+    each(mapped, function (group) {
+        object_merge_list(group, merged);
+    });
+    return merged;
+}
+
