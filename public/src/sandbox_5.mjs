@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { list_sort_map } from "./list_sort_map.mjs";
 import { date_to } from "./date_to.mjs";
 import { each_object } from "./each_object.mjs";
@@ -35,7 +36,8 @@ export async function sandbox_5() {
   let result = {};
   each_object(merged, function (key, value) {
     let include = before_trip(key, value);
-    if (false) {
+    if (include) {
+      object_property_set(object, "property_name", value2);
     }
   });
   let v = merged;
