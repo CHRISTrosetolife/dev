@@ -66,7 +66,7 @@ export async function sandbox_5() {
     let filtered = object_filter(merged, filter);
     let filtered2 = object_filter(filtered, function (key, value) {
       let v5 = list_includes_not(
-        ["Dec 22, 2022", "Dec 27, 2022", "Dec 28, 2022"],
+        ["Dec 22, 2022", "Dec 27, 2022", "Dec 28, 2022", "Jul 08, 2023"],
         key,
       );
       return v5;
