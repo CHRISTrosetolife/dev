@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { object_values_to_list } from "./object_values_to_list.mjs";
 import { list_size } from "./list_size.mjs";
 import { list_take_reverse } from "./list_take_reverse.mjs";
@@ -61,6 +62,8 @@ export async function sandbox_5() {
   list_sort_property(parsed, "date");
   let recent = list_take_reverse(parsed, count);
   let v = list_get(before, 0);
+  let result = "";
+  each(list, function (item2) {});
   return v;
   function longest(merged, filter) {
     let filtered = object_filter(merged, filter);
