@@ -38,8 +38,8 @@ export async function sandbox_5() {
   }
   function after_trip(key, value) {
     let d = date_to(key);
-    let cutoff = new Date("2025-04-03");
-    let v4 = d > cutoff;
+    let cutoff = new Date("2025-04-04");
+    let v4 = d >= cutoff;
     return v4;
   }
   let count = 5;
