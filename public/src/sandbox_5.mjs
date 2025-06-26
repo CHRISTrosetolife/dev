@@ -33,13 +33,17 @@ export async function sandbox_5() {
     let v4 = d < cutoff;
     return v4;
   }
-  let result = {};
-  each_object(merged, function (key, value) {
-    let include = before_trip(key, value);
-    if (include) {
-      object_property_set(result, key, value);
-    }
-  });
+  object_filter(merged, before_trip);
   let v = merged;
   return v;
 }
+function object_filter(merged, predicate) {
+    let result = {};
+    each_object(merged, function (key, value) {
+        let include = predicate(key, value);
+        if (include) {
+            object_property_set(result, key, value);
+        }
+    });
+}
+
