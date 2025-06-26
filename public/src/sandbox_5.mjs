@@ -18,7 +18,8 @@ export async function sandbox_5() {
   let v4 = await grace_facebook_data_messages_jared_cache();
   await list_adder_async(async function (la) {
     await list_map(v4, async function (item) {
-      await on_item(item);
+      let v = await on_item(item);
+      return v;
     });
   });
   return;
