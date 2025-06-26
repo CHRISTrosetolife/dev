@@ -11,13 +11,18 @@ export async function sandbox_5() {
   let thread = list_first(threads);
   let messages = object_property_get(thread, "messages");
   let property_name = "message";
-  messages = list_filter(messages, function (m) {
-    let v2 = object_property_string_empty_not_is(m, property_name);
-    return v2;
-  });
+  messages = list_filter_property_string_empty_not_is(messages, property_name);
   let result = list_to_groups(messages, facebook_data_messages_date_get);
   let v = result;
   return v;
   each(threads, function (item) {});
   return threads;
 }
+function list_filter_property_string_empty_not_is(list, property_name) {
+    filtered = list_filter(list, function (item) {
+        let v2 = object_property_string_empty_not_is(item, property_name);
+        return v2;
+    });
+    return filtered;
+}
+
