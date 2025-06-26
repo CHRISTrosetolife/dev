@@ -59,7 +59,7 @@ export async function sandbox_5() {
   });
   list_sort_property(parsed, "date");
   let recent = list_take_reverse(parsed, count);
-  let v = before;
+  let v = $lg;
   return v;
   function longest(merged, filter) {
     let filtered = object_filter(merged, filter);
