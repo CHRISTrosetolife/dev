@@ -11,6 +11,7 @@ export async function sandbox_5() {
   let messages = object_property_get(thread, "messages");
   messages = list_filter_property_string_empty_not_is(messages, "message");
   let result = list_to_groups(messages, facebook_data_messages_date_get);
+  let merged = {};
   let v = result;
   return v;
   each(threads, function (item) {});
