@@ -58,5 +58,7 @@ export async function sandbox_5() {
   let recent = list_take_reverse(parsed, count);
   let v = after;
   return v;
-  function longest(merged, filter) {}
+  function longest(merged, filter) {
+    let filtered = object_filter(merged, filter);
+  }
 }
