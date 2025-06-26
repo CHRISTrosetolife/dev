@@ -33,7 +33,9 @@ export async function sandbox_5() {
     let v4 = d < cutoff;
     return v4;
   }
-  each_object(merged, function (date, messages) {});
+  each_object(merged, function (key, value) {
+    let include = before_trip(key, value);
+  });
   let v = merged;
   return v;
 }
