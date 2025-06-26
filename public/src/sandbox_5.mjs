@@ -68,6 +68,9 @@ export async function sandbox_5() {
       ["Gra Cia"]: "Grace",
       ["Jared Mathis"]: "Jared",
     };
+    let user = object_property_get(item2, "user");
+    let message = object_property_get(item2, "message");
+    let when2 = object_property_get(item2, "when");
   });
   return messages;
   function longest(merged, filter) {
