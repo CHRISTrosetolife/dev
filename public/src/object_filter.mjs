@@ -8,4 +8,6 @@ export function object_filter(merged, predicate) {
       object_property_set(result, key, value);
     }
   });
+  let v = result;
+  return v;
 }
