@@ -15,6 +15,7 @@ import { list_to_groups } from "./list_to_groups.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { grace_facebook_data_messages_jared_parsed_cache } from "./grace_facebook_data_messages_jared_parsed_cache.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
+import { list_get } from "./list_get.mjs";
 export async function sandbox_5() {
   let threads = await grace_facebook_data_messages_jared_parsed_cache();
   let mapped = list_map(threads, function (thread) {
@@ -59,6 +60,7 @@ export async function sandbox_5() {
   });
   list_sort_property(parsed, "date");
   let recent = list_take_reverse(parsed, count);
+  let v = list_get(before, 0);
   return v;
   function longest(merged, filter) {
     let filtered = object_filter(merged, filter);
