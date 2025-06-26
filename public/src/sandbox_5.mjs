@@ -119,6 +119,7 @@ export async function sandbox_5() {
           "Dec 25, 2022",
           "Dec 27, 2022",
           "Dec 28, 2022",
+          "Dec 31, 2022",
           "Jun 13, 2023",
           "Jul 08, 2023",
           "Jul 19, 2023",
