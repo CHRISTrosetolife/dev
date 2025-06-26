@@ -76,6 +76,7 @@ export async function sandbox_5() {
     let users = {
       ["Gra Cia"]: name_grace,
       ["Jared Mathis"]: name_jared,
+      ["Ja Ma"]: name_jared,
     };
     let colors = {
       [name_grace]: "darkgreen",
