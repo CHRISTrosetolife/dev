@@ -18,6 +18,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { grace_facebook_data_messages_jared_parsed_cache } from "./grace_facebook_data_messages_jared_parsed_cache.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
 import { list_get } from "./list_get.mjs";
+import { string_replace } from "./string_replace.mjs";
 export async function sandbox_5() {
   let threads = await grace_facebook_data_messages_jared_parsed_cache();
   let mapped = list_map(threads, function (thread) {
@@ -73,10 +74,12 @@ export async function sandbox_5() {
     let message = object_property_get(item2, "message");
     let when2 = object_property_get(item2, "when");
     result += string_combine_multiple([
-      "\n\n",
       object_property_get(users, user),
       " @ ",
       when2,
+      "\n",
+      string_replace(message, "  ", "\n"),
+      "\n\n",
     ]);
   });
   return messages;
