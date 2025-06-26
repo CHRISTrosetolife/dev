@@ -41,6 +41,14 @@ export async function sandbox_5() {
   }
   let before = object_filter(merged, before_trip);
   let after = object_filter(merged, after_trip);
+  each_object(merged, function (date, messages) {
+    let d = date_to(date);
+    list_sort_map(messages, function (item) {
+      let when = object_property_get(item, "when");
+      let v3 = wd;
+      return v3;
+    });
+  });
   let v = merged;
   return v;
 }
