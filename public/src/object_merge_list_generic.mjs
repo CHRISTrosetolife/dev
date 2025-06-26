@@ -1,4 +1,4 @@
-import { list_add } from "./list_add.mjs";
+import { list_add_multiple } from "./list_add_multiple.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { assert } from "./assert.mjs";
@@ -9,7 +9,7 @@ export function object_merge_list_generic(from, to, strict) {
       assert(object_property_exists_not, [to, key]);
     }
     let existing = object_property_initialize(to, key, []);
-    list_add(existing, value);
+    list_add_multiple(existing, value);
   });
   return to;
 }
