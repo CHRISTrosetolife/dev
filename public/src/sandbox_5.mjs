@@ -33,6 +33,12 @@ export async function sandbox_5() {
     let v4 = d < cutoff;
     return v4;
   }
+  function before_trip(key, value) {
+    let d = date_to(key);
+    let cutoff = new Date("2025-04-22");
+    let v4 = d < cutoff;
+    return v4;
+  }
   let before = object_filter(merged, before_trip);
   let v = merged;
   return v;
