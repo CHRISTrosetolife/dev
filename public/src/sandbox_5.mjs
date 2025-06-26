@@ -1,3 +1,4 @@
+import { date_to } from "./date_to.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
@@ -8,7 +9,8 @@ export async function sandbox_5() {
   let thread = list_first(threads);
   let messages = object_property_get(thread, "messages");
   each(messages, function (message) {
-    object_property_set(object, "property_name", value);
+    let when = object_property_get(message, "when");
+    object_property_set(message, "when_date", date_to());
   });
   let v = messages;
   return v;
