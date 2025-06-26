@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each } from "./each.mjs";
 import { object_values_to_list } from "./object_values_to_list.mjs";
 import { list_size } from "./list_size.mjs";
@@ -71,7 +72,10 @@ export async function sandbox_5() {
     let user = object_property_get(item2, "user");
     let message = object_property_get(item2, "message");
     let when2 = object_property_get(item2, "when");
-    (result += $s), "\n\n", object_property_get(object, "property_name");
+    result += string_combine_multiple([
+      "\n\n",
+      object_property_get(object, "property_name"),
+    ]);
   });
   return messages;
   function longest(merged, filter) {
