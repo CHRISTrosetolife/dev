@@ -8,7 +8,7 @@ export function object_merge_list_strict(from, to) {
   assert_arguments_length(arguments, 2);
   let strict = true;
   each_object(from, function (key, value) {
-    if (false) {
+    if (strict) {
       assert(object_property_exists_not, [to, key]);
     }
     let existing = object_property_initialize(to, key, []);
