@@ -1,3 +1,4 @@
+import { list_random_item } from "./list_random_item.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { command_line_exec } from "./command_line_exec.mjs";
 import { folder_external_root_combine } from "./folder_external_root_combine.mjs";
@@ -20,7 +21,6 @@ import { list_to_groups } from "./list_to_groups.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { grace_facebook_data_messages_jared_parsed_cache } from "./grace_facebook_data_messages_jared_parsed_cache.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
-import { list_get } from "./list_get.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { path_join } from "./path_join.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
@@ -68,7 +68,7 @@ export async function sandbox_5() {
   });
   list_sort_property(parsed, "date");
   let recent = list_take_reverse(parsed, count);
-  let messages = list_get(before, 0);
+  let messages = list_random_item(before, 0);
   let result = "";
   each(messages, function (item2) {
     let name_grace = "Grace";
