@@ -1,3 +1,4 @@
+import { list_adder_async } from "./list_adder_async.mjs";
 import { list_single } from "./list_single.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
 import { list_map } from "./list_map.mjs";
@@ -18,6 +19,7 @@ import { list_filter } from "./list_filter.mjs";
 export async function sandbox_5() {
   let v4 = await grace_facebook_data_messages_jared_cache();
   let f = list_first(v4);
+  await list_adder_async(async function (la) {});
   await each_async(v4, async function (item) {
     await on_item(item);
   });
