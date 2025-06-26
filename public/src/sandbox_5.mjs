@@ -1,3 +1,4 @@
+import { object_property_exists } from "./object_property_exists.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_take } from "./list_take.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
@@ -17,7 +18,7 @@ export async function sandbox_5() {
   let result = {};
   each(messages, function (message) {
     let key = key_get(message);
-    if (false) {
+    if (object_property_exists(object, "property_name")) {
     }
   });
   function key_get(message) {
