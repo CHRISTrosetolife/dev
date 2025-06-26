@@ -73,6 +73,7 @@ export async function sandbox_5() {
   let before = conversations_filter(merged, before_trip);
   let after = conversations_filter(merged, after_trip);
   let messages = list_random_item(before);
+  messages = object_property_get(object, "property_name");
   let result = "";
   each(messages, function (item2) {
     let name_grace = "Grace";
