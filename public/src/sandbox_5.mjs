@@ -63,8 +63,7 @@ export async function sandbox_5() {
   function longest(merged, filter) {
     let filtered = object_filter(merged, filter);
     let parsed = object_values_to_list(filtered);
-    list_sort_map(parsed, function (item) {
-      let messages2 = object_property_get(item, "messages");
+    list_sort_property(parsed, function (messages2) {
       let v5 = list_size(messages2);
       return v5;
     });
