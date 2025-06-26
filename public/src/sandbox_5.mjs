@@ -33,7 +33,7 @@ export async function sandbox_5() {
     let v4 = d < cutoff;
     return v4;
   }
-  object_filter(merged, before_trip);
+  let before = object_filter(merged, before_trip);
   let v = merged;
   return v;
 }
