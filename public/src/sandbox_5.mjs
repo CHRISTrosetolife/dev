@@ -105,7 +105,7 @@ export async function sandbox_5() {
     output_folder,
     string_combine_multiple([name, ".html"]),
   ]);
-  await command_line_exec(string_combine_multiple(["start msedge ", url]));
+  await command_line_exec(output_path);
   function longest(merged, filter) {
     let filtered = object_filter(merged, filter);
     let filtered2 = object_filter(filtered, function (key, value) {
