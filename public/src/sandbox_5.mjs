@@ -37,7 +37,7 @@ export async function sandbox_5() {
   each_object(merged, function (key, value) {
     let include = before_trip(key, value);
     if (include) {
-      object_property_set(object, "property_name", value2);
+      object_property_set(result, key, value);
     }
   });
   let v = merged;
