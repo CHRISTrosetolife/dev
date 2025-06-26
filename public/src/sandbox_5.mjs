@@ -26,6 +26,11 @@ export async function sandbox_5() {
       return v3;
     });
   });
+  let result = [];
+  let predicate = function (key, value) {
+    let d = date_to(key);
+  };
+  each_object(merged, function (date, messages) {});
   let v = merged;
   return v;
 }
