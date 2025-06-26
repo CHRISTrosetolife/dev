@@ -19,9 +19,10 @@ import { list_filter } from "./list_filter.mjs";
 export async function sandbox_5() {
   let v4 = await grace_facebook_data_messages_jared_cache();
   let f = list_first(v4);
-  await list_adder_async(async function (la) {});
-  await each_async(v4, async function (item) {
-    await on_item(item);
+  await list_adder_async(async function (la) {
+    await each_async(v4, async function (item) {
+      await on_item(item);
+    });
   });
   return;
   async function on_item(item) {
