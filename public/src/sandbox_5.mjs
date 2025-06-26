@@ -13,10 +13,10 @@ export async function sandbox_5() {
   let thread = list_first(threads);
   let messages = object_property_get(thread, "messages");
   messages = list_filter(messages, string_empty_not_is);
-  let result = list_to_groups(messages, key_get);
+  let result = list_to_groups(messages, facebook_data_messages_date_get);
   let v = result;
   return v;
-  function key_get(message) {
+  function facebook_data_messages_date_get(message) {
     let when = object_property_get(message, "when");
     let s = string_split_space(when);
     let s3 = list_take(s, 3);
