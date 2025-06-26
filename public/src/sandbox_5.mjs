@@ -1,3 +1,4 @@
+import { list_to_groups } from "./list_to_groups.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_take } from "./list_take.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
@@ -7,21 +8,12 @@ import { grace_facebook_data_messages_jared_parsed_cache } from "./grace_faceboo
 import { list_first } from "./list_first.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { list_filter } from "./list_filter.mjs";
-import { identity } from "./identity.mjs";
-import { object_property_initialize } from "./object_property_initialize.mjs";
-import { list_add } from "./list_add.mjs";
 export async function sandbox_5() {
   let threads = await grace_facebook_data_messages_jared_parsed_cache();
   let thread = list_first(threads);
   let messages = object_property_get(thread, "messages");
   messages = list_filter(messages, string_empty_not_is);
-  let value_get = identity;
-  let result = {};
-  each(messages, function (message) {
-    let key = key_get(message);
-    let values = object_property_initialize(result, key, []);
-    list_add(values, value_get(message));
-  });
+  let result = list_to_groups(messages, key_get);
   let v = result;
   return v;
   function key_get(message) {
