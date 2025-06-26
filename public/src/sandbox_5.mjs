@@ -9,6 +9,7 @@ import { string_split_space } from "./string_split_space.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { identity } from "./identity.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
+import { list_add } from "./list_add.mjs";
 export async function sandbox_5() {
   let threads = await grace_facebook_data_messages_jared_parsed_cache();
   let thread = list_first(threads);
@@ -19,6 +20,7 @@ export async function sandbox_5() {
   each(messages, function (message) {
     let key = key_get(message);
     let values = object_property_initialize(result, key, []);
+    list_add(values, message);
   });
   function key_get(message) {
     let when = object_property_get(message, "when");
