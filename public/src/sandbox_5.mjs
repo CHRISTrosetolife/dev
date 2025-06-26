@@ -74,11 +74,13 @@ export async function sandbox_5() {
     let message = object_property_get(item2, "message");
     let when2 = object_property_get(item2, "when");
     result += string_combine_multiple([
+      "<p>",
       object_property_get(users, user),
       " @ ",
       when2,
       "\n",
       string_replace(message, "  ", "\n"),
+      "</p>",
       "\n\n",
     ]);
   });
