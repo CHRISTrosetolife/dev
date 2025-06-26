@@ -1,16 +1,15 @@
-import { date_to } from "./date_to.mjs";
-import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { grace_facebook_data_messages_jared_parsed_cache } from "./grace_facebook_data_messages_jared_parsed_cache.mjs";
 import { list_first } from "./list_first.mjs";
+import { string_split_space } from "./string_split_space.mjs";
 export async function sandbox_5() {
   let threads = await grace_facebook_data_messages_jared_parsed_cache();
   let thread = list_first(threads);
   let messages = object_property_get(thread, "messages");
   each(messages, function (message) {
     let when = object_property_get(message, "when");
-    object_property_set(message, "when_date", date_to(when));
+    let s = string_split_space(when);
   });
   let v = messages;
   return v;
