@@ -1,3 +1,4 @@
+import { list_wait } from "./list_wait.mjs";
 import { list_single } from "./list_single.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
@@ -15,7 +16,7 @@ import { list_map } from "./list_map.mjs";
 import { grace_facebook_data_messages_jared_cache } from "./grace_facebook_data_messages_jared_cache.mjs";
 export async function grace_facebook_data_messages_jared_parsed() {
   let v4 = await grace_facebook_data_messages_jared_cache();
-  let v2 = await list_map(v4, async function (item) {
+  let v2 = await list_wait(v4, async function (item) {
     let messages = await on_item(item);
     let path = object_property_get(item, "path");
     let v = {
