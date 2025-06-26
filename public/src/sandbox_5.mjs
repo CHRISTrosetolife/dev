@@ -1,3 +1,4 @@
+import { command_line_exec } from "./command_line_exec.mjs";
 import { folder_external_root_combine } from "./folder_external_root_combine.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each } from "./each.mjs";
@@ -20,6 +21,7 @@ import { grace_facebook_data_messages_jared_parsed_cache } from "./grace_faceboo
 import { list_includes_not } from "./list_includes_not.mjs";
 import { list_get } from "./list_get.mjs";
 import { string_replace } from "./string_replace.mjs";
+import { path_join } from "./path_join.mjs";
 export async function sandbox_5() {
   let threads = await grace_facebook_data_messages_jared_parsed_cache();
   let mapped = list_map(threads, function (thread) {
@@ -98,8 +100,12 @@ export async function sandbox_5() {
       "\n\n",
     ]);
   });
-  let v = folder_external_root_combine("output");
-  return v;
+  let output_folder = folder_external_root_combine("output");
+  let output_path = path_join([
+    output_folder,
+    string_combine_multiple([name, ".html"]),
+  ]);
+  await command_line_exec(string_combine_multiple(["start msedge ", url]));
   function longest(merged, filter) {
     let filtered = object_filter(merged, filter);
     let filtered2 = object_filter(filtered, function (key, value) {
