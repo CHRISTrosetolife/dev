@@ -33,6 +33,7 @@ export async function sandbox_5() {
     let main = html_parse_visit_tag_single(root, "main");
     let sections = html_parse_visit_tag_list(main, "section");
     let fs = list_take(sections, 10);
+    list_map(fs, $af);
     let c = html_parse_children(f);
     log({
       c: list_map(c, html_parse_tag_name),
