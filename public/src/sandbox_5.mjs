@@ -83,6 +83,7 @@ export async function sandbox_5() {
     result += string_combine_multiple([
       "<p>",
       '<span style="color: ',
+      object_property_get(object, "property_name"),
       '">',
       user_mapped,
       " @ ",
