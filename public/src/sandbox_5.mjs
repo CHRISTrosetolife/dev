@@ -1,3 +1,4 @@
+import { each_object } from "./each_object.mjs";
 import { groups_merge } from "./groups_merge.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_filter_property_string_empty_not_is } from "./list_filter_property_string_empty_not_is.mjs";
@@ -15,6 +16,7 @@ export async function sandbox_5() {
     return v2;
   });
   let merged = groups_merge(mapped);
+  each_object(object, function (key, value) {});
   let v = merged;
   return v;
 }
