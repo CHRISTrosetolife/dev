@@ -1,3 +1,4 @@
+import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { facebook_data_messages_date_get } from "./facebook_data_messages_date_get.mjs";
 import { list_to_groups } from "./list_to_groups.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -11,6 +12,8 @@ export async function sandbox_5() {
   let messages = object_property_get(thread, "messages");
   messages = list_filter(messages, function (m) {
     let message = object_property_get(m, "message");
+    let v2 = string_empty_not_is(message);
+    return v2;
   });
   let result = list_to_groups(messages, facebook_data_messages_date_get);
   let v = result;
