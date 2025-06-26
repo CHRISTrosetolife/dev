@@ -7,11 +7,13 @@ import { grace_facebook_data_messages_jared_parsed_cache } from "./grace_faceboo
 import { list_first } from "./list_first.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { list_filter } from "./list_filter.mjs";
+import { identity } from "./identity.mjs";
 export async function sandbox_5() {
   let threads = await grace_facebook_data_messages_jared_parsed_cache();
   let thread = list_first(threads);
   let messages = object_property_get(thread, "messages");
   messages = list_filter(messages, string_empty_not_is);
+  let value_get = identity;
   each(messages, function (message) {
     let key = key_get(message);
   });
