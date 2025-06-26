@@ -76,7 +76,8 @@ export async function sandbox_5() {
     let user_mapped = object_property_get(users, user);
     result += string_combine_multiple([
       "<p>",
-      '<span style=""',
+      '<span style="color: ',
+      '"',
       user_mapped,
       " @ ",
       when2,
