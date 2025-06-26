@@ -1,5 +1,3 @@
-import { exit } from "./exit.mjs";
-import { log } from "./log.mjs";
 import { list_sort_map } from "./list_sort_map.mjs";
 import { date_to } from "./date_to.mjs";
 import { each_object } from "./each_object.mjs";
@@ -27,10 +25,6 @@ export async function sandbox_5() {
       let v3 = wd;
       return v3;
     });
-    log({
-      messages,
-    });
-    exit();
   });
   let v = merged;
   return v;
