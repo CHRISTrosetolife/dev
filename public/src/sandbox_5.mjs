@@ -6,6 +6,8 @@ export async function sandbox_5() {
   let threads = await grace_facebook_data_messages_jared_parsed_cache();
   let thread = list_first(threads);
   let messages = object_property_get(thread, "messages");
+  let v = messages;
+  return v;
   each(threads, function (item) {});
   return threads;
 }
