@@ -68,7 +68,7 @@ export async function sandbox_5() {
   });
   list_sort_property(parsed, "date");
   let recent = list_take_reverse(parsed, count);
-  let messages = list_random_item(before, 0);
+  let messages = list_random_item(before);
   let result = "";
   each(messages, function (item2) {
     let name_grace = "Grace";
