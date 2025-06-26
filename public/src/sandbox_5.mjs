@@ -40,6 +40,7 @@ export async function sandbox_5() {
     return v4;
   }
   let before = object_filter(merged, before_trip);
+  let after = object_filter(merged, after_trip);
   let v = merged;
   return v;
 }
