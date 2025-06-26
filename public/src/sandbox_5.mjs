@@ -28,6 +28,9 @@ export async function sandbox_5() {
     let sections = html_parse_visit_tag_list(main, "section");
     f = list_first(sections);
     let c = html_parse_children(f);
+    log({
+      c: list_size(c),
+    });
     assert(equal, [list_size(c), 3]);
     let h2 = html_parse_visit_tag_single(c, "h2");
     let div = html_parse_visit_tag_single(c, "div");
