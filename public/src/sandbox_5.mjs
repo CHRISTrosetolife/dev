@@ -1,3 +1,4 @@
+import { list_take } from "./list_take.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
@@ -13,6 +14,7 @@ export async function sandbox_5() {
   each(messages, function (message) {
     let when = object_property_get(message, "when");
     let s = string_split_space(when);
+    let s3 = list_take(s, 3);
   });
   let v = messages;
   return v;
