@@ -1,3 +1,4 @@
+import { equal } from "./equal.mjs";
 import { list_map } from "./list_map.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { log } from "./log.mjs";
@@ -10,6 +11,8 @@ import { object_property_get } from "./object_property_get.mjs";
 import { each_async } from "./each_async.mjs";
 import { grace_facebook_data_messages_jared_cache } from "./grace_facebook_data_messages_jared_cache.mjs";
 import { list_first } from "./list_first.mjs";
+import { assert } from "./assert.mjs";
+import { list_size } from "./list_size.mjs";
 export async function sandbox_5() {
   let v4 = await grace_facebook_data_messages_jared_cache();
   let f = list_first(v4);
@@ -26,6 +29,7 @@ export async function sandbox_5() {
     let sections = html_parse_visit_tag_list(main, "section");
     f = list_first(sections);
     let c = html_parse_children(f);
+    assert(equal, [list_size(c), 3]);
     let m = list_map(c, html_parse_tag_name);
     log({
       m,
