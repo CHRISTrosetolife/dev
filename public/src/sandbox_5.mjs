@@ -68,7 +68,7 @@ export async function sandbox_5() {
     });
   });
   list_sort_property(parsed, "date");
-  let recent = list_take_reverse(parsed, count);
+  let recent = list_take_reverse(parsed, 1);
   let dates_recent = list_map_property(recent, "day");
   let before = conversations_filter(merged, before_trip);
   let after = conversations_filter(merged, after_trip);
