@@ -63,7 +63,7 @@ export async function sandbox_5() {
   let recent = list_take_reverse(parsed, count);
   let v = list_get(before, 0);
   let result = "";
-  each(list, function (item2) {});
+  each(v, function (item2) {});
   return v;
   function longest(merged, filter) {
     let filtered = object_filter(merged, filter);
