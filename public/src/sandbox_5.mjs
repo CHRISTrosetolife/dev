@@ -1,9 +1,7 @@
 import { html_parse_text } from "./html_parse_text.mjs";
 import { equal } from "./equal.mjs";
-import { list_map } from "./list_map.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { log } from "./log.mjs";
-import { html_parse_tag_name } from "./html_parse_tag_name.mjs";
 import { html_parse_children } from "./html_parse_children.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -34,7 +32,6 @@ export async function sandbox_5() {
     let h2 = html_parse_visit_tag_single(root, "h2");
     let div = html_parse_visit_tag_single(root, "div");
     let footer = html_parse_visit_tag_single(root, "footer");
-    let m = list_map(c, html_parse_tag_name);
     log({
       user: html_parse_text(h2),
       message: html_parse_text(div),
