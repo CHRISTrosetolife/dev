@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { each_object } from "./each_object.mjs";
 import { groups_merge } from "./groups_merge.mjs";
 import { list_map } from "./list_map.mjs";
@@ -16,7 +17,9 @@ export async function sandbox_5() {
     return v2;
   });
   let merged = groups_merge(mapped);
-  each_object(object, function (key, value) {});
+  each_object(merged, function (date, messages) {
+    each(list, function (item) {});
+  });
   let v = merged;
   return v;
 }
