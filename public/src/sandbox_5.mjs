@@ -5,7 +5,6 @@ import { folder_external_root_combine } from "./folder_external_root_combine.mjs
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each } from "./each.mjs";
 import { object_values_to_list } from "./object_values_to_list.mjs";
-import { list_size } from "./list_size.mjs";
 import { list_take_reverse } from "./list_take_reverse.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -128,9 +127,6 @@ export async function sandbox_5() {
       return v5;
     });
     let parsed = object_values_to_list(filtered2);
-    list_sort_map(parsed, list_size);
-    let recent = list_take_reverse(parsed, count);
-    let v6 = recent;
-    return v6;
+    return parsed;
   }
 }
