@@ -1,6 +1,5 @@
 import { list_sort_map } from "./list_sort_map.mjs";
 import { date_to } from "./date_to.mjs";
-import { each } from "./each.mjs";
 import { each_object } from "./each_object.mjs";
 import { groups_merge } from "./groups_merge.mjs";
 import { list_map } from "./list_map.mjs";
@@ -20,9 +19,6 @@ export async function sandbox_5() {
   });
   let merged = groups_merge(mapped);
   each_object(merged, function (date, messages) {
-    each(messages, function (item) {
-      let message = object_property_get(item, "message");
-    });
     list_sort_map(messages, function (item) {
       let when = object_property_get(item, "when");
       let wd = date_to(when);
