@@ -23,6 +23,7 @@ import { list_includes_not } from "./list_includes_not.mjs";
 import { list_get } from "./list_get.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { path_join } from "./path_join.mjs";
+import { file_overwrite } from "./file_overwrite.mjs";
 export async function sandbox_5() {
   let threads = await grace_facebook_data_messages_jared_parsed_cache();
   let mapped = list_map(threads, function (thread) {
@@ -106,6 +107,7 @@ export async function sandbox_5() {
     output_folder,
     string_combine_multiple([fn_name("sandbox_5"), ".html"]),
   ]);
+  await file_overwrite(output_path, result);
   await command_line_exec(output_path);
   function longest(merged, filter) {
     let filtered = object_filter(merged, filter);
