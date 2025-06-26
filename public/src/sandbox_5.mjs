@@ -16,6 +16,10 @@ export async function sandbox_5() {
   let result = list_to_groups(messages, facebook_data_messages_date_get);
   let v = result;
   return v;
+  each(threads, function (item) {});
+  return threads;
+}
+
   function facebook_data_messages_date_get(message) {
     let when = object_property_get(message, "when");
     let s = string_split_space(when);
@@ -24,6 +28,3 @@ export async function sandbox_5() {
     let v2 = s3j;
     return v2;
   }
-  each(threads, function (item) {});
-  return threads;
-}
