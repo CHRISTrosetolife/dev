@@ -45,7 +45,7 @@ export async function sandbox_5() {
   function before_trip(key, value) {
     let d = date_to(key);
     let cutoff = new Date("2025-03-22");
-    let v4 = d < cutoff && string_includes(key, "2022");
+    let v4 = d < cutoff && string_includes(key, "2024");
     return v4;
   }
   function after_trip(key, value) {
