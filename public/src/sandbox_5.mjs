@@ -66,6 +66,7 @@ export async function sandbox_5() {
   each(messages, function (item2) {
     let users = {
       ["Gra Cia"]: "Grace",
+      ["Jared Mathis"]: "Jared",
     };
   });
   return messages;
