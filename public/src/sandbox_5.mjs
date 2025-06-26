@@ -1,12 +1,15 @@
+import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { grace_facebook_data_messages_jared_parsed_cache } from "./grace_facebook_data_messages_jared_parsed_cache.mjs";
 import { list_first } from "./list_first.mjs";
 import { string_split_space } from "./string_split_space.mjs";
+import { list_filter } from "./list_filter.mjs";
 export async function sandbox_5() {
   let threads = await grace_facebook_data_messages_jared_parsed_cache();
   let thread = list_first(threads);
   let messages = object_property_get(thread, "messages");
+  list_filter(messages, string_empty_not_is);
   each(messages, function (message) {
     let when = object_property_get(message, "when");
     let s = string_split_space(when);
