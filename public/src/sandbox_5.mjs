@@ -14,6 +14,7 @@ import { facebook_data_messages_date_get } from "./facebook_data_messages_date_g
 import { list_to_groups } from "./list_to_groups.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { grace_facebook_data_messages_jared_parsed_cache } from "./grace_facebook_data_messages_jared_parsed_cache.mjs";
+import { list_includes_not } from "./list_includes_not.mjs";
 export async function sandbox_5() {
   let threads = await grace_facebook_data_messages_jared_parsed_cache();
   let mapped = list_map(threads, function (thread) {
@@ -62,7 +63,10 @@ export async function sandbox_5() {
   return v;
   function longest(merged, filter) {
     let filtered = object_filter(merged, filter);
-    let filtered2 = object_filter(filtered, function (item) {});
+    let filtered2 = object_filter(filtered, function (key, value) {
+      let v5 = list_includes_not(["Dec 22, 2022"]);
+      return v5;
+    });
     let parsed = object_values_to_list(filtered);
     list_sort_property(parsed, list_size);
     let recent = list_take_reverse(parsed, count);
