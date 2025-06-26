@@ -73,9 +73,10 @@ export async function sandbox_5() {
     let user = object_property_get(item2, "user");
     let message = object_property_get(item2, "message");
     let when2 = object_property_get(item2, "when");
+    let user_mapped = object_property_get(users, user);
     result += string_combine_multiple([
       "<p>",
-      object_property_get(users, user),
+      user_mapped,
       " @ ",
       when2,
       "\n",
