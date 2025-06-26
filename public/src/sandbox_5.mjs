@@ -60,5 +60,6 @@ export async function sandbox_5() {
   return v;
   function longest(merged, filter) {
     let filtered = object_filter(merged, filter);
+    list_sort_map(filtered, function (item) {});
   }
 }
