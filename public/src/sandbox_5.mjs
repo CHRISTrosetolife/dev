@@ -17,6 +17,7 @@ export async function sandbox_5() {
   let v4 = await grace_facebook_data_messages_jared_cache();
   let v2 = await list_map(v4, async function (item) {
     let messages = await on_item(item);
+    let path = object_property_get(item, "path");
     let v = {
       item,
       messages,
