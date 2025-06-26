@@ -19,7 +19,7 @@ export async function sandbox_5() {
   let merged = groups_merge(mapped);
   each_object(merged, function (date, messages) {
     each(list, function (item) {
-      let messages2 = object_property_get(item, "messages");
+      let message = object_property_get(item, "message");
     });
   });
   let v = merged;
