@@ -98,7 +98,7 @@ export async function sandbox_5() {
       "\n\n",
     ]);
   });
-  let v = folder_external_root_combine();
+  let v = folder_external_root_combine("output");
   return v;
   function longest(merged, filter) {
     let filtered = object_filter(merged, filter);
