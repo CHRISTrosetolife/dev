@@ -1,3 +1,4 @@
+import { object_merge_list } from "./object_merge_list.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_filter_property_string_empty_not_is } from "./list_filter_property_string_empty_not_is.mjs";
 import { facebook_data_messages_date_get } from "./facebook_data_messages_date_get.mjs";
@@ -17,8 +18,10 @@ export async function sandbox_5() {
   });
   let thread = list_first(threads);
   let merged = {};
+  each(mapped, function (group) {
+    object_merge_list(group, merged);
+  });
   let v = result;
   return v;
-  each(threads, function (item) {});
   return threads;
 }
