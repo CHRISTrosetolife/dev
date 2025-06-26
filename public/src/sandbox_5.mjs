@@ -1,7 +1,6 @@
 import { list_take } from "./list_take.mjs";
 import { list_single } from "./list_single.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
-import { html_parse_tag_name } from "./html_parse_tag_name.mjs";
 import { list_map } from "./list_map.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { equal } from "./equal.mjs";
@@ -35,9 +34,6 @@ export async function sandbox_5() {
     let fs = list_take(sections, 10);
     let m = list_map(fs, function (f) {
       let c = html_parse_children(f);
-      log({
-        c: list_map(c, html_parse_tag_name),
-      });
       assert(equal, [list_size(c), 3]);
       let h2 = html_parse_visit_tag_single(f, "h2");
       let divs = list_filter(c, function (child) {
@@ -49,6 +45,9 @@ export async function sandbox_5() {
         message: html_parse_text(list_single(divs)),
         when: html_parse_text(footer),
       };
+    });
+    log({
+      m,
     });
     return m;
   }
