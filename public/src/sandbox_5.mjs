@@ -1,3 +1,4 @@
+import { date_to } from "./date_to.mjs";
 import { each } from "./each.mjs";
 import { each_object } from "./each_object.mjs";
 import { groups_merge } from "./groups_merge.mjs";
@@ -21,6 +22,7 @@ export async function sandbox_5() {
     each(messages, function (item) {
       let message = object_property_get(item, "message");
       let when = object_property_get(item, "when");
+      let wd = date_to(when);
     });
   });
   let v = merged;
