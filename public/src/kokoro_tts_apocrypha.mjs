@@ -1,7 +1,7 @@
+import { folder_external_root_combine } from "./folder_external_root_combine.mjs";
 import { kokoro_tts } from "./kokoro_tts.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { path_join } from "./path_join.mjs";
-import { folder_external_root } from "./folder_external_root.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_join_space } from "./list_join_space.mjs";
@@ -32,7 +32,7 @@ export async function kokoro_tts_apocrypha(bible_folder) {
             let text = list_join_space(
               list_map(list_map_property(verses, "tokens"), list_join_space),
             );
-            let path = folder_external_root(
+            let path = folder_external_root_combine(
               path_join([
                 "bible",
                 "english",
