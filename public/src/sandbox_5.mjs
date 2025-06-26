@@ -1,4 +1,4 @@
-import { object_merge_list_strict } from "./object_merge_list_strict.mjs";
+import { object_merge_list } from "./object_merge_list.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_filter_property_string_empty_not_is } from "./list_filter_property_string_empty_not_is.mjs";
 import { facebook_data_messages_date_get } from "./facebook_data_messages_date_get.mjs";
