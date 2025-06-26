@@ -61,12 +61,17 @@ export async function sandbox_5() {
   return v;
   function longest(merged, filter) {
     let filtered = object_filter(merged, filter);
-    list_sort_map(filtered, function (item) {
+    let parsed = list_adder(function (la) {
+      each_object(filtered, function (key, value) {
+        la(value);
+      });
+    });
+    list_sort_map(parsed, function (item) {
       let messages2 = object_property_get(item, "messages");
       let v5 = list_size(messages2);
       return v5;
     });
-    let recent = list_take_reverse(filtered, count);
+    let recent = list_take_reverse(parsed, count);
     let v6 = recent;
     return v6;
   }
