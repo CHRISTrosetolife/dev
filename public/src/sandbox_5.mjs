@@ -33,21 +33,22 @@ export async function sandbox_5() {
     let main = html_parse_visit_tag_single(root, "main");
     let sections = html_parse_visit_tag_list(main, "section");
     let fs = list_take(sections, 10);
-    list_map(fs, function (f) {});
-    let c = html_parse_children(f);
-    log({
-      c: list_map(c, html_parse_tag_name),
-    });
-    assert(equal, [list_size(c), 3]);
-    let h2 = html_parse_visit_tag_single(f, "h2");
-    let divs = list_filter(c, function (child) {
-      return html_parse_tag_named(child, "div");
-    });
-    let footer = html_parse_visit_tag_single(f, "footer");
-    log({
-      user: html_parse_text(h2),
-      message: html_parse_text(list_single(divs)),
-      when: html_parse_text(footer),
+    list_map(fs, function (f) {
+      let c = html_parse_children(f);
+      log({
+        c: list_map(c, html_parse_tag_name),
+      });
+      assert(equal, [list_size(c), 3]);
+      let h2 = html_parse_visit_tag_single(f, "h2");
+      let divs = list_filter(c, function (child) {
+        return html_parse_tag_named(child, "div");
+      });
+      let footer = html_parse_visit_tag_single(f, "footer");
+      return {
+        user: html_parse_text(h2),
+        message: html_parse_text(list_single(divs)),
+        when: html_parse_text(footer),
+      };
     });
   }
 }
