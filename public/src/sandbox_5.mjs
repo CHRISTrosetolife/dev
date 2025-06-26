@@ -10,7 +10,7 @@ export async function sandbox_5() {
   let messages = object_property_get(thread, "messages");
   each(messages, function (message) {
     let when = object_property_get(message, "when");
-    object_property_set(message, "when_date", date_to());
+    object_property_set(message, "when_date", date_to(when));
   });
   let v = messages;
   return v;
