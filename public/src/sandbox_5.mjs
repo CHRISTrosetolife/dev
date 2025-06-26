@@ -55,8 +55,6 @@ export async function sandbox_5() {
     return v4;
   }
   let count = 5;
-  let before = conversations_filter(merged, before_trip);
-  let after = conversations_filter(merged, after_trip);
   let parsed = list_adder(function (la) {
     each_object(merged, function (date_string, messages) {
       let date = date_to(date_string);
@@ -68,6 +66,8 @@ export async function sandbox_5() {
   });
   list_sort_property(parsed, "date");
   let recent = list_take_reverse(parsed, count);
+  let before = conversations_filter(merged, before_trip);
+  let after = conversations_filter(merged, after_trip);
   let messages = list_random_item(before);
   let result = "";
   each(messages, function (item2) {
