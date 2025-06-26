@@ -26,15 +26,17 @@ export async function sandbox_5() {
       return v3;
     });
   });
-  let result = [];
   function before_trip(key, value) {
     let d = date_to(key);
     let cutoff = new Date("2025-03-22");
     let v4 = d < cutoff;
     return v4;
   }
+  let result = {};
   each_object(merged, function (key, value) {
     let include = before_trip(key, value);
+    if (false) {
+    }
   });
   let v = merged;
   return v;
