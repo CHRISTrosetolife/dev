@@ -44,8 +44,8 @@ export async function sandbox_5() {
     return v4;
   }
   let count = 5;
-  let before = object_filter(merged, before_trip);
-  let after = object_filter(merged, after_trip);
+  let before = longest(merged, before_trip);
+  let after = longest(merged, after_trip);
   let parsed = list_adder(function (la) {
     each_object(merged, function (date_string, messages) {
       let date = date_to(date_string);
