@@ -22,6 +22,8 @@ export async function sandbox_5() {
     let values = object_property_initialize(result, key, []);
     list_add(values, value_get(message));
   });
+  let v = result;
+  return v;
   function key_get(message) {
     let when = object_property_get(message, "when");
     let s = string_split_space(when);
@@ -30,8 +32,6 @@ export async function sandbox_5() {
     let v2 = s3j;
     return v2;
   }
-  let v = messages;
-  return v;
   each(threads, function (item) {});
   return threads;
 }
