@@ -1,3 +1,4 @@
+import { object_values_to_list } from "./object_values_to_list.mjs";
 import { list_size } from "./list_size.mjs";
 import { list_take_reverse } from "./list_take_reverse.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
@@ -61,11 +62,7 @@ export async function sandbox_5() {
   return v;
   function longest(merged, filter) {
     let filtered = object_filter(merged, filter);
-    let parsed = list_adder(function (la) {
-      each_object(filtered, function (key, value) {
-        la(value);
-      });
-    });
+    let parsed = object_values_to_list(filtered);
     list_sort_map(parsed, function (item) {
       let messages2 = object_property_get(item, "messages");
       let v5 = list_size(messages2);
