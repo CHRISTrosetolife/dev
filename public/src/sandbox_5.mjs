@@ -97,6 +97,7 @@ export async function sandbox_5() {
   messages = list_random_item(after);
   await facebook_data_messages_to_html_open(messages);
   function before_trip(item) {
+    let day2 = object_property_get(item, "day");
     let d = date_to(key);
     let cutoff = new Date("2025-03-22");
     let v4 = d < cutoff && string_includes(key, "2025");
