@@ -38,6 +38,43 @@ export async function sandbox_5() {
       return v3;
     });
   });
+  let filtered2 = object_filter(merged, function (key, value) {
+    let v5 = list_includes_not(
+      list_concat(
+        [
+          "Dec 22, 2022",
+          "Dec 25, 2022",
+          "Dec 27, 2022",
+          "Dec 28, 2022",
+          "Dec 30, 2022",
+          "Dec 31, 2022",
+          "Jun 13, 2023",
+          "Jul 08, 2023",
+          "Jul 19, 2023",
+          "Jul 20, 2023",
+          "Feb 12, 2024",
+          "Feb 26, 2024",
+          "Apr 22, 2024",
+          "May 18, 2024",
+          "Jul 16, 2024",
+          "Jul 22, 2024",
+          "Nov 02, 2024",
+          "Nov 28, 2024",
+          "Jan 08, 2025",
+          "Feb 27, 2025",
+          "Mar 13, 2025",
+          "Mar 19, 2025",
+          "Apr 09, 2025",
+          "Apr 06, 2025",
+          "Apr 19, 2025",
+          "Jun 02, 2025",
+        ],
+        dates_recent,
+      ),
+      key,
+    );
+    return v5;
+  });
   function before_trip(key, value) {
     let d = date_to(key);
     let cutoff = new Date("2025-03-22");
@@ -51,7 +88,7 @@ export async function sandbox_5() {
     return v4;
   }
   let parsed = list_adder(function (la) {
-    each_object(merged, function (date_string, messages) {
+    each_object(filtered2, function (date_string, messages) {
       let date = date_to(date_string);
       let day = date_string;
       la({
@@ -62,10 +99,10 @@ export async function sandbox_5() {
     });
   });
   list_sort_property(parsed, "date");
+  let before = object_filter(parsed, before_trip);
+  let after = object_filter(parsed, after_trip);
   let recents = list_take_reverse(parsed, 5);
   let dates_recent = list_map_property(recents, "day");
-  let before = conversations_filter(merged, before_trip);
-  let after = conversations_filter(merged, after_trip);
   let messages = list_random_item(before);
   let recent = list_first(recents);
   messages = object_property_get(recent, "messages");
@@ -73,43 +110,6 @@ export async function sandbox_5() {
   await facebook_data_messages_to_html_open(messages);
   function conversations_filter(merged, filter) {
     let filtered = object_filter(merged, filter);
-    let filtered2 = object_filter(filtered, function (key, value) {
-      let v5 = list_includes_not(
-        list_concat(
-          [
-            "Dec 22, 2022",
-            "Dec 25, 2022",
-            "Dec 27, 2022",
-            "Dec 28, 2022",
-            "Dec 30, 2022",
-            "Dec 31, 2022",
-            "Jun 13, 2023",
-            "Jul 08, 2023",
-            "Jul 19, 2023",
-            "Jul 20, 2023",
-            "Feb 12, 2024",
-            "Feb 26, 2024",
-            "Apr 22, 2024",
-            "May 18, 2024",
-            "Jul 16, 2024",
-            "Jul 22, 2024",
-            "Nov 02, 2024",
-            "Nov 28, 2024",
-            "Jan 08, 2025",
-            "Feb 27, 2025",
-            "Mar 13, 2025",
-            "Mar 19, 2025",
-            "Apr 09, 2025",
-            "Apr 06, 2025",
-            "Apr 19, 2025",
-            "Jun 02, 2025",
-          ],
-          dates_recent,
-        ),
-        key,
-      );
-      return v5;
-    });
     let parsed = object_values_to_list(filtered2);
     return parsed;
   }
