@@ -8,7 +8,7 @@ export function prayers_big() {
     "May there be life and life abundantly",
     "May the coming of the day of God be hastened",
     "for each member of the body of Christ, including future members, for each gift they could receive from God and each gift I have, if it would give the member more love or more treasure in heaven, may they they receive the gift, immediately and irrevocably",
-    "for each memeber of the body of Christ, including future members, let them perfectly use all of their money and possessions to maximize their love and treasure in heaven",
+    "for each member of the body of Christ, including future members, let them perfectly use all of their money and possessions to maximize their love and treasure in heaven",
     "Bless, help and provide for each person who has asked me to pray for them or give materially",
     "Answer all the prayer requests every Christian including me should be praying and help any others You desire to pray like this",
     "Protect all humans, including love and I, and all angels of the LORD from all spiritual beings who are acting against the LORD",
