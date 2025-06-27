@@ -8,7 +8,7 @@ export async function sandbox_5() {
   let day_first = list_first(parsed);
   let messages = object_property_get(day_first, "messages");
   log({
-    parsed,
+    messages,
   });
   await facebook_data_messages_to_html_open(messages);
 }
