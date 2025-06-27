@@ -6,7 +6,7 @@ import { list_first } from "./list_first.mjs";
 export async function sandbox_5() {
   let parsed = await grace_facebook_data_messages_jared_parsed_list();
   let day_first = list_first(parsed);
-  let messages2 = object_property_get(day_first, "messages");
+  let messages = object_property_get(day_first, "messages");
   log({
     parsed,
   });
