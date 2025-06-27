@@ -24,5 +24,7 @@ export async function sandbox_5() {
     });
   });
   let messages = list_concat_multiple(list);
+  let v2 = messages;
+  return v2;
   await facebook_data_messages_to_html_open(messages);
 }
