@@ -77,47 +77,7 @@ export async function sandbox_5() {
   let recent = list_first(recents);
   messages = object_property_get(recent, "messages");
   messages = list_random_item(after);
-  let result = "";
-  each(messages, function (item2) {
-    let name_grace = "Grace";
-    let name_jared = "Jared";
-    let users = {
-      ["Gra Cia"]: name_grace,
-      ["Jared Mathis"]: name_jared,
-      ["Ja Ma"]: name_jared,
-    };
-    let colors = {
-      [name_grace]: "darkgreen",
-      [name_jared]: "darkred",
-    };
-    let user = object_property_get(item2, "user");
-    let message = object_property_get(item2, "message");
-    let when2 = object_property_get(item2, "when");
-    let user_mapped = object_property_get(users, user);
-    result += string_combine_multiple([
-      "<p>",
-      '<span style="color: ',
-      object_property_get(colors, user_mapped),
-      '">',
-      user_mapped,
-      "</span>",
-      '<span style="color: darkgray">',
-      " @ ",
-      when2,
-      "</span>",
-      "<br>",
-      string_replace(message, "  ", "<br><br>"),
-      "</p>",
-      "\n\n",
-    ]);
-  });
-  let output_folder = folder_external_root_combine("output");
-  let output_path = path_join([
-    output_folder,
-    string_combine_multiple([fn_name("sandbox_5"), ".html"]),
-  ]);
-  await file_overwrite(output_path, result);
-  await command_line_exec(output_path);
+  await facebook_data_messages_to_html_open(messages);
   function conversations_filter(merged, filter) {
     let filtered = object_filter(merged, filter);
     let filtered2 = object_filter(filtered, function (key, value) {
@@ -161,3 +121,52 @@ export async function sandbox_5() {
     return parsed;
   }
 }
+async function facebook_data_messages_to_html_open(messages) {
+    let result = facebook_data_messages_to_html(messages);
+    let output_folder = folder_external_root_combine("output");
+    let output_path = path_join([
+        output_folder,
+        string_combine_multiple([fn_name("sandbox_5"), ".html"]),
+    ]);
+    await file_overwrite(output_path, result);
+    await command_line_exec(output_path);
+}
+
+function facebook_data_messages_to_html(messages) {
+    let result = "";
+    each(messages, function (item2) {
+        let name_grace = "Grace";
+        let name_jared = "Jared";
+        let users = {
+            ["Gra Cia"]: name_grace,
+            ["Jared Mathis"]: name_jared,
+            ["Ja Ma"]: name_jared,
+        };
+        let colors = {
+            [name_grace]: "darkgreen",
+            [name_jared]: "darkred",
+        };
+        let user = object_property_get(item2, "user");
+        let message = object_property_get(item2, "message");
+        let when2 = object_property_get(item2, "when");
+        let user_mapped = object_property_get(users, user);
+        result += string_combine_multiple([
+            "<p>",
+            '<span style="color: ',
+            object_property_get(colors, user_mapped),
+            '">',
+            user_mapped,
+            "</span>",
+            '<span style="color: darkgray">',
+            " @ ",
+            when2,
+            "</span>",
+            "<br>",
+            string_replace(message, "  ", "<br><br>"),
+            "</p>",
+            "\n\n",
+        ]);
+    });
+    return result;
+}
+
