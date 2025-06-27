@@ -15,11 +15,7 @@ export async function sandbox_5() {
     each(parsed, function (day) {
       let messages = object_property_get(day, "messages");
       let mapped = list_map_property(messages, "message");
-      log({
-        mapped,
-      });
       let match = list_any(mapped, function (m) {
-        log(m);
         let v = string_includes(m, search_term);
         return v;
       });
