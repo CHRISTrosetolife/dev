@@ -1,11 +1,7 @@
+import { facebook_data_messages_to_html_open } from "./facebook_data_messages_to_html_open.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_random_item } from "./list_random_item.mjs";
-import { fn_name } from "./fn_name.mjs";
-import { command_line_exec } from "./command_line_exec.mjs";
-import { folder_external_root_combine } from "./folder_external_root_combine.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { each } from "./each.mjs";
 import { object_values_to_list } from "./object_values_to_list.mjs";
 import { list_take_reverse } from "./list_take_reverse.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
@@ -22,9 +18,6 @@ import { list_to_groups } from "./list_to_groups.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { grace_facebook_data_messages_jared_parsed_cache } from "./grace_facebook_data_messages_jared_parsed_cache.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
-import { string_replace } from "./string_replace.mjs";
-import { path_join } from "./path_join.mjs";
-import { file_overwrite } from "./file_overwrite.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { list_first } from "./list_first.mjs";
 export async function sandbox_5() {
@@ -121,52 +114,3 @@ export async function sandbox_5() {
     return parsed;
   }
 }
-async function facebook_data_messages_to_html_open(messages) {
-    let result = facebook_data_messages_to_html(messages);
-    let output_folder = folder_external_root_combine("output");
-    let output_path = path_join([
-        output_folder,
-        string_combine_multiple([fn_name("sandbox_5"), ".html"]),
-    ]);
-    await file_overwrite(output_path, result);
-    await command_line_exec(output_path);
-}
-
-function facebook_data_messages_to_html(messages) {
-    let result = "";
-    each(messages, function (item2) {
-        let name_grace = "Grace";
-        let name_jared = "Jared";
-        let users = {
-            ["Gra Cia"]: name_grace,
-            ["Jared Mathis"]: name_jared,
-            ["Ja Ma"]: name_jared,
-        };
-        let colors = {
-            [name_grace]: "darkgreen",
-            [name_jared]: "darkred",
-        };
-        let user = object_property_get(item2, "user");
-        let message = object_property_get(item2, "message");
-        let when2 = object_property_get(item2, "when");
-        let user_mapped = object_property_get(users, user);
-        result += string_combine_multiple([
-            "<p>",
-            '<span style="color: ',
-            object_property_get(colors, user_mapped),
-            '">',
-            user_mapped,
-            "</span>",
-            '<span style="color: darkgray">',
-            " @ ",
-            when2,
-            "</span>",
-            "<br>",
-            string_replace(message, "  ", "<br><br>"),
-            "</p>",
-            "\n\n",
-        ]);
-    });
-    return result;
-}
-
