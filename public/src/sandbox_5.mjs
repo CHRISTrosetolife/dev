@@ -9,6 +9,6 @@ export async function sandbox_5() {
   let messages = object_property_get(day_first, "messages");
   log({
     messages,
-  });
+  });$r
   await facebook_data_messages_to_html_open(messages);
 }
