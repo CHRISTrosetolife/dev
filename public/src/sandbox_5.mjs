@@ -18,7 +18,8 @@ export async function sandbox_5() {
         let v = string_includes(m, search_term);
         return v;
       });
-      if (false) {
+      if (match) {
+        la(messages);
       }
     });
   });
