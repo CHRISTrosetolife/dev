@@ -16,11 +16,11 @@ export async function sandbox_5() {
       let messages = object_property_get(day, "messages");
       let mapped = list_map_property(messages, "message");
       let match = list_includes(mapped, function (m) {
+        log(m);
         let v = string_includes(m, search_term);
         return v;
       });
       if (match) {
-        log("a");
         la(messages);
       }
     });
