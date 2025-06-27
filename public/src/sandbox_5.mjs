@@ -14,8 +14,10 @@ export async function sandbox_5() {
   let messages = object_property_get(day_first, "messages");
   let mapped = list_map(messages, "message");
   let combined = list_join_space(texts);
-  list_includes(mapped, function (m) {});
-  string_includes(wedding);
+  list_includes(mapped, function (m) {
+    let v = string_includes(m, search_term);
+    return v;
+  });
   log({
     messages,
   });
