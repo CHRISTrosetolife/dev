@@ -57,7 +57,6 @@ export async function sandbox_5() {
     let v4 = d >= cutoff;
     return v4;
   }
-  let count = 5;
   let parsed = list_adder(function (la) {
     each_object(merged, function (date_string, messages) {
       let date = date_to(date_string);
