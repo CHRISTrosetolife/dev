@@ -1,3 +1,4 @@
+import { list_filter } from "./list_filter.mjs";
 import { facebook_data_messages_to_html_open } from "./facebook_data_messages_to_html_open.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_map_property } from "./list_map_property.mjs";
@@ -86,8 +87,8 @@ export async function sandbox_5() {
     });
   });
   list_sort_property(parsed, "date");
-  let before = object_filter(parsed, before_trip);
-  let after = object_filter(parsed, after_trip);
+  let before = list_filter(parsed, before_trip);
+  let after = list_filter(parsed, after_trip);
   let recents = list_take_reverse(parsed, 5);
   let dates_recent = list_map_property(recents, "day");
   let messages = list_random_item(before);
