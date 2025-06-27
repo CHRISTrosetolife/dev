@@ -1,3 +1,4 @@
+import { list_reverse } from "./list_reverse.mjs";
 import { list_any } from "./list_any.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
@@ -10,6 +11,7 @@ import { string_includes } from "./string_includes.mjs";
 export async function sandbox_5() {
   let search_term = "wedding";
   let parsed = await grace_facebook_data_messages_jared_parsed_list();
+  list_reverse(parsed);
   let list = list_adder(function (la) {
     each(parsed, function (day) {
       let messages = object_property_get(day, "messages");
