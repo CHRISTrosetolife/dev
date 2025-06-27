@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -19,6 +20,7 @@ export async function sandbox_5() {
         return v;
       });
       if (match) {
+        log("a");
         la(messages);
       }
     });
