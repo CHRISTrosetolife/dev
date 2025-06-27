@@ -2,7 +2,6 @@ import { facebook_data_messages_to_html_open } from "./facebook_data_messages_to
 import { list_concat } from "./list_concat.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_random_item } from "./list_random_item.mjs";
-import { object_values_to_list } from "./object_values_to_list.mjs";
 import { list_take_reverse } from "./list_take_reverse.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -108,9 +107,4 @@ export async function sandbox_5() {
   messages = object_property_get(recent, "messages");
   messages = list_random_item(after);
   await facebook_data_messages_to_html_open(messages);
-  function conversations_filter(merged, filter) {
-    let filtered = object_filter(merged, filter);
-    let parsed = object_values_to_list(filtered2);
-    return parsed;
-  }
 }
