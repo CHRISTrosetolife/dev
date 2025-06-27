@@ -1,5 +1,4 @@
 import { list_any } from "./list_any.mjs";
-import { log } from "./log.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -25,7 +24,5 @@ export async function sandbox_5() {
     });
   });
   let messages = list_concat_multiple(list);
-  let v2 = messages;
-  return v2;
   await facebook_data_messages_to_html_open(messages);
 }
