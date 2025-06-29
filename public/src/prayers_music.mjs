@@ -28,6 +28,7 @@ export function prayers_music() {
     "Reawaken Hymns",
     "SovereignGraceMusic",
     "Charity Gayle music",
+    "The Psalms Project",
   ];
   let v2 = prayers_list_generic_5(v, prayers_sabbw, string_prefix_and);
   return v2;
