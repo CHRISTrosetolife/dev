@@ -34,6 +34,7 @@ export async function app_contact_main() {
   html_rows_set(t, 8);
   let response;
   html_button(root, "Send message to me", async function () {
+    log("here");
     let value = html_value_get(t);
     let output = app_contact_respond(value);
     log({
