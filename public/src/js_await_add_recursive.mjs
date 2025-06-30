@@ -17,7 +17,7 @@ import { js_declaration_single_async_is } from "./js_declaration_single_async_is
 import { list_add } from "./list_add.mjs";
 import { js_declaration_single_name } from "./js_declaration_single_name.mjs";
 import { data_functions } from "./data_functions.mjs";
-export async function js_await_add_recursive(ast, stack) {
+export async function js_await_add_recursive(stack, ast) {
   let functions = await data_functions();
   let this_name = js_declaration_single_name(ast);
   list_add(stack, this_name);
