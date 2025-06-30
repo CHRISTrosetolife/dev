@@ -71,8 +71,8 @@ export async function js_await_add_recursive(ast, stack) {
     let difference = list_difference(importings, stack);
     each(difference, async function (importing) {
       if (!data_functions_async_is(functions, importing)) {
-        let ast_importing = await function_parse();
-        await js_await_add_recursive(ast, stack);
+        let ast_importing = await function_parse(importing);
+        await js_await_add_recursive(ast_importing, stack);
       }
     });
   }
