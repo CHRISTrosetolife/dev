@@ -20,6 +20,7 @@ export function function_aliases() {
   function_aliases_register(all, fn_name("app_dev_screenshots"), ["ds"]);
   function_aliases_register(all, fn_name("exit"), exit_aliases());
   function_aliases_register(all, fn_name("firebase_deploy"), ["f"]);
+  function_aliases_register(all, fn_name("function_deploy"), ["fd"]);
   function_aliases_register(all, fn_name("function_cache_new_run"), ["fc"]);
   function_aliases_register(all, fn_name("function_cache_delete"), ["fcd"]);
   function_aliases_register(all, fn_name("function_cache_new"), ["fcn"]);
