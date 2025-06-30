@@ -35,7 +35,7 @@ export async function app_contact_main() {
   html_button(root, "Send message to me", async function () {
     let value = html_value_get(t);
     let output = app_contact_respond(value);
-    if (value === null) {
+    if (output === null) {
       html_p_text(
         response,
         "💻 Computer program was not able to answer this message",
