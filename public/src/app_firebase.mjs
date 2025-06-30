@@ -11,9 +11,9 @@ export async function app_firebase(a) {
   let root = html_style_default_initialize();
   on_initialized();
   await html_script_axios(root);
-  firebase_initialize();
+  await firebase_initialize();
   let auth = firebase_auth();
-  onAuthStateChanged(auth, async (user) => {
+  onAuthStateChanged(auth, async function (user) {
     if (user) {
       await on_logged_in({
         root,
