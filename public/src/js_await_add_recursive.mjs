@@ -27,6 +27,9 @@ export async function js_await_add_recursive(ast, stack) {
     let { callee } = node;
     if (callee.type === "Identifier") {
       let { name } = callee;
+      log({
+        name,
+      });
       if (data_functions_async_is(functions, name)) {
         let { parent } = v;
         let { type: parent_type } = parent;
