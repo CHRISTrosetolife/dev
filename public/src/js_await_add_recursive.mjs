@@ -1,3 +1,4 @@
+import { function_parse } from "./function_parse.mjs";
 import { assert } from "./assert.mjs";
 import { list_remove_last } from "./list_remove_last.mjs";
 import { each } from "./each.mjs";
@@ -70,6 +71,7 @@ export async function js_await_add_recursive(ast, stack) {
     let difference = list_difference(importings, stack);
     each(difference, async function (importing) {
       if (!data_functions_async_is(functions, importing)) {
+        let ast_importing = await function_parse();
         await js_await_add_recursive(ast, stack);
       }
     });
