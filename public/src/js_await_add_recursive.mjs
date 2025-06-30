@@ -1,3 +1,4 @@
+import { data_functions_async_set } from "./data_functions_async_set.mjs";
 import { js_asyncify_recursive } from "./js_asyncify_recursive.mjs";
 import { assert } from "./assert.mjs";
 import { list_remove_last } from "./list_remove_last.mjs";
@@ -63,6 +64,7 @@ export async function js_await_add_recursive(ast, stack, functions) {
   });
   let async_after = js_declaration_single_async_is(ast);
   if (!async_before && async_after) {
+    data_functions_async_set(functions, this_name, true);
     log(string_combine_multiple([this_name, " made async"]));
     await js_asyncify_recursive(this_name, stack, functions);
   }
