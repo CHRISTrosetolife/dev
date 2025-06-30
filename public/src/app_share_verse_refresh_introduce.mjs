@@ -26,7 +26,6 @@ export function app_share_verse_refresh_introduce() {
       " years old. ",
     ]),
     string_combine_multiple([me_location(), ". "]),
-    "",
     emoji_wrap_music(
       string_combine_multiple([
         "Here are my Bible song videos: ",
