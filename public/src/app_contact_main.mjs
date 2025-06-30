@@ -20,7 +20,7 @@ import { firebase_initialize } from "./firebase_initialize.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 export async function app_contact_main() {
   let root = html_style_default_initialize();
-  firebase_initialize();
+  await firebase_initialize();
   let id = storage_local_initialize(app_contact, "id", await uuid());
   app_contact_instructions(root);
   let t = html_textarea_width_full_placeholder_storage_local(
