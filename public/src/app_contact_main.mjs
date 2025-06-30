@@ -39,9 +39,6 @@ export async function app_contact_main() {
     let value = html_value_get(t);
     let output = app_contact_respond(value);
     html_clear(response);
-    log({
-      output,
-    });
     if (output === null) {
       html_p_text(
         response,
