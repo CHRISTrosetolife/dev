@@ -1,3 +1,4 @@
+import { html_clear } from "./html_clear.mjs";
 import { log } from "./log.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
@@ -37,6 +38,7 @@ export async function app_contact_main() {
     log("here");
     let value = html_value_get(t);
     let output = app_contact_respond(value);
+    html_clear(response);
     log({
       output,
     });
