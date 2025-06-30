@@ -1,3 +1,4 @@
+import { function_transform } from "./function_transform.mjs";
 import { each_async } from "./each_async.mjs";
 import { log } from "./log.mjs";
 import { js_await_add_recursive } from "./js_await_add_recursive.mjs";
@@ -22,6 +23,7 @@ export async function js_asyncify_recursive(this_name, stack, functions) {
     if (!async_is) {
       let ast_importing = await function_parse(importing);
       await js_await_add_recursive(ast_importing, stack);
+      await function_transform();
     }
   });
 }
