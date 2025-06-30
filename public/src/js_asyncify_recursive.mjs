@@ -19,11 +19,9 @@ export async function js_asyncify_recursive(this_name, stack, functions) {
       importing,
       async_is,
     });
-    if (!async_is) {
-      await function_transform(importing, async function (ast) {
-        let v = await js_await_add_recursive(ast_importing, stack, functions);
-        return v;
-      });
-    }
+    await function_transform(importing, async function (ast) {
+      let v = await js_await_add_recursive(ast_importing, stack, functions);
+      return v;
+    });
   });
 }
