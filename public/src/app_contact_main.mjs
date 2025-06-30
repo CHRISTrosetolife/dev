@@ -1,5 +1,4 @@
 import { html_clear } from "./html_clear.mjs";
-import { log } from "./log.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
 import { html_value_set } from "./html_value_set.mjs";
@@ -20,6 +19,7 @@ import { app_contact } from "./app_contact.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { firebase_initialize } from "./firebase_initialize.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
+import e from "cors";
 export async function app_contact_main() {
   let root = html_style_default_initialize();
   await firebase_initialize();
@@ -35,35 +35,38 @@ export async function app_contact_main() {
   html_rows_set(t, 8);
   let response;
   html_button(root, "Send message to me", async function () {
-    log("here");
-    let value = html_value_get(t);
-    let output = app_contact_respond(value);
     html_clear(response);
-    if (output === null) {
-      html_p_text(
-        response,
-        "💻 Computer program was not able to answer this message",
-      );
-      let file_name = file_name_json(id);
-      let path = app_contact_firebase_folder_combine(file_name);
-      await firebase_upload_object(path, {
-        message: value,
-      });
-      html_p_text_multiple(response, [
-        "📬 Your message has been sent to me",
-        "📝 Lord-willing, I will answer",
-        "⏰️ Please refresh this page later to see if I have answered",
-      ]);
-    } else {
-      if (false) {
-        html_p_text(response, "💻 Computer program answered for me:");
+    try {
+      let value = html_value_get(t);
+      let output = app_contact_respond(value);
+      if (output === null) {
+        html_p_text(
+          response,
+          "💻 Computer program was not able to answer this message",
+        );
+        let file_name = file_name_json(id);
+        let path = app_contact_firebase_folder_combine(file_name);
+        await firebase_upload_object(path, {
+          message: value,
+        });
+        html_p_text_multiple(response, [
+          "📬 Your message has been sent to me",
+          "📝 Lord-willing, I will answer",
+          "⏰️ Please refresh this page later to see if I have answered",
+        ]);
+      } else {
+        if (false) {
+          html_p_text(response, "💻 Computer program answered for me:");
+        }
+        let r = html_p_text(response, output);
+        if (false) {
+          html_style_bold(r);
+        }
+        html_value_set(t, "");
+        html_scroll_center(response);
       }
-      let r = html_p_text(response, output);
-      if (false) {
-        html_style_bold(r);
-      }
-      html_value_set(t, "");
-      html_scroll_center(response);
+    } catch (e) {
+      html_p_text(response, e);
     }
   });
   response = html_p(root);
