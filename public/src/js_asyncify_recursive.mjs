@@ -23,7 +23,7 @@ export async function js_asyncify_recursive(this_name, stack, functions) {
     if (!async_is) {
       let ast_importing = await function_parse(importing);
       await js_await_add_recursive(ast_importing, stack);
-      await function_transform();
+      await function_transform(importing, function (ast) {});
     }
   });
 }
