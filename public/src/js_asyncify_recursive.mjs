@@ -14,7 +14,12 @@ export async function js_asyncify_recursive(this_name, stack, functions) {
     difference,
   });
   await each_async(difference, async function (importing) {
-    if (!data_functions_async_is(functions, importing)) {
+    let async_is = data_functions_async_is(functions, importing);
+    log({
+      importing,
+      async_is,
+    });
+    if (!async_is) {
       let ast_importing = await function_parse(importing);
       await js_await_add_recursive(ast_importing, stack);
     }
