@@ -22,9 +22,9 @@ export async function js_asyncify_recursive(this_name, stack, functions) {
     });
     if (!async_is) {
       let ast_importing = await function_parse(importing);
-      await js_await_add_recursive(stack, ast_importing, functions);
+      await js_await_add_recursive(ast_importing, stack, functions);
       await function_transform(importing, async function (ast) {
-        let v = await js_await_add_recursive(stack, ast_importing, functions);
+        let v = await js_await_add_recursive(ast_importing, stack, functions);
         return v;
       });
     }

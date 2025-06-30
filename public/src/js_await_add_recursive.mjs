@@ -16,7 +16,7 @@ import { js_visit_node } from "./js_visit_node.mjs";
 import { js_declaration_single_async_is } from "./js_declaration_single_async_is.mjs";
 import { list_add } from "./list_add.mjs";
 import { js_declaration_single_name } from "./js_declaration_single_name.mjs";
-export async function js_await_add_recursive(stack, ast, functions) {
+export async function js_await_add_recursive(ast, stack, functions) {
   let this_name = js_declaration_single_name(ast);
   list_add(stack, this_name);
   let async_before = js_declaration_single_async_is(ast);
