@@ -11,6 +11,8 @@ export async function app_contact_download() {
   let prefix = app_contact_firebase_folder_prefix();
   let file_paths = await storage_files_download(prefix);
   let file_paths_size = list_size(file_paths);
+  if (false) {
+  }
   log({
     file_paths_size,
   });
