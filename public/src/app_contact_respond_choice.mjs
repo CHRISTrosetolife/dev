@@ -18,7 +18,7 @@ export function app_contact_respond_choice(tokens, offset, outputs, choice) {
         item,
       });
       if (item === current) {
-        offset_next = index;
+        offset_next = index + 1;
       } else {
         match = false;
       }
