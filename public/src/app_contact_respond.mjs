@@ -19,6 +19,7 @@ export function app_contact_respond(input) {
   log({
     offset,
     output,
+    outputs,
   });
   return output;
   function lambda(change) {
