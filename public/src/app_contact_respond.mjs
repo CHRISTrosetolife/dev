@@ -13,6 +13,10 @@ export function app_contact_respond(input) {
   let change = true;
   while (change) {
     change = false;
+    change = lambda();
+  }
+  return output;
+  function lambda() {
     each(choices, function (choice) {
       let offset_next = app_contact_respond_choice(
         tokens,
@@ -25,5 +29,4 @@ export function app_contact_respond(input) {
       }
     });
   }
-  return output;
 }
