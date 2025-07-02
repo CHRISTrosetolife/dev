@@ -1,3 +1,4 @@
+import { app_url } from "./app_url.mjs";
 import { app_memorize_name } from "./app_memorize_name.mjs";
 import { app_dev_name } from "./app_dev_name.mjs";
 import { app_learn_code_name } from "./app_learn_code_name.mjs";
@@ -61,11 +62,7 @@ export function app_resume_generic(print, anonymous) {
   html_email(row, anonymous ? "email@address.com" : me_email());
   html_spacer_bullet(row);
   let a_name = "resume";
-  let website_url = string_combine_multiple([
-    "https://letjesusbeexalted.web.app/",
-    a_name,
-    ".html",
-  ]);
+  let website_url = app_url(a_name);
   html_link(row, website_url);
   app_resume_header_2(root, "Projects");
   let dev = app_resume_header_3(root, app_dev_name());
