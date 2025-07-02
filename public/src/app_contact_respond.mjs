@@ -64,7 +64,7 @@ export function app_contact_respond(input) {
     },
   ];
   let offset = 0;
-  each(list, function (item) {
+  each(choices, function (choice) {
     offset = app_contact_respond_choice(
       tokens,
       offset,
