@@ -1,10 +1,11 @@
+import { string_split_space } from "./string_split_space.mjs";
 import { log } from "./log.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
 export function app_contact_respond(input) {
   let lower = string_case_lower(input);
-  let split = list_split_space(lower);
+  let split = string_split_space(lower);
   log({
     split,
   });
