@@ -62,8 +62,7 @@ export function app_resume_generic(print, anonymous) {
   html_email(row, anonymous ? "email@address.com" : me_email());
   html_spacer_bullet(row);
   let a_name = "resume";
-  let website_url = app_url(a_name);
-  html_link(row, website_url);
+  html_link_app(a_name, row);
   app_resume_header_2(root, "Projects");
   let dev = app_resume_header_3(root, app_dev_name());
   html_cycle_p(
@@ -177,3 +176,8 @@ export function app_resume_generic(print, anonymous) {
     "Bachelor of Science in Computer Science ~2013; Computer Science Student of the Year Award",
   );
 }
+function html_link_app(a_name, row) {
+    let website_url = app_url(a_name);
+    html_link(row, website_url);
+}
+
