@@ -21,6 +21,13 @@ export function app_contact_respond(input) {
   if (list_includes(["hi", "hii"], input)) {
     output = app_share_verse_refresh_greet();
   }
+  let nice_to_meet_you = [
+    "great",
+    "to",
+    "meet",
+    "with",
+    app_contact_respond_you,
+  ];
   if (false) {
   }
   return output;
