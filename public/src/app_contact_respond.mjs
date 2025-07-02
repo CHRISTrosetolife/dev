@@ -64,13 +64,14 @@ export function app_contact_respond(input) {
     },
   ];
   let offset = 0;
-  each(list, function (item) {});
-  offset = app_contact_respond_choice(
-    tokens,
-    offset,
-    outputs,
-    response,
-    nice_to_meet_you,
-  );
+  each(list, function (item) {
+    offset = app_contact_respond_choice(
+      tokens,
+      offset,
+      outputs,
+      response,
+      nice_to_meet_you,
+    );
+  });
   return output;
 }
