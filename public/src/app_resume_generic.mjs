@@ -61,7 +61,9 @@ export function app_resume_generic(print, anonymous) {
   html_email(row, anonymous ? "email@address.com" : me_email());
   html_spacer_bullet(row);
   let website_url = string_combine_multiple([
-    "https://letjesusbeexalted.web.app/resume.html",
+    "https://letjesusbeexalted.web.app/",
+    "resume",
+    ".html",
   ]);
   html_link(row, website_url);
   app_resume_header_2(root, "Projects");
