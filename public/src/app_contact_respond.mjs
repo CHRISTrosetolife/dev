@@ -59,11 +59,13 @@ export function app_contact_respond(input) {
   let and = ["and"];
   let match = true;
   let offset = 0;
+  let offset_next = null;
   each_index(nice_to_meet_you, function (item, index) {
     if (list_index_is(tokens, offset + index)) {
       let current = list_get(tokens, index);
       if (item !== current) {
         match = false;
+      } else {
       }
     } else {
       match = false;
