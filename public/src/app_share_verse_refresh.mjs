@@ -1,3 +1,4 @@
+import { app_url } from "./app_url.mjs";
 import { window_location } from "./window_location.mjs";
 import { html_link_text } from "./html_link_text.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
@@ -165,6 +166,7 @@ export async function app_share_verse_refresh(
         "I have received too many messages to reply to them all in this app",
         "Please do not send me a message here.",
         "Instead, contact me using this link: ",
+        app_url("contact"),
       ],
     },
   ];
