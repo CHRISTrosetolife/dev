@@ -1,3 +1,4 @@
+import { each_index } from "./each_index.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { log } from "./log.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
@@ -28,6 +29,7 @@ export function app_contact_respond(input) {
     "with",
     app_contact_respond_you,
   ];
+  each_index(list, function (item, index) {});
   if (false) {
   }
   return output;
