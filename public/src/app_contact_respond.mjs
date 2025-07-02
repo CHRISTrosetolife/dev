@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_share_thanks } from "./app_share_thanks.mjs";
 import { log } from "./log.mjs";
 import { list_index_is } from "./list_index_is.mjs";
@@ -27,7 +28,7 @@ export function app_contact_respond(input) {
     "high",
     "god",
   ];
-  (response = $s), app_share_thanks();
+  let response = string_combine_multiple([app_share_thanks()]);
   let match = true;
   each_index(nice_to_meet_you, function (item, index) {
     if (list_index_is(tokens, index)) {
