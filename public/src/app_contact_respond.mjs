@@ -16,6 +16,7 @@ export function app_contact_respond(input) {
   if (list_includes(["hi", "hii"], input)) {
     output = app_share_verse_refresh_greet();
   }
+  let hi = ["hi"];
   let nice_to_meet_you = [
     "great",
     "to",
