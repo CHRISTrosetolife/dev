@@ -9,8 +9,9 @@ export function app_contact_respond_choice(tokens, offset, outputs, choice) {
   let match = true;
   let offset_next = null;
   each_index(choice_tokens, function (item, index) {
-    if (list_index_is(tokens, offset + index)) {
-      let current = list_get(tokens, index);
+    let ti = offset + index;
+    if (list_index_is(tokens, ti)) {
+      let current = list_get(tokens, ti);
       if (item === current) {
         offset_next = index;
       } else {
