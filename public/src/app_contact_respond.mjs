@@ -14,8 +14,9 @@ export function app_contact_respond(input) {
   let choices = app_contact_respond_choices();
   let offset = 0;
   while_change(lambda);
-  let v2 = list_empty_is(outputs) ? null : list_join_space(outputs);
   let finished = offset === list_index_last(tokens);
+  let v2 =
+    list_empty_is(outputs) || !finished ? null : list_join_space(outputs);
   return v2;
   function lambda(change) {
     each(choices, function (choice) {
