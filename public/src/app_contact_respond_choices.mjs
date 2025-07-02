@@ -45,7 +45,7 @@ export function app_contact_respond_choices() {
       response: "God let there be prayer 🙏 amen.",
     },
     {
-      tokens: ["keep", "sending", "us", "such", "scriptures"],
+      tokens: ["keep", "sending", "us", "such", "t", "scriptures"],
       response:
         "If you send me a message here 📨, then you will receive a scripture 📖.",
     },
