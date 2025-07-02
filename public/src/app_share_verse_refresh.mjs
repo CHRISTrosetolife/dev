@@ -114,31 +114,31 @@ export async function app_share_verse_refresh(
       value: [app_share_verse_refresh_greet()],
     },
     {
-      button_text: "👌🏿 How r u",
+      button_text: "👌 How r u",
       value: [
-        "😁 I am doing good 💯 through the grace of God 👌🏿 But please pray for my health 🙏🏿",
+        "😁 I am doing good 💯 through the grace of God 👌 But please pray for my health 🙏",
       ],
     },
     {
-      button_text: "🙏🏿 Bless",
+      button_text: "🙏 Bless",
       value: [
         string_combine_multiple([
-          "🙏🏿 God bless you, your family, your friends and your country exceedingly and abundantly, more than anyone can ask or think in the name of the Father and of the Son and of the Holy Spirit amen ",
+          "🙏 God bless you, your family, your friends and your country exceedingly and abundantly, more than anyone can ask or think in the name of the Father and of the Son and of the Holy Spirit amen ",
           emojis_trinity(),
         ]),
       ],
     },
     {
-      button_text: "🙏🏿 Amen",
-      value: ["🙏🏿 Amen ✝️"],
+      button_text: "🙏 Amen",
+      value: ["🙏 Amen ✝️"],
     },
     {
-      button_text: "🙏🏿 Glory",
-      value: [string_combine_multiple(["🙏🏿 Glory to God ", emojis_trinity()])],
+      button_text: "🙏 Glory",
+      value: [string_combine_multiple(["🙏 Glory to God ", emojis_trinity()])],
     },
     {
-      button_text: "🙏🏿 Thanks",
-      value: ["🙌🏿 Thank you very much 😁"],
+      button_text: "🙏 Thanks",
+      value: ["🙌 Thank you very much 😁"],
     },
     {
       button_text: string_combine_multiple([emoji_music_up(), " Praise"]),
@@ -152,12 +152,12 @@ export async function app_share_verse_refresh(
       button_text: "💵 Money",
       value: [
         string_combine_multiple([
-          "🙏🏿 May you delight 😃 yourself in the LORD our God ",
+          "🙏 May you delight 😃 yourself in the LORD our God ",
           emojis_trinity(),
           " and may the LORD grant you the desires of your heart 💓😊 !",
         ]),
         "😭 I'm sorry to hear that you are in need 😟 ! I have no money or anything else 🚫💲❌ to give on your behalf right now 😞 .",
-        "🙏🏿 Please ask someone else who can give, not me",
+        "🙏 Please ask someone else who can give, not me",
       ],
     },
     {
