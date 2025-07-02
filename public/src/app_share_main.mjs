@@ -14,7 +14,6 @@ import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 export function app_share_main(context) {
-  let lookup = html_hash_lookup();
   let root = html_clear_scroll_top_context(context);
   let folders = [
     {
@@ -72,6 +71,7 @@ export function app_share_main(context) {
   ];
   each(folders, function (folder) {
     html_button(root, object_property_get(folder, "text"), async function () {
+      let lookup = html_hash_lookup();
       let books_new = list_take_bible_books_new_context(context);
       let book = list_random_item(books_new);
       let book_code = object_property_get(book, "book_code");
