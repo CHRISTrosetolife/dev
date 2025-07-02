@@ -5,9 +5,9 @@ import { each_index } from "./each_index.mjs";
 export function app_contact_respond_choice(
   tokens,
   offset,
+  outputs,
   choice_response,
   choice_tokens,
-  outputs,
 ) {
   let match = true;
   let offset_next = null;
