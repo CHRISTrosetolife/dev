@@ -1,3 +1,4 @@
+import { list_index_last } from "./list_index_last.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { while_change } from "./while_change.mjs";
 import { app_contact_respond_choices } from "./app_contact_respond_choices.mjs";
@@ -14,7 +15,7 @@ export function app_contact_respond(input) {
   let offset = 0;
   while_change(lambda);
   let v2 = list_empty_is(outputs) ? null : list_join_space(outputs);
-  let finished = offset === list_last_index_is(tokens);
+  let finished = offset === list_index_last(tokens);
   return v2;
   function lambda(change) {
     each(choices, function (choice) {
