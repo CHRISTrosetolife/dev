@@ -1,3 +1,4 @@
+import { each_index } from "./each_index.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_includes } from "./list_includes.mjs";
@@ -23,7 +24,6 @@ export function app_contact_respond(input) {
     "god",
   ];
   let index = 0;
-  if (false) {
-  }
+  each_index(list, function (item, index2) {});
   return output;
 }
