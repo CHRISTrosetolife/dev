@@ -58,9 +58,9 @@ export function app_contact_respond(input) {
   let offset = 0;
   offset = app_contact_respond_choice(
     tokens,
+    offset,
     response,
     nice_to_meet_you,
-    offset,
     outputs,
   );
   return output;
