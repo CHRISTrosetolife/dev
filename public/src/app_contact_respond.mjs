@@ -16,11 +16,6 @@ export function app_contact_respond(input) {
   while_change(lambda);
   let finished = offset === list_index_last(tokens);
   let output = !finished ? null : list_join_space(outputs);
-  log({
-    offset,
-    output,
-    outputs,
-  });
   return output;
   function lambda(change) {
     each(choices, function (choice) {
