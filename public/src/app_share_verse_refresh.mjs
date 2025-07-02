@@ -104,13 +104,13 @@ export async function app_share_verse_refresh(
     emojis_trinity(),
   ]);
   let introduce_text = {
-    button_text: "👋🏿 Introduce",
+    button_text: "👋 Introduce",
     value: app_share_verse_refresh_introduce(),
   };
   let texts_extra = [
     introduce_text,
     {
-      button_text: "👋🏿 Greet",
+      button_text: "👋 Greet",
       value: [app_share_verse_refresh_greet()],
     },
     {
