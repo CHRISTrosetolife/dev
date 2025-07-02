@@ -10,6 +10,8 @@ export function app_contact_respond_choice(
   choice_response,
   choice_tokens,
 ) {
+  let tokens2 = object_property_get(choice, "tokens");
+  let response = object_property_get(choice, "response");
   let match = true;
   let offset_next = null;
   each_index(choice_tokens, function (item, index) {
@@ -26,7 +28,7 @@ export function app_contact_respond_choice(
   });
   if (match) {
     offset += offset_next;
-    list_add(outputs, object_property_get(object, "property_name"));
+    list_add(outputs, choice_response);
   }
   return offset;
 }
