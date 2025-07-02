@@ -1,3 +1,4 @@
+import { exit } from "./exit.mjs";
 import { log } from "./log.mjs";
 import { list_map_async } from "./list_map_async.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -11,7 +12,8 @@ export async function app_contact_download() {
   let prefix = app_contact_firebase_folder_prefix();
   let file_paths = await storage_files_download(prefix);
   let file_paths_size = list_size(file_paths);
-  if (false) {
+  if (file_paths_size >= 1000) {
+    exit();
   }
   log({
     file_paths_size,
