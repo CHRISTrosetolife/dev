@@ -85,9 +85,7 @@ export function app_share_main(context) {
       object_property_set(lookup, app_share_verse(), verse_number_next);
       let f = object_property_get(folder, "code");
       object_property_set(lookup, app_share_bible_folders(), f);
-      let joined = html_hash_unparse(lookup);
-      let h = string_combine_multiple(["#", joined]);
-      html_hash_set(h);
+      html_hash_set_lookup(lookup);
       await app_share_verse_refresh(
         context,
         book_code,
@@ -98,3 +96,9 @@ export function app_share_main(context) {
     });
   });
 }
+function html_hash_set_lookup(lookup) {
+    let joined = html_hash_unparse(lookup);
+    let h = string_combine_multiple(["#", joined]);
+    html_hash_set(h);
+}
+
