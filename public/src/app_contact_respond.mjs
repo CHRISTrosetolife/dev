@@ -23,6 +23,9 @@ export function app_contact_respond(input) {
   return output;
   function lambda(change) {
     each(choices, function (choice) {
+      log({
+        offset,
+      });
       let offset_next = app_contact_respond_choice(
         tokens,
         offset,
