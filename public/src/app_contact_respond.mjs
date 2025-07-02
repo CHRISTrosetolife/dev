@@ -7,7 +7,7 @@ export function app_contact_respond(input) {
   let lower = string_case_lower(input);
   let tokens = string_split_space(lower);
   function app_contact_respond_nice_to_meet_you(tokens) {
-    let v = ["great", "to", "meet", "with", "you"];
+    let v = ["great", "to", "meet", "with", app_contact_respond_you];
     return v;
   }
   log({
