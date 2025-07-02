@@ -1,3 +1,4 @@
+import { app_share_thanks } from "./app_share_thanks.mjs";
 import { app_url } from "./app_url.mjs";
 import { window_location } from "./window_location.mjs";
 import { html_link_text } from "./html_link_text.mjs";
@@ -275,7 +276,3 @@ export async function app_share_verse_refresh(
     html_hr(copy_message);
   }
 }
-function app_share_thanks() {
-    return "🙌 Thank you very much 😁";
-}
-
