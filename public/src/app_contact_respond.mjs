@@ -5,9 +5,10 @@ import { list_includes } from "./list_includes.mjs";
 import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
 export function app_contact_respond(input) {
   let lower = string_case_lower(input);
-  let split = string_split_space(lower);
+  let tokens = string_split_space(lower);
+  function app_contact_respond_nice_to_meet_you(tokens) {}
   log({
-    split,
+    split: tokens,
   });
   let output = null;
   if (list_includes(["hi", "hii"], input)) {
