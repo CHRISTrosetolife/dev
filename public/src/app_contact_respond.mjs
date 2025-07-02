@@ -1,3 +1,4 @@
+import { list_empty_is } from "./list_empty_is.mjs";
 import { while_change } from "./while_change.mjs";
 import { app_contact_respond_choices } from "./app_contact_respond_choices.mjs";
 import { each } from "./each.mjs";
@@ -13,7 +14,7 @@ export function app_contact_respond(input) {
   let choices = app_contact_respond_choices();
   let offset = 0;
   while_change(lambda);
-  let v2 = list_join_space(outputs);
+  let v2 = list_empty_is(outputs) ? null : list_join_space(outputs);
   return v2;
   function lambda(change) {
     each(choices, function (choice) {
@@ -25,7 +26,7 @@ export function app_contact_respond(input) {
       );
       if (offset_next !== offset) {
         change = true;
-        offset=offset_next
+        offset = offset_next;
       }
     });
     let v = change;
