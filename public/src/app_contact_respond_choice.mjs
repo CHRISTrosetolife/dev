@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_index_is } from "./list_index_is.mjs";
@@ -28,9 +27,5 @@ export function app_contact_respond_choice(
     offset += offset_next;
     list_add(outputs, response);
   }
-  log({
-    match,
-    response,
-  });
   return offset;
 }
