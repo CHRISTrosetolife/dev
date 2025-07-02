@@ -15,6 +15,7 @@ export function app_contact_respond_choice(tokens, offset, outputs, choice) {
       let current = list_get(tokens, ti);
       log({
         current,
+        item,
       });
       if (item === current) {
         offset_next = index;
