@@ -60,7 +60,7 @@ export function app_resume_generic(print, anonymous) {
   html_spacer_bullet(row);
   html_email(row, anonymous ? "email@address.com" : me_email());
   html_spacer_bullet(row);
-  html_link_app("resume", row);
+  html_link_app(row, "resume");
   app_resume_header_2(root, "Projects");
   let dev = app_resume_header_3(root, app_dev_name());
   html_cycle_p(
