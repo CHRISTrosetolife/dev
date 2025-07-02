@@ -6,11 +6,11 @@ import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.m
 export function app_contact_respond(input) {
   let lower = string_case_lower(input);
   let tokens = string_split_space(lower);
-  function app_contact_respond_nice_to_meet_you(tokens) {
+  function app_contact_respond_nice_to_meet_you() {
     let v = ["great", "to", "meet", "with", app_contact_respond_you];
     return v;
   }
-  function app_contact_respond_you(tokens) {
+  function app_contact_respond_you() {
     let v2 = ["you", [[""], ["servant", "of", "the", "most", "high", "god"]]];
     return v2;
   }
