@@ -21,7 +21,10 @@ export function app_contact_respond_choices() {
         "high",
         "god",
       ],
-      response: app_share_verse_refresh_greet(),
+      response: string_combine_multiple([
+        app_share_thanks(),
+        " Great to meet you, too!",
+      ]),
     },
     {
       choice: [
@@ -45,10 +48,7 @@ export function app_contact_respond_choices() {
         "such",
         "scriptures",
       ],
-      response: string_combine_multiple([
-        app_share_thanks(),
-        " Great to meet you, too!",
-      ]),
+      response: "",
     },
     {
       choice: ["keep", "sending", "us", "such", "scriptures"],
