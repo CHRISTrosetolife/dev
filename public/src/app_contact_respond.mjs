@@ -33,6 +33,7 @@ export function app_contact_respond(input) {
         match = false;
       }
     } else {
+      match = false;
     }
   });
   return output;
