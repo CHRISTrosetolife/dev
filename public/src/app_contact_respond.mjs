@@ -29,6 +29,7 @@ export function app_contact_respond(input) {
     "with",
     app_contact_respond_you,
   ];
+  let index = 0;
   each_index(list, function (item, index) {});
   if (false) {
   }
