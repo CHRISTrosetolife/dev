@@ -33,17 +33,6 @@ export function app_contact_respond(input) {
     app_share_thanks(),
     " Great to meet you, too!",
   ]);
-  let match = true;
-  each_index(nice_to_meet_you, function (item, index) {
-    if (list_index_is(tokens, index)) {
-      let current = list_get(tokens, index);
-      if (item !== current) {
-        match = false;
-      }
-    } else {
-      match = false;
-    }
-  });
   let pray = [
     "keep",
     "on",
@@ -67,6 +56,17 @@ export function app_contact_respond(input) {
   ];
   let scripture = ["keep", "sending", "us", "such", "scriptures"];
   let and = ["and"];
+  let match = true;
+  each_index(nice_to_meet_you, function (item, index) {
+    if (list_index_is(tokens, index)) {
+      let current = list_get(tokens, index);
+      if (item !== current) {
+        match = false;
+      }
+    } else {
+      match = false;
+    }
+  });
   log({
     match,
     response,
