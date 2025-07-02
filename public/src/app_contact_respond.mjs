@@ -63,8 +63,8 @@ export function app_contact_respond(input) {
       response: "",
     },
   ];
-  each(list, function (item) {});
   let offset = 0;
+  each(list, function (item) {});
   offset = app_contact_respond_choice(
     tokens,
     offset,
