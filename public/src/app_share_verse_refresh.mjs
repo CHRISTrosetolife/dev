@@ -163,12 +163,12 @@ export async function app_share_verse_refresh(
     {
       button_text: "📨 Contact",
       value_fn: function (parent) {
-        texts = [
+        let v_list = [
           "I have received too many messages to reply to them all in this app",
           "Please do not send me a message here.",
           "Instead, contact me using this link: ",
         ];
-        html_p_text_multiple(parent, texts);
+        html_p_text_multiple(parent, v_list);
       },
     },
   ];
