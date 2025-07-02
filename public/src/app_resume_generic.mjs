@@ -60,9 +60,10 @@ export function app_resume_generic(print, anonymous) {
   html_spacer_bullet(row);
   html_email(row, anonymous ? "email@address.com" : me_email());
   html_spacer_bullet(row);
+  let a_name = "resume";
   let website_url = string_combine_multiple([
     "https://letjesusbeexalted.web.app/",
-    "resume",
+    a_name,
     ".html",
   ]);
   html_link(row, website_url);
