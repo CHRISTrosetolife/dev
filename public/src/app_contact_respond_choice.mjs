@@ -3,9 +3,9 @@ import { list_get } from "./list_get.mjs";
 import { list_index_is } from "./list_index_is.mjs";
 import { each_index } from "./each_index.mjs";
 export function app_contact_respond_choice(
+  tokens,
   choice_response,
   choice_tokens,
-  tokens,
   offset,
   outputs,
 ) {
