@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_get } from "./list_get.mjs";
@@ -12,6 +13,9 @@ export function app_contact_respond_choice(tokens, offset, outputs, choice) {
     let ti = offset + index;
     if (list_index_is(tokens, ti)) {
       let current = list_get(tokens, ti);
+      log({
+        current,
+      });
       if (item === current) {
         offset_next = index;
       } else {
