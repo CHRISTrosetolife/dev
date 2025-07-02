@@ -23,6 +23,9 @@ export function app_contact_respond(input) {
     "high",
     "god",
   ];
-  each_index(nice_to_meet_you, function (item, index) {});
+  each_index(nice_to_meet_you, function (item, index) {
+    if (false) {
+    }
+  });
   return output;
 }
