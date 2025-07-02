@@ -1,11 +1,7 @@
-import { list_add } from "./list_add.mjs";
+import { app_contact_respond_choice } from "./app_contact_respond_choice.mjs";
 import { and } from "./and.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_share_thanks } from "./app_share_thanks.mjs";
-import { log } from "./log.mjs";
-import { list_index_is } from "./list_index_is.mjs";
-import { list_get } from "./list_get.mjs";
-import { each_index } from "./each_index.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_includes } from "./list_includes.mjs";
@@ -60,27 +56,12 @@ export function app_contact_respond(input) {
   let scripture = ["keep", "sending", "us", "such", "scriptures"];
   let and = ["and"];
   let offset = 0;
-  let match = true;
-  let offset_next = null;
-  each_index(nice_to_meet_you, function (item, index) {
-    if (list_index_is(tokens, offset + index)) {
-      let current = list_get(tokens, index);
-      if (item === current) {
-        offset_next = index;
-      } else {
-        match = false;
-      }
-    } else {
-      match = false;
-    }
-  });
-  if (match) {
-    offset += offset_next;
-    list_add(outputs, response);
-  }
-  log({
-    match,
+  offset = app_contact_respond_choice(
+    nice_to_meet_you,
+    tokens,
+    offset,
+    outputs,
     response,
-  });
+  );
   return output;
 }
