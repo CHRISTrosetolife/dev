@@ -66,6 +66,7 @@ export function app_contact_respond(input) {
       if (item !== current) {
         match = false;
       } else {
+        offset_next = index;
       }
     } else {
       match = false;
