@@ -19,7 +19,6 @@ import { app_contact } from "./app_contact.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { firebase_initialize } from "./firebase_initialize.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
-import e from "cors";
 export async function app_contact_main() {
   let root = html_style_default_initialize();
   await firebase_initialize();
