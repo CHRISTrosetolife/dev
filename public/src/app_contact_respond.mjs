@@ -1,3 +1,4 @@
+import { while_change } from "./while_change.mjs";
 import { app_contact_respond_choices } from "./app_contact_respond_choices.mjs";
 import { each } from "./each.mjs";
 import { app_contact_respond_choice } from "./app_contact_respond_choice.mjs";
@@ -10,11 +11,7 @@ export function app_contact_respond(input) {
   let output = null;
   let choices = app_contact_respond_choices();
   let offset = 0;
-  let change = true;
-  while (change) {
-    change = false;
-    change = lambda(change);
-  }
+  while_change(lambda);
   return output;
   function lambda(change) {
     each(choices, function (choice) {
