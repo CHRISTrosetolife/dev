@@ -4,11 +4,11 @@ import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.m
 export function app_contact_respond_choices() {
   let v = [
     {
-      choice: ["hi"],
+      tokens: ["hi"],
       response: app_share_verse_refresh_greet(),
     },
     {
-      choice: [
+      tokens: [
         "great",
         "to",
         "meet",
@@ -27,7 +27,7 @@ export function app_contact_respond_choices() {
       ]),
     },
     {
-      choice: [
+      tokens: [
         "keep",
         "on",
         "praying",
@@ -45,12 +45,12 @@ export function app_contact_respond_choices() {
       response: "God let there be prayer 🙏 amen.",
     },
     {
-      choice: ["keep", "sending", "us", "such", "scriptures"],
+      tokens: ["keep", "sending", "us", "such", "scriptures"],
       response:
         "If you send me a message here 📨, then you will receive a scripture 📖.",
     },
     {
-      choice: ["and"],
+      tokens: ["and"],
       response: "",
     },
   ];
