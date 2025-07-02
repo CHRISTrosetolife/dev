@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_index_is } from "./list_index_is.mjs";
 import { list_get } from "./list_get.mjs";
 import { each_index } from "./each_index.mjs";
@@ -35,6 +36,9 @@ export function app_contact_respond(input) {
     } else {
       match = false;
     }
+  });
+  log({
+    match,
   });
   return output;
 }
