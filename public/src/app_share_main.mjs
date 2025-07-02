@@ -70,18 +70,7 @@ export function app_share_main(context) {
   ];
   each(folders, function (folder) {
     html_button(root, object_property_get(folder, "text"), async function () {
-      let lookup = html_hash_lookup();
-      let books_new = list_take_bible_books_new_context(context);
-      let book = list_random_item(books_new);
-      let book_code = object_property_get(book, "book_code");
-      let chapter_code = "01";
-      object_property_set(
-        lookup,
-        app_share_chapter(),
-        string_combine_multiple([book_code, chapter_code]),
-      );
-      let verse_number_next = "1";
-      object_property_set(lookup, app_share_verse(), verse_number_next);
+      let { lookup, book_code, chapter_code, verse_number_next } = app_share_book_random(context);
       let f = object_property_get(folder, "code");
       object_property_set(lookup, app_share_bible_folders(), f);
       html_hash_set_lookup(lookup);
@@ -95,3 +84,19 @@ export function app_share_main(context) {
     });
   });
 }
+function app_share_book_random(context) {
+    let lookup = html_hash_lookup();
+    let books_new = list_take_bible_books_new_context(context);
+    let book = list_random_item(books_new);
+    let book_code = object_property_get(book, "book_code");
+    let chapter_code = "01";
+    object_property_set(
+        lookup,
+        app_share_chapter(),
+        string_combine_multiple([book_code, chapter_code])
+    );
+    let verse_number_next = "1";
+    object_property_set(lookup, app_share_verse(), verse_number_next);
+    return { lookup, book_code, chapter_code, verse_number_next };
+}
+
