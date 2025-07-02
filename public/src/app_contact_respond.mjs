@@ -1,3 +1,4 @@
+import { and } from "./and.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_share_thanks } from "./app_share_thanks.mjs";
 import { log } from "./log.mjs";
@@ -65,6 +66,7 @@ export function app_contact_respond(input) {
     "scriptures",
   ];
   let scripture = ["keep", "sending", "us", "such", "scriptures"];
+  let and = ["and"];
   log({
     match,
     response,
