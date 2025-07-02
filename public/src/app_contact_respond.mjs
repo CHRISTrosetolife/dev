@@ -43,6 +43,28 @@ export function app_contact_respond(input) {
       match = false;
     }
   });
+  let pray = [
+    "keep",
+    "on",
+    "praying",
+    "for",
+    "us",
+    "so",
+    "that",
+    "god's",
+    "will",
+    "be",
+    "done",
+    "on",
+    "us",
+    "and",
+    "keep",
+    "sending",
+    "us",
+    "such",
+    "scriptures",
+    "",
+  ];
   log({
     match,
     response,
