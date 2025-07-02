@@ -11,13 +11,7 @@ export function app_contact_respond(input) {
   let choices = app_contact_respond_choices();
   let offset = 0;
   each(choices, function (choice) {
-    offset = app_contact_respond_choice(
-      tokens,
-      offset,
-      outputs,
-      response,
-      nice_to_meet_you,
-    );
+    offset = app_contact_respond_choice(tokens, offset, outputs, choice);
   });
   return output;
 }
