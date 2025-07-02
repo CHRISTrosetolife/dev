@@ -10,59 +10,7 @@ export function app_contact_respond(input) {
   let lower = string_case_lower(input);
   let tokens = string_split_space(lower);
   let output = null;
-  let choices = [
-    {
-      choice: [
-        "great",
-        "to",
-        "meet",
-        "with",
-        "you",
-        "servant",
-        "of",
-        "the",
-        "most",
-        "high",
-        "god",
-      ],
-      response: app_share_verse_refresh_greet(),
-    },
-    {
-      choice: [
-        "keep",
-        "on",
-        "praying",
-        "for",
-        "us",
-        "so",
-        "that",
-        "god's",
-        "will",
-        "be",
-        "done",
-        "on",
-        "us",
-        "and",
-        "keep",
-        "sending",
-        "us",
-        "such",
-        "scriptures",
-      ],
-      response: string_combine_multiple([
-        app_share_thanks(),
-        " Great to meet you, too!",
-      ]),
-    },
-    {
-      choice: ["keep", "sending", "us", "such", "scriptures"],
-      response: "",
-    },
-    {
-      choice: ["and"],
-      response: "",
-    },
-  ];
+  let choices = app_contact_respond_choices();
   let offset = 0;
   each(choices, function (choice) {
     offset = app_contact_respond_choice(
@@ -75,3 +23,59 @@ export function app_contact_respond(input) {
   });
   return output;
 }
+function app_contact_respond_choices() {
+    return [
+        {
+            choice: [
+                "great",
+                "to",
+                "meet",
+                "with",
+                "you",
+                "servant",
+                "of",
+                "the",
+                "most",
+                "high",
+                "god",
+            ],
+            response: app_share_verse_refresh_greet(),
+        },
+        {
+            choice: [
+                "keep",
+                "on",
+                "praying",
+                "for",
+                "us",
+                "so",
+                "that",
+                "god's",
+                "will",
+                "be",
+                "done",
+                "on",
+                "us",
+                "and",
+                "keep",
+                "sending",
+                "us",
+                "such",
+                "scriptures",
+            ],
+            response: string_combine_multiple([
+                app_share_thanks(),
+                " Great to meet you, too!",
+            ]),
+        },
+        {
+            choice: ["keep", "sending", "us", "such", "scriptures"],
+            response: "",
+        },
+        {
+            choice: ["and"],
+            response: "",
+        },
+    ];
+}
+
