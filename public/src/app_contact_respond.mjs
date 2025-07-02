@@ -1,3 +1,4 @@
+import { list_add } from "./list_add.mjs";
 import { and } from "./and.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_share_thanks } from "./app_share_thanks.mjs";
@@ -10,6 +11,7 @@ import { string_case_lower } from "./string_case_lower.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
 export function app_contact_respond(input) {
+  let outputs = [];
   let lower = string_case_lower(input);
   let tokens = string_split_space(lower);
   let output = null;
@@ -74,6 +76,7 @@ export function app_contact_respond(input) {
   });
   if (match) {
     offset += offset_next;
+    list_add(outputs, response);
   }
   log({
     match,
