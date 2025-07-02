@@ -59,8 +59,8 @@ export function app_contact_respond(input) {
   ];
   let scripture = ["keep", "sending", "us", "such", "scriptures"];
   let and = ["and"];
-  let match = true;
   let offset = 0;
+  let match = true;
   let offset_next = null;
   each_index(nice_to_meet_you, function (item, index) {
     if (list_index_is(tokens, offset + index)) {
