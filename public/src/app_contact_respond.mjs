@@ -25,6 +25,7 @@ export function app_contact_respond(input) {
       );
       if (offset_next !== offset) {
         change = true;
+        offset=offset_next
       }
     });
     let v = change;
