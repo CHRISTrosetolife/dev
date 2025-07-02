@@ -7,8 +7,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 export function app_share_book_random(context) {
   let lookup = html_hash_lookup();
-  let book = list_take_bible_books_new_context_random(context);
-  let book_code = object_property_get(book, "book_code");
+  let book_code = list_take_bible_books_new_context_random(context);
   let chapter_code = "01";
   object_property_set(
     lookup,
