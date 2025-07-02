@@ -163,10 +163,10 @@ export async function app_share_verse_refresh(
     {
       button_text: "📨 Contact",
       value: [
-        "I have received too many messages to reply to them all in this app",
-        "Please do not send me a message here.",
-        "Instead, contact me using this link: ",
+        "Please contact me using this link: ",
         app_url("contact"),
+        "Please do not send me a message here.",
+        "I have received too many messages to reply to them all in this app.",
       ],
     },
   ];
