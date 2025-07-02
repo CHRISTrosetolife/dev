@@ -1,3 +1,4 @@
+import { app_context_books_bible } from "./app_context_books_bible.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
@@ -20,6 +21,8 @@ import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { firebase_initialize } from "./firebase_initialize.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 export async function app_contact_main() {
+  let context = {};
+  await app_context_books_bible(context);
   let root = html_style_default_initialize();
   await firebase_initialize();
   let id = storage_local_initialize(app_contact, "id", await uuid());
