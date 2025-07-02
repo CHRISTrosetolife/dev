@@ -138,7 +138,7 @@ export async function app_share_verse_refresh(
     },
     {
       button_text: "🙏 Thanks",
-      value: ["🙌 Thank you very much 😁"],
+      value: [app_share_thanks()],
     },
     {
       button_text: string_combine_multiple([emoji_music_up(), " Praise"]),
@@ -275,3 +275,7 @@ export async function app_share_verse_refresh(
     html_hr(copy_message);
   }
 }
+function app_share_thanks() {
+    return "🙌 Thank you very much 😁";
+}
+
