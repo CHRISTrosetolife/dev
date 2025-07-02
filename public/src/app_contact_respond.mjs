@@ -1,3 +1,4 @@
+import { list_get } from "./list_get.mjs";
 import { each_index } from "./each_index.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
@@ -24,7 +25,7 @@ export function app_contact_respond(input) {
     "god",
   ];
   each_index(nice_to_meet_you, function (item, index) {
-    if (false) {
+    if (item === list_get(tokens, index)) {
     }
   });
   return output;
