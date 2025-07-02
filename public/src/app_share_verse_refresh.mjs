@@ -159,6 +159,14 @@ export async function app_share_verse_refresh(
         "🙏🏿 Please ask someone else who can give, not me",
       ],
     },
+    {
+      button_text: "📨 Contact",
+      value: [
+        "I have received too many messages to reply to them all in this app",
+        "Please do not send me a message here.",
+        "Instaed, contact me using this link: ",
+      ],
+    },
   ];
   let texts_extra_div = html_div(root);
   await each_async(texts_extra, async function (t) {
