@@ -1,4 +1,4 @@
-import { app_url } from "./app_url.mjs";
+import { html_link_app } from "./html_link_app.mjs";
 import { app_memorize_name } from "./app_memorize_name.mjs";
 import { app_dev_name } from "./app_dev_name.mjs";
 import { app_learn_code_name } from "./app_learn_code_name.mjs";
@@ -19,7 +19,6 @@ import { function_name_to_url_github_style_link_list_bewteen_noop } from "./func
 import { html_cycle_p } from "./html_cycle_p.mjs";
 import { app_resume_header_3 } from "./app_resume_header_3.mjs";
 import { app_resume_header_2 } from "./app_resume_header_2.mjs";
-import { html_link } from "./html_link.mjs";
 import { me_email } from "./me_email.mjs";
 import { html_email } from "./html_email.mjs";
 import { me_phone } from "./me_phone.mjs";
@@ -176,8 +175,3 @@ export function app_resume_generic(print, anonymous) {
     "Bachelor of Science in Computer Science ~2013; Computer Science Student of the Year Award",
   );
 }
-function html_link_app(a_name, row) {
-    let website_url = app_url(a_name);
-    html_link(row, website_url);
-}
-
