@@ -72,7 +72,8 @@ export function app_contact_respond(input) {
       match = false;
     }
   });
-  if (false) {
+  if (match) {
+    offset += offset_next;
   }
   log({
     match,
