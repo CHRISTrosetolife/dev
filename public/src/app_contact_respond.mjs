@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { app_contact_respond_choice } from "./app_contact_respond_choice.mjs";
 import { and } from "./and.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -11,6 +12,7 @@ export function app_contact_respond(input) {
   let tokens = string_split_space(lower);
   let output = null;
   let choices = [];
+  each(list, function (item) {});
   let nice_to_meet_you = {
     choice: [
       "great",
