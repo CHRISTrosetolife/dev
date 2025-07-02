@@ -4,6 +4,7 @@ import { each } from "./each.mjs";
 import { app_contact_respond_choice } from "./app_contact_respond_choice.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
+import { list_join_space } from "./list_join_space.mjs";
 export function app_contact_respond(input) {
   let outputs = [];
   let lower = string_case_lower(input);
@@ -12,7 +13,8 @@ export function app_contact_respond(input) {
   let choices = app_contact_respond_choices();
   let offset = 0;
   while_change(lambda);
-  return output;
+  let v2 = list_join_space(outputs);
+  return v2;
   function lambda(change) {
     each(choices, function (choice) {
       let offset_next = app_contact_respond_choice(
