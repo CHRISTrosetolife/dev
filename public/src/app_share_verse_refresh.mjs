@@ -155,8 +155,8 @@ export async function app_share_verse_refresh(
           emojis_trinity(),
           " and may the LORD grant you the desires of your heart 💓😊 !",
         ]),
-        "😭 I'm sorry to hear that you are in need 😟 ! I have no money 🚫💲❌ to give on your behalf right now 😞 .",
-        "🙏🏿 Please ask someone else, not me",
+        "😭 I'm sorry to hear that you are in need 😟 ! I have no money or anything else 🚫💲❌ to give on your behalf right now 😞 .",
+        "🙏🏿 Please ask someone else who can give, not me",
       ],
     },
   ];
