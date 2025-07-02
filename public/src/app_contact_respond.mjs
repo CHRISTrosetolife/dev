@@ -30,7 +30,7 @@ export function app_contact_respond(input) {
   ];
   let response = string_combine_multiple([
     app_share_thanks(),
-    " Great to meet you, too",
+    " Great to meet you, too!",
   ]);
   let match = true;
   each_index(nice_to_meet_you, function (item, index) {
