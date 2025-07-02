@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_map_async } from "./list_map_async.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { app_contact_respond } from "./app_contact_respond.mjs";
@@ -10,6 +11,9 @@ export async function app_contact_download() {
   let prefix = app_contact_firebase_folder_prefix();
   let file_paths = await storage_files_download(prefix);
   let file_paths_size = list_size(file_paths);
+  log({
+    file_paths_size,
+  });
   let mapped = await list_map_async(file_paths, async function (file_path) {
     let file = await file_read_json(file_path);
     let message = object_property_get(file, "message");
