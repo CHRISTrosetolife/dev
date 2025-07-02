@@ -16,6 +16,7 @@ export function app_contact_respond(input) {
   }
   let hi = {
     choice: ["hi"],
+    response: app_share_verse_refresh_greet(),
   };
   let nice_to_meet_you = {
     choice: [
@@ -31,6 +32,7 @@ export function app_contact_respond(input) {
       "high",
       "god",
     ],
+    response: app_share_verse_refresh_greet(),
   };
   let response = string_combine_multiple([
     app_share_thanks(),
@@ -58,12 +60,15 @@ export function app_contact_respond(input) {
       "such",
       "scriptures",
     ],
+    response: app_share_verse_refresh_greet(),
   };
   let scripture = {
     choice: ["keep", "sending", "us", "such", "scriptures"],
+    response: app_share_verse_refresh_greet(),
   };
   let and = {
     choice: ["and"],
+    response: app_share_verse_refresh_greet(),
   };
   let offset = 0;
   offset = app_contact_respond_choice(
