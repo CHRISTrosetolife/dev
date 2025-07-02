@@ -45,6 +45,7 @@ export function app_contact_respond(input) {
   });
   log({
     match,
+    response,
   });
   return output;
 }
