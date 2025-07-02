@@ -68,7 +68,7 @@ export function app_contact_respond(input) {
   };
   let and = {
     choice: ["and"],
-    response: app_share_verse_refresh_greet(),
+    response: "",
   };
   let offset = 0;
   offset = app_contact_respond_choice(
