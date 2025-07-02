@@ -1,3 +1,4 @@
+import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { window_location } from "./window_location.mjs";
 import { html_link_text } from "./html_link_text.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
@@ -162,11 +163,12 @@ export async function app_share_verse_refresh(
     {
       button_text: "📨 Contact",
       value_fn: function (parent) {
-        [
+        texts = [
           "I have received too many messages to reply to them all in this app",
           "Please do not send me a message here.",
           "Instead, contact me using this link: ",
         ];
+        html_p_text_multiple(parent, texts);
       },
     },
   ];
