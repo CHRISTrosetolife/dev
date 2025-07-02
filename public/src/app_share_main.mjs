@@ -1,9 +1,8 @@
+import { html_hash_set_lookup } from "./html_hash_set_lookup.mjs";
 import { list_take_bible_books_new_context } from "./list_take_bible_books_new_context.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
 import { app_share_verse_refresh } from "./app_share_verse_refresh.mjs";
-import { html_hash_set } from "./html_hash_set.mjs";
-import { html_hash_unparse } from "./html_hash_unparse.mjs";
 import { app_share_bible_folders } from "./app_share_bible_folders.mjs";
 import { app_share_verse } from "./app_share_verse.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -96,9 +95,3 @@ export function app_share_main(context) {
     });
   });
 }
-function html_hash_set_lookup(lookup) {
-    let joined = html_hash_unparse(lookup);
-    let h = string_combine_multiple(["#", joined]);
-    html_hash_set(h);
-}
-
