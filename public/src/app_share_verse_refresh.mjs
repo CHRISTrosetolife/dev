@@ -176,9 +176,9 @@ export async function app_share_verse_refresh(
       on_click,
     );
     async function on_click() {
-      let v_list = object_property_get(t, "value");
+      let v = object_property_get(t, "value");
       html_style_display_none(b);
-      each(v_list, function (v_item) {
+      each(v, function (v_item) {
         list_add(texts_extra_chosen, v_item);
         list_add(texts_extra_chosen, "");
         html_p_text(texts_component, v_item);
