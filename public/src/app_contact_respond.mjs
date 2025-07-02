@@ -4,16 +4,13 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_share_thanks } from "./app_share_thanks.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
-import { list_includes } from "./list_includes.mjs";
 import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
 export function app_contact_respond(input) {
   let outputs = [];
   let lower = string_case_lower(input);
   let tokens = string_split_space(lower);
   let output = null;
-  if (list_includes(["hi", "hii"], input)) {
-    output = app_share_verse_refresh_greet();
-  }
+  let choices = [];
   let nice_to_meet_you = {
     choice: [
       "great",
