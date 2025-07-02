@@ -47,7 +47,7 @@ export function app_contact_respond_choices() {
     {
       choice: ["keep", "sending", "us", "such", "scriptures"],
       response:
-        "If you send me a message here, then you will receive a scripture",
+        "If you send me a message here 📨, then you will receive a scripture 📖",
     },
     {
       choice: ["and"],
