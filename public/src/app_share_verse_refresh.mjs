@@ -161,7 +161,13 @@ export async function app_share_verse_refresh(
     },
     {
       button_text: "📨 Contact",
-      value_fn: function (parent) {},
+      value_fn: function (parent) {
+        [
+          "I have received too many messages to reply to them all in this app",
+          "Please do not send me a message here.",
+          "Instaed, contact me using this link: ",
+        ];
+      },
     },
   ];
   let texts_extra_div = html_div(root);
