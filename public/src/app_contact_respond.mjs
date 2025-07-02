@@ -1,3 +1,4 @@
+import { app_share_thanks } from "./app_share_thanks.mjs";
 import { log } from "./log.mjs";
 import { list_index_is } from "./list_index_is.mjs";
 import { list_get } from "./list_get.mjs";
@@ -26,7 +27,7 @@ export function app_contact_respond(input) {
     "high",
     "god",
   ];
-  response = $s,app_share_thanks()
+  (response = $s), app_share_thanks();
   let match = true;
   each_index(nice_to_meet_you, function (item, index) {
     if (list_index_is(tokens, index)) {
