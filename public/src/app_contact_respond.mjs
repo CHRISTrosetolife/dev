@@ -14,10 +14,6 @@ export function app_contact_respond(input) {
   if (list_includes(["hi", "hii"], input)) {
     output = app_share_verse_refresh_greet();
   }
-  let hi = {
-    choice: ["hi"],
-    response: app_share_verse_refresh_greet(),
-  };
   let nice_to_meet_you = {
     choice: [
       "great",
@@ -34,10 +30,6 @@ export function app_contact_respond(input) {
     ],
     response: app_share_verse_refresh_greet(),
   };
-  let response = string_combine_multiple([
-    app_share_thanks(),
-    " Great to meet you, too!",
-  ]);
   let pray = {
     choice: [
       "keep",
@@ -60,11 +52,14 @@ export function app_contact_respond(input) {
       "such",
       "scriptures",
     ],
-    response: app_share_verse_refresh_greet(),
+    response: string_combine_multiple([
+      app_share_thanks(),
+      " Great to meet you, too!",
+    ]),
   };
   let scripture = {
     choice: ["keep", "sending", "us", "such", "scriptures"],
-    response: app_share_verse_refresh_greet(),
+    response: "",
   };
   let and = {
     choice: ["and"],
