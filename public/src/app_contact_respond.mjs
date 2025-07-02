@@ -63,8 +63,8 @@ export function app_contact_respond(input) {
     "us",
     "such",
     "scriptures",
-    "",
   ];
+  let scripture = ["keep", "sending", "us", "such", "scriptures"];
   log({
     match,
     response,
