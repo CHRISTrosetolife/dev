@@ -23,7 +23,6 @@ export function app_contact_respond(input) {
     "high",
     "god",
   ];
-  let index = 0;
-  each_index(list, function (item, index2) {});
+  each_index(nice_to_meet_you, function (item, index) {});
   return output;
 }
