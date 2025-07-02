@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { while_change } from "./while_change.mjs";
 import { app_contact_respond_choices } from "./app_contact_respond_choices.mjs";
@@ -14,6 +15,9 @@ export function app_contact_respond(input) {
   let offset = 0;
   while_change(lambda);
   let finished = offset === list_index_last(tokens);
+  log({
+    offset,
+  });
   let v2 = !finished ? null : list_join_space(outputs);
   return v2;
   function lambda(change) {
