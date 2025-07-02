@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_index_is } from "./list_index_is.mjs";
@@ -25,7 +26,7 @@ export function app_contact_respond_choice(
   });
   if (match) {
     offset += offset_next;
-    list_add(outputs, choice_response);
+    list_add(outputs, object_property_get(object, "property_name"));
   }
   return offset;
 }
