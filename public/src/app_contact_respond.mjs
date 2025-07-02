@@ -10,11 +10,11 @@ export function app_contact_respond(input) {
   let outputs = [];
   let lower = string_case_lower(input);
   let tokens = string_split_space(lower);
-  let output = null;
   let choices = app_contact_respond_choices();
   let offset = 0;
   while_change(lambda);
   let v2 = list_empty_is(outputs) ? null : list_join_space(outputs);
+  let finished = offset === list_last_index_is(tokens);
   return v2;
   function lambda(change) {
     each(choices, function (choice) {
