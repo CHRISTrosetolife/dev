@@ -25,7 +25,8 @@ export function app_contact_respond(input) {
     "god",
   ];
   each_index(nice_to_meet_you, function (item, index) {
-    if (item === list_get(tokens, index)) {
+    let current = list_get(tokens, index);
+    if (item === current) {
     }
   });
   return output;
