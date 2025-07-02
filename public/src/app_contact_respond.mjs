@@ -14,47 +14,57 @@ export function app_contact_respond(input) {
   if (list_includes(["hi", "hii"], input)) {
     output = app_share_verse_refresh_greet();
   }
-  let hi = ["hi"];
-  let nice_to_meet_you = [
-    "great",
-    "to",
-    "meet",
-    "with",
-    "you",
-    "servant",
-    "of",
-    "the",
-    "most",
-    "high",
-    "god",
-  ];
+  let hi = {
+    choice: ["hi"],
+  };
+  let nice_to_meet_you = {
+    choice: [
+      "great",
+      "to",
+      "meet",
+      "with",
+      "you",
+      "servant",
+      "of",
+      "the",
+      "most",
+      "high",
+      "god",
+    ],
+  };
   let response = string_combine_multiple([
     app_share_thanks(),
     " Great to meet you, too!",
   ]);
-  let pray = [
-    "keep",
-    "on",
-    "praying",
-    "for",
-    "us",
-    "so",
-    "that",
-    "god's",
-    "will",
-    "be",
-    "done",
-    "on",
-    "us",
-    "and",
-    "keep",
-    "sending",
-    "us",
-    "such",
-    "scriptures",
-  ];
-  let scripture = ["keep", "sending", "us", "such", "scriptures"];
-  let and = ["and"];
+  let pray = {
+    choice: [
+      "keep",
+      "on",
+      "praying",
+      "for",
+      "us",
+      "so",
+      "that",
+      "god's",
+      "will",
+      "be",
+      "done",
+      "on",
+      "us",
+      "and",
+      "keep",
+      "sending",
+      "us",
+      "such",
+      "scriptures",
+    ],
+  };
+  let scripture = {
+    choice: ["keep", "sending", "us", "such", "scriptures"],
+  };
+  let and = {
+    choice: ["and"],
+  };
   let offset = 0;
   offset = app_contact_respond_choice(
     tokens,
