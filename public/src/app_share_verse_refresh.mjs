@@ -165,8 +165,8 @@ export async function app_share_verse_refresh(
         [
           "I have received too many messages to reply to them all in this app",
           "Please do not send me a message here.",
-          "Instaed, contact me using this link: ",
         ];
+        ("Instaed, contact me using this link: ");
       },
     },
   ];
