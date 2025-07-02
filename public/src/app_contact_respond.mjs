@@ -10,6 +10,7 @@ export function app_contact_respond(input) {
   let output = null;
   let choices = app_contact_respond_choices();
   let offset = 0;
+  let change = false;
   each(choices, function (choice) {
     let offset_next = app_contact_respond_choice(
       tokens,
@@ -17,7 +18,8 @@ export function app_contact_respond(input) {
       outputs,
       choice,
     );
-    if (false) {
+    if (offset_next !== offset) {
+      change = true;
     }
   });
   return output;
