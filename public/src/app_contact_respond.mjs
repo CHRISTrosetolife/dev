@@ -27,9 +27,9 @@ export function app_contact_respond(input) {
   ];
   each_index(nice_to_meet_you, function (item, index) {
     if (list_index_is(tokens, index)) {
-    }
-    let current = list_get(tokens, index);
-    if (item === current) {
+      let current = list_get(tokens, index);
+      if (item === current) {
+      }
     }
   });
   return output;
