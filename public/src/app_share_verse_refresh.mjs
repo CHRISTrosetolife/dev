@@ -224,6 +224,7 @@ export async function app_share_verse_refresh(
         chapter_code,
         verse_number_next,
         context,
+        app_fn,
       ));
     lookup_next = {};
     object_property_set(

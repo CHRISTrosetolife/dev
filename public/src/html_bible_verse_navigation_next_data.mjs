@@ -8,6 +8,7 @@ export async function html_bible_verse_navigation_next_data(
   chapter_code,
   verse_number_next,
   context,
+  app_fn,
 ) {
   let next = await new Promise(async function (resolve) {
     await html_bible_verse_navigation_next(
