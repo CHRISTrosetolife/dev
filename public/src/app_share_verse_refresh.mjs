@@ -219,28 +219,7 @@ export async function app_share_verse_refresh(
     book_code = object_property_get(p, "book_code");
     chapter_code = object_property_get(p, "chapter_code");
     let app_fn = app_share;
-    let next = await new Promise(async function (resolve) {
-      await html_bible_verse_navigation_next(
-        app_share,
-        book_code,
-        chapter_code,
-        verse_number_next,
-        function (book_code, chapter, verse_number_next) {
-          let v4 = resolve({
-            book_code,
-            chapter,
-            verse_number_next,
-          });
-          return v4;
-        },
-        context,
-        noop,
-      );
-    });
-    book_code_next = object_property_get(next, "book_code");
-    chapter_code_next = object_property_get(next, "chapter");
-    chapter_next = app_gs_bible_chapter_name(book_code_next, chapter_code_next);
-    verse_number_next = object_property_get(next, "verse_number_next");
+    ({ verse_number_next, book_code_next, chapter_code_next, chapter_next } = await html_bible_verse_navigation_next_data(book_code, chapter_code, verse_number_next, context));
     lookup_next = {};
     object_property_set(
       lookup_next,
@@ -277,3 +256,29 @@ export async function app_share_verse_refresh(
     html_hr(copy_message);
   }
 }
+async function html_bible_verse_navigation_next_data(book_code, chapter_code, verse_number_next, context) {
+    let next = await new Promise(async function (resolve) {
+        await html_bible_verse_navigation_next(
+            app_share,
+            book_code,
+            chapter_code,
+            verse_number_next,
+            function (book_code, chapter, verse_number_next) {
+                let v4 = resolve({
+                    book_code,
+                    chapter,
+                    verse_number_next,
+                });
+                return v4;
+            },
+            context,
+            noop
+        );
+    });
+    book_code_next = object_property_get(next, "book_code");
+    chapter_code_next = object_property_get(next, "chapter");
+    chapter_next = app_gs_bible_chapter_name(book_code_next, chapter_code_next);
+    verse_number_next = object_property_get(next, "verse_number_next");
+    return { verse_number_next, book_code_next, chapter_code_next, chapter_next };
+}
+
