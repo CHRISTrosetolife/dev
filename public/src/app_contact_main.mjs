@@ -58,11 +58,12 @@ export async function app_contact_main() {
   );
   html_rows_set(t, 8);
   let response;
+  
+      let value_initial = html_value_get(t);
   html_button(root, "Send message to me", async function () {
     html_clear(response);
     try {
-      let value = html_value_get(t);
-      let output = app_contact_respond(value);
+      let { output, value } = app_contact_respond_component(t);
       if (output === null) {
         html_p_text(
           response,
@@ -135,3 +136,9 @@ export async function app_contact_main() {
   });
   response = html_p(root);
 }
+function app_contact_respond_component(t) {
+    let value = html_value_get(t);
+    let output = app_contact_respond(value);
+    return { output, value };
+}
+
