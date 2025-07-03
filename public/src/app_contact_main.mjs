@@ -103,6 +103,17 @@ export async function app_contact_main() {
           chapter_code,
           verse_number_next,
         ));
+      book_code = storage_local_initialize(app_contact, "book", book_code);
+      chapter_code = storage_local_initialize(
+        app_contact,
+        "chapter",
+        chapter_code,
+      );
+      verse_number_next = storage_local_initialize(
+        app_contact,
+        "verse_number",
+        verse_number_next,
+      );
     }
   });
   response = html_p(root);
