@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { app_share } from "./app_share.mjs";
 import { html_bible_verse_navigation_next_data } from "./html_bible_verse_navigation_next_data.mjs";
@@ -31,6 +32,7 @@ import { html_style_default_initialize_axios } from "./html_style_default_initia
 export async function app_contact_main() {
   let context = {};
   let root = await html_style_default_initialize_axios();
+  object_property_set(context, "version_code", "engbsb");
   await app_context_books_bible(context);
   let { book_code, chapter_code, verse_number_next } =
     list_take_bible_books_new_context_random_vc(context);
