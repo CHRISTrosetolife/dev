@@ -1,3 +1,4 @@
+import { firebase_download_bible_verse } from "./firebase_download_bible_verse.mjs";
 import { list_take_bible_books_new_context_random_vc } from "./list_take_bible_books_new_context_random_vc.mjs";
 import { app_context_books_bible } from "./app_context_books_bible.mjs";
 import { html_clear } from "./html_clear.mjs";
@@ -47,6 +48,11 @@ export async function app_contact_main() {
   html_rows_set(t, 8);
   let response;
   html_button(root, "Send message to me", async function () {
+    let text = await firebase_download_bible_verse(
+      bible_folder,
+      chapter,
+      verse_number,
+    );
     html_clear(response);
     try {
       let value = html_value_get(t);
