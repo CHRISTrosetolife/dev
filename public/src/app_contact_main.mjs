@@ -57,7 +57,7 @@ export async function app_contact_main() {
       chapter,
       verse_number_next,
     );
-    let reference = bible_reference_code(chapter, verse_number_next);
+    let reference = bible_reference_code(chapter, [verse_number_next]);
     html_clear(response);
     try {
       let value = html_value_get(t);
