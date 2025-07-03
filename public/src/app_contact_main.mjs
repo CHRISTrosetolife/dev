@@ -99,7 +99,7 @@ export async function app_contact_main() {
       );
       let reference = bible_reference_code(chapter, [verse_number_next]);
       html_p_text(
-        response,
+        verse_p,
         string_combine_multiple(["📖 ", reference, " ✝️ ", text]),
       );
       let chapter_code_next, book_code_next;
