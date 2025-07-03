@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_contact_respond_component } from "./app_contact_respond_component.mjs";
 import { html_style_italic } from "./html_style_italic.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -59,6 +60,9 @@ export async function app_contact_main() {
   html_button(root, "Send message to me", async function () {
     try {
       let { output, value } = app_contact_respond_component(t, response);
+      log({
+        output,
+      });
       if (output === null) {
         html_p_text(
           response,
