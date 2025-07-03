@@ -82,41 +82,6 @@ export async function app_contact_main() {
       html_p_text(response, e);
     } finally {
       await next();
-      async function next() {
-        html_clear(verse_p);
-        let chapter = app_gs_bible_chapter_name(book_code, chapter_code);
-        let text = await firebase_download_bible_verse(
-          object_property_get(context, "version_code"),
-          chapter,
-          verse_number_next,
-        );
-        let reference = bible_reference_code(chapter, [verse_number_next]);
-        html_p_text(
-          verse_p,
-          string_combine_multiple(["📖 ", reference, " ✝️ ", text]),
-        );
-        html_button_next_after(verse_p, "verse", next);
-        let chapter_code_next, book_code_next;
-        ({ verse_number_next, book_code_next, chapter_code_next } =
-          await html_bible_verse_navigation_next_data(
-            app_share,
-            context,
-            book_code,
-            chapter_code,
-            verse_number_next,
-          ));
-        book_code = storage_local_set(app_contact, "book", book_code_next);
-        chapter_code = storage_local_set(
-          app_contact,
-          "chapter",
-          chapter_code_next,
-        );
-        verse_number_next = storage_local_set(
-          app_contact,
-          "verse_number",
-          verse_number_next,
-        );
-      }
     }
   });
   response = html_p(root);
@@ -135,5 +100,36 @@ export async function app_contact_main() {
     }
     html_value_set(t, "");
     html_scroll_center(response);
+  }
+  async function next() {
+    html_clear(verse_p);
+    let chapter = app_gs_bible_chapter_name(book_code, chapter_code);
+    let text = await firebase_download_bible_verse(
+      object_property_get(context, "version_code"),
+      chapter,
+      verse_number_next,
+    );
+    let reference = bible_reference_code(chapter, [verse_number_next]);
+    html_p_text(
+      verse_p,
+      string_combine_multiple(["📖 ", reference, " ✝️ ", text]),
+    );
+    html_button_next_after(verse_p, "verse", next);
+    let chapter_code_next, book_code_next;
+    ({ verse_number_next, book_code_next, chapter_code_next } =
+      await html_bible_verse_navigation_next_data(
+        app_share,
+        context,
+        book_code,
+        chapter_code,
+        verse_number_next,
+      ));
+    book_code = storage_local_set(app_contact, "book", book_code_next);
+    chapter_code = storage_local_set(app_contact, "chapter", chapter_code_next);
+    verse_number_next = storage_local_set(
+      app_contact,
+      "verse_number",
+      verse_number_next,
+    );
   }
 }
