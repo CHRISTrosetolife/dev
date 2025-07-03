@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { app_share } from "./app_share.mjs";
@@ -58,7 +59,7 @@ export async function app_contact_main() {
   html_button(root, "Send message to me", async function () {
     let chapter = app_gs_bible_chapter_name(book_code, chapter_code);
     let text = await firebase_download_bible_verse(
-      "engbsb",
+      object_property_get(context, "version_code"),
       chapter,
       verse_number_next,
     );
