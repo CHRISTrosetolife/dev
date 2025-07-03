@@ -42,7 +42,7 @@ export function app_contact_respond_choices() {
         "on",
         "us",
       ],
-      response: "God let there be prayer 🙏 amen 🙇.",
+      response: "God, let there be prayer 🙏 amen 🙇.",
     },
     {
       tokens: ["keep", "sending", "us", "such", "scriptures"],
