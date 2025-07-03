@@ -1,3 +1,4 @@
+import { app_contact_respond_component } from "./app_contact_respond_component.mjs";
 import { html_style_italic } from "./html_style_italic.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -20,7 +21,6 @@ import { firebase_upload_object } from "./firebase_upload_object.mjs";
 import { app_contact_firebase_folder_combine } from "./app_contact_firebase_folder_combine.mjs";
 import { file_name_json } from "./file_name_json.mjs";
 import { html_p_text } from "./html_p_text.mjs";
-import { app_contact_respond } from "./app_contact_respond.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_rows_set } from "./html_rows_set.mjs";
@@ -58,8 +58,7 @@ export async function app_contact_main() {
   );
   html_rows_set(t, 8);
   let response;
-  
-      let value_initial = html_value_get(t);
+  let value_initial = html_value_get(t);
   html_button(root, "Send message to me", async function () {
     html_clear(response);
     try {
@@ -136,9 +135,3 @@ export async function app_contact_main() {
   });
   response = html_p(root);
 }
-function app_contact_respond_component(t) {
-    let value = html_value_get(t);
-    let output = app_contact_respond(value);
-    return { output, value };
-}
-
