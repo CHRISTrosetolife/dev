@@ -9,12 +9,12 @@ export function app_share_book_random(context) {
   let lookup = html_hash_lookup();
   let book_code = list_take_bible_books_new_context_random(context);
   let chapter_code = bible_chapter_code_1();
+  let verse_number_next = "1";
   object_property_set(
     lookup,
     app_share_chapter(),
     string_combine_multiple([book_code, chapter_code]),
   );
-  let verse_number_next = "1";
   object_property_set(lookup, app_share_verse(), verse_number_next);
   let v = {
     lookup,
