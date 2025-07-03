@@ -27,6 +27,8 @@ import { firebase_initialize } from "./firebase_initialize.mjs";
 import { html_style_default_initialize_axios } from "./html_style_default_initialize_axios.mjs";
 export async function app_contact_main() {
   let context = {};
+  let root = await html_style_default_initialize_axios();
+  await app_context_books_bible(context);
   let { book_code, chapter_code, verse_number_next } =
     list_take_bible_books_new_context_random_vc(context);
   book_code = storage_local_initialize(app_contact, "book", book_code);
@@ -36,8 +38,6 @@ export async function app_contact_main() {
     "verse_number",
     verse_number_next,
   );
-  let root = await html_style_default_initialize_axios();
-  await app_context_books_bible(context);
   await firebase_initialize();
   let id = storage_local_initialize(app_contact, "id", await uuid());
   app_contact_instructions(root);
