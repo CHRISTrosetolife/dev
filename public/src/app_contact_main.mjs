@@ -122,19 +122,19 @@ export async function app_contact_main() {
         );
       }
     }
-    function on_response(value, output) {
-      if (false) {
-        html_p_text(response, "💻 Computer program answered for me:");
-      }
-      let value_p = html_p_text(response, value);
-      html_style_italic(value_p);
-      let r = html_p_text(response, output);
-      if (false) {
-        html_style_bold(r);
-      }
-      html_value_set(t, "");
-      html_scroll_center(response);
-    }
   });
   response = html_p(root);
+  function on_response(value, output) {
+    if (false) {
+      html_p_text(response, "💻 Computer program answered for me:");
+    }
+    let value_p = html_p_text(response, value);
+    html_style_italic(value_p);
+    let r = html_p_text(response, output);
+    if (false) {
+      html_style_bold(r);
+    }
+    html_value_set(t, "");
+    html_scroll_center(response);
+  }
 }
