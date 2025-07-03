@@ -58,6 +58,7 @@ export async function app_contact_main() {
   html_rows_set(t, 8);
   let response;
   let { output, value } = app_contact_respond_component(t);
+  on_response(value, output);
   html_button(root, "Send message to me", async function () {
     html_clear(response);
     try {
@@ -78,17 +79,7 @@ export async function app_contact_main() {
           "⏰️ Please refresh this page later to see if I have answered",
         ]);
       } else {
-        if (false) {
-          html_p_text(response, "💻 Computer program answered for me:");
-        }
-        let value_p = html_p_text(response, value);
-        html_style_italic(value_p);
-        let r = html_p_text(response, output);
-        if (false) {
-          html_style_bold(r);
-        }
-        html_value_set(t, "");
-        html_scroll_center(response);
+        on_response(value, output);
       }
     } catch (e) {
       html_p_text(response, e);
@@ -130,6 +121,19 @@ export async function app_contact_main() {
           verse_number_next,
         );
       }
+    }
+    function on_response(value, output) {
+      if (false) {
+        html_p_text(response, "💻 Computer program answered for me:");
+      }
+      let value_p = html_p_text(response, value);
+      html_style_italic(value_p);
+      let r = html_p_text(response, output);
+      if (false) {
+        html_style_bold(r);
+      }
+      html_value_set(t, "");
+      html_scroll_center(response);
     }
   });
   response = html_p(root);
