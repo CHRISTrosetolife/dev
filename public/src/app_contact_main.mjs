@@ -1,3 +1,4 @@
+import { list_take_bible_books_new_context_random_vc } from "./list_take_bible_books_new_context_random_vc.mjs";
 import { app_context_books_bible } from "./app_context_books_bible.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { html_p } from "./html_p.mjs";
@@ -23,6 +24,8 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 export async function app_contact_main() {
   let context = {};
   await app_context_books_bible(context);
+  let { book_code, chapter_code, verse_number_next } =
+    list_take_bible_books_new_context_random_vc(context);
   let root = html_style_default_initialize();
   await firebase_initialize();
   let id = storage_local_initialize(app_contact, "id", await uuid());
