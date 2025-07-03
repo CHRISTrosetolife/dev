@@ -90,6 +90,7 @@ export async function app_contact_main() {
     } catch (e) {
       html_p_text(response, e);
     } finally {
+      let verse_p = html_p(response);
       let chapter = app_gs_bible_chapter_name(book_code, chapter_code);
       let text = await firebase_download_bible_verse(
         object_property_get(context, "version_code"),
