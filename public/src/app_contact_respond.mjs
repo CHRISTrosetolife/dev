@@ -18,16 +18,16 @@ export function app_contact_respond(input) {
   let offset = 0;
   while_change(lambda);
   log({
-    tokens,
+    filtered,
     offset,
   });
-  let finished = offset === list_size(tokens);
+  let finished = offset === list_size(filtered);
   let output = !finished ? null : list_join_space(outputs);
   return output;
   function lambda(change) {
     each(choices, function (choice) {
       let offset_next = app_contact_respond_choice(
-        tokens,
+        filtered,
         offset,
         outputs,
         choice,
