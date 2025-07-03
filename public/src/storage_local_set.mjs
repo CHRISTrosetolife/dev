@@ -5,4 +5,6 @@ export function storage_local_set(fn_namespace, key, value) {
   assert_arguments_length(arguments, 3);
   let json = json_to(value);
   localStorage.setItem(storage_local_key(fn_namespace, key), json);
+  let v = value;
+  return v;
 }
