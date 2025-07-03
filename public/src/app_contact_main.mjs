@@ -53,7 +53,7 @@ export async function app_contact_main() {
   html_button(root, "Send message to me", async function () {
     let chapter = app_gs_bible_chapter_name(book_code, chapter_code);
     let text = await firebase_download_bible_verse(
-      bible_folder,
+      "engbsb",
       chapter,
       verse_number,
     );
