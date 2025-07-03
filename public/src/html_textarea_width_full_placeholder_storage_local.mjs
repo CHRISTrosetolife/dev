@@ -20,6 +20,7 @@ export function html_textarea_width_full_placeholder_storage_local(
   }
   object_merge_strict(t, {
     on_change,
+    change: function () {},
   });
   let v = t;
   return v;
