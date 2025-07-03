@@ -4,11 +4,11 @@ import { noop } from "./noop.mjs";
 import { app_share } from "./app_share.mjs";
 import { html_bible_verse_navigation_next } from "./html_bible_verse_navigation_next.mjs";
 export async function html_bible_verse_navigation_next_data(
+  app_fn,
   book_code,
   chapter_code,
   verse_number_next,
   context,
-  app_fn,
 ) {
   let next = await new Promise(async function (resolve) {
     await html_bible_verse_navigation_next(

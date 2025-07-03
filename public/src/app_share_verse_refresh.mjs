@@ -220,11 +220,11 @@ export async function app_share_verse_refresh(
     let app_fn = app_share;
     ({ verse_number_next, book_code_next, chapter_code_next, chapter_next } =
       await html_bible_verse_navigation_next_data(
+        app_fn,
         book_code,
         chapter_code,
         verse_number_next,
         context,
-        app_fn,
       ));
     lookup_next = {};
     object_property_set(
