@@ -218,6 +218,7 @@ export async function app_share_verse_refresh(
     let p = bible_chapter_name_parse(chapter_next);
     book_code = object_property_get(p, "book_code");
     chapter_code = object_property_get(p, "chapter_code");
+    let app_fn = app_share;
     let next = await new Promise(async function (resolve) {
       await html_bible_verse_navigation_next(
         app_share,
