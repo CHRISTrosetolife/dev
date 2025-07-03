@@ -24,7 +24,7 @@ import { uuid } from "./uuid.mjs";
 import { app_contact } from "./app_contact.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { firebase_initialize } from "./firebase_initialize.mjs";
-import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
+import { html_style_default_initialize_axios } from "./html_style_default_initialize_axios.mjs";
 export async function app_contact_main() {
   let context = {};
   await app_context_books_bible(context);
@@ -37,7 +37,7 @@ export async function app_contact_main() {
     "verse_number",
     verse_number_next,
   );
-  let root = html_style_default_initialize();
+  let root = await html_style_default_initialize_axios();
   await firebase_initialize();
   let id = storage_local_initialize(app_contact, "id", await uuid());
   app_contact_instructions(root);
