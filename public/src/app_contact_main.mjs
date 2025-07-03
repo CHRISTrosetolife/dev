@@ -81,6 +81,7 @@ export async function app_contact_main() {
         if (false) {
           html_p_text(response, "💻 Computer program answered for me:");
         }
+        html_p_text(response, value);
         let r = html_p_text(response, output);
         if (false) {
           html_style_bold(r);
