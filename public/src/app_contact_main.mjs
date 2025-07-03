@@ -14,7 +14,6 @@ import { app_context_books_bible } from "./app_context_books_bible.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
-import { html_value_set } from "./html_value_set.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { firebase_upload_object } from "./firebase_upload_object.mjs";
@@ -102,7 +101,7 @@ export async function app_contact_main() {
       html_style_bold(r);
     }
     let change = object_property_get(t, "change");
-    html_value_set(t, "");
+    change("");
     html_scroll_center(response);
   }
   async function verse_next() {
