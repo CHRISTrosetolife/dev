@@ -91,7 +91,7 @@ export async function app_contact_main() {
     } catch (e) {
       html_p_text(response, e);
     } finally {
-      html_p_text(response, string_combine_multiple([reference, text]));
+      html_p_text(response, string_combine_multiple([reference, " ", text]));
     }
   });
   response = html_p(root);
