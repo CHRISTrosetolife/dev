@@ -57,13 +57,6 @@ export async function app_contact_main() {
   html_rows_set(t, 8);
   let response;
   html_button(root, "Send message to me", async function () {
-    let chapter = app_gs_bible_chapter_name(book_code, chapter_code);
-    let text = await firebase_download_bible_verse(
-      object_property_get(context, "version_code"),
-      chapter,
-      verse_number_next,
-    );
-    let reference = bible_reference_code(chapter, [verse_number_next]);
     html_clear(response);
     try {
       let value = html_value_get(t);
@@ -97,6 +90,13 @@ export async function app_contact_main() {
     } catch (e) {
       html_p_text(response, e);
     } finally {
+      let chapter = app_gs_bible_chapter_name(book_code, chapter_code);
+      let text = await firebase_download_bible_verse(
+        object_property_get(context, "version_code"),
+        chapter,
+        verse_number_next,
+      );
+      let reference = bible_reference_code(chapter, [verse_number_next]);
       html_p_text(
         response,
         string_combine_multiple(["📖 ", reference, " ✝️ ", text]),
