@@ -1,3 +1,4 @@
+import { storage_local_set } from "./storage_local_set.mjs";
 import { app_share } from "./app_share.mjs";
 import { html_bible_verse_navigation_next_data } from "./html_bible_verse_navigation_next_data.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -103,13 +104,13 @@ export async function app_contact_main() {
           chapter_code,
           verse_number_next,
         ));
-      book_code = storage_local_initialize(app_contact, "book", book_code);
-      chapter_code = storage_local_initialize(
+      book_code = storage_local_set(app_contact, "book", book_code_next);
+      chapter_code = storage_local_set(
         app_contact,
         "chapter",
-        chapter_code,
+        chapter_code_next,
       );
-      verse_number_next = storage_local_initialize(
+      verse_number_next = storage_local_set(
         app_contact,
         "verse_number",
         verse_number_next,
