@@ -1,3 +1,5 @@
+import { app_share } from "./app_share.mjs";
+import { html_bible_verse_navigation_next_data } from "./html_bible_verse_navigation_next_data.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { bible_reference_code } from "./bible_reference_code.mjs";
 import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
@@ -92,6 +94,14 @@ export async function app_contact_main() {
       html_p_text(response, e);
     } finally {
       html_p_text(response, string_combine_multiple([reference, " ", text]));
+      ({ verse_number_next, book_code_next, chapter_code_next, chapter_next } =
+        await html_bible_verse_navigation_next_data(
+          app_share,
+          context,
+          book_code,
+          chapter_code,
+          verse_number_next,
+        ));
     }
   });
   response = html_p(root);
