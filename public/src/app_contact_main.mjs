@@ -26,9 +26,13 @@ export async function app_contact_main() {
   await app_context_books_bible(context);
   let { book_code, chapter_code, verse_number_next } =
     list_take_bible_books_new_context_random_vc(context);
-  storage_local_initialize(app_contact, "book", book_code);
-  storage_local_initialize(app_contact, "chapter", chapter_code);
-  storage_local_initialize(app_contact, "verse_number", verse_number_next);
+  book_code = storage_local_initialize(app_contact, "book", book_code);
+  chapter_code = storage_local_initialize(app_contact, "chapter", chapter_code);
+  verse_number_next = storage_local_initialize(
+    app_contact,
+    "verse_number",
+    verse_number_next,
+  );
   let root = html_style_default_initialize();
   await firebase_initialize();
   let id = storage_local_initialize(app_contact, "id", await uuid());
