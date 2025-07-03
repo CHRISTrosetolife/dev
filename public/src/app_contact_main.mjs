@@ -101,6 +101,7 @@ export async function app_contact_main() {
     if (false) {
       html_style_bold(r);
     }
+    let change = object_property_get(t, "change");
     html_value_set(t, "");
     html_scroll_center(response);
   }
