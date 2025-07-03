@@ -21,7 +21,6 @@ import { firebase_upload_object } from "./firebase_upload_object.mjs";
 import { app_contact_firebase_folder_combine } from "./app_contact_firebase_folder_combine.mjs";
 import { file_name_json } from "./file_name_json.mjs";
 import { html_p_text } from "./html_p_text.mjs";
-import { html_value_get } from "./html_value_get.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_rows_set } from "./html_rows_set.mjs";
 import { html_textarea_width_full_placeholder_storage_local } from "./html_textarea_width_full_placeholder_storage_local.mjs";
@@ -58,7 +57,7 @@ export async function app_contact_main() {
   );
   html_rows_set(t, 8);
   let response;
-  let value_initial = html_value_get(t);
+  let { output, value } = app_contact_respond_component(t);
   html_button(root, "Send message to me", async function () {
     html_clear(response);
     try {
