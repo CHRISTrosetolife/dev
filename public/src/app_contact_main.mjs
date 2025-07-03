@@ -1,4 +1,4 @@
-import { bible_reference } from "./bible_reference.mjs";
+import { bible_reference_code } from "./bible_reference_code.mjs";
 import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
 import { firebase_download_bible_verse } from "./firebase_download_bible_verse.mjs";
 import { list_take_bible_books_new_context_random_vc } from "./list_take_bible_books_new_context_random_vc.mjs";
@@ -56,7 +56,7 @@ export async function app_contact_main() {
       chapter,
       verse_number,
     );
-    bible_reference(book_name, chapter, verse_number);
+    bible_reference_code(chapter, verse_numbers);
     html_clear(response);
     try {
       let value = html_value_get(t);
