@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { bible_reference_code } from "./bible_reference_code.mjs";
 import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
 import { firebase_download_bible_verse } from "./firebase_download_bible_verse.mjs";
@@ -56,7 +57,7 @@ export async function app_contact_main() {
       chapter,
       verse_number,
     );
-    bible_reference_code(chapter, verse_numbers);
+    let reference = bible_reference_code(chapter, verse_numbers);
     html_clear(response);
     try {
       let value = html_value_get(t);
@@ -89,6 +90,8 @@ export async function app_contact_main() {
       }
     } catch (e) {
       html_p_text(response, e);
+    } finally {
+      html_p_text(response, string_combine_multiple([reference, text]));
     }
   });
   response = html_p(root);
