@@ -81,13 +81,14 @@ export async function app_contact_main() {
     } catch (e) {
       html_p_text(response, e);
     } finally {
-      await next();
+      await verse_next();
     }
   });
   response = html_p(root);
   let verse_p = html_p(root);
   let { output, value } = app_contact_respond_component(t, response);
   on_response(value, output);
+  await verse_next();
   function on_response(value, output) {
     if (false) {
       html_p_text(response, "💻 Computer program answered for me:");
@@ -101,7 +102,7 @@ export async function app_contact_main() {
     html_value_set(t, "");
     html_scroll_center(response);
   }
-  async function next() {
+  async function verse_next() {
     html_clear(verse_p);
     let chapter = app_gs_bible_chapter_name(book_code, chapter_code);
     let text = await firebase_download_bible_verse(
@@ -114,7 +115,7 @@ export async function app_contact_main() {
       verse_p,
       string_combine_multiple(["📖 ", reference, " ✝️ ", text]),
     );
-    html_button_next_after(verse_p, "verse", next);
+    html_button_next_after(verse_p, "verse", verse_next);
     let chapter_code_next, book_code_next;
     ({ verse_number_next, book_code_next, chapter_code_next } =
       await html_bible_verse_navigation_next_data(
