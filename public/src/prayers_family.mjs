@@ -74,7 +74,7 @@ export function prayers_family() {
       prayers_bbw,
       string_prefix_and,
     ),
-    "bless beyond words parenting of Micah and Alexa",
+    "bless beyond words the parenting of Micah and Alexa",
   ];
   return v;
 }
