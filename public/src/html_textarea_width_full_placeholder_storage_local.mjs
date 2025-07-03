@@ -3,6 +3,7 @@ import { html_on_input_value } from "./html_on_input_value.mjs";
 import { html_value_set } from "./html_value_set.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { html_textarea_width_full_placeholder } from "./html_textarea_width_full_placeholder.mjs";
+import { object_merge_strict } from "./object_merge_strict.mjs";
 export function html_textarea_width_full_placeholder_storage_local(
   fn,
   root,
@@ -17,6 +18,9 @@ export function html_textarea_width_full_placeholder_storage_local(
   function on_change(value_new) {
     storage_local_set(fn, key, value_new);
   }
+  object_merge_strict(t, {
+    on_change,
+  });
   let v = t;
   return v;
 }
