@@ -97,7 +97,10 @@ export async function app_contact_main() {
     } catch (e) {
       html_p_text(response, e);
     } finally {
-      html_p_text(response, string_combine_multiple([reference, " ", text]));
+      html_p_text(
+        response,
+        string_combine_multiple(["📖 ", reference, " ✝️ ", text]),
+      );
       let chapter_code_next, book_code_next;
       ({ verse_number_next, book_code_next, chapter_code_next } =
         await html_bible_verse_navigation_next_data(
