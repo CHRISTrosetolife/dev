@@ -23,7 +23,7 @@ export function app_contact_respond_choices() {
       ],
       response: string_combine_multiple([
         app_share_thanks(),
-        " Great to meet you, too!",
+        " Great to meet you, too 🤝!",
       ]),
     },
     {
