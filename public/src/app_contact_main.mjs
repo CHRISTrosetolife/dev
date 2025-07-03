@@ -57,8 +57,6 @@ export async function app_contact_main() {
   );
   html_rows_set(t, 8);
   let response;
-  let { output, value } = app_contact_respond_component(t);
-  on_response(value, output);
   html_button(root, "Send message to me", async function () {
     html_clear(response);
     try {
@@ -124,6 +122,8 @@ export async function app_contact_main() {
     }
   });
   response = html_p(root);
+  let { output, value } = app_contact_respond_component(t);
+  on_response(value, output);
   function on_response(value, output) {
     if (false) {
       html_p_text(response, "💻 Computer program answered for me:");
