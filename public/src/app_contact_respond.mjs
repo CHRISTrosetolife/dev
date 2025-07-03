@@ -1,5 +1,4 @@
 import { log } from "./log.mjs";
-import { list_index_last } from "./list_index_last.mjs";
 import { while_change } from "./while_change.mjs";
 import { app_contact_respond_choices } from "./app_contact_respond_choices.mjs";
 import { each } from "./each.mjs";
@@ -7,6 +6,7 @@ import { app_contact_respond_choice } from "./app_contact_respond_choice.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_join_space } from "./list_join_space.mjs";
+import { list_size } from "./list_size.mjs";
 export function app_contact_respond(input) {
   let outputs = [];
   let lower = string_case_lower(input);
@@ -18,7 +18,7 @@ export function app_contact_respond(input) {
     tokens,
     offset,
   });
-  let finished = offset === list_index_last(tokens);
+  let finished = offset === list_size(tokens);
   let output = !finished ? null : list_join_space(outputs);
   return output;
   function lambda(change) {
