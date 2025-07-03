@@ -81,7 +81,6 @@ export async function app_contact_main() {
     } catch (e) {
       html_p_text(response, e);
     } finally {
-      let verse_p = html_p(response);
       await next();
       async function next() {
         html_clear(verse_p);
@@ -121,6 +120,7 @@ export async function app_contact_main() {
     }
   });
   response = html_p(root);
+  let verse_p = html_p(root);
   let { output, value } = app_contact_respond_component(t, response);
   on_response(value, output);
   function on_response(value, output) {
