@@ -30,6 +30,7 @@ import { app_contact } from "./app_contact.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { firebase_initialize } from "./firebase_initialize.mjs";
 import { html_style_default_initialize_axios } from "./html_style_default_initialize_axios.mjs";
+import { html_button_next_after } from "./html_button_next_after.mjs";
 export async function app_contact_main() {
   let context = {};
   let root = await html_style_default_initialize_axios();
@@ -102,6 +103,7 @@ export async function app_contact_main() {
         verse_p,
         string_combine_multiple(["📖 ", reference, " ✝️ ", text]),
       );
+      html_button_next_after();
       let chapter_code_next, book_code_next;
       ({ verse_number_next, book_code_next, chapter_code_next } =
         await html_bible_verse_navigation_next_data(
