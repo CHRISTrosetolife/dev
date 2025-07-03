@@ -1,3 +1,4 @@
+import { html_style_italic } from "./html_style_italic.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
@@ -81,7 +82,8 @@ export async function app_contact_main() {
         if (false) {
           html_p_text(response, "💻 Computer program answered for me:");
         }
-        html_p_text(response, value);
+        let value_p = html_p_text(response, value);
+        html_style_italic(value_p);
         let r = html_p_text(response, output);
         if (false) {
           html_style_bold(r);
