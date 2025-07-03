@@ -13,9 +13,10 @@ export function html_textarea_width_full_placeholder_storage_local(
   let t = html_textarea_width_full_placeholder(root, placeholder);
   let value_before = storage_local_initialize(fn, key, value_initial);
   html_value_set(t, value_before);
-  html_on_input_value(t, function (value_new) {
+  html_on_input_value(t, on_change);
+  function on_change(value_new) {
     storage_local_set(fn, key, value_new);
-  });
+  }
   let v = t;
   return v;
 }
