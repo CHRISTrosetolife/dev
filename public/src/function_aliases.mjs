@@ -104,7 +104,7 @@ export function function_aliases() {
   function_aliases_register(all, fn_name("app_new_existing"), ["ane"]);
   function_aliases_register(all, fn_name("sandbox_5"), ["s5"]);
   function_aliases_register(all, fn_name("app_code_local_upload"), ["u"]);
-  function_aliases_register(all, fn_name("app_code_local_download"), ["cd"]);
+  function_aliases_register(all, fn_name("app_code_local_download"), ["cdd"]);
   function_aliases_register(all, fn_name("function_params_move_name"), ["pm"]);
   function_aliases_register(all, fn_name("watch_git_pause"), ["wp"]);
   function_aliases_register(all, fn_name("watch_git_unpause"), ["wu"]);
