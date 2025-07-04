@@ -8,8 +8,7 @@ export function prayers_list_generic(list, count, on_first, on_last) {
     let last_is = m === count - 1 || list_index_last_is(list, index);
     if (last_is && first_is) {
       item = on_first(item);
-    }
-    if (last_is) {
+    } else if (last_is) {
       item = string_number_colon_generic(on_last(item), index, ";");
     } else if (first_is) {
       item = string_number_colon(on_first(item), index);
