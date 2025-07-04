@@ -2,13 +2,16 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_index_last_is } from "./list_index_last_is.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 export function prayers_list_generic(list, count, on_first, on_last) {
+  let ending_regular = ",";
   let ps = list_map_index(list, function (item, index) {
     let m = index % count;
     let first_is = m === 0;
     let last_is = m === count - 1 || list_index_last_is(list, index);
+    let endng;
     if (last_is) {
-      let endng = ";";
+      endng = ";";
     } else {
+      let ending = ending_regular;
     }
     if (first_is) {
       item = string_number_colon(on_first(item), index);
@@ -21,8 +24,7 @@ export function prayers_list_generic(list, count, on_first, on_last) {
   });
   return ps;
   function string_number_colon(item, index) {
-    let ending = ",";
-    let v3 = string_number_colon_generic(item, index, ending);
+    let v3 = string_number_colon_generic(item, index, ending_regular);
     return v3;
   }
   function string_number_colon_generic(item, index, ending) {
