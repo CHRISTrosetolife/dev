@@ -1,5 +1,4 @@
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
-import { log } from "./log.mjs";
 import { while_change } from "./while_change.mjs";
 import { app_contact_respond_choices } from "./app_contact_respond_choices.mjs";
 import { each } from "./each.mjs";
@@ -17,10 +16,6 @@ export function app_contact_respond(input) {
   let choices = app_contact_respond_choices();
   let offset = 0;
   while_change(lambda);
-  log({
-    filtered,
-    offset,
-  });
   let finished = offset === list_size(filtered);
   let output = !finished ? null : list_join_space(outputs);
   return output;
