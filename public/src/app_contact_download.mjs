@@ -24,6 +24,6 @@ export async function app_contact_download() {
     let v2 = object_property_get(m, "respond_null");
     return v2;
   });
-  let v3 = mapped;
+  let v3 = filtered;
   return v3;
 }
