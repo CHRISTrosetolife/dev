@@ -16,6 +16,7 @@ export function prayers_list_generic(list, count, on_first, on_last) {
     if (first_is) {
       item = string_number_colon(on_first(item), index);
     } else if (last_is) {
+      item = on_last(item);
     } else {
       item = string_number_colon(item, index);
     }
