@@ -62,6 +62,10 @@ export function app_share_main(context) {
       text: "Malay (Malaysia) and English",
       code: "zlmKSZI+engbsb",
     },
+    {
+      text: "Wolof (+220) and English",
+      code: "wolmbs+engbsb",
+    },
   ];
   each(folders, function (folder) {
     html_button(root, object_property_get(folder, "text"), async function () {
