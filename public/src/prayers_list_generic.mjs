@@ -22,10 +22,6 @@ export function prayers_list_generic(list, count, on_first, on_last) {
     return item;
   });
   return ps;
-  function string_number_colon(item, index) {
-    let v3 = string_number_colon_generic(item, index, ending_regular);
-    return v3;
-  }
   function string_number_colon_generic(item, index, ending) {
     let index_1 = index + 1;
     let index_1_colon = string_combine_multiple([index_1, ": "]);
