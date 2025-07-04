@@ -15,7 +15,7 @@ export function app_share_main(context) {
       code: "engbsb",
     },
     {
-      text: "Urdu and English",
+      text: "Urdu (+92) and English",
       code: "urdgvu+engbsb",
     },
     {
