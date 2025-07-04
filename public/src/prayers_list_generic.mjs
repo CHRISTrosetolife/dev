@@ -18,11 +18,11 @@ export function prayers_list_generic(list, count, on_first, on_last) {
     } else if (last_is) {
       item = on_last(item);
     }
-    item = string_number_colon_generic(item, index, ending);
+    item = line_format(item, index, ending);
     return item;
   });
   return ps;
-  function string_number_colon_generic(item, index, ending) {
+  function line_format(item, index, ending) {
     let index_1 = index + 1;
     let index_1_colon = string_combine_multiple([index_1, ": "]);
     let v2 = string_combine_multiple([index_1_colon, item, ending, " "]);
