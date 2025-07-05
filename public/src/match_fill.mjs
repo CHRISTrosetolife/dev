@@ -20,7 +20,6 @@ export function match_fill(tokens, choices) {
     let filtered = match_on(result, noop);
     let filtered_empty_not = list_empty_not_is(filtered);
     if (filtered_empty_not) {
-      match_choice_inner(result);
       let tokens = object_property_get(result, "tokens");
       let index = object_property_get(result, "index");
       let tokens_size = list_size(tokens);
