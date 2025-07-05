@@ -1,6 +1,5 @@
-import { object_merge } from "./object_merge.mjs";
+import { json_to } from "./json_to.mjs";
 export function object_copy(object) {
-  let copy = {};
-  object_merge(copy, object);
-  return copy;
+  let v = json_to(copy);
+  return v;
 }
