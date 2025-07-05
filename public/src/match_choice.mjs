@@ -12,7 +12,7 @@ export function match_choice(choices, on_match) {
     });
     let filtered2 = list_filter(mapped, list_empty_not_is);
     let mapped2 = list_map(filtered2, list_single);
-    let filtered = match_on(mapped, on_match);
+    let filtered = match_on(filtered2, on_match);
     return filtered;
   };
   return v;
