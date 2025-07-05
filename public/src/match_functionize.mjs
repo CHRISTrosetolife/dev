@@ -13,7 +13,7 @@ export function match_functionize(a, item) {
     if (string_is(item)) {
       item = match_string(item);
     }
-    let c = item(ai);
+    let c = item([ai]);
     return c;
   });
   let c = list_concat_multiple(v);
