@@ -10,6 +10,7 @@ export function match_fill(tokens, choices) {
   let a = {
     tokens,
     index: 0,
+    data: {},
   };
   object_property_set(a, "match", false);
   let result = a;
