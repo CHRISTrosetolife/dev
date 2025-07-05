@@ -60,7 +60,7 @@ export async function app_contact_main() {
   html_button(root, "Send message to me", async function () {
     try {
       let { repsonse, value } = app_contact_respond_component(t, response);
-      let { output, valid } = repsonse;
+      let { output } = repsonse;
       log({
         output,
       });
@@ -80,7 +80,7 @@ export async function app_contact_main() {
           "⏰️ Please refresh this page later to see if I have answered",
         ]);
       } else {
-        on_response(value, output);
+        on_response(value, repsonse);
       }
     } catch (e) {
       html_p_text(response, e);
@@ -93,7 +93,7 @@ export async function app_contact_main() {
   let { repsonse, value } = app_contact_respond_component(t, response);
   let { output, valid } = repsonse;
   if (output !== null) {
-    on_response(value, output);
+    on_response(value, repsonse);
     await verse_next();
   }
   function on_response(value, output) {
