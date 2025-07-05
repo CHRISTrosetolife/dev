@@ -5,7 +5,7 @@ export function app_contact_match_generic(lambda, message) {
   let v = function app_contact_match_inner(result) {
     let copy = app_contact_match_data_replace(result);
     let outputs = object_property_get(copy, "outputs");
-    lambda(outputs);
+    lambda(outputs, copy);
     list_add(outputs, message);
   };
   return v;
