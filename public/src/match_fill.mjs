@@ -8,6 +8,7 @@ import { match_functionize } from "./match_functionize.mjs";
 export function match_fill(choices) {
   let v = function match_choice_inner(a) {
     let result = a;
+    let final = result;
     each(choices, function (choice) {
       result = match_functionize(result, choice);
       let filtered = match_on([result], noop);
