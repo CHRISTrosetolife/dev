@@ -21,7 +21,6 @@ export function match_fill(tokens, choices) {
       let index = object_property_get(f, "index");
       let tokens_size = list_size(tokens);
       if (index === tokens_size + 1) {
-        object_property_set(f, "match", true);
         final = f;
       }
     });
