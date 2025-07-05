@@ -4,11 +4,12 @@ import { match_string } from "./match_string.mjs";
 import { string_is } from "./string_is.mjs";
 export function match_functionize(a, item, lambda) {
   assert_arguments_length(arguments, 3);
-  list_map(a, function (ai) {
+  let v = list_map(a, function (ai) {
     if (string_is(item)) {
       item = match_string(item);
     }
     let c = item(a);
+    return c;
   });
-  return c;
+  return v;
 }
