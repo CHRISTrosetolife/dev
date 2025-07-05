@@ -12,8 +12,8 @@ export function match_string(s) {
     let match = i === s;
     if (match) {
       object_property_increment(copy, "index");
-      object_property_set(copy, "match", true);
     }
+    object_property_set(copy, "match", match);
     let v2 = [copy];
     return v2;
   };
