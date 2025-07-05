@@ -19,7 +19,7 @@ export function app_contact_respond_choices() {
     {
       tokens: ["I", "really", "need", "help", "from", "you"],
       response:
-        "You asked for help. Please rewrite your message to say what kind of help you need",
+        "You asked for help. Please rewrite your message to say what kind of help you need.",
       invalid: true,
     },
     {
