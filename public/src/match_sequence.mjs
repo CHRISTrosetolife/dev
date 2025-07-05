@@ -1,23 +1,17 @@
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
-import { list_map } from "./list_map.mjs";
-import { list_filter_property } from "./list_filter_property.mjs";
 export function match_sequence(steps) {
   let v = function match_sequence_inner(a, on_match) {
+    let result = a;
     each(steps, function (step) {
-      let result = choice(a);
+      result = step(result);
       let match = object_property_get(result, "match");
       if (!match) {
         let v3 = true;
         return v3;
       }
     });
-    let mapped = list_map(choices, function (choice) {
-      return result;
-    });
-    let filtered = list_filter_property(mapped, "match", true);
-    each(filtered, on_match);
-    let v2 = filtered;
+    let v2 = [result];
     return v2;
   };
   return v;
