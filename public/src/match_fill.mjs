@@ -5,6 +5,7 @@ import { noop } from "./noop.mjs";
 import { each } from "./each.mjs";
 import { match_on } from "./match_on.mjs";
 import { match_functionize } from "./match_functionize.mjs";
+import { list_empty_is } from "./list_empty_is.mjs";
 export function match_fill(tokens, choices) {
   let a = {
     tokens,
@@ -13,7 +14,9 @@ export function match_fill(tokens, choices) {
   };
   object_property_set(a, "match", false);
   let final = a;
-  if (false) {
+  if (list_empty_is(tokens)) {
+    let v = final;
+    return v;
   }
   match_fill_inner(a);
   return final;
