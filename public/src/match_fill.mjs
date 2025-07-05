@@ -26,7 +26,7 @@ export function match_fill(choices) {
         }
       }
     });
-    return result;
+    return final;
   };
   return v;
 }
