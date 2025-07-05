@@ -14,6 +14,7 @@ export function match_choice(choices, on_match) {
     let c = list_concat_multiple(mapped);
     log({
       c,
+      choices,
     });
     let filtered = match_on(c, on_match);
     return filtered;
