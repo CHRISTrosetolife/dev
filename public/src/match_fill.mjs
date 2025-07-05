@@ -17,9 +17,9 @@ export function match_fill(choices) {
       let filtered_empty_not = list_empty_not_is(filtered);
       if (filtered_empty_not) {
         match_choice_inner(result);
-        let input = object_property_get(result, "input");
+        let tokens = object_property_get(result, "tokens");
         let index = object_property_get(result, "index");
-        let input_size = list_size(input);
+        let input_size = list_size(tokens);
         if (index === input_size + 1) {
           object_property_set(result, "match", true);
           final = result;
