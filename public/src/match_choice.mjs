@@ -1,9 +1,8 @@
 import { each } from "./each.mjs";
 export function match_choice(choices) {
-  let v = function (m) {
-    let { input } = m;
+  let v = function match_choice_inner(input) {
     each(choices, function (choice) {
-      choice(m);
+      choice(input);
     });
   };
   return v;
