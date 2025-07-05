@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_single } from "./list_single.mjs";
 import { match_functionize } from "./match_functionize.mjs";
 import { match_on } from "./match_on.mjs";
@@ -12,6 +13,9 @@ export function match_choice(choices, on_match) {
     });
     let filtered2 = list_filter(mapped, list_empty_not_is);
     let mapped2 = list_map(filtered2, list_single);
+    log({
+      on_match,
+    });
     let filtered = match_on(mapped2, on_match);
     return filtered;
   };
