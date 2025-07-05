@@ -11,6 +11,8 @@ export function match_fill(choices) {
     let mapped = each(choices, function (choice) {
       let result = match_functionize(a, choice);
       let filtered = match_on([result], on_match);
+      if (false) {
+      }
       return result;
     });
     return filtered;
