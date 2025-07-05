@@ -5,7 +5,7 @@ import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.m
 export function app_contact_respond_choices() {
   let v = [
     {
-      tokens: [["hello"], ["greetings"]],
+      tokens: [[["hello"], ["greetings"]]],
       response: app_share_verse_refresh_greet(),
     },
     {
