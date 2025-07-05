@@ -5,7 +5,7 @@ export function app_contact_match_invalid(message) {
   let v = app_contact_match_generic(lambda, message);
   return v;
   function lambda(outputs, data) {
-    object_property_set(object, "property_name", value);
+    object_property_set(data, "valid", false);
     list_clear(outputs);
   }
 }
