@@ -1,7 +1,7 @@
 import { each } from "./each.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
-export function match_sequence(choices) {
+export function match_sequence(steps) {
   let v = function match_sequence_inner(a, on_match) {
     let mapped = list_map(choices, function (choice) {
       let result = choice(a);
