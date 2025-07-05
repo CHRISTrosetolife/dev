@@ -19,6 +19,18 @@ export function app_contact_respond_choices() {
         "You asked for help. Please rewrite your message to say what kind of help you need.",
       ),
     ),
+    match_choice(
+      [
+        match_sequence(
+          ["I", "really", "need", "help", "from", "you"],
+          app_contact_match_invalid(
+            "You asked for help. Please rewrite your message to say what kind of help you need.",
+          ),
+        ),
+        "greetings",
+      ],
+      app_contact_match(app_share_verse_refresh_greet()),
+    ),
     {
       tokens: ["in", "Jesus", "name"],
       response: "",
