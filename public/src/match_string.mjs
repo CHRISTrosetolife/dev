@@ -6,7 +6,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { list_map } from "./list_map.mjs";
 export function match_string(s) {
   let v = function match_string_inner(a) {
-    let v3 = list_map(a, $a$ai);
+    let v3 = list_map(a, function (ai) {});
     return v3;
     let copy = object_copy(a);
     let tokens = object_property_get(copy, "tokens");
