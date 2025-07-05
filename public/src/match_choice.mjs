@@ -8,7 +8,7 @@ export function match_choice(choices) {
       return result;
     });
     let filtered = list_filter_property(mapped, "match", true);
-    each(list, function (item) {});
+    each(filtered, on_match);
     let v2 = filtered;
     return v2;
   };
