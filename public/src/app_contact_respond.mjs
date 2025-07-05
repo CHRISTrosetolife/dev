@@ -1,4 +1,3 @@
-import { object_property_get } from "./object_property_get.mjs";
 import { object_property_get_or } from "./object_property_get_or.mjs";
 import { match_fill } from "./match_fill.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
@@ -13,7 +12,7 @@ export function app_contact_respond(input) {
   let filtered = list_filter(tokens, string_empty_not_is);
   let choices = app_contact_respond_choices();
   let { data, match } = match_fill(filtered, choices);
-  let outputs = object_property_get(data, "outputs");
+  let outputs = object_property_get_or(data, "outputs", []);
   let valid = object_property_get_or(data, "valid", true);
   let output = !match || !valid ? null : list_join_space(outputs);
   let v3 = {
