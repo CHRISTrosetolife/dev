@@ -1,3 +1,4 @@
+import { noop } from "./noop.mjs";
 import { app_contact_match_invalid } from "./app_contact_match_invalid.mjs";
 import { match_sequence } from "./match_sequence.mjs";
 import { app_contact_match } from "./app_contact_match.mjs";
@@ -29,7 +30,7 @@ export function app_contact_respond_choices() {
         ),
         "greetings",
       ],
-      app_contact_match(app_share_verse_refresh_greet()),
+      noop,
     ),
     {
       tokens: ["in", "Jesus", "name"],
