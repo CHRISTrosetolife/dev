@@ -1,3 +1,4 @@
 export function app_contact_match(message) {
-  return;
+  let v = function () {};
+  return v;
 }
