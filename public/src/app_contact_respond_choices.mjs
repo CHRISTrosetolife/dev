@@ -12,7 +12,7 @@ export function app_contact_respond_choices() {
       response: app_share_verse_refresh_greet(),
     },
     {
-      tokens: ["in", "Jesus", "name"],
+      tokens: ["praise", "God"],
       response: "",
     },
     {
