@@ -4,7 +4,7 @@ export function match_choice(choices) {
     list_filter(choices, function (choice) {
       let result = choice(input, index);
       let { match } = result;
-      return;
+      return match;
     });
   };
   return v;
