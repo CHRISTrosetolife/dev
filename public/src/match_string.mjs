@@ -12,7 +12,7 @@ export function match_string(s) {
     if (match) {
       object_property_set(copy, "index", i + 1);
     }
-    return filtered;
+    return copy;
   };
   return v;
 }
