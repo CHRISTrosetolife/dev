@@ -13,7 +13,7 @@ export function match_sequence(steps) {
     });
     let match = object_property_get(result, "match");
     if (match) {
-      on_match();
+      on_match(result);
     }
     let v2 = [result];
     return v2;
