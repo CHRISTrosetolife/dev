@@ -20,9 +20,8 @@ export function match_fill(choices) {
         let index = object_property_get(result, "index");
         let input_size = list_size(input);
         if (index === input_size + 1) {
-          let data = object_property_get(result, "data");
-          object_property_set(object, "property_name", value);
           final = result;
+          object_property_set(object, "property_name", value);
         }
       }
     });
