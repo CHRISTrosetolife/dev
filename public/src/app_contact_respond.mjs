@@ -19,7 +19,6 @@ export function app_contact_respond(input) {
   while_change(lambda);
   let finished = offset === list_size(filtered);
   let output = !finished && valid ? null : list_join_space(outputs);
-  let v2 = output;
   let v3 = {
     output,
     valid,
