@@ -34,5 +34,9 @@ export function app_contact_respond_choice(tokens, offset, outputs, choice) {
     }
     list_add(outputs, choice_response);
   }
-  return offset;
+  let v = {
+    offset,
+    choice_valid,
+  };
+  return v;
 }
