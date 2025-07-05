@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { list_single } from "./list_single.mjs";
 import { match_functionize } from "./match_functionize.mjs";
@@ -15,6 +16,10 @@ export function match_choice(choices, on_match) {
     let filtered2 = list_filter(mapped, list_empty_not_is);
     let mapped2 = list_map(filtered2, list_single);
     let filtered = match_on(mapped2, on_match);
+    log({
+      filtered,
+      choices,
+    });
     return filtered;
   };
   return v;
