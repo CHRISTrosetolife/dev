@@ -6,7 +6,10 @@ export function app_contact_match(message) {
     let data = object_property_get(result, "data");
     let copy = object_copy(data);
     let outputs = object_property_get(copy, "outputs");
-    list_add(outputs, message);
+    lambda(outputs);
   };
   return v;
+  function lambda(outputs) {
+    list_add(outputs, message);
+  }
 }
