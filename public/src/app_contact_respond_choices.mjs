@@ -1,4 +1,3 @@
-import { identity } from "./identity.mjs";
 import { noop } from "./noop.mjs";
 import { app_contact_match_invalid } from "./app_contact_match_invalid.mjs";
 import { match_sequence } from "./match_sequence.mjs";
@@ -11,10 +10,7 @@ import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.m
 export function app_contact_respond_choices() {
   let v = [
     match_sequence(
-      [
-        match_choice(["hello", "greetings"], noop),
-        match_choice(["sir", identity], noop),
-      ],
+      [match_choice(["hello", "greetings"], noop), match_choice(["sir"], noop)],
       app_contact_match(app_share_verse_refresh_greet()),
     ),
     match_sequence(["praise", "God"], app_contact_match(app_share_praise())),
