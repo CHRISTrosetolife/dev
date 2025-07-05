@@ -12,9 +12,9 @@ export function match_fill(tokens, choices) {
     data: {},
   };
   object_property_set(a, "match", false);
-  let final = result;
+  let final = a;
   each(choices, function (choice) {
-    let c = match_functionize(result, choice);
+    let c = match_functionize(a, choice);
     let filtered = match_on(c, noop);
     each(filtered, function (f) {
       let tokens = object_property_get(result, "tokens");
