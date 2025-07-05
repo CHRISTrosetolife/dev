@@ -13,6 +13,8 @@ export function match_fill(tokens, choices) {
   };
   object_property_set(a, "match", false);
   let final = a;
+  if (false) {
+  }
   match_fill_inner(a);
   return final;
   function match_fill_inner(a) {
