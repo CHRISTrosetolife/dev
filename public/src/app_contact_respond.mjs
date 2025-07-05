@@ -15,7 +15,7 @@ export function app_contact_respond(input) {
   let { data, match } = match_fill(filtered, choices);
   let outputs = object_property_get(data, "outputs");
   let valid = object_property_get_or(data, "valid", true);
-  let output = !match || !valid ? null : list_join_space();
+  let output = !match || !valid ? null : list_join_space(outputs);
   let v3 = {
     output,
     valid,
