@@ -37,6 +37,7 @@ export function app_contact_respond_choice(tokens, offset, outputs, choice) {
   let v = {
     offset,
     valid,
+    match,
   };
   return v;
 }
