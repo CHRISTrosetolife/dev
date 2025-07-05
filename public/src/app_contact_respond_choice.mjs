@@ -1,4 +1,3 @@
-import { list_is } from "./list_is.mjs";
 import { list_clear } from "./list_clear.mjs";
 import { object_property_get_or } from "./object_property_get_or.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -14,8 +13,6 @@ export function app_contact_respond_choice(tokens, offset, outputs, choice) {
   let match = true;
   let offset_next = null;
   each_index(choice_tokens, function (item, index) {
-    if (list_is(item)) {
-    }
     item = string_case_lower(item);
     let ti = offset + index;
     if (list_index_is(tokens, ti)) {
