@@ -1,3 +1,4 @@
+import { noop } from "./noop.mjs";
 import { app_contact_match_invalid } from "./app_contact_match_invalid.mjs";
 import { match_sequence } from "./match_sequence.mjs";
 import { app_contact_match } from "./app_contact_match.mjs";
@@ -25,10 +26,7 @@ export function app_contact_respond_choices() {
         "You asked for help. Please edit your message to say what kind of help you need.",
       ),
     ),
-    {
-      tokens: ["in", "Jesus", "name"],
-      response: "",
-    },
+    match_sequence(match_choice(["in", "Jesus", "name"]), noop),
     {
       tokens: ["Amen"],
       response: "",
