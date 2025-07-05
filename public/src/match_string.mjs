@@ -6,19 +6,20 @@ import { object_property_get } from "./object_property_get.mjs";
 import { list_map } from "./list_map.mjs";
 export function match_string(s) {
   let v = function match_string_inner(a) {
-    let v3 = list_map(a, function (ai) {});
+    let v3 = list_map(a, function (ai) {
+      let copy = object_copy(a);
+      let tokens = object_property_get(copy, "tokens");
+      let index = object_property_get(copy, "index");
+      let i = list_get(tokens, index);
+      let match = i === s;
+      if (match) {
+        object_property_increment(copy, "index");
+      }
+      object_property_set(copy, "match", match);
+      let v2 = [copy];
+      return v2;
+    });
     return v3;
-    let copy = object_copy(a);
-    let tokens = object_property_get(copy, "tokens");
-    let index = object_property_get(copy, "index");
-    let i = list_get(tokens, index);
-    let match = i === s;
-    if (match) {
-      object_property_increment(copy, "index");
-    }
-    object_property_set(copy, "match", match);
-    let v2 = [copy];
-    return v2;
   };
   return v;
 }
