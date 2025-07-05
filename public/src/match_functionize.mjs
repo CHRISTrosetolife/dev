@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_map } from "./list_map.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
