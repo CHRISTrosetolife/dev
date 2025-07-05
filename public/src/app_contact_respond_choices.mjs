@@ -1,5 +1,4 @@
 import { noop } from "./noop.mjs";
-import { noop_recursive } from "./noop_recursive.mjs";
 import { app_contact_match_invalid } from "./app_contact_match_invalid.mjs";
 import { match_sequence } from "./match_sequence.mjs";
 import { app_contact_match } from "./app_contact_match.mjs";
@@ -29,7 +28,7 @@ export function app_contact_respond_choices() {
     ),
     match_choice(
       [match_sequence(["in", "Jesus", "name"], noop), "Amen", "and"],
-      noop_recursive,
+      noop,
     ),
     match_sequence(
       [
