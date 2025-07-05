@@ -13,9 +13,9 @@ export function match_fill(tokens, choices) {
   };
   object_property_set(a, "match", false);
   let final = a;
-  final = match_fill_inner(choices, a, final);
+  match_fill_inner(choices, a);
   return final;
-  function match_fill_inner(choices, a, final) {
+  function match_fill_inner(choices, a) {
     each(choices, function (choice) {
       let c = match_functionize(a, choice);
       let filtered = match_on(c, noop);
@@ -28,6 +28,5 @@ export function match_fill(tokens, choices) {
         }
       });
     });
-    return final;
   }
 }
