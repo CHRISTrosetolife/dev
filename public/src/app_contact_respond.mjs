@@ -15,6 +15,7 @@ export function app_contact_respond(input) {
   let filtered = list_filter(tokens, string_empty_not_is);
   let choices = app_contact_respond_choices();
   let offset = 0;
+  let valid = true;
   while_change(lambda);
   let finished = offset === list_size(filtered);
   let output = !finished ? null : list_join_space(outputs);
@@ -27,6 +28,8 @@ export function app_contact_respond(input) {
         outputs,
         choice,
       );
+      if (false) {
+      }
       if (offset_next !== offset) {
         change = true;
         offset = offset_next;
