@@ -7,7 +7,7 @@ export function app_contact_match_invalid(message) {
   return v;
   function lambda(outputs, data) {
     object_property_set(data, "valid", false);
-    log("");
+    log("here");
     list_clear(outputs);
   }
 }
