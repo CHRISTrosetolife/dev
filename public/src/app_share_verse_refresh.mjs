@@ -1,3 +1,4 @@
+import { app_share_praise } from "./app_share_praise.mjs";
 import { html_bible_verse_navigation_next_data } from "./html_bible_verse_navigation_next_data.mjs";
 import { app_share_thanks } from "./app_share_thanks.mjs";
 import { app_url } from "./app_url.mjs";
@@ -10,7 +11,6 @@ import { app_share_verse_refresh_phone } from "./app_share_verse_refresh_phone.m
 import { app_share_verse_refresh_introduce } from "./app_share_verse_refresh_introduce.mjs";
 import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
 import { emoji_music_up } from "./emoji_music_up.mjs";
-import { emoji_wrap_music } from "./emoji_wrap_music.mjs";
 import { emojis_trinity } from "./emojis_trinity.mjs";
 import { error } from "./error.mjs";
 import { html_hr } from "./html_hr.mjs";
@@ -138,9 +138,7 @@ export async function app_share_verse_refresh(
     },
     {
       button_text: string_combine_multiple([emoji_music_up(), " Praise"]),
-      value: [
-        app_share_praise(),
-      ],
+      value: [app_share_praise()],
     },
     {
       button_text: "📞 Phone",
@@ -259,12 +257,3 @@ export async function app_share_verse_refresh(
     html_hr(copy_message);
   }
 }
-function app_share_praise() {
-    return emoji_wrap_music(
-        string_combine_multiple([
-            "Praise the LORD our God ",
-            emojis_trinity(),
-        ])
-    );
-}
-

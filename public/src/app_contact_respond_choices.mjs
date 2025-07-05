@@ -13,7 +13,7 @@ export function app_contact_respond_choices() {
     },
     {
       tokens: ["praise", "God"],
-      response: "",
+      response: app_share_praise(),
     },
     {
       tokens: ["in", "Jesus", "name"],
