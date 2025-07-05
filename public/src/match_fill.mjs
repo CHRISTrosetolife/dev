@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { list_size } from "./list_size.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { noop } from "./noop.mjs";
@@ -19,8 +20,9 @@ export function match_fill(choices) {
         let index = object_property_get(result, "index");
         let input_size = list_size(input);
         if (index === input_size + 1) {
-          final = result;
           let data = object_property_get(result, "data");
+          object_property_set(object, "property_name", value);
+          final = result;
         }
       }
     });
