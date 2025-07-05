@@ -13,7 +13,7 @@ export function app_contact_respond(input) {
   let lower = string_case_lower(input);
   let tokens = string_split_space(lower);
   let filtered = list_filter(tokens, string_empty_not_is);
-  let choices = app_contact_respond_choices();
+  let fill = app_contact_respond_choices();
   let offset = 0;
   let valid = true;
   while_change(lambda);
