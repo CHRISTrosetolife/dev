@@ -12,6 +12,9 @@ export function match_choice(choices, on_match) {
       return result;
     });
     let c = list_concat_multiple(mapped);
+    log({
+      c,
+    });
     let filtered = match_on(c, on_match);
     return filtered;
   };
