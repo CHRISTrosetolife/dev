@@ -16,6 +16,10 @@ export function app_contact_respond_choices() {
       response: "",
     },
     {
+      tokens: ["in", "Jesus", "name"],
+      response: "",
+    },
+    {
       tokens: ["Amen"],
       response: "",
     },
