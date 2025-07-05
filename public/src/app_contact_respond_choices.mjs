@@ -1,3 +1,4 @@
+import { match_sequence } from "./match_sequence.mjs";
 import { app_contact_match } from "./app_contact_match.mjs";
 import { match_choice } from "./match_choice.mjs";
 import { app_share_praise } from "./app_share_praise.mjs";
@@ -10,10 +11,7 @@ export function app_contact_respond_choices() {
       ["hello", "greetings"],
       app_contact_match(app_share_verse_refresh_greet()),
     ),
-    {
-      tokens: ["praise", "God"],
-      response: app_share_praise(),
-    },
+    match_sequence(["praise", "God"], app_contact_match(app_share_praise())),
     {
       tokens: ["I", "really", "need", "help", "from", "you"],
       response:
