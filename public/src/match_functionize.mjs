@@ -9,6 +9,7 @@ export function match_functionize(a, item) {
   let c = item(a);
   log({
     item,
+    c,
   });
   let result = list_single(c);
   return result;
