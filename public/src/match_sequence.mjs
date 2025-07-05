@@ -18,7 +18,7 @@ export function match_sequence(steps, on_match) {
         return v3;
       }
     });
-    let filtered = match_on([result], on_match);
+    let filtered = match_on(result, on_match);
     return filtered;
   };
   return v;
