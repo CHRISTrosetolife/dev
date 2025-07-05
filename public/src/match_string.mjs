@@ -13,8 +13,9 @@ export function match_string(s) {
       let copy = object_copy(ai);
       let tokens = object_property_get(copy, "tokens");
       let index = object_property_get(copy, "index");
-      if (false) {
-        list_index_is(okens, index);
+      if (!list_index_is(tokens, index)) {
+        let v2 = null;
+        return v2;
       }
       let i = list_get(tokens, index);
       let match = i === s;
