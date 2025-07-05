@@ -13,17 +13,21 @@ export function match_fill(tokens, choices) {
   };
   object_property_set(a, "match", false);
   let final = a;
-  each(choices, function (choice) {
-    let c = match_functionize(a, choice);
-    let filtered = match_on(c, noop);
-    each(filtered, function (f) {
-      let tokens = object_property_get(f, "tokens");
-      let index = object_property_get(f, "index");
-      let tokens_size = list_size(tokens);
-      if (index === tokens_size + 1) {
-        final = f;
-      }
-    });
-  });
+  final = match_fill_inner(choices, a, final);
   return final;
+  function match_fill_inner(choices, a, final) {
+    each(choices, function (choice) {
+      let c = match_functionize(a, choice);
+      let filtered = match_on(c, noop);
+      each(filtered, function (f) {
+        let tokens = object_property_get(f, "tokens");
+        let index = object_property_get(f, "index");
+        let tokens_size = list_size(tokens);
+        if (index === tokens_size + 1) {
+          final = f;
+        }
+      });
+    });
+    return final;
+  }
 }
