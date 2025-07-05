@@ -1,3 +1,4 @@
+import { list_single } from "./list_single.mjs";
 import { match_string } from "./match_string.mjs";
 import { string_is } from "./string_is.mjs";
 import { match_on } from "./match_on.mjs";
@@ -8,7 +9,8 @@ export function match_choice(choices, on_match) {
       if (string_is(choice)) {
         choice = match_string(choice);
       }
-      let result = choice(a);
+      let c = choice(a);
+      let result = list_single(c);
       return result;
     });
     let filtered = match_on(mapped, on_match);
