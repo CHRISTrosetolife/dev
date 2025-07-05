@@ -13,7 +13,7 @@ export function app_contact_respond_choices() {
     match_sequence(
       [
         match_choice(["hello", "greetings"], noop),
-        match_choice(["sir", identity_get]),
+        match_choice(["sir", identity_get], noop),
       ],
       app_contact_match(app_share_verse_refresh_greet()),
     ),
