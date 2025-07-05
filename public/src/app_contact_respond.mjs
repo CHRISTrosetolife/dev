@@ -14,6 +14,10 @@ export function app_contact_respond(input) {
   let tokens = string_split_space(lower);
   let filtered = list_filter(tokens, string_empty_not_is);
   let fill = app_contact_respond_choices();
+  let result = fill({
+    tokens,
+    index: 0,
+  });
   let offset = 0;
   let valid = true;
   while_change(lambda);
