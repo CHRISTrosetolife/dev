@@ -6,7 +6,7 @@ import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { each } from "./each.mjs";
 import { match_on } from "./match_on.mjs";
 import { match_functionize } from "./match_functionize.mjs";
-export function match_fill(choices, tokens) {
+export function match_fill(tokens, choices) {
   let a = {
     tokens,
     index: 0,
