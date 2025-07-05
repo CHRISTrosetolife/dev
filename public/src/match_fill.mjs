@@ -4,15 +4,15 @@ import { match_on } from "./match_on.mjs";
 import { match_functionize } from "./match_functionize.mjs";
 export function match_fill(choices) {
   let v = function match_choice_inner(a) {
-    let result;
+    let result = a;
     each(choices, function (choice) {
-      let result = match_functionize(a, choice);
+      result = match_functionize(result, choice);
       let filtered = match_on([result], on_match);
       if (list_empty_not_is(filtered)) {
         match_choice_inner(result);
       }
     });
-    return filtered;
+    return result;
   };
   return v;
 }
