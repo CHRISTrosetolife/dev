@@ -5,6 +5,7 @@ import { object_copy } from "./object_copy.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
+import { list_index_is } from "./list_index_is.mjs";
 export function match_string(s) {
   s = string_case_lower(s);
   let v = function match_string_inner(a) {
@@ -12,6 +13,9 @@ export function match_string(s) {
       let copy = object_copy(ai);
       let tokens = object_property_get(copy, "tokens");
       let index = object_property_get(copy, "index");
+      if (false) {
+        list_index_is(okens, index);
+      }
       let i = list_get(tokens, index);
       let match = i === s;
       if (match) {
