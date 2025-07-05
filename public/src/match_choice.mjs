@@ -12,6 +12,9 @@ export function match_choice(choices, on_match) {
     });
     let mapped = list_map(choices, function (choice) {
       let result = match_functionize(a, choice);
+      log({
+        result,
+      });
       return result;
     });
     let c = list_concat_multiple(mapped);
