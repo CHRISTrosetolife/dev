@@ -66,6 +66,10 @@ export function app_share_main(context) {
       text: "Wolof (+220) and English",
       code: "wolmbs+engbsb",
     },
+    {
+      text: "Arabic (+971) and English",
+      code: "arbnav+engbsb",
+    },
   ];
   each(folders, function (folder) {
     html_button(root, object_property_get(folder, "text"), async function () {
