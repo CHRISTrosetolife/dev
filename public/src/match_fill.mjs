@@ -1,3 +1,4 @@
+import { noop } from "./noop.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { each } from "./each.mjs";
 import { match_on } from "./match_on.mjs";
@@ -7,7 +8,7 @@ export function match_fill(choices) {
     let result = a;
     each(choices, function (choice) {
       result = match_functionize(result, choice);
-      let filtered = match_on([result], on_match);
+      let filtered = match_on([result], noop);
       if (list_empty_not_is(filtered)) {
         match_choice_inner(result);
       }
