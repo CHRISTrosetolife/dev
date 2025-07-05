@@ -1,3 +1,4 @@
+import { list_clear } from "./list_clear.mjs";
 import { object_property_get_or } from "./object_property_get_or.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_add } from "./list_add.mjs";
@@ -28,6 +29,8 @@ export function app_contact_respond_choice(tokens, offset, outputs, choice) {
   if (match) {
     if (valid) {
       offset += offset_next;
+    } else {
+      list_clear(outputs);
     }
     list_add(outputs, choice_response);
   }
