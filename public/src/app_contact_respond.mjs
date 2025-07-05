@@ -21,7 +21,7 @@ export function app_contact_respond(input) {
   return output;
   function lambda(change) {
     each(choices, function (choice) {
-      let offset_next = app_contact_respond_choice(
+      let { offset: offset_next, choice_valid } = app_contact_respond_choice(
         filtered,
         offset,
         outputs,
