@@ -8,7 +8,7 @@ export function match_functionize(a, item, lambda) {
     if (string_is(item)) {
       item = match_string(item);
     }
-    let c = item(a);
+    let c = item(ai);
     return c;
   });
   return v;
