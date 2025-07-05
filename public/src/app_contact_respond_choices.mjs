@@ -51,8 +51,8 @@ export function app_contact_respond_choices() {
         ]),
       ),
     ),
-    {
-      tokens: [
+    match_sequence(
+      [
         "keep",
         "on",
         "praying",
@@ -67,13 +67,14 @@ export function app_contact_respond_choices() {
         "on",
         "us",
       ],
-      response: "God, let there be prayer 🙏 amen 🙇.",
-    },
-    {
-      tokens: ["keep", "sending", "us", "such", "scriptures"],
-      response:
+      app_contact_match("God, let there be prayer 🙏 amen 🙇."),
+    ),
+    match_sequence(
+      ["keep", "sending", "us", "such", "scriptures"],
+      app_contact_match(
         "If you send me a message here 📨, then you will receive a scripture 📖.",
-    },
+      ),
+    ),
   ];
   return v;
 }
