@@ -9,7 +9,7 @@ import { string_case_lower } from "./string_case_lower.mjs";
 export function app_contact_respond_choice(tokens, offset, outputs, choice) {
   let choice_tokens = object_property_get(choice, "tokens");
   let choice_response = object_property_get(choice, "response");
-  let choice_valid = object_property_get_or(choice, "valid", true);
+  let valid = object_property_get_or(choice, "valid", true);
   let match = true;
   let offset_next = null;
   each_index(choice_tokens, function (item, index) {
@@ -27,7 +27,7 @@ export function app_contact_respond_choice(tokens, offset, outputs, choice) {
     }
   });
   if (match) {
-    if (choice_valid) {
+    if (valid) {
       offset += offset_next;
     } else {
       list_clear(outputs);
@@ -36,7 +36,7 @@ export function app_contact_respond_choice(tokens, offset, outputs, choice) {
   }
   let v = {
     offset,
-    choice_valid,
+    valid,
   };
   return v;
 }
