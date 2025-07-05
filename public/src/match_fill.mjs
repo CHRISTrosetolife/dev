@@ -8,7 +8,7 @@ export function match_fill(choices) {
     let copy = object_copy(a);
     let input = object_property_get(copy, "input");
     let index = object_property_get(copy, "index");
-    let mapped = each(choices, function (choice) {
+    each(choices, function (choice) {
       let result = match_functionize(a, choice);
       let filtered = match_on([result], on_match);
       if (false) {
