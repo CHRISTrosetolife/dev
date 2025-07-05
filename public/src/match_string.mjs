@@ -12,7 +12,8 @@ export function match_string(s) {
     if (match) {
       object_property_set(copy, "index", i + 1);
     }
-    return copy;
+    let v2 = [copy];
+    return v2;
   };
   return v;
 }
