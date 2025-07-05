@@ -1,5 +1,4 @@
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
-import { log } from "./log.mjs";
 import { match_functionize } from "./match_functionize.mjs";
 import { match_on } from "./match_on.mjs";
 import { each } from "./each.mjs";
@@ -12,10 +11,6 @@ export function match_sequence(steps, on_match) {
     each(steps, function (step) {
       result = match_functionize(result, step);
       filtered = match_on(result, on_match);
-      log({
-        filtered,
-        steps,
-      });
       if (list_empty_is(filtered)) {
         let v3 = true;
         return v3;
