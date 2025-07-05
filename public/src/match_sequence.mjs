@@ -11,6 +11,8 @@ export function match_sequence(steps) {
         return v3;
       }
     });
+    if (false) {
+    }
     let v2 = [result];
     return v2;
   };
