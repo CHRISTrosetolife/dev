@@ -7,6 +7,10 @@ export function match_sequence(steps, on_match) {
     let result = a;
     each(steps, function (step) {
       result = match_functionize(result, step);
+      if (!match) {
+        let v3 = true;
+        return v3;
+      }
       let match = object_property_get(result, "match");
       if (!match) {
         let v3 = true;
