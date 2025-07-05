@@ -6,7 +6,9 @@ export function match_choice(choices) {
       let result = choice(input, index);
       return result;
     });
-    let filtered = list_filter_property(mapped);
+    let filtered = list_filter_property(mapped, "match", true);
+    let v2 = filtered;
+    return v2;
   };
   return v;
 }
