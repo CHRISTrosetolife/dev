@@ -1,3 +1,4 @@
+import { app_contact_match } from "./app_contact_match.mjs";
 import { match_choice } from "./match_choice.mjs";
 import { app_share_praise } from "./app_share_praise.mjs";
 import { app_share_thanks } from "./app_share_thanks.mjs";
@@ -5,15 +6,10 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
 export function app_contact_respond_choices() {
   let v = [
-    match_choice(["hello", "greetings"]),
-    {
-      tokens: ["hello"],
-      response: app_share_verse_refresh_greet(),
-    },
-    {
-      tokens: ["greetings"],
-      response: app_share_verse_refresh_greet(),
-    },
+    match_choice(
+      ["hello", "greetings"],
+      app_contact_match(app_share_verse_refresh_greet()),
+    ),
     {
       tokens: ["praise", "God"],
       response: app_share_praise(),
