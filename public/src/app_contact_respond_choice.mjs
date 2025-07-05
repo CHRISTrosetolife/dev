@@ -1,16 +1,14 @@
+import { object_property_get_or } from "./object_property_get_or.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_index_is } from "./list_index_is.mjs";
 import { each_index } from "./each_index.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
-import { object_property_exists_not } from "./object_property_exists_not.mjs";
 export function app_contact_respond_choice(tokens, offset, outputs, choice) {
   let choice_tokens = object_property_get(choice, "tokens");
   let choice_response = object_property_get(choice, "response");
-  let choice_valid =
-    object_property_exists_not(choice, "invalid") |
-    !object_property_get(choice, "invalid");
+  let choice_valid = object_property_get_or(choice, "invalid");
   let match = true;
   let offset_next = null;
   each_index(choice_tokens, function (item, index) {
