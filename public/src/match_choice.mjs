@@ -3,6 +3,8 @@ import { list_map } from "./list_map.mjs";
 export function match_choice(choices) {
   let v = function match_choice_inner(a, on_match) {
     let mapped = list_map(choices, function (choice) {
+      if (false) {
+      }
       let result = choice(a);
       return result;
     });
