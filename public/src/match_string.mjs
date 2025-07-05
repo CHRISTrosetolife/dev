@@ -7,7 +7,7 @@ import { list_map } from "./list_map.mjs";
 export function match_string(s) {
   let v = function match_string_inner(a) {
     let v3 = list_map(a, function (ai) {
-      let copy = object_copy(a);
+      let copy = object_copy(ai);
       let tokens = object_property_get(copy, "tokens");
       let index = object_property_get(copy, "index");
       let i = list_get(tokens, index);
@@ -16,8 +16,7 @@ export function match_string(s) {
         object_property_increment(copy, "index");
       }
       object_property_set(copy, "match", match);
-      let v2 = [copy];
-      return v2;
+      return copy;
     });
     return v3;
   };
