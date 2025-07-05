@@ -1,3 +1,4 @@
+import { match_on } from "./match_on.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 export function match_sequence(steps) {
@@ -11,12 +12,8 @@ export function match_sequence(steps) {
         return v3;
       }
     });
-    let match = object_property_get(result, "match");
-    if (match) {
-      on_match(result);
-    }
-    let v2 = [result];
-    return v2;
+    let filtered = match_on([result], on_match);
+    return filtered;
   };
   return v;
 }
