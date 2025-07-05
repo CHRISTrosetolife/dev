@@ -28,7 +28,8 @@ export function app_contact_respond(input) {
         outputs,
         choice,
       );
-      if (false) {
+      if (!choice_valid) {
+        valid = choice_valid;
       }
       if (offset_next !== offset) {
         change = true;
