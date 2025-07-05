@@ -2,7 +2,6 @@ import { object_property_set } from "./object_property_set.mjs";
 import { list_size } from "./list_size.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { noop } from "./noop.mjs";
-import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { each } from "./each.mjs";
 import { match_on } from "./match_on.mjs";
 import { match_functionize } from "./match_functionize.mjs";
@@ -27,9 +26,6 @@ export function match_fill(tokens, choices) {
         final = result;
       }
     });
-    let filtered_empty_not = list_empty_not_is(filtered);
-    if (filtered_empty_not) {
-    }
   });
   return final;
 }
