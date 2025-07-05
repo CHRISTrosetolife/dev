@@ -23,7 +23,9 @@ export async function app_contact_download() {
     return v;
   });
   let filtered = list_filter(mapped, function (m) {
-    let v2 = object_property_get(m, "respond_null");
+    let v2 =
+      object_property_get(m, "respond_null") ||
+      !object_property_get(m, "valid");
     return v2;
   });
   let v3 = filtered;
