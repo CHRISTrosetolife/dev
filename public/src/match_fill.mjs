@@ -9,7 +9,8 @@ export function match_fill(choices) {
     each(choices, function (choice) {
       result = match_functionize(result, choice);
       let filtered = match_on([result], noop);
-      if (list_empty_not_is(filtered)) {
+      let filtered_empty_not = list_empty_not_is(filtered);
+      if (filtered_empty_not) {
         match_choice_inner(result);
       }
     });
