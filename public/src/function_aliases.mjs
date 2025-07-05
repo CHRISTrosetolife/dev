@@ -117,7 +117,7 @@ export function function_aliases() {
   function_aliases_register(all, fn_name("computer_shutdown"), ["sh"]);
   function_aliases_register(all, fn_name("app_contact_download"), ["cd"]);
   function_aliases_register(all, fn_name("app_contact_main_deploy"), ["cy"]);
-  function_aliases_register(all, fn_name("app_contact_main_open"), ["cm"]);
+  function_aliases_register(all, fn_name("app_contact_main_open"), ["ac"]);
   marker();
   return all;
 }
