@@ -20,7 +20,11 @@ export function app_contact_respond(input) {
   let finished = offset === list_size(filtered);
   let output = !finished && valid ? null : list_join_space(outputs);
   let v2 = output;
-  return v2;
+  let v3 = {
+    output,
+    valid,
+  };
+  return v3;
   function lambda(change) {
     each(choices, function (choice) {
       let {
