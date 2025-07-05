@@ -90,7 +90,7 @@ export async function app_contact_main() {
   response = html_p(root);
   let verse_p = html_p(root);
   let { repsonse, value } = app_contact_respond_component(t, response);
-  let { output, valid } = app_contact_respond_component(t, response);
+  let { output, valid } = repsonse;
   if (output !== null) {
     on_response(value, output);
     await verse_next();
