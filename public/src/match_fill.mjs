@@ -10,9 +10,9 @@ export function match_fill(choices) {
     let index = object_property_get(copy, "index");
     let mapped = each(choices, function (choice) {
       let result = match_functionize(a, choice);
+      let filtered = match_on([result], on_match);
       return result;
     });
-    let filtered = match_on(mapped, on_match);
     return filtered;
   };
   return v;
