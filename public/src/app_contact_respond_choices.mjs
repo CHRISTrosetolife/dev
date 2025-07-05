@@ -26,15 +26,10 @@ export function app_contact_respond_choices() {
         "You asked for help. Please edit your message to say what kind of help you need.",
       ),
     ),
-    match_choice(match_sequence(["in", "Jesus", "name"]), noop),
-    {
-      tokens: ["Amen"],
-      response: "",
-    },
-    {
-      tokens: ["and"],
-      response: "",
-    },
+    match_choice(
+      [match_sequence(["in", "Jesus", "name"]), "Amen", "and"],
+      noop,
+    ),
     {
       tokens: [
         "great",
