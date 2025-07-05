@@ -11,7 +11,9 @@ export function match_sequence(steps) {
         return v3;
       }
     });
+    let match = object_property_get(result, "match");
     if (match) {
+      on_match();
     }
     let v2 = [result];
     return v2;
