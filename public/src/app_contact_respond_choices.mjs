@@ -9,8 +9,8 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
 export function app_contact_respond_choices() {
   let v = [
-    match_choice(
-      ["hello", "greetings"],
+    match_sequence(
+      match_choice(["hello", "greetings"], noop),
       app_contact_match(app_share_verse_refresh_greet()),
     ),
     match_sequence(["praise", "God"], app_contact_match(app_share_praise())),
