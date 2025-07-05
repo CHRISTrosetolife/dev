@@ -30,8 +30,8 @@ export function app_contact_respond_choices() {
       [match_sequence(["in", "Jesus", "name"]), "Amen", "and"],
       noop,
     ),
-    {
-      tokens: [
+    match_sequence(
+      [
         "great",
         "to",
         "meet",
@@ -44,11 +44,13 @@ export function app_contact_respond_choices() {
         "high",
         "god",
       ],
-      response: string_combine_multiple([
-        app_share_thanks(),
-        " Great to meet you, too 🤝!",
-      ]),
-    },
+      app_contact_match(
+        string_combine_multiple([
+          app_share_thanks(),
+          " Great to meet you, too 🤝!",
+        ]),
+      ),
+    ),
     {
       tokens: [
         "keep",
