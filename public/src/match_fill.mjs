@@ -16,6 +16,7 @@ export function match_fill(tokens, choices) {
   match_fill_inner(a);
   return final;
   function match_fill_inner(a) {
+    a = [a];
     each(choices, function (choice) {
       let c = match_functionize(a, choice);
       let filtered = match_on(c, noop);
