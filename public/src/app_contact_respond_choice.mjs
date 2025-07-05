@@ -30,6 +30,7 @@ export function app_contact_respond_choice(tokens, offset, outputs, choice) {
     offset += offset_next;
     if (!choice_valid) {
       list_clear(outputs);
+    } else {
     }
     list_add(outputs, choice_response);
   }
