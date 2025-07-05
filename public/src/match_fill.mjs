@@ -8,6 +8,7 @@ import { match_on } from "./match_on.mjs";
 import { match_functionize } from "./match_functionize.mjs";
 export function match_fill(choices) {
   let v = function match_choice_inner(a) {
+    object_property_set(a, "match", false);
     let result = a;
     let final = result;
     each(choices, function (choice) {
@@ -20,8 +21,8 @@ export function match_fill(choices) {
         let index = object_property_get(result, "index");
         let input_size = list_size(input);
         if (index === input_size + 1) {
+          object_property_set(result, "match", true);
           final = result;
-          object_property_set(object, "property_name", value);
         }
       }
     });
