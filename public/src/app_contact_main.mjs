@@ -59,8 +59,8 @@ export async function app_contact_main() {
   let response_p;
   html_button(root, "Send message to me", async function () {
     try {
-      let { repsonse, value } = app_contact_respond_component(t, response_p);
-      let { output } = repsonse;
+      let { response, value } = app_contact_respond_component(t, response_p);
+      let { output } = response;
       log({
         output,
       });
