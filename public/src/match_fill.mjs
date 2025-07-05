@@ -26,8 +26,8 @@ export function match_fill(tokens, choices) {
         if (index === tokens_size + 1) {
           final = f;
         } else {
+          match_fill_inner(f);
         }
-        match_fill_inner(f);
       });
     });
   }
