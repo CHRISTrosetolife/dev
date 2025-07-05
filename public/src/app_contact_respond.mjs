@@ -26,12 +26,8 @@ export function app_contact_respond(input) {
   return v2;
   function lambda(change) {
     each(choices, function (choice) {
-      let { offset: offset_next, valid } = app_contact_respond_choice(
-        filtered,
-        offset,
-        outputs,
-        choice,
-      );
+      let { offset: offset_next, valid: choice_valid } =
+        app_contact_respond_choice(filtered, offset, outputs, choice);
       if (!choice_valid) {
         valid = choice_valid;
       }
