@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { list_size } from "./list_size.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -32,9 +31,6 @@ export function match_fill(tokens, choices) {
         let tokens_size = list_size(tokens);
         if (index === tokens_size) {
           final = f;
-          log({
-            final,
-          });
         } else {
           match_fill_inner(f);
         }
