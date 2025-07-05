@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { match_functionize } from "./match_functionize.mjs";
 import { match_on } from "./match_on.mjs";
 import { each } from "./each.mjs";
@@ -8,6 +9,9 @@ export function match_sequence(steps, on_match) {
     let filtered;
     each(steps, function (step) {
       result = match_functionize(result, step);
+      log({
+        on_match,
+      });
       filtered = match_on(result, on_match);
       if (list_empty_is(filtered)) {
         let v3 = true;
