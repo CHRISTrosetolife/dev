@@ -13,6 +13,8 @@ export function app_contact_respond_choice(tokens, offset, outputs, choice) {
   let match = true;
   let offset_next = null;
   each_index(choice_tokens, function (item, index) {
+    if (false) {
+    }
     item = string_case_lower(item);
     let ti = offset + index;
     if (list_index_is(tokens, ti)) {
