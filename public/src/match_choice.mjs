@@ -9,12 +9,13 @@ export function match_choice(choices, on_match) {
   let v = function match_choice_inner(a) {
     let mapped = list_map(choices, function (choice) {
       let result = match_functionize(a, choice);
+      log({
+        choice,
+        result,
+      });
       return result;
     });
     let c = list_concat_multiple(mapped);
-    log({
-      c,
-    });
     let filtered = match_on(c, on_match);
     return filtered;
   };
