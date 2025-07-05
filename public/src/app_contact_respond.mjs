@@ -17,13 +17,6 @@ export function app_contact_respond(input) {
   let offset = 0;
   let valid = true;
   while_change(lambda);
-  let finished = offset === list_size(filtered);
-  let output = !finished && valid ? null : list_join_space(outputs);
-  let v3 = {
-    output,
-    valid,
-  };
-  return v3;
   function lambda(change) {
     each(choices, function (choice) {
       let {
@@ -42,4 +35,11 @@ export function app_contact_respond(input) {
     let v = change;
     return v;
   }
+  let finished = offset === list_size(filtered);
+  let output = !finished && valid ? null : list_join_space(outputs);
+  let v3 = {
+    output,
+    valid,
+  };
+  return v3;
 }
