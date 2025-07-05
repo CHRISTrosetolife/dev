@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { match_fill } from "./match_fill.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { app_contact_respond_choices } from "./app_contact_respond_choices.mjs";
@@ -12,10 +13,10 @@ export function app_contact_respond(input) {
   let tokens = string_split_space(lower);
   let filtered = list_filter(tokens, string_empty_not_is);
   let choices = app_contact_respond_choices();
-  let result = match_fill(tokens, choices);
-  let offset = 0;
+  let { index, data } = match_fill(tokens, choices);
+  let valid2 = object_property_get(data, "valid");
   let valid = true;
-  let finished = offset === list_size(filtered);
+  let finished = index === list_size(filtered);
   let output = !finished && valid ? null : list_join_space(outputs);
   let v3 = {
     output,
