@@ -95,7 +95,8 @@ export async function app_contact_main() {
     on_response(value, repsonse);
     await verse_next();
   }
-  function on_response(value, output) {
+  function on_response(value, repsonse) {
+    let { output, valid } = repsonse;
     if (false) {
       html_p_text(response, "💻 Computer program answered for me:");
     }
@@ -106,7 +107,9 @@ export async function app_contact_main() {
       html_style_bold(r);
     }
     let change = object_property_get(t, "change");
-    change("");
+    if (false) {
+      change("");
+    }
     html_scroll_center(response);
   }
   async function verse_next() {
