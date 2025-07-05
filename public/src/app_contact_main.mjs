@@ -90,10 +90,10 @@ export async function app_contact_main() {
   });
   response_p = html_p(root);
   let verse_p = html_p(root);
-  let { repsonse, value } = app_contact_respond_component(t, response_p);
-  let { output } = repsonse;
+  let { response, value } = app_contact_respond_component(t, response_p);
+  let { output } = response;
   if (output !== null) {
-    on_response(value, repsonse);
+    on_response(value, response);
     await verse_next();
   }
   function on_response(value, repsonse) {
