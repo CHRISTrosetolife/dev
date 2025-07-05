@@ -107,7 +107,7 @@ export async function app_contact_main() {
       html_style_bold(r);
     }
     let change = object_property_get(t, "change");
-    if (false) {
+    if (valid) {
       change("");
     }
     html_scroll_center(response);
