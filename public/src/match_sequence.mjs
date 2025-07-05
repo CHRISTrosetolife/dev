@@ -10,7 +10,7 @@ export function match_sequence(steps, on_match) {
     let result = a;
     let filtered;
     each(steps, function (step) {
-      result = match_functionize(result, step);
+      result = match_functionize(result, step, function (result) {});
       filtered = match_on(result, on_match);
       log({
         filtered,
