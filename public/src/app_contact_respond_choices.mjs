@@ -5,7 +5,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
 export function app_contact_respond_choices() {
   let v = [
-    match_choice(),
+    match_choice(["hello", "greetings"]),
     {
       tokens: ["hello"],
       response: app_share_verse_refresh_greet(),
