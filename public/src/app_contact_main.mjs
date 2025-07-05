@@ -88,7 +88,7 @@ export async function app_contact_main() {
       await verse_next();
     }
   });
-  response = html_p(root);
+  let response_p = html_p(root);
   let verse_p = html_p(root);
   let { repsonse, value } = app_contact_respond_component(t, response);
   if (output !== null) {
