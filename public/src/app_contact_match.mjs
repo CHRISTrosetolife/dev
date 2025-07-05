@@ -4,6 +4,7 @@ export function app_contact_match(message) {
   let v = function app_contact_match_inner(result) {
     let data = object_property_get(result, "data");
     let copy = object_copy(data);
+    let outputs = object_property_get(copy, "outputs");
   };
   return v;
 }
