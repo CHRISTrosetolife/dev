@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { object_property_increment } from "./object_property_increment.mjs";
 import { list_get } from "./list_get.mjs";
 import { object_copy } from "./object_copy.mjs";
@@ -11,6 +12,7 @@ export function match_string(s) {
     let match = i === s;
     if (match) {
       object_property_increment(copy, "index");
+      object_property_set(copy, "match", true);
     }
     let v2 = [copy];
     return v2;
