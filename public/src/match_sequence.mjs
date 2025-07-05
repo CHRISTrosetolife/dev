@@ -14,7 +14,6 @@ export function match_sequence(steps, on_match) {
       log({
         on_match,
         steps,
-        result,
       });
       filtered = match_on(result, on_match);
       if (list_empty_is(filtered)) {
