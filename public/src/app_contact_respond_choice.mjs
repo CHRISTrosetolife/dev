@@ -27,10 +27,10 @@ export function app_contact_respond_choice(tokens, offset, outputs, choice) {
     }
   });
   if (match) {
-    offset += offset_next;
-    if (!choice_valid) {
-      list_clear(outputs);
+    if (choice_valid) {
+      offset += offset_next;
     } else {
+      list_clear(outputs);
     }
     list_add(outputs, choice_response);
   }
