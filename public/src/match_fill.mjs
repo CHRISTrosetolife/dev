@@ -18,9 +18,7 @@ export function match_fill(tokens, choices) {
   each(choices, function (choice) {
     result = match_functionize(result, choice);
     let filtered = match_on(result, noop);
-    each(filtered, function (f) {});
-    let filtered_empty_not = list_empty_not_is(filtered);
-    if (filtered_empty_not) {
+    each(filtered, function (f) {
       let tokens = object_property_get(result, "tokens");
       let index = object_property_get(result, "index");
       let tokens_size = list_size(tokens);
@@ -28,6 +26,9 @@ export function match_fill(tokens, choices) {
         object_property_set(result, "match", true);
         final = result;
       }
+    });
+    let filtered_empty_not = list_empty_not_is(filtered);
+    if (filtered_empty_not) {
     }
   });
   return final;
