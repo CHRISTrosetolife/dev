@@ -19,8 +19,8 @@ export function match_fill(choices) {
         match_choice_inner(result);
         let tokens = object_property_get(result, "tokens");
         let index = object_property_get(result, "index");
-        let input_size = list_size(tokens);
-        if (index === input_size + 1) {
+        let tokens_size = list_size(tokens);
+        if (index === tokens_size + 1) {
           object_property_set(result, "match", true);
           final = result;
         }
