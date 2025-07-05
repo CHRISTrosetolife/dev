@@ -139,12 +139,7 @@ export async function app_share_verse_refresh(
     {
       button_text: string_combine_multiple([emoji_music_up(), " Praise"]),
       value: [
-        emoji_wrap_music(
-          string_combine_multiple([
-            "Praise the LORD our God ",
-            emojis_trinity(),
-          ]),
-        ),
+        app_share_praise(),
       ],
     },
     {
@@ -264,3 +259,12 @@ export async function app_share_verse_refresh(
     html_hr(copy_message);
   }
 }
+function app_share_praise() {
+    return emoji_wrap_music(
+        string_combine_multiple([
+            "Praise the LORD our God ",
+            emojis_trinity(),
+        ])
+    );
+}
+
