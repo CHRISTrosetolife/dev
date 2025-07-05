@@ -12,7 +12,6 @@ export function match_fill(tokens, choices) {
     data: {},
   };
   object_property_set(a, "match", false);
-  let result = a;
   let final = result;
   each(choices, function (choice) {
     let c = match_functionize(result, choice);
