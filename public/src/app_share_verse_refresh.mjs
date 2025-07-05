@@ -99,10 +99,6 @@ export async function app_share_verse_refresh(
     );
     return v2;
   }
-  let praise = string_combine_multiple([
-    "Praise the LORD our God ",
-    emojis_trinity(),
-  ]);
   let introduce_text = {
     button_text: "👋 Introduce",
     value: app_share_verse_refresh_introduce(),
@@ -142,7 +138,14 @@ export async function app_share_verse_refresh(
     },
     {
       button_text: string_combine_multiple([emoji_music_up(), " Praise"]),
-      value: [emoji_wrap_music(praise)],
+      value: [
+        emoji_wrap_music(
+          string_combine_multiple([
+            "Praise the LORD our God ",
+            emojis_trinity(),
+          ]),
+        ),
+      ],
     },
     {
       button_text: "📞 Phone",
