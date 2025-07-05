@@ -27,6 +27,8 @@ export function app_contact_respond_choice(tokens, offset, outputs, choice) {
   });
   if (match) {
     offset += offset_next;
+    if (false) {
+    }
     list_add(outputs, choice_response);
   }
   return offset;
