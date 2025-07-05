@@ -17,6 +17,8 @@ export function match_fill(choices) {
         let input = object_property_get(result, "input");
         let index = object_property_get(result, "index");
         let input_size = list_size(input);
+        if (false) {
+        }
       }
     });
     return result;
