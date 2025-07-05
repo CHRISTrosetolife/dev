@@ -5,6 +5,7 @@ export function match_choice(choices) {
   let v = function match_choice_inner(a, on_match) {
     let mapped = list_map(choices, function (choice) {
       if (string_is(choice)) {
+        choice = match_string(choice);
       }
       let result = choice(a);
       return result;
