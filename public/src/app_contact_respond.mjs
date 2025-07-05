@@ -31,7 +31,7 @@ export function app_contact_respond(input) {
         valid: choice_valid,
         match,
       } = app_contact_respond_choice(filtered, offset, outputs, choice);
-      if (!choice_valid) {
+      if (match && !choice_valid) {
         valid = choice_valid;
       }
       if (offset_next !== offset) {
