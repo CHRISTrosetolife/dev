@@ -1,4 +1,4 @@
 export function function_get(value) {
-  let v = $a; 
+  let v = function () {};
   return v;
 }
