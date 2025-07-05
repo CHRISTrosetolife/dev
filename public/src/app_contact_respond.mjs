@@ -1,3 +1,4 @@
+import { match_fill } from "./match_fill.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { while_change } from "./while_change.mjs";
 import { app_contact_respond_choices } from "./app_contact_respond_choices.mjs";
@@ -13,8 +14,8 @@ export function app_contact_respond(input) {
   let lower = string_case_lower(input);
   let tokens = string_split_space(lower);
   let filtered = list_filter(tokens, string_empty_not_is);
-  let fill = app_contact_respond_choices();
-  let result = fill(tokens);
+  let choices = app_contact_respond_choices();
+  let result = match_fill(choices, tokens);
   let offset = 0;
   let valid = true;
   while_change(lambda);
