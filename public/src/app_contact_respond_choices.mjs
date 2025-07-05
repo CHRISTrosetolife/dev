@@ -17,6 +17,10 @@ export function app_contact_respond_choices() {
       response: app_share_praise(),
     },
     {
+      tokens: ["I", "really", "need", "help", "from", "you"],
+      response: "",
+    },
+    {
       tokens: ["in", "Jesus", "name"],
       response: "",
     },
