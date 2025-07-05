@@ -56,17 +56,17 @@ export async function app_contact_main() {
     "",
   );
   html_rows_set(t, 8);
-  let response;
+  let response_p;
   html_button(root, "Send message to me", async function () {
     try {
-      let { repsonse, value } = app_contact_respond_component(t, response);
+      let { repsonse, value } = app_contact_respond_component(t, response_p);
       let { output } = repsonse;
       log({
         output,
       });
       if (output === null) {
         html_p_text(
-          response,
+          response_p,
           "💻 Computer program was not able to answer this message",
         );
         let file_name = file_name_json(id);
@@ -74,7 +74,7 @@ export async function app_contact_main() {
         await firebase_upload_object(path, {
           message: value,
         });
-        html_p_text_multiple(response, [
+        html_p_text_multiple(response_p, [
           "📬 Your message has been sent to me",
           "📝 Lord-willing, I will answer",
           "⏰️ Please refresh this page later to see if I have answered",
@@ -83,14 +83,14 @@ export async function app_contact_main() {
         on_response(value, repsonse);
       }
     } catch (e) {
-      html_p_text(response, e);
+      html_p_text(response_p, e);
     } finally {
       await verse_next();
     }
   });
-  let response_p = html_p(root);
+  response_p = html_p(root);
   let verse_p = html_p(root);
-  let { repsonse, value } = app_contact_respond_component(t, response);
+  let { repsonse, value } = app_contact_respond_component(t, response_p);
   if (output !== null) {
     on_response(value, repsonse);
     await verse_next();
@@ -98,11 +98,11 @@ export async function app_contact_main() {
   function on_response(value, repsonse) {
     let { output, valid } = repsonse;
     if (false) {
-      html_p_text(response, "💻 Computer program answered for me:");
+      html_p_text(response_p, "💻 Computer program answered for me:");
     }
-    let value_p = html_p_text(response, value);
+    let value_p = html_p_text(response_p, value);
     html_style_italic(value_p);
-    let r = html_p_text(response, output);
+    let r = html_p_text(response_p, output);
     if (false) {
       html_style_bold(r);
     }
@@ -110,7 +110,7 @@ export async function app_contact_main() {
     if (valid) {
       change("");
     }
-    html_scroll_center(response);
+    html_scroll_center(response_p);
   }
   async function verse_next() {
     html_clear(verse_p);
