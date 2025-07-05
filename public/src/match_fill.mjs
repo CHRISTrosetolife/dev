@@ -25,6 +25,7 @@ export function match_fill(tokens, choices) {
         let tokens_size = list_size(tokens);
         if (index === tokens_size + 1) {
           final = f;
+        } else {
         }
         match_fill_inner(f);
       });
