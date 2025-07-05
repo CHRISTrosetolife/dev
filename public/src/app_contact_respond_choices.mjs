@@ -1,3 +1,4 @@
+import { app_contact_match_invalid } from "./app_contact_match_invalid.mjs";
 import { match_sequence } from "./match_sequence.mjs";
 import { app_contact_match } from "./app_contact_match.mjs";
 import { match_choice } from "./match_choice.mjs";
@@ -12,12 +13,12 @@ export function app_contact_respond_choices() {
       app_contact_match(app_share_verse_refresh_greet()),
     ),
     match_sequence(["praise", "God"], app_contact_match(app_share_praise())),
-    {
-      tokens: ["I", "really", "need", "help", "from", "you"],
-      response:
+    match_sequence(
+      ["I", "really", "need", "help", "from", "you"],
+      app_contact_match_invalid(
         "You asked for help. Please rewrite your message to say what kind of help you need.",
-      valid: false,
-    },
+      ),
+    ),
     {
       tokens: ["in", "Jesus", "name"],
       response: "",
