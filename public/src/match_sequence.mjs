@@ -7,7 +7,9 @@ export function match_sequence(steps) {
     each(steps, function (step) {
       let result = choice(a);
       let match = object_property_get(result, "match");
-      if (false) {
+      if (!match) {
+        let v3 = true;
+        return v3;
       }
     });
     let mapped = list_map(choices, function (choice) {
