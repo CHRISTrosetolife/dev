@@ -7,7 +7,11 @@ import { each } from "./each.mjs";
 import { match_on } from "./match_on.mjs";
 import { match_functionize } from "./match_functionize.mjs";
 export function match_fill(choices) {
-  let v = function match_choice_inner(a) {
+  let v = function match_choice_inner(tokens) {
+    let a = {
+      tokens,
+      index: 0,
+    };
     object_property_set(a, "match", false);
     let result = a;
     let final = result;
