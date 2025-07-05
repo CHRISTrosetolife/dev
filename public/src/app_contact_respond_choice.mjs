@@ -8,7 +8,7 @@ import { string_case_lower } from "./string_case_lower.mjs";
 export function app_contact_respond_choice(tokens, offset, outputs, choice) {
   let choice_tokens = object_property_get(choice, "tokens");
   let choice_response = object_property_get(choice, "response");
-  let choice_valid = object_property_get_or(choice, "invalid");
+  let choice_valid = object_property_get_or(choice, "invalid", false);
   let match = true;
   let offset_next = null;
   each_index(choice_tokens, function (item, index) {
