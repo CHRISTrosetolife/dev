@@ -24,12 +24,12 @@ export function tokens_simple(input, quote_string, split_string) {
   let quoted = false;
   let split = string_split_empty(input);
   each_index(split, function (current, index) {
-    function lambda(change) {
-      let index_changed = change(index);
-      if (list_index_is(split, index_changed)) {
-        let other = list_get(split, index_changed);
-        let cn = string_combine(current, other);
-        if (cn === q2) {
+    function lambda(other_index_get) {
+      let index_other = other_index_get(index);
+      if (list_index_is(split, index_other)) {
+        let other = list_get(split, index_other);
+        let co = combine(current, other);
+        if (co === q2) {
           let v = true;
           return v;
         }
@@ -37,7 +37,7 @@ export function tokens_simple(input, quote_string, split_string) {
       let v2 = false;
       return v2;
     }
-    if (lambda(add_1)) {
+    if (lambda(add_1, string_combine)) {
       quoted = not(quoted);
       return;
     }
