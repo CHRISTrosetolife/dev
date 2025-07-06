@@ -20,7 +20,7 @@ export function tokens_simple(input, quote_string, split_string) {
   let quoted = false;
   let split = string_split_empty(input);
   each(split, function (s) {
-    if (s === quote_string) {
+    if (s === q2) {
       quoted = not(quoted);
     } else if (s === split_string && !quoted) {
       token_next();
@@ -30,8 +30,7 @@ export function tokens_simple(input, quote_string, split_string) {
   });
   let suffix = string_combine_multiple([
     split_string,
-    quote_string,
-    quote_string,
+    q4
   ]);
   if (list_empty_not_is(current) || string_ends_with(input, suffix)) {
     token_next();
