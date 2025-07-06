@@ -1,3 +1,4 @@
+import { keyboard_keys } from "./keyboard_keys.mjs";
 import { object_property_get_or } from "./object_property_get_or.mjs";
 import { match_fill } from "./match_fill.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
@@ -8,6 +9,7 @@ import { list_join_space } from "./list_join_space.mjs";
 import { list_filter } from "./list_filter.mjs";
 export function app_contact_respond(input) {
   let lower = string_case_lower(input);
+  let letters = keyboard_keys();
   let tokens = string_split_space(lower);
   let filtered = list_filter(tokens, string_empty_not_is);
   let choices = app_contact_respond_choices();
