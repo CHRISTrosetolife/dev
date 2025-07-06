@@ -10,11 +10,11 @@ import { string_split_space } from "./string_split_space.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_filter } from "./list_filter.mjs";
-import { list_add } from "./list_add.mjs";
+import { list_add_multiple } from "./list_add_multiple.mjs";
 export function app_contact_respond(input) {
   let lower = string_case_lower(input);
   let letters = keyboard_keys();
-  list_add(letters, string_split_empty("' "));
+  list_add_multiple(letters, string_split_empty("' "));
   let split = string_split_empty(lower);
   let filtered2 = list_filter(split, function (c) {
     let v = list_includes(letters, c);
