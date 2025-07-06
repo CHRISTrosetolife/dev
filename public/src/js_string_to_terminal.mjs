@@ -1,4 +1,3 @@
-import { exit } from "./exit.mjs";
 import { log } from "./log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
@@ -9,27 +8,14 @@ import { string_replace } from "./string_replace.mjs";
 export async function js_string_to_terminal() {
   function waitForInput() {
     let v2 = new Promise(function (resolve) {
-      let input = "";
-      process.stdin.setEncoding("utf8");
-      process.stdin.setRawMode(true);
-      process.stdin.resume();
-      function onData(char) {
-        if (char === "\r" || char === "\n") {
-          process.stdin.setRawMode(false);
-          process.stdin.pause();
-          process.stdin.removeListener("data", onData);
-          console.log();
-          resolve(input);
-        } else if (char === "\u0003") {
-          process.stdin.setRawMode(false);
-          process.stdin.pause();
-          process.exit();
-        } else {
-          process.stdout.write(char);
-          input += char;
-        }
-      }
-      process.stdin.on("data", onData);
+      let rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+      });
+      rl.question("", function (answer) {
+        rl.close();
+        resolve(answer);
+      });
     });
     return v2;
   }
