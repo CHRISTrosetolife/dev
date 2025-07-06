@@ -37,7 +37,7 @@ export function terminal_commands(context) {
     history_index_get,
   } = context;
   let symbols = "?_',<>=\"+.(){}[]:/-\\*$";
-  return [
+  let v = [
     {
       match: {
         sequence: "\x02",
@@ -46,10 +46,12 @@ export function terminal_commands(context) {
         meta: false,
         shift: false,
       },
-      action: async () => {
+      action: async function () {
         let value = await clipboard_paste();
         let split = string_split_empty(value);
-        let filtered = list_filter(split, (s) => s !== "\r");
+        let filtered = list_filter(split, function (s) {
+          return s !== "\r";
+        });
         keyboard_type(filtered);
       },
     },
@@ -71,7 +73,7 @@ export function terminal_commands(context) {
         meta: true,
         shift: false,
       },
-      action: () => {
+      action: function () {
         log_buffer_clear();
       },
     },
@@ -83,7 +85,7 @@ export function terminal_commands(context) {
         meta: false,
         shift: false,
       },
-      action: () => {
+      action: function () {
         let input = buffer_to_string();
         let tokens = terminal_tokens_get(input);
         let mapped = list_map(tokens, string_split_underscore);
@@ -116,7 +118,7 @@ export function terminal_commands(context) {
         meta: false,
         shift: false,
       },
-      action: (key) => {
+      action: function (key) {
         let b = buffer_get();
         if (list_empty_is(b)) {
           return;
@@ -134,7 +136,7 @@ export function terminal_commands(context) {
         meta: false,
         shift: false,
       },
-      action: (key) => {
+      action: function (key) {
         let input = buffer_to_string();
         let tokens = terminal_tokens_get(input);
         let extra = "";
@@ -148,6 +150,9 @@ export function terminal_commands(context) {
         let joined = list_join_space(tokens);
         joined = string_combine(joined, extra);
         buffer_clear();
+        log({
+          tokens,
+        });
         keyboard_type(joined);
       },
     },
@@ -159,12 +164,14 @@ export function terminal_commands(context) {
         meta: false,
         shift: false,
       },
-      action: async () => {
+      action: async function () {
         log("");
         let result = buffer_to_string();
         await history_add(result);
         buffer_clear();
-        each(on_returns_get(), (n) => n(result));
+        each(on_returns_get(), function (n) {
+          return n(result);
+        });
         list_remove_all(on_returns_get());
       },
     },
@@ -177,7 +184,7 @@ export function terminal_commands(context) {
         shift: false,
         code: "[A",
       },
-      action: async () => {
+      action: async function () {
         await history_index_get(subtract_1);
       },
     },
@@ -190,7 +197,7 @@ export function terminal_commands(context) {
         shift: false,
         code: "[B",
       },
-      action: async () => {
+      action: async function () {
         await history_index_get(add_1);
       },
     },
@@ -202,19 +209,28 @@ export function terminal_commands(context) {
         meta: false,
         shift: false,
       },
-      action: () => keyboard_type(" "),
+      action: function () {
+        return keyboard_type(" ");
+      },
     },
     {
       keys: list_concat(keyboard_keys(), list_map(range(10), string_to)),
-      action: (key) => keyboard_type(key.name),
+      action: function (key) {
+        return keyboard_type(key.name);
+      },
     },
     {
       keys: list_concat(keyboard_keys(), ["shift"]),
-      action: (key) => keyboard_type(key.sequence),
+      action: function (key) {
+        return keyboard_type(key.sequence);
+      },
     },
     {
       keys: string_split_empty(symbols),
-      action: (key) => keyboard_type(key.sequence),
+      action: function (key) {
+        return keyboard_type(key.sequence);
+      },
     },
   ];
+  return v;
 }
