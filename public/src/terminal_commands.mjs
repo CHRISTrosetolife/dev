@@ -92,7 +92,6 @@ export function terminal_commands(context) {
         shift: false,
       },
       action: function () {
-        log("here");
         let input = buffer_to_string();
         let tokens = terminal_tokens_get(input);
         let mapped = list_map(tokens, string_split_underscore);
@@ -144,13 +143,6 @@ export function terminal_commands(context) {
         shift: false,
       },
       action: function (key) {
-        log({
-          sequence: "\x17",
-          name: "w",
-          ctrl: true,
-          meta: false,
-          shift: false,
-        });
         let input = buffer_to_string();
         let tokens = terminal_tokens_get(input);
         let quote_string = terminal_tokens_quote();
@@ -175,6 +167,7 @@ export function terminal_commands(context) {
         let joined = list_join_space(mapped2);
         joined = string_combine(joined, extra);
         buffer_clear();
+        log(mapped2);
         keyboard_type(joined);
       },
     },
@@ -187,7 +180,6 @@ export function terminal_commands(context) {
         shift: false,
       },
       action: async function () {
-        log("");
         let result = buffer_to_string();
         await history_add(result);
         buffer_clear();
