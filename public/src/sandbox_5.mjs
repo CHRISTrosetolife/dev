@@ -40,4 +40,5 @@ export async function sandbox_5() {
       process.exit();
     }
   };
+  on_keypress(mainKeyHandler);
 }
