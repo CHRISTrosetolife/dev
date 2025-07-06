@@ -19,7 +19,7 @@ export function tokens_simple(input, quote_string, split_string) {
   input = string_trim(input, split_string);
   let q2 = string_double(quote_string);
   input = string_replace(input, quote_string, q2);
-  let q4 = string_combine(q2, q2);
+  let q4 = string_double(q2);
   input = string_replace(input, q4, quote_string);
   let tokens = [];
   let token_buffer = [];
