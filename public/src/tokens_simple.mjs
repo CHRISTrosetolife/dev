@@ -24,8 +24,9 @@ export function tokens_simple(input, quote_string, split_string) {
   let quoted = false;
   let split = string_split_empty(input);
   each_index(split, function (current, index) {
-    if (false) {
-      lambda(add_1);
+    if (lambda(add_1)) {
+      quoted = not(quoted);
+      return;
     }
     let index_before = subtract_1(index);
     if (list_index_is(split, index_before)) {
@@ -46,10 +47,10 @@ export function tokens_simple(input, quote_string, split_string) {
         let other = list_get(split, index_changed);
         let cn = string_combine(current, other);
         if (cn === q2) {
-          return;
-          quoted = not(quoted);
+          return true;
         }
       }
+      return false;
     }
   });
   let suffix = string_combine_multiple([split_string, q4]);
