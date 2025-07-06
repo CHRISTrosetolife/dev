@@ -28,14 +28,21 @@ export function app_contact_respond_choices() {
     match_on(
       match_sequence([
         match_choice(["How're", match_sequence(["how", "are"])]),
-        "you",
+        app_contact_phrase_you(),
         "doing",
         match_optional("today"),
       ]),
       app_contact_match(app_share_how_r_u()),
     ),
     match_on(
-      match_sequence(["I", "really", "need", "help", "from", "you"]),
+      match_sequence([
+        "I",
+        "really",
+        "need",
+        "help",
+        "from",
+        app_contact_phrase_you(),
+      ]),
       app_contact_match_invalid(
         "You asked for help. Please edit your message to say what kind of help you need.",
       ),
