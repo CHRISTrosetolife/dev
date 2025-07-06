@@ -1,3 +1,4 @@
+import { app_share_how_r_u } from "./app_share_how_r_u.mjs";
 import { identity } from "./identity.mjs";
 import { noop } from "./noop.mjs";
 import { app_contact_match_invalid } from "./app_contact_match_invalid.mjs";
@@ -20,9 +21,7 @@ export function app_contact_respond_choices() {
     match_sequence(["praise", "God"], app_contact_match(app_share_praise())),
     match_sequence(
       ["How're", "you", "doing", "today"],
-      app_contact_match_invalid(
-        "You asked for help. Please edit your message to say what kind of help you need.",
-      ),
+      app_contact_match(app_share_how_r_u()),
     ),
     match_sequence(
       ["I", "really", "need", "help", "from", "you"],
