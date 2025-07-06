@@ -26,7 +26,7 @@ export function tokens_simple(input, quote_string, split_string) {
   let quoted = false;
   let split = string_split_empty(input);
   each_index(split, function (current, index) {
-    function lambda(other_index_get) {
+    function lambda(other_index_get,combine) {
       let result = false;
       let index_other = other_index_get(index);
       if (list_index_is(split, index_other)) {
