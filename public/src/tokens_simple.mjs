@@ -25,7 +25,8 @@ export function tokens_simple(input, quote_string, split_string) {
   each_index(split, function (current, index) {
     let i1 = add_1(index);
     let next = list_get(split, i1);
-    if (list_index_is(split, i1) && string_combine(current, next) === q2) {
+    let cn = string_combine(current, next);
+    if (list_index_is(split, i1) && cn === q2) {
     }
     if (current === q2) {
       quoted = not(quoted);
