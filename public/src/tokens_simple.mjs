@@ -33,9 +33,7 @@ export function tokens_simple(input, quote_string, split_string) {
       if (list_index_is(split, index_other)) {
         let other = list_get(split, index_other);
         let co = combine(current, other);
-      log(co);
         if (co === q2) {
-      log(index_other);
           result = true;
         }
       }
