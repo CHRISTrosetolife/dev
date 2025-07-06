@@ -53,7 +53,7 @@ export function app_contact_respond_choices() {
         match_choice(["great", "nice"]),
         "to",
         "meet",
-        match_optional(["with"]),
+        match_optional("with"),
         "you",
         "servant",
         "of",
