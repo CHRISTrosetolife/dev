@@ -1,4 +1,3 @@
-import { app_contact_phrase_you } from "./app_contact_phrase_you.mjs";
 import { match_on } from "./match_on.mjs";
 import { app_contact_phrase_jesus } from "./app_contact_phrase_jesus.mjs";
 import { match_optional } from "./match_optional.mjs";
@@ -28,21 +27,14 @@ export function app_contact_respond_choices() {
     match_on(
       match_sequence([
         match_choice(["How're", match_sequence(["how", "are"])]),
-        app_contact_phrase_you(),
+        "you",
         "doing",
         match_optional("today"),
       ]),
       app_contact_match(app_share_how_r_u()),
     ),
     match_on(
-      match_sequence([
-        "I",
-        "really",
-        "need",
-        "help",
-        "from",
-        app_contact_phrase_you(),
-      ]),
+      match_sequence(["I", "really", "need", "help", "from", "you"]),
       app_contact_match_invalid(
         "You asked for help. Please edit your message to say what kind of help you need.",
       ),
@@ -62,7 +54,13 @@ export function app_contact_respond_choices() {
         "to",
         "meet",
         match_optional(["with"]),
-        app_contact_phrase_you(),
+        "you",
+        "servant",
+        "of",
+        "the",
+        "most",
+        "high",
+        "god",
       ]),
       app_contact_match(
         string_combine_multiple([
