@@ -5,6 +5,8 @@ export function match_on(match_fn, on_match) {
     a = match_fn(a);
     let filtered = match_filter(a);
     each(filtered, on_match);
+    let v2 = a;
+    return v2;
   };
   return v;
 }
