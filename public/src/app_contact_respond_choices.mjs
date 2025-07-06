@@ -1,3 +1,4 @@
+import { app_contact_phrase_jesus } from "./app_contact_phrase_jesus.mjs";
 import { match_optional } from "./match_optional.mjs";
 import { app_share_how_r_u } from "./app_share_how_r_u.mjs";
 import { noop } from "./noop.mjs";
@@ -33,15 +34,9 @@ export function app_contact_respond_choices() {
     ),
     match_choice(
       [
-        match_sequence(["in", "Jesus", "name"], noop),
+        match_sequence(["in", app_contact_phrase_jesus(), "name"], noop),
         match_sequence(
-          [
-            "in",
-            "the",
-            "name",
-            "of",
-            match_sequence(["Jesus", match_optional("Christ"), noop]),
-          ],
+          ["in", "the", "name", "of", app_contact_phrase_jesus()],
           noop,
         ),
         "Amen",
