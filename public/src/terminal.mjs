@@ -216,6 +216,7 @@ export async function terminal() {
     }
     let { first: function_name, remaining: args } =
       list_first_remaining(tokens);
+    process.stdin.removeListener("keypress", on);
     try {
       let result = await function_run_terminal(function_name, args);
       if (undefined_not_is(result)) {
