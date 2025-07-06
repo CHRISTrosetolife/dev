@@ -11,11 +11,10 @@ import { string_split_empty } from "./string_split_empty.mjs";
 import { string_replace } from "./string_replace.mjs";
 export function tokens_simple(input, quote_string, split_string) {
   input = string_trim(input, split_string);
-  string_replace(
-    input,
-    quote_string,
-    string_combine(quote_string, quote_string),
-  );
+  let q2 = string_combine(quote_string, quote_string);
+  input = string_replace(input, quote_string, q2);
+  let q4 = string_combine(q2, q2);
+  input = string_replace(input, q4, quote_string);
   let tokens = [];
   let current = [];
   let quoted = false;
