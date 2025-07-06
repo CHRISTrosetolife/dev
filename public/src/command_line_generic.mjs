@@ -12,6 +12,10 @@ export async function command_line_generic(command, silent) {
   process.stdin.pause();
   process.stdin.setRawMode(false);
   let handlers = process.stdin.listeners("keypress");
+  handlers.forEach(function (handler) {
+    let v2 = process.stdin.removeListener("keypress", handler);
+    return v2;
+  });
   let v = await new Promise(function (resolve, reject) {
     let result = {
       stdout: [],
