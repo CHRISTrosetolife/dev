@@ -1,3 +1,4 @@
+import { terminal_tokens_get } from "./terminal_tokens_get.mjs";
 import { list_remove_last } from "./list_remove_last.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { string_to } from "./string_to.mjs";
@@ -49,7 +50,8 @@ export function terminal_commands(context) {
         let value = await clipboard_paste();
         let split = string_split_empty(value);
         let filtered = list_filter(split, function (s) {
-          return s !== "\r";
+          let v2 = s !== "\r";
+          return v2;
         });
         keyboard_type(filtered);
       },
@@ -137,7 +139,8 @@ export function terminal_commands(context) {
       },
       action: function (key) {
         let input = buffer_to_string();
-        let tokens = terminal_tokens_get(input);list_map(tokens, )
+        let tokens = terminal_tokens_get(input);
+        list_map(tokens);
         let extra = "";
         if (list_empty_not_is(tokens)) {
           list_remove_last(tokens);
