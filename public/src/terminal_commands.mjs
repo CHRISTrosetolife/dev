@@ -147,29 +147,26 @@ export function terminal_commands(context) {
         let tokens = terminal_tokens_get(input);
         let quote_string = terminal_tokens_quote();
         let escaped = string_double(quote_string);
-        let m = list_map(tokens, function (t) {
+        let mapped = list_map(tokens, function (t) {
           return string_replace(t, quote_string, escaped);
         });
-        let m2 = list_map(m, function (t) {
+        let mapped2 = list_map(mapped, function (t) {
           if (string_includes(t, escaped)) {
             return string_delimit_generic(quote_string, t);
           }
           return t;
         });
         let extra = "";
-        if (list_empty_not_is(tokens)) {
-          list_remove_last(tokens);
-          if (list_empty_not_is(tokens)) {
+        if (list_empty_not_is(mapped2)) {
+          list_remove_last(mapped2);
+          if (list_empty_not_is(mapped2)) {
             extra = " ";
           }
         }
         log_clear_write_prompt();
-        let joined = list_join_space(tokens);
+        let joined = list_join_space(mapped2);
         joined = string_combine(joined, extra);
         buffer_clear();
-        log({
-          tokens,
-        });
         keyboard_type(joined);
       },
     },
