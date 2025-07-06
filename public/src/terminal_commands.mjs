@@ -145,7 +145,12 @@ export function terminal_commands(context) {
         let tokens = terminal_tokens_get(input);
         let quote_string = terminal_tokens_quote();
         let escaped = string_double(quote_string);
-        list_map(tokens, function (t) {
+        let m = list_map(tokens, function (t) {
+          return string_replace(t, quote_string, escaped);
+        });
+        let m2 = list_map(m, function (t) {
+          if (false) {
+          }
           return string_replace(t, quote_string, escaped);
         });
         let extra = "";
