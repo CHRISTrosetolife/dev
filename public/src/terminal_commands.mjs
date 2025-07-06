@@ -92,6 +92,7 @@ export function terminal_commands(context) {
         shift: false,
       },
       action: function () {
+        log("");
         let input = buffer_to_string();
         let tokens = terminal_tokens_get(input);
         let mapped = list_map(tokens, string_split_underscore);
@@ -144,12 +145,12 @@ export function terminal_commands(context) {
       },
       action: function (key) {
         log({
-        sequence: "\x17",
-        name: "w",
-        ctrl: true,
-        meta: false,
-        shift: false,
-      });
+          sequence: "\x17",
+          name: "w",
+          ctrl: true,
+          meta: false,
+          shift: false,
+        });
         let input = buffer_to_string();
         let tokens = terminal_tokens_get(input);
         let quote_string = terminal_tokens_quote();
