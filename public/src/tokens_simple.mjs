@@ -35,7 +35,7 @@ export function tokens_simple(input, quote_string, split_string) {
     }
     let index_before = subtract_1(index);
     if (list_index_is(split, index_before)) {
-      let before = list_get(split, index_after);
+      let before = list_get(split, index_before);
       let cn = string_combine(before, current);
       if (cn === q2) {
         return;
