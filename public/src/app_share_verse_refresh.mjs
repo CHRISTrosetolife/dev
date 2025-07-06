@@ -1,3 +1,4 @@
+import { app_share_how_r_u } from "./app_share_how_r_u.mjs";
 import { app_share_praise } from "./app_share_praise.mjs";
 import { html_bible_verse_navigation_next_data } from "./html_bible_verse_navigation_next_data.mjs";
 import { app_share_thanks } from "./app_share_thanks.mjs";
@@ -111,9 +112,7 @@ export async function app_share_verse_refresh(
     },
     {
       button_text: "👌 How r u",
-      value: [
-        "😁 I am doing good 💯 through the grace of God 👌 But please pray for my health 🙏",
-      ],
+      value: [app_share_how_r_u()],
     },
     {
       button_text: "🙏 Bless",
