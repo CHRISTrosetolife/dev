@@ -8,6 +8,9 @@ import { import_node } from "./import_node.mjs";
 export async function command_line_generic(command, silent) {
   let c = await import_node("child_process");
   let { spawn } = c;
+  process.stdin.pause();
+  process.stdin.setRawMode(false);
+  process.stdin.removeAllListeners("keypress");
   let v = await new Promise(function (resolve, reject) {
     let result = {
       stdout: [],
@@ -16,7 +19,9 @@ export async function command_line_generic(command, silent) {
     let { first, remaining } = list_first_remaining(
       string_split_space(command),
     );
-    let child = spawn(first, remaining);
+    let child = spawn(first, remaining, {
+      stdio: ["inherit", "pipe", "pipe"],
+    });
     if (!silent) {
       let { stdout, stderr } = child;
       stdout.setEncoding("utf8");
@@ -31,6 +36,7 @@ export async function command_line_generic(command, silent) {
       });
     }
     child.on("close", function (code) {
+      process.stdin.resume();
       let result = {
         code,
       };
@@ -41,6 +47,7 @@ export async function command_line_generic(command, silent) {
       }
     });
     child.on("error", function (error) {
+      process.stdin.resume();
       reject({
         error,
       });
