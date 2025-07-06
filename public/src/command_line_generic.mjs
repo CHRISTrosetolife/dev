@@ -60,6 +60,10 @@ export async function command_line_generic(command, silent) {
   });
   return v;
   function on_finish() {
+    handlers.forEach(function (handler) {
+      let v3 = process.stdin.on("keypress", handler);
+      return v3;
+    });
     process.stdin.resume();
     if (wasRaw) {
       process.stdin.setRawMode(true);
