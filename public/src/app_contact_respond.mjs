@@ -13,15 +13,7 @@ import { list_filter } from "./list_filter.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 export function app_contact_respond(input) {
   let lower = string_case_lower(input);
-  let letters = keyboard_keys();
-  list_add_multiple(letters, string_split_empty("' "));
-  let split = string_split_empty(lower);
-  let filtered2 = list_filter(split, function (c) {
-    let v = list_includes(letters, c);
-    return v;
-  });
-  let joined = list_join_empty(filtered2);
-  let tokens = string_split_space(joined);
+  let tokens = string_split_space(lower);
   let filtered = list_filter(tokens, string_empty_not_is);
   let choices = app_contact_respond_choices();
   let { data, match } = match_fill(filtered, choices);
@@ -33,4 +25,12 @@ export function app_contact_respond(input) {
     valid,
   };
   return v3;
+  let letters = keyboard_keys();
+  list_add_multiple(letters, string_split_empty("' "));
+  let split = string_split_empty(lower);
+  let filtered2 = list_filter(split, function (c) {
+    let v = list_includes(letters, c);
+    return v;
+  });
+  let joined = list_join_empty(filtered2);
 }
