@@ -143,6 +143,9 @@ export function terminal_commands(context) {
         shift: false,
       },
       action: function (key) {
+        log({
+          mapped2,
+        });
         let input = buffer_to_string();
         let tokens = terminal_tokens_get(input);
         let quote_string = terminal_tokens_quote();
