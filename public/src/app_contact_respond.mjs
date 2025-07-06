@@ -14,7 +14,7 @@ import { list_add } from "./list_add.mjs";
 export function app_contact_respond(input) {
   let lower = string_case_lower(input);
   let letters = keyboard_keys();
-  list_add(letters, "'");
+  list_add(letters, string_split_empty("' "));
   let split = string_split_empty(lower);
   let filtered2 = list_filter(split, function (c) {
     let v = list_includes(letters, c);
