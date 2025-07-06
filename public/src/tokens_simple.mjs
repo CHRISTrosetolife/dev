@@ -1,3 +1,4 @@
+import { string_combine_reverse } from "./string_combine_reverse.mjs";
 import { list_get } from "./list_get.mjs";
 import { add_1 } from "./add_1.mjs";
 import { each_index } from "./each_index.mjs";
@@ -41,13 +42,9 @@ export function tokens_simple(input, quote_string, split_string) {
       quoted = not(quoted);
       return;
     }
-    let index_before = subtract_1(index);
-    if (list_index_is(split, index_before)) {
-      let before = list_get(split, index_before);
-      let cn = string_combine(before, current);
-      if (cn === q2) {
-        return;
-      }
+    if (lambda(subtract_1, string_combine_reverse)) {
+      quoted = not(quoted);
+      return;
     }
     if (current === split_string && !quoted) {
       token_next();
