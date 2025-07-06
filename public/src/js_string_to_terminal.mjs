@@ -5,10 +5,19 @@ import { string_delimit } from "./string_delimit.mjs";
 import { string_double } from "./string_double.mjs";
 import { terminal_tokens_quote } from "./terminal_tokens_quote.mjs";
 import { string_replace } from "./string_replace.mjs";
-export function js_string_to_terminal(code) {
-  log({
-    code,
-  });
+export async function js_string_to_terminal() {
+  async function waitForInput() {
+    let v2 = await new Promise(function (resolve) {
+      process.stdin.resume();
+      process.stdin.setEncoding("utf8");
+      process.stdin.once("data", function (data) {
+        let input = data.replace(/\r?\n$/, "");
+        resolve(input);
+      });
+    });
+    return v2;
+  }
+  let code = await waitForInput();
   let parsed = js_parse_expression(code);
   let value = object_property_get(parsed, "value");
   log({
