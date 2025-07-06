@@ -1,5 +1,8 @@
-import { on_keypress_initialize } from "./on_keypress_initialize.mjs";
+import readline from "readline";
 export function on_keypress(on) {
-  on_keypress_initialize();
+  readline.emitKeypressEvents(process.stdin);
+  if (process.stdin.isTTY) {
+    process.stdin.setRawMode(true);
+  }
   process.stdin.on("keypress", on);
 }
