@@ -15,7 +15,7 @@ export function app_contact_respond_choices() {
   let v = [
     match_on(
       match_sequence([
-        match_choice(["hello", "greetings", "hi"]),
+        match_choice(["hello", "greetings", "hi", "hii"]),
         match_optional("sir"),
       ]),
       app_contact_match(app_share_verse_refresh_greet()),
