@@ -7,7 +7,7 @@ export function prayers_sins() {
     "Let there be no thievery, no doubt, no jealousy nor envy and no wrath nor sinful anger",
     "Let there be no pornography, no rape, no sexual sin and no sexual sin against children",
     "Let there be no fornication, no kidnapping, no hostages, no unnecessary war, no violence, no drugs and no excessive alcohol",
-    "Let there be no greed, no idolatry, no racism, no sexism, no ableism,no prejudice, and no partiality",
+    "Let there be no greed, no idolatry, no racism, no sexism, no ableism, no prejudice, and no partiality",
     "Let there be no self-harm",
   ];
   return v;
