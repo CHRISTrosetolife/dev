@@ -146,11 +146,7 @@ export function terminal_commands(context) {
         let quote_string = terminal_tokens_quote();
         let escaped = string_double(quote_string);
         list_map(tokens, function (t) {
-          return string_replace(
-            t,
-            quote_string,
-            string_combine(quote_string, quote_string),
-          );
+          return string_replace(t, quote_string, escaped);
         });
         let extra = "";
         if (list_empty_not_is(tokens)) {
