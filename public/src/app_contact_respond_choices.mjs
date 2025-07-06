@@ -58,7 +58,7 @@ export function app_contact_respond_choices() {
     ),
     match_on(
       match_sequence([
-        match_choice(["great", "nice"]),
+        match_on(match_choice(["great", "nice"])),
         "to",
         "meet",
         match_optional("with"),
