@@ -197,6 +197,7 @@ export async function terminal() {
   while (true) {
     log_write(prompt);
     let input = await next();
+    log("");
     if (list_includes(list_concat([fn_name("exit")], exit_aliases()), input)) {
       await history_pop();
       exit();
