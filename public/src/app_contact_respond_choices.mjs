@@ -1,3 +1,5 @@
+import { object_property_get } from "./object_property_get.mjs";
+import { object_merge } from "./object_merge.mjs";
 import { app_contact_phrase_you } from "./app_contact_phrase_you.mjs";
 import { match_on } from "./match_on.mjs";
 import { app_contact_phrase_jesus } from "./app_contact_phrase_jesus.mjs";
@@ -58,7 +60,10 @@ export function app_contact_respond_choices() {
     ),
     match_on(
       match_sequence([
-        match_on(match_choice(["great", "nice"])),
+        match_on(match_choice(["great", "nice"]), function (a) {
+          let v2 = object_merge(object_property_get(object, "property_name"));
+          return v2;
+        }),
         "to",
         "meet",
         match_optional("with"),
