@@ -1,3 +1,4 @@
+import { string_includes } from "./string_includes.mjs";
 import { string_double } from "./string_double.mjs";
 import { terminal_tokens_quote } from "./terminal_tokens_quote.mjs";
 import { terminal_tokens_get } from "./terminal_tokens_get.mjs";
@@ -149,7 +150,7 @@ export function terminal_commands(context) {
           return string_replace(t, quote_string, escaped);
         });
         let m2 = list_map(m, function (t) {
-          if (false) {
+          if (string_includes(t, escaped)) {
             return mstring_delimit_generic(quote_string, t);
           }
           return string_replace(t, quote_string, escaped);
