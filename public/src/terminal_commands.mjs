@@ -92,7 +92,7 @@ export function terminal_commands(context) {
         shift: false,
       },
       action: function () {
-        log("");
+        log("here");
         let input = buffer_to_string();
         let tokens = terminal_tokens_get(input);
         let mapped = list_map(tokens, string_split_underscore);
