@@ -22,19 +22,17 @@ export function tokens_simple(input, quote_string, split_string) {
   let current = [];
   let quoted = false;
   let split = string_split_empty(input);
-  each_index(split, function (s, index) {
+  each_index(split, function (current, index) {
     let i1 = add_1(index);
-    if (
-      list_index_is(split, i1) &&
-      string_combine(s, list_get(split, i1)) === q2
-    ) {
+    let next = list_get(split, i1);
+    if (list_index_is(split, i1) && string_combine(current, next) === q2) {
     }
-    if (s === q2) {
+    if (current === q2) {
       quoted = not(quoted);
-    } else if (s === split_string && !quoted) {
+    } else if (current === split_string && !quoted) {
       token_next();
     } else {
-      list_add(current, s);
+      list_add(current, current);
     }
   });
   let suffix = string_combine_multiple([split_string, q4]);
