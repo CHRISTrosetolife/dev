@@ -24,9 +24,10 @@ export function tokens_simple(input, quote_string, split_string) {
   let split = string_split_empty(input);
   each_index(split, function (current, index) {
     let i1 = add_1(index);
-    let next = list_get(split, i1);
-    let cn = string_combine(current, next);
-    if (list_index_is(split, i1) && cn === q2) {
+    if (list_index_is(split, i1)) {
+      let next = list_get(split, i1);
+      let cn = string_combine(current, next);
+      let newLocal = cn === q2;
     }
     if (current === q2) {
       quoted = not(quoted);
