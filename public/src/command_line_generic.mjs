@@ -37,10 +37,7 @@ export async function command_line_generic(command, silent) {
       });
     }
     child.on("close", function (code) {
-      process.stdin.resume();
-      if (wasRaw) {
-        process.stdin.setRawMode(true);
-      }
+      on_finish();
       let result = {
         code,
       };
@@ -51,14 +48,17 @@ export async function command_line_generic(command, silent) {
       }
     });
     child.on("error", function (error) {
-      process.stdin.resume();
-      if (wasRaw) {
-        process.stdin.setRawMode(true);
-      }
+      on_finish();
       reject({
         error,
       });
     });
   });
   return v;
+  function on_finish() {
+    process.stdin.resume();
+    if (wasRaw) {
+      process.stdin.setRawMode(true);
+    }
+  }
 }
