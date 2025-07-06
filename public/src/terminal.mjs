@@ -47,7 +47,6 @@ export async function terminal() {
     keyboard_type,
     log_buffer_clear,
     buffer_to_string,
-    terminal_tokens_get,
     log_clear_write_prompt,
     buffer_clear,
     buffer_get,

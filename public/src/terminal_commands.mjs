@@ -27,7 +27,6 @@ export function terminal_commands(context) {
     keyboard_type,
     log_buffer_clear,
     buffer_to_string,
-    terminal_tokens_get,
     log_clear_write_prompt,
     buffer_clear,
     buffer_get,
@@ -138,7 +137,7 @@ export function terminal_commands(context) {
       },
       action: function (key) {
         let input = buffer_to_string();
-        let tokens = terminal_tokens_get(input);
+        let tokens = terminal_tokens_get(input);list_map(tokens, )
         let extra = "";
         if (list_empty_not_is(tokens)) {
           list_remove_last(tokens);
