@@ -42,7 +42,6 @@ export function tokens_simple(input, quote_string, split_string) {
       return;
     }
     if (lambda(subtract_1, string_combine_reverse)) {
-      quoted = not(quoted);
       return;
     }
     if (current === split_string && !quoted) {
