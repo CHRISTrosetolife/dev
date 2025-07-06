@@ -1,3 +1,4 @@
+import { terminal_tokens_quote } from "./terminal_tokens_quote.mjs";
 import { terminal_tokens_get } from "./terminal_tokens_get.mjs";
 import { list_remove_last } from "./list_remove_last.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
@@ -23,6 +24,7 @@ import { exit } from "./exit.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { clipboard_paste } from "./clipboard_paste.mjs";
+import { string_replace } from "./string_replace.mjs";
 export function terminal_commands(context) {
   let {
     keyboard_type,
@@ -140,7 +142,14 @@ export function terminal_commands(context) {
       action: function (key) {
         let input = buffer_to_string();
         let tokens = terminal_tokens_get(input);
-        list_map(tokens);
+        let quote_string = terminal_tokens_quote();
+        list_map(tokens, function (t) {
+          return string_replace(
+            t,
+            quote_string,
+            string_combine(quote_string, quote_string),
+          );
+        });
         let extra = "";
         if (list_empty_not_is(tokens)) {
           list_remove_last(tokens);
