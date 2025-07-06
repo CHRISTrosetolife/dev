@@ -26,17 +26,16 @@ export function tokens_simple(input, quote_string, split_string) {
   let split = string_split_empty(input);
   each_index(split, function (current, index) {
     function lambda(other_index_get) {
+      let result = false;
       let index_other = other_index_get(index);
       if (list_index_is(split, index_other)) {
         let other = list_get(split, index_other);
         let co = combine(current, other);
         if (co === q2) {
-          let v = true;
-          return v;
+          result = true;
         }
       }
-      let v2 = false;
-      return v2;
+      return result;
     }
     if (lambda(add_1, string_combine)) {
       quoted = not(quoted);
