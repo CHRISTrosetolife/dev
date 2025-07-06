@@ -1,3 +1,4 @@
+import { app_contact_phrase_you } from "./app_contact_phrase_you.mjs";
 import { match_on } from "./match_on.mjs";
 import { app_contact_phrase_jesus } from "./app_contact_phrase_jesus.mjs";
 import { match_optional } from "./match_optional.mjs";
@@ -54,12 +55,7 @@ export function app_contact_respond_choices() {
         "to",
         "meet",
         match_optional(["with"]),
-        match_sequence([
-          "you",
-          match_optional([
-            match_sequence(["servant", "of", "the", "most", "high", "god"]),
-          ]),
-        ]),
+        app_contact_phrase_you(),
       ]),
       app_contact_match(
         string_combine_multiple([
