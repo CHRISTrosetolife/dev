@@ -27,11 +27,12 @@ export function tokens_simple(input, quote_string, split_string) {
     if (list_index_is(split, i1)) {
       let next = list_get(split, i1);
       let cn = string_combine(current, next);
-      let newLocal = cn === q2;
+      if (cn === q2) {
+        quoted = not(quoted);
+        return;
+      }
     }
-    if (current === q2) {
-      quoted = not(quoted);
-    } else if (current === split_string && !quoted) {
+    if (current === split_string && !quoted) {
       token_next();
     } else {
       list_add(current, current);
