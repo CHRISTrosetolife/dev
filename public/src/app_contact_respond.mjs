@@ -1,6 +1,5 @@
+import { app_contact_alphabet } from "./app_contact_alphabet.mjs";
 import { string_only } from "./string_only.mjs";
-import { string_split_empty } from "./string_split_empty.mjs";
-import { keyboard_keys } from "./keyboard_keys.mjs";
 import { object_property_get_or } from "./object_property_get_or.mjs";
 import { match_fill } from "./match_fill.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
@@ -9,11 +8,9 @@ import { string_split_space } from "./string_split_space.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_filter } from "./list_filter.mjs";
-import { list_add_multiple } from "./list_add_multiple.mjs";
 export function app_contact_respond(input) {
   let lower = string_case_lower(input);
-  let letters = keyboard_keys();
-  list_add_multiple(letters, string_split_empty("' "));
+  let letters = app_contact_alphabet();
   let joined = string_only(lower, letters);
   let tokens = string_split_space(joined);
   let filtered = list_filter(tokens, string_empty_not_is);
