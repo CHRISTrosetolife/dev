@@ -144,8 +144,12 @@ export function terminal_commands(context) {
       },
       action: function (key) {
         log({
-          mapped2,
-        });
+        sequence: "\x17",
+        name: "w",
+        ctrl: true,
+        meta: false,
+        shift: false,
+      });
         let input = buffer_to_string();
         let tokens = terminal_tokens_get(input);
         let quote_string = terminal_tokens_quote();
