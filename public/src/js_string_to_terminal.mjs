@@ -8,12 +8,11 @@ import { string_replace } from "./string_replace.mjs";
 import readline from "readline";
 export async function js_string_to_terminal() {
   function waitForInput() {
-    let v2 = new Promise(function (resolve) {
+    let result = new Promise(function (resolve) {
       let rl = readline.createInterface({
         input: process.stdin,
         output: process.stdout,
       });
-      log("here");
       rl.question("", function (answer) {
         log({
           answer,
@@ -22,7 +21,7 @@ export async function js_string_to_terminal() {
         resolve(answer);
       });
     });
-    return v2;
+    return result;
   }
   let code = await waitForInput();
   let parsed = js_parse_expression(code);
