@@ -1,5 +1,5 @@
+import { list_add } from "./list_add.mjs";
 import { js_statement_return } from "./js_statement_return.mjs";
-import { list_insert } from "./list_insert.mjs";
 import { js_expression_call_args_await_maybe } from "./js_expression_call_args_await_maybe.mjs";
 import { function_unalias } from "./function_unalias.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
@@ -23,13 +23,12 @@ export async function function_wrap(function_name, function_name_wrapped) {
     async_is,
   );
   let body = js_declaration_single_body(ast);
-  let index = 0;
   let e = js_expression_call_args_await_maybe(
     function_name,
     param_names,
     async_is,
   );
-  js_statement_return();
-  list_insert(body, index, e);
+  let r = js_statement_return(e);
+  list_add(body, r);
   await function_new_generic_ast(function_name_wrapped, ast, false, true);
 }
