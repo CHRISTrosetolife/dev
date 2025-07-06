@@ -21,7 +21,7 @@ export function app_contact_respond(input) {
     return v;
   });
   let joined = list_join_empty(filtered2);
-  let tokens = string_split_space(lower);
+  let tokens = string_split_space(joined);
   let filtered = list_filter(tokens, string_empty_not_is);
   let choices = app_contact_respond_choices();
   let { data, match } = match_fill(filtered, choices);
