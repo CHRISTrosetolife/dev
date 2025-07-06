@@ -30,6 +30,7 @@ export function tokens_simple(input, quote_string, split_string) {
     function lambda(other_index_get, combine) {
       let result = false;
       let index_other = other_index_get(index);
+      log(index_other);
       if (list_index_is(split, index_other)) {
         let other = list_get(split, index_other);
         let co = combine(current, other);
@@ -41,11 +42,9 @@ export function tokens_simple(input, quote_string, split_string) {
     }
     if (lambda(add_1, string_combine)) {
       quoted = not(quoted);
-      log("a");
       return;
     }
     if (lambda(subtract_1, string_combine_reverse)) {
-      log("b");
       return;
     }
     if (current === split_string && !quoted) {
