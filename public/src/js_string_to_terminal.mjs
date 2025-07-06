@@ -1,3 +1,4 @@
+import { exit } from "./exit.mjs";
 import { log } from "./log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
@@ -6,14 +7,29 @@ import { string_double } from "./string_double.mjs";
 import { terminal_tokens_quote } from "./terminal_tokens_quote.mjs";
 import { string_replace } from "./string_replace.mjs";
 export async function js_string_to_terminal() {
-  async function waitForInput() {
-    let v2 = await new Promise(function (resolve) {
-      process.stdin.resume();
+  function waitForInput() {
+    let v2 = new Promise(function (resolve) {
+      let input = "";
       process.stdin.setEncoding("utf8");
-      process.stdin.once("data", function (data) {
-        let input = data.replace(/\r?\n$/, "");
-        resolve(input);
-      });
+      process.stdin.setRawMode(true);
+      process.stdin.resume();
+      function onData(char) {
+        if (char === "\r" || char === "\n") {
+          process.stdin.setRawMode(false);
+          process.stdin.pause();
+          process.stdin.removeListener("data", onData);
+          console.log();
+          resolve(input);
+        } else if (char === "\u0003") {
+          process.stdin.setRawMode(false);
+          process.stdin.pause();
+          process.exit();
+        } else {
+          process.stdout.write(char);
+          input += char;
+        }
+      }
+      process.stdin.on("data", onData);
     });
     return v2;
   }
