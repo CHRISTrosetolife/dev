@@ -1,3 +1,4 @@
+import { string_combine } from "./string_combine.mjs";
 import { string_trim } from "./string_trim.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 import { string_ends_with } from "./string_ends_with.mjs";
@@ -7,8 +8,14 @@ import { list_add } from "./list_add.mjs";
 import { not } from "./not.mjs";
 import { each } from "./each.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
+import { string_replace } from "./string_replace.mjs";
 export function tokens_simple(input, quote_string, split_string) {
   input = string_trim(input, split_string);
+  string_replace(
+    input,
+    quote_string,
+    string_combine(quote_string, quote_string),
+  );
   let tokens = [];
   let current = [];
   let quoted = false;
