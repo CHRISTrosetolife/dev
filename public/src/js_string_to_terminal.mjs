@@ -14,6 +14,7 @@ export async function js_string_to_terminal() {
         output: process.stdout,
       });
       rl.question("", function (answer) {
+        log({});
         rl.close();
         resolve(answer);
       });
