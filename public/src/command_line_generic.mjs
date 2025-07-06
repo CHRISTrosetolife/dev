@@ -8,6 +8,7 @@ import { import_node } from "./import_node.mjs";
 export async function command_line_generic(command, silent) {
   let c = await import_node("child_process");
   let { spawn } = c;
+  let wasRaw = process.stdin.isRaw;
   process.stdin.pause();
   process.stdin.setRawMode(false);
   process.stdin.removeAllListeners("keypress");
@@ -37,6 +38,9 @@ export async function command_line_generic(command, silent) {
     }
     child.on("close", function (code) {
       process.stdin.resume();
+      if (wasRaw) {
+        process.stdin.setRawMode(true);
+      }
       let result = {
         code,
       };
@@ -48,6 +52,9 @@ export async function command_line_generic(command, silent) {
     });
     child.on("error", function (error) {
       process.stdin.resume();
+      if (wasRaw) {
+        process.stdin.setRawMode(true);
+      }
       reject({
         error,
       });
