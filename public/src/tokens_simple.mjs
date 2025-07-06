@@ -24,6 +24,19 @@ export function tokens_simple(input, quote_string, split_string) {
   let quoted = false;
   let split = string_split_empty(input);
   each_index(split, function (current, index) {
+    function lambda(change) {
+      let index_changed = change(index);
+      if (list_index_is(split, index_changed)) {
+        let other = list_get(split, index_changed);
+        let cn = string_combine(current, other);
+        if (cn === q2) {
+          let v = true;
+          return v;
+        }
+      }
+      let v2 = false;
+      return v2;
+    }
     if (lambda(add_1)) {
       quoted = not(quoted);
       return;
@@ -41,17 +54,6 @@ export function tokens_simple(input, quote_string, split_string) {
       return;
     }
     list_add(token_buffer, current);
-    function lambda(change) {
-      let index_changed = change(index);
-      if (list_index_is(split, index_changed)) {
-        let other = list_get(split, index_changed);
-        let cn = string_combine(current, other);
-        if (cn === q2) {
-          return true;
-        }
-      }
-      return false;
-    }
   });
   let suffix = string_combine_multiple([split_string, q4]);
   if (list_empty_not_is(token_buffer) || string_ends_with(input, suffix)) {
