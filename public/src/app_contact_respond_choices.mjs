@@ -21,7 +21,12 @@ export function app_contact_respond_choices() {
     ),
     match_sequence(["praise", "God"], app_contact_match(app_share_praise())),
     match_sequence(
-      [match_choice(["How're", "how are"], noop), "you", "doing", "today"],
+      [
+        match_choice(["How're", "how are"], noop),
+        "you",
+        "doing",
+        match_optional("today"),
+      ],
       app_contact_match(app_share_how_r_u()),
     ),
     match_sequence(
