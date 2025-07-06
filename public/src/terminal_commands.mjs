@@ -1,3 +1,4 @@
+import { string_delimit_generic } from "./string_delimit_generic.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { string_double } from "./string_double.mjs";
 import { terminal_tokens_quote } from "./terminal_tokens_quote.mjs";
@@ -151,7 +152,7 @@ export function terminal_commands(context) {
         });
         let m2 = list_map(m, function (t) {
           if (string_includes(t, escaped)) {
-            return mstring_delimit_generic(quote_string, t);
+            return string_delimit_generic(quote_string, t);
           }
           return t;
         });
