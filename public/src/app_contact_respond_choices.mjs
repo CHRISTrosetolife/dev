@@ -61,7 +61,9 @@ export function app_contact_respond_choices() {
     match_on(
       match_sequence([
         match_on(match_choice(["great", "nice"]), function (a) {
-          let v2 = object_merge(object_property_get(object, "property_name"));
+          let v2 = object_merge(object_property_get(a, "data"), {
+            description,
+          });
           return v2;
         }),
         "to",
