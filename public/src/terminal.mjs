@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { terminal_tokens_get } from "./terminal_tokens_get.mjs";
 import { list_remove_last } from "./list_remove_last.mjs";
 import { object_property_add_1_initialize } from "./object_property_add_1_initialize.mjs";
@@ -218,6 +219,23 @@ export async function terminal() {
       list_first_remaining(tokens);
     process.stdin.removeListener("keypress", on);
     try {
+      async function waitForLineInput(promptText = "") {
+        let v = new Promise(function (resolve) {
+          let rl = readline.createInterface({
+            input: process.stdin,
+            output: process.stdout,
+          });
+          rl.question(promptText, function (answer) {
+            rl.close();
+            resolve(answer);
+          });
+        });
+        return v;
+      }
+      await waitForLineInput("Enter input: ").then(function (input) {
+        console.log(string_combine_multiple(["You typed: ", input]));exit()
+        on_keypress(mainKeyHandler);
+      });
       let result = await function_run_terminal(function_name, args);
       if (undefined_not_is(result)) {
         log(result);
