@@ -150,6 +150,7 @@ export function terminal_commands(context) {
         });
         let m2 = list_map(m, function (t) {
           if (false) {
+            return mstring_delimit_generic(quote_string, t);
           }
           return string_replace(t, quote_string, escaped);
         });
