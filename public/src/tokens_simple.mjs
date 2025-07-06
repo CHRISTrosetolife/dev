@@ -1,3 +1,4 @@
+import { each_index } from "./each_index.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { string_trim } from "./string_trim.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
@@ -6,7 +7,6 @@ import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_add } from "./list_add.mjs";
 import { not } from "./not.mjs";
-import { each } from "./each.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { string_replace } from "./string_replace.mjs";
 export function tokens_simple(input, quote_string, split_string) {
@@ -19,7 +19,7 @@ export function tokens_simple(input, quote_string, split_string) {
   let current = [];
   let quoted = false;
   let split = string_split_empty(input);
-  each(split, function (s) {
+  each_index(split, function (s, index) {
     if (s === q2) {
       quoted = not(quoted);
     } else if (s === split_string && !quoted) {
@@ -28,10 +28,7 @@ export function tokens_simple(input, quote_string, split_string) {
       list_add(current, s);
     }
   });
-  let suffix = string_combine_multiple([
-    split_string,
-    q4
-  ]);
+  let suffix = string_combine_multiple([split_string, q4]);
   if (list_empty_not_is(current) || string_ends_with(input, suffix)) {
     token_next();
   }
