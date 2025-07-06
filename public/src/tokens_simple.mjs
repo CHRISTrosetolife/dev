@@ -1,3 +1,4 @@
+import { add_1 } from "./add_1.mjs";
 import { each_index } from "./each_index.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { string_trim } from "./string_trim.mjs";
@@ -20,6 +21,7 @@ export function tokens_simple(input, quote_string, split_string) {
   let quoted = false;
   let split = string_split_empty(input);
   each_index(split, function (s, index) {
+    let i1 = add_1(index);
     if (s === q2) {
       quoted = not(quoted);
     } else if (s === split_string && !quoted) {
