@@ -1,3 +1,4 @@
+import { string_double } from "./string_double.mjs";
 import { string_combine_reverse } from "./string_combine_reverse.mjs";
 import { list_get } from "./list_get.mjs";
 import { add_1 } from "./add_1.mjs";
@@ -16,7 +17,7 @@ import { list_index_is } from "./list_index_is.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 export function tokens_simple(input, quote_string, split_string) {
   input = string_trim(input, split_string);
-  let q2 = string_combine(quote_string, quote_string);
+  let q2 = string_double(quote_string);
   input = string_replace(input, quote_string, q2);
   let q4 = string_combine(q2, q2);
   input = string_replace(input, q4, quote_string);
