@@ -242,7 +242,7 @@ export async function terminal() {
         log(result);
       }
     } catch (e) {
-      log("here");
+      log(e);
       log_error(json_to(e));
     }
     on_keypress(on);
