@@ -17,7 +17,7 @@ import { string_replace } from "./string_replace.mjs";
 import { list_index_is } from "./list_index_is.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 export function tokens_simple(input, quote_string, split_string) {
-  log("");
+  log(arguments);
   input = string_trim(input, split_string);
   let q2 = string_double(quote_string);
   input = string_replace(input, quote_string, q2);
