@@ -233,7 +233,8 @@ export async function terminal() {
         return v;
       }
       await waitForLineInput("Enter input: ").then(function (input) {
-        console.log(string_combine_multiple(["You typed: ", input]));exit()
+        console.log(string_combine_multiple(["You typed: ", input]));
+        exit();
         on_keypress(mainKeyHandler);
       });
       let result = await function_run_terminal(function_name, args);
