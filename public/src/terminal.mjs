@@ -225,6 +225,7 @@ export async function terminal() {
     } catch (e) {
       log_error(json_to(e));
     }
+    on_keypress(on);
     unawait(async function () {
       await git_acp_message(input);
     });
