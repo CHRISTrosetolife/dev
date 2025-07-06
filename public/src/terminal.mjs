@@ -1,10 +1,10 @@
+import { terminal_tokens_get } from "./terminal_tokens_get.mjs";
 import { list_remove_last } from "./list_remove_last.mjs";
 import { object_property_add_1_initialize } from "./object_property_add_1_initialize.mjs";
 import { json_to } from "./json_to.mjs";
 import { log_error } from "./log_error.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { git_acp_message } from "./git_acp_message.mjs";
-import { tokens_simple } from "./tokens_simple.mjs";
 import { terminal_commands } from "./terminal_commands.mjs";
 import { list_filter_indices } from "./list_filter_indices.mjs";
 import { each_reverse } from "./each_reverse.mjs";
@@ -227,11 +227,5 @@ export async function terminal() {
     unawait(async function () {
       await git_acp_message(input);
     });
-  }
-  function terminal_tokens_get(input) {
-    let split_string = " ";
-    let quote_string = "'";
-    let v8 = tokens_simple(input, quote_string, split_string);
-    return v8;
   }
 }
