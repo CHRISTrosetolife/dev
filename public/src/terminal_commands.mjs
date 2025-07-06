@@ -153,7 +153,7 @@ export function terminal_commands(context) {
           if (string_includes(t, escaped)) {
             return mstring_delimit_generic(quote_string, t);
           }
-          return string_replace(t, quote_string, escaped);
+          return t;
         });
         let extra = "";
         if (list_empty_not_is(tokens)) {
