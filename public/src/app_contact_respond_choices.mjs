@@ -56,7 +56,9 @@ export function app_contact_respond_choices() {
         match_optional(["with"]),
         match_sequence([
           "you",
-          match_sequence(["servant", "of", "the", "most", "high", "god"]),
+          match_optional([
+            match_sequence(["servant", "of", "the", "most", "high", "god"]),
+          ]),
         ]),
       ]),
       app_contact_match(
