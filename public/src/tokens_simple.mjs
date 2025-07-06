@@ -30,6 +30,9 @@ export function tokens_simple(input, quote_string, split_string) {
     function lambda(other_index_get, combine) {
       let result = false;
       let index_other = other_index_get(index);
+      log({
+        combine,
+      });
       log(index_other);
       if (list_index_is(split, index_other)) {
         let other = list_get(split, index_other);
