@@ -12,7 +12,7 @@ export function app_contact_respond_choices() {
   let v = [
     match_sequence(
       [
-        match_choice(["hello", "greetings"], noop),
+        match_choice(["hello", "greetings", "hi"], noop),
         match_choice(["sir", identity], noop),
       ],
       app_contact_match(app_share_verse_refresh_greet()),
