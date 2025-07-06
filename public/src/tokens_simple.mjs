@@ -41,11 +41,11 @@ export function tokens_simple(input, quote_string, split_string) {
     }
     if (lambda(add_1, string_combine)) {
       quoted = not(quoted);
-      log("");
+      log("a");
       return;
     }
     if (lambda(subtract_1, string_combine_reverse)) {
-      log("");
+      log("b");
       return;
     }
     if (current === split_string && !quoted) {
