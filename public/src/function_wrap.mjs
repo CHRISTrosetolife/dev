@@ -1,3 +1,4 @@
+import { js_statement_return } from "./js_statement_return.mjs";
 import { list_insert } from "./list_insert.mjs";
 import { js_expression_call_args_await_maybe } from "./js_expression_call_args_await_maybe.mjs";
 import { function_unalias } from "./function_unalias.mjs";
@@ -28,6 +29,7 @@ export async function function_wrap(function_name, function_name_wrapped) {
     param_names,
     async_is,
   );
+  js_statement_return();
   list_insert(body, index, e);
   await function_new_generic_ast(function_name_wrapped, ast, false, true);
 }
