@@ -167,6 +167,10 @@ export function terminal_commands(context) {
         let joined = list_join_space(mapped2);
         joined = string_combine(joined, extra);
         buffer_clear();
+        log({
+          tokens,
+          mapped2,
+        });
         keyboard_type(joined);
       },
     },
