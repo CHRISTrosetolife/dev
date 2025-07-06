@@ -10,7 +10,6 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
 export function app_contact_respond_choices() {
   let v = [
-    
     match_sequence(
       [
         match_choice(["hello", "greetings", "hi"], noop),
@@ -20,7 +19,7 @@ export function app_contact_respond_choices() {
     ),
     match_sequence(["praise", "God"], app_contact_match(app_share_praise())),
     match_sequence(
-      ["I", "really", "need", "help", "from", "you"],
+      ["How're", "you", "doing", "today"],
       app_contact_match_invalid(
         "You asked for help. Please edit your message to say what kind of help you need.",
       ),
