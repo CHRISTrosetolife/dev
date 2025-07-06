@@ -5,7 +5,6 @@ import { string_delimit } from "./string_delimit.mjs";
 import { string_double } from "./string_double.mjs";
 import { terminal_tokens_quote } from "./terminal_tokens_quote.mjs";
 import { string_replace } from "./string_replace.mjs";
-import readline from "readline";
 export async function js_string_to_terminal() {
   let code = await line_read();
   let parsed = js_parse_expression(code);
