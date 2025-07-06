@@ -1,3 +1,4 @@
+import { string_split_empty } from "./string_split_empty.mjs";
 import { keyboard_keys } from "./keyboard_keys.mjs";
 import { object_property_get_or } from "./object_property_get_or.mjs";
 import { match_fill } from "./match_fill.mjs";
@@ -12,6 +13,7 @@ export function app_contact_respond(input) {
   let lower = string_case_lower(input);
   let letters = keyboard_keys();
   list_add(letters, "'");
+  let split = string_split_empty(lower);
   let tokens = string_split_space(lower);
   let filtered = list_filter(tokens, string_empty_not_is);
   let choices = app_contact_respond_choices();
