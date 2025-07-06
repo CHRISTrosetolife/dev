@@ -54,7 +54,10 @@ export function app_contact_respond_choices() {
         "to",
         "meet",
         match_optional(["with"]),
-        match_sequence(["you", "servant", "of", "the", "most", "high", "god"]),
+        match_sequence([
+          "you",
+          match_sequence(["servant", "of", "the", "most", "high", "god"]),
+        ]),
       ]),
       app_contact_match(
         string_combine_multiple([
