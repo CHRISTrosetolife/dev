@@ -40,7 +40,7 @@ export function app_contact_respond_choices() {
             "the",
             "name",
             "of",
-            match_sequence(["Jesus", "Christ", noop]),
+            match_sequence(["Jesus", match_optional("Christ"), noop]),
           ],
           noop,
         ),
