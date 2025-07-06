@@ -1,7 +1,8 @@
+import { list_insert } from "./list_insert.mjs";
+import { js_expression_call_args_await_maybe } from "./js_expression_call_args_await_maybe.mjs";
 import { function_unalias } from "./function_unalias.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
-import { js_expression_call_args_await_maybe_insert } from "./js_expression_call_args_await_maybe_insert.mjs";
 import { js_export_function_declare } from "./js_export_function_declare.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { function_new_generic_ast } from "./function_new_generic_ast.mjs";
@@ -21,12 +22,12 @@ export async function function_wrap(function_name, function_name_wrapped) {
     async_is,
   );
   let body = js_declaration_single_body(ast);
-  js_expression_call_args_await_maybe_insert(
+  let index = 0;
+  let e = js_expression_call_args_await_maybe(
     function_name,
     param_names,
     async_is,
-    body,
-    0,
   );
+  list_insert(body, index, e);
   await function_new_generic_ast(function_name_wrapped, ast, false, true);
 }
