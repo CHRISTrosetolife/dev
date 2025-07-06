@@ -21,7 +21,7 @@ export function app_contact_respond_choices() {
     match_sequence(
       ["I", "really", "need", "help", "from", "you"],
       app_contact_match_invalid(
-        "You asked for help. Please rewrite your message to say what kind of help you need.",
+        "You asked for help. Please edit your message to say what kind of help you need.",
       ),
     ),
     match_sequence(
