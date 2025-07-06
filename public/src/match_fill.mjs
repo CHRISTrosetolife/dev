@@ -24,7 +24,7 @@ export function match_fill(tokens, choices) {
     a = [a];
     each(choices, function (choice) {
       let c = match_functionize(a, choice);
-      let filtered = match_on(c, noop);
+      let filtered = match_filter(c);
       each(filtered, function (f) {
         let tokens = object_property_get(f, "tokens");
         let index = object_property_get(f, "index");
