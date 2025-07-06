@@ -12,6 +12,7 @@ import { not } from "./not.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { list_index_is } from "./list_index_is.mjs";
+import { subtract_1 } from "./subtract_1.mjs";
 export function tokens_simple(input, quote_string, split_string) {
   input = string_trim(input, split_string);
   let q2 = string_combine(quote_string, quote_string);
@@ -23,12 +24,20 @@ export function tokens_simple(input, quote_string, split_string) {
   let quoted = false;
   let split = string_split_empty(input);
   each_index(split, function (current, index) {
-    let i1 = add_1(index);
-    if (list_index_is(split, i1)) {
-      let next = list_get(split, i1);
-      let cn = string_combine(current, next);
+    let index_after = add_1(index);
+    if (list_index_is(split, index_after)) {
+      let after = list_get(split, index_after);
+      let cn = string_combine(current, after);
       if (cn === q2) {
         quoted = not(quoted);
+        return;
+      }
+    }
+    let index_before = subtract_1(index);
+    if (list_index_is(split, index_before)) {
+      let before = list_get(split, index_after);
+      let cn = string_combine(before, current);
+      if (cn === q2) {
         return;
       }
     }
