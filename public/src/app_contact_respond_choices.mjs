@@ -38,7 +38,16 @@ export function app_contact_respond_choices() {
     match_choice(
       [
         match_sequence(["in", "Jesus", "name"], noop),
-        match_sequence(["in", "the", "name", "of", "Jesus", "Christ"], noop),
+        match_sequence(
+          [
+            "in",
+            "the",
+            "name",
+            "of",
+            match_sequence(["Jesus", "Christ", noop]),
+          ],
+          noop,
+        ),
         "Amen",
         "and",
       ],
