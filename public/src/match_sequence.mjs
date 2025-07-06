@@ -1,7 +1,6 @@
-import { noop } from "./noop.mjs";
+import { match_filter } from "./match_filter.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { match_functionize } from "./match_functionize.mjs";
-import { match_on } from "./match_on.mjs";
 import { each } from "./each.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 export function match_sequence(steps) {
@@ -11,7 +10,7 @@ export function match_sequence(steps) {
     let filtered;
     each(steps, function (step) {
       result = match_functionize(result, step);
-      filtered = match_on(result, noop);
+      filtered = match_filter(result);
       if (list_empty_is(filtered)) {
         let v3 = true;
         return v3;
