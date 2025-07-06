@@ -10,8 +10,8 @@ import { list_join_space } from "./list_join_space.mjs";
 import { list_filter } from "./list_filter.mjs";
 export function app_contact_respond(input) {
   let lower = string_case_lower(input);
-  let letters = app_contact_alphabet();
-  let joined = string_only(lower, letters);
+  let alphabet = app_contact_alphabet();
+  let joined = string_only(lower, alphabet);
   let tokens = string_split_space(joined);
   let filtered = list_filter(tokens, string_empty_not_is);
   let choices = app_contact_respond_choices();
