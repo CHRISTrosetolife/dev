@@ -13,6 +13,7 @@ export async function js_string_to_terminal() {
         input: process.stdin,
         output: process.stdout,
       });
+      log("here");
       rl.question("", function (answer) {
         log({
           answer,
