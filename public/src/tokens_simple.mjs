@@ -1,3 +1,4 @@
+import { list_get } from "./list_get.mjs";
 import { add_1 } from "./add_1.mjs";
 import { each_index } from "./each_index.mjs";
 import { string_combine } from "./string_combine.mjs";
@@ -10,6 +11,7 @@ import { list_add } from "./list_add.mjs";
 import { not } from "./not.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { string_replace } from "./string_replace.mjs";
+import { list_index_is } from "./list_index_is.mjs";
 export function tokens_simple(input, quote_string, split_string) {
   input = string_trim(input, split_string);
   let q2 = string_combine(quote_string, quote_string);
@@ -22,7 +24,10 @@ export function tokens_simple(input, quote_string, split_string) {
   let split = string_split_empty(input);
   each_index(split, function (s, index) {
     let i1 = add_1(index);
-    if (false) {
+    if (
+      list_index_is(split, i1) &&
+      string_combine(s, list_get(split, i1)) === q2
+    ) {
     }
     if (s === q2) {
       quoted = not(quoted);
