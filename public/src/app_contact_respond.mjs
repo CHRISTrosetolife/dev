@@ -15,7 +15,7 @@ export function app_contact_respond(input) {
   let letters = keyboard_keys();
   list_add(letters, "'");
   let split = string_split_empty(lower);
-  list_filter(split, function (c) {
+  let filtered = list_filter(split, function (c) {
     let v = list_includes(letters, c);
     return v;
   });
