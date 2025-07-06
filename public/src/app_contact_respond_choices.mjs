@@ -50,7 +50,7 @@ export function app_contact_respond_choices() {
     ),
     match_on(
       match_sequence([
-        "great",
+        match_choice(["great", "nice"]),
         "to",
         "meet",
         "with",
