@@ -61,8 +61,5 @@ export function tokens_simple(input, quote_string, split_string) {
     token_buffer = [];
     list_add(tokens, token);
   }
-  log({
-    tokens,
-  });
   return tokens;
 }
