@@ -1,5 +1,5 @@
+import { match_optional } from "./match_optional.mjs";
 import { app_share_how_r_u } from "./app_share_how_r_u.mjs";
-import { identity } from "./identity.mjs";
 import { noop } from "./noop.mjs";
 import { app_contact_match_invalid } from "./app_contact_match_invalid.mjs";
 import { match_sequence } from "./match_sequence.mjs";
@@ -10,11 +10,12 @@ import { app_share_thanks } from "./app_share_thanks.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
 export function app_contact_respond_choices() {
+  let newLocal = "sir";
   let v = [
     match_sequence(
       [
         match_choice(["hello", "greetings", "hi"], noop),
-        match_choice(["sir", identity], noop),
+        match_optional(newLocal),
       ],
       app_contact_match(app_share_verse_refresh_greet()),
     ),
