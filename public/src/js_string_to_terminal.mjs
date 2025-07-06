@@ -8,7 +8,7 @@ export function js_string_to_terminal(code) {
   let parsed = js_parse_expression(code);
   let value = object_property_get(parsed, "value");
   let q = terminal_tokens_quote();
-  let replaced = string_replace(code, q, string_double(q));
+  let replaced = string_replace(value, q, string_double(q));
   let v = string_delimit(replaced);
   return v;
 }
