@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { match_filter } from "./match_filter.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { list_size } from "./list_size.mjs";
@@ -21,6 +22,9 @@ export function match_fill(tokens, choices) {
   return final;
   function match_fill_inner(a) {
     a = [a];
+    log({
+      choices,
+    });
     each(choices, function (choice) {
       let c = match_functionize(a, choice);
       let filtered = match_filter(c);
