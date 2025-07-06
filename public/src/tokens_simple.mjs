@@ -34,9 +34,9 @@ export function tokens_simple(input, quote_string, split_string) {
     }
     if (current === split_string && !quoted) {
       token_next();
-    } else {
-      list_add(current, current);
+      return;
     }
+    list_add(current, current);
   });
   let suffix = string_combine_multiple([split_string, q4]);
   if (list_empty_not_is(current) || string_ends_with(input, suffix)) {
