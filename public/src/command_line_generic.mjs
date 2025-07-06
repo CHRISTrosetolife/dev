@@ -11,7 +11,7 @@ export async function command_line_generic(command, silent) {
   let wasRaw = process.stdin.isRaw;
   process.stdin.pause();
   process.stdin.setRawMode(false);
-  process.stdin.removeAllListeners("keypress");
+  let handlers = process.stdin.listeners("keypress");
   let v = await new Promise(function (resolve, reject) {
     let result = {
       stdout: [],
