@@ -15,7 +15,7 @@ export function app_contact_respond_choices() {
   let v = [
     match_on(
       match_sequence([
-        match_choice(["hello", "greetings", "hi"], noop),
+        match_choice(["hello", "greetings", "hi"]),
         match_optional("sir"),
       ]),
       app_contact_match(app_share_verse_refresh_greet()),
@@ -26,7 +26,7 @@ export function app_contact_respond_choices() {
     ),
     match_on(
       match_sequence([
-        match_choice(["How're", match_sequence(["how", "are"], noop)], noop),
+        match_choice(["How're", match_sequence(["how", "are"])]),
         "you",
         "doing",
         match_optional("today"),
@@ -41,11 +41,8 @@ export function app_contact_respond_choices() {
     ),
     match_on(
       match_choice([
-        match_sequence(["in", app_contact_phrase_jesus(), "name"], noop),
-        match_sequence(
-          ["in", "the", "name", "of", app_contact_phrase_jesus()],
-          noop,
-        ),
+        match_sequence(["in", app_contact_phrase_jesus(), "name"]),
+        match_sequence(["in", "the", "name", "of", app_contact_phrase_jesus()]),
         "Amen",
         "and",
       ]),
