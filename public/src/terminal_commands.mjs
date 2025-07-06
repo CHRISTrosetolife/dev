@@ -1,3 +1,4 @@
+import { string_double } from "./string_double.mjs";
 import { terminal_tokens_quote } from "./terminal_tokens_quote.mjs";
 import { terminal_tokens_get } from "./terminal_tokens_get.mjs";
 import { list_remove_last } from "./list_remove_last.mjs";
@@ -143,6 +144,7 @@ export function terminal_commands(context) {
         let input = buffer_to_string();
         let tokens = terminal_tokens_get(input);
         let quote_string = terminal_tokens_quote();
+        let escaped = string_double(quote_string);
         list_map(tokens, function (t) {
           return string_replace(
             t,
