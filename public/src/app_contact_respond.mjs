@@ -1,4 +1,4 @@
-import { function_get } from "./function_get.mjs";
+import { null_get } from "./null_get.mjs";
 import { list_to_lookup_value } from "./list_to_lookup_value.mjs";
 import { function_result_path } from "./function_result_path.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -36,7 +36,3 @@ export async function app_contact_respond(input) {
   };
   return v3;
 }
-function null_get() {
-    return function_get(null);
-}
-
