@@ -1,4 +1,4 @@
-import { log } from "./log.mjs";
+import { list_to_lookup } from "./list_to_lookup.mjs";
 import { function_result_path } from "./function_result_path.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { storage_file_path_download } from "./storage_file_path_download.mjs";
@@ -18,14 +18,7 @@ export async function app_contact_respond(input) {
     function_result_path(fn_name("english_words_dictionary_object")),
   );
   let { words } = json_from(json);
-  log({
-    words,
-  });
-  let v = {
-    output: words,
-    valid: true,
-  };
-  return v;
+  list_to_lookup();
   let lower = string_case_lower(input);
   let alphabet = app_contact_alphabet();
   let joined = string_only(lower, alphabet);
