@@ -1,3 +1,5 @@
+import { function_result_path } from "./function_result_path.mjs";
+import { fn_name } from "./fn_name.mjs";
 import { storage_file_path_download } from "./storage_file_path_download.mjs";
 import { app_contact_alphabet } from "./app_contact_alphabet.mjs";
 import { string_only } from "./string_only.mjs";
@@ -10,7 +12,9 @@ import { string_case_lower } from "./string_case_lower.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_filter } from "./list_filter.mjs";
 export async function app_contact_respond(input) {
-  await storage_file_path_download();
+  await storage_file_path_download(
+    function_result_path(fn_name("english_words_dictionary_object")),
+  );
   let lower = string_case_lower(input);
   let alphabet = app_contact_alphabet();
   let joined = string_only(lower, alphabet);
