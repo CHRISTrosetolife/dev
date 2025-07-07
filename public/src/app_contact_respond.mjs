@@ -15,6 +15,10 @@ export async function app_contact_respond(input) {
   let { words } = await storage_file_path_download(
     function_result_path(fn_name("english_words_dictionary_object")),
   );
+  $f,
+    {
+      output: words,
+    };
   let lower = string_case_lower(input);
   let alphabet = app_contact_alphabet();
   let joined = string_only(lower, alphabet);
