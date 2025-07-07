@@ -12,7 +12,7 @@ import { string_case_lower } from "./string_case_lower.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_filter } from "./list_filter.mjs";
 export async function app_contact_respond(input) {
-  await storage_file_path_download(
+  let words = await storage_file_path_download(
     function_result_path(fn_name("english_words_dictionary_object")),
   );
   let lower = string_case_lower(input);
