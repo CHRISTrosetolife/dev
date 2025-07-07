@@ -19,7 +19,7 @@ export async function app_contact_respond(input) {
     function_result_path(fn_name("english_words_dictionary_object")),
   );
   let { words } = json_from(json);
-  list_to_lookup_value(words, function_get());
+  list_to_lookup_value(words, function_get(null));
   let lower = string_case_lower(input);
   let alphabet = app_contact_alphabet();
   let joined = string_only(lower, alphabet);
