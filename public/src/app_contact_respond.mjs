@@ -1,3 +1,4 @@
+import { function_get } from "./function_get.mjs";
 import { list_to_lookup_value } from "./list_to_lookup_value.mjs";
 import { function_result_path } from "./function_result_path.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -13,13 +14,12 @@ import { string_case_lower } from "./string_case_lower.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { json_from } from "./json_from.mjs";
-import { identity } from "./identity.mjs";
 export async function app_contact_respond(input) {
   let json = await storage_file_path_download(
     function_result_path(fn_name("english_words_dictionary_object")),
   );
   let { words } = json_from(json);
-  list_to_lookup_value(words, identity);
+  list_to_lookup_value(words, function_get());
   let lower = string_case_lower(input);
   let alphabet = app_contact_alphabet();
   let joined = string_only(lower, alphabet);
