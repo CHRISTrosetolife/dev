@@ -17,6 +17,7 @@ export async function app_contact_respond(input) {
   );
   let v = {
     output: words,
+    valid: true,
   };
   return v;
   let lower = string_case_lower(input);
