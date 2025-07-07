@@ -1,3 +1,4 @@
+import { storage_file_path_download } from "./storage_file_path_download.mjs";
 import { app_contact_alphabet } from "./app_contact_alphabet.mjs";
 import { string_only } from "./string_only.mjs";
 import { object_property_get_or } from "./object_property_get_or.mjs";
@@ -8,8 +9,8 @@ import { string_split_space } from "./string_split_space.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_filter } from "./list_filter.mjs";
-export function app_contact_respond(input) {
-storage_file_path_download()
+export async function app_contact_respond(input) {
+  await storage_file_path_download();
   let lower = string_case_lower(input);
   let alphabet = app_contact_alphabet();
   let joined = string_only(lower, alphabet);
