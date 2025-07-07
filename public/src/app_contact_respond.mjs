@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { function_result_path } from "./function_result_path.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { storage_file_path_download } from "./storage_file_path_download.mjs";
@@ -15,6 +16,9 @@ export async function app_contact_respond(input) {
   let { words } = await storage_file_path_download(
     function_result_path(fn_name("english_words_dictionary_object")),
   );
+  log({
+    words,
+  });
   let v = {
     output: words,
     valid: true,
