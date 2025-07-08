@@ -15,7 +15,7 @@ export function prayers_big() {
     "May all Christians speak and behave worthily in the presence of heavenly angels",
     "May I fellowship with any Christians from the generation Jesus spoke of and if God desires may they be known to the body of Christ on earth",
     "If it means anyone is saved, may there be miracles, wonders, signs, healing",
-    "May every thought be as if an optimal prayer is prayed",
+    "For each human, for each thought, may it be as if an optimal prayer is prayed",
     prayers_bbw("the bodies and any instruments and tools of elect angels"),
     prayers_bbw("M"),
     "For each challenge God gave Job, if God desires, may I fulfill",
