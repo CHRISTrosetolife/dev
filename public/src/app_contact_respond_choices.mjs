@@ -91,7 +91,7 @@ export function app_contact_respond_choices() {
         "on",
         "us",
       ]),
-      app_contact_match("God, let there be prayer 🙏 amen 🙇."),
+      app_contact_match("God, let there be prayer", " 🙏 amen 🙇."),
     ),
     match_on(
       match_sequence(["keep", "sending", "us", "such", "scriptures"]),
