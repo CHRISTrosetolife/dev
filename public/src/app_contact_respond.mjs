@@ -39,7 +39,7 @@ export async function app_contact_respond(input) {
       let result = [];
       each(words_lower, function (l) {
         if (string_starts_with(w, l)) {
-          list_concat(result, [l]);
+          let c = list_concat(result, [l]);
           let remaining = string_prefix_without(w, l);
         }
       });
