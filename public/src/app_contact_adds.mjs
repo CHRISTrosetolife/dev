@@ -8,6 +8,7 @@ export function app_contact_adds() {
     "sending",
     "it's",
     "how're",
+    "hi",
   ];
   return v;
 }
