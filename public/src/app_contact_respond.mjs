@@ -43,6 +43,7 @@ export async function app_contact_respond(input) {
   list_adder(function (la) {
     each(filtered, function (w) {
       let v = object_property_exists(words_lookup, w);
+      let added = false;
       if (!v) {
         let result = [];
         let r = app_contact_separate(words_lower, w, result);
@@ -51,8 +52,11 @@ export async function app_contact_respond(input) {
             log_error("todo");
           }
           let f = list_first(r);
-          each(list, function (item) {});
+          each(f, la);
+          added = true;
         }
+      }
+      if (false) {
       }
     });
   });
