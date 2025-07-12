@@ -31,7 +31,7 @@ export async function app_contact_respond(input) {
   let joined = string_only(lower, alphabet);
   let tokens = string_split_space(joined);
   let filtered = list_filter(tokens, string_empty_not_is);
-  each(filtered, function (f) {
+  each(filtered, function (w) {
     let v = object_property_exists(words_lookup, w);
     if (!v) {
       log({
