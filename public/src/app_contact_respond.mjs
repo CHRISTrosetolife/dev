@@ -25,7 +25,7 @@ export async function app_contact_respond(input) {
   );
   let { words } = json_from(json);
   let words_lower = list_map(words, string_case_lower);
-  list_add_multiple(words_lower, ["god", "greetings"]);
+  list_add_multiple(words_lower, ["god", "greetings", "today"]);
   let words_lookup = list_to_lookup_keys(words_lower);
   let lower = string_case_lower(input);
   let alphabet = app_contact_alphabet();
