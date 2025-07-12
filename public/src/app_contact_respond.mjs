@@ -39,6 +39,7 @@ export async function app_contact_respond(input) {
       let r = app_contact_separate(words_lower, w, result);
       log({
         r,
+        w,
       });
     }
   });
