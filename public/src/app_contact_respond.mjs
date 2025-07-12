@@ -1,4 +1,3 @@
-import { app_contact_dictionary } from "./app_contact_dictionary.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_first } from "./list_first.mjs";
 import { log_error } from "./log_error.mjs";
@@ -18,7 +17,6 @@ import { string_case_lower } from "./string_case_lower.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_filter } from "./list_filter.mjs";
 export async function app_contact_respond(input) {
-  let { lookup, list } = await app_contact_dictionary();
   let lower = string_case_lower(input);
   let alphabet = app_contact_alphabet();
   let joined = string_only(lower, alphabet, " ");
