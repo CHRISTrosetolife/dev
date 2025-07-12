@@ -52,6 +52,9 @@ export function app_contact_respond(d, input) {
   let { data, match } = match_fill(l, choices);
   let outputs = object_property_get_or(data, "outputs", []);
   let valid = object_property_get_or(data, "valid", true);
+  log({
+    outputs,
+  });
   let output = !match || !valid ? null : list_join_space(outputs);
   let v3 = {
     output,
