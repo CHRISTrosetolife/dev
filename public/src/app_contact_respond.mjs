@@ -41,7 +41,7 @@ export async function app_contact_respond(input) {
     if (!v) {
       let result = [];
       let r = app_contact_separate(words_lower, w, result);
-      if (list_empty_not_is()) {
+      if (list_empty_not_is(r)) {
       }
     }
   });
