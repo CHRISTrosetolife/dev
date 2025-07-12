@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import { list_multiple_is } from "./list_multiple_is.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { app_contact_adds } from "./app_contact_adds.mjs";
@@ -43,7 +44,8 @@ export async function app_contact_respond(input) {
       let result = [];
       let r = app_contact_separate(words_lower, w, result);
       if (list_empty_not_is(r)) {
-        if (list_multiple_is()) {
+        if (list_multiple_is(r)) {
+          error("todo");
         }
       }
     }
