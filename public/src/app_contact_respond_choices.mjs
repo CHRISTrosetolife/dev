@@ -91,7 +91,7 @@ export function app_contact_respond_choices() {
         "on",
         "us",
       ]),
-      app_contact_match("God, let there be prayer", " 🙏 amen 🙇."),
+      app_contact_match("God, let there be prayer", app_contact_phrase_amen()),
     ),
     match_on(
       match_sequence(["keep", "sending", "us", "such", "scriptures"]),
@@ -132,8 +132,12 @@ export function app_contact_respond_choices() {
         "me",
         "answer",
       ]),
-      app_contact_match("if God desires, may God give you an answer amen"),
+      app_contact_match($s,"if God desires, may God give you an answer ",app_contact_phrase_amen()),
     ),
   ];
   return v;
 }
+function app_contact_phrase_amen() {
+    return " 🙏 amen 🙇.";
+}
+
