@@ -1,3 +1,4 @@
+import { app_contact_phrase_amen } from "./app_contact_phrase_amen.mjs";
 import { app_contact_phrase_god_willing } from "./app_contact_phrase_god_willing.mjs";
 import { app_contact_phrase_god } from "./app_contact_phrase_god.mjs";
 import { app_share_bless } from "./app_share_bless.mjs";
@@ -132,12 +133,13 @@ export function app_contact_respond_choices() {
         "me",
         "answer",
       ]),
-      app_contact_match($s,"if God desires, may God give you an answer ",app_contact_phrase_amen()),
+      app_contact_match(
+        string_combine_multiple([
+          "if God desires, may God give you an answer ",
+          app_contact_phrase_amen(),
+        ]),
+      ),
     ),
   ];
   return v;
 }
-function app_contact_phrase_amen() {
-    return " 🙏 amen 🙇.";
-}
-
