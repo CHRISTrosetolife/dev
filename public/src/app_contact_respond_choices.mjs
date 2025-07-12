@@ -95,6 +95,19 @@ export function app_contact_respond_choices() {
         "If you send me a message here 📨, then you will receive a scripture 📖.",
       ),
     ),
+    match_on(
+      match_sequence([
+        "God",
+        "will",
+        "bless",
+        app_contact_phrase_you(),
+        "so",
+        "much",
+      ]),
+      app_contact_match(
+        "If you send me a message here 📨, then you will receive a scripture 📖.",
+      ),
+    ),
   ];
   return v;
 }
