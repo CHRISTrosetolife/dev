@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { assert } from "./assert.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { list_all } from "./list_all.mjs";
@@ -31,7 +32,10 @@ export async function app_contact_respond(input) {
     filtered,
     function (w) {
       let v = object_property_exists(words_lookup, w);
-      if (false) {
+      if (!v) {
+        log({
+          w,
+        });
       }
       return v;
     },
