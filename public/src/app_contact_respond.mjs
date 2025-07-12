@@ -33,12 +33,12 @@ export async function app_contact_respond(input) {
   let filtered = list_filter(tokens, string_empty_not_is);
   each(filtered, function (w) {
     let v = object_property_exists(words_lookup, w);
-    if (false) {
+    if (!v) {
+      log({
+        w,
+        v,
+      });
     }
-    log({
-      w,
-      v,
-    });
   });
   let choices = app_contact_respond_choices();
   let { data, match } = match_fill(filtered, choices);
