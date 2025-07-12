@@ -135,7 +135,7 @@ export function app_contact_respond_choices() {
       ]),
       app_contact_match(
         string_combine_multiple([
-          "if God desires, may God give you an answer ",
+          "If God desires, may God give you an answer ",
           app_contact_phrase_amen(),
         ]),
       ),
