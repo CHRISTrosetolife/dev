@@ -1,3 +1,4 @@
+import { object_property_exists } from "./object_property_exists.mjs";
 import { list_all } from "./list_all.mjs";
 import { list_to_lookup_keys } from "./list_to_lookup_keys.mjs";
 import { function_result_path } from "./function_result_path.mjs";
@@ -22,7 +23,7 @@ export async function app_contact_respond(input) {
   let words_lookup = list_to_lookup_keys(words);
   let lower = string_case_lower(input);
   list_all(lower, function (w) {
-    let v = $P;
+    let v = object_property_exists(object, "property_name");
     return v;
   });
   let alphabet = app_contact_alphabet();
