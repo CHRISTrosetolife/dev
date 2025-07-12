@@ -51,6 +51,7 @@ export async function app_contact_respond(input) {
             log_error("todo");
           }
           let f = list_first(r);
+          each(list, function (item) {});
         }
       }
     });
