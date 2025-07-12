@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_first } from "./list_first.mjs";
 import { log_error } from "./log_error.mjs";
@@ -43,6 +44,9 @@ export function app_contact_respond(d, input) {
         la(w);
       }
     });
+  });
+  log({
+    l,
   });
   let choices = app_contact_respond_choices();
   let { data, match } = match_fill(l, choices);
