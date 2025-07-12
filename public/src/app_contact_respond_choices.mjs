@@ -120,7 +120,7 @@ export function app_contact_respond_choices() {
         "it's",
         "message",
       ]),
-      app_contact_match(app_share_bless()),
+      app_contact_match("Feel free to send me a message!"),
     ),
   ];
   return v;
