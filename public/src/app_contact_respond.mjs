@@ -35,6 +35,7 @@ export async function app_contact_respond(input) {
   each(filtered, function (w) {
     let v = object_property_exists(words_lookup, w);
     if (!v) {
+      let result = [];
       each(words_lower, function (l) {
         if (string_starts_with(w, l)) {
           let remaining = string_prefix_without(w, l);
