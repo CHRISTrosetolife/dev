@@ -18,4 +18,6 @@ export function app_contact_separate(dictionary, remaining, result) {
       list_add_multiple(results, r);
     }
   });
+  let v2 = results;
+  return v2;
 }
