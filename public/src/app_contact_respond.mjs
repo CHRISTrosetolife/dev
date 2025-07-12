@@ -1,4 +1,3 @@
-import { never } from "./never.mjs";
 import { assert } from "./assert.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { list_all } from "./list_all.mjs";
@@ -24,11 +23,13 @@ export async function app_contact_respond(input) {
   let { words } = json_from(json);
   let words_lookup = list_to_lookup_keys(words);
   let lower = string_case_lower(input);
-  list_all(lower, function (w) {
-    let v = object_property_exists(words_lookup, w);
-    return v;
-  });
-  assert(never, []);
+  assert(list_all, [
+    lower,
+    function (w) {
+      let v = object_property_exists(words_lookup, w);
+      return v;
+    },
+  ]);
   let alphabet = app_contact_alphabet();
   let joined = string_only(lower, alphabet);
   let tokens = string_split_space(joined);
