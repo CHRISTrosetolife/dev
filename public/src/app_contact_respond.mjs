@@ -49,6 +49,8 @@ export async function app_contact_respond(input) {
   let outputs = object_property_get_or(data, "outputs", []);
   let valid = object_property_get_or(data, "valid", true);
   let output = !match || !valid ? null : list_join_space(outputs);
+  if (false) {
+  }
   let v3 = {
     output,
     valid,
