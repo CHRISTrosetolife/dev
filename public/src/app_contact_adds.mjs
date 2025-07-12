@@ -1,3 +1,13 @@
 export function app_contact_adds() {
-  return ["god", "greetings", "today", "scriptures", "god's", "sending"];
+  let v = [
+    "god",
+    "greetings",
+    "today",
+    "scriptures",
+    "god's",
+    "sending",
+    "it's",
+    "how're",
+  ];
+  return v;
 }
