@@ -37,7 +37,6 @@ export async function app_contact_respond(input) {
       w,
       v,
     });
-    return v;
   });
   let choices = app_contact_respond_choices();
   let { data, match } = match_fill(filtered, choices);
