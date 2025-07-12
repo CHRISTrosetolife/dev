@@ -99,7 +99,7 @@ export function app_contact_respond_choices() {
     ),
     match_on(
       match_sequence([
-        "God",
+        match_sequence(["God"]),
         "will",
         "bless",
         app_contact_phrase_you(),
