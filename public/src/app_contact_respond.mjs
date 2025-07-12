@@ -52,6 +52,7 @@ export function app_contact_respond(d, input) {
   let v3 = {
     output,
     valid,
+    outputs,
   };
   return v3;
 }
