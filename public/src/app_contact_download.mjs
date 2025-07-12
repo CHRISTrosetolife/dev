@@ -13,7 +13,7 @@ export async function app_contact_download() {
     let file = await file_read_json(file_path);
     let message = object_property_get(file, "message");
     let { lookup, list } = await app_contact_dictionary();
-    let { output } = await app_contact_respond(message);
+    let { output } = await app_contact_respond(lookup, list, message);
     let output_null = output === null;
     let v = {
       file_path,
