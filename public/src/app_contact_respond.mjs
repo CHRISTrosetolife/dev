@@ -56,7 +56,8 @@ export async function app_contact_respond(input) {
           added = true;
         }
       }
-      if (false) {
+      if (!added) {
+        la(w);
       }
     });
   });
