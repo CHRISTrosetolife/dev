@@ -23,17 +23,17 @@ export async function app_contact_respond(input) {
   let { words } = json_from(json);
   let words_lookup = list_to_lookup_keys(words);
   let lower = string_case_lower(input);
+  let alphabet = app_contact_alphabet();
+  let joined = string_only(lower, alphabet);
+  let tokens = string_split_space(joined);
+  let filtered = list_filter(tokens, string_empty_not_is);
   assert(list_all, [
-    lower,
+    filtered,
     function (w) {
       let v = object_property_exists(words_lookup, w);
       return v;
     },
   ]);
-  let alphabet = app_contact_alphabet();
-  let joined = string_only(lower, alphabet);
-  let tokens = string_split_space(joined);
-  let filtered = list_filter(tokens, string_empty_not_is);
   let choices = app_contact_respond_choices();
   let { data, match } = match_fill(filtered, choices);
   let outputs = object_property_get_or(data, "outputs", []);
