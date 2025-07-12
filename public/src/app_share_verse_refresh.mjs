@@ -1,3 +1,4 @@
+import { app_share_bless } from "./app_share_bless.mjs";
 import { app_share_how_r_u } from "./app_share_how_r_u.mjs";
 import { app_share_praise } from "./app_share_praise.mjs";
 import { html_bible_verse_navigation_next_data } from "./html_bible_verse_navigation_next_data.mjs";
@@ -116,12 +117,7 @@ export async function app_share_verse_refresh(
     },
     {
       button_text: "🙏 Bless",
-      value: [
-        string_combine_multiple([
-          "🙏 God bless you, your family, your friends and your country exceedingly and abundantly, more than anyone can ask or think in the name of the Father and of the Son and of the Holy Spirit amen ",
-          emojis_trinity(),
-        ]),
-      ],
+      value: [app_share_bless()],
     },
     {
       button_text: "🙏 Amen",
