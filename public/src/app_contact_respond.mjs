@@ -23,7 +23,7 @@ export async function app_contact_respond(input) {
   let words_lookup = list_to_lookup_keys(words);
   let lower = string_case_lower(input);
   list_all(lower, function (w) {
-    let v = object_property_exists(object, "property_name");
+    let v = object_property_exists(words_lookup, w);
     return v;
   });
   let alphabet = app_contact_alphabet();
