@@ -122,7 +122,6 @@ export function app_contact_respond_choices() {
       ]),
       app_contact_match("Feel free to send me a message here!"),
     ),
-    match_on(match_sequence(["yes"]), app_contact_match("test")),
   ];
   return v;
 }
