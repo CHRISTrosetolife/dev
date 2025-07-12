@@ -1,3 +1,4 @@
+import { app_contact_phrase_god } from "./app_contact_phrase_god.mjs";
 import { app_share_bless } from "./app_share_bless.mjs";
 import { app_contact_phrase_you } from "./app_contact_phrase_you.mjs";
 import { match_on } from "./match_on.mjs";
@@ -99,7 +100,7 @@ export function app_contact_respond_choices() {
     ),
     match_on(
       match_sequence([
-        match_sequence(["lord", "God"]),
+        app_contact_phrase_god(),
         "will",
         "bless",
         app_contact_phrase_you(),
