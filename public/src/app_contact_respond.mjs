@@ -1,8 +1,6 @@
 import { each } from "./each.mjs";
 import { log } from "./log.mjs";
-import { assert } from "./assert.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
-import { list_all } from "./list_all.mjs";
 import { list_to_lookup_keys } from "./list_to_lookup_keys.mjs";
 import { function_result_path } from "./function_result_path.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -33,19 +31,15 @@ export async function app_contact_respond(input) {
   let joined = string_only(lower, alphabet);
   let tokens = string_split_space(joined);
   let filtered = list_filter(tokens, string_empty_not_is);
-  each(list, function (item) {});
-  assert(list_all, [
-    filtered,
-    function (w) {
-      let v = object_property_exists(words_lookup, w);
-      if (!v) {
-        log({
-          w,
-        });
-      }
-      return v;
-    },
-  ]);
+  each(filtered, function (f) {
+    let v = object_property_exists(words_lookup, w);
+    if (!v) {
+      log({
+        w,
+      });
+    }
+    return v;
+  });
   let choices = app_contact_respond_choices();
   let { data, match } = match_fill(filtered, choices);
   let outputs = object_property_get_or(data, "outputs", []);
