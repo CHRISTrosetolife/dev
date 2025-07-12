@@ -38,6 +38,7 @@ export async function app_contact_respond(input) {
       "tur",
       "en",
       "sen",
+      "ing",
     ]),
   );
   list_add_multiple(words_lower, ["god", "greetings", "today"]);
