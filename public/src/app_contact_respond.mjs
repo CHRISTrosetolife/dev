@@ -16,7 +16,8 @@ import { string_split_space } from "./string_split_space.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_filter } from "./list_filter.mjs";
-export async function app_contact_respond(input) {
+export async function app_contact_respond(d, input) {
+  let { lookup, list } = d;
   let lower = string_case_lower(input);
   let alphabet = app_contact_alphabet();
   let joined = string_only(lower, alphabet, " ");
