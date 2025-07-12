@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { match_filter } from "./match_filter.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { list_size } from "./list_size.mjs";
@@ -28,9 +27,6 @@ export function match_fill(tokens, choices) {
       each(filtered, function (f) {
         let tokens = object_property_get(f, "tokens");
         let index = object_property_get(f, "index");
-        log({
-          index,
-        });
         let tokens_size = list_size(tokens);
         if (index === tokens_size) {
           final = f;
