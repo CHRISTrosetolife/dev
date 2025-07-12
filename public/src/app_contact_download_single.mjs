@@ -7,10 +7,10 @@ import { list_single } from "./list_single.mjs";
 export async function app_contact_download_single(query) {
   let file_paths = await app_contact_download_file_paths();
   let d = await app_contact_dictionary();
-  let filtered = await list_filter(file_paths, function (f) {
-    let v4 = string_includes(f, query);
-    return v4;
+  let fps = await list_filter(file_paths, function (fp) {
+    let match = string_includes(fp, query);
+    return match;
   });
-  let fp = list_single(filtered);
+  let fp = list_single(fps);
   let v = await app_contact_download_file(d, fp);
 }
