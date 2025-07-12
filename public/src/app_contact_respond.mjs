@@ -1,7 +1,6 @@
 import { app_contact_adds } from "./app_contact_adds.mjs";
 import { app_contact_removes } from "./app_contact_removes.mjs";
 import { list_difference } from "./list_difference.mjs";
-import { log } from "./log.mjs";
 import { app_contact_separate } from "./app_contact_separate.mjs";
 import { each } from "./each.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -41,10 +40,8 @@ export async function app_contact_respond(input) {
     if (!v) {
       let result = [];
       let r = app_contact_separate(words_lower, w, result);
-      log({
-        r,
-        w,
-      });
+      if (false) {
+      }
     }
   });
   let choices = app_contact_respond_choices();
