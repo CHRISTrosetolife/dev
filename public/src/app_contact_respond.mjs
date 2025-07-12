@@ -1,3 +1,4 @@
+import { list_first } from "./list_first.mjs";
 import { log_error } from "./log_error.mjs";
 import { list_multiple_is } from "./list_multiple_is.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
@@ -47,6 +48,7 @@ export async function app_contact_respond(input) {
         if (list_multiple_is(r)) {
           log_error("todo");
         }
+        let f = list_first(r);
       }
     }
   });
