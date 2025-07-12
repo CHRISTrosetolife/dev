@@ -45,11 +45,12 @@ export function app_contact_respond(d, input) {
       }
     });
   });
-  log({
-    l,
-  });
   let choices = app_contact_respond_choices();
   let result = match_fill(l, choices);
+  log({
+    l,
+    result,
+  });
   let { data, match } = result;
   let outputs = object_property_get_or(data, "outputs", []);
   let valid = object_property_get_or(data, "valid", true);
