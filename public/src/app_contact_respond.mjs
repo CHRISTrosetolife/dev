@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { log } from "./log.mjs";
 import { assert } from "./assert.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -32,6 +33,7 @@ export async function app_contact_respond(input) {
   let joined = string_only(lower, alphabet);
   let tokens = string_split_space(joined);
   let filtered = list_filter(tokens, string_empty_not_is);
+  each(list, function (item) {});
   assert(list_all, [
     filtered,
     function (w) {
@@ -49,8 +51,6 @@ export async function app_contact_respond(input) {
   let outputs = object_property_get_or(data, "outputs", []);
   let valid = object_property_get_or(data, "valid", true);
   let output = !match || !valid ? null : list_join_space(outputs);
-  if (false) {
-  }
   let v3 = {
     output,
     valid,
