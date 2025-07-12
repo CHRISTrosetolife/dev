@@ -17,12 +17,13 @@ import { string_case_lower } from "./string_case_lower.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { json_from } from "./json_from.mjs";
+import { list_map } from "./list_map.mjs";
 export async function app_contact_respond(input) {
   let json = await storage_file_path_download(
     function_result_path(fn_name("english_words_dictionary_object")),
   );
   let { words } = json_from(json);
-  let words_lower = string_case_lower(words);
+  let words_lower = list_map(words, string_case_lower);
   let words_lookup = list_to_lookup_keys(words_lower);
   let lower = string_case_lower(input);
   let alphabet = app_contact_alphabet();
