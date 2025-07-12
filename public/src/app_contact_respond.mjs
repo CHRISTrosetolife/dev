@@ -17,6 +17,7 @@ import { list_filter } from "./list_filter.mjs";
 import { json_from } from "./json_from.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
+import { string_starts_with } from "./string_starts_with.mjs";
 export async function app_contact_respond(input) {
   let json = await storage_file_path_download(
     function_result_path(fn_name("english_words_dictionary_object")),
@@ -34,7 +35,7 @@ export async function app_contact_respond(input) {
     let v = object_property_exists(words_lookup, w);
     if (!v) {
       each(words_lower, function (l) {
-        if (false) {
+        if (string_starts_with(w, l)) {
         }
       });
     }
