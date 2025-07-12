@@ -33,6 +33,8 @@ export async function app_contact_respond(input) {
   let filtered = list_filter(tokens, string_empty_not_is);
   each(filtered, function (w) {
     let v = object_property_exists(words_lookup, w);
+    if (false) {
+    }
     log({
       w,
       v,
