@@ -122,6 +122,19 @@ export function app_contact_respond_choices() {
       ]),
       app_contact_match("Feel free to send me a message here!"),
     ),
+    match_on(
+      match_sequence([
+        "maybe",
+        "lord",
+        "God",
+        "willing",
+        "he",
+        "gives",
+        "me",
+        "answer",
+      ]),
+      app_contact_match("Feel free to send me a message here!"),
+    ),
   ];
   return v;
 }
