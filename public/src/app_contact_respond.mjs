@@ -1,3 +1,4 @@
+import { list_concat } from "./list_concat.mjs";
 import { list_difference } from "./list_difference.mjs";
 import { log } from "./log.mjs";
 import { app_contact_separate } from "./app_contact_separate.mjs";
@@ -27,7 +28,18 @@ export async function app_contact_respond(input) {
   );
   let { words } = json_from(json);
   let words_lower = list_map(words, string_case_lower);
-  words_lower = list_difference(words_lower, string_split_empty("bdegmnsw"));
+  words_lower = list_difference(
+    words_lower,
+    list_concat(string_split_empty("bdegmnsw"), [
+      "ut",
+      "ur",
+      "re",
+      "res",
+      "tur",
+      "en",
+      "sen",
+    ]),
+  );
   list_add_multiple(words_lower, ["god", "greetings", "today"]);
   let words_lookup = list_to_lookup_keys(words_lower);
   let lower = string_case_lower(input);
