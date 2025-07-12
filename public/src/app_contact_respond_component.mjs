@@ -7,7 +7,7 @@ export async function app_contact_respond_component(t, response_p) {
   html_clear(response_p);
   let value = html_value_get(t);
   let d = await app_contact_dictionary();
-  let response =  app_contact_respond(d, value);
+  let response = app_contact_respond(d, value);
   log({
     response,
   });
