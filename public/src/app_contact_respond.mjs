@@ -57,7 +57,7 @@ export function app_contact_respond(d, input) {
     valid,
     match,
   });
-  let output = !match || !valid ? null : list_join_space(outputs);
+  let output = !match ? null : list_join_space(outputs);
   let v3 = {
     output,
     valid,
