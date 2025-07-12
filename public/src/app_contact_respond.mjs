@@ -33,7 +33,10 @@ export async function app_contact_respond(input) {
   each(filtered, function (w) {
     let v = object_property_exists(words_lookup, w);
     if (!v) {
-      each(list, function (item) {});
+      each(words_lower, function (l) {
+        if (false) {
+        }
+      });
     }
   });
   let choices = app_contact_respond_choices();
