@@ -1,5 +1,4 @@
 import { each } from "./each.mjs";
-import { log } from "./log.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { list_to_lookup_keys } from "./list_to_lookup_keys.mjs";
 import { function_result_path } from "./function_result_path.mjs";
@@ -34,10 +33,7 @@ export async function app_contact_respond(input) {
   each(filtered, function (w) {
     let v = object_property_exists(words_lookup, w);
     if (!v) {
-      log({
-        w,
-        v,
-      });
+      each(list, function (item) {});
     }
   });
   let choices = app_contact_respond_choices();
