@@ -4,10 +4,11 @@ import { list_includes } from "./list_includes.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 export function string_only(lower, letters, replacement) {
   let split = string_split_empty(lower);
-  let filtered2 = list_map(split, function (c) {
+  let mapped = list_map(split, function (c) {
     let v = list_includes(letters, c);
-    return v;
+    let v2 = v ? c : replacement;
+    return v2;
   });
-  let joined = list_join_empty(filtered2);
+  let joined = list_join_empty(mapped);
   return joined;
 }
