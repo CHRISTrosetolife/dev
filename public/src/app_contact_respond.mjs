@@ -30,7 +30,7 @@ export async function app_contact_respond(input) {
   let words_lower = list_map(words, string_case_lower);
   words_lower = list_difference(
     words_lower,
-    list_concat(string_split_empty("bdegmnsw"), [
+    list_concat(string_split_empty("bdefghmnsw"), [
       "ut",
       "ur",
       "re",
@@ -41,7 +41,14 @@ export async function app_contact_respond(input) {
       "ing",
     ]),
   );
-  list_add_multiple(words_lower, ["god", "greetings", "today"]);
+  list_add_multiple(words_lower, [
+    "god",
+    "greetings",
+    "today",
+    "scriptures",
+    "god's",
+    "sending",
+  ]);
   let words_lookup = list_to_lookup_keys(words_lower);
   let lower = string_case_lower(input);
   let alphabet = app_contact_alphabet();
