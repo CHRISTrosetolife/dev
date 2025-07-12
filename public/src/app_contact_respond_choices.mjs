@@ -1,3 +1,4 @@
+import { app_share_bless } from "./app_share_bless.mjs";
 import { app_contact_phrase_you } from "./app_contact_phrase_you.mjs";
 import { match_on } from "./match_on.mjs";
 import { app_contact_phrase_jesus } from "./app_contact_phrase_jesus.mjs";
@@ -104,9 +105,7 @@ export function app_contact_respond_choices() {
         "so",
         "much",
       ]),
-      app_contact_match(
-        "If you send me a message here 📨, then you will receive a scripture 📖.",
-      ),
+      app_contact_match(app_share_bless()),
     ),
   ];
   return v;
