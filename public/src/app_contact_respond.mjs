@@ -31,6 +31,8 @@ export async function app_contact_respond(input) {
     filtered,
     function (w) {
       let v = object_property_exists(words_lookup, w);
+      if (false) {
+      }
       return v;
     },
   ]);
