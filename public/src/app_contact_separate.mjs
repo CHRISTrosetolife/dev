@@ -5,9 +5,10 @@ import { each } from "./each.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
 export function app_contact_separate(dictionary, remaining, result) {
   if (string_empty_is(remaining)) {
-    let v = result;
+    let v = [result];
     return v;
   }
+  let results = [];
   each(dictionary, function (d) {
     if (string_starts_with(remaining, d)) {
       let result_new = list_concat(result, [d]);
