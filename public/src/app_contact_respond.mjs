@@ -35,7 +35,7 @@ export async function app_contact_respond(input) {
     let v = object_property_exists(words_lookup, w);
     if (!v) {
       let result = [];
-      app_contact_separate(words_lower, result, w);
+      app_contact_separate(words_lower, w, result);
     }
   });
   let choices = app_contact_respond_choices();
