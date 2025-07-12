@@ -1,3 +1,4 @@
+import { app_contact_phrase_god_willing } from "./app_contact_phrase_god_willing.mjs";
 import { app_contact_phrase_god } from "./app_contact_phrase_god.mjs";
 import { app_share_bless } from "./app_share_bless.mjs";
 import { app_contact_phrase_you } from "./app_contact_phrase_you.mjs";
@@ -125,7 +126,7 @@ export function app_contact_respond_choices() {
     match_on(
       match_sequence([
         "maybe",
-        match_sequence([app_contact_phrase_god(), "willing"]),
+        app_contact_phrase_god_willing(),
         "he",
         "gives",
         "me",
