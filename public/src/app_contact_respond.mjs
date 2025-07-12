@@ -20,13 +20,14 @@ import { list_filter } from "./list_filter.mjs";
 import { json_from } from "./json_from.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
+import { string_split_empty } from "./string_split_empty.mjs";
 export async function app_contact_respond(input) {
   let json = await storage_file_path_download(
     function_result_path(fn_name("english_words_dictionary_object")),
   );
   let { words } = json_from(json);
   let words_lower = list_map(words, string_case_lower);
-  words_lower = list_difference(words_lower, ["g", "d", "n"]);
+  words_lower = list_difference(words_lower, string_split_empty("degnw"));
   list_add_multiple(words_lower, ["god", "greetings", "today"]);
   let words_lookup = list_to_lookup_keys(words_lower);
   let lower = string_case_lower(input);
