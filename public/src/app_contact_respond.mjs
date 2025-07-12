@@ -40,7 +40,7 @@ export async function app_contact_respond(input) {
   let joined = string_only(lower, alphabet, " ");
   let tokens = string_split_space(joined);
   let filtered = list_filter(tokens, string_empty_not_is);
-  list_adder(function (la) {
+  let l = list_adder(function (la) {
     each(filtered, function (w) {
       let v = object_property_exists(words_lookup, w);
       let added = false;
@@ -62,7 +62,7 @@ export async function app_contact_respond(input) {
     });
   });
   let choices = app_contact_respond_choices();
-  let { data, match } = match_fill(filtered, choices);
+  let { data, match } = match_fill(l, choices);
   let outputs = object_property_get_or(data, "outputs", []);
   let valid = object_property_get_or(data, "valid", true);
   let output = !match || !valid ? null : list_join_space(outputs);
