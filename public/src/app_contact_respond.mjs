@@ -26,7 +26,7 @@ export async function app_contact_respond(input) {
   );
   let { words } = json_from(json);
   let words_lower = list_map(words, string_case_lower);
-  list_difference(words_lower, ["g", "d", "n"]);
+  words_lower = list_difference(words_lower, ["g", "d", "n"]);
   list_add_multiple(words_lower, ["god", "greetings", "today"]);
   let words_lookup = list_to_lookup_keys(words_lower);
   let lower = string_case_lower(input);
