@@ -31,10 +31,10 @@ export async function app_contact_respond(input) {
   let joined = string_only(lower, alphabet);
   let tokens = string_split_space(joined);
   let filtered = list_filter(tokens, string_empty_not_is);
+  log({
+    filtered,
+  });
   each(filtered, function (w) {
-    log({
-      w,
-    });
     let v = object_property_exists(words_lookup, w);
     return v;
   });
