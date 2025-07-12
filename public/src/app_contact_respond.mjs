@@ -33,7 +33,7 @@ export async function app_contact_respond(input) {
   let words_lookup = list_to_lookup_keys(words_lower);
   let lower = string_case_lower(input);
   let alphabet = app_contact_alphabet();
-  let joined = string_only(lower, alphabet);
+  let joined = string_only(lower, alphabet, _);
   let tokens = string_split_space(joined);
   let filtered = list_filter(tokens, string_empty_not_is);
   each(filtered, function (w) {
