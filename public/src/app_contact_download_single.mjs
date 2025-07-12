@@ -13,4 +13,6 @@ export async function app_contact_download_single(query) {
   });
   let fp = list_single(fps);
   let v = await app_contact_download_file(d, fp);
+  let v2 = v;
+  return v2;
 }
