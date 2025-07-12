@@ -1,3 +1,4 @@
+import { string_prefix_without } from "./string_prefix_without.mjs";
 import { each } from "./each.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { list_to_lookup_keys } from "./list_to_lookup_keys.mjs";
@@ -36,6 +37,7 @@ export async function app_contact_respond(input) {
     if (!v) {
       each(words_lower, function (l) {
         if (string_starts_with(w, l)) {
+          let remaining = string_prefix_without(w, l);
         }
       });
     }
