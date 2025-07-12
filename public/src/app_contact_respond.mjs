@@ -19,6 +19,7 @@ import { json_from } from "./json_from.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
+import { list_add } from "./list_add.mjs";
 export async function app_contact_respond(input) {
   let json = await storage_file_path_download(
     function_result_path(fn_name("english_words_dictionary_object")),
@@ -38,6 +39,7 @@ export async function app_contact_respond(input) {
       let result = [];
       each(words_lower, function (l) {
         if (string_starts_with(w, l)) {
+          list_add(result);
           let remaining = string_prefix_without(w, l);
         }
       });
