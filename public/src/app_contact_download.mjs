@@ -12,8 +12,8 @@ export async function app_contact_download() {
   let mapped = await list_map_async(file_paths, async function (file_path) {
     let file = await file_read_json(file_path);
     let message = object_property_get(file, "message");
-    let { lookup, list } = await app_contact_dictionary();
-    let { output } = await app_contact_respond(lookup, list, message);
+    let d = await app_contact_dictionary();
+    let { output } = await app_contact_respond(d, message);
     let output_null = output === null;
     let v = {
       file_path,
