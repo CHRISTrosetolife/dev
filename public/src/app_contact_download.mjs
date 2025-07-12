@@ -9,10 +9,10 @@ import { storage_files_download } from "./storage_files_download.mjs";
 export async function app_contact_download() {
   let prefix = app_contact_firebase_folder_prefix();
   let file_paths = await storage_files_download(prefix);
+  let d = await app_contact_dictionary();
   let mapped = await list_map_async(file_paths, async function (file_path) {
     let file = await file_read_json(file_path);
     let message = object_property_get(file, "message");
-    let d = await app_contact_dictionary();
     let { output } = app_contact_respond(d, message);
     let output_null = output === null;
     let v = {
