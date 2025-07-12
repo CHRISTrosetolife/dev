@@ -1,3 +1,4 @@
+import { app_contact_dictionary } from "./app_contact_dictionary.mjs";
 import { list_map_async } from "./list_map_async.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { app_contact_respond } from "./app_contact_respond.mjs";
@@ -11,6 +12,7 @@ export async function app_contact_download() {
   let mapped = await list_map_async(file_paths, async function (file_path) {
     let file = await file_read_json(file_path);
     let message = object_property_get(file, "message");
+    let { lookup, list } = await app_contact_dictionary();
     let { output } = await app_contact_respond(message);
     let output_null = output === null;
     let v = {
