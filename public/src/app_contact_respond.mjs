@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_first } from "./list_first.mjs";
 import { log_error } from "./log_error.mjs";
@@ -45,18 +44,10 @@ export function app_contact_respond(d, input) {
       }
     });
   });
-  log({
-    l,
-  });
   let choices = app_contact_respond_choices();
   let { data, match } = match_fill(l, choices);
   let outputs = object_property_get_or(data, "outputs", []);
   let valid = object_property_get_or(data, "valid", true);
-  log({
-    outputs,
-    valid,
-    match,
-  });
   let output = !match ? null : list_join_space(outputs);
   let v3 = {
     output,
