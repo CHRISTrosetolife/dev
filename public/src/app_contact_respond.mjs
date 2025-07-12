@@ -31,10 +31,10 @@ export async function app_contact_respond(input) {
     function_result_path(fn_name("english_words_dictionary_object")),
   );
   let { words } = json_from(json);
-  let words_lower = list_map(words, string_case_lower);
-  words_lower = list_difference(words_lower, app_contact_removes());
-  list_add_multiple(words_lower, app_contact_adds());
-  let words_lookup = list_to_lookup_keys(words_lower);
+  let list = list_map(words, string_case_lower);
+  list = list_difference(list, app_contact_removes());
+  list_add_multiple(list, app_contact_adds());
+  let lookup = list_to_lookup_keys(list);
   let lower = string_case_lower(input);
   let alphabet = app_contact_alphabet();
   let joined = string_only(lower, alphabet, " ");
@@ -42,11 +42,11 @@ export async function app_contact_respond(input) {
   let filtered = list_filter(tokens, string_empty_not_is);
   let l = list_adder(function (la) {
     each(filtered, function (w) {
-      let v = object_property_exists(words_lookup, w);
+      let v = object_property_exists(lookup, w);
       let added = false;
       if (!v) {
         let result = [];
-        let r = app_contact_separate(words_lower, w, result);
+        let r = app_contact_separate(list, w, result);
         if (list_empty_not_is(r)) {
           if (list_multiple_is(r)) {
             log_error("todo");
