@@ -125,8 +125,7 @@ export function app_contact_respond_choices() {
     match_on(
       match_sequence([
         "maybe",
-        app_contact_phrase_god(),
-        "willing",
+        match_sequence([app_contact_phrase_god(), "willing"]),
         "he",
         "gives",
         "me",
