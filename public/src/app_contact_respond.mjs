@@ -1,5 +1,4 @@
-import { list_concat } from "./list_concat.mjs";
-import { string_prefix_without } from "./string_prefix_without.mjs";
+import { app_contact_separate } from "./app_contact_separate.mjs";
 import { each } from "./each.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { list_to_lookup_keys } from "./list_to_lookup_keys.mjs";
@@ -19,7 +18,6 @@ import { list_filter } from "./list_filter.mjs";
 import { json_from } from "./json_from.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
-import { string_starts_with } from "./string_starts_with.mjs";
 export async function app_contact_respond(input) {
   let json = await storage_file_path_download(
     function_result_path(fn_name("english_words_dictionary_object")),
@@ -37,12 +35,7 @@ export async function app_contact_respond(input) {
     let v = object_property_exists(words_lookup, w);
     if (!v) {
       let result = [];
-      each(words_lower, function (l) {
-        if (string_starts_with(w, l)) {
-          let c = list_concat(result, [l]);
-          let remaining = string_prefix_without(w, l);
-        }
-      });
+      app_contact_separate(words_lower, w, result);
     }
   });
   let choices = app_contact_respond_choices();
