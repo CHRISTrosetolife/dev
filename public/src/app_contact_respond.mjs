@@ -1,3 +1,4 @@
+import { list_adder } from "./list_adder.mjs";
 import { list_first } from "./list_first.mjs";
 import { log_error } from "./log_error.mjs";
 import { list_multiple_is } from "./list_multiple_is.mjs";
@@ -39,6 +40,7 @@ export async function app_contact_respond(input) {
   let joined = string_only(lower, alphabet, " ");
   let tokens = string_split_space(joined);
   let filtered = list_filter(tokens, string_empty_not_is);
+  list_adder(function (la) {});
   each(filtered, function (w) {
     let v = object_property_exists(words_lookup, w);
     if (!v) {
