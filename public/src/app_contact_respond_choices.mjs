@@ -24,7 +24,7 @@ export function app_contact_respond_choices() {
       app_contact_match(app_share_verse_refresh_greet()),
     ),
     match_on(
-      match_sequence(["praise", "God"]),
+      match_sequence(["praise", app_contact_phrase_god()]),
       app_contact_match(app_share_praise()),
     ),
     match_on(
