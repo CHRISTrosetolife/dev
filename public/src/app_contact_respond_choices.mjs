@@ -109,6 +109,17 @@ export function app_contact_respond_choices() {
       ]),
       app_contact_match(app_share_bless()),
     ),
+    match_on(
+      match_sequence([
+        app_contact_phrase_god(),
+        "will",
+        "bless",
+        app_contact_phrase_you(),
+        "so",
+        "much",
+      ]),
+      app_contact_match(app_share_bless()),
+    ),
   ];
   return v;
 }
