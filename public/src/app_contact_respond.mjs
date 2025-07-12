@@ -54,6 +54,8 @@ export function app_contact_respond(d, input) {
   let valid = object_property_get_or(data, "valid", true);
   log({
     outputs,
+    valid,
+    match,
   });
   let output = !match || !valid ? null : list_join_space(outputs);
   let v3 = {
