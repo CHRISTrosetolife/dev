@@ -13,7 +13,7 @@ export function app_contact_separate(dictionary, remaining, result) {
     if (string_starts_with(remaining, d)) {
       let result_new = list_concat(result, [d]);
       let remaining_new = string_prefix_without(remaining, d);
-      app_contact_separate(dictionary, remaining_new, result_new);
+      let r = app_contact_separate(dictionary, remaining_new, result_new);
     }
   });
 }
