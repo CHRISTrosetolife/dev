@@ -132,7 +132,7 @@ export function app_contact_respond_choices() {
         "me",
         "answer",
       ]),
-      app_contact_match("Feel free to send me a message here!"),
+      app_contact_match("if God desires, may God give you an answer amen"),
     ),
   ];
   return v;
