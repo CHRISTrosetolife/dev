@@ -1,4 +1,3 @@
-import { todo } from "./todo.mjs";
 import { list_all } from "./list_all.mjs";
 import { list_to_lookup_keys } from "./list_to_lookup_keys.mjs";
 import { function_result_path } from "./function_result_path.mjs";
@@ -22,7 +21,7 @@ export async function app_contact_respond(input) {
   let { words } = json_from(json);
   let words_lookup = list_to_lookup_keys(words);
   let lower = string_case_lower(input);
-  list_all(lower, todo());
+  list_all(lower, function (w) {});
   let alphabet = app_contact_alphabet();
   let joined = string_only(lower, alphabet);
   let tokens = string_split_space(joined);
