@@ -1,3 +1,4 @@
+import { bible_reference_separator } from "./bible_reference_separator.mjs";
 import { global_function_property } from "./global_function_property.mjs";
 import { digits_10 } from "./digits_10.mjs";
 import { list_map_property } from "./list_map_property.mjs";
