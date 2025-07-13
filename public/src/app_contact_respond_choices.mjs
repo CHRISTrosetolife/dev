@@ -1,4 +1,4 @@
-import { match_repeat } from "./match_repeat.mjs";
+import { match_once_or_more } from "./match_once_or_more.mjs";
 import { match_digit } from "./match_digit.mjs";
 import { bible_reference_separator } from "./bible_reference_separator.mjs";
 import { app_contact_prayer_god_give } from "./app_contact_prayer_god_give.mjs";
@@ -168,10 +168,3 @@ export function app_contact_respond_choices() {
   ];
   return v;
 }
-function match_once_or_more(repeat_item, repetitions_max) {
-    return match_sequence([
-        repeat_item,
-        match_repeat(repetitions_max - 1, match_optional(repeat_item)),
-    ]);
-}
-
