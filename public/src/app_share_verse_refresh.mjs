@@ -155,7 +155,7 @@ export async function app_share_verse_refresh(
       button_text: "📨 Contact",
       value: [
         string_combine_multiple([
-          "Please contact me using this link: ",
+          "‼️ Please contact me using this link 👇 : ",
           app_url("contact"),
         ]),
         "Please do not send me a message in this app.",
