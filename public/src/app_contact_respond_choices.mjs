@@ -176,7 +176,9 @@ export function app_contact_respond_choices() {
         "about",
         "computer",
       ]),
-      app_contact_match(app_contact_prayer_god_give("a computer")),
+      app_contact_match(
+        "If God wills, I will contact you through this app, yes",
+      ),
     ),
     match_on(
       match_sequence([
