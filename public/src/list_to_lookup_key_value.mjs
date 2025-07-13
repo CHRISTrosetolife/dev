@@ -6,8 +6,9 @@ export function list_to_lookup_key_value(list, mapper_key, value_mapper) {
   let lookup = {};
   each(list, function (w) {
     let k = mapper_key(w);
+    let v = value_mapper(w, lookup);
     assert(object_property_exists_not, [lookup, k]);
-    object_property_set(lookup, k, value_mapper(w, lookup));
+    object_property_set(lookup, k, v);
   });
   return lookup;
 }
