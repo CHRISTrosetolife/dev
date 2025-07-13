@@ -10,9 +10,7 @@ export async function app_contact_adds() {
   global_function_property_initialize(
     app_contact_adds,
     "bible_books_names",
-    function () {
-      return bible_books_names;
-    },
+    bible_books_names,
   );
   let v = [
     bible_reference_separator(),
