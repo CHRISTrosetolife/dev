@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { assert } from "./assert.mjs";
@@ -12,10 +11,6 @@ export function object_merge_properties_generic(properties, from, to, strict) {
     if (strict) {
       assert(object_property_exists_not, [from, p]);
     }
-    log({
-      p,
-      value,
-    });
     object_property_set(to, p, value);
   });
   return to;
