@@ -14,7 +14,7 @@ export async function app_contact_dictionary() {
   let r = await storage_file_path_download(
     function_result_path(fn_name("english_words_dictionary_object")),
   );
-  if (string_is()) {
+  if (string_is(r)) {
     r = json_from(r);
   }
   let { words } = r;
