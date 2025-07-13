@@ -7,10 +7,10 @@ export async function app_contact_download_file(d, file_path) {
   let message = object_property_get(file, "message");
   let r = app_contact_respond(d, message);
   let output_null = output === null;
-  let v = object_merge_strict(r, {
+  object_merge_strict(r, {
     file_path,
     message,
     output_null,
   });
-  return v;
+  return r;
 }
