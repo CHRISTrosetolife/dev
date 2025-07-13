@@ -1,4 +1,7 @@
-export function app_contact_adds() {
+import { list_concat } from "./list_concat.mjs";
+import { bible_storage_version_http_get } from "./bible_storage_version_http_get.mjs";
+export async function app_contact_adds() {
+  let { books } = await bible_storage_version_http_get(version_code, "books");
   let v = [
     "god",
     "greetings",
@@ -10,5 +13,6 @@ export function app_contact_adds() {
     "how're",
     "hi",
   ];
-  return v;
+  let v2 = list_concat(v, books);
+  return v2;
 }

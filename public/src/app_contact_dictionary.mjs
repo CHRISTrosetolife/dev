@@ -16,7 +16,7 @@ export async function app_contact_dictionary() {
   let { words } = json_from(json);
   let list = list_map(words, string_case_lower);
   list = list_difference(list, app_contact_removes());
-  list_add_multiple(list, app_contact_adds());
+  list_add_multiple(list, await app_contact_adds());
   let lookup = list_to_lookup_keys(list);
   return {
     lookup,
