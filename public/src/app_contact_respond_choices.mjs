@@ -150,7 +150,7 @@ export function app_contact_respond_choices() {
     ),
     match_on(
       match_sequence(["we", "have", "not", "computer"]),
-      app_contact_match(app_contact_prayer_god_give("computer")),
+      app_contact_match(app_contact_prayer_god_give("a computer")),
     ),
     match_on(match_sequence(["verse"]), app_contact_match()),
   ];
