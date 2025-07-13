@@ -154,7 +154,7 @@ export function app_contact_respond_choices() {
       match_sequence(["we", "have", "not", "computer"]),
       app_contact_match(
         string_combine_multiple([
-          "God, thanks for Bible ",
+          "God, if You desire, please give computer",
           app_contact_phrase_amen(),
         ]),
       ),
