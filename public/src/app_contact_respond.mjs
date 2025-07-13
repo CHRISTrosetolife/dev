@@ -1,3 +1,4 @@
+import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_intersect } from "./list_intersect.mjs";
 import { log } from "./log.mjs";
@@ -47,9 +48,11 @@ export function app_contact_respond(d, input) {
       }
     });
   });
-  if (list_intersect(l, ["hif"])) {
+  let invalid = list_intersect(l, ["hif"]);
+  if (list_empty_not_is(invalid)) {
     let o = string_combine_multiple([
       "Your message contains an invalid word. Please remove invalid words. Invalid word(s): ",
+      list_join_comma_space(invalid),
     ]);
     let v3 = {
       output,
