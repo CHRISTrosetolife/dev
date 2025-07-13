@@ -1,3 +1,5 @@
+import { range } from "./range.mjs";
+import { list_map } from "./list_map.mjs";
 import { match_digit } from "./match_digit.mjs";
 import { bible_reference_separator } from "./bible_reference_separator.mjs";
 import { app_contact_prayer_god_give } from "./app_contact_prayer_god_give.mjs";
@@ -158,7 +160,7 @@ export function app_contact_respond_choices() {
       match_sequence([
         "verse",
         match_digit(),
-        match_sequence(),
+        match_sequence(list_map(range(2))),
         bible_reference_separator(),
       ]),
       app_contact_match(),
