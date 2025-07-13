@@ -1,3 +1,4 @@
+import { object_property_exists } from "./object_property_exists.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -11,7 +12,7 @@ export async function app_contact_download_responses_test() {
   let responses_new = await app_contact_download_responses_get();
   each(responses_new, function (n) {
     let message = object_property_get(n, "message");
-    if (false) {
+    if (object_property_exists(object, "property_name")) {
     }
     let e = object_property_get(lookup, message);
     assert(equal_json, [e, n]);
