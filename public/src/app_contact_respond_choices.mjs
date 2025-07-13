@@ -1,3 +1,5 @@
+import { app_contact_adds } from "./app_contact_adds.mjs";
+import { global_function_property } from "./global_function_property.mjs";
 import { app_contact_match_invalid_edit } from "./app_contact_match_invalid_edit.mjs";
 import { match_digits_1_to_999 } from "./match_digits_1_to_999.mjs";
 import { bible_reference_separator } from "./bible_reference_separator.mjs";
@@ -164,6 +166,9 @@ export function app_contact_respond_choices() {
     match_on(
       match_sequence([
         "verse",
+        match_choice(
+          global_function_property(app_contact_adds, "bible_books_names"),
+        ),
         match_digits_1_to_999(),
         bible_reference_separator(),
         match_digits_1_to_999(),
