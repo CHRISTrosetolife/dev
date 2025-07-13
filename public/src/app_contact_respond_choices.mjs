@@ -1,3 +1,4 @@
+import { app_contact_phrase_list_greetings } from "./app_contact_phrase_list_greetings.mjs";
 import { app_contact_adds } from "./app_contact_adds.mjs";
 import { global_function_property } from "./global_function_property.mjs";
 import { app_contact_match_invalid_edit } from "./app_contact_match_invalid_edit.mjs";
@@ -25,7 +26,7 @@ export function app_contact_respond_choices() {
   let v = [
     match_on(
       match_sequence([
-        match_choice(["hello", "greetings", "hi", "hii"]),
+        match_choice(app_contact_phrase_list_greetings()),
         match_optional("sir"),
       ]),
       app_contact_match(app_share_verse_refresh_greet()),
