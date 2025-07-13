@@ -46,7 +46,13 @@ export function app_contact_respond(d, input) {
       }
     });
   });
-  if (list_intersect()) {
+  if (list_intersect(l, ["hif"])) {
+    let v3 = {
+      output,
+      valid,
+      outputs,
+    };
+    return v3;
   }
   let choices = app_contact_respond_choices();
   log({
