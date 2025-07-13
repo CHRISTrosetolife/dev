@@ -10,10 +10,13 @@ import { fn_name } from "./fn_name.mjs";
 import { function_result_path } from "./function_result_path.mjs";
 import { storage_file_path_download } from "./storage_file_path_download.mjs";
 export async function app_contact_dictionary() {
-  let json = await storage_file_path_download(
+  let r = await storage_file_path_download(
     function_result_path(fn_name("english_words_dictionary_object")),
   );
-  let { words } = json_from(json);
+  if (false) {
+  }
+  let o = json_from(r);
+  let { words } = o;
   let list = list_map(words, string_case_lower);
   list = list_difference(list, app_contact_removes());
   list_add_multiple(list, await app_contact_adds());
