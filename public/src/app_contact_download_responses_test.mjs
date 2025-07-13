@@ -1,4 +1,4 @@
-import { never } from "./never.mjs";
+import { equal_json } from "./equal_json.mjs";
 import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_to_lookup_property } from "./list_to_lookup_property.mjs";
@@ -12,6 +12,6 @@ export async function app_contact_download_responses_test() {
   each(responses_new, function (r) {
     let message = object_property_get(r, "message");
     let e = object_property_get(lookup, message);
-    assert(never, []);
+    assert(equal_json, []);
   });
 }
