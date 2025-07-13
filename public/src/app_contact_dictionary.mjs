@@ -18,8 +18,9 @@ export async function app_contact_dictionary() {
   list = list_difference(list, app_contact_removes());
   list_add_multiple(list, await app_contact_adds());
   let lookup = list_to_lookup_keys(list);
-  return {
+  let v = {
     lookup,
     list,
   };
+  return v;
 }
