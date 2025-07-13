@@ -51,7 +51,10 @@ export function app_contact_respond_choices() {
         app_contact_phrase_you(),
       ]),
       app_contact_match_invalid(
-        "You asked for help. Please edit your message to say what kind of help you need.",
+        string_combine_multiple([
+          "You asked for help. Please edit your message to say what ",
+          "kind of help you need.",
+        ]),
       ),
     ),
     match_on(
