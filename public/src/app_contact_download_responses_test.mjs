@@ -4,5 +4,5 @@ import { app_contact_download_responses } from "./app_contact_download_responses
 export async function app_contact_download_responses_test() {
   let existing = app_contact_download_responses();
   let responses_new = await app_contact_download_responses_get();
-  each(list, function (item) {});
+  each(responses_new, function (r) {});
 }
