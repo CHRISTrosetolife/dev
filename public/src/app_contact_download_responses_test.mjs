@@ -14,4 +14,6 @@ export async function app_contact_download_responses_test() {
     let e = object_property_get(lookup, message);
     assert(equal_json, [e, n]);
   });
+  let v = responses_new;
+  return v;
 }
