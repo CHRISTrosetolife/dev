@@ -161,7 +161,7 @@ export function app_contact_respond_choices() {
         bible_reference_separator(),
         match_digits_1_to_999(),
       ]),
-      app_contact_match(),
+      app_contact_match("todo remove; bible verse reference matched"),
     ),
   ];
   return v;
