@@ -4,7 +4,7 @@ import { app_contact_download_all } from "./app_contact_download_all.mjs";
 export async function app_contact_download_responses_get() {
   let r = await app_contact_download_all();
   let v = list_map(r, function (ri) {
-    let v2 = object_properties_new(ri, ["outputs", "valid", "message"]);
+    let v2 = object_properties_new(ri, ["message", "outputs", "valid"]);
     return v2;
   });
   return v;
