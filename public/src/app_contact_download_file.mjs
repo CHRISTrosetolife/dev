@@ -4,7 +4,7 @@ import { object_property_get } from "./object_property_get.mjs";
 export async function app_contact_download_file(d, file_path) {
   let file = await file_read_json(file_path);
   let message = object_property_get(file, "message");
-  let { output, outputs } = app_contact_respond(d, message);
+  let r = app_contact_respond(d, message);
   let output_null = output === null;
   let v = {
     file_path,
