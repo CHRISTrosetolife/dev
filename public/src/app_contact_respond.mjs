@@ -1,3 +1,4 @@
+import { list_intersect } from "./list_intersect.mjs";
 import { log } from "./log.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_first } from "./list_first.mjs";
@@ -45,7 +46,7 @@ export function app_contact_respond(d, input) {
       }
     });
   });
-  if (false) {
+  if (list_intersect()) {
   }
   let choices = app_contact_respond_choices();
   log({
