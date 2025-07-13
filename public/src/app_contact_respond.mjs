@@ -55,9 +55,9 @@ export function app_contact_respond(d, input) {
       list_join_comma_space(invalid),
     ]);
     let v3 = {
-      output,
-      valid,
-      outputs,
+      output: o,
+      valid: false,
+      outputs: [o],
     };
     return v3;
   }
