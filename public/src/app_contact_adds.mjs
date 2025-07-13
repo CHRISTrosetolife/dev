@@ -6,6 +6,7 @@ export async function app_contact_adds() {
   let { books } = await bible_storage_version_http_get("engbsb", "books");
   let books_names = list_map_property(books, "book_name");
   let v = [
+    ":",
     "god",
     "greetings",
     "today",
