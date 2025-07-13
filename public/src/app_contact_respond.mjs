@@ -71,6 +71,12 @@ export function app_contact_respond(d, input) {
     "gives",
     "me",
     "answer",
+    "only",
+    "we",
+    "have",
+    "urdu",
+    "translation",
+    "bible",
   ];
   let result = match_fill(l, choices);
   let { data, match } = result;
