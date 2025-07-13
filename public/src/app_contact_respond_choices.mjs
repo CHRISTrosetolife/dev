@@ -163,8 +163,8 @@ export function app_contact_respond_choices() {
         match_sequence([
           repeat_item,
           match_repeat(repetitions_max - 1, match_optional(repeat_item)),
-          bible_reference_separator(),
         ]),
+        bible_reference_separator(),
       ]),
       app_contact_match(),
     ),
