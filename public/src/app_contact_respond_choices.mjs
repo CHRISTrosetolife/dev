@@ -177,7 +177,7 @@ export function app_contact_respond_choices() {
         "computer",
       ]),
       app_contact_match(
-        "If God wills, I will contact you through this app, yes",
+        "If God wills, I will contact you through this app, yes.",
       ),
     ),
     match_on(
