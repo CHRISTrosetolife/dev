@@ -12,7 +12,7 @@ export async function app_contact_download_responses_test() {
   let responses_new = await app_contact_download_responses_get();
   each(responses_new, function (n) {
     let message = object_property_get(n, "message");
-    if (object_property_exists(object, "property_name")) {
+    if (object_property_exists(lookup, message)) {
     }
     let e = object_property_get(lookup, message);
     assert(equal_json, [e, n]);
