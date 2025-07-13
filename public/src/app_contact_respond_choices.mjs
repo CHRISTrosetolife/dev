@@ -149,6 +149,15 @@ export function app_contact_respond_choices() {
         ]),
       ),
     ),
+    match_on(
+      match_sequence(["verse"]),
+      app_contact_match(
+        string_combine_multiple([
+          "God, thanks for Bible ",
+          app_contact_phrase_amen(),
+        ]),
+      ),
+    ),
   ];
   return v;
 }
