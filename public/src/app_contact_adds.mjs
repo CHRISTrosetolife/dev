@@ -1,7 +1,11 @@
+import { log } from "./log.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { bible_storage_version_http_get } from "./bible_storage_version_http_get.mjs";
 export async function app_contact_adds() {
   let { books } = await bible_storage_version_http_get("engbsb", "books");
+  log({
+    books,
+  });
   let v = [
     "god",
     "greetings",
