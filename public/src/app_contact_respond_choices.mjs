@@ -57,6 +57,7 @@ export function app_contact_respond_choices() {
         match_sequence(["in", "the", "name", "of", app_contact_phrase_jesus()]),
         "Amen",
         "and",
+        "but",
       ]),
       noop,
     ),
