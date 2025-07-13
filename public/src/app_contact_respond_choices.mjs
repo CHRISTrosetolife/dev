@@ -160,7 +160,7 @@ export function app_contact_respond_choices() {
       match_sequence([
         "verse",
         match_digit(),
-        match_sequence(list_map(range(2))),
+        match_sequence(list_map(range(2)), match_optional(match_digit())),
         bible_reference_separator(),
       ]),
       app_contact_match(),
