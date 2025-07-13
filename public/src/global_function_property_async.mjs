@@ -5,7 +5,7 @@ export async function global_function_property_async(
   property_name,
   value_get,
 ) {
-  let a = await global_function(app_fn);
+  let a = global_function(app_fn);
   let result = await object_property_get_or_async(a, property_name, value_get);
   return result;
 }
