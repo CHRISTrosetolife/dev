@@ -10,7 +10,7 @@ export async function app_contact_adds() {
     return bible_books_names;
   });
   let v = [
-    ":",
+    bible_reference_separator(),
     "god",
     "greetings",
     "today",
