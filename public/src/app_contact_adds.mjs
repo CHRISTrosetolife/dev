@@ -4,7 +4,7 @@ import { bible_storage_version_http_get } from "./bible_storage_version_http_get
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 export async function app_contact_adds() {
   let { books } = await bible_storage_version_http_get("engbsb", "books");
-  let books_names = list_map_property(books, "book_name");
+  let bible_books_names = list_map_property(books, "book_name");
   let v = [
     ":",
     "god",
@@ -17,6 +17,6 @@ export async function app_contact_adds() {
     "how're",
     "hi",
   ];
-  let v2 = list_concat_multiple([v, books_names, digits_10()]);
+  let v2 = list_concat_multiple([v, bible_books_names, digits_10()]);
   return v2;
 }
