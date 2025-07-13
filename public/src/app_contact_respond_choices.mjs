@@ -1,3 +1,4 @@
+import { app_contact_prayer_god_give } from "./app_contact_prayer_god_give.mjs";
 import { app_contact_phrase_amen } from "./app_contact_phrase_amen.mjs";
 import { app_contact_phrase_god_willing } from "./app_contact_phrase_god_willing.mjs";
 import { app_contact_phrase_god } from "./app_contact_phrase_god.mjs";
@@ -153,19 +154,9 @@ export function app_contact_respond_choices() {
     ),
     match_on(
       match_sequence(["we", "have", "not", "computer"]),
-      app_contact_match(
-        app_contact_prayer_god_give(request),
-      ),
+      app_contact_match(app_contact_prayer_god_give(request)),
     ),
     match_on(match_sequence(["verse"]), app_contact_match()),
   ];
   return v;
 }
-function app_contact_prayer_god_give(request) {
-    return string_combine_multiple([
-        "God, if You desire, please give ",
-        request,
-        app_contact_phrase_amen(),
-    ]);
-}
-
