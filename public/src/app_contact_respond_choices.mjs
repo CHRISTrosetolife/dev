@@ -1,5 +1,5 @@
+import { match_digit } from "./match_digit.mjs";
 import { bible_reference_separator } from "./bible_reference_separator.mjs";
-import { digits_10 } from "./digits_10.mjs";
 import { app_contact_prayer_god_give } from "./app_contact_prayer_god_give.mjs";
 import { app_contact_phrase_amen } from "./app_contact_phrase_amen.mjs";
 import { app_contact_phrase_god_willing } from "./app_contact_phrase_god_willing.mjs";
@@ -155,11 +155,7 @@ export function app_contact_respond_choices() {
       app_contact_match(app_contact_prayer_god_give("a computer")),
     ),
     match_on(
-      match_sequence([
-        "verse",
-        match_choice(digits_10()),
-        bible_reference_separator(),
-      ]),
+      match_sequence(["verse", match_digit(), bible_reference_separator()]),
       app_contact_match(),
     ),
   ];
