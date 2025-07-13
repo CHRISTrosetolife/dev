@@ -150,6 +150,15 @@ export function app_contact_respond_choices() {
         ]),
       ),
     ),
+    match_on(
+      match_sequence(["only", "we", "have", "Urdu", "translation", "bible"]),
+      app_contact_match(
+        string_combine_multiple([
+          "God, thanks for Bible ",
+          app_contact_phrase_amen(),
+        ]),
+      ),
+    ),
     match_on(match_sequence(["verse"]), app_contact_match()),
   ];
   return v;
