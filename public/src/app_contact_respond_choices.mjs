@@ -1,4 +1,4 @@
-import { match_digits_0_to_999 } from "./match_digits_0_to_999.mjs";
+import { match_digits_1_to_999 } from "./match_digits_1_to_999.mjs";
 import { bible_reference_separator } from "./bible_reference_separator.mjs";
 import { app_contact_prayer_god_give } from "./app_contact_prayer_god_give.mjs";
 import { app_contact_phrase_amen } from "./app_contact_phrase_amen.mjs";
@@ -157,7 +157,7 @@ export function app_contact_respond_choices() {
     match_on(
       match_sequence([
         "verse",
-        match_digits_0_to_999(),
+        match_digits_1_to_999(),
         bible_reference_separator(),
       ]),
       app_contact_match(),
