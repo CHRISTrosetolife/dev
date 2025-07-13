@@ -155,7 +155,12 @@ export function app_contact_respond_choices() {
       app_contact_match(app_contact_prayer_god_give("a computer")),
     ),
     match_on(
-      match_sequence(["verse", match_digit(), bible_reference_separator()]),
+      match_sequence([
+        "verse",
+        match_digit(),
+        match_sequence(),
+        bible_reference_separator(),
+      ]),
       app_contact_match(),
     ),
   ];
