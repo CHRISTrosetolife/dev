@@ -160,10 +160,7 @@ export function app_contact_respond_choices() {
     match_on(
       match_sequence([
         "verse",
-        match_sequence([
-          repeat_item,
-          match_repeat(repetitions_max - 1, match_optional(repeat_item)),
-        ]),
+        match_once_or_more(repeat_item, repetitions_max),
         bible_reference_separator(),
       ]),
       app_contact_match(),
@@ -171,3 +168,10 @@ export function app_contact_respond_choices() {
   ];
   return v;
 }
+function match_once_or_more(repeat_item, repetitions_max) {
+    return match_sequence([
+        repeat_item,
+        match_repeat(repetitions_max - 1, match_optional(repeat_item)),
+    ]);
+}
+
