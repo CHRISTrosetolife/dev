@@ -12,7 +12,6 @@ import { app_contact_phrase_jesus } from "./app_contact_phrase_jesus.mjs";
 import { match_optional } from "./match_optional.mjs";
 import { app_share_how_r_u } from "./app_share_how_r_u.mjs";
 import { noop } from "./noop.mjs";
-import { app_contact_match_invalid } from "./app_contact_match_invalid.mjs";
 import { match_sequence } from "./match_sequence.mjs";
 import { app_contact_match } from "./app_contact_match.mjs";
 import { match_choice } from "./match_choice.mjs";
@@ -55,9 +54,7 @@ export function app_contact_respond_choices() {
     ),
     match_on(
       match_sequence(["we", "will", "try"]),
-      app_contact_match_invalid(
-        "You said you would try. Please edit your message to say what you will try.",
-      ),
+      app_contact_match_invalid_edit("said you would try", "what you will try"),
     ),
     match_on(
       match_choice([
