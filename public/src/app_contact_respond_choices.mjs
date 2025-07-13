@@ -57,6 +57,13 @@ export function app_contact_respond_choices() {
       app_contact_match_invalid_edit("said you would try", "what you will try"),
     ),
     match_on(
+      match_sequence(["we", "are", "interested", "brother"]),
+      app_contact_match_invalid_edit(
+        "said you are interested",
+        "what you are interested in",
+      ),
+    ),
+    match_on(
       match_choice([
         match_sequence(["in", app_contact_phrase_jesus(), "name"]),
         match_sequence(["in", "the", "name", "of", app_contact_phrase_jesus()]),
