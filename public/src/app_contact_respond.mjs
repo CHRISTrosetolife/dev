@@ -63,6 +63,14 @@ export function app_contact_respond(d, input) {
     "have",
     "not",
     "computer",
+    "maybe",
+    "lord",
+    "god",
+    "willing",
+    "he",
+    "gives",
+    "me",
+    "answer",
   ];
   let result = match_fill(l, choices);
   let { data, match } = result;
