@@ -119,9 +119,7 @@ export function function_aliases() {
   function_aliases_register(all, fn_name("app_contact_main_deploy"), ["cy"]);
   function_aliases_register(all, fn_name("app_contact_main_open"), ["ac"]);
   function_aliases_register(all, fn_name("bible_verses_upload"), ["bd"]);
-  function_aliases_register(all, fn_name("js_terminal_to_string_split"), [
-    "ts",
-  ]);
+  function_aliases_register(all, fn_name("line_read_split_space"), ["ts"]);
   function_aliases_register(all, fn_name("app_contact_download_single"), [
     "cds",
   ]);
