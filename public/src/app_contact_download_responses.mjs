@@ -1,5 +1,5 @@
 export function app_contact_download_responses() {
-  let v = [
+  return [
     {
       message: "Praise God in the name of jesus christ 🙏 ",
       outputs: ["🎵 Praise the LORD our God ❤️‍🔥✝️🕊 🎶"],
@@ -75,5 +75,4 @@ export function app_contact_download_responses() {
       valid: true,
     },
   ];
-  return v;
 }
