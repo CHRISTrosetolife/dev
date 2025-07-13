@@ -1,3 +1,4 @@
+import { app_contact_phrase_list_greetings } from "./app_contact_phrase_list_greetings.mjs";
 import { global_function_property_initialize } from "./global_function_property_initialize.mjs";
 import { bible_reference_separator } from "./bible_reference_separator.mjs";
 import { digits_10 } from "./digits_10.mjs";
@@ -14,7 +15,6 @@ export async function app_contact_adds() {
   );
   let v = [
     bible_reference_separator(),
-    "god",
     "greetings",
     "today",
     "scriptures",
@@ -22,8 +22,12 @@ export async function app_contact_adds() {
     "sending",
     "it's",
     "how're",
-    "hi",
   ];
-  let v2 = list_concat_multiple([v, bible_books_names, digits_10()]);
+  let v2 = list_concat_multiple([
+    v,
+    bible_books_names,
+    app_contact_phrase_list_greetings(),
+    digits_10(),
+  ]);
   return v2;
 }
