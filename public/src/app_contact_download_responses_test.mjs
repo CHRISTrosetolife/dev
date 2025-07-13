@@ -9,8 +9,8 @@ export async function app_contact_download_responses_test() {
   let responses_existing = app_contact_download_responses();
   let lookup = list_to_lookup_property(responses_existing, "message");
   let responses_new = await app_contact_download_responses_get();
-  each(responses_new, function (r) {
-    let message = object_property_get(r, "message");
+  each(responses_new, function (n) {
+    let message = object_property_get(n, "message");
     let e = object_property_get(lookup, message);
     assert(equal_json, []);
   });
