@@ -18,7 +18,6 @@ import { app_share_thanks } from "./app_share_thanks.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
 export function app_contact_respond_choices() {
-  let request = "computer";
   let v = [
     match_on(
       match_sequence([
@@ -154,7 +153,7 @@ export function app_contact_respond_choices() {
     ),
     match_on(
       match_sequence(["we", "have", "not", "computer"]),
-      app_contact_match(app_contact_prayer_god_give(request)),
+      app_contact_match(app_contact_prayer_god_give("computer")),
     ),
     match_on(match_sequence(["verse"]), app_contact_match()),
   ];
