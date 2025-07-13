@@ -136,10 +136,7 @@ export function app_contact_respond_choices() {
         "answer",
       ]),
       app_contact_match(
-        string_combine_multiple([
-          "If God desires, may God give you an answer ",
-          app_contact_phrase_amen(),
-        ]),
+        app_contact_match(app_contact_prayer_god_give("an answer")),
       ),
     ),
     match_on(
