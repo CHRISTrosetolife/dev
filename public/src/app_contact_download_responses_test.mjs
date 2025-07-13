@@ -9,6 +9,6 @@ export async function app_contact_download_responses_test() {
   let responses_new = await app_contact_download_responses_get();
   each(responses_new, function (r) {
     let message = object_property_get(r, "message");
-    let e = object_property_get(lookup, "property_name");
+    let e = object_property_get(lookup, message);
   });
 }
