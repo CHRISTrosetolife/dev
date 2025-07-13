@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_intersect } from "./list_intersect.mjs";
 import { log } from "./log.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -47,6 +48,9 @@ export function app_contact_respond(d, input) {
     });
   });
   if (list_intersect(l, ["hif"])) {
+    let o = string_combine_multiple([
+      "Your message contains an invalid word. Please remove invalid words. Invalid word(s): ",
+    ]);
     let v3 = {
       output,
       valid,
