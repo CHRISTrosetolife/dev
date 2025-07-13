@@ -1,3 +1,4 @@
+import { app_contact_match_invalid_edit } from "./app_contact_match_invalid_edit.mjs";
 import { match_digits_1_to_999 } from "./match_digits_1_to_999.mjs";
 import { bible_reference_separator } from "./bible_reference_separator.mjs";
 import { app_contact_prayer_god_give } from "./app_contact_prayer_god_give.mjs";
@@ -52,14 +53,7 @@ export function app_contact_respond_choices() {
         "from",
         app_contact_phrase_you(),
       ]),
-      app_contact_match_invalid(
-        string_combine_multiple([
-          "You ",
-          what_you_did,
-          ". Please edit your message to say what ",
-          edit_to_say,
-        ]),
-      ),
+      app_contact_match_invalid_edit(what_you_did, edit_to_say),
     ),
     match_on(
       match_sequence(["we", "will", "try"]),
