@@ -1,3 +1,4 @@
+import { app_contact_dictionary } from "./app_contact_dictionary.mjs";
 import { log } from "./log.mjs";
 import { app_contact_respond_component } from "./app_contact_respond_component.mjs";
 import { html_style_italic } from "./html_style_italic.mjs";
@@ -34,6 +35,7 @@ import { html_button_next_after } from "./html_button_next_after.mjs";
 export async function app_contact_main() {
   let context = {};
   let root = await html_style_default_initialize_axios();
+  let d = await app_contact_dictionary();
   object_property_set(context, "version_code", "engbsb");
   await app_context_books_bible(context);
   let { book_code, chapter_code, verse_number_next } =
