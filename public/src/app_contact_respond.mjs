@@ -77,6 +77,11 @@ export function app_contact_respond(d, input) {
     "urdu",
     "translation",
     "bible",
+    "verse",
+    "john",
+    "1",
+    ":",
+    "7",
   ];
   let result = match_fill(l, choices);
   let { data, match } = result;
