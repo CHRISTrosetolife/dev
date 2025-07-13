@@ -5,6 +5,8 @@ import { list_concat_multiple } from "./list_concat_multiple.mjs";
 export async function app_contact_adds() {
   let { books } = await bible_storage_version_http_get("engbsb", "books");
   let bible_books_names = list_map_property(books, "book_name");
+  global_function_pro;
+  perty();
   let v = [
     ":",
     "god",
