@@ -2,7 +2,7 @@ export function app_contact_download_responses() {
   let v = [
     {
       message: "Praise God in the name of jesus christ 🙏 ",
-      outputs: ["🎵 Praise the LORD our God ❤️‍🔥✝️🕊 🎶"],
+      outputs: ["🎵 Praise the LORD our Gosd ❤️‍🔥✝️🕊 🎶"],
       valid: true,
     },
     {
