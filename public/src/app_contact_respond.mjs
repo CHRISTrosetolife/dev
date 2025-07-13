@@ -1,9 +1,9 @@
+import { log } from "./log.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_intersect } from "./list_intersect.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_first } from "./list_first.mjs";
-import { log_error } from "./log_error.mjs";
 import { list_multiple_is } from "./list_multiple_is.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { app_contact_separate } from "./app_contact_separate.mjs";
@@ -35,7 +35,7 @@ export function app_contact_respond(d, input) {
         let r = app_contact_separate(list, w, result);
         if (list_empty_not_is(r)) {
           if (list_multiple_is(r)) {
-            log_error("todo");
+            log("todo");
           }
           let f = list_first(r);
           each(f, la);
