@@ -6,7 +6,7 @@ export async function app_contact_download_file(d, file_path) {
   let file = await file_read_json(file_path);
   let message = object_property_get(file, "message");
   let r = app_contact_respond(d, message);
-  let output2 = object_property_get(r, "output");
+  let output = object_property_get(r, "output");
   let output_null = output === null;
   object_merge_strict(r, {
     file_path,
