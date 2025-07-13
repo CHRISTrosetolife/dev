@@ -14,6 +14,7 @@ export function object_merge_properties_generic(properties, from, to, strict) {
     }
     log({
       p,
+      value,
     });
     object_property_set(to, p, value);
   });
