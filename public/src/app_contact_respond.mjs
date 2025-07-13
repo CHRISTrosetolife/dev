@@ -49,7 +49,21 @@ export function app_contact_respond(d, input) {
   log({
     l,
   });
-  l = ["yes", "we", "are", "want", "to", "send", "it's", "message", "but"];
+  l = [
+    "yes",
+    "we",
+    "are",
+    "want",
+    "to",
+    "send",
+    "it's",
+    "message",
+    "but",
+    "we",
+    "have",
+    "not",
+    "computer",
+  ];
   let result = match_fill(l, choices);
   let { data, match } = result;
   let outputs = object_property_get_or(data, "outputs", []);
