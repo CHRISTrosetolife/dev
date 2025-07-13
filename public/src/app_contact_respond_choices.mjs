@@ -21,7 +21,6 @@ import { app_share_thanks } from "./app_share_thanks.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
 export function app_contact_respond_choices() {
-  let repeat_item = match_digit();
   let v = [
     match_on(
       match_sequence([
@@ -159,7 +158,7 @@ export function app_contact_respond_choices() {
     match_on(
       match_sequence([
         "verse",
-        match_once_or_more(repeat_item, 3),
+        match_once_or_more(match_digit(), 3),
         bible_reference_separator(),
       ]),
       app_contact_match(),
