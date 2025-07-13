@@ -20,7 +20,8 @@ import { app_share_thanks } from "./app_share_thanks.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
 export function app_contact_respond_choices() {
-  let what = "kind of help you need.";
+  let edit_to_say = "kind of help you need.";
+  let what_you_did = "asked for help";
   let v = [
     match_on(
       match_sequence([
@@ -54,9 +55,9 @@ export function app_contact_respond_choices() {
       app_contact_match_invalid(
         string_combine_multiple([
           "You ",
-          "asked for help",
+          what_you_did,
           ". Please edit your message to say what ",
-          what,
+          edit_to_say,
         ]),
       ),
     ),
