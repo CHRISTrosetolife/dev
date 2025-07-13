@@ -159,7 +159,7 @@ export function app_contact_respond_choices() {
       match_sequence([
         "verse",
         match_digit(),
-        match_repeat(2, match_optional(match_digit())),
+        match_repeat(3 - 1, match_optional(match_digit())),
         bible_reference_separator(),
       ]),
       app_contact_match(),
