@@ -35,7 +35,6 @@ import { html_button_next_after } from "./html_button_next_after.mjs";
 export async function app_contact_main() {
   let context = {};
   let root = await html_style_default_initialize_axios();
-  let d = await app_contact_dictionary();
   object_property_set(context, "version_code", "engbsb");
   await app_context_books_bible(context);
   let { book_code, chapter_code, verse_number_next } =
@@ -48,6 +47,7 @@ export async function app_contact_main() {
     verse_number_next,
   );
   await firebase_initialize();
+  let d = await app_contact_dictionary();
   let id = storage_local_initialize(app_contact, "id", await uuid());
   app_contact_instructions(root);
   let t = html_textarea_width_full_placeholder_storage_local(
