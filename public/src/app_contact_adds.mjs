@@ -15,6 +15,7 @@ export async function app_contact_adds() {
   );
   let v = [
     bible_reference_separator(),
+    "god",
     "greetings",
     "today",
     "scriptures",
