@@ -11,8 +11,6 @@ export async function app_contact_download_file(d, file_path) {
     file_path,
     message,
     output_null,
-    output,
-    outputs,
   });
   return v;
 }
