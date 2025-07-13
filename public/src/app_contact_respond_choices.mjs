@@ -146,9 +146,7 @@ export function app_contact_respond_choices() {
         "me",
         "answer",
       ]),
-      app_contact_match(
-        app_contact_match(app_contact_prayer_god_give("an answer")),
-      ),
+      app_contact_match(app_contact_prayer_god_give("an answer")),
     ),
     match_on(
       match_sequence(["only", "we", "have", "Urdu", "translation", "bible"]),
