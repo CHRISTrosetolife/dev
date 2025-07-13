@@ -16,6 +16,6 @@ export async function app_contact_adds() {
     "how're",
     "hi",
   ];
-  let v2 = list_concat_multiple([v, books_names, digits_10]);
+  let v2 = list_concat_multiple([v, books_names, digits_10()]);
   return v2;
 }
