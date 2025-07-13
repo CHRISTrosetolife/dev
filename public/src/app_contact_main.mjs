@@ -64,6 +64,7 @@ export async function app_contact_main() {
       let { response, value } = await app_contact_respond_component(
         t,
         response_p,
+        d,
       );
       let { output } = response;
       log({
