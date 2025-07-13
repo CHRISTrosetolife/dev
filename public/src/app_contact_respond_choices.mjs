@@ -53,7 +53,9 @@ export function app_contact_respond_choices() {
       ]),
       app_contact_match_invalid(
         string_combine_multiple([
-          "You asked for help. Please edit your message to say what ",
+          "You ",
+          "asked for help",
+          ". Please edit your message to say what ",
           what,
         ]),
       ),
