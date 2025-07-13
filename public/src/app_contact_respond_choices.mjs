@@ -151,7 +151,7 @@ export function app_contact_respond_choices() {
       ),
     ),
     match_on(
-      match_sequence(["only", "we", "have", "Urdu", "translation", "bible"]),
+      match_sequence(["we", "have", "not", "computer"]),
       app_contact_match(
         string_combine_multiple([
           "God, thanks for Bible ",
