@@ -35,8 +35,7 @@ export async function app_contact_adds() {
     bible_books_names,
     app_contact_phrase_list_greetings(),
     c,
-    m,
-    f,
+    na,
     digits_10(),
   ]);
   return v2;
