@@ -1,3 +1,4 @@
+import { match_once_or_more } from "./match_once_or_more.mjs";
 import { number_to_words } from "./number_to_words.mjs";
 import { list_map } from "./list_map.mjs";
 import { range_from } from "./range_from.mjs";
@@ -30,11 +31,13 @@ import { countries_names } from "./countries_names.mjs";
 export function app_contact_respond_choices() {
   let v = [
     match_on(
-      match_sequence([
-        match_choice(app_contact_phrase_list_greetings()),
-        match_optional("sir"),
-      ]),
-      app_contact_match(app_share_verse_refresh_greet()),
+      match_once_or_more(
+        match_sequence([
+          match_choice(app_contact_phrase_list_greetings()),
+          match_optional("sir"),
+        ]),
+        app_contact_match(app_share_verse_refresh_greet()),
+      ),
     ),
     match_on(
       match_sequence(["praise", app_contact_phrase_god()]),
