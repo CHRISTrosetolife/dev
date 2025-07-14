@@ -9,6 +9,8 @@ export function match_functionize(a, item) {
     if (string_is(item)) {
       item = match_string(item);
     }
+    if (false) {
+    }
     let c = item([ai]);
     return c;
   });
