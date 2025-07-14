@@ -19,6 +19,7 @@ export async function app_contact_adds() {
   let c = countries_names();
   let m = names_male();
   let f = names_female();
+  let na = list_concat_multiple([m, f]);
   let v = [
     bible_reference_separator(),
     "god",
