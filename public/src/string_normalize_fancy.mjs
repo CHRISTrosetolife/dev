@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 export function string_normalize_fancy(str) {
   let result = "";
   for (let char of str) {
@@ -10,5 +11,9 @@ export function string_normalize_fancy(str) {
       result += char;
     }
   }
+  log({
+    str,
+    result,
+  });
   return result;
 }
