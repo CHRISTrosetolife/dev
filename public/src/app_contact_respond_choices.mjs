@@ -193,7 +193,10 @@ export function app_contact_respond_choices() {
       ]),
       noop,
     ),
-    match_on(match_sequence(["am", "a", "christian"]), noop),
+    match_on(
+      match_sequence(["am", "a", "christian"]),
+      app_contact_match("Praise God that you are a Christian!"),
+    ),
   ];
   return v;
 }
