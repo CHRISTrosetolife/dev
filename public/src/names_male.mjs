@@ -4,10 +4,11 @@ import { list_filter_starts_with_not } from "./list_filter_starts_with_not.mjs";
 import { http_cache } from "./http_cache.mjs";
 import { string_split_newline } from "./string_split_newline.mjs";
 export async function names_male() {
+  let file_name = "male";
   let txt = await http_cache(
     string_combine_multiple([
       "https://www.cs.cmu.edu/afs/cs/project/ai-repository/ai/areas/nlp/corpora/names/",
-      "male",
+      file_name,
       ".txt",
     ]),
   );
