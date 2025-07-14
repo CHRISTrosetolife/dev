@@ -36,9 +36,9 @@ export function app_contact_respond_choices() {
           match_choice(app_contact_phrase_list_greetings()),
           match_optional("sir"),
         ]),
-        app_contact_match(app_share_verse_refresh_greet()),
       ),
       2,
+      app_contact_match(app_share_verse_refresh_greet()),
     ),
     match_on(
       match_sequence(["praise", app_contact_phrase_god()]),
