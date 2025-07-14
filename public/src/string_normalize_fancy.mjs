@@ -1,4 +1,4 @@
-export function string_normalize_fancy(s) {
+export function string_normalize_fancy(str) {
   let result = "";
   for (let char of str) {
     let code = char.codePointAt(0);
