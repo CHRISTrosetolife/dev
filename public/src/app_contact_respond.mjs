@@ -35,7 +35,7 @@ export function app_contact_respond(d, input) {
         let r = app_contact_separate(list, w, result);
         if (list_empty_not_is(r)) {
           if (list_multiple_is(r)) {
-            log("todo");
+            log(r);
           }
           let f = list_first(r);
           each(f, la);
