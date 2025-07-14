@@ -10,8 +10,6 @@ export function match_functionize(a, item) {
   let v = list_map(a, function (ai) {
     if (string_is(item)) {
       item = match_string(item);
-    } else if (string_is(item)) {
-      item = match_string(item);
     }
     assert(function_is, [item]);
     let c = item([ai]);
