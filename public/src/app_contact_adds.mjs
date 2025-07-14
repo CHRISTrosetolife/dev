@@ -15,6 +15,8 @@ export async function app_contact_adds() {
     bible_books_names,
   );
   let c = countries_names();
+  let m = male_names();
+  let f = female_names();
   let v = [
     bible_reference_separator(),
     "god",
@@ -30,6 +32,8 @@ export async function app_contact_adds() {
     bible_books_names,
     app_contact_phrase_list_greetings(),
     c,
+    m,
+    f,
     digits_10(),
   ]);
   return v2;
