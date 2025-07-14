@@ -24,12 +24,11 @@ export async function app_contact_adds() {
     "sending",
     "it's",
     "how're",
-    "kenya",
   ];
   let v2 = list_concat_multiple([
     v,
     bible_books_names,
-    app_contact_phrase_list_greetings(),
+    app_contact_phrase_list_greetings(),c,
     digits_10(),
   ]);
   return v2;
