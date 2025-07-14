@@ -1,3 +1,4 @@
+import { countries_names } from "./countries_names.mjs";
 import { app_contact_phrase_list_greetings } from "./app_contact_phrase_list_greetings.mjs";
 import { global_function_property_initialize } from "./global_function_property_initialize.mjs";
 import { bible_reference_separator } from "./bible_reference_separator.mjs";
@@ -13,6 +14,7 @@ export async function app_contact_adds() {
     "bible_books_names",
     bible_books_names,
   );
+  let c = countries_names();
   let v = [
     bible_reference_separator(),
     "god",
