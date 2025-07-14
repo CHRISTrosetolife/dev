@@ -6,4 +6,5 @@ export async function generate_list_string_generated(fn, list) {
   let f_name = object_property_get(fn, "name");
   let name = string_suffix_without(f_name, suffix);
   await generate_list_string(list, name);
+  return list;
 }
