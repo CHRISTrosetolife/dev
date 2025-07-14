@@ -1,3 +1,5 @@
+import { number_to_words } from "./number_to_words.mjs";
+import { list_map } from "./list_map.mjs";
 import { range_from } from "./range_from.mjs";
 import { names_first } from "./names_first.mjs";
 import { app_contact_phrase_list_greetings } from "./app_contact_phrase_list_greetings.mjs";
@@ -224,7 +226,7 @@ export function app_contact_respond_choices() {
         "am",
         "married",
         "with",
-        match_choice(range_from(2, 20)),
+        match_choice(list_map(range_from(2, 20), number_to_words)),
         "children",
       ]),
       app_contact_match(
