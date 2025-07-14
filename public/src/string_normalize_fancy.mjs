@@ -11,9 +11,15 @@ export function string_normalize_fancy(str) {
       result += char;
     }
   }
-  log({
-    str,
-    result,
-  });
+  log(
+    JSON.stringify(
+      {
+        str,
+        result,
+      },
+      null,
+      2,
+    ),
+  );
   return result;
 }
