@@ -1,3 +1,4 @@
+import { string_normalize_fancy } from "./string_normalize_fancy.mjs";
 import { list_unique_json } from "./list_unique_json.mjs";
 import { log } from "./log.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
@@ -22,7 +23,8 @@ import { list_join_space } from "./list_join_space.mjs";
 import { list_filter } from "./list_filter.mjs";
 export function app_contact_respond(d, input) {
   let { lookup, list } = d;
-  let lower = string_case_lower(input);
+  let normalized = string_normalize_fancy(input);
+  let lower = string_case_lower(normalized);
   let alphabet = app_contact_alphabet();
   let joined = string_only(lower, alphabet, " ");
   let tokens = string_split_space(joined);
