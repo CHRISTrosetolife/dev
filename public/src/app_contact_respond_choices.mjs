@@ -223,7 +223,7 @@ export function app_contact_respond_choices() {
       app_contact_match(
         string_combine_multiple([
           app_share_praise(),
-          " that you are a Christian! If we confess Jesus before men, then Jesus will confess us before the Father!",
+          " that you are married and have children!",
         ]),
       ),
     ),
