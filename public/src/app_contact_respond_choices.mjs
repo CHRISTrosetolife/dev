@@ -210,7 +210,7 @@ export function app_contact_respond_choices() {
         "am",
         match_choice(names_first()),
         "from",
-        countries_names(),
+        match_choice(countries_names()),
       ]),
       app_contact_match(
         string_combine_multiple([
