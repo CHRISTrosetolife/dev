@@ -1,3 +1,4 @@
+import { range_from } from "./range_from.mjs";
 import { names_first } from "./names_first.mjs";
 import { app_contact_phrase_list_greetings } from "./app_contact_phrase_list_greetings.mjs";
 import { app_contact_adds } from "./app_contact_adds.mjs";
@@ -219,7 +220,13 @@ export function app_contact_respond_choices() {
       ),
     ),
     match_on(
-      match_sequence(["am", "married", "with", "three", "children"]),
+      match_sequence([
+        "am",
+        "married",
+        "with",
+        match_choice(range_from()),
+        "children",
+      ]),
       app_contact_match(
         string_combine_multiple([
           app_share_praise(),
