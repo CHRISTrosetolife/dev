@@ -224,7 +224,7 @@ export function app_contact_respond_choices() {
         "am",
         "married",
         "with",
-        match_choice(range_from()),
+        match_choice(range_from(2, 20)),
         "children",
       ]),
       app_contact_match(
