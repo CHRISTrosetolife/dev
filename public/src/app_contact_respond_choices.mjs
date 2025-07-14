@@ -1,3 +1,4 @@
+import { names_first } from "./names_first.mjs";
 import { app_contact_phrase_list_greetings } from "./app_contact_phrase_list_greetings.mjs";
 import { app_contact_adds } from "./app_contact_adds.mjs";
 import { global_function_property } from "./global_function_property.mjs";
@@ -195,6 +196,15 @@ export function app_contact_respond_choices() {
     ),
     match_on(
       match_sequence(["am", "a", "christian"]),
+      app_contact_match(
+        string_combine_multiple([
+          app_share_praise(),
+          " that you are a Christian! If we confess Jesus before men, then Jesus will confess us before the Father!",
+        ]),
+      ),
+    ),
+    match_on(
+      match_sequence(["am", match_choice(names_first()), "from", "kenya"]),
       app_contact_match(
         string_combine_multiple([
           app_share_praise(),
