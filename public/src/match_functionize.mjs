@@ -1,3 +1,4 @@
+import { assert } from "./assert.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_map } from "./list_map.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
@@ -9,8 +10,7 @@ export function match_functionize(a, item) {
     if (string_is(item)) {
       item = match_string(item);
     }
-    if (false) {
-    }
+    assert(function_is, [item]);
     let c = item([ai]);
     return c;
   });
