@@ -1,3 +1,4 @@
+import { list_unique_json } from "./list_unique_json.mjs";
 import { log } from "./log.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -34,6 +35,7 @@ export function app_contact_respond(d, input) {
         let result = [];
         let r = app_contact_separate(list, w, result);
         if (list_empty_not_is(r)) {
+          r = list_unique_json(r);
           if (list_multiple_is(r)) {
             log(r);
           }
