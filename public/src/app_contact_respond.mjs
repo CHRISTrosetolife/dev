@@ -24,6 +24,9 @@ import { list_filter } from "./list_filter.mjs";
 export function app_contact_respond(d, input) {
   let { lookup, list } = d;
   let normalized = string_normalize_fancy(input);
+  log({
+    normalized,
+  });
   let lower = string_case_lower(normalized);
   let alphabet = app_contact_alphabet();
   let joined = string_only(lower, alphabet, " ");
