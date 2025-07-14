@@ -10,7 +10,7 @@ export function match_functionize(a, item) {
     if (string_is(item)) {
       item = match_string(item);
     }
-    assert(function_is, [item]);
+    assert(function_is, [item]); 
     let c = item([ai]);
     return c;
   });
