@@ -23,6 +23,7 @@ import { app_share_praise } from "./app_share_praise.mjs";
 import { app_share_thanks } from "./app_share_thanks.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
+import { countries_names } from "./countries_names.mjs";
 export function app_contact_respond_choices() {
   let v = [
     match_on(
@@ -204,7 +205,12 @@ export function app_contact_respond_choices() {
       ),
     ),
     match_on(
-      match_sequence(["am", match_choice(names_first()), "from", "kenya"]),
+      match_sequence([
+        "am",
+        match_choice(names_first()),
+        "from",
+        countries_names(),
+      ]),
       app_contact_match(
         string_combine_multiple([
           app_share_praise(),
