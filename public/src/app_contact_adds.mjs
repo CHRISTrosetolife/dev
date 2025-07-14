@@ -1,5 +1,5 @@
-import { names_female_generate } from "./names_female_generate.mjs";
-import { names_male_generate } from "./names_male_generate.mjs";
+import { names_female } from "./names_female.mjs";
+import { names_male } from "./names_male.mjs";
 import { countries_names } from "./countries_names.mjs";
 import { app_contact_phrase_list_greetings } from "./app_contact_phrase_list_greetings.mjs";
 import { global_function_property_initialize } from "./global_function_property_initialize.mjs";
@@ -17,8 +17,8 @@ export async function app_contact_adds() {
     bible_books_names,
   );
   let c = countries_names();
-  let m = await names_male_generate();
-  let f = await names_female_generate();
+  let m = names_male();
+  let f = names_female();
   let v = [
     bible_reference_separator(),
     "god",
