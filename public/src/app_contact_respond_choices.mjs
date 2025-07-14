@@ -36,8 +36,8 @@ export function app_contact_respond_choices() {
           match_choice(app_contact_phrase_list_greetings()),
           match_optional("sir"),
         ]),
+        2,
       ),
-      2,
       app_contact_match(app_share_verse_refresh_greet()),
     ),
     match_on(
