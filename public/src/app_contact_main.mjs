@@ -79,6 +79,7 @@ export async function app_contact_main() {
         let encrypted = await crypto_encrypt(crypto_key_public(), value);
         await firebase_upload_object(path, {
           encrypted,
+          message,
         });
         html_p_text_multiple(response_p, [
           "📬 Your message has been sent to me",
