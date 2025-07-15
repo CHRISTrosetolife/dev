@@ -244,7 +244,7 @@ export function app_contact_respond_choices() {
         match_choice(["sharing", "shared"]),
         "the",
         "living",
-        "world",
+        match_choice(["word", "world"]),
         "of",
         "god",
       ]),
