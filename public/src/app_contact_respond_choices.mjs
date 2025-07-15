@@ -234,7 +234,19 @@ export function app_contact_respond_choices() {
       app_contact_match("Thank God for your marriage and children!"),
     ),
     match_on(
-      match_sequence(["i", "ask", "you", "teach", "me", "by", "the", "god"]),
+      match_sequence([
+        "i",
+        "ask",
+        "you",
+        "teach",
+        "me",
+        "by",
+        "the",
+        "god",
+        "shared",
+        "the",
+        "living",
+      ]),
       app_contact_match(
         "If God desires, then I will teach you yes. Pray to God every day. Read the Bible every day. If you want me to teach you, then please send me a message on this app.",
       ),
