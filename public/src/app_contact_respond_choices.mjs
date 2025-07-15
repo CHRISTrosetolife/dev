@@ -214,6 +214,7 @@ export function app_contact_respond_choices() {
     match_on(
       match_sequence([
         match_choice([match_sequence(["my", "name", "is"]), "am"]),
+        match_optional("evangelist"),
         match_choice(names_first()),
         "from",
         match_choice(countries_names()),
