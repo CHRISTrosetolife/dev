@@ -230,6 +230,25 @@ export function app_contact_respond_choices() {
       ]),
       app_contact_match("Thank God for your marriage and children!"),
     ),
+    match_on(
+      match_sequence([
+        "i",
+        "ask",
+        "you",
+        "teach",
+        "me",
+        "by",
+        "the",
+        "god",
+        "shared",
+        "the",
+        "living",
+        "world",
+        "of",
+        "god",
+      ]),
+      app_contact_match("Thank God for your marriage and children!"),
+    ),
   ];
   return v;
 }
