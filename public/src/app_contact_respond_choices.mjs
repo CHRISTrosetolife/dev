@@ -1,3 +1,4 @@
+import { list_flatten } from "./list_flatten.mjs";
 import { app_contact_phrase_you_optional } from "./app_contact_phrase_you_optional.mjs";
 import { app_contact_match_invalid_edit_help } from "./app_contact_match_invalid_edit_help.mjs";
 import { names_last } from "./names_last.mjs";
@@ -310,5 +311,6 @@ export function app_contact_respond_choices() {
       ),
     ),
   ];
-  return v;
+  let v2 = list_flatten(v);
+  return v2;
 }
