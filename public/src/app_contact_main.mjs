@@ -97,10 +97,11 @@ export async function app_contact_main() {
         key,
         enc,
       );
-      console.log(
-        "🔐 Encrypted (base64):",
-        btoa(String.fromCharCode(...new Uint8Array(encrypted))),
+      let encryptedBase64 = btoa(
+        String.fromCharCode(...new Uint8Array(encrypted)),
       );
+      console.log("🔐 Encrypted (base64):", encryptedBase64);
+      return encryptedBase64;
     }
     let value = html_value_get(t);
     let e = encryptMessage(crypto_key_public(), value);
