@@ -61,6 +61,21 @@ export async function app_contact_main() {
   html_rows_set(t, 8);
   let response_p;
   html_button(root, "Send message to me", async function () {
+    async function encryptMessage(publicKeyPem, plaintext) {
+      let key = await importPublicKey(publicKeyPem);
+      let enc = new TextEncoder().encode(plaintext);
+      let encrypted = await crypto.subtle.encrypt(
+        {
+          name: "RSA-OAEP",
+        },
+        key,
+        enc,
+      );
+      console.log(
+        "🔐 Encrypted (base64):",
+        btoa(String.fromCharCode(...new Uint8Array(encrypted))),
+      );
+    }
     try {
       let { response, value } = app_contact_respond_component(t, response_p, d);
       let { output } = response;
