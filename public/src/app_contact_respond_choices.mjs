@@ -58,16 +58,36 @@ export function app_contact_respond_choices() {
       app_contact_match(app_share_how_r_u()),
     ),
     app_contact_respond_choices_invalid(),
-    match_on(
-      match_choice([
-        match_sequence(["in", app_contact_phrase_jesus(), "name"]),
-        match_sequence(["in", "the", "name", "of", app_contact_phrase_jesus()]),
-        app_contact_phrase_amen(),
-        "and",
-        "but",
-      ]),
-      noop,
-    ),
+    [
+      match_on(
+        match_choice([
+          match_sequence(["in", app_contact_phrase_jesus(), "name"]),
+          match_sequence([
+            "in",
+            "the",
+            "name",
+            "of",
+            app_contact_phrase_jesus(),
+          ]),
+          app_contact_phrase_amen(),
+          "and",
+          "but",
+        ]),
+        noop,
+      ),
+      match_on(
+        match_sequence([
+          "verse",
+          match_choice(
+            global_function_property(app_contact_adds, "bible_books_names"),
+          ),
+          match_digits_1_to_999(),
+          bible_reference_separator(),
+          match_digits_1_to_999(),
+        ]),
+        noop,
+      ),
+    ],
     match_on(
       match_sequence([
         match_choice(["great", "nice", "pleasure"]),
@@ -176,18 +196,6 @@ export function app_contact_respond_choices() {
       app_contact_match(
         "If God wills, I will contact you through this app, yes.",
       ),
-    ),
-    match_on(
-      match_sequence([
-        "verse",
-        match_choice(
-          global_function_property(app_contact_adds, "bible_books_names"),
-        ),
-        match_digits_1_to_999(),
-        bible_reference_separator(),
-        match_digits_1_to_999(),
-      ]),
-      noop,
     ),
     match_on(
       match_sequence(["am", "a", "christian"]),
