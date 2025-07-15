@@ -32,7 +32,7 @@ export async function functions_string_prefix_to_constant(
   let fp = function_name_to_path(constant_name);
   if (!(await file_exists(fp))) {
     "todo",
-      "maybe this should be done like this",
+      "maybe this should be done like this:",
       fn_name("function_new_constant_string");
     let return_value = string_delimit(string_slashes_escape(prefix));
     let code = js_code_statement_return(return_value);
