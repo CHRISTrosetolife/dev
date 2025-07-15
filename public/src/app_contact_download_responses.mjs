@@ -1,5 +1,5 @@
 export function app_contact_download_responses() {
-  let v = [
+  return [
     {
       message:
         "Hello am Dennis from kenya,am married with three children,am a Christian pleasure to meet you ",
@@ -30,7 +30,7 @@ export function app_contact_download_responses() {
         "😁 I am doing good 💯 through the grace of God 👌 But please pray for my health 🙏",
         "My name is servant Jared.",
         "If God desires, then I will teach you yes. Pray to God every day. Read the Bible every day. If you want me to teach you, then please keep sending me another message on this app.",
-        "🙏 God bless you, your family, your friends and your country exceedingly and abundantly, more than anyone can ask or think in the name of the Father and of the Son and of the Holy Spirit amen ❤️‍🔥✝️🕊",
+        "Thanks for the blessing! 🙏 God bless you, your family, your friends and your country exceedingly and abundantly, more than anyone can ask or think in the name of the Father and of the Son and of the Holy Spirit amen ❤️‍🔥✝️🕊",
       ],
       valid: true,
     },
@@ -100,7 +100,7 @@ export function app_contact_download_responses() {
         "Hello praise God I really need help from you andGod will bless you so much",
       outputs: [
         "You asked for help. Please edit your message to say what kind of help you need.",
-        "🙏 God bless you, your family, your friends and your country exceedingly and abundantly, more than anyone can ask or think in the name of the Father and of the Son and of the Holy Spirit amen ❤️‍🔥✝️🕊",
+        "Thanks for the blessing! 🙏 God bless you, your family, your friends and your country exceedingly and abundantly, more than anyone can ask or think in the name of the Father and of the Son and of the Holy Spirit amen ❤️‍🔥✝️🕊",
       ],
       valid: false,
     },
@@ -115,5 +115,4 @@ export function app_contact_download_responses() {
       valid: true,
     },
   ];
-  return v;
 }
