@@ -1,4 +1,4 @@
-import { crypto_key_public_import } from "./crypto_key_public_import.mjs";
+import { crypto_encrypt } from "./crypto_encrypt.mjs";
 import { crypto_key_public } from "./crypto_key_public.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_style_font_size_default_multiplied } from "./html_style_font_size_default_multiplied.mjs";
@@ -65,7 +65,8 @@ export async function app_contact_main() {
   let response_p;
   html_button(root, "Send message to me", async function () {
     async function encryptMessage(publicKeyPem, plaintext) {
-      return await crypto_encrypt(publicKeyPem, plaintext);
+      let v = await crypto_encrypt(publicKeyPem, plaintext);
+      return v;
     }
     let value = html_value_get(t);
     let e = encryptMessage(crypto_key_public(), value);
@@ -160,20 +161,3 @@ export async function app_contact_main() {
     );
   }
 }
-async function crypto_encrypt(publicKeyPem, plaintext) {
-    let key = await crypto_key_public_import(publicKeyPem);
-    let enc = new TextEncoder().encode(plaintext);
-    let encrypted = await crypto.subtle.encrypt(
-        {
-            name: "RSA-OAEP",
-        },
-        key,
-        enc
-    );
-    let encryptedBase64 = btoa(
-        String.fromCharCode(...new Uint8Array(encrypted))
-    );
-    console.log("🔐 Encrypted (base64):", encryptedBase64);
-    return encryptedBase64;
-}
-
