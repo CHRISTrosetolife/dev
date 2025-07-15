@@ -132,7 +132,7 @@ export function app_contact_respond_choices() {
         match_optional("will"),
         "bless",
         app_contact_phrase_you(),
-        match_sequence(["so", "much"]),
+        match_sequence_optional(["so", "much"]),
       ]),
       app_contact_match(app_share_bless()),
     ),
