@@ -1,16 +1,24 @@
-import { generateKeyPairSync } from "node:crypto";
+import { log } from "./log.mjs";
+import {
+  generateKeyPairSync,
+  publicEncrypt,
+  privateDecrypt,
+} from "node:crypto";
 export async function crypto_key_generate() {
-  let k = generateKeyPairSync("ec", {
-    namedCurve: "prime256v1",
+  let { publicKey, privateKey } = generateKeyPairSync("rsa", {
+    modulusLength: 2048,
     publicKeyEncoding: {
-      type: "spki",
+      type: "pkcs1",
       format: "pem",
     },
     privateKeyEncoding: {
-      type: "pkcs8",
+      type: "pkcs1",
       format: "pem",
     },
   });
-  let v = k;
-  return v;
+  let message = "Hello, secure world!";
+  let encrypted = publicEncrypt(publicKey, Buffer.from(message));
+  console.log("🔐 Encrypted (base64):", encrypted.toString("base64"));
+  let decrypted = privateDecrypt(privateKey, encrypted);
+  console.log("🔓 Decrypted:", decrypted.toString());
 }
