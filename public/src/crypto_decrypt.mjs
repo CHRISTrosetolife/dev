@@ -6,7 +6,7 @@ export function crypto_decrypt(private_key, buffer) {
   }
   let decrypted = privateDecrypt(
     {
-      key: privateKey,
+      key: private_key,
       padding: constants.RSA_PKCS1_OAEP_PADDING,
       oaepHash: "sha256",
     },
