@@ -96,7 +96,7 @@ export function app_contact_respond_choices_greetings() {
         "say",
         app_contact_phrase_how_r_u(),
         "because",
-        "is",
+        app_contact_phrase_it_is(),
         "a",
         "long",
         "time",
