@@ -12,6 +12,6 @@ export function crypto_decrypt(private_key, buffer) {
     },
     buffer,
   );
-  let v = decrypted;
+  let v = decrypted.toString("utf-8");
   return v;
 }
