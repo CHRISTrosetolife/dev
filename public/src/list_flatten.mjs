@@ -5,7 +5,7 @@ export function list_flatten(list) {
   let v = list_adder(function (la) {
     each(list, function (item) {
       if (list_is(item)) {
-        each(atom, la);
+        each(item, la);
       } else {
         la(item);
       }
