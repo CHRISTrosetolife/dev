@@ -1,4 +1,3 @@
-import { function_new_constant_string } from "./function_new_constant_string.mjs";
 import { function_run_save_parent_path } from "./function_run_save_parent_path.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 export async function crypto_key() {
