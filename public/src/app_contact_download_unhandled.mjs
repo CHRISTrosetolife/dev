@@ -8,7 +8,7 @@ import { object_property_get } from "./object_property_get.mjs";
 export async function app_contact_download_unhandled() {
   let lookup = app_contact_download_responses_lookup();
   let mapped = await app_contact_download_all();
-  let responses_new = app_contact_download_responses_convert(r);
+  let responses_new = app_contact_download_responses_convert(mapped);
   app_contact_download_responses_test_inner(responses_new, lookup);
   let filtered = list_filter(mapped, function (m) {
     let on = object_property_get(m, "output_null");
