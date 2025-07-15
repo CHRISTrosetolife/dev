@@ -1,6 +1,6 @@
 import { generateKeyPairSync } from "node:crypto";
 export async function crypto_key_generate() {
-  let { publicKey, privateKey } = generateKeyPairSync("ec", {
+  let k = generateKeyPairSync("ec", {
     namedCurve: "prime256v1",
     publicKeyEncoding: {
       type: "spki",
@@ -11,4 +11,6 @@ export async function crypto_key_generate() {
       format: "pem",
     },
   });
+  let v = k;
+  return v;
 }
