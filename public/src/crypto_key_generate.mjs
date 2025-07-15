@@ -14,7 +14,7 @@ export async function crypto_key_generate() {
   let k = generateKeyPairSync("rsa", {
     modulusLength: 2048,
     publicKeyEncoding: {
-      type: "pkcs1",
+      type: "spki",
       format: "pem",
     },
     privateKeyEncoding: {
