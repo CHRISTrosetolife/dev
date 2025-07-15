@@ -103,7 +103,12 @@ export function app_contact_respond_choices_greetings() {
         "missing",
         app_contact_phrase_you(),
       ]),
-      app_contact_match(string_combine_multiple([app_share_how_r_u()])),
+      app_contact_match(
+        string_combine_multiple([
+          "Yes, it has been a long time",
+          app_share_how_r_u(),
+        ]),
+      ),
     ),
   ];
   return v;
