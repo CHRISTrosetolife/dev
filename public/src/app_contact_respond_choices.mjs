@@ -1,3 +1,4 @@
+import { match_sequence_optional } from "./match_sequence_optional.mjs";
 import { app_contact_phrase_amen } from "./app_contact_phrase_amen.mjs";
 import { app_contact_match_prayer_god_give } from "./app_contact_match_prayer_god_give.mjs";
 import { app_contact_match_amen } from "./app_contact_match_amen.mjs";
@@ -30,6 +31,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
 import { countries_names } from "./countries_names.mjs";
 export function app_contact_respond_choices() {
+  let sequence = ["doing", match_optional("today")];
   let v = [
     match_on(
       match_once_or_more(
@@ -49,7 +51,7 @@ export function app_contact_respond_choices() {
       match_sequence([
         match_choice(["How're", match_sequence(["how", "are"])]),
         app_contact_phrase_you(),
-        match_optional(match_sequence(["doing", match_optional("today")])),
+        match_sequence_optional(sequence),
       ]),
       app_contact_match(app_share_how_r_u()),
     ),
