@@ -18,7 +18,7 @@ export async function app_contact_adds() {
   );
   let c = countries_names();
   let nf = names_first();
-  names_last();
+  let nl = names_last();
   let v = [
     bible_reference_separator(),
     "god",
