@@ -2,7 +2,7 @@ import { app_contact_match_invalid_edit } from "./app_contact_match_invalid_edit
 export function app_contact_match_invalid_edit_help() {
   let v = app_contact_match_invalid_edit(
     "asked for help",
-    "kind of help you need from me",
+    "kind of help you need",
   );
   return v;
 }
