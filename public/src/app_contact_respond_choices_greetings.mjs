@@ -105,7 +105,7 @@ export function app_contact_respond_choices_greetings() {
       ]),
       app_contact_match(
         string_combine_multiple([
-          "Yes, it has been a long time",
+          "Yes, it has been a long time. ",
           app_share_how_r_u(),
         ]),
       ),
