@@ -65,20 +65,7 @@ export async function app_contact_main() {
   let response_p;
   html_button(root, "Send message to me", async function () {
     async function encryptMessage(publicKeyPem, plaintext) {
-      let key = await crypto_key_public_import(publicKeyPem);
-      let enc = new TextEncoder().encode(plaintext);
-      let encrypted = await crypto.subtle.encrypt(
-        {
-          name: "RSA-OAEP",
-        },
-        key,
-        enc,
-      );
-      let encryptedBase64 = btoa(
-        String.fromCharCode(...new Uint8Array(encrypted)),
-      );
-      console.log("🔐 Encrypted (base64):", encryptedBase64);
-      return encryptedBase64;
+      return await crypto_encrypt(publicKeyPem, plaintext);
     }
     let value = html_value_get(t);
     let e = encryptMessage(crypto_key_public(), value);
@@ -173,3 +160,20 @@ export async function app_contact_main() {
     );
   }
 }
+async function crypto_encrypt(publicKeyPem, plaintext) {
+    let key = await crypto_key_public_import(publicKeyPem);
+    let enc = new TextEncoder().encode(plaintext);
+    let encrypted = await crypto.subtle.encrypt(
+        {
+            name: "RSA-OAEP",
+        },
+        key,
+        enc
+    );
+    let encryptedBase64 = btoa(
+        String.fromCharCode(...new Uint8Array(encrypted))
+    );
+    console.log("🔐 Encrypted (base64):", encryptedBase64);
+    return encryptedBase64;
+}
+
