@@ -63,6 +63,30 @@ export async function app_contact_main() {
   html_rows_set(t, 8);
   let response_p;
   html_button(root, "Send message to me", async function () {
+    async function importPublicKey(pem) {
+      let pemHeader = "-----BEGIN PUBLIC KEY-----";
+      let pemFooter = "-----END PUBLIC KEY-----";
+      let pemContents = pem
+        .replace(pemHeader, "")
+        .replace(pemFooter, "")
+        .replace(/\s/g, "");
+      let binaryDerString = atob(pemContents);
+      let binaryDer = new Uint8Array(binaryDerString.length);
+      for (let i = 0; i < binaryDerString.length; i++) {
+        binaryDer[i] = binaryDerString.charCodeAt(i);
+      }
+      let v = await window.crypto.subtle.importKey(
+        "spki",
+        binaryDer.buffer,
+        {
+          name: "RSA-OAEP",
+          hash: "SHA-256",
+        },
+        true,
+        ["encrypt"],
+      );
+      return v;
+    }
     async function encryptMessage(publicKeyPem, plaintext) {
       let key = await importPublicKey(publicKeyPem);
       let enc = new TextEncoder().encode(plaintext);
