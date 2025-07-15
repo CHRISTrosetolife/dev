@@ -19,7 +19,7 @@ export async function crypto_key_generate() {
   });
   let message = "Hello, secure world!";
   let encrypted = publicEncrypt(publicKey, buffer_to(message));
-  console.log("🔐 Encrypted (base64):", encrypted.toString("base64"));
+  log("🔐 Encrypted (base64):", encrypted.toString("base64"));
   let decrypted = privateDecrypt(privateKey, encrypted);
-  console.log("🔓 Decrypted:", decrypted.toString());
+  log("🔓 Decrypted:", decrypted.toString());
 }
