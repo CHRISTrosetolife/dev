@@ -1,13 +1,14 @@
-import { log } from "./log.mjs";
+import { generateKeyPairSync } from "node:crypto";
 export async function crypto_key_generate() {
-  let keyPair = await window.crypto.subtle.generateKey(
-    {
-      name: "ECDH",
-      namedCurve: "P-256",
+  let { publicKey, privateKey } = generateKeyPairSync("ec", {
+    namedCurve: "prime256v1",
+    publicKeyEncoding: {
+      type: "spki",
+      format: "pem",
     },
-    true,
-    ["deriveKey", "deriveBits"],
-  );
-  console.log("Public Key:", keyPair.publicKey);
-  console.log("Private Key:", keyPair.privateKey);
+    privateKeyEncoding: {
+      type: "pkcs8",
+      format: "pem",
+    },
+  });
 }
