@@ -9,8 +9,9 @@ export async function app_contact_download_unhandled() {
   let filtered = list_filter(mapped, function (m) {
     let on = object_property_get(m, "output_null");
     let message = object_property_get(m, "message");
-    object_property_exists(object, "property_name");
-    return on;
+    let new_is = !object_property_exists(lookup, message);
+    let v = on || new_is;
+    return v;
   });
   let v3 = filtered;
   return v3;
