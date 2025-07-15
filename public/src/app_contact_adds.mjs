@@ -1,3 +1,4 @@
+import { names_last_list } from "./names_last_list.mjs";
 import { list_add } from "./list_add.mjs";
 import { names_first } from "./names_first.mjs";
 import { countries_names } from "./countries_names.mjs";
@@ -18,7 +19,7 @@ export async function app_contact_adds() {
   );
   let c = countries_names();
   let nf = names_first();
-  let nl = names_list();
+  let nl = names_last_list();
   list_add(nl, "ejaz");
   let v = [
     bible_reference_separator(),
