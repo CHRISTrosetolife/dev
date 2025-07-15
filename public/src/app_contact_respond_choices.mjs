@@ -212,7 +212,7 @@ export function app_contact_respond_choices() {
     ),
     match_on(
       match_sequence([
-        "am",
+        match_choice(["am"]),
         match_choice(names_first()),
         "from",
         match_choice(countries_names()),
