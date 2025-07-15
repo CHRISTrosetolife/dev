@@ -31,7 +31,6 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.mjs";
 import { countries_names } from "./countries_names.mjs";
 export function app_contact_respond_choices() {
-  let sequence = ["doing", match_optional("today")];
   let v = [
     match_on(
       match_once_or_more(
@@ -51,7 +50,7 @@ export function app_contact_respond_choices() {
       match_sequence([
         match_choice(["How're", match_sequence(["how", "are"])]),
         app_contact_phrase_you(),
-        match_sequence_optional(sequence),
+        match_sequence_optional(["doing", match_optional("today")]),
       ]),
       app_contact_match(app_share_how_r_u()),
     ),
