@@ -77,6 +77,7 @@ export function app_contact_respond_choices() {
       match_sequence([
         "i",
         "want",
+        match_optional("you"),
         "to",
         "do",
         "work",
@@ -289,7 +290,7 @@ export function app_contact_respond_choices() {
       match_sequence([
         "i",
         "ask",
-        "you",
+        match_optional(app_contact_phrase_you()),
         "teach",
         "me",
         "by",
