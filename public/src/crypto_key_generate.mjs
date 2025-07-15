@@ -20,8 +20,7 @@ export async function crypto_key_generate() {
     },
   });
   let result = object_snake_to(k);
-  let v = k;
-  return v;
+  return result;
   let public_key = object_property_get(result, "public_key");
   let private_key = object_property_get(result, "private_key");
   let message = "Hello, secure world!";
