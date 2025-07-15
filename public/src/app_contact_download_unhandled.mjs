@@ -7,6 +7,7 @@ export async function app_contact_download_unhandled() {
   let mapped = await app_contact_download_all();
   let filtered = list_filter(mapped, function (m) {
     let on = object_property_get(m, "output_null");
+    let message = object_property_get(m, "message");
     return on;
   });
   let v3 = filtered;
