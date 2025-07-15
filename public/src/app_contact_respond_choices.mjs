@@ -1,8 +1,8 @@
+import { list_denest } from "./list_denest.mjs";
 import { app_contact_respond_choices_request } from "./app_contact_respond_choices_request.mjs";
 import { app_contact_respond_choices_greetings } from "./app_contact_respond_choices_greetings.mjs";
 import { app_contact_respond_choices_skip } from "./app_contact_respond_choices_skip.mjs";
 import { app_contact_respond_choices_invalid } from "./app_contact_respond_choices_invalid.mjs";
-import { list_flatten } from "./list_flatten.mjs";
 import { match_sequence_optional } from "./match_sequence_optional.mjs";
 import { app_contact_match_prayer_god_give } from "./app_contact_match_prayer_god_give.mjs";
 import { app_contact_match_amen } from "./app_contact_match_amen.mjs";
@@ -91,6 +91,6 @@ export function app_contact_respond_choices() {
       ),
     ),
   ];
-  let v2 = list_flatten(v);
+  let v2 = list_denest(v);
   return v2;
 }
