@@ -5,8 +5,9 @@ import {
   publicEncrypt,
   privateDecrypt,
 } from "node:crypto";
+import { object_properties } from "./object_properties.mjs";
 export async function crypto_key_generate() {
-  let { publicKey, privateKey } = generateKeyPairSync("rsa", {
+  let k = generateKeyPairSync("rsa", {
     modulusLength: 2048,
     publicKeyEncoding: {
       type: "spki",
@@ -17,6 +18,7 @@ export async function crypto_key_generate() {
       format: "pem",
     },
   });
+  object_properties(k);
   let message = "Hello, secure world!";
   let encrypted = publicEncrypt(publicKey, buffer_to(message));
   log("🔐 Encrypted (base64):", encrypted.toString("base64"));
