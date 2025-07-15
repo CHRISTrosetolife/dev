@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { crypto_key_generate } from "./crypto_key_generate.mjs";
 import { log } from "./log.mjs";
 import { buffer_to } from "./buffer_to.mjs";
@@ -13,7 +14,12 @@ export async function crypto_key_test() {
   });
   let message = "Hello, secure world!";
   let encrypted = publicEncrypt(public_key, buffer_to(message));
-  log("🔐 Encrypted (base64):", encrypted.toString("base64"));
+  log(
+    string_combine_multiple([
+      "🔐 Encrypted (base64):",
+      encrypted.toString("base64"),
+    ]),
+  );
   let decrypted = privateDecrypt(private_key, encrypted);
-  log("🔓 Decrypted:", decrypted.toString());
+  log(string_combine_multiple(["🔓 Decrypted:", decrypted.toString()]));
 }
