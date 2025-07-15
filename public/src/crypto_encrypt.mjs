@@ -2,9 +2,9 @@ import { buffer_to } from "./buffer_to.mjs";
 import { log } from "./log.mjs";
 import { crypto_key_public_import } from "./crypto_key_public_import.mjs";
 import { web_is } from "./web_is.mjs";
-export async function crypto_encrypt(publicKeyPem, message) {
+export async function crypto_encrypt(public_key_pem, message) {
   if (web_is()) {
-    let key = await crypto_key_public_import(publicKeyPem);
+    let key = await crypto_key_public_import(public_key_pem);
     let enc = new TextEncoder().encode(message);
     let encrypted = await crypto.subtle.encrypt(
       {
