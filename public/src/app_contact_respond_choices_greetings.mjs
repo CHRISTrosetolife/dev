@@ -1,4 +1,4 @@
-import { app_contact_phrase_its } from "./app_contact_phrase_its.mjs";
+import { app_contact_phrase_it_is } from "./app_contact_phrase_it_is.mjs";
 import { app_contact_phrase_how_r_u } from "./app_contact_phrase_how_r_u.mjs";
 import { number_to_words } from "./number_to_words.mjs";
 import { range_from } from "./range_from.mjs";
@@ -88,10 +88,7 @@ export function app_contact_respond_choices_greetings() {
     ),
     match_on(
       match_sequence([
-        match_choice([
-          match_sequence([match_optional("it"), "is"]),
-          app_contact_phrase_its(),
-        ]),
+        app_contact_phrase_it_is(),
         "a",
         "good",
         "time",
