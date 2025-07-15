@@ -1,3 +1,4 @@
+import { app_contact_phrase_amen } from "./app_contact_phrase_amen.mjs";
 import { app_contact_match_prayer_god_give } from "./app_contact_match_prayer_god_give.mjs";
 import { app_contact_match_amen } from "./app_contact_match_amen.mjs";
 import { match_once_or_more } from "./match_once_or_more.mjs";
@@ -78,7 +79,7 @@ export function app_contact_respond_choices() {
       match_choice([
         match_sequence(["in", app_contact_phrase_jesus(), "name"]),
         match_sequence(["in", "the", "name", "of", app_contact_phrase_jesus()]),
-        match_choice(["ameen", "Amen"]),
+        app_contact_phrase_amen(),
         "and",
         "but",
       ]),
