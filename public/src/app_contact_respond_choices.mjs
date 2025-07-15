@@ -241,7 +241,7 @@ export function app_contact_respond_choices() {
         "the",
         match_sequence_optional(["grace", "of"]),
         "god",
-        "shared",
+        match_choice(["sharing", "shared"]),
         "the",
         "living",
         "world",
