@@ -217,7 +217,7 @@ export function app_contact_respond_choices() {
         "from",
         match_choice(countries_names()),
       ]),
-      app_contact_match("My name is brother Jared."),
+      app_contact_match("My name is servant Jared."),
     ),
     match_on(
       match_sequence([
