@@ -5,9 +5,6 @@ import { buffer_to } from "./buffer_to.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { publicEncrypt, privateDecrypt } from "node:crypto";
 export async function crypto_key_test() {
-  let result = await crypto_key();
-  let public_key = object_property_get(result, "public_key");
-  let private_key = object_property_get(result, "private_key");
   log({
     public_key,
     private_key,
@@ -20,6 +17,9 @@ export async function crypto_key_test() {
       encrypted.toString("base64"),
     ]),
   );
+  let key = await crypto_key();
+  let public_key = object_property_get(key, "public_key");
+  let private_key = object_property_get(key, "private_key");
   let decrypted = privateDecrypt(private_key, encrypted);
   log(string_combine_multiple(["🔓 Decrypted:", decrypted.toString()]));
 }
