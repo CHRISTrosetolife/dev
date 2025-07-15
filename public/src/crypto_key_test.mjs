@@ -10,9 +10,9 @@ export async function crypto_key_test() {
     private_key,
   });
   let message = "Hello, secure world!";
+  let public_key = object_property_get(key, "public_key");
   let encrypted = publicEncrypt(public_key, buffer_to(message));
   let key = await crypto_key();
-  let public_key = object_property_get(key, "public_key");
   let private_key = object_property_get(key, "private_key");
   crypto_decrypt(private_key, encrypted);
 }
