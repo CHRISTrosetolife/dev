@@ -1,4 +1,4 @@
-import { cryto_decrypt } from "./cryto_decrypt.mjs";
+import { crypto_decrypt } from "./crypto_decrypt.mjs";
 import { crypto_key } from "./crypto_key.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { log } from "./log.mjs";
@@ -21,5 +21,5 @@ export async function crypto_key_test() {
   let key = await crypto_key();
   let public_key = object_property_get(key, "public_key");
   let private_key = object_property_get(key, "private_key");
-  cryto_decrypt(private_key, encrypted);
+  crypto_decrypt(private_key, encrypted);
 }
