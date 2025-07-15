@@ -8,13 +8,17 @@ import { app_contact_download_responses_get } from "./app_contact_download_respo
 export async function app_contact_download_responses_test() {
   let lookup = app_contact_download_responses_lookup();
   let responses_new = await app_contact_download_responses_get();
-  each(responses_new, function (n) {
-    let message = object_property_get(n, "message");
-    if (object_property_exists(lookup, message)) {
-      let e = object_property_get(lookup, message);
-      assert(equal_json, [e, n]);
-    }
-  });
+  app_contact_download_responses_test_inner(responses_new, lookup);
   let v = responses_new;
   return v;
 }
+function app_contact_download_responses_test_inner(responses_new, lookup) {
+    each(responses_new, function (n) {
+        let message = object_property_get(n, "message");
+        if (object_property_exists(lookup, message)) {
+            let e = object_property_get(lookup, message);
+            assert(equal_json, [e, n]);
+        }
+    });
+}
+
