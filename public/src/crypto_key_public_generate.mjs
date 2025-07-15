@@ -6,5 +6,5 @@ export async function crypto_key_public_generate() {
   let k = await crypto_key();
   let public_key = object_property_get(k, "public_key");
   let name = generate_suffix_without(crypto_key_public_generate);
-  await function_new_constant_string(name);
+  await function_new_constant_string(name, public_key);
 }
