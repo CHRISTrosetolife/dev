@@ -217,9 +217,7 @@ export function app_contact_respond_choices() {
         "from",
         match_choice(countries_names()),
       ]),
-      app_contact_match(
-        "Thank God that you are a Christian! If we confess Jesus before men, then Jesus will confess us before the Father!",
-      ),
+      app_contact_match("My name is brother Jared."),
     ),
     match_on(
       match_sequence([
