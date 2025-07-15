@@ -87,7 +87,7 @@ export function app_contact_respond_choices_greetings() {
     ),
     match_on(
       match_sequence([
-        "its",
+        app_contact_phrase_its(),
         "a",
         "good",
         "time",

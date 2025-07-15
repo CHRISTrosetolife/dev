@@ -45,7 +45,7 @@ export function app_contact_respond_choices() {
         "want",
         "to",
         "send",
-        match_choice(["it's", "its"]),
+        app_contact_phrase_its(),
         "message",
       ]),
       app_contact_match("Feel free to send me a message here!"),
@@ -95,3 +95,7 @@ export function app_contact_respond_choices() {
   let v2 = list_denest(v);
   return v2;
 }
+function app_contact_phrase_its() {
+    return match_choice(["it's", "its"]);
+}
+
