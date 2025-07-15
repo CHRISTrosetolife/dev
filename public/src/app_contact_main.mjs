@@ -108,9 +108,9 @@ export async function app_contact_main() {
   }
   function on_response(value, repsonse) {
     let { output, valid } = repsonse;
-    html_p_text(response_p, "💻 Computer program answered this message:");
     let value_p = html_p_text(response_p, value);
     html_style_italic(value_p);
+    html_p_text(response_p, "💻 Computer program answered this message:");
     let r = html_p_text(response_p, output);
     if (false) {
       html_style_bold(r);
