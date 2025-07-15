@@ -3,7 +3,6 @@ import { crypto_key } from "./crypto_key.mjs";
 import { log } from "./log.mjs";
 import { buffer_to } from "./buffer_to.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { publicEncrypt } from "node:crypto";
 export async function crypto_key_test() {
   let key = await crypto_key();
   log({
