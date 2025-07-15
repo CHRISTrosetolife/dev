@@ -20,6 +20,10 @@ export async function crypto_key_test() {
   let key = await crypto_key();
   let public_key = object_property_get(key, "public_key");
   let private_key = object_property_get(key, "private_key");
-  let decrypted = privateDecrypt(private_key, encrypted);
-  log(string_combine_multiple(["🔓 Decrypted:", decrypted.toString()]));
+  cryto_decrypt(private_key, encrypted);
 }
+function cryto_decrypt(private_key, encrypted) {
+    let decrypted = privateDecrypt(private_key, encrypted);
+    log(string_combine_multiple(["🔓 Decrypted:", decrypted.toString()]));
+}
+
