@@ -18,7 +18,7 @@ export async function crypto_encrypt(public_key_pem, message) {
     );
     return encryptedBase64;
   }
-  let { publicEncrypt } = await import("node:crypto");
+  let { publicEncrypt, constants } = await import("node:crypto");
   let encrypted = publicEncrypt(
     {
       key: public_key_pem,
