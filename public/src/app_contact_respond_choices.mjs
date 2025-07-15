@@ -239,6 +239,7 @@ export function app_contact_respond_choices() {
         "me",
         "by",
         "the",
+        match_sequence_optional(["grace", "of"]),
         "god",
         "shared",
         "the",
