@@ -97,6 +97,7 @@ export async function app_contact_main() {
   });
   response_p = html_p(root);
   let verse_p = html_p(root);
+  html_style_bold(verse_p);
   let { response, value } = await app_contact_respond_component(
     t,
     response_p,
@@ -117,9 +118,7 @@ export async function app_contact_main() {
     );
     html_style_font_size_default_multiplied(c, 0.9);
     let r = html_p_text(response_p, output);
-    if (false) {
-      html_style_bold(r);
-    }
+    html_style_bold(r);
     let change = object_property_get(t, "change");
     if (valid) {
       change("");
