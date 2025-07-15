@@ -31,9 +31,8 @@ export async function functions_string_prefix_to_constant(
   }
   let fp = function_name_to_path(constant_name);
   if (!(await file_exists(fp))) {
-    let code = js_code_statement_return(
-      string_delimit(string_slashes_escape(prefix)),
-    );
+    let return_value = string_delimit(string_slashes_escape(prefix));
+    let code = js_code_statement_return(return_value);
     await function_new_generic_code(
       constant_name,
       "",
@@ -45,15 +44,15 @@ export async function functions_string_prefix_to_constant(
     );
   }
   let functions = await data_functions();
-  each_object(functions, async (function_name, details) => {
+  each_object(functions, async function (function_name, details) {
     let { literals } = details;
-    each(literals, async (literal) => {
+    each(literals, async function (literal) {
       if (string_is_starts_with(literal, prefix)) {
         await function_transform_args_split_lambda(
           function_name,
           [
-            async (ast) => {
-              js_visit_node(ast, "Literal", (v) => {
+            async function (ast) {
+              js_visit_node(ast, "Literal", function (v) {
                 let { node } = v;
                 let { value } = node;
                 if (string_is_starts_with(value, prefix)) {
