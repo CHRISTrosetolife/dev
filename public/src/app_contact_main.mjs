@@ -1,6 +1,3 @@
-import { crypto_encrypt } from "./crypto_encrypt.mjs";
-import { crypto_key_public } from "./crypto_key_public.mjs";
-import { html_value_get } from "./html_value_get.mjs";
 import { html_style_font_size_default_multiplied } from "./html_style_font_size_default_multiplied.mjs";
 import { app_contact_dictionary } from "./app_contact_dictionary.mjs";
 import { log } from "./log.mjs";
@@ -64,11 +61,6 @@ export async function app_contact_main() {
   html_rows_set(t, 8);
   let response_p;
   html_button(root, "Send message to me", async function () {
-    let value = html_value_get(t);
-    let e = await crypto_encrypt(crypto_key_public(), value);
-    log({
-      e,
-    });
     try {
       let { response, value } = app_contact_respond_component(t, response_p, d);
       let { output } = response;
