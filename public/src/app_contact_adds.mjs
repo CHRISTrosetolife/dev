@@ -16,7 +16,8 @@ export async function app_contact_adds() {
     bible_books_names,
   );
   let c = countries_names();
-  let na = names_first();
+  let nf = names_first();
+  let nl = names_list();
   let v = [
     bible_reference_separator(),
     "god",
@@ -33,7 +34,7 @@ export async function app_contact_adds() {
     bible_books_names,
     app_contact_phrase_list_greetings(),
     c,
-    na,
+    nf,
     digits_10(),
   ]);
   return v2;
