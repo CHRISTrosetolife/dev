@@ -89,6 +89,28 @@ export function app_contact_respond_choices_greetings() {
       ]),
       app_contact_match("Thank God for your marriage and children!"),
     ),
+    match_on(
+      match_sequence([
+        "its",
+        "a",
+        "good",
+        "time",
+        "to",
+        "say",
+        "how",
+        "are",
+        "you",
+        "doing",
+        "because",
+        "is",
+        "a",
+        "long",
+        "time",
+        "missing",
+        "you",
+      ]),
+      app_contact_match("Thank God for your marriage and children!"),
+    ),
   ];
   return v;
 }
