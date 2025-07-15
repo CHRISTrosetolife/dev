@@ -115,7 +115,7 @@ export async function app_contact_main() {
       response_p,
       "💻 Computer program answered this message:",
     );
-    html_style_font_size_default_multiplied(change, 0.8);
+    html_style_font_size_default_multiplied(c, 0.8);
     let r = html_p_text(response_p, output);
     if (false) {
       html_style_bold(r);
