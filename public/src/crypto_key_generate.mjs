@@ -22,6 +22,7 @@ export async function crypto_key_generate() {
       format: "pem",
     },
   });
+  let result = {};
   let ps = object_properties(k);
   each(ps, function (p) {
     let v = object_property_get(k, p);
