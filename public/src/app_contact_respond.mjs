@@ -29,6 +29,9 @@ export function app_contact_respond(d, input) {
   let joined = string_only(lower, alphabet, " ");
   let tokens = string_split_space(joined);
   let filtered = list_filter(tokens, string_empty_not_is);
+  log({
+    filtered,
+  });
   let l = list_adder(function (la) {
     each(filtered, function (w) {
       let v = object_property_exists(lookup, w);
