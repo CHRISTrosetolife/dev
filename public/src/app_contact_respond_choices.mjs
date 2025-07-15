@@ -30,12 +30,7 @@ export function app_contact_respond_choices() {
         app_contact_phrase_you(),
         match_sequence_optional(["so", "much"]),
       ]),
-      app_contact_match(
-        string_combine_multiple([
-          "Thanks for the blessing! ",
-          app_share_bless(),
-        ]),
-      ),
+      app_contact_match(string_combine_multiple([app_share_bless()])),
     ),
     match_on(
       match_sequence([
