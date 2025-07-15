@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { buffer_to } from "./buffer_to.mjs";
 import { log } from "./log.mjs";
 import { crypto_key_public_import } from "./crypto_key_public_import.mjs";
@@ -16,7 +17,7 @@ export async function crypto_encrypt(public_key_pem, message) {
     let encryptedBase64 = btoa(
       String.fromCharCode(...new Uint8Array(encrypted)),
     );
-    console.log("🔐 Encrypted (base64):", encryptedBase64);
+    log(string_combine_multiple(["🔐 Encrypted (base64):", encryptedBase64]));
     return encryptedBase64;
   }
   let { publicEncrypt } = await import("node:crypto");
