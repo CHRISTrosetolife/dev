@@ -64,12 +64,8 @@ export async function app_contact_main() {
   html_rows_set(t, 8);
   let response_p;
   html_button(root, "Send message to me", async function () {
-    async function encryptMessage(publicKeyPem, plaintext) {
-      let v = await crypto_encrypt(publicKeyPem, plaintext);
-      return v;
-    }
     let value = html_value_get(t);
-    let e = encryptMessage(crypto_key_public(), value);
+    let e = await crypto_encrypt(crypto_key_public(), value);
     log({
       e,
     });
