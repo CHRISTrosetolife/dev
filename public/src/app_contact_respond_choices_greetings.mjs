@@ -1,3 +1,4 @@
+import { app_contact_phrase_how_r_u } from "./app_contact_phrase_how_r_u.mjs";
 import { number_to_words } from "./number_to_words.mjs";
 import { range_from } from "./range_from.mjs";
 import { list_map } from "./list_map.mjs";
@@ -7,7 +8,6 @@ import { names_first } from "./names_first.mjs";
 import { app_share_thanks } from "./app_share_thanks.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_share_how_r_u } from "./app_share_how_r_u.mjs";
-import { match_sequence_optional } from "./match_sequence_optional.mjs";
 import { app_contact_phrase_you } from "./app_contact_phrase_you.mjs";
 import { app_share_praise } from "./app_share_praise.mjs";
 import { app_contact_phrase_god } from "./app_contact_phrase_god.mjs";
@@ -36,11 +36,7 @@ export function app_contact_respond_choices_greetings() {
       app_contact_match(app_share_praise()),
     ),
     match_on(
-      match_sequence([
-        match_choice(["How're", match_sequence(["how", "are"])]),
-        app_contact_phrase_you(),
-        match_sequence_optional(["doing", match_optional("today")]),
-      ]),
+      app_contact_phrase_how_r_u(),
       app_contact_match(app_share_how_r_u()),
     ),
     match_on(
