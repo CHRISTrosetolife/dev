@@ -88,7 +88,10 @@ export function app_contact_respond_choices_greetings() {
     ),
     match_on(
       match_sequence([
-        match_choice([match_sequence(["it", "is"]), app_contact_phrase_its()]),
+        match_choice([
+          match_sequence([match_optional("it"), "is"]),
+          app_contact_phrase_its(),
+        ]),
         "a",
         "good",
         "time",
