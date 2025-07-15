@@ -128,7 +128,7 @@ export function app_contact_respond_choices() {
     match_on(
       match_sequence([
         app_contact_phrase_god(),
-        "will",
+        match_optional("will"),
         "bless",
         app_contact_phrase_you(),
         "so",
