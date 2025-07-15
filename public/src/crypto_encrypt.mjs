@@ -22,12 +22,6 @@ export async function crypto_encrypt(public_key_pem, message) {
   }
   let { publicEncrypt } = await import("node:crypto");
   let encrypted = publicEncrypt(public_key_pem, buffer_to(message));
-  log(
-    string_combine_multiple([
-      "🔐 Encrypted (base64):",
-      encrypted.toString("base64"),
-    ]),
-  );
   let v = encrypted.toString("base64");
   return v;
 }
