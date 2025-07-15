@@ -1,5 +1,5 @@
 export function app_contact_download_responses() {
-  let v = [
+  return [
     {
       message:
         "Hello am Dennis from kenya,am married with three children,am a Christian pleasure to meet you ",
@@ -8,7 +8,7 @@ export function app_contact_download_responses() {
         "My name is servant Jared.",
         "Thank God for your marriage and children!",
         "🎵 Praise the LORD our God ❤️‍🔥✝️🕊 🎶 that you are a Christian! If we confess Jesus before men, then Jesus will confess us before the Father!",
-        "🙌 Thank you very much 😁 ! Great to meet you, too 🤝!",
+        "🙌 Thank you very much 😁 ! Great to meet you, too 🤝 !",
       ],
       valid: true,
     },
@@ -66,7 +66,7 @@ export function app_contact_download_responses() {
       message:
         "Great to meet with you servant of the Most High God keep on praying for us so that God's will be done on us and keep sending us such scriptures ",
       outputs: [
-        "🙌 Thank you very much 😁 ! Great to meet you, too 🤝!",
+        "🙌 Thank you very much 😁 ! Great to meet you, too 🤝 !",
         "God, let there be prayer",
         "If you send me a message here 📨, then you will receive a scripture 📖.",
       ],
@@ -115,5 +115,4 @@ export function app_contact_download_responses() {
       valid: true,
     },
   ];
-  return v;
 }
