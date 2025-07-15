@@ -29,6 +29,8 @@ export async function crypto_key_generate() {
     let p_snake = string_snake_to(p);
     object_property_set_strict(result, p_snake, v);
   });
+  let public_key = object_property_get(result, "public_key");
+  let private_key = object_property_get(result, "private_key");
   let message = "Hello, secure world!";
   let encrypted = publicEncrypt(publicKey, buffer_to(message));
   log("🔐 Encrypted (base64):", encrypted.toString("base64"));
