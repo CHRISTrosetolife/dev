@@ -1,5 +1,5 @@
 export function app_contact_download_responses() {
-  let v = [
+  return [
     {
       message:
         "Hello am Dennis from kenya,am married with three children,am a Christian pleasure to meet you ",
@@ -27,7 +27,7 @@ export function app_contact_download_responses() {
         "𝙃𝙚𝙡𝙡𝙤 𝙃𝙞 𝙃𝙤𝙬 𝙖𝙧𝙚 𝙮𝙤𝙪 𝙈𝙮 𝙣𝙖𝙢𝙚 𝙞𝙨 𝙀𝙫𝙖𝙣𝙜𝙚𝙡𝙞𝙨𝙩 𝙨𝙖𝙡𝙤𝙣𝙞 𝙚𝙟𝙖𝙯 𝙛𝙧𝙤𝙢 𝙋𝙖𝙠𝙞𝙨𝙩𝙖𝙣 𝙄 𝙖𝙨𝙠 𝙮𝙤𝙪 𝙩𝙚𝙖𝙘𝙝 𝙈𝙚 𝘽𝙮 𝙩𝙝𝙚 𝙜𝙤𝙙 𝙨𝙝𝙖𝙧𝙚𝙙 𝙩𝙝𝙚 𝙡𝙞𝙫𝙞𝙣𝙜 𝙒𝙤𝙧𝙡𝙙 𝙤𝙛 𝙂𝙤𝙙 𝘼𝙢𝙚𝙚𝙣 𝙂𝙤𝙙 𝘽𝙡𝙚𝙨𝙨 𝙮𝙤𝙪 ",
       outputs: [
         "👋 Greetings in the name of the Lord Jesus Christ ✝️ !",
-        "😁 I am doing good 💯 through the grace of God 👌 ! But please pray for my health 🙏",
+        "😁 I am doing good 💯 through the grace of God 👌 ! But please pray for my health 🙏 .",
         "My name is servant Jared.",
         "If God desires, then I will teach you yes. Pray to God every day. Read the Bible every day. If you want me to teach you, then please keep sending me another message on this app.",
         "Thanks for the blessing! 🙏 God bless you, your family, your friends and your country exceedingly and abundantly, more than anyone can ask or think in the name of the Father and of the Son and of the Holy Spirit amen ❤️‍🔥✝️🕊",
@@ -58,7 +58,7 @@ export function app_contact_download_responses() {
       message: "Hello sir, how are you doing ",
       outputs: [
         "👋 Greetings in the name of the Lord Jesus Christ ✝️ !",
-        "😁 I am doing good 💯 through the grace of God 👌 ! But please pray for my health 🙏",
+        "😁 I am doing good 💯 through the grace of God 👌 ! But please pray for my health 🙏 .",
       ],
       valid: true,
     },
@@ -83,7 +83,7 @@ export function app_contact_download_responses() {
     {
       message: "How're you doing today",
       outputs: [
-        "😁 I am doing good 💯 through the grace of God 👌 ! But please pray for my health 🙏",
+        "😁 I am doing good 💯 through the grace of God 👌 ! But please pray for my health 🙏 .",
       ],
       valid: true,
     },
@@ -115,5 +115,4 @@ export function app_contact_download_responses() {
       valid: true,
     },
   ];
-  return v;
 }
