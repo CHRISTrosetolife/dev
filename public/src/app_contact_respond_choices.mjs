@@ -110,7 +110,7 @@ export function app_contact_respond_choices() {
         "from",
         app_contact_phrase_you(),
       ]),
-      app_contact_match_invalid_edit("asked for help", "kind of help you need"),
+      app_cosntact_match_invalid_edit_help(),
     ),
     match_on(
       match_sequence(["we", "will", "try"]),
