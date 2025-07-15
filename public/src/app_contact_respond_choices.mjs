@@ -252,7 +252,7 @@ export function app_contact_respond_choices() {
         "god",
       ]),
       app_contact_match(
-        "If God desires, then I will teach you yes. Pray to God every day. Read the Bible every day. If you want me to teach you, then please send me a message on this app.",
+        "If God desires, then I will teach you yes. Pray to God every day. Read the Bible every day. If you want me to teach you, then please keep sending me another message on this app.",
       ),
     ),
   ];
