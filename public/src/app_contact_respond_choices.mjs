@@ -1,3 +1,4 @@
+import { app_contact_match_amen } from "./app_contact_match_amen.mjs";
 import { match_once_or_more } from "./match_once_or_more.mjs";
 import { number_to_words } from "./number_to_words.mjs";
 import { list_map } from "./list_map.mjs";
@@ -10,7 +11,6 @@ import { app_contact_match_invalid_edit } from "./app_contact_match_invalid_edit
 import { match_digits_1_to_999 } from "./match_digits_1_to_999.mjs";
 import { bible_reference_separator } from "./bible_reference_separator.mjs";
 import { app_contact_prayer_god_give } from "./app_contact_prayer_god_give.mjs";
-import { app_contact_phrase_amen } from "./app_contact_phrase_amen.mjs";
 import { app_contact_phrase_god_willing } from "./app_contact_phrase_god_willing.mjs";
 import { app_contact_phrase_god } from "./app_contact_phrase_god.mjs";
 import { app_share_bless } from "./app_share_bless.mjs";
@@ -116,7 +116,7 @@ export function app_contact_respond_choices() {
         "on",
         "us",
       ]),
-      app_contact_match("God, let there be prayer", app_contact_phrase_amen()),
+      app_contact_match("God, let there be prayer", app_contact_match_amen()),
     ),
     match_on(
       match_sequence(["keep", "sending", "us", "such", "scriptures"]),
@@ -164,7 +164,7 @@ export function app_contact_respond_choices() {
       app_contact_match(
         string_combine_multiple([
           "God, thanks for Bible",
-          app_contact_phrase_amen(),
+          app_contact_match_amen(),
         ]),
       ),
     ),
