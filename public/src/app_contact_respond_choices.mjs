@@ -125,6 +125,28 @@ export function app_contact_respond_choices() {
     ),
     match_on(
       match_sequence([
+        "i",
+        "ask",
+        app_contact_phrase_you_optional(),
+        "teach",
+        "me",
+        "by",
+        "the",
+        match_sequence_optional(["grace", "of"]),
+        "god",
+        match_choice(["sharing", "shared"]),
+        "the",
+        "living",
+        match_choice(["word", "world"]),
+        "of",
+        "god",
+      ]),
+      app_contact_match(
+        "If God desires, then I will teach you yes. Pray to God every day. Read the Bible every day. If you want me to teach you, then please keep sending me another message on this app.",
+      ),
+    ),
+    match_on(
+      match_sequence([
         app_contact_phrase_god(),
         match_optional("will"),
         "bless",
@@ -190,28 +212,6 @@ export function app_contact_respond_choices() {
       ]),
       app_contact_match(
         "If God wills, I will contact you through this app, yes.",
-      ),
-    ),
-    match_on(
-      match_sequence([
-        "i",
-        "ask",
-        app_contact_phrase_you_optional(),
-        "teach",
-        "me",
-        "by",
-        "the",
-        match_sequence_optional(["grace", "of"]),
-        "god",
-        match_choice(["sharing", "shared"]),
-        "the",
-        "living",
-        match_choice(["word", "world"]),
-        "of",
-        "god",
-      ]),
-      app_contact_match(
-        "If God desires, then I will teach you yes. Pray to God every day. Read the Bible every day. If you want me to teach you, then please keep sending me another message on this app.",
       ),
     ),
   ];
