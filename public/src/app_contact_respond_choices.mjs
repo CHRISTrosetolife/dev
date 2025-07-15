@@ -67,7 +67,10 @@ export function app_contact_respond_choices() {
         "my",
         "children",
       ]),
-      app_contact_match_invalid_edit("asked for help", "kind of help you need"),
+      app_contact_match_invalid_edit(
+        "asked for support",
+        "kind of support you need",
+      ),
     ),
     match_on(
       match_sequence([
