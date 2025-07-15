@@ -31,6 +31,9 @@ export async function crypto_key_generate() {
   });
   let public_key = object_property_get(result, "public_key");
   let private_key = object_property_get(result, "private_key");
+  log({
+    result,
+  });
   let message = "Hello, secure world!";
   let encrypted = publicEncrypt(public_key, buffer_to(message));
   log("🔐 Encrypted (base64):", encrypted.toString("base64"));
