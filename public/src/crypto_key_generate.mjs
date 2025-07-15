@@ -1,3 +1,4 @@
+import { buffer_to } from "./buffer_to.mjs";
 import { log } from "./log.mjs";
 import {
   generateKeyPairSync,
@@ -17,7 +18,7 @@ export async function crypto_key_generate() {
     },
   });
   let message = "Hello, secure world!";
-  let encrypted = publicEncrypt(publicKey, Buffer.from(message));
+  let encrypted = publicEncrypt(publicKey, buffer_to(message));
   console.log("🔐 Encrypted (base64):", encrypted.toString("base64"));
   let decrypted = privateDecrypt(privateKey, encrypted);
   console.log("🔓 Decrypted:", decrypted.toString());
