@@ -13,7 +13,7 @@ export async function crypto_encrypt(public_key_pem, message) {
       key,
       enc,
     );
-    let encryptedBase64 = string_base64_to(
+    let encryptedBase64 = btoa(
       String.fromCharCode(...new Uint8Array(encrypted)),
     );
     return encryptedBase64;
