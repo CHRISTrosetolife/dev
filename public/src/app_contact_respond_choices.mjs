@@ -1,3 +1,4 @@
+import { app_cosntact_match_invalid_edit_help } from "./app_cosntact_match_invalid_edit_help.mjs";
 import { names_last } from "./names_last.mjs";
 import { match_sequence_optional } from "./match_sequence_optional.mjs";
 import { app_contact_phrase_amen } from "./app_contact_phrase_amen.mjs";
@@ -99,7 +100,7 @@ export function app_contact_respond_choices() {
         "need",
         "bible",
       ]),
-      app_cosntact_match_invalid_edit_help(),
+      app_contact_match_invalid_edit("asked for help", "kind of help you need"),
     ),
     match_on(
       match_sequence([
