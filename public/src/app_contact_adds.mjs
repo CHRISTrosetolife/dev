@@ -1,3 +1,4 @@
+import { list_last } from "./list_last.mjs";
 import { log } from "./log.mjs";
 import { names_first } from "./names_first.mjs";
 import { countries_names } from "./countries_names.mjs";
@@ -18,7 +19,7 @@ export async function app_contact_adds() {
   );
   let c = countries_names();
   let na = names_first();
-  log("");
+  log(list_last(na));
   let v = [
     bible_reference_separator(),
     "god",
