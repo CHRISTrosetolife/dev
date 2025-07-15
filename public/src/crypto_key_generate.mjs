@@ -1,7 +1,5 @@
 import { object_snake_to } from "./object_snake_to.mjs";
-import {
-  generateKeyPairSync,
-} from "node:crypto";
+import { generateKeyPairSync } from "node:crypto";
 export async function crypto_key_generate() {
   let k = generateKeyPairSync("rsa", {
     modulusLength: 2048,
