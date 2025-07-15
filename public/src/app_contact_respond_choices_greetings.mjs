@@ -100,7 +100,7 @@ export function app_contact_respond_choices_greetings() {
         "long",
         "time",
         "missing",
-        "you",
+        app_contact_phrase_you(),
       ]),
       app_contact_match("Thank God for your marriage and children!"),
     ),
