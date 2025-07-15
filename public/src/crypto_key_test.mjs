@@ -8,8 +8,8 @@ export async function crypto_key_test() {
   let message = "hi";
   let public_key = object_property_get(key, "public_key");
   let encrypted = await crypto_encrypt(public_key, message);
+  let decrypted = await crypto_key_decrypt(encrypted);
   log({
-    encrypted,
+    decrypted,
   });
-  await crypto_key_decrypt(encrypted);
 }
