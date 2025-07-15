@@ -1,3 +1,5 @@
+import { object_property_set_strict } from "./object_property_set_strict.mjs";
+import { object_property_get } from "./object_property_get.mjs";
 import { string_snake_to } from "./string_snake_to.mjs";
 import { each } from "./each.mjs";
 import { buffer_to } from "./buffer_to.mjs";
@@ -22,7 +24,9 @@ export async function crypto_key_generate() {
   });
   let ps = object_properties(k);
   each(ps, function (p) {
-    let p_snake = string_snake_to();
+    let p_snake = string_snake_to(p);
+    object_property_get(object, "property_name");
+    object_property_set_strict(result, p_snake, v);
   });
   let message = "Hello, secure world!";
   let encrypted = publicEncrypt(publicKey, buffer_to(message));
