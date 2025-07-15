@@ -1,10 +1,10 @@
-import { crypto_key } from "./crypto_key.mjs";
+import { crypto_key_generate } from "./crypto_key_generate.mjs";
 import { log } from "./log.mjs";
 import { buffer_to } from "./buffer_to.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { publicEncrypt, privateDecrypt } from "node:crypto";
 export async function crypto_key_test() {
-  let result = await crypto_key();
+  let result = await crypto_key_generate();
   let public_key = object_property_get(result, "public_key");
   let private_key = object_property_get(result, "private_key");
   let message = "Hello, secure world!";
