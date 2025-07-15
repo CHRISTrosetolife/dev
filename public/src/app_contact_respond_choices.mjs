@@ -1,3 +1,4 @@
+import { names_last } from "./names_last.mjs";
 import { match_sequence_optional } from "./match_sequence_optional.mjs";
 import { app_contact_phrase_amen } from "./app_contact_phrase_amen.mjs";
 import { app_contact_match_prayer_god_give } from "./app_contact_match_prayer_god_give.mjs";
@@ -216,7 +217,7 @@ export function app_contact_respond_choices() {
         match_choice([match_sequence(["my", "name", "is"]), "am"]),
         match_optional("evangelist"),
         match_choice(names_first()),
-        match_optional(match_choice(names_first())),
+        match_optional(match_choice(names_last())),
         "from",
         match_choice(countries_names()),
       ]),
