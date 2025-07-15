@@ -4,7 +4,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { log } from "./log.mjs";
 import { buffer_to } from "./buffer_to.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { publicEncrypt, privateDecrypt } from "node:crypto";
+import { publicEncrypt } from "node:crypto";
 export async function crypto_key_test() {
   log({
     public_key,
