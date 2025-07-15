@@ -10,6 +10,7 @@ export async function crypto_key_test() {
   let encrypted = await crypto_encrypt(public_key, message);
   let decrypted = await crypto_key_decrypt(encrypted);
   log({
+    encrypted,
     decrypted,
   });
 }
