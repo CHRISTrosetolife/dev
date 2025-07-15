@@ -52,7 +52,7 @@ export function app_contact_respond_choices_greetings() {
       app_contact_match(
         string_combine_multiple([
           app_share_thanks(),
-          " Great to meet you, too 🤝!",
+          " Great to meet you, too 🤝 !",
         ]),
       ),
     ),
