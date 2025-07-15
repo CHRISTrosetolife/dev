@@ -1,6 +1,6 @@
+import { app_contact_respond_choices_invalid } from "./app_contact_respond_choices_invalid.mjs";
 import { list_flatten } from "./list_flatten.mjs";
 import { app_contact_phrase_you_optional } from "./app_contact_phrase_you_optional.mjs";
-import { app_contact_match_invalid_edit_help } from "./app_contact_match_invalid_edit_help.mjs";
 import { names_last } from "./names_last.mjs";
 import { match_sequence_optional } from "./match_sequence_optional.mjs";
 import { app_contact_phrase_amen } from "./app_contact_phrase_amen.mjs";
@@ -14,7 +14,6 @@ import { names_first } from "./names_first.mjs";
 import { app_contact_phrase_list_greetings } from "./app_contact_phrase_list_greetings.mjs";
 import { app_contact_adds } from "./app_contact_adds.mjs";
 import { global_function_property } from "./global_function_property.mjs";
-import { app_contact_match_invalid_edit } from "./app_contact_match_invalid_edit.mjs";
 import { match_digits_1_to_999 } from "./match_digits_1_to_999.mjs";
 import { bible_reference_separator } from "./bible_reference_separator.mjs";
 import { app_contact_phrase_god_willing } from "./app_contact_phrase_god_willing.mjs";
@@ -246,80 +245,3 @@ export function app_contact_respond_choices() {
   let v2 = list_flatten(v);
   return v2;
 }
-function app_contact_respond_choices_invalid() {
-    return [
-        match_on(
-            match_sequence([
-                "i",
-                "want",
-                "your",
-                "guidance",
-                "and",
-                "support",
-                "for",
-                "my",
-                "children",
-            ]),
-            app_contact_match_invalid_edit(
-                "asked for support",
-                "kind of support you need"
-            )
-        ),
-        match_on(
-            match_sequence([
-                "i",
-                "want",
-                app_contact_phrase_you_optional(),
-                "to",
-                "do",
-                "work",
-                "with",
-                "me",
-                "helping",
-                "me",
-                "to",
-                "spread",
-                "the",
-                "the",
-                "word",
-                "of",
-                "god",
-                "in",
-                "such",
-                "places",
-                "where",
-                "people",
-                "really",
-                "need",
-                "bible",
-            ]),
-            app_contact_match_invalid_edit_help()
-        ),
-        match_on(
-            match_sequence([
-                "I",
-                "really",
-                "need",
-                "help",
-                "from",
-                app_contact_phrase_you(),
-            ]),
-            app_contact_match_invalid_edit_help()
-        ),
-        match_on(
-            match_sequence(["we", "will", "try"]),
-            app_contact_match_invalid_edit(
-                "said you would try",
-                "what you will try"
-            )
-        ),
-        match_on(
-            match_sequence(["we", "are", "interested", "brother"]),
-            app_contact_match_invalid_edit(
-                "said you are interested",
-                "what you are interested in"
-            )
-        ),
-    ];
-}
-
