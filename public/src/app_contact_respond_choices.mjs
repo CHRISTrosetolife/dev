@@ -64,6 +64,19 @@ export function app_contact_respond_choices() {
         "from",
         app_contact_phrase_you(),
       ]),
+      app_contact_match_invalid_edit(
+        "I want your guidance and support for my children",
+      ),
+    ),
+    match_on(
+      match_sequence([
+        "I",
+        "really",
+        "need",
+        "help",
+        "from",
+        app_contact_phrase_you(),
+      ]),
       app_contact_match_invalid_edit("asked for help", "kind of help you need"),
     ),
     match_on(
