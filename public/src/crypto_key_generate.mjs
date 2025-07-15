@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { buffer_to } from "./buffer_to.mjs";
 import { log } from "./log.mjs";
 import {
@@ -19,6 +20,7 @@ export async function crypto_key_generate() {
     },
   });
   object_properties(k);
+  each(list, function (item) {});
   let message = "Hello, secure world!";
   let encrypted = publicEncrypt(publicKey, buffer_to(message));
   log("🔐 Encrypted (base64):", encrypted.toString("base64"));
