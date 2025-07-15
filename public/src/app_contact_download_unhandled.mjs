@@ -1,3 +1,4 @@
+import { object_property_exists } from "./object_property_exists.mjs";
 import { app_contact_download_responses_lookup } from "./app_contact_download_responses_lookup.mjs";
 import { app_contact_download_all } from "./app_contact_download_all.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -8,6 +9,7 @@ export async function app_contact_download_unhandled() {
   let filtered = list_filter(mapped, function (m) {
     let on = object_property_get(m, "output_null");
     let message = object_property_get(m, "message");
+    object_property_exists(object, "property_name");
     return on;
   });
   let v3 = filtered;
