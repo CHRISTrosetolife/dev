@@ -48,8 +48,7 @@ export function app_contact_respond_choices() {
       match_sequence([
         match_choice(["How're", match_sequence(["how", "are"])]),
         app_contact_phrase_you(),
-        "doing",
-        match_optional("today"),
+        ["doing", match_optional("today")],
       ]),
       app_contact_match(app_share_how_r_u()),
     ),
