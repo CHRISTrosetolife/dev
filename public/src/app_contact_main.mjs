@@ -1,3 +1,4 @@
+import { html_style_font_size_default_multiplied } from "./html_style_font_size_default_multiplied.mjs";
 import { app_contact_dictionary } from "./app_contact_dictionary.mjs";
 import { log } from "./log.mjs";
 import { app_contact_respond_component } from "./app_contact_respond_component.mjs";
@@ -110,7 +111,11 @@ export async function app_contact_main() {
     let { output, valid } = repsonse;
     let value_p = html_p_text(response_p, value);
     html_style_italic(value_p);
-    html_p_text(response_p, "💻 Computer program answered this message:");
+    let c = html_p_text(
+      response_p,
+      "💻 Computer program answered this message:",
+    );
+    html_style_font_size_default_multiplied(change, 0.8);
     let r = html_p_text(response_p, output);
     if (false) {
       html_style_bold(r);
