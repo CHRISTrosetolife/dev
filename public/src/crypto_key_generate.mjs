@@ -1,7 +1,5 @@
-import { object_property_set_strict } from "./object_property_set_strict.mjs";
+import { object_snake_to } from "./object_snake_to.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { string_snake_to } from "./string_snake_to.mjs";
-import { each } from "./each.mjs";
 import { buffer_to } from "./buffer_to.mjs";
 import { log } from "./log.mjs";
 import {
@@ -9,7 +7,6 @@ import {
   publicEncrypt,
   privateDecrypt,
 } from "node:crypto";
-import { object_properties } from "./object_properties.mjs";
 export async function crypto_key_generate() {
   let k = generateKeyPairSync("rsa", {
     modulusLength: 2048,
@@ -22,13 +19,7 @@ export async function crypto_key_generate() {
       format: "pem",
     },
   });
-  let result = {};
-  let ps = object_properties(k);
-  each(ps, function (p) {
-    let v = object_property_get(k, p);
-    let p_snake = string_snake_to(p);
-    object_property_set_strict(result, p_snake, v);
-  });
+  let result = object_snake_to(k);
   let public_key = object_property_get(result, "public_key");
   let private_key = object_property_get(result, "private_key");
   log({
