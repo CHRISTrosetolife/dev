@@ -30,6 +30,7 @@ export async function app_contact_adds() {
     "how're",
     "ameen",
     "shared",
+    "helping",
   ];
   let v2 = list_concat_multiple([
     v,
