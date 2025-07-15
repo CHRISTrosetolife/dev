@@ -6,6 +6,7 @@ export function crypto_decrypt(private_key, encrypted) {
   let decoded = string_base64_from(encrypted);
   log({
     decoded,
+    encrypted,
   });
   let decrypted = privateDecrypt(private_key, decoded);
   log(string_combine_multiple(["🔓 Decrypted:", decrypted.toString()]));
