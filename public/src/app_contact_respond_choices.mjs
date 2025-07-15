@@ -15,6 +15,7 @@ import { match_optional } from "./match_optional.mjs";
 import { match_sequence } from "./match_sequence.mjs";
 import { app_contact_match } from "./app_contact_match.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { match_choice } from "./match_choice.mjs";
 export function app_contact_respond_choices() {
   let v = [
     app_contact_respond_choices_greetings(),
@@ -44,7 +45,7 @@ export function app_contact_respond_choices() {
         "want",
         "to",
         "send",
-        "it's",
+        match_choice(["it's", "its"]),
         "message",
       ]),
       app_contact_match("Feel free to send me a message here!"),
