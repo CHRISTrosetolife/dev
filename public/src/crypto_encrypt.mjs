@@ -14,14 +14,15 @@ export async function crypto_encrypt(public_key_pem, message) {
       key,
       enc,
     );
-    let encryptedBase64 = btoa(
+    let encrypted = btoa(
       String.fromCharCode(...new Uint8Array(encrypted)),
     );
-    log(string_combine_multiple(["🔐 Encrypted (base64):", encryptedBase64]));
-    return encryptedBase64;
+    log(string_combine_multiple(["🔐 Encrypted (base64):", encrypted]));
+    return encrypted;
   }
   let { publicEncrypt } = await import("node:crypto");
-  let encrypted = publicEncrypt(public_key_pem, buffer_to(message));  log(
+  let encrypted = publicEncrypt(public_key_pem, buffer_to(message));
+  log(
     string_combine_multiple([
       "🔐 Encrypted (base64):",
       encrypted.toString("base64"),
