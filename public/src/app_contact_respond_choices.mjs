@@ -78,6 +78,25 @@ export function app_contact_respond_choices() {
       ]),
       app_contact_match("My name is servant Jared."),
     ),
+    match_on(
+      match_sequence(["am", "a", "christian"]),
+      app_contact_match(
+        string_combine_multiple([
+          app_share_praise(),
+          " that you are a Christian! If we confess Jesus before men, then Jesus will confess us before the Father!",
+        ]),
+      ),
+    ),
+    match_on(
+      match_sequence([
+        "am",
+        "married",
+        "with",
+        match_choice(list_map(range_from(2, 20), number_to_words)),
+        "children",
+      ]),
+      app_contact_match("Thank God for your marriage and children!"),
+    ),
     app_contact_respond_choices_invalid(),
     app_contact_respond_choices_skip(),
     match_on(
@@ -172,25 +191,6 @@ export function app_contact_respond_choices() {
       app_contact_match(
         "If God wills, I will contact you through this app, yes.",
       ),
-    ),
-    match_on(
-      match_sequence(["am", "a", "christian"]),
-      app_contact_match(
-        string_combine_multiple([
-          app_share_praise(),
-          " that you are a Christian! If we confess Jesus before men, then Jesus will confess us before the Father!",
-        ]),
-      ),
-    ),
-    match_on(
-      match_sequence([
-        "am",
-        "married",
-        "with",
-        match_choice(list_map(range_from(2, 20), number_to_words)),
-        "children",
-      ]),
-      app_contact_match("Thank God for your marriage and children!"),
     ),
     match_on(
       match_sequence([
