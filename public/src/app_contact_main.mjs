@@ -1,3 +1,4 @@
+import { crypto_key_public_import } from "./crypto_key_public_import.mjs";
 import { crypto_key_public } from "./crypto_key_public.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_style_font_size_default_multiplied } from "./html_style_font_size_default_multiplied.mjs";
@@ -63,11 +64,8 @@ export async function app_contact_main() {
   html_rows_set(t, 8);
   let response_p;
   html_button(root, "Send message to me", async function () {
-    async function importPublicKey(pem) {
-      return await crypto_key_public_import(pem);
-    }
     async function encryptMessage(publicKeyPem, plaintext) {
-      let key = await importPublicKey(publicKeyPem);
+      let key = await crypto_key_public_import(publicKeyPem);
       let enc = new TextEncoder().encode(plaintext);
       let encrypted = await crypto.subtle.encrypt(
         {
@@ -175,28 +173,3 @@ export async function app_contact_main() {
     );
   }
 }
-async function crypto_key_public_import(pem) {
-    let pemHeader = "-----BEGIN PUBLIC KEY-----";
-    let pemFooter = "-----END PUBLIC KEY-----";
-    let pemContents = pem
-        .replace(pemHeader, "")
-        .replace(pemFooter, "")
-        .replace(/\s/g, "");
-    let binaryDerString = atob(pemContents);
-    let binaryDer = new Uint8Array(binaryDerString.length);
-    for (let i = 0; i < binaryDerString.length; i++) {
-        binaryDer[i] = binaryDerString.charCodeAt(i);
-    }
-    let v = await window.crypto.subtle.importKey(
-        "spki",
-        binaryDer.buffer,
-        {
-            name: "RSA-OAEP",
-            hash: "SHA-256",
-        },
-        true,
-        ["encrypt"]
-    );
-    return v;
-}
-
