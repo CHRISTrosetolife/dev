@@ -5,7 +5,7 @@ export function prayers_orphans_widows_unstained_world() {
     prayers_needy(),
     "Exalt the lowly",
     "Let all Christians excel in their gifts",
-    "Let no gifted Christian do slavish, menial, trivial tasks",
+    "Let no gifted Christian do slavish, menial or trivial tasks",
     prayers_church(),
   ];
   return v;
