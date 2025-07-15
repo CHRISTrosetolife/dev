@@ -4,4 +4,6 @@ import { privateDecrypt } from "node:crypto";
 export function crypto_decrypt(private_key, encrypted) {
   let decrypted = privateDecrypt(private_key, encrypted);
   log(string_combine_multiple(["🔓 Decrypted:", decrypted.toString()]));
+  let v = decrypted;
+  return v;
 }

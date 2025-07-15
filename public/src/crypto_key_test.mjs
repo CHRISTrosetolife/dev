@@ -5,6 +5,7 @@ import { buffer_to } from "./buffer_to.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { publicEncrypt } from "node:crypto";
 export async function crypto_key_test() {
+  let key = await crypto_key();
   log({
     public_key,
     private_key,
@@ -12,7 +13,11 @@ export async function crypto_key_test() {
   let message = "Hello, secure world!";
   let public_key = object_property_get(key, "public_key");
   let encrypted = publicEncrypt(public_key, buffer_to(message));
-  let key = await crypto_key();
-  let private_key = object_property_get(key, "private_key");
-  crypto_decrypt(private_key, encrypted);
+await cryto_key_decrypt(encrypted);
 }
+async function cryto_key_decrypt(encrypted) {
+    let key = await crypto_key();
+    let private_key = object_property_get(key, "private_key");
+    d=crypto_decrypt(private_key, encrypted);$r,d
+}
+
