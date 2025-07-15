@@ -28,5 +28,6 @@ export async function crypto_encrypt(public_key_pem, message) {
       encrypted.toString("base64"),
     ]),
   );
-  return encrypted;
+  let v = encrypted.toString("base64");
+  return v;
 }
