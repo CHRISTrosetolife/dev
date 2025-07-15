@@ -1,7 +1,7 @@
 import { string_split_empty } from "./string_split_empty.mjs";
 import { list_concat } from "./list_concat.mjs";
 export function app_contact_removes() {
-  let v = list_concat(string_split_empty("bdefghmnswy"), [
+  let v = list_concat(string_split_empty("bdefghlmnpswy"), [
     "ut",
     "ur",
     "re",
@@ -10,6 +10,7 @@ export function app_contact_removes() {
     "en",
     "sen",
     "ing",
+    "ng",
   ]);
   return v;
 }
