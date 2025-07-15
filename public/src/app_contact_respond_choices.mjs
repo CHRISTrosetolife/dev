@@ -29,76 +29,7 @@ import { app_share_verse_refresh_greet } from "./app_share_verse_refresh_greet.m
 import { countries_names } from "./countries_names.mjs";
 export function app_contact_respond_choices() {
   let v = [
-    [
-      match_on(
-        match_once_or_more(
-          match_sequence([
-            match_choice(app_contact_phrase_list_greetings()),
-            match_optional("sir"),
-          ]),
-          2,
-        ),
-        app_contact_match(app_share_verse_refresh_greet()),
-      ),
-      match_on(
-        match_sequence(["praise", app_contact_phrase_god()]),
-        app_contact_match(app_share_praise()),
-      ),
-      match_on(
-        match_sequence([
-          match_choice(["How're", match_sequence(["how", "are"])]),
-          app_contact_phrase_you(),
-          match_sequence_optional(["doing", match_optional("today")]),
-        ]),
-        app_contact_match(app_share_how_r_u()),
-      ),
-      match_on(
-        match_sequence([
-          match_choice(["great", "nice", "pleasure"]),
-          "to",
-          "meet",
-          match_optional("with"),
-          app_contact_phrase_you(),
-          match_optional("here"),
-        ]),
-        app_contact_match(
-          string_combine_multiple([
-            app_share_thanks(),
-            " Great to meet you, too 🤝!",
-          ]),
-        ),
-      ),
-      match_on(
-        match_sequence([
-          match_choice([match_sequence(["my", "name", "is"]), "am"]),
-          match_optional("evangelist"),
-          match_choice(names_first()),
-          match_optional(match_choice(names_last())),
-          "from",
-          match_choice(countries_names()),
-        ]),
-        app_contact_match("My name is servant Jared."),
-      ),
-      match_on(
-        match_sequence(["am", "a", "christian"]),
-        app_contact_match(
-          string_combine_multiple([
-            app_share_praise(),
-            " that you are a Christian! If we confess Jesus before men, then Jesus will confess us before the Father!",
-          ]),
-        ),
-      ),
-      match_on(
-        match_sequence([
-          "am",
-          "married",
-          "with",
-          match_choice(list_map(range_from(2, 20), number_to_words)),
-          "children",
-        ]),
-        app_contact_match("Thank God for your marriage and children!"),
-      ),
-    ],
+    app_contact_respond_choices_greetings(),
     app_contact_respond_choices_invalid(),
     app_contact_respond_choices_skip(),
     match_on(
@@ -220,3 +151,76 @@ export function app_contact_respond_choices() {
   let v2 = list_flatten(v);
   return v2;
 }
+function app_contact_respond_choices_greetings() {
+    return [
+        match_on(
+            match_once_or_more(
+                match_sequence([
+                    match_choice(app_contact_phrase_list_greetings()),
+                    match_optional("sir"),
+                ]),
+                2
+            ),
+            app_contact_match(app_share_verse_refresh_greet())
+        ),
+        match_on(
+            match_sequence(["praise", app_contact_phrase_god()]),
+            app_contact_match(app_share_praise())
+        ),
+        match_on(
+            match_sequence([
+                match_choice(["How're", match_sequence(["how", "are"])]),
+                app_contact_phrase_you(),
+                match_sequence_optional(["doing", match_optional("today")]),
+            ]),
+            app_contact_match(app_share_how_r_u())
+        ),
+        match_on(
+            match_sequence([
+                match_choice(["great", "nice", "pleasure"]),
+                "to",
+                "meet",
+                match_optional("with"),
+                app_contact_phrase_you(),
+                match_optional("here"),
+            ]),
+            app_contact_match(
+                string_combine_multiple([
+                    app_share_thanks(),
+                    " Great to meet you, too 🤝!",
+                ])
+            )
+        ),
+        match_on(
+            match_sequence([
+                match_choice([match_sequence(["my", "name", "is"]), "am"]),
+                match_optional("evangelist"),
+                match_choice(names_first()),
+                match_optional(match_choice(names_last())),
+                "from",
+                match_choice(countries_names()),
+            ]),
+            app_contact_match("My name is servant Jared.")
+        ),
+        match_on(
+            match_sequence(["am", "a", "christian"]),
+            app_contact_match(
+                string_combine_multiple([
+                    app_share_praise(),
+                    " that you are a Christian! If we confess Jesus before men, then Jesus will confess us before the Father!",
+                ])
+            )
+        ),
+        match_on(
+            match_sequence([
+                "am",
+                "married",
+                "with",
+                match_choice(list_map(range_from(2, 20), number_to_words)),
+                "children",
+            ]),
+            app_contact_match("Thank God for your marriage and children!")
+        ),
+    ];
+}
+
