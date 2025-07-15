@@ -1,9 +1,9 @@
-import { app_contact_respond_choices_skip } from "./app_contact_respond_choices_skip.mjs";
 import { app_contact_respond_choices_invalid } from "./app_contact_respond_choices_invalid.mjs";
 import { list_flatten } from "./list_flatten.mjs";
 import { app_contact_phrase_you_optional } from "./app_contact_phrase_you_optional.mjs";
 import { names_last } from "./names_last.mjs";
 import { match_sequence_optional } from "./match_sequence_optional.mjs";
+import { app_contact_phrase_amen } from "./app_contact_phrase_amen.mjs";
 import { app_contact_match_prayer_god_give } from "./app_contact_match_prayer_god_give.mjs";
 import { app_contact_match_amen } from "./app_contact_match_amen.mjs";
 import { match_once_or_more } from "./match_once_or_more.mjs";
@@ -12,13 +12,19 @@ import { list_map } from "./list_map.mjs";
 import { range_from } from "./range_from.mjs";
 import { names_first } from "./names_first.mjs";
 import { app_contact_phrase_list_greetings } from "./app_contact_phrase_list_greetings.mjs";
+import { app_contact_adds } from "./app_contact_adds.mjs";
+import { global_function_property } from "./global_function_property.mjs";
+import { match_digits_1_to_999 } from "./match_digits_1_to_999.mjs";
+import { bible_reference_separator } from "./bible_reference_separator.mjs";
 import { app_contact_phrase_god_willing } from "./app_contact_phrase_god_willing.mjs";
 import { app_contact_phrase_god } from "./app_contact_phrase_god.mjs";
 import { app_share_bless } from "./app_share_bless.mjs";
 import { app_contact_phrase_you } from "./app_contact_phrase_you.mjs";
 import { match_on } from "./match_on.mjs";
+import { app_contact_phrase_jesus } from "./app_contact_phrase_jesus.mjs";
 import { match_optional } from "./match_optional.mjs";
 import { app_share_how_r_u } from "./app_share_how_r_u.mjs";
+import { noop } from "./noop.mjs";
 import { match_sequence } from "./match_sequence.mjs";
 import { app_contact_match } from "./app_contact_match.mjs";
 import { match_choice } from "./match_choice.mjs";
@@ -51,8 +57,6 @@ export function app_contact_respond_choices() {
       ]),
       app_contact_match(app_share_how_r_u()),
     ),
-    app_contact_respond_choices_invalid(),
-    app_contact_respond_choices_skip(),
     match_on(
       match_sequence([
         match_choice(["great", "nice", "pleasure"]),
@@ -69,6 +73,19 @@ export function app_contact_respond_choices() {
         ]),
       ),
     ),
+    match_on(
+      match_sequence([
+        match_choice([match_sequence(["my", "name", "is"]), "am"]),
+        match_optional("evangelist"),
+        match_choice(names_first()),
+        match_optional(match_choice(names_last())),
+        "from",
+        match_choice(countries_names()),
+      ]),
+      app_contact_match("My name is servant Jared."),
+    ),
+    app_contact_respond_choices_invalid(),
+    app_contact_respond_choices_skip(),
     match_on(
       match_sequence([
         "keep",
@@ -173,17 +190,6 @@ export function app_contact_respond_choices() {
     ),
     match_on(
       match_sequence([
-        match_choice([match_sequence(["my", "name", "is"]), "am"]),
-        match_optional("evangelist"),
-        match_choice(names_first()),
-        match_optional(match_choice(names_last())),
-        "from",
-        match_choice(countries_names()),
-      ]),
-      app_contact_match("My name is servant Jared."),
-    ),
-    match_on(
-      match_sequence([
         "am",
         "married",
         "with",
@@ -218,3 +224,36 @@ export function app_contact_respond_choices() {
   let v2 = list_flatten(v);
   return v2;
 }
+function app_contact_respond_choices_skip() {
+    return [
+        match_on(
+            match_choice([
+                match_sequence(["in", app_contact_phrase_jesus(), "name"]),
+                match_sequence([
+                    "in",
+                    "the",
+                    "name",
+                    "of",
+                    app_contact_phrase_jesus(),
+                ]),
+                app_contact_phrase_amen(),
+                "and",
+                "but",
+            ]),
+            noop
+        ),
+        match_on(
+            match_sequence([
+                "verse",
+                match_choice(
+                    global_function_property(app_contact_adds, "bible_books_names")
+                ),
+                match_digits_1_to_999(),
+                bible_reference_separator(),
+                match_digits_1_to_999(),
+            ]),
+            noop
+        ),
+    ];
+}
+
