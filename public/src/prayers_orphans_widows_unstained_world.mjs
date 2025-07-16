@@ -10,6 +10,7 @@ export function prayers_orphans_widows_unstained_world() {
     "Save, bless and clothe the unclothed",
     "Save, bless and free the innocent prisoners",
     "Save, bless and heal the sick",
+    "Save, bless and provide for the poor",
     "Exalt the lowly",
     "Let all Christians excel in their gifts",
     "Let no gifted Christian do slavish, menial or trivial tasks",
