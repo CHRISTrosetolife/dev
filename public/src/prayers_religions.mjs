@@ -11,6 +11,8 @@ export function prayers_religions() {
       "Buddhists",
       "Agnostics",
       "Atheists",
+      "Taoists",
+      "Confucians",
     ],
     prayers_sabbw,
     string_prefix_and,
