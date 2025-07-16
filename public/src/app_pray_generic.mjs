@@ -61,12 +61,25 @@ export async function app_pray_generic(body, app_fn, ps) {
   }
   function colorize(d, index) {
     let choices = [
-      "Salmon",
-      "SandyBrown",
-      "Yellow",
-      "lightgreen",
-      "lightblue",
-      "MediumPurple",
+      "forestgreen",
+      "darkgreen",
+      "seagreen",
+      "mediumseagreen",
+      "mediumspringgreen",
+      "springgreen",
+      "green",
+      "darkolivegreen",
+      "olive",
+      "olivedrab",
+      "teal",
+      "mediumaquamarine",
+      "cadetblue",
+      "lightseagreen",
+      "darkslategray",
+      "palegreen",
+      "viridian",
+      "huntergreen",
+      "myrtlegreen",
     ];
     if (d.selected) {
       html_style_background_color(d, list_get_wrap(choices, index));
