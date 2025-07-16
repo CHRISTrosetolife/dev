@@ -16,6 +16,7 @@ export function prayers_religions() {
       "Indigenous worshippers",
       "Sikh(s)",
       "Baháʼí(s)",
+      "Shintoist(s)",
     ],
     prayers_sabbw,
     string_prefix_and,
