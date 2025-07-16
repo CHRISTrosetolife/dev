@@ -14,6 +14,7 @@ export function prayers_religions() {
       "Taoists",
       "Confucians",
       "Indigenous worshippers",
+      "Sikh(s)",
     ],
     prayers_sabbw,
     string_prefix_and,
