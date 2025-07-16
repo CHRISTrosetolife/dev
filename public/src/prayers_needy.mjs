@@ -5,12 +5,8 @@ export function prayers_needy() {
   let v = prayers_list_generic_5(
     [
       "children",
-      "widows",
       "foreigners",
       "the poor",
-      "the hungry",
-      "the thirsty",
-      "the unclothed",
       "the elderly",
       "prisoners",
       "the sick",
