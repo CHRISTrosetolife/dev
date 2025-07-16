@@ -66,9 +66,6 @@ export async function app_contact_main() {
     try {
       let { response, value } = app_contact_respond_component(t, response_p, d);
       let { output } = response;
-      log({
-        output,
-      });
       if (output === null) {
         html_p_text(
           response_p,

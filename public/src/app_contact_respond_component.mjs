@@ -6,9 +6,6 @@ export function app_contact_respond_component(t, response_p, d) {
   html_clear(response_p);
   let value = html_value_get(t);
   let response = app_contact_respond(d, value);
-  log({
-    response,
-  });
   let v = {
     response,
     value,
