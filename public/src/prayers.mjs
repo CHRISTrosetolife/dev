@@ -15,6 +15,7 @@ export function prayers() {
     prayers_countries(),
     prayers_orphans_widows_unstained_world(),
     prayers_big(),
+    prayers_music(),
     prayers_famous(),
     prayers_religions(),
   ]);
