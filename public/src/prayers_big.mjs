@@ -9,7 +9,7 @@ export function prayers_big() {
     "May the coming of the day of God be hastened",
     "for each member of the body of Christ, including future members, for each gift they could receive from God and each gift I have, if it would mean that the member would love more or have more treasure in heaven, may they receive the gift, immediately and irrevocably",
     "for each member of the body of Christ, including future members, let them perfectly use all of their money and possessions to maximize their love and treasure in heaven",
-    "Bless, help and provide for each person who has asked me to pray for them or give materially including Hope and Restoration Children's Center Orphange",
+    "Bless, help and provide for each person who has asked me to pray for them or give materially including Hope and Restoration Children's Center Orphange and Kimai Fellowship Church",
     "Answer all the prayer requests every Christian, including me, should be praying and help all others You desire to pray like this",
     "Protect all humans, including love and I, and all angels of the LORD from all spiritual beings who are acting against the LORD",
     "May all Christians speak and behave worthily in the presence of heavenly angels",
