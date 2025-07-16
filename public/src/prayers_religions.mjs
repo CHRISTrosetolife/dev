@@ -1,14 +1,11 @@
+import { prayers_sabbw } from "./prayers_sabbw.mjs";
+import { prayers_list_generic_5 } from "./prayers_list_generic_5.mjs";
 import { string_prefix_and } from "./string_prefix_and.mjs";
-import { list_join_comma_space } from "./list_join_comma_space.mjs";
-import { prayers_sabbwa } from "./prayers_sabbwa.mjs";
 export function prayers_religions() {
-  return prayers_sabbwa(
-    list_join_comma_space([
-      "Jews",
-      "descendants of Abraham",
-      "Muslims",
-      "Hindus",
-      string_prefix_and("Buddhists"),
-    ]),
+  let v = prayers_list_generic_5(
+    ["Jews", "descendants of Abraham", "Muslims", "Hindus", "Buddhists"],
+    prayers_sabbw,
+    string_prefix_and,
   );
+  return v;
 }
