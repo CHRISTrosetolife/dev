@@ -8,6 +8,7 @@ export function prayers_orphans_widows_unstained_world() {
     "Save, bless and feed the hungry and starving",
     "Save, bless and give drink to the thirsty and dehydrated",
     "Save, bless and clothe the unclothed",
+    "Save, bless and free the innocent prisoners",
     "Exalt the lowly",
     "Let all Christians excel in their gifts",
     "Let no gifted Christian do slavish, menial or trivial tasks",
