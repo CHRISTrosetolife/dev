@@ -3,7 +3,7 @@ import { prayers_needy } from "./prayers_needy.mjs";
 export function prayers_orphans_widows_unstained_world() {
   let v = [
     prayers_needy(),
-    "Save, bless and be a Father to the fatherless or motherless",
+    "Save, bless and be a Father to the fatherless and the motherless",
     "Save, bless and be a Husband to the widow",
     "Save, bless and feed the hungry and starving",
     "Save, bless and give drink to the thirsty and dehydrated",
