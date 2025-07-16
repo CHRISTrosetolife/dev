@@ -9,7 +9,6 @@ export function prayers_needy() {
       "the poor",
       "the elderly",
       "prisoners",
-      "the sick",
       "the innocent accused",
     ],
     prayers_sabbw,
