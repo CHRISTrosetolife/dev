@@ -4,7 +4,6 @@ import { prayers_list_generic_5 } from "./prayers_list_generic_5.mjs";
 export function prayers_needy() {
   let v = prayers_list_generic_5(
     [
-      "orphans",
       "children",
       "widows",
       "foreigners",
