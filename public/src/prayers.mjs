@@ -1,3 +1,4 @@
+import { prayers_music } from "./prayers_music.mjs";
 import { prayers_intro } from "./prayers_intro.mjs";
 import { prayers_orphans_widows_unstained_world } from "./prayers_orphans_widows_unstained_world.mjs";
 import { prayers_religions } from "./prayers_religions.mjs";
