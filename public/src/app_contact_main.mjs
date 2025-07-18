@@ -1,3 +1,4 @@
+import { html_value_get } from "./html_value_get.mjs";
 import { crypto_key_public } from "./crypto_key_public.mjs";
 import { crypto_encrypt } from "./crypto_encrypt.mjs";
 import { html_style_font_size_default_multiplied } from "./html_style_font_size_default_multiplied.mjs";
@@ -34,6 +35,8 @@ import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { firebase_initialize } from "./firebase_initialize.mjs";
 import { html_style_default_initialize_axios } from "./html_style_default_initialize_axios.mjs";
 import { html_button_next_after } from "./html_button_next_after.mjs";
+import { string_is } from "./string_is.mjs";
+import { string_empty_not_is } from "./string_empty_not_is.mjs";
 export async function app_contact_main() {
   let context = {};
   let root = await html_style_default_initialize_axios();
@@ -95,7 +98,8 @@ export async function app_contact_main() {
   response_p = html_p(root);
   let verse_p = html_p(root);
   html_style_bold(verse_p);
-  if (false) {
+  let value = html_value_get(t);
+  if (string_is(value) && string_empty_not_is(value)) {
     await message_send();
   }
   function on_response(value, repsonse) {
