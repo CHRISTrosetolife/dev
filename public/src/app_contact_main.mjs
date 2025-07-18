@@ -2,7 +2,6 @@ import { crypto_key_public } from "./crypto_key_public.mjs";
 import { crypto_encrypt } from "./crypto_encrypt.mjs";
 import { html_style_font_size_default_multiplied } from "./html_style_font_size_default_multiplied.mjs";
 import { app_contact_dictionary } from "./app_contact_dictionary.mjs";
-import { log } from "./log.mjs";
 import { app_contact_respond_component } from "./app_contact_respond_component.mjs";
 import { html_style_italic } from "./html_style_italic.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -76,7 +75,7 @@ export async function app_contact_main() {
         let encrypted = await crypto_encrypt(crypto_key_public(), value);
         await firebase_upload_object(path, {
           encrypted,
-          message,
+          value,
         });
         html_p_text_multiple(response_p, [
           "📬 Your message has been sent to me",
