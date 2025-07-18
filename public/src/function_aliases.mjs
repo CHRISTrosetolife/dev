@@ -128,7 +128,7 @@ export function function_aliases() {
   function_aliases_register(
     all,
     fn_name("app_contact_download_responses_generate"),
-    ["cdg"],
+    ["cg"],
   );
   function_aliases_register(
     all,
