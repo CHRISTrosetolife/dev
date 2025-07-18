@@ -95,7 +95,7 @@ export async function app_contact_main() {
   response_p = html_p(root);
   let verse_p = html_p(root);
   html_style_bold(verse_p);
-  message_send();
+  await message_send();
   function on_response(value, repsonse) {
     let { output, valid } = repsonse;
     let value_p = html_p_text(response_p, value);
