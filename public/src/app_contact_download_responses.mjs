@@ -1,5 +1,5 @@
 export function app_contact_download_responses() {
-  return [
+  let v = [
     {
       message:
         "Hello am Dennis from kenya,am married with three children,am a Christian pleasure to meet you ",
@@ -120,4 +120,5 @@ export function app_contact_download_responses() {
       valid: true,
     },
   ];
+  return v;
 }
