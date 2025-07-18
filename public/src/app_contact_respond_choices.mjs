@@ -62,6 +62,10 @@ export function app_contact_respond_choices() {
       app_contact_match(app_contact_match_prayer_god_give("an answer")),
     ),
     match_on(
+      match_sequence(["i", "want", "love"]),
+      app_contact_match(app_contact_match_prayer_god_give("love")),
+    ),
+    match_on(
       match_sequence(["only", "we", "have", "Urdu", "translation", "bible"]),
       app_contact_match(
         string_combine_multiple([
