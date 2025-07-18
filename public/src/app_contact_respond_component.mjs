@@ -5,6 +5,9 @@ import { html_value_get } from "./html_value_get.mjs";
 export function app_contact_respond_component(t, response_p, d) {
   html_clear(response_p);
   let value = html_value_get(t);
+  log({
+    value,
+  });
   let response = app_contact_respond(d, value);
   let v = {
     response,
