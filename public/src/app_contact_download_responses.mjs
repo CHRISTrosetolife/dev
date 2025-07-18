@@ -1,5 +1,5 @@
 export function app_contact_download_responses() {
-  let v = [
+  return [
     {
       message:
         "Hello am Dennis from kenya,am married with three children,am a Christian pleasure to meet you ",
@@ -20,6 +20,11 @@ export function app_contact_download_responses() {
     {
       message: "Greetings in Jesus name Amen ",
       outputs: ["👋 Greetings in the name of the Lord Jesus Christ ✝️ !"],
+      valid: true,
+    },
+    {
+      message: "i want love",
+      outputs: ["God, if You desire, please give love 🙏 amen 🙇."],
       valid: true,
     },
     {
@@ -115,5 +120,4 @@ export function app_contact_download_responses() {
       valid: true,
     },
   ];
-  return v;
 }
