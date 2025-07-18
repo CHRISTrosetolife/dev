@@ -62,6 +62,7 @@ export async function app_contact_main() {
   );
   html_rows_set(t, 8);
   let response_p;
+  log("b");
   html_button(root, "Send message to me", message_send);
   async function message_send() {
     log("a");
