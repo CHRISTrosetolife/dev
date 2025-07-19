@@ -7,7 +7,7 @@ export function prayers_family() {
     prayers_love(),
     "bless beyond words our marriage and together in person",
     "Save and bless beyond words our offspring and may they be obedient and healthy including no mental illness and no medication",
-    "Bless any trips, our legal marriage, any marriage ceremonies, Passport, Visa and Green Card",
+    "Bless any trips, our legal marriage, any marriage ceremonies, Cenomar, Passport, Visa and Green Card",
     prayers_list_generic_5(
       [
         "the family of love",
