@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { crypto_key_decrypt } from "./crypto_key_decrypt.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_merge_strict } from "./object_merge_strict.mjs";
@@ -11,9 +10,6 @@ export async function app_contact_download_file(d, file_path) {
   if (object_property_exists(file, "encrypted")) {
     let encrypted = object_property_get(file, "encrypted");
     message = await crypto_key_decrypt(encrypted);
-    log({
-      message,
-    });
   } else {
     message = object_property_get(file, "message");
   }
