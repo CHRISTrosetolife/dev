@@ -1,3 +1,4 @@
+import { app_resume } from "./app_resume.mjs";
 import { html_link_app } from "./html_link_app.mjs";
 import { app_memorize_name } from "./app_memorize_name.mjs";
 import { app_dev_name } from "./app_dev_name.mjs";
@@ -60,7 +61,7 @@ export function app_resume_generic(print, anonymous) {
   html_spacer_bullet(row);
   html_email(row, anonymous ? "email@address.com" : me_email());
   html_spacer_bullet(row);
-  html_link_app(row, "resume");
+  html_link_app(row, app_resume.name);
   app_resume_header_2(root, "Projects");
   let dev = app_resume_header_3(root, app_dev_name());
   html_cycle_p(
