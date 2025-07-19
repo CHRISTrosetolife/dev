@@ -1,3 +1,4 @@
+import { url_unsecure } from "./url_unsecure.mjs";
 import { each_object_async } from "./each_object_async.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { file_read_json_previous } from "./file_read_json_previous.mjs";
@@ -8,8 +9,8 @@ export async function sandbox_selenium() {
   let facebook = object_property_get(secret, "facebook");
   let driver = await new Builder().forBrowser(Browser.EDGE).build();
   try {
-    await driver.get("https://www.facebook.com/");
-    await each_object_async(facebook, async (key, value) => {
+    await driver.get(url_unsecure(string_localhost()));
+    await each_object_async(facebook, async function (key, value) {
       await driver.findElement(By.id(key)).sendKeys(value);
     });
     await driver.findElement(By.name("email")).sendKeys(Key.RETURN);
