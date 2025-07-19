@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { app_url_localhost } from "./app_url_localhost.mjs";
 import { each_object_async } from "./each_object_async.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -9,7 +10,7 @@ export async function sandbox_selenium() {
   let facebook = object_property_get(secret, "facebook");
   let driver = await new Builder().forBrowser(Browser.EDGE).build();
   try {
-    await driver.get(app_url_localhost());
+    await driver.get(app_url_localhost(fn_name("app_contact")));
     await each_object_async(facebook, async function (key, value) {
       await driver.findElement(By.id(key)).sendKeys(value);
     });
