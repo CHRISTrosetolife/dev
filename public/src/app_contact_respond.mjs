@@ -63,7 +63,9 @@ export function app_contact_respond(d, input) {
     return v3;
   }
   if (list_empty_is(input_tokens)) {
-    let o = string_combine_multiple(["Your message contains no valid words."]);
+    let o = string_combine_multiple([
+      "Your message contains no valid words. Please enter valid words",
+    ]);
     let v3 = app_contact_respond_output_invalid(o);
     return v3;
   }
