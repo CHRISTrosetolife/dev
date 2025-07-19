@@ -1,3 +1,4 @@
+import { list_empty_is } from "./list_empty_is.mjs";
 import { string_normalize_fancy } from "./string_normalize_fancy.mjs";
 import { list_unique_json } from "./list_unique_json.mjs";
 import { log } from "./log.mjs";
@@ -29,7 +30,7 @@ export function app_contact_respond(d, input) {
   let joined = string_only(lower, alphabet, " ");
   let tokens = string_split_space(joined);
   let filtered = list_filter(tokens, string_empty_not_is);
-  let l = list_adder(function (la) {
+  let input_tokens = list_adder(function (la) {
     each(filtered, function (w) {
       let v = object_property_exists(lookup, w);
       let added = false;
@@ -51,7 +52,7 @@ export function app_contact_respond(d, input) {
       }
     });
   });
-  let invalid = list_intersect(l, ["hif"]);
+  let invalid = list_intersect(input_tokens, ["hif"]);
   if (list_empty_not_is(invalid)) {
     let o = string_combine_multiple([
       "Your message contains an invalid word. Please remove invalid words. Invalid word(s): ",
@@ -64,8 +65,17 @@ export function app_contact_respond(d, input) {
     };
     return v3;
   }
+  if (list_empty_is(input_tokens)) {
+    let o = string_combine_multiple(["Your message contains no valid words."]);
+    let v3 = {
+      output: o,
+      valid: false,
+      outputs: [o],
+    };
+    return v3;
+  }
   let choices = app_contact_respond_choices();
-  let result = match_fill(l, choices);
+  let result = match_fill(input_tokens, choices);
   let { data, match } = result;
   let outputs = object_property_get_or(data, "outputs", []);
   let valid = object_property_get_or(data, "valid", true);
@@ -74,7 +84,7 @@ export function app_contact_respond(d, input) {
     output,
     valid,
     outputs,
-    tokens: l,
+    tokens: input_tokens,
   };
   return v3;
 }
