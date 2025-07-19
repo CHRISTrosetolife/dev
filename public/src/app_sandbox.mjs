@@ -7,7 +7,7 @@ import { html_document_body } from "./html_document_body.mjs";
 export async function app_sandbox() {
   let root = html_document_body();
   await html_scripts_load(root, ["axios"]);
-  let url = url_localhost(server_port());
+  let url = url_localhost_server();
   log({
     url,
   });
@@ -15,3 +15,7 @@ export async function app_sandbox() {
     data: "test post",
   });
 }
+function url_localhost_server() {
+    return url_localhost(server_port());
+}
+
