@@ -1,6 +1,5 @@
-import { string_localhost } from "./string_localhost.mjs";
+import { url_localhost_client } from "./url_localhost_client.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { url_unsecure } from "./url_unsecure.mjs";
 import { each_object_async } from "./each_object_async.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { file_read_json_previous } from "./file_read_json_previous.mjs";
@@ -11,9 +10,7 @@ export async function sandbox_selenium() {
   let facebook = object_property_get(secret, "facebook");
   let driver = await new Builder().forBrowser(Browser.EDGE).build();
   try {
-    await driver.get(
-      string_combine_multiple([url_unsecure(), string_localhost()]),
-    );
+    await driver.get(string_combine_multiple([url_localhost_client()]));
     await each_object_async(facebook, async function (key, value) {
       await driver.findElement(By.id(key)).sendKeys(value);
     });
