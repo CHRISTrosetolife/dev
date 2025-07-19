@@ -10,7 +10,7 @@ export async function sandbox_selenium() {
   let facebook = object_property_get(secret, "facebook");
   let driver = await new Builder().forBrowser(Browser.EDGE).build();
   try {
-    await driver.get(path_join([url_localhost_client()]));
+    await driver.get(app_url_localhost());
     await each_object_async(facebook, async function (key, value) {
       await driver.findElement(By.id(key)).sendKeys(value);
     });
