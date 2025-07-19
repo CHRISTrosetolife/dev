@@ -1,4 +1,4 @@
-import { app_contact } from "./app_contact.mjs";
+import { fn_name } from "./fn_name.mjs";
 import { app_share_bless } from "./app_share_bless.mjs";
 import { app_share_how_r_u } from "./app_share_how_r_u.mjs";
 import { app_share_praise } from "./app_share_praise.mjs";
@@ -157,7 +157,7 @@ export async function app_share_verse_refresh(
       value: [
         string_combine_multiple([
           "➡️ ‼️ Please contact me using this link ➡️ 👉 : ",
-          app_url(app_contact.name),
+          app_url(fn_name("app_contact")),
           " 👈 ⬅️",
         ]),
         "⬆️ ☝️ ‼️ ⬆️",
