@@ -1,3 +1,4 @@
+import { app_contact_respond_output_invalid } from "./app_contact_respond_output_invalid.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { string_normalize_fancy } from "./string_normalize_fancy.mjs";
 import { list_unique_json } from "./list_unique_json.mjs";
@@ -58,7 +59,6 @@ export function app_contact_respond(d, input) {
       "Your message contains an invalid word. Please remove invalid words. Invalid word(s): ",
       list_join_comma_space(invalid),
     ]);
-
     let v3 = app_contact_respond_output_invalid(o);
     return v3;
   }
@@ -81,11 +81,3 @@ export function app_contact_respond(d, input) {
   };
   return v3;
 }
-function app_contact_respond_output_invalid(o) {
-    return {
-        output: o,
-        valid: false,
-        outputs: [o],
-    };
-}
-
