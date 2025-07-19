@@ -10,10 +10,11 @@ import { prayers_famous } from "./prayers_famous.mjs";
 import { prayers_family } from "./prayers_family.mjs";
 import { list_denest } from "./list_denest.mjs";
 export function prayers() {
+  let short = true;
   let v = list_denest([
     prayers_intro(),
     prayers_family(),
-    prayers_countries(),
+    short ? [] : prayers_countries(),
     prayers_orphans_widows_unstained_world(),
     prayers_big(),
     prayers_music(),
