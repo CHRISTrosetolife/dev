@@ -16,7 +16,7 @@ export async function server() {
         string_combine_multiple([
           server.name,
           " ",
-          url_localhost(8080),
+          url_localhost_client(),
           " listening on port ",
           port,
         ]),
@@ -42,3 +42,7 @@ export async function server() {
     return url;
   }
 }
+function url_localhost_client() {
+    return url_localhost(8080);
+}
+
