@@ -157,7 +157,7 @@ export async function app_share_verse_refresh(
       value: [
         string_combine_multiple([
           "➡️ ‼️ Please contact me using this link ➡️ 👉 : ",
-          app_url(app_contact),
+          app_url(app_contact.name),
           " 👈 ⬅️",
         ]),
         "⬆️ ☝️ ‼️ ⬆️",
