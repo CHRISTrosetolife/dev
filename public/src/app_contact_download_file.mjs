@@ -9,8 +9,8 @@ export async function app_contact_download_file(d, file_path) {
   if (object_property_exists(file, "encrypted")) {
     message = object_property_get(file, "encrypted");
   } else {
+    message = object_property_get(file, "message");
   }
-  message = object_property_get(file, "message");
   let r = app_contact_respond(d, message);
   let output = object_property_get(r, "output");
   let output_null = output === null;
