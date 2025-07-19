@@ -1,3 +1,3 @@
 export function app_extension_html() {
-  return ".html";
+  return file_extension_html();
 }
